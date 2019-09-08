@@ -9,6 +9,11 @@ class MutableMenuItem {
     get() = map["nutrition"] as NutritionInformation
     set(value) { map["nutrition"] = value }
   fun nutrition(builder: MutableNutritionInformation.() -> Unit) { map["nutrition"] = MutableNutritionInformation().apply(builder).build() }
+  var menuAddOn: Any
+    get() = map["menuAddOn"]!!
+    set(value) { map["menuAddOn"] = value }
+  fun menuAddOnMenuItem(builder: MutableMenuItem.() -> Unit) { map["menuAddOn"] = MutableMenuItem().apply(builder).build() }
+  fun menuAddOnMenuSection(builder: MutableMenuSection.() -> Unit) { map["menuAddOn"] = MutableMenuSection().apply(builder).build() }
   var additionalType: String
     get() = map["additionalType"] as String
     set(value) { map["additionalType"] = value }
@@ -35,6 +40,11 @@ class MutableMenuItem {
     get() = map["potentialAction"] as Action
     set(value) { map["potentialAction"] = value }
   fun potentialAction(builder: MutableAction.() -> Unit) { map["potentialAction"] = MutableAction().apply(builder).build() }
+  var subjectOf: Any
+    get() = map["subjectOf"]!!
+    set(value) { map["subjectOf"] = value }
+  fun subjectOfCreativeWork(builder: MutableCreativeWork.() -> Unit) { map["subjectOf"] = MutableCreativeWork().apply(builder).build() }
+  fun subjectOfEvent(builder: MutableEvent.() -> Unit) { map["subjectOf"] = MutableEvent().apply(builder).build() }
   var id: String
     get() = map["id"] as String
     set(value) { map["id"] = value }

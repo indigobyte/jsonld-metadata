@@ -211,35 +211,35 @@ public class GeoCircle extends GeoShape {
       return this;
     }
     /**
-     * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
      */
     @NotNull public Builder elevation(@NotNull Integer integer) {
       putValue("elevation", integer);
       return this;
     }
     /**
-     * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
      */
     @NotNull public Builder elevation(@NotNull Long elevation) {
       putValue("elevation", elevation);
       return this;
     }
     /**
-     * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
      */
     @NotNull public Builder elevation(@NotNull Float elevation) {
       putValue("elevation", elevation);
       return this;
     }
     /**
-     * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
      */
     @NotNull public Builder elevation(@NotNull Double elevation) {
       putValue("elevation", elevation);
       return this;
     }
     /**
-     * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
      */
     @NotNull public Builder elevation(@NotNull String elevation) {
       putValue("elevation", elevation);
@@ -341,6 +341,34 @@ public class GeoCircle extends GeoShape {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork creativeWork) {
+      putValue("subjectOf", creativeWork);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("subjectOf", creativeWork.build());
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event event) {
+      putValue("subjectOf", event);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event.Builder event) {
+      putValue("subjectOf", event.build());
       return this;
     }
     @NotNull public Builder id(@NotNull String id) {

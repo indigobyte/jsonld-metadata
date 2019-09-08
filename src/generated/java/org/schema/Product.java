@@ -198,13 +198,13 @@ public class Product extends Thing {
     return Arrays.asList((QuantitativeValue) current);
   }
   /**
-   * The [GTIN-12](http://apps.gs1.org/GDD/glossary/Pages/GTIN-12.aspx) code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+   * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
    */
   @JsonIgnore public Identifier getGtin12() {
     return (Identifier) getValue("gtin12");
   }
   /**
-   * The [GTIN-12](http://apps.gs1.org/GDD/glossary/Pages/GTIN-12.aspx) code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+   * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
    */
   @JsonIgnore public Collection<Identifier> getGtin12s() {
     final Object current = myData.get("gtin12");
@@ -215,13 +215,13 @@ public class Product extends Thing {
     return Arrays.asList((Identifier) current);
   }
   /**
-   * The [GTIN-13](http://apps.gs1.org/GDD/glossary/Pages/GTIN-13.aspx) code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceeding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+   * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceeding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
    */
   @JsonIgnore public Identifier getGtin13() {
     return (Identifier) getValue("gtin13");
   }
   /**
-   * The [GTIN-13](http://apps.gs1.org/GDD/glossary/Pages/GTIN-13.aspx) code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceeding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+   * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceeding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
    */
   @JsonIgnore public Collection<Identifier> getGtin13s() {
     final Object current = myData.get("gtin13");
@@ -232,13 +232,13 @@ public class Product extends Thing {
     return Arrays.asList((Identifier) current);
   }
   /**
-   * The [GTIN-14](http://apps.gs1.org/GDD/glossary/Pages/GTIN-14.aspx) code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+   * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
    */
   @JsonIgnore public Identifier getGtin14() {
     return (Identifier) getValue("gtin14");
   }
   /**
-   * The [GTIN-14](http://apps.gs1.org/GDD/glossary/Pages/GTIN-14.aspx) code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+   * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
    */
   @JsonIgnore public Collection<Identifier> getGtin14s() {
     final Object current = myData.get("gtin14");
@@ -589,6 +589,23 @@ public class Product extends Thing {
     return Arrays.asList((Review) current);
   }
   /**
+   * A slogan or motto associated with the item.
+   */
+  @JsonIgnore public String getSlogan() {
+    return (String) getValue("slogan");
+  }
+  /**
+   * A slogan or motto associated with the item.
+   */
+  @JsonIgnore public Collection<String> getSlogans() {
+    final Object current = myData.get("slogan");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
    * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
    */
   @JsonIgnore public Identifier getSku() {
@@ -843,21 +860,21 @@ public class Product extends Thing {
       return this;
     }
     /**
-     * The [GTIN-12](http://apps.gs1.org/GDD/glossary/Pages/GTIN-12.aspx) code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      */
     @NotNull public Builder gtin12(@NotNull Identifier identifier) {
       putValue("gtin12", identifier);
       return this;
     }
     /**
-     * The [GTIN-13](http://apps.gs1.org/GDD/glossary/Pages/GTIN-13.aspx) code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceeding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceeding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      */
     @NotNull public Builder gtin13(@NotNull Identifier identifier) {
       putValue("gtin13", identifier);
       return this;
     }
     /**
-     * The [GTIN-14](http://apps.gs1.org/GDD/glossary/Pages/GTIN-14.aspx) code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      */
     @NotNull public Builder gtin14(@NotNull Identifier identifier) {
       putValue("gtin14", identifier);
@@ -1095,6 +1112,13 @@ public class Product extends Thing {
       return this;
     }
     /**
+     * A slogan or motto associated with the item.
+     */
+    @NotNull public Builder slogan(@NotNull String slogan) {
+      putValue("slogan", slogan);
+      return this;
+    }
+    /**
      * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
      */
     @NotNull public Builder sku(@NotNull Identifier identifier) {
@@ -1250,6 +1274,34 @@ public class Product extends Thing {
       putValue("potentialAction", action.build());
       return this;
     }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork creativeWork) {
+      putValue("subjectOf", creativeWork);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("subjectOf", creativeWork.build());
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event event) {
+      putValue("subjectOf", event);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event.Builder event) {
+      putValue("subjectOf", event.build());
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -1324,6 +1376,8 @@ public class Product extends Thing {
       if ("releaseDates".equals(key) && value instanceof java.util.Date) { releaseDate((java.util.Date)value); return; }
       if ("review".equals(key) && value instanceof Review) { review((Review)value); return; }
       if ("reviews".equals(key) && value instanceof Review) { review((Review)value); return; }
+      if ("slogan".equals(key) && value instanceof String) { slogan((String)value); return; }
+      if ("slogans".equals(key) && value instanceof String) { slogan((String)value); return; }
       if ("sku".equals(key) && value instanceof Identifier) { sku((Identifier)value); return; }
       if ("skus".equals(key) && value instanceof Identifier) { sku((Identifier)value); return; }
       if ("weight".equals(key) && value instanceof QuantitativeValue) { weight((QuantitativeValue)value); return; }

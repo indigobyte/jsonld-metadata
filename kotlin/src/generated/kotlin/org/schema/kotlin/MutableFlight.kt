@@ -5,20 +5,9 @@ class MutableFlight {
   var seller: Participant
     get() = map["seller"] as Participant
     set(value) { map["seller"] = value }
-  var provider: Any
-    get() = map["provider"]!!
-    set(value) { map["provider"] = value }
-  fun providerOrganization(builder: MutableOrganization.() -> Unit) { map["provider"] = MutableOrganization().apply(builder).build() }
-  fun providerPerson(builder: MutablePerson.() -> Unit) { map["provider"] = MutablePerson().apply(builder).build() }
   var flightNumber: Identifier
     get() = map["flightNumber"] as Identifier
     set(value) { map["flightNumber"] = value }
-  var departureTime: java.util.Date
-    get() = map["departureTime"] as java.util.Date
-    set(value) { map["departureTime"] = value }
-  var arrivalTime: java.util.Date
-    get() = map["arrivalTime"] as java.util.Date
-    set(value) { map["arrivalTime"] = value }
   var departureAirport: Airport
     get() = map["departureAirport"] as Airport
     set(value) { map["departureAirport"] = value }
@@ -59,6 +48,17 @@ class MutableFlight {
   var webCheckinTime: java.util.Date
     get() = map["webCheckinTime"] as java.util.Date
     set(value) { map["webCheckinTime"] = value }
+  var provider: Any
+    get() = map["provider"]!!
+    set(value) { map["provider"] = value }
+  fun providerOrganization(builder: MutableOrganization.() -> Unit) { map["provider"] = MutableOrganization().apply(builder).build() }
+  fun providerPerson(builder: MutablePerson.() -> Unit) { map["provider"] = MutablePerson().apply(builder).build() }
+  var departureTime: java.util.Date
+    get() = map["departureTime"] as java.util.Date
+    set(value) { map["departureTime"] = value }
+  var arrivalTime: java.util.Date
+    get() = map["arrivalTime"] as java.util.Date
+    set(value) { map["arrivalTime"] = value }
   var additionalType: String
     get() = map["additionalType"] as String
     set(value) { map["additionalType"] = value }
@@ -85,6 +85,11 @@ class MutableFlight {
     get() = map["potentialAction"] as Action
     set(value) { map["potentialAction"] = value }
   fun potentialAction(builder: MutableAction.() -> Unit) { map["potentialAction"] = MutableAction().apply(builder).build() }
+  var subjectOf: Any
+    get() = map["subjectOf"]!!
+    set(value) { map["subjectOf"] = value }
+  fun subjectOfCreativeWork(builder: MutableCreativeWork.() -> Unit) { map["subjectOf"] = MutableCreativeWork().apply(builder).build() }
+  fun subjectOfEvent(builder: MutableEvent.() -> Unit) { map["subjectOf"] = MutableEvent().apply(builder).build() }
   var id: String
     get() = map["id"] as String
     set(value) { map["id"] = value }

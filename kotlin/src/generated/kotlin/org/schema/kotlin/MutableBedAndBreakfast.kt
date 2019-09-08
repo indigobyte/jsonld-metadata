@@ -20,6 +20,9 @@ class MutableBedAndBreakfast {
     get() = map["amenityFeature"] as LocationFeatureSpecification
     set(value) { map["amenityFeature"] = value }
   fun amenityFeature(builder: MutableLocationFeatureSpecification.() -> Unit) { map["amenityFeature"] = MutableLocationFeatureSpecification().apply(builder).build() }
+  var numberOfRooms: Any
+    get() = map["numberOfRooms"]!!
+    set(value) { map["numberOfRooms"] = value }
   var petsAllowed: Any
     get() = map["petsAllowed"]!!
     set(value) { map["petsAllowed"] = value }
@@ -65,6 +68,12 @@ class MutableBedAndBreakfast {
   var faxNumber: String
     get() = map["faxNumber"] as String
     set(value) { map["faxNumber"] = value }
+  var isAccessibleForFree: Boolean
+    get() = map["isAccessibleForFree"] as Boolean
+    set(value) { map["isAccessibleForFree"] = value }
+  var publicAccess: Boolean
+    get() = map["publicAccess"] as Boolean
+    set(value) { map["publicAccess"] = value }
   var geo: Any
     get() = map["geo"]!!
     set(value) { map["geo"] = value }
@@ -104,6 +113,9 @@ class MutableBedAndBreakfast {
     get() = map["review"] as Review
     set(value) { map["review"] = value }
   fun review(builder: MutableReview.() -> Unit) { map["review"] = MutableReview().apply(builder).build() }
+  var slogan: String
+    get() = map["slogan"] as String
+    set(value) { map["slogan"] = value }
   var telephone: String
     get() = map["telephone"] as String
     set(value) { map["telephone"] = value }
@@ -140,6 +152,11 @@ class MutableBedAndBreakfast {
     get() = map["potentialAction"] as Action
     set(value) { map["potentialAction"] = value }
   fun potentialAction(builder: MutableAction.() -> Unit) { map["potentialAction"] = MutableAction().apply(builder).build() }
+  var subjectOf: Any
+    get() = map["subjectOf"]!!
+    set(value) { map["subjectOf"] = value }
+  fun subjectOfCreativeWork(builder: MutableCreativeWork.() -> Unit) { map["subjectOf"] = MutableCreativeWork().apply(builder).build() }
+  fun subjectOfEvent(builder: MutableEvent.() -> Unit) { map["subjectOf"] = MutableEvent().apply(builder).build() }
   var id: String
     get() = map["id"] as String
     set(value) { map["id"] = value }

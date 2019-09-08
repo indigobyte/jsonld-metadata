@@ -2,6 +2,14 @@ package org.schema.kotlin
 import org.schema.*
 class MutableTouristAttraction {
   private val map = HashMap<String,Any>()
+  var touristType: Any
+    get() = map["touristType"]!!
+    set(value) { map["touristType"] = value }
+  fun touristTypeAudience(builder: MutableAudience.() -> Unit) { map["touristType"] = MutableAudience().apply(builder).build() }
+  var availableLanguage: Any
+    get() = map["availableLanguage"]!!
+    set(value) { map["availableLanguage"] = value }
+  fun availableLanguageLanguage(builder: MutableLanguage.() -> Unit) { map["availableLanguage"] = MutableLanguage().apply(builder).build() }
   var address: Any
     get() = map["address"]!!
     set(value) { map["address"] = value }
@@ -28,6 +36,12 @@ class MutableTouristAttraction {
   var faxNumber: String
     get() = map["faxNumber"] as String
     set(value) { map["faxNumber"] = value }
+  var isAccessibleForFree: Boolean
+    get() = map["isAccessibleForFree"] as Boolean
+    set(value) { map["isAccessibleForFree"] = value }
+  var publicAccess: Boolean
+    get() = map["publicAccess"] as Boolean
+    set(value) { map["publicAccess"] = value }
   var geo: Any
     get() = map["geo"]!!
     set(value) { map["geo"] = value }
@@ -67,6 +81,9 @@ class MutableTouristAttraction {
     get() = map["review"] as Review
     set(value) { map["review"] = value }
   fun review(builder: MutableReview.() -> Unit) { map["review"] = MutableReview().apply(builder).build() }
+  var slogan: String
+    get() = map["slogan"] as String
+    set(value) { map["slogan"] = value }
   var telephone: String
     get() = map["telephone"] as String
     set(value) { map["telephone"] = value }
@@ -107,6 +124,11 @@ class MutableTouristAttraction {
     get() = map["potentialAction"] as Action
     set(value) { map["potentialAction"] = value }
   fun potentialAction(builder: MutableAction.() -> Unit) { map["potentialAction"] = MutableAction().apply(builder).build() }
+  var subjectOf: Any
+    get() = map["subjectOf"]!!
+    set(value) { map["subjectOf"] = value }
+  fun subjectOfCreativeWork(builder: MutableCreativeWork.() -> Unit) { map["subjectOf"] = MutableCreativeWork().apply(builder).build() }
+  fun subjectOfEvent(builder: MutableEvent.() -> Unit) { map["subjectOf"] = MutableEvent().apply(builder).build() }
   var id: String
     get() = map["id"] as String
     set(value) { map["id"] = value }

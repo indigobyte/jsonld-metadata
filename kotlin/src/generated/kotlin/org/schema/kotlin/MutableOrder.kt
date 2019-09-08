@@ -42,6 +42,7 @@ class MutableOrder {
     set(value) { map["orderedItem"] = value }
   fun orderedItemOrderItem(builder: MutableOrderItem.() -> Unit) { map["orderedItem"] = MutableOrderItem().apply(builder).build() }
   fun orderedItemProduct(builder: MutableProduct.() -> Unit) { map["orderedItem"] = MutableProduct().apply(builder).build() }
+  fun orderedItemService(builder: MutableService.() -> Unit) { map["orderedItem"] = MutableService().apply(builder).build() }
   var orderNumber: Identifier
     get() = map["orderNumber"] as Identifier
     set(value) { map["orderNumber"] = value }
@@ -98,6 +99,11 @@ class MutableOrder {
     get() = map["potentialAction"] as Action
     set(value) { map["potentialAction"] = value }
   fun potentialAction(builder: MutableAction.() -> Unit) { map["potentialAction"] = MutableAction().apply(builder).build() }
+  var subjectOf: Any
+    get() = map["subjectOf"]!!
+    set(value) { map["subjectOf"] = value }
+  fun subjectOfCreativeWork(builder: MutableCreativeWork.() -> Unit) { map["subjectOf"] = MutableCreativeWork().apply(builder).build() }
+  fun subjectOfEvent(builder: MutableEvent.() -> Unit) { map["subjectOf"] = MutableEvent().apply(builder).build() }
   var id: String
     get() = map["id"] as String
     set(value) { map["id"] = value }

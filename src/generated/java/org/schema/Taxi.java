@@ -273,6 +273,13 @@ public class Taxi extends Service {
       return this;
     }
     /**
+     * A slogan or motto associated with the item.
+     */
+    @NotNull public Builder slogan(@NotNull String slogan) {
+      putValue("slogan", slogan);
+      return this;
+    }
+    /**
      * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
      */
     @NotNull public Builder serviceType(@NotNull String serviceType) {
@@ -417,6 +424,34 @@ public class Taxi extends Service {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork creativeWork) {
+      putValue("subjectOf", creativeWork);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("subjectOf", creativeWork.build());
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event event) {
+      putValue("subjectOf", event);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event.Builder event) {
+      putValue("subjectOf", event.build());
       return this;
     }
     @NotNull public Builder id(@NotNull String id) {

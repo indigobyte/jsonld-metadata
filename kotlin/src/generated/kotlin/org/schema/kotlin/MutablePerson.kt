@@ -130,6 +130,10 @@ class MutablePerson {
     get() = map["performerIn"] as Event
     set(value) { map["performerIn"] = value }
   fun performerIn(builder: MutableEvent.() -> Unit) { map["performerIn"] = MutableEvent().apply(builder).build() }
+  var publishingPrinciples: Any
+    get() = map["publishingPrinciples"]!!
+    set(value) { map["publishingPrinciples"] = value }
+  fun publishingPrinciplesCreativeWork(builder: MutableCreativeWork.() -> Unit) { map["publishingPrinciples"] = MutableCreativeWork().apply(builder).build() }
   var relatedTo: Person
     get() = map["relatedTo"] as Person
     set(value) { map["relatedTo"] = value }
@@ -181,6 +185,10 @@ class MutablePerson {
     get() = map["deathPlace"] as Place
     set(value) { map["deathPlace"] = value }
   fun deathPlace(builder: MutablePlace.() -> Unit) { map["deathPlace"] = MutablePlace().apply(builder).build() }
+  var hasOccupation: Occupation
+    get() = map["hasOccupation"] as Occupation
+    set(value) { map["hasOccupation"] = value }
+  fun hasOccupation(builder: MutableOccupation.() -> Unit) { map["hasOccupation"] = MutableOccupation().apply(builder).build() }
   var additionalType: String
     get() = map["additionalType"] as String
     set(value) { map["additionalType"] = value }
@@ -207,6 +215,11 @@ class MutablePerson {
     get() = map["potentialAction"] as Action
     set(value) { map["potentialAction"] = value }
   fun potentialAction(builder: MutableAction.() -> Unit) { map["potentialAction"] = MutableAction().apply(builder).build() }
+  var subjectOf: Any
+    get() = map["subjectOf"]!!
+    set(value) { map["subjectOf"] = value }
+  fun subjectOfCreativeWork(builder: MutableCreativeWork.() -> Unit) { map["subjectOf"] = MutableCreativeWork().apply(builder).build() }
+  fun subjectOfEvent(builder: MutableEvent.() -> Unit) { map["subjectOf"] = MutableEvent().apply(builder).build() }
   var id: String
     get() = map["id"] as String
     set(value) { map["id"] = value }

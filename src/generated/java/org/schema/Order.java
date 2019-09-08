@@ -232,13 +232,13 @@ public class Order extends Intangible {
     return Arrays.asList((String) current);
   }
   /**
-   * The currency (in 3-letter ISO 4217 format) of the discount.
+   * The currency of the discount.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
    */
   @JsonIgnore public String getDiscountCurrency() {
     return (String) getValue("discountCurrency");
   }
   /**
-   * The currency (in 3-letter ISO 4217 format) of the discount.
+   * The currency of the discount.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
    */
   @JsonIgnore public Collection<String> getDiscountCurrencys() {
     final Object current = myData.get("discountCurrency");
@@ -315,6 +315,23 @@ public class Order extends Intangible {
       return (Collection<Product>) current;
     }
     return Arrays.asList((Product) current);
+  }
+  /**
+   * The item ordered.
+   */
+  @JsonIgnore public Service getOrderedItemService() {
+    return (Service) getValue("orderedItem");
+  }
+  /**
+   * The item ordered.
+   */
+  @JsonIgnore public Collection<Service> getOrderedItemServices() {
+    final Object current = myData.get("orderedItem");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Service>) current;
+    }
+    return Arrays.asList((Service) current);
   }
   /**
    * The identifier of the transaction.
@@ -620,7 +637,7 @@ public class Order extends Intangible {
       return this;
     }
     /**
-     * The currency (in 3-letter ISO 4217 format) of the discount.
+     * The currency of the discount.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
      */
     @NotNull public Builder discountCurrency(@NotNull String discountCurrency) {
       putValue("discountCurrency", discountCurrency);
@@ -666,6 +683,20 @@ public class Order extends Intangible {
      */
     @NotNull public Builder orderedItem(@NotNull Product.Builder product) {
       putValue("orderedItem", product.build());
+      return this;
+    }
+    /**
+     * The item ordered.
+     */
+    @NotNull public Builder orderedItem(@NotNull Service service) {
+      putValue("orderedItem", service);
+      return this;
+    }
+    /**
+     * The item ordered.
+     */
+    @NotNull public Builder orderedItem(@NotNull Service.Builder service) {
+      putValue("orderedItem", service.build());
       return this;
     }
     /**
@@ -836,6 +867,34 @@ public class Order extends Intangible {
       putValue("potentialAction", action.build());
       return this;
     }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork creativeWork) {
+      putValue("subjectOf", creativeWork);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("subjectOf", creativeWork.build());
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event event) {
+      putValue("subjectOf", event);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event.Builder event) {
+      putValue("subjectOf", event.build());
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -878,6 +937,8 @@ public class Order extends Intangible {
       if ("orderedItems".equals(key) && value instanceof OrderItem) { orderedItem((OrderItem)value); return; }
       if ("orderedItem".equals(key) && value instanceof Product) { orderedItem((Product)value); return; }
       if ("orderedItems".equals(key) && value instanceof Product) { orderedItem((Product)value); return; }
+      if ("orderedItem".equals(key) && value instanceof Service) { orderedItem((Service)value); return; }
+      if ("orderedItems".equals(key) && value instanceof Service) { orderedItem((Service)value); return; }
       if ("orderNumber".equals(key) && value instanceof Identifier) { orderNumber((Identifier)value); return; }
       if ("orderNumbers".equals(key) && value instanceof Identifier) { orderNumber((Identifier)value); return; }
       if ("orderStatus".equals(key) && value instanceof OrderStatus) { orderStatus((OrderStatus)value); return; }

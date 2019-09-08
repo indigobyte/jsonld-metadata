@@ -106,10 +106,17 @@ class MutableRNews {
     set(value) { map["owns"] = value }
   fun ownsOwnershipInfo(builder: MutableOwnershipInfo.() -> Unit) { map["owns"] = MutableOwnershipInfo().apply(builder).build() }
   fun ownsProduct(builder: MutableProduct.() -> Unit) { map["owns"] = MutableProduct().apply(builder).build() }
+  var publishingPrinciples: Any
+    get() = map["publishingPrinciples"]!!
+    set(value) { map["publishingPrinciples"] = value }
+  fun publishingPrinciplesCreativeWork(builder: MutableCreativeWork.() -> Unit) { map["publishingPrinciples"] = MutableCreativeWork().apply(builder).build() }
   var review: Review
     get() = map["review"] as Review
     set(value) { map["review"] = value }
   fun review(builder: MutableReview.() -> Unit) { map["review"] = MutableReview().apply(builder).build() }
+  var slogan: String
+    get() = map["slogan"] as String
+    set(value) { map["slogan"] = value }
   var seeks: Demand
     get() = map["seeks"] as Demand
     set(value) { map["seeks"] = value }
@@ -165,6 +172,11 @@ class MutableRNews {
     get() = map["potentialAction"] as Action
     set(value) { map["potentialAction"] = value }
   fun potentialAction(builder: MutableAction.() -> Unit) { map["potentialAction"] = MutableAction().apply(builder).build() }
+  var subjectOf: Any
+    get() = map["subjectOf"]!!
+    set(value) { map["subjectOf"] = value }
+  fun subjectOfCreativeWork(builder: MutableCreativeWork.() -> Unit) { map["subjectOf"] = MutableCreativeWork().apply(builder).build() }
+  fun subjectOfEvent(builder: MutableEvent.() -> Unit) { map["subjectOf"] = MutableEvent().apply(builder).build() }
   var id: String
     get() = map["id"] as String
     set(value) { map["id"] = value }

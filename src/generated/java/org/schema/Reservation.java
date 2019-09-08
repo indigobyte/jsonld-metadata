@@ -215,13 +215,13 @@ public class Reservation extends Intangible {
     return Arrays.asList((Ticket) current);
   }
   /**
-   * The total price for the reservation or ticket, including applicable taxes, shipping, etc.
+   * The total price for the reservation or ticket, including applicable taxes, shipping, etc.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
    */
   @JsonIgnore public Integer getTotalPriceInteger() {
     return (Integer) getValue("totalPrice");
   }
   /**
-   * The total price for the reservation or ticket, including applicable taxes, shipping, etc.
+   * The total price for the reservation or ticket, including applicable taxes, shipping, etc.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
    */
   @JsonIgnore public Collection<Integer> getTotalPriceIntegers() {
     final Object current = myData.get("totalPrice");
@@ -232,13 +232,13 @@ public class Reservation extends Intangible {
     return Arrays.asList((Integer) current);
   }
   /**
-   * The total price for the reservation or ticket, including applicable taxes, shipping, etc.
+   * The total price for the reservation or ticket, including applicable taxes, shipping, etc.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
    */
   @JsonIgnore public Long getTotalPriceLong() {
     return (Long) getValue("totalPrice");
   }
   /**
-   * The total price for the reservation or ticket, including applicable taxes, shipping, etc.
+   * The total price for the reservation or ticket, including applicable taxes, shipping, etc.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
    */
   @JsonIgnore public Collection<Long> getTotalPriceLongs() {
     final Object current = myData.get("totalPrice");
@@ -249,13 +249,13 @@ public class Reservation extends Intangible {
     return Arrays.asList((Long) current);
   }
   /**
-   * The total price for the reservation or ticket, including applicable taxes, shipping, etc.
+   * The total price for the reservation or ticket, including applicable taxes, shipping, etc.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
    */
   @JsonIgnore public Float getTotalPriceFloat() {
     return (Float) getValue("totalPrice");
   }
   /**
-   * The total price for the reservation or ticket, including applicable taxes, shipping, etc.
+   * The total price for the reservation or ticket, including applicable taxes, shipping, etc.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
    */
   @JsonIgnore public Collection<Float> getTotalPriceFloats() {
     final Object current = myData.get("totalPrice");
@@ -266,13 +266,13 @@ public class Reservation extends Intangible {
     return Arrays.asList((Float) current);
   }
   /**
-   * The total price for the reservation or ticket, including applicable taxes, shipping, etc.
+   * The total price for the reservation or ticket, including applicable taxes, shipping, etc.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
    */
   @JsonIgnore public Double getTotalPriceDouble() {
     return (Double) getValue("totalPrice");
   }
   /**
-   * The total price for the reservation or ticket, including applicable taxes, shipping, etc.
+   * The total price for the reservation or ticket, including applicable taxes, shipping, etc.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
    */
   @JsonIgnore public Collection<Double> getTotalPriceDoubles() {
     final Object current = myData.get("totalPrice");
@@ -283,13 +283,13 @@ public class Reservation extends Intangible {
     return Arrays.asList((Double) current);
   }
   /**
-   * The total price for the reservation or ticket, including applicable taxes, shipping, etc.
+   * The total price for the reservation or ticket, including applicable taxes, shipping, etc.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
    */
   @JsonIgnore public String getTotalPriceString() {
     return (String) getValue("totalPrice");
   }
   /**
-   * The total price for the reservation or ticket, including applicable taxes, shipping, etc.
+   * The total price for the reservation or ticket, including applicable taxes, shipping, etc.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
    */
   @JsonIgnore public Collection<String> getTotalPriceStrings() {
     final Object current = myData.get("totalPrice");
@@ -300,13 +300,13 @@ public class Reservation extends Intangible {
     return Arrays.asList((String) current);
   }
   /**
-   * The currency (in 3-letter ISO 4217 format) of the price or a price component, when attached to [[PriceSpecification]] and its subtypes.
+   * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
    */
   @JsonIgnore public String getPriceCurrency() {
     return (String) getValue("priceCurrency");
   }
   /**
-   * The currency (in 3-letter ISO 4217 format) of the price or a price component, when attached to [[PriceSpecification]] and its subtypes.
+   * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
    */
   @JsonIgnore public Collection<String> getPriceCurrencys() {
     final Object current = myData.get("priceCurrency");
@@ -491,42 +491,42 @@ public class Reservation extends Intangible {
       return this;
     }
     /**
-     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.
+     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      */
     @NotNull public Builder totalPrice(@NotNull Integer integer) {
       putValue("totalPrice", integer);
       return this;
     }
     /**
-     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.
+     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      */
     @NotNull public Builder totalPrice(@NotNull Long totalPrice) {
       putValue("totalPrice", totalPrice);
       return this;
     }
     /**
-     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.
+     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      */
     @NotNull public Builder totalPrice(@NotNull Float totalPrice) {
       putValue("totalPrice", totalPrice);
       return this;
     }
     /**
-     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.
+     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      */
     @NotNull public Builder totalPrice(@NotNull Double totalPrice) {
       putValue("totalPrice", totalPrice);
       return this;
     }
     /**
-     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.
+     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      */
     @NotNull public Builder totalPrice(@NotNull String totalPrice) {
       putValue("totalPrice", totalPrice);
       return this;
     }
     /**
-     * The currency (in 3-letter ISO 4217 format) of the price or a price component, when attached to [[PriceSpecification]] and its subtypes.
+     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
      */
     @NotNull public Builder priceCurrency(@NotNull String priceCurrency) {
       putValue("priceCurrency", priceCurrency);
@@ -635,6 +635,34 @@ public class Reservation extends Intangible {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork creativeWork) {
+      putValue("subjectOf", creativeWork);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("subjectOf", creativeWork.build());
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event event) {
+      putValue("subjectOf", event);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event.Builder event) {
+      putValue("subjectOf", event.build());
       return this;
     }
     @NotNull public Builder id(@NotNull String id) {

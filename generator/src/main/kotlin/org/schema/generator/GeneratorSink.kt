@@ -80,7 +80,9 @@ class GeneratorSink : TripleSink {
     }
 
     override fun addNonLiteral(subj: String, pred: String, obj: String) {
+//        println("Subject: $subj -- Pred: $pred -- obj: $obj")
         when(pred) {
+            "http://schema.org/" -> { /* ignore */ }
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" -> { if(!types.containsKey(subj)) types.put(subj, Type().apply { if (types.containsKey(obj)) parentType = obj }) }
             "http://www.w3.org/2000/01/rdf-schema#subClassOf" -> types[subj]!!.parentType = obj
             "http://schema.org/domainIncludes" -> {
@@ -99,23 +101,33 @@ class GeneratorSink : TripleSink {
                 }
             }
             "http://schema.org/rangeIncludes" -> types[subj]!!.dataTypes.add(obj)
-            "http://purl.org/dc/terms/source" -> types[subj]!!.source = obj
+            "http://purl.org/dc/terms/source" -> {
+                try {
+                    types[subj]!!.source = obj
+                } catch(e: Exception) {
+                    println("No pred for $pred")
+                }
+
+            }
             "http://www.w3.org/2002/07/owl#equivalentClass" -> types[subj]!!.equivalent = obj
             "http://www.w3.org/2002/07/owl#equivalentProperty" -> types[subj]!!.equivalent = obj
             "http://schema.org/inverseOf" -> { /* ignore */ }
             "http://schema.org/supersededBy" -> { types[subj]!!.isSuperseded = true }
             "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" -> {
-                val interfaceType = Type()
-                interfaceType.name = getInterfaceName(obj)
-                interfaceType.isInterface = true
-                types.put(obj, interfaceType)
+                if (obj.contains("http:")) {
+                    val interfaceType = Type()
 
-                if (!types.containsKey(subj)) types.put(subj, Type())
-                val type = types[subj]!!
-                if (type.isField) {
-                    type.dataTypes.add(obj)
-                } else {
-                    type.interfaces.add(interfaceType.name!!)
+                    interfaceType.name = getInterfaceName(obj)
+                    interfaceType.isInterface = true
+                    types.put(obj, interfaceType)
+
+                    if (!types.containsKey(subj)) types.put(subj, Type())
+                    val type = types[subj]!!
+                    if (type.isField) {
+                        type.dataTypes.add(obj)
+                    } else {
+                        type.interfaces.add(interfaceType.name!!)
+                    }
                 }
             }
             else -> System.err.println("Unknown non-literal: $pred")
@@ -148,9 +160,13 @@ class GeneratorSink : TripleSink {
     private fun getFieldType(field: Type): String? {
         if (field.isInterface && field.name != null)
             return field.name!!.capitalize()
-
-        val name = field.dataTypes.firstOrNull { types[it]!!.isInterface } ?: field.dataTypes.firstOrNull()
-        return getBasicTypeName(types[name]?.name)
+        try {
+            val name = field.dataTypes.firstOrNull { types[it]!!.isInterface } ?: field.dataTypes.firstOrNull()
+            return getBasicTypeName(types[name]?.name)
+        } catch (e: Exception) {
+//            println("Failed to find a field for ${field.}")
+            return null
+        }
     }
 
     fun getEitherTypes(field: Type): Collection<String> {

@@ -147,13 +147,13 @@ public class Rating extends Intangible {
     return Arrays.asList((String) current);
   }
   /**
-   * The rating for the content.
+   * The rating for the content.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
    */
   @JsonIgnore public Number getRatingValueNumber() {
     return (Number) getValue("ratingValue");
   }
   /**
-   * The rating for the content.
+   * The rating for the content.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
    */
   @JsonIgnore public Collection<Number> getRatingValueNumbers() {
     final Object current = myData.get("ratingValue");
@@ -164,13 +164,13 @@ public class Rating extends Intangible {
     return Arrays.asList((Number) current);
   }
   /**
-   * The rating for the content.
+   * The rating for the content.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
    */
   @JsonIgnore public String getRatingValueString() {
     return (String) getValue("ratingValue");
   }
   /**
-   * The rating for the content.
+   * The rating for the content.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
    */
   @JsonIgnore public Collection<String> getRatingValueStrings() {
     final Object current = myData.get("ratingValue");
@@ -265,6 +265,23 @@ public class Rating extends Intangible {
     }
     return Arrays.asList((String) current);
   }
+  /**
+   * This Review or Rating is relevant to this part or facet of the itemReviewed.
+   */
+  @JsonIgnore public String getReviewAspect() {
+    return (String) getValue("reviewAspect");
+  }
+  /**
+   * This Review or Rating is relevant to this part or facet of the itemReviewed.
+   */
+  @JsonIgnore public Collection<String> getReviewAspects() {
+    final Object current = myData.get("reviewAspect");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
   protected Rating(java.util.Map<String,Object> data) {
     super(data);
   }
@@ -343,14 +360,14 @@ public class Rating extends Intangible {
       return this;
     }
     /**
-     * The rating for the content.
+     * The rating for the content.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      */
     @NotNull public Builder ratingValue(@NotNull Number number) {
       putValue("ratingValue", number);
       return this;
     }
     /**
-     * The rating for the content.
+     * The rating for the content.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      */
     @NotNull public Builder ratingValue(@NotNull String ratingValue) {
       putValue("ratingValue", ratingValue);
@@ -389,6 +406,13 @@ public class Rating extends Intangible {
      */
     @NotNull public Builder worstRating(@NotNull String worstRating) {
       putValue("worstRating", worstRating);
+      return this;
+    }
+    /**
+     * This Review or Rating is relevant to this part or facet of the itemReviewed.
+     */
+    @NotNull public Builder reviewAspect(@NotNull String reviewAspect) {
+      putValue("reviewAspect", reviewAspect);
       return this;
     }
     /**
@@ -468,6 +492,34 @@ public class Rating extends Intangible {
       putValue("potentialAction", action.build());
       return this;
     }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork creativeWork) {
+      putValue("subjectOf", creativeWork);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("subjectOf", creativeWork.build());
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event event) {
+      putValue("subjectOf", event);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event.Builder event) {
+      putValue("subjectOf", event.build());
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -504,6 +556,8 @@ public class Rating extends Intangible {
       if ("worstRatings".equals(key) && value instanceof Double) { worstRating((Double)value); return; }
       if ("worstRating".equals(key) && value instanceof String) { worstRating((String)value); return; }
       if ("worstRatings".equals(key) && value instanceof String) { worstRating((String)value); return; }
+      if ("reviewAspect".equals(key) && value instanceof String) { reviewAspect((String)value); return; }
+      if ("reviewAspects".equals(key) && value instanceof String) { reviewAspect((String)value); return; }
       super.fromMap(key, value);
     }
   }

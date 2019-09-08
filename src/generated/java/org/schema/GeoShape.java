@@ -130,13 +130,13 @@ public class GeoShape extends StructuredValue {
     return Arrays.asList((String) current);
   }
   /**
-   * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+   * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
    */
   @JsonIgnore public Integer getElevationInteger() {
     return (Integer) getValue("elevation");
   }
   /**
-   * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+   * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
    */
   @JsonIgnore public Collection<Integer> getElevationIntegers() {
     final Object current = myData.get("elevation");
@@ -147,13 +147,13 @@ public class GeoShape extends StructuredValue {
     return Arrays.asList((Integer) current);
   }
   /**
-   * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+   * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
    */
   @JsonIgnore public Long getElevationLong() {
     return (Long) getValue("elevation");
   }
   /**
-   * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+   * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
    */
   @JsonIgnore public Collection<Long> getElevationLongs() {
     final Object current = myData.get("elevation");
@@ -164,13 +164,13 @@ public class GeoShape extends StructuredValue {
     return Arrays.asList((Long) current);
   }
   /**
-   * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+   * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
    */
   @JsonIgnore public Float getElevationFloat() {
     return (Float) getValue("elevation");
   }
   /**
-   * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+   * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
    */
   @JsonIgnore public Collection<Float> getElevationFloats() {
     final Object current = myData.get("elevation");
@@ -181,13 +181,13 @@ public class GeoShape extends StructuredValue {
     return Arrays.asList((Float) current);
   }
   /**
-   * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+   * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
    */
   @JsonIgnore public Double getElevationDouble() {
     return (Double) getValue("elevation");
   }
   /**
-   * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+   * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
    */
   @JsonIgnore public Collection<Double> getElevationDoubles() {
     final Object current = myData.get("elevation");
@@ -198,13 +198,13 @@ public class GeoShape extends StructuredValue {
     return Arrays.asList((Double) current);
   }
   /**
-   * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+   * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
    */
   @JsonIgnore public String getElevationString() {
     return (String) getValue("elevation");
   }
   /**
-   * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+   * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
    */
   @JsonIgnore public Collection<String> getElevationStrings() {
     final Object current = myData.get("elevation");
@@ -336,35 +336,35 @@ public class GeoShape extends StructuredValue {
       return this;
     }
     /**
-     * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
      */
     @NotNull public Builder elevation(@NotNull Integer integer) {
       putValue("elevation", integer);
       return this;
     }
     /**
-     * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
      */
     @NotNull public Builder elevation(@NotNull Long elevation) {
       putValue("elevation", elevation);
       return this;
     }
     /**
-     * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
      */
     @NotNull public Builder elevation(@NotNull Float elevation) {
       putValue("elevation", elevation);
       return this;
     }
     /**
-     * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
      */
     @NotNull public Builder elevation(@NotNull Double elevation) {
       putValue("elevation", elevation);
       return this;
     }
     /**
-     * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
      */
     @NotNull public Builder elevation(@NotNull String elevation) {
       putValue("elevation", elevation);
@@ -466,6 +466,34 @@ public class GeoShape extends StructuredValue {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork creativeWork) {
+      putValue("subjectOf", creativeWork);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("subjectOf", creativeWork.build());
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event event) {
+      putValue("subjectOf", event);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event.Builder event) {
+      putValue("subjectOf", event.build());
       return this;
     }
     @NotNull public Builder id(@NotNull String id) {

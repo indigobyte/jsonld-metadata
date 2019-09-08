@@ -62,13 +62,13 @@ public class PostalAddress extends ContactPoint {
     return Arrays.asList((String) current);
   }
   /**
-   * The locality. For example, Mountain View.
+   * The locality in which the street address is, and which is in the region. For example, Mountain View.
    */
   @JsonIgnore public String getAddressLocality() {
     return (String) getValue("addressLocality");
   }
   /**
-   * The locality. For example, Mountain View.
+   * The locality in which the street address is, and which is in the region. For example, Mountain View.
    */
   @JsonIgnore public Collection<String> getAddressLocalitys() {
     final Object current = myData.get("addressLocality");
@@ -79,13 +79,13 @@ public class PostalAddress extends ContactPoint {
     return Arrays.asList((String) current);
   }
   /**
-   * The region. For example, CA.
+   * The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country) 
    */
   @JsonIgnore public String getAddressRegion() {
     return (String) getValue("addressRegion");
   }
   /**
-   * The region. For example, CA.
+   * The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country) 
    */
   @JsonIgnore public Collection<String> getAddressRegions() {
     final Object current = myData.get("addressRegion");
@@ -182,14 +182,14 @@ public class PostalAddress extends ContactPoint {
       return this;
     }
     /**
-     * The locality. For example, Mountain View.
+     * The locality in which the street address is, and which is in the region. For example, Mountain View.
      */
     @NotNull public Builder addressLocality(@NotNull String addressLocality) {
       putValue("addressLocality", addressLocality);
       return this;
     }
     /**
-     * The region. For example, CA.
+     * The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country) 
      */
     @NotNull public Builder addressRegion(@NotNull String addressRegion) {
       putValue("addressRegion", addressRegion);
@@ -217,21 +217,21 @@ public class PostalAddress extends ContactPoint {
       return this;
     }
     /**
-     * A language someone may use with the item. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
+     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
      */
     @NotNull public Builder availableLanguage(@NotNull Language language) {
       putValue("availableLanguage", language);
       return this;
     }
     /**
-     * A language someone may use with the item. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
+     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
      */
     @NotNull public Builder availableLanguage(@NotNull Language.Builder language) {
       putValue("availableLanguage", language.build());
       return this;
     }
     /**
-     * A language someone may use with the item. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
+     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
      */
     @NotNull public Builder availableLanguage(@NotNull String availableLanguage) {
       putValue("availableLanguage", availableLanguage);
@@ -382,6 +382,34 @@ public class PostalAddress extends ContactPoint {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork creativeWork) {
+      putValue("subjectOf", creativeWork);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("subjectOf", creativeWork.build());
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event event) {
+      putValue("subjectOf", event);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event.Builder event) {
+      putValue("subjectOf", event.build());
       return this;
     }
     @NotNull public Builder id(@NotNull String id) {

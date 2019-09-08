@@ -95,6 +95,40 @@ public class BroadcastChannel extends Intangible {
     }
     return Arrays.asList((BroadcastService) current);
   }
+  /**
+   * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
+   */
+  @JsonIgnore public BroadcastFrequencySpecification getBroadcastFrequencyBroadcastFrequencySpecification() {
+    return (BroadcastFrequencySpecification) getValue("broadcastFrequency");
+  }
+  /**
+   * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
+   */
+  @JsonIgnore public Collection<BroadcastFrequencySpecification> getBroadcastFrequencyBroadcastFrequencySpecifications() {
+    final Object current = myData.get("broadcastFrequency");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<BroadcastFrequencySpecification>) current;
+    }
+    return Arrays.asList((BroadcastFrequencySpecification) current);
+  }
+  /**
+   * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
+   */
+  @JsonIgnore public String getBroadcastFrequencyString() {
+    return (String) getValue("broadcastFrequency");
+  }
+  /**
+   * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
+   */
+  @JsonIgnore public Collection<String> getBroadcastFrequencyStrings() {
+    final Object current = myData.get("broadcastFrequency");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
   protected BroadcastChannel(java.util.Map<String,Object> data) {
     super(data);
   }
@@ -149,6 +183,27 @@ public class BroadcastChannel extends Intangible {
      */
     @NotNull public Builder providesBroadcastService(@NotNull BroadcastService.Builder broadcastService) {
       putValue("providesBroadcastService", broadcastService.build());
+      return this;
+    }
+    /**
+     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
+     */
+    @NotNull public Builder broadcastFrequency(@NotNull BroadcastFrequencySpecification broadcastFrequencySpecification) {
+      putValue("broadcastFrequency", broadcastFrequencySpecification);
+      return this;
+    }
+    /**
+     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
+     */
+    @NotNull public Builder broadcastFrequency(@NotNull BroadcastFrequencySpecification.Builder broadcastFrequencySpecification) {
+      putValue("broadcastFrequency", broadcastFrequencySpecification.build());
+      return this;
+    }
+    /**
+     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
+     */
+    @NotNull public Builder broadcastFrequency(@NotNull String broadcastFrequency) {
+      putValue("broadcastFrequency", broadcastFrequency);
       return this;
     }
     /**
@@ -228,6 +283,34 @@ public class BroadcastChannel extends Intangible {
       putValue("potentialAction", action.build());
       return this;
     }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork creativeWork) {
+      putValue("subjectOf", creativeWork);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("subjectOf", creativeWork.build());
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event event) {
+      putValue("subjectOf", event);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event.Builder event) {
+      putValue("subjectOf", event.build());
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -244,6 +327,10 @@ public class BroadcastChannel extends Intangible {
       if ("broadcastServiceTiers".equals(key) && value instanceof String) { broadcastServiceTier((String)value); return; }
       if ("providesBroadcastService".equals(key) && value instanceof BroadcastService) { providesBroadcastService((BroadcastService)value); return; }
       if ("providesBroadcastServices".equals(key) && value instanceof BroadcastService) { providesBroadcastService((BroadcastService)value); return; }
+      if ("broadcastFrequency".equals(key) && value instanceof BroadcastFrequencySpecification) { broadcastFrequency((BroadcastFrequencySpecification)value); return; }
+      if ("broadcastFrequencys".equals(key) && value instanceof BroadcastFrequencySpecification) { broadcastFrequency((BroadcastFrequencySpecification)value); return; }
+      if ("broadcastFrequency".equals(key) && value instanceof String) { broadcastFrequency((String)value); return; }
+      if ("broadcastFrequencys".equals(key) && value instanceof String) { broadcastFrequency((String)value); return; }
       super.fromMap(key, value);
     }
   }

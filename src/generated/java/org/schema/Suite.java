@@ -53,6 +53,25 @@ public class Suite extends Accommodation {
    * The type of bed or beds included in the accommodation. For the single case of just one bed of a certain type, you use bed directly with a text.
    *       If you want to indicate the quantity of a certain kind of bed, use an instance of BedDetails. For more detailed information, use the amenityFeature property.
    */
+  @JsonIgnore public BedType getBedBedType() {
+    return (BedType) getValue("bed");
+  }
+  /**
+   * The type of bed or beds included in the accommodation. For the single case of just one bed of a certain type, you use bed directly with a text.
+   *       If you want to indicate the quantity of a certain kind of bed, use an instance of BedDetails. For more detailed information, use the amenityFeature property.
+   */
+  @JsonIgnore public Collection<BedType> getBedBedTypes() {
+    final Object current = myData.get("bed");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<BedType>) current;
+    }
+    return Arrays.asList((BedType) current);
+  }
+  /**
+   * The type of bed or beds included in the accommodation. For the single case of just one bed of a certain type, you use bed directly with a text.
+   *       If you want to indicate the quantity of a certain kind of bed, use an instance of BedDetails. For more detailed information, use the amenityFeature property.
+   */
   @JsonIgnore public String getBedString() {
     return (String) getValue("bed");
   }
@@ -69,14 +88,14 @@ public class Suite extends Accommodation {
     return Arrays.asList((String) current);
   }
   /**
-   * The number of rooms (excluding bathrooms and closets) of the acccommodation or lodging business.
+   * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
    * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
    */
   @JsonIgnore public Integer getNumberOfRoomsInteger() {
     return (Integer) getValue("numberOfRooms");
   }
   /**
-   * The number of rooms (excluding bathrooms and closets) of the acccommodation or lodging business.
+   * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
    * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
    */
   @JsonIgnore public Collection<Integer> getNumberOfRoomsIntegers() {
@@ -88,14 +107,14 @@ public class Suite extends Accommodation {
     return Arrays.asList((Integer) current);
   }
   /**
-   * The number of rooms (excluding bathrooms and closets) of the acccommodation or lodging business.
+   * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
    * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
    */
   @JsonIgnore public Long getNumberOfRoomsLong() {
     return (Long) getValue("numberOfRooms");
   }
   /**
-   * The number of rooms (excluding bathrooms and closets) of the acccommodation or lodging business.
+   * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
    * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
    */
   @JsonIgnore public Collection<Long> getNumberOfRoomsLongs() {
@@ -107,14 +126,14 @@ public class Suite extends Accommodation {
     return Arrays.asList((Long) current);
   }
   /**
-   * The number of rooms (excluding bathrooms and closets) of the acccommodation or lodging business.
+   * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
    * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
    */
   @JsonIgnore public Float getNumberOfRoomsFloat() {
     return (Float) getValue("numberOfRooms");
   }
   /**
-   * The number of rooms (excluding bathrooms and closets) of the acccommodation or lodging business.
+   * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
    * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
    */
   @JsonIgnore public Collection<Float> getNumberOfRoomsFloats() {
@@ -126,14 +145,14 @@ public class Suite extends Accommodation {
     return Arrays.asList((Float) current);
   }
   /**
-   * The number of rooms (excluding bathrooms and closets) of the acccommodation or lodging business.
+   * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
    * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
    */
   @JsonIgnore public Double getNumberOfRoomsDouble() {
     return (Double) getValue("numberOfRooms");
   }
   /**
-   * The number of rooms (excluding bathrooms and closets) of the acccommodation or lodging business.
+   * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
    * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
    */
   @JsonIgnore public Collection<Double> getNumberOfRoomsDoubles() {
@@ -145,14 +164,14 @@ public class Suite extends Accommodation {
     return Arrays.asList((Double) current);
   }
   /**
-   * The number of rooms (excluding bathrooms and closets) of the acccommodation or lodging business.
+   * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
    * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
    */
   @JsonIgnore public String getNumberOfRoomsString() {
     return (String) getValue("numberOfRooms");
   }
   /**
-   * The number of rooms (excluding bathrooms and closets) of the acccommodation or lodging business.
+   * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
    * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
    */
   @JsonIgnore public Collection<String> getNumberOfRoomsStrings() {
@@ -216,12 +235,28 @@ public class Suite extends Accommodation {
      * The type of bed or beds included in the accommodation. For the single case of just one bed of a certain type, you use bed directly with a text.
      *       If you want to indicate the quantity of a certain kind of bed, use an instance of BedDetails. For more detailed information, use the amenityFeature property.
      */
+    @NotNull public Builder bed(@NotNull BedType bedType) {
+      putValue("bed", bedType);
+      return this;
+    }
+    /**
+     * The type of bed or beds included in the accommodation. For the single case of just one bed of a certain type, you use bed directly with a text.
+     *       If you want to indicate the quantity of a certain kind of bed, use an instance of BedDetails. For more detailed information, use the amenityFeature property.
+     */
+    @NotNull public Builder bed(@NotNull BedType.Builder bedType) {
+      putValue("bed", bedType.build());
+      return this;
+    }
+    /**
+     * The type of bed or beds included in the accommodation. For the single case of just one bed of a certain type, you use bed directly with a text.
+     *       If you want to indicate the quantity of a certain kind of bed, use an instance of BedDetails. For more detailed information, use the amenityFeature property.
+     */
     @NotNull public Builder bed(@NotNull String bed) {
       putValue("bed", bed);
       return this;
     }
     /**
-     * The number of rooms (excluding bathrooms and closets) of the acccommodation or lodging business.
+     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
      * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
      */
     @NotNull public Builder numberOfRooms(@NotNull Integer integer) {
@@ -229,7 +264,7 @@ public class Suite extends Accommodation {
       return this;
     }
     /**
-     * The number of rooms (excluding bathrooms and closets) of the acccommodation or lodging business.
+     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
      * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
      */
     @NotNull public Builder numberOfRooms(@NotNull Long numberOfRooms) {
@@ -237,7 +272,7 @@ public class Suite extends Accommodation {
       return this;
     }
     /**
-     * The number of rooms (excluding bathrooms and closets) of the acccommodation or lodging business.
+     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
      * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
      */
     @NotNull public Builder numberOfRooms(@NotNull Float numberOfRooms) {
@@ -245,7 +280,7 @@ public class Suite extends Accommodation {
       return this;
     }
     /**
-     * The number of rooms (excluding bathrooms and closets) of the acccommodation or lodging business.
+     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
      * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
      */
     @NotNull public Builder numberOfRooms(@NotNull Double numberOfRooms) {
@@ -253,7 +288,7 @@ public class Suite extends Accommodation {
       return this;
     }
     /**
-     * The number of rooms (excluding bathrooms and closets) of the acccommodation or lodging business.
+     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
      * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
      */
     @NotNull public Builder numberOfRooms(@NotNull String numberOfRooms) {
@@ -420,6 +455,20 @@ public class Suite extends Accommodation {
       return this;
     }
     /**
+     * A flag to signal that the item, event, or place is accessible for free.
+     */
+    @NotNull public Builder isAccessibleForFree(@NotNull Boolean isAccessibleForFree) {
+      putValue("isAccessibleForFree", isAccessibleForFree);
+      return this;
+    }
+    /**
+     * A flag to signal that the [[Place]] is open to public visitors.  If this property is omitted there is no assumed default boolean value
+     */
+    @NotNull public Builder publicAccess(@NotNull Boolean publicAccess) {
+      putValue("publicAccess", publicAccess);
+      return this;
+    }
+    /**
      * The geo coordinates of the place.
      */
     @NotNull public Builder geo(@NotNull GeoCoordinates geoCoordinates) {
@@ -583,6 +632,13 @@ public class Suite extends Accommodation {
       return this;
     }
     /**
+     * A slogan or motto associated with the item.
+     */
+    @NotNull public Builder slogan(@NotNull String slogan) {
+      putValue("slogan", slogan);
+      return this;
+    }
+    /**
      * The telephone number.
      */
     @NotNull public Builder telephone(@NotNull String telephone) {
@@ -689,6 +745,34 @@ public class Suite extends Accommodation {
       putValue("potentialAction", action.build());
       return this;
     }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork creativeWork) {
+      putValue("subjectOf", creativeWork);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("subjectOf", creativeWork.build());
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event event) {
+      putValue("subjectOf", event);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event.Builder event) {
+      putValue("subjectOf", event.build());
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -699,6 +783,8 @@ public class Suite extends Accommodation {
     @Override protected void fromMap(String key, Object value) {
       if ("bed".equals(key) && value instanceof BedDetails) { bed((BedDetails)value); return; }
       if ("beds".equals(key) && value instanceof BedDetails) { bed((BedDetails)value); return; }
+      if ("bed".equals(key) && value instanceof BedType) { bed((BedType)value); return; }
+      if ("beds".equals(key) && value instanceof BedType) { bed((BedType)value); return; }
       if ("bed".equals(key) && value instanceof String) { bed((String)value); return; }
       if ("beds".equals(key) && value instanceof String) { bed((String)value); return; }
       if ("numberOfRooms".equals(key) && value instanceof Integer) { numberOfRooms((Integer)value); return; }

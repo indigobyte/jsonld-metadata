@@ -28,23 +28,6 @@ import java.util.*;
  */
 public class Event extends Thing {
   /**
-   * The subject matter of the content.
-   */
-  @JsonIgnore public Thing getAbout() {
-    return (Thing) getValue("about");
-  }
-  /**
-   * The subject matter of the content.
-   */
-  @JsonIgnore public Collection<Thing> getAbouts() {
-    final Object current = myData.get("about");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Thing>) current;
-    }
-    return Arrays.asList((Thing) current);
-  }
-  /**
    * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
    */
   @JsonIgnore public Person getActor() {
@@ -266,13 +249,13 @@ public class Event extends Thing {
     return Arrays.asList((EventStatusType) current);
   }
   /**
-   * A flag to signal that the publication is accessible for free.
+   * A flag to signal that the item, event, or place is accessible for free.
    */
   @JsonIgnore public Boolean getIsAccessibleForFree() {
     return (Boolean) getValue("isAccessibleForFree");
   }
   /**
-   * A flag to signal that the publication is accessible for free.
+   * A flag to signal that the item, event, or place is accessible for free.
    */
   @JsonIgnore public Collection<Boolean> getIsAccessibleForFrees() {
     final Object current = myData.get("isAccessibleForFree");
@@ -673,20 +656,6 @@ public class Event extends Thing {
       return new Event(myData);
     }
     /**
-     * The subject matter of the content.
-     */
-    @NotNull public Builder about(@NotNull Thing thing) {
-      putValue("about", thing);
-      return this;
-    }
-    /**
-     * The subject matter of the content.
-     */
-    @NotNull public Builder about(@NotNull Thing.Builder thing) {
-      putValue("about", thing.build());
-      return this;
-    }
-    /**
      * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
      */
     @NotNull public Builder actor(@NotNull Person person) {
@@ -848,7 +817,7 @@ public class Event extends Thing {
       return this;
     }
     /**
-     * A flag to signal that the publication is accessible for free.
+     * A flag to signal that the item, event, or place is accessible for free.
      */
     @NotNull public Builder isAccessibleForFree(@NotNull Boolean isAccessibleForFree) {
       putValue("isAccessibleForFree", isAccessibleForFree);
@@ -1191,6 +1160,34 @@ public class Event extends Thing {
       putValue("potentialAction", action.build());
       return this;
     }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork creativeWork) {
+      putValue("subjectOf", creativeWork);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("subjectOf", creativeWork.build());
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event event) {
+      putValue("subjectOf", event);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event.Builder event) {
+      putValue("subjectOf", event.build());
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -1199,8 +1196,6 @@ public class Event extends Thing {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("about".equals(key) && value instanceof Thing) { about((Thing)value); return; }
-      if ("abouts".equals(key) && value instanceof Thing) { about((Thing)value); return; }
       if ("actor".equals(key) && value instanceof Person) { actor((Person)value); return; }
       if ("actors".equals(key) && value instanceof Person) { actor((Person)value); return; }
       if ("aggregateRating".equals(key) && value instanceof AggregateRating) { aggregateRating((AggregateRating)value); return; }

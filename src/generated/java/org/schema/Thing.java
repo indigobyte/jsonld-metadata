@@ -196,6 +196,40 @@ public class Thing {
     }
     return Arrays.asList((Action) current);
   }
+  /**
+   * A CreativeWork or Event about this Thing.
+   */
+  @JsonIgnore public CreativeWork getSubjectOfCreativeWork() {
+    return (CreativeWork) getValue("subjectOf");
+  }
+  /**
+   * A CreativeWork or Event about this Thing.
+   */
+  @JsonIgnore public Collection<CreativeWork> getSubjectOfCreativeWorks() {
+    final Object current = myData.get("subjectOf");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<CreativeWork>) current;
+    }
+    return Arrays.asList((CreativeWork) current);
+  }
+  /**
+   * A CreativeWork or Event about this Thing.
+   */
+  @JsonIgnore public Event getSubjectOfEvent() {
+    return (Event) getValue("subjectOf");
+  }
+  /**
+   * A CreativeWork or Event about this Thing.
+   */
+  @JsonIgnore public Collection<Event> getSubjectOfEvents() {
+    final Object current = myData.get("subjectOf");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Event>) current;
+    }
+    return Arrays.asList((Event) current);
+  }
   @JsonProperty("@id") public String getId() {
     return (String) getValue("id");
   }
@@ -318,6 +352,34 @@ public class Thing {
       putValue("potentialAction", action.build());
       return this;
     }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork creativeWork) {
+      putValue("subjectOf", creativeWork);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("subjectOf", creativeWork.build());
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event event) {
+      putValue("subjectOf", event);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event.Builder event) {
+      putValue("subjectOf", event.build());
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -363,6 +425,10 @@ public class Thing {
       if ("urls".equals(key) && value instanceof String) { url((String)value); return; }
       if ("potentialAction".equals(key) && value instanceof Action) { potentialAction((Action)value); return; }
       if ("potentialActions".equals(key) && value instanceof Action) { potentialAction((Action)value); return; }
+      if ("subjectOf".equals(key) && value instanceof CreativeWork) { subjectOf((CreativeWork)value); return; }
+      if ("subjectOfs".equals(key) && value instanceof CreativeWork) { subjectOf((CreativeWork)value); return; }
+      if ("subjectOf".equals(key) && value instanceof Event) { subjectOf((Event)value); return; }
+      if ("subjectOfs".equals(key) && value instanceof Event) { subjectOf((Event)value); return; }
       if ("id".equals(key) && value instanceof String) { id((String)value); return; }
       if ("ids".equals(key) && value instanceof String) { id((String)value); return; }
       if ("@id".equals(key) && value instanceof String) { id((String)value); return; }

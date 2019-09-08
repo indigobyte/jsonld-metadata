@@ -9,10 +9,6 @@ class MutableCourseInstance {
     get() = map["instructor"] as Person
     set(value) { map["instructor"] = value }
   fun instructor(builder: MutablePerson.() -> Unit) { map["instructor"] = MutablePerson().apply(builder).build() }
-  var about: Thing
-    get() = map["about"] as Thing
-    set(value) { map["about"] = value }
-  fun about(builder: MutableThing.() -> Unit) { map["about"] = MutableThing().apply(builder).build() }
   var actor: Person
     get() = map["actor"] as Person
     set(value) { map["actor"] = value }
@@ -148,6 +144,11 @@ class MutableCourseInstance {
     get() = map["potentialAction"] as Action
     set(value) { map["potentialAction"] = value }
   fun potentialAction(builder: MutableAction.() -> Unit) { map["potentialAction"] = MutableAction().apply(builder).build() }
+  var subjectOf: Any
+    get() = map["subjectOf"]!!
+    set(value) { map["subjectOf"] = value }
+  fun subjectOfCreativeWork(builder: MutableCreativeWork.() -> Unit) { map["subjectOf"] = MutableCreativeWork().apply(builder).build() }
+  fun subjectOfEvent(builder: MutableEvent.() -> Unit) { map["subjectOf"] = MutableEvent().apply(builder).build() }
   var id: String
     get() = map["id"] as String
     set(value) { map["id"] = value }

@@ -186,6 +186,9 @@ class MutableCar {
     get() = map["review"] as Review
     set(value) { map["review"] = value }
   fun review(builder: MutableReview.() -> Unit) { map["review"] = MutableReview().apply(builder).build() }
+  var slogan: String
+    get() = map["slogan"] as String
+    set(value) { map["slogan"] = value }
   var sku: Identifier
     get() = map["sku"] as Identifier
     set(value) { map["sku"] = value }
@@ -228,6 +231,11 @@ class MutableCar {
     get() = map["potentialAction"] as Action
     set(value) { map["potentialAction"] = value }
   fun potentialAction(builder: MutableAction.() -> Unit) { map["potentialAction"] = MutableAction().apply(builder).build() }
+  var subjectOf: Any
+    get() = map["subjectOf"]!!
+    set(value) { map["subjectOf"] = value }
+  fun subjectOfCreativeWork(builder: MutableCreativeWork.() -> Unit) { map["subjectOf"] = MutableCreativeWork().apply(builder).build() }
+  fun subjectOfEvent(builder: MutableEvent.() -> Unit) { map["subjectOf"] = MutableEvent().apply(builder).build() }
   var id: String
     get() = map["id"] as String
     set(value) { map["id"] = value }

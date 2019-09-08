@@ -9,6 +9,9 @@ class MutableQuoteAction {
     get() = map["priceSpecification"] as PriceSpecification
     set(value) { map["priceSpecification"] = value }
   fun priceSpecification(builder: MutablePriceSpecification.() -> Unit) { map["priceSpecification"] = MutablePriceSpecification().apply(builder).build() }
+  var priceCurrency: String
+    get() = map["priceCurrency"] as String
+    set(value) { map["priceCurrency"] = value }
   var agent: Any
     get() = map["agent"]!!
     set(value) { map["agent"] = value }
@@ -57,6 +60,11 @@ class MutableQuoteAction {
     get() = map["potentialAction"] as Action
     set(value) { map["potentialAction"] = value }
   fun potentialAction(builder: MutableAction.() -> Unit) { map["potentialAction"] = MutableAction().apply(builder).build() }
+  var subjectOf: Any
+    get() = map["subjectOf"]!!
+    set(value) { map["subjectOf"] = value }
+  fun subjectOfCreativeWork(builder: MutableCreativeWork.() -> Unit) { map["subjectOf"] = MutableCreativeWork().apply(builder).build() }
+  fun subjectOfEvent(builder: MutableEvent.() -> Unit) { map["subjectOf"] = MutableEvent().apply(builder).build() }
   var id: String
     get() = map["id"] as String
     set(value) { map["id"] = value }

@@ -191,24 +191,70 @@ public class LiveBlogPosting extends BlogPosting {
       return this;
     }
     /**
+     * Indicates sections of a Web page that are particularly 'speakable' in the sense of being highlighted as being especially appropriate for text-to-speech conversion. Other sections of a page may also be usefully spoken in particular circumstances; the 'speakable' property serves to indicate the parts most likely to be generally useful for speech.
+     * 
+     * The *speakable* property can be repeated an arbitrary number of times, with three kinds of possible 'content-locator' values:
+     * 
+     * 1.) *id-value* URL references - uses *id-value* of an element in the page being annotated. The simplest use of *speakable* has (potentially relative) URL values, referencing identified sections of the document concerned.
+     * 
+     * 2.) CSS Selectors - addresses content in the annotated page, eg. via class attribute. Use the [[cssSelector]] property.
+     * 
+     * 3.)  XPaths - addresses content via XPaths (assuming an XML view of the content). Use the [[xpath]] property.
+     * 
+     * 
+     * For more sophisticated markup of speakable sections beyond simple ID references, either CSS selectors or XPath expressions to pick out document section(s) as speakable. For this
+     * we define a supporting type, [[SpeakableSpecification]]  which is defined to be a possible value of the *speakable* property.
+     *          
+     */
+    @NotNull public Builder speakable(@NotNull SpeakableSpecification speakableSpecification) {
+      putValue("speakable", speakableSpecification);
+      return this;
+    }
+    /**
+     * Indicates sections of a Web page that are particularly 'speakable' in the sense of being highlighted as being especially appropriate for text-to-speech conversion. Other sections of a page may also be usefully spoken in particular circumstances; the 'speakable' property serves to indicate the parts most likely to be generally useful for speech.
+     * 
+     * The *speakable* property can be repeated an arbitrary number of times, with three kinds of possible 'content-locator' values:
+     * 
+     * 1.) *id-value* URL references - uses *id-value* of an element in the page being annotated. The simplest use of *speakable* has (potentially relative) URL values, referencing identified sections of the document concerned.
+     * 
+     * 2.) CSS Selectors - addresses content in the annotated page, eg. via class attribute. Use the [[cssSelector]] property.
+     * 
+     * 3.)  XPaths - addresses content via XPaths (assuming an XML view of the content). Use the [[xpath]] property.
+     * 
+     * 
+     * For more sophisticated markup of speakable sections beyond simple ID references, either CSS selectors or XPath expressions to pick out document section(s) as speakable. For this
+     * we define a supporting type, [[SpeakableSpecification]]  which is defined to be a possible value of the *speakable* property.
+     *          
+     */
+    @NotNull public Builder speakable(@NotNull SpeakableSpecification.Builder speakableSpecification) {
+      putValue("speakable", speakableSpecification.build());
+      return this;
+    }
+    /**
+     * Indicates sections of a Web page that are particularly 'speakable' in the sense of being highlighted as being especially appropriate for text-to-speech conversion. Other sections of a page may also be usefully spoken in particular circumstances; the 'speakable' property serves to indicate the parts most likely to be generally useful for speech.
+     * 
+     * The *speakable* property can be repeated an arbitrary number of times, with three kinds of possible 'content-locator' values:
+     * 
+     * 1.) *id-value* URL references - uses *id-value* of an element in the page being annotated. The simplest use of *speakable* has (potentially relative) URL values, referencing identified sections of the document concerned.
+     * 
+     * 2.) CSS Selectors - addresses content in the annotated page, eg. via class attribute. Use the [[cssSelector]] property.
+     * 
+     * 3.)  XPaths - addresses content via XPaths (assuming an XML view of the content). Use the [[xpath]] property.
+     * 
+     * 
+     * For more sophisticated markup of speakable sections beyond simple ID references, either CSS selectors or XPath expressions to pick out document section(s) as speakable. For this
+     * we define a supporting type, [[SpeakableSpecification]]  which is defined to be a possible value of the *speakable* property.
+     *          
+     */
+    @NotNull public Builder speakable(@NotNull String speakable) {
+      putValue("speakable", speakable);
+      return this;
+    }
+    /**
      * Indicates (by URL or string) a particular version of a schema used in some CreativeWork. For example, a document could declare a schemaVersion using an URL such as http://schema.org/version/2.0/ if precise indication of schema version was required by some application. 
      */
     @NotNull public Builder schemaVersion(@NotNull String schemaVersion) {
       putValue("schemaVersion", schemaVersion);
-      return this;
-    }
-    /**
-     * The subject matter of the content.
-     */
-    @NotNull public Builder about(@NotNull Thing thing) {
-      putValue("about", thing);
-      return this;
-    }
-    /**
-     * The subject matter of the content.
-     */
-    @NotNull public Builder about(@NotNull Thing.Builder thing) {
-      putValue("about", thing.build());
       return this;
     }
     /**
@@ -317,6 +363,20 @@ public class LiveBlogPosting extends BlogPosting {
       return this;
     }
     /**
+     * An embedded audio object.
+     */
+    @NotNull public Builder audio(@NotNull Clip clip) {
+      putValue("audio", clip);
+      return this;
+    }
+    /**
+     * An embedded audio object.
+     */
+    @NotNull public Builder audio(@NotNull Clip.Builder clip) {
+      putValue("audio", clip.build());
+      return this;
+    }
+    /**
      * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
      */
     @NotNull public Builder author(@NotNull Organization organization) {
@@ -398,6 +458,20 @@ public class LiveBlogPosting extends BlogPosting {
      */
     @NotNull public Builder locationCreated(@NotNull Place.Builder place) {
       putValue("locationCreated", place.build());
+      return this;
+    }
+    /**
+     * Official rating of a piece of content&#x2014;for example,'MPAA PG-13'.
+     */
+    @NotNull public Builder contentRating(@NotNull Rating rating) {
+      putValue("contentRating", rating);
+      return this;
+    }
+    /**
+     * Official rating of a piece of content&#x2014;for example,'MPAA PG-13'.
+     */
+    @NotNull public Builder contentRating(@NotNull Rating.Builder rating) {
+      putValue("contentRating", rating.build());
       return this;
     }
     /**
@@ -604,14 +678,25 @@ public class LiveBlogPosting extends BlogPosting {
       return this;
     }
     /**
-     * Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.
+     * Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)) e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.).
+     * 
+     * In cases where a [[CreativeWork]] has several media type representations, [[encoding]] can be used to indicate each [[MediaObject]] alongside particular [[encodingFormat]] information.
+     * 
+     * Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.
      */
-    @NotNull public Builder fileFormat(@NotNull String fileFormat) {
-      putValue("fileFormat", fileFormat);
+    @NotNull public Builder encodingFormat(@NotNull String encodingFormat) {
+      putValue("encodingFormat", encodingFormat);
       return this;
     }
     /**
-     * A flag to signal that the publication is accessible for free.
+     * Date the content expires and is no longer useful or available. For example a [[VideoObject]] or [[NewsArticle]] whose availability or relevance is time-limited, or a [[ClaimReview]] fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date.
+     */
+    @NotNull public Builder expires(@NotNull java.util.Date date) {
+      putValue("expires", date);
+      return this;
+    }
+    /**
+     * A flag to signal that the item, event, or place is accessible for free.
      */
     @NotNull public Builder isAccessibleForFree(@NotNull Boolean isAccessibleForFree) {
       putValue("isAccessibleForFree", isAccessibleForFree);
@@ -660,35 +745,35 @@ public class LiveBlogPosting extends BlogPosting {
       return this;
     }
     /**
-     * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
+     * A resource from which this work is derived or from which it is a modification or adaption.
      */
     @NotNull public Builder isBasedOn(@NotNull CreativeWork creativeWork) {
       putValue("isBasedOn", creativeWork);
       return this;
     }
     /**
-     * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
+     * A resource from which this work is derived or from which it is a modification or adaption.
      */
     @NotNull public Builder isBasedOn(@NotNull CreativeWork.Builder creativeWork) {
       putValue("isBasedOn", creativeWork.build());
       return this;
     }
     /**
-     * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
+     * A resource from which this work is derived or from which it is a modification or adaption.
      */
     @NotNull public Builder isBasedOn(@NotNull Product product) {
       putValue("isBasedOn", product);
       return this;
     }
     /**
-     * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
+     * A resource from which this work is derived or from which it is a modification or adaption.
      */
     @NotNull public Builder isBasedOn(@NotNull Product.Builder product) {
       putValue("isBasedOn", product.build());
       return this;
     }
     /**
-     * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
+     * A resource from which this work is derived or from which it is a modification or adaption.
      */
     @NotNull public Builder isBasedOn(@NotNull String isBasedOn) {
       putValue("isBasedOn", isBasedOn);
@@ -739,15 +824,8 @@ public class LiveBlogPosting extends BlogPosting {
     /**
      * Indicates the primary entity described in some page or other CreativeWork.
      */
-    @NotNull public Builder mainEntity(@NotNull Thing thing) {
-      putValue("mainEntity", thing);
-      return this;
-    }
-    /**
-     * Indicates the primary entity described in some page or other CreativeWork.
-     */
-    @NotNull public Builder mainEntity(@NotNull Thing.Builder thing) {
-      putValue("mainEntity", thing.build());
+    @NotNull public Builder mainEntity(@NotNull About about) {
+      putValue("mainEntity", about);
       return this;
     }
     /**
@@ -849,7 +927,30 @@ public class LiveBlogPosting extends BlogPosting {
       return this;
     }
     /**
-     * Link to page describing the editorial principles of the organization primarily responsible for the creation of the CreativeWork.
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+     * 
+     */
+    @NotNull public Builder publishingPrinciples(@NotNull CreativeWork creativeWork) {
+      putValue("publishingPrinciples", creativeWork);
+      return this;
+    }
+    /**
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+     * 
+     */
+    @NotNull public Builder publishingPrinciples(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("publishingPrinciples", creativeWork.build());
+      return this;
+    }
+    /**
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+     * 
      */
     @NotNull public Builder publishingPrinciples(@NotNull String publishingPrinciples) {
       putValue("publishingPrinciples", publishingPrinciples);
@@ -895,6 +996,22 @@ public class LiveBlogPosting extends BlogPosting {
      */
     @NotNull public Builder sourceOrganization(@NotNull Organization.Builder organization) {
       putValue("sourceOrganization", organization.build());
+      return this;
+    }
+    /**
+     * The "spatial" property can be used in cases when more specific properties
+     * (e.g. [[locationCreated]], [[spatialCoverage]], [[contentLocation]]) are not known to be appropriate.
+     */
+    @NotNull public Builder spatial(@NotNull Place place) {
+      putValue("spatial", place);
+      return this;
+    }
+    /**
+     * The "spatial" property can be used in cases when more specific properties
+     * (e.g. [[locationCreated]], [[spatialCoverage]], [[contentLocation]]) are not known to be appropriate.
+     */
+    @NotNull public Builder spatial(@NotNull Place.Builder place) {
+      putValue("spatial", place.build());
       return this;
     }
     /**
@@ -947,6 +1064,8 @@ public class LiveBlogPosting extends BlogPosting {
      * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
      *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.
      *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
+     * 
+     * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
      */
     @NotNull public Builder temporalCoverage(@NotNull String temporalCoverage) {
       putValue("temporalCoverage", temporalCoverage);
@@ -956,9 +1075,27 @@ public class LiveBlogPosting extends BlogPosting {
      * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
      *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.
      *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
+     * 
+     * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
      */
     @NotNull public Builder temporalCoverage(@NotNull java.util.Date date) {
       putValue("temporalCoverage", date);
+      return this;
+    }
+    /**
+     * The "temporal" property can be used in cases where more specific properties
+     * (e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]], [[datePublished]]) are not known to be appropriate.
+     */
+    @NotNull public Builder temporal(@NotNull String temporal) {
+      putValue("temporal", temporal);
+      return this;
+    }
+    /**
+     * The "temporal" property can be used in cases where more specific properties
+     * (e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]], [[datePublished]]) are not known to be appropriate.
+     */
+    @NotNull public Builder temporal(@NotNull java.util.Date date) {
+      putValue("temporal", date);
       return this;
     }
     /**
@@ -976,7 +1113,7 @@ public class LiveBlogPosting extends BlogPosting {
       return this;
     }
     /**
-     * Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience, e.g. 'P30M', 'P1H25M'.
+     * Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience, e.g. 'PT30M', 'PT1H25M'.
      */
     @NotNull public Builder timeRequired(@NotNull Duration duration) {
       putValue("timeRequired", duration);
@@ -1022,6 +1159,20 @@ public class LiveBlogPosting extends BlogPosting {
      */
     @NotNull public Builder version(@NotNull String version) {
       putValue("version", version);
+      return this;
+    }
+    /**
+     * An embedded video object.
+     */
+    @NotNull public Builder video(@NotNull Clip clip) {
+      putValue("video", clip);
+      return this;
+    }
+    /**
+     * An embedded video object.
+     */
+    @NotNull public Builder video(@NotNull Clip.Builder clip) {
+      putValue("video", clip.build());
       return this;
     }
     /**
@@ -1074,7 +1225,7 @@ public class LiveBlogPosting extends BlogPosting {
       return this;
     }
     /**
-     * Indicates a CreativeWork that is (in some sense) a part of this CreativeWork.
+     * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
      */
     @NotNull public Builder hasPart(@NotNull HasPart hasPart) {
       putValue("hasPart", hasPart);
@@ -1190,8 +1341,16 @@ public class LiveBlogPosting extends BlogPosting {
      * A list of single or combined accessModes that are sufficient to understand all the intellectual content of a resource. Expected values include:  auditory, tactile, textual, visual.
      *       
      */
-    @NotNull public Builder accessModeSufficient(@NotNull String accessModeSufficient) {
-      putValue("accessModeSufficient", accessModeSufficient);
+    @NotNull public Builder accessModeSufficient(@NotNull ItemList itemList) {
+      putValue("accessModeSufficient", itemList);
+      return this;
+    }
+    /**
+     * A list of single or combined accessModes that are sufficient to understand all the intellectual content of a resource. Expected values include:  auditory, tactile, textual, visual.
+     *       
+     */
+    @NotNull public Builder accessModeSufficient(@NotNull ItemList.Builder itemList) {
+      putValue("accessModeSufficient", itemList.build());
       return this;
     }
     /**
@@ -1276,6 +1435,34 @@ public class LiveBlogPosting extends BlogPosting {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork creativeWork) {
+      putValue("subjectOf", creativeWork);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("subjectOf", creativeWork.build());
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event event) {
+      putValue("subjectOf", event);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event.Builder event) {
+      putValue("subjectOf", event.build());
       return this;
     }
     @NotNull public Builder id(@NotNull String id) {

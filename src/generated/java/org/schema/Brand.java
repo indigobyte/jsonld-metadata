@@ -95,6 +95,23 @@ public class Brand extends Intangible {
     }
     return Arrays.asList((Review) current);
   }
+  /**
+   * A slogan or motto associated with the item.
+   */
+  @JsonIgnore public String getSlogan() {
+    return (String) getValue("slogan");
+  }
+  /**
+   * A slogan or motto associated with the item.
+   */
+  @JsonIgnore public Collection<String> getSlogans() {
+    final Object current = myData.get("slogan");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
   protected Brand(java.util.Map<String,Object> data) {
     super(data);
   }
@@ -156,6 +173,13 @@ public class Brand extends Intangible {
      */
     @NotNull public Builder review(@NotNull Review.Builder review) {
       putValue("review", review.build());
+      return this;
+    }
+    /**
+     * A slogan or motto associated with the item.
+     */
+    @NotNull public Builder slogan(@NotNull String slogan) {
+      putValue("slogan", slogan);
       return this;
     }
     /**
@@ -235,6 +259,34 @@ public class Brand extends Intangible {
       putValue("potentialAction", action.build());
       return this;
     }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork creativeWork) {
+      putValue("subjectOf", creativeWork);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("subjectOf", creativeWork.build());
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event event) {
+      putValue("subjectOf", event);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event.Builder event) {
+      putValue("subjectOf", event.build());
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -251,6 +303,8 @@ public class Brand extends Intangible {
       if ("logos".equals(key) && value instanceof String) { logo((String)value); return; }
       if ("review".equals(key) && value instanceof Review) { review((Review)value); return; }
       if ("reviews".equals(key) && value instanceof Review) { review((Review)value); return; }
+      if ("slogan".equals(key) && value instanceof String) { slogan((String)value); return; }
+      if ("slogans".equals(key) && value instanceof String) { slogan((String)value); return; }
       super.fromMap(key, value);
     }
   }

@@ -776,6 +776,52 @@ public class Person extends Thing implements Competitor {
     return Arrays.asList((Event) current);
   }
   /**
+   * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+   * 
+   * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+   * 
+   */
+  @JsonIgnore public CreativeWork getPublishingPrinciplesCreativeWork() {
+    return (CreativeWork) getValue("publishingPrinciples");
+  }
+  /**
+   * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+   * 
+   * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+   * 
+   */
+  @JsonIgnore public Collection<CreativeWork> getPublishingPrinciplesCreativeWorks() {
+    final Object current = myData.get("publishingPrinciples");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<CreativeWork>) current;
+    }
+    return Arrays.asList((CreativeWork) current);
+  }
+  /**
+   * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+   * 
+   * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+   * 
+   */
+  @JsonIgnore public String getPublishingPrinciplesString() {
+    return (String) getValue("publishingPrinciples");
+  }
+  /**
+   * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+   * 
+   * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+   * 
+   */
+  @JsonIgnore public Collection<String> getPublishingPrinciplesStrings() {
+    final Object current = myData.get("publishingPrinciples");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
    * The most generic familial relation.
    */
   @JsonIgnore public Person getRelatedTo() {
@@ -1029,6 +1075,23 @@ public class Person extends Thing implements Competitor {
       return (Collection<Place>) current;
     }
     return Arrays.asList((Place) current);
+  }
+  /**
+   * The Person's occupation. For past professions, use Role for expressing dates.
+   */
+  @JsonIgnore public Occupation getHasOccupation() {
+    return (Occupation) getValue("hasOccupation");
+  }
+  /**
+   * The Person's occupation. For past professions, use Role for expressing dates.
+   */
+  @JsonIgnore public Collection<Occupation> getHasOccupations() {
+    final Object current = myData.get("hasOccupation");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Occupation>) current;
+    }
+    return Arrays.asList((Occupation) current);
   }
   protected Person(java.util.Map<String,Object> data) {
     super(data);
@@ -1514,6 +1577,36 @@ public class Person extends Thing implements Competitor {
       return this;
     }
     /**
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+     * 
+     */
+    @NotNull public Builder publishingPrinciples(@NotNull CreativeWork creativeWork) {
+      putValue("publishingPrinciples", creativeWork);
+      return this;
+    }
+    /**
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+     * 
+     */
+    @NotNull public Builder publishingPrinciples(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("publishingPrinciples", creativeWork.build());
+      return this;
+    }
+    /**
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+     * 
+     */
+    @NotNull public Builder publishingPrinciples(@NotNull String publishingPrinciples) {
+      putValue("publishingPrinciples", publishingPrinciples);
+      return this;
+    }
+    /**
      * The most generic familial relation.
      */
     @NotNull public Builder relatedTo(@NotNull Person person) {
@@ -1703,6 +1796,20 @@ public class Person extends Thing implements Competitor {
       return this;
     }
     /**
+     * The Person's occupation. For past professions, use Role for expressing dates.
+     */
+    @NotNull public Builder hasOccupation(@NotNull Occupation occupation) {
+      putValue("hasOccupation", occupation);
+      return this;
+    }
+    /**
+     * The Person's occupation. For past professions, use Role for expressing dates.
+     */
+    @NotNull public Builder hasOccupation(@NotNull Occupation.Builder occupation) {
+      putValue("hasOccupation", occupation.build());
+      return this;
+    }
+    /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      */
     @NotNull public Builder additionalType(@NotNull String additionalType) {
@@ -1777,6 +1884,34 @@ public class Person extends Thing implements Competitor {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork creativeWork) {
+      putValue("subjectOf", creativeWork);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("subjectOf", creativeWork.build());
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event event) {
+      putValue("subjectOf", event);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event.Builder event) {
+      putValue("subjectOf", event.build());
       return this;
     }
     @NotNull public Builder id(@NotNull String id) {
@@ -1875,6 +2010,10 @@ public class Person extends Thing implements Competitor {
       if ("parents".equals(key) && value instanceof Person) { parent((Person)value); return; }
       if ("performerIn".equals(key) && value instanceof Event) { performerIn((Event)value); return; }
       if ("performerIns".equals(key) && value instanceof Event) { performerIn((Event)value); return; }
+      if ("publishingPrinciples".equals(key) && value instanceof CreativeWork) { publishingPrinciples((CreativeWork)value); return; }
+      if ("publishingPrincipless".equals(key) && value instanceof CreativeWork) { publishingPrinciples((CreativeWork)value); return; }
+      if ("publishingPrinciples".equals(key) && value instanceof String) { publishingPrinciples((String)value); return; }
+      if ("publishingPrincipless".equals(key) && value instanceof String) { publishingPrinciples((String)value); return; }
       if ("relatedTo".equals(key) && value instanceof Person) { relatedTo((Person)value); return; }
       if ("relatedTos".equals(key) && value instanceof Person) { relatedTo((Person)value); return; }
       if ("seeks".equals(key) && value instanceof Demand) { seeks((Demand)value); return; }
@@ -1905,6 +2044,8 @@ public class Person extends Thing implements Competitor {
       if ("birthPlaces".equals(key) && value instanceof Place) { birthPlace((Place)value); return; }
       if ("deathPlace".equals(key) && value instanceof Place) { deathPlace((Place)value); return; }
       if ("deathPlaces".equals(key) && value instanceof Place) { deathPlace((Place)value); return; }
+      if ("hasOccupation".equals(key) && value instanceof Occupation) { hasOccupation((Occupation)value); return; }
+      if ("hasOccupations".equals(key) && value instanceof Occupation) { hasOccupation((Occupation)value); return; }
       super.fromMap(key, value);
     }
   }

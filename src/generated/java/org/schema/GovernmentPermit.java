@@ -70,7 +70,7 @@ public class GovernmentPermit extends Permit {
       return this;
     }
     /**
-     * The time validity of the permit.
+     * The duration of validity of a permit or similar thing.
      */
     @NotNull public Builder validFor(@NotNull Duration duration) {
       putValue("validFor", duration);
@@ -84,14 +84,14 @@ public class GovernmentPermit extends Permit {
       return this;
     }
     /**
-     * The geographic area where the permit is valid.
+     * The geographic area where a permit or similar thing is valid.
      */
     @NotNull public Builder validIn(@NotNull AdministrativeArea administrativeArea) {
       putValue("validIn", administrativeArea);
       return this;
     }
     /**
-     * The geographic area where the permit is valid.
+     * The geographic area where a permit or similar thing is valid.
      */
     @NotNull public Builder validIn(@NotNull AdministrativeArea.Builder administrativeArea) {
       putValue("validIn", administrativeArea.build());
@@ -193,6 +193,34 @@ public class GovernmentPermit extends Permit {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork creativeWork) {
+      putValue("subjectOf", creativeWork);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("subjectOf", creativeWork.build());
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event event) {
+      putValue("subjectOf", event);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event.Builder event) {
+      putValue("subjectOf", event.build());
       return this;
     }
     @NotNull public Builder id(@NotNull String id) {

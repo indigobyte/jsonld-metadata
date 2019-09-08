@@ -134,6 +134,20 @@ public class Residence extends Place {
       return this;
     }
     /**
+     * A flag to signal that the item, event, or place is accessible for free.
+     */
+    @NotNull public Builder isAccessibleForFree(@NotNull Boolean isAccessibleForFree) {
+      putValue("isAccessibleForFree", isAccessibleForFree);
+      return this;
+    }
+    /**
+     * A flag to signal that the [[Place]] is open to public visitors.  If this property is omitted there is no assumed default boolean value
+     */
+    @NotNull public Builder publicAccess(@NotNull Boolean publicAccess) {
+      putValue("publicAccess", publicAccess);
+      return this;
+    }
+    /**
      * The geo coordinates of the place.
      */
     @NotNull public Builder geo(@NotNull GeoCoordinates geoCoordinates) {
@@ -297,6 +311,13 @@ public class Residence extends Place {
       return this;
     }
     /**
+     * A slogan or motto associated with the item.
+     */
+    @NotNull public Builder slogan(@NotNull String slogan) {
+      putValue("slogan", slogan);
+      return this;
+    }
+    /**
      * The telephone number.
      */
     @NotNull public Builder telephone(@NotNull String telephone) {
@@ -415,6 +436,34 @@ public class Residence extends Place {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork creativeWork) {
+      putValue("subjectOf", creativeWork);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("subjectOf", creativeWork.build());
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event event) {
+      putValue("subjectOf", event);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event.Builder event) {
+      putValue("subjectOf", event.build());
       return this;
     }
     @NotNull public Builder id(@NotNull String id) {

@@ -129,6 +129,57 @@ public class BroadcastService extends Service {
     }
     return Arrays.asList((String) current);
   }
+  /**
+   * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
+   */
+  @JsonIgnore public BroadcastFrequencySpecification getBroadcastFrequencyBroadcastFrequencySpecification() {
+    return (BroadcastFrequencySpecification) getValue("broadcastFrequency");
+  }
+  /**
+   * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
+   */
+  @JsonIgnore public Collection<BroadcastFrequencySpecification> getBroadcastFrequencyBroadcastFrequencySpecifications() {
+    final Object current = myData.get("broadcastFrequency");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<BroadcastFrequencySpecification>) current;
+    }
+    return Arrays.asList((BroadcastFrequencySpecification) current);
+  }
+  /**
+   * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
+   */
+  @JsonIgnore public String getBroadcastFrequencyString() {
+    return (String) getValue("broadcastFrequency");
+  }
+  /**
+   * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
+   */
+  @JsonIgnore public Collection<String> getBroadcastFrequencyStrings() {
+    final Object current = myData.get("broadcastFrequency");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * A broadcast channel of a broadcast service.
+   */
+  @JsonIgnore public BroadcastChannel getHasBroadcastChannel() {
+    return (BroadcastChannel) getValue("hasBroadcastChannel");
+  }
+  /**
+   * A broadcast channel of a broadcast service.
+   */
+  @JsonIgnore public Collection<BroadcastChannel> getHasBroadcastChannels() {
+    final Object current = myData.get("hasBroadcastChannel");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<BroadcastChannel>) current;
+    }
+    return Arrays.asList((BroadcastChannel) current);
+  }
   protected BroadcastService(java.util.Map<String,Object> data) {
     super(data);
   }
@@ -204,6 +255,41 @@ public class BroadcastService extends Service {
      */
     @NotNull public Builder broadcastTimezone(@NotNull String broadcastTimezone) {
       putValue("broadcastTimezone", broadcastTimezone);
+      return this;
+    }
+    /**
+     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
+     */
+    @NotNull public Builder broadcastFrequency(@NotNull BroadcastFrequencySpecification broadcastFrequencySpecification) {
+      putValue("broadcastFrequency", broadcastFrequencySpecification);
+      return this;
+    }
+    /**
+     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
+     */
+    @NotNull public Builder broadcastFrequency(@NotNull BroadcastFrequencySpecification.Builder broadcastFrequencySpecification) {
+      putValue("broadcastFrequency", broadcastFrequencySpecification.build());
+      return this;
+    }
+    /**
+     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
+     */
+    @NotNull public Builder broadcastFrequency(@NotNull String broadcastFrequency) {
+      putValue("broadcastFrequency", broadcastFrequency);
+      return this;
+    }
+    /**
+     * A broadcast channel of a broadcast service.
+     */
+    @NotNull public Builder hasBroadcastChannel(@NotNull BroadcastChannel broadcastChannel) {
+      putValue("hasBroadcastChannel", broadcastChannel);
+      return this;
+    }
+    /**
+     * A broadcast channel of a broadcast service.
+     */
+    @NotNull public Builder hasBroadcastChannel(@NotNull BroadcastChannel.Builder broadcastChannel) {
+      putValue("hasBroadcastChannel", broadcastChannel.build());
       return this;
     }
     /**
@@ -438,6 +524,13 @@ public class BroadcastService extends Service {
       return this;
     }
     /**
+     * A slogan or motto associated with the item.
+     */
+    @NotNull public Builder slogan(@NotNull String slogan) {
+      putValue("slogan", slogan);
+      return this;
+    }
+    /**
      * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
      */
     @NotNull public Builder serviceType(@NotNull String serviceType) {
@@ -584,6 +677,34 @@ public class BroadcastService extends Service {
       putValue("potentialAction", action.build());
       return this;
     }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork creativeWork) {
+      putValue("subjectOf", creativeWork);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("subjectOf", creativeWork.build());
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event event) {
+      putValue("subjectOf", event);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event.Builder event) {
+      putValue("subjectOf", event.build());
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -604,6 +725,12 @@ public class BroadcastService extends Service {
       if ("broadcastDisplayNames".equals(key) && value instanceof String) { broadcastDisplayName((String)value); return; }
       if ("broadcastTimezone".equals(key) && value instanceof String) { broadcastTimezone((String)value); return; }
       if ("broadcastTimezones".equals(key) && value instanceof String) { broadcastTimezone((String)value); return; }
+      if ("broadcastFrequency".equals(key) && value instanceof BroadcastFrequencySpecification) { broadcastFrequency((BroadcastFrequencySpecification)value); return; }
+      if ("broadcastFrequencys".equals(key) && value instanceof BroadcastFrequencySpecification) { broadcastFrequency((BroadcastFrequencySpecification)value); return; }
+      if ("broadcastFrequency".equals(key) && value instanceof String) { broadcastFrequency((String)value); return; }
+      if ("broadcastFrequencys".equals(key) && value instanceof String) { broadcastFrequency((String)value); return; }
+      if ("hasBroadcastChannel".equals(key) && value instanceof BroadcastChannel) { hasBroadcastChannel((BroadcastChannel)value); return; }
+      if ("hasBroadcastChannels".equals(key) && value instanceof BroadcastChannel) { hasBroadcastChannel((BroadcastChannel)value); return; }
       super.fromMap(key, value);
     }
   }

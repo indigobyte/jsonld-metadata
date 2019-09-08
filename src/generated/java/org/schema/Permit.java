@@ -62,13 +62,13 @@ public class Permit extends Intangible {
     return Arrays.asList((Audience) current);
   }
   /**
-   * The time validity of the permit.
+   * The duration of validity of a permit or similar thing.
    */
   @JsonIgnore public Duration getValidFor() {
     return (Duration) getValue("validFor");
   }
   /**
-   * The time validity of the permit.
+   * The duration of validity of a permit or similar thing.
    */
   @JsonIgnore public Collection<Duration> getValidFors() {
     final Object current = myData.get("validFor");
@@ -96,13 +96,13 @@ public class Permit extends Intangible {
     return Arrays.asList((java.util.Date) current);
   }
   /**
-   * The geographic area where the permit is valid.
+   * The geographic area where a permit or similar thing is valid.
    */
   @JsonIgnore public AdministrativeArea getValidIn() {
     return (AdministrativeArea) getValue("validIn");
   }
   /**
-   * The geographic area where the permit is valid.
+   * The geographic area where a permit or similar thing is valid.
    */
   @JsonIgnore public Collection<AdministrativeArea> getValidIns() {
     final Object current = myData.get("validIn");
@@ -189,7 +189,7 @@ public class Permit extends Intangible {
       return this;
     }
     /**
-     * The time validity of the permit.
+     * The duration of validity of a permit or similar thing.
      */
     @NotNull public Builder validFor(@NotNull Duration duration) {
       putValue("validFor", duration);
@@ -203,14 +203,14 @@ public class Permit extends Intangible {
       return this;
     }
     /**
-     * The geographic area where the permit is valid.
+     * The geographic area where a permit or similar thing is valid.
      */
     @NotNull public Builder validIn(@NotNull AdministrativeArea administrativeArea) {
       putValue("validIn", administrativeArea);
       return this;
     }
     /**
-     * The geographic area where the permit is valid.
+     * The geographic area where a permit or similar thing is valid.
      */
     @NotNull public Builder validIn(@NotNull AdministrativeArea.Builder administrativeArea) {
       putValue("validIn", administrativeArea.build());
@@ -312,6 +312,34 @@ public class Permit extends Intangible {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork creativeWork) {
+      putValue("subjectOf", creativeWork);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("subjectOf", creativeWork.build());
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event event) {
+      putValue("subjectOf", event);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event.Builder event) {
+      putValue("subjectOf", event.build());
       return this;
     }
     @NotNull public Builder id(@NotNull String id) {

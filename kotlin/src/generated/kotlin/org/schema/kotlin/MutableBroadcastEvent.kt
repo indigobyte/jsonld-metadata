@@ -19,10 +19,6 @@ class MutableBroadcastEvent {
     get() = map["publishedOn"] as BroadcastService
     set(value) { map["publishedOn"] = value }
   fun publishedOn(builder: MutableBroadcastService.() -> Unit) { map["publishedOn"] = MutableBroadcastService().apply(builder).build() }
-  var about: Thing
-    get() = map["about"] as Thing
-    set(value) { map["about"] = value }
-  fun about(builder: MutableThing.() -> Unit) { map["about"] = MutableThing().apply(builder).build() }
   var actor: Person
     get() = map["actor"] as Person
     set(value) { map["actor"] = value }
@@ -155,6 +151,11 @@ class MutableBroadcastEvent {
     get() = map["potentialAction"] as Action
     set(value) { map["potentialAction"] = value }
   fun potentialAction(builder: MutableAction.() -> Unit) { map["potentialAction"] = MutableAction().apply(builder).build() }
+  var subjectOf: Any
+    get() = map["subjectOf"]!!
+    set(value) { map["subjectOf"] = value }
+  fun subjectOfCreativeWork(builder: MutableCreativeWork.() -> Unit) { map["subjectOf"] = MutableCreativeWork().apply(builder).build() }
+  fun subjectOfEvent(builder: MutableEvent.() -> Unit) { map["subjectOf"] = MutableEvent().apply(builder).build() }
   var id: String
     get() = map["id"] as String
     set(value) { map["id"] = value }

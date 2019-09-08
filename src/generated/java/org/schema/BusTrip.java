@@ -26,75 +26,7 @@ import java.util.*;
 /**
  * A trip on a commercial bus line.
  */
-public class BusTrip extends Intangible {
-  /**
-   * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-   */
-  @JsonIgnore public Organization getProviderOrganization() {
-    return (Organization) getValue("provider");
-  }
-  /**
-   * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-   */
-  @JsonIgnore public Collection<Organization> getProviderOrganizations() {
-    final Object current = myData.get("provider");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
-    }
-    return Arrays.asList((Organization) current);
-  }
-  /**
-   * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-   */
-  @JsonIgnore public Person getProviderPerson() {
-    return (Person) getValue("provider");
-  }
-  /**
-   * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-   */
-  @JsonIgnore public Collection<Person> getProviderPersons() {
-    final Object current = myData.get("provider");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
-    }
-    return Arrays.asList((Person) current);
-  }
-  /**
-   * The expected departure time.
-   */
-  @JsonIgnore public java.util.Date getDepartureTime() {
-    return (java.util.Date) getValue("departureTime");
-  }
-  /**
-   * The expected departure time.
-   */
-  @JsonIgnore public Collection<java.util.Date> getDepartureTimes() {
-    final Object current = myData.get("departureTime");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
-    }
-    return Arrays.asList((java.util.Date) current);
-  }
-  /**
-   * The expected arrival time.
-   */
-  @JsonIgnore public java.util.Date getArrivalTime() {
-    return (java.util.Date) getValue("arrivalTime");
-  }
-  /**
-   * The expected arrival time.
-   */
-  @JsonIgnore public Collection<java.util.Date> getArrivalTimes() {
-    final Object current = myData.get("arrivalTime");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
-    }
-    return Arrays.asList((java.util.Date) current);
-  }
+public class BusTrip extends Trip {
   /**
    * The unique identifier for the bus.
    */
@@ -204,54 +136,12 @@ public class BusTrip extends Intangible {
   /**
    * Builder for {@link BusTrip}
    */
-  public static class Builder extends Intangible.Builder {
+  public static class Builder extends Trip.Builder {
     public Builder(@NotNull HashMap<String,Object> data) {
       super(data);
     }
     @NotNull public BusTrip build() {
       return new BusTrip(myData);
-    }
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     */
-    @NotNull public Builder provider(@NotNull Organization organization) {
-      putValue("provider", organization);
-      return this;
-    }
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     */
-    @NotNull public Builder provider(@NotNull Organization.Builder organization) {
-      putValue("provider", organization.build());
-      return this;
-    }
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     */
-    @NotNull public Builder provider(@NotNull Person person) {
-      putValue("provider", person);
-      return this;
-    }
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     */
-    @NotNull public Builder provider(@NotNull Person.Builder person) {
-      putValue("provider", person.build());
-      return this;
-    }
-    /**
-     * The expected departure time.
-     */
-    @NotNull public Builder departureTime(@NotNull java.util.Date date) {
-      putValue("departureTime", date);
-      return this;
-    }
-    /**
-     * The expected arrival time.
-     */
-    @NotNull public Builder arrivalTime(@NotNull java.util.Date date) {
-      putValue("arrivalTime", date);
-      return this;
     }
     /**
      * The unique identifier for the bus.
@@ -321,6 +211,48 @@ public class BusTrip extends Intangible {
      */
     @NotNull public Builder arrivalBusStop(@NotNull BusStop.Builder busStop) {
       putValue("arrivalBusStop", busStop.build());
+      return this;
+    }
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     */
+    @NotNull public Builder provider(@NotNull Organization organization) {
+      putValue("provider", organization);
+      return this;
+    }
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     */
+    @NotNull public Builder provider(@NotNull Organization.Builder organization) {
+      putValue("provider", organization.build());
+      return this;
+    }
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     */
+    @NotNull public Builder provider(@NotNull Person person) {
+      putValue("provider", person);
+      return this;
+    }
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     */
+    @NotNull public Builder provider(@NotNull Person.Builder person) {
+      putValue("provider", person.build());
+      return this;
+    }
+    /**
+     * The expected departure time.
+     */
+    @NotNull public Builder departureTime(@NotNull java.util.Date date) {
+      putValue("departureTime", date);
+      return this;
+    }
+    /**
+     * The expected arrival time.
+     */
+    @NotNull public Builder arrivalTime(@NotNull java.util.Date date) {
+      putValue("arrivalTime", date);
       return this;
     }
     /**
@@ -400,6 +332,34 @@ public class BusTrip extends Intangible {
       putValue("potentialAction", action.build());
       return this;
     }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork creativeWork) {
+      putValue("subjectOf", creativeWork);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("subjectOf", creativeWork.build());
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event event) {
+      putValue("subjectOf", event);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event.Builder event) {
+      putValue("subjectOf", event.build());
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -408,14 +368,6 @@ public class BusTrip extends Intangible {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("provider".equals(key) && value instanceof Organization) { provider((Organization)value); return; }
-      if ("providers".equals(key) && value instanceof Organization) { provider((Organization)value); return; }
-      if ("provider".equals(key) && value instanceof Person) { provider((Person)value); return; }
-      if ("providers".equals(key) && value instanceof Person) { provider((Person)value); return; }
-      if ("departureTime".equals(key) && value instanceof java.util.Date) { departureTime((java.util.Date)value); return; }
-      if ("departureTimes".equals(key) && value instanceof java.util.Date) { departureTime((java.util.Date)value); return; }
-      if ("arrivalTime".equals(key) && value instanceof java.util.Date) { arrivalTime((java.util.Date)value); return; }
-      if ("arrivalTimes".equals(key) && value instanceof java.util.Date) { arrivalTime((java.util.Date)value); return; }
       if ("busNumber".equals(key) && value instanceof String) { busNumber((String)value); return; }
       if ("busNumbers".equals(key) && value instanceof String) { busNumber((String)value); return; }
       if ("busName".equals(key) && value instanceof String) { busName((String)value); return; }

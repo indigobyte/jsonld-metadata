@@ -147,23 +147,6 @@ public class JobPosting extends Intangible {
     return Arrays.asList((java.util.Date) current);
   }
   /**
-   * Educational background needed for the position.
-   */
-  @JsonIgnore public String getEducationRequirements() {
-    return (String) getValue("educationRequirements");
-  }
-  /**
-   * Educational background needed for the position.
-   */
-  @JsonIgnore public Collection<String> getEducationRequirementss() {
-    final Object current = myData.get("educationRequirements");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
    * Type of employment (e.g. full-time, part-time, contract, temporary, seasonal, internship).
    */
   @JsonIgnore public String getEmploymentType() {
@@ -174,23 +157,6 @@ public class JobPosting extends Intangible {
    */
   @JsonIgnore public Collection<String> getEmploymentTypes() {
     final Object current = myData.get("employmentType");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * Description of skills and experience needed for the position.
-   */
-  @JsonIgnore public String getExperienceRequirements() {
-    return (String) getValue("experienceRequirements");
-  }
-  /**
-   * Description of skills and experience needed for the position.
-   */
-  @JsonIgnore public Collection<String> getExperienceRequirementss() {
-    final Object current = myData.get("experienceRequirements");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<String>) current;
@@ -266,57 +232,6 @@ public class JobPosting extends Intangible {
     return Arrays.asList((Place) current);
   }
   /**
-   * Category or categories describing the job. Use BLS O*NET-SOC taxonomy: http://www.onetcenter.org/taxonomy.html. Ideally includes textual label and formal code, with the property repeated for each applicable value.
-   */
-  @JsonIgnore public String getOccupationalCategory() {
-    return (String) getValue("occupationalCategory");
-  }
-  /**
-   * Category or categories describing the job. Use BLS O*NET-SOC taxonomy: http://www.onetcenter.org/taxonomy.html. Ideally includes textual label and formal code, with the property repeated for each applicable value.
-   */
-  @JsonIgnore public Collection<String> getOccupationalCategorys() {
-    final Object current = myData.get("occupationalCategory");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * Specific qualifications required for this role.
-   */
-  @JsonIgnore public String getQualifications() {
-    return (String) getValue("qualifications");
-  }
-  /**
-   * Specific qualifications required for this role.
-   */
-  @JsonIgnore public Collection<String> getQualificationss() {
-    final Object current = myData.get("qualifications");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * Responsibilities associated with this role.
-   */
-  @JsonIgnore public String getResponsibilities() {
-    return (String) getValue("responsibilities");
-  }
-  /**
-   * Responsibilities associated with this role.
-   */
-  @JsonIgnore public Collection<String> getResponsibilitiess() {
-    final Object current = myData.get("responsibilities");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
    * The currency (coded using [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217) ) used for the main salary information in this job posting or for this employee.
    */
   @JsonIgnore public String getSalaryCurrency() {
@@ -327,23 +242,6 @@ public class JobPosting extends Intangible {
    */
   @JsonIgnore public Collection<String> getSalaryCurrencys() {
     final Object current = myData.get("salaryCurrency");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * Skills required to fulfill this role.
-   */
-  @JsonIgnore public String getSkills() {
-    return (String) getValue("skills");
-  }
-  /**
-   * Skills required to fulfill this role.
-   */
-  @JsonIgnore public Collection<String> getSkillss() {
-    final Object current = myData.get("skills");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<String>) current;
@@ -418,6 +316,212 @@ public class JobPosting extends Intangible {
     }
     return Arrays.asList((String) current);
   }
+  /**
+   * Educational background needed for the position or Occupation.
+   */
+  @JsonIgnore public String getEducationRequirements() {
+    return (String) getValue("educationRequirements");
+  }
+  /**
+   * Educational background needed for the position or Occupation.
+   */
+  @JsonIgnore public Collection<String> getEducationRequirementss() {
+    final Object current = myData.get("educationRequirements");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
+   */
+  @JsonIgnore public Integer getEstimatedSalaryInteger() {
+    return (Integer) getValue("estimatedSalary");
+  }
+  /**
+   * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
+   */
+  @JsonIgnore public Collection<Integer> getEstimatedSalaryIntegers() {
+    final Object current = myData.get("estimatedSalary");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Integer>) current;
+    }
+    return Arrays.asList((Integer) current);
+  }
+  /**
+   * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
+   */
+  @JsonIgnore public Long getEstimatedSalaryLong() {
+    return (Long) getValue("estimatedSalary");
+  }
+  /**
+   * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
+   */
+  @JsonIgnore public Collection<Long> getEstimatedSalaryLongs() {
+    final Object current = myData.get("estimatedSalary");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Long>) current;
+    }
+    return Arrays.asList((Long) current);
+  }
+  /**
+   * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
+   */
+  @JsonIgnore public Float getEstimatedSalaryFloat() {
+    return (Float) getValue("estimatedSalary");
+  }
+  /**
+   * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
+   */
+  @JsonIgnore public Collection<Float> getEstimatedSalaryFloats() {
+    final Object current = myData.get("estimatedSalary");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Float>) current;
+    }
+    return Arrays.asList((Float) current);
+  }
+  /**
+   * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
+   */
+  @JsonIgnore public Double getEstimatedSalaryDouble() {
+    return (Double) getValue("estimatedSalary");
+  }
+  /**
+   * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
+   */
+  @JsonIgnore public Collection<Double> getEstimatedSalaryDoubles() {
+    final Object current = myData.get("estimatedSalary");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Double>) current;
+    }
+    return Arrays.asList((Double) current);
+  }
+  /**
+   * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
+   */
+  @JsonIgnore public String getEstimatedSalaryString() {
+    return (String) getValue("estimatedSalary");
+  }
+  /**
+   * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
+   */
+  @JsonIgnore public Collection<String> getEstimatedSalaryStrings() {
+    final Object current = myData.get("estimatedSalary");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * Description of skills and experience needed for the position or Occupation.
+   */
+  @JsonIgnore public String getExperienceRequirements() {
+    return (String) getValue("experienceRequirements");
+  }
+  /**
+   * Description of skills and experience needed for the position or Occupation.
+   */
+  @JsonIgnore public Collection<String> getExperienceRequirementss() {
+    final Object current = myData.get("experienceRequirements");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.\n
+   * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
+   */
+  @JsonIgnore public String getOccupationalCategory() {
+    return (String) getValue("occupationalCategory");
+  }
+  /**
+   * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.\n
+   * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
+   */
+  @JsonIgnore public Collection<String> getOccupationalCategorys() {
+    final Object current = myData.get("occupationalCategory");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * Specific qualifications required for this role or Occupation.
+   */
+  @JsonIgnore public String getQualifications() {
+    return (String) getValue("qualifications");
+  }
+  /**
+   * Specific qualifications required for this role or Occupation.
+   */
+  @JsonIgnore public Collection<String> getQualificationss() {
+    final Object current = myData.get("qualifications");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * Responsibilities associated with this role or Occupation.
+   */
+  @JsonIgnore public String getResponsibilities() {
+    return (String) getValue("responsibilities");
+  }
+  /**
+   * Responsibilities associated with this role or Occupation.
+   */
+  @JsonIgnore public Collection<String> getResponsibilitiess() {
+    final Object current = myData.get("responsibilities");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * Skills required to fulfill this role or in this Occupation.
+   */
+  @JsonIgnore public String getSkills() {
+    return (String) getValue("skills");
+  }
+  /**
+   * Skills required to fulfill this role or in this Occupation.
+   */
+  @JsonIgnore public Collection<String> getSkillss() {
+    final Object current = myData.get("skills");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * The Occupation for the JobPosting.
+   */
+  @JsonIgnore public Occupation getRelevantOccupation() {
+    return (Occupation) getValue("relevantOccupation");
+  }
+  /**
+   * The Occupation for the JobPosting.
+   */
+  @JsonIgnore public Collection<Occupation> getRelevantOccupations() {
+    final Object current = myData.get("relevantOccupation");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Occupation>) current;
+    }
+    return Arrays.asList((Occupation) current);
+  }
   protected JobPosting(java.util.Map<String,Object> data) {
     super(data);
   }
@@ -482,24 +586,10 @@ public class JobPosting extends Intangible {
       return this;
     }
     /**
-     * Educational background needed for the position.
-     */
-    @NotNull public Builder educationRequirements(@NotNull String educationRequirements) {
-      putValue("educationRequirements", educationRequirements);
-      return this;
-    }
-    /**
      * Type of employment (e.g. full-time, part-time, contract, temporary, seasonal, internship).
      */
     @NotNull public Builder employmentType(@NotNull String employmentType) {
       putValue("employmentType", employmentType);
-      return this;
-    }
-    /**
-     * Description of skills and experience needed for the position.
-     */
-    @NotNull public Builder experienceRequirements(@NotNull String experienceRequirements) {
-      putValue("experienceRequirements", experienceRequirements);
       return this;
     }
     /**
@@ -545,38 +635,10 @@ public class JobPosting extends Intangible {
       return this;
     }
     /**
-     * Category or categories describing the job. Use BLS O*NET-SOC taxonomy: http://www.onetcenter.org/taxonomy.html. Ideally includes textual label and formal code, with the property repeated for each applicable value.
-     */
-    @NotNull public Builder occupationalCategory(@NotNull String occupationalCategory) {
-      putValue("occupationalCategory", occupationalCategory);
-      return this;
-    }
-    /**
-     * Specific qualifications required for this role.
-     */
-    @NotNull public Builder qualifications(@NotNull String qualifications) {
-      putValue("qualifications", qualifications);
-      return this;
-    }
-    /**
-     * Responsibilities associated with this role.
-     */
-    @NotNull public Builder responsibilities(@NotNull String responsibilities) {
-      putValue("responsibilities", responsibilities);
-      return this;
-    }
-    /**
      * The currency (coded using [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217) ) used for the main salary information in this job posting or for this employee.
      */
     @NotNull public Builder salaryCurrency(@NotNull String salaryCurrency) {
       putValue("salaryCurrency", salaryCurrency);
-      return this;
-    }
-    /**
-     * Skills required to fulfill this role.
-     */
-    @NotNull public Builder skills(@NotNull String skills) {
-      putValue("skills", skills);
       return this;
     }
     /**
@@ -605,6 +667,98 @@ public class JobPosting extends Intangible {
      */
     @NotNull public Builder workHours(@NotNull String workHours) {
       putValue("workHours", workHours);
+      return this;
+    }
+    /**
+     * Educational background needed for the position or Occupation.
+     */
+    @NotNull public Builder educationRequirements(@NotNull String educationRequirements) {
+      putValue("educationRequirements", educationRequirements);
+      return this;
+    }
+    /**
+     * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
+     */
+    @NotNull public Builder estimatedSalary(@NotNull Integer integer) {
+      putValue("estimatedSalary", integer);
+      return this;
+    }
+    /**
+     * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
+     */
+    @NotNull public Builder estimatedSalary(@NotNull Long estimatedSalary) {
+      putValue("estimatedSalary", estimatedSalary);
+      return this;
+    }
+    /**
+     * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
+     */
+    @NotNull public Builder estimatedSalary(@NotNull Float estimatedSalary) {
+      putValue("estimatedSalary", estimatedSalary);
+      return this;
+    }
+    /**
+     * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
+     */
+    @NotNull public Builder estimatedSalary(@NotNull Double estimatedSalary) {
+      putValue("estimatedSalary", estimatedSalary);
+      return this;
+    }
+    /**
+     * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
+     */
+    @NotNull public Builder estimatedSalary(@NotNull String estimatedSalary) {
+      putValue("estimatedSalary", estimatedSalary);
+      return this;
+    }
+    /**
+     * Description of skills and experience needed for the position or Occupation.
+     */
+    @NotNull public Builder experienceRequirements(@NotNull String experienceRequirements) {
+      putValue("experienceRequirements", experienceRequirements);
+      return this;
+    }
+    /**
+     * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.\n
+     * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
+     */
+    @NotNull public Builder occupationalCategory(@NotNull String occupationalCategory) {
+      putValue("occupationalCategory", occupationalCategory);
+      return this;
+    }
+    /**
+     * Specific qualifications required for this role or Occupation.
+     */
+    @NotNull public Builder qualifications(@NotNull String qualifications) {
+      putValue("qualifications", qualifications);
+      return this;
+    }
+    /**
+     * Responsibilities associated with this role or Occupation.
+     */
+    @NotNull public Builder responsibilities(@NotNull String responsibilities) {
+      putValue("responsibilities", responsibilities);
+      return this;
+    }
+    /**
+     * Skills required to fulfill this role or in this Occupation.
+     */
+    @NotNull public Builder skills(@NotNull String skills) {
+      putValue("skills", skills);
+      return this;
+    }
+    /**
+     * The Occupation for the JobPosting.
+     */
+    @NotNull public Builder relevantOccupation(@NotNull Occupation occupation) {
+      putValue("relevantOccupation", occupation);
+      return this;
+    }
+    /**
+     * The Occupation for the JobPosting.
+     */
+    @NotNull public Builder relevantOccupation(@NotNull Occupation.Builder occupation) {
+      putValue("relevantOccupation", occupation.build());
       return this;
     }
     /**
@@ -684,6 +838,34 @@ public class JobPosting extends Intangible {
       putValue("potentialAction", action.build());
       return this;
     }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork creativeWork) {
+      putValue("subjectOf", creativeWork);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("subjectOf", creativeWork.build());
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event event) {
+      putValue("subjectOf", event);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event.Builder event) {
+      putValue("subjectOf", event.build());
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -706,12 +888,8 @@ public class JobPosting extends Intangible {
       if ("jobBenefitss".equals(key) && value instanceof String) { jobBenefits((String)value); return; }
       if ("datePosted".equals(key) && value instanceof java.util.Date) { datePosted((java.util.Date)value); return; }
       if ("datePosteds".equals(key) && value instanceof java.util.Date) { datePosted((java.util.Date)value); return; }
-      if ("educationRequirements".equals(key) && value instanceof String) { educationRequirements((String)value); return; }
-      if ("educationRequirementss".equals(key) && value instanceof String) { educationRequirements((String)value); return; }
       if ("employmentType".equals(key) && value instanceof String) { employmentType((String)value); return; }
       if ("employmentTypes".equals(key) && value instanceof String) { employmentType((String)value); return; }
-      if ("experienceRequirements".equals(key) && value instanceof String) { experienceRequirements((String)value); return; }
-      if ("experienceRequirementss".equals(key) && value instanceof String) { experienceRequirements((String)value); return; }
       if ("hiringOrganization".equals(key) && value instanceof Organization) { hiringOrganization((Organization)value); return; }
       if ("hiringOrganizations".equals(key) && value instanceof Organization) { hiringOrganization((Organization)value); return; }
       if ("incentiveCompensation".equals(key) && value instanceof String) { incentiveCompensation((String)value); return; }
@@ -720,16 +898,8 @@ public class JobPosting extends Intangible {
       if ("industrys".equals(key) && value instanceof String) { industry((String)value); return; }
       if ("jobLocation".equals(key) && value instanceof Place) { jobLocation((Place)value); return; }
       if ("jobLocations".equals(key) && value instanceof Place) { jobLocation((Place)value); return; }
-      if ("occupationalCategory".equals(key) && value instanceof String) { occupationalCategory((String)value); return; }
-      if ("occupationalCategorys".equals(key) && value instanceof String) { occupationalCategory((String)value); return; }
-      if ("qualifications".equals(key) && value instanceof String) { qualifications((String)value); return; }
-      if ("qualificationss".equals(key) && value instanceof String) { qualifications((String)value); return; }
-      if ("responsibilities".equals(key) && value instanceof String) { responsibilities((String)value); return; }
-      if ("responsibilitiess".equals(key) && value instanceof String) { responsibilities((String)value); return; }
       if ("salaryCurrency".equals(key) && value instanceof String) { salaryCurrency((String)value); return; }
       if ("salaryCurrencys".equals(key) && value instanceof String) { salaryCurrency((String)value); return; }
-      if ("skills".equals(key) && value instanceof String) { skills((String)value); return; }
-      if ("skillss".equals(key) && value instanceof String) { skills((String)value); return; }
       if ("specialCommitments".equals(key) && value instanceof String) { specialCommitments((String)value); return; }
       if ("specialCommitmentss".equals(key) && value instanceof String) { specialCommitments((String)value); return; }
       if ("title".equals(key) && value instanceof String) { title((String)value); return; }
@@ -738,6 +908,30 @@ public class JobPosting extends Intangible {
       if ("validThroughs".equals(key) && value instanceof java.util.Date) { validThrough((java.util.Date)value); return; }
       if ("workHours".equals(key) && value instanceof String) { workHours((String)value); return; }
       if ("workHourss".equals(key) && value instanceof String) { workHours((String)value); return; }
+      if ("educationRequirements".equals(key) && value instanceof String) { educationRequirements((String)value); return; }
+      if ("educationRequirementss".equals(key) && value instanceof String) { educationRequirements((String)value); return; }
+      if ("estimatedSalary".equals(key) && value instanceof Integer) { estimatedSalary((Integer)value); return; }
+      if ("estimatedSalarys".equals(key) && value instanceof Integer) { estimatedSalary((Integer)value); return; }
+      if ("estimatedSalary".equals(key) && value instanceof Long) { estimatedSalary((Long)value); return; }
+      if ("estimatedSalarys".equals(key) && value instanceof Long) { estimatedSalary((Long)value); return; }
+      if ("estimatedSalary".equals(key) && value instanceof Float) { estimatedSalary((Float)value); return; }
+      if ("estimatedSalarys".equals(key) && value instanceof Float) { estimatedSalary((Float)value); return; }
+      if ("estimatedSalary".equals(key) && value instanceof Double) { estimatedSalary((Double)value); return; }
+      if ("estimatedSalarys".equals(key) && value instanceof Double) { estimatedSalary((Double)value); return; }
+      if ("estimatedSalary".equals(key) && value instanceof String) { estimatedSalary((String)value); return; }
+      if ("estimatedSalarys".equals(key) && value instanceof String) { estimatedSalary((String)value); return; }
+      if ("experienceRequirements".equals(key) && value instanceof String) { experienceRequirements((String)value); return; }
+      if ("experienceRequirementss".equals(key) && value instanceof String) { experienceRequirements((String)value); return; }
+      if ("occupationalCategory".equals(key) && value instanceof String) { occupationalCategory((String)value); return; }
+      if ("occupationalCategorys".equals(key) && value instanceof String) { occupationalCategory((String)value); return; }
+      if ("qualifications".equals(key) && value instanceof String) { qualifications((String)value); return; }
+      if ("qualificationss".equals(key) && value instanceof String) { qualifications((String)value); return; }
+      if ("responsibilities".equals(key) && value instanceof String) { responsibilities((String)value); return; }
+      if ("responsibilitiess".equals(key) && value instanceof String) { responsibilities((String)value); return; }
+      if ("skills".equals(key) && value instanceof String) { skills((String)value); return; }
+      if ("skillss".equals(key) && value instanceof String) { skills((String)value); return; }
+      if ("relevantOccupation".equals(key) && value instanceof Occupation) { relevantOccupation((Occupation)value); return; }
+      if ("relevantOccupations".equals(key) && value instanceof Occupation) { relevantOccupation((Occupation)value); return; }
       super.fromMap(key, value);
     }
   }

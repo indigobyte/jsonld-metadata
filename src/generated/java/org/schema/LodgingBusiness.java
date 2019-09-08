@@ -45,13 +45,13 @@ public class LodgingBusiness extends LocalBusiness {
     return Arrays.asList((Audience) current);
   }
   /**
-   * A language someone may use with the item. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
+   * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
    */
   @JsonIgnore public Language getAvailableLanguageLanguage() {
     return (Language) getValue("availableLanguage");
   }
   /**
-   * A language someone may use with the item. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
+   * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
    */
   @JsonIgnore public Collection<Language> getAvailableLanguageLanguages() {
     final Object current = myData.get("availableLanguage");
@@ -62,13 +62,13 @@ public class LodgingBusiness extends LocalBusiness {
     return Arrays.asList((Language) current);
   }
   /**
-   * A language someone may use with the item. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
+   * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
    */
   @JsonIgnore public String getAvailableLanguageString() {
     return (String) getValue("availableLanguage");
   }
   /**
-   * A language someone may use with the item. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
+   * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
    */
   @JsonIgnore public Collection<String> getAvailableLanguageStrings() {
     final Object current = myData.get("availableLanguage");
@@ -128,6 +128,101 @@ public class LodgingBusiness extends LocalBusiness {
       return (Collection<LocationFeatureSpecification>) current;
     }
     return Arrays.asList((LocationFeatureSpecification) current);
+  }
+  /**
+   * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
+   * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
+   */
+  @JsonIgnore public Integer getNumberOfRoomsInteger() {
+    return (Integer) getValue("numberOfRooms");
+  }
+  /**
+   * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
+   * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
+   */
+  @JsonIgnore public Collection<Integer> getNumberOfRoomsIntegers() {
+    final Object current = myData.get("numberOfRooms");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Integer>) current;
+    }
+    return Arrays.asList((Integer) current);
+  }
+  /**
+   * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
+   * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
+   */
+  @JsonIgnore public Long getNumberOfRoomsLong() {
+    return (Long) getValue("numberOfRooms");
+  }
+  /**
+   * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
+   * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
+   */
+  @JsonIgnore public Collection<Long> getNumberOfRoomsLongs() {
+    final Object current = myData.get("numberOfRooms");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Long>) current;
+    }
+    return Arrays.asList((Long) current);
+  }
+  /**
+   * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
+   * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
+   */
+  @JsonIgnore public Float getNumberOfRoomsFloat() {
+    return (Float) getValue("numberOfRooms");
+  }
+  /**
+   * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
+   * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
+   */
+  @JsonIgnore public Collection<Float> getNumberOfRoomsFloats() {
+    final Object current = myData.get("numberOfRooms");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Float>) current;
+    }
+    return Arrays.asList((Float) current);
+  }
+  /**
+   * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
+   * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
+   */
+  @JsonIgnore public Double getNumberOfRoomsDouble() {
+    return (Double) getValue("numberOfRooms");
+  }
+  /**
+   * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
+   * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
+   */
+  @JsonIgnore public Collection<Double> getNumberOfRoomsDoubles() {
+    final Object current = myData.get("numberOfRooms");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Double>) current;
+    }
+    return Arrays.asList((Double) current);
+  }
+  /**
+   * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
+   * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
+   */
+  @JsonIgnore public String getNumberOfRoomsString() {
+    return (String) getValue("numberOfRooms");
+  }
+  /**
+   * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
+   * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
+   */
+  @JsonIgnore public Collection<String> getNumberOfRoomsStrings() {
+    final Object current = myData.get("numberOfRooms");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
   }
   /**
    * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
@@ -209,21 +304,21 @@ public class LodgingBusiness extends LocalBusiness {
       return this;
     }
     /**
-     * A language someone may use with the item. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
+     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
      */
     @NotNull public Builder availableLanguage(@NotNull Language language) {
       putValue("availableLanguage", language);
       return this;
     }
     /**
-     * A language someone may use with the item. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
+     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
      */
     @NotNull public Builder availableLanguage(@NotNull Language.Builder language) {
       putValue("availableLanguage", language.build());
       return this;
     }
     /**
-     * A language someone may use with the item. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
+     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
      */
     @NotNull public Builder availableLanguage(@NotNull String availableLanguage) {
       putValue("availableLanguage", availableLanguage);
@@ -258,6 +353,46 @@ public class LodgingBusiness extends LocalBusiness {
       return this;
     }
     /**
+     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
+     * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
+     */
+    @NotNull public Builder numberOfRooms(@NotNull Integer integer) {
+      putValue("numberOfRooms", integer);
+      return this;
+    }
+    /**
+     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
+     * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
+     */
+    @NotNull public Builder numberOfRooms(@NotNull Long numberOfRooms) {
+      putValue("numberOfRooms", numberOfRooms);
+      return this;
+    }
+    /**
+     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
+     * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
+     */
+    @NotNull public Builder numberOfRooms(@NotNull Float numberOfRooms) {
+      putValue("numberOfRooms", numberOfRooms);
+      return this;
+    }
+    /**
+     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
+     * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
+     */
+    @NotNull public Builder numberOfRooms(@NotNull Double numberOfRooms) {
+      putValue("numberOfRooms", numberOfRooms);
+      return this;
+    }
+    /**
+     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
+     * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
+     */
+    @NotNull public Builder numberOfRooms(@NotNull String numberOfRooms) {
+      putValue("numberOfRooms", numberOfRooms);
+      return this;
+    }
+    /**
      * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
      */
     @NotNull public Builder petsAllowed(@NotNull Boolean petsAllowed) {
@@ -286,7 +421,7 @@ public class LodgingBusiness extends LocalBusiness {
       return this;
     }
     /**
-     * The currency accepted (in [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217)).
+     * The currency accepted.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
      */
     @NotNull public Builder currenciesAccepted(@NotNull String currenciesAccepted) {
       putValue("currenciesAccepted", currenciesAccepted);
@@ -300,7 +435,7 @@ public class LodgingBusiness extends LocalBusiness {
       return this;
     }
     /**
-     * Cash, credit card, etc.
+     * Cash, Credit Card, Cryptocurrency, Local Exchange Tradings System, etc.
      */
     @NotNull public Builder paymentAccepted(@NotNull String paymentAccepted) {
       putValue("paymentAccepted", paymentAccepted);
@@ -403,6 +538,20 @@ public class LodgingBusiness extends LocalBusiness {
      */
     @NotNull public Builder faxNumber(@NotNull String faxNumber) {
       putValue("faxNumber", faxNumber);
+      return this;
+    }
+    /**
+     * A flag to signal that the item, event, or place is accessible for free.
+     */
+    @NotNull public Builder isAccessibleForFree(@NotNull Boolean isAccessibleForFree) {
+      putValue("isAccessibleForFree", isAccessibleForFree);
+      return this;
+    }
+    /**
+     * A flag to signal that the [[Place]] is open to public visitors.  If this property is omitted there is no assumed default boolean value
+     */
+    @NotNull public Builder publicAccess(@NotNull Boolean publicAccess) {
+      putValue("publicAccess", publicAccess);
       return this;
     }
     /**
@@ -569,6 +718,13 @@ public class LodgingBusiness extends LocalBusiness {
       return this;
     }
     /**
+     * A slogan or motto associated with the item.
+     */
+    @NotNull public Builder slogan(@NotNull String slogan) {
+      putValue("slogan", slogan);
+      return this;
+    }
+    /**
      * The telephone number.
      */
     @NotNull public Builder telephone(@NotNull String telephone) {
@@ -675,6 +831,34 @@ public class LodgingBusiness extends LocalBusiness {
       putValue("potentialAction", action.build());
       return this;
     }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork creativeWork) {
+      putValue("subjectOf", creativeWork);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("subjectOf", creativeWork.build());
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event event) {
+      putValue("subjectOf", event);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event.Builder event) {
+      putValue("subjectOf", event.build());
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -695,6 +879,16 @@ public class LodgingBusiness extends LocalBusiness {
       if ("checkoutTimes".equals(key) && value instanceof java.util.Date) { checkoutTime((java.util.Date)value); return; }
       if ("amenityFeature".equals(key) && value instanceof LocationFeatureSpecification) { amenityFeature((LocationFeatureSpecification)value); return; }
       if ("amenityFeatures".equals(key) && value instanceof LocationFeatureSpecification) { amenityFeature((LocationFeatureSpecification)value); return; }
+      if ("numberOfRooms".equals(key) && value instanceof Integer) { numberOfRooms((Integer)value); return; }
+      if ("numberOfRoomss".equals(key) && value instanceof Integer) { numberOfRooms((Integer)value); return; }
+      if ("numberOfRooms".equals(key) && value instanceof Long) { numberOfRooms((Long)value); return; }
+      if ("numberOfRoomss".equals(key) && value instanceof Long) { numberOfRooms((Long)value); return; }
+      if ("numberOfRooms".equals(key) && value instanceof Float) { numberOfRooms((Float)value); return; }
+      if ("numberOfRoomss".equals(key) && value instanceof Float) { numberOfRooms((Float)value); return; }
+      if ("numberOfRooms".equals(key) && value instanceof Double) { numberOfRooms((Double)value); return; }
+      if ("numberOfRoomss".equals(key) && value instanceof Double) { numberOfRooms((Double)value); return; }
+      if ("numberOfRooms".equals(key) && value instanceof String) { numberOfRooms((String)value); return; }
+      if ("numberOfRoomss".equals(key) && value instanceof String) { numberOfRooms((String)value); return; }
       if ("petsAllowed".equals(key) && value instanceof Boolean) { petsAllowed((Boolean)value); return; }
       if ("petsAlloweds".equals(key) && value instanceof Boolean) { petsAllowed((Boolean)value); return; }
       if ("petsAllowed".equals(key) && value instanceof String) { petsAllowed((String)value); return; }

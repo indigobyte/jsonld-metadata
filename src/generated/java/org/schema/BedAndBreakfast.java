@@ -59,21 +59,21 @@ public class BedAndBreakfast extends LodgingBusiness {
       return this;
     }
     /**
-     * A language someone may use with the item. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
+     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
      */
     @NotNull public Builder availableLanguage(@NotNull Language language) {
       putValue("availableLanguage", language);
       return this;
     }
     /**
-     * A language someone may use with the item. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
+     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
      */
     @NotNull public Builder availableLanguage(@NotNull Language.Builder language) {
       putValue("availableLanguage", language.build());
       return this;
     }
     /**
-     * A language someone may use with the item. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
+     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
      */
     @NotNull public Builder availableLanguage(@NotNull String availableLanguage) {
       putValue("availableLanguage", availableLanguage);
@@ -108,6 +108,46 @@ public class BedAndBreakfast extends LodgingBusiness {
       return this;
     }
     /**
+     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
+     * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
+     */
+    @NotNull public Builder numberOfRooms(@NotNull Integer integer) {
+      putValue("numberOfRooms", integer);
+      return this;
+    }
+    /**
+     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
+     * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
+     */
+    @NotNull public Builder numberOfRooms(@NotNull Long numberOfRooms) {
+      putValue("numberOfRooms", numberOfRooms);
+      return this;
+    }
+    /**
+     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
+     * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
+     */
+    @NotNull public Builder numberOfRooms(@NotNull Float numberOfRooms) {
+      putValue("numberOfRooms", numberOfRooms);
+      return this;
+    }
+    /**
+     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
+     * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
+     */
+    @NotNull public Builder numberOfRooms(@NotNull Double numberOfRooms) {
+      putValue("numberOfRooms", numberOfRooms);
+      return this;
+    }
+    /**
+     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
+     * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
+     */
+    @NotNull public Builder numberOfRooms(@NotNull String numberOfRooms) {
+      putValue("numberOfRooms", numberOfRooms);
+      return this;
+    }
+    /**
      * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
      */
     @NotNull public Builder petsAllowed(@NotNull Boolean petsAllowed) {
@@ -136,7 +176,7 @@ public class BedAndBreakfast extends LodgingBusiness {
       return this;
     }
     /**
-     * The currency accepted (in [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217)).
+     * The currency accepted.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
      */
     @NotNull public Builder currenciesAccepted(@NotNull String currenciesAccepted) {
       putValue("currenciesAccepted", currenciesAccepted);
@@ -150,7 +190,7 @@ public class BedAndBreakfast extends LodgingBusiness {
       return this;
     }
     /**
-     * Cash, credit card, etc.
+     * Cash, Credit Card, Cryptocurrency, Local Exchange Tradings System, etc.
      */
     @NotNull public Builder paymentAccepted(@NotNull String paymentAccepted) {
       putValue("paymentAccepted", paymentAccepted);
@@ -253,6 +293,20 @@ public class BedAndBreakfast extends LodgingBusiness {
      */
     @NotNull public Builder faxNumber(@NotNull String faxNumber) {
       putValue("faxNumber", faxNumber);
+      return this;
+    }
+    /**
+     * A flag to signal that the item, event, or place is accessible for free.
+     */
+    @NotNull public Builder isAccessibleForFree(@NotNull Boolean isAccessibleForFree) {
+      putValue("isAccessibleForFree", isAccessibleForFree);
+      return this;
+    }
+    /**
+     * A flag to signal that the [[Place]] is open to public visitors.  If this property is omitted there is no assumed default boolean value
+     */
+    @NotNull public Builder publicAccess(@NotNull Boolean publicAccess) {
+      putValue("publicAccess", publicAccess);
       return this;
     }
     /**
@@ -419,6 +473,13 @@ public class BedAndBreakfast extends LodgingBusiness {
       return this;
     }
     /**
+     * A slogan or motto associated with the item.
+     */
+    @NotNull public Builder slogan(@NotNull String slogan) {
+      putValue("slogan", slogan);
+      return this;
+    }
+    /**
      * The telephone number.
      */
     @NotNull public Builder telephone(@NotNull String telephone) {
@@ -523,6 +584,34 @@ public class BedAndBreakfast extends LodgingBusiness {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork creativeWork) {
+      putValue("subjectOf", creativeWork);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("subjectOf", creativeWork.build());
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event event) {
+      putValue("subjectOf", event);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event.Builder event) {
+      putValue("subjectOf", event.build());
       return this;
     }
     @NotNull public Builder id(@NotNull String id) {

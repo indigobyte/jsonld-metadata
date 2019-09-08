@@ -28,13 +28,13 @@ import java.util.*;
  */
 public class LocalBusiness extends Place {
   /**
-   * The currency accepted (in [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217)).
+   * The currency accepted.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
    */
   @JsonIgnore public String getCurrenciesAccepted() {
     return (String) getValue("currenciesAccepted");
   }
   /**
-   * The currency accepted (in [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217)).
+   * The currency accepted.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
    */
   @JsonIgnore public Collection<String> getCurrenciesAccepteds() {
     final Object current = myData.get("currenciesAccepted");
@@ -62,13 +62,13 @@ public class LocalBusiness extends Place {
     return Arrays.asList((String) current);
   }
   /**
-   * Cash, credit card, etc.
+   * Cash, Credit Card, Cryptocurrency, Local Exchange Tradings System, etc.
    */
   @JsonIgnore public String getPaymentAccepted() {
     return (String) getValue("paymentAccepted");
   }
   /**
-   * Cash, credit card, etc.
+   * Cash, Credit Card, Cryptocurrency, Local Exchange Tradings System, etc.
    */
   @JsonIgnore public Collection<String> getPaymentAccepteds() {
     final Object current = myData.get("paymentAccepted");
@@ -110,7 +110,7 @@ public class LocalBusiness extends Place {
       return new LocalBusiness(myData);
     }
     /**
-     * The currency accepted (in [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217)).
+     * The currency accepted.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
      */
     @NotNull public Builder currenciesAccepted(@NotNull String currenciesAccepted) {
       putValue("currenciesAccepted", currenciesAccepted);
@@ -124,7 +124,7 @@ public class LocalBusiness extends Place {
       return this;
     }
     /**
-     * Cash, credit card, etc.
+     * Cash, Credit Card, Cryptocurrency, Local Exchange Tradings System, etc.
      */
     @NotNull public Builder paymentAccepted(@NotNull String paymentAccepted) {
       putValue("paymentAccepted", paymentAccepted);
@@ -227,6 +227,20 @@ public class LocalBusiness extends Place {
      */
     @NotNull public Builder faxNumber(@NotNull String faxNumber) {
       putValue("faxNumber", faxNumber);
+      return this;
+    }
+    /**
+     * A flag to signal that the item, event, or place is accessible for free.
+     */
+    @NotNull public Builder isAccessibleForFree(@NotNull Boolean isAccessibleForFree) {
+      putValue("isAccessibleForFree", isAccessibleForFree);
+      return this;
+    }
+    /**
+     * A flag to signal that the [[Place]] is open to public visitors.  If this property is omitted there is no assumed default boolean value
+     */
+    @NotNull public Builder publicAccess(@NotNull Boolean publicAccess) {
+      putValue("publicAccess", publicAccess);
       return this;
     }
     /**
@@ -393,6 +407,13 @@ public class LocalBusiness extends Place {
       return this;
     }
     /**
+     * A slogan or motto associated with the item.
+     */
+    @NotNull public Builder slogan(@NotNull String slogan) {
+      putValue("slogan", slogan);
+      return this;
+    }
+    /**
      * The telephone number.
      */
     @NotNull public Builder telephone(@NotNull String telephone) {
@@ -511,6 +532,34 @@ public class LocalBusiness extends Place {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork creativeWork) {
+      putValue("subjectOf", creativeWork);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("subjectOf", creativeWork.build());
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event event) {
+      putValue("subjectOf", event);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event.Builder event) {
+      putValue("subjectOf", event.build());
       return this;
     }
     @NotNull public Builder id(@NotNull String id) {

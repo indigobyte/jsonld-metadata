@@ -24,9 +24,77 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * A tourist attraction.
+ * A tourist attraction.  In principle any Thing can be a [[TouristAttraction]], from a [[Mountain]] and [[LandmarksOrHistoricalBuildings]] to a [[LocalBusiness]].  This Type can be used on its own to describe a general [[TouristAttraction]], or be used as an [[additionalType]] to add tourist attraction properties to any other type.  (See examples below)Source: http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#IIT-CNR.it
  */
 public class TouristAttraction extends Place {
+  /**
+   * Attraction suitable for type(s) of tourist. eg. Children, visitors from a particular country, etc. 
+   */
+  @JsonIgnore public Audience getTouristTypeAudience() {
+    return (Audience) getValue("touristType");
+  }
+  /**
+   * Attraction suitable for type(s) of tourist. eg. Children, visitors from a particular country, etc. 
+   */
+  @JsonIgnore public Collection<Audience> getTouristTypeAudiences() {
+    final Object current = myData.get("touristType");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Audience>) current;
+    }
+    return Arrays.asList((Audience) current);
+  }
+  /**
+   * Attraction suitable for type(s) of tourist. eg. Children, visitors from a particular country, etc. 
+   */
+  @JsonIgnore public String getTouristTypeString() {
+    return (String) getValue("touristType");
+  }
+  /**
+   * Attraction suitable for type(s) of tourist. eg. Children, visitors from a particular country, etc. 
+   */
+  @JsonIgnore public Collection<String> getTouristTypeStrings() {
+    final Object current = myData.get("touristType");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
+   */
+  @JsonIgnore public Language getAvailableLanguageLanguage() {
+    return (Language) getValue("availableLanguage");
+  }
+  /**
+   * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
+   */
+  @JsonIgnore public Collection<Language> getAvailableLanguageLanguages() {
+    final Object current = myData.get("availableLanguage");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Language>) current;
+    }
+    return Arrays.asList((Language) current);
+  }
+  /**
+   * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
+   */
+  @JsonIgnore public String getAvailableLanguageString() {
+    return (String) getValue("availableLanguage");
+  }
+  /**
+   * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
+   */
+  @JsonIgnore public Collection<String> getAvailableLanguageStrings() {
+    final Object current = myData.get("availableLanguage");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
   protected TouristAttraction(java.util.Map<String,Object> data) {
     super(data);
   }
@@ -40,6 +108,48 @@ public class TouristAttraction extends Place {
     }
     @NotNull public TouristAttraction build() {
       return new TouristAttraction(myData);
+    }
+    /**
+     * Attraction suitable for type(s) of tourist. eg. Children, visitors from a particular country, etc. 
+     */
+    @NotNull public Builder touristType(@NotNull Audience audience) {
+      putValue("touristType", audience);
+      return this;
+    }
+    /**
+     * Attraction suitable for type(s) of tourist. eg. Children, visitors from a particular country, etc. 
+     */
+    @NotNull public Builder touristType(@NotNull Audience.Builder audience) {
+      putValue("touristType", audience.build());
+      return this;
+    }
+    /**
+     * Attraction suitable for type(s) of tourist. eg. Children, visitors from a particular country, etc. 
+     */
+    @NotNull public Builder touristType(@NotNull String touristType) {
+      putValue("touristType", touristType);
+      return this;
+    }
+    /**
+     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
+     */
+    @NotNull public Builder availableLanguage(@NotNull Language language) {
+      putValue("availableLanguage", language);
+      return this;
+    }
+    /**
+     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
+     */
+    @NotNull public Builder availableLanguage(@NotNull Language.Builder language) {
+      putValue("availableLanguage", language.build());
+      return this;
+    }
+    /**
+     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
+     */
+    @NotNull public Builder availableLanguage(@NotNull String availableLanguage) {
+      putValue("availableLanguage", availableLanguage);
+      return this;
     }
     /**
      * Physical address of the item.
@@ -131,6 +241,20 @@ public class TouristAttraction extends Place {
      */
     @NotNull public Builder faxNumber(@NotNull String faxNumber) {
       putValue("faxNumber", faxNumber);
+      return this;
+    }
+    /**
+     * A flag to signal that the item, event, or place is accessible for free.
+     */
+    @NotNull public Builder isAccessibleForFree(@NotNull Boolean isAccessibleForFree) {
+      putValue("isAccessibleForFree", isAccessibleForFree);
+      return this;
+    }
+    /**
+     * A flag to signal that the [[Place]] is open to public visitors.  If this property is omitted there is no assumed default boolean value
+     */
+    @NotNull public Builder publicAccess(@NotNull Boolean publicAccess) {
+      putValue("publicAccess", publicAccess);
       return this;
     }
     /**
@@ -297,6 +421,13 @@ public class TouristAttraction extends Place {
       return this;
     }
     /**
+     * A slogan or motto associated with the item.
+     */
+    @NotNull public Builder slogan(@NotNull String slogan) {
+      putValue("slogan", slogan);
+      return this;
+    }
+    /**
      * The telephone number.
      */
     @NotNull public Builder telephone(@NotNull String telephone) {
@@ -417,6 +548,34 @@ public class TouristAttraction extends Place {
       putValue("potentialAction", action.build());
       return this;
     }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork creativeWork) {
+      putValue("subjectOf", creativeWork);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("subjectOf", creativeWork.build());
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event event) {
+      putValue("subjectOf", event);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event.Builder event) {
+      putValue("subjectOf", event.build());
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -425,6 +584,14 @@ public class TouristAttraction extends Place {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
+      if ("touristType".equals(key) && value instanceof Audience) { touristType((Audience)value); return; }
+      if ("touristTypes".equals(key) && value instanceof Audience) { touristType((Audience)value); return; }
+      if ("touristType".equals(key) && value instanceof String) { touristType((String)value); return; }
+      if ("touristTypes".equals(key) && value instanceof String) { touristType((String)value); return; }
+      if ("availableLanguage".equals(key) && value instanceof Language) { availableLanguage((Language)value); return; }
+      if ("availableLanguages".equals(key) && value instanceof Language) { availableLanguage((Language)value); return; }
+      if ("availableLanguage".equals(key) && value instanceof String) { availableLanguage((String)value); return; }
+      if ("availableLanguages".equals(key) && value instanceof String) { availableLanguage((String)value); return; }
       super.fromMap(key, value);
     }
   }

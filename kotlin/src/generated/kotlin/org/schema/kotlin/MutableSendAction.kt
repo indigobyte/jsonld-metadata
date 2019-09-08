@@ -5,12 +5,6 @@ class MutableSendAction {
   var deliveryMethod: DeliveryMethod
     get() = map["deliveryMethod"] as DeliveryMethod
     set(value) { map["deliveryMethod"] = value }
-  var recipient: Any
-    get() = map["recipient"]!!
-    set(value) { map["recipient"] = value }
-  fun recipientAudience(builder: MutableAudience.() -> Unit) { map["recipient"] = MutableAudience().apply(builder).build() }
-  fun recipientOrganization(builder: MutableOrganization.() -> Unit) { map["recipient"] = MutableOrganization().apply(builder).build() }
-  fun recipientPerson(builder: MutablePerson.() -> Unit) { map["recipient"] = MutablePerson().apply(builder).build() }
   var fromLocation: Place
     get() = map["fromLocation"] as Place
     set(value) { map["fromLocation"] = value }
@@ -67,6 +61,11 @@ class MutableSendAction {
     get() = map["potentialAction"] as Action
     set(value) { map["potentialAction"] = value }
   fun potentialAction(builder: MutableAction.() -> Unit) { map["potentialAction"] = MutableAction().apply(builder).build() }
+  var subjectOf: Any
+    get() = map["subjectOf"]!!
+    set(value) { map["subjectOf"] = value }
+  fun subjectOfCreativeWork(builder: MutableCreativeWork.() -> Unit) { map["subjectOf"] = MutableCreativeWork().apply(builder).build() }
+  fun subjectOfEvent(builder: MutableEvent.() -> Unit) { map["subjectOf"] = MutableEvent().apply(builder).build() }
   var id: String
     get() = map["id"] as String
     set(value) { map["id"] = value }

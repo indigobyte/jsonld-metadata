@@ -61,6 +61,40 @@ public class MenuItem extends Intangible {
     }
     return Arrays.asList((NutritionInformation) current);
   }
+  /**
+   * Additional menu item(s) such as a side dish of salad or side order of fries that can be added to this menu item. Additionally it can be a menu section containing allowed add-on menu items for this menu item.
+   */
+  @JsonIgnore public MenuItem getMenuAddOnMenuItem() {
+    return (MenuItem) getValue("menuAddOn");
+  }
+  /**
+   * Additional menu item(s) such as a side dish of salad or side order of fries that can be added to this menu item. Additionally it can be a menu section containing allowed add-on menu items for this menu item.
+   */
+  @JsonIgnore public Collection<MenuItem> getMenuAddOnMenuItems() {
+    final Object current = myData.get("menuAddOn");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<MenuItem>) current;
+    }
+    return Arrays.asList((MenuItem) current);
+  }
+  /**
+   * Additional menu item(s) such as a side dish of salad or side order of fries that can be added to this menu item. Additionally it can be a menu section containing allowed add-on menu items for this menu item.
+   */
+  @JsonIgnore public MenuSection getMenuAddOnMenuSection() {
+    return (MenuSection) getValue("menuAddOn");
+  }
+  /**
+   * Additional menu item(s) such as a side dish of salad or side order of fries that can be added to this menu item. Additionally it can be a menu section containing allowed add-on menu items for this menu item.
+   */
+  @JsonIgnore public Collection<MenuSection> getMenuAddOnMenuSections() {
+    final Object current = myData.get("menuAddOn");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<MenuSection>) current;
+    }
+    return Arrays.asList((MenuSection) current);
+  }
   protected MenuItem(java.util.Map<String,Object> data) {
     super(data);
   }
@@ -94,6 +128,34 @@ public class MenuItem extends Intangible {
      */
     @NotNull public Builder nutrition(@NotNull NutritionInformation.Builder nutritionInformation) {
       putValue("nutrition", nutritionInformation.build());
+      return this;
+    }
+    /**
+     * Additional menu item(s) such as a side dish of salad or side order of fries that can be added to this menu item. Additionally it can be a menu section containing allowed add-on menu items for this menu item.
+     */
+    @NotNull public Builder menuAddOn(@NotNull MenuItem menuItem) {
+      putValue("menuAddOn", menuItem);
+      return this;
+    }
+    /**
+     * Additional menu item(s) such as a side dish of salad or side order of fries that can be added to this menu item. Additionally it can be a menu section containing allowed add-on menu items for this menu item.
+     */
+    @NotNull public Builder menuAddOn(@NotNull MenuItem.Builder menuItem) {
+      putValue("menuAddOn", menuItem.build());
+      return this;
+    }
+    /**
+     * Additional menu item(s) such as a side dish of salad or side order of fries that can be added to this menu item. Additionally it can be a menu section containing allowed add-on menu items for this menu item.
+     */
+    @NotNull public Builder menuAddOn(@NotNull MenuSection menuSection) {
+      putValue("menuAddOn", menuSection);
+      return this;
+    }
+    /**
+     * Additional menu item(s) such as a side dish of salad or side order of fries that can be added to this menu item. Additionally it can be a menu section containing allowed add-on menu items for this menu item.
+     */
+    @NotNull public Builder menuAddOn(@NotNull MenuSection.Builder menuSection) {
+      putValue("menuAddOn", menuSection.build());
       return this;
     }
     /**
@@ -173,6 +235,34 @@ public class MenuItem extends Intangible {
       putValue("potentialAction", action.build());
       return this;
     }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork creativeWork) {
+      putValue("subjectOf", creativeWork);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("subjectOf", creativeWork.build());
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event event) {
+      putValue("subjectOf", event);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event.Builder event) {
+      putValue("subjectOf", event.build());
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -185,6 +275,10 @@ public class MenuItem extends Intangible {
       if ("suitableForDiets".equals(key) && value instanceof RestrictedDiet) { suitableForDiet((RestrictedDiet)value); return; }
       if ("nutrition".equals(key) && value instanceof NutritionInformation) { nutrition((NutritionInformation)value); return; }
       if ("nutritions".equals(key) && value instanceof NutritionInformation) { nutrition((NutritionInformation)value); return; }
+      if ("menuAddOn".equals(key) && value instanceof MenuItem) { menuAddOn((MenuItem)value); return; }
+      if ("menuAddOns".equals(key) && value instanceof MenuItem) { menuAddOn((MenuItem)value); return; }
+      if ("menuAddOn".equals(key) && value instanceof MenuSection) { menuAddOn((MenuSection)value); return; }
+      if ("menuAddOns".equals(key) && value instanceof MenuSection) { menuAddOn((MenuSection)value); return; }
       super.fromMap(key, value);
     }
   }

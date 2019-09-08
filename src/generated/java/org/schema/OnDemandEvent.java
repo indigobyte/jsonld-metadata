@@ -42,7 +42,7 @@ public class OnDemandEvent extends PublicationEvent {
       return new OnDemandEvent(myData);
     }
     /**
-     * A flag to signal that the publication is accessible for free.
+     * A flag to signal that the item, event, or place is accessible for free.
      */
     @NotNull public Builder isAccessibleForFree(@NotNull Boolean isAccessibleForFree) {
       putValue("isAccessibleForFree", isAccessibleForFree);
@@ -60,20 +60,6 @@ public class OnDemandEvent extends PublicationEvent {
      */
     @NotNull public Builder publishedOn(@NotNull BroadcastService.Builder broadcastService) {
       putValue("publishedOn", broadcastService.build());
-      return this;
-    }
-    /**
-     * The subject matter of the content.
-     */
-    @NotNull public Builder about(@NotNull Thing thing) {
-      putValue("about", thing);
-      return this;
-    }
-    /**
-     * The subject matter of the content.
-     */
-    @NotNull public Builder about(@NotNull Thing.Builder thing) {
-      putValue("about", thing.build());
       return this;
     }
     /**
@@ -572,6 +558,34 @@ public class OnDemandEvent extends PublicationEvent {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork creativeWork) {
+      putValue("subjectOf", creativeWork);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("subjectOf", creativeWork.build());
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event event) {
+      putValue("subjectOf", event);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event.Builder event) {
+      putValue("subjectOf", event.build());
       return this;
     }
     @NotNull public Builder id(@NotNull String id) {

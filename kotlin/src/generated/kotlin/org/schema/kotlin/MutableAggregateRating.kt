@@ -26,6 +26,9 @@ class MutableAggregateRating {
   var worstRating: Any
     get() = map["worstRating"]!!
     set(value) { map["worstRating"] = value }
+  var reviewAspect: String
+    get() = map["reviewAspect"] as String
+    set(value) { map["reviewAspect"] = value }
   var additionalType: String
     get() = map["additionalType"] as String
     set(value) { map["additionalType"] = value }
@@ -52,6 +55,11 @@ class MutableAggregateRating {
     get() = map["potentialAction"] as Action
     set(value) { map["potentialAction"] = value }
   fun potentialAction(builder: MutableAction.() -> Unit) { map["potentialAction"] = MutableAction().apply(builder).build() }
+  var subjectOf: Any
+    get() = map["subjectOf"]!!
+    set(value) { map["subjectOf"] = value }
+  fun subjectOfCreativeWork(builder: MutableCreativeWork.() -> Unit) { map["subjectOf"] = MutableCreativeWork().apply(builder).build() }
+  fun subjectOfEvent(builder: MutableEvent.() -> Unit) { map["subjectOf"] = MutableEvent().apply(builder).build() }
   var id: String
     get() = map["id"] as String
     set(value) { map["id"] = value }

@@ -30,13 +30,30 @@ public class BedDetails extends Intangible {
   /**
    * The type of bed to which the BedDetail refers, i.e. the type of bed available in the quantity indicated by quantity.
    */
-  @JsonIgnore public String getTypeOfBed() {
+  @JsonIgnore public BedType getTypeOfBedBedType() {
+    return (BedType) getValue("typeOfBed");
+  }
+  /**
+   * The type of bed to which the BedDetail refers, i.e. the type of bed available in the quantity indicated by quantity.
+   */
+  @JsonIgnore public Collection<BedType> getTypeOfBedBedTypes() {
+    final Object current = myData.get("typeOfBed");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<BedType>) current;
+    }
+    return Arrays.asList((BedType) current);
+  }
+  /**
+   * The type of bed to which the BedDetail refers, i.e. the type of bed available in the quantity indicated by quantity.
+   */
+  @JsonIgnore public String getTypeOfBedString() {
     return (String) getValue("typeOfBed");
   }
   /**
    * The type of bed to which the BedDetail refers, i.e. the type of bed available in the quantity indicated by quantity.
    */
-  @JsonIgnore public Collection<String> getTypeOfBeds() {
+  @JsonIgnore public Collection<String> getTypeOfBedStrings() {
     final Object current = myData.get("typeOfBed");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
@@ -142,6 +159,20 @@ public class BedDetails extends Intangible {
     }
     @NotNull public BedDetails build() {
       return new BedDetails(myData);
+    }
+    /**
+     * The type of bed to which the BedDetail refers, i.e. the type of bed available in the quantity indicated by quantity.
+     */
+    @NotNull public Builder typeOfBed(@NotNull BedType bedType) {
+      putValue("typeOfBed", bedType);
+      return this;
+    }
+    /**
+     * The type of bed to which the BedDetail refers, i.e. the type of bed available in the quantity indicated by quantity.
+     */
+    @NotNull public Builder typeOfBed(@NotNull BedType.Builder bedType) {
+      putValue("typeOfBed", bedType.build());
+      return this;
     }
     /**
      * The type of bed to which the BedDetail refers, i.e. the type of bed available in the quantity indicated by quantity.
@@ -262,6 +293,34 @@ public class BedDetails extends Intangible {
       putValue("potentialAction", action.build());
       return this;
     }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork creativeWork) {
+      putValue("subjectOf", creativeWork);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("subjectOf", creativeWork.build());
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event event) {
+      putValue("subjectOf", event);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event.Builder event) {
+      putValue("subjectOf", event.build());
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -270,6 +329,8 @@ public class BedDetails extends Intangible {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
+      if ("typeOfBed".equals(key) && value instanceof BedType) { typeOfBed((BedType)value); return; }
+      if ("typeOfBeds".equals(key) && value instanceof BedType) { typeOfBed((BedType)value); return; }
       if ("typeOfBed".equals(key) && value instanceof String) { typeOfBed((String)value); return; }
       if ("typeOfBeds".equals(key) && value instanceof String) { typeOfBed((String)value); return; }
       if ("numberOfBeds".equals(key) && value instanceof Integer) { numberOfBeds((Integer)value); return; }

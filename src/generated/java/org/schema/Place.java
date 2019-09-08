@@ -166,6 +166,40 @@ public class Place extends Thing {
     return Arrays.asList((String) current);
   }
   /**
+   * A flag to signal that the item, event, or place is accessible for free.
+   */
+  @JsonIgnore public Boolean getIsAccessibleForFree() {
+    return (Boolean) getValue("isAccessibleForFree");
+  }
+  /**
+   * A flag to signal that the item, event, or place is accessible for free.
+   */
+  @JsonIgnore public Collection<Boolean> getIsAccessibleForFrees() {
+    final Object current = myData.get("isAccessibleForFree");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Boolean>) current;
+    }
+    return Arrays.asList((Boolean) current);
+  }
+  /**
+   * A flag to signal that the [[Place]] is open to public visitors.  If this property is omitted there is no assumed default boolean value
+   */
+  @JsonIgnore public Boolean getPublicAccess() {
+    return (Boolean) getValue("publicAccess");
+  }
+  /**
+   * A flag to signal that the [[Place]] is open to public visitors.  If this property is omitted there is no assumed default boolean value
+   */
+  @JsonIgnore public Collection<Boolean> getPublicAccesss() {
+    final Object current = myData.get("publicAccess");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Boolean>) current;
+    }
+    return Arrays.asList((Boolean) current);
+  }
+  /**
    * The geo coordinates of the place.
    */
   @JsonIgnore public GeoCoordinates getGeoGeoCoordinates() {
@@ -406,6 +440,23 @@ public class Place extends Thing {
     return Arrays.asList((Review) current);
   }
   /**
+   * A slogan or motto associated with the item.
+   */
+  @JsonIgnore public String getSlogan() {
+    return (String) getValue("slogan");
+  }
+  /**
+   * A slogan or motto associated with the item.
+   */
+  @JsonIgnore public Collection<String> getSlogans() {
+    final Object current = myData.get("slogan");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
    * The telephone number.
    */
   @JsonIgnore public String getTelephone() {
@@ -582,6 +633,20 @@ public class Place extends Thing {
       return this;
     }
     /**
+     * A flag to signal that the item, event, or place is accessible for free.
+     */
+    @NotNull public Builder isAccessibleForFree(@NotNull Boolean isAccessibleForFree) {
+      putValue("isAccessibleForFree", isAccessibleForFree);
+      return this;
+    }
+    /**
+     * A flag to signal that the [[Place]] is open to public visitors.  If this property is omitted there is no assumed default boolean value
+     */
+    @NotNull public Builder publicAccess(@NotNull Boolean publicAccess) {
+      putValue("publicAccess", publicAccess);
+      return this;
+    }
+    /**
      * The geo coordinates of the place.
      */
     @NotNull public Builder geo(@NotNull GeoCoordinates geoCoordinates) {
@@ -745,6 +810,13 @@ public class Place extends Thing {
       return this;
     }
     /**
+     * A slogan or motto associated with the item.
+     */
+    @NotNull public Builder slogan(@NotNull String slogan) {
+      putValue("slogan", slogan);
+      return this;
+    }
+    /**
      * The telephone number.
      */
     @NotNull public Builder telephone(@NotNull String telephone) {
@@ -865,6 +937,34 @@ public class Place extends Thing {
       putValue("potentialAction", action.build());
       return this;
     }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork creativeWork) {
+      putValue("subjectOf", creativeWork);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("subjectOf", creativeWork.build());
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event event) {
+      putValue("subjectOf", event);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event.Builder event) {
+      putValue("subjectOf", event.build());
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -889,6 +989,10 @@ public class Place extends Thing {
       if ("events".equals(key) && value instanceof Event) { event((Event)value); return; }
       if ("faxNumber".equals(key) && value instanceof String) { faxNumber((String)value); return; }
       if ("faxNumbers".equals(key) && value instanceof String) { faxNumber((String)value); return; }
+      if ("isAccessibleForFree".equals(key) && value instanceof Boolean) { isAccessibleForFree((Boolean)value); return; }
+      if ("isAccessibleForFrees".equals(key) && value instanceof Boolean) { isAccessibleForFree((Boolean)value); return; }
+      if ("publicAccess".equals(key) && value instanceof Boolean) { publicAccess((Boolean)value); return; }
+      if ("publicAccesss".equals(key) && value instanceof Boolean) { publicAccess((Boolean)value); return; }
       if ("geo".equals(key) && value instanceof GeoCoordinates) { geo((GeoCoordinates)value); return; }
       if ("geos".equals(key) && value instanceof GeoCoordinates) { geo((GeoCoordinates)value); return; }
       if ("geo".equals(key) && value instanceof GeoShape) { geo((GeoShape)value); return; }
@@ -917,6 +1021,8 @@ public class Place extends Thing {
       if ("photos".equals(key) && value instanceof Photograph) { photo((Photograph)value); return; }
       if ("review".equals(key) && value instanceof Review) { review((Review)value); return; }
       if ("reviews".equals(key) && value instanceof Review) { review((Review)value); return; }
+      if ("slogan".equals(key) && value instanceof String) { slogan((String)value); return; }
+      if ("slogans".equals(key) && value instanceof String) { slogan((String)value); return; }
       if ("telephone".equals(key) && value instanceof String) { telephone((String)value); return; }
       if ("telephones".equals(key) && value instanceof String) { telephone((String)value); return; }
       if ("additionalProperty".equals(key) && value instanceof PropertyValue) { additionalProperty((PropertyValue)value); return; }

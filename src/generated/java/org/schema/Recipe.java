@@ -26,24 +26,7 @@ import java.util.*;
 /**
  * A recipe. For dietary restrictions covered by the recipe, a few common restrictions are enumerated via [[suitableForDiet]]. The [[keywords]] property can also be used to add more detail.
  */
-public class Recipe extends CreativeWork {
-  /**
-   * The total time it takes to prepare and cook the recipe, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
-   */
-  @JsonIgnore public Duration getTotalTime() {
-    return (Duration) getValue("totalTime");
-  }
-  /**
-   * The total time it takes to prepare and cook the recipe, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
-   */
-  @JsonIgnore public Collection<Duration> getTotalTimes() {
-    final Object current = myData.get("totalTime");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Duration>) current;
-    }
-    return Arrays.asList((Duration) current);
-  }
+public class Recipe extends HowTo {
   /**
    * The time it takes to actually cook the dish, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
    */
@@ -94,23 +77,6 @@ public class Recipe extends CreativeWork {
       return (Collection<NutritionInformation>) current;
     }
     return Arrays.asList((NutritionInformation) current);
-  }
-  /**
-   * The length of time it takes to prepare the recipe, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
-   */
-  @JsonIgnore public Duration getPrepTime() {
-    return (Duration) getValue("prepTime");
-  }
-  /**
-   * The length of time it takes to prepare the recipe, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
-   */
-  @JsonIgnore public Collection<Duration> getPrepTimes() {
-    final Object current = myData.get("prepTime");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Duration>) current;
-    }
-    return Arrays.asList((Duration) current);
   }
   /**
    * The category of the recipe—for example, appetizer, entree, etc.
@@ -164,13 +130,30 @@ public class Recipe extends CreativeWork {
     return Arrays.asList((String) current);
   }
   /**
-   * A step or instruction involved in making the recipe.
+   * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
+   */
+  @JsonIgnore public CreativeWork getRecipeInstructionsCreativeWork() {
+    return (CreativeWork) getValue("recipeInstructions");
+  }
+  /**
+   * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
+   */
+  @JsonIgnore public Collection<CreativeWork> getRecipeInstructionsCreativeWorks() {
+    final Object current = myData.get("recipeInstructions");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<CreativeWork>) current;
+    }
+    return Arrays.asList((CreativeWork) current);
+  }
+  /**
+   * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
    */
   @JsonIgnore public ItemList getRecipeInstructionsItemList() {
     return (ItemList) getValue("recipeInstructions");
   }
   /**
-   * A step or instruction involved in making the recipe.
+   * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
    */
   @JsonIgnore public Collection<ItemList> getRecipeInstructionsItemLists() {
     final Object current = myData.get("recipeInstructions");
@@ -181,13 +164,13 @@ public class Recipe extends CreativeWork {
     return Arrays.asList((ItemList) current);
   }
   /**
-   * A step or instruction involved in making the recipe.
+   * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
    */
   @JsonIgnore public String getRecipeInstructionsString() {
     return (String) getValue("recipeInstructions");
   }
   /**
-   * A step or instruction involved in making the recipe.
+   * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
    */
   @JsonIgnore public Collection<String> getRecipeInstructionsStrings() {
     final Object current = myData.get("recipeInstructions");
@@ -200,13 +183,30 @@ public class Recipe extends CreativeWork {
   /**
    * The quantity produced by the recipe (for example, number of people served, number of servings, etc).
    */
-  @JsonIgnore public String getRecipeYield() {
+  @JsonIgnore public QuantitativeValue getRecipeYieldQuantitativeValue() {
+    return (QuantitativeValue) getValue("recipeYield");
+  }
+  /**
+   * The quantity produced by the recipe (for example, number of people served, number of servings, etc).
+   */
+  @JsonIgnore public Collection<QuantitativeValue> getRecipeYieldQuantitativeValues() {
+    final Object current = myData.get("recipeYield");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<QuantitativeValue>) current;
+    }
+    return Arrays.asList((QuantitativeValue) current);
+  }
+  /**
+   * The quantity produced by the recipe (for example, number of people served, number of servings, etc).
+   */
+  @JsonIgnore public String getRecipeYieldString() {
     return (String) getValue("recipeYield");
   }
   /**
    * The quantity produced by the recipe (for example, number of people served, number of servings, etc).
    */
-  @JsonIgnore public Collection<String> getRecipeYields() {
+  @JsonIgnore public Collection<String> getRecipeYieldStrings() {
     final Object current = myData.get("recipeYield");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
@@ -221,19 +221,12 @@ public class Recipe extends CreativeWork {
   /**
    * Builder for {@link Recipe}
    */
-  public static class Builder extends CreativeWork.Builder {
+  public static class Builder extends HowTo.Builder {
     public Builder(@NotNull HashMap<String,Object> data) {
       super(data);
     }
     @NotNull public Recipe build() {
       return new Recipe(myData);
-    }
-    /**
-     * The total time it takes to prepare and cook the recipe, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
-     */
-    @NotNull public Builder totalTime(@NotNull Duration duration) {
-      putValue("totalTime", duration);
-      return this;
     }
     /**
      * The time it takes to actually cook the dish, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
@@ -264,13 +257,6 @@ public class Recipe extends CreativeWork {
       return this;
     }
     /**
-     * The length of time it takes to prepare the recipe, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
-     */
-    @NotNull public Builder prepTime(@NotNull Duration duration) {
-      putValue("prepTime", duration);
-      return this;
-    }
-    /**
      * The category of the recipe—for example, appetizer, entree, etc.
      */
     @NotNull public Builder recipeCategory(@NotNull String recipeCategory) {
@@ -292,24 +278,52 @@ public class Recipe extends CreativeWork {
       return this;
     }
     /**
-     * A step or instruction involved in making the recipe.
+     * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
+     */
+    @NotNull public Builder recipeInstructions(@NotNull CreativeWork creativeWork) {
+      putValue("recipeInstructions", creativeWork);
+      return this;
+    }
+    /**
+     * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
+     */
+    @NotNull public Builder recipeInstructions(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("recipeInstructions", creativeWork.build());
+      return this;
+    }
+    /**
+     * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
      */
     @NotNull public Builder recipeInstructions(@NotNull ItemList itemList) {
       putValue("recipeInstructions", itemList);
       return this;
     }
     /**
-     * A step or instruction involved in making the recipe.
+     * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
      */
     @NotNull public Builder recipeInstructions(@NotNull ItemList.Builder itemList) {
       putValue("recipeInstructions", itemList.build());
       return this;
     }
     /**
-     * A step or instruction involved in making the recipe.
+     * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
      */
     @NotNull public Builder recipeInstructions(@NotNull String recipeInstructions) {
       putValue("recipeInstructions", recipeInstructions);
+      return this;
+    }
+    /**
+     * The quantity produced by the recipe (for example, number of people served, number of servings, etc).
+     */
+    @NotNull public Builder recipeYield(@NotNull QuantitativeValue quantitativeValue) {
+      putValue("recipeYield", quantitativeValue);
+      return this;
+    }
+    /**
+     * The quantity produced by the recipe (for example, number of people served, number of servings, etc).
+     */
+    @NotNull public Builder recipeYield(@NotNull QuantitativeValue.Builder quantitativeValue) {
+      putValue("recipeYield", quantitativeValue.build());
       return this;
     }
     /**
@@ -320,24 +334,94 @@ public class Recipe extends CreativeWork {
       return this;
     }
     /**
+     * The estimated cost of the supply or supplies consumed when performing instructions.
+     */
+    @NotNull public Builder estimatedCost(@NotNull MonetaryAmount monetaryAmount) {
+      putValue("estimatedCost", monetaryAmount);
+      return this;
+    }
+    /**
+     * The estimated cost of the supply or supplies consumed when performing instructions.
+     */
+    @NotNull public Builder estimatedCost(@NotNull MonetaryAmount.Builder monetaryAmount) {
+      putValue("estimatedCost", monetaryAmount.build());
+      return this;
+    }
+    /**
+     * The estimated cost of the supply or supplies consumed when performing instructions.
+     */
+    @NotNull public Builder estimatedCost(@NotNull String estimatedCost) {
+      putValue("estimatedCost", estimatedCost);
+      return this;
+    }
+    /**
+     * The length of time it takes to perform instructions or a direction (not including time to prepare the supplies), in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
+     */
+    @NotNull public Builder performTime(@NotNull PerformTime performTime) {
+      putValue("performTime", performTime);
+      return this;
+    }
+    /**
+     * The length of time it takes to prepare the items to be used in instructions or a direction, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
+     */
+    @NotNull public Builder prepTime(@NotNull Duration duration) {
+      putValue("prepTime", duration);
+      return this;
+    }
+    /**
+     * A sub-property of instrument. A supply consumed when performing instructions or a direction.
+     */
+    @NotNull public Builder supply(@NotNull Supply supply) {
+      putValue("supply", supply);
+      return this;
+    }
+    /**
+     * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection.
+     */
+    @NotNull public Builder step(@NotNull Step step) {
+      putValue("step", step);
+      return this;
+    }
+    /**
+     * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
+     */
+    @NotNull public Builder tool(@NotNull HowToTool howToTool) {
+      putValue("tool", howToTool);
+      return this;
+    }
+    /**
+     * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
+     */
+    @NotNull public Builder tool(@NotNull HowToTool.Builder howToTool) {
+      putValue("tool", howToTool.build());
+      return this;
+    }
+    /**
+     * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
+     */
+    @NotNull public Builder tool(@NotNull String tool) {
+      putValue("tool", tool);
+      return this;
+    }
+    /**
+     * The total time required to perform instructions or a direction (including time to prepare the supplies), in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
+     */
+    @NotNull public Builder totalTime(@NotNull Duration duration) {
+      putValue("totalTime", duration);
+      return this;
+    }
+    /**
+     * The quantity that results by performing instructions. For example, a paper airplane, 10 personalized candles.
+     */
+    @NotNull public Builder yield(@NotNull Yield yield) {
+      putValue("yield", yield);
+      return this;
+    }
+    /**
      * Indicates (by URL or string) a particular version of a schema used in some CreativeWork. For example, a document could declare a schemaVersion using an URL such as http://schema.org/version/2.0/ if precise indication of schema version was required by some application. 
      */
     @NotNull public Builder schemaVersion(@NotNull String schemaVersion) {
       putValue("schemaVersion", schemaVersion);
-      return this;
-    }
-    /**
-     * The subject matter of the content.
-     */
-    @NotNull public Builder about(@NotNull Thing thing) {
-      putValue("about", thing);
-      return this;
-    }
-    /**
-     * The subject matter of the content.
-     */
-    @NotNull public Builder about(@NotNull Thing.Builder thing) {
-      putValue("about", thing.build());
       return this;
     }
     /**
@@ -446,6 +530,20 @@ public class Recipe extends CreativeWork {
       return this;
     }
     /**
+     * An embedded audio object.
+     */
+    @NotNull public Builder audio(@NotNull Clip clip) {
+      putValue("audio", clip);
+      return this;
+    }
+    /**
+     * An embedded audio object.
+     */
+    @NotNull public Builder audio(@NotNull Clip.Builder clip) {
+      putValue("audio", clip.build());
+      return this;
+    }
+    /**
      * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
      */
     @NotNull public Builder author(@NotNull Organization organization) {
@@ -527,6 +625,20 @@ public class Recipe extends CreativeWork {
      */
     @NotNull public Builder locationCreated(@NotNull Place.Builder place) {
       putValue("locationCreated", place.build());
+      return this;
+    }
+    /**
+     * Official rating of a piece of content&#x2014;for example,'MPAA PG-13'.
+     */
+    @NotNull public Builder contentRating(@NotNull Rating rating) {
+      putValue("contentRating", rating);
+      return this;
+    }
+    /**
+     * Official rating of a piece of content&#x2014;for example,'MPAA PG-13'.
+     */
+    @NotNull public Builder contentRating(@NotNull Rating.Builder rating) {
+      putValue("contentRating", rating.build());
       return this;
     }
     /**
@@ -733,14 +845,25 @@ public class Recipe extends CreativeWork {
       return this;
     }
     /**
-     * Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.
+     * Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)) e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.).
+     * 
+     * In cases where a [[CreativeWork]] has several media type representations, [[encoding]] can be used to indicate each [[MediaObject]] alongside particular [[encodingFormat]] information.
+     * 
+     * Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.
      */
-    @NotNull public Builder fileFormat(@NotNull String fileFormat) {
-      putValue("fileFormat", fileFormat);
+    @NotNull public Builder encodingFormat(@NotNull String encodingFormat) {
+      putValue("encodingFormat", encodingFormat);
       return this;
     }
     /**
-     * A flag to signal that the publication is accessible for free.
+     * Date the content expires and is no longer useful or available. For example a [[VideoObject]] or [[NewsArticle]] whose availability or relevance is time-limited, or a [[ClaimReview]] fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date.
+     */
+    @NotNull public Builder expires(@NotNull java.util.Date date) {
+      putValue("expires", date);
+      return this;
+    }
+    /**
+     * A flag to signal that the item, event, or place is accessible for free.
      */
     @NotNull public Builder isAccessibleForFree(@NotNull Boolean isAccessibleForFree) {
       putValue("isAccessibleForFree", isAccessibleForFree);
@@ -789,35 +912,35 @@ public class Recipe extends CreativeWork {
       return this;
     }
     /**
-     * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
+     * A resource from which this work is derived or from which it is a modification or adaption.
      */
     @NotNull public Builder isBasedOn(@NotNull CreativeWork creativeWork) {
       putValue("isBasedOn", creativeWork);
       return this;
     }
     /**
-     * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
+     * A resource from which this work is derived or from which it is a modification or adaption.
      */
     @NotNull public Builder isBasedOn(@NotNull CreativeWork.Builder creativeWork) {
       putValue("isBasedOn", creativeWork.build());
       return this;
     }
     /**
-     * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
+     * A resource from which this work is derived or from which it is a modification or adaption.
      */
     @NotNull public Builder isBasedOn(@NotNull Product product) {
       putValue("isBasedOn", product);
       return this;
     }
     /**
-     * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
+     * A resource from which this work is derived or from which it is a modification or adaption.
      */
     @NotNull public Builder isBasedOn(@NotNull Product.Builder product) {
       putValue("isBasedOn", product.build());
       return this;
     }
     /**
-     * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
+     * A resource from which this work is derived or from which it is a modification or adaption.
      */
     @NotNull public Builder isBasedOn(@NotNull String isBasedOn) {
       putValue("isBasedOn", isBasedOn);
@@ -868,15 +991,8 @@ public class Recipe extends CreativeWork {
     /**
      * Indicates the primary entity described in some page or other CreativeWork.
      */
-    @NotNull public Builder mainEntity(@NotNull Thing thing) {
-      putValue("mainEntity", thing);
-      return this;
-    }
-    /**
-     * Indicates the primary entity described in some page or other CreativeWork.
-     */
-    @NotNull public Builder mainEntity(@NotNull Thing.Builder thing) {
-      putValue("mainEntity", thing.build());
+    @NotNull public Builder mainEntity(@NotNull About about) {
+      putValue("mainEntity", about);
       return this;
     }
     /**
@@ -978,7 +1094,30 @@ public class Recipe extends CreativeWork {
       return this;
     }
     /**
-     * Link to page describing the editorial principles of the organization primarily responsible for the creation of the CreativeWork.
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+     * 
+     */
+    @NotNull public Builder publishingPrinciples(@NotNull CreativeWork creativeWork) {
+      putValue("publishingPrinciples", creativeWork);
+      return this;
+    }
+    /**
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+     * 
+     */
+    @NotNull public Builder publishingPrinciples(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("publishingPrinciples", creativeWork.build());
+      return this;
+    }
+    /**
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+     * 
      */
     @NotNull public Builder publishingPrinciples(@NotNull String publishingPrinciples) {
       putValue("publishingPrinciples", publishingPrinciples);
@@ -1024,6 +1163,22 @@ public class Recipe extends CreativeWork {
      */
     @NotNull public Builder sourceOrganization(@NotNull Organization.Builder organization) {
       putValue("sourceOrganization", organization.build());
+      return this;
+    }
+    /**
+     * The "spatial" property can be used in cases when more specific properties
+     * (e.g. [[locationCreated]], [[spatialCoverage]], [[contentLocation]]) are not known to be appropriate.
+     */
+    @NotNull public Builder spatial(@NotNull Place place) {
+      putValue("spatial", place);
+      return this;
+    }
+    /**
+     * The "spatial" property can be used in cases when more specific properties
+     * (e.g. [[locationCreated]], [[spatialCoverage]], [[contentLocation]]) are not known to be appropriate.
+     */
+    @NotNull public Builder spatial(@NotNull Place.Builder place) {
+      putValue("spatial", place.build());
       return this;
     }
     /**
@@ -1076,6 +1231,8 @@ public class Recipe extends CreativeWork {
      * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
      *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.
      *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
+     * 
+     * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
      */
     @NotNull public Builder temporalCoverage(@NotNull String temporalCoverage) {
       putValue("temporalCoverage", temporalCoverage);
@@ -1085,9 +1242,27 @@ public class Recipe extends CreativeWork {
      * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
      *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.
      *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
+     * 
+     * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
      */
     @NotNull public Builder temporalCoverage(@NotNull java.util.Date date) {
       putValue("temporalCoverage", date);
+      return this;
+    }
+    /**
+     * The "temporal" property can be used in cases where more specific properties
+     * (e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]], [[datePublished]]) are not known to be appropriate.
+     */
+    @NotNull public Builder temporal(@NotNull String temporal) {
+      putValue("temporal", temporal);
+      return this;
+    }
+    /**
+     * The "temporal" property can be used in cases where more specific properties
+     * (e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]], [[datePublished]]) are not known to be appropriate.
+     */
+    @NotNull public Builder temporal(@NotNull java.util.Date date) {
+      putValue("temporal", date);
       return this;
     }
     /**
@@ -1105,7 +1280,7 @@ public class Recipe extends CreativeWork {
       return this;
     }
     /**
-     * Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience, e.g. 'P30M', 'P1H25M'.
+     * Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience, e.g. 'PT30M', 'PT1H25M'.
      */
     @NotNull public Builder timeRequired(@NotNull Duration duration) {
       putValue("timeRequired", duration);
@@ -1151,6 +1326,20 @@ public class Recipe extends CreativeWork {
      */
     @NotNull public Builder version(@NotNull String version) {
       putValue("version", version);
+      return this;
+    }
+    /**
+     * An embedded video object.
+     */
+    @NotNull public Builder video(@NotNull Clip clip) {
+      putValue("video", clip);
+      return this;
+    }
+    /**
+     * An embedded video object.
+     */
+    @NotNull public Builder video(@NotNull Clip.Builder clip) {
+      putValue("video", clip.build());
       return this;
     }
     /**
@@ -1203,7 +1392,7 @@ public class Recipe extends CreativeWork {
       return this;
     }
     /**
-     * Indicates a CreativeWork that is (in some sense) a part of this CreativeWork.
+     * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
      */
     @NotNull public Builder hasPart(@NotNull HasPart hasPart) {
       putValue("hasPart", hasPart);
@@ -1319,8 +1508,16 @@ public class Recipe extends CreativeWork {
      * A list of single or combined accessModes that are sufficient to understand all the intellectual content of a resource. Expected values include:  auditory, tactile, textual, visual.
      *       
      */
-    @NotNull public Builder accessModeSufficient(@NotNull String accessModeSufficient) {
-      putValue("accessModeSufficient", accessModeSufficient);
+    @NotNull public Builder accessModeSufficient(@NotNull ItemList itemList) {
+      putValue("accessModeSufficient", itemList);
+      return this;
+    }
+    /**
+     * A list of single or combined accessModes that are sufficient to understand all the intellectual content of a resource. Expected values include:  auditory, tactile, textual, visual.
+     *       
+     */
+    @NotNull public Builder accessModeSufficient(@NotNull ItemList.Builder itemList) {
+      putValue("accessModeSufficient", itemList.build());
       return this;
     }
     /**
@@ -1407,6 +1604,34 @@ public class Recipe extends CreativeWork {
       putValue("potentialAction", action.build());
       return this;
     }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork creativeWork) {
+      putValue("subjectOf", creativeWork);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("subjectOf", creativeWork.build());
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event event) {
+      putValue("subjectOf", event);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event.Builder event) {
+      putValue("subjectOf", event.build());
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -1415,26 +1640,26 @@ public class Recipe extends CreativeWork {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("totalTime".equals(key) && value instanceof Duration) { totalTime((Duration)value); return; }
-      if ("totalTimes".equals(key) && value instanceof Duration) { totalTime((Duration)value); return; }
       if ("cookTime".equals(key) && value instanceof Duration) { cookTime((Duration)value); return; }
       if ("cookTimes".equals(key) && value instanceof Duration) { cookTime((Duration)value); return; }
       if ("cookingMethod".equals(key) && value instanceof String) { cookingMethod((String)value); return; }
       if ("cookingMethods".equals(key) && value instanceof String) { cookingMethod((String)value); return; }
       if ("nutrition".equals(key) && value instanceof NutritionInformation) { nutrition((NutritionInformation)value); return; }
       if ("nutritions".equals(key) && value instanceof NutritionInformation) { nutrition((NutritionInformation)value); return; }
-      if ("prepTime".equals(key) && value instanceof Duration) { prepTime((Duration)value); return; }
-      if ("prepTimes".equals(key) && value instanceof Duration) { prepTime((Duration)value); return; }
       if ("recipeCategory".equals(key) && value instanceof String) { recipeCategory((String)value); return; }
       if ("recipeCategorys".equals(key) && value instanceof String) { recipeCategory((String)value); return; }
       if ("recipeCuisine".equals(key) && value instanceof String) { recipeCuisine((String)value); return; }
       if ("recipeCuisines".equals(key) && value instanceof String) { recipeCuisine((String)value); return; }
       if ("recipeIngredient".equals(key) && value instanceof String) { recipeIngredient((String)value); return; }
       if ("recipeIngredients".equals(key) && value instanceof String) { recipeIngredient((String)value); return; }
+      if ("recipeInstructions".equals(key) && value instanceof CreativeWork) { recipeInstructions((CreativeWork)value); return; }
+      if ("recipeInstructionss".equals(key) && value instanceof CreativeWork) { recipeInstructions((CreativeWork)value); return; }
       if ("recipeInstructions".equals(key) && value instanceof ItemList) { recipeInstructions((ItemList)value); return; }
       if ("recipeInstructionss".equals(key) && value instanceof ItemList) { recipeInstructions((ItemList)value); return; }
       if ("recipeInstructions".equals(key) && value instanceof String) { recipeInstructions((String)value); return; }
       if ("recipeInstructionss".equals(key) && value instanceof String) { recipeInstructions((String)value); return; }
+      if ("recipeYield".equals(key) && value instanceof QuantitativeValue) { recipeYield((QuantitativeValue)value); return; }
+      if ("recipeYields".equals(key) && value instanceof QuantitativeValue) { recipeYield((QuantitativeValue)value); return; }
       if ("recipeYield".equals(key) && value instanceof String) { recipeYield((String)value); return; }
       if ("recipeYields".equals(key) && value instanceof String) { recipeYield((String)value); return; }
       super.fromMap(key, value);

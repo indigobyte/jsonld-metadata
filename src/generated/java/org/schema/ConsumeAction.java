@@ -44,6 +44,23 @@ public class ConsumeAction extends Action {
     }
     return Arrays.asList((Offer) current);
   }
+  /**
+   * A set of requirements that a must be fulfilled in order to perform an Action. If more than one value is specied, fulfilling one set of requirements will allow the Action to be performed.
+   */
+  @JsonIgnore public ActionAccessSpecification getActionAccessibilityRequirement() {
+    return (ActionAccessSpecification) getValue("actionAccessibilityRequirement");
+  }
+  /**
+   * A set of requirements that a must be fulfilled in order to perform an Action. If more than one value is specied, fulfilling one set of requirements will allow the Action to be performed.
+   */
+  @JsonIgnore public Collection<ActionAccessSpecification> getActionAccessibilityRequirements() {
+    final Object current = myData.get("actionAccessibilityRequirement");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<ActionAccessSpecification>) current;
+    }
+    return Arrays.asList((ActionAccessSpecification) current);
+  }
   protected ConsumeAction(java.util.Map<String,Object> data) {
     super(data);
   }
@@ -70,6 +87,20 @@ public class ConsumeAction extends Action {
      */
     @NotNull public Builder expectsAcceptanceOf(@NotNull Offer.Builder offer) {
       putValue("expectsAcceptanceOf", offer.build());
+      return this;
+    }
+    /**
+     * A set of requirements that a must be fulfilled in order to perform an Action. If more than one value is specied, fulfilling one set of requirements will allow the Action to be performed.
+     */
+    @NotNull public Builder actionAccessibilityRequirement(@NotNull ActionAccessSpecification actionAccessSpecification) {
+      putValue("actionAccessibilityRequirement", actionAccessSpecification);
+      return this;
+    }
+    /**
+     * A set of requirements that a must be fulfilled in order to perform an Action. If more than one value is specied, fulfilling one set of requirements will allow the Action to be performed.
+     */
+    @NotNull public Builder actionAccessibilityRequirement(@NotNull ActionAccessSpecification.Builder actionAccessSpecification) {
+      putValue("actionAccessibilityRequirement", actionAccessSpecification.build());
       return this;
     }
     /**
@@ -101,14 +132,14 @@ public class ConsumeAction extends Action {
       return this;
     }
     /**
-     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      */
     @NotNull public Builder endTime(@NotNull java.util.Date date) {
       putValue("endTime", date);
       return this;
     }
     /**
-     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      */
     @NotNull public Builder startTime(@NotNull java.util.Date date) {
       putValue("startTime", date);
@@ -226,6 +257,34 @@ public class ConsumeAction extends Action {
       putValue("potentialAction", action.build());
       return this;
     }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork creativeWork) {
+      putValue("subjectOf", creativeWork);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("subjectOf", creativeWork.build());
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event event) {
+      putValue("subjectOf", event);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event.Builder event) {
+      putValue("subjectOf", event.build());
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -236,6 +295,8 @@ public class ConsumeAction extends Action {
     @Override protected void fromMap(String key, Object value) {
       if ("expectsAcceptanceOf".equals(key) && value instanceof Offer) { expectsAcceptanceOf((Offer)value); return; }
       if ("expectsAcceptanceOfs".equals(key) && value instanceof Offer) { expectsAcceptanceOf((Offer)value); return; }
+      if ("actionAccessibilityRequirement".equals(key) && value instanceof ActionAccessSpecification) { actionAccessibilityRequirement((ActionAccessSpecification)value); return; }
+      if ("actionAccessibilityRequirements".equals(key) && value instanceof ActionAccessSpecification) { actionAccessibilityRequirement((ActionAccessSpecification)value); return; }
       super.fromMap(key, value);
     }
   }

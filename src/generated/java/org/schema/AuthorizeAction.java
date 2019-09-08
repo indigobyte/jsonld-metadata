@@ -27,57 +27,6 @@ import java.util.*;
  * The act of granting permission to an object.
  */
 public class AuthorizeAction extends AllocateAction {
-  /**
-   * A sub property of participant. The participant who is at the receiving end of the action.
-   */
-  @JsonIgnore public Audience getRecipientAudience() {
-    return (Audience) getValue("recipient");
-  }
-  /**
-   * A sub property of participant. The participant who is at the receiving end of the action.
-   */
-  @JsonIgnore public Collection<Audience> getRecipientAudiences() {
-    final Object current = myData.get("recipient");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Audience>) current;
-    }
-    return Arrays.asList((Audience) current);
-  }
-  /**
-   * A sub property of participant. The participant who is at the receiving end of the action.
-   */
-  @JsonIgnore public Organization getRecipientOrganization() {
-    return (Organization) getValue("recipient");
-  }
-  /**
-   * A sub property of participant. The participant who is at the receiving end of the action.
-   */
-  @JsonIgnore public Collection<Organization> getRecipientOrganizations() {
-    final Object current = myData.get("recipient");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
-    }
-    return Arrays.asList((Organization) current);
-  }
-  /**
-   * A sub property of participant. The participant who is at the receiving end of the action.
-   */
-  @JsonIgnore public Person getRecipientPerson() {
-    return (Person) getValue("recipient");
-  }
-  /**
-   * A sub property of participant. The participant who is at the receiving end of the action.
-   */
-  @JsonIgnore public Collection<Person> getRecipientPersons() {
-    final Object current = myData.get("recipient");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
-    }
-    return Arrays.asList((Person) current);
-  }
   protected AuthorizeAction(java.util.Map<String,Object> data) {
     super(data);
   }
@@ -91,48 +40,6 @@ public class AuthorizeAction extends AllocateAction {
     }
     @NotNull public AuthorizeAction build() {
       return new AuthorizeAction(myData);
-    }
-    /**
-     * A sub property of participant. The participant who is at the receiving end of the action.
-     */
-    @NotNull public Builder recipient(@NotNull Audience audience) {
-      putValue("recipient", audience);
-      return this;
-    }
-    /**
-     * A sub property of participant. The participant who is at the receiving end of the action.
-     */
-    @NotNull public Builder recipient(@NotNull Audience.Builder audience) {
-      putValue("recipient", audience.build());
-      return this;
-    }
-    /**
-     * A sub property of participant. The participant who is at the receiving end of the action.
-     */
-    @NotNull public Builder recipient(@NotNull Organization organization) {
-      putValue("recipient", organization);
-      return this;
-    }
-    /**
-     * A sub property of participant. The participant who is at the receiving end of the action.
-     */
-    @NotNull public Builder recipient(@NotNull Organization.Builder organization) {
-      putValue("recipient", organization.build());
-      return this;
-    }
-    /**
-     * A sub property of participant. The participant who is at the receiving end of the action.
-     */
-    @NotNull public Builder recipient(@NotNull Person person) {
-      putValue("recipient", person);
-      return this;
-    }
-    /**
-     * A sub property of participant. The participant who is at the receiving end of the action.
-     */
-    @NotNull public Builder recipient(@NotNull Person.Builder person) {
-      putValue("recipient", person.build());
-      return this;
     }
     /**
      * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
@@ -163,14 +70,14 @@ public class AuthorizeAction extends AllocateAction {
       return this;
     }
     /**
-     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      */
     @NotNull public Builder endTime(@NotNull java.util.Date date) {
       putValue("endTime", date);
       return this;
     }
     /**
-     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      */
     @NotNull public Builder startTime(@NotNull java.util.Date date) {
       putValue("startTime", date);
@@ -288,6 +195,34 @@ public class AuthorizeAction extends AllocateAction {
       putValue("potentialAction", action.build());
       return this;
     }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork creativeWork) {
+      putValue("subjectOf", creativeWork);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("subjectOf", creativeWork.build());
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event event) {
+      putValue("subjectOf", event);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event.Builder event) {
+      putValue("subjectOf", event.build());
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -296,12 +231,6 @@ public class AuthorizeAction extends AllocateAction {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("recipient".equals(key) && value instanceof Audience) { recipient((Audience)value); return; }
-      if ("recipients".equals(key) && value instanceof Audience) { recipient((Audience)value); return; }
-      if ("recipient".equals(key) && value instanceof Organization) { recipient((Organization)value); return; }
-      if ("recipients".equals(key) && value instanceof Organization) { recipient((Organization)value); return; }
-      if ("recipient".equals(key) && value instanceof Person) { recipient((Person)value); return; }
-      if ("recipients".equals(key) && value instanceof Person) { recipient((Person)value); return; }
       super.fromMap(key, value);
     }
   }

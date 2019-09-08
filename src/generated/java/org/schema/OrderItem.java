@@ -197,6 +197,23 @@ public class OrderItem extends Intangible {
     }
     return Arrays.asList((Product) current);
   }
+  /**
+   * The item ordered.
+   */
+  @JsonIgnore public Service getOrderedItemService() {
+    return (Service) getValue("orderedItem");
+  }
+  /**
+   * The item ordered.
+   */
+  @JsonIgnore public Collection<Service> getOrderedItemServices() {
+    final Object current = myData.get("orderedItem");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Service>) current;
+    }
+    return Arrays.asList((Service) current);
+  }
   protected OrderItem(java.util.Map<String,Object> data) {
     super(data);
   }
@@ -303,6 +320,20 @@ public class OrderItem extends Intangible {
       return this;
     }
     /**
+     * The item ordered.
+     */
+    @NotNull public Builder orderedItem(@NotNull Service service) {
+      putValue("orderedItem", service);
+      return this;
+    }
+    /**
+     * The item ordered.
+     */
+    @NotNull public Builder orderedItem(@NotNull Service.Builder service) {
+      putValue("orderedItem", service.build());
+      return this;
+    }
+    /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      */
     @NotNull public Builder additionalType(@NotNull String additionalType) {
@@ -379,6 +410,34 @@ public class OrderItem extends Intangible {
       putValue("potentialAction", action.build());
       return this;
     }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork creativeWork) {
+      putValue("subjectOf", creativeWork);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("subjectOf", creativeWork.build());
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event event) {
+      putValue("subjectOf", event);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event.Builder event) {
+      putValue("subjectOf", event.build());
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -407,6 +466,8 @@ public class OrderItem extends Intangible {
       if ("orderedItems".equals(key) && value instanceof OrderItem) { orderedItem((OrderItem)value); return; }
       if ("orderedItem".equals(key) && value instanceof Product) { orderedItem((Product)value); return; }
       if ("orderedItems".equals(key) && value instanceof Product) { orderedItem((Product)value); return; }
+      if ("orderedItem".equals(key) && value instanceof Service) { orderedItem((Service)value); return; }
+      if ("orderedItems".equals(key) && value instanceof Service) { orderedItem((Service)value); return; }
       super.fromMap(key, value);
     }
   }

@@ -75,10 +75,6 @@ class MutableSoftwareApplication {
   var schemaVersion: String
     get() = map["schemaVersion"] as String
     set(value) { map["schemaVersion"] = value }
-  var about: Thing
-    get() = map["about"] as Thing
-    set(value) { map["about"] = value }
-  fun about(builder: MutableThing.() -> Unit) { map["about"] = MutableThing().apply(builder).build() }
   var accessibilityAPI: String
     get() = map["accessibilityAPI"] as String
     set(value) { map["accessibilityAPI"] = value }
@@ -110,10 +106,11 @@ class MutableSoftwareApplication {
     get() = map["audience"] as Audience
     set(value) { map["audience"] = value }
   fun audience(builder: MutableAudience.() -> Unit) { map["audience"] = MutableAudience().apply(builder).build() }
-  var audio: AudioObject
-    get() = map["audio"] as AudioObject
+  var audio: Any
+    get() = map["audio"]!!
     set(value) { map["audio"] = value }
-  fun audio(builder: MutableAudioObject.() -> Unit) { map["audio"] = MutableAudioObject().apply(builder).build() }
+  fun audioAudioObject(builder: MutableAudioObject.() -> Unit) { map["audio"] = MutableAudioObject().apply(builder).build() }
+  fun audioClip(builder: MutableClip.() -> Unit) { map["audio"] = MutableClip().apply(builder).build() }
   var author: Any
     get() = map["author"]!!
     set(value) { map["author"] = value }
@@ -134,9 +131,10 @@ class MutableSoftwareApplication {
     get() = map["locationCreated"] as Place
     set(value) { map["locationCreated"] = value }
   fun locationCreated(builder: MutablePlace.() -> Unit) { map["locationCreated"] = MutablePlace().apply(builder).build() }
-  var contentRating: String
-    get() = map["contentRating"] as String
+  var contentRating: Any
+    get() = map["contentRating"]!!
     set(value) { map["contentRating"] = value }
+  fun contentRatingRating(builder: MutableRating.() -> Unit) { map["contentRating"] = MutableRating().apply(builder).build() }
   var contributor: Any
     get() = map["contributor"]!!
     set(value) { map["contributor"] = value }
@@ -182,9 +180,12 @@ class MutableSoftwareApplication {
     get() = map["encoding"] as MediaObject
     set(value) { map["encoding"] = value }
   fun encoding(builder: MutableMediaObject.() -> Unit) { map["encoding"] = MutableMediaObject().apply(builder).build() }
-  var fileFormat: String
-    get() = map["fileFormat"] as String
-    set(value) { map["fileFormat"] = value }
+  var encodingFormat: String
+    get() = map["encodingFormat"] as String
+    set(value) { map["encodingFormat"] = value }
+  var expires: java.util.Date
+    get() = map["expires"] as java.util.Date
+    set(value) { map["expires"] = value }
   var isAccessibleForFree: Boolean
     get() = map["isAccessibleForFree"] as Boolean
     set(value) { map["isAccessibleForFree"] = value }
@@ -219,10 +220,9 @@ class MutableSoftwareApplication {
   var learningResourceType: String
     get() = map["learningResourceType"] as String
     set(value) { map["learningResourceType"] = value }
-  var mainEntity: Thing
-    get() = map["mainEntity"] as Thing
+  var mainEntity: About
+    get() = map["mainEntity"] as About
     set(value) { map["mainEntity"] = value }
-  fun mainEntity(builder: MutableThing.() -> Unit) { map["mainEntity"] = MutableThing().apply(builder).build() }
   var mentions: Thing
     get() = map["mentions"] as Thing
     set(value) { map["mentions"] = value }
@@ -245,9 +245,10 @@ class MutableSoftwareApplication {
     set(value) { map["publisher"] = value }
   fun publisherOrganization(builder: MutableOrganization.() -> Unit) { map["publisher"] = MutableOrganization().apply(builder).build() }
   fun publisherPerson(builder: MutablePerson.() -> Unit) { map["publisher"] = MutablePerson().apply(builder).build() }
-  var publishingPrinciples: String
-    get() = map["publishingPrinciples"] as String
+  var publishingPrinciples: Any
+    get() = map["publishingPrinciples"]!!
     set(value) { map["publishingPrinciples"] = value }
+  fun publishingPrinciplesCreativeWork(builder: MutableCreativeWork.() -> Unit) { map["publishingPrinciples"] = MutableCreativeWork().apply(builder).build() }
   var recordedAt: Event
     get() = map["recordedAt"] as Event
     set(value) { map["recordedAt"] = value }
@@ -260,6 +261,10 @@ class MutableSoftwareApplication {
     get() = map["sourceOrganization"] as Organization
     set(value) { map["sourceOrganization"] = value }
   fun sourceOrganization(builder: MutableOrganization.() -> Unit) { map["sourceOrganization"] = MutableOrganization().apply(builder).build() }
+  var spatial: Place
+    get() = map["spatial"] as Place
+    set(value) { map["spatial"] = value }
+  fun spatial(builder: MutablePlace.() -> Unit) { map["spatial"] = MutablePlace().apply(builder).build() }
   var spatialCoverage: Place
     get() = map["spatialCoverage"] as Place
     set(value) { map["spatialCoverage"] = value }
@@ -272,6 +277,9 @@ class MutableSoftwareApplication {
   var temporalCoverage: Any
     get() = map["temporalCoverage"]!!
     set(value) { map["temporalCoverage"] = value }
+  var temporal: Any
+    get() = map["temporal"]!!
+    set(value) { map["temporal"] = value }
   var text: String
     get() = map["text"] as String
     set(value) { map["text"] = value }
@@ -287,10 +295,11 @@ class MutableSoftwareApplication {
   var version: Any
     get() = map["version"]!!
     set(value) { map["version"] = value }
-  var video: VideoObject
-    get() = map["video"] as VideoObject
+  var video: Any
+    get() = map["video"]!!
     set(value) { map["video"] = value }
-  fun video(builder: MutableVideoObject.() -> Unit) { map["video"] = MutableVideoObject().apply(builder).build() }
+  fun videoClip(builder: MutableClip.() -> Unit) { map["video"] = MutableClip().apply(builder).build() }
+  fun videoVideoObject(builder: MutableVideoObject.() -> Unit) { map["video"] = MutableVideoObject().apply(builder).build() }
   var provider: Any
     get() = map["provider"]!!
     set(value) { map["provider"] = value }
@@ -330,9 +339,10 @@ class MutableSoftwareApplication {
   var accessMode: String
     get() = map["accessMode"] as String
     set(value) { map["accessMode"] = value }
-  var accessModeSufficient: String
-    get() = map["accessModeSufficient"] as String
+  var accessModeSufficient: ItemList
+    get() = map["accessModeSufficient"] as ItemList
     set(value) { map["accessModeSufficient"] = value }
+  fun accessModeSufficient(builder: MutableItemList.() -> Unit) { map["accessModeSufficient"] = MutableItemList().apply(builder).build() }
   var accessibilitySummary: String
     get() = map["accessibilitySummary"] as String
     set(value) { map["accessibilitySummary"] = value }
@@ -362,6 +372,11 @@ class MutableSoftwareApplication {
     get() = map["potentialAction"] as Action
     set(value) { map["potentialAction"] = value }
   fun potentialAction(builder: MutableAction.() -> Unit) { map["potentialAction"] = MutableAction().apply(builder).build() }
+  var subjectOf: Any
+    get() = map["subjectOf"]!!
+    set(value) { map["subjectOf"] = value }
+  fun subjectOfCreativeWork(builder: MutableCreativeWork.() -> Unit) { map["subjectOf"] = MutableCreativeWork().apply(builder).build() }
+  fun subjectOfEvent(builder: MutableEvent.() -> Unit) { map["subjectOf"] = MutableEvent().apply(builder).build() }
   var id: String
     get() = map["id"] as String
     set(value) { map["id"] = value }

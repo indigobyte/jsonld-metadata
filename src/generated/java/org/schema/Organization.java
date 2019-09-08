@@ -589,6 +589,52 @@ public class Organization extends Thing implements MemberOf {
     return Arrays.asList((Product) current);
   }
   /**
+   * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+   * 
+   * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+   * 
+   */
+  @JsonIgnore public CreativeWork getPublishingPrinciplesCreativeWork() {
+    return (CreativeWork) getValue("publishingPrinciples");
+  }
+  /**
+   * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+   * 
+   * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+   * 
+   */
+  @JsonIgnore public Collection<CreativeWork> getPublishingPrinciplesCreativeWorks() {
+    final Object current = myData.get("publishingPrinciples");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<CreativeWork>) current;
+    }
+    return Arrays.asList((CreativeWork) current);
+  }
+  /**
+   * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+   * 
+   * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+   * 
+   */
+  @JsonIgnore public String getPublishingPrinciplesString() {
+    return (String) getValue("publishingPrinciples");
+  }
+  /**
+   * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+   * 
+   * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+   * 
+   */
+  @JsonIgnore public Collection<String> getPublishingPrinciplesStrings() {
+    final Object current = myData.get("publishingPrinciples");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
    * A review of the item.
    */
   @JsonIgnore public Review getReview() {
@@ -604,6 +650,23 @@ public class Organization extends Thing implements MemberOf {
       return (Collection<Review>) current;
     }
     return Arrays.asList((Review) current);
+  }
+  /**
+   * A slogan or motto associated with the item.
+   */
+  @JsonIgnore public String getSlogan() {
+    return (String) getValue("slogan");
+  }
+  /**
+   * A slogan or motto associated with the item.
+   */
+  @JsonIgnore public Collection<String> getSlogans() {
+    final Object current = myData.get("slogan");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
   }
   /**
    * A pointer to products or services sought by the organization or person (demand).
@@ -1144,6 +1207,36 @@ public class Organization extends Thing implements MemberOf {
       return this;
     }
     /**
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+     * 
+     */
+    @NotNull public Builder publishingPrinciples(@NotNull CreativeWork creativeWork) {
+      putValue("publishingPrinciples", creativeWork);
+      return this;
+    }
+    /**
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+     * 
+     */
+    @NotNull public Builder publishingPrinciples(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("publishingPrinciples", creativeWork.build());
+      return this;
+    }
+    /**
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+     * 
+     */
+    @NotNull public Builder publishingPrinciples(@NotNull String publishingPrinciples) {
+      putValue("publishingPrinciples", publishingPrinciples);
+      return this;
+    }
+    /**
      * A review of the item.
      */
     @NotNull public Builder review(@NotNull Review review) {
@@ -1155,6 +1248,13 @@ public class Organization extends Thing implements MemberOf {
      */
     @NotNull public Builder review(@NotNull Review.Builder review) {
       putValue("review", review.build());
+      return this;
+    }
+    /**
+     * A slogan or motto associated with the item.
+     */
+    @NotNull public Builder slogan(@NotNull String slogan) {
+      putValue("slogan", slogan);
       return this;
     }
     /**
@@ -1332,6 +1432,34 @@ public class Organization extends Thing implements MemberOf {
       putValue("potentialAction", action.build());
       return this;
     }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork creativeWork) {
+      putValue("subjectOf", creativeWork);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("subjectOf", creativeWork.build());
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event event) {
+      putValue("subjectOf", event);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event.Builder event) {
+      putValue("subjectOf", event.build());
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -1406,8 +1534,14 @@ public class Organization extends Thing implements MemberOf {
       if ("ownss".equals(key) && value instanceof OwnershipInfo) { owns((OwnershipInfo)value); return; }
       if ("owns".equals(key) && value instanceof Product) { owns((Product)value); return; }
       if ("ownss".equals(key) && value instanceof Product) { owns((Product)value); return; }
+      if ("publishingPrinciples".equals(key) && value instanceof CreativeWork) { publishingPrinciples((CreativeWork)value); return; }
+      if ("publishingPrincipless".equals(key) && value instanceof CreativeWork) { publishingPrinciples((CreativeWork)value); return; }
+      if ("publishingPrinciples".equals(key) && value instanceof String) { publishingPrinciples((String)value); return; }
+      if ("publishingPrincipless".equals(key) && value instanceof String) { publishingPrinciples((String)value); return; }
       if ("review".equals(key) && value instanceof Review) { review((Review)value); return; }
       if ("reviews".equals(key) && value instanceof Review) { review((Review)value); return; }
+      if ("slogan".equals(key) && value instanceof String) { slogan((String)value); return; }
+      if ("slogans".equals(key) && value instanceof String) { slogan((String)value); return; }
       if ("seeks".equals(key) && value instanceof Demand) { seeks((Demand)value); return; }
       if ("seekss".equals(key) && value instanceof Demand) { seeks((Demand)value); return; }
       if ("funder".equals(key) && value instanceof Organization) { funder((Organization)value); return; }

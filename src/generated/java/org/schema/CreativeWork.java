@@ -26,7 +26,7 @@ import java.util.*;
 /**
  * The most generic kind of creative work, including books, movies, photographs, software programs, etc.Source: http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_rNews
  */
-public class CreativeWork extends Thing implements WorkFeatured {
+public class CreativeWork extends Thing implements WorkFeatured, Step {
   /**
    * Indicates (by URL or string) a particular version of a schema used in some CreativeWork. For example, a document could declare a schemaVersion using an URL such as http://schema.org/version/2.0/ if precise indication of schema version was required by some application. 
    */
@@ -43,23 +43,6 @@ public class CreativeWork extends Thing implements WorkFeatured {
       return (Collection<String>) current;
     }
     return Arrays.asList((String) current);
-  }
-  /**
-   * The subject matter of the content.
-   */
-  @JsonIgnore public Thing getAbout() {
-    return (Thing) getValue("about");
-  }
-  /**
-   * The subject matter of the content.
-   */
-  @JsonIgnore public Collection<Thing> getAbouts() {
-    final Object current = myData.get("about");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Thing>) current;
-    }
-    return Arrays.asList((Thing) current);
   }
   /**
    * Indicates that the resource is compatible with the referenced accessibility API ([WebSchemas wiki lists possible values](http://www.w3.org/wiki/WebSchemas/Accessibility)).
@@ -217,19 +200,36 @@ public class CreativeWork extends Thing implements WorkFeatured {
   /**
    * An embedded audio object.
    */
-  @JsonIgnore public AudioObject getAudio() {
+  @JsonIgnore public AudioObject getAudioAudioObject() {
     return (AudioObject) getValue("audio");
   }
   /**
    * An embedded audio object.
    */
-  @JsonIgnore public Collection<AudioObject> getAudios() {
+  @JsonIgnore public Collection<AudioObject> getAudioAudioObjects() {
     final Object current = myData.get("audio");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<AudioObject>) current;
     }
     return Arrays.asList((AudioObject) current);
+  }
+  /**
+   * An embedded audio object.
+   */
+  @JsonIgnore public Clip getAudioClip() {
+    return (Clip) getValue("audio");
+  }
+  /**
+   * An embedded audio object.
+   */
+  @JsonIgnore public Collection<Clip> getAudioClips() {
+    final Object current = myData.get("audio");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Clip>) current;
+    }
+    return Arrays.asList((Clip) current);
   }
   /**
    * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
@@ -353,13 +353,30 @@ public class CreativeWork extends Thing implements WorkFeatured {
   /**
    * Official rating of a piece of content&#x2014;for example,'MPAA PG-13'.
    */
-  @JsonIgnore public String getContentRating() {
+  @JsonIgnore public Rating getContentRatingRating() {
+    return (Rating) getValue("contentRating");
+  }
+  /**
+   * Official rating of a piece of content&#x2014;for example,'MPAA PG-13'.
+   */
+  @JsonIgnore public Collection<Rating> getContentRatingRatings() {
+    final Object current = myData.get("contentRating");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Rating>) current;
+    }
+    return Arrays.asList((Rating) current);
+  }
+  /**
+   * Official rating of a piece of content&#x2014;for example,'MPAA PG-13'.
+   */
+  @JsonIgnore public String getContentRatingString() {
     return (String) getValue("contentRating");
   }
   /**
    * Official rating of a piece of content&#x2014;for example,'MPAA PG-13'.
    */
-  @JsonIgnore public Collection<String> getContentRatings() {
+  @JsonIgnore public Collection<String> getContentRatingStrings() {
     final Object current = myData.get("contentRating");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
@@ -691,16 +708,24 @@ public class CreativeWork extends Thing implements WorkFeatured {
     return Arrays.asList((MediaObject) current);
   }
   /**
-   * Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.
+   * Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)) e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.).
+   * 
+   * In cases where a [[CreativeWork]] has several media type representations, [[encoding]] can be used to indicate each [[MediaObject]] alongside particular [[encodingFormat]] information.
+   * 
+   * Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.
    */
-  @JsonIgnore public String getFileFormat() {
-    return (String) getValue("fileFormat");
+  @JsonIgnore public String getEncodingFormat() {
+    return (String) getValue("encodingFormat");
   }
   /**
-   * Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.
+   * Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)) e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.).
+   * 
+   * In cases where a [[CreativeWork]] has several media type representations, [[encoding]] can be used to indicate each [[MediaObject]] alongside particular [[encodingFormat]] information.
+   * 
+   * Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.
    */
-  @JsonIgnore public Collection<String> getFileFormats() {
-    final Object current = myData.get("fileFormat");
+  @JsonIgnore public Collection<String> getEncodingFormats() {
+    final Object current = myData.get("encodingFormat");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<String>) current;
@@ -708,13 +733,30 @@ public class CreativeWork extends Thing implements WorkFeatured {
     return Arrays.asList((String) current);
   }
   /**
-   * A flag to signal that the publication is accessible for free.
+   * Date the content expires and is no longer useful or available. For example a [[VideoObject]] or [[NewsArticle]] whose availability or relevance is time-limited, or a [[ClaimReview]] fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date.
+   */
+  @JsonIgnore public java.util.Date getExpires() {
+    return (java.util.Date) getValue("expires");
+  }
+  /**
+   * Date the content expires and is no longer useful or available. For example a [[VideoObject]] or [[NewsArticle]] whose availability or relevance is time-limited, or a [[ClaimReview]] fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date.
+   */
+  @JsonIgnore public Collection<java.util.Date> getExpiress() {
+    final Object current = myData.get("expires");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<java.util.Date>) current;
+    }
+    return Arrays.asList((java.util.Date) current);
+  }
+  /**
+   * A flag to signal that the item, event, or place is accessible for free.
    */
   @JsonIgnore public Boolean getIsAccessibleForFree() {
     return (Boolean) getValue("isAccessibleForFree");
   }
   /**
-   * A flag to signal that the publication is accessible for free.
+   * A flag to signal that the item, event, or place is accessible for free.
    */
   @JsonIgnore public Collection<Boolean> getIsAccessibleForFrees() {
     final Object current = myData.get("isAccessibleForFree");
@@ -810,13 +852,13 @@ public class CreativeWork extends Thing implements WorkFeatured {
     return Arrays.asList((String) current);
   }
   /**
-   * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
+   * A resource from which this work is derived or from which it is a modification or adaption.
    */
   @JsonIgnore public CreativeWork getIsBasedOnCreativeWork() {
     return (CreativeWork) getValue("isBasedOn");
   }
   /**
-   * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
+   * A resource from which this work is derived or from which it is a modification or adaption.
    */
   @JsonIgnore public Collection<CreativeWork> getIsBasedOnCreativeWorks() {
     final Object current = myData.get("isBasedOn");
@@ -827,13 +869,13 @@ public class CreativeWork extends Thing implements WorkFeatured {
     return Arrays.asList((CreativeWork) current);
   }
   /**
-   * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
+   * A resource from which this work is derived or from which it is a modification or adaption.
    */
   @JsonIgnore public Product getIsBasedOnProduct() {
     return (Product) getValue("isBasedOn");
   }
   /**
-   * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
+   * A resource from which this work is derived or from which it is a modification or adaption.
    */
   @JsonIgnore public Collection<Product> getIsBasedOnProducts() {
     final Object current = myData.get("isBasedOn");
@@ -844,13 +886,13 @@ public class CreativeWork extends Thing implements WorkFeatured {
     return Arrays.asList((Product) current);
   }
   /**
-   * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
+   * A resource from which this work is derived or from which it is a modification or adaption.
    */
   @JsonIgnore public String getIsBasedOnString() {
     return (String) getValue("isBasedOn");
   }
   /**
-   * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
+   * A resource from which this work is derived or from which it is a modification or adaption.
    */
   @JsonIgnore public Collection<String> getIsBasedOnStrings() {
     final Object current = myData.get("isBasedOn");
@@ -948,19 +990,19 @@ public class CreativeWork extends Thing implements WorkFeatured {
   /**
    * Indicates the primary entity described in some page or other CreativeWork.
    */
-  @JsonIgnore public Thing getMainEntity() {
-    return (Thing) getValue("mainEntity");
+  @JsonIgnore public About getMainEntity() {
+    return (About) getValue("mainEntity");
   }
   /**
    * Indicates the primary entity described in some page or other CreativeWork.
    */
-  @JsonIgnore public Collection<Thing> getMainEntitys() {
+  @JsonIgnore public Collection<About> getMainEntitys() {
     final Object current = myData.get("mainEntity");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<Thing>) current;
+      return (Collection<About>) current;
     }
-    return Arrays.asList((Thing) current);
+    return Arrays.asList((About) current);
   }
   /**
    * Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.
@@ -1082,15 +1124,44 @@ public class CreativeWork extends Thing implements WorkFeatured {
     return Arrays.asList((Person) current);
   }
   /**
-   * Link to page describing the editorial principles of the organization primarily responsible for the creation of the CreativeWork.
+   * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+   * 
+   * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+   * 
    */
-  @JsonIgnore public String getPublishingPrinciples() {
+  @JsonIgnore public CreativeWork getPublishingPrinciplesCreativeWork() {
+    return (CreativeWork) getValue("publishingPrinciples");
+  }
+  /**
+   * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+   * 
+   * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+   * 
+   */
+  @JsonIgnore public Collection<CreativeWork> getPublishingPrinciplesCreativeWorks() {
+    final Object current = myData.get("publishingPrinciples");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<CreativeWork>) current;
+    }
+    return Arrays.asList((CreativeWork) current);
+  }
+  /**
+   * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+   * 
+   * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+   * 
+   */
+  @JsonIgnore public String getPublishingPrinciplesString() {
     return (String) getValue("publishingPrinciples");
   }
   /**
-   * Link to page describing the editorial principles of the organization primarily responsible for the creation of the CreativeWork.
+   * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+   * 
+   * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+   * 
    */
-  @JsonIgnore public Collection<String> getPublishingPrincipless() {
+  @JsonIgnore public Collection<String> getPublishingPrinciplesStrings() {
     final Object current = myData.get("publishingPrinciples");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
@@ -1148,6 +1219,25 @@ public class CreativeWork extends Thing implements WorkFeatured {
       return (Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
+  }
+  /**
+   * The "spatial" property can be used in cases when more specific properties
+   * (e.g. [[locationCreated]], [[spatialCoverage]], [[contentLocation]]) are not known to be appropriate.
+   */
+  @JsonIgnore public Place getSpatial() {
+    return (Place) getValue("spatial");
+  }
+  /**
+   * The "spatial" property can be used in cases when more specific properties
+   * (e.g. [[locationCreated]], [[spatialCoverage]], [[contentLocation]]) are not known to be appropriate.
+   */
+  @JsonIgnore public Collection<Place> getSpatials() {
+    final Object current = myData.get("spatial");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Place>) current;
+    }
+    return Arrays.asList((Place) current);
   }
   /**
    * The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of
@@ -1208,6 +1298,8 @@ public class CreativeWork extends Thing implements WorkFeatured {
    * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
    *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.
    *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
+   * 
+   * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
    */
   @JsonIgnore public String getTemporalCoverageString() {
     return (String) getValue("temporalCoverage");
@@ -1216,6 +1308,8 @@ public class CreativeWork extends Thing implements WorkFeatured {
    * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
    *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.
    *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
+   * 
+   * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
    */
   @JsonIgnore public Collection<String> getTemporalCoverageStrings() {
     final Object current = myData.get("temporalCoverage");
@@ -1229,6 +1323,8 @@ public class CreativeWork extends Thing implements WorkFeatured {
    * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
    *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.
    *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
+   * 
+   * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
    */
   @JsonIgnore public java.util.Date getTemporalCoverageDate() {
     return (java.util.Date) getValue("temporalCoverage");
@@ -1237,9 +1333,49 @@ public class CreativeWork extends Thing implements WorkFeatured {
    * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
    *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.
    *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
+   * 
+   * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
    */
   @JsonIgnore public Collection<java.util.Date> getTemporalCoverageDates() {
     final Object current = myData.get("temporalCoverage");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<java.util.Date>) current;
+    }
+    return Arrays.asList((java.util.Date) current);
+  }
+  /**
+   * The "temporal" property can be used in cases where more specific properties
+   * (e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]], [[datePublished]]) are not known to be appropriate.
+   */
+  @JsonIgnore public String getTemporalString() {
+    return (String) getValue("temporal");
+  }
+  /**
+   * The "temporal" property can be used in cases where more specific properties
+   * (e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]], [[datePublished]]) are not known to be appropriate.
+   */
+  @JsonIgnore public Collection<String> getTemporalStrings() {
+    final Object current = myData.get("temporal");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * The "temporal" property can be used in cases where more specific properties
+   * (e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]], [[datePublished]]) are not known to be appropriate.
+   */
+  @JsonIgnore public java.util.Date getTemporalDate() {
+    return (java.util.Date) getValue("temporal");
+  }
+  /**
+   * The "temporal" property can be used in cases where more specific properties
+   * (e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]], [[datePublished]]) are not known to be appropriate.
+   */
+  @JsonIgnore public Collection<java.util.Date> getTemporalDates() {
+    final Object current = myData.get("temporal");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<java.util.Date>) current;
@@ -1281,13 +1417,13 @@ public class CreativeWork extends Thing implements WorkFeatured {
     return Arrays.asList((String) current);
   }
   /**
-   * Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience, e.g. 'P30M', 'P1H25M'.
+   * Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience, e.g. 'PT30M', 'PT1H25M'.
    */
   @JsonIgnore public Duration getTimeRequired() {
     return (Duration) getValue("timeRequired");
   }
   /**
-   * Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience, e.g. 'P30M', 'P1H25M'.
+   * Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience, e.g. 'PT30M', 'PT1H25M'.
    */
   @JsonIgnore public Collection<Duration> getTimeRequireds() {
     final Object current = myData.get("timeRequired");
@@ -1402,13 +1538,30 @@ public class CreativeWork extends Thing implements WorkFeatured {
   /**
    * An embedded video object.
    */
-  @JsonIgnore public VideoObject getVideo() {
+  @JsonIgnore public Clip getVideoClip() {
+    return (Clip) getValue("video");
+  }
+  /**
+   * An embedded video object.
+   */
+  @JsonIgnore public Collection<Clip> getVideoClips() {
+    final Object current = myData.get("video");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Clip>) current;
+    }
+    return Arrays.asList((Clip) current);
+  }
+  /**
+   * An embedded video object.
+   */
+  @JsonIgnore public VideoObject getVideoVideoObject() {
     return (VideoObject) getValue("video");
   }
   /**
    * An embedded video object.
    */
-  @JsonIgnore public Collection<VideoObject> getVideos() {
+  @JsonIgnore public Collection<VideoObject> getVideoVideoObjects() {
     final Object current = myData.get("video");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
@@ -1468,13 +1621,13 @@ public class CreativeWork extends Thing implements WorkFeatured {
     return Arrays.asList((Integer) current);
   }
   /**
-   * Indicates a CreativeWork that is (in some sense) a part of this CreativeWork.
+   * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
    */
   @JsonIgnore public HasPart getHasPart() {
     return (HasPart) getValue("hasPart");
   }
   /**
-   * Indicates a CreativeWork that is (in some sense) a part of this CreativeWork.
+   * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
    */
   @JsonIgnore public Collection<HasPart> getHasParts() {
     final Object current = myData.get("hasPart");
@@ -1626,20 +1779,20 @@ public class CreativeWork extends Thing implements WorkFeatured {
    * A list of single or combined accessModes that are sufficient to understand all the intellectual content of a resource. Expected values include:  auditory, tactile, textual, visual.
    *       
    */
-  @JsonIgnore public String getAccessModeSufficient() {
-    return (String) getValue("accessModeSufficient");
+  @JsonIgnore public ItemList getAccessModeSufficient() {
+    return (ItemList) getValue("accessModeSufficient");
   }
   /**
    * A list of single or combined accessModes that are sufficient to understand all the intellectual content of a resource. Expected values include:  auditory, tactile, textual, visual.
    *       
    */
-  @JsonIgnore public Collection<String> getAccessModeSufficients() {
+  @JsonIgnore public Collection<ItemList> getAccessModeSufficients() {
     final Object current = myData.get("accessModeSufficient");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<String>) current;
+      return (Collection<ItemList>) current;
     }
-    return Arrays.asList((String) current);
+    return Arrays.asList((ItemList) current);
   }
   /**
    * A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as "short descriptions are present but long descriptions will be needed for non-visual users" or "short descriptions are present and no long descriptions are needed."
@@ -1677,20 +1830,6 @@ public class CreativeWork extends Thing implements WorkFeatured {
      */
     @NotNull public Builder schemaVersion(@NotNull String schemaVersion) {
       putValue("schemaVersion", schemaVersion);
-      return this;
-    }
-    /**
-     * The subject matter of the content.
-     */
-    @NotNull public Builder about(@NotNull Thing thing) {
-      putValue("about", thing);
-      return this;
-    }
-    /**
-     * The subject matter of the content.
-     */
-    @NotNull public Builder about(@NotNull Thing.Builder thing) {
-      putValue("about", thing.build());
       return this;
     }
     /**
@@ -1799,6 +1938,20 @@ public class CreativeWork extends Thing implements WorkFeatured {
       return this;
     }
     /**
+     * An embedded audio object.
+     */
+    @NotNull public Builder audio(@NotNull Clip clip) {
+      putValue("audio", clip);
+      return this;
+    }
+    /**
+     * An embedded audio object.
+     */
+    @NotNull public Builder audio(@NotNull Clip.Builder clip) {
+      putValue("audio", clip.build());
+      return this;
+    }
+    /**
      * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
      */
     @NotNull public Builder author(@NotNull Organization organization) {
@@ -1880,6 +2033,20 @@ public class CreativeWork extends Thing implements WorkFeatured {
      */
     @NotNull public Builder locationCreated(@NotNull Place.Builder place) {
       putValue("locationCreated", place.build());
+      return this;
+    }
+    /**
+     * Official rating of a piece of content&#x2014;for example,'MPAA PG-13'.
+     */
+    @NotNull public Builder contentRating(@NotNull Rating rating) {
+      putValue("contentRating", rating);
+      return this;
+    }
+    /**
+     * Official rating of a piece of content&#x2014;for example,'MPAA PG-13'.
+     */
+    @NotNull public Builder contentRating(@NotNull Rating.Builder rating) {
+      putValue("contentRating", rating.build());
       return this;
     }
     /**
@@ -2086,14 +2253,25 @@ public class CreativeWork extends Thing implements WorkFeatured {
       return this;
     }
     /**
-     * Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.
+     * Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)) e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.).
+     * 
+     * In cases where a [[CreativeWork]] has several media type representations, [[encoding]] can be used to indicate each [[MediaObject]] alongside particular [[encodingFormat]] information.
+     * 
+     * Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.
      */
-    @NotNull public Builder fileFormat(@NotNull String fileFormat) {
-      putValue("fileFormat", fileFormat);
+    @NotNull public Builder encodingFormat(@NotNull String encodingFormat) {
+      putValue("encodingFormat", encodingFormat);
       return this;
     }
     /**
-     * A flag to signal that the publication is accessible for free.
+     * Date the content expires and is no longer useful or available. For example a [[VideoObject]] or [[NewsArticle]] whose availability or relevance is time-limited, or a [[ClaimReview]] fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date.
+     */
+    @NotNull public Builder expires(@NotNull java.util.Date date) {
+      putValue("expires", date);
+      return this;
+    }
+    /**
+     * A flag to signal that the item, event, or place is accessible for free.
      */
     @NotNull public Builder isAccessibleForFree(@NotNull Boolean isAccessibleForFree) {
       putValue("isAccessibleForFree", isAccessibleForFree);
@@ -2142,35 +2320,35 @@ public class CreativeWork extends Thing implements WorkFeatured {
       return this;
     }
     /**
-     * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
+     * A resource from which this work is derived or from which it is a modification or adaption.
      */
     @NotNull public Builder isBasedOn(@NotNull CreativeWork creativeWork) {
       putValue("isBasedOn", creativeWork);
       return this;
     }
     /**
-     * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
+     * A resource from which this work is derived or from which it is a modification or adaption.
      */
     @NotNull public Builder isBasedOn(@NotNull CreativeWork.Builder creativeWork) {
       putValue("isBasedOn", creativeWork.build());
       return this;
     }
     /**
-     * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
+     * A resource from which this work is derived or from which it is a modification or adaption.
      */
     @NotNull public Builder isBasedOn(@NotNull Product product) {
       putValue("isBasedOn", product);
       return this;
     }
     /**
-     * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
+     * A resource from which this work is derived or from which it is a modification or adaption.
      */
     @NotNull public Builder isBasedOn(@NotNull Product.Builder product) {
       putValue("isBasedOn", product.build());
       return this;
     }
     /**
-     * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
+     * A resource from which this work is derived or from which it is a modification or adaption.
      */
     @NotNull public Builder isBasedOn(@NotNull String isBasedOn) {
       putValue("isBasedOn", isBasedOn);
@@ -2221,15 +2399,8 @@ public class CreativeWork extends Thing implements WorkFeatured {
     /**
      * Indicates the primary entity described in some page or other CreativeWork.
      */
-    @NotNull public Builder mainEntity(@NotNull Thing thing) {
-      putValue("mainEntity", thing);
-      return this;
-    }
-    /**
-     * Indicates the primary entity described in some page or other CreativeWork.
-     */
-    @NotNull public Builder mainEntity(@NotNull Thing.Builder thing) {
-      putValue("mainEntity", thing.build());
+    @NotNull public Builder mainEntity(@NotNull About about) {
+      putValue("mainEntity", about);
       return this;
     }
     /**
@@ -2331,7 +2502,30 @@ public class CreativeWork extends Thing implements WorkFeatured {
       return this;
     }
     /**
-     * Link to page describing the editorial principles of the organization primarily responsible for the creation of the CreativeWork.
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+     * 
+     */
+    @NotNull public Builder publishingPrinciples(@NotNull CreativeWork creativeWork) {
+      putValue("publishingPrinciples", creativeWork);
+      return this;
+    }
+    /**
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+     * 
+     */
+    @NotNull public Builder publishingPrinciples(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("publishingPrinciples", creativeWork.build());
+      return this;
+    }
+    /**
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+     * 
      */
     @NotNull public Builder publishingPrinciples(@NotNull String publishingPrinciples) {
       putValue("publishingPrinciples", publishingPrinciples);
@@ -2377,6 +2571,22 @@ public class CreativeWork extends Thing implements WorkFeatured {
      */
     @NotNull public Builder sourceOrganization(@NotNull Organization.Builder organization) {
       putValue("sourceOrganization", organization.build());
+      return this;
+    }
+    /**
+     * The "spatial" property can be used in cases when more specific properties
+     * (e.g. [[locationCreated]], [[spatialCoverage]], [[contentLocation]]) are not known to be appropriate.
+     */
+    @NotNull public Builder spatial(@NotNull Place place) {
+      putValue("spatial", place);
+      return this;
+    }
+    /**
+     * The "spatial" property can be used in cases when more specific properties
+     * (e.g. [[locationCreated]], [[spatialCoverage]], [[contentLocation]]) are not known to be appropriate.
+     */
+    @NotNull public Builder spatial(@NotNull Place.Builder place) {
+      putValue("spatial", place.build());
       return this;
     }
     /**
@@ -2429,6 +2639,8 @@ public class CreativeWork extends Thing implements WorkFeatured {
      * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
      *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.
      *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
+     * 
+     * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
      */
     @NotNull public Builder temporalCoverage(@NotNull String temporalCoverage) {
       putValue("temporalCoverage", temporalCoverage);
@@ -2438,9 +2650,27 @@ public class CreativeWork extends Thing implements WorkFeatured {
      * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
      *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.
      *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
+     * 
+     * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
      */
     @NotNull public Builder temporalCoverage(@NotNull java.util.Date date) {
       putValue("temporalCoverage", date);
+      return this;
+    }
+    /**
+     * The "temporal" property can be used in cases where more specific properties
+     * (e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]], [[datePublished]]) are not known to be appropriate.
+     */
+    @NotNull public Builder temporal(@NotNull String temporal) {
+      putValue("temporal", temporal);
+      return this;
+    }
+    /**
+     * The "temporal" property can be used in cases where more specific properties
+     * (e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]], [[datePublished]]) are not known to be appropriate.
+     */
+    @NotNull public Builder temporal(@NotNull java.util.Date date) {
+      putValue("temporal", date);
       return this;
     }
     /**
@@ -2458,7 +2688,7 @@ public class CreativeWork extends Thing implements WorkFeatured {
       return this;
     }
     /**
-     * Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience, e.g. 'P30M', 'P1H25M'.
+     * Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience, e.g. 'PT30M', 'PT1H25M'.
      */
     @NotNull public Builder timeRequired(@NotNull Duration duration) {
       putValue("timeRequired", duration);
@@ -2504,6 +2734,20 @@ public class CreativeWork extends Thing implements WorkFeatured {
      */
     @NotNull public Builder version(@NotNull String version) {
       putValue("version", version);
+      return this;
+    }
+    /**
+     * An embedded video object.
+     */
+    @NotNull public Builder video(@NotNull Clip clip) {
+      putValue("video", clip);
+      return this;
+    }
+    /**
+     * An embedded video object.
+     */
+    @NotNull public Builder video(@NotNull Clip.Builder clip) {
+      putValue("video", clip.build());
       return this;
     }
     /**
@@ -2556,7 +2800,7 @@ public class CreativeWork extends Thing implements WorkFeatured {
       return this;
     }
     /**
-     * Indicates a CreativeWork that is (in some sense) a part of this CreativeWork.
+     * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
      */
     @NotNull public Builder hasPart(@NotNull HasPart hasPart) {
       putValue("hasPart", hasPart);
@@ -2672,8 +2916,16 @@ public class CreativeWork extends Thing implements WorkFeatured {
      * A list of single or combined accessModes that are sufficient to understand all the intellectual content of a resource. Expected values include:  auditory, tactile, textual, visual.
      *       
      */
-    @NotNull public Builder accessModeSufficient(@NotNull String accessModeSufficient) {
-      putValue("accessModeSufficient", accessModeSufficient);
+    @NotNull public Builder accessModeSufficient(@NotNull ItemList itemList) {
+      putValue("accessModeSufficient", itemList);
+      return this;
+    }
+    /**
+     * A list of single or combined accessModes that are sufficient to understand all the intellectual content of a resource. Expected values include:  auditory, tactile, textual, visual.
+     *       
+     */
+    @NotNull public Builder accessModeSufficient(@NotNull ItemList.Builder itemList) {
+      putValue("accessModeSufficient", itemList.build());
       return this;
     }
     /**
@@ -2760,6 +3012,34 @@ public class CreativeWork extends Thing implements WorkFeatured {
       putValue("potentialAction", action.build());
       return this;
     }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork creativeWork) {
+      putValue("subjectOf", creativeWork);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("subjectOf", creativeWork.build());
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event event) {
+      putValue("subjectOf", event);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event.Builder event) {
+      putValue("subjectOf", event.build());
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -2770,8 +3050,6 @@ public class CreativeWork extends Thing implements WorkFeatured {
     @Override protected void fromMap(String key, Object value) {
       if ("schemaVersion".equals(key) && value instanceof String) { schemaVersion((String)value); return; }
       if ("schemaVersions".equals(key) && value instanceof String) { schemaVersion((String)value); return; }
-      if ("about".equals(key) && value instanceof Thing) { about((Thing)value); return; }
-      if ("abouts".equals(key) && value instanceof Thing) { about((Thing)value); return; }
       if ("accessibilityAPI".equals(key) && value instanceof String) { accessibilityAPI((String)value); return; }
       if ("accessibilityAPIs".equals(key) && value instanceof String) { accessibilityAPI((String)value); return; }
       if ("accessibilityControl".equals(key) && value instanceof String) { accessibilityControl((String)value); return; }
@@ -2792,6 +3070,8 @@ public class CreativeWork extends Thing implements WorkFeatured {
       if ("audiences".equals(key) && value instanceof Audience) { audience((Audience)value); return; }
       if ("audio".equals(key) && value instanceof AudioObject) { audio((AudioObject)value); return; }
       if ("audios".equals(key) && value instanceof AudioObject) { audio((AudioObject)value); return; }
+      if ("audio".equals(key) && value instanceof Clip) { audio((Clip)value); return; }
+      if ("audios".equals(key) && value instanceof Clip) { audio((Clip)value); return; }
       if ("author".equals(key) && value instanceof Organization) { author((Organization)value); return; }
       if ("authors".equals(key) && value instanceof Organization) { author((Organization)value); return; }
       if ("author".equals(key) && value instanceof Person) { author((Person)value); return; }
@@ -2806,6 +3086,8 @@ public class CreativeWork extends Thing implements WorkFeatured {
       if ("comments".equals(key) && value instanceof Comment) { comment((Comment)value); return; }
       if ("locationCreated".equals(key) && value instanceof Place) { locationCreated((Place)value); return; }
       if ("locationCreateds".equals(key) && value instanceof Place) { locationCreated((Place)value); return; }
+      if ("contentRating".equals(key) && value instanceof Rating) { contentRating((Rating)value); return; }
+      if ("contentRatings".equals(key) && value instanceof Rating) { contentRating((Rating)value); return; }
       if ("contentRating".equals(key) && value instanceof String) { contentRating((String)value); return; }
       if ("contentRatings".equals(key) && value instanceof String) { contentRating((String)value); return; }
       if ("contributor".equals(key) && value instanceof Organization) { contributor((Organization)value); return; }
@@ -2846,8 +3128,10 @@ public class CreativeWork extends Thing implements WorkFeatured {
       if ("educationalUses".equals(key) && value instanceof String) { educationalUse((String)value); return; }
       if ("encoding".equals(key) && value instanceof MediaObject) { encoding((MediaObject)value); return; }
       if ("encodings".equals(key) && value instanceof MediaObject) { encoding((MediaObject)value); return; }
-      if ("fileFormat".equals(key) && value instanceof String) { fileFormat((String)value); return; }
-      if ("fileFormats".equals(key) && value instanceof String) { fileFormat((String)value); return; }
+      if ("encodingFormat".equals(key) && value instanceof String) { encodingFormat((String)value); return; }
+      if ("encodingFormats".equals(key) && value instanceof String) { encodingFormat((String)value); return; }
+      if ("expires".equals(key) && value instanceof java.util.Date) { expires((java.util.Date)value); return; }
+      if ("expiress".equals(key) && value instanceof java.util.Date) { expires((java.util.Date)value); return; }
       if ("isAccessibleForFree".equals(key) && value instanceof Boolean) { isAccessibleForFree((Boolean)value); return; }
       if ("isAccessibleForFrees".equals(key) && value instanceof Boolean) { isAccessibleForFree((Boolean)value); return; }
       if ("genre".equals(key) && value instanceof String) { genre((String)value); return; }
@@ -2876,8 +3160,8 @@ public class CreativeWork extends Thing implements WorkFeatured {
       if ("licenses".equals(key) && value instanceof String) { license((String)value); return; }
       if ("learningResourceType".equals(key) && value instanceof String) { learningResourceType((String)value); return; }
       if ("learningResourceTypes".equals(key) && value instanceof String) { learningResourceType((String)value); return; }
-      if ("mainEntity".equals(key) && value instanceof Thing) { mainEntity((Thing)value); return; }
-      if ("mainEntitys".equals(key) && value instanceof Thing) { mainEntity((Thing)value); return; }
+      if ("mainEntity".equals(key) && value instanceof About) { mainEntity((About)value); return; }
+      if ("mainEntitys".equals(key) && value instanceof About) { mainEntity((About)value); return; }
       if ("mentions".equals(key) && value instanceof Thing) { mentions((Thing)value); return; }
       if ("mentionss".equals(key) && value instanceof Thing) { mentions((Thing)value); return; }
       if ("offers".equals(key) && value instanceof Offer) { offers((Offer)value); return; }
@@ -2892,6 +3176,8 @@ public class CreativeWork extends Thing implements WorkFeatured {
       if ("publishers".equals(key) && value instanceof Organization) { publisher((Organization)value); return; }
       if ("publisher".equals(key) && value instanceof Person) { publisher((Person)value); return; }
       if ("publishers".equals(key) && value instanceof Person) { publisher((Person)value); return; }
+      if ("publishingPrinciples".equals(key) && value instanceof CreativeWork) { publishingPrinciples((CreativeWork)value); return; }
+      if ("publishingPrincipless".equals(key) && value instanceof CreativeWork) { publishingPrinciples((CreativeWork)value); return; }
       if ("publishingPrinciples".equals(key) && value instanceof String) { publishingPrinciples((String)value); return; }
       if ("publishingPrincipless".equals(key) && value instanceof String) { publishingPrinciples((String)value); return; }
       if ("recordedAt".equals(key) && value instanceof Event) { recordedAt((Event)value); return; }
@@ -2900,6 +3186,8 @@ public class CreativeWork extends Thing implements WorkFeatured {
       if ("reviews".equals(key) && value instanceof Review) { review((Review)value); return; }
       if ("sourceOrganization".equals(key) && value instanceof Organization) { sourceOrganization((Organization)value); return; }
       if ("sourceOrganizations".equals(key) && value instanceof Organization) { sourceOrganization((Organization)value); return; }
+      if ("spatial".equals(key) && value instanceof Place) { spatial((Place)value); return; }
+      if ("spatials".equals(key) && value instanceof Place) { spatial((Place)value); return; }
       if ("spatialCoverage".equals(key) && value instanceof Place) { spatialCoverage((Place)value); return; }
       if ("spatialCoverages".equals(key) && value instanceof Place) { spatialCoverage((Place)value); return; }
       if ("funder".equals(key) && value instanceof Organization) { funder((Organization)value); return; }
@@ -2910,6 +3198,10 @@ public class CreativeWork extends Thing implements WorkFeatured {
       if ("temporalCoverages".equals(key) && value instanceof String) { temporalCoverage((String)value); return; }
       if ("temporalCoverage".equals(key) && value instanceof java.util.Date) { temporalCoverage((java.util.Date)value); return; }
       if ("temporalCoverages".equals(key) && value instanceof java.util.Date) { temporalCoverage((java.util.Date)value); return; }
+      if ("temporal".equals(key) && value instanceof String) { temporal((String)value); return; }
+      if ("temporals".equals(key) && value instanceof String) { temporal((String)value); return; }
+      if ("temporal".equals(key) && value instanceof java.util.Date) { temporal((java.util.Date)value); return; }
+      if ("temporals".equals(key) && value instanceof java.util.Date) { temporal((java.util.Date)value); return; }
       if ("text".equals(key) && value instanceof String) { text((String)value); return; }
       if ("texts".equals(key) && value instanceof String) { text((String)value); return; }
       if ("thumbnailUrl".equals(key) && value instanceof String) { thumbnailUrl((String)value); return; }
@@ -2928,6 +3220,8 @@ public class CreativeWork extends Thing implements WorkFeatured {
       if ("versions".equals(key) && value instanceof Double) { version((Double)value); return; }
       if ("version".equals(key) && value instanceof String) { version((String)value); return; }
       if ("versions".equals(key) && value instanceof String) { version((String)value); return; }
+      if ("video".equals(key) && value instanceof Clip) { video((Clip)value); return; }
+      if ("videos".equals(key) && value instanceof Clip) { video((Clip)value); return; }
       if ("video".equals(key) && value instanceof VideoObject) { video((VideoObject)value); return; }
       if ("videos".equals(key) && value instanceof VideoObject) { video((VideoObject)value); return; }
       if ("provider".equals(key) && value instanceof Organization) { provider((Organization)value); return; }
@@ -2954,8 +3248,8 @@ public class CreativeWork extends Thing implements WorkFeatured {
       if ("interactionStatistics".equals(key) && value instanceof InteractionCounter) { interactionStatistic((InteractionCounter)value); return; }
       if ("accessMode".equals(key) && value instanceof String) { accessMode((String)value); return; }
       if ("accessModes".equals(key) && value instanceof String) { accessMode((String)value); return; }
-      if ("accessModeSufficient".equals(key) && value instanceof String) { accessModeSufficient((String)value); return; }
-      if ("accessModeSufficients".equals(key) && value instanceof String) { accessModeSufficient((String)value); return; }
+      if ("accessModeSufficient".equals(key) && value instanceof ItemList) { accessModeSufficient((ItemList)value); return; }
+      if ("accessModeSufficients".equals(key) && value instanceof ItemList) { accessModeSufficient((ItemList)value); return; }
       if ("accessibilitySummary".equals(key) && value instanceof String) { accessibilitySummary((String)value); return; }
       if ("accessibilitySummarys".equals(key) && value instanceof String) { accessibilitySummary((String)value); return; }
       super.fromMap(key, value);

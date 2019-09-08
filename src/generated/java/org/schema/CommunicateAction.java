@@ -28,23 +28,6 @@ import java.util.*;
  */
 public class CommunicateAction extends InteractAction {
   /**
-   * The subject matter of the content.
-   */
-  @JsonIgnore public Thing getAbout() {
-    return (Thing) getValue("about");
-  }
-  /**
-   * The subject matter of the content.
-   */
-  @JsonIgnore public Collection<Thing> getAbouts() {
-    final Object current = myData.get("about");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Thing>) current;
-    }
-    return Arrays.asList((Thing) current);
-  }
-  /**
    * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
    */
   @JsonIgnore public Language getInLanguageLanguage() {
@@ -78,57 +61,6 @@ public class CommunicateAction extends InteractAction {
     }
     return Arrays.asList((String) current);
   }
-  /**
-   * A sub property of participant. The participant who is at the receiving end of the action.
-   */
-  @JsonIgnore public Audience getRecipientAudience() {
-    return (Audience) getValue("recipient");
-  }
-  /**
-   * A sub property of participant. The participant who is at the receiving end of the action.
-   */
-  @JsonIgnore public Collection<Audience> getRecipientAudiences() {
-    final Object current = myData.get("recipient");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Audience>) current;
-    }
-    return Arrays.asList((Audience) current);
-  }
-  /**
-   * A sub property of participant. The participant who is at the receiving end of the action.
-   */
-  @JsonIgnore public Organization getRecipientOrganization() {
-    return (Organization) getValue("recipient");
-  }
-  /**
-   * A sub property of participant. The participant who is at the receiving end of the action.
-   */
-  @JsonIgnore public Collection<Organization> getRecipientOrganizations() {
-    final Object current = myData.get("recipient");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
-    }
-    return Arrays.asList((Organization) current);
-  }
-  /**
-   * A sub property of participant. The participant who is at the receiving end of the action.
-   */
-  @JsonIgnore public Person getRecipientPerson() {
-    return (Person) getValue("recipient");
-  }
-  /**
-   * A sub property of participant. The participant who is at the receiving end of the action.
-   */
-  @JsonIgnore public Collection<Person> getRecipientPersons() {
-    final Object current = myData.get("recipient");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
-    }
-    return Arrays.asList((Person) current);
-  }
   protected CommunicateAction(java.util.Map<String,Object> data) {
     super(data);
   }
@@ -142,20 +74,6 @@ public class CommunicateAction extends InteractAction {
     }
     @NotNull public CommunicateAction build() {
       return new CommunicateAction(myData);
-    }
-    /**
-     * The subject matter of the content.
-     */
-    @NotNull public Builder about(@NotNull Thing thing) {
-      putValue("about", thing);
-      return this;
-    }
-    /**
-     * The subject matter of the content.
-     */
-    @NotNull public Builder about(@NotNull Thing.Builder thing) {
-      putValue("about", thing.build());
-      return this;
     }
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
@@ -176,48 +94,6 @@ public class CommunicateAction extends InteractAction {
      */
     @NotNull public Builder inLanguage(@NotNull String inLanguage) {
       putValue("inLanguage", inLanguage);
-      return this;
-    }
-    /**
-     * A sub property of participant. The participant who is at the receiving end of the action.
-     */
-    @NotNull public Builder recipient(@NotNull Audience audience) {
-      putValue("recipient", audience);
-      return this;
-    }
-    /**
-     * A sub property of participant. The participant who is at the receiving end of the action.
-     */
-    @NotNull public Builder recipient(@NotNull Audience.Builder audience) {
-      putValue("recipient", audience.build());
-      return this;
-    }
-    /**
-     * A sub property of participant. The participant who is at the receiving end of the action.
-     */
-    @NotNull public Builder recipient(@NotNull Organization organization) {
-      putValue("recipient", organization);
-      return this;
-    }
-    /**
-     * A sub property of participant. The participant who is at the receiving end of the action.
-     */
-    @NotNull public Builder recipient(@NotNull Organization.Builder organization) {
-      putValue("recipient", organization.build());
-      return this;
-    }
-    /**
-     * A sub property of participant. The participant who is at the receiving end of the action.
-     */
-    @NotNull public Builder recipient(@NotNull Person person) {
-      putValue("recipient", person);
-      return this;
-    }
-    /**
-     * A sub property of participant. The participant who is at the receiving end of the action.
-     */
-    @NotNull public Builder recipient(@NotNull Person.Builder person) {
-      putValue("recipient", person.build());
       return this;
     }
     /**
@@ -249,14 +125,14 @@ public class CommunicateAction extends InteractAction {
       return this;
     }
     /**
-     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      */
     @NotNull public Builder endTime(@NotNull java.util.Date date) {
       putValue("endTime", date);
       return this;
     }
     /**
-     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      */
     @NotNull public Builder startTime(@NotNull java.util.Date date) {
       putValue("startTime", date);
@@ -374,6 +250,34 @@ public class CommunicateAction extends InteractAction {
       putValue("potentialAction", action.build());
       return this;
     }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork creativeWork) {
+      putValue("subjectOf", creativeWork);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("subjectOf", creativeWork.build());
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event event) {
+      putValue("subjectOf", event);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event.Builder event) {
+      putValue("subjectOf", event.build());
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -382,18 +286,10 @@ public class CommunicateAction extends InteractAction {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("about".equals(key) && value instanceof Thing) { about((Thing)value); return; }
-      if ("abouts".equals(key) && value instanceof Thing) { about((Thing)value); return; }
       if ("inLanguage".equals(key) && value instanceof Language) { inLanguage((Language)value); return; }
       if ("inLanguages".equals(key) && value instanceof Language) { inLanguage((Language)value); return; }
       if ("inLanguage".equals(key) && value instanceof String) { inLanguage((String)value); return; }
       if ("inLanguages".equals(key) && value instanceof String) { inLanguage((String)value); return; }
-      if ("recipient".equals(key) && value instanceof Audience) { recipient((Audience)value); return; }
-      if ("recipients".equals(key) && value instanceof Audience) { recipient((Audience)value); return; }
-      if ("recipient".equals(key) && value instanceof Organization) { recipient((Organization)value); return; }
-      if ("recipients".equals(key) && value instanceof Organization) { recipient((Organization)value); return; }
-      if ("recipient".equals(key) && value instanceof Person) { recipient((Person)value); return; }
-      if ("recipients".equals(key) && value instanceof Person) { recipient((Person)value); return; }
       super.fromMap(key, value);
     }
   }

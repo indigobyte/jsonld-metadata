@@ -26,7 +26,7 @@ import java.util.*;
 /**
  * An airline flight.
  */
-public class Flight extends Intangible {
+public class Flight extends Trip {
   /**
    * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
    */
@@ -45,40 +45,6 @@ public class Flight extends Intangible {
     return Arrays.asList((Participant) current);
   }
   /**
-   * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-   */
-  @JsonIgnore public Organization getProviderOrganization() {
-    return (Organization) getValue("provider");
-  }
-  /**
-   * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-   */
-  @JsonIgnore public Collection<Organization> getProviderOrganizations() {
-    final Object current = myData.get("provider");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
-    }
-    return Arrays.asList((Organization) current);
-  }
-  /**
-   * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-   */
-  @JsonIgnore public Person getProviderPerson() {
-    return (Person) getValue("provider");
-  }
-  /**
-   * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-   */
-  @JsonIgnore public Collection<Person> getProviderPersons() {
-    final Object current = myData.get("provider");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
-    }
-    return Arrays.asList((Person) current);
-  }
-  /**
    * The unique identifier for a flight including the airline IATA code. For example, if describing United flight 110, where the IATA code for United is 'UA', the flightNumber is 'UA110'.
    */
   @JsonIgnore public Identifier getFlightNumber() {
@@ -94,40 +60,6 @@ public class Flight extends Intangible {
       return (Collection<Identifier>) current;
     }
     return Arrays.asList((Identifier) current);
-  }
-  /**
-   * The expected departure time.
-   */
-  @JsonIgnore public java.util.Date getDepartureTime() {
-    return (java.util.Date) getValue("departureTime");
-  }
-  /**
-   * The expected departure time.
-   */
-  @JsonIgnore public Collection<java.util.Date> getDepartureTimes() {
-    final Object current = myData.get("departureTime");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
-    }
-    return Arrays.asList((java.util.Date) current);
-  }
-  /**
-   * The expected arrival time.
-   */
-  @JsonIgnore public java.util.Date getArrivalTime() {
-    return (java.util.Date) getValue("arrivalTime");
-  }
-  /**
-   * The expected arrival time.
-   */
-  @JsonIgnore public Collection<java.util.Date> getArrivalTimes() {
-    final Object current = myData.get("arrivalTime");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
-    }
-    return Arrays.asList((java.util.Date) current);
   }
   /**
    * The airport where the flight originates.
@@ -391,7 +323,7 @@ public class Flight extends Intangible {
   /**
    * Builder for {@link Flight}
    */
-  public static class Builder extends Intangible.Builder {
+  public static class Builder extends Trip.Builder {
     public Builder(@NotNull HashMap<String,Object> data) {
       super(data);
     }
@@ -406,52 +338,10 @@ public class Flight extends Intangible {
       return this;
     }
     /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     */
-    @NotNull public Builder provider(@NotNull Organization organization) {
-      putValue("provider", organization);
-      return this;
-    }
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     */
-    @NotNull public Builder provider(@NotNull Organization.Builder organization) {
-      putValue("provider", organization.build());
-      return this;
-    }
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     */
-    @NotNull public Builder provider(@NotNull Person person) {
-      putValue("provider", person);
-      return this;
-    }
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     */
-    @NotNull public Builder provider(@NotNull Person.Builder person) {
-      putValue("provider", person.build());
-      return this;
-    }
-    /**
      * The unique identifier for a flight including the airline IATA code. For example, if describing United flight 110, where the IATA code for United is 'UA', the flightNumber is 'UA110'.
      */
     @NotNull public Builder flightNumber(@NotNull Identifier identifier) {
       putValue("flightNumber", identifier);
-      return this;
-    }
-    /**
-     * The expected departure time.
-     */
-    @NotNull public Builder departureTime(@NotNull java.util.Date date) {
-      putValue("departureTime", date);
-      return this;
-    }
-    /**
-     * The expected arrival time.
-     */
-    @NotNull public Builder arrivalTime(@NotNull java.util.Date date) {
-      putValue("arrivalTime", date);
       return this;
     }
     /**
@@ -588,6 +478,48 @@ public class Flight extends Intangible {
       return this;
     }
     /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     */
+    @NotNull public Builder provider(@NotNull Organization organization) {
+      putValue("provider", organization);
+      return this;
+    }
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     */
+    @NotNull public Builder provider(@NotNull Organization.Builder organization) {
+      putValue("provider", organization.build());
+      return this;
+    }
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     */
+    @NotNull public Builder provider(@NotNull Person person) {
+      putValue("provider", person);
+      return this;
+    }
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     */
+    @NotNull public Builder provider(@NotNull Person.Builder person) {
+      putValue("provider", person.build());
+      return this;
+    }
+    /**
+     * The expected departure time.
+     */
+    @NotNull public Builder departureTime(@NotNull java.util.Date date) {
+      putValue("departureTime", date);
+      return this;
+    }
+    /**
+     * The expected arrival time.
+     */
+    @NotNull public Builder arrivalTime(@NotNull java.util.Date date) {
+      putValue("arrivalTime", date);
+      return this;
+    }
+    /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      */
     @NotNull public Builder additionalType(@NotNull String additionalType) {
@@ -664,6 +596,34 @@ public class Flight extends Intangible {
       putValue("potentialAction", action.build());
       return this;
     }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork creativeWork) {
+      putValue("subjectOf", creativeWork);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("subjectOf", creativeWork.build());
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event event) {
+      putValue("subjectOf", event);
+      return this;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     */
+    @NotNull public Builder subjectOf(@NotNull Event.Builder event) {
+      putValue("subjectOf", event.build());
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -674,16 +634,8 @@ public class Flight extends Intangible {
     @Override protected void fromMap(String key, Object value) {
       if ("seller".equals(key) && value instanceof Participant) { seller((Participant)value); return; }
       if ("sellers".equals(key) && value instanceof Participant) { seller((Participant)value); return; }
-      if ("provider".equals(key) && value instanceof Organization) { provider((Organization)value); return; }
-      if ("providers".equals(key) && value instanceof Organization) { provider((Organization)value); return; }
-      if ("provider".equals(key) && value instanceof Person) { provider((Person)value); return; }
-      if ("providers".equals(key) && value instanceof Person) { provider((Person)value); return; }
       if ("flightNumber".equals(key) && value instanceof Identifier) { flightNumber((Identifier)value); return; }
       if ("flightNumbers".equals(key) && value instanceof Identifier) { flightNumber((Identifier)value); return; }
-      if ("departureTime".equals(key) && value instanceof java.util.Date) { departureTime((java.util.Date)value); return; }
-      if ("departureTimes".equals(key) && value instanceof java.util.Date) { departureTime((java.util.Date)value); return; }
-      if ("arrivalTime".equals(key) && value instanceof java.util.Date) { arrivalTime((java.util.Date)value); return; }
-      if ("arrivalTimes".equals(key) && value instanceof java.util.Date) { arrivalTime((java.util.Date)value); return; }
       if ("departureAirport".equals(key) && value instanceof Airport) { departureAirport((Airport)value); return; }
       if ("departureAirports".equals(key) && value instanceof Airport) { departureAirport((Airport)value); return; }
       if ("arrivalAirport".equals(key) && value instanceof Airport) { arrivalAirport((Airport)value); return; }
