@@ -46,9 +46,9 @@ class ThingDeserializer extends JsonDeserializer<Thing> {
 
     @Nullable
     static Thing fromMap(Map<String, Object> result) {
-        if (!"http://schema.org/".equals(result.get("@context"))) {
-            return null;
-        }
+//        if (!"http://schema.org/".equals(result.get("@context"))) {
+//            return null;
+//        }
 
         final Object type = result.get("@type");
         if (type == null || !(type instanceof String)) {

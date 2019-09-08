@@ -50,13 +50,13 @@ fun main(args: Array<String>) {
     val sink = GeneratorSink()
     val processor = StreamProcessor(RdfaParser.connect(sink))
 
-    File("generator/resources").listFiles { f -> f.extension == "rdfa" }?.forEach {
+    File("resources").listFiles { f -> f.extension == "rdfa" }?.forEach {
         println("Processing ${it.name}")
         processor.process(FileInputStream(it), "http://schema.org/")
     }
     sink.postProcess()
 
-    sources("src/main/java") {
+    sources("../src/generated/java") {
         pakage(NAMESPACE) {
             println("Generating Java classes")
             ClassesGenerator(sink, BANNER).generate(this)
@@ -66,7 +66,7 @@ fun main(args: Array<String>) {
         }
     }
 
-    sources("kotlin/src/main/kotlin") {
+    sources("../kotlin/src/generated/kotlin") {
         pakage(NAMESPACE_KOTLIN) {
             println("Generating Kotlin classes")
             KotlinClassesGenerator(sink, BANNER).generate(this)

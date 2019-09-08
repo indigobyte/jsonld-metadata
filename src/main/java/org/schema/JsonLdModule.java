@@ -32,6 +32,7 @@ public class JsonLdModule extends SimpleModule {
     public JsonLdModule() {
         super("JsonLD Module", new Version(1, 0, 0, null, null, null));
         addDeserializer(Thing.class, new ThingDeserializer());
+        addDeserializer(Graph.class, new GraphDeserializer());
         addSerializer(Date.class, new DateSerializer());
     }
     private static class DateSerializer extends JsonSerializer<Date> {

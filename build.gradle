@@ -2,13 +2,13 @@ plugins {
     id 'java-library'
     id 'maven'
     id 'maven-publish'
-    id 'com.github.kropp.teamcity-gitversion' version '0.1.8'
-    id 'com.jfrog.bintray' version '1.7.3'
+//    id 'com.github.kropp.teamcity-gitversion' version '0.1.8'
+//    id 'com.jfrog.bintray' version '1.7.3'
 }
 
 group 'com.github.kropp'
 
-sourceCompatibility = 1.6
+sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
@@ -18,36 +18,41 @@ sourceSets {
     main {
         java {
             srcDir "src/main/java"
+            srcDir "src/generated/java"
         }
     }
     test {
         java {
-            srcDir "test/main/java"
+            srcDir "src/test/java"
+        }
+        resources {
+            srcDir "src/test/resources"
         }
     }
 }
+
 
 jar {}
 
-if (System.getenv('BINTRAY_USER')) {
-    bintray {
-        user = System.getenv('BINTRAY_USER')
-        key = System.getenv('BINTRAY_KEY')
-        pkg {
-            repo = 'org.schema'
-            name = 'jsonld-metadata'
-            userOrg = 'kropp'
-            licenses = ['Apache-2.0']
-            vcsUrl = 'git@github.com:kropp/jsonld-metadata.git'
-            version {
-                name = project.version
-                desc = 'JSON-LD Metadata ' + project.version
-                vcsTag = project.version
-            }
-        }
-        publications = ['JsonLdMetadataPublication']
-    }
-}
+//if (System.getenv('BINTRAY_USER')) {
+//    bintray {
+//        user = System.getenv('BINTRAY_USER')
+//        key = System.getenv('BINTRAY_KEY')
+//        pkg {
+//            repo = 'org.schema'
+//            name = 'jsonld-metadata'
+//            userOrg = 'kropp'
+//            licenses = ['Apache-2.0']
+//            vcsUrl = 'git@github.com:kropp/jsonld-metadata.git'
+//            version {
+//                name = project.version
+//                desc = 'JSON-LD Metadata ' + project.version
+//                vcsTag = project.version
+//            }
+//        }
+//        publications = ['JsonLdMetadataPublication']
+//    }
+//}
 
 publishing {
     publications {
@@ -60,49 +65,49 @@ publishing {
     }
 }
 
-if (hasProperty('mavenPublishUrl')) {
-    uploadArchives {
-        repositories {
-            mavenDeployer {
-
-                repository(url: project.mavenPublishUrl) {
-                }
-
-                pom.project {
-                    groupId 'org.schema'
-
-                    name 'JSON-LD Metadata'
-                    description 'JSON-LD Java serializer'
-                    packaging 'jar'
-                    url 'https://github.com/kropp/jsonld-metadata/'
-
-                    scm {
-                        url 'https://github.com/kropp/jsonld-metadata/'
-                        connection 'scm:git:git@github.com:kropp/jsonld-metadata.git'
-                        developerConnection 'scm:git:git@github.com:kropp/jsonld-metadata.git'
-                    }
-
-                    licenses {
-                        license {
-                            name 'The Apache Software License, Version 2.0'
-                            url 'http://www.apache.org/license/LICENSE-2.0.txt'
-                            distribution 'repo'
-                        }
-                    }
-
-                    developers {
-                        developer {
-                            id 'JetBrains'
-                            name 'JetBrains Team'
-                            organization 'JetBrains s.r.o'
-                            organizationUrl 'http://www.jetbrains.com'
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
+//if (hasProperty('mavenPublishUrl')) {
+//    uploadArchives {
+//        repositories {
+//            mavenDeployer {
+//
+//                repository(url: project.mavenPublishUrl) {
+//                }
+//
+//                pom.project {
+//                    groupId 'org.schema'
+//
+//                    name 'JSON-LD Metadata'
+//                    description 'JSON-LD Java serializer'
+//                    packaging 'jar'
+//                    url 'https://github.com/kropp/jsonld-metadata/'
+//
+//                    scm {
+//                        url 'https://github.com/kropp/jsonld-metadata/'
+//                        connection 'scm:git:git@github.com:kropp/jsonld-metadata.git'
+//                        developerConnection 'scm:git:git@github.com:kropp/jsonld-metadata.git'
+//                    }
+//
+//                    licenses {
+//                        license {
+//                            name 'The Apache Software License, Version 2.0'
+//                            url 'http://www.apache.org/license/LICENSE-2.0.txt'
+//                            distribution 'repo'
+//                        }
+//                    }
+//
+//                    developers {
+//                        developer {
+//                            id 'JetBrains'
+//                            name 'JetBrains Team'
+//                            organization 'JetBrains s.r.o'
+//                            organizationUrl 'http://www.jetbrains.com'
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//    }
+//}
 
 dependencies {
     compile 'com.fasterxml.jackson.core:jackson-databind:2.7.+'
@@ -111,6 +116,6 @@ dependencies {
     testCompile 'junit:junit:4.11'
 }
 
-task wrapper(type: Wrapper) {
-    gradleVersion = '4.0'
-}
+//task wrapper(type: Wrapper) {
+//    gradleVersion = '5.1.1'
+//}
