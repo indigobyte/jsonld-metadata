@@ -80,11 +80,12 @@ class GeneratorSink : TripleSink {
     }
 
     override fun addNonLiteral(subj: String, pred: String, obj: String) {
-        //println("Subject: $subj -- Pred: $pred -- obj: $obj")
+        // println("Subject: $subj -- Pred: $pred -- obj: $obj")
         when(pred) {
             "http://schema.org/" -> { /* ignore */ }
-            "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" -> { if(!types.containsKey(subj)) types.put(subj, Type().apply { if (types.containsKey(obj)) parentType = obj }) }
-            "http://www.w3.org/2000/01/rdf-schema#subClassOf" -> types[subj]!!.parentType = obj
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" -> if(!types.containsKey(subj)) types.put(subj, Type().apply { if (types.containsKey(obj)) parentType = obj })
+            "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+                "rdfs:subClassOf" -> types[subj]!!.parentType = obj // ???
             "http://schema.org/domainIncludes" -> {
                 val objType = types[obj]
                 if (obj.contains("Message")) {
@@ -126,8 +127,10 @@ class GeneratorSink : TripleSink {
                 }
 
             }
-            "http://www.w3.org/2002/07/owl#equivalentClass" -> types[subj]!!.equivalent = obj
-            "http://www.w3.org/2002/07/owl#equivalentProperty" -> types[subj]!!.equivalent = obj
+            "http://www.w3.org/2002/07/owl#equivalentClass",
+                "owl:equivalentClass" -> types[subj]!!.equivalent = obj
+            "http://www.w3.org/2002/07/owl#equivalentProperty",
+                "owl:equivalentProperty"-> types[subj]!!.equivalent = obj
             "http://schema.org/inverseOf" -> { /* ignore */ }
             "http://schema.org/supersededBy" -> { types[subj]!!.isSuperseded = true }
             "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",

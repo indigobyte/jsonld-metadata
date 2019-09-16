@@ -38,10 +38,6 @@ public class SchemaOrg {
    */
   @NotNull public static WriteAction.Builder writeAction() { return new WriteAction.Builder(new HashMap<String,Object>()); }
   /**
-   * A property of an issue
-   */
-  @NotNull public static IssueField.Builder issueField() { return new IssueField.Builder(new HashMap<String,Object>()); }
-  /**
    * All-wheel Drive is a transmission layout where the engine drives all four wheels.
    */
   @NotNull public static AllWheelDriveConfiguration.Builder allWheelDriveConfiguration() { return new AllWheelDriveConfiguration.Builder(new HashMap<String,Object>()); }
@@ -371,10 +367,6 @@ See also the <a href="/docs/hotels.html">dedicated document on the use of schema
    * The act of interacting with another person or organization.
    */
   @NotNull public static InteractAction.Builder interactAction() { return new InteractAction.Builder(new HashMap<String,Object>()); }
-  /**
-   * Single entity in issue tracker (e.g. bug or feature)
-   */
-  @NotNull public static Issue.Builder issue() { return new Issue.Builder(new HashMap<String,Object>()); }
   /**
    * A house painting service.
    */
@@ -1142,10 +1134,6 @@ endorsement rating is particularly useful in the absence of numeric scales as it
    */
   @NotNull public static WarrantyPromise.Builder warrantyPromise() { return new WarrantyPromise.Builder(new HashMap<String,Object>()); }
   /**
-   * Software code review
-   */
-  @NotNull public static SourceCodeReview.Builder sourceCodeReview() { return new SourceCodeReview.Builder(new HashMap<String,Object>()); }
-  /**
    * Web page type: Profile page.
    */
   @NotNull public static ProfilePage.Builder profilePage() { return new ProfilePage.Builder(new HashMap<String,Object>()); }
@@ -1185,10 +1173,6 @@ endorsement rating is particularly useful in the absence of numeric scales as it
    * A reservation for air travel.\n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, use [[Offer]].
    */
   @NotNull public static FlightReservation.Builder flightReservation() { return new FlightReservation.Builder(new HashMap<String,Object>()); }
-  /**
-   * Specific revision of a software code
-   */
-  @NotNull public static SourceCodeRevision.Builder sourceCodeRevision() { return new SourceCodeRevision.Builder(new HashMap<String,Object>()); }
   /**
    * A part of a successively published publication such as a periodical or publication volume, often numbered, usually containing a grouping of works such as articles.\n\nSee also [blog post](http://blog.schema.org/2014/09/schemaorg-support-for-bibliographic_2.html).
    */
@@ -1584,10 +1568,6 @@ See also the <a href="/docs/hotels.html">dedicated document on the use of schema
    */
   @NotNull public static Occupation.Builder occupation() { return new Occupation.Builder(new HashMap<String,Object>()); }
   /**
-   * Specific build of a software applicaton
-   */
-  @NotNull public static SoftwareApplicationBuild.Builder softwareApplicationBuild() { return new SoftwareApplicationBuild.Builder(new HashMap<String,Object>()); }
-  /**
    * The act of notifying someone of information pertinent to them, with no expectation of a response.
    */
   @NotNull public static InformAction.Builder informAction() { return new InformAction.Builder(new HashMap<String,Object>()); }
@@ -1746,10 +1726,6 @@ See also the <a href="/docs/hotels.html">dedicated document on the use of schema
    * The act of expressing a preference from a fixed/finite/structured set of choices/options.
    */
   @NotNull public static VoteAction.Builder voteAction() { return new VoteAction.Builder(new HashMap<String,Object>()); }
-  /**
-   * Project
-   */
-  @NotNull public static Project.Builder project() { return new Project.Builder(new HashMap<String,Object>()); }
   /**
    * A short radio program or a segment/part of a radio program.
    */
@@ -2546,7 +2522,6 @@ See also the dedicated [document on the use of schema.org for marking up hotels 
     if ("CollegeOrUniversity".equals(type)) { return new CollegeOrUniversity.Builder(new HashMap<String,Object>()); }
     if ("Tourism".equals(type)) { return new Tourism.Builder(new HashMap<String,Object>()); }
     if ("WriteAction".equals(type)) { return new WriteAction.Builder(new HashMap<String,Object>()); }
-    if ("IssueField".equals(type)) { return new IssueField.Builder(new HashMap<String,Object>()); }
     if ("AllWheelDriveConfiguration".equals(type)) { return new AllWheelDriveConfiguration.Builder(new HashMap<String,Object>()); }
     if ("Dentist".equals(type)) { return new Dentist.Builder(new HashMap<String,Object>()); }
     if ("BusStop".equals(type)) { return new BusStop.Builder(new HashMap<String,Object>()); }
@@ -2626,7 +2601,6 @@ See also the dedicated [document on the use of schema.org for marking up hotels 
     if ("InteractionCounter".equals(type)) { return new InteractionCounter.Builder(new HashMap<String,Object>()); }
     if ("OrganizationRole".equals(type)) { return new OrganizationRole.Builder(new HashMap<String,Object>()); }
     if ("InteractAction".equals(type)) { return new InteractAction.Builder(new HashMap<String,Object>()); }
-    if ("Issue".equals(type)) { return new Issue.Builder(new HashMap<String,Object>()); }
     if ("HousePainter".equals(type)) { return new HousePainter.Builder(new HashMap<String,Object>()); }
     if ("TrainReservation".equals(type)) { return new TrainReservation.Builder(new HashMap<String,Object>()); }
     if ("SubwayStation".equals(type)) { return new SubwayStation.Builder(new HashMap<String,Object>()); }
@@ -2814,7 +2788,6 @@ See also the dedicated [document on the use of schema.org for marking up hotels 
     if ("AddAction".equals(type)) { return new AddAction.Builder(new HashMap<String,Object>()); }
     if ("HomeAndConstructionBusiness".equals(type)) { return new HomeAndConstructionBusiness.Builder(new HashMap<String,Object>()); }
     if ("WarrantyPromise".equals(type)) { return new WarrantyPromise.Builder(new HashMap<String,Object>()); }
-    if ("SourceCodeReview".equals(type)) { return new SourceCodeReview.Builder(new HashMap<String,Object>()); }
     if ("ProfilePage".equals(type)) { return new ProfilePage.Builder(new HashMap<String,Object>()); }
     if ("MusicRecording".equals(type)) { return new MusicRecording.Builder(new HashMap<String,Object>()); }
     if ("DeliveryChargeSpecification".equals(type)) { return new DeliveryChargeSpecification.Builder(new HashMap<String,Object>()); }
@@ -2825,7 +2798,6 @@ See also the dedicated [document on the use of schema.org for marking up hotels 
     if ("Map".equals(type)) { return new Map.Builder(new HashMap<String,Object>()); }
     if ("Season".equals(type)) { return new Season.Builder(new HashMap<String,Object>()); }
     if ("FlightReservation".equals(type)) { return new FlightReservation.Builder(new HashMap<String,Object>()); }
-    if ("SourceCodeRevision".equals(type)) { return new SourceCodeRevision.Builder(new HashMap<String,Object>()); }
     if ("PublicationIssue".equals(type)) { return new PublicationIssue.Builder(new HashMap<String,Object>()); }
     if ("ShoeStore".equals(type)) { return new ShoeStore.Builder(new HashMap<String,Object>()); }
     if ("SocialEvent".equals(type)) { return new SocialEvent.Builder(new HashMap<String,Object>()); }
@@ -2922,7 +2894,6 @@ See also the dedicated [document on the use of schema.org for marking up hotels 
     if ("LegislativeBuilding".equals(type)) { return new LegislativeBuilding.Builder(new HashMap<String,Object>()); }
     if ("Course".equals(type)) { return new Course.Builder(new HashMap<String,Object>()); }
     if ("Occupation".equals(type)) { return new Occupation.Builder(new HashMap<String,Object>()); }
-    if ("SoftwareApplicationBuild".equals(type)) { return new SoftwareApplicationBuild.Builder(new HashMap<String,Object>()); }
     if ("InformAction".equals(type)) { return new InformAction.Builder(new HashMap<String,Object>()); }
     if ("EducationEvent".equals(type)) { return new EducationEvent.Builder(new HashMap<String,Object>()); }
     if ("FireStation".equals(type)) { return new FireStation.Builder(new HashMap<String,Object>()); }
@@ -2961,7 +2932,6 @@ See also the dedicated [document on the use of schema.org for marking up hotels 
     if ("HealthAndBeautyBusiness".equals(type)) { return new HealthAndBeautyBusiness.Builder(new HashMap<String,Object>()); }
     if ("Researcher".equals(type)) { return new Researcher.Builder(new HashMap<String,Object>()); }
     if ("VoteAction".equals(type)) { return new VoteAction.Builder(new HashMap<String,Object>()); }
-    if ("Project".equals(type)) { return new Project.Builder(new HashMap<String,Object>()); }
     if ("RadioClip".equals(type)) { return new RadioClip.Builder(new HashMap<String,Object>()); }
     if ("VideoObject".equals(type)) { return new VideoObject.Builder(new HashMap<String,Object>()); }
     if ("Permit".equals(type)) { return new Permit.Builder(new HashMap<String,Object>()); }
