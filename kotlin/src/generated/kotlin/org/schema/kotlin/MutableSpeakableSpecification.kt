@@ -2,14 +2,12 @@ package org.schema.kotlin
 import org.schema.*
 class MutableSpeakableSpecification {
   private val map = HashMap<String,Any>()
-  var cssSelector: 
-    get() = map["cssSelector"] as 
+  var cssSelector: String
+    get() = map["cssSelector"] as String
     set(value) { map["cssSelector"] = value }
-  fun cssSelector(builder: Mutable.() -> Unit) { map["cssSelector"] = Mutable().apply(builder).build() }
-  var xpath: 
-    get() = map["xpath"] as 
+  var xpath: String
+    get() = map["xpath"] as String
     set(value) { map["xpath"] = value }
-  fun xpath(builder: Mutable.() -> Unit) { map["xpath"] = Mutable().apply(builder).build() }
   var additionalType: String
     get() = map["additionalType"] as String
     set(value) { map["additionalType"] = value }

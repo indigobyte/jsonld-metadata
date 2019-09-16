@@ -44,29 +44,15 @@ public class WPAdBlock extends WebPageElement {
     /**
      * A CSS selector, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual "Web page element".
      */
-    @NotNull public Builder cssSelector(@NotNull  ) {
-      putValue("cssSelector", );
-      return this;
-    }
-    /**
-     * A CSS selector, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual "Web page element".
-     */
-    @NotNull public Builder cssSelector(@NotNull .Builder ) {
-      putValue("cssSelector", .build());
+    @NotNull public Builder cssSelector(@NotNull String cssSelector) {
+      putValue("cssSelector", cssSelector);
       return this;
     }
     /**
      * An XPath, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual "Web page element".
      */
-    @NotNull public Builder xpath(@NotNull  ) {
-      putValue("xpath", );
-      return this;
-    }
-    /**
-     * An XPath, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual "Web page element".
-     */
-    @NotNull public Builder xpath(@NotNull .Builder ) {
-      putValue("xpath", .build());
+    @NotNull public Builder xpath(@NotNull String xpath) {
+      putValue("xpath", xpath);
       return this;
     }
     /**

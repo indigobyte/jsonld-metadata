@@ -30,36 +30,36 @@ public class SpeakableSpecification extends Intangible {
   /**
    * A CSS selector, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual "Web page element".
    */
-  @JsonIgnore public  getCssSelector() {
-    return () getValue("cssSelector");
+  @JsonIgnore public String getCssSelector() {
+    return (String) getValue("cssSelector");
   }
   /**
    * A CSS selector, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual "Web page element".
    */
-  @JsonIgnore public Collection<> getCssSelectors() {
+  @JsonIgnore public Collection<String> getCssSelectors() {
     final Object current = myData.get("cssSelector");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<>) current;
+      return (Collection<String>) current;
     }
-    return Arrays.asList(() current);
+    return Arrays.asList((String) current);
   }
   /**
    * An XPath, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual "Web page element".
    */
-  @JsonIgnore public  getXpath() {
-    return () getValue("xpath");
+  @JsonIgnore public String getXpath() {
+    return (String) getValue("xpath");
   }
   /**
    * An XPath, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual "Web page element".
    */
-  @JsonIgnore public Collection<> getXpaths() {
+  @JsonIgnore public Collection<String> getXpaths() {
     final Object current = myData.get("xpath");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<>) current;
+      return (Collection<String>) current;
     }
-    return Arrays.asList(() current);
+    return Arrays.asList((String) current);
   }
   protected SpeakableSpecification(java.util.Map<String,Object> data) {
     super(data);
@@ -78,29 +78,15 @@ public class SpeakableSpecification extends Intangible {
     /**
      * A CSS selector, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual "Web page element".
      */
-    @NotNull public Builder cssSelector(@NotNull  ) {
-      putValue("cssSelector", );
-      return this;
-    }
-    /**
-     * A CSS selector, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual "Web page element".
-     */
-    @NotNull public Builder cssSelector(@NotNull .Builder ) {
-      putValue("cssSelector", .build());
+    @NotNull public Builder cssSelector(@NotNull String cssSelector) {
+      putValue("cssSelector", cssSelector);
       return this;
     }
     /**
      * An XPath, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual "Web page element".
      */
-    @NotNull public Builder xpath(@NotNull  ) {
-      putValue("xpath", );
-      return this;
-    }
-    /**
-     * An XPath, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual "Web page element".
-     */
-    @NotNull public Builder xpath(@NotNull .Builder ) {
-      putValue("xpath", .build());
+    @NotNull public Builder xpath(@NotNull String xpath) {
+      putValue("xpath", xpath);
       return this;
     }
     /**
@@ -216,10 +202,10 @@ public class SpeakableSpecification extends Intangible {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("cssSelector".equals(key) && value instanceof ) { cssSelector(()value); return; }
-      if ("cssSelectors".equals(key) && value instanceof ) { cssSelector(()value); return; }
-      if ("xpath".equals(key) && value instanceof ) { xpath(()value); return; }
-      if ("xpaths".equals(key) && value instanceof ) { xpath(()value); return; }
+      if ("cssSelector".equals(key) && value instanceof String) { cssSelector((String)value); return; }
+      if ("cssSelectors".equals(key) && value instanceof String) { cssSelector((String)value); return; }
+      if ("xpath".equals(key) && value instanceof String) { xpath((String)value); return; }
+      if ("xpaths".equals(key) && value instanceof String) { xpath((String)value); return; }
       super.fromMap(key, value);
     }
   }

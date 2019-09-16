@@ -80,24 +80,41 @@ class GeneratorSink : TripleSink {
     }
 
     override fun addNonLiteral(subj: String, pred: String, obj: String) {
-//        println("Subject: $subj -- Pred: $pred -- obj: $obj")
+        //println("Subject: $subj -- Pred: $pred -- obj: $obj")
         when(pred) {
             "http://schema.org/" -> { /* ignore */ }
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" -> { if(!types.containsKey(subj)) types.put(subj, Type().apply { if (types.containsKey(obj)) parentType = obj }) }
             "http://www.w3.org/2000/01/rdf-schema#subClassOf" -> types[subj]!!.parentType = obj
             "http://schema.org/domainIncludes" -> {
                 val objType = types[obj]
+                if (obj.contains("Message")) {
+                    println("Subject: $subj -- Pred: $pred -- obj: $obj")
+                    println("Obj type: ${objType}")
+                    println("Obj type name: ${objType?.name}")
+                }
 
                 if (objType != null) {
-                    val subjType = types[subj]!!
-                    subjType.isField = true
-                    if (!objType.subTypes.contains(subj)) {
-                        objType.subTypes.add(subj)
-                    }
+                    types[subj]?.let { subjType ->
+                        if (obj.contains("Message")) {
+                            println("Adding ${subjType.name} to Message")
+                        }
+                        if (!objType.subTypes.contains(subj)) {
+                            objType.subTypes.add(subj)
+                        }
+                        subjType.isField = true
+                    } ?: println("No SubjType, make one")
+                    
                 } else {
                     val type = Type()
                     type.interfaces.add(getInterfaceName(subj))
                     types.put(obj, type)
+                    
+                    //type.subTypes.add(subj)
+                    //val subjType = Type()
+                    //subjType.isField = true
+                    //types.add(subjType, subj)
+                    
+                    
                 }
             }
             "http://schema.org/rangeIncludes" -> types[subj]!!.dataTypes.add(obj)
@@ -113,7 +130,10 @@ class GeneratorSink : TripleSink {
             "http://www.w3.org/2002/07/owl#equivalentProperty" -> types[subj]!!.equivalent = obj
             "http://schema.org/inverseOf" -> { /* ignore */ }
             "http://schema.org/supersededBy" -> { types[subj]!!.isSuperseded = true }
-            "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" -> {
+            "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+                "rdfs:subPropertyOf"-> {
+                // THIS IS NOT IN THE CURRENT SCHEMA
+                println("Making subPropertyOf ${obj}")
                 if (obj.contains("http:")) {
                     val interfaceType = Type()
 
@@ -130,7 +150,7 @@ class GeneratorSink : TripleSink {
                     }
                 }
             }
-            else -> System.err.println("Unknown non-literal: $pred")
+            else -> System.err.println("Unknown non-literal: $pred, $subj")
         }
     }
 
@@ -164,8 +184,13 @@ class GeneratorSink : TripleSink {
             val name = field.dataTypes.firstOrNull { types[it]!!.isInterface } ?: field.dataTypes.firstOrNull()
             return getBasicTypeName(types[name]?.name)
         } catch (e: Exception) {
-//            println("Failed to find a field for ${field.}")
-            return null
+            println("exception: ${e.message}")
+            println("Failed to find a field for ${field.name} (${field.isInterface})")
+            // TODO This is a hack.  They are basically an array list of strings
+            return when (field.name) { 
+                "Xpath", "CssSelector" -> "String"
+                else -> null
+            }
         }
     }
 
