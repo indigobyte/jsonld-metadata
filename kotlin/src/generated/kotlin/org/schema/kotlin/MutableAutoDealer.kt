@@ -51,16 +51,12 @@ class MutableAutoDealer {
     set(value) { map["geo"] = value }
   fun geoGeoCoordinates(builder: MutableGeoCoordinates.() -> Unit) { map["geo"] = MutableGeoCoordinates().apply(builder).build() }
   fun geoGeoShape(builder: MutableGeoShape.() -> Unit) { map["geo"] = MutableGeoShape().apply(builder).build() }
-  var globalLocationNumber: Identifier
-    get() = map["globalLocationNumber"] as Identifier
-    set(value) { map["globalLocationNumber"] = value }
   var isicV4: String
     get() = map["isicV4"] as String
     set(value) { map["isicV4"] = value }
-  var logo: Any
-    get() = map["logo"]!!
+  var logo: Logo
+    get() = map["logo"] as Logo
     set(value) { map["logo"] = value }
-  fun logoImageObject(builder: MutableImageObject.() -> Unit) { map["logo"] = MutableImageObject().apply(builder).build() }
   var hasMap: Any
     get() = map["hasMap"]!!
     set(value) { map["hasMap"] = value }
@@ -76,11 +72,9 @@ class MutableAutoDealer {
     get() = map["specialOpeningHoursSpecification"] as OpeningHoursSpecification
     set(value) { map["specialOpeningHoursSpecification"] = value }
   fun specialOpeningHoursSpecification(builder: MutableOpeningHoursSpecification.() -> Unit) { map["specialOpeningHoursSpecification"] = MutableOpeningHoursSpecification().apply(builder).build() }
-  var photo: Any
-    get() = map["photo"]!!
+  var photo: Photo
+    get() = map["photo"] as Photo
     set(value) { map["photo"] = value }
-  fun photoImageObject(builder: MutableImageObject.() -> Unit) { map["photo"] = MutableImageObject().apply(builder).build() }
-  fun photoPhotograph(builder: MutablePhotograph.() -> Unit) { map["photo"] = MutablePhotograph().apply(builder).build() }
   var review: Review
     get() = map["review"] as Review
     set(value) { map["review"] = value }
@@ -102,22 +96,25 @@ class MutableAutoDealer {
   var smokingAllowed: Boolean
     get() = map["smokingAllowed"] as Boolean
     set(value) { map["smokingAllowed"] = value }
-  var additionalType: String
-    get() = map["additionalType"] as String
+  var additionalType: AdditionalType
+    get() = map["additionalType"] as AdditionalType
     set(value) { map["additionalType"] = value }
   var alternateName: String
     get() = map["alternateName"] as String
     set(value) { map["alternateName"] = value }
-  var disambiguatingDescription: String
-    get() = map["disambiguatingDescription"] as String
+  var description: DisambiguatingDescription
+    get() = map["description"] as DisambiguatingDescription
+    set(value) { map["description"] = value }
+  var disambiguatingDescription: DisambiguatingDescription
+    get() = map["disambiguatingDescription"] as DisambiguatingDescription
     set(value) { map["disambiguatingDescription"] = value }
+  var image: Logo
+    get() = map["image"] as Logo
+    set(value) { map["image"] = value }
   var mainEntityOfPage: Any
     get() = map["mainEntityOfPage"]!!
     set(value) { map["mainEntityOfPage"] = value }
   fun mainEntityOfPageCreativeWork(builder: MutableCreativeWork.() -> Unit) { map["mainEntityOfPage"] = MutableCreativeWork().apply(builder).build() }
-  var name: String
-    get() = map["name"] as String
-    set(value) { map["name"] = value }
   var sameAs: String
     get() = map["sameAs"] as String
     set(value) { map["sameAs"] = value }
@@ -128,6 +125,9 @@ class MutableAutoDealer {
     get() = map["potentialAction"] as Action
     set(value) { map["potentialAction"] = value }
   fun potentialAction(builder: MutableAction.() -> Unit) { map["potentialAction"] = MutableAction().apply(builder).build() }
+  var identifier: Isbn
+    get() = map["identifier"] as Isbn
+    set(value) { map["identifier"] = value }
   var subjectOf: Any
     get() = map["subjectOf"]!!
     set(value) { map["subjectOf"] = value }

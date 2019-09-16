@@ -27,22 +27,16 @@ import java.util.*;
  * A recipe. For dietary restrictions covered by the recipe, a few common restrictions are enumerated via [[suitableForDiet]]. The [[keywords]] property can also be used to add more detail.
  */
 public class Recipe extends HowTo {
-  /**
-   * The time it takes to actually cook the dish, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
-   */
-  @JsonIgnore public Duration getCookTime() {
-    return (Duration) getValue("cookTime");
+  @JsonIgnore public CookTime getCookTime() {
+    return (CookTime) getValue("cookTime");
   }
-  /**
-   * The time it takes to actually cook the dish, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
-   */
-  @JsonIgnore public Collection<Duration> getCookTimes() {
+  @JsonIgnore public Collection<CookTime> getCookTimes() {
     final Object current = myData.get("cookTime");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<Duration>) current;
+      return (Collection<CookTime>) current;
     }
-    return Arrays.asList((Duration) current);
+    return Arrays.asList((CookTime) current);
   }
   /**
    * The method of cooking, such as Frying, Steaming, ...
@@ -112,107 +106,38 @@ public class Recipe extends HowTo {
     }
     return Arrays.asList((String) current);
   }
-  /**
-   * A single ingredient used in the recipe, e.g. sugar, flour or garlic.
-   */
-  @JsonIgnore public String getRecipeIngredient() {
-    return (String) getValue("recipeIngredient");
+  @JsonIgnore public RecipeIngredient getRecipeIngredient() {
+    return (RecipeIngredient) getValue("recipeIngredient");
   }
-  /**
-   * A single ingredient used in the recipe, e.g. sugar, flour or garlic.
-   */
-  @JsonIgnore public Collection<String> getRecipeIngredients() {
+  @JsonIgnore public Collection<RecipeIngredient> getRecipeIngredients() {
     final Object current = myData.get("recipeIngredient");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<String>) current;
+      return (Collection<RecipeIngredient>) current;
     }
-    return Arrays.asList((String) current);
+    return Arrays.asList((RecipeIngredient) current);
   }
-  /**
-   * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
-   */
-  @JsonIgnore public CreativeWork getRecipeInstructionsCreativeWork() {
-    return (CreativeWork) getValue("recipeInstructions");
+  @JsonIgnore public RecipeInstructions getRecipeInstructions() {
+    return (RecipeInstructions) getValue("recipeInstructions");
   }
-  /**
-   * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
-   */
-  @JsonIgnore public Collection<CreativeWork> getRecipeInstructionsCreativeWorks() {
+  @JsonIgnore public Collection<RecipeInstructions> getRecipeInstructionss() {
     final Object current = myData.get("recipeInstructions");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<CreativeWork>) current;
+      return (Collection<RecipeInstructions>) current;
     }
-    return Arrays.asList((CreativeWork) current);
+    return Arrays.asList((RecipeInstructions) current);
   }
-  /**
-   * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
-   */
-  @JsonIgnore public ItemList getRecipeInstructionsItemList() {
-    return (ItemList) getValue("recipeInstructions");
+  @JsonIgnore public RecipeYield getRecipeYield() {
+    return (RecipeYield) getValue("recipeYield");
   }
-  /**
-   * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
-   */
-  @JsonIgnore public Collection<ItemList> getRecipeInstructionsItemLists() {
-    final Object current = myData.get("recipeInstructions");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<ItemList>) current;
-    }
-    return Arrays.asList((ItemList) current);
-  }
-  /**
-   * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
-   */
-  @JsonIgnore public String getRecipeInstructionsString() {
-    return (String) getValue("recipeInstructions");
-  }
-  /**
-   * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
-   */
-  @JsonIgnore public Collection<String> getRecipeInstructionsStrings() {
-    final Object current = myData.get("recipeInstructions");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * The quantity produced by the recipe (for example, number of people served, number of servings, etc).
-   */
-  @JsonIgnore public QuantitativeValue getRecipeYieldQuantitativeValue() {
-    return (QuantitativeValue) getValue("recipeYield");
-  }
-  /**
-   * The quantity produced by the recipe (for example, number of people served, number of servings, etc).
-   */
-  @JsonIgnore public Collection<QuantitativeValue> getRecipeYieldQuantitativeValues() {
+  @JsonIgnore public Collection<RecipeYield> getRecipeYields() {
     final Object current = myData.get("recipeYield");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+      return (Collection<RecipeYield>) current;
     }
-    return Arrays.asList((QuantitativeValue) current);
-  }
-  /**
-   * The quantity produced by the recipe (for example, number of people served, number of servings, etc).
-   */
-  @JsonIgnore public String getRecipeYieldString() {
-    return (String) getValue("recipeYield");
-  }
-  /**
-   * The quantity produced by the recipe (for example, number of people served, number of servings, etc).
-   */
-  @JsonIgnore public Collection<String> getRecipeYieldStrings() {
-    final Object current = myData.get("recipeYield");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
+    return Arrays.asList((RecipeYield) current);
   }
   protected Recipe(java.util.Map<String,Object> data) {
     super(data);
@@ -228,11 +153,8 @@ public class Recipe extends HowTo {
     @NotNull public Recipe build() {
       return new Recipe(myData);
     }
-    /**
-     * The time it takes to actually cook the dish, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
-     */
-    @NotNull public Builder cookTime(@NotNull Duration duration) {
-      putValue("cookTime", duration);
+    @NotNull public Builder cookTime(@NotNull CookTime cookTime) {
+      putValue("cookTime", cookTime);
       return this;
     }
     /**
@@ -270,66 +192,15 @@ public class Recipe extends HowTo {
       putValue("recipeCuisine", recipeCuisine);
       return this;
     }
-    /**
-     * A single ingredient used in the recipe, e.g. sugar, flour or garlic.
-     */
-    @NotNull public Builder recipeIngredient(@NotNull String recipeIngredient) {
+    @NotNull public Builder recipeIngredient(@NotNull RecipeIngredient recipeIngredient) {
       putValue("recipeIngredient", recipeIngredient);
       return this;
     }
-    /**
-     * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
-     */
-    @NotNull public Builder recipeInstructions(@NotNull CreativeWork creativeWork) {
-      putValue("recipeInstructions", creativeWork);
-      return this;
-    }
-    /**
-     * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
-     */
-    @NotNull public Builder recipeInstructions(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("recipeInstructions", creativeWork.build());
-      return this;
-    }
-    /**
-     * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
-     */
-    @NotNull public Builder recipeInstructions(@NotNull ItemList itemList) {
-      putValue("recipeInstructions", itemList);
-      return this;
-    }
-    /**
-     * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
-     */
-    @NotNull public Builder recipeInstructions(@NotNull ItemList.Builder itemList) {
-      putValue("recipeInstructions", itemList.build());
-      return this;
-    }
-    /**
-     * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
-     */
-    @NotNull public Builder recipeInstructions(@NotNull String recipeInstructions) {
+    @NotNull public Builder recipeInstructions(@NotNull RecipeInstructions recipeInstructions) {
       putValue("recipeInstructions", recipeInstructions);
       return this;
     }
-    /**
-     * The quantity produced by the recipe (for example, number of people served, number of servings, etc).
-     */
-    @NotNull public Builder recipeYield(@NotNull QuantitativeValue quantitativeValue) {
-      putValue("recipeYield", quantitativeValue);
-      return this;
-    }
-    /**
-     * The quantity produced by the recipe (for example, number of people served, number of servings, etc).
-     */
-    @NotNull public Builder recipeYield(@NotNull QuantitativeValue.Builder quantitativeValue) {
-      putValue("recipeYield", quantitativeValue.build());
-      return this;
-    }
-    /**
-     * The quantity produced by the recipe (for example, number of people served, number of servings, etc).
-     */
-    @NotNull public Builder recipeYield(@NotNull String recipeYield) {
+    @NotNull public Builder recipeYield(@NotNull RecipeYield recipeYield) {
       putValue("recipeYield", recipeYield);
       return this;
     }
@@ -357,8 +228,15 @@ public class Recipe extends HowTo {
     /**
      * The length of time it takes to perform instructions or a direction (not including time to prepare the supplies), in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
      */
-    @NotNull public Builder performTime(@NotNull PerformTime performTime) {
-      putValue("performTime", performTime);
+    @NotNull public Builder performTime(@NotNull Duration duration) {
+      putValue("performTime", duration);
+      return this;
+    }
+    /**
+     * The length of time it takes to perform instructions or a direction (not including time to prepare the supplies), in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
+     */
+    @NotNull public Builder performTime(@NotNull Duration.Builder duration) {
+      putValue("performTime", duration.build());
       return this;
     }
     /**
@@ -369,8 +247,12 @@ public class Recipe extends HowTo {
       return this;
     }
     /**
-     * A sub-property of instrument. A supply consumed when performing instructions or a direction.
+     * The length of time it takes to prepare the items to be used in instructions or a direction, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
      */
+    @NotNull public Builder prepTime(@NotNull Duration.Builder duration) {
+      putValue("prepTime", duration.build());
+      return this;
+    }
     @NotNull public Builder supply(@NotNull Supply supply) {
       putValue("supply", supply);
       return this;
@@ -378,28 +260,53 @@ public class Recipe extends HowTo {
     /**
      * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection.
      */
-    @NotNull public Builder step(@NotNull Step step) {
+    @NotNull public Builder step(@NotNull CreativeWork creativeWork) {
+      putValue("step", creativeWork);
+      return this;
+    }
+    /**
+     * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection.
+     */
+    @NotNull public Builder step(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("step", creativeWork.build());
+      return this;
+    }
+    /**
+     * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection.
+     */
+    @NotNull public Builder step(@NotNull HowToSection howToSection) {
+      putValue("step", howToSection);
+      return this;
+    }
+    /**
+     * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection.
+     */
+    @NotNull public Builder step(@NotNull HowToSection.Builder howToSection) {
+      putValue("step", howToSection.build());
+      return this;
+    }
+    /**
+     * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection.
+     */
+    @NotNull public Builder step(@NotNull HowToStep howToStep) {
+      putValue("step", howToStep);
+      return this;
+    }
+    /**
+     * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection.
+     */
+    @NotNull public Builder step(@NotNull HowToStep.Builder howToStep) {
+      putValue("step", howToStep.build());
+      return this;
+    }
+    /**
+     * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection.
+     */
+    @NotNull public Builder step(@NotNull String step) {
       putValue("step", step);
       return this;
     }
-    /**
-     * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
-     */
-    @NotNull public Builder tool(@NotNull HowToTool howToTool) {
-      putValue("tool", howToTool);
-      return this;
-    }
-    /**
-     * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
-     */
-    @NotNull public Builder tool(@NotNull HowToTool.Builder howToTool) {
-      putValue("tool", howToTool.build());
-      return this;
-    }
-    /**
-     * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
-     */
-    @NotNull public Builder tool(@NotNull String tool) {
+    @NotNull public Builder tool(@NotNull Tool tool) {
       putValue("tool", tool);
       return this;
     }
@@ -411,9 +318,30 @@ public class Recipe extends HowTo {
       return this;
     }
     /**
+     * The total time required to perform instructions or a direction (including time to prepare the supplies), in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
+     */
+    @NotNull public Builder totalTime(@NotNull Duration.Builder duration) {
+      putValue("totalTime", duration.build());
+      return this;
+    }
+    /**
      * The quantity that results by performing instructions. For example, a paper airplane, 10 personalized candles.
      */
-    @NotNull public Builder yield(@NotNull Yield yield) {
+    @NotNull public Builder yield(@NotNull QuantitativeValue quantitativeValue) {
+      putValue("yield", quantitativeValue);
+      return this;
+    }
+    /**
+     * The quantity that results by performing instructions. For example, a paper airplane, 10 personalized candles.
+     */
+    @NotNull public Builder yield(@NotNull QuantitativeValue.Builder quantitativeValue) {
+      putValue("yield", quantitativeValue.build());
+      return this;
+    }
+    /**
+     * The quantity that results by performing instructions. For example, a paper airplane, 10 personalized candles.
+     */
+    @NotNull public Builder yield(@NotNull String yield) {
       putValue("yield", yield);
       return this;
     }
@@ -422,6 +350,13 @@ public class Recipe extends HowTo {
      */
     @NotNull public Builder schemaVersion(@NotNull String schemaVersion) {
       putValue("schemaVersion", schemaVersion);
+      return this;
+    }
+    /**
+     * The subject matter of the content.
+     */
+    @NotNull public Builder about(@NotNull MainEntity mainEntity) {
+      putValue("about", mainEntity);
       return this;
     }
     /**
@@ -611,6 +546,13 @@ public class Recipe extends HowTo {
      */
     @NotNull public Builder comment(@NotNull Comment.Builder comment) {
       putValue("comment", comment.build());
+      return this;
+    }
+    /**
+     * The location depicted or described in the content. For example, the location in a photograph or painting.
+     */
+    @NotNull public Builder contentLocation(@NotNull SpatialCoverage spatialCoverage) {
+      putValue("contentLocation", spatialCoverage);
       return this;
     }
     /**
@@ -893,13 +835,6 @@ public class Recipe extends HowTo {
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
      */
-    @NotNull public Builder inLanguage(@NotNull Language.Builder language) {
-      putValue("inLanguage", language.build());
-      return this;
-    }
-    /**
-     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
-     */
     @NotNull public Builder inLanguage(@NotNull String inLanguage) {
       putValue("inLanguage", inLanguage);
       return this;
@@ -954,6 +889,13 @@ public class Recipe extends HowTo {
       return this;
     }
     /**
+     * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
+     */
+    @NotNull public Builder isPartOf(@NotNull PartOfEpisode partOfEpisode) {
+      putValue("isPartOf", partOfEpisode);
+      return this;
+    }
+    /**
      * Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas.
      */
     @NotNull public Builder keywords(@NotNull String keywords) {
@@ -989,13 +931,6 @@ public class Recipe extends HowTo {
       return this;
     }
     /**
-     * Indicates the primary entity described in some page or other CreativeWork.
-     */
-    @NotNull public Builder mainEntity(@NotNull About about) {
-      putValue("mainEntity", about);
-      return this;
-    }
-    /**
      * Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.
      */
     @NotNull public Builder mentions(@NotNull Thing thing) {
@@ -1021,6 +956,13 @@ public class Recipe extends HowTo {
      */
     @NotNull public Builder offers(@NotNull Offer.Builder offer) {
       putValue("offers", offer.build());
+      return this;
+    }
+    /**
+     * The position of an item in a series or sequence of items.
+     */
+    @NotNull public Builder position(@NotNull SeasonNumber seasonNumber) {
+      putValue("position", seasonNumber);
       return this;
     }
     /**
@@ -1181,50 +1123,19 @@ public class Recipe extends HowTo {
       putValue("spatial", place.build());
       return this;
     }
-    /**
-     * The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of
-     *       contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates
-     *       areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
-     */
-    @NotNull public Builder spatialCoverage(@NotNull Place place) {
-      putValue("spatialCoverage", place);
+    @NotNull public Builder spatialCoverage(@NotNull SpatialCoverage spatialCoverage) {
+      putValue("spatialCoverage", spatialCoverage);
       return this;
     }
     /**
-     * The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of
-     *       contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates
-     *       areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
+     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
      */
-    @NotNull public Builder spatialCoverage(@NotNull Place.Builder place) {
-      putValue("spatialCoverage", place.build());
+    @NotNull public Builder sponsor(@NotNull Funder funder) {
+      putValue("sponsor", funder);
       return this;
     }
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     */
-    @NotNull public Builder funder(@NotNull Organization organization) {
-      putValue("funder", organization);
-      return this;
-    }
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     */
-    @NotNull public Builder funder(@NotNull Organization.Builder organization) {
-      putValue("funder", organization.build());
-      return this;
-    }
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     */
-    @NotNull public Builder funder(@NotNull Person person) {
-      putValue("funder", person);
-      return this;
-    }
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     */
-    @NotNull public Builder funder(@NotNull Person.Builder person) {
-      putValue("funder", person.build());
+    @NotNull public Builder funder(@NotNull Funder funder) {
+      putValue("funder", funder);
       return this;
     }
     /**
@@ -1284,6 +1195,13 @@ public class Recipe extends HowTo {
      */
     @NotNull public Builder timeRequired(@NotNull Duration duration) {
       putValue("timeRequired", duration);
+      return this;
+    }
+    /**
+     * Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience, e.g. 'PT30M', 'PT1H25M'.
+     */
+    @NotNull public Builder timeRequired(@NotNull Duration.Builder duration) {
+      putValue("timeRequired", duration.build());
       return this;
     }
     /**
@@ -1394,8 +1312,15 @@ public class Recipe extends HowTo {
     /**
      * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
      */
-    @NotNull public Builder hasPart(@NotNull HasPart hasPart) {
-      putValue("hasPart", hasPart);
+    @NotNull public Builder hasPart(@NotNull CreativeWork creativeWork) {
+      putValue("hasPart", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
+     */
+    @NotNull public Builder hasPart(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("hasPart", creativeWork.build());
       return this;
     }
     /**
@@ -1483,6 +1408,13 @@ public class Recipe extends HowTo {
       return this;
     }
     /**
+     * A material that something is made from, e.g. leather, wool, cotton, paper.
+     */
+    @NotNull public Builder material(@NotNull ArtMedium artMedium) {
+      putValue("material", artMedium);
+      return this;
+    }
+    /**
      * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
      */
     @NotNull public Builder interactionStatistic(@NotNull InteractionCounter interactionCounter) {
@@ -1527,10 +1459,7 @@ public class Recipe extends HowTo {
       putValue("accessibilitySummary", accessibilitySummary);
       return this;
     }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     */
-    @NotNull public Builder additionalType(@NotNull String additionalType) {
+    @NotNull public Builder additionalType(@NotNull AdditionalType additionalType) {
       putValue("additionalType", additionalType);
       return this;
     }
@@ -1542,10 +1471,21 @@ public class Recipe extends HowTo {
       return this;
     }
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * A description of the item.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
+    @NotNull public Builder description(@NotNull DisambiguatingDescription disambiguatingDescription) {
+      putValue("description", disambiguatingDescription);
+      return this;
+    }
+    @NotNull public Builder disambiguatingDescription(@NotNull DisambiguatingDescription disambiguatingDescription) {
       putValue("disambiguatingDescription", disambiguatingDescription);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Logo logo) {
+      putValue("image", logo);
       return this;
     }
     /**
@@ -1567,13 +1507,6 @@ public class Recipe extends HowTo {
      */
     @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
       putValue("mainEntityOfPage", mainEntityOfPage);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
       return this;
     }
     /**
@@ -1602,6 +1535,14 @@ public class Recipe extends HowTo {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Isbn isbn) {
+      putValue("identifier", isbn);
       return this;
     }
     /**
@@ -1640,8 +1581,8 @@ public class Recipe extends HowTo {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("cookTime".equals(key) && value instanceof Duration) { cookTime((Duration)value); return; }
-      if ("cookTimes".equals(key) && value instanceof Duration) { cookTime((Duration)value); return; }
+      if ("cookTime".equals(key) && value instanceof CookTime) { cookTime((CookTime)value); return; }
+      if ("cookTimes".equals(key) && value instanceof CookTime) { cookTime((CookTime)value); return; }
       if ("cookingMethod".equals(key) && value instanceof String) { cookingMethod((String)value); return; }
       if ("cookingMethods".equals(key) && value instanceof String) { cookingMethod((String)value); return; }
       if ("nutrition".equals(key) && value instanceof NutritionInformation) { nutrition((NutritionInformation)value); return; }
@@ -1650,18 +1591,12 @@ public class Recipe extends HowTo {
       if ("recipeCategorys".equals(key) && value instanceof String) { recipeCategory((String)value); return; }
       if ("recipeCuisine".equals(key) && value instanceof String) { recipeCuisine((String)value); return; }
       if ("recipeCuisines".equals(key) && value instanceof String) { recipeCuisine((String)value); return; }
-      if ("recipeIngredient".equals(key) && value instanceof String) { recipeIngredient((String)value); return; }
-      if ("recipeIngredients".equals(key) && value instanceof String) { recipeIngredient((String)value); return; }
-      if ("recipeInstructions".equals(key) && value instanceof CreativeWork) { recipeInstructions((CreativeWork)value); return; }
-      if ("recipeInstructionss".equals(key) && value instanceof CreativeWork) { recipeInstructions((CreativeWork)value); return; }
-      if ("recipeInstructions".equals(key) && value instanceof ItemList) { recipeInstructions((ItemList)value); return; }
-      if ("recipeInstructionss".equals(key) && value instanceof ItemList) { recipeInstructions((ItemList)value); return; }
-      if ("recipeInstructions".equals(key) && value instanceof String) { recipeInstructions((String)value); return; }
-      if ("recipeInstructionss".equals(key) && value instanceof String) { recipeInstructions((String)value); return; }
-      if ("recipeYield".equals(key) && value instanceof QuantitativeValue) { recipeYield((QuantitativeValue)value); return; }
-      if ("recipeYields".equals(key) && value instanceof QuantitativeValue) { recipeYield((QuantitativeValue)value); return; }
-      if ("recipeYield".equals(key) && value instanceof String) { recipeYield((String)value); return; }
-      if ("recipeYields".equals(key) && value instanceof String) { recipeYield((String)value); return; }
+      if ("recipeIngredient".equals(key) && value instanceof RecipeIngredient) { recipeIngredient((RecipeIngredient)value); return; }
+      if ("recipeIngredients".equals(key) && value instanceof RecipeIngredient) { recipeIngredient((RecipeIngredient)value); return; }
+      if ("recipeInstructions".equals(key) && value instanceof RecipeInstructions) { recipeInstructions((RecipeInstructions)value); return; }
+      if ("recipeInstructionss".equals(key) && value instanceof RecipeInstructions) { recipeInstructions((RecipeInstructions)value); return; }
+      if ("recipeYield".equals(key) && value instanceof RecipeYield) { recipeYield((RecipeYield)value); return; }
+      if ("recipeYields".equals(key) && value instanceof RecipeYield) { recipeYield((RecipeYield)value); return; }
       super.fromMap(key, value);
     }
   }

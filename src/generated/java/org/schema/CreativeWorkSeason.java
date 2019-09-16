@@ -79,23 +79,6 @@ public class CreativeWorkSeason extends CreativeWork {
     return Arrays.asList((java.util.Date) current);
   }
   /**
-   * An episode of a tv, radio or game media within a series or season.
-   */
-  @JsonIgnore public HasPart getEpisode() {
-    return (HasPart) getValue("episode");
-  }
-  /**
-   * An episode of a tv, radio or game media within a series or season.
-   */
-  @JsonIgnore public Collection<HasPart> getEpisodes() {
-    final Object current = myData.get("episode");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<HasPart>) current;
-    }
-    return Arrays.asList((HasPart) current);
-  }
-  /**
    * The number of episodes in this season or series.
    */
   @JsonIgnore public Integer getNumberOfEpisodes() {
@@ -111,23 +94,6 @@ public class CreativeWorkSeason extends CreativeWork {
       return (Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
-  }
-  /**
-   * The series to which this episode or season belongs.
-   */
-  @JsonIgnore public IsPartOf getPartOfSeries() {
-    return (IsPartOf) getValue("partOfSeries");
-  }
-  /**
-   * The series to which this episode or season belongs.
-   */
-  @JsonIgnore public Collection<IsPartOf> getPartOfSeriess() {
-    final Object current = myData.get("partOfSeries");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<IsPartOf>) current;
-    }
-    return Arrays.asList((IsPartOf) current);
   }
   /**
    * The production company or studio responsible for the item e.g. series, video game, episode etc.
@@ -146,39 +112,16 @@ public class CreativeWorkSeason extends CreativeWork {
     }
     return Arrays.asList((Organization) current);
   }
-  /**
-   * Position of the season within an ordered group of seasons.
-   */
-  @JsonIgnore public Integer getSeasonNumberInteger() {
-    return (Integer) getValue("seasonNumber");
+  @JsonIgnore public SeasonNumber getSeasonNumber() {
+    return (SeasonNumber) getValue("seasonNumber");
   }
-  /**
-   * Position of the season within an ordered group of seasons.
-   */
-  @JsonIgnore public Collection<Integer> getSeasonNumberIntegers() {
+  @JsonIgnore public Collection<SeasonNumber> getSeasonNumbers() {
     final Object current = myData.get("seasonNumber");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+      return (Collection<SeasonNumber>) current;
     }
-    return Arrays.asList((Integer) current);
-  }
-  /**
-   * Position of the season within an ordered group of seasons.
-   */
-  @JsonIgnore public String getSeasonNumberString() {
-    return (String) getValue("seasonNumber");
-  }
-  /**
-   * Position of the season within an ordered group of seasons.
-   */
-  @JsonIgnore public Collection<String> getSeasonNumberStrings() {
-    final Object current = myData.get("seasonNumber");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
+    return Arrays.asList((SeasonNumber) current);
   }
   /**
    * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
@@ -264,24 +207,10 @@ public class CreativeWorkSeason extends CreativeWork {
       return this;
     }
     /**
-     * An episode of a tv, radio or game media within a series or season.
-     */
-    @NotNull public Builder episode(@NotNull HasPart hasPart) {
-      putValue("episode", hasPart);
-      return this;
-    }
-    /**
      * The number of episodes in this season or series.
      */
     @NotNull public Builder numberOfEpisodes(@NotNull Integer integer) {
       putValue("numberOfEpisodes", integer);
-      return this;
-    }
-    /**
-     * The series to which this episode or season belongs.
-     */
-    @NotNull public Builder partOfSeries(@NotNull IsPartOf isPartOf) {
-      putValue("partOfSeries", isPartOf);
       return this;
     }
     /**
@@ -298,17 +227,7 @@ public class CreativeWorkSeason extends CreativeWork {
       putValue("productionCompany", organization.build());
       return this;
     }
-    /**
-     * Position of the season within an ordered group of seasons.
-     */
-    @NotNull public Builder seasonNumber(@NotNull Integer integer) {
-      putValue("seasonNumber", integer);
-      return this;
-    }
-    /**
-     * Position of the season within an ordered group of seasons.
-     */
-    @NotNull public Builder seasonNumber(@NotNull String seasonNumber) {
+    @NotNull public Builder seasonNumber(@NotNull SeasonNumber seasonNumber) {
       putValue("seasonNumber", seasonNumber);
       return this;
     }
@@ -338,6 +257,13 @@ public class CreativeWorkSeason extends CreativeWork {
      */
     @NotNull public Builder schemaVersion(@NotNull String schemaVersion) {
       putValue("schemaVersion", schemaVersion);
+      return this;
+    }
+    /**
+     * The subject matter of the content.
+     */
+    @NotNull public Builder about(@NotNull MainEntity mainEntity) {
+      putValue("about", mainEntity);
       return this;
     }
     /**
@@ -527,6 +453,13 @@ public class CreativeWorkSeason extends CreativeWork {
      */
     @NotNull public Builder comment(@NotNull Comment.Builder comment) {
       putValue("comment", comment.build());
+      return this;
+    }
+    /**
+     * The location depicted or described in the content. For example, the location in a photograph or painting.
+     */
+    @NotNull public Builder contentLocation(@NotNull SpatialCoverage spatialCoverage) {
+      putValue("contentLocation", spatialCoverage);
       return this;
     }
     /**
@@ -809,13 +742,6 @@ public class CreativeWorkSeason extends CreativeWork {
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
      */
-    @NotNull public Builder inLanguage(@NotNull Language.Builder language) {
-      putValue("inLanguage", language.build());
-      return this;
-    }
-    /**
-     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
-     */
     @NotNull public Builder inLanguage(@NotNull String inLanguage) {
       putValue("inLanguage", inLanguage);
       return this;
@@ -870,6 +796,13 @@ public class CreativeWorkSeason extends CreativeWork {
       return this;
     }
     /**
+     * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
+     */
+    @NotNull public Builder isPartOf(@NotNull PartOfEpisode partOfEpisode) {
+      putValue("isPartOf", partOfEpisode);
+      return this;
+    }
+    /**
      * Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas.
      */
     @NotNull public Builder keywords(@NotNull String keywords) {
@@ -905,13 +838,6 @@ public class CreativeWorkSeason extends CreativeWork {
       return this;
     }
     /**
-     * Indicates the primary entity described in some page or other CreativeWork.
-     */
-    @NotNull public Builder mainEntity(@NotNull About about) {
-      putValue("mainEntity", about);
-      return this;
-    }
-    /**
      * Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.
      */
     @NotNull public Builder mentions(@NotNull Thing thing) {
@@ -937,6 +863,13 @@ public class CreativeWorkSeason extends CreativeWork {
      */
     @NotNull public Builder offers(@NotNull Offer.Builder offer) {
       putValue("offers", offer.build());
+      return this;
+    }
+    /**
+     * The position of an item in a series or sequence of items.
+     */
+    @NotNull public Builder position(@NotNull SeasonNumber seasonNumber) {
+      putValue("position", seasonNumber);
       return this;
     }
     /**
@@ -1097,50 +1030,19 @@ public class CreativeWorkSeason extends CreativeWork {
       putValue("spatial", place.build());
       return this;
     }
-    /**
-     * The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of
-     *       contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates
-     *       areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
-     */
-    @NotNull public Builder spatialCoverage(@NotNull Place place) {
-      putValue("spatialCoverage", place);
+    @NotNull public Builder spatialCoverage(@NotNull SpatialCoverage spatialCoverage) {
+      putValue("spatialCoverage", spatialCoverage);
       return this;
     }
     /**
-     * The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of
-     *       contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates
-     *       areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
+     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
      */
-    @NotNull public Builder spatialCoverage(@NotNull Place.Builder place) {
-      putValue("spatialCoverage", place.build());
+    @NotNull public Builder sponsor(@NotNull Funder funder) {
+      putValue("sponsor", funder);
       return this;
     }
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     */
-    @NotNull public Builder funder(@NotNull Organization organization) {
-      putValue("funder", organization);
-      return this;
-    }
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     */
-    @NotNull public Builder funder(@NotNull Organization.Builder organization) {
-      putValue("funder", organization.build());
-      return this;
-    }
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     */
-    @NotNull public Builder funder(@NotNull Person person) {
-      putValue("funder", person);
-      return this;
-    }
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     */
-    @NotNull public Builder funder(@NotNull Person.Builder person) {
-      putValue("funder", person.build());
+    @NotNull public Builder funder(@NotNull Funder funder) {
+      putValue("funder", funder);
       return this;
     }
     /**
@@ -1200,6 +1102,13 @@ public class CreativeWorkSeason extends CreativeWork {
      */
     @NotNull public Builder timeRequired(@NotNull Duration duration) {
       putValue("timeRequired", duration);
+      return this;
+    }
+    /**
+     * Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience, e.g. 'PT30M', 'PT1H25M'.
+     */
+    @NotNull public Builder timeRequired(@NotNull Duration.Builder duration) {
+      putValue("timeRequired", duration.build());
       return this;
     }
     /**
@@ -1310,8 +1219,15 @@ public class CreativeWorkSeason extends CreativeWork {
     /**
      * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
      */
-    @NotNull public Builder hasPart(@NotNull HasPart hasPart) {
-      putValue("hasPart", hasPart);
+    @NotNull public Builder hasPart(@NotNull CreativeWork creativeWork) {
+      putValue("hasPart", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
+     */
+    @NotNull public Builder hasPart(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("hasPart", creativeWork.build());
       return this;
     }
     /**
@@ -1399,6 +1315,13 @@ public class CreativeWorkSeason extends CreativeWork {
       return this;
     }
     /**
+     * A material that something is made from, e.g. leather, wool, cotton, paper.
+     */
+    @NotNull public Builder material(@NotNull ArtMedium artMedium) {
+      putValue("material", artMedium);
+      return this;
+    }
+    /**
      * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
      */
     @NotNull public Builder interactionStatistic(@NotNull InteractionCounter interactionCounter) {
@@ -1443,10 +1366,7 @@ public class CreativeWorkSeason extends CreativeWork {
       putValue("accessibilitySummary", accessibilitySummary);
       return this;
     }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     */
-    @NotNull public Builder additionalType(@NotNull String additionalType) {
+    @NotNull public Builder additionalType(@NotNull AdditionalType additionalType) {
       putValue("additionalType", additionalType);
       return this;
     }
@@ -1458,10 +1378,21 @@ public class CreativeWorkSeason extends CreativeWork {
       return this;
     }
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * A description of the item.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
+    @NotNull public Builder description(@NotNull DisambiguatingDescription disambiguatingDescription) {
+      putValue("description", disambiguatingDescription);
+      return this;
+    }
+    @NotNull public Builder disambiguatingDescription(@NotNull DisambiguatingDescription disambiguatingDescription) {
       putValue("disambiguatingDescription", disambiguatingDescription);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Logo logo) {
+      putValue("image", logo);
       return this;
     }
     /**
@@ -1483,13 +1414,6 @@ public class CreativeWorkSeason extends CreativeWork {
      */
     @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
       putValue("mainEntityOfPage", mainEntityOfPage);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
       return this;
     }
     /**
@@ -1518,6 +1442,14 @@ public class CreativeWorkSeason extends CreativeWork {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Isbn isbn) {
+      putValue("identifier", isbn);
       return this;
     }
     /**
@@ -1562,18 +1494,12 @@ public class CreativeWorkSeason extends CreativeWork {
       if ("directors".equals(key) && value instanceof Person) { director((Person)value); return; }
       if ("endDate".equals(key) && value instanceof java.util.Date) { endDate((java.util.Date)value); return; }
       if ("endDates".equals(key) && value instanceof java.util.Date) { endDate((java.util.Date)value); return; }
-      if ("episode".equals(key) && value instanceof HasPart) { episode((HasPart)value); return; }
-      if ("episodes".equals(key) && value instanceof HasPart) { episode((HasPart)value); return; }
       if ("numberOfEpisodes".equals(key) && value instanceof Integer) { numberOfEpisodes((Integer)value); return; }
       if ("numberOfEpisodess".equals(key) && value instanceof Integer) { numberOfEpisodes((Integer)value); return; }
-      if ("partOfSeries".equals(key) && value instanceof IsPartOf) { partOfSeries((IsPartOf)value); return; }
-      if ("partOfSeriess".equals(key) && value instanceof IsPartOf) { partOfSeries((IsPartOf)value); return; }
       if ("productionCompany".equals(key) && value instanceof Organization) { productionCompany((Organization)value); return; }
       if ("productionCompanys".equals(key) && value instanceof Organization) { productionCompany((Organization)value); return; }
-      if ("seasonNumber".equals(key) && value instanceof Integer) { seasonNumber((Integer)value); return; }
-      if ("seasonNumbers".equals(key) && value instanceof Integer) { seasonNumber((Integer)value); return; }
-      if ("seasonNumber".equals(key) && value instanceof String) { seasonNumber((String)value); return; }
-      if ("seasonNumbers".equals(key) && value instanceof String) { seasonNumber((String)value); return; }
+      if ("seasonNumber".equals(key) && value instanceof SeasonNumber) { seasonNumber((SeasonNumber)value); return; }
+      if ("seasonNumbers".equals(key) && value instanceof SeasonNumber) { seasonNumber((SeasonNumber)value); return; }
       if ("startDate".equals(key) && value instanceof java.util.Date) { startDate((java.util.Date)value); return; }
       if ("startDates".equals(key) && value instanceof java.util.Date) { startDate((java.util.Date)value); return; }
       if ("trailer".equals(key) && value instanceof VideoObject) { trailer((VideoObject)value); return; }

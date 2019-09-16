@@ -27,22 +27,16 @@ import java.util.*;
  * The act of producing a balanced opinion about the object for an audience. An agent reviews an object with participants resulting in a review.
  */
 public class ReviewAction extends AssessAction {
-  /**
-   * A sub property of result. The review that resulted in the performing of the action.
-   */
-  @JsonIgnore public Review getResultReview() {
-    return (Review) getValue("resultReview");
+  @JsonIgnore public ResultReview getResultReview() {
+    return (ResultReview) getValue("resultReview");
   }
-  /**
-   * A sub property of result. The review that resulted in the performing of the action.
-   */
-  @JsonIgnore public Collection<Review> getResultReviews() {
+  @JsonIgnore public Collection<ResultReview> getResultReviews() {
     final Object current = myData.get("resultReview");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<Review>) current;
+      return (Collection<ResultReview>) current;
     }
-    return Arrays.asList((Review) current);
+    return Arrays.asList((ResultReview) current);
   }
   protected ReviewAction(java.util.Map<String,Object> data) {
     super(data);
@@ -58,18 +52,8 @@ public class ReviewAction extends AssessAction {
     @NotNull public ReviewAction build() {
       return new ReviewAction(myData);
     }
-    /**
-     * A sub property of result. The review that resulted in the performing of the action.
-     */
-    @NotNull public Builder resultReview(@NotNull Review review) {
-      putValue("resultReview", review);
-      return this;
-    }
-    /**
-     * A sub property of result. The review that resulted in the performing of the action.
-     */
-    @NotNull public Builder resultReview(@NotNull Review.Builder review) {
-      putValue("resultReview", review.build());
+    @NotNull public Builder resultReview(@NotNull ResultReview resultReview) {
+      putValue("resultReview", resultReview);
       return this;
     }
     /**
@@ -105,6 +89,55 @@ public class ReviewAction extends AssessAction {
      */
     @NotNull public Builder endTime(@NotNull java.util.Date date) {
       putValue("endTime", date);
+      return this;
+    }
+    /**
+     * The object that helped the agent perform the action. e.g. John wrote a book with *a pen*.
+     */
+    @NotNull public Builder instrument(@NotNull Language language) {
+      putValue("instrument", language);
+      return this;
+    }
+    /**
+     * The location of for example where the event is happening, an organization is located, or where an action takes place.
+     */
+    @NotNull public Builder location(@NotNull SportsActivityLocation sportsActivityLocation) {
+      putValue("location", sportsActivityLocation);
+      return this;
+    }
+    /**
+     * The location of for example where the event is happening, an organization is located, or where an action takes place.
+     */
+    @NotNull public Builder location(@NotNull SportsActivityLocation.Builder sportsActivityLocation) {
+      putValue("location", sportsActivityLocation.build());
+      return this;
+    }
+    /**
+     * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
+     */
+    @NotNull public Builder object(@NotNull Option option) {
+      putValue("object", option);
+      return this;
+    }
+    /**
+     * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
+     */
+    @NotNull public Builder participant(@NotNull RealEstateAgent realEstateAgent) {
+      putValue("participant", realEstateAgent);
+      return this;
+    }
+    /**
+     * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
+     */
+    @NotNull public Builder participant(@NotNull RealEstateAgent.Builder realEstateAgent) {
+      putValue("participant", realEstateAgent.build());
+      return this;
+    }
+    /**
+     * The result produced in the action. e.g. John wrote *a book*.
+     */
+    @NotNull public Builder result(@NotNull ResultComment resultComment) {
+      putValue("result", resultComment);
       return this;
     }
     /**
@@ -149,10 +182,7 @@ public class ReviewAction extends AssessAction {
       putValue("target", entryPoint.build());
       return this;
     }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     */
-    @NotNull public Builder additionalType(@NotNull String additionalType) {
+    @NotNull public Builder additionalType(@NotNull AdditionalType additionalType) {
       putValue("additionalType", additionalType);
       return this;
     }
@@ -164,10 +194,21 @@ public class ReviewAction extends AssessAction {
       return this;
     }
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * A description of the item.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
+    @NotNull public Builder description(@NotNull DisambiguatingDescription disambiguatingDescription) {
+      putValue("description", disambiguatingDescription);
+      return this;
+    }
+    @NotNull public Builder disambiguatingDescription(@NotNull DisambiguatingDescription disambiguatingDescription) {
       putValue("disambiguatingDescription", disambiguatingDescription);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Logo logo) {
+      putValue("image", logo);
       return this;
     }
     /**
@@ -189,13 +230,6 @@ public class ReviewAction extends AssessAction {
      */
     @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
       putValue("mainEntityOfPage", mainEntityOfPage);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
       return this;
     }
     /**
@@ -224,6 +258,14 @@ public class ReviewAction extends AssessAction {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Isbn isbn) {
+      putValue("identifier", isbn);
       return this;
     }
     /**
@@ -262,8 +304,8 @@ public class ReviewAction extends AssessAction {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("resultReview".equals(key) && value instanceof Review) { resultReview((Review)value); return; }
-      if ("resultReviews".equals(key) && value instanceof Review) { resultReview((Review)value); return; }
+      if ("resultReview".equals(key) && value instanceof ResultReview) { resultReview((ResultReview)value); return; }
+      if ("resultReviews".equals(key) && value instanceof ResultReview) { resultReview((ResultReview)value); return; }
       super.fromMap(key, value);
     }
   }

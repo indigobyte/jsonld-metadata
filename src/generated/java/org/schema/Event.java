@@ -28,6 +28,23 @@ import java.util.*;
  */
 public class Event extends Thing {
   /**
+   * The subject matter of the content.
+   */
+  @JsonIgnore public MainEntity getAbout() {
+    return (MainEntity) getValue("about");
+  }
+  /**
+   * The subject matter of the content.
+   */
+  @JsonIgnore public Collection<MainEntity> getAbouts() {
+    final Object current = myData.get("about");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<MainEntity>) current;
+    }
+    return Arrays.asList((MainEntity) current);
+  }
+  /**
    * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
    */
   @JsonIgnore public Person getActor() {
@@ -215,6 +232,23 @@ public class Event extends Thing {
     return Arrays.asList((java.util.Date) current);
   }
   /**
+   * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
+   */
+  @JsonIgnore public LoanTerm getDuration() {
+    return (LoanTerm) getValue("duration");
+  }
+  /**
+   * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
+   */
+  @JsonIgnore public Collection<LoanTerm> getDurations() {
+    final Object current = myData.get("duration");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<LoanTerm>) current;
+    }
+    return Arrays.asList((LoanTerm) current);
+  }
+  /**
    * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
    */
   @JsonIgnore public java.util.Date getEndDate() {
@@ -298,6 +332,23 @@ public class Event extends Thing {
       return (Collection<String>) current;
     }
     return Arrays.asList((String) current);
+  }
+  /**
+   * The location of for example where the event is happening, an organization is located, or where an action takes place.
+   */
+  @JsonIgnore public SportsActivityLocation getLocation() {
+    return (SportsActivityLocation) getValue("location");
+  }
+  /**
+   * The location of for example where the event is happening, an organization is located, or where an action takes place.
+   */
+  @JsonIgnore public Collection<SportsActivityLocation> getLocations() {
+    final Object current = myData.get("location");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<SportsActivityLocation>) current;
+    }
+    return Arrays.asList((SportsActivityLocation) current);
   }
   /**
    * The total number of individuals that may attend an event or venue.
@@ -436,38 +487,32 @@ public class Event extends Thing {
     return Arrays.asList((Review) current);
   }
   /**
-   * A person or organization that supports (sponsors) something through some kind of financial contribution.
+   * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
    */
-  @JsonIgnore public Organization getFunderOrganization() {
-    return (Organization) getValue("funder");
+  @JsonIgnore public Funder getSponsor() {
+    return (Funder) getValue("sponsor");
   }
   /**
-   * A person or organization that supports (sponsors) something through some kind of financial contribution.
+   * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
    */
-  @JsonIgnore public Collection<Organization> getFunderOrganizations() {
+  @JsonIgnore public Collection<Funder> getSponsors() {
+    final Object current = myData.get("sponsor");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Funder>) current;
+    }
+    return Arrays.asList((Funder) current);
+  }
+  @JsonIgnore public Funder getFunder() {
+    return (Funder) getValue("funder");
+  }
+  @JsonIgnore public Collection<Funder> getFunders() {
     final Object current = myData.get("funder");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+      return (Collection<Funder>) current;
     }
-    return Arrays.asList((Organization) current);
-  }
-  /**
-   * A person or organization that supports (sponsors) something through some kind of financial contribution.
-   */
-  @JsonIgnore public Person getFunderPerson() {
-    return (Person) getValue("funder");
-  }
-  /**
-   * A person or organization that supports (sponsors) something through some kind of financial contribution.
-   */
-  @JsonIgnore public Collection<Person> getFunderPersons() {
-    final Object current = myData.get("funder");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
-    }
-    return Arrays.asList((Person) current);
+    return Arrays.asList((Funder) current);
   }
   /**
    * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
@@ -537,41 +582,35 @@ public class Event extends Thing {
     }
     return Arrays.asList((String) current);
   }
-  /**
-   * A work performed in some event, for example a play performed in a TheaterEvent.
-   */
-  @JsonIgnore public CreativeWork getWorkPerformed() {
-    return (CreativeWork) getValue("workPerformed");
+  @JsonIgnore public WorkPerformed getWorkPerformed() {
+    return (WorkPerformed) getValue("workPerformed");
+  }
+  @JsonIgnore public Collection<WorkPerformed> getWorkPerformeds() {
+    final Object current = myData.get("workPerformed");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<WorkPerformed>) current;
+    }
+    return Arrays.asList((WorkPerformed) current);
   }
   /**
-   * A work performed in some event, for example a play performed in a TheaterEvent.
+   * A work featured in some event, e.g. exhibited in an ExhibitionEvent.
+   *        Specific subproperties are available for workPerformed (e.g. a play), or a workPresented (a Movie at a ScreeningEvent).
    */
-  @JsonIgnore public Collection<CreativeWork> getWorkPerformeds() {
-    final Object current = myData.get("workPerformed");
+  @JsonIgnore public CreativeWork getWorkFeatured() {
+    return (CreativeWork) getValue("workFeatured");
+  }
+  /**
+   * A work featured in some event, e.g. exhibited in an ExhibitionEvent.
+   *        Specific subproperties are available for workPerformed (e.g. a play), or a workPresented (a Movie at a ScreeningEvent).
+   */
+  @JsonIgnore public Collection<CreativeWork> getWorkFeatureds() {
+    final Object current = myData.get("workFeatured");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<CreativeWork>) current;
     }
     return Arrays.asList((CreativeWork) current);
-  }
-  /**
-   * A work featured in some event, e.g. exhibited in an ExhibitionEvent.
-   *        Specific subproperties are available for workPerformed (e.g. a play), or a workPresented (a Movie at a ScreeningEvent).
-   */
-  @JsonIgnore public WorkFeatured getWorkFeatured() {
-    return (WorkFeatured) getValue("workFeatured");
-  }
-  /**
-   * A work featured in some event, e.g. exhibited in an ExhibitionEvent.
-   *        Specific subproperties are available for workPerformed (e.g. a play), or a workPresented (a Movie at a ScreeningEvent).
-   */
-  @JsonIgnore public Collection<WorkFeatured> getWorkFeatureds() {
-    final Object current = myData.get("workFeatured");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<WorkFeatured>) current;
-    }
-    return Arrays.asList((WorkFeatured) current);
   }
   /**
    * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
@@ -654,6 +693,13 @@ public class Event extends Thing {
     }
     @NotNull public Event build() {
       return new Event(myData);
+    }
+    /**
+     * The subject matter of the content.
+     */
+    @NotNull public Builder about(@NotNull MainEntity mainEntity) {
+      putValue("about", mainEntity);
+      return this;
     }
     /**
      * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
@@ -803,6 +849,13 @@ public class Event extends Thing {
       return this;
     }
     /**
+     * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
+     */
+    @NotNull public Builder duration(@NotNull LoanTerm loanTerm) {
+      putValue("duration", loanTerm);
+      return this;
+    }
+    /**
      * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      */
     @NotNull public Builder endDate(@NotNull java.util.Date date) {
@@ -833,15 +886,22 @@ public class Event extends Thing {
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
      */
-    @NotNull public Builder inLanguage(@NotNull Language.Builder language) {
-      putValue("inLanguage", language.build());
+    @NotNull public Builder inLanguage(@NotNull String inLanguage) {
+      putValue("inLanguage", inLanguage);
       return this;
     }
     /**
-     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     * The location of for example where the event is happening, an organization is located, or where an action takes place.
      */
-    @NotNull public Builder inLanguage(@NotNull String inLanguage) {
-      putValue("inLanguage", inLanguage);
+    @NotNull public Builder location(@NotNull SportsActivityLocation sportsActivityLocation) {
+      putValue("location", sportsActivityLocation);
+      return this;
+    }
+    /**
+     * The location of for example where the event is happening, an organization is located, or where an action takes place.
+     */
+    @NotNull public Builder location(@NotNull SportsActivityLocation.Builder sportsActivityLocation) {
+      putValue("location", sportsActivityLocation.build());
       return this;
     }
     /**
@@ -936,31 +996,14 @@ public class Event extends Thing {
       return this;
     }
     /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
+     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
      */
-    @NotNull public Builder funder(@NotNull Organization organization) {
-      putValue("funder", organization);
+    @NotNull public Builder sponsor(@NotNull Funder funder) {
+      putValue("sponsor", funder);
       return this;
     }
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     */
-    @NotNull public Builder funder(@NotNull Organization.Builder organization) {
-      putValue("funder", organization.build());
-      return this;
-    }
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     */
-    @NotNull public Builder funder(@NotNull Person person) {
-      putValue("funder", person);
-      return this;
-    }
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     */
-    @NotNull public Builder funder(@NotNull Person.Builder person) {
-      putValue("funder", person.build());
+    @NotNull public Builder funder(@NotNull Funder funder) {
+      putValue("funder", funder);
       return this;
     }
     /**
@@ -1005,26 +1048,24 @@ public class Event extends Thing {
       putValue("typicalAgeRange", typicalAgeRange);
       return this;
     }
-    /**
-     * A work performed in some event, for example a play performed in a TheaterEvent.
-     */
-    @NotNull public Builder workPerformed(@NotNull CreativeWork creativeWork) {
-      putValue("workPerformed", creativeWork);
-      return this;
-    }
-    /**
-     * A work performed in some event, for example a play performed in a TheaterEvent.
-     */
-    @NotNull public Builder workPerformed(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("workPerformed", creativeWork.build());
+    @NotNull public Builder workPerformed(@NotNull WorkPerformed workPerformed) {
+      putValue("workPerformed", workPerformed);
       return this;
     }
     /**
      * A work featured in some event, e.g. exhibited in an ExhibitionEvent.
      *        Specific subproperties are available for workPerformed (e.g. a play), or a workPresented (a Movie at a ScreeningEvent).
      */
-    @NotNull public Builder workFeatured(@NotNull WorkFeatured workFeatured) {
-      putValue("workFeatured", workFeatured);
+    @NotNull public Builder workFeatured(@NotNull CreativeWork creativeWork) {
+      putValue("workFeatured", creativeWork);
+      return this;
+    }
+    /**
+     * A work featured in some event, e.g. exhibited in an ExhibitionEvent.
+     *        Specific subproperties are available for workPerformed (e.g. a play), or a workPresented (a Movie at a ScreeningEvent).
+     */
+    @NotNull public Builder workFeatured(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("workFeatured", creativeWork.build());
       return this;
     }
     /**
@@ -1083,10 +1124,7 @@ public class Event extends Thing {
       putValue("composer", person.build());
       return this;
     }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     */
-    @NotNull public Builder additionalType(@NotNull String additionalType) {
+    @NotNull public Builder additionalType(@NotNull AdditionalType additionalType) {
       putValue("additionalType", additionalType);
       return this;
     }
@@ -1098,10 +1136,21 @@ public class Event extends Thing {
       return this;
     }
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * A description of the item.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
+    @NotNull public Builder description(@NotNull DisambiguatingDescription disambiguatingDescription) {
+      putValue("description", disambiguatingDescription);
+      return this;
+    }
+    @NotNull public Builder disambiguatingDescription(@NotNull DisambiguatingDescription disambiguatingDescription) {
       putValue("disambiguatingDescription", disambiguatingDescription);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Logo logo) {
+      putValue("image", logo);
       return this;
     }
     /**
@@ -1123,13 +1172,6 @@ public class Event extends Thing {
      */
     @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
       putValue("mainEntityOfPage", mainEntityOfPage);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
       return this;
     }
     /**
@@ -1158,6 +1200,14 @@ public class Event extends Thing {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Isbn isbn) {
+      putValue("identifier", isbn);
       return this;
     }
     /**
@@ -1196,6 +1246,8 @@ public class Event extends Thing {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
+      if ("about".equals(key) && value instanceof MainEntity) { about((MainEntity)value); return; }
+      if ("abouts".equals(key) && value instanceof MainEntity) { about((MainEntity)value); return; }
       if ("actor".equals(key) && value instanceof Person) { actor((Person)value); return; }
       if ("actors".equals(key) && value instanceof Person) { actor((Person)value); return; }
       if ("aggregateRating".equals(key) && value instanceof AggregateRating) { aggregateRating((AggregateRating)value); return; }
@@ -1218,6 +1270,8 @@ public class Event extends Thing {
       if ("directors".equals(key) && value instanceof Person) { director((Person)value); return; }
       if ("doorTime".equals(key) && value instanceof java.util.Date) { doorTime((java.util.Date)value); return; }
       if ("doorTimes".equals(key) && value instanceof java.util.Date) { doorTime((java.util.Date)value); return; }
+      if ("duration".equals(key) && value instanceof LoanTerm) { duration((LoanTerm)value); return; }
+      if ("durations".equals(key) && value instanceof LoanTerm) { duration((LoanTerm)value); return; }
       if ("endDate".equals(key) && value instanceof java.util.Date) { endDate((java.util.Date)value); return; }
       if ("endDates".equals(key) && value instanceof java.util.Date) { endDate((java.util.Date)value); return; }
       if ("eventStatus".equals(key) && value instanceof EventStatusType) { eventStatus((EventStatusType)value); return; }
@@ -1228,6 +1282,8 @@ public class Event extends Thing {
       if ("inLanguages".equals(key) && value instanceof Language) { inLanguage((Language)value); return; }
       if ("inLanguage".equals(key) && value instanceof String) { inLanguage((String)value); return; }
       if ("inLanguages".equals(key) && value instanceof String) { inLanguage((String)value); return; }
+      if ("location".equals(key) && value instanceof SportsActivityLocation) { location((SportsActivityLocation)value); return; }
+      if ("locations".equals(key) && value instanceof SportsActivityLocation) { location((SportsActivityLocation)value); return; }
       if ("maximumAttendeeCapacity".equals(key) && value instanceof Integer) { maximumAttendeeCapacity((Integer)value); return; }
       if ("maximumAttendeeCapacitys".equals(key) && value instanceof Integer) { maximumAttendeeCapacity((Integer)value); return; }
       if ("remainingAttendeeCapacity".equals(key) && value instanceof Integer) { remainingAttendeeCapacity((Integer)value); return; }
@@ -1244,10 +1300,10 @@ public class Event extends Thing {
       if ("recordedIns".equals(key) && value instanceof CreativeWork) { recordedIn((CreativeWork)value); return; }
       if ("review".equals(key) && value instanceof Review) { review((Review)value); return; }
       if ("reviews".equals(key) && value instanceof Review) { review((Review)value); return; }
-      if ("funder".equals(key) && value instanceof Organization) { funder((Organization)value); return; }
-      if ("funders".equals(key) && value instanceof Organization) { funder((Organization)value); return; }
-      if ("funder".equals(key) && value instanceof Person) { funder((Person)value); return; }
-      if ("funders".equals(key) && value instanceof Person) { funder((Person)value); return; }
+      if ("sponsor".equals(key) && value instanceof Funder) { sponsor((Funder)value); return; }
+      if ("sponsors".equals(key) && value instanceof Funder) { sponsor((Funder)value); return; }
+      if ("funder".equals(key) && value instanceof Funder) { funder((Funder)value); return; }
+      if ("funders".equals(key) && value instanceof Funder) { funder((Funder)value); return; }
       if ("startDate".equals(key) && value instanceof java.util.Date) { startDate((java.util.Date)value); return; }
       if ("startDates".equals(key) && value instanceof java.util.Date) { startDate((java.util.Date)value); return; }
       if ("subEvent".equals(key) && value instanceof Event) { subEvent((Event)value); return; }
@@ -1256,10 +1312,10 @@ public class Event extends Thing {
       if ("superEvents".equals(key) && value instanceof Event) { superEvent((Event)value); return; }
       if ("typicalAgeRange".equals(key) && value instanceof String) { typicalAgeRange((String)value); return; }
       if ("typicalAgeRanges".equals(key) && value instanceof String) { typicalAgeRange((String)value); return; }
-      if ("workPerformed".equals(key) && value instanceof CreativeWork) { workPerformed((CreativeWork)value); return; }
-      if ("workPerformeds".equals(key) && value instanceof CreativeWork) { workPerformed((CreativeWork)value); return; }
-      if ("workFeatured".equals(key) && value instanceof WorkFeatured) { workFeatured((WorkFeatured)value); return; }
-      if ("workFeatureds".equals(key) && value instanceof WorkFeatured) { workFeatured((WorkFeatured)value); return; }
+      if ("workPerformed".equals(key) && value instanceof WorkPerformed) { workPerformed((WorkPerformed)value); return; }
+      if ("workPerformeds".equals(key) && value instanceof WorkPerformed) { workPerformed((WorkPerformed)value); return; }
+      if ("workFeatured".equals(key) && value instanceof CreativeWork) { workFeatured((CreativeWork)value); return; }
+      if ("workFeatureds".equals(key) && value instanceof CreativeWork) { workFeatured((CreativeWork)value); return; }
       if ("translator".equals(key) && value instanceof Organization) { translator((Organization)value); return; }
       if ("translators".equals(key) && value instanceof Organization) { translator((Organization)value); return; }
       if ("translator".equals(key) && value instanceof Person) { translator((Person)value); return; }

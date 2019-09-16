@@ -64,19 +64,19 @@ public class HowTo extends CreativeWork {
   /**
    * The length of time it takes to perform instructions or a direction (not including time to prepare the supplies), in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
    */
-  @JsonIgnore public PerformTime getPerformTime() {
-    return (PerformTime) getValue("performTime");
+  @JsonIgnore public Duration getPerformTime() {
+    return (Duration) getValue("performTime");
   }
   /**
    * The length of time it takes to perform instructions or a direction (not including time to prepare the supplies), in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
    */
-  @JsonIgnore public Collection<PerformTime> getPerformTimes() {
+  @JsonIgnore public Collection<Duration> getPerformTimes() {
     final Object current = myData.get("performTime");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<PerformTime>) current;
+      return (Collection<Duration>) current;
     }
-    return Arrays.asList((PerformTime) current);
+    return Arrays.asList((Duration) current);
   }
   /**
    * The length of time it takes to prepare the items to be used in instructions or a direction, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
@@ -95,15 +95,9 @@ public class HowTo extends CreativeWork {
     }
     return Arrays.asList((Duration) current);
   }
-  /**
-   * A sub-property of instrument. A supply consumed when performing instructions or a direction.
-   */
   @JsonIgnore public Supply getSupply() {
     return (Supply) getValue("supply");
   }
-  /**
-   * A sub-property of instrument. A supply consumed when performing instructions or a direction.
-   */
   @JsonIgnore public Collection<Supply> getSupplys() {
     final Object current = myData.get("supply");
     if (current == null) return Collections.emptyList();
@@ -115,53 +109,81 @@ public class HowTo extends CreativeWork {
   /**
    * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection.
    */
-  @JsonIgnore public Step getStep() {
-    return (Step) getValue("step");
+  @JsonIgnore public CreativeWork getStepCreativeWork() {
+    return (CreativeWork) getValue("step");
   }
   /**
    * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection.
    */
-  @JsonIgnore public Collection<Step> getSteps() {
+  @JsonIgnore public Collection<CreativeWork> getStepCreativeWorks() {
     final Object current = myData.get("step");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<Step>) current;
+      return (Collection<CreativeWork>) current;
     }
-    return Arrays.asList((Step) current);
+    return Arrays.asList((CreativeWork) current);
   }
   /**
-   * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
+   * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection.
    */
-  @JsonIgnore public HowToTool getToolHowToTool() {
-    return (HowToTool) getValue("tool");
+  @JsonIgnore public HowToSection getStepHowToSection() {
+    return (HowToSection) getValue("step");
   }
   /**
-   * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
+   * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection.
    */
-  @JsonIgnore public Collection<HowToTool> getToolHowToTools() {
-    final Object current = myData.get("tool");
+  @JsonIgnore public Collection<HowToSection> getStepHowToSections() {
+    final Object current = myData.get("step");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<HowToTool>) current;
+      return (Collection<HowToSection>) current;
     }
-    return Arrays.asList((HowToTool) current);
+    return Arrays.asList((HowToSection) current);
   }
   /**
-   * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
+   * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection.
    */
-  @JsonIgnore public String getToolString() {
-    return (String) getValue("tool");
+  @JsonIgnore public HowToStep getStepHowToStep() {
+    return (HowToStep) getValue("step");
   }
   /**
-   * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
+   * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection.
    */
-  @JsonIgnore public Collection<String> getToolStrings() {
-    final Object current = myData.get("tool");
+  @JsonIgnore public Collection<HowToStep> getStepHowToSteps() {
+    final Object current = myData.get("step");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<HowToStep>) current;
+    }
+    return Arrays.asList((HowToStep) current);
+  }
+  /**
+   * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection.
+   */
+  @JsonIgnore public String getStepString() {
+    return (String) getValue("step");
+  }
+  /**
+   * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection.
+   */
+  @JsonIgnore public Collection<String> getStepStrings() {
+    final Object current = myData.get("step");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<String>) current;
     }
     return Arrays.asList((String) current);
+  }
+  @JsonIgnore public Tool getTool() {
+    return (Tool) getValue("tool");
+  }
+  @JsonIgnore public Collection<Tool> getTools() {
+    final Object current = myData.get("tool");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Tool>) current;
+    }
+    return Arrays.asList((Tool) current);
   }
   /**
    * The total time required to perform instructions or a direction (including time to prepare the supplies), in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
@@ -183,19 +205,36 @@ public class HowTo extends CreativeWork {
   /**
    * The quantity that results by performing instructions. For example, a paper airplane, 10 personalized candles.
    */
-  @JsonIgnore public Yield getYield() {
-    return (Yield) getValue("yield");
+  @JsonIgnore public QuantitativeValue getYieldQuantitativeValue() {
+    return (QuantitativeValue) getValue("yield");
   }
   /**
    * The quantity that results by performing instructions. For example, a paper airplane, 10 personalized candles.
    */
-  @JsonIgnore public Collection<Yield> getYields() {
+  @JsonIgnore public Collection<QuantitativeValue> getYieldQuantitativeValues() {
     final Object current = myData.get("yield");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<Yield>) current;
+      return (Collection<QuantitativeValue>) current;
     }
-    return Arrays.asList((Yield) current);
+    return Arrays.asList((QuantitativeValue) current);
+  }
+  /**
+   * The quantity that results by performing instructions. For example, a paper airplane, 10 personalized candles.
+   */
+  @JsonIgnore public String getYieldString() {
+    return (String) getValue("yield");
+  }
+  /**
+   * The quantity that results by performing instructions. For example, a paper airplane, 10 personalized candles.
+   */
+  @JsonIgnore public Collection<String> getYieldStrings() {
+    final Object current = myData.get("yield");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
   }
   protected HowTo(java.util.Map<String,Object> data) {
     super(data);
@@ -235,8 +274,15 @@ public class HowTo extends CreativeWork {
     /**
      * The length of time it takes to perform instructions or a direction (not including time to prepare the supplies), in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
      */
-    @NotNull public Builder performTime(@NotNull PerformTime performTime) {
-      putValue("performTime", performTime);
+    @NotNull public Builder performTime(@NotNull Duration duration) {
+      putValue("performTime", duration);
+      return this;
+    }
+    /**
+     * The length of time it takes to perform instructions or a direction (not including time to prepare the supplies), in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
+     */
+    @NotNull public Builder performTime(@NotNull Duration.Builder duration) {
+      putValue("performTime", duration.build());
       return this;
     }
     /**
@@ -247,8 +293,12 @@ public class HowTo extends CreativeWork {
       return this;
     }
     /**
-     * A sub-property of instrument. A supply consumed when performing instructions or a direction.
+     * The length of time it takes to prepare the items to be used in instructions or a direction, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
      */
+    @NotNull public Builder prepTime(@NotNull Duration.Builder duration) {
+      putValue("prepTime", duration.build());
+      return this;
+    }
     @NotNull public Builder supply(@NotNull Supply supply) {
       putValue("supply", supply);
       return this;
@@ -256,28 +306,53 @@ public class HowTo extends CreativeWork {
     /**
      * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection.
      */
-    @NotNull public Builder step(@NotNull Step step) {
+    @NotNull public Builder step(@NotNull CreativeWork creativeWork) {
+      putValue("step", creativeWork);
+      return this;
+    }
+    /**
+     * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection.
+     */
+    @NotNull public Builder step(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("step", creativeWork.build());
+      return this;
+    }
+    /**
+     * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection.
+     */
+    @NotNull public Builder step(@NotNull HowToSection howToSection) {
+      putValue("step", howToSection);
+      return this;
+    }
+    /**
+     * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection.
+     */
+    @NotNull public Builder step(@NotNull HowToSection.Builder howToSection) {
+      putValue("step", howToSection.build());
+      return this;
+    }
+    /**
+     * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection.
+     */
+    @NotNull public Builder step(@NotNull HowToStep howToStep) {
+      putValue("step", howToStep);
+      return this;
+    }
+    /**
+     * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection.
+     */
+    @NotNull public Builder step(@NotNull HowToStep.Builder howToStep) {
+      putValue("step", howToStep.build());
+      return this;
+    }
+    /**
+     * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection.
+     */
+    @NotNull public Builder step(@NotNull String step) {
       putValue("step", step);
       return this;
     }
-    /**
-     * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
-     */
-    @NotNull public Builder tool(@NotNull HowToTool howToTool) {
-      putValue("tool", howToTool);
-      return this;
-    }
-    /**
-     * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
-     */
-    @NotNull public Builder tool(@NotNull HowToTool.Builder howToTool) {
-      putValue("tool", howToTool.build());
-      return this;
-    }
-    /**
-     * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
-     */
-    @NotNull public Builder tool(@NotNull String tool) {
+    @NotNull public Builder tool(@NotNull Tool tool) {
       putValue("tool", tool);
       return this;
     }
@@ -289,9 +364,30 @@ public class HowTo extends CreativeWork {
       return this;
     }
     /**
+     * The total time required to perform instructions or a direction (including time to prepare the supplies), in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
+     */
+    @NotNull public Builder totalTime(@NotNull Duration.Builder duration) {
+      putValue("totalTime", duration.build());
+      return this;
+    }
+    /**
      * The quantity that results by performing instructions. For example, a paper airplane, 10 personalized candles.
      */
-    @NotNull public Builder yield(@NotNull Yield yield) {
+    @NotNull public Builder yield(@NotNull QuantitativeValue quantitativeValue) {
+      putValue("yield", quantitativeValue);
+      return this;
+    }
+    /**
+     * The quantity that results by performing instructions. For example, a paper airplane, 10 personalized candles.
+     */
+    @NotNull public Builder yield(@NotNull QuantitativeValue.Builder quantitativeValue) {
+      putValue("yield", quantitativeValue.build());
+      return this;
+    }
+    /**
+     * The quantity that results by performing instructions. For example, a paper airplane, 10 personalized candles.
+     */
+    @NotNull public Builder yield(@NotNull String yield) {
       putValue("yield", yield);
       return this;
     }
@@ -300,6 +396,13 @@ public class HowTo extends CreativeWork {
      */
     @NotNull public Builder schemaVersion(@NotNull String schemaVersion) {
       putValue("schemaVersion", schemaVersion);
+      return this;
+    }
+    /**
+     * The subject matter of the content.
+     */
+    @NotNull public Builder about(@NotNull MainEntity mainEntity) {
+      putValue("about", mainEntity);
       return this;
     }
     /**
@@ -489,6 +592,13 @@ public class HowTo extends CreativeWork {
      */
     @NotNull public Builder comment(@NotNull Comment.Builder comment) {
       putValue("comment", comment.build());
+      return this;
+    }
+    /**
+     * The location depicted or described in the content. For example, the location in a photograph or painting.
+     */
+    @NotNull public Builder contentLocation(@NotNull SpatialCoverage spatialCoverage) {
+      putValue("contentLocation", spatialCoverage);
       return this;
     }
     /**
@@ -771,13 +881,6 @@ public class HowTo extends CreativeWork {
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
      */
-    @NotNull public Builder inLanguage(@NotNull Language.Builder language) {
-      putValue("inLanguage", language.build());
-      return this;
-    }
-    /**
-     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
-     */
     @NotNull public Builder inLanguage(@NotNull String inLanguage) {
       putValue("inLanguage", inLanguage);
       return this;
@@ -832,6 +935,13 @@ public class HowTo extends CreativeWork {
       return this;
     }
     /**
+     * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
+     */
+    @NotNull public Builder isPartOf(@NotNull PartOfEpisode partOfEpisode) {
+      putValue("isPartOf", partOfEpisode);
+      return this;
+    }
+    /**
      * Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas.
      */
     @NotNull public Builder keywords(@NotNull String keywords) {
@@ -867,13 +977,6 @@ public class HowTo extends CreativeWork {
       return this;
     }
     /**
-     * Indicates the primary entity described in some page or other CreativeWork.
-     */
-    @NotNull public Builder mainEntity(@NotNull About about) {
-      putValue("mainEntity", about);
-      return this;
-    }
-    /**
      * Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.
      */
     @NotNull public Builder mentions(@NotNull Thing thing) {
@@ -899,6 +1002,13 @@ public class HowTo extends CreativeWork {
      */
     @NotNull public Builder offers(@NotNull Offer.Builder offer) {
       putValue("offers", offer.build());
+      return this;
+    }
+    /**
+     * The position of an item in a series or sequence of items.
+     */
+    @NotNull public Builder position(@NotNull SeasonNumber seasonNumber) {
+      putValue("position", seasonNumber);
       return this;
     }
     /**
@@ -1059,50 +1169,19 @@ public class HowTo extends CreativeWork {
       putValue("spatial", place.build());
       return this;
     }
-    /**
-     * The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of
-     *       contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates
-     *       areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
-     */
-    @NotNull public Builder spatialCoverage(@NotNull Place place) {
-      putValue("spatialCoverage", place);
+    @NotNull public Builder spatialCoverage(@NotNull SpatialCoverage spatialCoverage) {
+      putValue("spatialCoverage", spatialCoverage);
       return this;
     }
     /**
-     * The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of
-     *       contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates
-     *       areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
+     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
      */
-    @NotNull public Builder spatialCoverage(@NotNull Place.Builder place) {
-      putValue("spatialCoverage", place.build());
+    @NotNull public Builder sponsor(@NotNull Funder funder) {
+      putValue("sponsor", funder);
       return this;
     }
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     */
-    @NotNull public Builder funder(@NotNull Organization organization) {
-      putValue("funder", organization);
-      return this;
-    }
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     */
-    @NotNull public Builder funder(@NotNull Organization.Builder organization) {
-      putValue("funder", organization.build());
-      return this;
-    }
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     */
-    @NotNull public Builder funder(@NotNull Person person) {
-      putValue("funder", person);
-      return this;
-    }
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     */
-    @NotNull public Builder funder(@NotNull Person.Builder person) {
-      putValue("funder", person.build());
+    @NotNull public Builder funder(@NotNull Funder funder) {
+      putValue("funder", funder);
       return this;
     }
     /**
@@ -1162,6 +1241,13 @@ public class HowTo extends CreativeWork {
      */
     @NotNull public Builder timeRequired(@NotNull Duration duration) {
       putValue("timeRequired", duration);
+      return this;
+    }
+    /**
+     * Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience, e.g. 'PT30M', 'PT1H25M'.
+     */
+    @NotNull public Builder timeRequired(@NotNull Duration.Builder duration) {
+      putValue("timeRequired", duration.build());
       return this;
     }
     /**
@@ -1272,8 +1358,15 @@ public class HowTo extends CreativeWork {
     /**
      * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
      */
-    @NotNull public Builder hasPart(@NotNull HasPart hasPart) {
-      putValue("hasPart", hasPart);
+    @NotNull public Builder hasPart(@NotNull CreativeWork creativeWork) {
+      putValue("hasPart", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
+     */
+    @NotNull public Builder hasPart(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("hasPart", creativeWork.build());
       return this;
     }
     /**
@@ -1361,6 +1454,13 @@ public class HowTo extends CreativeWork {
       return this;
     }
     /**
+     * A material that something is made from, e.g. leather, wool, cotton, paper.
+     */
+    @NotNull public Builder material(@NotNull ArtMedium artMedium) {
+      putValue("material", artMedium);
+      return this;
+    }
+    /**
      * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
      */
     @NotNull public Builder interactionStatistic(@NotNull InteractionCounter interactionCounter) {
@@ -1405,10 +1505,7 @@ public class HowTo extends CreativeWork {
       putValue("accessibilitySummary", accessibilitySummary);
       return this;
     }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     */
-    @NotNull public Builder additionalType(@NotNull String additionalType) {
+    @NotNull public Builder additionalType(@NotNull AdditionalType additionalType) {
       putValue("additionalType", additionalType);
       return this;
     }
@@ -1420,10 +1517,21 @@ public class HowTo extends CreativeWork {
       return this;
     }
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * A description of the item.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
+    @NotNull public Builder description(@NotNull DisambiguatingDescription disambiguatingDescription) {
+      putValue("description", disambiguatingDescription);
+      return this;
+    }
+    @NotNull public Builder disambiguatingDescription(@NotNull DisambiguatingDescription disambiguatingDescription) {
       putValue("disambiguatingDescription", disambiguatingDescription);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Logo logo) {
+      putValue("image", logo);
       return this;
     }
     /**
@@ -1445,13 +1553,6 @@ public class HowTo extends CreativeWork {
      */
     @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
       putValue("mainEntityOfPage", mainEntityOfPage);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
       return this;
     }
     /**
@@ -1480,6 +1581,14 @@ public class HowTo extends CreativeWork {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Isbn isbn) {
+      putValue("identifier", isbn);
       return this;
     }
     /**
@@ -1522,22 +1631,28 @@ public class HowTo extends CreativeWork {
       if ("estimatedCosts".equals(key) && value instanceof MonetaryAmount) { estimatedCost((MonetaryAmount)value); return; }
       if ("estimatedCost".equals(key) && value instanceof String) { estimatedCost((String)value); return; }
       if ("estimatedCosts".equals(key) && value instanceof String) { estimatedCost((String)value); return; }
-      if ("performTime".equals(key) && value instanceof PerformTime) { performTime((PerformTime)value); return; }
-      if ("performTimes".equals(key) && value instanceof PerformTime) { performTime((PerformTime)value); return; }
+      if ("performTime".equals(key) && value instanceof Duration) { performTime((Duration)value); return; }
+      if ("performTimes".equals(key) && value instanceof Duration) { performTime((Duration)value); return; }
       if ("prepTime".equals(key) && value instanceof Duration) { prepTime((Duration)value); return; }
       if ("prepTimes".equals(key) && value instanceof Duration) { prepTime((Duration)value); return; }
       if ("supply".equals(key) && value instanceof Supply) { supply((Supply)value); return; }
       if ("supplys".equals(key) && value instanceof Supply) { supply((Supply)value); return; }
-      if ("step".equals(key) && value instanceof Step) { step((Step)value); return; }
-      if ("steps".equals(key) && value instanceof Step) { step((Step)value); return; }
-      if ("tool".equals(key) && value instanceof HowToTool) { tool((HowToTool)value); return; }
-      if ("tools".equals(key) && value instanceof HowToTool) { tool((HowToTool)value); return; }
-      if ("tool".equals(key) && value instanceof String) { tool((String)value); return; }
-      if ("tools".equals(key) && value instanceof String) { tool((String)value); return; }
+      if ("step".equals(key) && value instanceof CreativeWork) { step((CreativeWork)value); return; }
+      if ("steps".equals(key) && value instanceof CreativeWork) { step((CreativeWork)value); return; }
+      if ("step".equals(key) && value instanceof HowToSection) { step((HowToSection)value); return; }
+      if ("steps".equals(key) && value instanceof HowToSection) { step((HowToSection)value); return; }
+      if ("step".equals(key) && value instanceof HowToStep) { step((HowToStep)value); return; }
+      if ("steps".equals(key) && value instanceof HowToStep) { step((HowToStep)value); return; }
+      if ("step".equals(key) && value instanceof String) { step((String)value); return; }
+      if ("steps".equals(key) && value instanceof String) { step((String)value); return; }
+      if ("tool".equals(key) && value instanceof Tool) { tool((Tool)value); return; }
+      if ("tools".equals(key) && value instanceof Tool) { tool((Tool)value); return; }
       if ("totalTime".equals(key) && value instanceof Duration) { totalTime((Duration)value); return; }
       if ("totalTimes".equals(key) && value instanceof Duration) { totalTime((Duration)value); return; }
-      if ("yield".equals(key) && value instanceof Yield) { yield((Yield)value); return; }
-      if ("yields".equals(key) && value instanceof Yield) { yield((Yield)value); return; }
+      if ("yield".equals(key) && value instanceof QuantitativeValue) { yield((QuantitativeValue)value); return; }
+      if ("yields".equals(key) && value instanceof QuantitativeValue) { yield((QuantitativeValue)value); return; }
+      if ("yield".equals(key) && value instanceof String) { yield((String)value); return; }
+      if ("yields".equals(key) && value instanceof String) { yield((String)value); return; }
       super.fromMap(key, value);
     }
   }

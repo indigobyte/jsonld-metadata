@@ -30,18 +30,6 @@ class MutableIndividualProduct {
     set(value) { map["depth"] = value }
   fun depthDistance(builder: MutableDistance.() -> Unit) { map["depth"] = MutableDistance().apply(builder).build() }
   fun depthQuantitativeValue(builder: MutableQuantitativeValue.() -> Unit) { map["depth"] = MutableQuantitativeValue().apply(builder).build() }
-  var gtin12: Identifier
-    get() = map["gtin12"] as Identifier
-    set(value) { map["gtin12"] = value }
-  var gtin13: Identifier
-    get() = map["gtin13"] as Identifier
-    set(value) { map["gtin13"] = value }
-  var gtin14: Identifier
-    get() = map["gtin14"] as Identifier
-    set(value) { map["gtin14"] = value }
-  var gtin8: Identifier
-    get() = map["gtin8"] as Identifier
-    set(value) { map["gtin8"] = value }
   var height: Any
     get() = map["height"]!!
     set(value) { map["height"] = value }
@@ -68,10 +56,9 @@ class MutableIndividualProduct {
   var itemCondition: OfferItemCondition
     get() = map["itemCondition"] as OfferItemCondition
     set(value) { map["itemCondition"] = value }
-  var logo: Any
-    get() = map["logo"]!!
+  var logo: Logo
+    get() = map["logo"] as Logo
     set(value) { map["logo"] = value }
-  fun logoImageObject(builder: MutableImageObject.() -> Unit) { map["logo"] = MutableImageObject().apply(builder).build() }
   var model: Any
     get() = map["model"]!!
     set(value) { map["model"] = value }
@@ -87,9 +74,6 @@ class MutableIndividualProduct {
     get() = map["offers"] as Offer
     set(value) { map["offers"] = value }
   fun offers(builder: MutableOffer.() -> Unit) { map["offers"] = MutableOffer().apply(builder).build() }
-  var productID: Identifier
-    get() = map["productID"] as Identifier
-    set(value) { map["productID"] = value }
   var releaseDate: java.util.Date
     get() = map["releaseDate"] as java.util.Date
     set(value) { map["releaseDate"] = value }
@@ -100,9 +84,6 @@ class MutableIndividualProduct {
   var slogan: String
     get() = map["slogan"] as String
     set(value) { map["slogan"] = value }
-  var sku: Identifier
-    get() = map["sku"] as Identifier
-    set(value) { map["sku"] = value }
   var weight: QuantitativeValue
     get() = map["weight"] as QuantitativeValue
     set(value) { map["weight"] = value }
@@ -112,6 +93,9 @@ class MutableIndividualProduct {
     set(value) { map["width"] = value }
   fun widthDistance(builder: MutableDistance.() -> Unit) { map["width"] = MutableDistance().apply(builder).build() }
   fun widthQuantitativeValue(builder: MutableQuantitativeValue.() -> Unit) { map["width"] = MutableQuantitativeValue().apply(builder).build() }
+  var material: ArtMedium
+    get() = map["material"] as ArtMedium
+    set(value) { map["material"] = value }
   var additionalProperty: PropertyValue
     get() = map["additionalProperty"] as PropertyValue
     set(value) { map["additionalProperty"] = value }
@@ -122,22 +106,25 @@ class MutableIndividualProduct {
   var purchaseDate: java.util.Date
     get() = map["purchaseDate"] as java.util.Date
     set(value) { map["purchaseDate"] = value }
-  var additionalType: String
-    get() = map["additionalType"] as String
+  var additionalType: AdditionalType
+    get() = map["additionalType"] as AdditionalType
     set(value) { map["additionalType"] = value }
   var alternateName: String
     get() = map["alternateName"] as String
     set(value) { map["alternateName"] = value }
-  var disambiguatingDescription: String
-    get() = map["disambiguatingDescription"] as String
+  var description: DisambiguatingDescription
+    get() = map["description"] as DisambiguatingDescription
+    set(value) { map["description"] = value }
+  var disambiguatingDescription: DisambiguatingDescription
+    get() = map["disambiguatingDescription"] as DisambiguatingDescription
     set(value) { map["disambiguatingDescription"] = value }
+  var image: Logo
+    get() = map["image"] as Logo
+    set(value) { map["image"] = value }
   var mainEntityOfPage: Any
     get() = map["mainEntityOfPage"]!!
     set(value) { map["mainEntityOfPage"] = value }
   fun mainEntityOfPageCreativeWork(builder: MutableCreativeWork.() -> Unit) { map["mainEntityOfPage"] = MutableCreativeWork().apply(builder).build() }
-  var name: String
-    get() = map["name"] as String
-    set(value) { map["name"] = value }
   var sameAs: String
     get() = map["sameAs"] as String
     set(value) { map["sameAs"] = value }
@@ -148,6 +135,9 @@ class MutableIndividualProduct {
     get() = map["potentialAction"] as Action
     set(value) { map["potentialAction"] = value }
   fun potentialAction(builder: MutableAction.() -> Unit) { map["potentialAction"] = MutableAction().apply(builder).build() }
+  var identifier: Isbn
+    get() = map["identifier"] as Isbn
+    set(value) { map["identifier"] = value }
   var subjectOf: Any
     get() = map["subjectOf"]!!
     set(value) { map["subjectOf"] = value }

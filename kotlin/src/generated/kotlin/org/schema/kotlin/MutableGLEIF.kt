@@ -18,6 +18,9 @@ class MutableGLEIF {
     get() = map["alumni"] as Person
     set(value) { map["alumni"] = value }
   fun alumni(builder: MutablePerson.() -> Unit) { map["alumni"] = MutablePerson().apply(builder).build() }
+  var areaServed: AvailableAtOrFrom
+    get() = map["areaServed"] as AvailableAtOrFrom
+    set(value) { map["areaServed"] = value }
   var award: String
     get() = map["award"] as String
     set(value) { map["award"] = value }
@@ -38,9 +41,6 @@ class MutableGLEIF {
     get() = map["department"] as Organization
     set(value) { map["department"] = value }
   fun department(builder: MutableOrganization.() -> Unit) { map["department"] = MutableOrganization().apply(builder).build() }
-  var duns: Identifier
-    get() = map["duns"] as Identifier
-    set(value) { map["duns"] = value }
   var email: String
     get() = map["email"] as String
     set(value) { map["email"] = value }
@@ -65,9 +65,6 @@ class MutableGLEIF {
   var foundingDate: java.util.Date
     get() = map["foundingDate"] as java.util.Date
     set(value) { map["foundingDate"] = value }
-  var globalLocationNumber: Identifier
-    get() = map["globalLocationNumber"] as Identifier
-    set(value) { map["globalLocationNumber"] = value }
   var hasPOS: Place
     get() = map["hasPOS"] as Place
     set(value) { map["hasPOS"] = value }
@@ -78,10 +75,13 @@ class MutableGLEIF {
   var legalName: String
     get() = map["legalName"] as String
     set(value) { map["legalName"] = value }
-  var logo: Any
-    get() = map["logo"]!!
+  var location: SportsActivityLocation
+    get() = map["location"] as SportsActivityLocation
+    set(value) { map["location"] = value }
+  fun location(builder: MutableSportsActivityLocation.() -> Unit) { map["location"] = MutableSportsActivityLocation().apply(builder).build() }
+  var logo: Logo
+    get() = map["logo"] as Logo
     set(value) { map["logo"] = value }
-  fun logoImageObject(builder: MutableImageObject.() -> Unit) { map["logo"] = MutableImageObject().apply(builder).build() }
   var makesOffer: Offer
     get() = map["makesOffer"] as Offer
     set(value) { map["makesOffer"] = value }
@@ -91,9 +91,11 @@ class MutableGLEIF {
     set(value) { map["member"] = value }
   fun memberOrganization(builder: MutableOrganization.() -> Unit) { map["member"] = MutableOrganization().apply(builder).build() }
   fun memberPerson(builder: MutablePerson.() -> Unit) { map["member"] = MutablePerson().apply(builder).build() }
-  var memberOf: MemberOf
-    get() = map["memberOf"] as MemberOf
+  var memberOf: Any
+    get() = map["memberOf"]!!
     set(value) { map["memberOf"] = value }
+  fun memberOfOrganization(builder: MutableOrganization.() -> Unit) { map["memberOf"] = MutableOrganization().apply(builder).build() }
+  fun memberOfProgramMembership(builder: MutableProgramMembership.() -> Unit) { map["memberOf"] = MutableProgramMembership().apply(builder).build() }
   var naics: String
     get() = map["naics"] as String
     set(value) { map["naics"] = value }
@@ -121,18 +123,16 @@ class MutableGLEIF {
     get() = map["seeks"] as Demand
     set(value) { map["seeks"] = value }
   fun seeks(builder: MutableDemand.() -> Unit) { map["seeks"] = MutableDemand().apply(builder).build() }
-  var funder: Any
-    get() = map["funder"]!!
+  var sponsor: Funder
+    get() = map["sponsor"] as Funder
+    set(value) { map["sponsor"] = value }
+  var funder: Funder
+    get() = map["funder"] as Funder
     set(value) { map["funder"] = value }
-  fun funderOrganization(builder: MutableOrganization.() -> Unit) { map["funder"] = MutableOrganization().apply(builder).build() }
-  fun funderPerson(builder: MutablePerson.() -> Unit) { map["funder"] = MutablePerson().apply(builder).build() }
   var subOrganization: Organization
     get() = map["subOrganization"] as Organization
     set(value) { map["subOrganization"] = value }
   fun subOrganization(builder: MutableOrganization.() -> Unit) { map["subOrganization"] = MutableOrganization().apply(builder).build() }
-  var taxID: Identifier
-    get() = map["taxID"] as Identifier
-    set(value) { map["taxID"] = value }
   var telephone: String
     get() = map["telephone"] as String
     set(value) { map["telephone"] = value }
@@ -143,25 +143,25 @@ class MutableGLEIF {
     get() = map["foundingLocation"] as Place
     set(value) { map["foundingLocation"] = value }
   fun foundingLocation(builder: MutablePlace.() -> Unit) { map["foundingLocation"] = MutablePlace().apply(builder).build() }
-  var leiCode: Identifier
-    get() = map["leiCode"] as Identifier
-    set(value) { map["leiCode"] = value }
-  var additionalType: String
-    get() = map["additionalType"] as String
+  var additionalType: AdditionalType
+    get() = map["additionalType"] as AdditionalType
     set(value) { map["additionalType"] = value }
   var alternateName: String
     get() = map["alternateName"] as String
     set(value) { map["alternateName"] = value }
-  var disambiguatingDescription: String
-    get() = map["disambiguatingDescription"] as String
+  var description: DisambiguatingDescription
+    get() = map["description"] as DisambiguatingDescription
+    set(value) { map["description"] = value }
+  var disambiguatingDescription: DisambiguatingDescription
+    get() = map["disambiguatingDescription"] as DisambiguatingDescription
     set(value) { map["disambiguatingDescription"] = value }
+  var image: Logo
+    get() = map["image"] as Logo
+    set(value) { map["image"] = value }
   var mainEntityOfPage: Any
     get() = map["mainEntityOfPage"]!!
     set(value) { map["mainEntityOfPage"] = value }
   fun mainEntityOfPageCreativeWork(builder: MutableCreativeWork.() -> Unit) { map["mainEntityOfPage"] = MutableCreativeWork().apply(builder).build() }
-  var name: String
-    get() = map["name"] as String
-    set(value) { map["name"] = value }
   var sameAs: String
     get() = map["sameAs"] as String
     set(value) { map["sameAs"] = value }
@@ -172,6 +172,9 @@ class MutableGLEIF {
     get() = map["potentialAction"] as Action
     set(value) { map["potentialAction"] = value }
   fun potentialAction(builder: MutableAction.() -> Unit) { map["potentialAction"] = MutableAction().apply(builder).build() }
+  var identifier: Isbn
+    get() = map["identifier"] as Isbn
+    set(value) { map["identifier"] = value }
   var subjectOf: Any
     get() = map["subjectOf"]!!
     set(value) { map["subjectOf"] = value }

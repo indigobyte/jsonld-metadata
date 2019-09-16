@@ -204,37 +204,13 @@ public class BookStore extends Store {
       return this;
     }
     /**
-     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
-     */
-    @NotNull public Builder globalLocationNumber(@NotNull Identifier identifier) {
-      putValue("globalLocationNumber", identifier);
-      return this;
-    }
-    /**
      * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
      */
     @NotNull public Builder isicV4(@NotNull String isicV4) {
       putValue("isicV4", isicV4);
       return this;
     }
-    /**
-     * An associated logo.
-     */
-    @NotNull public Builder logo(@NotNull ImageObject imageObject) {
-      putValue("logo", imageObject);
-      return this;
-    }
-    /**
-     * An associated logo.
-     */
-    @NotNull public Builder logo(@NotNull ImageObject.Builder imageObject) {
-      putValue("logo", imageObject.build());
-      return this;
-    }
-    /**
-     * An associated logo.
-     */
-    @NotNull public Builder logo(@NotNull String logo) {
+    @NotNull public Builder logo(@NotNull Logo logo) {
       putValue("logo", logo);
       return this;
     }
@@ -296,32 +272,8 @@ public class BookStore extends Store {
       putValue("specialOpeningHoursSpecification", openingHoursSpecification.build());
       return this;
     }
-    /**
-     * A photograph of this place.
-     */
-    @NotNull public Builder photo(@NotNull ImageObject imageObject) {
-      putValue("photo", imageObject);
-      return this;
-    }
-    /**
-     * A photograph of this place.
-     */
-    @NotNull public Builder photo(@NotNull ImageObject.Builder imageObject) {
-      putValue("photo", imageObject.build());
-      return this;
-    }
-    /**
-     * A photograph of this place.
-     */
-    @NotNull public Builder photo(@NotNull Photograph photograph) {
-      putValue("photo", photograph);
-      return this;
-    }
-    /**
-     * A photograph of this place.
-     */
-    @NotNull public Builder photo(@NotNull Photograph.Builder photograph) {
-      putValue("photo", photograph.build());
+    @NotNull public Builder photo(@NotNull Photo photo) {
+      putValue("photo", photo);
       return this;
     }
     /**
@@ -389,10 +341,7 @@ public class BookStore extends Store {
       putValue("smokingAllowed", smokingAllowed);
       return this;
     }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     */
-    @NotNull public Builder additionalType(@NotNull String additionalType) {
+    @NotNull public Builder additionalType(@NotNull AdditionalType additionalType) {
       putValue("additionalType", additionalType);
       return this;
     }
@@ -404,10 +353,21 @@ public class BookStore extends Store {
       return this;
     }
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * A description of the item.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
+    @NotNull public Builder description(@NotNull DisambiguatingDescription disambiguatingDescription) {
+      putValue("description", disambiguatingDescription);
+      return this;
+    }
+    @NotNull public Builder disambiguatingDescription(@NotNull DisambiguatingDescription disambiguatingDescription) {
       putValue("disambiguatingDescription", disambiguatingDescription);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Logo logo) {
+      putValue("image", logo);
       return this;
     }
     /**
@@ -429,13 +389,6 @@ public class BookStore extends Store {
      */
     @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
       putValue("mainEntityOfPage", mainEntityOfPage);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
       return this;
     }
     /**
@@ -464,6 +417,14 @@ public class BookStore extends Store {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Isbn isbn) {
+      putValue("identifier", isbn);
       return this;
     }
     /**

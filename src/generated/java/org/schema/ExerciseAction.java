@@ -27,22 +27,27 @@ import java.util.*;
  * The act of participating in exertive activity for the purposes of improving health and fitness.
  */
 public class ExerciseAction extends PlayAction {
-  /**
-   * A sub property of location. The course where this action was taken.
-   */
-  @JsonIgnore public Place getExerciseCourse() {
-    return (Place) getValue("exerciseCourse");
+  @JsonIgnore public Course getCourse() {
+    return (Course) getValue("course");
   }
-  /**
-   * A sub property of location. The course where this action was taken.
-   */
-  @JsonIgnore public Collection<Place> getExerciseCourses() {
+  @JsonIgnore public Collection<Course> getCourses() {
+    final Object current = myData.get("course");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Course>) current;
+    }
+    return Arrays.asList((Course) current);
+  }
+  @JsonIgnore public ExerciseCourse getExerciseCourse() {
+    return (ExerciseCourse) getValue("exerciseCourse");
+  }
+  @JsonIgnore public Collection<ExerciseCourse> getExerciseCourses() {
     final Object current = myData.get("exerciseCourse");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<Place>) current;
+      return (Collection<ExerciseCourse>) current;
     }
-    return Arrays.asList((Place) current);
+    return Arrays.asList((ExerciseCourse) current);
   }
   /**
    * The distance travelled, e.g. exercising or travelling.
@@ -61,49 +66,31 @@ public class ExerciseAction extends PlayAction {
     }
     return Arrays.asList((Distance) current);
   }
-  /**
-   * A sub property of location. The original location of the object or the agent before the action.
-   */
-  @JsonIgnore public Place getFromLocation() {
-    return (Place) getValue("fromLocation");
+  @JsonIgnore public FromLocation getFromLocation() {
+    return (FromLocation) getValue("fromLocation");
   }
-  /**
-   * A sub property of location. The original location of the object or the agent before the action.
-   */
-  @JsonIgnore public Collection<Place> getFromLocations() {
+  @JsonIgnore public Collection<FromLocation> getFromLocations() {
     final Object current = myData.get("fromLocation");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<Place>) current;
+      return (Collection<FromLocation>) current;
     }
-    return Arrays.asList((Place) current);
+    return Arrays.asList((FromLocation) current);
   }
-  /**
-   * A sub property of participant. The opponent on this action.
-   */
-  @JsonIgnore public Person getOpponent() {
-    return (Person) getValue("opponent");
+  @JsonIgnore public Opponent getOpponent() {
+    return (Opponent) getValue("opponent");
   }
-  /**
-   * A sub property of participant. The opponent on this action.
-   */
-  @JsonIgnore public Collection<Person> getOpponents() {
+  @JsonIgnore public Collection<Opponent> getOpponents() {
     final Object current = myData.get("opponent");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<Person>) current;
+      return (Collection<Opponent>) current;
     }
-    return Arrays.asList((Person) current);
+    return Arrays.asList((Opponent) current);
   }
-  /**
-   * A sub property of location. The sports activity location where this action occurred.
-   */
   @JsonIgnore public SportsActivityLocation getSportsActivityLocation() {
     return (SportsActivityLocation) getValue("sportsActivityLocation");
   }
-  /**
-   * A sub property of location. The sports activity location where this action occurred.
-   */
   @JsonIgnore public Collection<SportsActivityLocation> getSportsActivityLocations() {
     final Object current = myData.get("sportsActivityLocation");
     if (current == null) return Collections.emptyList();
@@ -112,15 +99,9 @@ public class ExerciseAction extends PlayAction {
     }
     return Arrays.asList((SportsActivityLocation) current);
   }
-  /**
-   * A sub property of location. The sports event where this action occurred.
-   */
   @JsonIgnore public SportsEvent getSportsEvent() {
     return (SportsEvent) getValue("sportsEvent");
   }
-  /**
-   * A sub property of location. The sports event where this action occurred.
-   */
   @JsonIgnore public Collection<SportsEvent> getSportsEvents() {
     final Object current = myData.get("sportsEvent");
     if (current == null) return Collections.emptyList();
@@ -129,15 +110,9 @@ public class ExerciseAction extends PlayAction {
     }
     return Arrays.asList((SportsEvent) current);
   }
-  /**
-   * A sub property of participant. The sports team that participated on this action.
-   */
   @JsonIgnore public SportsTeam getSportsTeam() {
     return (SportsTeam) getValue("sportsTeam");
   }
-  /**
-   * A sub property of participant. The sports team that participated on this action.
-   */
   @JsonIgnore public Collection<SportsTeam> getSportsTeams() {
     final Object current = myData.get("sportsTeam");
     if (current == null) return Collections.emptyList();
@@ -146,22 +121,16 @@ public class ExerciseAction extends PlayAction {
     }
     return Arrays.asList((SportsTeam) current);
   }
-  /**
-   * A sub property of location. The final location of the object or the agent after the action.
-   */
-  @JsonIgnore public Place getToLocation() {
-    return (Place) getValue("toLocation");
+  @JsonIgnore public ToLocation getToLocation() {
+    return (ToLocation) getValue("toLocation");
   }
-  /**
-   * A sub property of location. The final location of the object or the agent after the action.
-   */
-  @JsonIgnore public Collection<Place> getToLocations() {
+  @JsonIgnore public Collection<ToLocation> getToLocations() {
     final Object current = myData.get("toLocation");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<Place>) current;
+      return (Collection<ToLocation>) current;
     }
-    return Arrays.asList((Place) current);
+    return Arrays.asList((ToLocation) current);
   }
   protected ExerciseAction(java.util.Map<String,Object> data) {
     super(data);
@@ -177,18 +146,16 @@ public class ExerciseAction extends PlayAction {
     @NotNull public ExerciseAction build() {
       return new ExerciseAction(myData);
     }
-    /**
-     * A sub property of location. The course where this action was taken.
-     */
-    @NotNull public Builder exerciseCourse(@NotNull Place place) {
-      putValue("exerciseCourse", place);
+    @NotNull public Builder course(@NotNull Course course) {
+      putValue("course", course);
       return this;
     }
-    /**
-     * A sub property of location. The course where this action was taken.
-     */
-    @NotNull public Builder exerciseCourse(@NotNull Place.Builder place) {
-      putValue("exerciseCourse", place.build());
+    @NotNull public Builder course(@NotNull Course.Builder course) {
+      putValue("course", course.build());
+      return this;
+    }
+    @NotNull public Builder exerciseCourse(@NotNull ExerciseCourse exerciseCourse) {
+      putValue("exerciseCourse", exerciseCourse);
       return this;
     }
     /**
@@ -205,88 +172,40 @@ public class ExerciseAction extends PlayAction {
       putValue("distance", distance.build());
       return this;
     }
-    /**
-     * A sub property of location. The original location of the object or the agent before the action.
-     */
-    @NotNull public Builder fromLocation(@NotNull Place place) {
-      putValue("fromLocation", place);
+    @NotNull public Builder fromLocation(@NotNull FromLocation fromLocation) {
+      putValue("fromLocation", fromLocation);
       return this;
     }
-    /**
-     * A sub property of location. The original location of the object or the agent before the action.
-     */
-    @NotNull public Builder fromLocation(@NotNull Place.Builder place) {
-      putValue("fromLocation", place.build());
+    @NotNull public Builder opponent(@NotNull Opponent opponent) {
+      putValue("opponent", opponent);
       return this;
     }
-    /**
-     * A sub property of participant. The opponent on this action.
-     */
-    @NotNull public Builder opponent(@NotNull Person person) {
-      putValue("opponent", person);
-      return this;
-    }
-    /**
-     * A sub property of participant. The opponent on this action.
-     */
-    @NotNull public Builder opponent(@NotNull Person.Builder person) {
-      putValue("opponent", person.build());
-      return this;
-    }
-    /**
-     * A sub property of location. The sports activity location where this action occurred.
-     */
     @NotNull public Builder sportsActivityLocation(@NotNull SportsActivityLocation sportsActivityLocation) {
       putValue("sportsActivityLocation", sportsActivityLocation);
       return this;
     }
-    /**
-     * A sub property of location. The sports activity location where this action occurred.
-     */
     @NotNull public Builder sportsActivityLocation(@NotNull SportsActivityLocation.Builder sportsActivityLocation) {
       putValue("sportsActivityLocation", sportsActivityLocation.build());
       return this;
     }
-    /**
-     * A sub property of location. The sports event where this action occurred.
-     */
     @NotNull public Builder sportsEvent(@NotNull SportsEvent sportsEvent) {
       putValue("sportsEvent", sportsEvent);
       return this;
     }
-    /**
-     * A sub property of location. The sports event where this action occurred.
-     */
     @NotNull public Builder sportsEvent(@NotNull SportsEvent.Builder sportsEvent) {
       putValue("sportsEvent", sportsEvent.build());
       return this;
     }
-    /**
-     * A sub property of participant. The sports team that participated on this action.
-     */
     @NotNull public Builder sportsTeam(@NotNull SportsTeam sportsTeam) {
       putValue("sportsTeam", sportsTeam);
       return this;
     }
-    /**
-     * A sub property of participant. The sports team that participated on this action.
-     */
     @NotNull public Builder sportsTeam(@NotNull SportsTeam.Builder sportsTeam) {
       putValue("sportsTeam", sportsTeam.build());
       return this;
     }
-    /**
-     * A sub property of location. The final location of the object or the agent after the action.
-     */
-    @NotNull public Builder toLocation(@NotNull Place place) {
-      putValue("toLocation", place);
-      return this;
-    }
-    /**
-     * A sub property of location. The final location of the object or the agent after the action.
-     */
-    @NotNull public Builder toLocation(@NotNull Place.Builder place) {
-      putValue("toLocation", place.build());
+    @NotNull public Builder toLocation(@NotNull ToLocation toLocation) {
+      putValue("toLocation", toLocation);
       return this;
     }
     /**
@@ -353,6 +272,55 @@ public class ExerciseAction extends PlayAction {
       return this;
     }
     /**
+     * The object that helped the agent perform the action. e.g. John wrote a book with *a pen*.
+     */
+    @NotNull public Builder instrument(@NotNull Language language) {
+      putValue("instrument", language);
+      return this;
+    }
+    /**
+     * The location of for example where the event is happening, an organization is located, or where an action takes place.
+     */
+    @NotNull public Builder location(@NotNull SportsActivityLocation sportsActivityLocation) {
+      putValue("location", sportsActivityLocation);
+      return this;
+    }
+    /**
+     * The location of for example where the event is happening, an organization is located, or where an action takes place.
+     */
+    @NotNull public Builder location(@NotNull SportsActivityLocation.Builder sportsActivityLocation) {
+      putValue("location", sportsActivityLocation.build());
+      return this;
+    }
+    /**
+     * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
+     */
+    @NotNull public Builder object(@NotNull Option option) {
+      putValue("object", option);
+      return this;
+    }
+    /**
+     * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
+     */
+    @NotNull public Builder participant(@NotNull RealEstateAgent realEstateAgent) {
+      putValue("participant", realEstateAgent);
+      return this;
+    }
+    /**
+     * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
+     */
+    @NotNull public Builder participant(@NotNull RealEstateAgent.Builder realEstateAgent) {
+      putValue("participant", realEstateAgent.build());
+      return this;
+    }
+    /**
+     * The result produced in the action. e.g. John wrote *a book*.
+     */
+    @NotNull public Builder result(@NotNull ResultComment resultComment) {
+      putValue("result", resultComment);
+      return this;
+    }
+    /**
      * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      */
     @NotNull public Builder startTime(@NotNull java.util.Date date) {
@@ -394,10 +362,7 @@ public class ExerciseAction extends PlayAction {
       putValue("target", entryPoint.build());
       return this;
     }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     */
-    @NotNull public Builder additionalType(@NotNull String additionalType) {
+    @NotNull public Builder additionalType(@NotNull AdditionalType additionalType) {
       putValue("additionalType", additionalType);
       return this;
     }
@@ -409,10 +374,21 @@ public class ExerciseAction extends PlayAction {
       return this;
     }
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * A description of the item.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
+    @NotNull public Builder description(@NotNull DisambiguatingDescription disambiguatingDescription) {
+      putValue("description", disambiguatingDescription);
+      return this;
+    }
+    @NotNull public Builder disambiguatingDescription(@NotNull DisambiguatingDescription disambiguatingDescription) {
       putValue("disambiguatingDescription", disambiguatingDescription);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Logo logo) {
+      putValue("image", logo);
       return this;
     }
     /**
@@ -434,13 +410,6 @@ public class ExerciseAction extends PlayAction {
      */
     @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
       putValue("mainEntityOfPage", mainEntityOfPage);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
       return this;
     }
     /**
@@ -469,6 +438,14 @@ public class ExerciseAction extends PlayAction {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Isbn isbn) {
+      putValue("identifier", isbn);
       return this;
     }
     /**
@@ -507,22 +484,24 @@ public class ExerciseAction extends PlayAction {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("exerciseCourse".equals(key) && value instanceof Place) { exerciseCourse((Place)value); return; }
-      if ("exerciseCourses".equals(key) && value instanceof Place) { exerciseCourse((Place)value); return; }
+      if ("course".equals(key) && value instanceof Course) { course((Course)value); return; }
+      if ("courses".equals(key) && value instanceof Course) { course((Course)value); return; }
+      if ("exerciseCourse".equals(key) && value instanceof ExerciseCourse) { exerciseCourse((ExerciseCourse)value); return; }
+      if ("exerciseCourses".equals(key) && value instanceof ExerciseCourse) { exerciseCourse((ExerciseCourse)value); return; }
       if ("distance".equals(key) && value instanceof Distance) { distance((Distance)value); return; }
       if ("distances".equals(key) && value instanceof Distance) { distance((Distance)value); return; }
-      if ("fromLocation".equals(key) && value instanceof Place) { fromLocation((Place)value); return; }
-      if ("fromLocations".equals(key) && value instanceof Place) { fromLocation((Place)value); return; }
-      if ("opponent".equals(key) && value instanceof Person) { opponent((Person)value); return; }
-      if ("opponents".equals(key) && value instanceof Person) { opponent((Person)value); return; }
+      if ("fromLocation".equals(key) && value instanceof FromLocation) { fromLocation((FromLocation)value); return; }
+      if ("fromLocations".equals(key) && value instanceof FromLocation) { fromLocation((FromLocation)value); return; }
+      if ("opponent".equals(key) && value instanceof Opponent) { opponent((Opponent)value); return; }
+      if ("opponents".equals(key) && value instanceof Opponent) { opponent((Opponent)value); return; }
       if ("sportsActivityLocation".equals(key) && value instanceof SportsActivityLocation) { sportsActivityLocation((SportsActivityLocation)value); return; }
       if ("sportsActivityLocations".equals(key) && value instanceof SportsActivityLocation) { sportsActivityLocation((SportsActivityLocation)value); return; }
       if ("sportsEvent".equals(key) && value instanceof SportsEvent) { sportsEvent((SportsEvent)value); return; }
       if ("sportsEvents".equals(key) && value instanceof SportsEvent) { sportsEvent((SportsEvent)value); return; }
       if ("sportsTeam".equals(key) && value instanceof SportsTeam) { sportsTeam((SportsTeam)value); return; }
       if ("sportsTeams".equals(key) && value instanceof SportsTeam) { sportsTeam((SportsTeam)value); return; }
-      if ("toLocation".equals(key) && value instanceof Place) { toLocation((Place)value); return; }
-      if ("toLocations".equals(key) && value instanceof Place) { toLocation((Place)value); return; }
+      if ("toLocation".equals(key) && value instanceof ToLocation) { toLocation((ToLocation)value); return; }
+      if ("toLocations".equals(key) && value instanceof ToLocation) { toLocation((ToLocation)value); return; }
       super.fromMap(key, value);
     }
   }

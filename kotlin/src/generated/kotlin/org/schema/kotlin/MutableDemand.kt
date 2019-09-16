@@ -10,6 +10,9 @@ class MutableDemand {
     get() = map["advanceBookingRequirement"] as QuantitativeValue
     set(value) { map["advanceBookingRequirement"] = value }
   fun advanceBookingRequirement(builder: MutableQuantitativeValue.() -> Unit) { map["advanceBookingRequirement"] = MutableQuantitativeValue().apply(builder).build() }
+  var areaServed: AvailableAtOrFrom
+    get() = map["areaServed"] as AvailableAtOrFrom
+    set(value) { map["areaServed"] = value }
   var availability: ItemAvailability
     get() = map["availability"] as ItemAvailability
     set(value) { map["availability"] = value }
@@ -19,10 +22,9 @@ class MutableDemand {
   var availabilityStarts: java.util.Date
     get() = map["availabilityStarts"] as java.util.Date
     set(value) { map["availabilityStarts"] = value }
-  var availableAtOrFrom: Place
-    get() = map["availableAtOrFrom"] as Place
+  var availableAtOrFrom: AvailableAtOrFrom
+    get() = map["availableAtOrFrom"] as AvailableAtOrFrom
     set(value) { map["availableAtOrFrom"] = value }
-  fun availableAtOrFrom(builder: MutablePlace.() -> Unit) { map["availableAtOrFrom"] = MutablePlace().apply(builder).build() }
   var availableDeliveryMethod: DeliveryMethod
     get() = map["availableDeliveryMethod"] as DeliveryMethod
     set(value) { map["availableDeliveryMethod"] = value }
@@ -44,11 +46,9 @@ class MutableDemand {
     get() = map["eligibleQuantity"] as QuantitativeValue
     set(value) { map["eligibleQuantity"] = value }
   fun eligibleQuantity(builder: MutableQuantitativeValue.() -> Unit) { map["eligibleQuantity"] = MutableQuantitativeValue().apply(builder).build() }
-  var eligibleRegion: Any
-    get() = map["eligibleRegion"]!!
+  var eligibleRegion: EligibleRegion
+    get() = map["eligibleRegion"] as EligibleRegion
     set(value) { map["eligibleRegion"] = value }
-  fun eligibleRegionGeoShape(builder: MutableGeoShape.() -> Unit) { map["eligibleRegion"] = MutableGeoShape().apply(builder).build() }
-  fun eligibleRegionPlace(builder: MutablePlace.() -> Unit) { map["eligibleRegion"] = MutablePlace().apply(builder).build() }
   var ineligibleRegion: Any
     get() = map["ineligibleRegion"]!!
     set(value) { map["ineligibleRegion"] = value }
@@ -58,18 +58,6 @@ class MutableDemand {
     get() = map["eligibleTransactionVolume"] as PriceSpecification
     set(value) { map["eligibleTransactionVolume"] = value }
   fun eligibleTransactionVolume(builder: MutablePriceSpecification.() -> Unit) { map["eligibleTransactionVolume"] = MutablePriceSpecification().apply(builder).build() }
-  var gtin12: Identifier
-    get() = map["gtin12"] as Identifier
-    set(value) { map["gtin12"] = value }
-  var gtin13: Identifier
-    get() = map["gtin13"] as Identifier
-    set(value) { map["gtin13"] = value }
-  var gtin14: Identifier
-    get() = map["gtin14"] as Identifier
-    set(value) { map["gtin14"] = value }
-  var gtin8: Identifier
-    get() = map["gtin8"] as Identifier
-    set(value) { map["gtin8"] = value }
   var includesObject: TypeAndQuantityNode
     get() = map["includesObject"] as TypeAndQuantityNode
     set(value) { map["includesObject"] = value }
@@ -93,12 +81,6 @@ class MutableDemand {
     get() = map["priceSpecification"] as PriceSpecification
     set(value) { map["priceSpecification"] = value }
   fun priceSpecification(builder: MutablePriceSpecification.() -> Unit) { map["priceSpecification"] = MutablePriceSpecification().apply(builder).build() }
-  var seller: Participant
-    get() = map["seller"] as Participant
-    set(value) { map["seller"] = value }
-  var sku: Identifier
-    get() = map["sku"] as Identifier
-    set(value) { map["sku"] = value }
   var validFrom: java.util.Date
     get() = map["validFrom"] as java.util.Date
     set(value) { map["validFrom"] = value }
@@ -109,22 +91,25 @@ class MutableDemand {
     get() = map["warranty"] as WarrantyPromise
     set(value) { map["warranty"] = value }
   fun warranty(builder: MutableWarrantyPromise.() -> Unit) { map["warranty"] = MutableWarrantyPromise().apply(builder).build() }
-  var additionalType: String
-    get() = map["additionalType"] as String
+  var additionalType: AdditionalType
+    get() = map["additionalType"] as AdditionalType
     set(value) { map["additionalType"] = value }
   var alternateName: String
     get() = map["alternateName"] as String
     set(value) { map["alternateName"] = value }
-  var disambiguatingDescription: String
-    get() = map["disambiguatingDescription"] as String
+  var description: DisambiguatingDescription
+    get() = map["description"] as DisambiguatingDescription
+    set(value) { map["description"] = value }
+  var disambiguatingDescription: DisambiguatingDescription
+    get() = map["disambiguatingDescription"] as DisambiguatingDescription
     set(value) { map["disambiguatingDescription"] = value }
+  var image: Logo
+    get() = map["image"] as Logo
+    set(value) { map["image"] = value }
   var mainEntityOfPage: Any
     get() = map["mainEntityOfPage"]!!
     set(value) { map["mainEntityOfPage"] = value }
   fun mainEntityOfPageCreativeWork(builder: MutableCreativeWork.() -> Unit) { map["mainEntityOfPage"] = MutableCreativeWork().apply(builder).build() }
-  var name: String
-    get() = map["name"] as String
-    set(value) { map["name"] = value }
   var sameAs: String
     get() = map["sameAs"] as String
     set(value) { map["sameAs"] = value }
@@ -135,6 +120,9 @@ class MutableDemand {
     get() = map["potentialAction"] as Action
     set(value) { map["potentialAction"] = value }
   fun potentialAction(builder: MutableAction.() -> Unit) { map["potentialAction"] = MutableAction().apply(builder).build() }
+  var identifier: Isbn
+    get() = map["identifier"] as Isbn
+    set(value) { map["identifier"] = value }
   var subjectOf: Any
     get() = map["subjectOf"]!!
     set(value) { map["subjectOf"] = value }

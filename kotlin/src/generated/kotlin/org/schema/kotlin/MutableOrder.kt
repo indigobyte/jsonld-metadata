@@ -14,9 +14,6 @@ class MutableOrder {
     get() = map["billingAddress"] as PostalAddress
     set(value) { map["billingAddress"] = value }
   fun billingAddress(builder: MutablePostalAddress.() -> Unit) { map["billingAddress"] = MutablePostalAddress().apply(builder).build() }
-  var confirmationNumber: Identifier
-    get() = map["confirmationNumber"] as Identifier
-    set(value) { map["confirmationNumber"] = value }
   var customer: Any
     get() = map["customer"]!!
     set(value) { map["customer"] = value }
@@ -43,9 +40,6 @@ class MutableOrder {
   fun orderedItemOrderItem(builder: MutableOrderItem.() -> Unit) { map["orderedItem"] = MutableOrderItem().apply(builder).build() }
   fun orderedItemProduct(builder: MutableProduct.() -> Unit) { map["orderedItem"] = MutableProduct().apply(builder).build() }
   fun orderedItemService(builder: MutableService.() -> Unit) { map["orderedItem"] = MutableService().apply(builder).build() }
-  var orderNumber: Identifier
-    get() = map["orderNumber"] as Identifier
-    set(value) { map["orderNumber"] = value }
   var orderStatus: OrderStatus
     get() = map["orderStatus"] as OrderStatus
     set(value) { map["orderStatus"] = value }
@@ -62,9 +56,6 @@ class MutableOrder {
   var paymentUrl: String
     get() = map["paymentUrl"] as String
     set(value) { map["paymentUrl"] = value }
-  var seller: Participant
-    get() = map["seller"] as Participant
-    set(value) { map["seller"] = value }
   var paymentDueDate: java.util.Date
     get() = map["paymentDueDate"] as java.util.Date
     set(value) { map["paymentDueDate"] = value }
@@ -73,22 +64,25 @@ class MutableOrder {
     set(value) { map["broker"] = value }
   fun brokerOrganization(builder: MutableOrganization.() -> Unit) { map["broker"] = MutableOrganization().apply(builder).build() }
   fun brokerPerson(builder: MutablePerson.() -> Unit) { map["broker"] = MutablePerson().apply(builder).build() }
-  var additionalType: String
-    get() = map["additionalType"] as String
+  var additionalType: AdditionalType
+    get() = map["additionalType"] as AdditionalType
     set(value) { map["additionalType"] = value }
   var alternateName: String
     get() = map["alternateName"] as String
     set(value) { map["alternateName"] = value }
-  var disambiguatingDescription: String
-    get() = map["disambiguatingDescription"] as String
+  var description: DisambiguatingDescription
+    get() = map["description"] as DisambiguatingDescription
+    set(value) { map["description"] = value }
+  var disambiguatingDescription: DisambiguatingDescription
+    get() = map["disambiguatingDescription"] as DisambiguatingDescription
     set(value) { map["disambiguatingDescription"] = value }
+  var image: Logo
+    get() = map["image"] as Logo
+    set(value) { map["image"] = value }
   var mainEntityOfPage: Any
     get() = map["mainEntityOfPage"]!!
     set(value) { map["mainEntityOfPage"] = value }
   fun mainEntityOfPageCreativeWork(builder: MutableCreativeWork.() -> Unit) { map["mainEntityOfPage"] = MutableCreativeWork().apply(builder).build() }
-  var name: String
-    get() = map["name"] as String
-    set(value) { map["name"] = value }
   var sameAs: String
     get() = map["sameAs"] as String
     set(value) { map["sameAs"] = value }
@@ -99,6 +93,9 @@ class MutableOrder {
     get() = map["potentialAction"] as Action
     set(value) { map["potentialAction"] = value }
   fun potentialAction(builder: MutableAction.() -> Unit) { map["potentialAction"] = MutableAction().apply(builder).build() }
+  var identifier: Isbn
+    get() = map["identifier"] as Isbn
+    set(value) { map["identifier"] = value }
   var subjectOf: Any
     get() = map["subjectOf"]!!
     set(value) { map["subjectOf"] = value }

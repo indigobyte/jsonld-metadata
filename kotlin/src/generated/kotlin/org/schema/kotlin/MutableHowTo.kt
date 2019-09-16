@@ -6,31 +6,40 @@ class MutableHowTo {
     get() = map["estimatedCost"]!!
     set(value) { map["estimatedCost"] = value }
   fun estimatedCostMonetaryAmount(builder: MutableMonetaryAmount.() -> Unit) { map["estimatedCost"] = MutableMonetaryAmount().apply(builder).build() }
-  var performTime: PerformTime
-    get() = map["performTime"] as PerformTime
+  var performTime: Duration
+    get() = map["performTime"] as Duration
     set(value) { map["performTime"] = value }
+  fun performTime(builder: MutableDuration.() -> Unit) { map["performTime"] = MutableDuration().apply(builder).build() }
   var prepTime: Duration
     get() = map["prepTime"] as Duration
     set(value) { map["prepTime"] = value }
+  fun prepTime(builder: MutableDuration.() -> Unit) { map["prepTime"] = MutableDuration().apply(builder).build() }
   var supply: Supply
     get() = map["supply"] as Supply
     set(value) { map["supply"] = value }
-  var step: Step
-    get() = map["step"] as Step
+  var step: Any
+    get() = map["step"]!!
     set(value) { map["step"] = value }
-  var tool: Any
-    get() = map["tool"]!!
+  fun stepCreativeWork(builder: MutableCreativeWork.() -> Unit) { map["step"] = MutableCreativeWork().apply(builder).build() }
+  fun stepHowToSection(builder: MutableHowToSection.() -> Unit) { map["step"] = MutableHowToSection().apply(builder).build() }
+  fun stepHowToStep(builder: MutableHowToStep.() -> Unit) { map["step"] = MutableHowToStep().apply(builder).build() }
+  var tool: Tool
+    get() = map["tool"] as Tool
     set(value) { map["tool"] = value }
-  fun toolHowToTool(builder: MutableHowToTool.() -> Unit) { map["tool"] = MutableHowToTool().apply(builder).build() }
   var totalTime: Duration
     get() = map["totalTime"] as Duration
     set(value) { map["totalTime"] = value }
-  var yield: Yield
-    get() = map["yield"] as Yield
+  fun totalTime(builder: MutableDuration.() -> Unit) { map["totalTime"] = MutableDuration().apply(builder).build() }
+  var yield: Any
+    get() = map["yield"]!!
     set(value) { map["yield"] = value }
+  fun yieldQuantitativeValue(builder: MutableQuantitativeValue.() -> Unit) { map["yield"] = MutableQuantitativeValue().apply(builder).build() }
   var schemaVersion: String
     get() = map["schemaVersion"] as String
     set(value) { map["schemaVersion"] = value }
+  var about: MainEntity
+    get() = map["about"] as MainEntity
+    set(value) { map["about"] = value }
   var accessibilityAPI: String
     get() = map["accessibilityAPI"] as String
     set(value) { map["accessibilityAPI"] = value }
@@ -83,6 +92,9 @@ class MutableHowTo {
     get() = map["comment"] as Comment
     set(value) { map["comment"] = value }
   fun comment(builder: MutableComment.() -> Unit) { map["comment"] = MutableComment().apply(builder).build() }
+  var contentLocation: SpatialCoverage
+    get() = map["contentLocation"] as SpatialCoverage
+    set(value) { map["contentLocation"] = value }
   var locationCreated: Place
     get() = map["locationCreated"] as Place
     set(value) { map["locationCreated"] = value }
@@ -154,7 +166,6 @@ class MutableHowTo {
   var inLanguage: Any
     get() = map["inLanguage"]!!
     set(value) { map["inLanguage"] = value }
-  fun inLanguageLanguage(builder: MutableLanguage.() -> Unit) { map["inLanguage"] = MutableLanguage().apply(builder).build() }
   var interactivityType: String
     get() = map["interactivityType"] as String
     set(value) { map["interactivityType"] = value }
@@ -166,6 +177,9 @@ class MutableHowTo {
   var isFamilyFriendly: Boolean
     get() = map["isFamilyFriendly"] as Boolean
     set(value) { map["isFamilyFriendly"] = value }
+  var isPartOf: PartOfEpisode
+    get() = map["isPartOf"] as PartOfEpisode
+    set(value) { map["isPartOf"] = value }
   var keywords: String
     get() = map["keywords"] as String
     set(value) { map["keywords"] = value }
@@ -176,9 +190,6 @@ class MutableHowTo {
   var learningResourceType: String
     get() = map["learningResourceType"] as String
     set(value) { map["learningResourceType"] = value }
-  var mainEntity: About
-    get() = map["mainEntity"] as About
-    set(value) { map["mainEntity"] = value }
   var mentions: Thing
     get() = map["mentions"] as Thing
     set(value) { map["mentions"] = value }
@@ -187,6 +198,9 @@ class MutableHowTo {
     get() = map["offers"] as Offer
     set(value) { map["offers"] = value }
   fun offers(builder: MutableOffer.() -> Unit) { map["offers"] = MutableOffer().apply(builder).build() }
+  var position: SeasonNumber
+    get() = map["position"] as SeasonNumber
+    set(value) { map["position"] = value }
   var producer: Any
     get() = map["producer"]!!
     set(value) { map["producer"] = value }
@@ -221,15 +235,15 @@ class MutableHowTo {
     get() = map["spatial"] as Place
     set(value) { map["spatial"] = value }
   fun spatial(builder: MutablePlace.() -> Unit) { map["spatial"] = MutablePlace().apply(builder).build() }
-  var spatialCoverage: Place
-    get() = map["spatialCoverage"] as Place
+  var spatialCoverage: SpatialCoverage
+    get() = map["spatialCoverage"] as SpatialCoverage
     set(value) { map["spatialCoverage"] = value }
-  fun spatialCoverage(builder: MutablePlace.() -> Unit) { map["spatialCoverage"] = MutablePlace().apply(builder).build() }
-  var funder: Any
-    get() = map["funder"]!!
+  var sponsor: Funder
+    get() = map["sponsor"] as Funder
+    set(value) { map["sponsor"] = value }
+  var funder: Funder
+    get() = map["funder"] as Funder
     set(value) { map["funder"] = value }
-  fun funderOrganization(builder: MutableOrganization.() -> Unit) { map["funder"] = MutableOrganization().apply(builder).build() }
-  fun funderPerson(builder: MutablePerson.() -> Unit) { map["funder"] = MutablePerson().apply(builder).build() }
   var temporalCoverage: Any
     get() = map["temporalCoverage"]!!
     set(value) { map["temporalCoverage"] = value }
@@ -245,6 +259,7 @@ class MutableHowTo {
   var timeRequired: Duration
     get() = map["timeRequired"] as Duration
     set(value) { map["timeRequired"] = value }
+  fun timeRequired(builder: MutableDuration.() -> Unit) { map["timeRequired"] = MutableDuration().apply(builder).build() }
   var typicalAgeRange: String
     get() = map["typicalAgeRange"] as String
     set(value) { map["typicalAgeRange"] = value }
@@ -264,9 +279,10 @@ class MutableHowTo {
   var commentCount: Int
     get() = map["commentCount"] as Int
     set(value) { map["commentCount"] = value }
-  var hasPart: HasPart
-    get() = map["hasPart"] as HasPart
+  var hasPart: CreativeWork
+    get() = map["hasPart"] as CreativeWork
     set(value) { map["hasPart"] = value }
+  fun hasPart(builder: MutableCreativeWork.() -> Unit) { map["hasPart"] = MutableCreativeWork().apply(builder).build() }
   var workExample: CreativeWork
     get() = map["workExample"] as CreativeWork
     set(value) { map["workExample"] = value }
@@ -288,6 +304,9 @@ class MutableHowTo {
     get() = map["releasedEvent"] as PublicationEvent
     set(value) { map["releasedEvent"] = value }
   fun releasedEvent(builder: MutablePublicationEvent.() -> Unit) { map["releasedEvent"] = MutablePublicationEvent().apply(builder).build() }
+  var material: ArtMedium
+    get() = map["material"] as ArtMedium
+    set(value) { map["material"] = value }
   var interactionStatistic: InteractionCounter
     get() = map["interactionStatistic"] as InteractionCounter
     set(value) { map["interactionStatistic"] = value }
@@ -302,22 +321,25 @@ class MutableHowTo {
   var accessibilitySummary: String
     get() = map["accessibilitySummary"] as String
     set(value) { map["accessibilitySummary"] = value }
-  var additionalType: String
-    get() = map["additionalType"] as String
+  var additionalType: AdditionalType
+    get() = map["additionalType"] as AdditionalType
     set(value) { map["additionalType"] = value }
   var alternateName: String
     get() = map["alternateName"] as String
     set(value) { map["alternateName"] = value }
-  var disambiguatingDescription: String
-    get() = map["disambiguatingDescription"] as String
+  var description: DisambiguatingDescription
+    get() = map["description"] as DisambiguatingDescription
+    set(value) { map["description"] = value }
+  var disambiguatingDescription: DisambiguatingDescription
+    get() = map["disambiguatingDescription"] as DisambiguatingDescription
     set(value) { map["disambiguatingDescription"] = value }
+  var image: Logo
+    get() = map["image"] as Logo
+    set(value) { map["image"] = value }
   var mainEntityOfPage: Any
     get() = map["mainEntityOfPage"]!!
     set(value) { map["mainEntityOfPage"] = value }
   fun mainEntityOfPageCreativeWork(builder: MutableCreativeWork.() -> Unit) { map["mainEntityOfPage"] = MutableCreativeWork().apply(builder).build() }
-  var name: String
-    get() = map["name"] as String
-    set(value) { map["name"] = value }
   var sameAs: String
     get() = map["sameAs"] as String
     set(value) { map["sameAs"] = value }
@@ -328,6 +350,9 @@ class MutableHowTo {
     get() = map["potentialAction"] as Action
     set(value) { map["potentialAction"] = value }
   fun potentialAction(builder: MutableAction.() -> Unit) { map["potentialAction"] = MutableAction().apply(builder).build() }
+  var identifier: Isbn
+    get() = map["identifier"] as Isbn
+    set(value) { map["identifier"] = value }
   var subjectOf: Any
     get() = map["subjectOf"]!!
     set(value) { map["subjectOf"] = value }

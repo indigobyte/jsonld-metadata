@@ -26,7 +26,7 @@ import java.util.*;
 /**
  * A direction indicating a single action to do in the instructions for how to achieve a result.
  */
-public class HowToDirection extends CreativeWork implements PerformTime {
+public class HowToDirection extends CreativeWork {
   /**
    * The length of time it takes to prepare the items to be used in instructions or a direction, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
    */
@@ -44,15 +44,9 @@ public class HowToDirection extends CreativeWork implements PerformTime {
     }
     return Arrays.asList((Duration) current);
   }
-  /**
-   * A sub-property of instrument. A supply consumed when performing instructions or a direction.
-   */
   @JsonIgnore public Supply getSupply() {
     return (Supply) getValue("supply");
   }
-  /**
-   * A sub-property of instrument. A supply consumed when performing instructions or a direction.
-   */
   @JsonIgnore public Collection<Supply> getSupplys() {
     final Object current = myData.get("supply");
     if (current == null) return Collections.emptyList();
@@ -61,39 +55,16 @@ public class HowToDirection extends CreativeWork implements PerformTime {
     }
     return Arrays.asList((Supply) current);
   }
-  /**
-   * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
-   */
-  @JsonIgnore public HowToTool getToolHowToTool() {
-    return (HowToTool) getValue("tool");
+  @JsonIgnore public Tool getTool() {
+    return (Tool) getValue("tool");
   }
-  /**
-   * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
-   */
-  @JsonIgnore public Collection<HowToTool> getToolHowToTools() {
+  @JsonIgnore public Collection<Tool> getTools() {
     final Object current = myData.get("tool");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<HowToTool>) current;
+      return (Collection<Tool>) current;
     }
-    return Arrays.asList((HowToTool) current);
-  }
-  /**
-   * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
-   */
-  @JsonIgnore public String getToolString() {
-    return (String) getValue("tool");
-  }
-  /**
-   * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
-   */
-  @JsonIgnore public Collection<String> getToolStrings() {
-    final Object current = myData.get("tool");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
+    return Arrays.asList((Tool) current);
   }
   /**
    * The total time required to perform instructions or a direction (including time to prepare the supplies), in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
@@ -236,30 +207,17 @@ public class HowToDirection extends CreativeWork implements PerformTime {
       return this;
     }
     /**
-     * A sub-property of instrument. A supply consumed when performing instructions or a direction.
+     * The length of time it takes to prepare the items to be used in instructions or a direction, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
      */
+    @NotNull public Builder prepTime(@NotNull Duration.Builder duration) {
+      putValue("prepTime", duration.build());
+      return this;
+    }
     @NotNull public Builder supply(@NotNull Supply supply) {
       putValue("supply", supply);
       return this;
     }
-    /**
-     * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
-     */
-    @NotNull public Builder tool(@NotNull HowToTool howToTool) {
-      putValue("tool", howToTool);
-      return this;
-    }
-    /**
-     * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
-     */
-    @NotNull public Builder tool(@NotNull HowToTool.Builder howToTool) {
-      putValue("tool", howToTool.build());
-      return this;
-    }
-    /**
-     * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
-     */
-    @NotNull public Builder tool(@NotNull String tool) {
+    @NotNull public Builder tool(@NotNull Tool tool) {
       putValue("tool", tool);
       return this;
     }
@@ -268,6 +226,13 @@ public class HowToDirection extends CreativeWork implements PerformTime {
      */
     @NotNull public Builder totalTime(@NotNull Duration duration) {
       putValue("totalTime", duration);
+      return this;
+    }
+    /**
+     * The total time required to perform instructions or a direction (including time to prepare the supplies), in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
+     */
+    @NotNull public Builder totalTime(@NotNull Duration.Builder duration) {
+      putValue("totalTime", duration.build());
       return this;
     }
     /**
@@ -338,6 +303,13 @@ public class HowToDirection extends CreativeWork implements PerformTime {
      */
     @NotNull public Builder schemaVersion(@NotNull String schemaVersion) {
       putValue("schemaVersion", schemaVersion);
+      return this;
+    }
+    /**
+     * The subject matter of the content.
+     */
+    @NotNull public Builder about(@NotNull MainEntity mainEntity) {
+      putValue("about", mainEntity);
       return this;
     }
     /**
@@ -527,6 +499,13 @@ public class HowToDirection extends CreativeWork implements PerformTime {
      */
     @NotNull public Builder comment(@NotNull Comment.Builder comment) {
       putValue("comment", comment.build());
+      return this;
+    }
+    /**
+     * The location depicted or described in the content. For example, the location in a photograph or painting.
+     */
+    @NotNull public Builder contentLocation(@NotNull SpatialCoverage spatialCoverage) {
+      putValue("contentLocation", spatialCoverage);
       return this;
     }
     /**
@@ -809,13 +788,6 @@ public class HowToDirection extends CreativeWork implements PerformTime {
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
      */
-    @NotNull public Builder inLanguage(@NotNull Language.Builder language) {
-      putValue("inLanguage", language.build());
-      return this;
-    }
-    /**
-     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
-     */
     @NotNull public Builder inLanguage(@NotNull String inLanguage) {
       putValue("inLanguage", inLanguage);
       return this;
@@ -870,6 +842,13 @@ public class HowToDirection extends CreativeWork implements PerformTime {
       return this;
     }
     /**
+     * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
+     */
+    @NotNull public Builder isPartOf(@NotNull PartOfEpisode partOfEpisode) {
+      putValue("isPartOf", partOfEpisode);
+      return this;
+    }
+    /**
      * Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas.
      */
     @NotNull public Builder keywords(@NotNull String keywords) {
@@ -905,13 +884,6 @@ public class HowToDirection extends CreativeWork implements PerformTime {
       return this;
     }
     /**
-     * Indicates the primary entity described in some page or other CreativeWork.
-     */
-    @NotNull public Builder mainEntity(@NotNull About about) {
-      putValue("mainEntity", about);
-      return this;
-    }
-    /**
      * Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.
      */
     @NotNull public Builder mentions(@NotNull Thing thing) {
@@ -937,6 +909,13 @@ public class HowToDirection extends CreativeWork implements PerformTime {
      */
     @NotNull public Builder offers(@NotNull Offer.Builder offer) {
       putValue("offers", offer.build());
+      return this;
+    }
+    /**
+     * The position of an item in a series or sequence of items.
+     */
+    @NotNull public Builder position(@NotNull SeasonNumber seasonNumber) {
+      putValue("position", seasonNumber);
       return this;
     }
     /**
@@ -1097,50 +1076,19 @@ public class HowToDirection extends CreativeWork implements PerformTime {
       putValue("spatial", place.build());
       return this;
     }
-    /**
-     * The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of
-     *       contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates
-     *       areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
-     */
-    @NotNull public Builder spatialCoverage(@NotNull Place place) {
-      putValue("spatialCoverage", place);
+    @NotNull public Builder spatialCoverage(@NotNull SpatialCoverage spatialCoverage) {
+      putValue("spatialCoverage", spatialCoverage);
       return this;
     }
     /**
-     * The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of
-     *       contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates
-     *       areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
+     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
      */
-    @NotNull public Builder spatialCoverage(@NotNull Place.Builder place) {
-      putValue("spatialCoverage", place.build());
+    @NotNull public Builder sponsor(@NotNull Funder funder) {
+      putValue("sponsor", funder);
       return this;
     }
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     */
-    @NotNull public Builder funder(@NotNull Organization organization) {
-      putValue("funder", organization);
-      return this;
-    }
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     */
-    @NotNull public Builder funder(@NotNull Organization.Builder organization) {
-      putValue("funder", organization.build());
-      return this;
-    }
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     */
-    @NotNull public Builder funder(@NotNull Person person) {
-      putValue("funder", person);
-      return this;
-    }
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     */
-    @NotNull public Builder funder(@NotNull Person.Builder person) {
-      putValue("funder", person.build());
+    @NotNull public Builder funder(@NotNull Funder funder) {
+      putValue("funder", funder);
       return this;
     }
     /**
@@ -1200,6 +1148,13 @@ public class HowToDirection extends CreativeWork implements PerformTime {
      */
     @NotNull public Builder timeRequired(@NotNull Duration duration) {
       putValue("timeRequired", duration);
+      return this;
+    }
+    /**
+     * Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience, e.g. 'PT30M', 'PT1H25M'.
+     */
+    @NotNull public Builder timeRequired(@NotNull Duration.Builder duration) {
+      putValue("timeRequired", duration.build());
       return this;
     }
     /**
@@ -1310,8 +1265,15 @@ public class HowToDirection extends CreativeWork implements PerformTime {
     /**
      * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
      */
-    @NotNull public Builder hasPart(@NotNull HasPart hasPart) {
-      putValue("hasPart", hasPart);
+    @NotNull public Builder hasPart(@NotNull CreativeWork creativeWork) {
+      putValue("hasPart", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
+     */
+    @NotNull public Builder hasPart(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("hasPart", creativeWork.build());
       return this;
     }
     /**
@@ -1399,6 +1361,13 @@ public class HowToDirection extends CreativeWork implements PerformTime {
       return this;
     }
     /**
+     * A material that something is made from, e.g. leather, wool, cotton, paper.
+     */
+    @NotNull public Builder material(@NotNull ArtMedium artMedium) {
+      putValue("material", artMedium);
+      return this;
+    }
+    /**
      * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
      */
     @NotNull public Builder interactionStatistic(@NotNull InteractionCounter interactionCounter) {
@@ -1443,10 +1412,7 @@ public class HowToDirection extends CreativeWork implements PerformTime {
       putValue("accessibilitySummary", accessibilitySummary);
       return this;
     }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     */
-    @NotNull public Builder additionalType(@NotNull String additionalType) {
+    @NotNull public Builder additionalType(@NotNull AdditionalType additionalType) {
       putValue("additionalType", additionalType);
       return this;
     }
@@ -1458,10 +1424,21 @@ public class HowToDirection extends CreativeWork implements PerformTime {
       return this;
     }
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * A description of the item.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
+    @NotNull public Builder description(@NotNull DisambiguatingDescription disambiguatingDescription) {
+      putValue("description", disambiguatingDescription);
+      return this;
+    }
+    @NotNull public Builder disambiguatingDescription(@NotNull DisambiguatingDescription disambiguatingDescription) {
       putValue("disambiguatingDescription", disambiguatingDescription);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Logo logo) {
+      putValue("image", logo);
       return this;
     }
     /**
@@ -1483,13 +1460,6 @@ public class HowToDirection extends CreativeWork implements PerformTime {
      */
     @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
       putValue("mainEntityOfPage", mainEntityOfPage);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
       return this;
     }
     /**
@@ -1518,6 +1488,14 @@ public class HowToDirection extends CreativeWork implements PerformTime {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Isbn isbn) {
+      putValue("identifier", isbn);
       return this;
     }
     /**
@@ -1560,10 +1538,8 @@ public class HowToDirection extends CreativeWork implements PerformTime {
       if ("prepTimes".equals(key) && value instanceof Duration) { prepTime((Duration)value); return; }
       if ("supply".equals(key) && value instanceof Supply) { supply((Supply)value); return; }
       if ("supplys".equals(key) && value instanceof Supply) { supply((Supply)value); return; }
-      if ("tool".equals(key) && value instanceof HowToTool) { tool((HowToTool)value); return; }
-      if ("tools".equals(key) && value instanceof HowToTool) { tool((HowToTool)value); return; }
-      if ("tool".equals(key) && value instanceof String) { tool((String)value); return; }
-      if ("tools".equals(key) && value instanceof String) { tool((String)value); return; }
+      if ("tool".equals(key) && value instanceof Tool) { tool((Tool)value); return; }
+      if ("tools".equals(key) && value instanceof Tool) { tool((Tool)value); return; }
       if ("totalTime".equals(key) && value instanceof Duration) { totalTime((Duration)value); return; }
       if ("totalTimes".equals(key) && value instanceof Duration) { totalTime((Duration)value); return; }
       if ("afterMedia".equals(key) && value instanceof MediaObject) { afterMedia((MediaObject)value); return; }

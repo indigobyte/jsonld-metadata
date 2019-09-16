@@ -62,23 +62,6 @@ public class CreativeWorkSeries extends Series {
     }
     return Arrays.asList((java.util.Date) current);
   }
-  /**
-   * The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
-   */
-  @JsonIgnore public Identifier getIssn() {
-    return (Identifier) getValue("issn");
-  }
-  /**
-   * The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
-   */
-  @JsonIgnore public Collection<Identifier> getIssns() {
-    final Object current = myData.get("issn");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Identifier>) current;
-    }
-    return Arrays.asList((Identifier) current);
-  }
   protected CreativeWorkSeries(java.util.Map<String,Object> data) {
     super(data);
   }
@@ -107,17 +90,7 @@ public class CreativeWorkSeries extends Series {
       putValue("startDate", date);
       return this;
     }
-    /**
-     * The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
-     */
-    @NotNull public Builder issn(@NotNull Identifier identifier) {
-      putValue("issn", identifier);
-      return this;
-    }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     */
-    @NotNull public Builder additionalType(@NotNull String additionalType) {
+    @NotNull public Builder additionalType(@NotNull AdditionalType additionalType) {
       putValue("additionalType", additionalType);
       return this;
     }
@@ -129,10 +102,21 @@ public class CreativeWorkSeries extends Series {
       return this;
     }
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * A description of the item.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
+    @NotNull public Builder description(@NotNull DisambiguatingDescription disambiguatingDescription) {
+      putValue("description", disambiguatingDescription);
+      return this;
+    }
+    @NotNull public Builder disambiguatingDescription(@NotNull DisambiguatingDescription disambiguatingDescription) {
       putValue("disambiguatingDescription", disambiguatingDescription);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Logo logo) {
+      putValue("image", logo);
       return this;
     }
     /**
@@ -154,13 +138,6 @@ public class CreativeWorkSeries extends Series {
      */
     @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
       putValue("mainEntityOfPage", mainEntityOfPage);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
       return this;
     }
     /**
@@ -189,6 +166,14 @@ public class CreativeWorkSeries extends Series {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Isbn isbn) {
+      putValue("identifier", isbn);
       return this;
     }
     /**
@@ -231,8 +216,6 @@ public class CreativeWorkSeries extends Series {
       if ("endDates".equals(key) && value instanceof java.util.Date) { endDate((java.util.Date)value); return; }
       if ("startDate".equals(key) && value instanceof java.util.Date) { startDate((java.util.Date)value); return; }
       if ("startDates".equals(key) && value instanceof java.util.Date) { startDate((java.util.Date)value); return; }
-      if ("issn".equals(key) && value instanceof Identifier) { issn((Identifier)value); return; }
-      if ("issns".equals(key) && value instanceof Identifier) { issn((Identifier)value); return; }
       super.fromMap(key, value);
     }
   }

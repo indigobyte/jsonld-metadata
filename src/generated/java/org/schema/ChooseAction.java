@@ -27,39 +27,27 @@ import java.util.*;
  * The act of expressing a preference from a set of options or a large or unbounded set of choices/options.
  */
 public class ChooseAction extends AssessAction {
-  /**
-   * A sub property of object. The options subject to this action.
-   */
-  @JsonIgnore public String getActionOptionString() {
-    return (String) getValue("actionOption");
+  @JsonIgnore public Option getOption() {
+    return (Option) getValue("option");
   }
-  /**
-   * A sub property of object. The options subject to this action.
-   */
-  @JsonIgnore public Collection<String> getActionOptionStrings() {
+  @JsonIgnore public Collection<Option> getOptions() {
+    final Object current = myData.get("option");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Option>) current;
+    }
+    return Arrays.asList((Option) current);
+  }
+  @JsonIgnore public ActionOption getActionOption() {
+    return (ActionOption) getValue("actionOption");
+  }
+  @JsonIgnore public Collection<ActionOption> getActionOptions() {
     final Object current = myData.get("actionOption");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<String>) current;
+      return (Collection<ActionOption>) current;
     }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * A sub property of object. The options subject to this action.
-   */
-  @JsonIgnore public Thing getActionOptionThing() {
-    return (Thing) getValue("actionOption");
-  }
-  /**
-   * A sub property of object. The options subject to this action.
-   */
-  @JsonIgnore public Collection<Thing> getActionOptionThings() {
-    final Object current = myData.get("actionOption");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Thing>) current;
-    }
-    return Arrays.asList((Thing) current);
+    return Arrays.asList((ActionOption) current);
   }
   protected ChooseAction(java.util.Map<String,Object> data) {
     super(data);
@@ -75,25 +63,12 @@ public class ChooseAction extends AssessAction {
     @NotNull public ChooseAction build() {
       return new ChooseAction(myData);
     }
-    /**
-     * A sub property of object. The options subject to this action.
-     */
-    @NotNull public Builder actionOption(@NotNull String actionOption) {
+    @NotNull public Builder option(@NotNull Option option) {
+      putValue("option", option);
+      return this;
+    }
+    @NotNull public Builder actionOption(@NotNull ActionOption actionOption) {
       putValue("actionOption", actionOption);
-      return this;
-    }
-    /**
-     * A sub property of object. The options subject to this action.
-     */
-    @NotNull public Builder actionOption(@NotNull Thing thing) {
-      putValue("actionOption", thing);
-      return this;
-    }
-    /**
-     * A sub property of object. The options subject to this action.
-     */
-    @NotNull public Builder actionOption(@NotNull Thing.Builder thing) {
-      putValue("actionOption", thing.build());
       return this;
     }
     /**
@@ -129,6 +104,55 @@ public class ChooseAction extends AssessAction {
      */
     @NotNull public Builder endTime(@NotNull java.util.Date date) {
       putValue("endTime", date);
+      return this;
+    }
+    /**
+     * The object that helped the agent perform the action. e.g. John wrote a book with *a pen*.
+     */
+    @NotNull public Builder instrument(@NotNull Language language) {
+      putValue("instrument", language);
+      return this;
+    }
+    /**
+     * The location of for example where the event is happening, an organization is located, or where an action takes place.
+     */
+    @NotNull public Builder location(@NotNull SportsActivityLocation sportsActivityLocation) {
+      putValue("location", sportsActivityLocation);
+      return this;
+    }
+    /**
+     * The location of for example where the event is happening, an organization is located, or where an action takes place.
+     */
+    @NotNull public Builder location(@NotNull SportsActivityLocation.Builder sportsActivityLocation) {
+      putValue("location", sportsActivityLocation.build());
+      return this;
+    }
+    /**
+     * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
+     */
+    @NotNull public Builder object(@NotNull Option option) {
+      putValue("object", option);
+      return this;
+    }
+    /**
+     * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
+     */
+    @NotNull public Builder participant(@NotNull RealEstateAgent realEstateAgent) {
+      putValue("participant", realEstateAgent);
+      return this;
+    }
+    /**
+     * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
+     */
+    @NotNull public Builder participant(@NotNull RealEstateAgent.Builder realEstateAgent) {
+      putValue("participant", realEstateAgent.build());
+      return this;
+    }
+    /**
+     * The result produced in the action. e.g. John wrote *a book*.
+     */
+    @NotNull public Builder result(@NotNull ResultComment resultComment) {
+      putValue("result", resultComment);
       return this;
     }
     /**
@@ -173,10 +197,7 @@ public class ChooseAction extends AssessAction {
       putValue("target", entryPoint.build());
       return this;
     }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     */
-    @NotNull public Builder additionalType(@NotNull String additionalType) {
+    @NotNull public Builder additionalType(@NotNull AdditionalType additionalType) {
       putValue("additionalType", additionalType);
       return this;
     }
@@ -188,10 +209,21 @@ public class ChooseAction extends AssessAction {
       return this;
     }
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * A description of the item.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
+    @NotNull public Builder description(@NotNull DisambiguatingDescription disambiguatingDescription) {
+      putValue("description", disambiguatingDescription);
+      return this;
+    }
+    @NotNull public Builder disambiguatingDescription(@NotNull DisambiguatingDescription disambiguatingDescription) {
       putValue("disambiguatingDescription", disambiguatingDescription);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Logo logo) {
+      putValue("image", logo);
       return this;
     }
     /**
@@ -213,13 +245,6 @@ public class ChooseAction extends AssessAction {
      */
     @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
       putValue("mainEntityOfPage", mainEntityOfPage);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
       return this;
     }
     /**
@@ -248,6 +273,14 @@ public class ChooseAction extends AssessAction {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Isbn isbn) {
+      putValue("identifier", isbn);
       return this;
     }
     /**
@@ -286,10 +319,10 @@ public class ChooseAction extends AssessAction {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("actionOption".equals(key) && value instanceof String) { actionOption((String)value); return; }
-      if ("actionOptions".equals(key) && value instanceof String) { actionOption((String)value); return; }
-      if ("actionOption".equals(key) && value instanceof Thing) { actionOption((Thing)value); return; }
-      if ("actionOptions".equals(key) && value instanceof Thing) { actionOption((Thing)value); return; }
+      if ("option".equals(key) && value instanceof Option) { option((Option)value); return; }
+      if ("options".equals(key) && value instanceof Option) { option((Option)value); return; }
+      if ("actionOption".equals(key) && value instanceof ActionOption) { actionOption((ActionOption)value); return; }
+      if ("actionOptions".equals(key) && value instanceof ActionOption) { actionOption((ActionOption)value); return; }
       super.fromMap(key, value);
     }
   }

@@ -26,7 +26,7 @@ import java.util.*;
 /**
  * A comment on an item - for example, a comment on a blog post. The comment's content is expressed via the [[text]] property, and its topic via [[about]], properties shared with all CreativeWorks.
  */
-public class Comment extends CreativeWork {
+public class Comment extends CreativeWork implements ResultComment {
   /**
    * The number of upvotes this question, answer or comment has received from the community.
    */
@@ -114,17 +114,17 @@ public class Comment extends CreativeWork {
       return this;
     }
     /**
-     * The parent of a question, answer or item in general.
-     */
-    @NotNull public Builder parentItem(@NotNull Question.Builder question) {
-      putValue("parentItem", question.build());
-      return this;
-    }
-    /**
      * Indicates (by URL or string) a particular version of a schema used in some CreativeWork. For example, a document could declare a schemaVersion using an URL such as http://schema.org/version/2.0/ if precise indication of schema version was required by some application. 
      */
     @NotNull public Builder schemaVersion(@NotNull String schemaVersion) {
       putValue("schemaVersion", schemaVersion);
+      return this;
+    }
+    /**
+     * The subject matter of the content.
+     */
+    @NotNull public Builder about(@NotNull MainEntity mainEntity) {
+      putValue("about", mainEntity);
       return this;
     }
     /**
@@ -314,6 +314,13 @@ public class Comment extends CreativeWork {
      */
     @NotNull public Builder comment(@NotNull Comment.Builder comment) {
       putValue("comment", comment.build());
+      return this;
+    }
+    /**
+     * The location depicted or described in the content. For example, the location in a photograph or painting.
+     */
+    @NotNull public Builder contentLocation(@NotNull SpatialCoverage spatialCoverage) {
+      putValue("contentLocation", spatialCoverage);
       return this;
     }
     /**
@@ -596,13 +603,6 @@ public class Comment extends CreativeWork {
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
      */
-    @NotNull public Builder inLanguage(@NotNull Language.Builder language) {
-      putValue("inLanguage", language.build());
-      return this;
-    }
-    /**
-     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
-     */
     @NotNull public Builder inLanguage(@NotNull String inLanguage) {
       putValue("inLanguage", inLanguage);
       return this;
@@ -657,6 +657,13 @@ public class Comment extends CreativeWork {
       return this;
     }
     /**
+     * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
+     */
+    @NotNull public Builder isPartOf(@NotNull PartOfEpisode partOfEpisode) {
+      putValue("isPartOf", partOfEpisode);
+      return this;
+    }
+    /**
      * Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas.
      */
     @NotNull public Builder keywords(@NotNull String keywords) {
@@ -692,13 +699,6 @@ public class Comment extends CreativeWork {
       return this;
     }
     /**
-     * Indicates the primary entity described in some page or other CreativeWork.
-     */
-    @NotNull public Builder mainEntity(@NotNull About about) {
-      putValue("mainEntity", about);
-      return this;
-    }
-    /**
      * Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.
      */
     @NotNull public Builder mentions(@NotNull Thing thing) {
@@ -724,6 +724,13 @@ public class Comment extends CreativeWork {
      */
     @NotNull public Builder offers(@NotNull Offer.Builder offer) {
       putValue("offers", offer.build());
+      return this;
+    }
+    /**
+     * The position of an item in a series or sequence of items.
+     */
+    @NotNull public Builder position(@NotNull SeasonNumber seasonNumber) {
+      putValue("position", seasonNumber);
       return this;
     }
     /**
@@ -884,50 +891,19 @@ public class Comment extends CreativeWork {
       putValue("spatial", place.build());
       return this;
     }
-    /**
-     * The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of
-     *       contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates
-     *       areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
-     */
-    @NotNull public Builder spatialCoverage(@NotNull Place place) {
-      putValue("spatialCoverage", place);
+    @NotNull public Builder spatialCoverage(@NotNull SpatialCoverage spatialCoverage) {
+      putValue("spatialCoverage", spatialCoverage);
       return this;
     }
     /**
-     * The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of
-     *       contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates
-     *       areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
+     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
      */
-    @NotNull public Builder spatialCoverage(@NotNull Place.Builder place) {
-      putValue("spatialCoverage", place.build());
+    @NotNull public Builder sponsor(@NotNull Funder funder) {
+      putValue("sponsor", funder);
       return this;
     }
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     */
-    @NotNull public Builder funder(@NotNull Organization organization) {
-      putValue("funder", organization);
-      return this;
-    }
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     */
-    @NotNull public Builder funder(@NotNull Organization.Builder organization) {
-      putValue("funder", organization.build());
-      return this;
-    }
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     */
-    @NotNull public Builder funder(@NotNull Person person) {
-      putValue("funder", person);
-      return this;
-    }
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     */
-    @NotNull public Builder funder(@NotNull Person.Builder person) {
-      putValue("funder", person.build());
+    @NotNull public Builder funder(@NotNull Funder funder) {
+      putValue("funder", funder);
       return this;
     }
     /**
@@ -987,6 +963,13 @@ public class Comment extends CreativeWork {
      */
     @NotNull public Builder timeRequired(@NotNull Duration duration) {
       putValue("timeRequired", duration);
+      return this;
+    }
+    /**
+     * Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience, e.g. 'PT30M', 'PT1H25M'.
+     */
+    @NotNull public Builder timeRequired(@NotNull Duration.Builder duration) {
+      putValue("timeRequired", duration.build());
       return this;
     }
     /**
@@ -1097,8 +1080,15 @@ public class Comment extends CreativeWork {
     /**
      * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
      */
-    @NotNull public Builder hasPart(@NotNull HasPart hasPart) {
-      putValue("hasPart", hasPart);
+    @NotNull public Builder hasPart(@NotNull CreativeWork creativeWork) {
+      putValue("hasPart", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
+     */
+    @NotNull public Builder hasPart(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("hasPart", creativeWork.build());
       return this;
     }
     /**
@@ -1186,6 +1176,13 @@ public class Comment extends CreativeWork {
       return this;
     }
     /**
+     * A material that something is made from, e.g. leather, wool, cotton, paper.
+     */
+    @NotNull public Builder material(@NotNull ArtMedium artMedium) {
+      putValue("material", artMedium);
+      return this;
+    }
+    /**
      * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
      */
     @NotNull public Builder interactionStatistic(@NotNull InteractionCounter interactionCounter) {
@@ -1230,10 +1227,7 @@ public class Comment extends CreativeWork {
       putValue("accessibilitySummary", accessibilitySummary);
       return this;
     }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     */
-    @NotNull public Builder additionalType(@NotNull String additionalType) {
+    @NotNull public Builder additionalType(@NotNull AdditionalType additionalType) {
       putValue("additionalType", additionalType);
       return this;
     }
@@ -1245,10 +1239,21 @@ public class Comment extends CreativeWork {
       return this;
     }
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * A description of the item.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
+    @NotNull public Builder description(@NotNull DisambiguatingDescription disambiguatingDescription) {
+      putValue("description", disambiguatingDescription);
+      return this;
+    }
+    @NotNull public Builder disambiguatingDescription(@NotNull DisambiguatingDescription disambiguatingDescription) {
       putValue("disambiguatingDescription", disambiguatingDescription);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Logo logo) {
+      putValue("image", logo);
       return this;
     }
     /**
@@ -1270,13 +1275,6 @@ public class Comment extends CreativeWork {
      */
     @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
       putValue("mainEntityOfPage", mainEntityOfPage);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
       return this;
     }
     /**
@@ -1305,6 +1303,14 @@ public class Comment extends CreativeWork {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Isbn isbn) {
+      putValue("identifier", isbn);
       return this;
     }
     /**

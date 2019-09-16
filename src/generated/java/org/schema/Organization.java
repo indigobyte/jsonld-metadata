@@ -26,7 +26,7 @@ import java.util.*;
 /**
  * An organization such as a school, NGO, corporation, club, etc.
  */
-public class Organization extends Thing implements MemberOf {
+public class Organization extends Thing implements CcRecipient, Funder, Lender, ToRecipient, Vendor, Followee, Landlord, Recipient, Sender, Endorsee {
   /**
    * Indicates an OfferCatalog listing for this Organization, Person, or Service.
    */
@@ -111,6 +111,23 @@ public class Organization extends Thing implements MemberOf {
       return (Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
+  }
+  /**
+   * The geographic area where a service or offered item is provided.
+   */
+  @JsonIgnore public AvailableAtOrFrom getAreaServed() {
+    return (AvailableAtOrFrom) getValue("areaServed");
+  }
+  /**
+   * The geographic area where a service or offered item is provided.
+   */
+  @JsonIgnore public Collection<AvailableAtOrFrom> getAreaServeds() {
+    final Object current = myData.get("areaServed");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<AvailableAtOrFrom>) current;
+    }
+    return Arrays.asList((AvailableAtOrFrom) current);
   }
   /**
    * An award won by or for this item.
@@ -213,23 +230,6 @@ public class Organization extends Thing implements MemberOf {
       return (Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
-  }
-  /**
-   * The Dun & Bradstreet DUNS number for identifying an organization or business person.
-   */
-  @JsonIgnore public Identifier getDuns() {
-    return (Identifier) getValue("duns");
-  }
-  /**
-   * The Dun & Bradstreet DUNS number for identifying an organization or business person.
-   */
-  @JsonIgnore public Collection<Identifier> getDunss() {
-    final Object current = myData.get("duns");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Identifier>) current;
-    }
-    return Arrays.asList((Identifier) current);
   }
   /**
    * Email address.
@@ -351,23 +351,6 @@ public class Organization extends Thing implements MemberOf {
     return Arrays.asList((java.util.Date) current);
   }
   /**
-   * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
-   */
-  @JsonIgnore public Identifier getGlobalLocationNumber() {
-    return (Identifier) getValue("globalLocationNumber");
-  }
-  /**
-   * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
-   */
-  @JsonIgnore public Collection<Identifier> getGlobalLocationNumbers() {
-    final Object current = myData.get("globalLocationNumber");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Identifier>) current;
-    }
-    return Arrays.asList((Identifier) current);
-  }
-  /**
    * Points-of-Sales operated by the organization or person.
    */
   @JsonIgnore public Place getHasPOS() {
@@ -419,38 +402,32 @@ public class Organization extends Thing implements MemberOf {
     return Arrays.asList((String) current);
   }
   /**
-   * An associated logo.
+   * The location of for example where the event is happening, an organization is located, or where an action takes place.
    */
-  @JsonIgnore public ImageObject getLogoImageObject() {
-    return (ImageObject) getValue("logo");
+  @JsonIgnore public SportsActivityLocation getLocation() {
+    return (SportsActivityLocation) getValue("location");
   }
   /**
-   * An associated logo.
+   * The location of for example where the event is happening, an organization is located, or where an action takes place.
    */
-  @JsonIgnore public Collection<ImageObject> getLogoImageObjects() {
+  @JsonIgnore public Collection<SportsActivityLocation> getLocations() {
+    final Object current = myData.get("location");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<SportsActivityLocation>) current;
+    }
+    return Arrays.asList((SportsActivityLocation) current);
+  }
+  @JsonIgnore public Logo getLogo() {
+    return (Logo) getValue("logo");
+  }
+  @JsonIgnore public Collection<Logo> getLogos() {
     final Object current = myData.get("logo");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<ImageObject>) current;
+      return (Collection<Logo>) current;
     }
-    return Arrays.asList((ImageObject) current);
-  }
-  /**
-   * An associated logo.
-   */
-  @JsonIgnore public String getLogoString() {
-    return (String) getValue("logo");
-  }
-  /**
-   * An associated logo.
-   */
-  @JsonIgnore public Collection<String> getLogoStrings() {
-    final Object current = myData.get("logo");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
+    return Arrays.asList((Logo) current);
   }
   /**
    * A pointer to products or services offered by the organization or person.
@@ -506,19 +483,36 @@ public class Organization extends Thing implements MemberOf {
   /**
    * An Organization (or ProgramMembership) to which this Person or Organization belongs.
    */
-  @JsonIgnore public MemberOf getMemberOf() {
-    return (MemberOf) getValue("memberOf");
+  @JsonIgnore public Organization getMemberOfOrganization() {
+    return (Organization) getValue("memberOf");
   }
   /**
    * An Organization (or ProgramMembership) to which this Person or Organization belongs.
    */
-  @JsonIgnore public Collection<MemberOf> getMemberOfs() {
+  @JsonIgnore public Collection<Organization> getMemberOfOrganizations() {
     final Object current = myData.get("memberOf");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<MemberOf>) current;
+      return (Collection<Organization>) current;
     }
-    return Arrays.asList((MemberOf) current);
+    return Arrays.asList((Organization) current);
+  }
+  /**
+   * An Organization (or ProgramMembership) to which this Person or Organization belongs.
+   */
+  @JsonIgnore public ProgramMembership getMemberOfProgramMembership() {
+    return (ProgramMembership) getValue("memberOf");
+  }
+  /**
+   * An Organization (or ProgramMembership) to which this Person or Organization belongs.
+   */
+  @JsonIgnore public Collection<ProgramMembership> getMemberOfProgramMemberships() {
+    final Object current = myData.get("memberOf");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<ProgramMembership>) current;
+    }
+    return Arrays.asList((ProgramMembership) current);
   }
   /**
    * The North American Industry Classification System (NAICS) code for a particular organization or business person.
@@ -686,38 +680,32 @@ public class Organization extends Thing implements MemberOf {
     return Arrays.asList((Demand) current);
   }
   /**
-   * A person or organization that supports (sponsors) something through some kind of financial contribution.
+   * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
    */
-  @JsonIgnore public Organization getFunderOrganization() {
-    return (Organization) getValue("funder");
+  @JsonIgnore public Funder getSponsor() {
+    return (Funder) getValue("sponsor");
   }
   /**
-   * A person or organization that supports (sponsors) something through some kind of financial contribution.
+   * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
    */
-  @JsonIgnore public Collection<Organization> getFunderOrganizations() {
+  @JsonIgnore public Collection<Funder> getSponsors() {
+    final Object current = myData.get("sponsor");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Funder>) current;
+    }
+    return Arrays.asList((Funder) current);
+  }
+  @JsonIgnore public Funder getFunder() {
+    return (Funder) getValue("funder");
+  }
+  @JsonIgnore public Collection<Funder> getFunders() {
     final Object current = myData.get("funder");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+      return (Collection<Funder>) current;
     }
-    return Arrays.asList((Organization) current);
-  }
-  /**
-   * A person or organization that supports (sponsors) something through some kind of financial contribution.
-   */
-  @JsonIgnore public Person getFunderPerson() {
-    return (Person) getValue("funder");
-  }
-  /**
-   * A person or organization that supports (sponsors) something through some kind of financial contribution.
-   */
-  @JsonIgnore public Collection<Person> getFunderPersons() {
-    final Object current = myData.get("funder");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
-    }
-    return Arrays.asList((Person) current);
+    return Arrays.asList((Funder) current);
   }
   /**
    * A relationship between two organizations where the first includes the second, e.g., as a subsidiary. See also: the more specific 'department' property.
@@ -735,23 +723,6 @@ public class Organization extends Thing implements MemberOf {
       return (Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
-  }
-  /**
-   * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
-   */
-  @JsonIgnore public Identifier getTaxID() {
-    return (Identifier) getValue("taxID");
-  }
-  /**
-   * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
-   */
-  @JsonIgnore public Collection<Identifier> getTaxIDs() {
-    final Object current = myData.get("taxID");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Identifier>) current;
-    }
-    return Arrays.asList((Identifier) current);
   }
   /**
    * The telephone number.
@@ -803,23 +774,6 @@ public class Organization extends Thing implements MemberOf {
       return (Collection<Place>) current;
     }
     return Arrays.asList((Place) current);
-  }
-  /**
-   * An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
-   */
-  @JsonIgnore public Identifier getLeiCode() {
-    return (Identifier) getValue("leiCode");
-  }
-  /**
-   * An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
-   */
-  @JsonIgnore public Collection<Identifier> getLeiCodes() {
-    final Object current = myData.get("leiCode");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Identifier>) current;
-    }
-    return Arrays.asList((Identifier) current);
   }
   protected Organization(java.util.Map<String,Object> data) {
     super(data);
@@ -896,6 +850,13 @@ public class Organization extends Thing implements MemberOf {
      */
     @NotNull public Builder alumni(@NotNull Person.Builder person) {
       putValue("alumni", person.build());
+      return this;
+    }
+    /**
+     * The geographic area where a service or offered item is provided.
+     */
+    @NotNull public Builder areaServed(@NotNull AvailableAtOrFrom availableAtOrFrom) {
+      putValue("areaServed", availableAtOrFrom);
       return this;
     }
     /**
@@ -976,13 +937,6 @@ public class Organization extends Thing implements MemberOf {
       return this;
     }
     /**
-     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
-     */
-    @NotNull public Builder duns(@NotNull Identifier identifier) {
-      putValue("duns", identifier);
-      return this;
-    }
-    /**
      * Email address.
      */
     @NotNull public Builder email(@NotNull String email) {
@@ -1053,13 +1007,6 @@ public class Organization extends Thing implements MemberOf {
       return this;
     }
     /**
-     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
-     */
-    @NotNull public Builder globalLocationNumber(@NotNull Identifier identifier) {
-      putValue("globalLocationNumber", identifier);
-      return this;
-    }
-    /**
      * Points-of-Sales operated by the organization or person.
      */
     @NotNull public Builder hasPOS(@NotNull Place place) {
@@ -1088,23 +1035,20 @@ public class Organization extends Thing implements MemberOf {
       return this;
     }
     /**
-     * An associated logo.
+     * The location of for example where the event is happening, an organization is located, or where an action takes place.
      */
-    @NotNull public Builder logo(@NotNull ImageObject imageObject) {
-      putValue("logo", imageObject);
+    @NotNull public Builder location(@NotNull SportsActivityLocation sportsActivityLocation) {
+      putValue("location", sportsActivityLocation);
       return this;
     }
     /**
-     * An associated logo.
+     * The location of for example where the event is happening, an organization is located, or where an action takes place.
      */
-    @NotNull public Builder logo(@NotNull ImageObject.Builder imageObject) {
-      putValue("logo", imageObject.build());
+    @NotNull public Builder location(@NotNull SportsActivityLocation.Builder sportsActivityLocation) {
+      putValue("location", sportsActivityLocation.build());
       return this;
     }
-    /**
-     * An associated logo.
-     */
-    @NotNull public Builder logo(@NotNull String logo) {
+    @NotNull public Builder logo(@NotNull Logo logo) {
       putValue("logo", logo);
       return this;
     }
@@ -1153,8 +1097,29 @@ public class Organization extends Thing implements MemberOf {
     /**
      * An Organization (or ProgramMembership) to which this Person or Organization belongs.
      */
-    @NotNull public Builder memberOf(@NotNull MemberOf memberOf) {
-      putValue("memberOf", memberOf);
+    @NotNull public Builder memberOf(@NotNull Organization organization) {
+      putValue("memberOf", organization);
+      return this;
+    }
+    /**
+     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
+     */
+    @NotNull public Builder memberOf(@NotNull Organization.Builder organization) {
+      putValue("memberOf", organization.build());
+      return this;
+    }
+    /**
+     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
+     */
+    @NotNull public Builder memberOf(@NotNull ProgramMembership programMembership) {
+      putValue("memberOf", programMembership);
+      return this;
+    }
+    /**
+     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
+     */
+    @NotNull public Builder memberOf(@NotNull ProgramMembership.Builder programMembership) {
+      putValue("memberOf", programMembership.build());
       return this;
     }
     /**
@@ -1272,31 +1237,14 @@ public class Organization extends Thing implements MemberOf {
       return this;
     }
     /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
+     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
      */
-    @NotNull public Builder funder(@NotNull Organization organization) {
-      putValue("funder", organization);
+    @NotNull public Builder sponsor(@NotNull Funder funder) {
+      putValue("sponsor", funder);
       return this;
     }
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     */
-    @NotNull public Builder funder(@NotNull Organization.Builder organization) {
-      putValue("funder", organization.build());
-      return this;
-    }
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     */
-    @NotNull public Builder funder(@NotNull Person person) {
-      putValue("funder", person);
-      return this;
-    }
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     */
-    @NotNull public Builder funder(@NotNull Person.Builder person) {
-      putValue("funder", person.build());
+    @NotNull public Builder funder(@NotNull Funder funder) {
+      putValue("funder", funder);
       return this;
     }
     /**
@@ -1311,13 +1259,6 @@ public class Organization extends Thing implements MemberOf {
      */
     @NotNull public Builder subOrganization(@NotNull Organization.Builder organization) {
       putValue("subOrganization", organization.build());
-      return this;
-    }
-    /**
-     * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
-     */
-    @NotNull public Builder taxID(@NotNull Identifier identifier) {
-      putValue("taxID", identifier);
       return this;
     }
     /**
@@ -1348,17 +1289,7 @@ public class Organization extends Thing implements MemberOf {
       putValue("foundingLocation", place.build());
       return this;
     }
-    /**
-     * An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
-     */
-    @NotNull public Builder leiCode(@NotNull Identifier identifier) {
-      putValue("leiCode", identifier);
-      return this;
-    }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     */
-    @NotNull public Builder additionalType(@NotNull String additionalType) {
+    @NotNull public Builder additionalType(@NotNull AdditionalType additionalType) {
       putValue("additionalType", additionalType);
       return this;
     }
@@ -1370,10 +1301,21 @@ public class Organization extends Thing implements MemberOf {
       return this;
     }
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * A description of the item.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
+    @NotNull public Builder description(@NotNull DisambiguatingDescription disambiguatingDescription) {
+      putValue("description", disambiguatingDescription);
+      return this;
+    }
+    @NotNull public Builder disambiguatingDescription(@NotNull DisambiguatingDescription disambiguatingDescription) {
       putValue("disambiguatingDescription", disambiguatingDescription);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Logo logo) {
+      putValue("image", logo);
       return this;
     }
     /**
@@ -1395,13 +1337,6 @@ public class Organization extends Thing implements MemberOf {
      */
     @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
       putValue("mainEntityOfPage", mainEntityOfPage);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
       return this;
     }
     /**
@@ -1430,6 +1365,14 @@ public class Organization extends Thing implements MemberOf {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Isbn isbn) {
+      putValue("identifier", isbn);
       return this;
     }
     /**
@@ -1478,6 +1421,8 @@ public class Organization extends Thing implements MemberOf {
       if ("aggregateRatings".equals(key) && value instanceof AggregateRating) { aggregateRating((AggregateRating)value); return; }
       if ("alumni".equals(key) && value instanceof Person) { alumni((Person)value); return; }
       if ("alumnis".equals(key) && value instanceof Person) { alumni((Person)value); return; }
+      if ("areaServed".equals(key) && value instanceof AvailableAtOrFrom) { areaServed((AvailableAtOrFrom)value); return; }
+      if ("areaServeds".equals(key) && value instanceof AvailableAtOrFrom) { areaServed((AvailableAtOrFrom)value); return; }
       if ("award".equals(key) && value instanceof String) { award((String)value); return; }
       if ("awards".equals(key) && value instanceof String) { award((String)value); return; }
       if ("parentOrganization".equals(key) && value instanceof Organization) { parentOrganization((Organization)value); return; }
@@ -1490,8 +1435,6 @@ public class Organization extends Thing implements MemberOf {
       if ("contactPoints".equals(key) && value instanceof ContactPoint) { contactPoint((ContactPoint)value); return; }
       if ("department".equals(key) && value instanceof Organization) { department((Organization)value); return; }
       if ("departments".equals(key) && value instanceof Organization) { department((Organization)value); return; }
-      if ("duns".equals(key) && value instanceof Identifier) { duns((Identifier)value); return; }
-      if ("dunss".equals(key) && value instanceof Identifier) { duns((Identifier)value); return; }
       if ("email".equals(key) && value instanceof String) { email((String)value); return; }
       if ("emails".equals(key) && value instanceof String) { email((String)value); return; }
       if ("employee".equals(key) && value instanceof Person) { employee((Person)value); return; }
@@ -1506,26 +1449,26 @@ public class Organization extends Thing implements MemberOf {
       if ("dissolutionDates".equals(key) && value instanceof java.util.Date) { dissolutionDate((java.util.Date)value); return; }
       if ("foundingDate".equals(key) && value instanceof java.util.Date) { foundingDate((java.util.Date)value); return; }
       if ("foundingDates".equals(key) && value instanceof java.util.Date) { foundingDate((java.util.Date)value); return; }
-      if ("globalLocationNumber".equals(key) && value instanceof Identifier) { globalLocationNumber((Identifier)value); return; }
-      if ("globalLocationNumbers".equals(key) && value instanceof Identifier) { globalLocationNumber((Identifier)value); return; }
       if ("hasPOS".equals(key) && value instanceof Place) { hasPOS((Place)value); return; }
       if ("hasPOSs".equals(key) && value instanceof Place) { hasPOS((Place)value); return; }
       if ("isicV4".equals(key) && value instanceof String) { isicV4((String)value); return; }
       if ("isicV4s".equals(key) && value instanceof String) { isicV4((String)value); return; }
       if ("legalName".equals(key) && value instanceof String) { legalName((String)value); return; }
       if ("legalNames".equals(key) && value instanceof String) { legalName((String)value); return; }
-      if ("logo".equals(key) && value instanceof ImageObject) { logo((ImageObject)value); return; }
-      if ("logos".equals(key) && value instanceof ImageObject) { logo((ImageObject)value); return; }
-      if ("logo".equals(key) && value instanceof String) { logo((String)value); return; }
-      if ("logos".equals(key) && value instanceof String) { logo((String)value); return; }
+      if ("location".equals(key) && value instanceof SportsActivityLocation) { location((SportsActivityLocation)value); return; }
+      if ("locations".equals(key) && value instanceof SportsActivityLocation) { location((SportsActivityLocation)value); return; }
+      if ("logo".equals(key) && value instanceof Logo) { logo((Logo)value); return; }
+      if ("logos".equals(key) && value instanceof Logo) { logo((Logo)value); return; }
       if ("makesOffer".equals(key) && value instanceof Offer) { makesOffer((Offer)value); return; }
       if ("makesOffers".equals(key) && value instanceof Offer) { makesOffer((Offer)value); return; }
       if ("member".equals(key) && value instanceof Organization) { member((Organization)value); return; }
       if ("members".equals(key) && value instanceof Organization) { member((Organization)value); return; }
       if ("member".equals(key) && value instanceof Person) { member((Person)value); return; }
       if ("members".equals(key) && value instanceof Person) { member((Person)value); return; }
-      if ("memberOf".equals(key) && value instanceof MemberOf) { memberOf((MemberOf)value); return; }
-      if ("memberOfs".equals(key) && value instanceof MemberOf) { memberOf((MemberOf)value); return; }
+      if ("memberOf".equals(key) && value instanceof Organization) { memberOf((Organization)value); return; }
+      if ("memberOfs".equals(key) && value instanceof Organization) { memberOf((Organization)value); return; }
+      if ("memberOf".equals(key) && value instanceof ProgramMembership) { memberOf((ProgramMembership)value); return; }
+      if ("memberOfs".equals(key) && value instanceof ProgramMembership) { memberOf((ProgramMembership)value); return; }
       if ("naics".equals(key) && value instanceof String) { naics((String)value); return; }
       if ("naicss".equals(key) && value instanceof String) { naics((String)value); return; }
       if ("numberOfEmployees".equals(key) && value instanceof QuantitativeValue) { numberOfEmployees((QuantitativeValue)value); return; }
@@ -1544,22 +1487,18 @@ public class Organization extends Thing implements MemberOf {
       if ("slogans".equals(key) && value instanceof String) { slogan((String)value); return; }
       if ("seeks".equals(key) && value instanceof Demand) { seeks((Demand)value); return; }
       if ("seekss".equals(key) && value instanceof Demand) { seeks((Demand)value); return; }
-      if ("funder".equals(key) && value instanceof Organization) { funder((Organization)value); return; }
-      if ("funders".equals(key) && value instanceof Organization) { funder((Organization)value); return; }
-      if ("funder".equals(key) && value instanceof Person) { funder((Person)value); return; }
-      if ("funders".equals(key) && value instanceof Person) { funder((Person)value); return; }
+      if ("sponsor".equals(key) && value instanceof Funder) { sponsor((Funder)value); return; }
+      if ("sponsors".equals(key) && value instanceof Funder) { sponsor((Funder)value); return; }
+      if ("funder".equals(key) && value instanceof Funder) { funder((Funder)value); return; }
+      if ("funders".equals(key) && value instanceof Funder) { funder((Funder)value); return; }
       if ("subOrganization".equals(key) && value instanceof Organization) { subOrganization((Organization)value); return; }
       if ("subOrganizations".equals(key) && value instanceof Organization) { subOrganization((Organization)value); return; }
-      if ("taxID".equals(key) && value instanceof Identifier) { taxID((Identifier)value); return; }
-      if ("taxIDs".equals(key) && value instanceof Identifier) { taxID((Identifier)value); return; }
       if ("telephone".equals(key) && value instanceof String) { telephone((String)value); return; }
       if ("telephones".equals(key) && value instanceof String) { telephone((String)value); return; }
       if ("vatID".equals(key) && value instanceof String) { vatID((String)value); return; }
       if ("vatIDs".equals(key) && value instanceof String) { vatID((String)value); return; }
       if ("foundingLocation".equals(key) && value instanceof Place) { foundingLocation((Place)value); return; }
       if ("foundingLocations".equals(key) && value instanceof Place) { foundingLocation((Place)value); return; }
-      if ("leiCode".equals(key) && value instanceof Identifier) { leiCode((Identifier)value); return; }
-      if ("leiCodes".equals(key) && value instanceof Identifier) { leiCode((Identifier)value); return; }
       super.fromMap(key, value);
     }
   }

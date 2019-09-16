@@ -28,40 +28,6 @@ import java.util.*;
  */
 public class Flight extends Trip {
   /**
-   * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
-   */
-  @JsonIgnore public Participant getSeller() {
-    return (Participant) getValue("seller");
-  }
-  /**
-   * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
-   */
-  @JsonIgnore public Collection<Participant> getSellers() {
-    final Object current = myData.get("seller");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Participant>) current;
-    }
-    return Arrays.asList((Participant) current);
-  }
-  /**
-   * The unique identifier for a flight including the airline IATA code. For example, if describing United flight 110, where the IATA code for United is 'UA', the flightNumber is 'UA110'.
-   */
-  @JsonIgnore public Identifier getFlightNumber() {
-    return (Identifier) getValue("flightNumber");
-  }
-  /**
-   * The unique identifier for a flight including the airline IATA code. For example, if describing United flight 110, where the IATA code for United is 'UA', the flightNumber is 'UA110'.
-   */
-  @JsonIgnore public Collection<Identifier> getFlightNumbers() {
-    final Object current = myData.get("flightNumber");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Identifier>) current;
-    }
-    return Arrays.asList((Identifier) current);
-  }
-  /**
    * The airport where the flight originates.
    */
   @JsonIgnore public Airport getDepartureAirport() {
@@ -331,20 +297,6 @@ public class Flight extends Trip {
       return new Flight(myData);
     }
     /**
-     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
-     */
-    @NotNull public Builder seller(@NotNull Participant participant) {
-      putValue("seller", participant);
-      return this;
-    }
-    /**
-     * The unique identifier for a flight including the airline IATA code. For example, if describing United flight 110, where the IATA code for United is 'UA', the flightNumber is 'UA110'.
-     */
-    @NotNull public Builder flightNumber(@NotNull Identifier identifier) {
-      putValue("flightNumber", identifier);
-      return this;
-    }
-    /**
      * The airport where the flight originates.
      */
     @NotNull public Builder departureAirport(@NotNull Airport airport) {
@@ -445,6 +397,13 @@ public class Flight extends Trip {
     /**
      * The estimated time the flight will take.
      */
+    @NotNull public Builder estimatedFlightDuration(@NotNull Duration.Builder duration) {
+      putValue("estimatedFlightDuration", duration.build());
+      return this;
+    }
+    /**
+     * The estimated time the flight will take.
+     */
     @NotNull public Builder estimatedFlightDuration(@NotNull String estimatedFlightDuration) {
       putValue("estimatedFlightDuration", estimatedFlightDuration);
       return this;
@@ -519,10 +478,7 @@ public class Flight extends Trip {
       putValue("arrivalTime", date);
       return this;
     }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     */
-    @NotNull public Builder additionalType(@NotNull String additionalType) {
+    @NotNull public Builder additionalType(@NotNull AdditionalType additionalType) {
       putValue("additionalType", additionalType);
       return this;
     }
@@ -534,10 +490,21 @@ public class Flight extends Trip {
       return this;
     }
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * A description of the item.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
+    @NotNull public Builder description(@NotNull DisambiguatingDescription disambiguatingDescription) {
+      putValue("description", disambiguatingDescription);
+      return this;
+    }
+    @NotNull public Builder disambiguatingDescription(@NotNull DisambiguatingDescription disambiguatingDescription) {
       putValue("disambiguatingDescription", disambiguatingDescription);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Logo logo) {
+      putValue("image", logo);
       return this;
     }
     /**
@@ -559,13 +526,6 @@ public class Flight extends Trip {
      */
     @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
       putValue("mainEntityOfPage", mainEntityOfPage);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
       return this;
     }
     /**
@@ -594,6 +554,14 @@ public class Flight extends Trip {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Isbn isbn) {
+      putValue("identifier", isbn);
       return this;
     }
     /**
@@ -632,10 +600,6 @@ public class Flight extends Trip {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("seller".equals(key) && value instanceof Participant) { seller((Participant)value); return; }
-      if ("sellers".equals(key) && value instanceof Participant) { seller((Participant)value); return; }
-      if ("flightNumber".equals(key) && value instanceof Identifier) { flightNumber((Identifier)value); return; }
-      if ("flightNumbers".equals(key) && value instanceof Identifier) { flightNumber((Identifier)value); return; }
       if ("departureAirport".equals(key) && value instanceof Airport) { departureAirport((Airport)value); return; }
       if ("departureAirports".equals(key) && value instanceof Airport) { departureAirport((Airport)value); return; }
       if ("arrivalAirport".equals(key) && value instanceof Airport) { arrivalAirport((Airport)value); return; }

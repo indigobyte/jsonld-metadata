@@ -26,7 +26,7 @@ import java.util.*;
 /**
  * The most generic kind of creative work, including books, movies, photographs, software programs, etc.Source: http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_rNews
  */
-public class CreativeWork extends Thing implements WorkFeatured, Step {
+public class CreativeWork extends Thing implements RecipeInstructions, WorkPerformed {
   /**
    * Indicates (by URL or string) a particular version of a schema used in some CreativeWork. For example, a document could declare a schemaVersion using an URL such as http://schema.org/version/2.0/ if precise indication of schema version was required by some application. 
    */
@@ -43,6 +43,23 @@ public class CreativeWork extends Thing implements WorkFeatured, Step {
       return (Collection<String>) current;
     }
     return Arrays.asList((String) current);
+  }
+  /**
+   * The subject matter of the content.
+   */
+  @JsonIgnore public MainEntity getAbout() {
+    return (MainEntity) getValue("about");
+  }
+  /**
+   * The subject matter of the content.
+   */
+  @JsonIgnore public Collection<MainEntity> getAbouts() {
+    final Object current = myData.get("about");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<MainEntity>) current;
+    }
+    return Arrays.asList((MainEntity) current);
   }
   /**
    * Indicates that the resource is compatible with the referenced accessibility API ([WebSchemas wiki lists possible values](http://www.w3.org/wiki/WebSchemas/Accessibility)).
@@ -332,6 +349,23 @@ public class CreativeWork extends Thing implements WorkFeatured, Step {
       return (Collection<Comment>) current;
     }
     return Arrays.asList((Comment) current);
+  }
+  /**
+   * The location depicted or described in the content. For example, the location in a photograph or painting.
+   */
+  @JsonIgnore public SpatialCoverage getContentLocation() {
+    return (SpatialCoverage) getValue("contentLocation");
+  }
+  /**
+   * The location depicted or described in the content. For example, the location in a photograph or painting.
+   */
+  @JsonIgnore public Collection<SpatialCoverage> getContentLocations() {
+    final Object current = myData.get("contentLocation");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<SpatialCoverage>) current;
+    }
+    return Arrays.asList((SpatialCoverage) current);
   }
   /**
    * The location where the CreativeWork was created, which may not be the same as the location depicted in the CreativeWork.
@@ -920,6 +954,23 @@ public class CreativeWork extends Thing implements WorkFeatured, Step {
     return Arrays.asList((Boolean) current);
   }
   /**
+   * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
+   */
+  @JsonIgnore public PartOfEpisode getIsPartOf() {
+    return (PartOfEpisode) getValue("isPartOf");
+  }
+  /**
+   * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
+   */
+  @JsonIgnore public Collection<PartOfEpisode> getIsPartOfs() {
+    final Object current = myData.get("isPartOf");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<PartOfEpisode>) current;
+    }
+    return Arrays.asList((PartOfEpisode) current);
+  }
+  /**
    * Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas.
    */
   @JsonIgnore public String getKeywords() {
@@ -988,23 +1039,6 @@ public class CreativeWork extends Thing implements WorkFeatured, Step {
     return Arrays.asList((String) current);
   }
   /**
-   * Indicates the primary entity described in some page or other CreativeWork.
-   */
-  @JsonIgnore public About getMainEntity() {
-    return (About) getValue("mainEntity");
-  }
-  /**
-   * Indicates the primary entity described in some page or other CreativeWork.
-   */
-  @JsonIgnore public Collection<About> getMainEntitys() {
-    final Object current = myData.get("mainEntity");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<About>) current;
-    }
-    return Arrays.asList((About) current);
-  }
-  /**
    * Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.
    */
   @JsonIgnore public Thing getMentions() {
@@ -1037,6 +1071,23 @@ public class CreativeWork extends Thing implements WorkFeatured, Step {
       return (Collection<Offer>) current;
     }
     return Arrays.asList((Offer) current);
+  }
+  /**
+   * The position of an item in a series or sequence of items.
+   */
+  @JsonIgnore public SeasonNumber getPosition() {
+    return (SeasonNumber) getValue("position");
+  }
+  /**
+   * The position of an item in a series or sequence of items.
+   */
+  @JsonIgnore public Collection<SeasonNumber> getPositions() {
+    final Object current = myData.get("position");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<SeasonNumber>) current;
+    }
+    return Arrays.asList((SeasonNumber) current);
   }
   /**
    * The person or organization who produced the work (e.g. music album, movie, tv/radio series etc.).
@@ -1239,60 +1290,44 @@ public class CreativeWork extends Thing implements WorkFeatured, Step {
     }
     return Arrays.asList((Place) current);
   }
-  /**
-   * The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of
-   *       contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates
-   *       areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
-   */
-  @JsonIgnore public Place getSpatialCoverage() {
-    return (Place) getValue("spatialCoverage");
+  @JsonIgnore public SpatialCoverage getSpatialCoverage() {
+    return (SpatialCoverage) getValue("spatialCoverage");
   }
-  /**
-   * The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of
-   *       contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates
-   *       areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
-   */
-  @JsonIgnore public Collection<Place> getSpatialCoverages() {
+  @JsonIgnore public Collection<SpatialCoverage> getSpatialCoverages() {
     final Object current = myData.get("spatialCoverage");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<Place>) current;
+      return (Collection<SpatialCoverage>) current;
     }
-    return Arrays.asList((Place) current);
+    return Arrays.asList((SpatialCoverage) current);
   }
   /**
-   * A person or organization that supports (sponsors) something through some kind of financial contribution.
+   * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
    */
-  @JsonIgnore public Organization getFunderOrganization() {
-    return (Organization) getValue("funder");
+  @JsonIgnore public Funder getSponsor() {
+    return (Funder) getValue("sponsor");
   }
   /**
-   * A person or organization that supports (sponsors) something through some kind of financial contribution.
+   * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
    */
-  @JsonIgnore public Collection<Organization> getFunderOrganizations() {
+  @JsonIgnore public Collection<Funder> getSponsors() {
+    final Object current = myData.get("sponsor");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Funder>) current;
+    }
+    return Arrays.asList((Funder) current);
+  }
+  @JsonIgnore public Funder getFunder() {
+    return (Funder) getValue("funder");
+  }
+  @JsonIgnore public Collection<Funder> getFunders() {
     final Object current = myData.get("funder");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+      return (Collection<Funder>) current;
     }
-    return Arrays.asList((Organization) current);
-  }
-  /**
-   * A person or organization that supports (sponsors) something through some kind of financial contribution.
-   */
-  @JsonIgnore public Person getFunderPerson() {
-    return (Person) getValue("funder");
-  }
-  /**
-   * A person or organization that supports (sponsors) something through some kind of financial contribution.
-   */
-  @JsonIgnore public Collection<Person> getFunderPersons() {
-    final Object current = myData.get("funder");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
-    }
-    return Arrays.asList((Person) current);
+    return Arrays.asList((Funder) current);
   }
   /**
    * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
@@ -1623,19 +1658,19 @@ public class CreativeWork extends Thing implements WorkFeatured, Step {
   /**
    * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
    */
-  @JsonIgnore public HasPart getHasPart() {
-    return (HasPart) getValue("hasPart");
+  @JsonIgnore public CreativeWork getHasPart() {
+    return (CreativeWork) getValue("hasPart");
   }
   /**
    * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
    */
-  @JsonIgnore public Collection<HasPart> getHasParts() {
+  @JsonIgnore public Collection<CreativeWork> getHasParts() {
     final Object current = myData.get("hasPart");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<HasPart>) current;
+      return (Collection<CreativeWork>) current;
     }
-    return Arrays.asList((HasPart) current);
+    return Arrays.asList((CreativeWork) current);
   }
   /**
    * Example/instance/realization/derivation of the concept of this creative work. eg. The paperback edition, first edition, or eBook.
@@ -1740,6 +1775,23 @@ public class CreativeWork extends Thing implements WorkFeatured, Step {
     return Arrays.asList((PublicationEvent) current);
   }
   /**
+   * A material that something is made from, e.g. leather, wool, cotton, paper.
+   */
+  @JsonIgnore public ArtMedium getMaterial() {
+    return (ArtMedium) getValue("material");
+  }
+  /**
+   * A material that something is made from, e.g. leather, wool, cotton, paper.
+   */
+  @JsonIgnore public Collection<ArtMedium> getMaterials() {
+    final Object current = myData.get("material");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<ArtMedium>) current;
+    }
+    return Arrays.asList((ArtMedium) current);
+  }
+  /**
    * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
    */
   @JsonIgnore public InteractionCounter getInteractionStatistic() {
@@ -1830,6 +1882,13 @@ public class CreativeWork extends Thing implements WorkFeatured, Step {
      */
     @NotNull public Builder schemaVersion(@NotNull String schemaVersion) {
       putValue("schemaVersion", schemaVersion);
+      return this;
+    }
+    /**
+     * The subject matter of the content.
+     */
+    @NotNull public Builder about(@NotNull MainEntity mainEntity) {
+      putValue("about", mainEntity);
       return this;
     }
     /**
@@ -2019,6 +2078,13 @@ public class CreativeWork extends Thing implements WorkFeatured, Step {
      */
     @NotNull public Builder comment(@NotNull Comment.Builder comment) {
       putValue("comment", comment.build());
+      return this;
+    }
+    /**
+     * The location depicted or described in the content. For example, the location in a photograph or painting.
+     */
+    @NotNull public Builder contentLocation(@NotNull SpatialCoverage spatialCoverage) {
+      putValue("contentLocation", spatialCoverage);
       return this;
     }
     /**
@@ -2301,13 +2367,6 @@ public class CreativeWork extends Thing implements WorkFeatured, Step {
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
      */
-    @NotNull public Builder inLanguage(@NotNull Language.Builder language) {
-      putValue("inLanguage", language.build());
-      return this;
-    }
-    /**
-     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
-     */
     @NotNull public Builder inLanguage(@NotNull String inLanguage) {
       putValue("inLanguage", inLanguage);
       return this;
@@ -2362,6 +2421,13 @@ public class CreativeWork extends Thing implements WorkFeatured, Step {
       return this;
     }
     /**
+     * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
+     */
+    @NotNull public Builder isPartOf(@NotNull PartOfEpisode partOfEpisode) {
+      putValue("isPartOf", partOfEpisode);
+      return this;
+    }
+    /**
      * Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas.
      */
     @NotNull public Builder keywords(@NotNull String keywords) {
@@ -2397,13 +2463,6 @@ public class CreativeWork extends Thing implements WorkFeatured, Step {
       return this;
     }
     /**
-     * Indicates the primary entity described in some page or other CreativeWork.
-     */
-    @NotNull public Builder mainEntity(@NotNull About about) {
-      putValue("mainEntity", about);
-      return this;
-    }
-    /**
      * Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.
      */
     @NotNull public Builder mentions(@NotNull Thing thing) {
@@ -2429,6 +2488,13 @@ public class CreativeWork extends Thing implements WorkFeatured, Step {
      */
     @NotNull public Builder offers(@NotNull Offer.Builder offer) {
       putValue("offers", offer.build());
+      return this;
+    }
+    /**
+     * The position of an item in a series or sequence of items.
+     */
+    @NotNull public Builder position(@NotNull SeasonNumber seasonNumber) {
+      putValue("position", seasonNumber);
       return this;
     }
     /**
@@ -2589,50 +2655,19 @@ public class CreativeWork extends Thing implements WorkFeatured, Step {
       putValue("spatial", place.build());
       return this;
     }
-    /**
-     * The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of
-     *       contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates
-     *       areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
-     */
-    @NotNull public Builder spatialCoverage(@NotNull Place place) {
-      putValue("spatialCoverage", place);
+    @NotNull public Builder spatialCoverage(@NotNull SpatialCoverage spatialCoverage) {
+      putValue("spatialCoverage", spatialCoverage);
       return this;
     }
     /**
-     * The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of
-     *       contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates
-     *       areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
+     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
      */
-    @NotNull public Builder spatialCoverage(@NotNull Place.Builder place) {
-      putValue("spatialCoverage", place.build());
+    @NotNull public Builder sponsor(@NotNull Funder funder) {
+      putValue("sponsor", funder);
       return this;
     }
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     */
-    @NotNull public Builder funder(@NotNull Organization organization) {
-      putValue("funder", organization);
-      return this;
-    }
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     */
-    @NotNull public Builder funder(@NotNull Organization.Builder organization) {
-      putValue("funder", organization.build());
-      return this;
-    }
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     */
-    @NotNull public Builder funder(@NotNull Person person) {
-      putValue("funder", person);
-      return this;
-    }
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     */
-    @NotNull public Builder funder(@NotNull Person.Builder person) {
-      putValue("funder", person.build());
+    @NotNull public Builder funder(@NotNull Funder funder) {
+      putValue("funder", funder);
       return this;
     }
     /**
@@ -2692,6 +2727,13 @@ public class CreativeWork extends Thing implements WorkFeatured, Step {
      */
     @NotNull public Builder timeRequired(@NotNull Duration duration) {
       putValue("timeRequired", duration);
+      return this;
+    }
+    /**
+     * Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience, e.g. 'PT30M', 'PT1H25M'.
+     */
+    @NotNull public Builder timeRequired(@NotNull Duration.Builder duration) {
+      putValue("timeRequired", duration.build());
       return this;
     }
     /**
@@ -2802,8 +2844,15 @@ public class CreativeWork extends Thing implements WorkFeatured, Step {
     /**
      * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
      */
-    @NotNull public Builder hasPart(@NotNull HasPart hasPart) {
-      putValue("hasPart", hasPart);
+    @NotNull public Builder hasPart(@NotNull CreativeWork creativeWork) {
+      putValue("hasPart", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
+     */
+    @NotNull public Builder hasPart(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("hasPart", creativeWork.build());
       return this;
     }
     /**
@@ -2891,6 +2940,13 @@ public class CreativeWork extends Thing implements WorkFeatured, Step {
       return this;
     }
     /**
+     * A material that something is made from, e.g. leather, wool, cotton, paper.
+     */
+    @NotNull public Builder material(@NotNull ArtMedium artMedium) {
+      putValue("material", artMedium);
+      return this;
+    }
+    /**
      * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
      */
     @NotNull public Builder interactionStatistic(@NotNull InteractionCounter interactionCounter) {
@@ -2935,10 +2991,7 @@ public class CreativeWork extends Thing implements WorkFeatured, Step {
       putValue("accessibilitySummary", accessibilitySummary);
       return this;
     }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     */
-    @NotNull public Builder additionalType(@NotNull String additionalType) {
+    @NotNull public Builder additionalType(@NotNull AdditionalType additionalType) {
       putValue("additionalType", additionalType);
       return this;
     }
@@ -2950,10 +3003,21 @@ public class CreativeWork extends Thing implements WorkFeatured, Step {
       return this;
     }
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * A description of the item.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
+    @NotNull public Builder description(@NotNull DisambiguatingDescription disambiguatingDescription) {
+      putValue("description", disambiguatingDescription);
+      return this;
+    }
+    @NotNull public Builder disambiguatingDescription(@NotNull DisambiguatingDescription disambiguatingDescription) {
       putValue("disambiguatingDescription", disambiguatingDescription);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Logo logo) {
+      putValue("image", logo);
       return this;
     }
     /**
@@ -2975,13 +3039,6 @@ public class CreativeWork extends Thing implements WorkFeatured, Step {
      */
     @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
       putValue("mainEntityOfPage", mainEntityOfPage);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
       return this;
     }
     /**
@@ -3010,6 +3067,14 @@ public class CreativeWork extends Thing implements WorkFeatured, Step {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Isbn isbn) {
+      putValue("identifier", isbn);
       return this;
     }
     /**
@@ -3050,6 +3115,8 @@ public class CreativeWork extends Thing implements WorkFeatured, Step {
     @Override protected void fromMap(String key, Object value) {
       if ("schemaVersion".equals(key) && value instanceof String) { schemaVersion((String)value); return; }
       if ("schemaVersions".equals(key) && value instanceof String) { schemaVersion((String)value); return; }
+      if ("about".equals(key) && value instanceof MainEntity) { about((MainEntity)value); return; }
+      if ("abouts".equals(key) && value instanceof MainEntity) { about((MainEntity)value); return; }
       if ("accessibilityAPI".equals(key) && value instanceof String) { accessibilityAPI((String)value); return; }
       if ("accessibilityAPIs".equals(key) && value instanceof String) { accessibilityAPI((String)value); return; }
       if ("accessibilityControl".equals(key) && value instanceof String) { accessibilityControl((String)value); return; }
@@ -3084,6 +3151,8 @@ public class CreativeWork extends Thing implements WorkFeatured, Step {
       if ("citations".equals(key) && value instanceof String) { citation((String)value); return; }
       if ("comment".equals(key) && value instanceof Comment) { comment((Comment)value); return; }
       if ("comments".equals(key) && value instanceof Comment) { comment((Comment)value); return; }
+      if ("contentLocation".equals(key) && value instanceof SpatialCoverage) { contentLocation((SpatialCoverage)value); return; }
+      if ("contentLocations".equals(key) && value instanceof SpatialCoverage) { contentLocation((SpatialCoverage)value); return; }
       if ("locationCreated".equals(key) && value instanceof Place) { locationCreated((Place)value); return; }
       if ("locationCreateds".equals(key) && value instanceof Place) { locationCreated((Place)value); return; }
       if ("contentRating".equals(key) && value instanceof Rating) { contentRating((Rating)value); return; }
@@ -3152,6 +3221,8 @@ public class CreativeWork extends Thing implements WorkFeatured, Step {
       if ("isBasedOns".equals(key) && value instanceof String) { isBasedOn((String)value); return; }
       if ("isFamilyFriendly".equals(key) && value instanceof Boolean) { isFamilyFriendly((Boolean)value); return; }
       if ("isFamilyFriendlys".equals(key) && value instanceof Boolean) { isFamilyFriendly((Boolean)value); return; }
+      if ("isPartOf".equals(key) && value instanceof PartOfEpisode) { isPartOf((PartOfEpisode)value); return; }
+      if ("isPartOfs".equals(key) && value instanceof PartOfEpisode) { isPartOf((PartOfEpisode)value); return; }
       if ("keywords".equals(key) && value instanceof String) { keywords((String)value); return; }
       if ("keywordss".equals(key) && value instanceof String) { keywords((String)value); return; }
       if ("license".equals(key) && value instanceof CreativeWork) { license((CreativeWork)value); return; }
@@ -3160,12 +3231,12 @@ public class CreativeWork extends Thing implements WorkFeatured, Step {
       if ("licenses".equals(key) && value instanceof String) { license((String)value); return; }
       if ("learningResourceType".equals(key) && value instanceof String) { learningResourceType((String)value); return; }
       if ("learningResourceTypes".equals(key) && value instanceof String) { learningResourceType((String)value); return; }
-      if ("mainEntity".equals(key) && value instanceof About) { mainEntity((About)value); return; }
-      if ("mainEntitys".equals(key) && value instanceof About) { mainEntity((About)value); return; }
       if ("mentions".equals(key) && value instanceof Thing) { mentions((Thing)value); return; }
       if ("mentionss".equals(key) && value instanceof Thing) { mentions((Thing)value); return; }
       if ("offers".equals(key) && value instanceof Offer) { offers((Offer)value); return; }
       if ("offerss".equals(key) && value instanceof Offer) { offers((Offer)value); return; }
+      if ("position".equals(key) && value instanceof SeasonNumber) { position((SeasonNumber)value); return; }
+      if ("positions".equals(key) && value instanceof SeasonNumber) { position((SeasonNumber)value); return; }
       if ("producer".equals(key) && value instanceof Organization) { producer((Organization)value); return; }
       if ("producers".equals(key) && value instanceof Organization) { producer((Organization)value); return; }
       if ("producer".equals(key) && value instanceof Person) { producer((Person)value); return; }
@@ -3188,12 +3259,12 @@ public class CreativeWork extends Thing implements WorkFeatured, Step {
       if ("sourceOrganizations".equals(key) && value instanceof Organization) { sourceOrganization((Organization)value); return; }
       if ("spatial".equals(key) && value instanceof Place) { spatial((Place)value); return; }
       if ("spatials".equals(key) && value instanceof Place) { spatial((Place)value); return; }
-      if ("spatialCoverage".equals(key) && value instanceof Place) { spatialCoverage((Place)value); return; }
-      if ("spatialCoverages".equals(key) && value instanceof Place) { spatialCoverage((Place)value); return; }
-      if ("funder".equals(key) && value instanceof Organization) { funder((Organization)value); return; }
-      if ("funders".equals(key) && value instanceof Organization) { funder((Organization)value); return; }
-      if ("funder".equals(key) && value instanceof Person) { funder((Person)value); return; }
-      if ("funders".equals(key) && value instanceof Person) { funder((Person)value); return; }
+      if ("spatialCoverage".equals(key) && value instanceof SpatialCoverage) { spatialCoverage((SpatialCoverage)value); return; }
+      if ("spatialCoverages".equals(key) && value instanceof SpatialCoverage) { spatialCoverage((SpatialCoverage)value); return; }
+      if ("sponsor".equals(key) && value instanceof Funder) { sponsor((Funder)value); return; }
+      if ("sponsors".equals(key) && value instanceof Funder) { sponsor((Funder)value); return; }
+      if ("funder".equals(key) && value instanceof Funder) { funder((Funder)value); return; }
+      if ("funders".equals(key) && value instanceof Funder) { funder((Funder)value); return; }
       if ("temporalCoverage".equals(key) && value instanceof String) { temporalCoverage((String)value); return; }
       if ("temporalCoverages".equals(key) && value instanceof String) { temporalCoverage((String)value); return; }
       if ("temporalCoverage".equals(key) && value instanceof java.util.Date) { temporalCoverage((java.util.Date)value); return; }
@@ -3230,8 +3301,8 @@ public class CreativeWork extends Thing implements WorkFeatured, Step {
       if ("providers".equals(key) && value instanceof Person) { provider((Person)value); return; }
       if ("commentCount".equals(key) && value instanceof Integer) { commentCount((Integer)value); return; }
       if ("commentCounts".equals(key) && value instanceof Integer) { commentCount((Integer)value); return; }
-      if ("hasPart".equals(key) && value instanceof HasPart) { hasPart((HasPart)value); return; }
-      if ("hasParts".equals(key) && value instanceof HasPart) { hasPart((HasPart)value); return; }
+      if ("hasPart".equals(key) && value instanceof CreativeWork) { hasPart((CreativeWork)value); return; }
+      if ("hasParts".equals(key) && value instanceof CreativeWork) { hasPart((CreativeWork)value); return; }
       if ("workExample".equals(key) && value instanceof CreativeWork) { workExample((CreativeWork)value); return; }
       if ("workExamples".equals(key) && value instanceof CreativeWork) { workExample((CreativeWork)value); return; }
       if ("exampleOfWork".equals(key) && value instanceof CreativeWork) { exampleOfWork((CreativeWork)value); return; }
@@ -3244,6 +3315,8 @@ public class CreativeWork extends Thing implements WorkFeatured, Step {
       if ("translators".equals(key) && value instanceof Person) { translator((Person)value); return; }
       if ("releasedEvent".equals(key) && value instanceof PublicationEvent) { releasedEvent((PublicationEvent)value); return; }
       if ("releasedEvents".equals(key) && value instanceof PublicationEvent) { releasedEvent((PublicationEvent)value); return; }
+      if ("material".equals(key) && value instanceof ArtMedium) { material((ArtMedium)value); return; }
+      if ("materials".equals(key) && value instanceof ArtMedium) { material((ArtMedium)value); return; }
       if ("interactionStatistic".equals(key) && value instanceof InteractionCounter) { interactionStatistic((InteractionCounter)value); return; }
       if ("interactionStatistics".equals(key) && value instanceof InteractionCounter) { interactionStatistic((InteractionCounter)value); return; }
       if ("accessMode".equals(key) && value instanceof String) { accessMode((String)value); return; }

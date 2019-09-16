@@ -132,19 +132,19 @@ class GeneratorSink : TripleSink {
             "http://schema.org/supersededBy" -> { types[subj]!!.isSuperseded = true }
             "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
                 "rdfs:subPropertyOf"-> {
-                // THIS IS NOT IN THE CURRENT SCHEMA
-                println("Making subPropertyOf ${obj}")
-                if (obj.contains("http:")) {
+                println("Making subPropertyOf ${obj} -> ${subj}")
+                if (subj.contains("http:")) {
                     val interfaceType = Type()
-
-                    interfaceType.name = getInterfaceName(obj)
+                    // Create child type (subj)
+                    interfaceType.name = getInterfaceName(subj)
                     interfaceType.isInterface = true
-                    types.put(obj, interfaceType)
+                    types.put(subj, interfaceType)
 
-                    if (!types.containsKey(subj)) types.put(subj, Type())
-                    val type = types[subj]!!
+                    // Create parent type (obj)
+                    if (!types.containsKey(obj)) types.put(obj, Type())
+                    val type = types[obj]!!
                     if (type.isField) {
-                        type.dataTypes.add(obj)
+                        type.dataTypes.add(subj)
                     } else {
                         type.interfaces.add(interfaceType.name!!)
                     }

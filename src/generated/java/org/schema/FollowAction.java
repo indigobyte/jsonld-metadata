@@ -27,39 +27,16 @@ import java.util.*;
  * The act of forming a personal connection with someone/something (object) unidirectionally/asymmetrically to get updates polled from.\n\nRelated actions:\n\n* [[BefriendAction]]: Unlike BefriendAction, FollowAction implies that the connection is *not* necessarily reciprocal.\n* [[SubscribeAction]]: Unlike SubscribeAction, FollowAction implies that the follower acts as an active agent constantly/actively polling for updates.\n* [[RegisterAction]]: Unlike RegisterAction, FollowAction implies that the agent is interested in continuing receiving updates from the object.\n* [[JoinAction]]: Unlike JoinAction, FollowAction implies that the agent is interested in getting updates from the object.\n* [[TrackAction]]: Unlike TrackAction, FollowAction refers to the polling of updates of all aspects of animate objects rather than the location of inanimate objects (e.g. you track a package, but you don't follow it).
  */
 public class FollowAction extends InteractAction {
-  /**
-   * A sub property of object. The person or organization being followed.
-   */
-  @JsonIgnore public Organization getFolloweeOrganization() {
-    return (Organization) getValue("followee");
+  @JsonIgnore public Followee getFollowee() {
+    return (Followee) getValue("followee");
   }
-  /**
-   * A sub property of object. The person or organization being followed.
-   */
-  @JsonIgnore public Collection<Organization> getFolloweeOrganizations() {
+  @JsonIgnore public Collection<Followee> getFollowees() {
     final Object current = myData.get("followee");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+      return (Collection<Followee>) current;
     }
-    return Arrays.asList((Organization) current);
-  }
-  /**
-   * A sub property of object. The person or organization being followed.
-   */
-  @JsonIgnore public Person getFolloweePerson() {
-    return (Person) getValue("followee");
-  }
-  /**
-   * A sub property of object. The person or organization being followed.
-   */
-  @JsonIgnore public Collection<Person> getFolloweePersons() {
-    final Object current = myData.get("followee");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
-    }
-    return Arrays.asList((Person) current);
+    return Arrays.asList((Followee) current);
   }
   protected FollowAction(java.util.Map<String,Object> data) {
     super(data);
@@ -75,32 +52,8 @@ public class FollowAction extends InteractAction {
     @NotNull public FollowAction build() {
       return new FollowAction(myData);
     }
-    /**
-     * A sub property of object. The person or organization being followed.
-     */
-    @NotNull public Builder followee(@NotNull Organization organization) {
-      putValue("followee", organization);
-      return this;
-    }
-    /**
-     * A sub property of object. The person or organization being followed.
-     */
-    @NotNull public Builder followee(@NotNull Organization.Builder organization) {
-      putValue("followee", organization.build());
-      return this;
-    }
-    /**
-     * A sub property of object. The person or organization being followed.
-     */
-    @NotNull public Builder followee(@NotNull Person person) {
-      putValue("followee", person);
-      return this;
-    }
-    /**
-     * A sub property of object. The person or organization being followed.
-     */
-    @NotNull public Builder followee(@NotNull Person.Builder person) {
-      putValue("followee", person.build());
+    @NotNull public Builder followee(@NotNull Followee followee) {
+      putValue("followee", followee);
       return this;
     }
     /**
@@ -136,6 +89,55 @@ public class FollowAction extends InteractAction {
      */
     @NotNull public Builder endTime(@NotNull java.util.Date date) {
       putValue("endTime", date);
+      return this;
+    }
+    /**
+     * The object that helped the agent perform the action. e.g. John wrote a book with *a pen*.
+     */
+    @NotNull public Builder instrument(@NotNull Language language) {
+      putValue("instrument", language);
+      return this;
+    }
+    /**
+     * The location of for example where the event is happening, an organization is located, or where an action takes place.
+     */
+    @NotNull public Builder location(@NotNull SportsActivityLocation sportsActivityLocation) {
+      putValue("location", sportsActivityLocation);
+      return this;
+    }
+    /**
+     * The location of for example where the event is happening, an organization is located, or where an action takes place.
+     */
+    @NotNull public Builder location(@NotNull SportsActivityLocation.Builder sportsActivityLocation) {
+      putValue("location", sportsActivityLocation.build());
+      return this;
+    }
+    /**
+     * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
+     */
+    @NotNull public Builder object(@NotNull Option option) {
+      putValue("object", option);
+      return this;
+    }
+    /**
+     * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
+     */
+    @NotNull public Builder participant(@NotNull RealEstateAgent realEstateAgent) {
+      putValue("participant", realEstateAgent);
+      return this;
+    }
+    /**
+     * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
+     */
+    @NotNull public Builder participant(@NotNull RealEstateAgent.Builder realEstateAgent) {
+      putValue("participant", realEstateAgent.build());
+      return this;
+    }
+    /**
+     * The result produced in the action. e.g. John wrote *a book*.
+     */
+    @NotNull public Builder result(@NotNull ResultComment resultComment) {
+      putValue("result", resultComment);
       return this;
     }
     /**
@@ -180,10 +182,7 @@ public class FollowAction extends InteractAction {
       putValue("target", entryPoint.build());
       return this;
     }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     */
-    @NotNull public Builder additionalType(@NotNull String additionalType) {
+    @NotNull public Builder additionalType(@NotNull AdditionalType additionalType) {
       putValue("additionalType", additionalType);
       return this;
     }
@@ -195,10 +194,21 @@ public class FollowAction extends InteractAction {
       return this;
     }
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * A description of the item.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
+    @NotNull public Builder description(@NotNull DisambiguatingDescription disambiguatingDescription) {
+      putValue("description", disambiguatingDescription);
+      return this;
+    }
+    @NotNull public Builder disambiguatingDescription(@NotNull DisambiguatingDescription disambiguatingDescription) {
       putValue("disambiguatingDescription", disambiguatingDescription);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Logo logo) {
+      putValue("image", logo);
       return this;
     }
     /**
@@ -220,13 +230,6 @@ public class FollowAction extends InteractAction {
      */
     @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
       putValue("mainEntityOfPage", mainEntityOfPage);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
       return this;
     }
     /**
@@ -255,6 +258,14 @@ public class FollowAction extends InteractAction {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Isbn isbn) {
+      putValue("identifier", isbn);
       return this;
     }
     /**
@@ -293,10 +304,8 @@ public class FollowAction extends InteractAction {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("followee".equals(key) && value instanceof Organization) { followee((Organization)value); return; }
-      if ("followees".equals(key) && value instanceof Organization) { followee((Organization)value); return; }
-      if ("followee".equals(key) && value instanceof Person) { followee((Person)value); return; }
-      if ("followees".equals(key) && value instanceof Person) { followee((Person)value); return; }
+      if ("followee".equals(key) && value instanceof Followee) { followee((Followee)value); return; }
+      if ("followees".equals(key) && value instanceof Followee) { followee((Followee)value); return; }
       super.fromMap(key, value);
     }
   }

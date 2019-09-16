@@ -9,6 +9,9 @@ class MutableOnDemandEvent {
     get() = map["publishedOn"] as BroadcastService
     set(value) { map["publishedOn"] = value }
   fun publishedOn(builder: MutableBroadcastService.() -> Unit) { map["publishedOn"] = MutableBroadcastService().apply(builder).build() }
+  var about: MainEntity
+    get() = map["about"] as MainEntity
+    set(value) { map["about"] = value }
   var actor: Person
     get() = map["actor"] as Person
     set(value) { map["actor"] = value }
@@ -43,6 +46,9 @@ class MutableOnDemandEvent {
   var doorTime: java.util.Date
     get() = map["doorTime"] as java.util.Date
     set(value) { map["doorTime"] = value }
+  var duration: LoanTerm
+    get() = map["duration"] as LoanTerm
+    set(value) { map["duration"] = value }
   var endDate: java.util.Date
     get() = map["endDate"] as java.util.Date
     set(value) { map["endDate"] = value }
@@ -52,7 +58,10 @@ class MutableOnDemandEvent {
   var inLanguage: Any
     get() = map["inLanguage"]!!
     set(value) { map["inLanguage"] = value }
-  fun inLanguageLanguage(builder: MutableLanguage.() -> Unit) { map["inLanguage"] = MutableLanguage().apply(builder).build() }
+  var location: SportsActivityLocation
+    get() = map["location"] as SportsActivityLocation
+    set(value) { map["location"] = value }
+  fun location(builder: MutableSportsActivityLocation.() -> Unit) { map["location"] = MutableSportsActivityLocation().apply(builder).build() }
   var maximumAttendeeCapacity: Int
     get() = map["maximumAttendeeCapacity"] as Int
     set(value) { map["maximumAttendeeCapacity"] = value }
@@ -79,11 +88,12 @@ class MutableOnDemandEvent {
     get() = map["review"] as Review
     set(value) { map["review"] = value }
   fun review(builder: MutableReview.() -> Unit) { map["review"] = MutableReview().apply(builder).build() }
-  var funder: Any
-    get() = map["funder"]!!
+  var sponsor: Funder
+    get() = map["sponsor"] as Funder
+    set(value) { map["sponsor"] = value }
+  var funder: Funder
+    get() = map["funder"] as Funder
     set(value) { map["funder"] = value }
-  fun funderOrganization(builder: MutableOrganization.() -> Unit) { map["funder"] = MutableOrganization().apply(builder).build() }
-  fun funderPerson(builder: MutablePerson.() -> Unit) { map["funder"] = MutablePerson().apply(builder).build() }
   var startDate: java.util.Date
     get() = map["startDate"] as java.util.Date
     set(value) { map["startDate"] = value }
@@ -98,13 +108,13 @@ class MutableOnDemandEvent {
   var typicalAgeRange: String
     get() = map["typicalAgeRange"] as String
     set(value) { map["typicalAgeRange"] = value }
-  var workPerformed: CreativeWork
-    get() = map["workPerformed"] as CreativeWork
+  var workPerformed: WorkPerformed
+    get() = map["workPerformed"] as WorkPerformed
     set(value) { map["workPerformed"] = value }
-  fun workPerformed(builder: MutableCreativeWork.() -> Unit) { map["workPerformed"] = MutableCreativeWork().apply(builder).build() }
-  var workFeatured: WorkFeatured
-    get() = map["workFeatured"] as WorkFeatured
+  var workFeatured: CreativeWork
+    get() = map["workFeatured"] as CreativeWork
     set(value) { map["workFeatured"] = value }
+  fun workFeatured(builder: MutableCreativeWork.() -> Unit) { map["workFeatured"] = MutableCreativeWork().apply(builder).build() }
   var translator: Any
     get() = map["translator"]!!
     set(value) { map["translator"] = value }
@@ -115,22 +125,25 @@ class MutableOnDemandEvent {
     set(value) { map["composer"] = value }
   fun composerOrganization(builder: MutableOrganization.() -> Unit) { map["composer"] = MutableOrganization().apply(builder).build() }
   fun composerPerson(builder: MutablePerson.() -> Unit) { map["composer"] = MutablePerson().apply(builder).build() }
-  var additionalType: String
-    get() = map["additionalType"] as String
+  var additionalType: AdditionalType
+    get() = map["additionalType"] as AdditionalType
     set(value) { map["additionalType"] = value }
   var alternateName: String
     get() = map["alternateName"] as String
     set(value) { map["alternateName"] = value }
-  var disambiguatingDescription: String
-    get() = map["disambiguatingDescription"] as String
+  var description: DisambiguatingDescription
+    get() = map["description"] as DisambiguatingDescription
+    set(value) { map["description"] = value }
+  var disambiguatingDescription: DisambiguatingDescription
+    get() = map["disambiguatingDescription"] as DisambiguatingDescription
     set(value) { map["disambiguatingDescription"] = value }
+  var image: Logo
+    get() = map["image"] as Logo
+    set(value) { map["image"] = value }
   var mainEntityOfPage: Any
     get() = map["mainEntityOfPage"]!!
     set(value) { map["mainEntityOfPage"] = value }
   fun mainEntityOfPageCreativeWork(builder: MutableCreativeWork.() -> Unit) { map["mainEntityOfPage"] = MutableCreativeWork().apply(builder).build() }
-  var name: String
-    get() = map["name"] as String
-    set(value) { map["name"] = value }
   var sameAs: String
     get() = map["sameAs"] as String
     set(value) { map["sameAs"] = value }
@@ -141,6 +154,9 @@ class MutableOnDemandEvent {
     get() = map["potentialAction"] as Action
     set(value) { map["potentialAction"] = value }
   fun potentialAction(builder: MutableAction.() -> Unit) { map["potentialAction"] = MutableAction().apply(builder).build() }
+  var identifier: Isbn
+    get() = map["identifier"] as Isbn
+    set(value) { map["identifier"] = value }
   var subjectOf: Any
     get() = map["subjectOf"]!!
     set(value) { map["subjectOf"] = value }
