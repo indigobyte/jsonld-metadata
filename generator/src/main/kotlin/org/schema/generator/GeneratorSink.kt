@@ -25,6 +25,10 @@ class GeneratorSink : TripleSink {
     private val ID_TYPE = "http://schema.org/@id"
 
     private val NUMBER_UNDERLYING_TYPES = listOf("Integer", "Long", "Float", "Double", "String")
+    
+    private val subjects = mutableSetOf<String>()
+    private val predicates = mutableSetOf<String>()
+    private val objects = mutableSetOf<String>()
 
     data class Type(
             var isSuperseded: Boolean = false,
@@ -57,6 +61,15 @@ class GeneratorSink : TripleSink {
     }
 
     fun postProcess() {
+        println("Subjects\n========")
+        println(subjects)
+        println()
+        println("Predicates\n==========")
+        println(predicates)
+        println()
+        println("Objects\n=======")
+        println(objects)
+    
         for (type in types.values) {
             if (type.isField && type.isInterface) {
                 type.isField = false
@@ -81,10 +94,14 @@ class GeneratorSink : TripleSink {
     }
 
     override fun addNonLiteral(subj: String, pred: String, obj: String) {
-        // println("Subject: $subj -- Pred: $pred -- obj: $obj")
+        //println("Subject: $subj -- Pred: $pred -- obj: $obj")
+        subjects.add(subj)
+        predicates.add(pred)
+        objects.add(obj)
         when(pred) {
             "http://schema.org/" -> { /* ignore */ }
-            "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" -> if(!types.containsKey(subj)) types.put(subj, Type().apply { if (types.containsKey(obj)) parentType = obj })
+            // This one is basically dead.  Move the logic -- NO IT IS NOT, WTF
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" -> if (!types.containsKey(subj)) types.put(subj, Type().apply { if (types.containsKey(obj)) parentType = obj })
             "http://www.w3.org/2000/01/rdf-schema#subClassOf",
                 "rdfs:subClassOf" -> types[subj]!!.parentType = obj // ???
             "http://schema.org/domainIncludes" -> {
@@ -128,7 +145,8 @@ class GeneratorSink : TripleSink {
             "http://schema.org/supersededBy" -> { types[subj]!!.isSuperseded = true }
             "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
                 "rdfs:subPropertyOf"-> {
-                println("Making subPropertyOf ${obj} -> ${subj}")
+                //println("Making subPropertyOf ${obj} -> ${subj}")
+                
                 if (subj.contains("http:")) {
                     val interfaceType = Type()
                     // Create child type (subj)
@@ -219,7 +237,12 @@ class GeneratorSink : TripleSink {
         if (type == null) {
             return emptyList()
         }
-        val fieldTypes = type.subTypes.map { types[it] }.filterNotNull().filter { it.name != null && !it.isSuperseded && it.dataTypes.any() && it.dataTypes[0] != "http://schema.org/Class" }.toMutableList()
+        val fieldTypes = type.subTypes
+            .mapNotNull { types[it] }
+            //.filterNotNull()
+            .filter { it.name != null && !it.isSuperseded && it.dataTypes.any() && it.dataTypes[0] != "http://schema.org/Class" }
+            .toMutableList()
+            
         getAllFields(types[type.parentType]).filterNot { i -> fieldTypes.any { it.name == i.name} }.forEach { fieldTypes.add(it) }
         return fieldTypes
     }

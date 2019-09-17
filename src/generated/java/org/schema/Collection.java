@@ -26,5 +26,5 @@ import java.util.*;
 /**
  * 
  */
-public interface FoodEstablishment {
+public interface Collection {
 }
