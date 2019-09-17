@@ -26,18 +26,19 @@ class GeneratorSink : TripleSink {
 
     private val NUMBER_UNDERLYING_TYPES = listOf("Integer", "Long", "Float", "Double", "String")
 
-    class Type {
-        var isSuperseded: Boolean = false
-        var isInterface: Boolean = false
-        var name: String? = null
-        var parentType: String? = null
-        var comment: String? = null
-        var source: String? = null
-        var equivalent: String? = null
-        val subTypes: MutableList<String> = ArrayList()
-        val interfaces: MutableList<String> = ArrayList()
-        var isField = false
-        val dataTypes: MutableList<String> = ArrayList()
+    data class Type(
+            var isSuperseded: Boolean = false,
+            var isInterface: Boolean = false,
+            var name: String? = null,
+            var parentType: String? = null,
+            var comment: String? = null,
+            var source: String? = null,
+            var equivalent: String? = null,
+            val subTypes: MutableList<String> = mutableListOf(),
+            val interfaces: MutableList<String> = mutableListOf(),
+            var isField: Boolean = false,
+            val dataTypes: MutableList<String> = mutableListOf()
+    ) {
 
         val classOrInterface
             get() = if (isInterface) "interface" else "class"
@@ -88,34 +89,26 @@ class GeneratorSink : TripleSink {
                 "rdfs:subClassOf" -> types[subj]!!.parentType = obj // ???
             "http://schema.org/domainIncludes" -> {
                 val objType = types[obj]
-                if (obj.contains("Message")) {
-                    println("Subject: $subj -- Pred: $pred -- obj: $obj")
-                    println("Obj type: ${objType}")
-                    println("Obj type name: ${objType?.name}")
-                }
 
                 if (objType != null) {
                     types[subj]?.let { subjType ->
-                        if (obj.contains("Message")) {
-                            println("Adding ${subjType.name} to Message")
-                        }
                         if (!objType.subTypes.contains(subj)) {
                             objType.subTypes.add(subj)
                         }
                         subjType.isField = true
                     } ?: println("No SubjType, make one")
-                    
+
                 } else {
                     val type = Type()
                     type.interfaces.add(getInterfaceName(subj))
-                    types.put(obj, type)
-                    
+                    types[obj] = type
+
                     //type.subTypes.add(subj)
                     //val subjType = Type()
                     //subjType.isField = true
                     //types.add(subjType, subj)
-                    
-                    
+
+
                 }
             }
             "http://schema.org/rangeIncludes" -> types[subj]!!.dataTypes.add(obj)
@@ -183,14 +176,15 @@ class GeneratorSink : TripleSink {
     private fun getFieldType(field: Type): String? {
         if (field.isInterface && field.name != null)
             return field.name!!.capitalize()
-        try {
+
+        return try {
             val name = field.dataTypes.firstOrNull { types[it]!!.isInterface } ?: field.dataTypes.firstOrNull()
-            return getBasicTypeName(types[name]?.name)
+            getBasicTypeName(types[name]?.name)
         } catch (e: Exception) {
             println("exception: ${e.message}")
             println("Failed to find a field for ${field.name} (${field.isInterface})")
             // TODO This is a hack.  They are basically an array list of strings
-            return when (field.name) { 
+            when (field.name) {
                 "Xpath", "CssSelector" -> "String"
                 else -> null
             }
@@ -213,7 +207,7 @@ class GeneratorSink : TripleSink {
         if (interfaceName != null)
             return listOf(types[interfaceName]!!.name!!)
 
-        return field.dataTypes.map { getBasicTypeName(types[it]?.name) }.filterNotNull().distinct().sorted()
+        return field.dataTypes.mapNotNull { getBasicTypeName(types[it]?.name) }.distinct().sorted()
     }
 
     fun shouldSkip(name: String): Boolean {
