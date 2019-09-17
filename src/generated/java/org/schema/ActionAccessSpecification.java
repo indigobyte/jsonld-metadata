@@ -95,16 +95,62 @@ public class ActionAccessSpecification extends Intangible {
     }
     return Arrays.asList((Thing) current);
   }
-  @JsonIgnore public EligibleRegion getEligibleRegion() {
-    return (EligibleRegion) getValue("eligibleRegion");
+  /**
+   * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\n\nSee also [[ineligibleRegion]].
+   *     
+   */
+  @JsonIgnore public GeoShape getEligibleRegionGeoShape() {
+    return (GeoShape) getValue("eligibleRegion");
   }
-  @JsonIgnore public Collection<EligibleRegion> getEligibleRegions() {
+  /**
+   * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\n\nSee also [[ineligibleRegion]].
+   *     
+   */
+  @JsonIgnore public Collection<GeoShape> getEligibleRegionGeoShapes() {
     final Object current = myData.get("eligibleRegion");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<EligibleRegion>) current;
+      return (Collection<GeoShape>) current;
     }
-    return Arrays.asList((EligibleRegion) current);
+    return Arrays.asList((GeoShape) current);
+  }
+  /**
+   * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\n\nSee also [[ineligibleRegion]].
+   *     
+   */
+  @JsonIgnore public Place getEligibleRegionPlace() {
+    return (Place) getValue("eligibleRegion");
+  }
+  /**
+   * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\n\nSee also [[ineligibleRegion]].
+   *     
+   */
+  @JsonIgnore public Collection<Place> getEligibleRegionPlaces() {
+    final Object current = myData.get("eligibleRegion");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Place>) current;
+    }
+    return Arrays.asList((Place) current);
+  }
+  /**
+   * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\n\nSee also [[ineligibleRegion]].
+   *     
+   */
+  @JsonIgnore public String getEligibleRegionString() {
+    return (String) getValue("eligibleRegion");
+  }
+  /**
+   * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\n\nSee also [[ineligibleRegion]].
+   *     
+   */
+  @JsonIgnore public Collection<String> getEligibleRegionStrings() {
+    final Object current = myData.get("eligibleRegion");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
   }
   /**
    * An Offer which must be accepted before the user can perform the Action. For example, the user may need to buy a movie before being able to watch it.
@@ -206,7 +252,43 @@ public class ActionAccessSpecification extends Intangible {
       putValue("category", thing.build());
       return this;
     }
-    @NotNull public Builder eligibleRegion(@NotNull EligibleRegion eligibleRegion) {
+    /**
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\n\nSee also [[ineligibleRegion]].
+     *     
+     */
+    @NotNull public Builder eligibleRegion(@NotNull GeoShape geoShape) {
+      putValue("eligibleRegion", geoShape);
+      return this;
+    }
+    /**
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\n\nSee also [[ineligibleRegion]].
+     *     
+     */
+    @NotNull public Builder eligibleRegion(@NotNull GeoShape.Builder geoShape) {
+      putValue("eligibleRegion", geoShape.build());
+      return this;
+    }
+    /**
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\n\nSee also [[ineligibleRegion]].
+     *     
+     */
+    @NotNull public Builder eligibleRegion(@NotNull Place place) {
+      putValue("eligibleRegion", place);
+      return this;
+    }
+    /**
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\n\nSee also [[ineligibleRegion]].
+     *     
+     */
+    @NotNull public Builder eligibleRegion(@NotNull Place.Builder place) {
+      putValue("eligibleRegion", place.build());
+      return this;
+    }
+    /**
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\n\nSee also [[ineligibleRegion]].
+     *     
+     */
+    @NotNull public Builder eligibleRegion(@NotNull String eligibleRegion) {
       putValue("eligibleRegion", eligibleRegion);
       return this;
     }
@@ -245,7 +327,10 @@ public class ActionAccessSpecification extends Intangible {
       putValue("requiresSubscription", mediaSubscription.build());
       return this;
     }
-    @NotNull public Builder additionalType(@NotNull AdditionalType additionalType) {
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     */
+    @NotNull public Builder additionalType(@NotNull String additionalType) {
       putValue("additionalType", additionalType);
       return this;
     }
@@ -257,21 +342,10 @@ public class ActionAccessSpecification extends Intangible {
       return this;
     }
     /**
-     * A description of the item.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder description(@NotNull DisambiguatingDescription disambiguatingDescription) {
-      putValue("description", disambiguatingDescription);
-      return this;
-    }
-    @NotNull public Builder disambiguatingDescription(@NotNull DisambiguatingDescription disambiguatingDescription) {
+    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
       putValue("disambiguatingDescription", disambiguatingDescription);
-      return this;
-    }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     */
-    @NotNull public Builder image(@NotNull Logo logo) {
-      putValue("image", logo);
       return this;
     }
     /**
@@ -293,6 +367,13 @@ public class ActionAccessSpecification extends Intangible {
      */
     @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
       putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
+    /**
+     * The name of the item.
+     */
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -321,14 +402,6 @@ public class ActionAccessSpecification extends Intangible {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
-      return this;
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     */
-    @NotNull public Builder identifier(@NotNull Isbn isbn) {
-      putValue("identifier", isbn);
       return this;
     }
     /**
@@ -375,8 +448,12 @@ public class ActionAccessSpecification extends Intangible {
       if ("categorys".equals(key) && value instanceof String) { category((String)value); return; }
       if ("category".equals(key) && value instanceof Thing) { category((Thing)value); return; }
       if ("categorys".equals(key) && value instanceof Thing) { category((Thing)value); return; }
-      if ("eligibleRegion".equals(key) && value instanceof EligibleRegion) { eligibleRegion((EligibleRegion)value); return; }
-      if ("eligibleRegions".equals(key) && value instanceof EligibleRegion) { eligibleRegion((EligibleRegion)value); return; }
+      if ("eligibleRegion".equals(key) && value instanceof GeoShape) { eligibleRegion((GeoShape)value); return; }
+      if ("eligibleRegions".equals(key) && value instanceof GeoShape) { eligibleRegion((GeoShape)value); return; }
+      if ("eligibleRegion".equals(key) && value instanceof Place) { eligibleRegion((Place)value); return; }
+      if ("eligibleRegions".equals(key) && value instanceof Place) { eligibleRegion((Place)value); return; }
+      if ("eligibleRegion".equals(key) && value instanceof String) { eligibleRegion((String)value); return; }
+      if ("eligibleRegions".equals(key) && value instanceof String) { eligibleRegion((String)value); return; }
       if ("expectsAcceptanceOf".equals(key) && value instanceof Offer) { expectsAcceptanceOf((Offer)value); return; }
       if ("expectsAcceptanceOfs".equals(key) && value instanceof Offer) { expectsAcceptanceOf((Offer)value); return; }
       if ("requiresSubscription".equals(key) && value instanceof Boolean) { requiresSubscription((Boolean)value); return; }

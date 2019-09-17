@@ -79,6 +79,23 @@ public class Order extends Intangible {
     return Arrays.asList((PostalAddress) current);
   }
   /**
+   * A number that confirms the given order or payment has been received.
+   */
+  @JsonIgnore public Identifier getConfirmationNumber() {
+    return (Identifier) getValue("confirmationNumber");
+  }
+  /**
+   * A number that confirms the given order or payment has been received.
+   */
+  @JsonIgnore public Collection<Identifier> getConfirmationNumbers() {
+    final Object current = myData.get("confirmationNumber");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Identifier>) current;
+    }
+    return Arrays.asList((Identifier) current);
+  }
+  /**
    * Party placing the order or paying the invoice.
    */
   @JsonIgnore public Organization getCustomerOrganization() {
@@ -317,6 +334,23 @@ public class Order extends Intangible {
     return Arrays.asList((Service) current);
   }
   /**
+   * The identifier of the transaction.
+   */
+  @JsonIgnore public Identifier getOrderNumber() {
+    return (Identifier) getValue("orderNumber");
+  }
+  /**
+   * The identifier of the transaction.
+   */
+  @JsonIgnore public Collection<Identifier> getOrderNumbers() {
+    final Object current = myData.get("orderNumber");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Identifier>) current;
+    }
+    return Arrays.asList((Identifier) current);
+  }
+  /**
    * The current status of the order.
    */
   @JsonIgnore public OrderStatus getOrderStatus() {
@@ -400,6 +434,23 @@ public class Order extends Intangible {
       return (Collection<String>) current;
     }
     return Arrays.asList((String) current);
+  }
+  /**
+   * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+   */
+  @JsonIgnore public Participant getSeller() {
+    return (Participant) getValue("seller");
+  }
+  /**
+   * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+   */
+  @JsonIgnore public Collection<Participant> getSellers() {
+    final Object current = myData.get("seller");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Participant>) current;
+    }
+    return Arrays.asList((Participant) current);
   }
   /**
    * The date that payment is due.
@@ -506,6 +557,13 @@ public class Order extends Intangible {
      */
     @NotNull public Builder billingAddress(@NotNull PostalAddress.Builder postalAddress) {
       putValue("billingAddress", postalAddress.build());
+      return this;
+    }
+    /**
+     * A number that confirms the given order or payment has been received.
+     */
+    @NotNull public Builder confirmationNumber(@NotNull Identifier identifier) {
+      putValue("confirmationNumber", identifier);
       return this;
     }
     /**
@@ -642,6 +700,13 @@ public class Order extends Intangible {
       return this;
     }
     /**
+     * The identifier of the transaction.
+     */
+    @NotNull public Builder orderNumber(@NotNull Identifier identifier) {
+      putValue("orderNumber", identifier);
+      return this;
+    }
+    /**
      * The current status of the order.
      */
     @NotNull public Builder orderStatus(@NotNull OrderStatus orderStatus) {
@@ -684,6 +749,13 @@ public class Order extends Intangible {
       return this;
     }
     /**
+     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+     */
+    @NotNull public Builder seller(@NotNull Participant participant) {
+      putValue("seller", participant);
+      return this;
+    }
+    /**
      * The date that payment is due.
      */
     @NotNull public Builder paymentDueDate(@NotNull java.util.Date date) {
@@ -718,7 +790,10 @@ public class Order extends Intangible {
       putValue("broker", person.build());
       return this;
     }
-    @NotNull public Builder additionalType(@NotNull AdditionalType additionalType) {
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     */
+    @NotNull public Builder additionalType(@NotNull String additionalType) {
       putValue("additionalType", additionalType);
       return this;
     }
@@ -730,21 +805,10 @@ public class Order extends Intangible {
       return this;
     }
     /**
-     * A description of the item.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder description(@NotNull DisambiguatingDescription disambiguatingDescription) {
-      putValue("description", disambiguatingDescription);
-      return this;
-    }
-    @NotNull public Builder disambiguatingDescription(@NotNull DisambiguatingDescription disambiguatingDescription) {
+    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
       putValue("disambiguatingDescription", disambiguatingDescription);
-      return this;
-    }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     */
-    @NotNull public Builder image(@NotNull Logo logo) {
-      putValue("image", logo);
       return this;
     }
     /**
@@ -766,6 +830,13 @@ public class Order extends Intangible {
      */
     @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
       putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
+    /**
+     * The name of the item.
+     */
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -794,14 +865,6 @@ public class Order extends Intangible {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
-      return this;
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     */
-    @NotNull public Builder identifier(@NotNull Isbn isbn) {
-      putValue("identifier", isbn);
       return this;
     }
     /**
@@ -846,6 +909,8 @@ public class Order extends Intangible {
       if ("acceptedOffers".equals(key) && value instanceof Offer) { acceptedOffer((Offer)value); return; }
       if ("billingAddress".equals(key) && value instanceof PostalAddress) { billingAddress((PostalAddress)value); return; }
       if ("billingAddresss".equals(key) && value instanceof PostalAddress) { billingAddress((PostalAddress)value); return; }
+      if ("confirmationNumber".equals(key) && value instanceof Identifier) { confirmationNumber((Identifier)value); return; }
+      if ("confirmationNumbers".equals(key) && value instanceof Identifier) { confirmationNumber((Identifier)value); return; }
       if ("customer".equals(key) && value instanceof Organization) { customer((Organization)value); return; }
       if ("customers".equals(key) && value instanceof Organization) { customer((Organization)value); return; }
       if ("customer".equals(key) && value instanceof Person) { customer((Person)value); return; }
@@ -874,6 +939,8 @@ public class Order extends Intangible {
       if ("orderedItems".equals(key) && value instanceof Product) { orderedItem((Product)value); return; }
       if ("orderedItem".equals(key) && value instanceof Service) { orderedItem((Service)value); return; }
       if ("orderedItems".equals(key) && value instanceof Service) { orderedItem((Service)value); return; }
+      if ("orderNumber".equals(key) && value instanceof Identifier) { orderNumber((Identifier)value); return; }
+      if ("orderNumbers".equals(key) && value instanceof Identifier) { orderNumber((Identifier)value); return; }
       if ("orderStatus".equals(key) && value instanceof OrderStatus) { orderStatus((OrderStatus)value); return; }
       if ("orderStatuss".equals(key) && value instanceof OrderStatus) { orderStatus((OrderStatus)value); return; }
       if ("partOfInvoice".equals(key) && value instanceof Invoice) { partOfInvoice((Invoice)value); return; }
@@ -884,6 +951,8 @@ public class Order extends Intangible {
       if ("paymentMethodIds".equals(key) && value instanceof String) { paymentMethodId((String)value); return; }
       if ("paymentUrl".equals(key) && value instanceof String) { paymentUrl((String)value); return; }
       if ("paymentUrls".equals(key) && value instanceof String) { paymentUrl((String)value); return; }
+      if ("seller".equals(key) && value instanceof Participant) { seller((Participant)value); return; }
+      if ("sellers".equals(key) && value instanceof Participant) { seller((Participant)value); return; }
       if ("paymentDueDate".equals(key) && value instanceof java.util.Date) { paymentDueDate((java.util.Date)value); return; }
       if ("paymentDueDates".equals(key) && value instanceof java.util.Date) { paymentDueDate((java.util.Date)value); return; }
       if ("broker".equals(key) && value instanceof Organization) { broker((Organization)value); return; }

@@ -2,12 +2,16 @@ package org.schema.kotlin
 import org.schema.*
 class MutableTaxiService {
   private val map = HashMap<String,Any>()
+  var hasOfferCatalog: OfferCatalog
+    get() = map["hasOfferCatalog"] as OfferCatalog
+    set(value) { map["hasOfferCatalog"] = value }
+  fun hasOfferCatalog(builder: MutableOfferCatalog.() -> Unit) { map["hasOfferCatalog"] = MutableOfferCatalog().apply(builder).build() }
   var aggregateRating: AggregateRating
     get() = map["aggregateRating"] as AggregateRating
     set(value) { map["aggregateRating"] = value }
   fun aggregateRating(builder: MutableAggregateRating.() -> Unit) { map["aggregateRating"] = MutableAggregateRating().apply(builder).build() }
-  var areaServed: AvailableAtOrFrom
-    get() = map["areaServed"] as AvailableAtOrFrom
+  var areaServed: AreaServed
+    get() = map["areaServed"] as AreaServed
     set(value) { map["areaServed"] = value }
   var audience: Audience
     get() = map["audience"] as Audience
@@ -43,9 +47,10 @@ class MutableTaxiService {
     set(value) { map["isSimilarTo"] = value }
   fun isSimilarToProduct(builder: MutableProduct.() -> Unit) { map["isSimilarTo"] = MutableProduct().apply(builder).build() }
   fun isSimilarToService(builder: MutableService.() -> Unit) { map["isSimilarTo"] = MutableService().apply(builder).build() }
-  var logo: Logo
-    get() = map["logo"] as Logo
+  var logo: Any
+    get() = map["logo"]!!
     set(value) { map["logo"] = value }
+  fun logoImageObject(builder: MutableImageObject.() -> Unit) { map["logo"] = MutableImageObject().apply(builder).build() }
   var offers: Offer
     get() = map["offers"] as Offer
     set(value) { map["offers"] = value }
@@ -77,25 +82,28 @@ class MutableTaxiService {
     set(value) { map["broker"] = value }
   fun brokerOrganization(builder: MutableOrganization.() -> Unit) { map["broker"] = MutableOrganization().apply(builder).build() }
   fun brokerPerson(builder: MutablePerson.() -> Unit) { map["broker"] = MutablePerson().apply(builder).build() }
-  var additionalType: AdditionalType
-    get() = map["additionalType"] as AdditionalType
+  var additionalType: String
+    get() = map["additionalType"] as String
     set(value) { map["additionalType"] = value }
   var alternateName: String
     get() = map["alternateName"] as String
     set(value) { map["alternateName"] = value }
-  var description: DisambiguatingDescription
-    get() = map["description"] as DisambiguatingDescription
+  var description: Description
+    get() = map["description"] as Description
     set(value) { map["description"] = value }
-  var disambiguatingDescription: DisambiguatingDescription
-    get() = map["disambiguatingDescription"] as DisambiguatingDescription
+  var disambiguatingDescription: String
+    get() = map["disambiguatingDescription"] as String
     set(value) { map["disambiguatingDescription"] = value }
-  var image: Logo
-    get() = map["image"] as Logo
+  var image: Image
+    get() = map["image"] as Image
     set(value) { map["image"] = value }
   var mainEntityOfPage: Any
     get() = map["mainEntityOfPage"]!!
     set(value) { map["mainEntityOfPage"] = value }
   fun mainEntityOfPageCreativeWork(builder: MutableCreativeWork.() -> Unit) { map["mainEntityOfPage"] = MutableCreativeWork().apply(builder).build() }
+  var name: String
+    get() = map["name"] as String
+    set(value) { map["name"] = value }
   var sameAs: String
     get() = map["sameAs"] as String
     set(value) { map["sameAs"] = value }
@@ -106,8 +114,8 @@ class MutableTaxiService {
     get() = map["potentialAction"] as Action
     set(value) { map["potentialAction"] = value }
   fun potentialAction(builder: MutableAction.() -> Unit) { map["potentialAction"] = MutableAction().apply(builder).build() }
-  var identifier: Isbn
-    get() = map["identifier"] as Isbn
+  var identifier: Identifier
+    get() = map["identifier"] as Identifier
     set(value) { map["identifier"] = value }
   var subjectOf: Any
     get() = map["subjectOf"]!!

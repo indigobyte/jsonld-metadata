@@ -29,6 +29,91 @@ import java.util.*;
  */
 public class PropertyValue extends StructuredValue {
   /**
+   * The upper value of some characteristic or property.
+   */
+  @JsonIgnore public Integer getMaxValueInteger() {
+    return (Integer) getValue("maxValue");
+  }
+  /**
+   * The upper value of some characteristic or property.
+   */
+  @JsonIgnore public Collection<Integer> getMaxValueIntegers() {
+    final Object current = myData.get("maxValue");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Integer>) current;
+    }
+    return Arrays.asList((Integer) current);
+  }
+  /**
+   * The upper value of some characteristic or property.
+   */
+  @JsonIgnore public Long getMaxValueLong() {
+    return (Long) getValue("maxValue");
+  }
+  /**
+   * The upper value of some characteristic or property.
+   */
+  @JsonIgnore public Collection<Long> getMaxValueLongs() {
+    final Object current = myData.get("maxValue");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Long>) current;
+    }
+    return Arrays.asList((Long) current);
+  }
+  /**
+   * The upper value of some characteristic or property.
+   */
+  @JsonIgnore public Float getMaxValueFloat() {
+    return (Float) getValue("maxValue");
+  }
+  /**
+   * The upper value of some characteristic or property.
+   */
+  @JsonIgnore public Collection<Float> getMaxValueFloats() {
+    final Object current = myData.get("maxValue");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Float>) current;
+    }
+    return Arrays.asList((Float) current);
+  }
+  /**
+   * The upper value of some characteristic or property.
+   */
+  @JsonIgnore public Double getMaxValueDouble() {
+    return (Double) getValue("maxValue");
+  }
+  /**
+   * The upper value of some characteristic or property.
+   */
+  @JsonIgnore public Collection<Double> getMaxValueDoubles() {
+    final Object current = myData.get("maxValue");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Double>) current;
+    }
+    return Arrays.asList((Double) current);
+  }
+  /**
+   * The upper value of some characteristic or property.
+   */
+  @JsonIgnore public String getMaxValueString() {
+    return (String) getValue("maxValue");
+  }
+  /**
+   * The upper value of some characteristic or property.
+   */
+  @JsonIgnore public Collection<String> getMaxValueStrings() {
+    final Object current = myData.get("maxValue");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
    * The lower value of some characteristic or property.
    */
   @JsonIgnore public Integer getMinValueInteger() {
@@ -357,6 +442,41 @@ public class PropertyValue extends StructuredValue {
       return new PropertyValue(myData);
     }
     /**
+     * The upper value of some characteristic or property.
+     */
+    @NotNull public Builder maxValue(@NotNull Integer integer) {
+      putValue("maxValue", integer);
+      return this;
+    }
+    /**
+     * The upper value of some characteristic or property.
+     */
+    @NotNull public Builder maxValue(@NotNull Long maxValue) {
+      putValue("maxValue", maxValue);
+      return this;
+    }
+    /**
+     * The upper value of some characteristic or property.
+     */
+    @NotNull public Builder maxValue(@NotNull Float maxValue) {
+      putValue("maxValue", maxValue);
+      return this;
+    }
+    /**
+     * The upper value of some characteristic or property.
+     */
+    @NotNull public Builder maxValue(@NotNull Double maxValue) {
+      putValue("maxValue", maxValue);
+      return this;
+    }
+    /**
+     * The upper value of some characteristic or property.
+     */
+    @NotNull public Builder maxValue(@NotNull String maxValue) {
+      putValue("maxValue", maxValue);
+      return this;
+    }
+    /**
      * The lower value of some characteristic or property.
      */
     @NotNull public Builder minValue(@NotNull Integer integer) {
@@ -521,7 +641,10 @@ public class PropertyValue extends StructuredValue {
       putValue("propertyID", propertyID);
       return this;
     }
-    @NotNull public Builder additionalType(@NotNull AdditionalType additionalType) {
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     */
+    @NotNull public Builder additionalType(@NotNull String additionalType) {
       putValue("additionalType", additionalType);
       return this;
     }
@@ -533,21 +656,10 @@ public class PropertyValue extends StructuredValue {
       return this;
     }
     /**
-     * A description of the item.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder description(@NotNull DisambiguatingDescription disambiguatingDescription) {
-      putValue("description", disambiguatingDescription);
-      return this;
-    }
-    @NotNull public Builder disambiguatingDescription(@NotNull DisambiguatingDescription disambiguatingDescription) {
+    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
       putValue("disambiguatingDescription", disambiguatingDescription);
-      return this;
-    }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     */
-    @NotNull public Builder image(@NotNull Logo logo) {
-      putValue("image", logo);
       return this;
     }
     /**
@@ -569,6 +681,13 @@ public class PropertyValue extends StructuredValue {
      */
     @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
       putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
+    /**
+     * The name of the item.
+     */
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -597,14 +716,6 @@ public class PropertyValue extends StructuredValue {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
-      return this;
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     */
-    @NotNull public Builder identifier(@NotNull Isbn isbn) {
-      putValue("identifier", isbn);
       return this;
     }
     /**
@@ -643,6 +754,16 @@ public class PropertyValue extends StructuredValue {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
+      if ("maxValue".equals(key) && value instanceof Integer) { maxValue((Integer)value); return; }
+      if ("maxValues".equals(key) && value instanceof Integer) { maxValue((Integer)value); return; }
+      if ("maxValue".equals(key) && value instanceof Long) { maxValue((Long)value); return; }
+      if ("maxValues".equals(key) && value instanceof Long) { maxValue((Long)value); return; }
+      if ("maxValue".equals(key) && value instanceof Float) { maxValue((Float)value); return; }
+      if ("maxValues".equals(key) && value instanceof Float) { maxValue((Float)value); return; }
+      if ("maxValue".equals(key) && value instanceof Double) { maxValue((Double)value); return; }
+      if ("maxValues".equals(key) && value instanceof Double) { maxValue((Double)value); return; }
+      if ("maxValue".equals(key) && value instanceof String) { maxValue((String)value); return; }
+      if ("maxValues".equals(key) && value instanceof String) { maxValue((String)value); return; }
       if ("minValue".equals(key) && value instanceof Integer) { minValue((Integer)value); return; }
       if ("minValues".equals(key) && value instanceof Integer) { minValue((Integer)value); return; }
       if ("minValue".equals(key) && value instanceof Long) { minValue((Long)value); return; }

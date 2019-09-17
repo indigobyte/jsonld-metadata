@@ -24,7 +24,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * 
+ * A sub-property of instrument. A supply consumed when performing instructions or a direction.
  */
-public interface Supply {
+public interface Supply extends Instrument {
 }

@@ -176,6 +176,20 @@ public class FinancialProduct extends Service {
       return this;
     }
     /**
+     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
+     */
+    @NotNull public Builder hasOfferCatalog(@NotNull OfferCatalog offerCatalog) {
+      putValue("hasOfferCatalog", offerCatalog);
+      return this;
+    }
+    /**
+     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
+     */
+    @NotNull public Builder hasOfferCatalog(@NotNull OfferCatalog.Builder offerCatalog) {
+      putValue("hasOfferCatalog", offerCatalog.build());
+      return this;
+    }
+    /**
      * The overall rating, based on a collection of reviews or ratings, of the item.
      */
     @NotNull public Builder aggregateRating(@NotNull AggregateRating aggregateRating) {
@@ -187,13 +201,6 @@ public class FinancialProduct extends Service {
      */
     @NotNull public Builder aggregateRating(@NotNull AggregateRating.Builder aggregateRating) {
       putValue("aggregateRating", aggregateRating.build());
-      return this;
-    }
-    /**
-     * The geographic area where a service or offered item is provided.
-     */
-    @NotNull public Builder areaServed(@NotNull AvailableAtOrFrom availableAtOrFrom) {
-      putValue("areaServed", availableAtOrFrom);
       return this;
     }
     /**
@@ -350,7 +357,24 @@ public class FinancialProduct extends Service {
       putValue("isSimilarTo", service.build());
       return this;
     }
-    @NotNull public Builder logo(@NotNull Logo logo) {
+    /**
+     * An associated logo.
+     */
+    @NotNull public Builder logo(@NotNull ImageObject imageObject) {
+      putValue("logo", imageObject);
+      return this;
+    }
+    /**
+     * An associated logo.
+     */
+    @NotNull public Builder logo(@NotNull ImageObject.Builder imageObject) {
+      putValue("logo", imageObject.build());
+      return this;
+    }
+    /**
+     * An associated logo.
+     */
+    @NotNull public Builder logo(@NotNull String logo) {
       putValue("logo", logo);
       return this;
     }
@@ -473,7 +497,10 @@ public class FinancialProduct extends Service {
       putValue("broker", person.build());
       return this;
     }
-    @NotNull public Builder additionalType(@NotNull AdditionalType additionalType) {
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     */
+    @NotNull public Builder additionalType(@NotNull String additionalType) {
       putValue("additionalType", additionalType);
       return this;
     }
@@ -485,21 +512,10 @@ public class FinancialProduct extends Service {
       return this;
     }
     /**
-     * A description of the item.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder description(@NotNull DisambiguatingDescription disambiguatingDescription) {
-      putValue("description", disambiguatingDescription);
-      return this;
-    }
-    @NotNull public Builder disambiguatingDescription(@NotNull DisambiguatingDescription disambiguatingDescription) {
+    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
       putValue("disambiguatingDescription", disambiguatingDescription);
-      return this;
-    }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     */
-    @NotNull public Builder image(@NotNull Logo logo) {
-      putValue("image", logo);
       return this;
     }
     /**
@@ -521,6 +537,13 @@ public class FinancialProduct extends Service {
      */
     @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
       putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
+    /**
+     * The name of the item.
+     */
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -549,14 +572,6 @@ public class FinancialProduct extends Service {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
-      return this;
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     */
-    @NotNull public Builder identifier(@NotNull Isbn isbn) {
-      putValue("identifier", isbn);
       return this;
     }
     /**

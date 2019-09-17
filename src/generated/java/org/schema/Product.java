@@ -198,6 +198,74 @@ public class Product extends Thing {
     return Arrays.asList((QuantitativeValue) current);
   }
   /**
+   * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+   */
+  @JsonIgnore public Identifier getGtin12() {
+    return (Identifier) getValue("gtin12");
+  }
+  /**
+   * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+   */
+  @JsonIgnore public Collection<Identifier> getGtin12s() {
+    final Object current = myData.get("gtin12");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Identifier>) current;
+    }
+    return Arrays.asList((Identifier) current);
+  }
+  /**
+   * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceeding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+   */
+  @JsonIgnore public Identifier getGtin13() {
+    return (Identifier) getValue("gtin13");
+  }
+  /**
+   * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceeding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+   */
+  @JsonIgnore public Collection<Identifier> getGtin13s() {
+    final Object current = myData.get("gtin13");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Identifier>) current;
+    }
+    return Arrays.asList((Identifier) current);
+  }
+  /**
+   * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+   */
+  @JsonIgnore public Identifier getGtin14() {
+    return (Identifier) getValue("gtin14");
+  }
+  /**
+   * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+   */
+  @JsonIgnore public Collection<Identifier> getGtin14s() {
+    final Object current = myData.get("gtin14");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Identifier>) current;
+    }
+    return Arrays.asList((Identifier) current);
+  }
+  /**
+   * The [GTIN-8](http://apps.gs1.org/GDD/glossary/Pages/GTIN-8.aspx) code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+   */
+  @JsonIgnore public Identifier getGtin8() {
+    return (Identifier) getValue("gtin8");
+  }
+  /**
+   * The [GTIN-8](http://apps.gs1.org/GDD/glossary/Pages/GTIN-8.aspx) code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+   */
+  @JsonIgnore public Collection<Identifier> getGtin8s() {
+    final Object current = myData.get("gtin8");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Identifier>) current;
+    }
+    return Arrays.asList((Identifier) current);
+  }
+  /**
    * The height of the item.
    */
   @JsonIgnore public Distance getHeightDistance() {
@@ -350,16 +418,39 @@ public class Product extends Thing {
     }
     return Arrays.asList((OfferItemCondition) current);
   }
-  @JsonIgnore public Logo getLogo() {
-    return (Logo) getValue("logo");
+  /**
+   * An associated logo.
+   */
+  @JsonIgnore public ImageObject getLogoImageObject() {
+    return (ImageObject) getValue("logo");
   }
-  @JsonIgnore public Collection<Logo> getLogos() {
+  /**
+   * An associated logo.
+   */
+  @JsonIgnore public Collection<ImageObject> getLogoImageObjects() {
     final Object current = myData.get("logo");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<Logo>) current;
+      return (Collection<ImageObject>) current;
     }
-    return Arrays.asList((Logo) current);
+    return Arrays.asList((ImageObject) current);
+  }
+  /**
+   * An associated logo.
+   */
+  @JsonIgnore public String getLogoString() {
+    return (String) getValue("logo");
+  }
+  /**
+   * An associated logo.
+   */
+  @JsonIgnore public Collection<String> getLogoStrings() {
+    final Object current = myData.get("logo");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
   }
   /**
    * The model of the product. Use with the URL of a ProductModel or a textual representation of the model identifier. The URL of the ProductModel can be from an external source. It is recommended to additionally provide strong product identifiers via the gtin8/gtin13/gtin14 and mpn properties.
@@ -447,6 +538,23 @@ public class Product extends Thing {
     return Arrays.asList((Offer) current);
   }
   /**
+   * The product identifier, such as ISBN. For example: ``` meta itemprop="productID" content="isbn:123-456-789" ```.
+   */
+  @JsonIgnore public Identifier getProductID() {
+    return (Identifier) getValue("productID");
+  }
+  /**
+   * The product identifier, such as ISBN. For example: ``` meta itemprop="productID" content="isbn:123-456-789" ```.
+   */
+  @JsonIgnore public Collection<Identifier> getProductIDs() {
+    final Object current = myData.get("productID");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Identifier>) current;
+    }
+    return Arrays.asList((Identifier) current);
+  }
+  /**
    * The release date of a product or product model. This can be used to distinguish the exact variant of a product.
    */
   @JsonIgnore public java.util.Date getReleaseDate() {
@@ -498,6 +606,23 @@ public class Product extends Thing {
     return Arrays.asList((String) current);
   }
   /**
+   * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
+   */
+  @JsonIgnore public Identifier getSku() {
+    return (Identifier) getValue("sku");
+  }
+  /**
+   * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
+   */
+  @JsonIgnore public Collection<Identifier> getSkus() {
+    final Object current = myData.get("sku");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Identifier>) current;
+    }
+    return Arrays.asList((Identifier) current);
+  }
+  /**
    * The weight of the product or person.
    */
   @JsonIgnore public QuantitativeValue getWeight() {
@@ -547,23 +672,6 @@ public class Product extends Thing {
       return (Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
-  }
-  /**
-   * A material that something is made from, e.g. leather, wool, cotton, paper.
-   */
-  @JsonIgnore public ArtMedium getMaterial() {
-    return (ArtMedium) getValue("material");
-  }
-  /**
-   * A material that something is made from, e.g. leather, wool, cotton, paper.
-   */
-  @JsonIgnore public Collection<ArtMedium> getMaterials() {
-    final Object current = myData.get("material");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<ArtMedium>) current;
-    }
-    return Arrays.asList((ArtMedium) current);
   }
   /**
    * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.\n\nNote: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
@@ -752,6 +860,34 @@ public class Product extends Thing {
       return this;
     }
     /**
+     * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     */
+    @NotNull public Builder gtin12(@NotNull Identifier identifier) {
+      putValue("gtin12", identifier);
+      return this;
+    }
+    /**
+     * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceeding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     */
+    @NotNull public Builder gtin13(@NotNull Identifier identifier) {
+      putValue("gtin13", identifier);
+      return this;
+    }
+    /**
+     * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     */
+    @NotNull public Builder gtin14(@NotNull Identifier identifier) {
+      putValue("gtin14", identifier);
+      return this;
+    }
+    /**
+     * The [GTIN-8](http://apps.gs1.org/GDD/glossary/Pages/GTIN-8.aspx) code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     */
+    @NotNull public Builder gtin8(@NotNull Identifier identifier) {
+      putValue("gtin8", identifier);
+      return this;
+    }
+    /**
      * The height of the item.
      */
     @NotNull public Builder height(@NotNull Distance distance) {
@@ -870,7 +1006,24 @@ public class Product extends Thing {
       putValue("itemCondition", offerItemCondition);
       return this;
     }
-    @NotNull public Builder logo(@NotNull Logo logo) {
+    /**
+     * An associated logo.
+     */
+    @NotNull public Builder logo(@NotNull ImageObject imageObject) {
+      putValue("logo", imageObject);
+      return this;
+    }
+    /**
+     * An associated logo.
+     */
+    @NotNull public Builder logo(@NotNull ImageObject.Builder imageObject) {
+      putValue("logo", imageObject.build());
+      return this;
+    }
+    /**
+     * An associated logo.
+     */
+    @NotNull public Builder logo(@NotNull String logo) {
       putValue("logo", logo);
       return this;
     }
@@ -931,6 +1084,13 @@ public class Product extends Thing {
       return this;
     }
     /**
+     * The product identifier, such as ISBN. For example: ``` meta itemprop="productID" content="isbn:123-456-789" ```.
+     */
+    @NotNull public Builder productID(@NotNull Identifier identifier) {
+      putValue("productID", identifier);
+      return this;
+    }
+    /**
      * The release date of a product or product model. This can be used to distinguish the exact variant of a product.
      */
     @NotNull public Builder releaseDate(@NotNull java.util.Date date) {
@@ -956,6 +1116,13 @@ public class Product extends Thing {
      */
     @NotNull public Builder slogan(@NotNull String slogan) {
       putValue("slogan", slogan);
+      return this;
+    }
+    /**
+     * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
+     */
+    @NotNull public Builder sku(@NotNull Identifier identifier) {
+      putValue("sku", identifier);
       return this;
     }
     /**
@@ -1001,13 +1168,6 @@ public class Product extends Thing {
       return this;
     }
     /**
-     * A material that something is made from, e.g. leather, wool, cotton, paper.
-     */
-    @NotNull public Builder material(@NotNull ArtMedium artMedium) {
-      putValue("material", artMedium);
-      return this;
-    }
-    /**
      * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.\n\nNote: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
      * 
      */
@@ -1037,7 +1197,10 @@ public class Product extends Thing {
       putValue("purchaseDate", date);
       return this;
     }
-    @NotNull public Builder additionalType(@NotNull AdditionalType additionalType) {
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     */
+    @NotNull public Builder additionalType(@NotNull String additionalType) {
       putValue("additionalType", additionalType);
       return this;
     }
@@ -1049,21 +1212,10 @@ public class Product extends Thing {
       return this;
     }
     /**
-     * A description of the item.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder description(@NotNull DisambiguatingDescription disambiguatingDescription) {
-      putValue("description", disambiguatingDescription);
-      return this;
-    }
-    @NotNull public Builder disambiguatingDescription(@NotNull DisambiguatingDescription disambiguatingDescription) {
+    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
       putValue("disambiguatingDescription", disambiguatingDescription);
-      return this;
-    }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     */
-    @NotNull public Builder image(@NotNull Logo logo) {
-      putValue("image", logo);
       return this;
     }
     /**
@@ -1085,6 +1237,13 @@ public class Product extends Thing {
      */
     @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
       putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
+    /**
+     * The name of the item.
+     */
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -1113,14 +1272,6 @@ public class Product extends Thing {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
-      return this;
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     */
-    @NotNull public Builder identifier(@NotNull Isbn isbn) {
-      putValue("identifier", isbn);
       return this;
     }
     /**
@@ -1179,6 +1330,14 @@ public class Product extends Thing {
       if ("depths".equals(key) && value instanceof Distance) { depth((Distance)value); return; }
       if ("depth".equals(key) && value instanceof QuantitativeValue) { depth((QuantitativeValue)value); return; }
       if ("depths".equals(key) && value instanceof QuantitativeValue) { depth((QuantitativeValue)value); return; }
+      if ("gtin12".equals(key) && value instanceof Identifier) { gtin12((Identifier)value); return; }
+      if ("gtin12s".equals(key) && value instanceof Identifier) { gtin12((Identifier)value); return; }
+      if ("gtin13".equals(key) && value instanceof Identifier) { gtin13((Identifier)value); return; }
+      if ("gtin13s".equals(key) && value instanceof Identifier) { gtin13((Identifier)value); return; }
+      if ("gtin14".equals(key) && value instanceof Identifier) { gtin14((Identifier)value); return; }
+      if ("gtin14s".equals(key) && value instanceof Identifier) { gtin14((Identifier)value); return; }
+      if ("gtin8".equals(key) && value instanceof Identifier) { gtin8((Identifier)value); return; }
+      if ("gtin8s".equals(key) && value instanceof Identifier) { gtin8((Identifier)value); return; }
       if ("height".equals(key) && value instanceof Distance) { height((Distance)value); return; }
       if ("heights".equals(key) && value instanceof Distance) { height((Distance)value); return; }
       if ("height".equals(key) && value instanceof QuantitativeValue) { height((QuantitativeValue)value); return; }
@@ -1197,8 +1356,10 @@ public class Product extends Thing {
       if ("isSimilarTos".equals(key) && value instanceof Service) { isSimilarTo((Service)value); return; }
       if ("itemCondition".equals(key) && value instanceof OfferItemCondition) { itemCondition((OfferItemCondition)value); return; }
       if ("itemConditions".equals(key) && value instanceof OfferItemCondition) { itemCondition((OfferItemCondition)value); return; }
-      if ("logo".equals(key) && value instanceof Logo) { logo((Logo)value); return; }
-      if ("logos".equals(key) && value instanceof Logo) { logo((Logo)value); return; }
+      if ("logo".equals(key) && value instanceof ImageObject) { logo((ImageObject)value); return; }
+      if ("logos".equals(key) && value instanceof ImageObject) { logo((ImageObject)value); return; }
+      if ("logo".equals(key) && value instanceof String) { logo((String)value); return; }
+      if ("logos".equals(key) && value instanceof String) { logo((String)value); return; }
       if ("model".equals(key) && value instanceof ProductModel) { model((ProductModel)value); return; }
       if ("models".equals(key) && value instanceof ProductModel) { model((ProductModel)value); return; }
       if ("model".equals(key) && value instanceof String) { model((String)value); return; }
@@ -1209,20 +1370,22 @@ public class Product extends Thing {
       if ("manufacturers".equals(key) && value instanceof Organization) { manufacturer((Organization)value); return; }
       if ("offers".equals(key) && value instanceof Offer) { offers((Offer)value); return; }
       if ("offerss".equals(key) && value instanceof Offer) { offers((Offer)value); return; }
+      if ("productID".equals(key) && value instanceof Identifier) { productID((Identifier)value); return; }
+      if ("productIDs".equals(key) && value instanceof Identifier) { productID((Identifier)value); return; }
       if ("releaseDate".equals(key) && value instanceof java.util.Date) { releaseDate((java.util.Date)value); return; }
       if ("releaseDates".equals(key) && value instanceof java.util.Date) { releaseDate((java.util.Date)value); return; }
       if ("review".equals(key) && value instanceof Review) { review((Review)value); return; }
       if ("reviews".equals(key) && value instanceof Review) { review((Review)value); return; }
       if ("slogan".equals(key) && value instanceof String) { slogan((String)value); return; }
       if ("slogans".equals(key) && value instanceof String) { slogan((String)value); return; }
+      if ("sku".equals(key) && value instanceof Identifier) { sku((Identifier)value); return; }
+      if ("skus".equals(key) && value instanceof Identifier) { sku((Identifier)value); return; }
       if ("weight".equals(key) && value instanceof QuantitativeValue) { weight((QuantitativeValue)value); return; }
       if ("weights".equals(key) && value instanceof QuantitativeValue) { weight((QuantitativeValue)value); return; }
       if ("width".equals(key) && value instanceof Distance) { width((Distance)value); return; }
       if ("widths".equals(key) && value instanceof Distance) { width((Distance)value); return; }
       if ("width".equals(key) && value instanceof QuantitativeValue) { width((QuantitativeValue)value); return; }
       if ("widths".equals(key) && value instanceof QuantitativeValue) { width((QuantitativeValue)value); return; }
-      if ("material".equals(key) && value instanceof ArtMedium) { material((ArtMedium)value); return; }
-      if ("materials".equals(key) && value instanceof ArtMedium) { material((ArtMedium)value); return; }
       if ("additionalProperty".equals(key) && value instanceof PropertyValue) { additionalProperty((PropertyValue)value); return; }
       if ("additionalPropertys".equals(key) && value instanceof PropertyValue) { additionalProperty((PropertyValue)value); return; }
       if ("productionDate".equals(key) && value instanceof java.util.Date) { productionDate((java.util.Date)value); return; }

@@ -6,9 +6,10 @@ class MutableBrand {
     get() = map["aggregateRating"] as AggregateRating
     set(value) { map["aggregateRating"] = value }
   fun aggregateRating(builder: MutableAggregateRating.() -> Unit) { map["aggregateRating"] = MutableAggregateRating().apply(builder).build() }
-  var logo: Logo
-    get() = map["logo"] as Logo
+  var logo: Any
+    get() = map["logo"]!!
     set(value) { map["logo"] = value }
+  fun logoImageObject(builder: MutableImageObject.() -> Unit) { map["logo"] = MutableImageObject().apply(builder).build() }
   var review: Review
     get() = map["review"] as Review
     set(value) { map["review"] = value }
@@ -16,25 +17,28 @@ class MutableBrand {
   var slogan: String
     get() = map["slogan"] as String
     set(value) { map["slogan"] = value }
-  var additionalType: AdditionalType
-    get() = map["additionalType"] as AdditionalType
+  var additionalType: String
+    get() = map["additionalType"] as String
     set(value) { map["additionalType"] = value }
   var alternateName: String
     get() = map["alternateName"] as String
     set(value) { map["alternateName"] = value }
-  var description: DisambiguatingDescription
-    get() = map["description"] as DisambiguatingDescription
+  var description: Description
+    get() = map["description"] as Description
     set(value) { map["description"] = value }
-  var disambiguatingDescription: DisambiguatingDescription
-    get() = map["disambiguatingDescription"] as DisambiguatingDescription
+  var disambiguatingDescription: String
+    get() = map["disambiguatingDescription"] as String
     set(value) { map["disambiguatingDescription"] = value }
-  var image: Logo
-    get() = map["image"] as Logo
+  var image: Image
+    get() = map["image"] as Image
     set(value) { map["image"] = value }
   var mainEntityOfPage: Any
     get() = map["mainEntityOfPage"]!!
     set(value) { map["mainEntityOfPage"] = value }
   fun mainEntityOfPageCreativeWork(builder: MutableCreativeWork.() -> Unit) { map["mainEntityOfPage"] = MutableCreativeWork().apply(builder).build() }
+  var name: String
+    get() = map["name"] as String
+    set(value) { map["name"] = value }
   var sameAs: String
     get() = map["sameAs"] as String
     set(value) { map["sameAs"] = value }
@@ -45,8 +49,8 @@ class MutableBrand {
     get() = map["potentialAction"] as Action
     set(value) { map["potentialAction"] = value }
   fun potentialAction(builder: MutableAction.() -> Unit) { map["potentialAction"] = MutableAction().apply(builder).build() }
-  var identifier: Isbn
-    get() = map["identifier"] as Isbn
+  var identifier: Identifier
+    get() = map["identifier"] as Identifier
     set(value) { map["identifier"] = value }
   var subjectOf: Any
     get() = map["subjectOf"]!!

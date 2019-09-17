@@ -5,10 +5,10 @@ class MutableServiceChannel {
   var availableLanguage: Any
     get() = map["availableLanguage"]!!
     set(value) { map["availableLanguage"] = value }
+  fun availableLanguageLanguage(builder: MutableLanguage.() -> Unit) { map["availableLanguage"] = MutableLanguage().apply(builder).build() }
   var processingTime: Duration
     get() = map["processingTime"] as Duration
     set(value) { map["processingTime"] = value }
-  fun processingTime(builder: MutableDuration.() -> Unit) { map["processingTime"] = MutableDuration().apply(builder).build() }
   var providesService: Service
     get() = map["providesService"] as Service
     set(value) { map["providesService"] = value }
@@ -32,25 +32,28 @@ class MutableServiceChannel {
   var serviceUrl: String
     get() = map["serviceUrl"] as String
     set(value) { map["serviceUrl"] = value }
-  var additionalType: AdditionalType
-    get() = map["additionalType"] as AdditionalType
+  var additionalType: String
+    get() = map["additionalType"] as String
     set(value) { map["additionalType"] = value }
   var alternateName: String
     get() = map["alternateName"] as String
     set(value) { map["alternateName"] = value }
-  var description: DisambiguatingDescription
-    get() = map["description"] as DisambiguatingDescription
+  var description: Description
+    get() = map["description"] as Description
     set(value) { map["description"] = value }
-  var disambiguatingDescription: DisambiguatingDescription
-    get() = map["disambiguatingDescription"] as DisambiguatingDescription
+  var disambiguatingDescription: String
+    get() = map["disambiguatingDescription"] as String
     set(value) { map["disambiguatingDescription"] = value }
-  var image: Logo
-    get() = map["image"] as Logo
+  var image: Image
+    get() = map["image"] as Image
     set(value) { map["image"] = value }
   var mainEntityOfPage: Any
     get() = map["mainEntityOfPage"]!!
     set(value) { map["mainEntityOfPage"] = value }
   fun mainEntityOfPageCreativeWork(builder: MutableCreativeWork.() -> Unit) { map["mainEntityOfPage"] = MutableCreativeWork().apply(builder).build() }
+  var name: String
+    get() = map["name"] as String
+    set(value) { map["name"] = value }
   var sameAs: String
     get() = map["sameAs"] as String
     set(value) { map["sameAs"] = value }
@@ -61,8 +64,8 @@ class MutableServiceChannel {
     get() = map["potentialAction"] as Action
     set(value) { map["potentialAction"] = value }
   fun potentialAction(builder: MutableAction.() -> Unit) { map["potentialAction"] = MutableAction().apply(builder).build() }
-  var identifier: Isbn
-    get() = map["identifier"] as Isbn
+  var identifier: Identifier
+    get() = map["identifier"] as Identifier
     set(value) { map["identifier"] = value }
   var subjectOf: Any
     get() = map["subjectOf"]!!

@@ -207,13 +207,6 @@ public class UserComments extends UserInteraction {
       return this;
     }
     /**
-     * The subject matter of the content.
-     */
-    @NotNull public Builder about(@NotNull MainEntity mainEntity) {
-      putValue("about", mainEntity);
-      return this;
-    }
-    /**
      * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
      */
     @NotNull public Builder actor(@NotNull Person person) {
@@ -361,13 +354,6 @@ public class UserComments extends UserInteraction {
       return this;
     }
     /**
-     * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
-     */
-    @NotNull public Builder duration(@NotNull LoanTerm loanTerm) {
-      putValue("duration", loanTerm);
-      return this;
-    }
-    /**
      * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      */
     @NotNull public Builder endDate(@NotNull java.util.Date date) {
@@ -398,22 +384,15 @@ public class UserComments extends UserInteraction {
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
      */
+    @NotNull public Builder inLanguage(@NotNull Language.Builder language) {
+      putValue("inLanguage", language.build());
+      return this;
+    }
+    /**
+     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     */
     @NotNull public Builder inLanguage(@NotNull String inLanguage) {
       putValue("inLanguage", inLanguage);
-      return this;
-    }
-    /**
-     * The location of for example where the event is happening, an organization is located, or where an action takes place.
-     */
-    @NotNull public Builder location(@NotNull SportsActivityLocation sportsActivityLocation) {
-      putValue("location", sportsActivityLocation);
-      return this;
-    }
-    /**
-     * The location of for example where the event is happening, an organization is located, or where an action takes place.
-     */
-    @NotNull public Builder location(@NotNull SportsActivityLocation.Builder sportsActivityLocation) {
-      putValue("location", sportsActivityLocation.build());
       return this;
     }
     /**
@@ -508,14 +487,31 @@ public class UserComments extends UserInteraction {
       return this;
     }
     /**
-     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
      */
-    @NotNull public Builder sponsor(@NotNull Funder funder) {
-      putValue("sponsor", funder);
+    @NotNull public Builder funder(@NotNull Organization organization) {
+      putValue("funder", organization);
       return this;
     }
-    @NotNull public Builder funder(@NotNull Funder funder) {
-      putValue("funder", funder);
+    /**
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
+     */
+    @NotNull public Builder funder(@NotNull Organization.Builder organization) {
+      putValue("funder", organization.build());
+      return this;
+    }
+    /**
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
+     */
+    @NotNull public Builder funder(@NotNull Person person) {
+      putValue("funder", person);
+      return this;
+    }
+    /**
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
+     */
+    @NotNull public Builder funder(@NotNull Person.Builder person) {
+      putValue("funder", person.build());
       return this;
     }
     /**
@@ -560,24 +556,26 @@ public class UserComments extends UserInteraction {
       putValue("typicalAgeRange", typicalAgeRange);
       return this;
     }
-    @NotNull public Builder workPerformed(@NotNull WorkPerformed workPerformed) {
-      putValue("workPerformed", workPerformed);
+    /**
+     * A work performed in some event, for example a play performed in a TheaterEvent.
+     */
+    @NotNull public Builder workPerformed(@NotNull CreativeWork creativeWork) {
+      putValue("workPerformed", creativeWork);
+      return this;
+    }
+    /**
+     * A work performed in some event, for example a play performed in a TheaterEvent.
+     */
+    @NotNull public Builder workPerformed(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("workPerformed", creativeWork.build());
       return this;
     }
     /**
      * A work featured in some event, e.g. exhibited in an ExhibitionEvent.
      *        Specific subproperties are available for workPerformed (e.g. a play), or a workPresented (a Movie at a ScreeningEvent).
      */
-    @NotNull public Builder workFeatured(@NotNull CreativeWork creativeWork) {
-      putValue("workFeatured", creativeWork);
-      return this;
-    }
-    /**
-     * A work featured in some event, e.g. exhibited in an ExhibitionEvent.
-     *        Specific subproperties are available for workPerformed (e.g. a play), or a workPresented (a Movie at a ScreeningEvent).
-     */
-    @NotNull public Builder workFeatured(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("workFeatured", creativeWork.build());
+    @NotNull public Builder workFeatured(@NotNull WorkFeatured workFeatured) {
+      putValue("workFeatured", workFeatured);
       return this;
     }
     /**
@@ -636,7 +634,10 @@ public class UserComments extends UserInteraction {
       putValue("composer", person.build());
       return this;
     }
-    @NotNull public Builder additionalType(@NotNull AdditionalType additionalType) {
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     */
+    @NotNull public Builder additionalType(@NotNull String additionalType) {
       putValue("additionalType", additionalType);
       return this;
     }
@@ -648,21 +649,10 @@ public class UserComments extends UserInteraction {
       return this;
     }
     /**
-     * A description of the item.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder description(@NotNull DisambiguatingDescription disambiguatingDescription) {
-      putValue("description", disambiguatingDescription);
-      return this;
-    }
-    @NotNull public Builder disambiguatingDescription(@NotNull DisambiguatingDescription disambiguatingDescription) {
+    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
       putValue("disambiguatingDescription", disambiguatingDescription);
-      return this;
-    }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     */
-    @NotNull public Builder image(@NotNull Logo logo) {
-      putValue("image", logo);
       return this;
     }
     /**
@@ -684,6 +674,13 @@ public class UserComments extends UserInteraction {
      */
     @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
       putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
+    /**
+     * The name of the item.
+     */
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -712,14 +709,6 @@ public class UserComments extends UserInteraction {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
-      return this;
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     */
-    @NotNull public Builder identifier(@NotNull Isbn isbn) {
-      putValue("identifier", isbn);
       return this;
     }
     /**

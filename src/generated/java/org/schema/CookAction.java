@@ -27,6 +27,57 @@ import java.util.*;
  * The act of producing/preparing food.
  */
 public class CookAction extends CreateAction {
+  /**
+   * A sub property of location. The specific food establishment where the action occurred.
+   */
+  @JsonIgnore public Location getFoodEstablishment() {
+    return (Location) getValue("foodEstablishment");
+  }
+  /**
+   * A sub property of location. The specific food establishment where the action occurred.
+   */
+  @JsonIgnore public Collection<Location> getFoodEstablishments() {
+    final Object current = myData.get("foodEstablishment");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Location>) current;
+    }
+    return Arrays.asList((Location) current);
+  }
+  /**
+   * A sub property of location. The specific food event where the action occurred.
+   */
+  @JsonIgnore public Location getFoodEvent() {
+    return (Location) getValue("foodEvent");
+  }
+  /**
+   * A sub property of location. The specific food event where the action occurred.
+   */
+  @JsonIgnore public Collection<Location> getFoodEvents() {
+    final Object current = myData.get("foodEvent");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Location>) current;
+    }
+    return Arrays.asList((Location) current);
+  }
+  /**
+   * A sub property of instrument. The recipe/instructions used to perform the action.
+   */
+  @JsonIgnore public Instrument getRecipe() {
+    return (Instrument) getValue("recipe");
+  }
+  /**
+   * A sub property of instrument. The recipe/instructions used to perform the action.
+   */
+  @JsonIgnore public Collection<Instrument> getRecipes() {
+    final Object current = myData.get("recipe");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Instrument>) current;
+    }
+    return Arrays.asList((Instrument) current);
+  }
   protected CookAction(java.util.Map<String,Object> data) {
     super(data);
   }
@@ -40,6 +91,27 @@ public class CookAction extends CreateAction {
     }
     @NotNull public CookAction build() {
       return new CookAction(myData);
+    }
+    /**
+     * A sub property of location. The specific food establishment where the action occurred.
+     */
+    @NotNull public Builder foodEstablishment(@NotNull Location location) {
+      putValue("foodEstablishment", location);
+      return this;
+    }
+    /**
+     * A sub property of location. The specific food event where the action occurred.
+     */
+    @NotNull public Builder foodEvent(@NotNull Location location) {
+      putValue("foodEvent", location);
+      return this;
+    }
+    /**
+     * A sub property of instrument. The recipe/instructions used to perform the action.
+     */
+    @NotNull public Builder recipe(@NotNull Instrument instrument) {
+      putValue("recipe", instrument);
+      return this;
     }
     /**
      * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
@@ -74,55 +146,6 @@ public class CookAction extends CreateAction {
      */
     @NotNull public Builder endTime(@NotNull java.util.Date date) {
       putValue("endTime", date);
-      return this;
-    }
-    /**
-     * The object that helped the agent perform the action. e.g. John wrote a book with *a pen*.
-     */
-    @NotNull public Builder instrument(@NotNull Language language) {
-      putValue("instrument", language);
-      return this;
-    }
-    /**
-     * The location of for example where the event is happening, an organization is located, or where an action takes place.
-     */
-    @NotNull public Builder location(@NotNull SportsActivityLocation sportsActivityLocation) {
-      putValue("location", sportsActivityLocation);
-      return this;
-    }
-    /**
-     * The location of for example where the event is happening, an organization is located, or where an action takes place.
-     */
-    @NotNull public Builder location(@NotNull SportsActivityLocation.Builder sportsActivityLocation) {
-      putValue("location", sportsActivityLocation.build());
-      return this;
-    }
-    /**
-     * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
-     */
-    @NotNull public Builder object(@NotNull Option option) {
-      putValue("object", option);
-      return this;
-    }
-    /**
-     * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
-     */
-    @NotNull public Builder participant(@NotNull RealEstateAgent realEstateAgent) {
-      putValue("participant", realEstateAgent);
-      return this;
-    }
-    /**
-     * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
-     */
-    @NotNull public Builder participant(@NotNull RealEstateAgent.Builder realEstateAgent) {
-      putValue("participant", realEstateAgent.build());
-      return this;
-    }
-    /**
-     * The result produced in the action. e.g. John wrote *a book*.
-     */
-    @NotNull public Builder result(@NotNull ResultComment resultComment) {
-      putValue("result", resultComment);
       return this;
     }
     /**
@@ -167,7 +190,10 @@ public class CookAction extends CreateAction {
       putValue("target", entryPoint.build());
       return this;
     }
-    @NotNull public Builder additionalType(@NotNull AdditionalType additionalType) {
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     */
+    @NotNull public Builder additionalType(@NotNull String additionalType) {
       putValue("additionalType", additionalType);
       return this;
     }
@@ -179,21 +205,10 @@ public class CookAction extends CreateAction {
       return this;
     }
     /**
-     * A description of the item.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder description(@NotNull DisambiguatingDescription disambiguatingDescription) {
-      putValue("description", disambiguatingDescription);
-      return this;
-    }
-    @NotNull public Builder disambiguatingDescription(@NotNull DisambiguatingDescription disambiguatingDescription) {
+    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
       putValue("disambiguatingDescription", disambiguatingDescription);
-      return this;
-    }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     */
-    @NotNull public Builder image(@NotNull Logo logo) {
-      putValue("image", logo);
       return this;
     }
     /**
@@ -215,6 +230,13 @@ public class CookAction extends CreateAction {
      */
     @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
       putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
+    /**
+     * The name of the item.
+     */
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -243,14 +265,6 @@ public class CookAction extends CreateAction {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
-      return this;
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     */
-    @NotNull public Builder identifier(@NotNull Isbn isbn) {
-      putValue("identifier", isbn);
       return this;
     }
     /**
@@ -289,6 +303,12 @@ public class CookAction extends CreateAction {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
+      if ("foodEstablishment".equals(key) && value instanceof Location) { foodEstablishment((Location)value); return; }
+      if ("foodEstablishments".equals(key) && value instanceof Location) { foodEstablishment((Location)value); return; }
+      if ("foodEvent".equals(key) && value instanceof Location) { foodEvent((Location)value); return; }
+      if ("foodEvents".equals(key) && value instanceof Location) { foodEvent((Location)value); return; }
+      if ("recipe".equals(key) && value instanceof Instrument) { recipe((Instrument)value); return; }
+      if ("recipes".equals(key) && value instanceof Instrument) { recipe((Instrument)value); return; }
       super.fromMap(key, value);
     }
   }

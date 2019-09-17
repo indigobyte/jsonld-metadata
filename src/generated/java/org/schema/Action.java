@@ -79,91 +79,6 @@ public class Action extends Thing {
     return Arrays.asList((java.util.Date) current);
   }
   /**
-   * The object that helped the agent perform the action. e.g. John wrote a book with *a pen*.
-   */
-  @JsonIgnore public Language getInstrument() {
-    return (Language) getValue("instrument");
-  }
-  /**
-   * The object that helped the agent perform the action. e.g. John wrote a book with *a pen*.
-   */
-  @JsonIgnore public Collection<Language> getInstruments() {
-    final Object current = myData.get("instrument");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Language>) current;
-    }
-    return Arrays.asList((Language) current);
-  }
-  /**
-   * The location of for example where the event is happening, an organization is located, or where an action takes place.
-   */
-  @JsonIgnore public SportsActivityLocation getLocation() {
-    return (SportsActivityLocation) getValue("location");
-  }
-  /**
-   * The location of for example where the event is happening, an organization is located, or where an action takes place.
-   */
-  @JsonIgnore public Collection<SportsActivityLocation> getLocations() {
-    final Object current = myData.get("location");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<SportsActivityLocation>) current;
-    }
-    return Arrays.asList((SportsActivityLocation) current);
-  }
-  /**
-   * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
-   */
-  @JsonIgnore public Option getObject() {
-    return (Option) getValue("object");
-  }
-  /**
-   * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
-   */
-  @JsonIgnore public Collection<Option> getObjects() {
-    final Object current = myData.get("object");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Option>) current;
-    }
-    return Arrays.asList((Option) current);
-  }
-  /**
-   * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
-   */
-  @JsonIgnore public RealEstateAgent getParticipant() {
-    return (RealEstateAgent) getValue("participant");
-  }
-  /**
-   * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
-   */
-  @JsonIgnore public Collection<RealEstateAgent> getParticipants() {
-    final Object current = myData.get("participant");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<RealEstateAgent>) current;
-    }
-    return Arrays.asList((RealEstateAgent) current);
-  }
-  /**
-   * The result produced in the action. e.g. John wrote *a book*.
-   */
-  @JsonIgnore public ResultComment getResult() {
-    return (ResultComment) getValue("result");
-  }
-  /**
-   * The result produced in the action. e.g. John wrote *a book*.
-   */
-  @JsonIgnore public Collection<ResultComment> getResults() {
-    final Object current = myData.get("result");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<ResultComment>) current;
-    }
-    return Arrays.asList((ResultComment) current);
-  }
-  /**
    * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
    */
   @JsonIgnore public java.util.Date getStartTime() {
@@ -281,55 +196,6 @@ public class Action extends Thing {
       return this;
     }
     /**
-     * The object that helped the agent perform the action. e.g. John wrote a book with *a pen*.
-     */
-    @NotNull public Builder instrument(@NotNull Language language) {
-      putValue("instrument", language);
-      return this;
-    }
-    /**
-     * The location of for example where the event is happening, an organization is located, or where an action takes place.
-     */
-    @NotNull public Builder location(@NotNull SportsActivityLocation sportsActivityLocation) {
-      putValue("location", sportsActivityLocation);
-      return this;
-    }
-    /**
-     * The location of for example where the event is happening, an organization is located, or where an action takes place.
-     */
-    @NotNull public Builder location(@NotNull SportsActivityLocation.Builder sportsActivityLocation) {
-      putValue("location", sportsActivityLocation.build());
-      return this;
-    }
-    /**
-     * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
-     */
-    @NotNull public Builder object(@NotNull Option option) {
-      putValue("object", option);
-      return this;
-    }
-    /**
-     * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
-     */
-    @NotNull public Builder participant(@NotNull RealEstateAgent realEstateAgent) {
-      putValue("participant", realEstateAgent);
-      return this;
-    }
-    /**
-     * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
-     */
-    @NotNull public Builder participant(@NotNull RealEstateAgent.Builder realEstateAgent) {
-      putValue("participant", realEstateAgent.build());
-      return this;
-    }
-    /**
-     * The result produced in the action. e.g. John wrote *a book*.
-     */
-    @NotNull public Builder result(@NotNull ResultComment resultComment) {
-      putValue("result", resultComment);
-      return this;
-    }
-    /**
      * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      */
     @NotNull public Builder startTime(@NotNull java.util.Date date) {
@@ -371,7 +237,10 @@ public class Action extends Thing {
       putValue("target", entryPoint.build());
       return this;
     }
-    @NotNull public Builder additionalType(@NotNull AdditionalType additionalType) {
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     */
+    @NotNull public Builder additionalType(@NotNull String additionalType) {
       putValue("additionalType", additionalType);
       return this;
     }
@@ -383,21 +252,10 @@ public class Action extends Thing {
       return this;
     }
     /**
-     * A description of the item.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder description(@NotNull DisambiguatingDescription disambiguatingDescription) {
-      putValue("description", disambiguatingDescription);
-      return this;
-    }
-    @NotNull public Builder disambiguatingDescription(@NotNull DisambiguatingDescription disambiguatingDescription) {
+    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
       putValue("disambiguatingDescription", disambiguatingDescription);
-      return this;
-    }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     */
-    @NotNull public Builder image(@NotNull Logo logo) {
-      putValue("image", logo);
       return this;
     }
     /**
@@ -419,6 +277,13 @@ public class Action extends Thing {
      */
     @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
       putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
+    /**
+     * The name of the item.
+     */
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -447,14 +312,6 @@ public class Action extends Thing {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
-      return this;
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     */
-    @NotNull public Builder identifier(@NotNull Isbn isbn) {
-      putValue("identifier", isbn);
       return this;
     }
     /**
@@ -499,16 +356,6 @@ public class Action extends Thing {
       if ("agents".equals(key) && value instanceof Person) { agent((Person)value); return; }
       if ("endTime".equals(key) && value instanceof java.util.Date) { endTime((java.util.Date)value); return; }
       if ("endTimes".equals(key) && value instanceof java.util.Date) { endTime((java.util.Date)value); return; }
-      if ("instrument".equals(key) && value instanceof Language) { instrument((Language)value); return; }
-      if ("instruments".equals(key) && value instanceof Language) { instrument((Language)value); return; }
-      if ("location".equals(key) && value instanceof SportsActivityLocation) { location((SportsActivityLocation)value); return; }
-      if ("locations".equals(key) && value instanceof SportsActivityLocation) { location((SportsActivityLocation)value); return; }
-      if ("object".equals(key) && value instanceof Option) { object((Option)value); return; }
-      if ("objects".equals(key) && value instanceof Option) { object((Option)value); return; }
-      if ("participant".equals(key) && value instanceof RealEstateAgent) { participant((RealEstateAgent)value); return; }
-      if ("participants".equals(key) && value instanceof RealEstateAgent) { participant((RealEstateAgent)value); return; }
-      if ("result".equals(key) && value instanceof ResultComment) { result((ResultComment)value); return; }
-      if ("results".equals(key) && value instanceof ResultComment) { result((ResultComment)value); return; }
       if ("startTime".equals(key) && value instanceof java.util.Date) { startTime((java.util.Date)value); return; }
       if ("startTimes".equals(key) && value instanceof java.util.Date) { startTime((java.util.Date)value); return; }
       if ("actionStatus".equals(key) && value instanceof ActionStatusType) { actionStatus((ActionStatusType)value); return; }

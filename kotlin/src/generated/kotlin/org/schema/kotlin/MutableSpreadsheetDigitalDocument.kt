@@ -9,8 +9,8 @@ class MutableSpreadsheetDigitalDocument {
   var schemaVersion: String
     get() = map["schemaVersion"] as String
     set(value) { map["schemaVersion"] = value }
-  var about: MainEntity
-    get() = map["about"] as MainEntity
+  var about: About
+    get() = map["about"] as About
     set(value) { map["about"] = value }
   var accessibilityAPI: String
     get() = map["accessibilityAPI"] as String
@@ -64,8 +64,8 @@ class MutableSpreadsheetDigitalDocument {
     get() = map["comment"] as Comment
     set(value) { map["comment"] = value }
   fun comment(builder: MutableComment.() -> Unit) { map["comment"] = MutableComment().apply(builder).build() }
-  var contentLocation: SpatialCoverage
-    get() = map["contentLocation"] as SpatialCoverage
+  var contentLocation: ContentLocation
+    get() = map["contentLocation"] as ContentLocation
     set(value) { map["contentLocation"] = value }
   var locationCreated: Place
     get() = map["locationCreated"] as Place
@@ -138,6 +138,7 @@ class MutableSpreadsheetDigitalDocument {
   var inLanguage: Any
     get() = map["inLanguage"]!!
     set(value) { map["inLanguage"] = value }
+  fun inLanguageLanguage(builder: MutableLanguage.() -> Unit) { map["inLanguage"] = MutableLanguage().apply(builder).build() }
   var interactivityType: String
     get() = map["interactivityType"] as String
     set(value) { map["interactivityType"] = value }
@@ -149,8 +150,8 @@ class MutableSpreadsheetDigitalDocument {
   var isFamilyFriendly: Boolean
     get() = map["isFamilyFriendly"] as Boolean
     set(value) { map["isFamilyFriendly"] = value }
-  var isPartOf: PartOfEpisode
-    get() = map["isPartOf"] as PartOfEpisode
+  var isPartOf: IsPartOf
+    get() = map["isPartOf"] as IsPartOf
     set(value) { map["isPartOf"] = value }
   var keywords: String
     get() = map["keywords"] as String
@@ -162,6 +163,9 @@ class MutableSpreadsheetDigitalDocument {
   var learningResourceType: String
     get() = map["learningResourceType"] as String
     set(value) { map["learningResourceType"] = value }
+  var mainEntity: About
+    get() = map["mainEntity"] as About
+    set(value) { map["mainEntity"] = value }
   var mentions: Thing
     get() = map["mentions"] as Thing
     set(value) { map["mentions"] = value }
@@ -170,8 +174,8 @@ class MutableSpreadsheetDigitalDocument {
     get() = map["offers"] as Offer
     set(value) { map["offers"] = value }
   fun offers(builder: MutableOffer.() -> Unit) { map["offers"] = MutableOffer().apply(builder).build() }
-  var position: SeasonNumber
-    get() = map["position"] as SeasonNumber
+  var position: Position
+    get() = map["position"] as Position
     set(value) { map["position"] = value }
   var producer: Any
     get() = map["producer"]!!
@@ -207,15 +211,18 @@ class MutableSpreadsheetDigitalDocument {
     get() = map["spatial"] as Place
     set(value) { map["spatial"] = value }
   fun spatial(builder: MutablePlace.() -> Unit) { map["spatial"] = MutablePlace().apply(builder).build() }
-  var spatialCoverage: SpatialCoverage
-    get() = map["spatialCoverage"] as SpatialCoverage
+  var spatialCoverage: Place
+    get() = map["spatialCoverage"] as Place
     set(value) { map["spatialCoverage"] = value }
-  var sponsor: Funder
-    get() = map["sponsor"] as Funder
+  fun spatialCoverage(builder: MutablePlace.() -> Unit) { map["spatialCoverage"] = MutablePlace().apply(builder).build() }
+  var sponsor: Sponsor
+    get() = map["sponsor"] as Sponsor
     set(value) { map["sponsor"] = value }
-  var funder: Funder
-    get() = map["funder"] as Funder
+  var funder: Any
+    get() = map["funder"]!!
     set(value) { map["funder"] = value }
+  fun funderOrganization(builder: MutableOrganization.() -> Unit) { map["funder"] = MutableOrganization().apply(builder).build() }
+  fun funderPerson(builder: MutablePerson.() -> Unit) { map["funder"] = MutablePerson().apply(builder).build() }
   var temporalCoverage: Any
     get() = map["temporalCoverage"]!!
     set(value) { map["temporalCoverage"] = value }
@@ -231,7 +238,6 @@ class MutableSpreadsheetDigitalDocument {
   var timeRequired: Duration
     get() = map["timeRequired"] as Duration
     set(value) { map["timeRequired"] = value }
-  fun timeRequired(builder: MutableDuration.() -> Unit) { map["timeRequired"] = MutableDuration().apply(builder).build() }
   var typicalAgeRange: String
     get() = map["typicalAgeRange"] as String
     set(value) { map["typicalAgeRange"] = value }
@@ -251,10 +257,9 @@ class MutableSpreadsheetDigitalDocument {
   var commentCount: Int
     get() = map["commentCount"] as Int
     set(value) { map["commentCount"] = value }
-  var hasPart: CreativeWork
-    get() = map["hasPart"] as CreativeWork
+  var hasPart: HasPart
+    get() = map["hasPart"] as HasPart
     set(value) { map["hasPart"] = value }
-  fun hasPart(builder: MutableCreativeWork.() -> Unit) { map["hasPart"] = MutableCreativeWork().apply(builder).build() }
   var workExample: CreativeWork
     get() = map["workExample"] as CreativeWork
     set(value) { map["workExample"] = value }
@@ -276,8 +281,8 @@ class MutableSpreadsheetDigitalDocument {
     get() = map["releasedEvent"] as PublicationEvent
     set(value) { map["releasedEvent"] = value }
   fun releasedEvent(builder: MutablePublicationEvent.() -> Unit) { map["releasedEvent"] = MutablePublicationEvent().apply(builder).build() }
-  var material: ArtMedium
-    get() = map["material"] as ArtMedium
+  var material: Material
+    get() = map["material"] as Material
     set(value) { map["material"] = value }
   var interactionStatistic: InteractionCounter
     get() = map["interactionStatistic"] as InteractionCounter
@@ -293,25 +298,28 @@ class MutableSpreadsheetDigitalDocument {
   var accessibilitySummary: String
     get() = map["accessibilitySummary"] as String
     set(value) { map["accessibilitySummary"] = value }
-  var additionalType: AdditionalType
-    get() = map["additionalType"] as AdditionalType
+  var additionalType: String
+    get() = map["additionalType"] as String
     set(value) { map["additionalType"] = value }
   var alternateName: String
     get() = map["alternateName"] as String
     set(value) { map["alternateName"] = value }
-  var description: DisambiguatingDescription
-    get() = map["description"] as DisambiguatingDescription
+  var description: Description
+    get() = map["description"] as Description
     set(value) { map["description"] = value }
-  var disambiguatingDescription: DisambiguatingDescription
-    get() = map["disambiguatingDescription"] as DisambiguatingDescription
+  var disambiguatingDescription: String
+    get() = map["disambiguatingDescription"] as String
     set(value) { map["disambiguatingDescription"] = value }
-  var image: Logo
-    get() = map["image"] as Logo
+  var image: Image
+    get() = map["image"] as Image
     set(value) { map["image"] = value }
   var mainEntityOfPage: Any
     get() = map["mainEntityOfPage"]!!
     set(value) { map["mainEntityOfPage"] = value }
   fun mainEntityOfPageCreativeWork(builder: MutableCreativeWork.() -> Unit) { map["mainEntityOfPage"] = MutableCreativeWork().apply(builder).build() }
+  var name: String
+    get() = map["name"] as String
+    set(value) { map["name"] = value }
   var sameAs: String
     get() = map["sameAs"] as String
     set(value) { map["sameAs"] = value }
@@ -322,8 +330,8 @@ class MutableSpreadsheetDigitalDocument {
     get() = map["potentialAction"] as Action
     set(value) { map["potentialAction"] = value }
   fun potentialAction(builder: MutableAction.() -> Unit) { map["potentialAction"] = MutableAction().apply(builder).build() }
-  var identifier: Isbn
-    get() = map["identifier"] as Isbn
+  var identifier: Identifier
+    get() = map["identifier"] as Identifier
     set(value) { map["identifier"] = value }
   var subjectOf: Any
     get() = map["subjectOf"]!!

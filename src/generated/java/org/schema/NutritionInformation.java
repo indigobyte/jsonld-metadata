@@ -26,7 +26,24 @@ import java.util.*;
 /**
  * Nutritional information about the recipe.
  */
-public class NutritionInformation extends StructuredValue implements Calories {
+public class NutritionInformation extends StructuredValue {
+  /**
+   * The number of calories.
+   */
+  @JsonIgnore public Energy getCalories() {
+    return (Energy) getValue("calories");
+  }
+  /**
+   * The number of calories.
+   */
+  @JsonIgnore public Collection<Energy> getCaloriess() {
+    final Object current = myData.get("calories");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Energy>) current;
+    }
+    return Arrays.asList((Energy) current);
+  }
   /**
    * The number of grams of carbohydrates.
    */
@@ -229,6 +246,20 @@ public class NutritionInformation extends StructuredValue implements Calories {
       return new NutritionInformation(myData);
     }
     /**
+     * The number of calories.
+     */
+    @NotNull public Builder calories(@NotNull Energy energy) {
+      putValue("calories", energy);
+      return this;
+    }
+    /**
+     * The number of calories.
+     */
+    @NotNull public Builder calories(@NotNull Energy.Builder energy) {
+      putValue("calories", energy.build());
+      return this;
+    }
+    /**
      * The number of grams of carbohydrates.
      */
     @NotNull public Builder carbohydrateContent(@NotNull Mass mass) {
@@ -375,7 +406,10 @@ public class NutritionInformation extends StructuredValue implements Calories {
       putValue("unsaturatedFatContent", mass.build());
       return this;
     }
-    @NotNull public Builder additionalType(@NotNull AdditionalType additionalType) {
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     */
+    @NotNull public Builder additionalType(@NotNull String additionalType) {
       putValue("additionalType", additionalType);
       return this;
     }
@@ -387,21 +421,10 @@ public class NutritionInformation extends StructuredValue implements Calories {
       return this;
     }
     /**
-     * A description of the item.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder description(@NotNull DisambiguatingDescription disambiguatingDescription) {
-      putValue("description", disambiguatingDescription);
-      return this;
-    }
-    @NotNull public Builder disambiguatingDescription(@NotNull DisambiguatingDescription disambiguatingDescription) {
+    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
       putValue("disambiguatingDescription", disambiguatingDescription);
-      return this;
-    }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     */
-    @NotNull public Builder image(@NotNull Logo logo) {
-      putValue("image", logo);
       return this;
     }
     /**
@@ -423,6 +446,13 @@ public class NutritionInformation extends StructuredValue implements Calories {
      */
     @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
       putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
+    /**
+     * The name of the item.
+     */
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -451,14 +481,6 @@ public class NutritionInformation extends StructuredValue implements Calories {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
-      return this;
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     */
-    @NotNull public Builder identifier(@NotNull Isbn isbn) {
-      putValue("identifier", isbn);
       return this;
     }
     /**
@@ -497,6 +519,8 @@ public class NutritionInformation extends StructuredValue implements Calories {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
+      if ("calories".equals(key) && value instanceof Energy) { calories((Energy)value); return; }
+      if ("caloriess".equals(key) && value instanceof Energy) { calories((Energy)value); return; }
       if ("carbohydrateContent".equals(key) && value instanceof Mass) { carbohydrateContent((Mass)value); return; }
       if ("carbohydrateContents".equals(key) && value instanceof Mass) { carbohydrateContent((Mass)value); return; }
       if ("cholesterolContent".equals(key) && value instanceof Mass) { cholesterolContent((Mass)value); return; }

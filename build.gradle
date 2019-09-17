@@ -20,11 +20,14 @@ sourceSets {
         java {
             srcDir "src/main/java"
             srcDir "src/generated/java"
+            
         }
     }
     test {
         java {
             srcDir "src/test/java"
+            srcDir "src/generated-test/java"
+            
         }
         resources {
             srcDir "src/test/resources"

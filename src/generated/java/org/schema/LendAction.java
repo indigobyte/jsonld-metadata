@@ -27,16 +27,22 @@ import java.util.*;
  * The act of providing an object under an agreement that it will be returned at a later date. Reciprocal of BorrowAction.\n\nRelated actions:\n\n* [[BorrowAction]]: Reciprocal of LendAction.
  */
 public class LendAction extends TransferAction {
-  @JsonIgnore public Borrower getBorrower() {
-    return (Borrower) getValue("borrower");
+  /**
+   * A sub property of participant. The person that borrows the object being lent.
+   */
+  @JsonIgnore public Person getBorrower() {
+    return (Person) getValue("borrower");
   }
-  @JsonIgnore public Collection<Borrower> getBorrowers() {
+  /**
+   * A sub property of participant. The person that borrows the object being lent.
+   */
+  @JsonIgnore public Collection<Person> getBorrowers() {
     final Object current = myData.get("borrower");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<Borrower>) current;
+      return (Collection<Person>) current;
     }
-    return Arrays.asList((Borrower) current);
+    return Arrays.asList((Person) current);
   }
   protected LendAction(java.util.Map<String,Object> data) {
     super(data);
@@ -52,16 +58,46 @@ public class LendAction extends TransferAction {
     @NotNull public LendAction build() {
       return new LendAction(myData);
     }
-    @NotNull public Builder borrower(@NotNull Borrower borrower) {
-      putValue("borrower", borrower);
+    /**
+     * A sub property of participant. The person that borrows the object being lent.
+     */
+    @NotNull public Builder borrower(@NotNull Person person) {
+      putValue("borrower", person);
       return this;
     }
-    @NotNull public Builder fromLocation(@NotNull FromLocation fromLocation) {
-      putValue("fromLocation", fromLocation);
+    /**
+     * A sub property of participant. The person that borrows the object being lent.
+     */
+    @NotNull public Builder borrower(@NotNull Person.Builder person) {
+      putValue("borrower", person.build());
       return this;
     }
-    @NotNull public Builder toLocation(@NotNull ToLocation toLocation) {
-      putValue("toLocation", toLocation);
+    /**
+     * A sub property of location. The original location of the object or the agent before the action.
+     */
+    @NotNull public Builder fromLocation(@NotNull Place place) {
+      putValue("fromLocation", place);
+      return this;
+    }
+    /**
+     * A sub property of location. The original location of the object or the agent before the action.
+     */
+    @NotNull public Builder fromLocation(@NotNull Place.Builder place) {
+      putValue("fromLocation", place.build());
+      return this;
+    }
+    /**
+     * A sub property of location. The final location of the object or the agent after the action.
+     */
+    @NotNull public Builder toLocation(@NotNull Place place) {
+      putValue("toLocation", place);
+      return this;
+    }
+    /**
+     * A sub property of location. The final location of the object or the agent after the action.
+     */
+    @NotNull public Builder toLocation(@NotNull Place.Builder place) {
+      putValue("toLocation", place.build());
       return this;
     }
     /**
@@ -97,55 +133,6 @@ public class LendAction extends TransferAction {
      */
     @NotNull public Builder endTime(@NotNull java.util.Date date) {
       putValue("endTime", date);
-      return this;
-    }
-    /**
-     * The object that helped the agent perform the action. e.g. John wrote a book with *a pen*.
-     */
-    @NotNull public Builder instrument(@NotNull Language language) {
-      putValue("instrument", language);
-      return this;
-    }
-    /**
-     * The location of for example where the event is happening, an organization is located, or where an action takes place.
-     */
-    @NotNull public Builder location(@NotNull SportsActivityLocation sportsActivityLocation) {
-      putValue("location", sportsActivityLocation);
-      return this;
-    }
-    /**
-     * The location of for example where the event is happening, an organization is located, or where an action takes place.
-     */
-    @NotNull public Builder location(@NotNull SportsActivityLocation.Builder sportsActivityLocation) {
-      putValue("location", sportsActivityLocation.build());
-      return this;
-    }
-    /**
-     * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
-     */
-    @NotNull public Builder object(@NotNull Option option) {
-      putValue("object", option);
-      return this;
-    }
-    /**
-     * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
-     */
-    @NotNull public Builder participant(@NotNull RealEstateAgent realEstateAgent) {
-      putValue("participant", realEstateAgent);
-      return this;
-    }
-    /**
-     * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
-     */
-    @NotNull public Builder participant(@NotNull RealEstateAgent.Builder realEstateAgent) {
-      putValue("participant", realEstateAgent.build());
-      return this;
-    }
-    /**
-     * The result produced in the action. e.g. John wrote *a book*.
-     */
-    @NotNull public Builder result(@NotNull ResultComment resultComment) {
-      putValue("result", resultComment);
       return this;
     }
     /**
@@ -190,7 +177,10 @@ public class LendAction extends TransferAction {
       putValue("target", entryPoint.build());
       return this;
     }
-    @NotNull public Builder additionalType(@NotNull AdditionalType additionalType) {
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     */
+    @NotNull public Builder additionalType(@NotNull String additionalType) {
       putValue("additionalType", additionalType);
       return this;
     }
@@ -202,21 +192,10 @@ public class LendAction extends TransferAction {
       return this;
     }
     /**
-     * A description of the item.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder description(@NotNull DisambiguatingDescription disambiguatingDescription) {
-      putValue("description", disambiguatingDescription);
-      return this;
-    }
-    @NotNull public Builder disambiguatingDescription(@NotNull DisambiguatingDescription disambiguatingDescription) {
+    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
       putValue("disambiguatingDescription", disambiguatingDescription);
-      return this;
-    }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     */
-    @NotNull public Builder image(@NotNull Logo logo) {
-      putValue("image", logo);
       return this;
     }
     /**
@@ -238,6 +217,13 @@ public class LendAction extends TransferAction {
      */
     @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
       putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
+    /**
+     * The name of the item.
+     */
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -266,14 +252,6 @@ public class LendAction extends TransferAction {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
-      return this;
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     */
-    @NotNull public Builder identifier(@NotNull Isbn isbn) {
-      putValue("identifier", isbn);
       return this;
     }
     /**
@@ -312,8 +290,8 @@ public class LendAction extends TransferAction {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("borrower".equals(key) && value instanceof Borrower) { borrower((Borrower)value); return; }
-      if ("borrowers".equals(key) && value instanceof Borrower) { borrower((Borrower)value); return; }
+      if ("borrower".equals(key) && value instanceof Person) { borrower((Person)value); return; }
+      if ("borrowers".equals(key) && value instanceof Person) { borrower((Person)value); return; }
       super.fromMap(key, value);
     }
   }

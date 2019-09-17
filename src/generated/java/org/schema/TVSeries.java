@@ -79,6 +79,23 @@ public class TVSeries extends CreativeWorkSeries {
     return Arrays.asList((Person) current);
   }
   /**
+   * An episode of a tv, radio or game media within a series or season.
+   */
+  @JsonIgnore public HasPart getEpisode() {
+    return (HasPart) getValue("episode");
+  }
+  /**
+   * An episode of a tv, radio or game media within a series or season.
+   */
+  @JsonIgnore public Collection<HasPart> getEpisodes() {
+    final Object current = myData.get("episode");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<HasPart>) current;
+    }
+    return Arrays.asList((HasPart) current);
+  }
+  /**
    * The composer of the soundtrack.
    */
   @JsonIgnore public MusicGroup getMusicByMusicGroup() {
@@ -164,6 +181,23 @@ public class TVSeries extends CreativeWorkSeries {
     return Arrays.asList((Organization) current);
   }
   /**
+   * A season that is part of the media series.
+   */
+  @JsonIgnore public HasPart getContainsSeason() {
+    return (HasPart) getValue("containsSeason");
+  }
+  /**
+   * A season that is part of the media series.
+   */
+  @JsonIgnore public Collection<HasPart> getContainsSeasons() {
+    final Object current = myData.get("containsSeason");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<HasPart>) current;
+    }
+    return Arrays.asList((HasPart) current);
+  }
+  /**
    * The trailer of a movie or tv/radio series, season, episode, etc.
    */
   @JsonIgnore public VideoObject getTrailer() {
@@ -237,6 +271,13 @@ public class TVSeries extends CreativeWorkSeries {
       return this;
     }
     /**
+     * An episode of a tv, radio or game media within a series or season.
+     */
+    @NotNull public Builder episode(@NotNull HasPart hasPart) {
+      putValue("episode", hasPart);
+      return this;
+    }
+    /**
      * The composer of the soundtrack.
      */
     @NotNull public Builder musicBy(@NotNull MusicGroup musicGroup) {
@@ -293,6 +334,13 @@ public class TVSeries extends CreativeWorkSeries {
       return this;
     }
     /**
+     * A season that is part of the media series.
+     */
+    @NotNull public Builder containsSeason(@NotNull HasPart hasPart) {
+      putValue("containsSeason", hasPart);
+      return this;
+    }
+    /**
      * The trailer of a movie or tv/radio series, season, episode, etc.
      */
     @NotNull public Builder trailer(@NotNull VideoObject videoObject) {
@@ -320,7 +368,17 @@ public class TVSeries extends CreativeWorkSeries {
       putValue("startDate", date);
       return this;
     }
-    @NotNull public Builder additionalType(@NotNull AdditionalType additionalType) {
+    /**
+     * The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
+     */
+    @NotNull public Builder issn(@NotNull Identifier identifier) {
+      putValue("issn", identifier);
+      return this;
+    }
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     */
+    @NotNull public Builder additionalType(@NotNull String additionalType) {
       putValue("additionalType", additionalType);
       return this;
     }
@@ -332,21 +390,10 @@ public class TVSeries extends CreativeWorkSeries {
       return this;
     }
     /**
-     * A description of the item.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder description(@NotNull DisambiguatingDescription disambiguatingDescription) {
-      putValue("description", disambiguatingDescription);
-      return this;
-    }
-    @NotNull public Builder disambiguatingDescription(@NotNull DisambiguatingDescription disambiguatingDescription) {
+    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
       putValue("disambiguatingDescription", disambiguatingDescription);
-      return this;
-    }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     */
-    @NotNull public Builder image(@NotNull Logo logo) {
-      putValue("image", logo);
       return this;
     }
     /**
@@ -368,6 +415,13 @@ public class TVSeries extends CreativeWorkSeries {
      */
     @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
       putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
+    /**
+     * The name of the item.
+     */
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -396,14 +450,6 @@ public class TVSeries extends CreativeWorkSeries {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
-      return this;
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     */
-    @NotNull public Builder identifier(@NotNull Isbn isbn) {
-      putValue("identifier", isbn);
       return this;
     }
     /**
@@ -448,6 +494,8 @@ public class TVSeries extends CreativeWorkSeries {
       if ("countryOfOrigins".equals(key) && value instanceof Country) { countryOfOrigin((Country)value); return; }
       if ("director".equals(key) && value instanceof Person) { director((Person)value); return; }
       if ("directors".equals(key) && value instanceof Person) { director((Person)value); return; }
+      if ("episode".equals(key) && value instanceof HasPart) { episode((HasPart)value); return; }
+      if ("episodes".equals(key) && value instanceof HasPart) { episode((HasPart)value); return; }
       if ("musicBy".equals(key) && value instanceof MusicGroup) { musicBy((MusicGroup)value); return; }
       if ("musicBys".equals(key) && value instanceof MusicGroup) { musicBy((MusicGroup)value); return; }
       if ("musicBy".equals(key) && value instanceof Person) { musicBy((Person)value); return; }
@@ -458,6 +506,8 @@ public class TVSeries extends CreativeWorkSeries {
       if ("numberOfSeasonss".equals(key) && value instanceof Integer) { numberOfSeasons((Integer)value); return; }
       if ("productionCompany".equals(key) && value instanceof Organization) { productionCompany((Organization)value); return; }
       if ("productionCompanys".equals(key) && value instanceof Organization) { productionCompany((Organization)value); return; }
+      if ("containsSeason".equals(key) && value instanceof HasPart) { containsSeason((HasPart)value); return; }
+      if ("containsSeasons".equals(key) && value instanceof HasPart) { containsSeason((HasPart)value); return; }
       if ("trailer".equals(key) && value instanceof VideoObject) { trailer((VideoObject)value); return; }
       if ("trailers".equals(key) && value instanceof VideoObject) { trailer((VideoObject)value); return; }
       super.fromMap(key, value);

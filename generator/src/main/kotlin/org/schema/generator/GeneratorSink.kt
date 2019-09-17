@@ -19,6 +19,12 @@ package org.schema.generator
 import org.semarglproject.sink.TripleSink
 import java.util.*
 
+fun <K,V> MutableMap<K,V>.doWith(key: K, block: V.() -> Unit) {
+    this.getValue(key).let {
+        this[key] = it.apply { block() }
+    }
+}
+
 class GeneratorSink : TripleSink {
     private var uri: String = "http://schema.org/"
 
@@ -51,7 +57,7 @@ class GeneratorSink : TripleSink {
             get() = parentType == "http://schema.org/Enumeration" && name != "QualitativeValue"
     }
 
-    val types = hashMapOf<String, Type>()
+    val types = hashMapOf<String, Type>().withDefault { Type() }
 
     override fun setProperty(key: String, value: Any): Boolean {
         return true
@@ -94,16 +100,29 @@ class GeneratorSink : TripleSink {
     }
 
     override fun addNonLiteral(subj: String, pred: String, obj: String) {
+        addNonLiteralOriginal(subj, pred, obj)
+    }
+    
+    private fun addNonLiteralMine(subj: String, pred: String, obj: String) {
         //println("Subject: $subj -- Pred: $pred -- obj: $obj")
         subjects.add(subj)
         predicates.add(pred)
         objects.add(obj)
         when(pred) {
             "http://schema.org/" -> { /* ignore */ }
-            // This one is basically dead.  Move the logic -- NO IT IS NOT, WTF
-            "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" -> if (!types.containsKey(subj)) types.put(subj, Type().apply { if (types.containsKey(obj)) parentType = obj })
+            // Top level types (aka classes)
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" -> {
+                println("Found Type ${subj} with obj ${obj}")
+                if (!types.containsKey(subj)) {
+                    println("Creating...")
+                    types.put(subj, Type().apply { if (types.containsKey(obj)) parentType = obj })
+                }
+            }
             "http://www.w3.org/2000/01/rdf-schema#subClassOf",
-                "rdfs:subClassOf" -> types[subj]!!.parentType = obj // ???
+                "rdfs:subClassOf" -> {
+                    println("Making ${subj} a sublcass of ${obj}")
+                    types[subj]!!.parentType = obj // ???
+                }
             "http://schema.org/domainIncludes" -> {
                 val objType = types[obj]
 
@@ -117,7 +136,10 @@ class GeneratorSink : TripleSink {
 
                 } else {
                     val type = Type()
-                    type.interfaces.add(getInterfaceName(subj))
+                    getInterfaceName(subj)?.let {
+                        type.interfaces.add(it)
+                    }
+
                     types[obj] = type
 
                     //type.subTypes.add(subj)
@@ -128,7 +150,7 @@ class GeneratorSink : TripleSink {
 
                 }
             }
-            "http://schema.org/rangeIncludes" -> types[subj]!!.dataTypes.add(obj)
+            "http://schema.org/rangeIncludes" ->  types.doWith(subj) { dataTypes.add(obj) } //types[subj]!!.dataTypes.add(obj)
             "http://purl.org/dc/terms/source" -> {
                 try {
                     types[subj]!!.source = obj
@@ -167,13 +189,73 @@ class GeneratorSink : TripleSink {
             else -> System.err.println("Unknown non-literal: $pred, $subj")
         }
     }
+    
+    
+    
+    private fun addNonLiteralOriginal(subj: String, pred: String, obj: String) {
+        when(pred) {
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" -> types.doWith(subj) { if (types.containsKey(obj)) parentType = obj }  //if(!types.containsKey(subj)) types.put(subj, Type().apply { if (types.containsKey(obj)) parentType = obj }) 
+            "http://www.w3.org/2000/01/rdf-schema#subClassOf" -> types.doWith(subj) { parentType = obj } //types[subj]!!.parentType = obj
+            "http://schema.org/domainIncludes" -> {
+            if (subj.contains("fileFormat") || obj.contains("fileFormat")) {
+                    println("domainIncludes: $subj -- $obj")
+                    //System.exit(1)
+                }
+                types.doWith(obj) {
+                    if (!subTypes.contains(subj)) subTypes.add(subj)
+                }
+                
+                types.doWith(subj) {
+                    getInterfaceName(subj)?.let {
+                        name = it
+                    }
+                    isField = true
+                }
+            }
+            "http://schema.org/rangeIncludes" -> types.doWith(subj) { dataTypes.add(obj) }
+            "http://purl.org/dc/terms/source" -> types.doWith(subj) { source = obj }
+            "http://www.w3.org/2002/07/owl#equivalentClass" -> types.doWith(subj) { equivalent = obj }
+            "http://www.w3.org/2002/07/owl#equivalentProperty" -> types.doWith(subj) { equivalent = obj }
+            "http://schema.org/inverseOf" -> { /* ignore */ }
+            "http://schema.org/supersededBy" -> types.doWith(subj) { isSuperseded = true }
+            "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" -> {
+                if (subj.contains("fileFormat") || obj.contains("fileFormat")) {
+                   println("subPropertyOf: $subj -- $obj")
+                    //System.exit(1)
+                }
+                
+                getInterfaceName(obj)?.let {
+                    val interfaceType = Type()
+                    interfaceType.name = it
+                    interfaceType.isInterface = true
+                    types.put(obj, interfaceType)
+    
+                    if (!types.containsKey(subj)) types.put(subj, Type())
+                    
+                    val type = types[subj]!!
+                    if (type.isField) {
+                        type.dataTypes.add(obj)
+                    } else {
+                        type.interfaces.add(it)
+                        //println("adding interface $it to $subj")
+                    }
+                } //?: println("${obj} not a valid interface type subprop")
+            }
+            else -> System.err.println("Unknown non-literal: $pred")
+        }
+    }
+    
 
-    private fun getInterfaceName(obj: String): String = obj.substring(uri.length).capitalize()
-
+    private fun getInterfaceName(name: String): String? = if (name.contains(uri, true)) {
+            name.substring(uri.length).capitalize()
+        } else {
+            null
+        }
+    
     override fun addPlainLiteral(subj: String, pred: String, content: String, lang: String?) {
         when(pred) {
-            "http://www.w3.org/2000/01/rdf-schema#label" -> types[subj]!!.name = content.replace(" ", "").replace(".", "").capitalize()
-            "http://www.w3.org/2000/01/rdf-schema#comment" -> types[subj]!!.comment = content
+            "http://www.w3.org/2000/01/rdf-schema#label" -> types.doWith(subj) { name = content.replace(" ", "").replace(".", "").capitalize() }
+            "http://www.w3.org/2000/01/rdf-schema#comment" -> types.doWith(subj) { comment = content }
             else -> System.err.println("Unknown plain literal: $pred")
         }
     }

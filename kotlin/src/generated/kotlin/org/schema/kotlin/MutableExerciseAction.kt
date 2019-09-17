@@ -2,23 +2,22 @@ package org.schema.kotlin
 import org.schema.*
 class MutableExerciseAction {
   private val map = HashMap<String,Any>()
-  var course: Course
-    get() = map["course"] as Course
-    set(value) { map["course"] = value }
-  fun course(builder: MutableCourse.() -> Unit) { map["course"] = MutableCourse().apply(builder).build() }
-  var exerciseCourse: ExerciseCourse
-    get() = map["exerciseCourse"] as ExerciseCourse
+  var exerciseCourse: Place
+    get() = map["exerciseCourse"] as Place
     set(value) { map["exerciseCourse"] = value }
+  fun exerciseCourse(builder: MutablePlace.() -> Unit) { map["exerciseCourse"] = MutablePlace().apply(builder).build() }
   var distance: Distance
     get() = map["distance"] as Distance
     set(value) { map["distance"] = value }
   fun distance(builder: MutableDistance.() -> Unit) { map["distance"] = MutableDistance().apply(builder).build() }
-  var fromLocation: FromLocation
-    get() = map["fromLocation"] as FromLocation
+  var fromLocation: Place
+    get() = map["fromLocation"] as Place
     set(value) { map["fromLocation"] = value }
-  var opponent: Opponent
-    get() = map["opponent"] as Opponent
+  fun fromLocation(builder: MutablePlace.() -> Unit) { map["fromLocation"] = MutablePlace().apply(builder).build() }
+  var opponent: Person
+    get() = map["opponent"] as Person
     set(value) { map["opponent"] = value }
+  fun opponent(builder: MutablePerson.() -> Unit) { map["opponent"] = MutablePerson().apply(builder).build() }
   var sportsActivityLocation: SportsActivityLocation
     get() = map["sportsActivityLocation"] as SportsActivityLocation
     set(value) { map["sportsActivityLocation"] = value }
@@ -31,9 +30,10 @@ class MutableExerciseAction {
     get() = map["sportsTeam"] as SportsTeam
     set(value) { map["sportsTeam"] = value }
   fun sportsTeam(builder: MutableSportsTeam.() -> Unit) { map["sportsTeam"] = MutableSportsTeam().apply(builder).build() }
-  var toLocation: ToLocation
-    get() = map["toLocation"] as ToLocation
+  var toLocation: Place
+    get() = map["toLocation"] as Place
     set(value) { map["toLocation"] = value }
+  fun toLocation(builder: MutablePlace.() -> Unit) { map["toLocation"] = MutablePlace().apply(builder).build() }
   var audience: Audience
     get() = map["audience"] as Audience
     set(value) { map["audience"] = value }
@@ -50,22 +50,20 @@ class MutableExerciseAction {
   var endTime: java.util.Date
     get() = map["endTime"] as java.util.Date
     set(value) { map["endTime"] = value }
-  var instrument: Language
-    get() = map["instrument"] as Language
+  var instrument: Instrument
+    get() = map["instrument"] as Instrument
     set(value) { map["instrument"] = value }
-  var location: SportsActivityLocation
-    get() = map["location"] as SportsActivityLocation
+  var location: Location
+    get() = map["location"] as Location
     set(value) { map["location"] = value }
-  fun location(builder: MutableSportsActivityLocation.() -> Unit) { map["location"] = MutableSportsActivityLocation().apply(builder).build() }
-  var object: Option
-    get() = map["object"] as Option
+  var object: Object
+    get() = map["object"] as Object
     set(value) { map["object"] = value }
-  var participant: RealEstateAgent
-    get() = map["participant"] as RealEstateAgent
+  var participant: Participant
+    get() = map["participant"] as Participant
     set(value) { map["participant"] = value }
-  fun participant(builder: MutableRealEstateAgent.() -> Unit) { map["participant"] = MutableRealEstateAgent().apply(builder).build() }
-  var result: ResultComment
-    get() = map["result"] as ResultComment
+  var result: Result
+    get() = map["result"] as Result
     set(value) { map["result"] = value }
   var startTime: java.util.Date
     get() = map["startTime"] as java.util.Date
@@ -81,25 +79,28 @@ class MutableExerciseAction {
     get() = map["target"] as EntryPoint
     set(value) { map["target"] = value }
   fun target(builder: MutableEntryPoint.() -> Unit) { map["target"] = MutableEntryPoint().apply(builder).build() }
-  var additionalType: AdditionalType
-    get() = map["additionalType"] as AdditionalType
+  var additionalType: String
+    get() = map["additionalType"] as String
     set(value) { map["additionalType"] = value }
   var alternateName: String
     get() = map["alternateName"] as String
     set(value) { map["alternateName"] = value }
-  var description: DisambiguatingDescription
-    get() = map["description"] as DisambiguatingDescription
+  var description: Description
+    get() = map["description"] as Description
     set(value) { map["description"] = value }
-  var disambiguatingDescription: DisambiguatingDescription
-    get() = map["disambiguatingDescription"] as DisambiguatingDescription
+  var disambiguatingDescription: String
+    get() = map["disambiguatingDescription"] as String
     set(value) { map["disambiguatingDescription"] = value }
-  var image: Logo
-    get() = map["image"] as Logo
+  var image: Image
+    get() = map["image"] as Image
     set(value) { map["image"] = value }
   var mainEntityOfPage: Any
     get() = map["mainEntityOfPage"]!!
     set(value) { map["mainEntityOfPage"] = value }
   fun mainEntityOfPageCreativeWork(builder: MutableCreativeWork.() -> Unit) { map["mainEntityOfPage"] = MutableCreativeWork().apply(builder).build() }
+  var name: String
+    get() = map["name"] as String
+    set(value) { map["name"] = value }
   var sameAs: String
     get() = map["sameAs"] as String
     set(value) { map["sameAs"] = value }
@@ -110,8 +111,8 @@ class MutableExerciseAction {
     get() = map["potentialAction"] as Action
     set(value) { map["potentialAction"] = value }
   fun potentialAction(builder: MutableAction.() -> Unit) { map["potentialAction"] = MutableAction().apply(builder).build() }
-  var identifier: Isbn
-    get() = map["identifier"] as Isbn
+  var identifier: Identifier
+    get() = map["identifier"] as Identifier
     set(value) { map["identifier"] = value }
   var subjectOf: Any
     get() = map["subjectOf"]!!

@@ -2,6 +2,11 @@ package org.schema.kotlin
 import org.schema.*
 class MutableProgramMembership {
   private val map = HashMap<String,Any>()
+  var member: Any
+    get() = map["member"]!!
+    set(value) { map["member"] = value }
+  fun memberOrganization(builder: MutableOrganization.() -> Unit) { map["member"] = MutableOrganization().apply(builder).build() }
+  fun memberPerson(builder: MutablePerson.() -> Unit) { map["member"] = MutablePerson().apply(builder).build() }
   var membershipNumber: String
     get() = map["membershipNumber"] as String
     set(value) { map["membershipNumber"] = value }
@@ -12,25 +17,28 @@ class MutableProgramMembership {
     get() = map["hostingOrganization"] as Organization
     set(value) { map["hostingOrganization"] = value }
   fun hostingOrganization(builder: MutableOrganization.() -> Unit) { map["hostingOrganization"] = MutableOrganization().apply(builder).build() }
-  var additionalType: AdditionalType
-    get() = map["additionalType"] as AdditionalType
+  var additionalType: String
+    get() = map["additionalType"] as String
     set(value) { map["additionalType"] = value }
   var alternateName: String
     get() = map["alternateName"] as String
     set(value) { map["alternateName"] = value }
-  var description: DisambiguatingDescription
-    get() = map["description"] as DisambiguatingDescription
+  var description: Description
+    get() = map["description"] as Description
     set(value) { map["description"] = value }
-  var disambiguatingDescription: DisambiguatingDescription
-    get() = map["disambiguatingDescription"] as DisambiguatingDescription
+  var disambiguatingDescription: String
+    get() = map["disambiguatingDescription"] as String
     set(value) { map["disambiguatingDescription"] = value }
-  var image: Logo
-    get() = map["image"] as Logo
+  var image: Image
+    get() = map["image"] as Image
     set(value) { map["image"] = value }
   var mainEntityOfPage: Any
     get() = map["mainEntityOfPage"]!!
     set(value) { map["mainEntityOfPage"] = value }
   fun mainEntityOfPageCreativeWork(builder: MutableCreativeWork.() -> Unit) { map["mainEntityOfPage"] = MutableCreativeWork().apply(builder).build() }
+  var name: String
+    get() = map["name"] as String
+    set(value) { map["name"] = value }
   var sameAs: String
     get() = map["sameAs"] as String
     set(value) { map["sameAs"] = value }
@@ -41,8 +49,8 @@ class MutableProgramMembership {
     get() = map["potentialAction"] as Action
     set(value) { map["potentialAction"] = value }
   fun potentialAction(builder: MutableAction.() -> Unit) { map["potentialAction"] = MutableAction().apply(builder).build() }
-  var identifier: Isbn
-    get() = map["identifier"] as Isbn
+  var identifier: Identifier
+    get() = map["identifier"] as Identifier
     set(value) { map["identifier"] = value }
   var subjectOf: Any
     get() = map["subjectOf"]!!

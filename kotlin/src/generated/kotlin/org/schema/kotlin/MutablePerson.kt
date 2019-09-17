@@ -2,6 +2,10 @@ package org.schema.kotlin
 import org.schema.*
 class MutablePerson {
   private val map = HashMap<String,Any>()
+  var hasOfferCatalog: OfferCatalog
+    get() = map["hasOfferCatalog"] as OfferCatalog
+    set(value) { map["hasOfferCatalog"] = value }
+  fun hasOfferCatalog(builder: MutableOfferCatalog.() -> Unit) { map["hasOfferCatalog"] = MutableOfferCatalog().apply(builder).build() }
   var additionalName: String
     get() = map["additionalName"] as String
     set(value) { map["additionalName"] = value }
@@ -9,6 +13,9 @@ class MutablePerson {
     get() = map["address"]!!
     set(value) { map["address"] = value }
   fun addressPostalAddress(builder: MutablePostalAddress.() -> Unit) { map["address"] = MutablePostalAddress().apply(builder).build() }
+  var affiliation: MemberOf
+    get() = map["affiliation"] as MemberOf
+    set(value) { map["affiliation"] = value }
   var alumniOf: Any
     get() = map["alumniOf"]!!
     set(value) { map["alumniOf"] = value }
@@ -40,6 +47,9 @@ class MutablePerson {
   var deathDate: java.util.Date
     get() = map["deathDate"] as java.util.Date
     set(value) { map["deathDate"] = value }
+  var duns: Identifier
+    get() = map["duns"] as Identifier
+    set(value) { map["duns"] = value }
   var email: String
     get() = map["email"] as String
     set(value) { map["email"] = value }
@@ -59,6 +69,9 @@ class MutablePerson {
   var givenName: String
     get() = map["givenName"] as String
     set(value) { map["givenName"] = value }
+  var globalLocationNumber: Identifier
+    get() = map["globalLocationNumber"] as Identifier
+    set(value) { map["globalLocationNumber"] = value }
   var hasPOS: Place
     get() = map["hasPOS"] as Place
     set(value) { map["hasPOS"] = value }
@@ -68,9 +81,11 @@ class MutablePerson {
     set(value) { map["height"] = value }
   fun heightDistance(builder: MutableDistance.() -> Unit) { map["height"] = MutableDistance().apply(builder).build() }
   fun heightQuantitativeValue(builder: MutableQuantitativeValue.() -> Unit) { map["height"] = MutableQuantitativeValue().apply(builder).build() }
-  var homeLocation: HomeLocation
-    get() = map["homeLocation"] as HomeLocation
+  var homeLocation: Any
+    get() = map["homeLocation"]!!
     set(value) { map["homeLocation"] = value }
+  fun homeLocationContactPoint(builder: MutableContactPoint.() -> Unit) { map["homeLocation"] = MutableContactPoint().apply(builder).build() }
+  fun homeLocationPlace(builder: MutablePlace.() -> Unit) { map["homeLocation"] = MutablePlace().apply(builder).build() }
   var honorificPrefix: String
     get() = map["honorificPrefix"] as String
     set(value) { map["honorificPrefix"] = value }
@@ -91,11 +106,9 @@ class MutablePerson {
     get() = map["makesOffer"] as Offer
     set(value) { map["makesOffer"] = value }
   fun makesOffer(builder: MutableOffer.() -> Unit) { map["makesOffer"] = MutableOffer().apply(builder).build() }
-  var memberOf: Any
-    get() = map["memberOf"]!!
+  var memberOf: MemberOf
+    get() = map["memberOf"] as MemberOf
     set(value) { map["memberOf"] = value }
-  fun memberOfOrganization(builder: MutableOrganization.() -> Unit) { map["memberOf"] = MutableOrganization().apply(builder).build() }
-  fun memberOfProgramMembership(builder: MutableProgramMembership.() -> Unit) { map["memberOf"] = MutableProgramMembership().apply(builder).build() }
   var naics: String
     get() = map["naics"] as String
     set(value) { map["naics"] = value }
@@ -137,16 +150,21 @@ class MutablePerson {
     get() = map["sibling"] as Person
     set(value) { map["sibling"] = value }
   fun sibling(builder: MutablePerson.() -> Unit) { map["sibling"] = MutablePerson().apply(builder).build() }
-  var sponsor: Funder
-    get() = map["sponsor"] as Funder
+  var sponsor: Sponsor
+    get() = map["sponsor"] as Sponsor
     set(value) { map["sponsor"] = value }
-  var funder: Funder
-    get() = map["funder"] as Funder
+  var funder: Any
+    get() = map["funder"]!!
     set(value) { map["funder"] = value }
+  fun funderOrganization(builder: MutableOrganization.() -> Unit) { map["funder"] = MutableOrganization().apply(builder).build() }
+  fun funderPerson(builder: MutablePerson.() -> Unit) { map["funder"] = MutablePerson().apply(builder).build() }
   var spouse: Person
     get() = map["spouse"] as Person
     set(value) { map["spouse"] = value }
   fun spouse(builder: MutablePerson.() -> Unit) { map["spouse"] = MutablePerson().apply(builder).build() }
+  var taxID: Identifier
+    get() = map["taxID"] as Identifier
+    set(value) { map["taxID"] = value }
   var telephone: String
     get() = map["telephone"] as String
     set(value) { map["telephone"] = value }
@@ -157,9 +175,11 @@ class MutablePerson {
     get() = map["weight"] as QuantitativeValue
     set(value) { map["weight"] = value }
   fun weight(builder: MutableQuantitativeValue.() -> Unit) { map["weight"] = MutableQuantitativeValue().apply(builder).build() }
-  var workLocation: WorkLocation
-    get() = map["workLocation"] as WorkLocation
+  var workLocation: Any
+    get() = map["workLocation"]!!
     set(value) { map["workLocation"] = value }
+  fun workLocationContactPoint(builder: MutableContactPoint.() -> Unit) { map["workLocation"] = MutableContactPoint().apply(builder).build() }
+  fun workLocationPlace(builder: MutablePlace.() -> Unit) { map["workLocation"] = MutablePlace().apply(builder).build() }
   var worksFor: Organization
     get() = map["worksFor"] as Organization
     set(value) { map["worksFor"] = value }
@@ -176,25 +196,28 @@ class MutablePerson {
     get() = map["hasOccupation"] as Occupation
     set(value) { map["hasOccupation"] = value }
   fun hasOccupation(builder: MutableOccupation.() -> Unit) { map["hasOccupation"] = MutableOccupation().apply(builder).build() }
-  var additionalType: AdditionalType
-    get() = map["additionalType"] as AdditionalType
+  var additionalType: String
+    get() = map["additionalType"] as String
     set(value) { map["additionalType"] = value }
   var alternateName: String
     get() = map["alternateName"] as String
     set(value) { map["alternateName"] = value }
-  var description: DisambiguatingDescription
-    get() = map["description"] as DisambiguatingDescription
+  var description: Description
+    get() = map["description"] as Description
     set(value) { map["description"] = value }
-  var disambiguatingDescription: DisambiguatingDescription
-    get() = map["disambiguatingDescription"] as DisambiguatingDescription
+  var disambiguatingDescription: String
+    get() = map["disambiguatingDescription"] as String
     set(value) { map["disambiguatingDescription"] = value }
-  var image: Logo
-    get() = map["image"] as Logo
+  var image: Image
+    get() = map["image"] as Image
     set(value) { map["image"] = value }
   var mainEntityOfPage: Any
     get() = map["mainEntityOfPage"]!!
     set(value) { map["mainEntityOfPage"] = value }
   fun mainEntityOfPageCreativeWork(builder: MutableCreativeWork.() -> Unit) { map["mainEntityOfPage"] = MutableCreativeWork().apply(builder).build() }
+  var name: String
+    get() = map["name"] as String
+    set(value) { map["name"] = value }
   var sameAs: String
     get() = map["sameAs"] as String
     set(value) { map["sameAs"] = value }
@@ -205,8 +228,8 @@ class MutablePerson {
     get() = map["potentialAction"] as Action
     set(value) { map["potentialAction"] = value }
   fun potentialAction(builder: MutableAction.() -> Unit) { map["potentialAction"] = MutableAction().apply(builder).build() }
-  var identifier: Isbn
-    get() = map["identifier"] as Isbn
+  var identifier: Identifier
+    get() = map["identifier"] as Identifier
     set(value) { map["identifier"] = value }
   var subjectOf: Any
     get() = map["subjectOf"]!!

@@ -2,8 +2,8 @@ package org.schema.kotlin
 import org.schema.*
 class MutableUserCheckins {
   private val map = HashMap<String,Any>()
-  var about: MainEntity
-    get() = map["about"] as MainEntity
+  var about: About
+    get() = map["about"] as About
     set(value) { map["about"] = value }
   var actor: Person
     get() = map["actor"] as Person
@@ -39,8 +39,8 @@ class MutableUserCheckins {
   var doorTime: java.util.Date
     get() = map["doorTime"] as java.util.Date
     set(value) { map["doorTime"] = value }
-  var duration: LoanTerm
-    get() = map["duration"] as LoanTerm
+  var duration: Duration
+    get() = map["duration"] as Duration
     set(value) { map["duration"] = value }
   var endDate: java.util.Date
     get() = map["endDate"] as java.util.Date
@@ -54,10 +54,10 @@ class MutableUserCheckins {
   var inLanguage: Any
     get() = map["inLanguage"]!!
     set(value) { map["inLanguage"] = value }
-  var location: SportsActivityLocation
-    get() = map["location"] as SportsActivityLocation
+  fun inLanguageLanguage(builder: MutableLanguage.() -> Unit) { map["inLanguage"] = MutableLanguage().apply(builder).build() }
+  var location: Location
+    get() = map["location"] as Location
     set(value) { map["location"] = value }
-  fun location(builder: MutableSportsActivityLocation.() -> Unit) { map["location"] = MutableSportsActivityLocation().apply(builder).build() }
   var maximumAttendeeCapacity: Int
     get() = map["maximumAttendeeCapacity"] as Int
     set(value) { map["maximumAttendeeCapacity"] = value }
@@ -84,12 +84,14 @@ class MutableUserCheckins {
     get() = map["review"] as Review
     set(value) { map["review"] = value }
   fun review(builder: MutableReview.() -> Unit) { map["review"] = MutableReview().apply(builder).build() }
-  var sponsor: Funder
-    get() = map["sponsor"] as Funder
+  var sponsor: Sponsor
+    get() = map["sponsor"] as Sponsor
     set(value) { map["sponsor"] = value }
-  var funder: Funder
-    get() = map["funder"] as Funder
+  var funder: Any
+    get() = map["funder"]!!
     set(value) { map["funder"] = value }
+  fun funderOrganization(builder: MutableOrganization.() -> Unit) { map["funder"] = MutableOrganization().apply(builder).build() }
+  fun funderPerson(builder: MutablePerson.() -> Unit) { map["funder"] = MutablePerson().apply(builder).build() }
   var startDate: java.util.Date
     get() = map["startDate"] as java.util.Date
     set(value) { map["startDate"] = value }
@@ -104,13 +106,13 @@ class MutableUserCheckins {
   var typicalAgeRange: String
     get() = map["typicalAgeRange"] as String
     set(value) { map["typicalAgeRange"] = value }
-  var workPerformed: WorkPerformed
-    get() = map["workPerformed"] as WorkPerformed
+  var workPerformed: CreativeWork
+    get() = map["workPerformed"] as CreativeWork
     set(value) { map["workPerformed"] = value }
-  var workFeatured: CreativeWork
-    get() = map["workFeatured"] as CreativeWork
+  fun workPerformed(builder: MutableCreativeWork.() -> Unit) { map["workPerformed"] = MutableCreativeWork().apply(builder).build() }
+  var workFeatured: WorkFeatured
+    get() = map["workFeatured"] as WorkFeatured
     set(value) { map["workFeatured"] = value }
-  fun workFeatured(builder: MutableCreativeWork.() -> Unit) { map["workFeatured"] = MutableCreativeWork().apply(builder).build() }
   var translator: Any
     get() = map["translator"]!!
     set(value) { map["translator"] = value }
@@ -121,25 +123,28 @@ class MutableUserCheckins {
     set(value) { map["composer"] = value }
   fun composerOrganization(builder: MutableOrganization.() -> Unit) { map["composer"] = MutableOrganization().apply(builder).build() }
   fun composerPerson(builder: MutablePerson.() -> Unit) { map["composer"] = MutablePerson().apply(builder).build() }
-  var additionalType: AdditionalType
-    get() = map["additionalType"] as AdditionalType
+  var additionalType: String
+    get() = map["additionalType"] as String
     set(value) { map["additionalType"] = value }
   var alternateName: String
     get() = map["alternateName"] as String
     set(value) { map["alternateName"] = value }
-  var description: DisambiguatingDescription
-    get() = map["description"] as DisambiguatingDescription
+  var description: Description
+    get() = map["description"] as Description
     set(value) { map["description"] = value }
-  var disambiguatingDescription: DisambiguatingDescription
-    get() = map["disambiguatingDescription"] as DisambiguatingDescription
+  var disambiguatingDescription: String
+    get() = map["disambiguatingDescription"] as String
     set(value) { map["disambiguatingDescription"] = value }
-  var image: Logo
-    get() = map["image"] as Logo
+  var image: Image
+    get() = map["image"] as Image
     set(value) { map["image"] = value }
   var mainEntityOfPage: Any
     get() = map["mainEntityOfPage"]!!
     set(value) { map["mainEntityOfPage"] = value }
   fun mainEntityOfPageCreativeWork(builder: MutableCreativeWork.() -> Unit) { map["mainEntityOfPage"] = MutableCreativeWork().apply(builder).build() }
+  var name: String
+    get() = map["name"] as String
+    set(value) { map["name"] = value }
   var sameAs: String
     get() = map["sameAs"] as String
     set(value) { map["sameAs"] = value }
@@ -150,8 +155,8 @@ class MutableUserCheckins {
     get() = map["potentialAction"] as Action
     set(value) { map["potentialAction"] = value }
   fun potentialAction(builder: MutableAction.() -> Unit) { map["potentialAction"] = MutableAction().apply(builder).build() }
-  var identifier: Isbn
-    get() = map["identifier"] as Isbn
+  var identifier: Identifier
+    get() = map["identifier"] as Identifier
     set(value) { map["identifier"] = value }
   var subjectOf: Any
     get() = map["subjectOf"]!!

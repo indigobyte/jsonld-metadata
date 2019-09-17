@@ -28,6 +28,91 @@ import java.util.*;
  */
 public class EmployeeRole extends OrganizationRole {
   /**
+   * The base salary of the job or of an employee in an EmployeeRole.
+   */
+  @JsonIgnore public Integer getBaseSalaryInteger() {
+    return (Integer) getValue("baseSalary");
+  }
+  /**
+   * The base salary of the job or of an employee in an EmployeeRole.
+   */
+  @JsonIgnore public Collection<Integer> getBaseSalaryIntegers() {
+    final Object current = myData.get("baseSalary");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Integer>) current;
+    }
+    return Arrays.asList((Integer) current);
+  }
+  /**
+   * The base salary of the job or of an employee in an EmployeeRole.
+   */
+  @JsonIgnore public Long getBaseSalaryLong() {
+    return (Long) getValue("baseSalary");
+  }
+  /**
+   * The base salary of the job or of an employee in an EmployeeRole.
+   */
+  @JsonIgnore public Collection<Long> getBaseSalaryLongs() {
+    final Object current = myData.get("baseSalary");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Long>) current;
+    }
+    return Arrays.asList((Long) current);
+  }
+  /**
+   * The base salary of the job or of an employee in an EmployeeRole.
+   */
+  @JsonIgnore public Float getBaseSalaryFloat() {
+    return (Float) getValue("baseSalary");
+  }
+  /**
+   * The base salary of the job or of an employee in an EmployeeRole.
+   */
+  @JsonIgnore public Collection<Float> getBaseSalaryFloats() {
+    final Object current = myData.get("baseSalary");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Float>) current;
+    }
+    return Arrays.asList((Float) current);
+  }
+  /**
+   * The base salary of the job or of an employee in an EmployeeRole.
+   */
+  @JsonIgnore public Double getBaseSalaryDouble() {
+    return (Double) getValue("baseSalary");
+  }
+  /**
+   * The base salary of the job or of an employee in an EmployeeRole.
+   */
+  @JsonIgnore public Collection<Double> getBaseSalaryDoubles() {
+    final Object current = myData.get("baseSalary");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Double>) current;
+    }
+    return Arrays.asList((Double) current);
+  }
+  /**
+   * The base salary of the job or of an employee in an EmployeeRole.
+   */
+  @JsonIgnore public String getBaseSalaryString() {
+    return (String) getValue("baseSalary");
+  }
+  /**
+   * The base salary of the job or of an employee in an EmployeeRole.
+   */
+  @JsonIgnore public Collection<String> getBaseSalaryStrings() {
+    final Object current = myData.get("baseSalary");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
    * The currency (coded using [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217) ) used for the main salary information in this job posting or for this employee.
    */
   @JsonIgnore public String getSalaryCurrency() {
@@ -57,6 +142,41 @@ public class EmployeeRole extends OrganizationRole {
     }
     @NotNull public EmployeeRole build() {
       return new EmployeeRole(myData);
+    }
+    /**
+     * The base salary of the job or of an employee in an EmployeeRole.
+     */
+    @NotNull public Builder baseSalary(@NotNull Integer integer) {
+      putValue("baseSalary", integer);
+      return this;
+    }
+    /**
+     * The base salary of the job or of an employee in an EmployeeRole.
+     */
+    @NotNull public Builder baseSalary(@NotNull Long baseSalary) {
+      putValue("baseSalary", baseSalary);
+      return this;
+    }
+    /**
+     * The base salary of the job or of an employee in an EmployeeRole.
+     */
+    @NotNull public Builder baseSalary(@NotNull Float baseSalary) {
+      putValue("baseSalary", baseSalary);
+      return this;
+    }
+    /**
+     * The base salary of the job or of an employee in an EmployeeRole.
+     */
+    @NotNull public Builder baseSalary(@NotNull Double baseSalary) {
+      putValue("baseSalary", baseSalary);
+      return this;
+    }
+    /**
+     * The base salary of the job or of an employee in an EmployeeRole.
+     */
+    @NotNull public Builder baseSalary(@NotNull String baseSalary) {
+      putValue("baseSalary", baseSalary);
+      return this;
     }
     /**
      * The currency (coded using [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217) ) used for the main salary information in this job posting or for this employee.
@@ -101,6 +221,13 @@ public class EmployeeRole extends OrganizationRole {
       return this;
     }
     /**
+     * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
+     */
+    @NotNull public Builder endDate(@NotNull java.util.Date date) {
+      putValue("endDate", date);
+      return this;
+    }
+    /**
      * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      */
     @NotNull public Builder startDate(@NotNull java.util.Date date) {
@@ -114,7 +241,10 @@ public class EmployeeRole extends OrganizationRole {
       putValue("roleName", roleName);
       return this;
     }
-    @NotNull public Builder additionalType(@NotNull AdditionalType additionalType) {
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     */
+    @NotNull public Builder additionalType(@NotNull String additionalType) {
       putValue("additionalType", additionalType);
       return this;
     }
@@ -126,21 +256,10 @@ public class EmployeeRole extends OrganizationRole {
       return this;
     }
     /**
-     * A description of the item.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder description(@NotNull DisambiguatingDescription disambiguatingDescription) {
-      putValue("description", disambiguatingDescription);
-      return this;
-    }
-    @NotNull public Builder disambiguatingDescription(@NotNull DisambiguatingDescription disambiguatingDescription) {
+    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
       putValue("disambiguatingDescription", disambiguatingDescription);
-      return this;
-    }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     */
-    @NotNull public Builder image(@NotNull Logo logo) {
-      putValue("image", logo);
       return this;
     }
     /**
@@ -162,6 +281,13 @@ public class EmployeeRole extends OrganizationRole {
      */
     @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
       putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
+    /**
+     * The name of the item.
+     */
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -190,14 +316,6 @@ public class EmployeeRole extends OrganizationRole {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
-      return this;
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     */
-    @NotNull public Builder identifier(@NotNull Isbn isbn) {
-      putValue("identifier", isbn);
       return this;
     }
     /**
@@ -236,6 +354,16 @@ public class EmployeeRole extends OrganizationRole {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
+      if ("baseSalary".equals(key) && value instanceof Integer) { baseSalary((Integer)value); return; }
+      if ("baseSalarys".equals(key) && value instanceof Integer) { baseSalary((Integer)value); return; }
+      if ("baseSalary".equals(key) && value instanceof Long) { baseSalary((Long)value); return; }
+      if ("baseSalarys".equals(key) && value instanceof Long) { baseSalary((Long)value); return; }
+      if ("baseSalary".equals(key) && value instanceof Float) { baseSalary((Float)value); return; }
+      if ("baseSalarys".equals(key) && value instanceof Float) { baseSalary((Float)value); return; }
+      if ("baseSalary".equals(key) && value instanceof Double) { baseSalary((Double)value); return; }
+      if ("baseSalarys".equals(key) && value instanceof Double) { baseSalary((Double)value); return; }
+      if ("baseSalary".equals(key) && value instanceof String) { baseSalary((String)value); return; }
+      if ("baseSalarys".equals(key) && value instanceof String) { baseSalary((String)value); return; }
       if ("salaryCurrency".equals(key) && value instanceof String) { salaryCurrency((String)value); return; }
       if ("salaryCurrencys".equals(key) && value instanceof String) { salaryCurrency((String)value); return; }
       super.fromMap(key, value);

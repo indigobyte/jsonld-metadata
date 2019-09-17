@@ -66,17 +66,17 @@ fun main(args: Array<String>) {
         }
     }
 
-    sources("../kotlin/src/generated/kotlin") {
-        pakage(NAMESPACE_KOTLIN) {
-            println("Generating Kotlin classes")
-            KotlinClassesGenerator(sink, BANNER).generate(this)
-        }
-    }
+    //sources("../kotlin/src/generated/kotlin") {
+    //    pakage(NAMESPACE_KOTLIN) {
+    //        println("Generating Kotlin classes")
+    //        KotlinClassesGenerator(sink, BANNER).generate(this)
+    //    }
+    //}
 
-    sources("test/main/java") {
+    sources("../src/generated-test/java") {
         pakage(NAMESPACE) {
             println("Generating tests")
-            //TestsGenerator(sink, BANNER).generate(this)
+            TestsGenerator(sink, BANNER).generate(this)
         }
     }
 }

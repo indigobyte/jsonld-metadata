@@ -181,7 +181,10 @@ public class Car extends Vehicle {
       putValue("numberOfForwardGears", quantitativeValue.build());
       return this;
     }
-    @NotNull public Builder vehicleIdentificationNumber(@NotNull VehicleIdentificationNumber vehicleIdentificationNumber) {
+    /**
+     * The Vehicle Identification Number (VIN) is a unique serial number used by the automotive industry to identify individual motor vehicles.
+     */
+    @NotNull public Builder vehicleIdentificationNumber(@NotNull String vehicleIdentificationNumber) {
       putValue("vehicleIdentificationNumber", vehicleIdentificationNumber);
       return this;
     }
@@ -515,6 +518,34 @@ public class Car extends Vehicle {
       return this;
     }
     /**
+     * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     */
+    @NotNull public Builder gtin12(@NotNull Identifier identifier) {
+      putValue("gtin12", identifier);
+      return this;
+    }
+    /**
+     * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceeding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     */
+    @NotNull public Builder gtin13(@NotNull Identifier identifier) {
+      putValue("gtin13", identifier);
+      return this;
+    }
+    /**
+     * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     */
+    @NotNull public Builder gtin14(@NotNull Identifier identifier) {
+      putValue("gtin14", identifier);
+      return this;
+    }
+    /**
+     * The [GTIN-8](http://apps.gs1.org/GDD/glossary/Pages/GTIN-8.aspx) code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     */
+    @NotNull public Builder gtin8(@NotNull Identifier identifier) {
+      putValue("gtin8", identifier);
+      return this;
+    }
+    /**
      * The height of the item.
      */
     @NotNull public Builder height(@NotNull Distance distance) {
@@ -633,7 +664,24 @@ public class Car extends Vehicle {
       putValue("itemCondition", offerItemCondition);
       return this;
     }
-    @NotNull public Builder logo(@NotNull Logo logo) {
+    /**
+     * An associated logo.
+     */
+    @NotNull public Builder logo(@NotNull ImageObject imageObject) {
+      putValue("logo", imageObject);
+      return this;
+    }
+    /**
+     * An associated logo.
+     */
+    @NotNull public Builder logo(@NotNull ImageObject.Builder imageObject) {
+      putValue("logo", imageObject.build());
+      return this;
+    }
+    /**
+     * An associated logo.
+     */
+    @NotNull public Builder logo(@NotNull String logo) {
       putValue("logo", logo);
       return this;
     }
@@ -694,6 +742,13 @@ public class Car extends Vehicle {
       return this;
     }
     /**
+     * The product identifier, such as ISBN. For example: ``` meta itemprop="productID" content="isbn:123-456-789" ```.
+     */
+    @NotNull public Builder productID(@NotNull Identifier identifier) {
+      putValue("productID", identifier);
+      return this;
+    }
+    /**
      * The release date of a product or product model. This can be used to distinguish the exact variant of a product.
      */
     @NotNull public Builder releaseDate(@NotNull java.util.Date date) {
@@ -719,6 +774,13 @@ public class Car extends Vehicle {
      */
     @NotNull public Builder slogan(@NotNull String slogan) {
       putValue("slogan", slogan);
+      return this;
+    }
+    /**
+     * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
+     */
+    @NotNull public Builder sku(@NotNull Identifier identifier) {
+      putValue("sku", identifier);
       return this;
     }
     /**
@@ -764,13 +826,6 @@ public class Car extends Vehicle {
       return this;
     }
     /**
-     * A material that something is made from, e.g. leather, wool, cotton, paper.
-     */
-    @NotNull public Builder material(@NotNull ArtMedium artMedium) {
-      putValue("material", artMedium);
-      return this;
-    }
-    /**
      * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.\n\nNote: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
      * 
      */
@@ -786,7 +841,10 @@ public class Car extends Vehicle {
       putValue("additionalProperty", propertyValue.build());
       return this;
     }
-    @NotNull public Builder additionalType(@NotNull AdditionalType additionalType) {
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     */
+    @NotNull public Builder additionalType(@NotNull String additionalType) {
       putValue("additionalType", additionalType);
       return this;
     }
@@ -798,21 +856,10 @@ public class Car extends Vehicle {
       return this;
     }
     /**
-     * A description of the item.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder description(@NotNull DisambiguatingDescription disambiguatingDescription) {
-      putValue("description", disambiguatingDescription);
-      return this;
-    }
-    @NotNull public Builder disambiguatingDescription(@NotNull DisambiguatingDescription disambiguatingDescription) {
+    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
       putValue("disambiguatingDescription", disambiguatingDescription);
-      return this;
-    }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     */
-    @NotNull public Builder image(@NotNull Logo logo) {
-      putValue("image", logo);
       return this;
     }
     /**
@@ -834,6 +881,13 @@ public class Car extends Vehicle {
      */
     @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
       putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
+    /**
+     * The name of the item.
+     */
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -862,14 +916,6 @@ public class Car extends Vehicle {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
-      return this;
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     */
-    @NotNull public Builder identifier(@NotNull Isbn isbn) {
-      putValue("identifier", isbn);
       return this;
     }
     /**

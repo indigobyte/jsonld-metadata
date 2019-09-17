@@ -105,13 +105,6 @@ public class DatasetClass extends Organization {
       return this;
     }
     /**
-     * The geographic area where a service or offered item is provided.
-     */
-    @NotNull public Builder areaServed(@NotNull AvailableAtOrFrom availableAtOrFrom) {
-      putValue("areaServed", availableAtOrFrom);
-      return this;
-    }
-    /**
      * An award won by or for this item.
      */
     @NotNull public Builder award(@NotNull String award) {
@@ -189,6 +182,13 @@ public class DatasetClass extends Organization {
       return this;
     }
     /**
+     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
+     */
+    @NotNull public Builder duns(@NotNull Identifier identifier) {
+      putValue("duns", identifier);
+      return this;
+    }
+    /**
      * Email address.
      */
     @NotNull public Builder email(@NotNull String email) {
@@ -259,6 +259,13 @@ public class DatasetClass extends Organization {
       return this;
     }
     /**
+     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
+     */
+    @NotNull public Builder globalLocationNumber(@NotNull Identifier identifier) {
+      putValue("globalLocationNumber", identifier);
+      return this;
+    }
+    /**
      * Points-of-Sales operated by the organization or person.
      */
     @NotNull public Builder hasPOS(@NotNull Place place) {
@@ -287,20 +294,23 @@ public class DatasetClass extends Organization {
       return this;
     }
     /**
-     * The location of for example where the event is happening, an organization is located, or where an action takes place.
+     * An associated logo.
      */
-    @NotNull public Builder location(@NotNull SportsActivityLocation sportsActivityLocation) {
-      putValue("location", sportsActivityLocation);
+    @NotNull public Builder logo(@NotNull ImageObject imageObject) {
+      putValue("logo", imageObject);
       return this;
     }
     /**
-     * The location of for example where the event is happening, an organization is located, or where an action takes place.
+     * An associated logo.
      */
-    @NotNull public Builder location(@NotNull SportsActivityLocation.Builder sportsActivityLocation) {
-      putValue("location", sportsActivityLocation.build());
+    @NotNull public Builder logo(@NotNull ImageObject.Builder imageObject) {
+      putValue("logo", imageObject.build());
       return this;
     }
-    @NotNull public Builder logo(@NotNull Logo logo) {
+    /**
+     * An associated logo.
+     */
+    @NotNull public Builder logo(@NotNull String logo) {
       putValue("logo", logo);
       return this;
     }
@@ -349,29 +359,8 @@ public class DatasetClass extends Organization {
     /**
      * An Organization (or ProgramMembership) to which this Person or Organization belongs.
      */
-    @NotNull public Builder memberOf(@NotNull Organization organization) {
-      putValue("memberOf", organization);
-      return this;
-    }
-    /**
-     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
-     */
-    @NotNull public Builder memberOf(@NotNull Organization.Builder organization) {
-      putValue("memberOf", organization.build());
-      return this;
-    }
-    /**
-     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
-     */
-    @NotNull public Builder memberOf(@NotNull ProgramMembership programMembership) {
-      putValue("memberOf", programMembership);
-      return this;
-    }
-    /**
-     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
-     */
-    @NotNull public Builder memberOf(@NotNull ProgramMembership.Builder programMembership) {
-      putValue("memberOf", programMembership.build());
+    @NotNull public Builder memberOf(@NotNull MemberOf memberOf) {
+      putValue("memberOf", memberOf);
       return this;
     }
     /**
@@ -489,14 +478,31 @@ public class DatasetClass extends Organization {
       return this;
     }
     /**
-     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
      */
-    @NotNull public Builder sponsor(@NotNull Funder funder) {
-      putValue("sponsor", funder);
+    @NotNull public Builder funder(@NotNull Organization organization) {
+      putValue("funder", organization);
       return this;
     }
-    @NotNull public Builder funder(@NotNull Funder funder) {
-      putValue("funder", funder);
+    /**
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
+     */
+    @NotNull public Builder funder(@NotNull Organization.Builder organization) {
+      putValue("funder", organization.build());
+      return this;
+    }
+    /**
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
+     */
+    @NotNull public Builder funder(@NotNull Person person) {
+      putValue("funder", person);
+      return this;
+    }
+    /**
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
+     */
+    @NotNull public Builder funder(@NotNull Person.Builder person) {
+      putValue("funder", person.build());
       return this;
     }
     /**
@@ -511,6 +517,13 @@ public class DatasetClass extends Organization {
      */
     @NotNull public Builder subOrganization(@NotNull Organization.Builder organization) {
       putValue("subOrganization", organization.build());
+      return this;
+    }
+    /**
+     * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
+     */
+    @NotNull public Builder taxID(@NotNull Identifier identifier) {
+      putValue("taxID", identifier);
       return this;
     }
     /**
@@ -541,7 +554,17 @@ public class DatasetClass extends Organization {
       putValue("foundingLocation", place.build());
       return this;
     }
-    @NotNull public Builder additionalType(@NotNull AdditionalType additionalType) {
+    /**
+     * An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
+     */
+    @NotNull public Builder leiCode(@NotNull Identifier identifier) {
+      putValue("leiCode", identifier);
+      return this;
+    }
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     */
+    @NotNull public Builder additionalType(@NotNull String additionalType) {
       putValue("additionalType", additionalType);
       return this;
     }
@@ -553,21 +576,10 @@ public class DatasetClass extends Organization {
       return this;
     }
     /**
-     * A description of the item.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder description(@NotNull DisambiguatingDescription disambiguatingDescription) {
-      putValue("description", disambiguatingDescription);
-      return this;
-    }
-    @NotNull public Builder disambiguatingDescription(@NotNull DisambiguatingDescription disambiguatingDescription) {
+    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
       putValue("disambiguatingDescription", disambiguatingDescription);
-      return this;
-    }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     */
-    @NotNull public Builder image(@NotNull Logo logo) {
-      putValue("image", logo);
       return this;
     }
     /**
@@ -589,6 +601,13 @@ public class DatasetClass extends Organization {
      */
     @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
       putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
+    /**
+     * The name of the item.
+     */
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -617,14 +636,6 @@ public class DatasetClass extends Organization {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
-      return this;
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     */
-    @NotNull public Builder identifier(@NotNull Isbn isbn) {
-      putValue("identifier", isbn);
       return this;
     }
     /**

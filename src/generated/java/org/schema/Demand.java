@@ -79,23 +79,6 @@ public class Demand extends Intangible {
     return Arrays.asList((QuantitativeValue) current);
   }
   /**
-   * The geographic area where a service or offered item is provided.
-   */
-  @JsonIgnore public AvailableAtOrFrom getAreaServed() {
-    return (AvailableAtOrFrom) getValue("areaServed");
-  }
-  /**
-   * The geographic area where a service or offered item is provided.
-   */
-  @JsonIgnore public Collection<AvailableAtOrFrom> getAreaServeds() {
-    final Object current = myData.get("areaServed");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<AvailableAtOrFrom>) current;
-    }
-    return Arrays.asList((AvailableAtOrFrom) current);
-  }
-  /**
    * The availability of this item&#x2014;for example In stock, Out of stock, Pre-order, etc.
    */
   @JsonIgnore public ItemAvailability getAvailability() {
@@ -146,16 +129,22 @@ public class Demand extends Intangible {
     }
     return Arrays.asList((java.util.Date) current);
   }
-  @JsonIgnore public AvailableAtOrFrom getAvailableAtOrFrom() {
-    return (AvailableAtOrFrom) getValue("availableAtOrFrom");
+  /**
+   * The place(s) from which the offer can be obtained (e.g. store locations).
+   */
+  @JsonIgnore public Place getAvailableAtOrFrom() {
+    return (Place) getValue("availableAtOrFrom");
   }
-  @JsonIgnore public Collection<AvailableAtOrFrom> getAvailableAtOrFroms() {
+  /**
+   * The place(s) from which the offer can be obtained (e.g. store locations).
+   */
+  @JsonIgnore public Collection<Place> getAvailableAtOrFroms() {
     final Object current = myData.get("availableAtOrFrom");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<AvailableAtOrFrom>) current;
+      return (Collection<Place>) current;
     }
-    return Arrays.asList((AvailableAtOrFrom) current);
+    return Arrays.asList((Place) current);
   }
   /**
    * The delivery method(s) available for this offer.
@@ -259,16 +248,62 @@ public class Demand extends Intangible {
     }
     return Arrays.asList((QuantitativeValue) current);
   }
-  @JsonIgnore public EligibleRegion getEligibleRegion() {
-    return (EligibleRegion) getValue("eligibleRegion");
+  /**
+   * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\n\nSee also [[ineligibleRegion]].
+   *     
+   */
+  @JsonIgnore public GeoShape getEligibleRegionGeoShape() {
+    return (GeoShape) getValue("eligibleRegion");
   }
-  @JsonIgnore public Collection<EligibleRegion> getEligibleRegions() {
+  /**
+   * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\n\nSee also [[ineligibleRegion]].
+   *     
+   */
+  @JsonIgnore public Collection<GeoShape> getEligibleRegionGeoShapes() {
     final Object current = myData.get("eligibleRegion");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<EligibleRegion>) current;
+      return (Collection<GeoShape>) current;
     }
-    return Arrays.asList((EligibleRegion) current);
+    return Arrays.asList((GeoShape) current);
+  }
+  /**
+   * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\n\nSee also [[ineligibleRegion]].
+   *     
+   */
+  @JsonIgnore public Place getEligibleRegionPlace() {
+    return (Place) getValue("eligibleRegion");
+  }
+  /**
+   * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\n\nSee also [[ineligibleRegion]].
+   *     
+   */
+  @JsonIgnore public Collection<Place> getEligibleRegionPlaces() {
+    final Object current = myData.get("eligibleRegion");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Place>) current;
+    }
+    return Arrays.asList((Place) current);
+  }
+  /**
+   * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\n\nSee also [[ineligibleRegion]].
+   *     
+   */
+  @JsonIgnore public String getEligibleRegionString() {
+    return (String) getValue("eligibleRegion");
+  }
+  /**
+   * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\n\nSee also [[ineligibleRegion]].
+   *     
+   */
+  @JsonIgnore public Collection<String> getEligibleRegionStrings() {
+    final Object current = myData.get("eligibleRegion");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
   }
   /**
    * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.\n\nSee also [[eligibleRegion]].
@@ -343,6 +378,74 @@ public class Demand extends Intangible {
       return (Collection<PriceSpecification>) current;
     }
     return Arrays.asList((PriceSpecification) current);
+  }
+  /**
+   * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+   */
+  @JsonIgnore public Identifier getGtin12() {
+    return (Identifier) getValue("gtin12");
+  }
+  /**
+   * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+   */
+  @JsonIgnore public Collection<Identifier> getGtin12s() {
+    final Object current = myData.get("gtin12");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Identifier>) current;
+    }
+    return Arrays.asList((Identifier) current);
+  }
+  /**
+   * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceeding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+   */
+  @JsonIgnore public Identifier getGtin13() {
+    return (Identifier) getValue("gtin13");
+  }
+  /**
+   * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceeding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+   */
+  @JsonIgnore public Collection<Identifier> getGtin13s() {
+    final Object current = myData.get("gtin13");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Identifier>) current;
+    }
+    return Arrays.asList((Identifier) current);
+  }
+  /**
+   * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+   */
+  @JsonIgnore public Identifier getGtin14() {
+    return (Identifier) getValue("gtin14");
+  }
+  /**
+   * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+   */
+  @JsonIgnore public Collection<Identifier> getGtin14s() {
+    final Object current = myData.get("gtin14");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Identifier>) current;
+    }
+    return Arrays.asList((Identifier) current);
+  }
+  /**
+   * The [GTIN-8](http://apps.gs1.org/GDD/glossary/Pages/GTIN-8.aspx) code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+   */
+  @JsonIgnore public Identifier getGtin8() {
+    return (Identifier) getValue("gtin8");
+  }
+  /**
+   * The [GTIN-8](http://apps.gs1.org/GDD/glossary/Pages/GTIN-8.aspx) code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+   */
+  @JsonIgnore public Collection<Identifier> getGtin8s() {
+    final Object current = myData.get("gtin8");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Identifier>) current;
+    }
+    return Arrays.asList((Identifier) current);
   }
   /**
    * This links to a node or nodes indicating the exact quantity of the products included in the offer.
@@ -464,6 +567,40 @@ public class Demand extends Intangible {
     return Arrays.asList((PriceSpecification) current);
   }
   /**
+   * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+   */
+  @JsonIgnore public Participant getSeller() {
+    return (Participant) getValue("seller");
+  }
+  /**
+   * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+   */
+  @JsonIgnore public Collection<Participant> getSellers() {
+    final Object current = myData.get("seller");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Participant>) current;
+    }
+    return Arrays.asList((Participant) current);
+  }
+  /**
+   * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
+   */
+  @JsonIgnore public Identifier getSku() {
+    return (Identifier) getValue("sku");
+  }
+  /**
+   * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
+   */
+  @JsonIgnore public Collection<Identifier> getSkus() {
+    final Object current = myData.get("sku");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Identifier>) current;
+    }
+    return Arrays.asList((Identifier) current);
+  }
+  /**
    * The date when the item becomes valid.
    */
   @JsonIgnore public java.util.Date getValidFrom() {
@@ -564,13 +701,6 @@ public class Demand extends Intangible {
       return this;
     }
     /**
-     * The geographic area where a service or offered item is provided.
-     */
-    @NotNull public Builder areaServed(@NotNull AvailableAtOrFrom availableAtOrFrom) {
-      putValue("areaServed", availableAtOrFrom);
-      return this;
-    }
-    /**
      * The availability of this item&#x2014;for example In stock, Out of stock, Pre-order, etc.
      */
     @NotNull public Builder availability(@NotNull ItemAvailability itemAvailability) {
@@ -591,8 +721,18 @@ public class Demand extends Intangible {
       putValue("availabilityStarts", date);
       return this;
     }
-    @NotNull public Builder availableAtOrFrom(@NotNull AvailableAtOrFrom availableAtOrFrom) {
-      putValue("availableAtOrFrom", availableAtOrFrom);
+    /**
+     * The place(s) from which the offer can be obtained (e.g. store locations).
+     */
+    @NotNull public Builder availableAtOrFrom(@NotNull Place place) {
+      putValue("availableAtOrFrom", place);
+      return this;
+    }
+    /**
+     * The place(s) from which the offer can be obtained (e.g. store locations).
+     */
+    @NotNull public Builder availableAtOrFrom(@NotNull Place.Builder place) {
+      putValue("availableAtOrFrom", place.build());
       return this;
     }
     /**
@@ -658,7 +798,43 @@ public class Demand extends Intangible {
       putValue("eligibleQuantity", quantitativeValue.build());
       return this;
     }
-    @NotNull public Builder eligibleRegion(@NotNull EligibleRegion eligibleRegion) {
+    /**
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\n\nSee also [[ineligibleRegion]].
+     *     
+     */
+    @NotNull public Builder eligibleRegion(@NotNull GeoShape geoShape) {
+      putValue("eligibleRegion", geoShape);
+      return this;
+    }
+    /**
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\n\nSee also [[ineligibleRegion]].
+     *     
+     */
+    @NotNull public Builder eligibleRegion(@NotNull GeoShape.Builder geoShape) {
+      putValue("eligibleRegion", geoShape.build());
+      return this;
+    }
+    /**
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\n\nSee also [[ineligibleRegion]].
+     *     
+     */
+    @NotNull public Builder eligibleRegion(@NotNull Place place) {
+      putValue("eligibleRegion", place);
+      return this;
+    }
+    /**
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\n\nSee also [[ineligibleRegion]].
+     *     
+     */
+    @NotNull public Builder eligibleRegion(@NotNull Place.Builder place) {
+      putValue("eligibleRegion", place.build());
+      return this;
+    }
+    /**
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\n\nSee also [[ineligibleRegion]].
+     *     
+     */
+    @NotNull public Builder eligibleRegion(@NotNull String eligibleRegion) {
       putValue("eligibleRegion", eligibleRegion);
       return this;
     }
@@ -714,6 +890,34 @@ public class Demand extends Intangible {
      */
     @NotNull public Builder eligibleTransactionVolume(@NotNull PriceSpecification.Builder priceSpecification) {
       putValue("eligibleTransactionVolume", priceSpecification.build());
+      return this;
+    }
+    /**
+     * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     */
+    @NotNull public Builder gtin12(@NotNull Identifier identifier) {
+      putValue("gtin12", identifier);
+      return this;
+    }
+    /**
+     * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceeding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     */
+    @NotNull public Builder gtin13(@NotNull Identifier identifier) {
+      putValue("gtin13", identifier);
+      return this;
+    }
+    /**
+     * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     */
+    @NotNull public Builder gtin14(@NotNull Identifier identifier) {
+      putValue("gtin14", identifier);
+      return this;
+    }
+    /**
+     * The [GTIN-8](http://apps.gs1.org/GDD/glossary/Pages/GTIN-8.aspx) code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     */
+    @NotNull public Builder gtin8(@NotNull Identifier identifier) {
+      putValue("gtin8", identifier);
       return this;
     }
     /**
@@ -801,6 +1005,20 @@ public class Demand extends Intangible {
       return this;
     }
     /**
+     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+     */
+    @NotNull public Builder seller(@NotNull Participant participant) {
+      putValue("seller", participant);
+      return this;
+    }
+    /**
+     * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
+     */
+    @NotNull public Builder sku(@NotNull Identifier identifier) {
+      putValue("sku", identifier);
+      return this;
+    }
+    /**
      * The date when the item becomes valid.
      */
     @NotNull public Builder validFrom(@NotNull java.util.Date date) {
@@ -828,7 +1046,10 @@ public class Demand extends Intangible {
       putValue("warranty", warrantyPromise.build());
       return this;
     }
-    @NotNull public Builder additionalType(@NotNull AdditionalType additionalType) {
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     */
+    @NotNull public Builder additionalType(@NotNull String additionalType) {
       putValue("additionalType", additionalType);
       return this;
     }
@@ -840,21 +1061,10 @@ public class Demand extends Intangible {
       return this;
     }
     /**
-     * A description of the item.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder description(@NotNull DisambiguatingDescription disambiguatingDescription) {
-      putValue("description", disambiguatingDescription);
-      return this;
-    }
-    @NotNull public Builder disambiguatingDescription(@NotNull DisambiguatingDescription disambiguatingDescription) {
+    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
       putValue("disambiguatingDescription", disambiguatingDescription);
-      return this;
-    }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     */
-    @NotNull public Builder image(@NotNull Logo logo) {
-      putValue("image", logo);
       return this;
     }
     /**
@@ -876,6 +1086,13 @@ public class Demand extends Intangible {
      */
     @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
       putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
+    /**
+     * The name of the item.
+     */
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -904,14 +1121,6 @@ public class Demand extends Intangible {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
-      return this;
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     */
-    @NotNull public Builder identifier(@NotNull Isbn isbn) {
-      putValue("identifier", isbn);
       return this;
     }
     /**
@@ -956,16 +1165,14 @@ public class Demand extends Intangible {
       if ("acceptedPaymentMethods".equals(key) && value instanceof PaymentMethod) { acceptedPaymentMethod((PaymentMethod)value); return; }
       if ("advanceBookingRequirement".equals(key) && value instanceof QuantitativeValue) { advanceBookingRequirement((QuantitativeValue)value); return; }
       if ("advanceBookingRequirements".equals(key) && value instanceof QuantitativeValue) { advanceBookingRequirement((QuantitativeValue)value); return; }
-      if ("areaServed".equals(key) && value instanceof AvailableAtOrFrom) { areaServed((AvailableAtOrFrom)value); return; }
-      if ("areaServeds".equals(key) && value instanceof AvailableAtOrFrom) { areaServed((AvailableAtOrFrom)value); return; }
       if ("availability".equals(key) && value instanceof ItemAvailability) { availability((ItemAvailability)value); return; }
       if ("availabilitys".equals(key) && value instanceof ItemAvailability) { availability((ItemAvailability)value); return; }
       if ("availabilityEnds".equals(key) && value instanceof java.util.Date) { availabilityEnds((java.util.Date)value); return; }
       if ("availabilityEndss".equals(key) && value instanceof java.util.Date) { availabilityEnds((java.util.Date)value); return; }
       if ("availabilityStarts".equals(key) && value instanceof java.util.Date) { availabilityStarts((java.util.Date)value); return; }
       if ("availabilityStartss".equals(key) && value instanceof java.util.Date) { availabilityStarts((java.util.Date)value); return; }
-      if ("availableAtOrFrom".equals(key) && value instanceof AvailableAtOrFrom) { availableAtOrFrom((AvailableAtOrFrom)value); return; }
-      if ("availableAtOrFroms".equals(key) && value instanceof AvailableAtOrFrom) { availableAtOrFrom((AvailableAtOrFrom)value); return; }
+      if ("availableAtOrFrom".equals(key) && value instanceof Place) { availableAtOrFrom((Place)value); return; }
+      if ("availableAtOrFroms".equals(key) && value instanceof Place) { availableAtOrFrom((Place)value); return; }
       if ("availableDeliveryMethod".equals(key) && value instanceof DeliveryMethod) { availableDeliveryMethod((DeliveryMethod)value); return; }
       if ("availableDeliveryMethods".equals(key) && value instanceof DeliveryMethod) { availableDeliveryMethod((DeliveryMethod)value); return; }
       if ("businessFunction".equals(key) && value instanceof BusinessFunction) { businessFunction((BusinessFunction)value); return; }
@@ -978,8 +1185,12 @@ public class Demand extends Intangible {
       if ("eligibleDurations".equals(key) && value instanceof QuantitativeValue) { eligibleDuration((QuantitativeValue)value); return; }
       if ("eligibleQuantity".equals(key) && value instanceof QuantitativeValue) { eligibleQuantity((QuantitativeValue)value); return; }
       if ("eligibleQuantitys".equals(key) && value instanceof QuantitativeValue) { eligibleQuantity((QuantitativeValue)value); return; }
-      if ("eligibleRegion".equals(key) && value instanceof EligibleRegion) { eligibleRegion((EligibleRegion)value); return; }
-      if ("eligibleRegions".equals(key) && value instanceof EligibleRegion) { eligibleRegion((EligibleRegion)value); return; }
+      if ("eligibleRegion".equals(key) && value instanceof GeoShape) { eligibleRegion((GeoShape)value); return; }
+      if ("eligibleRegions".equals(key) && value instanceof GeoShape) { eligibleRegion((GeoShape)value); return; }
+      if ("eligibleRegion".equals(key) && value instanceof Place) { eligibleRegion((Place)value); return; }
+      if ("eligibleRegions".equals(key) && value instanceof Place) { eligibleRegion((Place)value); return; }
+      if ("eligibleRegion".equals(key) && value instanceof String) { eligibleRegion((String)value); return; }
+      if ("eligibleRegions".equals(key) && value instanceof String) { eligibleRegion((String)value); return; }
       if ("ineligibleRegion".equals(key) && value instanceof GeoShape) { ineligibleRegion((GeoShape)value); return; }
       if ("ineligibleRegions".equals(key) && value instanceof GeoShape) { ineligibleRegion((GeoShape)value); return; }
       if ("ineligibleRegion".equals(key) && value instanceof Place) { ineligibleRegion((Place)value); return; }
@@ -988,6 +1199,14 @@ public class Demand extends Intangible {
       if ("ineligibleRegions".equals(key) && value instanceof String) { ineligibleRegion((String)value); return; }
       if ("eligibleTransactionVolume".equals(key) && value instanceof PriceSpecification) { eligibleTransactionVolume((PriceSpecification)value); return; }
       if ("eligibleTransactionVolumes".equals(key) && value instanceof PriceSpecification) { eligibleTransactionVolume((PriceSpecification)value); return; }
+      if ("gtin12".equals(key) && value instanceof Identifier) { gtin12((Identifier)value); return; }
+      if ("gtin12s".equals(key) && value instanceof Identifier) { gtin12((Identifier)value); return; }
+      if ("gtin13".equals(key) && value instanceof Identifier) { gtin13((Identifier)value); return; }
+      if ("gtin13s".equals(key) && value instanceof Identifier) { gtin13((Identifier)value); return; }
+      if ("gtin14".equals(key) && value instanceof Identifier) { gtin14((Identifier)value); return; }
+      if ("gtin14s".equals(key) && value instanceof Identifier) { gtin14((Identifier)value); return; }
+      if ("gtin8".equals(key) && value instanceof Identifier) { gtin8((Identifier)value); return; }
+      if ("gtin8s".equals(key) && value instanceof Identifier) { gtin8((Identifier)value); return; }
       if ("includesObject".equals(key) && value instanceof TypeAndQuantityNode) { includesObject((TypeAndQuantityNode)value); return; }
       if ("includesObjects".equals(key) && value instanceof TypeAndQuantityNode) { includesObject((TypeAndQuantityNode)value); return; }
       if ("inventoryLevel".equals(key) && value instanceof QuantitativeValue) { inventoryLevel((QuantitativeValue)value); return; }
@@ -1002,6 +1221,10 @@ public class Demand extends Intangible {
       if ("mpns".equals(key) && value instanceof String) { mpn((String)value); return; }
       if ("priceSpecification".equals(key) && value instanceof PriceSpecification) { priceSpecification((PriceSpecification)value); return; }
       if ("priceSpecifications".equals(key) && value instanceof PriceSpecification) { priceSpecification((PriceSpecification)value); return; }
+      if ("seller".equals(key) && value instanceof Participant) { seller((Participant)value); return; }
+      if ("sellers".equals(key) && value instanceof Participant) { seller((Participant)value); return; }
+      if ("sku".equals(key) && value instanceof Identifier) { sku((Identifier)value); return; }
+      if ("skus".equals(key) && value instanceof Identifier) { sku((Identifier)value); return; }
       if ("validFrom".equals(key) && value instanceof java.util.Date) { validFrom((java.util.Date)value); return; }
       if ("validFroms".equals(key) && value instanceof java.util.Date) { validFrom((java.util.Date)value); return; }
       if ("validThrough".equals(key) && value instanceof java.util.Date) { validThrough((java.util.Date)value); return; }

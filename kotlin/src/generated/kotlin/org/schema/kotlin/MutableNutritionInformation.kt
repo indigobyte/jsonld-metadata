@@ -2,6 +2,10 @@ package org.schema.kotlin
 import org.schema.*
 class MutableNutritionInformation {
   private val map = HashMap<String,Any>()
+  var calories: Energy
+    get() = map["calories"] as Energy
+    set(value) { map["calories"] = value }
+  fun calories(builder: MutableEnergy.() -> Unit) { map["calories"] = MutableEnergy().apply(builder).build() }
   var carbohydrateContent: Mass
     get() = map["carbohydrateContent"] as Mass
     set(value) { map["carbohydrateContent"] = value }
@@ -45,25 +49,28 @@ class MutableNutritionInformation {
     get() = map["unsaturatedFatContent"] as Mass
     set(value) { map["unsaturatedFatContent"] = value }
   fun unsaturatedFatContent(builder: MutableMass.() -> Unit) { map["unsaturatedFatContent"] = MutableMass().apply(builder).build() }
-  var additionalType: AdditionalType
-    get() = map["additionalType"] as AdditionalType
+  var additionalType: String
+    get() = map["additionalType"] as String
     set(value) { map["additionalType"] = value }
   var alternateName: String
     get() = map["alternateName"] as String
     set(value) { map["alternateName"] = value }
-  var description: DisambiguatingDescription
-    get() = map["description"] as DisambiguatingDescription
+  var description: Description
+    get() = map["description"] as Description
     set(value) { map["description"] = value }
-  var disambiguatingDescription: DisambiguatingDescription
-    get() = map["disambiguatingDescription"] as DisambiguatingDescription
+  var disambiguatingDescription: String
+    get() = map["disambiguatingDescription"] as String
     set(value) { map["disambiguatingDescription"] = value }
-  var image: Logo
-    get() = map["image"] as Logo
+  var image: Image
+    get() = map["image"] as Image
     set(value) { map["image"] = value }
   var mainEntityOfPage: Any
     get() = map["mainEntityOfPage"]!!
     set(value) { map["mainEntityOfPage"] = value }
   fun mainEntityOfPageCreativeWork(builder: MutableCreativeWork.() -> Unit) { map["mainEntityOfPage"] = MutableCreativeWork().apply(builder).build() }
+  var name: String
+    get() = map["name"] as String
+    set(value) { map["name"] = value }
   var sameAs: String
     get() = map["sameAs"] as String
     set(value) { map["sameAs"] = value }
@@ -74,8 +81,8 @@ class MutableNutritionInformation {
     get() = map["potentialAction"] as Action
     set(value) { map["potentialAction"] = value }
   fun potentialAction(builder: MutableAction.() -> Unit) { map["potentialAction"] = MutableAction().apply(builder).build() }
-  var identifier: Isbn
-    get() = map["identifier"] as Isbn
+  var identifier: Identifier
+    get() = map["identifier"] as Identifier
     set(value) { map["identifier"] = value }
   var subjectOf: Any
     get() = map["subjectOf"]!!

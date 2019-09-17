@@ -26,40 +26,57 @@ import java.util.*;
 /**
  * Event type: Sports event.
  */
-public class SportsEvent extends Event implements SportsEvent {
+public class SportsEvent extends Event {
   /**
-   * A competitor in a sports event.
+   * The home team in a sports event.
    */
-  @JsonIgnore public Person getCompetitorPerson() {
-    return (Person) getValue("competitor");
+  @JsonIgnore public Competitor getHomeTeam() {
+    return (Competitor) getValue("homeTeam");
+  }
+  /**
+   * The home team in a sports event.
+   */
+  @JsonIgnore public Collection<Competitor> getHomeTeams() {
+    final Object current = myData.get("homeTeam");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Competitor>) current;
+    }
+    return Arrays.asList((Competitor) current);
+  }
+  /**
+   * The away team in a sports event.
+   */
+  @JsonIgnore public Competitor getAwayTeam() {
+    return (Competitor) getValue("awayTeam");
+  }
+  /**
+   * The away team in a sports event.
+   */
+  @JsonIgnore public Collection<Competitor> getAwayTeams() {
+    final Object current = myData.get("awayTeam");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Competitor>) current;
+    }
+    return Arrays.asList((Competitor) current);
   }
   /**
    * A competitor in a sports event.
    */
-  @JsonIgnore public Collection<Person> getCompetitorPersons() {
+  @JsonIgnore public Competitor getCompetitor() {
+    return (Competitor) getValue("competitor");
+  }
+  /**
+   * A competitor in a sports event.
+   */
+  @JsonIgnore public Collection<Competitor> getCompetitors() {
     final Object current = myData.get("competitor");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<Person>) current;
+      return (Collection<Competitor>) current;
     }
-    return Arrays.asList((Person) current);
-  }
-  /**
-   * A competitor in a sports event.
-   */
-  @JsonIgnore public SportsTeam getCompetitorSportsTeam() {
-    return (SportsTeam) getValue("competitor");
-  }
-  /**
-   * A competitor in a sports event.
-   */
-  @JsonIgnore public Collection<SportsTeam> getCompetitorSportsTeams() {
-    final Object current = myData.get("competitor");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<SportsTeam>) current;
-    }
-    return Arrays.asList((SportsTeam) current);
+    return Arrays.asList((Competitor) current);
   }
   protected SportsEvent(java.util.Map<String,Object> data) {
     super(data);
@@ -76,38 +93,24 @@ public class SportsEvent extends Event implements SportsEvent {
       return new SportsEvent(myData);
     }
     /**
-     * A competitor in a sports event.
+     * The home team in a sports event.
      */
-    @NotNull public Builder competitor(@NotNull Person person) {
-      putValue("competitor", person);
+    @NotNull public Builder homeTeam(@NotNull Competitor competitor) {
+      putValue("homeTeam", competitor);
+      return this;
+    }
+    /**
+     * The away team in a sports event.
+     */
+    @NotNull public Builder awayTeam(@NotNull Competitor competitor) {
+      putValue("awayTeam", competitor);
       return this;
     }
     /**
      * A competitor in a sports event.
      */
-    @NotNull public Builder competitor(@NotNull Person.Builder person) {
-      putValue("competitor", person.build());
-      return this;
-    }
-    /**
-     * A competitor in a sports event.
-     */
-    @NotNull public Builder competitor(@NotNull SportsTeam sportsTeam) {
-      putValue("competitor", sportsTeam);
-      return this;
-    }
-    /**
-     * A competitor in a sports event.
-     */
-    @NotNull public Builder competitor(@NotNull SportsTeam.Builder sportsTeam) {
-      putValue("competitor", sportsTeam.build());
-      return this;
-    }
-    /**
-     * The subject matter of the content.
-     */
-    @NotNull public Builder about(@NotNull MainEntity mainEntity) {
-      putValue("about", mainEntity);
+    @NotNull public Builder competitor(@NotNull Competitor competitor) {
+      putValue("competitor", competitor);
       return this;
     }
     /**
@@ -258,13 +261,6 @@ public class SportsEvent extends Event implements SportsEvent {
       return this;
     }
     /**
-     * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
-     */
-    @NotNull public Builder duration(@NotNull LoanTerm loanTerm) {
-      putValue("duration", loanTerm);
-      return this;
-    }
-    /**
      * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      */
     @NotNull public Builder endDate(@NotNull java.util.Date date) {
@@ -295,22 +291,15 @@ public class SportsEvent extends Event implements SportsEvent {
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
      */
+    @NotNull public Builder inLanguage(@NotNull Language.Builder language) {
+      putValue("inLanguage", language.build());
+      return this;
+    }
+    /**
+     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     */
     @NotNull public Builder inLanguage(@NotNull String inLanguage) {
       putValue("inLanguage", inLanguage);
-      return this;
-    }
-    /**
-     * The location of for example where the event is happening, an organization is located, or where an action takes place.
-     */
-    @NotNull public Builder location(@NotNull SportsActivityLocation sportsActivityLocation) {
-      putValue("location", sportsActivityLocation);
-      return this;
-    }
-    /**
-     * The location of for example where the event is happening, an organization is located, or where an action takes place.
-     */
-    @NotNull public Builder location(@NotNull SportsActivityLocation.Builder sportsActivityLocation) {
-      putValue("location", sportsActivityLocation.build());
       return this;
     }
     /**
@@ -405,14 +394,31 @@ public class SportsEvent extends Event implements SportsEvent {
       return this;
     }
     /**
-     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
      */
-    @NotNull public Builder sponsor(@NotNull Funder funder) {
-      putValue("sponsor", funder);
+    @NotNull public Builder funder(@NotNull Organization organization) {
+      putValue("funder", organization);
       return this;
     }
-    @NotNull public Builder funder(@NotNull Funder funder) {
-      putValue("funder", funder);
+    /**
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
+     */
+    @NotNull public Builder funder(@NotNull Organization.Builder organization) {
+      putValue("funder", organization.build());
+      return this;
+    }
+    /**
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
+     */
+    @NotNull public Builder funder(@NotNull Person person) {
+      putValue("funder", person);
+      return this;
+    }
+    /**
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
+     */
+    @NotNull public Builder funder(@NotNull Person.Builder person) {
+      putValue("funder", person.build());
       return this;
     }
     /**
@@ -457,24 +463,26 @@ public class SportsEvent extends Event implements SportsEvent {
       putValue("typicalAgeRange", typicalAgeRange);
       return this;
     }
-    @NotNull public Builder workPerformed(@NotNull WorkPerformed workPerformed) {
-      putValue("workPerformed", workPerformed);
+    /**
+     * A work performed in some event, for example a play performed in a TheaterEvent.
+     */
+    @NotNull public Builder workPerformed(@NotNull CreativeWork creativeWork) {
+      putValue("workPerformed", creativeWork);
+      return this;
+    }
+    /**
+     * A work performed in some event, for example a play performed in a TheaterEvent.
+     */
+    @NotNull public Builder workPerformed(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("workPerformed", creativeWork.build());
       return this;
     }
     /**
      * A work featured in some event, e.g. exhibited in an ExhibitionEvent.
      *        Specific subproperties are available for workPerformed (e.g. a play), or a workPresented (a Movie at a ScreeningEvent).
      */
-    @NotNull public Builder workFeatured(@NotNull CreativeWork creativeWork) {
-      putValue("workFeatured", creativeWork);
-      return this;
-    }
-    /**
-     * A work featured in some event, e.g. exhibited in an ExhibitionEvent.
-     *        Specific subproperties are available for workPerformed (e.g. a play), or a workPresented (a Movie at a ScreeningEvent).
-     */
-    @NotNull public Builder workFeatured(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("workFeatured", creativeWork.build());
+    @NotNull public Builder workFeatured(@NotNull WorkFeatured workFeatured) {
+      putValue("workFeatured", workFeatured);
       return this;
     }
     /**
@@ -533,7 +541,10 @@ public class SportsEvent extends Event implements SportsEvent {
       putValue("composer", person.build());
       return this;
     }
-    @NotNull public Builder additionalType(@NotNull AdditionalType additionalType) {
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     */
+    @NotNull public Builder additionalType(@NotNull String additionalType) {
       putValue("additionalType", additionalType);
       return this;
     }
@@ -545,21 +556,10 @@ public class SportsEvent extends Event implements SportsEvent {
       return this;
     }
     /**
-     * A description of the item.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder description(@NotNull DisambiguatingDescription disambiguatingDescription) {
-      putValue("description", disambiguatingDescription);
-      return this;
-    }
-    @NotNull public Builder disambiguatingDescription(@NotNull DisambiguatingDescription disambiguatingDescription) {
+    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
       putValue("disambiguatingDescription", disambiguatingDescription);
-      return this;
-    }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     */
-    @NotNull public Builder image(@NotNull Logo logo) {
-      putValue("image", logo);
       return this;
     }
     /**
@@ -581,6 +581,13 @@ public class SportsEvent extends Event implements SportsEvent {
      */
     @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
       putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
+    /**
+     * The name of the item.
+     */
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -609,14 +616,6 @@ public class SportsEvent extends Event implements SportsEvent {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
-      return this;
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     */
-    @NotNull public Builder identifier(@NotNull Isbn isbn) {
-      putValue("identifier", isbn);
       return this;
     }
     /**
@@ -655,10 +654,12 @@ public class SportsEvent extends Event implements SportsEvent {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("competitor".equals(key) && value instanceof Person) { competitor((Person)value); return; }
-      if ("competitors".equals(key) && value instanceof Person) { competitor((Person)value); return; }
-      if ("competitor".equals(key) && value instanceof SportsTeam) { competitor((SportsTeam)value); return; }
-      if ("competitors".equals(key) && value instanceof SportsTeam) { competitor((SportsTeam)value); return; }
+      if ("homeTeam".equals(key) && value instanceof Competitor) { homeTeam((Competitor)value); return; }
+      if ("homeTeams".equals(key) && value instanceof Competitor) { homeTeam((Competitor)value); return; }
+      if ("awayTeam".equals(key) && value instanceof Competitor) { awayTeam((Competitor)value); return; }
+      if ("awayTeams".equals(key) && value instanceof Competitor) { awayTeam((Competitor)value); return; }
+      if ("competitor".equals(key) && value instanceof Competitor) { competitor((Competitor)value); return; }
+      if ("competitors".equals(key) && value instanceof Competitor) { competitor((Competitor)value); return; }
       super.fromMap(key, value);
     }
   }

@@ -10,22 +10,20 @@ class MutableFindAction {
   var endTime: java.util.Date
     get() = map["endTime"] as java.util.Date
     set(value) { map["endTime"] = value }
-  var instrument: Language
-    get() = map["instrument"] as Language
+  var instrument: Instrument
+    get() = map["instrument"] as Instrument
     set(value) { map["instrument"] = value }
-  var location: SportsActivityLocation
-    get() = map["location"] as SportsActivityLocation
+  var location: Location
+    get() = map["location"] as Location
     set(value) { map["location"] = value }
-  fun location(builder: MutableSportsActivityLocation.() -> Unit) { map["location"] = MutableSportsActivityLocation().apply(builder).build() }
-  var object: Option
-    get() = map["object"] as Option
+  var object: Object
+    get() = map["object"] as Object
     set(value) { map["object"] = value }
-  var participant: RealEstateAgent
-    get() = map["participant"] as RealEstateAgent
+  var participant: Participant
+    get() = map["participant"] as Participant
     set(value) { map["participant"] = value }
-  fun participant(builder: MutableRealEstateAgent.() -> Unit) { map["participant"] = MutableRealEstateAgent().apply(builder).build() }
-  var result: ResultComment
-    get() = map["result"] as ResultComment
+  var result: Result
+    get() = map["result"] as Result
     set(value) { map["result"] = value }
   var startTime: java.util.Date
     get() = map["startTime"] as java.util.Date
@@ -41,25 +39,28 @@ class MutableFindAction {
     get() = map["target"] as EntryPoint
     set(value) { map["target"] = value }
   fun target(builder: MutableEntryPoint.() -> Unit) { map["target"] = MutableEntryPoint().apply(builder).build() }
-  var additionalType: AdditionalType
-    get() = map["additionalType"] as AdditionalType
+  var additionalType: String
+    get() = map["additionalType"] as String
     set(value) { map["additionalType"] = value }
   var alternateName: String
     get() = map["alternateName"] as String
     set(value) { map["alternateName"] = value }
-  var description: DisambiguatingDescription
-    get() = map["description"] as DisambiguatingDescription
+  var description: Description
+    get() = map["description"] as Description
     set(value) { map["description"] = value }
-  var disambiguatingDescription: DisambiguatingDescription
-    get() = map["disambiguatingDescription"] as DisambiguatingDescription
+  var disambiguatingDescription: String
+    get() = map["disambiguatingDescription"] as String
     set(value) { map["disambiguatingDescription"] = value }
-  var image: Logo
-    get() = map["image"] as Logo
+  var image: Image
+    get() = map["image"] as Image
     set(value) { map["image"] = value }
   var mainEntityOfPage: Any
     get() = map["mainEntityOfPage"]!!
     set(value) { map["mainEntityOfPage"] = value }
   fun mainEntityOfPageCreativeWork(builder: MutableCreativeWork.() -> Unit) { map["mainEntityOfPage"] = MutableCreativeWork().apply(builder).build() }
+  var name: String
+    get() = map["name"] as String
+    set(value) { map["name"] = value }
   var sameAs: String
     get() = map["sameAs"] as String
     set(value) { map["sameAs"] = value }
@@ -70,8 +71,8 @@ class MutableFindAction {
     get() = map["potentialAction"] as Action
     set(value) { map["potentialAction"] = value }
   fun potentialAction(builder: MutableAction.() -> Unit) { map["potentialAction"] = MutableAction().apply(builder).build() }
-  var identifier: Isbn
-    get() = map["identifier"] as Isbn
+  var identifier: Identifier
+    get() = map["identifier"] as Identifier
     set(value) { map["identifier"] = value }
   var subjectOf: Any
     get() = map["subjectOf"]!!

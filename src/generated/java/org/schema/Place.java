@@ -26,7 +26,7 @@ import java.util.*;
 /**
  * Entities that have a somewhat fixed, physical extension.
  */
-public class Place extends Thing implements ToLocation, EligibleRegion, WorkLocation, FromLocation, ExerciseCourse, SpatialCoverage, HomeLocation, Course, AvailableAtOrFrom {
+public class Place extends Thing {
   /**
    * Physical address of the item.
    */
@@ -234,6 +234,23 @@ public class Place extends Thing implements ToLocation, EligibleRegion, WorkLoca
     return Arrays.asList((GeoShape) current);
   }
   /**
+   * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
+   */
+  @JsonIgnore public Identifier getGlobalLocationNumber() {
+    return (Identifier) getValue("globalLocationNumber");
+  }
+  /**
+   * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
+   */
+  @JsonIgnore public Collection<Identifier> getGlobalLocationNumbers() {
+    final Object current = myData.get("globalLocationNumber");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Identifier>) current;
+    }
+    return Arrays.asList((Identifier) current);
+  }
+  /**
    * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
    */
   @JsonIgnore public String getIsicV4() {
@@ -250,16 +267,39 @@ public class Place extends Thing implements ToLocation, EligibleRegion, WorkLoca
     }
     return Arrays.asList((String) current);
   }
-  @JsonIgnore public Logo getLogo() {
-    return (Logo) getValue("logo");
+  /**
+   * An associated logo.
+   */
+  @JsonIgnore public ImageObject getLogoImageObject() {
+    return (ImageObject) getValue("logo");
   }
-  @JsonIgnore public Collection<Logo> getLogos() {
+  /**
+   * An associated logo.
+   */
+  @JsonIgnore public Collection<ImageObject> getLogoImageObjects() {
     final Object current = myData.get("logo");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<Logo>) current;
+      return (Collection<ImageObject>) current;
     }
-    return Arrays.asList((Logo) current);
+    return Arrays.asList((ImageObject) current);
+  }
+  /**
+   * An associated logo.
+   */
+  @JsonIgnore public String getLogoString() {
+    return (String) getValue("logo");
+  }
+  /**
+   * An associated logo.
+   */
+  @JsonIgnore public Collection<String> getLogoStrings() {
+    final Object current = myData.get("logo");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
   }
   /**
    * A URL to a map of the place.
@@ -348,16 +388,39 @@ public class Place extends Thing implements ToLocation, EligibleRegion, WorkLoca
     }
     return Arrays.asList((OpeningHoursSpecification) current);
   }
-  @JsonIgnore public Photo getPhoto() {
-    return (Photo) getValue("photo");
+  /**
+   * A photograph of this place.
+   */
+  @JsonIgnore public ImageObject getPhotoImageObject() {
+    return (ImageObject) getValue("photo");
   }
-  @JsonIgnore public Collection<Photo> getPhotos() {
+  /**
+   * A photograph of this place.
+   */
+  @JsonIgnore public Collection<ImageObject> getPhotoImageObjects() {
     final Object current = myData.get("photo");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<Photo>) current;
+      return (Collection<ImageObject>) current;
     }
-    return Arrays.asList((Photo) current);
+    return Arrays.asList((ImageObject) current);
+  }
+  /**
+   * A photograph of this place.
+   */
+  @JsonIgnore public Photograph getPhotoPhotograph() {
+    return (Photograph) getValue("photo");
+  }
+  /**
+   * A photograph of this place.
+   */
+  @JsonIgnore public Collection<Photograph> getPhotoPhotographs() {
+    final Object current = myData.get("photo");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Photograph>) current;
+    }
+    return Arrays.asList((Photograph) current);
   }
   /**
    * A review of the item.
@@ -612,13 +675,37 @@ public class Place extends Thing implements ToLocation, EligibleRegion, WorkLoca
       return this;
     }
     /**
+     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
+     */
+    @NotNull public Builder globalLocationNumber(@NotNull Identifier identifier) {
+      putValue("globalLocationNumber", identifier);
+      return this;
+    }
+    /**
      * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
      */
     @NotNull public Builder isicV4(@NotNull String isicV4) {
       putValue("isicV4", isicV4);
       return this;
     }
-    @NotNull public Builder logo(@NotNull Logo logo) {
+    /**
+     * An associated logo.
+     */
+    @NotNull public Builder logo(@NotNull ImageObject imageObject) {
+      putValue("logo", imageObject);
+      return this;
+    }
+    /**
+     * An associated logo.
+     */
+    @NotNull public Builder logo(@NotNull ImageObject.Builder imageObject) {
+      putValue("logo", imageObject.build());
+      return this;
+    }
+    /**
+     * An associated logo.
+     */
+    @NotNull public Builder logo(@NotNull String logo) {
       putValue("logo", logo);
       return this;
     }
@@ -680,8 +767,32 @@ public class Place extends Thing implements ToLocation, EligibleRegion, WorkLoca
       putValue("specialOpeningHoursSpecification", openingHoursSpecification.build());
       return this;
     }
-    @NotNull public Builder photo(@NotNull Photo photo) {
-      putValue("photo", photo);
+    /**
+     * A photograph of this place.
+     */
+    @NotNull public Builder photo(@NotNull ImageObject imageObject) {
+      putValue("photo", imageObject);
+      return this;
+    }
+    /**
+     * A photograph of this place.
+     */
+    @NotNull public Builder photo(@NotNull ImageObject.Builder imageObject) {
+      putValue("photo", imageObject.build());
+      return this;
+    }
+    /**
+     * A photograph of this place.
+     */
+    @NotNull public Builder photo(@NotNull Photograph photograph) {
+      putValue("photo", photograph);
+      return this;
+    }
+    /**
+     * A photograph of this place.
+     */
+    @NotNull public Builder photo(@NotNull Photograph.Builder photograph) {
+      putValue("photo", photograph.build());
       return this;
     }
     /**
@@ -749,7 +860,10 @@ public class Place extends Thing implements ToLocation, EligibleRegion, WorkLoca
       putValue("smokingAllowed", smokingAllowed);
       return this;
     }
-    @NotNull public Builder additionalType(@NotNull AdditionalType additionalType) {
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     */
+    @NotNull public Builder additionalType(@NotNull String additionalType) {
       putValue("additionalType", additionalType);
       return this;
     }
@@ -761,21 +875,10 @@ public class Place extends Thing implements ToLocation, EligibleRegion, WorkLoca
       return this;
     }
     /**
-     * A description of the item.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder description(@NotNull DisambiguatingDescription disambiguatingDescription) {
-      putValue("description", disambiguatingDescription);
-      return this;
-    }
-    @NotNull public Builder disambiguatingDescription(@NotNull DisambiguatingDescription disambiguatingDescription) {
+    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
       putValue("disambiguatingDescription", disambiguatingDescription);
-      return this;
-    }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     */
-    @NotNull public Builder image(@NotNull Logo logo) {
-      putValue("image", logo);
       return this;
     }
     /**
@@ -797,6 +900,13 @@ public class Place extends Thing implements ToLocation, EligibleRegion, WorkLoca
      */
     @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
       putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
+    /**
+     * The name of the item.
+     */
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -825,14 +935,6 @@ public class Place extends Thing implements ToLocation, EligibleRegion, WorkLoca
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
-      return this;
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     */
-    @NotNull public Builder identifier(@NotNull Isbn isbn) {
-      putValue("identifier", isbn);
       return this;
     }
     /**
@@ -895,10 +997,14 @@ public class Place extends Thing implements ToLocation, EligibleRegion, WorkLoca
       if ("geos".equals(key) && value instanceof GeoCoordinates) { geo((GeoCoordinates)value); return; }
       if ("geo".equals(key) && value instanceof GeoShape) { geo((GeoShape)value); return; }
       if ("geos".equals(key) && value instanceof GeoShape) { geo((GeoShape)value); return; }
+      if ("globalLocationNumber".equals(key) && value instanceof Identifier) { globalLocationNumber((Identifier)value); return; }
+      if ("globalLocationNumbers".equals(key) && value instanceof Identifier) { globalLocationNumber((Identifier)value); return; }
       if ("isicV4".equals(key) && value instanceof String) { isicV4((String)value); return; }
       if ("isicV4s".equals(key) && value instanceof String) { isicV4((String)value); return; }
-      if ("logo".equals(key) && value instanceof Logo) { logo((Logo)value); return; }
-      if ("logos".equals(key) && value instanceof Logo) { logo((Logo)value); return; }
+      if ("logo".equals(key) && value instanceof ImageObject) { logo((ImageObject)value); return; }
+      if ("logos".equals(key) && value instanceof ImageObject) { logo((ImageObject)value); return; }
+      if ("logo".equals(key) && value instanceof String) { logo((String)value); return; }
+      if ("logos".equals(key) && value instanceof String) { logo((String)value); return; }
       if ("hasMap".equals(key) && value instanceof Map) { hasMap((Map)value); return; }
       if ("hasMaps".equals(key) && value instanceof Map) { hasMap((Map)value); return; }
       if ("hasMap".equals(key) && value instanceof String) { hasMap((String)value); return; }
@@ -909,8 +1015,10 @@ public class Place extends Thing implements ToLocation, EligibleRegion, WorkLoca
       if ("openingHoursSpecifications".equals(key) && value instanceof OpeningHoursSpecification) { openingHoursSpecification((OpeningHoursSpecification)value); return; }
       if ("specialOpeningHoursSpecification".equals(key) && value instanceof OpeningHoursSpecification) { specialOpeningHoursSpecification((OpeningHoursSpecification)value); return; }
       if ("specialOpeningHoursSpecifications".equals(key) && value instanceof OpeningHoursSpecification) { specialOpeningHoursSpecification((OpeningHoursSpecification)value); return; }
-      if ("photo".equals(key) && value instanceof Photo) { photo((Photo)value); return; }
-      if ("photos".equals(key) && value instanceof Photo) { photo((Photo)value); return; }
+      if ("photo".equals(key) && value instanceof ImageObject) { photo((ImageObject)value); return; }
+      if ("photos".equals(key) && value instanceof ImageObject) { photo((ImageObject)value); return; }
+      if ("photo".equals(key) && value instanceof Photograph) { photo((Photograph)value); return; }
+      if ("photos".equals(key) && value instanceof Photograph) { photo((Photograph)value); return; }
       if ("review".equals(key) && value instanceof Review) { review((Review)value); return; }
       if ("reviews".equals(key) && value instanceof Review) { review((Review)value); return; }
       if ("slogan".equals(key) && value instanceof String) { slogan((String)value); return; }

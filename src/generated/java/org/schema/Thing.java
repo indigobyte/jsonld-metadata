@@ -27,7 +27,7 @@ import java.util.*;
  * The most generic type of item.
  */
 @JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
-public class Thing implements Collection, ActionOption, TargetCollection, Option, Replacee, Replacer {
+public class Thing {
   @JsonProperty("@type") public String getJsonLdType() {
     return getClass().getSimpleName();
   }
@@ -43,16 +43,22 @@ public class Thing implements Collection, ActionOption, TargetCollection, Option
     }
     return current;
   }
-  @JsonIgnore public AdditionalType getAdditionalType() {
-    return (AdditionalType) getValue("additionalType");
+  /**
+   * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+   */
+  @JsonIgnore public String getAdditionalType() {
+    return (String) getValue("additionalType");
   }
-  @JsonIgnore public Collection<AdditionalType> getAdditionalTypes() {
+  /**
+   * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+   */
+  @JsonIgnore public Collection<String> getAdditionalTypes() {
     final Object current = myData.get("additionalType");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<AdditionalType>) current;
+      return (Collection<String>) current;
     }
-    return Arrays.asList((AdditionalType) current);
+    return Arrays.asList((String) current);
   }
   /**
    * An alias for the item.
@@ -72,49 +78,21 @@ public class Thing implements Collection, ActionOption, TargetCollection, Option
     return Arrays.asList((String) current);
   }
   /**
-   * A description of the item.
+   * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
    */
-  @JsonIgnore public DisambiguatingDescription getDescription() {
-    return (DisambiguatingDescription) getValue("description");
+  @JsonIgnore public String getDisambiguatingDescription() {
+    return (String) getValue("disambiguatingDescription");
   }
   /**
-   * A description of the item.
+   * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
    */
-  @JsonIgnore public Collection<DisambiguatingDescription> getDescriptions() {
-    final Object current = myData.get("description");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DisambiguatingDescription>) current;
-    }
-    return Arrays.asList((DisambiguatingDescription) current);
-  }
-  @JsonIgnore public DisambiguatingDescription getDisambiguatingDescription() {
-    return (DisambiguatingDescription) getValue("disambiguatingDescription");
-  }
-  @JsonIgnore public Collection<DisambiguatingDescription> getDisambiguatingDescriptions() {
+  @JsonIgnore public Collection<String> getDisambiguatingDescriptions() {
     final Object current = myData.get("disambiguatingDescription");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<DisambiguatingDescription>) current;
+      return (Collection<String>) current;
     }
-    return Arrays.asList((DisambiguatingDescription) current);
-  }
-  /**
-   * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-   */
-  @JsonIgnore public Logo getImage() {
-    return (Logo) getValue("image");
-  }
-  /**
-   * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-   */
-  @JsonIgnore public Collection<Logo> getImages() {
-    final Object current = myData.get("image");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Logo>) current;
-    }
-    return Arrays.asList((Logo) current);
+    return Arrays.asList((String) current);
   }
   /**
    * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -144,6 +122,23 @@ public class Thing implements Collection, ActionOption, TargetCollection, Option
    */
   @JsonIgnore public Collection<String> getMainEntityOfPageStrings() {
     final Object current = myData.get("mainEntityOfPage");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * The name of the item.
+   */
+  @JsonIgnore public String getName() {
+    return (String) getValue("name");
+  }
+  /**
+   * The name of the item.
+   */
+  @JsonIgnore public Collection<String> getNames() {
+    final Object current = myData.get("name");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<String>) current;
@@ -200,25 +195,6 @@ public class Thing implements Collection, ActionOption, TargetCollection, Option
       return (Collection<Action>) current;
     }
     return Arrays.asList((Action) current);
-  }
-  /**
-   * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-   *         
-   */
-  @JsonIgnore public Isbn getIdentifier() {
-    return (Isbn) getValue("identifier");
-  }
-  /**
-   * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-   *         
-   */
-  @JsonIgnore public Collection<Isbn> getIdentifiers() {
-    final Object current = myData.get("identifier");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Isbn>) current;
-    }
-    return Arrays.asList((Isbn) current);
   }
   /**
    * A CreativeWork or Event about this Thing.
@@ -299,7 +275,10 @@ public class Thing implements Collection, ActionOption, TargetCollection, Option
     @NotNull public Thing build() {
       return new Thing(myData);
     }
-    @NotNull public Builder additionalType(@NotNull AdditionalType additionalType) {
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     */
+    @NotNull public Builder additionalType(@NotNull String additionalType) {
       putValue("additionalType", additionalType);
       return this;
     }
@@ -311,21 +290,10 @@ public class Thing implements Collection, ActionOption, TargetCollection, Option
       return this;
     }
     /**
-     * A description of the item.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder description(@NotNull DisambiguatingDescription disambiguatingDescription) {
-      putValue("description", disambiguatingDescription);
-      return this;
-    }
-    @NotNull public Builder disambiguatingDescription(@NotNull DisambiguatingDescription disambiguatingDescription) {
+    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
       putValue("disambiguatingDescription", disambiguatingDescription);
-      return this;
-    }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     */
-    @NotNull public Builder image(@NotNull Logo logo) {
-      putValue("image", logo);
       return this;
     }
     /**
@@ -347,6 +315,13 @@ public class Thing implements Collection, ActionOption, TargetCollection, Option
      */
     @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
       putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
+    /**
+     * The name of the item.
+     */
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -375,14 +350,6 @@ public class Thing implements Collection, ActionOption, TargetCollection, Option
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
-      return this;
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     */
-    @NotNull public Builder identifier(@NotNull Isbn isbn) {
-      putValue("identifier", isbn);
       return this;
     }
     /**
@@ -440,28 +407,24 @@ public class Thing implements Collection, ActionOption, TargetCollection, Option
       }
     }
     protected void fromMap(String key, Object value) {
-      if ("additionalType".equals(key) && value instanceof AdditionalType) { additionalType((AdditionalType)value); return; }
-      if ("additionalTypes".equals(key) && value instanceof AdditionalType) { additionalType((AdditionalType)value); return; }
+      if ("additionalType".equals(key) && value instanceof String) { additionalType((String)value); return; }
+      if ("additionalTypes".equals(key) && value instanceof String) { additionalType((String)value); return; }
       if ("alternateName".equals(key) && value instanceof String) { alternateName((String)value); return; }
       if ("alternateNames".equals(key) && value instanceof String) { alternateName((String)value); return; }
-      if ("description".equals(key) && value instanceof DisambiguatingDescription) { description((DisambiguatingDescription)value); return; }
-      if ("descriptions".equals(key) && value instanceof DisambiguatingDescription) { description((DisambiguatingDescription)value); return; }
-      if ("disambiguatingDescription".equals(key) && value instanceof DisambiguatingDescription) { disambiguatingDescription((DisambiguatingDescription)value); return; }
-      if ("disambiguatingDescriptions".equals(key) && value instanceof DisambiguatingDescription) { disambiguatingDescription((DisambiguatingDescription)value); return; }
-      if ("image".equals(key) && value instanceof Logo) { image((Logo)value); return; }
-      if ("images".equals(key) && value instanceof Logo) { image((Logo)value); return; }
+      if ("disambiguatingDescription".equals(key) && value instanceof String) { disambiguatingDescription((String)value); return; }
+      if ("disambiguatingDescriptions".equals(key) && value instanceof String) { disambiguatingDescription((String)value); return; }
       if ("mainEntityOfPage".equals(key) && value instanceof CreativeWork) { mainEntityOfPage((CreativeWork)value); return; }
       if ("mainEntityOfPages".equals(key) && value instanceof CreativeWork) { mainEntityOfPage((CreativeWork)value); return; }
       if ("mainEntityOfPage".equals(key) && value instanceof String) { mainEntityOfPage((String)value); return; }
       if ("mainEntityOfPages".equals(key) && value instanceof String) { mainEntityOfPage((String)value); return; }
+      if ("name".equals(key) && value instanceof String) { name((String)value); return; }
+      if ("names".equals(key) && value instanceof String) { name((String)value); return; }
       if ("sameAs".equals(key) && value instanceof String) { sameAs((String)value); return; }
       if ("sameAss".equals(key) && value instanceof String) { sameAs((String)value); return; }
       if ("url".equals(key) && value instanceof String) { url((String)value); return; }
       if ("urls".equals(key) && value instanceof String) { url((String)value); return; }
       if ("potentialAction".equals(key) && value instanceof Action) { potentialAction((Action)value); return; }
       if ("potentialActions".equals(key) && value instanceof Action) { potentialAction((Action)value); return; }
-      if ("identifier".equals(key) && value instanceof Isbn) { identifier((Isbn)value); return; }
-      if ("identifiers".equals(key) && value instanceof Isbn) { identifier((Isbn)value); return; }
       if ("subjectOf".equals(key) && value instanceof CreativeWork) { subjectOf((CreativeWork)value); return; }
       if ("subjectOfs".equals(key) && value instanceof CreativeWork) { subjectOf((CreativeWork)value); return; }
       if ("subjectOf".equals(key) && value instanceof Event) { subjectOf((Event)value); return; }
