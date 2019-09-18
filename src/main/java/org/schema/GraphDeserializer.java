@@ -34,7 +34,7 @@ public class GraphDeserializer extends JsonDeserializer<Graph> {
             g.things.add(ThingDeserializer.fromMap(t));
         }
 
-        return null;
+        return g;
     }
 
 }

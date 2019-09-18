@@ -1,1 +1,82 @@
-{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://www.lecremedelacrumb.com/#website","url":"https://www.lecremedelacrumb.com/","name":"Creme De La Crumb","potentialAction":{"@type":"SearchAction","target":"https://www.lecremedelacrumb.com/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"ImageObject","@id":"https://www.lecremedelacrumb.com/fire-roasted-salsa/#primaryimage","url":"https://www.lecremedelacrumb.com/wp-content/uploads/2015/07/fire-roasted-salsa-5.jpg","width":680,"height":1020,"caption":"Fire Roasted Salsa | Creme de la Crumb"},{"@type":"WebPage","@id":"https://www.lecremedelacrumb.com/fire-roasted-salsa/#webpage","url":"https://www.lecremedelacrumb.com/fire-roasted-salsa/","inLanguage":"en-US","name":"Fire Roasted Salsa | Creme De La Crumb","isPartOf":{"@id":"https://www.lecremedelacrumb.com/#website"},"primaryImageOfPage":{"@id":"https://www.lecremedelacrumb.com/fire-roasted-salsa/#primaryimage"},"datePublished":"2015-07-10T13:00:35+00:00","dateModified":"2018-09-07T21:22:05+00:00","author":{"@id":"https://www.lecremedelacrumb.com/#/schema/person/fd3774af0495fba3aa301a6a7a47d826"},"description":"Easy restaurant-style Fire Roasted Salsa you can whip up in the blender with zesty lime, and spicy roasted tomatoes!"},{"@type":["Person"],"@id":"https://www.lecremedelacrumb.com/#/schema/person/fd3774af0495fba3aa301a6a7a47d826","name":"Tiffany","description":"Hey there, I\u2019m Tiffany - cook, photographer, mother, and semi-professional taco eater. I am passionate about turning simple flavors and ingredients into tasty meals the whole family will love, with minimal prep and cleanup so there\u2019s more time to spend eating and enjoying. Stay awhile, and help yourself to a taco or two.","sameAs":["https://www.facebook.com/cremedelacrumbblog/","https://twitter.com/CremedelaCrumb1"]},{"@context":"http://schema.org/","@type":"Recipe","name":"Fire Roasted Salsa","author":{"@type":"Person","name":"Tiffany"},"description":"Easy restaurant-style Fire Roasted Salsa you can whip up in the blender with zesty lime, and spicy roasted tomatoes!","datePublished":"2018-09-07T15:22:06+00:00","image":["https://www.lecremedelacrumb.com/wp-content/uploads/2015/07/fire-roasted-salsa-3.jpg"],"recipeYield":"8","prepTime":"PT10M","recipeIngredient":["2 15-ounce cans fire roasted tomatoes","1 4-ounce can  diced green chilis","1 small red onion,  (diced)","1 large handful  cilantro leaves","juice of 1 lime","1 tablespoon minced garlic","1-2 teaspoons  salt,  (to taste)","1-2  jalape\u00f1os,  (seeded and diced)"],"recipeInstructions":[{"@type":"HowToStep","text":"Add all ingredients to a blender or food processor and pulse until all ingredients come together and pureed."},{"@type":"HowToStep","text":"Serve immediately or, for best flavor cover and chill for 1-2 hours or longer. Store chilled in airtight container."}],"recipeCategory":["Appetizer","Sauce / Condiment"],"recipeCuisine":["Mexican"],"keywords":"salsa, spicy","aggregateRating":{"@type":"AggregateRating","ratingValue":"5","ratingCount":"1"},"@id":"https://www.lecremedelacrumb.com/fire-roasted-salsa/#recipe","isPartOf":{"@id":"https://www.lecremedelacrumb.com/fire-roasted-salsa/#webpage"},"mainEntityOfPage":"https://www.lecremedelacrumb.com/fire-roasted-salsa/#webpage"}]}
+{
+  "@context": "https://schema.org/",
+  "@graph": [{
+    "@context": "https://schema.org/",
+    "@type": "WebSite",
+    "@id": "https://www.lecremedelacrumb.com/#website",
+    "url": "https://www.lecremedelacrumb.com/",
+    "name": "Creme De La Crumb",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://www.lecremedelacrumb.com/?s={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }, {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "@id": "https://www.lecremedelacrumb.com/fire-roasted-salsa/#primaryimage",
+    "url": "https://www.lecremedelacrumb.com/wp-content/uploads/2015/07/fire-roasted-salsa-5.jpg",
+    "width": 680,
+    "height": 1020,
+    "caption": "Fire Roasted Salsa | Creme de la Crumb"
+  }, {
+    "@type": "WebPage",
+    "@context": "https://schema.org/",
+    "@id": "https://www.lecremedelacrumb.com/fire-roasted-salsa/#webpage",
+    "url": "https://www.lecremedelacrumb.com/fire-roasted-salsa/",
+    "inLanguage": "en-US",
+    "name": "Fire Roasted Salsa | Creme De La Crumb",
+    "isPartOf": {
+      "@id": "https://www.lecremedelacrumb.com/#website"
+    },
+    "primaryImageOfPage": {
+      "@id": "https://www.lecremedelacrumb.com/fire-roasted-salsa/#primaryimage"
+    },
+    "datePublished": "2015-07-10T13:00:35+00:00",
+    "dateModified": "2018-09-07T21:22:05+00:00",
+    "author": {
+      "@id": "https://www.lecremedelacrumb.com/#/schema/person/fd3774af0495fba3aa301a6a7a47d826"
+    },
+    "description": "Easy restaurant-style Fire Roasted Salsa you can whip up in the blender with zesty lime, and spicy roasted tomatoes!"
+  }, {
+    "@type": ["Person"],
+    "@id": "https://www.lecremedelacrumb.com/#/schema/person/fd3774af0495fba3aa301a6a7a47d826",
+    "name": "Tiffany",
+    "description": "Hey there, I\u2019m Tiffany - cook, photographer, mother, and semi-professional taco eater. I am passionate about turning simple flavors and ingredients into tasty meals the whole family will love, with minimal prep and cleanup so there\u2019s more time to spend eating and enjoying. Stay awhile, and help yourself to a taco or two.",
+    "sameAs": ["https://www.facebook.com/cremedelacrumbblog/", "https://twitter.com/CremedelaCrumb1"]
+  }, {
+    "@context": "http://schema.org/",
+    "@type": "Recipe",
+    "name": "Fire Roasted Salsa",
+    "author": {
+      "@type": "Person",
+      "name": "Tiffany"
+    },
+    "description": "Easy restaurant-style Fire Roasted Salsa you can whip up in the blender with zesty lime, and spicy roasted tomatoes!",
+    "datePublished": "2018-09-07T15:22:06+00:00",
+    "image": ["https://www.lecremedelacrumb.com/wp-content/uploads/2015/07/fire-roasted-salsa-3.jpg"],
+    "recipeYield": "8",
+    "prepTime": "PT10M",
+    "recipeIngredient": ["2 15-ounce cans fire roasted tomatoes", "1 4-ounce can  diced green chilis", "1 small red onion,  (diced)", "1 large handful  cilantro leaves", "juice of 1 lime", "1 tablespoon minced garlic", "1-2 teaspoons  salt,  (to taste)", "1-2  jalape\u00f1os,  (seeded and diced)"],
+    "recipeInstructions": [{
+      "@type": "HowToStep",
+      "text": "Add all ingredients to a blender or food processor and pulse until all ingredients come together and pureed."
+    }, {
+      "@type": "HowToStep",
+      "text": "Serve immediately or, for best flavor cover and chill for 1-2 hours or longer. Store chilled in airtight container."
+    }],
+    "recipeCategory": ["Appetizer", "Sauce / Condiment"],
+    "recipeCuisine": ["Mexican"],
+    "keywords": "salsa, spicy",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "ratingCount": "1"
+    },
+    "@id": "https://www.lecremedelacrumb.com/fire-roasted-salsa/#recipe",
+    "isPartOf": {
+      "@id": "https://www.lecremedelacrumb.com/fire-roasted-salsa/#webpage"
+    },
+    "mainEntityOfPage": "https://www.lecremedelacrumb.com/fire-roasted-salsa/#webpage"
+  }]
+}

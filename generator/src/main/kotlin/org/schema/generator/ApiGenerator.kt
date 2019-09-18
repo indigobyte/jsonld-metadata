@@ -159,7 +159,10 @@ class ThingDeserializer extends JsonDeserializer<Thing> {
 
     @Nullable
     static Thing fromMap(Map<String, Object> result) {
-        if (!"http://schema.org/".equals(result.get("@context"))) {
+        final Object context = result.get("@context");
+        if (context == null) return null;
+        
+        if (!context.toString().matches("https?://schema.org/")) {
             return null;
         }
 
