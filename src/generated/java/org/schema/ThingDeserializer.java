@@ -47,7 +47,7 @@ class ThingDeserializer extends JsonDeserializer<Thing> {
     static Thing fromMap(Map<String, Object> result) {
         final Object context = result.get("@context");
         if (context == null) return null;
-
+        
         if (!context.toString().matches("https?://schema.org/")) {
             return null;
         }
