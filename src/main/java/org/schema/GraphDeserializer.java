@@ -27,11 +27,21 @@ public class GraphDeserializer extends JsonDeserializer<Graph> {
         if (type == null || !(type instanceof List)) {
             return null;
         }
-
+        
         Graph g = new Graph();
+        
+        final Object context = result.get("@context");
+        if (context != null && (context instanceof String)) {
+            g.context = (String)context;
+        }
 
+        
         for (java.util.Map<String, Object> t: (List<java.util.Map<String, Object>>) type) {
-            g.things.add(ThingDeserializer.fromMap(t));
+            if (g.context != null) {
+                g.things.add(ThingDeserializer.fromMap(t, g.context));
+            } else {
+                g.things.add(ThingDeserializer.fromMap(t));
+            }
         }
 
         return g;

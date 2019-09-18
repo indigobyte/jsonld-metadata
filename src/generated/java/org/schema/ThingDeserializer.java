@@ -44,10 +44,7 @@ class ThingDeserializer extends JsonDeserializer<Thing> {
     }
 
     @Nullable
-    static Thing fromMap(Map<String, Object> result) {
-        final Object context = result.get("@context");
-        if (context == null) return null;
-        
+    static Thing fromMap(Map<String, Object> result, String context) {
         if (!context.toString().matches("https?://schema.org/")) {
             return null;
         }
@@ -74,5 +71,14 @@ class ThingDeserializer extends JsonDeserializer<Thing> {
 
         builder.fromMap(result);
         return (Thing) builder.build();
+        
+    }
+
+    @Nullable
+    static Thing fromMap(Map<String, Object> result) {
+        final Object context = result.get("@context");
+        if (context == null) return null;
+        
+        return fromMap(result, (String)context);
     }
 }
