@@ -120,6 +120,12 @@ dependencies {
     testCompile 'junit:junit:4.11'
 }
 
+
+test {
+    //testLogging.showStandardStreams = true
+    //testLogging.exceptionFormat = 'full'
+}
+
 //task wrapper(type: Wrapper) {
 //    gradleVersion = '5.1.1'
 //}
