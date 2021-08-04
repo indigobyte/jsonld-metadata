@@ -1,6 +1,6 @@
 plugins {
     id 'java-library'
-    id 'maven'
+//    id 'maven'
     id 'maven-publish'
 //    id 'com.github.kropp.teamcity-gitversion' version '0.1.8'
 //    id 'com.jfrog.bintray' version '1.7.3'
@@ -8,8 +8,8 @@ plugins {
 
 group 'com.github.kropp'
 
-sourceCompatibility = '1.8'
-targetCompatibility = '1.8'
+sourceCompatibility = '16'
+targetCompatibility = '16'
 
 repositories {
     mavenCentral()
@@ -114,10 +114,10 @@ publishing {
 //}
 
 dependencies {
-    compile 'com.fasterxml.jackson.core:jackson-databind:2.7.+'
-    compile 'org.jetbrains:annotations:13.0'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.10.5.1'
+    implementation 'org.jetbrains:annotations:21.0.1'
 
-    testCompile 'junit:junit:4.11'
+    testImplementation 'junit:junit:4.11'
 }
 
 
@@ -128,4 +128,13 @@ test {
 
 //task wrapper(type: Wrapper) {
 //    gradleVersion = '5.1.1'
+//}
+
+rootProject.tasks.named("processTestResources") {
+    duplicatesStrategy = 'include'
+}
+
+//tasks.withType(JavaCompile) {
+//    options.compilerArgs << '-Xlint:unchecked'
+//    options.deprecation = true
 //}

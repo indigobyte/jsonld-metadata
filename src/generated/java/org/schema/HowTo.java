@@ -1536,8 +1536,8 @@ public class HowTo extends CreativeWork {
       if ("tools".equals(key) && value instanceof String) { tool((String)value); return; }
       if ("totalTime".equals(key) && value instanceof Duration) { totalTime((Duration)value); return; }
       if ("totalTimes".equals(key) && value instanceof Duration) { totalTime((Duration)value); return; }
-      if ("yield".equals(key) && value instanceof Yield) { yield((Yield)value); return; }
-      if ("yields".equals(key) && value instanceof Yield) { yield((Yield)value); return; }
+      if ("yield".equals(key) && value instanceof Yield) { this.yield((Yield)value); return; }
+      if ("yields".equals(key) && value instanceof Yield) { this.yield((Yield)value); return; }
       super.fromMap(key, value);
     }
   }

@@ -64,14 +64,20 @@ open class Type {
 }
 
 class Klass(val sourceDirectory: File, val namespace: String?, val name: String, private val classOrInterface: String? = "class") : Type() {
-    var extends : Collection<String>? = null
+    var extends: Collection<String>? = null
     var implements: Collection<String>? = null
 
     internal val indent = "  "
 
     val fields = arrayListOf<Field>()
 
-    fun field(name: String, type: String, access: String = "private", prefix: String = "my", body: Field.() -> Unit = {}) {
+    fun field(
+        name: String,
+        type: String,
+        access: String = "private",
+        prefix: String = "my",
+        body: Field.() -> Unit = {}
+    ) {
         val field = Field(this, name.capitalize(), type, access, prefix)
         fields += field
 
@@ -79,24 +85,29 @@ class Klass(val sourceDirectory: File, val namespace: String?, val name: String,
     }
 
     fun constant(name: String, type: String, value: String) {
-        text.appendln("  private static final $type $name = $value;")
+        text.appendLine("  private static final $type $name = $value;")
     }
 
-    fun konstructor(visibility: String = "public", parameters: Collection<Parameter>? = null, superParameters: Collection<String>? = null) {
+    fun konstructor(
+        visibility: String = "public",
+        parameters: Collection<Parameter>? = null,
+        superParameters: Collection<String>? = null
+    ) {
         text.append("  $visibility $name(")
-        text.append(parameters?.map { (it.annotations?.joinToString(" ")?.plus(" ") ?: "") + "${it.type} ${it.name}" }?.joinToString(", ") ?: "")
-        text.appendln(") {")
+        text.append(parameters?.map { (it.annotations?.joinToString(" ")?.plus(" ") ?: "") + "${it.type} ${it.name}" }
+            ?.joinToString(", ") ?: "")
+        text.appendLine(") {")
 
         if (superParameters != null) {
             text.append("    super(")
             text.append(superParameters.joinToString(", "))
-            text.appendln(");")
+            text.appendLine(");")
         }
 
         fields.forEach {
-            text.appendln("    ${it.prefix}${it.name} = ${it.name.decapitalize()};")
+            text.appendLine("    ${it.prefix}${it.name} = ${it.name.decapitalize()};")
         }
-        text.appendln("  }")
+        text.appendLine("  }")
     }
 
     fun method(name: String, type: String = "void", body: Method.() -> Unit) {
@@ -106,72 +117,72 @@ class Klass(val sourceDirectory: File, val namespace: String?, val name: String,
     fun hashCodeAndEquals(callSuper: Boolean = true) {
         with(text) {
             // hashCode
-            appendln("  @Override public int hashCode() {")
+            appendLine("  @Override public int hashCode() {")
             if (callSuper) {
-                appendln("    int result = super.hashCode();")
+                appendLine("    int result = super.hashCode();")
             } else {
-                appendln("    int result = 0;")
+                appendLine("    int result = 0;")
             }
             fields.forEach {
-                appendln("    result = 31 * result + (my${it.name} != null ? my${it.name}.hashCode() : 0);")
+                appendLine("    result = 31 * result + (my${it.name} != null ? my${it.name}.hashCode() : 0);")
             }
-            appendln("    return result;")
-            appendln("  }")
+            appendLine("    return result;")
+            appendLine("  }")
 
             // equals
-            appendln("  @Override public boolean equals(Object o) {")
-            appendln("    if (this == o) return true;")
-            appendln("    if (o == null || getClass() != o.getClass()) return false;")
+            appendLine("  @Override public boolean equals(Object o) {")
+            appendLine("    if (this == o) return true;")
+            appendLine("    if (o == null || getClass() != o.getClass()) return false;")
             val other = name.decapitalize()
-            appendln("    $name $other = ($name) o;")
+            appendLine("    $name $other = ($name) o;")
             if (callSuper) {
-                appendln("    if (!super.equals(o)) return false;")
+                appendLine("    if (!super.equals(o)) return false;")
             }
             fields.forEach {
-                appendln("    if (my${it.name} != null ? !my${it.name}.equals($other.my${it.name}) : $other.my${it.name} != null) return false;")
+                appendLine("    if (my${it.name} != null ? !my${it.name}.equals($other.my${it.name}) : $other.my${it.name} != null) return false;")
             }
-            appendln("    return true;")
-            appendln("  }")
+            appendLine("    return true;")
+            appendLine("  }")
         }
     }
 
     internal fun generate() {
         text.insert(0, with(StringBuilder()) {
             copyright?.let {
-                appendln(it)
-                appendln()
+                appendLine(it)
+                appendLine()
             }
             namespace?.let {
-                appendln("package $it;")
-                appendln()
+                appendLine("package $it;")
+                appendLine()
             }
             imports?.forEach {
-                appendln("import $it;")
+                appendLine("import $it;")
             }
-            appendln()
+            appendLine()
             comment?.let {
-                appendln("/**")
-                it.split("\n").forEach { appendln(" * $it") }
-                appendln(" */")
+                appendLine("/**")
+                it.split("\n").forEach { appendLine(" * $it") }
+                appendLine(" */")
             }
             annotations?.forEach {
-                appendln(it)
+                appendLine(it)
             }
             append("public $classOrInterface $name")
 
-            extends?.let { if(it.isNotEmpty()) append(" extends ${it.joinToString(", ")}")}
+            extends?.let { if (it.isNotEmpty()) append(" extends ${it.joinToString(", ")}") }
             if (implements?.any() == true) {
                 append(" implements ")
                 append(implements!!.joinToString(", "))
             }
-            appendln(" {")
+            appendLine(" {")
         }.toString())
 
         fields.forEach {
-            text.appendln("  ${it.fieldDeclaration};")
+            text.appendLine("  ${it.fieldDeclaration};")
         }
 
-        text.appendln("}")
+        text.appendLine("}")
     }
 
     fun save() {
@@ -187,7 +198,13 @@ class Enumeration(val sourceDirectory: File, val namespace: String?, val name: S
     var members: Map<String, String>? = null
     val fields = arrayListOf<Field>()
 
-    fun field(name: String, type: String, access: String = "private", prefix: String = "my", body: Field.() -> Unit = {}) {
+    fun field(
+        name: String,
+        type: String,
+        access: String = "private",
+        prefix: String = "my",
+        body: Field.() -> Unit = {}
+    ) {
         val field = Field(this, name.capitalize(), type, access, prefix)
         fields += field
 
@@ -197,38 +214,38 @@ class Enumeration(val sourceDirectory: File, val namespace: String?, val name: S
     internal fun generate() {
         text.insert(0, with(StringBuilder()) {
             copyright?.let {
-                appendln(it)
-                appendln()
+                appendLine(it)
+                appendLine()
             }
             namespace?.let {
-                appendln("package $it;")
-                appendln()
+                appendLine("package $it;")
+                appendLine()
             }
             imports?.forEach {
-                appendln("import $it;")
-                appendln()
+                appendLine("import $it;")
+                appendLine()
             }
             comment?.let {
-                appendln("/**")
-                it.split("\n").flatMap { it.split("\\n") }.forEach { appendln(" * $it") }
-                appendln(" */")
+                appendLine("/**")
+                it.split("\n").flatMap { it.split("\\n") }.forEach { appendLine(" * $it") }
+                appendLine(" */")
             }
 
-            appendln("public enum $name {")
+            appendLine("public enum $name {")
 
-            members?.let { append("  " + it.map { "${it.key}(\"${it.value}\")" }.joinToString(", ")); appendln(";") }
+            members?.let { append("  " + it.map { "${it.key}(\"${it.value}\")" }.joinToString(", ")); appendLine(";") }
 
             val cparams = fields.map { "${it.type} ${it.name.decapitalize()}" }.joinToString(", ")
-            appendln("  $name($cparams) {")
-            fields.forEach { appendln("    ${it.prefix}${it.name} = ${it.name.decapitalize()};") }
-            appendln("  }")
+            appendLine("  $name($cparams) {")
+            fields.forEach { appendLine("    ${it.prefix}${it.name} = ${it.name.decapitalize()};") }
+            appendLine("  }")
         }.toString())
 
         fields.forEach {
-            text.appendln("  ${it.fieldDeclaration};")
+            text.appendLine("  ${it.fieldDeclaration};")
         }
 
-        text.appendln("}")
+        text.appendLine("}")
     }
 
     fun save() {
@@ -258,7 +275,7 @@ fun Klass.klass(name: String, body: Klass.() -> Unit) {
     c.generate()
 
     c.text.split("\n").forEach {
-        text.appendln("  $it")
+        text.appendLine("  $it")
     }
 }
 
@@ -266,30 +283,36 @@ class Field(val c: Type, val name: String, val type: String, val access: String,
     var initial: String? = null
     fun getter(annotations: Collection<String>? = null, comment: String? = null) {
         comment?.let {
-            c.text.appendln("  /**")
-            c.text.appendln("   * $it")
-            c.text.appendln("   */")
+            c.text.appendLine("  /**")
+            c.text.appendLine("   * $it")
+            c.text.appendLine("   */")
         }
-        annotations?.forEach { c.text.appendln("  $it") }
-        c.text.appendln("  public $type get$name() { return $prefix$name; }")
+        annotations?.forEach { c.text.appendLine("  $it") }
+        c.text.appendLine("  public $type get$name() { return $prefix$name; }")
     }
+
     fun setter(methodCallBefore: String? = null, isPublic: Boolean = true) {
         c.text.append(if (isPublic) "  public" else "  ")
         val paramName = getVariableName(type, "value")
         c.text.append("void set$type($type $paramName) {")
         methodCallBefore?.let { c.text.append(" $it();") }
-        c.text.appendln(" $prefix$name = $paramName; }")
+        c.text.appendLine(" $prefix$name = $paramName; }")
     }
+
     private fun getVariableName(typeName: String, entityName: String? = null): String {
         val indexOfDot = typeName.lastIndexOf('.')
         if (indexOfDot > 0) {
-            return typeName.substring(indexOfDot+1).decapitalize()
+            return typeName.substring(indexOfDot + 1).decapitalize()
         }
-        if (entityName != null && arrayOf("Boolean", "String", "Class", "Long", "Int", "Double", "Float").contains(typeName)) {
+        if (entityName != null && arrayOf("Boolean", "String", "Class", "Long", "Int", "Double", "Float").contains(
+                typeName
+            )
+        ) {
             return entityName.decapitalize()
         }
         return typeName.decapitalize()
     }
+
     val fieldDeclaration: String
         get() = "$access $type $prefix" + (if (prefix.isEmpty()) name.decapitalize() else name) + (if (initial == null) "" else " = $initial")
 }
@@ -310,7 +333,7 @@ class Method(val c: Klass, val name: String, val type: String): Closeable {
     }
 
     fun line(line: String) {
-        body.appendln("    " + line)
+        body.appendLine("    " + line)
     }
 
     fun lines(lines: Iterable<String>) {
@@ -323,26 +346,27 @@ class Method(val c: Klass, val name: String, val type: String): Closeable {
             c.text.append("  ").append(annotations?.single()).append(" ")
         } else {
             annotations?.forEach {
-                c.text.appendln("  $it")
+                c.text.appendLine("  $it")
             }
             c.text.append("  ")
         }
         c.text.append("$access $type $name(")
-        c.text.append(parameters?.map { (it.annotations?.joinToString(" ")?.plus(" ") ?: "") + "${it.type} ${it.name}" }?.joinToString(", ") ?: "")
+        c.text.append(parameters?.map { (it.annotations?.joinToString(" ")?.plus(" ") ?: "") + "${it.type} ${it.name}" }
+            ?.joinToString(", ") ?: "")
         c.text.append(")")
         throws?.let { c.text.append(" throws $it") }
-        c.text.appendln(" {")
+        c.text.appendLine(" {")
 
         c.text.append(body.toString())
 
-        c.text.appendln("  }")
+        c.text.appendLine("  }")
     }
 }
 
 private fun appendComment(stringBuilder: StringBuilder, indent: String, comment: String?) {
     comment?.let {
-        stringBuilder.appendln("$indent/**")
-        stringBuilder.appendln("$indent * ${it.replace("\n", "\n$indent * ")}")
-        stringBuilder.appendln("$indent */")
+        stringBuilder.appendLine("$indent/**")
+        stringBuilder.appendLine("$indent * ${it.replace("\n", "\n$indent * ")}")
+        stringBuilder.appendLine("$indent */")
     }
 }

@@ -76,19 +76,19 @@ class ClassesGenerator(private val sink: GeneratorSink, private val banner: Stri
 
                     fieldTypes.forEach { fieldType ->
                         val methodName = getMethodName(fieldType, fieldTypes, name)
-                        val key = name.decapitalize()
+                        val key1 = name.decapitalize()
                         method(methodName, fieldType) {
                             comment = it.comment
                             annotations = if (name == "Id") listOf("@JsonProperty(\"@id\")") else listOf("@JsonIgnore")
 
-                            line("return ($fieldType) getValue(\"$key\");")
+                            line("return ($fieldType) getValue(\"$key1\");")
                         }
                         if (name != "Id") {
                             method(methodName + "s", "Collection<$fieldType>") {
                                 comment = it.comment
                                 annotations = listOf("@JsonIgnore")
 
-                                line("final Object current = myData.get(\"$key\");")
+                                line("final Object current = myData.get(\"$key1\");")
                                 line("if (current == null) return Collections.emptyList();")
                                 line("if (current instanceof Collection) {")
                                 line("  return (Collection<$fieldType>) current;")

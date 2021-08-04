@@ -46,7 +46,7 @@ private val BANNER = """/*
 private const val NAMESPACE = "org.schema"
 private const val NAMESPACE_KOTLIN = "$NAMESPACE.kotlin"
 
-fun main(args: Array<String>) {
+fun main() {
     val sink = GeneratorSink()
     val processor = StreamProcessor(RdfaParser.connect(sink))
 
