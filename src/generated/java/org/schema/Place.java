@@ -79,14 +79,14 @@ public class Place extends Thing {
     return Arrays.asList((AggregateRating) current);
   }
   /**
-   * A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.\n\nFor example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code "3047" is a branchCode for a particular branch.
+   * A short textual code (also called &quot;store code&quot;) that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.\n\nFor example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code &quot;3047&quot; is a branchCode for a particular branch.
    *       
    */
   @JsonIgnore public String getBranchCode() {
     return (String) getValue("branchCode");
   }
   /**
-   * A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.\n\nFor example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code "3047" is a branchCode for a particular branch.
+   * A short textual code (also called &quot;store code&quot;) that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.\n\nFor example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code &quot;3047&quot; is a branchCode for a particular branch.
    *       
    */
   @JsonIgnore public Collection<String> getBranchCodes() {
@@ -763,7 +763,7 @@ public class Place extends Thing {
       return this;
     }
     /**
-     * A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.\n\nFor example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code "3047" is a branchCode for a particular branch.
+     * A short textual code (also called &quot;store code&quot;) that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.\n\nFor example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code &quot;3047&quot; is a branchCode for a particular branch.
      *       
      */
     @NotNull public Builder branchCode(@NotNull String branchCode) {
@@ -1237,86 +1237,86 @@ public class Place extends Thing {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("address".equals(key) && value instanceof PostalAddress) { address((PostalAddress)value); return; }
-      if ("addresss".equals(key) && value instanceof PostalAddress) { address((PostalAddress)value); return; }
-      if ("address".equals(key) && value instanceof String) { address((String)value); return; }
-      if ("addresss".equals(key) && value instanceof String) { address((String)value); return; }
-      if ("aggregateRating".equals(key) && value instanceof AggregateRating) { aggregateRating((AggregateRating)value); return; }
-      if ("aggregateRatings".equals(key) && value instanceof AggregateRating) { aggregateRating((AggregateRating)value); return; }
-      if ("branchCode".equals(key) && value instanceof String) { branchCode((String)value); return; }
-      if ("branchCodes".equals(key) && value instanceof String) { branchCode((String)value); return; }
-      if ("containedInPlace".equals(key) && value instanceof Place) { containedInPlace((Place)value); return; }
-      if ("containedInPlaces".equals(key) && value instanceof Place) { containedInPlace((Place)value); return; }
-      if ("containsPlace".equals(key) && value instanceof Place) { containsPlace((Place)value); return; }
-      if ("containsPlaces".equals(key) && value instanceof Place) { containsPlace((Place)value); return; }
-      if ("event".equals(key) && value instanceof Event) { event((Event)value); return; }
-      if ("events".equals(key) && value instanceof Event) { event((Event)value); return; }
-      if ("faxNumber".equals(key) && value instanceof String) { faxNumber((String)value); return; }
-      if ("faxNumbers".equals(key) && value instanceof String) { faxNumber((String)value); return; }
-      if ("isAccessibleForFree".equals(key) && value instanceof Boolean) { isAccessibleForFree((Boolean)value); return; }
-      if ("isAccessibleForFrees".equals(key) && value instanceof Boolean) { isAccessibleForFree((Boolean)value); return; }
-      if ("publicAccess".equals(key) && value instanceof Boolean) { publicAccess((Boolean)value); return; }
-      if ("publicAccesss".equals(key) && value instanceof Boolean) { publicAccess((Boolean)value); return; }
-      if ("geo".equals(key) && value instanceof GeoCoordinates) { geo((GeoCoordinates)value); return; }
-      if ("geos".equals(key) && value instanceof GeoCoordinates) { geo((GeoCoordinates)value); return; }
-      if ("geo".equals(key) && value instanceof GeoShape) { geo((GeoShape)value); return; }
-      if ("geos".equals(key) && value instanceof GeoShape) { geo((GeoShape)value); return; }
-      if ("globalLocationNumber".equals(key) && value instanceof Identifier) { globalLocationNumber((Identifier)value); return; }
-      if ("globalLocationNumbers".equals(key) && value instanceof Identifier) { globalLocationNumber((Identifier)value); return; }
-      if ("globalLocationNumber".equals(key) && value instanceof String) { globalLocationNumber((String)value); return; }
-      if ("globalLocationNumbers".equals(key) && value instanceof String) { globalLocationNumber((String)value); return; }
-      if ("isicV4".equals(key) && value instanceof String) { isicV4((String)value); return; }
-      if ("isicV4s".equals(key) && value instanceof String) { isicV4((String)value); return; }
-      if ("latitude".equals(key) && value instanceof Integer) { latitude((Integer)value); return; }
-      if ("latitudes".equals(key) && value instanceof Integer) { latitude((Integer)value); return; }
-      if ("latitude".equals(key) && value instanceof Long) { latitude((Long)value); return; }
-      if ("latitudes".equals(key) && value instanceof Long) { latitude((Long)value); return; }
-      if ("latitude".equals(key) && value instanceof Float) { latitude((Float)value); return; }
-      if ("latitudes".equals(key) && value instanceof Float) { latitude((Float)value); return; }
-      if ("latitude".equals(key) && value instanceof Double) { latitude((Double)value); return; }
-      if ("latitudes".equals(key) && value instanceof Double) { latitude((Double)value); return; }
-      if ("latitude".equals(key) && value instanceof String) { latitude((String)value); return; }
-      if ("latitudes".equals(key) && value instanceof String) { latitude((String)value); return; }
-      if ("logo".equals(key) && value instanceof ImageObject) { logo((ImageObject)value); return; }
-      if ("logos".equals(key) && value instanceof ImageObject) { logo((ImageObject)value); return; }
-      if ("logo".equals(key) && value instanceof String) { logo((String)value); return; }
-      if ("logos".equals(key) && value instanceof String) { logo((String)value); return; }
-      if ("longitude".equals(key) && value instanceof Integer) { longitude((Integer)value); return; }
-      if ("longitudes".equals(key) && value instanceof Integer) { longitude((Integer)value); return; }
-      if ("longitude".equals(key) && value instanceof Long) { longitude((Long)value); return; }
-      if ("longitudes".equals(key) && value instanceof Long) { longitude((Long)value); return; }
-      if ("longitude".equals(key) && value instanceof Float) { longitude((Float)value); return; }
-      if ("longitudes".equals(key) && value instanceof Float) { longitude((Float)value); return; }
-      if ("longitude".equals(key) && value instanceof Double) { longitude((Double)value); return; }
-      if ("longitudes".equals(key) && value instanceof Double) { longitude((Double)value); return; }
-      if ("longitude".equals(key) && value instanceof String) { longitude((String)value); return; }
-      if ("longitudes".equals(key) && value instanceof String) { longitude((String)value); return; }
-      if ("hasMap".equals(key) && value instanceof Map) { hasMap((Map)value); return; }
-      if ("hasMaps".equals(key) && value instanceof Map) { hasMap((Map)value); return; }
-      if ("hasMap".equals(key) && value instanceof String) { hasMap((String)value); return; }
-      if ("hasMaps".equals(key) && value instanceof String) { hasMap((String)value); return; }
-      if ("maximumAttendeeCapacity".equals(key) && value instanceof Integer) { maximumAttendeeCapacity((Integer)value); return; }
-      if ("maximumAttendeeCapacitys".equals(key) && value instanceof Integer) { maximumAttendeeCapacity((Integer)value); return; }
-      if ("openingHoursSpecification".equals(key) && value instanceof OpeningHoursSpecification) { openingHoursSpecification((OpeningHoursSpecification)value); return; }
-      if ("openingHoursSpecifications".equals(key) && value instanceof OpeningHoursSpecification) { openingHoursSpecification((OpeningHoursSpecification)value); return; }
-      if ("specialOpeningHoursSpecification".equals(key) && value instanceof OpeningHoursSpecification) { specialOpeningHoursSpecification((OpeningHoursSpecification)value); return; }
-      if ("specialOpeningHoursSpecifications".equals(key) && value instanceof OpeningHoursSpecification) { specialOpeningHoursSpecification((OpeningHoursSpecification)value); return; }
-      if ("photo".equals(key) && value instanceof ImageObject) { photo((ImageObject)value); return; }
-      if ("photos".equals(key) && value instanceof ImageObject) { photo((ImageObject)value); return; }
-      if ("photo".equals(key) && value instanceof Photograph) { photo((Photograph)value); return; }
-      if ("photos".equals(key) && value instanceof Photograph) { photo((Photograph)value); return; }
-      if ("review".equals(key) && value instanceof Review) { review((Review)value); return; }
-      if ("reviews".equals(key) && value instanceof Review) { review((Review)value); return; }
-      if ("slogan".equals(key) && value instanceof String) { slogan((String)value); return; }
-      if ("slogans".equals(key) && value instanceof String) { slogan((String)value); return; }
-      if ("telephone".equals(key) && value instanceof String) { telephone((String)value); return; }
-      if ("telephones".equals(key) && value instanceof String) { telephone((String)value); return; }
-      if ("additionalProperty".equals(key) && value instanceof PropertyValue) { additionalProperty((PropertyValue)value); return; }
-      if ("additionalPropertys".equals(key) && value instanceof PropertyValue) { additionalProperty((PropertyValue)value); return; }
-      if ("amenityFeature".equals(key) && value instanceof LocationFeatureSpecification) { amenityFeature((LocationFeatureSpecification)value); return; }
-      if ("amenityFeatures".equals(key) && value instanceof LocationFeatureSpecification) { amenityFeature((LocationFeatureSpecification)value); return; }
-      if ("smokingAllowed".equals(key) && value instanceof Boolean) { smokingAllowed((Boolean)value); return; }
-      if ("smokingAlloweds".equals(key) && value instanceof Boolean) { smokingAllowed((Boolean)value); return; }
+      if ("address".equals(key) && value instanceof PostalAddress) { this.address((PostalAddress)value); return; }
+      if ("addresss".equals(key) && value instanceof PostalAddress) { this.address((PostalAddress)value); return; }
+      if ("address".equals(key) && value instanceof String) { this.address((String)value); return; }
+      if ("addresss".equals(key) && value instanceof String) { this.address((String)value); return; }
+      if ("aggregateRating".equals(key) && value instanceof AggregateRating) { this.aggregateRating((AggregateRating)value); return; }
+      if ("aggregateRatings".equals(key) && value instanceof AggregateRating) { this.aggregateRating((AggregateRating)value); return; }
+      if ("branchCode".equals(key) && value instanceof String) { this.branchCode((String)value); return; }
+      if ("branchCodes".equals(key) && value instanceof String) { this.branchCode((String)value); return; }
+      if ("containedInPlace".equals(key) && value instanceof Place) { this.containedInPlace((Place)value); return; }
+      if ("containedInPlaces".equals(key) && value instanceof Place) { this.containedInPlace((Place)value); return; }
+      if ("containsPlace".equals(key) && value instanceof Place) { this.containsPlace((Place)value); return; }
+      if ("containsPlaces".equals(key) && value instanceof Place) { this.containsPlace((Place)value); return; }
+      if ("event".equals(key) && value instanceof Event) { this.event((Event)value); return; }
+      if ("events".equals(key) && value instanceof Event) { this.event((Event)value); return; }
+      if ("faxNumber".equals(key) && value instanceof String) { this.faxNumber((String)value); return; }
+      if ("faxNumbers".equals(key) && value instanceof String) { this.faxNumber((String)value); return; }
+      if ("isAccessibleForFree".equals(key) && value instanceof Boolean) { this.isAccessibleForFree((Boolean)value); return; }
+      if ("isAccessibleForFrees".equals(key) && value instanceof Boolean) { this.isAccessibleForFree((Boolean)value); return; }
+      if ("publicAccess".equals(key) && value instanceof Boolean) { this.publicAccess((Boolean)value); return; }
+      if ("publicAccesss".equals(key) && value instanceof Boolean) { this.publicAccess((Boolean)value); return; }
+      if ("geo".equals(key) && value instanceof GeoCoordinates) { this.geo((GeoCoordinates)value); return; }
+      if ("geos".equals(key) && value instanceof GeoCoordinates) { this.geo((GeoCoordinates)value); return; }
+      if ("geo".equals(key) && value instanceof GeoShape) { this.geo((GeoShape)value); return; }
+      if ("geos".equals(key) && value instanceof GeoShape) { this.geo((GeoShape)value); return; }
+      if ("globalLocationNumber".equals(key) && value instanceof Identifier) { this.globalLocationNumber((Identifier)value); return; }
+      if ("globalLocationNumbers".equals(key) && value instanceof Identifier) { this.globalLocationNumber((Identifier)value); return; }
+      if ("globalLocationNumber".equals(key) && value instanceof String) { this.globalLocationNumber((String)value); return; }
+      if ("globalLocationNumbers".equals(key) && value instanceof String) { this.globalLocationNumber((String)value); return; }
+      if ("isicV4".equals(key) && value instanceof String) { this.isicV4((String)value); return; }
+      if ("isicV4s".equals(key) && value instanceof String) { this.isicV4((String)value); return; }
+      if ("latitude".equals(key) && value instanceof Integer) { this.latitude((Integer)value); return; }
+      if ("latitudes".equals(key) && value instanceof Integer) { this.latitude((Integer)value); return; }
+      if ("latitude".equals(key) && value instanceof Long) { this.latitude((Long)value); return; }
+      if ("latitudes".equals(key) && value instanceof Long) { this.latitude((Long)value); return; }
+      if ("latitude".equals(key) && value instanceof Float) { this.latitude((Float)value); return; }
+      if ("latitudes".equals(key) && value instanceof Float) { this.latitude((Float)value); return; }
+      if ("latitude".equals(key) && value instanceof Double) { this.latitude((Double)value); return; }
+      if ("latitudes".equals(key) && value instanceof Double) { this.latitude((Double)value); return; }
+      if ("latitude".equals(key) && value instanceof String) { this.latitude((String)value); return; }
+      if ("latitudes".equals(key) && value instanceof String) { this.latitude((String)value); return; }
+      if ("logo".equals(key) && value instanceof ImageObject) { this.logo((ImageObject)value); return; }
+      if ("logos".equals(key) && value instanceof ImageObject) { this.logo((ImageObject)value); return; }
+      if ("logo".equals(key) && value instanceof String) { this.logo((String)value); return; }
+      if ("logos".equals(key) && value instanceof String) { this.logo((String)value); return; }
+      if ("longitude".equals(key) && value instanceof Integer) { this.longitude((Integer)value); return; }
+      if ("longitudes".equals(key) && value instanceof Integer) { this.longitude((Integer)value); return; }
+      if ("longitude".equals(key) && value instanceof Long) { this.longitude((Long)value); return; }
+      if ("longitudes".equals(key) && value instanceof Long) { this.longitude((Long)value); return; }
+      if ("longitude".equals(key) && value instanceof Float) { this.longitude((Float)value); return; }
+      if ("longitudes".equals(key) && value instanceof Float) { this.longitude((Float)value); return; }
+      if ("longitude".equals(key) && value instanceof Double) { this.longitude((Double)value); return; }
+      if ("longitudes".equals(key) && value instanceof Double) { this.longitude((Double)value); return; }
+      if ("longitude".equals(key) && value instanceof String) { this.longitude((String)value); return; }
+      if ("longitudes".equals(key) && value instanceof String) { this.longitude((String)value); return; }
+      if ("hasMap".equals(key) && value instanceof Map) { this.hasMap((Map)value); return; }
+      if ("hasMaps".equals(key) && value instanceof Map) { this.hasMap((Map)value); return; }
+      if ("hasMap".equals(key) && value instanceof String) { this.hasMap((String)value); return; }
+      if ("hasMaps".equals(key) && value instanceof String) { this.hasMap((String)value); return; }
+      if ("maximumAttendeeCapacity".equals(key) && value instanceof Integer) { this.maximumAttendeeCapacity((Integer)value); return; }
+      if ("maximumAttendeeCapacitys".equals(key) && value instanceof Integer) { this.maximumAttendeeCapacity((Integer)value); return; }
+      if ("openingHoursSpecification".equals(key) && value instanceof OpeningHoursSpecification) { this.openingHoursSpecification((OpeningHoursSpecification)value); return; }
+      if ("openingHoursSpecifications".equals(key) && value instanceof OpeningHoursSpecification) { this.openingHoursSpecification((OpeningHoursSpecification)value); return; }
+      if ("specialOpeningHoursSpecification".equals(key) && value instanceof OpeningHoursSpecification) { this.specialOpeningHoursSpecification((OpeningHoursSpecification)value); return; }
+      if ("specialOpeningHoursSpecifications".equals(key) && value instanceof OpeningHoursSpecification) { this.specialOpeningHoursSpecification((OpeningHoursSpecification)value); return; }
+      if ("photo".equals(key) && value instanceof ImageObject) { this.photo((ImageObject)value); return; }
+      if ("photos".equals(key) && value instanceof ImageObject) { this.photo((ImageObject)value); return; }
+      if ("photo".equals(key) && value instanceof Photograph) { this.photo((Photograph)value); return; }
+      if ("photos".equals(key) && value instanceof Photograph) { this.photo((Photograph)value); return; }
+      if ("review".equals(key) && value instanceof Review) { this.review((Review)value); return; }
+      if ("reviews".equals(key) && value instanceof Review) { this.review((Review)value); return; }
+      if ("slogan".equals(key) && value instanceof String) { this.slogan((String)value); return; }
+      if ("slogans".equals(key) && value instanceof String) { this.slogan((String)value); return; }
+      if ("telephone".equals(key) && value instanceof String) { this.telephone((String)value); return; }
+      if ("telephones".equals(key) && value instanceof String) { this.telephone((String)value); return; }
+      if ("additionalProperty".equals(key) && value instanceof PropertyValue) { this.additionalProperty((PropertyValue)value); return; }
+      if ("additionalPropertys".equals(key) && value instanceof PropertyValue) { this.additionalProperty((PropertyValue)value); return; }
+      if ("amenityFeature".equals(key) && value instanceof LocationFeatureSpecification) { this.amenityFeature((LocationFeatureSpecification)value); return; }
+      if ("amenityFeatures".equals(key) && value instanceof LocationFeatureSpecification) { this.amenityFeature((LocationFeatureSpecification)value); return; }
+      if ("smokingAllowed".equals(key) && value instanceof Boolean) { this.smokingAllowed((Boolean)value); return; }
+      if ("smokingAlloweds".equals(key) && value instanceof Boolean) { this.smokingAllowed((Boolean)value); return; }
       super.fromMap(key, value);
     }
   }

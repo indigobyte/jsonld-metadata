@@ -24,7 +24,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * A contact point&#x2014;for example, a Customer Complaints department.
+ * A contact point&amp;#x2014;for example, a Customer Complaints department.
  */
 public class ContactPoint extends StructuredValue {
   /**
@@ -147,13 +147,13 @@ public class ContactPoint extends StructuredValue {
     return Arrays.asList((OpeningHoursSpecification) current);
   }
   /**
-   * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. "iPhone") or a general category of products or services (e.g. "smartphones").
+   * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. &quot;iPhone&quot;) or a general category of products or services (e.g. &quot;smartphones&quot;).
    */
   @JsonIgnore public Product getProductSupportedProduct() {
     return (Product) getValue("productSupported");
   }
   /**
-   * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. "iPhone") or a general category of products or services (e.g. "smartphones").
+   * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. &quot;iPhone&quot;) or a general category of products or services (e.g. &quot;smartphones&quot;).
    */
   @JsonIgnore public Collection<Product> getProductSupportedProducts() {
     final Object current = myData.get("productSupported");
@@ -164,13 +164,13 @@ public class ContactPoint extends StructuredValue {
     return Arrays.asList((Product) current);
   }
   /**
-   * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. "iPhone") or a general category of products or services (e.g. "smartphones").
+   * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. &quot;iPhone&quot;) or a general category of products or services (e.g. &quot;smartphones&quot;).
    */
   @JsonIgnore public String getProductSupportedString() {
     return (String) getValue("productSupported");
   }
   /**
-   * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. "iPhone") or a general category of products or services (e.g. "smartphones").
+   * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. &quot;iPhone&quot;) or a general category of products or services (e.g. &quot;smartphones&quot;).
    */
   @JsonIgnore public Collection<String> getProductSupportedStrings() {
     final Object current = myData.get("productSupported");
@@ -275,21 +275,21 @@ public class ContactPoint extends StructuredValue {
       return this;
     }
     /**
-     * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. "iPhone") or a general category of products or services (e.g. "smartphones").
+     * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. &quot;iPhone&quot;) or a general category of products or services (e.g. &quot;smartphones&quot;).
      */
     @NotNull public Builder productSupported(@NotNull Product product) {
       putValue("productSupported", product);
       return this;
     }
     /**
-     * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. "iPhone") or a general category of products or services (e.g. "smartphones").
+     * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. &quot;iPhone&quot;) or a general category of products or services (e.g. &quot;smartphones&quot;).
      */
     @NotNull public Builder productSupported(@NotNull Product.Builder product) {
       putValue("productSupported", product.build());
       return this;
     }
     /**
-     * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. "iPhone") or a general category of products or services (e.g. "smartphones").
+     * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. &quot;iPhone&quot;) or a general category of products or services (e.g. &quot;smartphones&quot;).
      */
     @NotNull public Builder productSupported(@NotNull String productSupported) {
       putValue("productSupported", productSupported);
@@ -415,26 +415,26 @@ public class ContactPoint extends StructuredValue {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("availableLanguage".equals(key) && value instanceof Language) { availableLanguage((Language)value); return; }
-      if ("availableLanguages".equals(key) && value instanceof Language) { availableLanguage((Language)value); return; }
-      if ("availableLanguage".equals(key) && value instanceof String) { availableLanguage((String)value); return; }
-      if ("availableLanguages".equals(key) && value instanceof String) { availableLanguage((String)value); return; }
-      if ("contactOption".equals(key) && value instanceof ContactPointOption) { contactOption((ContactPointOption)value); return; }
-      if ("contactOptions".equals(key) && value instanceof ContactPointOption) { contactOption((ContactPointOption)value); return; }
-      if ("contactType".equals(key) && value instanceof String) { contactType((String)value); return; }
-      if ("contactTypes".equals(key) && value instanceof String) { contactType((String)value); return; }
-      if ("email".equals(key) && value instanceof String) { email((String)value); return; }
-      if ("emails".equals(key) && value instanceof String) { email((String)value); return; }
-      if ("faxNumber".equals(key) && value instanceof String) { faxNumber((String)value); return; }
-      if ("faxNumbers".equals(key) && value instanceof String) { faxNumber((String)value); return; }
-      if ("hoursAvailable".equals(key) && value instanceof OpeningHoursSpecification) { hoursAvailable((OpeningHoursSpecification)value); return; }
-      if ("hoursAvailables".equals(key) && value instanceof OpeningHoursSpecification) { hoursAvailable((OpeningHoursSpecification)value); return; }
-      if ("productSupported".equals(key) && value instanceof Product) { productSupported((Product)value); return; }
-      if ("productSupporteds".equals(key) && value instanceof Product) { productSupported((Product)value); return; }
-      if ("productSupported".equals(key) && value instanceof String) { productSupported((String)value); return; }
-      if ("productSupporteds".equals(key) && value instanceof String) { productSupported((String)value); return; }
-      if ("telephone".equals(key) && value instanceof String) { telephone((String)value); return; }
-      if ("telephones".equals(key) && value instanceof String) { telephone((String)value); return; }
+      if ("availableLanguage".equals(key) && value instanceof Language) { this.availableLanguage((Language)value); return; }
+      if ("availableLanguages".equals(key) && value instanceof Language) { this.availableLanguage((Language)value); return; }
+      if ("availableLanguage".equals(key) && value instanceof String) { this.availableLanguage((String)value); return; }
+      if ("availableLanguages".equals(key) && value instanceof String) { this.availableLanguage((String)value); return; }
+      if ("contactOption".equals(key) && value instanceof ContactPointOption) { this.contactOption((ContactPointOption)value); return; }
+      if ("contactOptions".equals(key) && value instanceof ContactPointOption) { this.contactOption((ContactPointOption)value); return; }
+      if ("contactType".equals(key) && value instanceof String) { this.contactType((String)value); return; }
+      if ("contactTypes".equals(key) && value instanceof String) { this.contactType((String)value); return; }
+      if ("email".equals(key) && value instanceof String) { this.email((String)value); return; }
+      if ("emails".equals(key) && value instanceof String) { this.email((String)value); return; }
+      if ("faxNumber".equals(key) && value instanceof String) { this.faxNumber((String)value); return; }
+      if ("faxNumbers".equals(key) && value instanceof String) { this.faxNumber((String)value); return; }
+      if ("hoursAvailable".equals(key) && value instanceof OpeningHoursSpecification) { this.hoursAvailable((OpeningHoursSpecification)value); return; }
+      if ("hoursAvailables".equals(key) && value instanceof OpeningHoursSpecification) { this.hoursAvailable((OpeningHoursSpecification)value); return; }
+      if ("productSupported".equals(key) && value instanceof Product) { this.productSupported((Product)value); return; }
+      if ("productSupporteds".equals(key) && value instanceof Product) { this.productSupported((Product)value); return; }
+      if ("productSupported".equals(key) && value instanceof String) { this.productSupported((String)value); return; }
+      if ("productSupporteds".equals(key) && value instanceof String) { this.productSupported((String)value); return; }
+      if ("telephone".equals(key) && value instanceof String) { this.telephone((String)value); return; }
+      if ("telephones".equals(key) && value instanceof String) { this.telephone((String)value); return; }
       super.fromMap(key, value);
     }
   }

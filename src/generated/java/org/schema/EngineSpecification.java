@@ -209,10 +209,10 @@ public class EngineSpecification extends StructuredValue {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("fuelType".equals(key) && value instanceof QualitativeValue) { fuelType((QualitativeValue)value); return; }
-      if ("fuelTypes".equals(key) && value instanceof QualitativeValue) { fuelType((QualitativeValue)value); return; }
-      if ("fuelType".equals(key) && value instanceof String) { fuelType((String)value); return; }
-      if ("fuelTypes".equals(key) && value instanceof String) { fuelType((String)value); return; }
+      if ("fuelType".equals(key) && value instanceof QualitativeValue) { this.fuelType((QualitativeValue)value); return; }
+      if ("fuelTypes".equals(key) && value instanceof QualitativeValue) { this.fuelType((QualitativeValue)value); return; }
+      if ("fuelType".equals(key) && value instanceof String) { this.fuelType((String)value); return; }
+      if ("fuelTypes".equals(key) && value instanceof String) { this.fuelType((String)value); return; }
       super.fromMap(key, value);
     }
   }

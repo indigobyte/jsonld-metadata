@@ -405,14 +405,14 @@ public class QuantitativeValue extends StructuredValue implements Yield {
   }
   /**
    * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
-   * <a href='unitCode'>unitCode</a>.
+   * &lt;a href='unitCode'&gt;unitCode&lt;/a&gt;.
    */
   @JsonIgnore public String getUnitText() {
     return (String) getValue("unitText");
   }
   /**
    * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
-   * <a href='unitCode'>unitCode</a>.
+   * &lt;a href='unitCode'&gt;unitCode&lt;/a&gt;.
    */
   @JsonIgnore public Collection<String> getUnitTexts() {
     final Object current = myData.get("unitText");
@@ -636,7 +636,7 @@ public class QuantitativeValue extends StructuredValue implements Yield {
     }
     /**
      * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
-     * <a href='unitCode'>unitCode</a>.
+     * &lt;a href='unitCode'&gt;unitCode&lt;/a&gt;.
      */
     @NotNull public Builder unitText(@NotNull String unitText) {
       putValue("unitText", unitText);
@@ -755,52 +755,52 @@ public class QuantitativeValue extends StructuredValue implements Yield {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("maxValue".equals(key) && value instanceof Integer) { maxValue((Integer)value); return; }
-      if ("maxValues".equals(key) && value instanceof Integer) { maxValue((Integer)value); return; }
-      if ("maxValue".equals(key) && value instanceof Long) { maxValue((Long)value); return; }
-      if ("maxValues".equals(key) && value instanceof Long) { maxValue((Long)value); return; }
-      if ("maxValue".equals(key) && value instanceof Float) { maxValue((Float)value); return; }
-      if ("maxValues".equals(key) && value instanceof Float) { maxValue((Float)value); return; }
-      if ("maxValue".equals(key) && value instanceof Double) { maxValue((Double)value); return; }
-      if ("maxValues".equals(key) && value instanceof Double) { maxValue((Double)value); return; }
-      if ("maxValue".equals(key) && value instanceof String) { maxValue((String)value); return; }
-      if ("maxValues".equals(key) && value instanceof String) { maxValue((String)value); return; }
-      if ("minValue".equals(key) && value instanceof Integer) { minValue((Integer)value); return; }
-      if ("minValues".equals(key) && value instanceof Integer) { minValue((Integer)value); return; }
-      if ("minValue".equals(key) && value instanceof Long) { minValue((Long)value); return; }
-      if ("minValues".equals(key) && value instanceof Long) { minValue((Long)value); return; }
-      if ("minValue".equals(key) && value instanceof Float) { minValue((Float)value); return; }
-      if ("minValues".equals(key) && value instanceof Float) { minValue((Float)value); return; }
-      if ("minValue".equals(key) && value instanceof Double) { minValue((Double)value); return; }
-      if ("minValues".equals(key) && value instanceof Double) { minValue((Double)value); return; }
-      if ("minValue".equals(key) && value instanceof String) { minValue((String)value); return; }
-      if ("minValues".equals(key) && value instanceof String) { minValue((String)value); return; }
-      if ("unitCode".equals(key) && value instanceof String) { unitCode((String)value); return; }
-      if ("unitCodes".equals(key) && value instanceof String) { unitCode((String)value); return; }
-      if ("value".equals(key) && value instanceof Integer) { value((Integer)value); return; }
-      if ("values".equals(key) && value instanceof Integer) { value((Integer)value); return; }
-      if ("value".equals(key) && value instanceof Long) { value((Long)value); return; }
-      if ("values".equals(key) && value instanceof Long) { value((Long)value); return; }
-      if ("value".equals(key) && value instanceof Float) { value((Float)value); return; }
-      if ("values".equals(key) && value instanceof Float) { value((Float)value); return; }
-      if ("value".equals(key) && value instanceof Double) { value((Double)value); return; }
-      if ("values".equals(key) && value instanceof Double) { value((Double)value); return; }
-      if ("value".equals(key) && value instanceof String) { value((String)value); return; }
-      if ("values".equals(key) && value instanceof String) { value((String)value); return; }
-      if ("valueReference".equals(key) && value instanceof Enumeration) { valueReference((Enumeration)value); return; }
-      if ("valueReferences".equals(key) && value instanceof Enumeration) { valueReference((Enumeration)value); return; }
-      if ("valueReference".equals(key) && value instanceof PropertyValue) { valueReference((PropertyValue)value); return; }
-      if ("valueReferences".equals(key) && value instanceof PropertyValue) { valueReference((PropertyValue)value); return; }
-      if ("valueReference".equals(key) && value instanceof QualitativeValue) { valueReference((QualitativeValue)value); return; }
-      if ("valueReferences".equals(key) && value instanceof QualitativeValue) { valueReference((QualitativeValue)value); return; }
-      if ("valueReference".equals(key) && value instanceof QuantitativeValue) { valueReference((QuantitativeValue)value); return; }
-      if ("valueReferences".equals(key) && value instanceof QuantitativeValue) { valueReference((QuantitativeValue)value); return; }
-      if ("valueReference".equals(key) && value instanceof StructuredValue) { valueReference((StructuredValue)value); return; }
-      if ("valueReferences".equals(key) && value instanceof StructuredValue) { valueReference((StructuredValue)value); return; }
-      if ("additionalProperty".equals(key) && value instanceof PropertyValue) { additionalProperty((PropertyValue)value); return; }
-      if ("additionalPropertys".equals(key) && value instanceof PropertyValue) { additionalProperty((PropertyValue)value); return; }
-      if ("unitText".equals(key) && value instanceof String) { unitText((String)value); return; }
-      if ("unitTexts".equals(key) && value instanceof String) { unitText((String)value); return; }
+      if ("maxValue".equals(key) && value instanceof Integer) { this.maxValue((Integer)value); return; }
+      if ("maxValues".equals(key) && value instanceof Integer) { this.maxValue((Integer)value); return; }
+      if ("maxValue".equals(key) && value instanceof Long) { this.maxValue((Long)value); return; }
+      if ("maxValues".equals(key) && value instanceof Long) { this.maxValue((Long)value); return; }
+      if ("maxValue".equals(key) && value instanceof Float) { this.maxValue((Float)value); return; }
+      if ("maxValues".equals(key) && value instanceof Float) { this.maxValue((Float)value); return; }
+      if ("maxValue".equals(key) && value instanceof Double) { this.maxValue((Double)value); return; }
+      if ("maxValues".equals(key) && value instanceof Double) { this.maxValue((Double)value); return; }
+      if ("maxValue".equals(key) && value instanceof String) { this.maxValue((String)value); return; }
+      if ("maxValues".equals(key) && value instanceof String) { this.maxValue((String)value); return; }
+      if ("minValue".equals(key) && value instanceof Integer) { this.minValue((Integer)value); return; }
+      if ("minValues".equals(key) && value instanceof Integer) { this.minValue((Integer)value); return; }
+      if ("minValue".equals(key) && value instanceof Long) { this.minValue((Long)value); return; }
+      if ("minValues".equals(key) && value instanceof Long) { this.minValue((Long)value); return; }
+      if ("minValue".equals(key) && value instanceof Float) { this.minValue((Float)value); return; }
+      if ("minValues".equals(key) && value instanceof Float) { this.minValue((Float)value); return; }
+      if ("minValue".equals(key) && value instanceof Double) { this.minValue((Double)value); return; }
+      if ("minValues".equals(key) && value instanceof Double) { this.minValue((Double)value); return; }
+      if ("minValue".equals(key) && value instanceof String) { this.minValue((String)value); return; }
+      if ("minValues".equals(key) && value instanceof String) { this.minValue((String)value); return; }
+      if ("unitCode".equals(key) && value instanceof String) { this.unitCode((String)value); return; }
+      if ("unitCodes".equals(key) && value instanceof String) { this.unitCode((String)value); return; }
+      if ("value".equals(key) && value instanceof Integer) { this.value((Integer)value); return; }
+      if ("values".equals(key) && value instanceof Integer) { this.value((Integer)value); return; }
+      if ("value".equals(key) && value instanceof Long) { this.value((Long)value); return; }
+      if ("values".equals(key) && value instanceof Long) { this.value((Long)value); return; }
+      if ("value".equals(key) && value instanceof Float) { this.value((Float)value); return; }
+      if ("values".equals(key) && value instanceof Float) { this.value((Float)value); return; }
+      if ("value".equals(key) && value instanceof Double) { this.value((Double)value); return; }
+      if ("values".equals(key) && value instanceof Double) { this.value((Double)value); return; }
+      if ("value".equals(key) && value instanceof String) { this.value((String)value); return; }
+      if ("values".equals(key) && value instanceof String) { this.value((String)value); return; }
+      if ("valueReference".equals(key) && value instanceof Enumeration) { this.valueReference((Enumeration)value); return; }
+      if ("valueReferences".equals(key) && value instanceof Enumeration) { this.valueReference((Enumeration)value); return; }
+      if ("valueReference".equals(key) && value instanceof PropertyValue) { this.valueReference((PropertyValue)value); return; }
+      if ("valueReferences".equals(key) && value instanceof PropertyValue) { this.valueReference((PropertyValue)value); return; }
+      if ("valueReference".equals(key) && value instanceof QualitativeValue) { this.valueReference((QualitativeValue)value); return; }
+      if ("valueReferences".equals(key) && value instanceof QualitativeValue) { this.valueReference((QualitativeValue)value); return; }
+      if ("valueReference".equals(key) && value instanceof QuantitativeValue) { this.valueReference((QuantitativeValue)value); return; }
+      if ("valueReferences".equals(key) && value instanceof QuantitativeValue) { this.valueReference((QuantitativeValue)value); return; }
+      if ("valueReference".equals(key) && value instanceof StructuredValue) { this.valueReference((StructuredValue)value); return; }
+      if ("valueReferences".equals(key) && value instanceof StructuredValue) { this.valueReference((StructuredValue)value); return; }
+      if ("additionalProperty".equals(key) && value instanceof PropertyValue) { this.additionalProperty((PropertyValue)value); return; }
+      if ("additionalPropertys".equals(key) && value instanceof PropertyValue) { this.additionalProperty((PropertyValue)value); return; }
+      if ("unitText".equals(key) && value instanceof String) { this.unitText((String)value); return; }
+      if ("unitTexts".equals(key) && value instanceof String) { this.unitText((String)value); return; }
       super.fromMap(key, value);
     }
   }

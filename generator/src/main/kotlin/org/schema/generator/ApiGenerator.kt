@@ -1,5 +1,7 @@
 package org.schema.generator
 
+import org.apache.commons.text.StringEscapeUtils
+
 /**
  * @author Victor Kropp
  */
@@ -28,7 +30,7 @@ class ApiGenerator(private val sink: GeneratorSink, private val banner: String? 
 
                 type.comment?.let {
                     appendLine("  /**")
-                    appendLine("   * $it")
+                    appendLine("   * ${StringEscapeUtils.escapeHtml4(it)}")
                     appendLine("   */")
                 }
                 appendLine("  @NotNull public static $typeName.Builder ${typeName.decapitalize()}() { return new $typeName.Builder(new HashMap<String,Object>()); }")

@@ -79,13 +79,13 @@ public class DataFeedItem extends Intangible {
     return Arrays.asList((java.util.Date) current);
   }
   /**
-   * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')’.
+   * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')&rsquo;.
    */
   @JsonIgnore public Thing getItem() {
     return (Thing) getValue("item");
   }
   /**
-   * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')’.
+   * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')&rsquo;.
    */
   @JsonIgnore public Collection<Thing> getItems() {
     final Object current = myData.get("item");
@@ -131,14 +131,14 @@ public class DataFeedItem extends Intangible {
       return this;
     }
     /**
-     * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')’.
+     * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')&rsquo;.
      */
     @NotNull public Builder item(@NotNull Thing thing) {
       putValue("item", thing);
       return this;
     }
     /**
-     * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')’.
+     * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')&rsquo;.
      */
     @NotNull public Builder item(@NotNull Thing.Builder thing) {
       putValue("item", thing.build());
@@ -257,14 +257,14 @@ public class DataFeedItem extends Intangible {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("dateCreated".equals(key) && value instanceof java.util.Date) { dateCreated((java.util.Date)value); return; }
-      if ("dateCreateds".equals(key) && value instanceof java.util.Date) { dateCreated((java.util.Date)value); return; }
-      if ("dateDeleted".equals(key) && value instanceof java.util.Date) { dateDeleted((java.util.Date)value); return; }
-      if ("dateDeleteds".equals(key) && value instanceof java.util.Date) { dateDeleted((java.util.Date)value); return; }
-      if ("dateModified".equals(key) && value instanceof java.util.Date) { dateModified((java.util.Date)value); return; }
-      if ("dateModifieds".equals(key) && value instanceof java.util.Date) { dateModified((java.util.Date)value); return; }
-      if ("item".equals(key) && value instanceof Thing) { item((Thing)value); return; }
-      if ("items".equals(key) && value instanceof Thing) { item((Thing)value); return; }
+      if ("dateCreated".equals(key) && value instanceof java.util.Date) { this.dateCreated((java.util.Date)value); return; }
+      if ("dateCreateds".equals(key) && value instanceof java.util.Date) { this.dateCreated((java.util.Date)value); return; }
+      if ("dateDeleted".equals(key) && value instanceof java.util.Date) { this.dateDeleted((java.util.Date)value); return; }
+      if ("dateDeleteds".equals(key) && value instanceof java.util.Date) { this.dateDeleted((java.util.Date)value); return; }
+      if ("dateModified".equals(key) && value instanceof java.util.Date) { this.dateModified((java.util.Date)value); return; }
+      if ("dateModifieds".equals(key) && value instanceof java.util.Date) { this.dateModified((java.util.Date)value); return; }
+      if ("item".equals(key) && value instanceof Thing) { this.item((Thing)value); return; }
+      if ("items".equals(key) && value instanceof Thing) { this.item((Thing)value); return; }
       super.fromMap(key, value);
     }
   }

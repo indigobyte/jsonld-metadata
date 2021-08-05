@@ -70,14 +70,14 @@ public class HowToTool extends HowToItem {
       return this;
     }
     /**
-     * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')’.
+     * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')&rsquo;.
      */
     @NotNull public Builder item(@NotNull Thing thing) {
       putValue("item", thing);
       return this;
     }
     /**
-     * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')’.
+     * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')&rsquo;.
      */
     @NotNull public Builder item(@NotNull Thing.Builder thing) {
       putValue("item", thing.build());

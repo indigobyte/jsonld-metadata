@@ -504,34 +504,34 @@ public class GeoShape extends StructuredValue {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("address".equals(key) && value instanceof PostalAddress) { address((PostalAddress)value); return; }
-      if ("addresss".equals(key) && value instanceof PostalAddress) { address((PostalAddress)value); return; }
-      if ("address".equals(key) && value instanceof String) { address((String)value); return; }
-      if ("addresss".equals(key) && value instanceof String) { address((String)value); return; }
-      if ("addressCountry".equals(key) && value instanceof Country) { addressCountry((Country)value); return; }
-      if ("addressCountrys".equals(key) && value instanceof Country) { addressCountry((Country)value); return; }
-      if ("addressCountry".equals(key) && value instanceof String) { addressCountry((String)value); return; }
-      if ("addressCountrys".equals(key) && value instanceof String) { addressCountry((String)value); return; }
-      if ("box".equals(key) && value instanceof String) { box((String)value); return; }
-      if ("boxs".equals(key) && value instanceof String) { box((String)value); return; }
-      if ("circle".equals(key) && value instanceof String) { circle((String)value); return; }
-      if ("circles".equals(key) && value instanceof String) { circle((String)value); return; }
-      if ("elevation".equals(key) && value instanceof Integer) { elevation((Integer)value); return; }
-      if ("elevations".equals(key) && value instanceof Integer) { elevation((Integer)value); return; }
-      if ("elevation".equals(key) && value instanceof Long) { elevation((Long)value); return; }
-      if ("elevations".equals(key) && value instanceof Long) { elevation((Long)value); return; }
-      if ("elevation".equals(key) && value instanceof Float) { elevation((Float)value); return; }
-      if ("elevations".equals(key) && value instanceof Float) { elevation((Float)value); return; }
-      if ("elevation".equals(key) && value instanceof Double) { elevation((Double)value); return; }
-      if ("elevations".equals(key) && value instanceof Double) { elevation((Double)value); return; }
-      if ("elevation".equals(key) && value instanceof String) { elevation((String)value); return; }
-      if ("elevations".equals(key) && value instanceof String) { elevation((String)value); return; }
-      if ("line".equals(key) && value instanceof String) { line((String)value); return; }
-      if ("lines".equals(key) && value instanceof String) { line((String)value); return; }
-      if ("polygon".equals(key) && value instanceof String) { polygon((String)value); return; }
-      if ("polygons".equals(key) && value instanceof String) { polygon((String)value); return; }
-      if ("postalCode".equals(key) && value instanceof String) { postalCode((String)value); return; }
-      if ("postalCodes".equals(key) && value instanceof String) { postalCode((String)value); return; }
+      if ("address".equals(key) && value instanceof PostalAddress) { this.address((PostalAddress)value); return; }
+      if ("addresss".equals(key) && value instanceof PostalAddress) { this.address((PostalAddress)value); return; }
+      if ("address".equals(key) && value instanceof String) { this.address((String)value); return; }
+      if ("addresss".equals(key) && value instanceof String) { this.address((String)value); return; }
+      if ("addressCountry".equals(key) && value instanceof Country) { this.addressCountry((Country)value); return; }
+      if ("addressCountrys".equals(key) && value instanceof Country) { this.addressCountry((Country)value); return; }
+      if ("addressCountry".equals(key) && value instanceof String) { this.addressCountry((String)value); return; }
+      if ("addressCountrys".equals(key) && value instanceof String) { this.addressCountry((String)value); return; }
+      if ("box".equals(key) && value instanceof String) { this.box((String)value); return; }
+      if ("boxs".equals(key) && value instanceof String) { this.box((String)value); return; }
+      if ("circle".equals(key) && value instanceof String) { this.circle((String)value); return; }
+      if ("circles".equals(key) && value instanceof String) { this.circle((String)value); return; }
+      if ("elevation".equals(key) && value instanceof Integer) { this.elevation((Integer)value); return; }
+      if ("elevations".equals(key) && value instanceof Integer) { this.elevation((Integer)value); return; }
+      if ("elevation".equals(key) && value instanceof Long) { this.elevation((Long)value); return; }
+      if ("elevations".equals(key) && value instanceof Long) { this.elevation((Long)value); return; }
+      if ("elevation".equals(key) && value instanceof Float) { this.elevation((Float)value); return; }
+      if ("elevations".equals(key) && value instanceof Float) { this.elevation((Float)value); return; }
+      if ("elevation".equals(key) && value instanceof Double) { this.elevation((Double)value); return; }
+      if ("elevations".equals(key) && value instanceof Double) { this.elevation((Double)value); return; }
+      if ("elevation".equals(key) && value instanceof String) { this.elevation((String)value); return; }
+      if ("elevations".equals(key) && value instanceof String) { this.elevation((String)value); return; }
+      if ("line".equals(key) && value instanceof String) { this.line((String)value); return; }
+      if ("lines".equals(key) && value instanceof String) { this.line((String)value); return; }
+      if ("polygon".equals(key) && value instanceof String) { this.polygon((String)value); return; }
+      if ("polygons".equals(key) && value instanceof String) { this.polygon((String)value); return; }
+      if ("postalCode".equals(key) && value instanceof String) { this.postalCode((String)value); return; }
+      if ("postalCodes".equals(key) && value instanceof String) { this.postalCode((String)value); return; }
       super.fromMap(key, value);
     }
   }

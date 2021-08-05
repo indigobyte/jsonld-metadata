@@ -255,8 +255,8 @@ public class SearchAction extends Action {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("query".equals(key) && value instanceof String) { query((String)value); return; }
-      if ("querys".equals(key) && value instanceof String) { query((String)value); return; }
+      if ("query".equals(key) && value instanceof String) { this.query((String)value); return; }
+      if ("querys".equals(key) && value instanceof String) { this.query((String)value); return; }
       super.fromMap(key, value);
     }
   }

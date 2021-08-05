@@ -62,13 +62,13 @@ public class DatedMoneySpecification extends StructuredValue {
     return Arrays.asList((Number) current);
   }
   /**
-   * The currency in which the monetary amount is expressed.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
+   * The currency in which the monetary amount is expressed.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;.
    */
   @JsonIgnore public String getCurrency() {
     return (String) getValue("currency");
   }
   /**
-   * The currency in which the monetary amount is expressed.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
+   * The currency in which the monetary amount is expressed.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;.
    */
   @JsonIgnore public Collection<String> getCurrencys() {
     final Object current = myData.get("currency");
@@ -148,7 +148,7 @@ public class DatedMoneySpecification extends StructuredValue {
       return this;
     }
     /**
-     * The currency in which the monetary amount is expressed.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
+     * The currency in which the monetary amount is expressed.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;.
      */
     @NotNull public Builder currency(@NotNull String currency) {
       putValue("currency", currency);
@@ -281,16 +281,16 @@ public class DatedMoneySpecification extends StructuredValue {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("amount".equals(key) && value instanceof MonetaryAmount) { amount((MonetaryAmount)value); return; }
-      if ("amounts".equals(key) && value instanceof MonetaryAmount) { amount((MonetaryAmount)value); return; }
-      if ("amount".equals(key) && value instanceof Number) { amount((Number)value); return; }
-      if ("amounts".equals(key) && value instanceof Number) { amount((Number)value); return; }
-      if ("currency".equals(key) && value instanceof String) { currency((String)value); return; }
-      if ("currencys".equals(key) && value instanceof String) { currency((String)value); return; }
-      if ("startDate".equals(key) && value instanceof java.util.Date) { startDate((java.util.Date)value); return; }
-      if ("startDates".equals(key) && value instanceof java.util.Date) { startDate((java.util.Date)value); return; }
-      if ("endDate".equals(key) && value instanceof java.util.Date) { endDate((java.util.Date)value); return; }
-      if ("endDates".equals(key) && value instanceof java.util.Date) { endDate((java.util.Date)value); return; }
+      if ("amount".equals(key) && value instanceof MonetaryAmount) { this.amount((MonetaryAmount)value); return; }
+      if ("amounts".equals(key) && value instanceof MonetaryAmount) { this.amount((MonetaryAmount)value); return; }
+      if ("amount".equals(key) && value instanceof Number) { this.amount((Number)value); return; }
+      if ("amounts".equals(key) && value instanceof Number) { this.amount((Number)value); return; }
+      if ("currency".equals(key) && value instanceof String) { this.currency((String)value); return; }
+      if ("currencys".equals(key) && value instanceof String) { this.currency((String)value); return; }
+      if ("startDate".equals(key) && value instanceof java.util.Date) { this.startDate((java.util.Date)value); return; }
+      if ("startDates".equals(key) && value instanceof java.util.Date) { this.startDate((java.util.Date)value); return; }
+      if ("endDate".equals(key) && value instanceof java.util.Date) { this.endDate((java.util.Date)value); return; }
+      if ("endDates".equals(key) && value instanceof java.util.Date) { this.endDate((java.util.Date)value); return; }
       super.fromMap(key, value);
     }
   }

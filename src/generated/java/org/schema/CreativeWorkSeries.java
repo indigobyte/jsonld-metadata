@@ -251,14 +251,14 @@ public class CreativeWorkSeries extends Series {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("endDate".equals(key) && value instanceof java.util.Date) { endDate((java.util.Date)value); return; }
-      if ("endDates".equals(key) && value instanceof java.util.Date) { endDate((java.util.Date)value); return; }
-      if ("startDate".equals(key) && value instanceof java.util.Date) { startDate((java.util.Date)value); return; }
-      if ("startDates".equals(key) && value instanceof java.util.Date) { startDate((java.util.Date)value); return; }
-      if ("issn".equals(key) && value instanceof Identifier) { issn((Identifier)value); return; }
-      if ("issns".equals(key) && value instanceof Identifier) { issn((Identifier)value); return; }
-      if ("issn".equals(key) && value instanceof String) { issn((String)value); return; }
-      if ("issns".equals(key) && value instanceof String) { issn((String)value); return; }
+      if ("endDate".equals(key) && value instanceof java.util.Date) { this.endDate((java.util.Date)value); return; }
+      if ("endDates".equals(key) && value instanceof java.util.Date) { this.endDate((java.util.Date)value); return; }
+      if ("startDate".equals(key) && value instanceof java.util.Date) { this.startDate((java.util.Date)value); return; }
+      if ("startDates".equals(key) && value instanceof java.util.Date) { this.startDate((java.util.Date)value); return; }
+      if ("issn".equals(key) && value instanceof Identifier) { this.issn((Identifier)value); return; }
+      if ("issns".equals(key) && value instanceof Identifier) { this.issn((Identifier)value); return; }
+      if ("issn".equals(key) && value instanceof String) { this.issn((String)value); return; }
+      if ("issns".equals(key) && value instanceof String) { this.issn((String)value); return; }
       super.fromMap(key, value);
     }
   }

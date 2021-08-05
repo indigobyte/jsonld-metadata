@@ -307,10 +307,10 @@ public class ReplaceAction extends UpdateAction {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("replacee".equals(key) && value instanceof Thing) { replacee((Thing)value); return; }
-      if ("replacees".equals(key) && value instanceof Thing) { replacee((Thing)value); return; }
-      if ("replacer".equals(key) && value instanceof Thing) { replacer((Thing)value); return; }
-      if ("replacers".equals(key) && value instanceof Thing) { replacer((Thing)value); return; }
+      if ("replacee".equals(key) && value instanceof Thing) { this.replacee((Thing)value); return; }
+      if ("replacees".equals(key) && value instanceof Thing) { this.replacee((Thing)value); return; }
+      if ("replacer".equals(key) && value instanceof Thing) { this.replacer((Thing)value); return; }
+      if ("replacers".equals(key) && value instanceof Thing) { this.replacer((Thing)value); return; }
       super.fromMap(key, value);
     }
   }

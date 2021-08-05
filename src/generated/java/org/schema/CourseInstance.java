@@ -28,13 +28,13 @@ import java.util.*;
  */
 public class CourseInstance extends Event {
   /**
-   * The medium or means of delivery of the course instance or the mode of study, either as a text label (e.g. "online", "onsite" or "blended"; "synchronous" or "asynchronous"; "full-time" or "part-time") or as a URL reference to a term from a controlled vocabulary (e.g. https://ceds.ed.gov/element/001311#Asynchronous ).
+   * The medium or means of delivery of the course instance or the mode of study, either as a text label (e.g. &quot;online&quot;, &quot;onsite&quot; or &quot;blended&quot;; &quot;synchronous&quot; or &quot;asynchronous&quot;; &quot;full-time&quot; or &quot;part-time&quot;) or as a URL reference to a term from a controlled vocabulary (e.g. https://ceds.ed.gov/element/001311#Asynchronous ).
    */
   @JsonIgnore public String getCourseMode() {
     return (String) getValue("courseMode");
   }
   /**
-   * The medium or means of delivery of the course instance or the mode of study, either as a text label (e.g. "online", "onsite" or "blended"; "synchronous" or "asynchronous"; "full-time" or "part-time") or as a URL reference to a term from a controlled vocabulary (e.g. https://ceds.ed.gov/element/001311#Asynchronous ).
+   * The medium or means of delivery of the course instance or the mode of study, either as a text label (e.g. &quot;online&quot;, &quot;onsite&quot; or &quot;blended&quot;; &quot;synchronous&quot; or &quot;asynchronous&quot;; &quot;full-time&quot; or &quot;part-time&quot;) or as a URL reference to a term from a controlled vocabulary (e.g. https://ceds.ed.gov/element/001311#Asynchronous ).
    */
   @JsonIgnore public Collection<String> getCourseModes() {
     final Object current = myData.get("courseMode");
@@ -76,7 +76,7 @@ public class CourseInstance extends Event {
       return new CourseInstance(myData);
     }
     /**
-     * The medium or means of delivery of the course instance or the mode of study, either as a text label (e.g. "online", "onsite" or "blended"; "synchronous" or "asynchronous"; "full-time" or "part-time") or as a URL reference to a term from a controlled vocabulary (e.g. https://ceds.ed.gov/element/001311#Asynchronous ).
+     * The medium or means of delivery of the course instance or the mode of study, either as a text label (e.g. &quot;online&quot;, &quot;onsite&quot; or &quot;blended&quot;; &quot;synchronous&quot; or &quot;asynchronous&quot;; &quot;full-time&quot; or &quot;part-time&quot;) or as a URL reference to a term from a controlled vocabulary (e.g. https://ceds.ed.gov/element/001311#Asynchronous ).
      */
     @NotNull public Builder courseMode(@NotNull String courseMode) {
       putValue("courseMode", courseMode);
@@ -300,7 +300,7 @@ public class CourseInstance extends Event {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Demand demand) {
@@ -308,7 +308,7 @@ public class CourseInstance extends Event {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Demand.Builder demand) {
@@ -316,7 +316,7 @@ public class CourseInstance extends Event {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Offer offer) {
@@ -324,7 +324,7 @@ public class CourseInstance extends Event {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Offer.Builder offer) {
@@ -332,28 +332,28 @@ public class CourseInstance extends Event {
       return this;
     }
     /**
-     * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
+     * A performer at the event&amp;#x2014;for example, a presenter, musician, musical group or actor.
      */
     @NotNull public Builder performer(@NotNull Organization organization) {
       putValue("performer", organization);
       return this;
     }
     /**
-     * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
+     * A performer at the event&amp;#x2014;for example, a presenter, musician, musical group or actor.
      */
     @NotNull public Builder performer(@NotNull Organization.Builder organization) {
       putValue("performer", organization.build());
       return this;
     }
     /**
-     * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
+     * A performer at the event&amp;#x2014;for example, a presenter, musician, musical group or actor.
      */
     @NotNull public Builder performer(@NotNull Person person) {
       putValue("performer", person);
       return this;
     }
     /**
-     * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
+     * A performer at the event&amp;#x2014;for example, a presenter, musician, musical group or actor.
      */
     @NotNull public Builder performer(@NotNull Person.Builder person) {
       putValue("performer", person.build());
@@ -655,10 +655,10 @@ public class CourseInstance extends Event {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("courseMode".equals(key) && value instanceof String) { courseMode((String)value); return; }
-      if ("courseModes".equals(key) && value instanceof String) { courseMode((String)value); return; }
-      if ("instructor".equals(key) && value instanceof Person) { instructor((Person)value); return; }
-      if ("instructors".equals(key) && value instanceof Person) { instructor((Person)value); return; }
+      if ("courseMode".equals(key) && value instanceof String) { this.courseMode((String)value); return; }
+      if ("courseModes".equals(key) && value instanceof String) { this.courseMode((String)value); return; }
+      if ("instructor".equals(key) && value instanceof Person) { this.instructor((Person)value); return; }
+      if ("instructors".equals(key) && value instanceof Person) { this.instructor((Person)value); return; }
       super.fromMap(key, value);
     }
   }

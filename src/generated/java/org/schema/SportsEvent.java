@@ -441,7 +441,7 @@ public class SportsEvent extends Event {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Demand demand) {
@@ -449,7 +449,7 @@ public class SportsEvent extends Event {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Demand.Builder demand) {
@@ -457,7 +457,7 @@ public class SportsEvent extends Event {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Offer offer) {
@@ -465,7 +465,7 @@ public class SportsEvent extends Event {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Offer.Builder offer) {
@@ -473,28 +473,28 @@ public class SportsEvent extends Event {
       return this;
     }
     /**
-     * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
+     * A performer at the event&amp;#x2014;for example, a presenter, musician, musical group or actor.
      */
     @NotNull public Builder performer(@NotNull Organization organization) {
       putValue("performer", organization);
       return this;
     }
     /**
-     * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
+     * A performer at the event&amp;#x2014;for example, a presenter, musician, musical group or actor.
      */
     @NotNull public Builder performer(@NotNull Organization.Builder organization) {
       putValue("performer", organization.build());
       return this;
     }
     /**
-     * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
+     * A performer at the event&amp;#x2014;for example, a presenter, musician, musical group or actor.
      */
     @NotNull public Builder performer(@NotNull Person person) {
       putValue("performer", person);
       return this;
     }
     /**
-     * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
+     * A performer at the event&amp;#x2014;for example, a presenter, musician, musical group or actor.
      */
     @NotNull public Builder performer(@NotNull Person.Builder person) {
       putValue("performer", person.build());
@@ -796,20 +796,20 @@ public class SportsEvent extends Event {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("homeTeam".equals(key) && value instanceof Competitor) { homeTeam((Competitor)value); return; }
-      if ("homeTeams".equals(key) && value instanceof Competitor) { homeTeam((Competitor)value); return; }
-      if ("homeTeam".equals(key) && value instanceof Person) { homeTeam((Person)value); return; }
-      if ("homeTeams".equals(key) && value instanceof Person) { homeTeam((Person)value); return; }
-      if ("homeTeam".equals(key) && value instanceof SportsTeam) { homeTeam((SportsTeam)value); return; }
-      if ("homeTeams".equals(key) && value instanceof SportsTeam) { homeTeam((SportsTeam)value); return; }
-      if ("awayTeam".equals(key) && value instanceof Competitor) { awayTeam((Competitor)value); return; }
-      if ("awayTeams".equals(key) && value instanceof Competitor) { awayTeam((Competitor)value); return; }
-      if ("awayTeam".equals(key) && value instanceof Person) { awayTeam((Person)value); return; }
-      if ("awayTeams".equals(key) && value instanceof Person) { awayTeam((Person)value); return; }
-      if ("awayTeam".equals(key) && value instanceof SportsTeam) { awayTeam((SportsTeam)value); return; }
-      if ("awayTeams".equals(key) && value instanceof SportsTeam) { awayTeam((SportsTeam)value); return; }
-      if ("competitor".equals(key) && value instanceof Competitor) { competitor((Competitor)value); return; }
-      if ("competitors".equals(key) && value instanceof Competitor) { competitor((Competitor)value); return; }
+      if ("homeTeam".equals(key) && value instanceof Competitor) { this.homeTeam((Competitor)value); return; }
+      if ("homeTeams".equals(key) && value instanceof Competitor) { this.homeTeam((Competitor)value); return; }
+      if ("homeTeam".equals(key) && value instanceof Person) { this.homeTeam((Person)value); return; }
+      if ("homeTeams".equals(key) && value instanceof Person) { this.homeTeam((Person)value); return; }
+      if ("homeTeam".equals(key) && value instanceof SportsTeam) { this.homeTeam((SportsTeam)value); return; }
+      if ("homeTeams".equals(key) && value instanceof SportsTeam) { this.homeTeam((SportsTeam)value); return; }
+      if ("awayTeam".equals(key) && value instanceof Competitor) { this.awayTeam((Competitor)value); return; }
+      if ("awayTeams".equals(key) && value instanceof Competitor) { this.awayTeam((Competitor)value); return; }
+      if ("awayTeam".equals(key) && value instanceof Person) { this.awayTeam((Person)value); return; }
+      if ("awayTeams".equals(key) && value instanceof Person) { this.awayTeam((Person)value); return; }
+      if ("awayTeam".equals(key) && value instanceof SportsTeam) { this.awayTeam((SportsTeam)value); return; }
+      if ("awayTeams".equals(key) && value instanceof SportsTeam) { this.awayTeam((SportsTeam)value); return; }
+      if ("competitor".equals(key) && value instanceof Competitor) { this.competitor((Competitor)value); return; }
+      if ("competitors".equals(key) && value instanceof Competitor) { this.competitor((Competitor)value); return; }
       super.fromMap(key, value);
     }
   }

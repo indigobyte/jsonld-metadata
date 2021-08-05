@@ -226,12 +226,12 @@ public class Role extends Intangible {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("endDate".equals(key) && value instanceof java.util.Date) { endDate((java.util.Date)value); return; }
-      if ("endDates".equals(key) && value instanceof java.util.Date) { endDate((java.util.Date)value); return; }
-      if ("startDate".equals(key) && value instanceof java.util.Date) { startDate((java.util.Date)value); return; }
-      if ("startDates".equals(key) && value instanceof java.util.Date) { startDate((java.util.Date)value); return; }
-      if ("roleName".equals(key) && value instanceof String) { roleName((String)value); return; }
-      if ("roleNames".equals(key) && value instanceof String) { roleName((String)value); return; }
+      if ("endDate".equals(key) && value instanceof java.util.Date) { this.endDate((java.util.Date)value); return; }
+      if ("endDates".equals(key) && value instanceof java.util.Date) { this.endDate((java.util.Date)value); return; }
+      if ("startDate".equals(key) && value instanceof java.util.Date) { this.startDate((java.util.Date)value); return; }
+      if ("startDates".equals(key) && value instanceof java.util.Date) { this.startDate((java.util.Date)value); return; }
+      if ("roleName".equals(key) && value instanceof String) { this.roleName((String)value); return; }
+      if ("roleNames".equals(key) && value instanceof String) { this.roleName((String)value); return; }
       super.fromMap(key, value);
     }
   }

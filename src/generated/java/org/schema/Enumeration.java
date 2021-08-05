@@ -24,7 +24,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * Lists or enumerations—for example, a list of cuisines or music genres, etc.
+ * Lists or enumerations&mdash;for example, a list of cuisines or music genres, etc.
  */
 public class Enumeration extends Intangible {
   protected Enumeration(java.util.Map<String,Object> data) {

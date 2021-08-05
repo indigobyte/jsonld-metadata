@@ -329,20 +329,20 @@ public class BedDetails extends Intangible {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("typeOfBed".equals(key) && value instanceof BedType) { typeOfBed((BedType)value); return; }
-      if ("typeOfBeds".equals(key) && value instanceof BedType) { typeOfBed((BedType)value); return; }
-      if ("typeOfBed".equals(key) && value instanceof String) { typeOfBed((String)value); return; }
-      if ("typeOfBeds".equals(key) && value instanceof String) { typeOfBed((String)value); return; }
-      if ("numberOfBeds".equals(key) && value instanceof Integer) { numberOfBeds((Integer)value); return; }
-      if ("numberOfBedss".equals(key) && value instanceof Integer) { numberOfBeds((Integer)value); return; }
-      if ("numberOfBeds".equals(key) && value instanceof Long) { numberOfBeds((Long)value); return; }
-      if ("numberOfBedss".equals(key) && value instanceof Long) { numberOfBeds((Long)value); return; }
-      if ("numberOfBeds".equals(key) && value instanceof Float) { numberOfBeds((Float)value); return; }
-      if ("numberOfBedss".equals(key) && value instanceof Float) { numberOfBeds((Float)value); return; }
-      if ("numberOfBeds".equals(key) && value instanceof Double) { numberOfBeds((Double)value); return; }
-      if ("numberOfBedss".equals(key) && value instanceof Double) { numberOfBeds((Double)value); return; }
-      if ("numberOfBeds".equals(key) && value instanceof String) { numberOfBeds((String)value); return; }
-      if ("numberOfBedss".equals(key) && value instanceof String) { numberOfBeds((String)value); return; }
+      if ("typeOfBed".equals(key) && value instanceof BedType) { this.typeOfBed((BedType)value); return; }
+      if ("typeOfBeds".equals(key) && value instanceof BedType) { this.typeOfBed((BedType)value); return; }
+      if ("typeOfBed".equals(key) && value instanceof String) { this.typeOfBed((String)value); return; }
+      if ("typeOfBeds".equals(key) && value instanceof String) { this.typeOfBed((String)value); return; }
+      if ("numberOfBeds".equals(key) && value instanceof Integer) { this.numberOfBeds((Integer)value); return; }
+      if ("numberOfBedss".equals(key) && value instanceof Integer) { this.numberOfBeds((Integer)value); return; }
+      if ("numberOfBeds".equals(key) && value instanceof Long) { this.numberOfBeds((Long)value); return; }
+      if ("numberOfBedss".equals(key) && value instanceof Long) { this.numberOfBeds((Long)value); return; }
+      if ("numberOfBeds".equals(key) && value instanceof Float) { this.numberOfBeds((Float)value); return; }
+      if ("numberOfBedss".equals(key) && value instanceof Float) { this.numberOfBeds((Float)value); return; }
+      if ("numberOfBeds".equals(key) && value instanceof Double) { this.numberOfBeds((Double)value); return; }
+      if ("numberOfBedss".equals(key) && value instanceof Double) { this.numberOfBeds((Double)value); return; }
+      if ("numberOfBeds".equals(key) && value instanceof String) { this.numberOfBeds((String)value); return; }
+      if ("numberOfBedss".equals(key) && value instanceof String) { this.numberOfBeds((String)value); return; }
       super.fromMap(key, value);
     }
   }

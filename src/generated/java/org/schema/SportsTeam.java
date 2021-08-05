@@ -251,14 +251,14 @@ public class SportsTeam extends SportsOrganization implements Competitor {
       return this;
     }
     /**
-     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
+     * The Dun &amp; Bradstreet DUNS number for identifying an organization or business person.
      */
     @NotNull public Builder duns(@NotNull Identifier identifier) {
       putValue("duns", identifier);
       return this;
     }
     /**
-     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
+     * The Dun &amp; Bradstreet DUNS number for identifying an organization or business person.
      */
     @NotNull public Builder duns(@NotNull String duns) {
       putValue("duns", duns);
@@ -771,10 +771,10 @@ public class SportsTeam extends SportsOrganization implements Competitor {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("coach".equals(key) && value instanceof Person) { coach((Person)value); return; }
-      if ("coachs".equals(key) && value instanceof Person) { coach((Person)value); return; }
-      if ("athlete".equals(key) && value instanceof Person) { athlete((Person)value); return; }
-      if ("athletes".equals(key) && value instanceof Person) { athlete((Person)value); return; }
+      if ("coach".equals(key) && value instanceof Person) { this.coach((Person)value); return; }
+      if ("coachs".equals(key) && value instanceof Person) { this.coach((Person)value); return; }
+      if ("athlete".equals(key) && value instanceof Person) { this.athlete((Person)value); return; }
+      if ("athletes".equals(key) && value instanceof Person) { this.athlete((Person)value); return; }
       super.fromMap(key, value);
     }
   }

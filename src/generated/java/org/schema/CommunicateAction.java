@@ -286,10 +286,10 @@ public class CommunicateAction extends InteractAction {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("inLanguage".equals(key) && value instanceof Language) { inLanguage((Language)value); return; }
-      if ("inLanguages".equals(key) && value instanceof Language) { inLanguage((Language)value); return; }
-      if ("inLanguage".equals(key) && value instanceof String) { inLanguage((String)value); return; }
-      if ("inLanguages".equals(key) && value instanceof String) { inLanguage((String)value); return; }
+      if ("inLanguage".equals(key) && value instanceof Language) { this.inLanguage((Language)value); return; }
+      if ("inLanguages".equals(key) && value instanceof Language) { this.inLanguage((Language)value); return; }
+      if ("inLanguage".equals(key) && value instanceof String) { this.inLanguage((String)value); return; }
+      if ("inLanguages".equals(key) && value instanceof String) { this.inLanguage((String)value); return; }
       super.fromMap(key, value);
     }
   }

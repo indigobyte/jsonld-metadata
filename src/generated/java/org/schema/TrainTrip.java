@@ -200,7 +200,7 @@ public class TrainTrip extends Trip {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Demand demand) {
@@ -208,7 +208,7 @@ public class TrainTrip extends Trip {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Demand.Builder demand) {
@@ -216,7 +216,7 @@ public class TrainTrip extends Trip {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Offer offer) {
@@ -224,7 +224,7 @@ public class TrainTrip extends Trip {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Offer.Builder offer) {
@@ -386,18 +386,18 @@ public class TrainTrip extends Trip {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("trainNumber".equals(key) && value instanceof String) { trainNumber((String)value); return; }
-      if ("trainNumbers".equals(key) && value instanceof String) { trainNumber((String)value); return; }
-      if ("trainName".equals(key) && value instanceof String) { trainName((String)value); return; }
-      if ("trainNames".equals(key) && value instanceof String) { trainName((String)value); return; }
-      if ("departureStation".equals(key) && value instanceof TrainStation) { departureStation((TrainStation)value); return; }
-      if ("departureStations".equals(key) && value instanceof TrainStation) { departureStation((TrainStation)value); return; }
-      if ("arrivalStation".equals(key) && value instanceof TrainStation) { arrivalStation((TrainStation)value); return; }
-      if ("arrivalStations".equals(key) && value instanceof TrainStation) { arrivalStation((TrainStation)value); return; }
-      if ("departurePlatform".equals(key) && value instanceof String) { departurePlatform((String)value); return; }
-      if ("departurePlatforms".equals(key) && value instanceof String) { departurePlatform((String)value); return; }
-      if ("arrivalPlatform".equals(key) && value instanceof String) { arrivalPlatform((String)value); return; }
-      if ("arrivalPlatforms".equals(key) && value instanceof String) { arrivalPlatform((String)value); return; }
+      if ("trainNumber".equals(key) && value instanceof String) { this.trainNumber((String)value); return; }
+      if ("trainNumbers".equals(key) && value instanceof String) { this.trainNumber((String)value); return; }
+      if ("trainName".equals(key) && value instanceof String) { this.trainName((String)value); return; }
+      if ("trainNames".equals(key) && value instanceof String) { this.trainName((String)value); return; }
+      if ("departureStation".equals(key) && value instanceof TrainStation) { this.departureStation((TrainStation)value); return; }
+      if ("departureStations".equals(key) && value instanceof TrainStation) { this.departureStation((TrainStation)value); return; }
+      if ("arrivalStation".equals(key) && value instanceof TrainStation) { this.arrivalStation((TrainStation)value); return; }
+      if ("arrivalStations".equals(key) && value instanceof TrainStation) { this.arrivalStation((TrainStation)value); return; }
+      if ("departurePlatform".equals(key) && value instanceof String) { this.departurePlatform((String)value); return; }
+      if ("departurePlatforms".equals(key) && value instanceof String) { this.departurePlatform((String)value); return; }
+      if ("arrivalPlatform".equals(key) && value instanceof String) { this.arrivalPlatform((String)value); return; }
+      if ("arrivalPlatforms".equals(key) && value instanceof String) { this.arrivalPlatform((String)value); return; }
       super.fromMap(key, value);
     }
   }

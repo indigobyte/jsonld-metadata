@@ -283,8 +283,8 @@ public class AskAction extends CommunicateAction {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("question".equals(key) && value instanceof Question) { question((Question)value); return; }
-      if ("questions".equals(key) && value instanceof Question) { question((Question)value); return; }
+      if ("question".equals(key) && value instanceof Question) { this.question((Question)value); return; }
+      if ("questions".equals(key) && value instanceof Question) { this.question((Question)value); return; }
       super.fromMap(key, value);
     }
   }

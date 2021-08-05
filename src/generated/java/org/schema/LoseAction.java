@@ -262,8 +262,8 @@ public class LoseAction extends AchieveAction {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("winner".equals(key) && value instanceof Person) { winner((Person)value); return; }
-      if ("winners".equals(key) && value instanceof Person) { winner((Person)value); return; }
+      if ("winner".equals(key) && value instanceof Person) { this.winner((Person)value); return; }
+      if ("winners".equals(key) && value instanceof Person) { this.winner((Person)value); return; }
       super.fromMap(key, value);
     }
   }

@@ -182,14 +182,14 @@ public class TypeAndQuantityNode extends StructuredValue {
   }
   /**
    * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
-   * <a href='unitCode'>unitCode</a>.
+   * &lt;a href='unitCode'&gt;unitCode&lt;/a&gt;.
    */
   @JsonIgnore public String getUnitText() {
     return (String) getValue("unitText");
   }
   /**
    * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
-   * <a href='unitCode'>unitCode</a>.
+   * &lt;a href='unitCode'&gt;unitCode&lt;/a&gt;.
    */
   @JsonIgnore public Collection<String> getUnitTexts() {
     final Object current = myData.get("unitText");
@@ -292,7 +292,7 @@ public class TypeAndQuantityNode extends StructuredValue {
     }
     /**
      * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
-     * <a href='unitCode'>unitCode</a>.
+     * &lt;a href='unitCode'&gt;unitCode&lt;/a&gt;.
      */
     @NotNull public Builder unitText(@NotNull String unitText) {
       putValue("unitText", unitText);
@@ -411,26 +411,26 @@ public class TypeAndQuantityNode extends StructuredValue {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("amountOfThisGood".equals(key) && value instanceof Integer) { amountOfThisGood((Integer)value); return; }
-      if ("amountOfThisGoods".equals(key) && value instanceof Integer) { amountOfThisGood((Integer)value); return; }
-      if ("amountOfThisGood".equals(key) && value instanceof Long) { amountOfThisGood((Long)value); return; }
-      if ("amountOfThisGoods".equals(key) && value instanceof Long) { amountOfThisGood((Long)value); return; }
-      if ("amountOfThisGood".equals(key) && value instanceof Float) { amountOfThisGood((Float)value); return; }
-      if ("amountOfThisGoods".equals(key) && value instanceof Float) { amountOfThisGood((Float)value); return; }
-      if ("amountOfThisGood".equals(key) && value instanceof Double) { amountOfThisGood((Double)value); return; }
-      if ("amountOfThisGoods".equals(key) && value instanceof Double) { amountOfThisGood((Double)value); return; }
-      if ("amountOfThisGood".equals(key) && value instanceof String) { amountOfThisGood((String)value); return; }
-      if ("amountOfThisGoods".equals(key) && value instanceof String) { amountOfThisGood((String)value); return; }
-      if ("businessFunction".equals(key) && value instanceof BusinessFunction) { businessFunction((BusinessFunction)value); return; }
-      if ("businessFunctions".equals(key) && value instanceof BusinessFunction) { businessFunction((BusinessFunction)value); return; }
-      if ("typeOfGood".equals(key) && value instanceof Product) { typeOfGood((Product)value); return; }
-      if ("typeOfGoods".equals(key) && value instanceof Product) { typeOfGood((Product)value); return; }
-      if ("typeOfGood".equals(key) && value instanceof Service) { typeOfGood((Service)value); return; }
-      if ("typeOfGoods".equals(key) && value instanceof Service) { typeOfGood((Service)value); return; }
-      if ("unitCode".equals(key) && value instanceof String) { unitCode((String)value); return; }
-      if ("unitCodes".equals(key) && value instanceof String) { unitCode((String)value); return; }
-      if ("unitText".equals(key) && value instanceof String) { unitText((String)value); return; }
-      if ("unitTexts".equals(key) && value instanceof String) { unitText((String)value); return; }
+      if ("amountOfThisGood".equals(key) && value instanceof Integer) { this.amountOfThisGood((Integer)value); return; }
+      if ("amountOfThisGoods".equals(key) && value instanceof Integer) { this.amountOfThisGood((Integer)value); return; }
+      if ("amountOfThisGood".equals(key) && value instanceof Long) { this.amountOfThisGood((Long)value); return; }
+      if ("amountOfThisGoods".equals(key) && value instanceof Long) { this.amountOfThisGood((Long)value); return; }
+      if ("amountOfThisGood".equals(key) && value instanceof Float) { this.amountOfThisGood((Float)value); return; }
+      if ("amountOfThisGoods".equals(key) && value instanceof Float) { this.amountOfThisGood((Float)value); return; }
+      if ("amountOfThisGood".equals(key) && value instanceof Double) { this.amountOfThisGood((Double)value); return; }
+      if ("amountOfThisGoods".equals(key) && value instanceof Double) { this.amountOfThisGood((Double)value); return; }
+      if ("amountOfThisGood".equals(key) && value instanceof String) { this.amountOfThisGood((String)value); return; }
+      if ("amountOfThisGoods".equals(key) && value instanceof String) { this.amountOfThisGood((String)value); return; }
+      if ("businessFunction".equals(key) && value instanceof BusinessFunction) { this.businessFunction((BusinessFunction)value); return; }
+      if ("businessFunctions".equals(key) && value instanceof BusinessFunction) { this.businessFunction((BusinessFunction)value); return; }
+      if ("typeOfGood".equals(key) && value instanceof Product) { this.typeOfGood((Product)value); return; }
+      if ("typeOfGoods".equals(key) && value instanceof Product) { this.typeOfGood((Product)value); return; }
+      if ("typeOfGood".equals(key) && value instanceof Service) { this.typeOfGood((Service)value); return; }
+      if ("typeOfGoods".equals(key) && value instanceof Service) { this.typeOfGood((Service)value); return; }
+      if ("unitCode".equals(key) && value instanceof String) { this.unitCode((String)value); return; }
+      if ("unitCodes".equals(key) && value instanceof String) { this.unitCode((String)value); return; }
+      if ("unitText".equals(key) && value instanceof String) { this.unitText((String)value); return; }
+      if ("unitTexts".equals(key) && value instanceof String) { this.unitText((String)value); return; }
       super.fromMap(key, value);
     }
   }

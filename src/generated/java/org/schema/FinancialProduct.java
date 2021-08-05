@@ -379,7 +379,7 @@ public class FinancialProduct extends Service {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Demand demand) {
@@ -387,7 +387,7 @@ public class FinancialProduct extends Service {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Demand.Builder demand) {
@@ -395,7 +395,7 @@ public class FinancialProduct extends Service {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Offer offer) {
@@ -403,7 +403,7 @@ public class FinancialProduct extends Service {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Offer.Builder offer) {
@@ -628,16 +628,16 @@ public class FinancialProduct extends Service {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("annualPercentageRate".equals(key) && value instanceof Number) { annualPercentageRate((Number)value); return; }
-      if ("annualPercentageRates".equals(key) && value instanceof Number) { annualPercentageRate((Number)value); return; }
-      if ("annualPercentageRate".equals(key) && value instanceof QuantitativeValue) { annualPercentageRate((QuantitativeValue)value); return; }
-      if ("annualPercentageRates".equals(key) && value instanceof QuantitativeValue) { annualPercentageRate((QuantitativeValue)value); return; }
-      if ("feesAndCommissionsSpecification".equals(key) && value instanceof String) { feesAndCommissionsSpecification((String)value); return; }
-      if ("feesAndCommissionsSpecifications".equals(key) && value instanceof String) { feesAndCommissionsSpecification((String)value); return; }
-      if ("interestRate".equals(key) && value instanceof Number) { interestRate((Number)value); return; }
-      if ("interestRates".equals(key) && value instanceof Number) { interestRate((Number)value); return; }
-      if ("interestRate".equals(key) && value instanceof QuantitativeValue) { interestRate((QuantitativeValue)value); return; }
-      if ("interestRates".equals(key) && value instanceof QuantitativeValue) { interestRate((QuantitativeValue)value); return; }
+      if ("annualPercentageRate".equals(key) && value instanceof Number) { this.annualPercentageRate((Number)value); return; }
+      if ("annualPercentageRates".equals(key) && value instanceof Number) { this.annualPercentageRate((Number)value); return; }
+      if ("annualPercentageRate".equals(key) && value instanceof QuantitativeValue) { this.annualPercentageRate((QuantitativeValue)value); return; }
+      if ("annualPercentageRates".equals(key) && value instanceof QuantitativeValue) { this.annualPercentageRate((QuantitativeValue)value); return; }
+      if ("feesAndCommissionsSpecification".equals(key) && value instanceof String) { this.feesAndCommissionsSpecification((String)value); return; }
+      if ("feesAndCommissionsSpecifications".equals(key) && value instanceof String) { this.feesAndCommissionsSpecification((String)value); return; }
+      if ("interestRate".equals(key) && value instanceof Number) { this.interestRate((Number)value); return; }
+      if ("interestRates".equals(key) && value instanceof Number) { this.interestRate((Number)value); return; }
+      if ("interestRate".equals(key) && value instanceof QuantitativeValue) { this.interestRate((QuantitativeValue)value); return; }
+      if ("interestRates".equals(key) && value instanceof QuantitativeValue) { this.interestRate((QuantitativeValue)value); return; }
       super.fromMap(key, value);
     }
   }

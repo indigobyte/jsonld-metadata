@@ -306,7 +306,7 @@ public class FoodEstablishmentReservation extends Reservation {
       return this;
     }
     /**
-     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
+     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;.
      */
     @NotNull public Builder priceCurrency(@NotNull String priceCurrency) {
       putValue("priceCurrency", priceCurrency);
@@ -453,14 +453,14 @@ public class FoodEstablishmentReservation extends Reservation {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("endTime".equals(key) && value instanceof java.util.Date) { endTime((java.util.Date)value); return; }
-      if ("endTimes".equals(key) && value instanceof java.util.Date) { endTime((java.util.Date)value); return; }
-      if ("startTime".equals(key) && value instanceof java.util.Date) { startTime((java.util.Date)value); return; }
-      if ("startTimes".equals(key) && value instanceof java.util.Date) { startTime((java.util.Date)value); return; }
-      if ("partySize".equals(key) && value instanceof Integer) { partySize((Integer)value); return; }
-      if ("partySizes".equals(key) && value instanceof Integer) { partySize((Integer)value); return; }
-      if ("partySize".equals(key) && value instanceof QuantitativeValue) { partySize((QuantitativeValue)value); return; }
-      if ("partySizes".equals(key) && value instanceof QuantitativeValue) { partySize((QuantitativeValue)value); return; }
+      if ("endTime".equals(key) && value instanceof java.util.Date) { this.endTime((java.util.Date)value); return; }
+      if ("endTimes".equals(key) && value instanceof java.util.Date) { this.endTime((java.util.Date)value); return; }
+      if ("startTime".equals(key) && value instanceof java.util.Date) { this.startTime((java.util.Date)value); return; }
+      if ("startTimes".equals(key) && value instanceof java.util.Date) { this.startTime((java.util.Date)value); return; }
+      if ("partySize".equals(key) && value instanceof Integer) { this.partySize((Integer)value); return; }
+      if ("partySizes".equals(key) && value instanceof Integer) { this.partySize((Integer)value); return; }
+      if ("partySize".equals(key) && value instanceof QuantitativeValue) { this.partySize((QuantitativeValue)value); return; }
+      if ("partySizes".equals(key) && value instanceof QuantitativeValue) { this.partySize((QuantitativeValue)value); return; }
       super.fromMap(key, value);
     }
   }

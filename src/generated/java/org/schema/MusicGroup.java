@@ -62,13 +62,13 @@ public class MusicGroup extends PerformingGroup {
     return Arrays.asList((String) current);
   }
   /**
-   * A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
+   * A music recording (track)&amp;#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
    */
   @JsonIgnore public ItemList getTrackItemList() {
     return (ItemList) getValue("track");
   }
   /**
-   * A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
+   * A music recording (track)&amp;#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
    */
   @JsonIgnore public Collection<ItemList> getTrackItemLists() {
     final Object current = myData.get("track");
@@ -79,13 +79,13 @@ public class MusicGroup extends PerformingGroup {
     return Arrays.asList((ItemList) current);
   }
   /**
-   * A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
+   * A music recording (track)&amp;#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
    */
   @JsonIgnore public MusicRecording getTrackMusicRecording() {
     return (MusicRecording) getValue("track");
   }
   /**
-   * A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
+   * A music recording (track)&amp;#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
    */
   @JsonIgnore public Collection<MusicRecording> getTrackMusicRecordings() {
     final Object current = myData.get("track");
@@ -131,28 +131,28 @@ public class MusicGroup extends PerformingGroup {
       return this;
     }
     /**
-     * A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
+     * A music recording (track)&amp;#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
      */
     @NotNull public Builder track(@NotNull ItemList itemList) {
       putValue("track", itemList);
       return this;
     }
     /**
-     * A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
+     * A music recording (track)&amp;#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
      */
     @NotNull public Builder track(@NotNull ItemList.Builder itemList) {
       putValue("track", itemList.build());
       return this;
     }
     /**
-     * A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
+     * A music recording (track)&amp;#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
      */
     @NotNull public Builder track(@NotNull MusicRecording musicRecording) {
       putValue("track", musicRecording);
       return this;
     }
     /**
-     * A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
+     * A music recording (track)&amp;#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
      */
     @NotNull public Builder track(@NotNull MusicRecording.Builder musicRecording) {
       putValue("track", musicRecording.build());
@@ -299,14 +299,14 @@ public class MusicGroup extends PerformingGroup {
       return this;
     }
     /**
-     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
+     * The Dun &amp; Bradstreet DUNS number for identifying an organization or business person.
      */
     @NotNull public Builder duns(@NotNull Identifier identifier) {
       putValue("duns", identifier);
       return this;
     }
     /**
-     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
+     * The Dun &amp; Bradstreet DUNS number for identifying an organization or business person.
      */
     @NotNull public Builder duns(@NotNull String duns) {
       putValue("duns", duns);
@@ -819,14 +819,14 @@ public class MusicGroup extends PerformingGroup {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("album".equals(key) && value instanceof MusicAlbum) { album((MusicAlbum)value); return; }
-      if ("albums".equals(key) && value instanceof MusicAlbum) { album((MusicAlbum)value); return; }
-      if ("genre".equals(key) && value instanceof String) { genre((String)value); return; }
-      if ("genres".equals(key) && value instanceof String) { genre((String)value); return; }
-      if ("track".equals(key) && value instanceof ItemList) { track((ItemList)value); return; }
-      if ("tracks".equals(key) && value instanceof ItemList) { track((ItemList)value); return; }
-      if ("track".equals(key) && value instanceof MusicRecording) { track((MusicRecording)value); return; }
-      if ("tracks".equals(key) && value instanceof MusicRecording) { track((MusicRecording)value); return; }
+      if ("album".equals(key) && value instanceof MusicAlbum) { this.album((MusicAlbum)value); return; }
+      if ("albums".equals(key) && value instanceof MusicAlbum) { this.album((MusicAlbum)value); return; }
+      if ("genre".equals(key) && value instanceof String) { this.genre((String)value); return; }
+      if ("genres".equals(key) && value instanceof String) { this.genre((String)value); return; }
+      if ("track".equals(key) && value instanceof ItemList) { this.track((ItemList)value); return; }
+      if ("tracks".equals(key) && value instanceof ItemList) { this.track((ItemList)value); return; }
+      if ("track".equals(key) && value instanceof MusicRecording) { this.track((MusicRecording)value); return; }
+      if ("tracks".equals(key) && value instanceof MusicRecording) { this.track((MusicRecording)value); return; }
       super.fromMap(key, value);
     }
   }

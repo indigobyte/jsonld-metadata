@@ -255,8 +255,8 @@ public class PlanAction extends OrganizeAction {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("scheduledTime".equals(key) && value instanceof java.util.Date) { scheduledTime((java.util.Date)value); return; }
-      if ("scheduledTimes".equals(key) && value instanceof java.util.Date) { scheduledTime((java.util.Date)value); return; }
+      if ("scheduledTime".equals(key) && value instanceof java.util.Date) { this.scheduledTime((java.util.Date)value); return; }
+      if ("scheduledTimes".equals(key) && value instanceof java.util.Date) { this.scheduledTime((java.util.Date)value); return; }
       super.fromMap(key, value);
     }
   }

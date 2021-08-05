@@ -262,8 +262,8 @@ public class WinAction extends AchieveAction {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("loser".equals(key) && value instanceof Person) { loser((Person)value); return; }
-      if ("losers".equals(key) && value instanceof Person) { loser((Person)value); return; }
+      if ("loser".equals(key) && value instanceof Person) { this.loser((Person)value); return; }
+      if ("losers".equals(key) && value instanceof Person) { this.loser((Person)value); return; }
       super.fromMap(key, value);
     }
   }

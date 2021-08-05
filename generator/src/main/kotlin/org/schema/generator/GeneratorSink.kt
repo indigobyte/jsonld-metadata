@@ -310,7 +310,7 @@ class GeneratorSink : TripleSink {
                 return listOf(types[interfaceName]!!.name!!)
             }
         } else {
-            println("Type not found")
+            // println("Type not found")
         }
 
 

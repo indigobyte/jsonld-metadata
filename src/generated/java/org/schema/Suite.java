@@ -24,9 +24,9 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * A suite in a hotel or other public accommodation, denotes a class of luxury accommodations, the key feature of which is multiple rooms (Source: Wikipedia, the free encyclopedia, see <a href="http://en.wikipedia.org/wiki/Suite_(hotel)">http://en.wikipedia.org/wiki/Suite_(hotel)</a>).
- * <br /><br />
- * See also the <a href="/docs/hotels.html">dedicated document on the use of schema.org for marking up hotels and other forms of accommodations</a>.
+ * A suite in a hotel or other public accommodation, denotes a class of luxury accommodations, the key feature of which is multiple rooms (Source: Wikipedia, the free encyclopedia, see &lt;a href=&quot;http://en.wikipedia.org/wiki/Suite_(hotel)&quot;&gt;http://en.wikipedia.org/wiki/Suite_(hotel)&lt;/a&gt;).
+ * &lt;br /&gt;&lt;br /&gt;
+ * See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on the use of schema.org for marking up hotels and other forms of accommodations&lt;/a&gt;.
  * Source: https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology
  */
 public class Suite extends Accommodation {
@@ -398,7 +398,7 @@ public class Suite extends Accommodation {
       return this;
     }
     /**
-     * A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.\n\nFor example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code "3047" is a branchCode for a particular branch.
+     * A short textual code (also called &quot;store code&quot;) that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.\n\nFor example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code &quot;3047&quot; is a branchCode for a particular branch.
      *       
      */
     @NotNull public Builder branchCode(@NotNull String branchCode) {
@@ -858,24 +858,24 @@ public class Suite extends Accommodation {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("bed".equals(key) && value instanceof BedDetails) { bed((BedDetails)value); return; }
-      if ("beds".equals(key) && value instanceof BedDetails) { bed((BedDetails)value); return; }
-      if ("bed".equals(key) && value instanceof BedType) { bed((BedType)value); return; }
-      if ("beds".equals(key) && value instanceof BedType) { bed((BedType)value); return; }
-      if ("bed".equals(key) && value instanceof String) { bed((String)value); return; }
-      if ("beds".equals(key) && value instanceof String) { bed((String)value); return; }
-      if ("numberOfRooms".equals(key) && value instanceof Integer) { numberOfRooms((Integer)value); return; }
-      if ("numberOfRoomss".equals(key) && value instanceof Integer) { numberOfRooms((Integer)value); return; }
-      if ("numberOfRooms".equals(key) && value instanceof Long) { numberOfRooms((Long)value); return; }
-      if ("numberOfRoomss".equals(key) && value instanceof Long) { numberOfRooms((Long)value); return; }
-      if ("numberOfRooms".equals(key) && value instanceof Float) { numberOfRooms((Float)value); return; }
-      if ("numberOfRoomss".equals(key) && value instanceof Float) { numberOfRooms((Float)value); return; }
-      if ("numberOfRooms".equals(key) && value instanceof Double) { numberOfRooms((Double)value); return; }
-      if ("numberOfRoomss".equals(key) && value instanceof Double) { numberOfRooms((Double)value); return; }
-      if ("numberOfRooms".equals(key) && value instanceof String) { numberOfRooms((String)value); return; }
-      if ("numberOfRoomss".equals(key) && value instanceof String) { numberOfRooms((String)value); return; }
-      if ("occupancy".equals(key) && value instanceof QuantitativeValue) { occupancy((QuantitativeValue)value); return; }
-      if ("occupancys".equals(key) && value instanceof QuantitativeValue) { occupancy((QuantitativeValue)value); return; }
+      if ("bed".equals(key) && value instanceof BedDetails) { this.bed((BedDetails)value); return; }
+      if ("beds".equals(key) && value instanceof BedDetails) { this.bed((BedDetails)value); return; }
+      if ("bed".equals(key) && value instanceof BedType) { this.bed((BedType)value); return; }
+      if ("beds".equals(key) && value instanceof BedType) { this.bed((BedType)value); return; }
+      if ("bed".equals(key) && value instanceof String) { this.bed((String)value); return; }
+      if ("beds".equals(key) && value instanceof String) { this.bed((String)value); return; }
+      if ("numberOfRooms".equals(key) && value instanceof Integer) { this.numberOfRooms((Integer)value); return; }
+      if ("numberOfRoomss".equals(key) && value instanceof Integer) { this.numberOfRooms((Integer)value); return; }
+      if ("numberOfRooms".equals(key) && value instanceof Long) { this.numberOfRooms((Long)value); return; }
+      if ("numberOfRoomss".equals(key) && value instanceof Long) { this.numberOfRooms((Long)value); return; }
+      if ("numberOfRooms".equals(key) && value instanceof Float) { this.numberOfRooms((Float)value); return; }
+      if ("numberOfRoomss".equals(key) && value instanceof Float) { this.numberOfRooms((Float)value); return; }
+      if ("numberOfRooms".equals(key) && value instanceof Double) { this.numberOfRooms((Double)value); return; }
+      if ("numberOfRoomss".equals(key) && value instanceof Double) { this.numberOfRooms((Double)value); return; }
+      if ("numberOfRooms".equals(key) && value instanceof String) { this.numberOfRooms((String)value); return; }
+      if ("numberOfRoomss".equals(key) && value instanceof String) { this.numberOfRooms((String)value); return; }
+      if ("occupancy".equals(key) && value instanceof QuantitativeValue) { this.occupancy((QuantitativeValue)value); return; }
+      if ("occupancys".equals(key) && value instanceof QuantitativeValue) { this.occupancy((QuantitativeValue)value); return; }
       super.fromMap(key, value);
     }
   }

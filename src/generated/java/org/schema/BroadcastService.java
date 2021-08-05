@@ -130,13 +130,13 @@ public class BroadcastService extends Service {
     return Arrays.asList((String) current);
   }
   /**
-   * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
+   * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. &quot;87 FM&quot;.
    */
   @JsonIgnore public BroadcastFrequencySpecification getBroadcastFrequencyBroadcastFrequencySpecification() {
     return (BroadcastFrequencySpecification) getValue("broadcastFrequency");
   }
   /**
-   * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
+   * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. &quot;87 FM&quot;.
    */
   @JsonIgnore public Collection<BroadcastFrequencySpecification> getBroadcastFrequencyBroadcastFrequencySpecifications() {
     final Object current = myData.get("broadcastFrequency");
@@ -147,13 +147,13 @@ public class BroadcastService extends Service {
     return Arrays.asList((BroadcastFrequencySpecification) current);
   }
   /**
-   * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
+   * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. &quot;87 FM&quot;.
    */
   @JsonIgnore public String getBroadcastFrequencyString() {
     return (String) getValue("broadcastFrequency");
   }
   /**
-   * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
+   * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. &quot;87 FM&quot;.
    */
   @JsonIgnore public Collection<String> getBroadcastFrequencyStrings() {
     final Object current = myData.get("broadcastFrequency");
@@ -258,21 +258,21 @@ public class BroadcastService extends Service {
       return this;
     }
     /**
-     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
+     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. &quot;87 FM&quot;.
      */
     @NotNull public Builder broadcastFrequency(@NotNull BroadcastFrequencySpecification broadcastFrequencySpecification) {
       putValue("broadcastFrequency", broadcastFrequencySpecification);
       return this;
     }
     /**
-     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
+     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. &quot;87 FM&quot;.
      */
     @NotNull public Builder broadcastFrequency(@NotNull BroadcastFrequencySpecification.Builder broadcastFrequencySpecification) {
       putValue("broadcastFrequency", broadcastFrequencySpecification.build());
       return this;
     }
     /**
-     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
+     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. &quot;87 FM&quot;.
      */
     @NotNull public Builder broadcastFrequency(@NotNull String broadcastFrequency) {
       putValue("broadcastFrequency", broadcastFrequency);
@@ -496,7 +496,7 @@ public class BroadcastService extends Service {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Demand demand) {
@@ -504,7 +504,7 @@ public class BroadcastService extends Service {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Demand.Builder demand) {
@@ -512,7 +512,7 @@ public class BroadcastService extends Service {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Offer offer) {
@@ -520,7 +520,7 @@ public class BroadcastService extends Service {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Offer.Builder offer) {
@@ -745,24 +745,24 @@ public class BroadcastService extends Service {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("broadcaster".equals(key) && value instanceof Organization) { broadcaster((Organization)value); return; }
-      if ("broadcasters".equals(key) && value instanceof Organization) { broadcaster((Organization)value); return; }
-      if ("parentService".equals(key) && value instanceof BroadcastService) { parentService((BroadcastService)value); return; }
-      if ("parentServices".equals(key) && value instanceof BroadcastService) { parentService((BroadcastService)value); return; }
-      if ("videoFormat".equals(key) && value instanceof String) { videoFormat((String)value); return; }
-      if ("videoFormats".equals(key) && value instanceof String) { videoFormat((String)value); return; }
-      if ("broadcastAffiliateOf".equals(key) && value instanceof Organization) { broadcastAffiliateOf((Organization)value); return; }
-      if ("broadcastAffiliateOfs".equals(key) && value instanceof Organization) { broadcastAffiliateOf((Organization)value); return; }
-      if ("broadcastDisplayName".equals(key) && value instanceof String) { broadcastDisplayName((String)value); return; }
-      if ("broadcastDisplayNames".equals(key) && value instanceof String) { broadcastDisplayName((String)value); return; }
-      if ("broadcastTimezone".equals(key) && value instanceof String) { broadcastTimezone((String)value); return; }
-      if ("broadcastTimezones".equals(key) && value instanceof String) { broadcastTimezone((String)value); return; }
-      if ("broadcastFrequency".equals(key) && value instanceof BroadcastFrequencySpecification) { broadcastFrequency((BroadcastFrequencySpecification)value); return; }
-      if ("broadcastFrequencys".equals(key) && value instanceof BroadcastFrequencySpecification) { broadcastFrequency((BroadcastFrequencySpecification)value); return; }
-      if ("broadcastFrequency".equals(key) && value instanceof String) { broadcastFrequency((String)value); return; }
-      if ("broadcastFrequencys".equals(key) && value instanceof String) { broadcastFrequency((String)value); return; }
-      if ("hasBroadcastChannel".equals(key) && value instanceof BroadcastChannel) { hasBroadcastChannel((BroadcastChannel)value); return; }
-      if ("hasBroadcastChannels".equals(key) && value instanceof BroadcastChannel) { hasBroadcastChannel((BroadcastChannel)value); return; }
+      if ("broadcaster".equals(key) && value instanceof Organization) { this.broadcaster((Organization)value); return; }
+      if ("broadcasters".equals(key) && value instanceof Organization) { this.broadcaster((Organization)value); return; }
+      if ("parentService".equals(key) && value instanceof BroadcastService) { this.parentService((BroadcastService)value); return; }
+      if ("parentServices".equals(key) && value instanceof BroadcastService) { this.parentService((BroadcastService)value); return; }
+      if ("videoFormat".equals(key) && value instanceof String) { this.videoFormat((String)value); return; }
+      if ("videoFormats".equals(key) && value instanceof String) { this.videoFormat((String)value); return; }
+      if ("broadcastAffiliateOf".equals(key) && value instanceof Organization) { this.broadcastAffiliateOf((Organization)value); return; }
+      if ("broadcastAffiliateOfs".equals(key) && value instanceof Organization) { this.broadcastAffiliateOf((Organization)value); return; }
+      if ("broadcastDisplayName".equals(key) && value instanceof String) { this.broadcastDisplayName((String)value); return; }
+      if ("broadcastDisplayNames".equals(key) && value instanceof String) { this.broadcastDisplayName((String)value); return; }
+      if ("broadcastTimezone".equals(key) && value instanceof String) { this.broadcastTimezone((String)value); return; }
+      if ("broadcastTimezones".equals(key) && value instanceof String) { this.broadcastTimezone((String)value); return; }
+      if ("broadcastFrequency".equals(key) && value instanceof BroadcastFrequencySpecification) { this.broadcastFrequency((BroadcastFrequencySpecification)value); return; }
+      if ("broadcastFrequencys".equals(key) && value instanceof BroadcastFrequencySpecification) { this.broadcastFrequency((BroadcastFrequencySpecification)value); return; }
+      if ("broadcastFrequency".equals(key) && value instanceof String) { this.broadcastFrequency((String)value); return; }
+      if ("broadcastFrequencys".equals(key) && value instanceof String) { this.broadcastFrequency((String)value); return; }
+      if ("hasBroadcastChannel".equals(key) && value instanceof BroadcastChannel) { this.hasBroadcastChannel((BroadcastChannel)value); return; }
+      if ("hasBroadcastChannels".equals(key) && value instanceof BroadcastChannel) { this.hasBroadcastChannel((BroadcastChannel)value); return; }
       super.fromMap(key, value);
     }
   }

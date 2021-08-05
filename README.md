@@ -40,6 +40,6 @@ Must set working directory to `generator` before running.
 - Checkout `mvn-repo` branch of this repository into separate folder.
 - Create `build/mvnRepo` folder.
 - Put contents of `mvn-repo` branch of this git repository into `build/mvnRepo` folder.
-As the result, you'll get `build/mvnRepo/tv` folder.
+As the result, you'll get `build/mvnRepo/com/indigobyte` folder.
 - Run `gradle :publishJsonLdMetadataPublicationPublicationToMvnRepoRepository`
 - Commit and push `build/mvnRepo` folder to `mvn-repo` git branch.

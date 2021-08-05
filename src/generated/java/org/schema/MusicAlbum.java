@@ -190,28 +190,28 @@ public class MusicAlbum extends MusicPlaylist {
       return this;
     }
     /**
-     * A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
+     * A music recording (track)&amp;#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
      */
     @NotNull public Builder track(@NotNull ItemList itemList) {
       putValue("track", itemList);
       return this;
     }
     /**
-     * A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
+     * A music recording (track)&amp;#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
      */
     @NotNull public Builder track(@NotNull ItemList.Builder itemList) {
       putValue("track", itemList.build());
       return this;
     }
     /**
-     * A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
+     * A music recording (track)&amp;#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
      */
     @NotNull public Builder track(@NotNull MusicRecording musicRecording) {
       putValue("track", musicRecording);
       return this;
     }
     /**
-     * A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
+     * A music recording (track)&amp;#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
      */
     @NotNull public Builder track(@NotNull MusicRecording.Builder musicRecording) {
       putValue("track", musicRecording.build());
@@ -428,21 +428,21 @@ public class MusicAlbum extends MusicPlaylist {
       return this;
     }
     /**
-     * Official rating of a piece of content&#x2014;for example,'MPAA PG-13'.
+     * Official rating of a piece of content&amp;#x2014;for example,'MPAA PG-13'.
      */
     @NotNull public Builder contentRating(@NotNull Rating rating) {
       putValue("contentRating", rating);
       return this;
     }
     /**
-     * Official rating of a piece of content&#x2014;for example,'MPAA PG-13'.
+     * Official rating of a piece of content&amp;#x2014;for example,'MPAA PG-13'.
      */
     @NotNull public Builder contentRating(@NotNull Rating.Builder rating) {
       putValue("contentRating", rating.build());
       return this;
     }
     /**
-     * Official rating of a piece of content&#x2014;for example,'MPAA PG-13'.
+     * Official rating of a piece of content&amp;#x2014;for example,'MPAA PG-13'.
      */
     @NotNull public Builder contentRating(@NotNull String contentRating) {
       putValue("contentRating", contentRating);
@@ -824,7 +824,7 @@ public class MusicAlbum extends MusicPlaylist {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Demand demand) {
@@ -832,7 +832,7 @@ public class MusicAlbum extends MusicPlaylist {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Demand.Builder demand) {
@@ -840,7 +840,7 @@ public class MusicAlbum extends MusicPlaylist {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Offer offer) {
@@ -848,7 +848,7 @@ public class MusicAlbum extends MusicPlaylist {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Offer.Builder offer) {
@@ -998,7 +998,7 @@ public class MusicAlbum extends MusicPlaylist {
       return this;
     }
     /**
-     * The "spatial" property can be used in cases when more specific properties
+     * The &quot;spatial&quot; property can be used in cases when more specific properties
      * (e.g. [[locationCreated]], [[spatialCoverage]], [[contentLocation]]) are not known to be appropriate.
      */
     @NotNull public Builder spatial(@NotNull Place place) {
@@ -1006,7 +1006,7 @@ public class MusicAlbum extends MusicPlaylist {
       return this;
     }
     /**
-     * The "spatial" property can be used in cases when more specific properties
+     * The &quot;spatial&quot; property can be used in cases when more specific properties
      * (e.g. [[locationCreated]], [[spatialCoverage]], [[contentLocation]]) are not known to be appropriate.
      */
     @NotNull public Builder spatial(@NotNull Place.Builder place) {
@@ -1061,10 +1061,10 @@ public class MusicAlbum extends MusicPlaylist {
     }
     /**
      * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
-     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.
-     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
+     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written &quot;2011/2012&quot;). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.
+     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via &quot;1939/1945&quot;.
      * 
-     * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
+     * Open-ended date ranges can be written with &quot;..&quot; in place of the end date. For example, &quot;2015-11/..&quot; indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
      */
     @NotNull public Builder temporalCoverage(@NotNull String temporalCoverage) {
       putValue("temporalCoverage", temporalCoverage);
@@ -1072,17 +1072,17 @@ public class MusicAlbum extends MusicPlaylist {
     }
     /**
      * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
-     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.
-     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
+     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written &quot;2011/2012&quot;). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.
+     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via &quot;1939/1945&quot;.
      * 
-     * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
+     * Open-ended date ranges can be written with &quot;..&quot; in place of the end date. For example, &quot;2015-11/..&quot; indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
      */
     @NotNull public Builder temporalCoverage(@NotNull java.util.Date date) {
       putValue("temporalCoverage", date);
       return this;
     }
     /**
-     * The "temporal" property can be used in cases where more specific properties
+     * The &quot;temporal&quot; property can be used in cases where more specific properties
      * (e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]], [[datePublished]]) are not known to be appropriate.
      */
     @NotNull public Builder temporal(@NotNull String temporal) {
@@ -1090,7 +1090,7 @@ public class MusicAlbum extends MusicPlaylist {
       return this;
     }
     /**
-     * The "temporal" property can be used in cases where more specific properties
+     * The &quot;temporal&quot; property can be used in cases where more specific properties
      * (e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]], [[datePublished]]) are not known to be appropriate.
      */
     @NotNull public Builder temporal(@NotNull java.util.Date date) {
@@ -1353,7 +1353,7 @@ public class MusicAlbum extends MusicPlaylist {
       return this;
     }
     /**
-     * A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as "short descriptions are present but long descriptions will be needed for non-visual users" or "short descriptions are present and no long descriptions are needed."
+     * A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as &quot;short descriptions are present but long descriptions will be needed for non-visual users&quot; or &quot;short descriptions are present and no long descriptions are needed.&quot;
      */
     @NotNull public Builder accessibilitySummary(@NotNull String accessibilitySummary) {
       putValue("accessibilitySummary", accessibilitySummary);
@@ -1472,16 +1472,16 @@ public class MusicAlbum extends MusicPlaylist {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("byArtist".equals(key) && value instanceof MusicGroup) { byArtist((MusicGroup)value); return; }
-      if ("byArtists".equals(key) && value instanceof MusicGroup) { byArtist((MusicGroup)value); return; }
-      if ("byArtist".equals(key) && value instanceof Person) { byArtist((Person)value); return; }
-      if ("byArtists".equals(key) && value instanceof Person) { byArtist((Person)value); return; }
-      if ("albumProductionType".equals(key) && value instanceof MusicAlbumProductionType) { albumProductionType((MusicAlbumProductionType)value); return; }
-      if ("albumProductionTypes".equals(key) && value instanceof MusicAlbumProductionType) { albumProductionType((MusicAlbumProductionType)value); return; }
-      if ("albumReleaseType".equals(key) && value instanceof MusicAlbumReleaseType) { albumReleaseType((MusicAlbumReleaseType)value); return; }
-      if ("albumReleaseTypes".equals(key) && value instanceof MusicAlbumReleaseType) { albumReleaseType((MusicAlbumReleaseType)value); return; }
-      if ("albumRelease".equals(key) && value instanceof MusicRelease) { albumRelease((MusicRelease)value); return; }
-      if ("albumReleases".equals(key) && value instanceof MusicRelease) { albumRelease((MusicRelease)value); return; }
+      if ("byArtist".equals(key) && value instanceof MusicGroup) { this.byArtist((MusicGroup)value); return; }
+      if ("byArtists".equals(key) && value instanceof MusicGroup) { this.byArtist((MusicGroup)value); return; }
+      if ("byArtist".equals(key) && value instanceof Person) { this.byArtist((Person)value); return; }
+      if ("byArtists".equals(key) && value instanceof Person) { this.byArtist((Person)value); return; }
+      if ("albumProductionType".equals(key) && value instanceof MusicAlbumProductionType) { this.albumProductionType((MusicAlbumProductionType)value); return; }
+      if ("albumProductionTypes".equals(key) && value instanceof MusicAlbumProductionType) { this.albumProductionType((MusicAlbumProductionType)value); return; }
+      if ("albumReleaseType".equals(key) && value instanceof MusicAlbumReleaseType) { this.albumReleaseType((MusicAlbumReleaseType)value); return; }
+      if ("albumReleaseTypes".equals(key) && value instanceof MusicAlbumReleaseType) { this.albumReleaseType((MusicAlbumReleaseType)value); return; }
+      if ("albumRelease".equals(key) && value instanceof MusicRelease) { this.albumRelease((MusicRelease)value); return; }
+      if ("albumReleases".equals(key) && value instanceof MusicRelease) { this.albumRelease((MusicRelease)value); return; }
       super.fromMap(key, value);
     }
   }

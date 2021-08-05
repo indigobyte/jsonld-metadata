@@ -274,16 +274,16 @@ public class BroadcastFrequencySpecification extends Intangible {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("broadcastFrequencyValue".equals(key) && value instanceof Integer) { broadcastFrequencyValue((Integer)value); return; }
-      if ("broadcastFrequencyValues".equals(key) && value instanceof Integer) { broadcastFrequencyValue((Integer)value); return; }
-      if ("broadcastFrequencyValue".equals(key) && value instanceof Long) { broadcastFrequencyValue((Long)value); return; }
-      if ("broadcastFrequencyValues".equals(key) && value instanceof Long) { broadcastFrequencyValue((Long)value); return; }
-      if ("broadcastFrequencyValue".equals(key) && value instanceof Float) { broadcastFrequencyValue((Float)value); return; }
-      if ("broadcastFrequencyValues".equals(key) && value instanceof Float) { broadcastFrequencyValue((Float)value); return; }
-      if ("broadcastFrequencyValue".equals(key) && value instanceof Double) { broadcastFrequencyValue((Double)value); return; }
-      if ("broadcastFrequencyValues".equals(key) && value instanceof Double) { broadcastFrequencyValue((Double)value); return; }
-      if ("broadcastFrequencyValue".equals(key) && value instanceof String) { broadcastFrequencyValue((String)value); return; }
-      if ("broadcastFrequencyValues".equals(key) && value instanceof String) { broadcastFrequencyValue((String)value); return; }
+      if ("broadcastFrequencyValue".equals(key) && value instanceof Integer) { this.broadcastFrequencyValue((Integer)value); return; }
+      if ("broadcastFrequencyValues".equals(key) && value instanceof Integer) { this.broadcastFrequencyValue((Integer)value); return; }
+      if ("broadcastFrequencyValue".equals(key) && value instanceof Long) { this.broadcastFrequencyValue((Long)value); return; }
+      if ("broadcastFrequencyValues".equals(key) && value instanceof Long) { this.broadcastFrequencyValue((Long)value); return; }
+      if ("broadcastFrequencyValue".equals(key) && value instanceof Float) { this.broadcastFrequencyValue((Float)value); return; }
+      if ("broadcastFrequencyValues".equals(key) && value instanceof Float) { this.broadcastFrequencyValue((Float)value); return; }
+      if ("broadcastFrequencyValue".equals(key) && value instanceof Double) { this.broadcastFrequencyValue((Double)value); return; }
+      if ("broadcastFrequencyValues".equals(key) && value instanceof Double) { this.broadcastFrequencyValue((Double)value); return; }
+      if ("broadcastFrequencyValue".equals(key) && value instanceof String) { this.broadcastFrequencyValue((String)value); return; }
+      if ("broadcastFrequencyValues".equals(key) && value instanceof String) { this.broadcastFrequencyValue((String)value); return; }
       super.fromMap(key, value);
     }
   }

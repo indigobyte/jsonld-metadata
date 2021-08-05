@@ -24,7 +24,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * A monetary value or range. This type can be used to describe an amount of money such as $50 USD, or a range as in describing a bank account being suitable for a balance between £1,000 and £1,000,000 GBP, or the value of a salary, etc. It is recommended to use [[PriceSpecification]] Types to describe the price of an Offer, Invoice, etc.Source: http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO
+ * A monetary value or range. This type can be used to describe an amount of money such as $50 USD, or a range as in describing a bank account being suitable for a balance between &pound;1,000 and &pound;1,000,000 GBP, or the value of a salary, etc. It is recommended to use [[PriceSpecification]] Types to describe the price of an Offer, Invoice, etc.Source: http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO
  */
 public class MonetaryAmount extends StructuredValue {
   /**
@@ -317,13 +317,13 @@ public class MonetaryAmount extends StructuredValue {
     return Arrays.asList((String) current);
   }
   /**
-   * The currency in which the monetary amount is expressed.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
+   * The currency in which the monetary amount is expressed.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;.
    */
   @JsonIgnore public String getCurrency() {
     return (String) getValue("currency");
   }
   /**
-   * The currency in which the monetary amount is expressed.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
+   * The currency in which the monetary amount is expressed.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;.
    */
   @JsonIgnore public Collection<String> getCurrencys() {
     final Object current = myData.get("currency");
@@ -467,7 +467,7 @@ public class MonetaryAmount extends StructuredValue {
       return this;
     }
     /**
-     * The currency in which the monetary amount is expressed.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
+     * The currency in which the monetary amount is expressed.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;.
      */
     @NotNull public Builder currency(@NotNull String currency) {
       putValue("currency", currency);
@@ -586,42 +586,42 @@ public class MonetaryAmount extends StructuredValue {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("maxValue".equals(key) && value instanceof Integer) { maxValue((Integer)value); return; }
-      if ("maxValues".equals(key) && value instanceof Integer) { maxValue((Integer)value); return; }
-      if ("maxValue".equals(key) && value instanceof Long) { maxValue((Long)value); return; }
-      if ("maxValues".equals(key) && value instanceof Long) { maxValue((Long)value); return; }
-      if ("maxValue".equals(key) && value instanceof Float) { maxValue((Float)value); return; }
-      if ("maxValues".equals(key) && value instanceof Float) { maxValue((Float)value); return; }
-      if ("maxValue".equals(key) && value instanceof Double) { maxValue((Double)value); return; }
-      if ("maxValues".equals(key) && value instanceof Double) { maxValue((Double)value); return; }
-      if ("maxValue".equals(key) && value instanceof String) { maxValue((String)value); return; }
-      if ("maxValues".equals(key) && value instanceof String) { maxValue((String)value); return; }
-      if ("minValue".equals(key) && value instanceof Integer) { minValue((Integer)value); return; }
-      if ("minValues".equals(key) && value instanceof Integer) { minValue((Integer)value); return; }
-      if ("minValue".equals(key) && value instanceof Long) { minValue((Long)value); return; }
-      if ("minValues".equals(key) && value instanceof Long) { minValue((Long)value); return; }
-      if ("minValue".equals(key) && value instanceof Float) { minValue((Float)value); return; }
-      if ("minValues".equals(key) && value instanceof Float) { minValue((Float)value); return; }
-      if ("minValue".equals(key) && value instanceof Double) { minValue((Double)value); return; }
-      if ("minValues".equals(key) && value instanceof Double) { minValue((Double)value); return; }
-      if ("minValue".equals(key) && value instanceof String) { minValue((String)value); return; }
-      if ("minValues".equals(key) && value instanceof String) { minValue((String)value); return; }
-      if ("validFrom".equals(key) && value instanceof java.util.Date) { validFrom((java.util.Date)value); return; }
-      if ("validFroms".equals(key) && value instanceof java.util.Date) { validFrom((java.util.Date)value); return; }
-      if ("validThrough".equals(key) && value instanceof java.util.Date) { validThrough((java.util.Date)value); return; }
-      if ("validThroughs".equals(key) && value instanceof java.util.Date) { validThrough((java.util.Date)value); return; }
-      if ("value".equals(key) && value instanceof Integer) { value((Integer)value); return; }
-      if ("values".equals(key) && value instanceof Integer) { value((Integer)value); return; }
-      if ("value".equals(key) && value instanceof Long) { value((Long)value); return; }
-      if ("values".equals(key) && value instanceof Long) { value((Long)value); return; }
-      if ("value".equals(key) && value instanceof Float) { value((Float)value); return; }
-      if ("values".equals(key) && value instanceof Float) { value((Float)value); return; }
-      if ("value".equals(key) && value instanceof Double) { value((Double)value); return; }
-      if ("values".equals(key) && value instanceof Double) { value((Double)value); return; }
-      if ("value".equals(key) && value instanceof String) { value((String)value); return; }
-      if ("values".equals(key) && value instanceof String) { value((String)value); return; }
-      if ("currency".equals(key) && value instanceof String) { currency((String)value); return; }
-      if ("currencys".equals(key) && value instanceof String) { currency((String)value); return; }
+      if ("maxValue".equals(key) && value instanceof Integer) { this.maxValue((Integer)value); return; }
+      if ("maxValues".equals(key) && value instanceof Integer) { this.maxValue((Integer)value); return; }
+      if ("maxValue".equals(key) && value instanceof Long) { this.maxValue((Long)value); return; }
+      if ("maxValues".equals(key) && value instanceof Long) { this.maxValue((Long)value); return; }
+      if ("maxValue".equals(key) && value instanceof Float) { this.maxValue((Float)value); return; }
+      if ("maxValues".equals(key) && value instanceof Float) { this.maxValue((Float)value); return; }
+      if ("maxValue".equals(key) && value instanceof Double) { this.maxValue((Double)value); return; }
+      if ("maxValues".equals(key) && value instanceof Double) { this.maxValue((Double)value); return; }
+      if ("maxValue".equals(key) && value instanceof String) { this.maxValue((String)value); return; }
+      if ("maxValues".equals(key) && value instanceof String) { this.maxValue((String)value); return; }
+      if ("minValue".equals(key) && value instanceof Integer) { this.minValue((Integer)value); return; }
+      if ("minValues".equals(key) && value instanceof Integer) { this.minValue((Integer)value); return; }
+      if ("minValue".equals(key) && value instanceof Long) { this.minValue((Long)value); return; }
+      if ("minValues".equals(key) && value instanceof Long) { this.minValue((Long)value); return; }
+      if ("minValue".equals(key) && value instanceof Float) { this.minValue((Float)value); return; }
+      if ("minValues".equals(key) && value instanceof Float) { this.minValue((Float)value); return; }
+      if ("minValue".equals(key) && value instanceof Double) { this.minValue((Double)value); return; }
+      if ("minValues".equals(key) && value instanceof Double) { this.minValue((Double)value); return; }
+      if ("minValue".equals(key) && value instanceof String) { this.minValue((String)value); return; }
+      if ("minValues".equals(key) && value instanceof String) { this.minValue((String)value); return; }
+      if ("validFrom".equals(key) && value instanceof java.util.Date) { this.validFrom((java.util.Date)value); return; }
+      if ("validFroms".equals(key) && value instanceof java.util.Date) { this.validFrom((java.util.Date)value); return; }
+      if ("validThrough".equals(key) && value instanceof java.util.Date) { this.validThrough((java.util.Date)value); return; }
+      if ("validThroughs".equals(key) && value instanceof java.util.Date) { this.validThrough((java.util.Date)value); return; }
+      if ("value".equals(key) && value instanceof Integer) { this.value((Integer)value); return; }
+      if ("values".equals(key) && value instanceof Integer) { this.value((Integer)value); return; }
+      if ("value".equals(key) && value instanceof Long) { this.value((Long)value); return; }
+      if ("values".equals(key) && value instanceof Long) { this.value((Long)value); return; }
+      if ("value".equals(key) && value instanceof Float) { this.value((Float)value); return; }
+      if ("values".equals(key) && value instanceof Float) { this.value((Float)value); return; }
+      if ("value".equals(key) && value instanceof Double) { this.value((Double)value); return; }
+      if ("values".equals(key) && value instanceof Double) { this.value((Double)value); return; }
+      if ("value".equals(key) && value instanceof String) { this.value((String)value); return; }
+      if ("values".equals(key) && value instanceof String) { this.value((String)value); return; }
+      if ("currency".equals(key) && value instanceof String) { this.currency((String)value); return; }
+      if ("currencys".equals(key) && value instanceof String) { this.currency((String)value); return; }
       super.fromMap(key, value);
     }
   }

@@ -121,14 +121,14 @@ public class HowToItem extends ListItem {
       return this;
     }
     /**
-     * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')’.
+     * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')&rsquo;.
      */
     @NotNull public Builder item(@NotNull Thing thing) {
       putValue("item", thing);
       return this;
     }
     /**
-     * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')’.
+     * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')&rsquo;.
      */
     @NotNull public Builder item(@NotNull Thing.Builder thing) {
       putValue("item", thing.build());
@@ -275,12 +275,12 @@ public class HowToItem extends ListItem {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("requiredQuantity".equals(key) && value instanceof Number) { requiredQuantity((Number)value); return; }
-      if ("requiredQuantitys".equals(key) && value instanceof Number) { requiredQuantity((Number)value); return; }
-      if ("requiredQuantity".equals(key) && value instanceof QuantitativeValue) { requiredQuantity((QuantitativeValue)value); return; }
-      if ("requiredQuantitys".equals(key) && value instanceof QuantitativeValue) { requiredQuantity((QuantitativeValue)value); return; }
-      if ("requiredQuantity".equals(key) && value instanceof String) { requiredQuantity((String)value); return; }
-      if ("requiredQuantitys".equals(key) && value instanceof String) { requiredQuantity((String)value); return; }
+      if ("requiredQuantity".equals(key) && value instanceof Number) { this.requiredQuantity((Number)value); return; }
+      if ("requiredQuantitys".equals(key) && value instanceof Number) { this.requiredQuantity((Number)value); return; }
+      if ("requiredQuantity".equals(key) && value instanceof QuantitativeValue) { this.requiredQuantity((QuantitativeValue)value); return; }
+      if ("requiredQuantitys".equals(key) && value instanceof QuantitativeValue) { this.requiredQuantity((QuantitativeValue)value); return; }
+      if ("requiredQuantity".equals(key) && value instanceof String) { this.requiredQuantity((String)value); return; }
+      if ("requiredQuantitys".equals(key) && value instanceof String) { this.requiredQuantity((String)value); return; }
       super.fromMap(key, value);
     }
   }

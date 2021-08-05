@@ -354,18 +354,18 @@ public class EmployeeRole extends OrganizationRole {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("baseSalary".equals(key) && value instanceof Integer) { baseSalary((Integer)value); return; }
-      if ("baseSalarys".equals(key) && value instanceof Integer) { baseSalary((Integer)value); return; }
-      if ("baseSalary".equals(key) && value instanceof Long) { baseSalary((Long)value); return; }
-      if ("baseSalarys".equals(key) && value instanceof Long) { baseSalary((Long)value); return; }
-      if ("baseSalary".equals(key) && value instanceof Float) { baseSalary((Float)value); return; }
-      if ("baseSalarys".equals(key) && value instanceof Float) { baseSalary((Float)value); return; }
-      if ("baseSalary".equals(key) && value instanceof Double) { baseSalary((Double)value); return; }
-      if ("baseSalarys".equals(key) && value instanceof Double) { baseSalary((Double)value); return; }
-      if ("baseSalary".equals(key) && value instanceof String) { baseSalary((String)value); return; }
-      if ("baseSalarys".equals(key) && value instanceof String) { baseSalary((String)value); return; }
-      if ("salaryCurrency".equals(key) && value instanceof String) { salaryCurrency((String)value); return; }
-      if ("salaryCurrencys".equals(key) && value instanceof String) { salaryCurrency((String)value); return; }
+      if ("baseSalary".equals(key) && value instanceof Integer) { this.baseSalary((Integer)value); return; }
+      if ("baseSalarys".equals(key) && value instanceof Integer) { this.baseSalary((Integer)value); return; }
+      if ("baseSalary".equals(key) && value instanceof Long) { this.baseSalary((Long)value); return; }
+      if ("baseSalarys".equals(key) && value instanceof Long) { this.baseSalary((Long)value); return; }
+      if ("baseSalary".equals(key) && value instanceof Float) { this.baseSalary((Float)value); return; }
+      if ("baseSalarys".equals(key) && value instanceof Float) { this.baseSalary((Float)value); return; }
+      if ("baseSalary".equals(key) && value instanceof Double) { this.baseSalary((Double)value); return; }
+      if ("baseSalarys".equals(key) && value instanceof Double) { this.baseSalary((Double)value); return; }
+      if ("baseSalary".equals(key) && value instanceof String) { this.baseSalary((String)value); return; }
+      if ("baseSalarys".equals(key) && value instanceof String) { this.baseSalary((String)value); return; }
+      if ("salaryCurrency".equals(key) && value instanceof String) { this.salaryCurrency((String)value); return; }
+      if ("salaryCurrencys".equals(key) && value instanceof String) { this.salaryCurrency((String)value); return; }
       super.fromMap(key, value);
     }
   }

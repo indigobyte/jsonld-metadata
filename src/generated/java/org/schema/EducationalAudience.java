@@ -199,8 +199,8 @@ public class EducationalAudience extends Audience {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("educationalRole".equals(key) && value instanceof String) { educationalRole((String)value); return; }
-      if ("educationalRoles".equals(key) && value instanceof String) { educationalRole((String)value); return; }
+      if ("educationalRole".equals(key) && value instanceof String) { this.educationalRole((String)value); return; }
+      if ("educationalRoles".equals(key) && value instanceof String) { this.educationalRole((String)value); return; }
       super.fromMap(key, value);
     }
   }

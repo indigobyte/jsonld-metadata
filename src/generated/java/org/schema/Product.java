@@ -589,14 +589,14 @@ public class Product extends Thing {
     return Arrays.asList((Organization) current);
   }
   /**
-   * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+   * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
    *       
    */
   @JsonIgnore public Demand getOffersDemand() {
     return (Demand) getValue("offers");
   }
   /**
-   * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+   * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
    *       
    */
   @JsonIgnore public Collection<Demand> getOffersDemands() {
@@ -608,14 +608,14 @@ public class Product extends Thing {
     return Arrays.asList((Demand) current);
   }
   /**
-   * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+   * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
    *       
    */
   @JsonIgnore public Offer getOffersOffer() {
     return (Offer) getValue("offers");
   }
   /**
-   * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+   * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
    *       
    */
   @JsonIgnore public Collection<Offer> getOffersOffers() {
@@ -627,13 +627,13 @@ public class Product extends Thing {
     return Arrays.asList((Offer) current);
   }
   /**
-   * The product identifier, such as ISBN. For example: ``` meta itemprop="productID" content="isbn:123-456-789" ```.
+   * The product identifier, such as ISBN. For example: ``` meta itemprop=&quot;productID&quot; content=&quot;isbn:123-456-789&quot; ```.
    */
   @JsonIgnore public Identifier getProductIDIdentifier() {
     return (Identifier) getValue("productID");
   }
   /**
-   * The product identifier, such as ISBN. For example: ``` meta itemprop="productID" content="isbn:123-456-789" ```.
+   * The product identifier, such as ISBN. For example: ``` meta itemprop=&quot;productID&quot; content=&quot;isbn:123-456-789&quot; ```.
    */
   @JsonIgnore public Collection<Identifier> getProductIDIdentifiers() {
     final Object current = myData.get("productID");
@@ -644,13 +644,13 @@ public class Product extends Thing {
     return Arrays.asList((Identifier) current);
   }
   /**
-   * The product identifier, such as ISBN. For example: ``` meta itemprop="productID" content="isbn:123-456-789" ```.
+   * The product identifier, such as ISBN. For example: ``` meta itemprop=&quot;productID&quot; content=&quot;isbn:123-456-789&quot; ```.
    */
   @JsonIgnore public String getProductIDString() {
     return (String) getValue("productID");
   }
   /**
-   * The product identifier, such as ISBN. For example: ``` meta itemprop="productID" content="isbn:123-456-789" ```.
+   * The product identifier, such as ISBN. For example: ``` meta itemprop=&quot;productID&quot; content=&quot;isbn:123-456-789&quot; ```.
    */
   @JsonIgnore public Collection<String> getProductIDStrings() {
     final Object current = myData.get("productID");
@@ -1221,7 +1221,7 @@ public class Product extends Thing {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Demand demand) {
@@ -1229,7 +1229,7 @@ public class Product extends Thing {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Demand.Builder demand) {
@@ -1237,7 +1237,7 @@ public class Product extends Thing {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Offer offer) {
@@ -1245,7 +1245,7 @@ public class Product extends Thing {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Offer.Builder offer) {
@@ -1253,14 +1253,14 @@ public class Product extends Thing {
       return this;
     }
     /**
-     * The product identifier, such as ISBN. For example: ``` meta itemprop="productID" content="isbn:123-456-789" ```.
+     * The product identifier, such as ISBN. For example: ``` meta itemprop=&quot;productID&quot; content=&quot;isbn:123-456-789&quot; ```.
      */
     @NotNull public Builder productID(@NotNull Identifier identifier) {
       putValue("productID", identifier);
       return this;
     }
     /**
-     * The product identifier, such as ISBN. For example: ``` meta itemprop="productID" content="isbn:123-456-789" ```.
+     * The product identifier, such as ISBN. For example: ``` meta itemprop=&quot;productID&quot; content=&quot;isbn:123-456-789&quot; ```.
      */
     @NotNull public Builder productID(@NotNull String productID) {
       putValue("productID", productID);
@@ -1493,102 +1493,102 @@ public class Product extends Thing {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("aggregateRating".equals(key) && value instanceof AggregateRating) { aggregateRating((AggregateRating)value); return; }
-      if ("aggregateRatings".equals(key) && value instanceof AggregateRating) { aggregateRating((AggregateRating)value); return; }
-      if ("audience".equals(key) && value instanceof Audience) { audience((Audience)value); return; }
-      if ("audiences".equals(key) && value instanceof Audience) { audience((Audience)value); return; }
-      if ("award".equals(key) && value instanceof String) { award((String)value); return; }
-      if ("awards".equals(key) && value instanceof String) { award((String)value); return; }
-      if ("brand".equals(key) && value instanceof Brand) { brand((Brand)value); return; }
-      if ("brands".equals(key) && value instanceof Brand) { brand((Brand)value); return; }
-      if ("brand".equals(key) && value instanceof Organization) { brand((Organization)value); return; }
-      if ("brands".equals(key) && value instanceof Organization) { brand((Organization)value); return; }
-      if ("category".equals(key) && value instanceof String) { category((String)value); return; }
-      if ("categorys".equals(key) && value instanceof String) { category((String)value); return; }
-      if ("category".equals(key) && value instanceof Thing) { category((Thing)value); return; }
-      if ("categorys".equals(key) && value instanceof Thing) { category((Thing)value); return; }
-      if ("color".equals(key) && value instanceof String) { color((String)value); return; }
-      if ("colors".equals(key) && value instanceof String) { color((String)value); return; }
-      if ("depth".equals(key) && value instanceof Distance) { depth((Distance)value); return; }
-      if ("depths".equals(key) && value instanceof Distance) { depth((Distance)value); return; }
-      if ("depth".equals(key) && value instanceof QuantitativeValue) { depth((QuantitativeValue)value); return; }
-      if ("depths".equals(key) && value instanceof QuantitativeValue) { depth((QuantitativeValue)value); return; }
-      if ("gtin12".equals(key) && value instanceof Identifier) { gtin12((Identifier)value); return; }
-      if ("gtin12s".equals(key) && value instanceof Identifier) { gtin12((Identifier)value); return; }
-      if ("gtin12".equals(key) && value instanceof String) { gtin12((String)value); return; }
-      if ("gtin12s".equals(key) && value instanceof String) { gtin12((String)value); return; }
-      if ("gtin13".equals(key) && value instanceof Identifier) { gtin13((Identifier)value); return; }
-      if ("gtin13s".equals(key) && value instanceof Identifier) { gtin13((Identifier)value); return; }
-      if ("gtin13".equals(key) && value instanceof String) { gtin13((String)value); return; }
-      if ("gtin13s".equals(key) && value instanceof String) { gtin13((String)value); return; }
-      if ("gtin14".equals(key) && value instanceof Identifier) { gtin14((Identifier)value); return; }
-      if ("gtin14s".equals(key) && value instanceof Identifier) { gtin14((Identifier)value); return; }
-      if ("gtin14".equals(key) && value instanceof String) { gtin14((String)value); return; }
-      if ("gtin14s".equals(key) && value instanceof String) { gtin14((String)value); return; }
-      if ("gtin8".equals(key) && value instanceof Identifier) { gtin8((Identifier)value); return; }
-      if ("gtin8s".equals(key) && value instanceof Identifier) { gtin8((Identifier)value); return; }
-      if ("gtin8".equals(key) && value instanceof String) { gtin8((String)value); return; }
-      if ("gtin8s".equals(key) && value instanceof String) { gtin8((String)value); return; }
-      if ("height".equals(key) && value instanceof Distance) { height((Distance)value); return; }
-      if ("heights".equals(key) && value instanceof Distance) { height((Distance)value); return; }
-      if ("height".equals(key) && value instanceof QuantitativeValue) { height((QuantitativeValue)value); return; }
-      if ("heights".equals(key) && value instanceof QuantitativeValue) { height((QuantitativeValue)value); return; }
-      if ("isAccessoryOrSparePartFor".equals(key) && value instanceof Product) { isAccessoryOrSparePartFor((Product)value); return; }
-      if ("isAccessoryOrSparePartFors".equals(key) && value instanceof Product) { isAccessoryOrSparePartFor((Product)value); return; }
-      if ("isConsumableFor".equals(key) && value instanceof Product) { isConsumableFor((Product)value); return; }
-      if ("isConsumableFors".equals(key) && value instanceof Product) { isConsumableFor((Product)value); return; }
-      if ("isRelatedTo".equals(key) && value instanceof Product) { isRelatedTo((Product)value); return; }
-      if ("isRelatedTos".equals(key) && value instanceof Product) { isRelatedTo((Product)value); return; }
-      if ("isRelatedTo".equals(key) && value instanceof Service) { isRelatedTo((Service)value); return; }
-      if ("isRelatedTos".equals(key) && value instanceof Service) { isRelatedTo((Service)value); return; }
-      if ("isSimilarTo".equals(key) && value instanceof Product) { isSimilarTo((Product)value); return; }
-      if ("isSimilarTos".equals(key) && value instanceof Product) { isSimilarTo((Product)value); return; }
-      if ("isSimilarTo".equals(key) && value instanceof Service) { isSimilarTo((Service)value); return; }
-      if ("isSimilarTos".equals(key) && value instanceof Service) { isSimilarTo((Service)value); return; }
-      if ("itemCondition".equals(key) && value instanceof OfferItemCondition) { itemCondition((OfferItemCondition)value); return; }
-      if ("itemConditions".equals(key) && value instanceof OfferItemCondition) { itemCondition((OfferItemCondition)value); return; }
-      if ("logo".equals(key) && value instanceof ImageObject) { logo((ImageObject)value); return; }
-      if ("logos".equals(key) && value instanceof ImageObject) { logo((ImageObject)value); return; }
-      if ("logo".equals(key) && value instanceof String) { logo((String)value); return; }
-      if ("logos".equals(key) && value instanceof String) { logo((String)value); return; }
-      if ("model".equals(key) && value instanceof ProductModel) { model((ProductModel)value); return; }
-      if ("models".equals(key) && value instanceof ProductModel) { model((ProductModel)value); return; }
-      if ("model".equals(key) && value instanceof String) { model((String)value); return; }
-      if ("models".equals(key) && value instanceof String) { model((String)value); return; }
-      if ("mpn".equals(key) && value instanceof String) { mpn((String)value); return; }
-      if ("mpns".equals(key) && value instanceof String) { mpn((String)value); return; }
-      if ("manufacturer".equals(key) && value instanceof Organization) { manufacturer((Organization)value); return; }
-      if ("manufacturers".equals(key) && value instanceof Organization) { manufacturer((Organization)value); return; }
-      if ("offers".equals(key) && value instanceof Demand) { offers((Demand)value); return; }
-      if ("offerss".equals(key) && value instanceof Demand) { offers((Demand)value); return; }
-      if ("offers".equals(key) && value instanceof Offer) { offers((Offer)value); return; }
-      if ("offerss".equals(key) && value instanceof Offer) { offers((Offer)value); return; }
-      if ("productID".equals(key) && value instanceof Identifier) { productID((Identifier)value); return; }
-      if ("productIDs".equals(key) && value instanceof Identifier) { productID((Identifier)value); return; }
-      if ("productID".equals(key) && value instanceof String) { productID((String)value); return; }
-      if ("productIDs".equals(key) && value instanceof String) { productID((String)value); return; }
-      if ("releaseDate".equals(key) && value instanceof java.util.Date) { releaseDate((java.util.Date)value); return; }
-      if ("releaseDates".equals(key) && value instanceof java.util.Date) { releaseDate((java.util.Date)value); return; }
-      if ("review".equals(key) && value instanceof Review) { review((Review)value); return; }
-      if ("reviews".equals(key) && value instanceof Review) { review((Review)value); return; }
-      if ("slogan".equals(key) && value instanceof String) { slogan((String)value); return; }
-      if ("slogans".equals(key) && value instanceof String) { slogan((String)value); return; }
-      if ("sku".equals(key) && value instanceof Identifier) { sku((Identifier)value); return; }
-      if ("skus".equals(key) && value instanceof Identifier) { sku((Identifier)value); return; }
-      if ("sku".equals(key) && value instanceof String) { sku((String)value); return; }
-      if ("skus".equals(key) && value instanceof String) { sku((String)value); return; }
-      if ("weight".equals(key) && value instanceof QuantitativeValue) { weight((QuantitativeValue)value); return; }
-      if ("weights".equals(key) && value instanceof QuantitativeValue) { weight((QuantitativeValue)value); return; }
-      if ("width".equals(key) && value instanceof Distance) { width((Distance)value); return; }
-      if ("widths".equals(key) && value instanceof Distance) { width((Distance)value); return; }
-      if ("width".equals(key) && value instanceof QuantitativeValue) { width((QuantitativeValue)value); return; }
-      if ("widths".equals(key) && value instanceof QuantitativeValue) { width((QuantitativeValue)value); return; }
-      if ("additionalProperty".equals(key) && value instanceof PropertyValue) { additionalProperty((PropertyValue)value); return; }
-      if ("additionalPropertys".equals(key) && value instanceof PropertyValue) { additionalProperty((PropertyValue)value); return; }
-      if ("productionDate".equals(key) && value instanceof java.util.Date) { productionDate((java.util.Date)value); return; }
-      if ("productionDates".equals(key) && value instanceof java.util.Date) { productionDate((java.util.Date)value); return; }
-      if ("purchaseDate".equals(key) && value instanceof java.util.Date) { purchaseDate((java.util.Date)value); return; }
-      if ("purchaseDates".equals(key) && value instanceof java.util.Date) { purchaseDate((java.util.Date)value); return; }
+      if ("aggregateRating".equals(key) && value instanceof AggregateRating) { this.aggregateRating((AggregateRating)value); return; }
+      if ("aggregateRatings".equals(key) && value instanceof AggregateRating) { this.aggregateRating((AggregateRating)value); return; }
+      if ("audience".equals(key) && value instanceof Audience) { this.audience((Audience)value); return; }
+      if ("audiences".equals(key) && value instanceof Audience) { this.audience((Audience)value); return; }
+      if ("award".equals(key) && value instanceof String) { this.award((String)value); return; }
+      if ("awards".equals(key) && value instanceof String) { this.award((String)value); return; }
+      if ("brand".equals(key) && value instanceof Brand) { this.brand((Brand)value); return; }
+      if ("brands".equals(key) && value instanceof Brand) { this.brand((Brand)value); return; }
+      if ("brand".equals(key) && value instanceof Organization) { this.brand((Organization)value); return; }
+      if ("brands".equals(key) && value instanceof Organization) { this.brand((Organization)value); return; }
+      if ("category".equals(key) && value instanceof String) { this.category((String)value); return; }
+      if ("categorys".equals(key) && value instanceof String) { this.category((String)value); return; }
+      if ("category".equals(key) && value instanceof Thing) { this.category((Thing)value); return; }
+      if ("categorys".equals(key) && value instanceof Thing) { this.category((Thing)value); return; }
+      if ("color".equals(key) && value instanceof String) { this.color((String)value); return; }
+      if ("colors".equals(key) && value instanceof String) { this.color((String)value); return; }
+      if ("depth".equals(key) && value instanceof Distance) { this.depth((Distance)value); return; }
+      if ("depths".equals(key) && value instanceof Distance) { this.depth((Distance)value); return; }
+      if ("depth".equals(key) && value instanceof QuantitativeValue) { this.depth((QuantitativeValue)value); return; }
+      if ("depths".equals(key) && value instanceof QuantitativeValue) { this.depth((QuantitativeValue)value); return; }
+      if ("gtin12".equals(key) && value instanceof Identifier) { this.gtin12((Identifier)value); return; }
+      if ("gtin12s".equals(key) && value instanceof Identifier) { this.gtin12((Identifier)value); return; }
+      if ("gtin12".equals(key) && value instanceof String) { this.gtin12((String)value); return; }
+      if ("gtin12s".equals(key) && value instanceof String) { this.gtin12((String)value); return; }
+      if ("gtin13".equals(key) && value instanceof Identifier) { this.gtin13((Identifier)value); return; }
+      if ("gtin13s".equals(key) && value instanceof Identifier) { this.gtin13((Identifier)value); return; }
+      if ("gtin13".equals(key) && value instanceof String) { this.gtin13((String)value); return; }
+      if ("gtin13s".equals(key) && value instanceof String) { this.gtin13((String)value); return; }
+      if ("gtin14".equals(key) && value instanceof Identifier) { this.gtin14((Identifier)value); return; }
+      if ("gtin14s".equals(key) && value instanceof Identifier) { this.gtin14((Identifier)value); return; }
+      if ("gtin14".equals(key) && value instanceof String) { this.gtin14((String)value); return; }
+      if ("gtin14s".equals(key) && value instanceof String) { this.gtin14((String)value); return; }
+      if ("gtin8".equals(key) && value instanceof Identifier) { this.gtin8((Identifier)value); return; }
+      if ("gtin8s".equals(key) && value instanceof Identifier) { this.gtin8((Identifier)value); return; }
+      if ("gtin8".equals(key) && value instanceof String) { this.gtin8((String)value); return; }
+      if ("gtin8s".equals(key) && value instanceof String) { this.gtin8((String)value); return; }
+      if ("height".equals(key) && value instanceof Distance) { this.height((Distance)value); return; }
+      if ("heights".equals(key) && value instanceof Distance) { this.height((Distance)value); return; }
+      if ("height".equals(key) && value instanceof QuantitativeValue) { this.height((QuantitativeValue)value); return; }
+      if ("heights".equals(key) && value instanceof QuantitativeValue) { this.height((QuantitativeValue)value); return; }
+      if ("isAccessoryOrSparePartFor".equals(key) && value instanceof Product) { this.isAccessoryOrSparePartFor((Product)value); return; }
+      if ("isAccessoryOrSparePartFors".equals(key) && value instanceof Product) { this.isAccessoryOrSparePartFor((Product)value); return; }
+      if ("isConsumableFor".equals(key) && value instanceof Product) { this.isConsumableFor((Product)value); return; }
+      if ("isConsumableFors".equals(key) && value instanceof Product) { this.isConsumableFor((Product)value); return; }
+      if ("isRelatedTo".equals(key) && value instanceof Product) { this.isRelatedTo((Product)value); return; }
+      if ("isRelatedTos".equals(key) && value instanceof Product) { this.isRelatedTo((Product)value); return; }
+      if ("isRelatedTo".equals(key) && value instanceof Service) { this.isRelatedTo((Service)value); return; }
+      if ("isRelatedTos".equals(key) && value instanceof Service) { this.isRelatedTo((Service)value); return; }
+      if ("isSimilarTo".equals(key) && value instanceof Product) { this.isSimilarTo((Product)value); return; }
+      if ("isSimilarTos".equals(key) && value instanceof Product) { this.isSimilarTo((Product)value); return; }
+      if ("isSimilarTo".equals(key) && value instanceof Service) { this.isSimilarTo((Service)value); return; }
+      if ("isSimilarTos".equals(key) && value instanceof Service) { this.isSimilarTo((Service)value); return; }
+      if ("itemCondition".equals(key) && value instanceof OfferItemCondition) { this.itemCondition((OfferItemCondition)value); return; }
+      if ("itemConditions".equals(key) && value instanceof OfferItemCondition) { this.itemCondition((OfferItemCondition)value); return; }
+      if ("logo".equals(key) && value instanceof ImageObject) { this.logo((ImageObject)value); return; }
+      if ("logos".equals(key) && value instanceof ImageObject) { this.logo((ImageObject)value); return; }
+      if ("logo".equals(key) && value instanceof String) { this.logo((String)value); return; }
+      if ("logos".equals(key) && value instanceof String) { this.logo((String)value); return; }
+      if ("model".equals(key) && value instanceof ProductModel) { this.model((ProductModel)value); return; }
+      if ("models".equals(key) && value instanceof ProductModel) { this.model((ProductModel)value); return; }
+      if ("model".equals(key) && value instanceof String) { this.model((String)value); return; }
+      if ("models".equals(key) && value instanceof String) { this.model((String)value); return; }
+      if ("mpn".equals(key) && value instanceof String) { this.mpn((String)value); return; }
+      if ("mpns".equals(key) && value instanceof String) { this.mpn((String)value); return; }
+      if ("manufacturer".equals(key) && value instanceof Organization) { this.manufacturer((Organization)value); return; }
+      if ("manufacturers".equals(key) && value instanceof Organization) { this.manufacturer((Organization)value); return; }
+      if ("offers".equals(key) && value instanceof Demand) { this.offers((Demand)value); return; }
+      if ("offerss".equals(key) && value instanceof Demand) { this.offers((Demand)value); return; }
+      if ("offers".equals(key) && value instanceof Offer) { this.offers((Offer)value); return; }
+      if ("offerss".equals(key) && value instanceof Offer) { this.offers((Offer)value); return; }
+      if ("productID".equals(key) && value instanceof Identifier) { this.productID((Identifier)value); return; }
+      if ("productIDs".equals(key) && value instanceof Identifier) { this.productID((Identifier)value); return; }
+      if ("productID".equals(key) && value instanceof String) { this.productID((String)value); return; }
+      if ("productIDs".equals(key) && value instanceof String) { this.productID((String)value); return; }
+      if ("releaseDate".equals(key) && value instanceof java.util.Date) { this.releaseDate((java.util.Date)value); return; }
+      if ("releaseDates".equals(key) && value instanceof java.util.Date) { this.releaseDate((java.util.Date)value); return; }
+      if ("review".equals(key) && value instanceof Review) { this.review((Review)value); return; }
+      if ("reviews".equals(key) && value instanceof Review) { this.review((Review)value); return; }
+      if ("slogan".equals(key) && value instanceof String) { this.slogan((String)value); return; }
+      if ("slogans".equals(key) && value instanceof String) { this.slogan((String)value); return; }
+      if ("sku".equals(key) && value instanceof Identifier) { this.sku((Identifier)value); return; }
+      if ("skus".equals(key) && value instanceof Identifier) { this.sku((Identifier)value); return; }
+      if ("sku".equals(key) && value instanceof String) { this.sku((String)value); return; }
+      if ("skus".equals(key) && value instanceof String) { this.sku((String)value); return; }
+      if ("weight".equals(key) && value instanceof QuantitativeValue) { this.weight((QuantitativeValue)value); return; }
+      if ("weights".equals(key) && value instanceof QuantitativeValue) { this.weight((QuantitativeValue)value); return; }
+      if ("width".equals(key) && value instanceof Distance) { this.width((Distance)value); return; }
+      if ("widths".equals(key) && value instanceof Distance) { this.width((Distance)value); return; }
+      if ("width".equals(key) && value instanceof QuantitativeValue) { this.width((QuantitativeValue)value); return; }
+      if ("widths".equals(key) && value instanceof QuantitativeValue) { this.width((QuantitativeValue)value); return; }
+      if ("additionalProperty".equals(key) && value instanceof PropertyValue) { this.additionalProperty((PropertyValue)value); return; }
+      if ("additionalPropertys".equals(key) && value instanceof PropertyValue) { this.additionalProperty((PropertyValue)value); return; }
+      if ("productionDate".equals(key) && value instanceof java.util.Date) { this.productionDate((java.util.Date)value); return; }
+      if ("productionDates".equals(key) && value instanceof java.util.Date) { this.productionDate((java.util.Date)value); return; }
+      if ("purchaseDate".equals(key) && value instanceof java.util.Date) { this.purchaseDate((java.util.Date)value); return; }
+      if ("purchaseDates".equals(key) && value instanceof java.util.Date) { this.purchaseDate((java.util.Date)value); return; }
       super.fromMap(key, value);
     }
   }

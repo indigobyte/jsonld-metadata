@@ -147,13 +147,13 @@ public class Ticket extends Intangible {
     return Arrays.asList((String) current);
   }
   /**
-   * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
+   * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;.
    */
   @JsonIgnore public String getPriceCurrency() {
     return (String) getValue("priceCurrency");
   }
   /**
-   * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
+   * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;.
    */
   @JsonIgnore public Collection<String> getPriceCurrencys() {
     final Object current = myData.get("priceCurrency");
@@ -326,7 +326,7 @@ public class Ticket extends Intangible {
       return this;
     }
     /**
-     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
+     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;.
      */
     @NotNull public Builder priceCurrency(@NotNull String priceCurrency) {
       putValue("priceCurrency", priceCurrency);
@@ -494,32 +494,32 @@ public class Ticket extends Intangible {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("underName".equals(key) && value instanceof Organization) { underName((Organization)value); return; }
-      if ("underNames".equals(key) && value instanceof Organization) { underName((Organization)value); return; }
-      if ("underName".equals(key) && value instanceof Person) { underName((Person)value); return; }
-      if ("underNames".equals(key) && value instanceof Person) { underName((Person)value); return; }
-      if ("totalPrice".equals(key) && value instanceof Integer) { totalPrice((Integer)value); return; }
-      if ("totalPrices".equals(key) && value instanceof Integer) { totalPrice((Integer)value); return; }
-      if ("totalPrice".equals(key) && value instanceof Long) { totalPrice((Long)value); return; }
-      if ("totalPrices".equals(key) && value instanceof Long) { totalPrice((Long)value); return; }
-      if ("totalPrice".equals(key) && value instanceof Float) { totalPrice((Float)value); return; }
-      if ("totalPrices".equals(key) && value instanceof Float) { totalPrice((Float)value); return; }
-      if ("totalPrice".equals(key) && value instanceof Double) { totalPrice((Double)value); return; }
-      if ("totalPrices".equals(key) && value instanceof Double) { totalPrice((Double)value); return; }
-      if ("totalPrice".equals(key) && value instanceof String) { totalPrice((String)value); return; }
-      if ("totalPrices".equals(key) && value instanceof String) { totalPrice((String)value); return; }
-      if ("priceCurrency".equals(key) && value instanceof String) { priceCurrency((String)value); return; }
-      if ("priceCurrencys".equals(key) && value instanceof String) { priceCurrency((String)value); return; }
-      if ("issuedBy".equals(key) && value instanceof Organization) { issuedBy((Organization)value); return; }
-      if ("issuedBys".equals(key) && value instanceof Organization) { issuedBy((Organization)value); return; }
-      if ("dateIssued".equals(key) && value instanceof java.util.Date) { dateIssued((java.util.Date)value); return; }
-      if ("dateIssueds".equals(key) && value instanceof java.util.Date) { dateIssued((java.util.Date)value); return; }
-      if ("ticketedSeat".equals(key) && value instanceof Seat) { ticketedSeat((Seat)value); return; }
-      if ("ticketedSeats".equals(key) && value instanceof Seat) { ticketedSeat((Seat)value); return; }
-      if ("ticketNumber".equals(key) && value instanceof String) { ticketNumber((String)value); return; }
-      if ("ticketNumbers".equals(key) && value instanceof String) { ticketNumber((String)value); return; }
-      if ("ticketToken".equals(key) && value instanceof String) { ticketToken((String)value); return; }
-      if ("ticketTokens".equals(key) && value instanceof String) { ticketToken((String)value); return; }
+      if ("underName".equals(key) && value instanceof Organization) { this.underName((Organization)value); return; }
+      if ("underNames".equals(key) && value instanceof Organization) { this.underName((Organization)value); return; }
+      if ("underName".equals(key) && value instanceof Person) { this.underName((Person)value); return; }
+      if ("underNames".equals(key) && value instanceof Person) { this.underName((Person)value); return; }
+      if ("totalPrice".equals(key) && value instanceof Integer) { this.totalPrice((Integer)value); return; }
+      if ("totalPrices".equals(key) && value instanceof Integer) { this.totalPrice((Integer)value); return; }
+      if ("totalPrice".equals(key) && value instanceof Long) { this.totalPrice((Long)value); return; }
+      if ("totalPrices".equals(key) && value instanceof Long) { this.totalPrice((Long)value); return; }
+      if ("totalPrice".equals(key) && value instanceof Float) { this.totalPrice((Float)value); return; }
+      if ("totalPrices".equals(key) && value instanceof Float) { this.totalPrice((Float)value); return; }
+      if ("totalPrice".equals(key) && value instanceof Double) { this.totalPrice((Double)value); return; }
+      if ("totalPrices".equals(key) && value instanceof Double) { this.totalPrice((Double)value); return; }
+      if ("totalPrice".equals(key) && value instanceof String) { this.totalPrice((String)value); return; }
+      if ("totalPrices".equals(key) && value instanceof String) { this.totalPrice((String)value); return; }
+      if ("priceCurrency".equals(key) && value instanceof String) { this.priceCurrency((String)value); return; }
+      if ("priceCurrencys".equals(key) && value instanceof String) { this.priceCurrency((String)value); return; }
+      if ("issuedBy".equals(key) && value instanceof Organization) { this.issuedBy((Organization)value); return; }
+      if ("issuedBys".equals(key) && value instanceof Organization) { this.issuedBy((Organization)value); return; }
+      if ("dateIssued".equals(key) && value instanceof java.util.Date) { this.dateIssued((java.util.Date)value); return; }
+      if ("dateIssueds".equals(key) && value instanceof java.util.Date) { this.dateIssued((java.util.Date)value); return; }
+      if ("ticketedSeat".equals(key) && value instanceof Seat) { this.ticketedSeat((Seat)value); return; }
+      if ("ticketedSeats".equals(key) && value instanceof Seat) { this.ticketedSeat((Seat)value); return; }
+      if ("ticketNumber".equals(key) && value instanceof String) { this.ticketNumber((String)value); return; }
+      if ("ticketNumbers".equals(key) && value instanceof String) { this.ticketNumber((String)value); return; }
+      if ("ticketToken".equals(key) && value instanceof String) { this.ticketToken((String)value); return; }
+      if ("ticketTokens".equals(key) && value instanceof String) { this.ticketToken((String)value); return; }
       super.fromMap(key, value);
     }
   }

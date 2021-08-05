@@ -199,8 +199,8 @@ public class PerformanceRole extends Role {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("characterName".equals(key) && value instanceof String) { characterName((String)value); return; }
-      if ("characterNames".equals(key) && value instanceof String) { characterName((String)value); return; }
+      if ("characterName".equals(key) && value instanceof String) { this.characterName((String)value); return; }
+      if ("characterNames".equals(key) && value instanceof String) { this.characterName((String)value); return; }
       super.fromMap(key, value);
     }
   }

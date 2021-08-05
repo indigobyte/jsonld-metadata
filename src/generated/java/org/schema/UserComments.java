@@ -410,7 +410,7 @@ public class UserComments extends UserInteraction {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Demand demand) {
@@ -418,7 +418,7 @@ public class UserComments extends UserInteraction {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Demand.Builder demand) {
@@ -426,7 +426,7 @@ public class UserComments extends UserInteraction {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Offer offer) {
@@ -434,7 +434,7 @@ public class UserComments extends UserInteraction {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Offer.Builder offer) {
@@ -442,28 +442,28 @@ public class UserComments extends UserInteraction {
       return this;
     }
     /**
-     * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
+     * A performer at the event&amp;#x2014;for example, a presenter, musician, musical group or actor.
      */
     @NotNull public Builder performer(@NotNull Organization organization) {
       putValue("performer", organization);
       return this;
     }
     /**
-     * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
+     * A performer at the event&amp;#x2014;for example, a presenter, musician, musical group or actor.
      */
     @NotNull public Builder performer(@NotNull Organization.Builder organization) {
       putValue("performer", organization.build());
       return this;
     }
     /**
-     * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
+     * A performer at the event&amp;#x2014;for example, a presenter, musician, musical group or actor.
      */
     @NotNull public Builder performer(@NotNull Person person) {
       putValue("performer", person);
       return this;
     }
     /**
-     * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
+     * A performer at the event&amp;#x2014;for example, a presenter, musician, musical group or actor.
      */
     @NotNull public Builder performer(@NotNull Person.Builder person) {
       putValue("performer", person.build());
@@ -765,18 +765,18 @@ public class UserComments extends UserInteraction {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("commentText".equals(key) && value instanceof String) { commentText((String)value); return; }
-      if ("commentTexts".equals(key) && value instanceof String) { commentText((String)value); return; }
-      if ("commentTime".equals(key) && value instanceof java.util.Date) { commentTime((java.util.Date)value); return; }
-      if ("commentTimes".equals(key) && value instanceof java.util.Date) { commentTime((java.util.Date)value); return; }
-      if ("creator".equals(key) && value instanceof Organization) { creator((Organization)value); return; }
-      if ("creators".equals(key) && value instanceof Organization) { creator((Organization)value); return; }
-      if ("creator".equals(key) && value instanceof Person) { creator((Person)value); return; }
-      if ("creators".equals(key) && value instanceof Person) { creator((Person)value); return; }
-      if ("discusses".equals(key) && value instanceof CreativeWork) { discusses((CreativeWork)value); return; }
-      if ("discussess".equals(key) && value instanceof CreativeWork) { discusses((CreativeWork)value); return; }
-      if ("replyToUrl".equals(key) && value instanceof String) { replyToUrl((String)value); return; }
-      if ("replyToUrls".equals(key) && value instanceof String) { replyToUrl((String)value); return; }
+      if ("commentText".equals(key) && value instanceof String) { this.commentText((String)value); return; }
+      if ("commentTexts".equals(key) && value instanceof String) { this.commentText((String)value); return; }
+      if ("commentTime".equals(key) && value instanceof java.util.Date) { this.commentTime((java.util.Date)value); return; }
+      if ("commentTimes".equals(key) && value instanceof java.util.Date) { this.commentTime((java.util.Date)value); return; }
+      if ("creator".equals(key) && value instanceof Organization) { this.creator((Organization)value); return; }
+      if ("creators".equals(key) && value instanceof Organization) { this.creator((Organization)value); return; }
+      if ("creator".equals(key) && value instanceof Person) { this.creator((Person)value); return; }
+      if ("creators".equals(key) && value instanceof Person) { this.creator((Person)value); return; }
+      if ("discusses".equals(key) && value instanceof CreativeWork) { this.discusses((CreativeWork)value); return; }
+      if ("discussess".equals(key) && value instanceof CreativeWork) { this.discusses((CreativeWork)value); return; }
+      if ("replyToUrl".equals(key) && value instanceof String) { this.replyToUrl((String)value); return; }
+      if ("replyToUrls".equals(key) && value instanceof String) { this.replyToUrl((String)value); return; }
       super.fromMap(key, value);
     }
   }

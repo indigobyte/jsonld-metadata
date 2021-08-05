@@ -290,8 +290,8 @@ public class LendAction extends TransferAction {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("borrower".equals(key) && value instanceof Person) { borrower((Person)value); return; }
-      if ("borrowers".equals(key) && value instanceof Person) { borrower((Person)value); return; }
+      if ("borrower".equals(key) && value instanceof Person) { this.borrower((Person)value); return; }
+      if ("borrowers".equals(key) && value instanceof Person) { this.borrower((Person)value); return; }
       super.fromMap(key, value);
     }
   }

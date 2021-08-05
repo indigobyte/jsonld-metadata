@@ -266,13 +266,13 @@ public class PropertyValueSpecification extends Intangible {
     return Arrays.asList((Thing) current);
   }
   /**
-   * Whether or not a property is mutable.  Default is false. Specifying this for a property that also has a value makes it act similar to a "hidden" input in an HTML form.
+   * Whether or not a property is mutable.  Default is false. Specifying this for a property that also has a value makes it act similar to a &quot;hidden&quot; input in an HTML form.
    */
   @JsonIgnore public Boolean getReadonlyValue() {
     return (Boolean) getValue("readonlyValue");
   }
   /**
-   * Whether or not a property is mutable.  Default is false. Specifying this for a property that also has a value makes it act similar to a "hidden" input in an HTML form.
+   * Whether or not a property is mutable.  Default is false. Specifying this for a property that also has a value makes it act similar to a &quot;hidden&quot; input in an HTML form.
    */
   @JsonIgnore public Collection<Boolean> getReadonlyValues() {
     final Object current = myData.get("readonlyValue");
@@ -691,7 +691,7 @@ public class PropertyValueSpecification extends Intangible {
       return this;
     }
     /**
-     * Whether or not a property is mutable.  Default is false. Specifying this for a property that also has a value makes it act similar to a "hidden" input in an HTML form.
+     * Whether or not a property is mutable.  Default is false. Specifying this for a property that also has a value makes it act similar to a &quot;hidden&quot; input in an HTML form.
      */
     @NotNull public Builder readonlyValue(@NotNull Boolean readonlyValue) {
       putValue("readonlyValue", readonlyValue);
@@ -929,70 +929,70 @@ public class PropertyValueSpecification extends Intangible {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("maxValue".equals(key) && value instanceof Integer) { maxValue((Integer)value); return; }
-      if ("maxValues".equals(key) && value instanceof Integer) { maxValue((Integer)value); return; }
-      if ("maxValue".equals(key) && value instanceof Long) { maxValue((Long)value); return; }
-      if ("maxValues".equals(key) && value instanceof Long) { maxValue((Long)value); return; }
-      if ("maxValue".equals(key) && value instanceof Float) { maxValue((Float)value); return; }
-      if ("maxValues".equals(key) && value instanceof Float) { maxValue((Float)value); return; }
-      if ("maxValue".equals(key) && value instanceof Double) { maxValue((Double)value); return; }
-      if ("maxValues".equals(key) && value instanceof Double) { maxValue((Double)value); return; }
-      if ("maxValue".equals(key) && value instanceof String) { maxValue((String)value); return; }
-      if ("maxValues".equals(key) && value instanceof String) { maxValue((String)value); return; }
-      if ("minValue".equals(key) && value instanceof Integer) { minValue((Integer)value); return; }
-      if ("minValues".equals(key) && value instanceof Integer) { minValue((Integer)value); return; }
-      if ("minValue".equals(key) && value instanceof Long) { minValue((Long)value); return; }
-      if ("minValues".equals(key) && value instanceof Long) { minValue((Long)value); return; }
-      if ("minValue".equals(key) && value instanceof Float) { minValue((Float)value); return; }
-      if ("minValues".equals(key) && value instanceof Float) { minValue((Float)value); return; }
-      if ("minValue".equals(key) && value instanceof Double) { minValue((Double)value); return; }
-      if ("minValues".equals(key) && value instanceof Double) { minValue((Double)value); return; }
-      if ("minValue".equals(key) && value instanceof String) { minValue((String)value); return; }
-      if ("minValues".equals(key) && value instanceof String) { minValue((String)value); return; }
-      if ("valueName".equals(key) && value instanceof String) { valueName((String)value); return; }
-      if ("valueNames".equals(key) && value instanceof String) { valueName((String)value); return; }
-      if ("valueRequired".equals(key) && value instanceof Boolean) { valueRequired((Boolean)value); return; }
-      if ("valueRequireds".equals(key) && value instanceof Boolean) { valueRequired((Boolean)value); return; }
-      if ("defaultValue".equals(key) && value instanceof String) { defaultValue((String)value); return; }
-      if ("defaultValues".equals(key) && value instanceof String) { defaultValue((String)value); return; }
-      if ("defaultValue".equals(key) && value instanceof Thing) { defaultValue((Thing)value); return; }
-      if ("defaultValues".equals(key) && value instanceof Thing) { defaultValue((Thing)value); return; }
-      if ("readonlyValue".equals(key) && value instanceof Boolean) { readonlyValue((Boolean)value); return; }
-      if ("readonlyValues".equals(key) && value instanceof Boolean) { readonlyValue((Boolean)value); return; }
-      if ("multipleValues".equals(key) && value instanceof Boolean) { multipleValues((Boolean)value); return; }
-      if ("multipleValuess".equals(key) && value instanceof Boolean) { multipleValues((Boolean)value); return; }
-      if ("valueMinLength".equals(key) && value instanceof Integer) { valueMinLength((Integer)value); return; }
-      if ("valueMinLengths".equals(key) && value instanceof Integer) { valueMinLength((Integer)value); return; }
-      if ("valueMinLength".equals(key) && value instanceof Long) { valueMinLength((Long)value); return; }
-      if ("valueMinLengths".equals(key) && value instanceof Long) { valueMinLength((Long)value); return; }
-      if ("valueMinLength".equals(key) && value instanceof Float) { valueMinLength((Float)value); return; }
-      if ("valueMinLengths".equals(key) && value instanceof Float) { valueMinLength((Float)value); return; }
-      if ("valueMinLength".equals(key) && value instanceof Double) { valueMinLength((Double)value); return; }
-      if ("valueMinLengths".equals(key) && value instanceof Double) { valueMinLength((Double)value); return; }
-      if ("valueMinLength".equals(key) && value instanceof String) { valueMinLength((String)value); return; }
-      if ("valueMinLengths".equals(key) && value instanceof String) { valueMinLength((String)value); return; }
-      if ("valueMaxLength".equals(key) && value instanceof Integer) { valueMaxLength((Integer)value); return; }
-      if ("valueMaxLengths".equals(key) && value instanceof Integer) { valueMaxLength((Integer)value); return; }
-      if ("valueMaxLength".equals(key) && value instanceof Long) { valueMaxLength((Long)value); return; }
-      if ("valueMaxLengths".equals(key) && value instanceof Long) { valueMaxLength((Long)value); return; }
-      if ("valueMaxLength".equals(key) && value instanceof Float) { valueMaxLength((Float)value); return; }
-      if ("valueMaxLengths".equals(key) && value instanceof Float) { valueMaxLength((Float)value); return; }
-      if ("valueMaxLength".equals(key) && value instanceof Double) { valueMaxLength((Double)value); return; }
-      if ("valueMaxLengths".equals(key) && value instanceof Double) { valueMaxLength((Double)value); return; }
-      if ("valueMaxLength".equals(key) && value instanceof String) { valueMaxLength((String)value); return; }
-      if ("valueMaxLengths".equals(key) && value instanceof String) { valueMaxLength((String)value); return; }
-      if ("valuePattern".equals(key) && value instanceof String) { valuePattern((String)value); return; }
-      if ("valuePatterns".equals(key) && value instanceof String) { valuePattern((String)value); return; }
-      if ("stepValue".equals(key) && value instanceof Integer) { stepValue((Integer)value); return; }
-      if ("stepValues".equals(key) && value instanceof Integer) { stepValue((Integer)value); return; }
-      if ("stepValue".equals(key) && value instanceof Long) { stepValue((Long)value); return; }
-      if ("stepValues".equals(key) && value instanceof Long) { stepValue((Long)value); return; }
-      if ("stepValue".equals(key) && value instanceof Float) { stepValue((Float)value); return; }
-      if ("stepValues".equals(key) && value instanceof Float) { stepValue((Float)value); return; }
-      if ("stepValue".equals(key) && value instanceof Double) { stepValue((Double)value); return; }
-      if ("stepValues".equals(key) && value instanceof Double) { stepValue((Double)value); return; }
-      if ("stepValue".equals(key) && value instanceof String) { stepValue((String)value); return; }
-      if ("stepValues".equals(key) && value instanceof String) { stepValue((String)value); return; }
+      if ("maxValue".equals(key) && value instanceof Integer) { this.maxValue((Integer)value); return; }
+      if ("maxValues".equals(key) && value instanceof Integer) { this.maxValue((Integer)value); return; }
+      if ("maxValue".equals(key) && value instanceof Long) { this.maxValue((Long)value); return; }
+      if ("maxValues".equals(key) && value instanceof Long) { this.maxValue((Long)value); return; }
+      if ("maxValue".equals(key) && value instanceof Float) { this.maxValue((Float)value); return; }
+      if ("maxValues".equals(key) && value instanceof Float) { this.maxValue((Float)value); return; }
+      if ("maxValue".equals(key) && value instanceof Double) { this.maxValue((Double)value); return; }
+      if ("maxValues".equals(key) && value instanceof Double) { this.maxValue((Double)value); return; }
+      if ("maxValue".equals(key) && value instanceof String) { this.maxValue((String)value); return; }
+      if ("maxValues".equals(key) && value instanceof String) { this.maxValue((String)value); return; }
+      if ("minValue".equals(key) && value instanceof Integer) { this.minValue((Integer)value); return; }
+      if ("minValues".equals(key) && value instanceof Integer) { this.minValue((Integer)value); return; }
+      if ("minValue".equals(key) && value instanceof Long) { this.minValue((Long)value); return; }
+      if ("minValues".equals(key) && value instanceof Long) { this.minValue((Long)value); return; }
+      if ("minValue".equals(key) && value instanceof Float) { this.minValue((Float)value); return; }
+      if ("minValues".equals(key) && value instanceof Float) { this.minValue((Float)value); return; }
+      if ("minValue".equals(key) && value instanceof Double) { this.minValue((Double)value); return; }
+      if ("minValues".equals(key) && value instanceof Double) { this.minValue((Double)value); return; }
+      if ("minValue".equals(key) && value instanceof String) { this.minValue((String)value); return; }
+      if ("minValues".equals(key) && value instanceof String) { this.minValue((String)value); return; }
+      if ("valueName".equals(key) && value instanceof String) { this.valueName((String)value); return; }
+      if ("valueNames".equals(key) && value instanceof String) { this.valueName((String)value); return; }
+      if ("valueRequired".equals(key) && value instanceof Boolean) { this.valueRequired((Boolean)value); return; }
+      if ("valueRequireds".equals(key) && value instanceof Boolean) { this.valueRequired((Boolean)value); return; }
+      if ("defaultValue".equals(key) && value instanceof String) { this.defaultValue((String)value); return; }
+      if ("defaultValues".equals(key) && value instanceof String) { this.defaultValue((String)value); return; }
+      if ("defaultValue".equals(key) && value instanceof Thing) { this.defaultValue((Thing)value); return; }
+      if ("defaultValues".equals(key) && value instanceof Thing) { this.defaultValue((Thing)value); return; }
+      if ("readonlyValue".equals(key) && value instanceof Boolean) { this.readonlyValue((Boolean)value); return; }
+      if ("readonlyValues".equals(key) && value instanceof Boolean) { this.readonlyValue((Boolean)value); return; }
+      if ("multipleValues".equals(key) && value instanceof Boolean) { this.multipleValues((Boolean)value); return; }
+      if ("multipleValuess".equals(key) && value instanceof Boolean) { this.multipleValues((Boolean)value); return; }
+      if ("valueMinLength".equals(key) && value instanceof Integer) { this.valueMinLength((Integer)value); return; }
+      if ("valueMinLengths".equals(key) && value instanceof Integer) { this.valueMinLength((Integer)value); return; }
+      if ("valueMinLength".equals(key) && value instanceof Long) { this.valueMinLength((Long)value); return; }
+      if ("valueMinLengths".equals(key) && value instanceof Long) { this.valueMinLength((Long)value); return; }
+      if ("valueMinLength".equals(key) && value instanceof Float) { this.valueMinLength((Float)value); return; }
+      if ("valueMinLengths".equals(key) && value instanceof Float) { this.valueMinLength((Float)value); return; }
+      if ("valueMinLength".equals(key) && value instanceof Double) { this.valueMinLength((Double)value); return; }
+      if ("valueMinLengths".equals(key) && value instanceof Double) { this.valueMinLength((Double)value); return; }
+      if ("valueMinLength".equals(key) && value instanceof String) { this.valueMinLength((String)value); return; }
+      if ("valueMinLengths".equals(key) && value instanceof String) { this.valueMinLength((String)value); return; }
+      if ("valueMaxLength".equals(key) && value instanceof Integer) { this.valueMaxLength((Integer)value); return; }
+      if ("valueMaxLengths".equals(key) && value instanceof Integer) { this.valueMaxLength((Integer)value); return; }
+      if ("valueMaxLength".equals(key) && value instanceof Long) { this.valueMaxLength((Long)value); return; }
+      if ("valueMaxLengths".equals(key) && value instanceof Long) { this.valueMaxLength((Long)value); return; }
+      if ("valueMaxLength".equals(key) && value instanceof Float) { this.valueMaxLength((Float)value); return; }
+      if ("valueMaxLengths".equals(key) && value instanceof Float) { this.valueMaxLength((Float)value); return; }
+      if ("valueMaxLength".equals(key) && value instanceof Double) { this.valueMaxLength((Double)value); return; }
+      if ("valueMaxLengths".equals(key) && value instanceof Double) { this.valueMaxLength((Double)value); return; }
+      if ("valueMaxLength".equals(key) && value instanceof String) { this.valueMaxLength((String)value); return; }
+      if ("valueMaxLengths".equals(key) && value instanceof String) { this.valueMaxLength((String)value); return; }
+      if ("valuePattern".equals(key) && value instanceof String) { this.valuePattern((String)value); return; }
+      if ("valuePatterns".equals(key) && value instanceof String) { this.valuePattern((String)value); return; }
+      if ("stepValue".equals(key) && value instanceof Integer) { this.stepValue((Integer)value); return; }
+      if ("stepValues".equals(key) && value instanceof Integer) { this.stepValue((Integer)value); return; }
+      if ("stepValue".equals(key) && value instanceof Long) { this.stepValue((Long)value); return; }
+      if ("stepValues".equals(key) && value instanceof Long) { this.stepValue((Long)value); return; }
+      if ("stepValue".equals(key) && value instanceof Float) { this.stepValue((Float)value); return; }
+      if ("stepValues".equals(key) && value instanceof Float) { this.stepValue((Float)value); return; }
+      if ("stepValue".equals(key) && value instanceof Double) { this.stepValue((Double)value); return; }
+      if ("stepValues".equals(key) && value instanceof Double) { this.stepValue((Double)value); return; }
+      if ("stepValue".equals(key) && value instanceof String) { this.stepValue((String)value); return; }
+      if ("stepValues".equals(key) && value instanceof String) { this.stepValue((String)value); return; }
       super.fromMap(key, value);
     }
   }

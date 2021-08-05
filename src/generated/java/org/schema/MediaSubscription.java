@@ -216,10 +216,10 @@ public class MediaSubscription extends Intangible {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("authenticator".equals(key) && value instanceof Organization) { authenticator((Organization)value); return; }
-      if ("authenticators".equals(key) && value instanceof Organization) { authenticator((Organization)value); return; }
-      if ("expectsAcceptanceOf".equals(key) && value instanceof Offer) { expectsAcceptanceOf((Offer)value); return; }
-      if ("expectsAcceptanceOfs".equals(key) && value instanceof Offer) { expectsAcceptanceOf((Offer)value); return; }
+      if ("authenticator".equals(key) && value instanceof Organization) { this.authenticator((Organization)value); return; }
+      if ("authenticators".equals(key) && value instanceof Organization) { this.authenticator((Organization)value); return; }
+      if ("expectsAcceptanceOf".equals(key) && value instanceof Offer) { this.expectsAcceptanceOf((Offer)value); return; }
+      if ("expectsAcceptanceOfs".equals(key) && value instanceof Offer) { this.expectsAcceptanceOf((Offer)value); return; }
       super.fromMap(key, value);
     }
   }

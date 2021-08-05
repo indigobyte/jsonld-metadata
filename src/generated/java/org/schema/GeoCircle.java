@@ -379,14 +379,14 @@ public class GeoCircle extends GeoShape {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("geoRadius".equals(key) && value instanceof Distance) { geoRadius((Distance)value); return; }
-      if ("geoRadiuss".equals(key) && value instanceof Distance) { geoRadius((Distance)value); return; }
-      if ("geoRadius".equals(key) && value instanceof Number) { geoRadius((Number)value); return; }
-      if ("geoRadiuss".equals(key) && value instanceof Number) { geoRadius((Number)value); return; }
-      if ("geoRadius".equals(key) && value instanceof String) { geoRadius((String)value); return; }
-      if ("geoRadiuss".equals(key) && value instanceof String) { geoRadius((String)value); return; }
-      if ("geoMidpoint".equals(key) && value instanceof GeoCoordinates) { geoMidpoint((GeoCoordinates)value); return; }
-      if ("geoMidpoints".equals(key) && value instanceof GeoCoordinates) { geoMidpoint((GeoCoordinates)value); return; }
+      if ("geoRadius".equals(key) && value instanceof Distance) { this.geoRadius((Distance)value); return; }
+      if ("geoRadiuss".equals(key) && value instanceof Distance) { this.geoRadius((Distance)value); return; }
+      if ("geoRadius".equals(key) && value instanceof Number) { this.geoRadius((Number)value); return; }
+      if ("geoRadiuss".equals(key) && value instanceof Number) { this.geoRadius((Number)value); return; }
+      if ("geoRadius".equals(key) && value instanceof String) { this.geoRadius((String)value); return; }
+      if ("geoRadiuss".equals(key) && value instanceof String) { this.geoRadius((String)value); return; }
+      if ("geoMidpoint".equals(key) && value instanceof GeoCoordinates) { this.geoMidpoint((GeoCoordinates)value); return; }
+      if ("geoMidpoints".equals(key) && value instanceof GeoCoordinates) { this.geoMidpoint((GeoCoordinates)value); return; }
       super.fromMap(key, value);
     }
   }

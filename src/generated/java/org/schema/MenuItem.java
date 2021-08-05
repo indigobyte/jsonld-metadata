@@ -28,14 +28,14 @@ import java.util.*;
  */
 public class MenuItem extends Intangible {
   /**
-   * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+   * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
    *       
    */
   @JsonIgnore public Demand getOffersDemand() {
     return (Demand) getValue("offers");
   }
   /**
-   * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+   * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
    *       
    */
   @JsonIgnore public Collection<Demand> getOffersDemands() {
@@ -47,14 +47,14 @@ public class MenuItem extends Intangible {
     return Arrays.asList((Demand) current);
   }
   /**
-   * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+   * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
    *       
    */
   @JsonIgnore public Offer getOffersOffer() {
     return (Offer) getValue("offers");
   }
   /**
-   * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+   * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
    *       
    */
   @JsonIgnore public Collection<Offer> getOffersOffers() {
@@ -148,7 +148,7 @@ public class MenuItem extends Intangible {
       return new MenuItem(myData);
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Demand demand) {
@@ -156,7 +156,7 @@ public class MenuItem extends Intangible {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Demand.Builder demand) {
@@ -164,7 +164,7 @@ public class MenuItem extends Intangible {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Offer offer) {
@@ -172,7 +172,7 @@ public class MenuItem extends Intangible {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Offer.Builder offer) {
@@ -341,18 +341,18 @@ public class MenuItem extends Intangible {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("offers".equals(key) && value instanceof Demand) { offers((Demand)value); return; }
-      if ("offerss".equals(key) && value instanceof Demand) { offers((Demand)value); return; }
-      if ("offers".equals(key) && value instanceof Offer) { offers((Offer)value); return; }
-      if ("offerss".equals(key) && value instanceof Offer) { offers((Offer)value); return; }
-      if ("suitableForDiet".equals(key) && value instanceof RestrictedDiet) { suitableForDiet((RestrictedDiet)value); return; }
-      if ("suitableForDiets".equals(key) && value instanceof RestrictedDiet) { suitableForDiet((RestrictedDiet)value); return; }
-      if ("nutrition".equals(key) && value instanceof NutritionInformation) { nutrition((NutritionInformation)value); return; }
-      if ("nutritions".equals(key) && value instanceof NutritionInformation) { nutrition((NutritionInformation)value); return; }
-      if ("menuAddOn".equals(key) && value instanceof MenuItem) { menuAddOn((MenuItem)value); return; }
-      if ("menuAddOns".equals(key) && value instanceof MenuItem) { menuAddOn((MenuItem)value); return; }
-      if ("menuAddOn".equals(key) && value instanceof MenuSection) { menuAddOn((MenuSection)value); return; }
-      if ("menuAddOns".equals(key) && value instanceof MenuSection) { menuAddOn((MenuSection)value); return; }
+      if ("offers".equals(key) && value instanceof Demand) { this.offers((Demand)value); return; }
+      if ("offerss".equals(key) && value instanceof Demand) { this.offers((Demand)value); return; }
+      if ("offers".equals(key) && value instanceof Offer) { this.offers((Offer)value); return; }
+      if ("offerss".equals(key) && value instanceof Offer) { this.offers((Offer)value); return; }
+      if ("suitableForDiet".equals(key) && value instanceof RestrictedDiet) { this.suitableForDiet((RestrictedDiet)value); return; }
+      if ("suitableForDiets".equals(key) && value instanceof RestrictedDiet) { this.suitableForDiet((RestrictedDiet)value); return; }
+      if ("nutrition".equals(key) && value instanceof NutritionInformation) { this.nutrition((NutritionInformation)value); return; }
+      if ("nutritions".equals(key) && value instanceof NutritionInformation) { this.nutrition((NutritionInformation)value); return; }
+      if ("menuAddOn".equals(key) && value instanceof MenuItem) { this.menuAddOn((MenuItem)value); return; }
+      if ("menuAddOns".equals(key) && value instanceof MenuItem) { this.menuAddOn((MenuItem)value); return; }
+      if ("menuAddOn".equals(key) && value instanceof MenuSection) { this.menuAddOn((MenuSection)value); return; }
+      if ("menuAddOns".equals(key) && value instanceof MenuSection) { this.menuAddOn((MenuSection)value); return; }
       super.fromMap(key, value);
     }
   }

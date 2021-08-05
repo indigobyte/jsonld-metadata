@@ -24,7 +24,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * A house is a building or structure that has the ability to be occupied for habitation by humans or other creatures (Source: Wikipedia, the free encyclopedia, see <a href="http://en.wikipedia.org/wiki/House">http://en.wikipedia.org/wiki/House</a>).Source: https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology
+ * A house is a building or structure that has the ability to be occupied for habitation by humans or other creatures (Source: Wikipedia, the free encyclopedia, see &lt;a href=&quot;http://en.wikipedia.org/wiki/House&quot;&gt;http://en.wikipedia.org/wiki/House&lt;/a&gt;).Source: https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology
  */
 public class House extends Accommodation {
   /**
@@ -263,7 +263,7 @@ public class House extends Accommodation {
       return this;
     }
     /**
-     * A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.\n\nFor example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code "3047" is a branchCode for a particular branch.
+     * A short textual code (also called &quot;store code&quot;) that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.\n\nFor example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code &quot;3047&quot; is a branchCode for a particular branch.
      *       
      */
     @NotNull public Builder branchCode(@NotNull String branchCode) {
@@ -723,16 +723,16 @@ public class House extends Accommodation {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("numberOfRooms".equals(key) && value instanceof Integer) { numberOfRooms((Integer)value); return; }
-      if ("numberOfRoomss".equals(key) && value instanceof Integer) { numberOfRooms((Integer)value); return; }
-      if ("numberOfRooms".equals(key) && value instanceof Long) { numberOfRooms((Long)value); return; }
-      if ("numberOfRoomss".equals(key) && value instanceof Long) { numberOfRooms((Long)value); return; }
-      if ("numberOfRooms".equals(key) && value instanceof Float) { numberOfRooms((Float)value); return; }
-      if ("numberOfRoomss".equals(key) && value instanceof Float) { numberOfRooms((Float)value); return; }
-      if ("numberOfRooms".equals(key) && value instanceof Double) { numberOfRooms((Double)value); return; }
-      if ("numberOfRoomss".equals(key) && value instanceof Double) { numberOfRooms((Double)value); return; }
-      if ("numberOfRooms".equals(key) && value instanceof String) { numberOfRooms((String)value); return; }
-      if ("numberOfRoomss".equals(key) && value instanceof String) { numberOfRooms((String)value); return; }
+      if ("numberOfRooms".equals(key) && value instanceof Integer) { this.numberOfRooms((Integer)value); return; }
+      if ("numberOfRoomss".equals(key) && value instanceof Integer) { this.numberOfRooms((Integer)value); return; }
+      if ("numberOfRooms".equals(key) && value instanceof Long) { this.numberOfRooms((Long)value); return; }
+      if ("numberOfRoomss".equals(key) && value instanceof Long) { this.numberOfRooms((Long)value); return; }
+      if ("numberOfRooms".equals(key) && value instanceof Float) { this.numberOfRooms((Float)value); return; }
+      if ("numberOfRoomss".equals(key) && value instanceof Float) { this.numberOfRooms((Float)value); return; }
+      if ("numberOfRooms".equals(key) && value instanceof Double) { this.numberOfRooms((Double)value); return; }
+      if ("numberOfRoomss".equals(key) && value instanceof Double) { this.numberOfRooms((Double)value); return; }
+      if ("numberOfRooms".equals(key) && value instanceof String) { this.numberOfRooms((String)value); return; }
+      if ("numberOfRoomss".equals(key) && value instanceof String) { this.numberOfRooms((String)value); return; }
       super.fromMap(key, value);
     }
   }

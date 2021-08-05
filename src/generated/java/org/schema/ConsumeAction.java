@@ -293,10 +293,10 @@ public class ConsumeAction extends Action {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("expectsAcceptanceOf".equals(key) && value instanceof Offer) { expectsAcceptanceOf((Offer)value); return; }
-      if ("expectsAcceptanceOfs".equals(key) && value instanceof Offer) { expectsAcceptanceOf((Offer)value); return; }
-      if ("actionAccessibilityRequirement".equals(key) && value instanceof ActionAccessSpecification) { actionAccessibilityRequirement((ActionAccessSpecification)value); return; }
-      if ("actionAccessibilityRequirements".equals(key) && value instanceof ActionAccessSpecification) { actionAccessibilityRequirement((ActionAccessSpecification)value); return; }
+      if ("expectsAcceptanceOf".equals(key) && value instanceof Offer) { this.expectsAcceptanceOf((Offer)value); return; }
+      if ("expectsAcceptanceOfs".equals(key) && value instanceof Offer) { this.expectsAcceptanceOf((Offer)value); return; }
+      if ("actionAccessibilityRequirement".equals(key) && value instanceof ActionAccessSpecification) { this.actionAccessibilityRequirement((ActionAccessSpecification)value); return; }
+      if ("actionAccessibilityRequirements".equals(key) && value instanceof ActionAccessSpecification) { this.actionAccessibilityRequirement((ActionAccessSpecification)value); return; }
       super.fromMap(key, value);
     }
   }

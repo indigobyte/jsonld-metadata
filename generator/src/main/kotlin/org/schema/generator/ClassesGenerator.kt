@@ -219,8 +219,8 @@ class ClassesGenerator(private val sink: GeneratorSink, private val banner: Stri
                                 val fieldTypes = sink.getEitherTypes(it)
 
                                 fieldTypes.flatMap { listOf(
-                                    "if (\"$varName\".equals(key) && value instanceof $it) { $varName(($it)value); return; }",
-                                    "if (\"${varName}s\".equals(key) && value instanceof $it) { $varName(($it)value); return; }"
+                                    "if (\"$varName\".equals(key) && value instanceof $it) { this.$varName(($it)value); return; }",
+                                    "if (\"${varName}s\".equals(key) && value instanceof $it) { this.$varName(($it)value); return; }"
                                 )}
                             })
 

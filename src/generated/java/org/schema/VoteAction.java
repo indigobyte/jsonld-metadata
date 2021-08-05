@@ -283,8 +283,8 @@ public class VoteAction extends ChooseAction {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("candidate".equals(key) && value instanceof Person) { candidate((Person)value); return; }
-      if ("candidates".equals(key) && value instanceof Person) { candidate((Person)value); return; }
+      if ("candidate".equals(key) && value instanceof Person) { this.candidate((Person)value); return; }
+      if ("candidates".equals(key) && value instanceof Person) { this.candidate((Person)value); return; }
       super.fromMap(key, value);
     }
   }

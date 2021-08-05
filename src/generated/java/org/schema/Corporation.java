@@ -206,14 +206,14 @@ public class Corporation extends Organization {
       return this;
     }
     /**
-     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
+     * The Dun &amp; Bradstreet DUNS number for identifying an organization or business person.
      */
     @NotNull public Builder duns(@NotNull Identifier identifier) {
       putValue("duns", identifier);
       return this;
     }
     /**
-     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
+     * The Dun &amp; Bradstreet DUNS number for identifying an organization or business person.
      */
     @NotNull public Builder duns(@NotNull String duns) {
       putValue("duns", duns);
@@ -726,8 +726,8 @@ public class Corporation extends Organization {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("tickerSymbol".equals(key) && value instanceof String) { tickerSymbol((String)value); return; }
-      if ("tickerSymbols".equals(key) && value instanceof String) { tickerSymbol((String)value); return; }
+      if ("tickerSymbol".equals(key) && value instanceof String) { this.tickerSymbol((String)value); return; }
+      if ("tickerSymbols".equals(key) && value instanceof String) { this.tickerSymbol((String)value); return; }
       super.fromMap(key, value);
     }
   }

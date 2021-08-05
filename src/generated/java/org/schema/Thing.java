@@ -407,30 +407,30 @@ public class Thing {
       }
     }
     protected void fromMap(String key, Object value) {
-      if ("additionalType".equals(key) && value instanceof String) { additionalType((String)value); return; }
-      if ("additionalTypes".equals(key) && value instanceof String) { additionalType((String)value); return; }
-      if ("alternateName".equals(key) && value instanceof String) { alternateName((String)value); return; }
-      if ("alternateNames".equals(key) && value instanceof String) { alternateName((String)value); return; }
-      if ("disambiguatingDescription".equals(key) && value instanceof String) { disambiguatingDescription((String)value); return; }
-      if ("disambiguatingDescriptions".equals(key) && value instanceof String) { disambiguatingDescription((String)value); return; }
-      if ("mainEntityOfPage".equals(key) && value instanceof CreativeWork) { mainEntityOfPage((CreativeWork)value); return; }
-      if ("mainEntityOfPages".equals(key) && value instanceof CreativeWork) { mainEntityOfPage((CreativeWork)value); return; }
-      if ("mainEntityOfPage".equals(key) && value instanceof String) { mainEntityOfPage((String)value); return; }
-      if ("mainEntityOfPages".equals(key) && value instanceof String) { mainEntityOfPage((String)value); return; }
-      if ("name".equals(key) && value instanceof String) { name((String)value); return; }
-      if ("names".equals(key) && value instanceof String) { name((String)value); return; }
-      if ("sameAs".equals(key) && value instanceof String) { sameAs((String)value); return; }
-      if ("sameAss".equals(key) && value instanceof String) { sameAs((String)value); return; }
-      if ("url".equals(key) && value instanceof String) { url((String)value); return; }
-      if ("urls".equals(key) && value instanceof String) { url((String)value); return; }
-      if ("potentialAction".equals(key) && value instanceof Action) { potentialAction((Action)value); return; }
-      if ("potentialActions".equals(key) && value instanceof Action) { potentialAction((Action)value); return; }
-      if ("subjectOf".equals(key) && value instanceof CreativeWork) { subjectOf((CreativeWork)value); return; }
-      if ("subjectOfs".equals(key) && value instanceof CreativeWork) { subjectOf((CreativeWork)value); return; }
-      if ("subjectOf".equals(key) && value instanceof Event) { subjectOf((Event)value); return; }
-      if ("subjectOfs".equals(key) && value instanceof Event) { subjectOf((Event)value); return; }
-      if ("id".equals(key) && value instanceof String) { id((String)value); return; }
-      if ("ids".equals(key) && value instanceof String) { id((String)value); return; }
+      if ("additionalType".equals(key) && value instanceof String) { this.additionalType((String)value); return; }
+      if ("additionalTypes".equals(key) && value instanceof String) { this.additionalType((String)value); return; }
+      if ("alternateName".equals(key) && value instanceof String) { this.alternateName((String)value); return; }
+      if ("alternateNames".equals(key) && value instanceof String) { this.alternateName((String)value); return; }
+      if ("disambiguatingDescription".equals(key) && value instanceof String) { this.disambiguatingDescription((String)value); return; }
+      if ("disambiguatingDescriptions".equals(key) && value instanceof String) { this.disambiguatingDescription((String)value); return; }
+      if ("mainEntityOfPage".equals(key) && value instanceof CreativeWork) { this.mainEntityOfPage((CreativeWork)value); return; }
+      if ("mainEntityOfPages".equals(key) && value instanceof CreativeWork) { this.mainEntityOfPage((CreativeWork)value); return; }
+      if ("mainEntityOfPage".equals(key) && value instanceof String) { this.mainEntityOfPage((String)value); return; }
+      if ("mainEntityOfPages".equals(key) && value instanceof String) { this.mainEntityOfPage((String)value); return; }
+      if ("name".equals(key) && value instanceof String) { this.name((String)value); return; }
+      if ("names".equals(key) && value instanceof String) { this.name((String)value); return; }
+      if ("sameAs".equals(key) && value instanceof String) { this.sameAs((String)value); return; }
+      if ("sameAss".equals(key) && value instanceof String) { this.sameAs((String)value); return; }
+      if ("url".equals(key) && value instanceof String) { this.url((String)value); return; }
+      if ("urls".equals(key) && value instanceof String) { this.url((String)value); return; }
+      if ("potentialAction".equals(key) && value instanceof Action) { this.potentialAction((Action)value); return; }
+      if ("potentialActions".equals(key) && value instanceof Action) { this.potentialAction((Action)value); return; }
+      if ("subjectOf".equals(key) && value instanceof CreativeWork) { this.subjectOf((CreativeWork)value); return; }
+      if ("subjectOfs".equals(key) && value instanceof CreativeWork) { this.subjectOf((CreativeWork)value); return; }
+      if ("subjectOf".equals(key) && value instanceof Event) { this.subjectOf((Event)value); return; }
+      if ("subjectOfs".equals(key) && value instanceof Event) { this.subjectOf((Event)value); return; }
+      if ("id".equals(key) && value instanceof String) { this.id((String)value); return; }
+      if ("ids".equals(key) && value instanceof String) { this.id((String)value); return; }
       if ("@id".equals(key) && value instanceof String) { id((String)value); return; }
     }
     protected HashMap<String,Object> myData;

@@ -24,7 +24,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * An offer to transfer some rights to an item or to provide a service — for example, an offer to sell tickets to an event, to rent the DVD of a movie, to stream a TV show over the internet, to repair a motorcycle, or to loan a book.\n\nNote: As the [[businessFunction]] property, which identifies the form of offer (e.g. sell, lease, repair, dispose), defaults to http://purl.org/goodrelations/v1#Sell; an Offer without a defined businessFunction value can be assumed to be an offer to sell.\n\nFor [GTIN](http://www.gs1.org/barcodes/technical/idkeys/gtin)-related fields, see [Check Digit calculator](http://www.gs1.org/barcodes/support/check_digit_calculator) and [validation guide](http://www.gs1us.org/resources/standards/gtin-validation-guide) from [GS1](http://www.gs1.org/).Source: http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms
+ * An offer to transfer some rights to an item or to provide a service &mdash; for example, an offer to sell tickets to an event, to rent the DVD of a movie, to stream a TV show over the internet, to repair a motorcycle, or to loan a book.\n\nNote: As the [[businessFunction]] property, which identifies the form of offer (e.g. sell, lease, repair, dispose), defaults to http://purl.org/goodrelations/v1#Sell; an Offer without a defined businessFunction value can be assumed to be an offer to sell.\n\nFor [GTIN](http://www.gs1.org/barcodes/technical/idkeys/gtin)-related fields, see [Check Digit calculator](http://www.gs1.org/barcodes/support/check_digit_calculator) and [validation guide](http://www.gs1us.org/resources/standards/gtin-validation-guide) from [GS1](http://www.gs1.org/).Source: http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms
  */
 public class Offer extends Intangible {
   /**
@@ -113,13 +113,13 @@ public class Offer extends Intangible {
     return Arrays.asList((AggregateRating) current);
   }
   /**
-   * The availability of this item&#x2014;for example In stock, Out of stock, Pre-order, etc.
+   * The availability of this item&amp;#x2014;for example In stock, Out of stock, Pre-order, etc.
    */
   @JsonIgnore public ItemAvailability getAvailability() {
     return (ItemAvailability) getValue("availability");
   }
   /**
-   * The availability of this item&#x2014;for example In stock, Out of stock, Pre-order, etc.
+   * The availability of this item&amp;#x2014;for example In stock, Out of stock, Pre-order, etc.
    */
   @JsonIgnore public Collection<ItemAvailability> getAvailabilitys() {
     final Object current = myData.get("availability");
@@ -805,14 +805,14 @@ public class Offer extends Intangible {
     return Arrays.asList((String) current);
   }
   /**
-   * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.\n\nUsage guidelines:\n\n* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.\n* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
+   * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.\n\nUsage guidelines:\n\n* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;) instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.\n* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a &quot;content=&quot; attribute for publishing simple machine-readable values alongside more human-friendly formatting.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
    *       
    */
   @JsonIgnore public Integer getPriceInteger() {
     return (Integer) getValue("price");
   }
   /**
-   * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.\n\nUsage guidelines:\n\n* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.\n* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
+   * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.\n\nUsage guidelines:\n\n* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;) instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.\n* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a &quot;content=&quot; attribute for publishing simple machine-readable values alongside more human-friendly formatting.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
    *       
    */
   @JsonIgnore public Collection<Integer> getPriceIntegers() {
@@ -824,14 +824,14 @@ public class Offer extends Intangible {
     return Arrays.asList((Integer) current);
   }
   /**
-   * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.\n\nUsage guidelines:\n\n* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.\n* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
+   * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.\n\nUsage guidelines:\n\n* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;) instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.\n* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a &quot;content=&quot; attribute for publishing simple machine-readable values alongside more human-friendly formatting.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
    *       
    */
   @JsonIgnore public Long getPriceLong() {
     return (Long) getValue("price");
   }
   /**
-   * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.\n\nUsage guidelines:\n\n* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.\n* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
+   * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.\n\nUsage guidelines:\n\n* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;) instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.\n* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a &quot;content=&quot; attribute for publishing simple machine-readable values alongside more human-friendly formatting.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
    *       
    */
   @JsonIgnore public Collection<Long> getPriceLongs() {
@@ -843,14 +843,14 @@ public class Offer extends Intangible {
     return Arrays.asList((Long) current);
   }
   /**
-   * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.\n\nUsage guidelines:\n\n* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.\n* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
+   * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.\n\nUsage guidelines:\n\n* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;) instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.\n* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a &quot;content=&quot; attribute for publishing simple machine-readable values alongside more human-friendly formatting.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
    *       
    */
   @JsonIgnore public Float getPriceFloat() {
     return (Float) getValue("price");
   }
   /**
-   * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.\n\nUsage guidelines:\n\n* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.\n* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
+   * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.\n\nUsage guidelines:\n\n* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;) instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.\n* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a &quot;content=&quot; attribute for publishing simple machine-readable values alongside more human-friendly formatting.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
    *       
    */
   @JsonIgnore public Collection<Float> getPriceFloats() {
@@ -862,14 +862,14 @@ public class Offer extends Intangible {
     return Arrays.asList((Float) current);
   }
   /**
-   * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.\n\nUsage guidelines:\n\n* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.\n* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
+   * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.\n\nUsage guidelines:\n\n* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;) instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.\n* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a &quot;content=&quot; attribute for publishing simple machine-readable values alongside more human-friendly formatting.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
    *       
    */
   @JsonIgnore public Double getPriceDouble() {
     return (Double) getValue("price");
   }
   /**
-   * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.\n\nUsage guidelines:\n\n* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.\n* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
+   * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.\n\nUsage guidelines:\n\n* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;) instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.\n* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a &quot;content=&quot; attribute for publishing simple machine-readable values alongside more human-friendly formatting.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
    *       
    */
   @JsonIgnore public Collection<Double> getPriceDoubles() {
@@ -881,14 +881,14 @@ public class Offer extends Intangible {
     return Arrays.asList((Double) current);
   }
   /**
-   * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.\n\nUsage guidelines:\n\n* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.\n* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
+   * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.\n\nUsage guidelines:\n\n* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;) instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.\n* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a &quot;content=&quot; attribute for publishing simple machine-readable values alongside more human-friendly formatting.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
    *       
    */
   @JsonIgnore public String getPriceString() {
     return (String) getValue("price");
   }
   /**
-   * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.\n\nUsage guidelines:\n\n* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.\n* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
+   * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.\n\nUsage guidelines:\n\n* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;) instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.\n* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a &quot;content=&quot; attribute for publishing simple machine-readable values alongside more human-friendly formatting.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
    *       
    */
   @JsonIgnore public Collection<String> getPriceStrings() {
@@ -1087,13 +1087,13 @@ public class Offer extends Intangible {
     return Arrays.asList((WarrantyPromise) current);
   }
   /**
-   * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
+   * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;.
    */
   @JsonIgnore public String getPriceCurrency() {
     return (String) getValue("priceCurrency");
   }
   /**
-   * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
+   * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;.
    */
   @JsonIgnore public Collection<String> getPriceCurrencys() {
     final Object current = myData.get("priceCurrency");
@@ -1181,7 +1181,7 @@ public class Offer extends Intangible {
       return this;
     }
     /**
-     * The availability of this item&#x2014;for example In stock, Out of stock, Pre-order, etc.
+     * The availability of this item&amp;#x2014;for example In stock, Out of stock, Pre-order, etc.
      */
     @NotNull public Builder availability(@NotNull ItemAvailability itemAvailability) {
       putValue("availability", itemAvailability);
@@ -1618,7 +1618,7 @@ public class Offer extends Intangible {
       return this;
     }
     /**
-     * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.\n\nUsage guidelines:\n\n* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.\n* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
+     * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.\n\nUsage guidelines:\n\n* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;) instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.\n* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a &quot;content=&quot; attribute for publishing simple machine-readable values alongside more human-friendly formatting.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
      *       
      */
     @NotNull public Builder price(@NotNull Integer integer) {
@@ -1626,7 +1626,7 @@ public class Offer extends Intangible {
       return this;
     }
     /**
-     * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.\n\nUsage guidelines:\n\n* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.\n* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
+     * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.\n\nUsage guidelines:\n\n* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;) instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.\n* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a &quot;content=&quot; attribute for publishing simple machine-readable values alongside more human-friendly formatting.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
      *       
      */
     @NotNull public Builder price(@NotNull Long price) {
@@ -1634,7 +1634,7 @@ public class Offer extends Intangible {
       return this;
     }
     /**
-     * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.\n\nUsage guidelines:\n\n* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.\n* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
+     * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.\n\nUsage guidelines:\n\n* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;) instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.\n* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a &quot;content=&quot; attribute for publishing simple machine-readable values alongside more human-friendly formatting.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
      *       
      */
     @NotNull public Builder price(@NotNull Float price) {
@@ -1642,7 +1642,7 @@ public class Offer extends Intangible {
       return this;
     }
     /**
-     * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.\n\nUsage guidelines:\n\n* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.\n* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
+     * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.\n\nUsage guidelines:\n\n* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;) instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.\n* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a &quot;content=&quot; attribute for publishing simple machine-readable values alongside more human-friendly formatting.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
      *       
      */
     @NotNull public Builder price(@NotNull Double price) {
@@ -1650,7 +1650,7 @@ public class Offer extends Intangible {
       return this;
     }
     /**
-     * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.\n\nUsage guidelines:\n\n* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.\n* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
+     * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.\n\nUsage guidelines:\n\n* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;) instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.\n* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a &quot;content=&quot; attribute for publishing simple machine-readable values alongside more human-friendly formatting.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
      *       
      */
     @NotNull public Builder price(@NotNull String price) {
@@ -1770,7 +1770,7 @@ public class Offer extends Intangible {
       return this;
     }
     /**
-     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
+     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;.
      */
     @NotNull public Builder priceCurrency(@NotNull String priceCurrency) {
       putValue("priceCurrency", priceCurrency);
@@ -1889,130 +1889,130 @@ public class Offer extends Intangible {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("acceptedPaymentMethod".equals(key) && value instanceof LoanOrCredit) { acceptedPaymentMethod((LoanOrCredit)value); return; }
-      if ("acceptedPaymentMethods".equals(key) && value instanceof LoanOrCredit) { acceptedPaymentMethod((LoanOrCredit)value); return; }
-      if ("acceptedPaymentMethod".equals(key) && value instanceof PaymentMethod) { acceptedPaymentMethod((PaymentMethod)value); return; }
-      if ("acceptedPaymentMethods".equals(key) && value instanceof PaymentMethod) { acceptedPaymentMethod((PaymentMethod)value); return; }
-      if ("addOn".equals(key) && value instanceof Offer) { addOn((Offer)value); return; }
-      if ("addOns".equals(key) && value instanceof Offer) { addOn((Offer)value); return; }
-      if ("advanceBookingRequirement".equals(key) && value instanceof QuantitativeValue) { advanceBookingRequirement((QuantitativeValue)value); return; }
-      if ("advanceBookingRequirements".equals(key) && value instanceof QuantitativeValue) { advanceBookingRequirement((QuantitativeValue)value); return; }
-      if ("aggregateRating".equals(key) && value instanceof AggregateRating) { aggregateRating((AggregateRating)value); return; }
-      if ("aggregateRatings".equals(key) && value instanceof AggregateRating) { aggregateRating((AggregateRating)value); return; }
-      if ("availability".equals(key) && value instanceof ItemAvailability) { availability((ItemAvailability)value); return; }
-      if ("availabilitys".equals(key) && value instanceof ItemAvailability) { availability((ItemAvailability)value); return; }
-      if ("availabilityEnds".equals(key) && value instanceof java.util.Date) { availabilityEnds((java.util.Date)value); return; }
-      if ("availabilityEndss".equals(key) && value instanceof java.util.Date) { availabilityEnds((java.util.Date)value); return; }
-      if ("availabilityStarts".equals(key) && value instanceof java.util.Date) { availabilityStarts((java.util.Date)value); return; }
-      if ("availabilityStartss".equals(key) && value instanceof java.util.Date) { availabilityStarts((java.util.Date)value); return; }
-      if ("availableAtOrFrom".equals(key) && value instanceof Place) { availableAtOrFrom((Place)value); return; }
-      if ("availableAtOrFroms".equals(key) && value instanceof Place) { availableAtOrFrom((Place)value); return; }
-      if ("availableDeliveryMethod".equals(key) && value instanceof DeliveryMethod) { availableDeliveryMethod((DeliveryMethod)value); return; }
-      if ("availableDeliveryMethods".equals(key) && value instanceof DeliveryMethod) { availableDeliveryMethod((DeliveryMethod)value); return; }
-      if ("businessFunction".equals(key) && value instanceof BusinessFunction) { businessFunction((BusinessFunction)value); return; }
-      if ("businessFunctions".equals(key) && value instanceof BusinessFunction) { businessFunction((BusinessFunction)value); return; }
-      if ("category".equals(key) && value instanceof String) { category((String)value); return; }
-      if ("categorys".equals(key) && value instanceof String) { category((String)value); return; }
-      if ("category".equals(key) && value instanceof Thing) { category((Thing)value); return; }
-      if ("categorys".equals(key) && value instanceof Thing) { category((Thing)value); return; }
-      if ("deliveryLeadTime".equals(key) && value instanceof QuantitativeValue) { deliveryLeadTime((QuantitativeValue)value); return; }
-      if ("deliveryLeadTimes".equals(key) && value instanceof QuantitativeValue) { deliveryLeadTime((QuantitativeValue)value); return; }
-      if ("eligibleCustomerType".equals(key) && value instanceof BusinessEntityType) { eligibleCustomerType((BusinessEntityType)value); return; }
-      if ("eligibleCustomerTypes".equals(key) && value instanceof BusinessEntityType) { eligibleCustomerType((BusinessEntityType)value); return; }
-      if ("eligibleDuration".equals(key) && value instanceof QuantitativeValue) { eligibleDuration((QuantitativeValue)value); return; }
-      if ("eligibleDurations".equals(key) && value instanceof QuantitativeValue) { eligibleDuration((QuantitativeValue)value); return; }
-      if ("eligibleQuantity".equals(key) && value instanceof QuantitativeValue) { eligibleQuantity((QuantitativeValue)value); return; }
-      if ("eligibleQuantitys".equals(key) && value instanceof QuantitativeValue) { eligibleQuantity((QuantitativeValue)value); return; }
-      if ("eligibleRegion".equals(key) && value instanceof GeoShape) { eligibleRegion((GeoShape)value); return; }
-      if ("eligibleRegions".equals(key) && value instanceof GeoShape) { eligibleRegion((GeoShape)value); return; }
-      if ("eligibleRegion".equals(key) && value instanceof Place) { eligibleRegion((Place)value); return; }
-      if ("eligibleRegions".equals(key) && value instanceof Place) { eligibleRegion((Place)value); return; }
-      if ("eligibleRegion".equals(key) && value instanceof String) { eligibleRegion((String)value); return; }
-      if ("eligibleRegions".equals(key) && value instanceof String) { eligibleRegion((String)value); return; }
-      if ("ineligibleRegion".equals(key) && value instanceof GeoShape) { ineligibleRegion((GeoShape)value); return; }
-      if ("ineligibleRegions".equals(key) && value instanceof GeoShape) { ineligibleRegion((GeoShape)value); return; }
-      if ("ineligibleRegion".equals(key) && value instanceof Place) { ineligibleRegion((Place)value); return; }
-      if ("ineligibleRegions".equals(key) && value instanceof Place) { ineligibleRegion((Place)value); return; }
-      if ("ineligibleRegion".equals(key) && value instanceof String) { ineligibleRegion((String)value); return; }
-      if ("ineligibleRegions".equals(key) && value instanceof String) { ineligibleRegion((String)value); return; }
-      if ("eligibleTransactionVolume".equals(key) && value instanceof PriceSpecification) { eligibleTransactionVolume((PriceSpecification)value); return; }
-      if ("eligibleTransactionVolumes".equals(key) && value instanceof PriceSpecification) { eligibleTransactionVolume((PriceSpecification)value); return; }
-      if ("gtin12".equals(key) && value instanceof Identifier) { gtin12((Identifier)value); return; }
-      if ("gtin12s".equals(key) && value instanceof Identifier) { gtin12((Identifier)value); return; }
-      if ("gtin12".equals(key) && value instanceof String) { gtin12((String)value); return; }
-      if ("gtin12s".equals(key) && value instanceof String) { gtin12((String)value); return; }
-      if ("gtin13".equals(key) && value instanceof Identifier) { gtin13((Identifier)value); return; }
-      if ("gtin13s".equals(key) && value instanceof Identifier) { gtin13((Identifier)value); return; }
-      if ("gtin13".equals(key) && value instanceof String) { gtin13((String)value); return; }
-      if ("gtin13s".equals(key) && value instanceof String) { gtin13((String)value); return; }
-      if ("gtin14".equals(key) && value instanceof Identifier) { gtin14((Identifier)value); return; }
-      if ("gtin14s".equals(key) && value instanceof Identifier) { gtin14((Identifier)value); return; }
-      if ("gtin14".equals(key) && value instanceof String) { gtin14((String)value); return; }
-      if ("gtin14s".equals(key) && value instanceof String) { gtin14((String)value); return; }
-      if ("gtin8".equals(key) && value instanceof Identifier) { gtin8((Identifier)value); return; }
-      if ("gtin8s".equals(key) && value instanceof Identifier) { gtin8((Identifier)value); return; }
-      if ("gtin8".equals(key) && value instanceof String) { gtin8((String)value); return; }
-      if ("gtin8s".equals(key) && value instanceof String) { gtin8((String)value); return; }
-      if ("includesObject".equals(key) && value instanceof TypeAndQuantityNode) { includesObject((TypeAndQuantityNode)value); return; }
-      if ("includesObjects".equals(key) && value instanceof TypeAndQuantityNode) { includesObject((TypeAndQuantityNode)value); return; }
-      if ("inventoryLevel".equals(key) && value instanceof QuantitativeValue) { inventoryLevel((QuantitativeValue)value); return; }
-      if ("inventoryLevels".equals(key) && value instanceof QuantitativeValue) { inventoryLevel((QuantitativeValue)value); return; }
-      if ("itemCondition".equals(key) && value instanceof OfferItemCondition) { itemCondition((OfferItemCondition)value); return; }
-      if ("itemConditions".equals(key) && value instanceof OfferItemCondition) { itemCondition((OfferItemCondition)value); return; }
-      if ("itemOffered".equals(key) && value instanceof AggregateOffer) { itemOffered((AggregateOffer)value); return; }
-      if ("itemOffereds".equals(key) && value instanceof AggregateOffer) { itemOffered((AggregateOffer)value); return; }
-      if ("itemOffered".equals(key) && value instanceof CreativeWork) { itemOffered((CreativeWork)value); return; }
-      if ("itemOffereds".equals(key) && value instanceof CreativeWork) { itemOffered((CreativeWork)value); return; }
-      if ("itemOffered".equals(key) && value instanceof Event) { itemOffered((Event)value); return; }
-      if ("itemOffereds".equals(key) && value instanceof Event) { itemOffered((Event)value); return; }
-      if ("itemOffered".equals(key) && value instanceof MenuItem) { itemOffered((MenuItem)value); return; }
-      if ("itemOffereds".equals(key) && value instanceof MenuItem) { itemOffered((MenuItem)value); return; }
-      if ("itemOffered".equals(key) && value instanceof Product) { itemOffered((Product)value); return; }
-      if ("itemOffereds".equals(key) && value instanceof Product) { itemOffered((Product)value); return; }
-      if ("itemOffered".equals(key) && value instanceof Service) { itemOffered((Service)value); return; }
-      if ("itemOffereds".equals(key) && value instanceof Service) { itemOffered((Service)value); return; }
-      if ("itemOffered".equals(key) && value instanceof Trip) { itemOffered((Trip)value); return; }
-      if ("itemOffereds".equals(key) && value instanceof Trip) { itemOffered((Trip)value); return; }
-      if ("offeredBy".equals(key) && value instanceof Organization) { offeredBy((Organization)value); return; }
-      if ("offeredBys".equals(key) && value instanceof Organization) { offeredBy((Organization)value); return; }
-      if ("offeredBy".equals(key) && value instanceof Person) { offeredBy((Person)value); return; }
-      if ("offeredBys".equals(key) && value instanceof Person) { offeredBy((Person)value); return; }
-      if ("mpn".equals(key) && value instanceof String) { mpn((String)value); return; }
-      if ("mpns".equals(key) && value instanceof String) { mpn((String)value); return; }
-      if ("price".equals(key) && value instanceof Integer) { price((Integer)value); return; }
-      if ("prices".equals(key) && value instanceof Integer) { price((Integer)value); return; }
-      if ("price".equals(key) && value instanceof Long) { price((Long)value); return; }
-      if ("prices".equals(key) && value instanceof Long) { price((Long)value); return; }
-      if ("price".equals(key) && value instanceof Float) { price((Float)value); return; }
-      if ("prices".equals(key) && value instanceof Float) { price((Float)value); return; }
-      if ("price".equals(key) && value instanceof Double) { price((Double)value); return; }
-      if ("prices".equals(key) && value instanceof Double) { price((Double)value); return; }
-      if ("price".equals(key) && value instanceof String) { price((String)value); return; }
-      if ("prices".equals(key) && value instanceof String) { price((String)value); return; }
-      if ("priceSpecification".equals(key) && value instanceof PriceSpecification) { priceSpecification((PriceSpecification)value); return; }
-      if ("priceSpecifications".equals(key) && value instanceof PriceSpecification) { priceSpecification((PriceSpecification)value); return; }
-      if ("priceValidUntil".equals(key) && value instanceof java.util.Date) { priceValidUntil((java.util.Date)value); return; }
-      if ("priceValidUntils".equals(key) && value instanceof java.util.Date) { priceValidUntil((java.util.Date)value); return; }
-      if ("review".equals(key) && value instanceof Review) { review((Review)value); return; }
-      if ("reviews".equals(key) && value instanceof Review) { review((Review)value); return; }
-      if ("seller".equals(key) && value instanceof Organization) { seller((Organization)value); return; }
-      if ("sellers".equals(key) && value instanceof Organization) { seller((Organization)value); return; }
-      if ("seller".equals(key) && value instanceof Participant) { seller((Participant)value); return; }
-      if ("sellers".equals(key) && value instanceof Participant) { seller((Participant)value); return; }
-      if ("seller".equals(key) && value instanceof Person) { seller((Person)value); return; }
-      if ("sellers".equals(key) && value instanceof Person) { seller((Person)value); return; }
-      if ("sku".equals(key) && value instanceof Identifier) { sku((Identifier)value); return; }
-      if ("skus".equals(key) && value instanceof Identifier) { sku((Identifier)value); return; }
-      if ("sku".equals(key) && value instanceof String) { sku((String)value); return; }
-      if ("skus".equals(key) && value instanceof String) { sku((String)value); return; }
-      if ("validFrom".equals(key) && value instanceof java.util.Date) { validFrom((java.util.Date)value); return; }
-      if ("validFroms".equals(key) && value instanceof java.util.Date) { validFrom((java.util.Date)value); return; }
-      if ("validThrough".equals(key) && value instanceof java.util.Date) { validThrough((java.util.Date)value); return; }
-      if ("validThroughs".equals(key) && value instanceof java.util.Date) { validThrough((java.util.Date)value); return; }
-      if ("warranty".equals(key) && value instanceof WarrantyPromise) { warranty((WarrantyPromise)value); return; }
-      if ("warrantys".equals(key) && value instanceof WarrantyPromise) { warranty((WarrantyPromise)value); return; }
-      if ("priceCurrency".equals(key) && value instanceof String) { priceCurrency((String)value); return; }
-      if ("priceCurrencys".equals(key) && value instanceof String) { priceCurrency((String)value); return; }
+      if ("acceptedPaymentMethod".equals(key) && value instanceof LoanOrCredit) { this.acceptedPaymentMethod((LoanOrCredit)value); return; }
+      if ("acceptedPaymentMethods".equals(key) && value instanceof LoanOrCredit) { this.acceptedPaymentMethod((LoanOrCredit)value); return; }
+      if ("acceptedPaymentMethod".equals(key) && value instanceof PaymentMethod) { this.acceptedPaymentMethod((PaymentMethod)value); return; }
+      if ("acceptedPaymentMethods".equals(key) && value instanceof PaymentMethod) { this.acceptedPaymentMethod((PaymentMethod)value); return; }
+      if ("addOn".equals(key) && value instanceof Offer) { this.addOn((Offer)value); return; }
+      if ("addOns".equals(key) && value instanceof Offer) { this.addOn((Offer)value); return; }
+      if ("advanceBookingRequirement".equals(key) && value instanceof QuantitativeValue) { this.advanceBookingRequirement((QuantitativeValue)value); return; }
+      if ("advanceBookingRequirements".equals(key) && value instanceof QuantitativeValue) { this.advanceBookingRequirement((QuantitativeValue)value); return; }
+      if ("aggregateRating".equals(key) && value instanceof AggregateRating) { this.aggregateRating((AggregateRating)value); return; }
+      if ("aggregateRatings".equals(key) && value instanceof AggregateRating) { this.aggregateRating((AggregateRating)value); return; }
+      if ("availability".equals(key) && value instanceof ItemAvailability) { this.availability((ItemAvailability)value); return; }
+      if ("availabilitys".equals(key) && value instanceof ItemAvailability) { this.availability((ItemAvailability)value); return; }
+      if ("availabilityEnds".equals(key) && value instanceof java.util.Date) { this.availabilityEnds((java.util.Date)value); return; }
+      if ("availabilityEndss".equals(key) && value instanceof java.util.Date) { this.availabilityEnds((java.util.Date)value); return; }
+      if ("availabilityStarts".equals(key) && value instanceof java.util.Date) { this.availabilityStarts((java.util.Date)value); return; }
+      if ("availabilityStartss".equals(key) && value instanceof java.util.Date) { this.availabilityStarts((java.util.Date)value); return; }
+      if ("availableAtOrFrom".equals(key) && value instanceof Place) { this.availableAtOrFrom((Place)value); return; }
+      if ("availableAtOrFroms".equals(key) && value instanceof Place) { this.availableAtOrFrom((Place)value); return; }
+      if ("availableDeliveryMethod".equals(key) && value instanceof DeliveryMethod) { this.availableDeliveryMethod((DeliveryMethod)value); return; }
+      if ("availableDeliveryMethods".equals(key) && value instanceof DeliveryMethod) { this.availableDeliveryMethod((DeliveryMethod)value); return; }
+      if ("businessFunction".equals(key) && value instanceof BusinessFunction) { this.businessFunction((BusinessFunction)value); return; }
+      if ("businessFunctions".equals(key) && value instanceof BusinessFunction) { this.businessFunction((BusinessFunction)value); return; }
+      if ("category".equals(key) && value instanceof String) { this.category((String)value); return; }
+      if ("categorys".equals(key) && value instanceof String) { this.category((String)value); return; }
+      if ("category".equals(key) && value instanceof Thing) { this.category((Thing)value); return; }
+      if ("categorys".equals(key) && value instanceof Thing) { this.category((Thing)value); return; }
+      if ("deliveryLeadTime".equals(key) && value instanceof QuantitativeValue) { this.deliveryLeadTime((QuantitativeValue)value); return; }
+      if ("deliveryLeadTimes".equals(key) && value instanceof QuantitativeValue) { this.deliveryLeadTime((QuantitativeValue)value); return; }
+      if ("eligibleCustomerType".equals(key) && value instanceof BusinessEntityType) { this.eligibleCustomerType((BusinessEntityType)value); return; }
+      if ("eligibleCustomerTypes".equals(key) && value instanceof BusinessEntityType) { this.eligibleCustomerType((BusinessEntityType)value); return; }
+      if ("eligibleDuration".equals(key) && value instanceof QuantitativeValue) { this.eligibleDuration((QuantitativeValue)value); return; }
+      if ("eligibleDurations".equals(key) && value instanceof QuantitativeValue) { this.eligibleDuration((QuantitativeValue)value); return; }
+      if ("eligibleQuantity".equals(key) && value instanceof QuantitativeValue) { this.eligibleQuantity((QuantitativeValue)value); return; }
+      if ("eligibleQuantitys".equals(key) && value instanceof QuantitativeValue) { this.eligibleQuantity((QuantitativeValue)value); return; }
+      if ("eligibleRegion".equals(key) && value instanceof GeoShape) { this.eligibleRegion((GeoShape)value); return; }
+      if ("eligibleRegions".equals(key) && value instanceof GeoShape) { this.eligibleRegion((GeoShape)value); return; }
+      if ("eligibleRegion".equals(key) && value instanceof Place) { this.eligibleRegion((Place)value); return; }
+      if ("eligibleRegions".equals(key) && value instanceof Place) { this.eligibleRegion((Place)value); return; }
+      if ("eligibleRegion".equals(key) && value instanceof String) { this.eligibleRegion((String)value); return; }
+      if ("eligibleRegions".equals(key) && value instanceof String) { this.eligibleRegion((String)value); return; }
+      if ("ineligibleRegion".equals(key) && value instanceof GeoShape) { this.ineligibleRegion((GeoShape)value); return; }
+      if ("ineligibleRegions".equals(key) && value instanceof GeoShape) { this.ineligibleRegion((GeoShape)value); return; }
+      if ("ineligibleRegion".equals(key) && value instanceof Place) { this.ineligibleRegion((Place)value); return; }
+      if ("ineligibleRegions".equals(key) && value instanceof Place) { this.ineligibleRegion((Place)value); return; }
+      if ("ineligibleRegion".equals(key) && value instanceof String) { this.ineligibleRegion((String)value); return; }
+      if ("ineligibleRegions".equals(key) && value instanceof String) { this.ineligibleRegion((String)value); return; }
+      if ("eligibleTransactionVolume".equals(key) && value instanceof PriceSpecification) { this.eligibleTransactionVolume((PriceSpecification)value); return; }
+      if ("eligibleTransactionVolumes".equals(key) && value instanceof PriceSpecification) { this.eligibleTransactionVolume((PriceSpecification)value); return; }
+      if ("gtin12".equals(key) && value instanceof Identifier) { this.gtin12((Identifier)value); return; }
+      if ("gtin12s".equals(key) && value instanceof Identifier) { this.gtin12((Identifier)value); return; }
+      if ("gtin12".equals(key) && value instanceof String) { this.gtin12((String)value); return; }
+      if ("gtin12s".equals(key) && value instanceof String) { this.gtin12((String)value); return; }
+      if ("gtin13".equals(key) && value instanceof Identifier) { this.gtin13((Identifier)value); return; }
+      if ("gtin13s".equals(key) && value instanceof Identifier) { this.gtin13((Identifier)value); return; }
+      if ("gtin13".equals(key) && value instanceof String) { this.gtin13((String)value); return; }
+      if ("gtin13s".equals(key) && value instanceof String) { this.gtin13((String)value); return; }
+      if ("gtin14".equals(key) && value instanceof Identifier) { this.gtin14((Identifier)value); return; }
+      if ("gtin14s".equals(key) && value instanceof Identifier) { this.gtin14((Identifier)value); return; }
+      if ("gtin14".equals(key) && value instanceof String) { this.gtin14((String)value); return; }
+      if ("gtin14s".equals(key) && value instanceof String) { this.gtin14((String)value); return; }
+      if ("gtin8".equals(key) && value instanceof Identifier) { this.gtin8((Identifier)value); return; }
+      if ("gtin8s".equals(key) && value instanceof Identifier) { this.gtin8((Identifier)value); return; }
+      if ("gtin8".equals(key) && value instanceof String) { this.gtin8((String)value); return; }
+      if ("gtin8s".equals(key) && value instanceof String) { this.gtin8((String)value); return; }
+      if ("includesObject".equals(key) && value instanceof TypeAndQuantityNode) { this.includesObject((TypeAndQuantityNode)value); return; }
+      if ("includesObjects".equals(key) && value instanceof TypeAndQuantityNode) { this.includesObject((TypeAndQuantityNode)value); return; }
+      if ("inventoryLevel".equals(key) && value instanceof QuantitativeValue) { this.inventoryLevel((QuantitativeValue)value); return; }
+      if ("inventoryLevels".equals(key) && value instanceof QuantitativeValue) { this.inventoryLevel((QuantitativeValue)value); return; }
+      if ("itemCondition".equals(key) && value instanceof OfferItemCondition) { this.itemCondition((OfferItemCondition)value); return; }
+      if ("itemConditions".equals(key) && value instanceof OfferItemCondition) { this.itemCondition((OfferItemCondition)value); return; }
+      if ("itemOffered".equals(key) && value instanceof AggregateOffer) { this.itemOffered((AggregateOffer)value); return; }
+      if ("itemOffereds".equals(key) && value instanceof AggregateOffer) { this.itemOffered((AggregateOffer)value); return; }
+      if ("itemOffered".equals(key) && value instanceof CreativeWork) { this.itemOffered((CreativeWork)value); return; }
+      if ("itemOffereds".equals(key) && value instanceof CreativeWork) { this.itemOffered((CreativeWork)value); return; }
+      if ("itemOffered".equals(key) && value instanceof Event) { this.itemOffered((Event)value); return; }
+      if ("itemOffereds".equals(key) && value instanceof Event) { this.itemOffered((Event)value); return; }
+      if ("itemOffered".equals(key) && value instanceof MenuItem) { this.itemOffered((MenuItem)value); return; }
+      if ("itemOffereds".equals(key) && value instanceof MenuItem) { this.itemOffered((MenuItem)value); return; }
+      if ("itemOffered".equals(key) && value instanceof Product) { this.itemOffered((Product)value); return; }
+      if ("itemOffereds".equals(key) && value instanceof Product) { this.itemOffered((Product)value); return; }
+      if ("itemOffered".equals(key) && value instanceof Service) { this.itemOffered((Service)value); return; }
+      if ("itemOffereds".equals(key) && value instanceof Service) { this.itemOffered((Service)value); return; }
+      if ("itemOffered".equals(key) && value instanceof Trip) { this.itemOffered((Trip)value); return; }
+      if ("itemOffereds".equals(key) && value instanceof Trip) { this.itemOffered((Trip)value); return; }
+      if ("offeredBy".equals(key) && value instanceof Organization) { this.offeredBy((Organization)value); return; }
+      if ("offeredBys".equals(key) && value instanceof Organization) { this.offeredBy((Organization)value); return; }
+      if ("offeredBy".equals(key) && value instanceof Person) { this.offeredBy((Person)value); return; }
+      if ("offeredBys".equals(key) && value instanceof Person) { this.offeredBy((Person)value); return; }
+      if ("mpn".equals(key) && value instanceof String) { this.mpn((String)value); return; }
+      if ("mpns".equals(key) && value instanceof String) { this.mpn((String)value); return; }
+      if ("price".equals(key) && value instanceof Integer) { this.price((Integer)value); return; }
+      if ("prices".equals(key) && value instanceof Integer) { this.price((Integer)value); return; }
+      if ("price".equals(key) && value instanceof Long) { this.price((Long)value); return; }
+      if ("prices".equals(key) && value instanceof Long) { this.price((Long)value); return; }
+      if ("price".equals(key) && value instanceof Float) { this.price((Float)value); return; }
+      if ("prices".equals(key) && value instanceof Float) { this.price((Float)value); return; }
+      if ("price".equals(key) && value instanceof Double) { this.price((Double)value); return; }
+      if ("prices".equals(key) && value instanceof Double) { this.price((Double)value); return; }
+      if ("price".equals(key) && value instanceof String) { this.price((String)value); return; }
+      if ("prices".equals(key) && value instanceof String) { this.price((String)value); return; }
+      if ("priceSpecification".equals(key) && value instanceof PriceSpecification) { this.priceSpecification((PriceSpecification)value); return; }
+      if ("priceSpecifications".equals(key) && value instanceof PriceSpecification) { this.priceSpecification((PriceSpecification)value); return; }
+      if ("priceValidUntil".equals(key) && value instanceof java.util.Date) { this.priceValidUntil((java.util.Date)value); return; }
+      if ("priceValidUntils".equals(key) && value instanceof java.util.Date) { this.priceValidUntil((java.util.Date)value); return; }
+      if ("review".equals(key) && value instanceof Review) { this.review((Review)value); return; }
+      if ("reviews".equals(key) && value instanceof Review) { this.review((Review)value); return; }
+      if ("seller".equals(key) && value instanceof Organization) { this.seller((Organization)value); return; }
+      if ("sellers".equals(key) && value instanceof Organization) { this.seller((Organization)value); return; }
+      if ("seller".equals(key) && value instanceof Participant) { this.seller((Participant)value); return; }
+      if ("sellers".equals(key) && value instanceof Participant) { this.seller((Participant)value); return; }
+      if ("seller".equals(key) && value instanceof Person) { this.seller((Person)value); return; }
+      if ("sellers".equals(key) && value instanceof Person) { this.seller((Person)value); return; }
+      if ("sku".equals(key) && value instanceof Identifier) { this.sku((Identifier)value); return; }
+      if ("skus".equals(key) && value instanceof Identifier) { this.sku((Identifier)value); return; }
+      if ("sku".equals(key) && value instanceof String) { this.sku((String)value); return; }
+      if ("skus".equals(key) && value instanceof String) { this.sku((String)value); return; }
+      if ("validFrom".equals(key) && value instanceof java.util.Date) { this.validFrom((java.util.Date)value); return; }
+      if ("validFroms".equals(key) && value instanceof java.util.Date) { this.validFrom((java.util.Date)value); return; }
+      if ("validThrough".equals(key) && value instanceof java.util.Date) { this.validThrough((java.util.Date)value); return; }
+      if ("validThroughs".equals(key) && value instanceof java.util.Date) { this.validThrough((java.util.Date)value); return; }
+      if ("warranty".equals(key) && value instanceof WarrantyPromise) { this.warranty((WarrantyPromise)value); return; }
+      if ("warrantys".equals(key) && value instanceof WarrantyPromise) { this.warranty((WarrantyPromise)value); return; }
+      if ("priceCurrency".equals(key) && value instanceof String) { this.priceCurrency((String)value); return; }
+      if ("priceCurrencys".equals(key) && value instanceof String) { this.priceCurrency((String)value); return; }
       super.fromMap(key, value);
     }
   }

@@ -452,30 +452,30 @@ public class Occupation extends Intangible {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("educationRequirements".equals(key) && value instanceof String) { educationRequirements((String)value); return; }
-      if ("educationRequirementss".equals(key) && value instanceof String) { educationRequirements((String)value); return; }
-      if ("estimatedSalary".equals(key) && value instanceof Integer) { estimatedSalary((Integer)value); return; }
-      if ("estimatedSalarys".equals(key) && value instanceof Integer) { estimatedSalary((Integer)value); return; }
-      if ("estimatedSalary".equals(key) && value instanceof Long) { estimatedSalary((Long)value); return; }
-      if ("estimatedSalarys".equals(key) && value instanceof Long) { estimatedSalary((Long)value); return; }
-      if ("estimatedSalary".equals(key) && value instanceof Float) { estimatedSalary((Float)value); return; }
-      if ("estimatedSalarys".equals(key) && value instanceof Float) { estimatedSalary((Float)value); return; }
-      if ("estimatedSalary".equals(key) && value instanceof Double) { estimatedSalary((Double)value); return; }
-      if ("estimatedSalarys".equals(key) && value instanceof Double) { estimatedSalary((Double)value); return; }
-      if ("estimatedSalary".equals(key) && value instanceof String) { estimatedSalary((String)value); return; }
-      if ("estimatedSalarys".equals(key) && value instanceof String) { estimatedSalary((String)value); return; }
-      if ("experienceRequirements".equals(key) && value instanceof String) { experienceRequirements((String)value); return; }
-      if ("experienceRequirementss".equals(key) && value instanceof String) { experienceRequirements((String)value); return; }
-      if ("occupationalCategory".equals(key) && value instanceof String) { occupationalCategory((String)value); return; }
-      if ("occupationalCategorys".equals(key) && value instanceof String) { occupationalCategory((String)value); return; }
-      if ("occupationLocation".equals(key) && value instanceof AdministrativeArea) { occupationLocation((AdministrativeArea)value); return; }
-      if ("occupationLocations".equals(key) && value instanceof AdministrativeArea) { occupationLocation((AdministrativeArea)value); return; }
-      if ("qualifications".equals(key) && value instanceof String) { qualifications((String)value); return; }
-      if ("qualificationss".equals(key) && value instanceof String) { qualifications((String)value); return; }
-      if ("responsibilities".equals(key) && value instanceof String) { responsibilities((String)value); return; }
-      if ("responsibilitiess".equals(key) && value instanceof String) { responsibilities((String)value); return; }
-      if ("skills".equals(key) && value instanceof String) { skills((String)value); return; }
-      if ("skillss".equals(key) && value instanceof String) { skills((String)value); return; }
+      if ("educationRequirements".equals(key) && value instanceof String) { this.educationRequirements((String)value); return; }
+      if ("educationRequirementss".equals(key) && value instanceof String) { this.educationRequirements((String)value); return; }
+      if ("estimatedSalary".equals(key) && value instanceof Integer) { this.estimatedSalary((Integer)value); return; }
+      if ("estimatedSalarys".equals(key) && value instanceof Integer) { this.estimatedSalary((Integer)value); return; }
+      if ("estimatedSalary".equals(key) && value instanceof Long) { this.estimatedSalary((Long)value); return; }
+      if ("estimatedSalarys".equals(key) && value instanceof Long) { this.estimatedSalary((Long)value); return; }
+      if ("estimatedSalary".equals(key) && value instanceof Float) { this.estimatedSalary((Float)value); return; }
+      if ("estimatedSalarys".equals(key) && value instanceof Float) { this.estimatedSalary((Float)value); return; }
+      if ("estimatedSalary".equals(key) && value instanceof Double) { this.estimatedSalary((Double)value); return; }
+      if ("estimatedSalarys".equals(key) && value instanceof Double) { this.estimatedSalary((Double)value); return; }
+      if ("estimatedSalary".equals(key) && value instanceof String) { this.estimatedSalary((String)value); return; }
+      if ("estimatedSalarys".equals(key) && value instanceof String) { this.estimatedSalary((String)value); return; }
+      if ("experienceRequirements".equals(key) && value instanceof String) { this.experienceRequirements((String)value); return; }
+      if ("experienceRequirementss".equals(key) && value instanceof String) { this.experienceRequirements((String)value); return; }
+      if ("occupationalCategory".equals(key) && value instanceof String) { this.occupationalCategory((String)value); return; }
+      if ("occupationalCategorys".equals(key) && value instanceof String) { this.occupationalCategory((String)value); return; }
+      if ("occupationLocation".equals(key) && value instanceof AdministrativeArea) { this.occupationLocation((AdministrativeArea)value); return; }
+      if ("occupationLocations".equals(key) && value instanceof AdministrativeArea) { this.occupationLocation((AdministrativeArea)value); return; }
+      if ("qualifications".equals(key) && value instanceof String) { this.qualifications((String)value); return; }
+      if ("qualificationss".equals(key) && value instanceof String) { this.qualifications((String)value); return; }
+      if ("responsibilities".equals(key) && value instanceof String) { this.responsibilities((String)value); return; }
+      if ("responsibilitiess".equals(key) && value instanceof String) { this.responsibilities((String)value); return; }
+      if ("skills".equals(key) && value instanceof String) { this.skills((String)value); return; }
+      if ("skillss".equals(key) && value instanceof String) { this.skills((String)value); return; }
       super.fromMap(key, value);
     }
   }

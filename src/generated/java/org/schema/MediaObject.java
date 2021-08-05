@@ -206,13 +206,13 @@ public class MediaObject extends CreativeWork {
     return Arrays.asList((QuantitativeValue) current);
   }
   /**
-   * Player type required&#x2014;for example, Flash or Silverlight.
+   * Player type required&amp;#x2014;for example, Flash or Silverlight.
    */
   @JsonIgnore public String getPlayerType() {
     return (String) getValue("playerType");
   }
   /**
-   * Player type required&#x2014;for example, Flash or Silverlight.
+   * Player type required&amp;#x2014;for example, Flash or Silverlight.
    */
   @JsonIgnore public Collection<String> getPlayerTypes() {
     final Object current = myData.get("playerType");
@@ -475,7 +475,7 @@ public class MediaObject extends CreativeWork {
       return this;
     }
     /**
-     * Player type required&#x2014;for example, Flash or Silverlight.
+     * Player type required&amp;#x2014;for example, Flash or Silverlight.
      */
     @NotNull public Builder playerType(@NotNull String playerType) {
       putValue("playerType", playerType);
@@ -783,21 +783,21 @@ public class MediaObject extends CreativeWork {
       return this;
     }
     /**
-     * Official rating of a piece of content&#x2014;for example,'MPAA PG-13'.
+     * Official rating of a piece of content&amp;#x2014;for example,'MPAA PG-13'.
      */
     @NotNull public Builder contentRating(@NotNull Rating rating) {
       putValue("contentRating", rating);
       return this;
     }
     /**
-     * Official rating of a piece of content&#x2014;for example,'MPAA PG-13'.
+     * Official rating of a piece of content&amp;#x2014;for example,'MPAA PG-13'.
      */
     @NotNull public Builder contentRating(@NotNull Rating.Builder rating) {
       putValue("contentRating", rating.build());
       return this;
     }
     /**
-     * Official rating of a piece of content&#x2014;for example,'MPAA PG-13'.
+     * Official rating of a piece of content&amp;#x2014;for example,'MPAA PG-13'.
      */
     @NotNull public Builder contentRating(@NotNull String contentRating) {
       putValue("contentRating", contentRating);
@@ -1168,7 +1168,7 @@ public class MediaObject extends CreativeWork {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Demand demand) {
@@ -1176,7 +1176,7 @@ public class MediaObject extends CreativeWork {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Demand.Builder demand) {
@@ -1184,7 +1184,7 @@ public class MediaObject extends CreativeWork {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Offer offer) {
@@ -1192,7 +1192,7 @@ public class MediaObject extends CreativeWork {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Offer.Builder offer) {
@@ -1342,7 +1342,7 @@ public class MediaObject extends CreativeWork {
       return this;
     }
     /**
-     * The "spatial" property can be used in cases when more specific properties
+     * The &quot;spatial&quot; property can be used in cases when more specific properties
      * (e.g. [[locationCreated]], [[spatialCoverage]], [[contentLocation]]) are not known to be appropriate.
      */
     @NotNull public Builder spatial(@NotNull Place place) {
@@ -1350,7 +1350,7 @@ public class MediaObject extends CreativeWork {
       return this;
     }
     /**
-     * The "spatial" property can be used in cases when more specific properties
+     * The &quot;spatial&quot; property can be used in cases when more specific properties
      * (e.g. [[locationCreated]], [[spatialCoverage]], [[contentLocation]]) are not known to be appropriate.
      */
     @NotNull public Builder spatial(@NotNull Place.Builder place) {
@@ -1405,10 +1405,10 @@ public class MediaObject extends CreativeWork {
     }
     /**
      * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
-     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.
-     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
+     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written &quot;2011/2012&quot;). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.
+     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via &quot;1939/1945&quot;.
      * 
-     * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
+     * Open-ended date ranges can be written with &quot;..&quot; in place of the end date. For example, &quot;2015-11/..&quot; indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
      */
     @NotNull public Builder temporalCoverage(@NotNull String temporalCoverage) {
       putValue("temporalCoverage", temporalCoverage);
@@ -1416,17 +1416,17 @@ public class MediaObject extends CreativeWork {
     }
     /**
      * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
-     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.
-     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
+     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written &quot;2011/2012&quot;). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.
+     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via &quot;1939/1945&quot;.
      * 
-     * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
+     * Open-ended date ranges can be written with &quot;..&quot; in place of the end date. For example, &quot;2015-11/..&quot; indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
      */
     @NotNull public Builder temporalCoverage(@NotNull java.util.Date date) {
       putValue("temporalCoverage", date);
       return this;
     }
     /**
-     * The "temporal" property can be used in cases where more specific properties
+     * The &quot;temporal&quot; property can be used in cases where more specific properties
      * (e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]], [[datePublished]]) are not known to be appropriate.
      */
     @NotNull public Builder temporal(@NotNull String temporal) {
@@ -1434,7 +1434,7 @@ public class MediaObject extends CreativeWork {
       return this;
     }
     /**
-     * The "temporal" property can be used in cases where more specific properties
+     * The &quot;temporal&quot; property can be used in cases where more specific properties
      * (e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]], [[datePublished]]) are not known to be appropriate.
      */
     @NotNull public Builder temporal(@NotNull java.util.Date date) {
@@ -1697,7 +1697,7 @@ public class MediaObject extends CreativeWork {
       return this;
     }
     /**
-     * A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as "short descriptions are present but long descriptions will be needed for non-visual users" or "short descriptions are present and no long descriptions are needed."
+     * A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as &quot;short descriptions are present but long descriptions will be needed for non-visual users&quot; or &quot;short descriptions are present and no long descriptions are needed.&quot;
      */
     @NotNull public Builder accessibilitySummary(@NotNull String accessibilitySummary) {
       putValue("accessibilitySummary", accessibilitySummary);
@@ -1816,44 +1816,44 @@ public class MediaObject extends CreativeWork {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("associatedArticle".equals(key) && value instanceof NewsArticle) { associatedArticle((NewsArticle)value); return; }
-      if ("associatedArticles".equals(key) && value instanceof NewsArticle) { associatedArticle((NewsArticle)value); return; }
-      if ("bitrate".equals(key) && value instanceof String) { bitrate((String)value); return; }
-      if ("bitrates".equals(key) && value instanceof String) { bitrate((String)value); return; }
-      if ("contentSize".equals(key) && value instanceof String) { contentSize((String)value); return; }
-      if ("contentSizes".equals(key) && value instanceof String) { contentSize((String)value); return; }
-      if ("contentUrl".equals(key) && value instanceof String) { contentUrl((String)value); return; }
-      if ("contentUrls".equals(key) && value instanceof String) { contentUrl((String)value); return; }
-      if ("embedUrl".equals(key) && value instanceof String) { embedUrl((String)value); return; }
-      if ("embedUrls".equals(key) && value instanceof String) { embedUrl((String)value); return; }
-      if ("encodesCreativeWork".equals(key) && value instanceof CreativeWork) { encodesCreativeWork((CreativeWork)value); return; }
-      if ("encodesCreativeWorks".equals(key) && value instanceof CreativeWork) { encodesCreativeWork((CreativeWork)value); return; }
-      if ("encodingFormat".equals(key) && value instanceof String) { encodingFormat((String)value); return; }
-      if ("encodingFormats".equals(key) && value instanceof String) { encodingFormat((String)value); return; }
-      if ("endTime".equals(key) && value instanceof java.util.Date) { endTime((java.util.Date)value); return; }
-      if ("endTimes".equals(key) && value instanceof java.util.Date) { endTime((java.util.Date)value); return; }
-      if ("height".equals(key) && value instanceof Distance) { height((Distance)value); return; }
-      if ("heights".equals(key) && value instanceof Distance) { height((Distance)value); return; }
-      if ("height".equals(key) && value instanceof QuantitativeValue) { height((QuantitativeValue)value); return; }
-      if ("heights".equals(key) && value instanceof QuantitativeValue) { height((QuantitativeValue)value); return; }
-      if ("playerType".equals(key) && value instanceof String) { playerType((String)value); return; }
-      if ("playerTypes".equals(key) && value instanceof String) { playerType((String)value); return; }
-      if ("productionCompany".equals(key) && value instanceof Organization) { productionCompany((Organization)value); return; }
-      if ("productionCompanys".equals(key) && value instanceof Organization) { productionCompany((Organization)value); return; }
-      if ("requiresSubscription".equals(key) && value instanceof Boolean) { requiresSubscription((Boolean)value); return; }
-      if ("requiresSubscriptions".equals(key) && value instanceof Boolean) { requiresSubscription((Boolean)value); return; }
-      if ("requiresSubscription".equals(key) && value instanceof MediaSubscription) { requiresSubscription((MediaSubscription)value); return; }
-      if ("requiresSubscriptions".equals(key) && value instanceof MediaSubscription) { requiresSubscription((MediaSubscription)value); return; }
-      if ("startTime".equals(key) && value instanceof java.util.Date) { startTime((java.util.Date)value); return; }
-      if ("startTimes".equals(key) && value instanceof java.util.Date) { startTime((java.util.Date)value); return; }
-      if ("uploadDate".equals(key) && value instanceof java.util.Date) { uploadDate((java.util.Date)value); return; }
-      if ("uploadDates".equals(key) && value instanceof java.util.Date) { uploadDate((java.util.Date)value); return; }
-      if ("width".equals(key) && value instanceof Distance) { width((Distance)value); return; }
-      if ("widths".equals(key) && value instanceof Distance) { width((Distance)value); return; }
-      if ("width".equals(key) && value instanceof QuantitativeValue) { width((QuantitativeValue)value); return; }
-      if ("widths".equals(key) && value instanceof QuantitativeValue) { width((QuantitativeValue)value); return; }
-      if ("regionsAllowed".equals(key) && value instanceof Place) { regionsAllowed((Place)value); return; }
-      if ("regionsAlloweds".equals(key) && value instanceof Place) { regionsAllowed((Place)value); return; }
+      if ("associatedArticle".equals(key) && value instanceof NewsArticle) { this.associatedArticle((NewsArticle)value); return; }
+      if ("associatedArticles".equals(key) && value instanceof NewsArticle) { this.associatedArticle((NewsArticle)value); return; }
+      if ("bitrate".equals(key) && value instanceof String) { this.bitrate((String)value); return; }
+      if ("bitrates".equals(key) && value instanceof String) { this.bitrate((String)value); return; }
+      if ("contentSize".equals(key) && value instanceof String) { this.contentSize((String)value); return; }
+      if ("contentSizes".equals(key) && value instanceof String) { this.contentSize((String)value); return; }
+      if ("contentUrl".equals(key) && value instanceof String) { this.contentUrl((String)value); return; }
+      if ("contentUrls".equals(key) && value instanceof String) { this.contentUrl((String)value); return; }
+      if ("embedUrl".equals(key) && value instanceof String) { this.embedUrl((String)value); return; }
+      if ("embedUrls".equals(key) && value instanceof String) { this.embedUrl((String)value); return; }
+      if ("encodesCreativeWork".equals(key) && value instanceof CreativeWork) { this.encodesCreativeWork((CreativeWork)value); return; }
+      if ("encodesCreativeWorks".equals(key) && value instanceof CreativeWork) { this.encodesCreativeWork((CreativeWork)value); return; }
+      if ("encodingFormat".equals(key) && value instanceof String) { this.encodingFormat((String)value); return; }
+      if ("encodingFormats".equals(key) && value instanceof String) { this.encodingFormat((String)value); return; }
+      if ("endTime".equals(key) && value instanceof java.util.Date) { this.endTime((java.util.Date)value); return; }
+      if ("endTimes".equals(key) && value instanceof java.util.Date) { this.endTime((java.util.Date)value); return; }
+      if ("height".equals(key) && value instanceof Distance) { this.height((Distance)value); return; }
+      if ("heights".equals(key) && value instanceof Distance) { this.height((Distance)value); return; }
+      if ("height".equals(key) && value instanceof QuantitativeValue) { this.height((QuantitativeValue)value); return; }
+      if ("heights".equals(key) && value instanceof QuantitativeValue) { this.height((QuantitativeValue)value); return; }
+      if ("playerType".equals(key) && value instanceof String) { this.playerType((String)value); return; }
+      if ("playerTypes".equals(key) && value instanceof String) { this.playerType((String)value); return; }
+      if ("productionCompany".equals(key) && value instanceof Organization) { this.productionCompany((Organization)value); return; }
+      if ("productionCompanys".equals(key) && value instanceof Organization) { this.productionCompany((Organization)value); return; }
+      if ("requiresSubscription".equals(key) && value instanceof Boolean) { this.requiresSubscription((Boolean)value); return; }
+      if ("requiresSubscriptions".equals(key) && value instanceof Boolean) { this.requiresSubscription((Boolean)value); return; }
+      if ("requiresSubscription".equals(key) && value instanceof MediaSubscription) { this.requiresSubscription((MediaSubscription)value); return; }
+      if ("requiresSubscriptions".equals(key) && value instanceof MediaSubscription) { this.requiresSubscription((MediaSubscription)value); return; }
+      if ("startTime".equals(key) && value instanceof java.util.Date) { this.startTime((java.util.Date)value); return; }
+      if ("startTimes".equals(key) && value instanceof java.util.Date) { this.startTime((java.util.Date)value); return; }
+      if ("uploadDate".equals(key) && value instanceof java.util.Date) { this.uploadDate((java.util.Date)value); return; }
+      if ("uploadDates".equals(key) && value instanceof java.util.Date) { this.uploadDate((java.util.Date)value); return; }
+      if ("width".equals(key) && value instanceof Distance) { this.width((Distance)value); return; }
+      if ("widths".equals(key) && value instanceof Distance) { this.width((Distance)value); return; }
+      if ("width".equals(key) && value instanceof QuantitativeValue) { this.width((QuantitativeValue)value); return; }
+      if ("widths".equals(key) && value instanceof QuantitativeValue) { this.width((QuantitativeValue)value); return; }
+      if ("regionsAllowed".equals(key) && value instanceof Place) { this.regionsAllowed((Place)value); return; }
+      if ("regionsAlloweds".equals(key) && value instanceof Place) { this.regionsAllowed((Place)value); return; }
       super.fromMap(key, value);
     }
   }

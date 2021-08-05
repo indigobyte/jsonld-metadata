@@ -187,7 +187,7 @@ public class TouristAttraction extends Place {
       return this;
     }
     /**
-     * A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.\n\nFor example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code "3047" is a branchCode for a particular branch.
+     * A short textual code (also called &quot;store code&quot;) that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.\n\nFor example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code &quot;3047&quot; is a branchCode for a particular branch.
      *       
      */
     @NotNull public Builder branchCode(@NotNull String branchCode) {
@@ -661,14 +661,14 @@ public class TouristAttraction extends Place {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("touristType".equals(key) && value instanceof Audience) { touristType((Audience)value); return; }
-      if ("touristTypes".equals(key) && value instanceof Audience) { touristType((Audience)value); return; }
-      if ("touristType".equals(key) && value instanceof String) { touristType((String)value); return; }
-      if ("touristTypes".equals(key) && value instanceof String) { touristType((String)value); return; }
-      if ("availableLanguage".equals(key) && value instanceof Language) { availableLanguage((Language)value); return; }
-      if ("availableLanguages".equals(key) && value instanceof Language) { availableLanguage((Language)value); return; }
-      if ("availableLanguage".equals(key) && value instanceof String) { availableLanguage((String)value); return; }
-      if ("availableLanguages".equals(key) && value instanceof String) { availableLanguage((String)value); return; }
+      if ("touristType".equals(key) && value instanceof Audience) { this.touristType((Audience)value); return; }
+      if ("touristTypes".equals(key) && value instanceof Audience) { this.touristType((Audience)value); return; }
+      if ("touristType".equals(key) && value instanceof String) { this.touristType((String)value); return; }
+      if ("touristTypes".equals(key) && value instanceof String) { this.touristType((String)value); return; }
+      if ("availableLanguage".equals(key) && value instanceof Language) { this.availableLanguage((Language)value); return; }
+      if ("availableLanguages".equals(key) && value instanceof Language) { this.availableLanguage((Language)value); return; }
+      if ("availableLanguage".equals(key) && value instanceof String) { this.availableLanguage((String)value); return; }
+      if ("availableLanguages".equals(key) && value instanceof String) { this.availableLanguage((String)value); return; }
       super.fromMap(key, value);
     }
   }

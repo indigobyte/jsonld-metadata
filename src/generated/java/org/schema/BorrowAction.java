@@ -321,10 +321,10 @@ public class BorrowAction extends TransferAction {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("lender".equals(key) && value instanceof Organization) { lender((Organization)value); return; }
-      if ("lenders".equals(key) && value instanceof Organization) { lender((Organization)value); return; }
-      if ("lender".equals(key) && value instanceof Person) { lender((Person)value); return; }
-      if ("lenders".equals(key) && value instanceof Person) { lender((Person)value); return; }
+      if ("lender".equals(key) && value instanceof Organization) { this.lender((Organization)value); return; }
+      if ("lenders".equals(key) && value instanceof Organization) { this.lender((Organization)value); return; }
+      if ("lender".equals(key) && value instanceof Person) { this.lender((Person)value); return; }
+      if ("lenders".equals(key) && value instanceof Person) { this.lender((Person)value); return; }
       super.fromMap(key, value);
     }
   }

@@ -45,13 +45,13 @@ public class Course extends CreativeWork {
     return Arrays.asList((String) current);
   }
   /**
-   * Requirements for taking the Course. May be completion of another [[Course]] or a textual description like "permission of instructor". Requirements may be a pre-requisite competency, referenced using [[AlignmentObject]].
+   * Requirements for taking the Course. May be completion of another [[Course]] or a textual description like &quot;permission of instructor&quot;. Requirements may be a pre-requisite competency, referenced using [[AlignmentObject]].
    */
   @JsonIgnore public AlignmentObject getCoursePrerequisitesAlignmentObject() {
     return (AlignmentObject) getValue("coursePrerequisites");
   }
   /**
-   * Requirements for taking the Course. May be completion of another [[Course]] or a textual description like "permission of instructor". Requirements may be a pre-requisite competency, referenced using [[AlignmentObject]].
+   * Requirements for taking the Course. May be completion of another [[Course]] or a textual description like &quot;permission of instructor&quot;. Requirements may be a pre-requisite competency, referenced using [[AlignmentObject]].
    */
   @JsonIgnore public Collection<AlignmentObject> getCoursePrerequisitesAlignmentObjects() {
     final Object current = myData.get("coursePrerequisites");
@@ -62,13 +62,13 @@ public class Course extends CreativeWork {
     return Arrays.asList((AlignmentObject) current);
   }
   /**
-   * Requirements for taking the Course. May be completion of another [[Course]] or a textual description like "permission of instructor". Requirements may be a pre-requisite competency, referenced using [[AlignmentObject]].
+   * Requirements for taking the Course. May be completion of another [[Course]] or a textual description like &quot;permission of instructor&quot;. Requirements may be a pre-requisite competency, referenced using [[AlignmentObject]].
    */
   @JsonIgnore public Course getCoursePrerequisitesCourse() {
     return (Course) getValue("coursePrerequisites");
   }
   /**
-   * Requirements for taking the Course. May be completion of another [[Course]] or a textual description like "permission of instructor". Requirements may be a pre-requisite competency, referenced using [[AlignmentObject]].
+   * Requirements for taking the Course. May be completion of another [[Course]] or a textual description like &quot;permission of instructor&quot;. Requirements may be a pre-requisite competency, referenced using [[AlignmentObject]].
    */
   @JsonIgnore public Collection<Course> getCoursePrerequisitesCourses() {
     final Object current = myData.get("coursePrerequisites");
@@ -79,13 +79,13 @@ public class Course extends CreativeWork {
     return Arrays.asList((Course) current);
   }
   /**
-   * Requirements for taking the Course. May be completion of another [[Course]] or a textual description like "permission of instructor". Requirements may be a pre-requisite competency, referenced using [[AlignmentObject]].
+   * Requirements for taking the Course. May be completion of another [[Course]] or a textual description like &quot;permission of instructor&quot;. Requirements may be a pre-requisite competency, referenced using [[AlignmentObject]].
    */
   @JsonIgnore public String getCoursePrerequisitesString() {
     return (String) getValue("coursePrerequisites");
   }
   /**
-   * Requirements for taking the Course. May be completion of another [[Course]] or a textual description like "permission of instructor". Requirements may be a pre-requisite competency, referenced using [[AlignmentObject]].
+   * Requirements for taking the Course. May be completion of another [[Course]] or a textual description like &quot;permission of instructor&quot;. Requirements may be a pre-requisite competency, referenced using [[AlignmentObject]].
    */
   @JsonIgnore public Collection<String> getCoursePrerequisitesStrings() {
     final Object current = myData.get("coursePrerequisites");
@@ -134,35 +134,35 @@ public class Course extends CreativeWork {
       return this;
     }
     /**
-     * Requirements for taking the Course. May be completion of another [[Course]] or a textual description like "permission of instructor". Requirements may be a pre-requisite competency, referenced using [[AlignmentObject]].
+     * Requirements for taking the Course. May be completion of another [[Course]] or a textual description like &quot;permission of instructor&quot;. Requirements may be a pre-requisite competency, referenced using [[AlignmentObject]].
      */
     @NotNull public Builder coursePrerequisites(@NotNull AlignmentObject alignmentObject) {
       putValue("coursePrerequisites", alignmentObject);
       return this;
     }
     /**
-     * Requirements for taking the Course. May be completion of another [[Course]] or a textual description like "permission of instructor". Requirements may be a pre-requisite competency, referenced using [[AlignmentObject]].
+     * Requirements for taking the Course. May be completion of another [[Course]] or a textual description like &quot;permission of instructor&quot;. Requirements may be a pre-requisite competency, referenced using [[AlignmentObject]].
      */
     @NotNull public Builder coursePrerequisites(@NotNull AlignmentObject.Builder alignmentObject) {
       putValue("coursePrerequisites", alignmentObject.build());
       return this;
     }
     /**
-     * Requirements for taking the Course. May be completion of another [[Course]] or a textual description like "permission of instructor". Requirements may be a pre-requisite competency, referenced using [[AlignmentObject]].
+     * Requirements for taking the Course. May be completion of another [[Course]] or a textual description like &quot;permission of instructor&quot;. Requirements may be a pre-requisite competency, referenced using [[AlignmentObject]].
      */
     @NotNull public Builder coursePrerequisites(@NotNull Course course) {
       putValue("coursePrerequisites", course);
       return this;
     }
     /**
-     * Requirements for taking the Course. May be completion of another [[Course]] or a textual description like "permission of instructor". Requirements may be a pre-requisite competency, referenced using [[AlignmentObject]].
+     * Requirements for taking the Course. May be completion of another [[Course]] or a textual description like &quot;permission of instructor&quot;. Requirements may be a pre-requisite competency, referenced using [[AlignmentObject]].
      */
     @NotNull public Builder coursePrerequisites(@NotNull Course.Builder course) {
       putValue("coursePrerequisites", course.build());
       return this;
     }
     /**
-     * Requirements for taking the Course. May be completion of another [[Course]] or a textual description like "permission of instructor". Requirements may be a pre-requisite competency, referenced using [[AlignmentObject]].
+     * Requirements for taking the Course. May be completion of another [[Course]] or a textual description like &quot;permission of instructor&quot;. Requirements may be a pre-requisite competency, referenced using [[AlignmentObject]].
      */
     @NotNull public Builder coursePrerequisites(@NotNull String coursePrerequisites) {
       putValue("coursePrerequisites", coursePrerequisites);
@@ -393,21 +393,21 @@ public class Course extends CreativeWork {
       return this;
     }
     /**
-     * Official rating of a piece of content&#x2014;for example,'MPAA PG-13'.
+     * Official rating of a piece of content&amp;#x2014;for example,'MPAA PG-13'.
      */
     @NotNull public Builder contentRating(@NotNull Rating rating) {
       putValue("contentRating", rating);
       return this;
     }
     /**
-     * Official rating of a piece of content&#x2014;for example,'MPAA PG-13'.
+     * Official rating of a piece of content&amp;#x2014;for example,'MPAA PG-13'.
      */
     @NotNull public Builder contentRating(@NotNull Rating.Builder rating) {
       putValue("contentRating", rating.build());
       return this;
     }
     /**
-     * Official rating of a piece of content&#x2014;for example,'MPAA PG-13'.
+     * Official rating of a piece of content&amp;#x2014;for example,'MPAA PG-13'.
      */
     @NotNull public Builder contentRating(@NotNull String contentRating) {
       putValue("contentRating", contentRating);
@@ -789,7 +789,7 @@ public class Course extends CreativeWork {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Demand demand) {
@@ -797,7 +797,7 @@ public class Course extends CreativeWork {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Demand.Builder demand) {
@@ -805,7 +805,7 @@ public class Course extends CreativeWork {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Offer offer) {
@@ -813,7 +813,7 @@ public class Course extends CreativeWork {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Offer.Builder offer) {
@@ -963,7 +963,7 @@ public class Course extends CreativeWork {
       return this;
     }
     /**
-     * The "spatial" property can be used in cases when more specific properties
+     * The &quot;spatial&quot; property can be used in cases when more specific properties
      * (e.g. [[locationCreated]], [[spatialCoverage]], [[contentLocation]]) are not known to be appropriate.
      */
     @NotNull public Builder spatial(@NotNull Place place) {
@@ -971,7 +971,7 @@ public class Course extends CreativeWork {
       return this;
     }
     /**
-     * The "spatial" property can be used in cases when more specific properties
+     * The &quot;spatial&quot; property can be used in cases when more specific properties
      * (e.g. [[locationCreated]], [[spatialCoverage]], [[contentLocation]]) are not known to be appropriate.
      */
     @NotNull public Builder spatial(@NotNull Place.Builder place) {
@@ -1026,10 +1026,10 @@ public class Course extends CreativeWork {
     }
     /**
      * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
-     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.
-     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
+     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written &quot;2011/2012&quot;). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.
+     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via &quot;1939/1945&quot;.
      * 
-     * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
+     * Open-ended date ranges can be written with &quot;..&quot; in place of the end date. For example, &quot;2015-11/..&quot; indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
      */
     @NotNull public Builder temporalCoverage(@NotNull String temporalCoverage) {
       putValue("temporalCoverage", temporalCoverage);
@@ -1037,17 +1037,17 @@ public class Course extends CreativeWork {
     }
     /**
      * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
-     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.
-     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
+     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written &quot;2011/2012&quot;). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.
+     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via &quot;1939/1945&quot;.
      * 
-     * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
+     * Open-ended date ranges can be written with &quot;..&quot; in place of the end date. For example, &quot;2015-11/..&quot; indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
      */
     @NotNull public Builder temporalCoverage(@NotNull java.util.Date date) {
       putValue("temporalCoverage", date);
       return this;
     }
     /**
-     * The "temporal" property can be used in cases where more specific properties
+     * The &quot;temporal&quot; property can be used in cases where more specific properties
      * (e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]], [[datePublished]]) are not known to be appropriate.
      */
     @NotNull public Builder temporal(@NotNull String temporal) {
@@ -1055,7 +1055,7 @@ public class Course extends CreativeWork {
       return this;
     }
     /**
-     * The "temporal" property can be used in cases where more specific properties
+     * The &quot;temporal&quot; property can be used in cases where more specific properties
      * (e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]], [[datePublished]]) are not known to be appropriate.
      */
     @NotNull public Builder temporal(@NotNull java.util.Date date) {
@@ -1318,7 +1318,7 @@ public class Course extends CreativeWork {
       return this;
     }
     /**
-     * A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as "short descriptions are present but long descriptions will be needed for non-visual users" or "short descriptions are present and no long descriptions are needed."
+     * A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as &quot;short descriptions are present but long descriptions will be needed for non-visual users&quot; or &quot;short descriptions are present and no long descriptions are needed.&quot;
      */
     @NotNull public Builder accessibilitySummary(@NotNull String accessibilitySummary) {
       putValue("accessibilitySummary", accessibilitySummary);
@@ -1437,16 +1437,16 @@ public class Course extends CreativeWork {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("courseCode".equals(key) && value instanceof String) { courseCode((String)value); return; }
-      if ("courseCodes".equals(key) && value instanceof String) { courseCode((String)value); return; }
-      if ("coursePrerequisites".equals(key) && value instanceof AlignmentObject) { coursePrerequisites((AlignmentObject)value); return; }
-      if ("coursePrerequisitess".equals(key) && value instanceof AlignmentObject) { coursePrerequisites((AlignmentObject)value); return; }
-      if ("coursePrerequisites".equals(key) && value instanceof Course) { coursePrerequisites((Course)value); return; }
-      if ("coursePrerequisitess".equals(key) && value instanceof Course) { coursePrerequisites((Course)value); return; }
-      if ("coursePrerequisites".equals(key) && value instanceof String) { coursePrerequisites((String)value); return; }
-      if ("coursePrerequisitess".equals(key) && value instanceof String) { coursePrerequisites((String)value); return; }
-      if ("hasCourseInstance".equals(key) && value instanceof CourseInstance) { hasCourseInstance((CourseInstance)value); return; }
-      if ("hasCourseInstances".equals(key) && value instanceof CourseInstance) { hasCourseInstance((CourseInstance)value); return; }
+      if ("courseCode".equals(key) && value instanceof String) { this.courseCode((String)value); return; }
+      if ("courseCodes".equals(key) && value instanceof String) { this.courseCode((String)value); return; }
+      if ("coursePrerequisites".equals(key) && value instanceof AlignmentObject) { this.coursePrerequisites((AlignmentObject)value); return; }
+      if ("coursePrerequisitess".equals(key) && value instanceof AlignmentObject) { this.coursePrerequisites((AlignmentObject)value); return; }
+      if ("coursePrerequisites".equals(key) && value instanceof Course) { this.coursePrerequisites((Course)value); return; }
+      if ("coursePrerequisitess".equals(key) && value instanceof Course) { this.coursePrerequisites((Course)value); return; }
+      if ("coursePrerequisites".equals(key) && value instanceof String) { this.coursePrerequisites((String)value); return; }
+      if ("coursePrerequisitess".equals(key) && value instanceof String) { this.coursePrerequisites((String)value); return; }
+      if ("hasCourseInstance".equals(key) && value instanceof CourseInstance) { this.hasCourseInstance((CourseInstance)value); return; }
+      if ("hasCourseInstances".equals(key) && value instanceof CourseInstance) { this.hasCourseInstance((CourseInstance)value); return; }
       super.fromMap(key, value);
     }
   }

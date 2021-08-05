@@ -283,8 +283,8 @@ public class SendAction extends TransferAction {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("deliveryMethod".equals(key) && value instanceof DeliveryMethod) { deliveryMethod((DeliveryMethod)value); return; }
-      if ("deliveryMethods".equals(key) && value instanceof DeliveryMethod) { deliveryMethod((DeliveryMethod)value); return; }
+      if ("deliveryMethod".equals(key) && value instanceof DeliveryMethod) { this.deliveryMethod((DeliveryMethod)value); return; }
+      if ("deliveryMethods".equals(key) && value instanceof DeliveryMethod) { this.deliveryMethod((DeliveryMethod)value); return; }
       super.fromMap(key, value);
     }
   }

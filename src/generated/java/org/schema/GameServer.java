@@ -233,12 +233,12 @@ public class GameServer extends Intangible {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("serverStatus".equals(key) && value instanceof GameServerStatus) { serverStatus((GameServerStatus)value); return; }
-      if ("serverStatuss".equals(key) && value instanceof GameServerStatus) { serverStatus((GameServerStatus)value); return; }
-      if ("playersOnline".equals(key) && value instanceof Integer) { playersOnline((Integer)value); return; }
-      if ("playersOnlines".equals(key) && value instanceof Integer) { playersOnline((Integer)value); return; }
-      if ("game".equals(key) && value instanceof VideoGame) { game((VideoGame)value); return; }
-      if ("games".equals(key) && value instanceof VideoGame) { game((VideoGame)value); return; }
+      if ("serverStatus".equals(key) && value instanceof GameServerStatus) { this.serverStatus((GameServerStatus)value); return; }
+      if ("serverStatuss".equals(key) && value instanceof GameServerStatus) { this.serverStatus((GameServerStatus)value); return; }
+      if ("playersOnline".equals(key) && value instanceof Integer) { this.playersOnline((Integer)value); return; }
+      if ("playersOnlines".equals(key) && value instanceof Integer) { this.playersOnline((Integer)value); return; }
+      if ("game".equals(key) && value instanceof VideoGame) { this.game((VideoGame)value); return; }
+      if ("games".equals(key) && value instanceof VideoGame) { this.game((VideoGame)value); return; }
       super.fromMap(key, value);
     }
   }

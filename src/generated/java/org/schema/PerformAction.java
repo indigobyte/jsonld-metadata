@@ -290,8 +290,8 @@ public class PerformAction extends PlayAction {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("entertainmentBusiness".equals(key) && value instanceof EntertainmentBusiness) { entertainmentBusiness((EntertainmentBusiness)value); return; }
-      if ("entertainmentBusinesss".equals(key) && value instanceof EntertainmentBusiness) { entertainmentBusiness((EntertainmentBusiness)value); return; }
+      if ("entertainmentBusiness".equals(key) && value instanceof EntertainmentBusiness) { this.entertainmentBusiness((EntertainmentBusiness)value); return; }
+      if ("entertainmentBusinesss".equals(key) && value instanceof EntertainmentBusiness) { this.entertainmentBusiness((EntertainmentBusiness)value); return; }
       super.fromMap(key, value);
     }
   }

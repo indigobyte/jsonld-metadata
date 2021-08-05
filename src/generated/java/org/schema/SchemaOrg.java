@@ -90,9 +90,9 @@ See also the dedicated [document on the use of schema.org for marking up hotels 
    */
   @NotNull public static MediaGallery.Builder mediaGallery() { return new MediaGallery.Builder(new HashMap<String,Object>()); }
   /**
-   * A resort is a place used for relaxation or recreation, attracting visitors for holidays or vacations. Resorts are places, towns or sometimes commercial establishment operated by a single company (Source: Wikipedia, the free encyclopedia, see <a href="http://en.wikipedia.org/wiki/Resort">http://en.wikipedia.org/wiki/Resort</a>).
-<br /><br />
-See also the <a href="/docs/hotels.html">dedicated document on the use of schema.org for marking up hotels and other forms of accommodations</a>.
+   * A resort is a place used for relaxation or recreation, attracting visitors for holidays or vacations. Resorts are places, towns or sometimes commercial establishment operated by a single company (Source: Wikipedia, the free encyclopedia, see &lt;a href=&quot;http://en.wikipedia.org/wiki/Resort&quot;&gt;http://en.wikipedia.org/wiki/Resort&lt;/a&gt;).
+&lt;br /&gt;&lt;br /&gt;
+See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on the use of schema.org for marking up hotels and other forms of accommodations&lt;/a&gt;.
     
    */
   @NotNull public static Resort.Builder resort() { return new Resort.Builder(new HashMap<String,Object>()); }
@@ -331,9 +331,9 @@ The place is __open__ if the [[opens]] property is specified, and __closed__ oth
    */
   @NotNull public static HairSalon.Builder hairSalon() { return new HairSalon.Builder(new HashMap<String,Object>()); }
   /**
-   * A room is a distinguishable space within a structure, usually separated from other spaces by interior walls. (Source: Wikipedia, the free encyclopedia, see <a href="http://en.wikipedia.org/wiki/Room">http://en.wikipedia.org/wiki/Room</a>).
-<br /><br />
-See also the <a href="/docs/hotels.html">dedicated document on the use of schema.org for marking up hotels and other forms of accommodations</a>.
+   * A room is a distinguishable space within a structure, usually separated from other spaces by interior walls. (Source: Wikipedia, the free encyclopedia, see &lt;a href=&quot;http://en.wikipedia.org/wiki/Room&quot;&gt;http://en.wikipedia.org/wiki/Room&lt;/a&gt;).
+&lt;br /&gt;&lt;br /&gt;
+See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on the use of schema.org for marking up hotels and other forms of accommodations&lt;/a&gt;.
 
    */
   @NotNull public static Room.Builder room() { return new Room.Builder(new HashMap<String,Object>()); }
@@ -408,7 +408,7 @@ See also the <a href="/docs/hotels.html">dedicated document on the use of schema
    */
   @NotNull public static CommunicateAction.Builder communicateAction() { return new CommunicateAction.Builder(new HashMap<String,Object>()); }
   /**
-   * An apartment (in American English) or flat (in British English) is a self-contained housing unit (a type of residential real estate) that occupies only part of a building (Source: Wikipedia, the free encyclopedia, see <a href="http://en.wikipedia.org/wiki/Apartment">http://en.wikipedia.org/wiki/Apartment</a>).
+   * An apartment (in American English) or flat (in British English) is a self-contained housing unit (a type of residential real estate) that occupies only part of a building (Source: Wikipedia, the free encyclopedia, see &lt;a href=&quot;http://en.wikipedia.org/wiki/Apartment&quot;&gt;http://en.wikipedia.org/wiki/Apartment&lt;/a&gt;).
    */
   @NotNull public static Apartment.Builder apartment() { return new Apartment.Builder(new HashMap<String,Object>()); }
   /**
@@ -577,7 +577,7 @@ See also the <a href="/docs/hotels.html">dedicated document on the use of schema
    */
   @NotNull public static GasStation.Builder gasStation() { return new GasStation.Builder(new HashMap<String,Object>()); }
   /**
-   * A government office&#x2014;for example, an IRS or DMV office.
+   * A government office&amp;#x2014;for example, an IRS or DMV office.
    */
   @NotNull public static GovernmentOffice.Builder governmentOffice() { return new GovernmentOffice.Builder(new HashMap<String,Object>()); }
   /**
@@ -637,7 +637,7 @@ See also the <a href="/docs/hotels.html">dedicated document on the use of schema
    */
   @NotNull public static QAPage.Builder qAPage() { return new QAPage.Builder(new HashMap<String,Object>()); }
   /**
-   * Used to describe membership in a loyalty programs (e.g. "StarAliance"), traveler clubs (e.g. "AAA"), purchase clubs ("Safeway Club"), etc.
+   * Used to describe membership in a loyalty programs (e.g. &quot;StarAliance&quot;), traveler clubs (e.g. &quot;AAA&quot;), purchase clubs (&quot;Safeway Club&quot;), etc.
    */
   @NotNull public static ProgramMembership.Builder programMembership() { return new ProgramMembership.Builder(new HashMap<String,Object>()); }
   /**
@@ -705,13 +705,13 @@ See also the <a href="/docs/hotels.html">dedicated document on the use of schema
    */
   @NotNull public static State.Builder state() { return new State.Builder(new HashMap<String,Object>()); }
   /**
-   * Original definition: "provider of professional services."\n\nThe general [[ProfessionalService]] type for local businesses was deprecated due to confusion with [[Service]]. For reference, the types that it included were: [[Dentist]],
+   * Original definition: &quot;provider of professional services.&quot;\n\nThe general [[ProfessionalService]] type for local businesses was deprecated due to confusion with [[Service]]. For reference, the types that it included were: [[Dentist]],
         [[AccountingService]], [[Attorney]], [[Notary]], as well as types for several kinds of [[HomeAndConstructionBusiness]]: [[Electrician]], [[GeneralContractor]],
         [[HousePainter]], [[Locksmith]], [[Plumber]], [[RoofingContractor]]. [[LegalService]] was introduced as a more inclusive supertype of [[Attorney]].
    */
   @NotNull public static ProfessionalService.Builder professionalService() { return new ProfessionalService.Builder(new HashMap<String,Object>()); }
   /**
-   * A compound price specification is one that bundles multiple prices that all apply in combination for different dimensions of consumption. Use the name property of the attached unit price specification for indicating the dimension of a price component (e.g. "electricity" or "final cleaning").
+   * A compound price specification is one that bundles multiple prices that all apply in combination for different dimensions of consumption. Use the name property of the attached unit price specification for indicating the dimension of a price component (e.g. &quot;electricity&quot; or &quot;final cleaning&quot;).
    */
   @NotNull public static CompoundPriceSpecification.Builder compoundPriceSpecification() { return new CompoundPriceSpecification.Builder(new HashMap<String,Object>()); }
   /**
@@ -794,7 +794,7 @@ A more detailed overview of [schema.org News markup](/docs/news.html) is also av
    */
   @NotNull public static DepositAccount.Builder depositAccount() { return new DepositAccount.Builder(new HashMap<String,Object>()); }
   /**
-   * A monetary value or range. This type can be used to describe an amount of money such as $50 USD, or a range as in describing a bank account being suitable for a balance between £1,000 and £1,000,000 GBP, or the value of a salary, etc. It is recommended to use [[PriceSpecification]] Types to describe the price of an Offer, Invoice, etc.
+   * A monetary value or range. This type can be used to describe an amount of money such as $50 USD, or a range as in describing a bank account being suitable for a balance between &pound;1,000 and &pound;1,000,000 GBP, or the value of a salary, etc. It is recommended to use [[PriceSpecification]] Types to describe the price of an Offer, Invoice, etc.
    */
   @NotNull public static MonetaryAmount.Builder monetaryAmount() { return new MonetaryAmount.Builder(new HashMap<String,Object>()); }
   /**
@@ -816,8 +816,8 @@ A more detailed overview of [schema.org News markup](/docs/news.html) is also av
   /**
    * An accommodation is a place that can accommodate human beings, e.g. a hotel room, a camping pitch, or a meeting room. Many accommodations are for overnight stays, but this is not a mandatory requirement.
 For more specific types of accommodations not defined in schema.org, one can use additionalType with external vocabularies.
-<br /><br />
-See also the <a href="/docs/hotels.html">dedicated document on the use of schema.org for marking up hotels and other forms of accommodations</a>.
+&lt;br /&gt;&lt;br /&gt;
+See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on the use of schema.org for marking up hotels and other forms of accommodations&lt;/a&gt;.
 
    */
   @NotNull public static Accommodation.Builder accommodation() { return new Accommodation.Builder(new HashMap<String,Object>()); }
@@ -918,12 +918,12 @@ See also the <a href="/docs/hotels.html">dedicated document on the use of schema
    */
   @NotNull public static ExhibitionEvent.Builder exhibitionEvent() { return new ExhibitionEvent.Builder(new HashMap<String,Object>()); }
   /**
-   * A web page. Every web page is implicitly assumed to be declared to be of type WebPage, so the various properties about that webpage, such as <code>breadcrumb</code> may be used. We recommend explicit declaration if these properties are specified, but if they are found outside of an itemscope, they will be assumed to be about the page.
+   * A web page. Every web page is implicitly assumed to be declared to be of type WebPage, so the various properties about that webpage, such as &lt;code&gt;breadcrumb&lt;/code&gt; may be used. We recommend explicit declaration if these properties are specified, but if they are found outside of an itemscope, they will be assumed to be about the page.
    */
   @NotNull public static WebPage.Builder webPage() { return new WebPage.Builder(new HashMap<String,Object>()); }
   /**
-   * An EndorsementRating is a rating that expresses some level of endorsement, for example inclusion in a "critic's pick" blog, a
-"Like" or "+1" on a social network. It can be considered the [[result]] of an [[EndorseAction]] in which the [[object]] of the action is rated positively by
+   * An EndorsementRating is a rating that expresses some level of endorsement, for example inclusion in a &quot;critic's pick&quot; blog, a
+&quot;Like&quot; or &quot;+1&quot; on a social network. It can be considered the [[result]] of an [[EndorseAction]] in which the [[object]] of the action is rated positively by
 some [[agent]]. As is common elsewhere in schema.org, it is sometimes more useful to describe the results of such an action without explicitly describing the [[Action]].
 
 An [[EndorsementRating]] may be part of a numeric scale or organized system, but this is not required: having an explicit type for indicating a positive,
@@ -960,7 +960,7 @@ endorsement rating is particularly useful in the absence of numeric scales as it
    */
   @NotNull public static WebPageElement.Builder webPageElement() { return new WebPageElement.Builder(new HashMap<String,Object>()); }
   /**
-   * Reserving a concrete object.\n\nRelated actions:\n\n* [[ScheduleAction]]</a>: Unlike ScheduleAction, ReserveAction reserves concrete objects (e.g. a table, a hotel) towards a time slot / spatial allocation.
+   * Reserving a concrete object.\n\nRelated actions:\n\n* [[ScheduleAction]]&lt;/a&gt;: Unlike ScheduleAction, ReserveAction reserves concrete objects (e.g. a table, a hotel) towards a time slot / spatial allocation.
    */
   @NotNull public static ReserveAction.Builder reserveAction() { return new ReserveAction.Builder(new HashMap<String,Object>()); }
   /**
@@ -1057,7 +1057,7 @@ endorsement rating is particularly useful in the absence of numeric scales as it
    */
   @NotNull public static AdultEntertainment.Builder adultEntertainment() { return new AdultEntertainment.Builder(new HashMap<String,Object>()); }
   /**
-   * This element is based on the STI Accommodation Ontology, see <a href="http://ontologies.sti-innsbruck.at/acco/ns.html">http://ontologies.sti-innsbruck.at/acco/ns.html</a> for details.
+   * This element is based on the STI Accommodation Ontology, see &lt;a href=&quot;http://ontologies.sti-innsbruck.at/acco/ns.html&quot;&gt;http://ontologies.sti-innsbruck.at/acco/ns.html&lt;/a&gt; for details.
     Many class and property definitions are inspired by or based on abstracts from Wikipedia, the free encyclopedia.
    */
   @NotNull public static STIAccommodationOntology.Builder sTIAccommodationOntology() { return new STIAccommodationOntology.Builder(new HashMap<String,Object>()); }
@@ -1236,8 +1236,8 @@ endorsement rating is particularly useful in the absence of numeric scales as it
   @NotNull public static ReactAction.Builder reactAction() { return new ReactAction.Builder(new HashMap<String,Object>()); }
   /**
    * A hotel is an establishment that provides lodging paid on a short-term basis (Source: Wikipedia, the free encyclopedia, see http://en.wikipedia.org/wiki/Hotel).
-<br /><br />
-See also the <a href="/docs/hotels.html">dedicated document on the use of schema.org for marking up hotels and other forms of accommodations</a>.
+&lt;br /&gt;&lt;br /&gt;
+See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on the use of schema.org for marking up hotels and other forms of accommodations&lt;/a&gt;.
 
    */
   @NotNull public static Hotel.Builder hotel() { return new Hotel.Builder(new HashMap<String,Object>()); }
@@ -1270,7 +1270,7 @@ See also the <a href="/docs/hotels.html">dedicated document on the use of schema
    */
   @NotNull public static DeleteAction.Builder deleteAction() { return new DeleteAction.Builder(new HashMap<String,Object>()); }
   /**
-   * Properties that take Energy as values are of the form '&lt;Number&gt; &lt;Energy unit of measure&gt;'.
+   * Properties that take Energy as values are of the form '&amp;lt;Number&amp;gt; &amp;lt;Energy unit of measure&amp;gt;'.
    */
   @NotNull public static Energy.Builder energy() { return new Energy.Builder(new HashMap<String,Object>()); }
   /**
@@ -1406,7 +1406,7 @@ See also the <a href="/docs/hotels.html">dedicated document on the use of schema
    */
   @NotNull public static CheckoutPage.Builder checkoutPage() { return new CheckoutPage.Builder(new HashMap<String,Object>()); }
   /**
-   * This class contains information contributed by [http://wikidoc.org>WikiDoc](http://wikidoc.org>WikiDoc).
+   * This class contains information contributed by [http://wikidoc.org&gt;WikiDoc](http://wikidoc.org&gt;WikiDoc).
    */
   @NotNull public static WikiDoc.Builder wikiDoc() { return new WikiDoc.Builder(new HashMap<String,Object>()); }
   /**
@@ -1438,7 +1438,7 @@ See also the <a href="/docs/hotels.html">dedicated document on the use of schema
    */
   @NotNull public static MusicComposition.Builder musicComposition() { return new MusicComposition.Builder(new HashMap<String,Object>()); }
   /**
-   * A house is a building or structure that has the ability to be occupied for habitation by humans or other creatures (Source: Wikipedia, the free encyclopedia, see <a href="http://en.wikipedia.org/wiki/House">http://en.wikipedia.org/wiki/House</a>).
+   * A house is a building or structure that has the ability to be occupied for habitation by humans or other creatures (Source: Wikipedia, the free encyclopedia, see &lt;a href=&quot;http://en.wikipedia.org/wiki/House&quot;&gt;http://en.wikipedia.org/wiki/House&lt;/a&gt;).
    */
   @NotNull public static House.Builder house() { return new House.Builder(new HashMap<String,Object>()); }
   /**
@@ -1467,8 +1467,8 @@ See also the <a href="/docs/hotels.html">dedicated document on the use of schema
   @NotNull public static TravelAction.Builder travelAction() { return new TravelAction.Builder(new HashMap<String,Object>()); }
   /**
    * A hotel room is a single room in a hotel.
-<br /><br />
-See also the <a href="/docs/hotels.html">dedicated document on the use of schema.org for marking up hotels and other forms of accommodations</a>.
+&lt;br /&gt;&lt;br /&gt;
+See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on the use of schema.org for marking up hotels and other forms of accommodations&lt;/a&gt;.
 
    */
   @NotNull public static HotelRoom.Builder hotelRoom() { return new HotelRoom.Builder(new HashMap<String,Object>()); }
@@ -1490,8 +1490,8 @@ See also the <a href="/docs/hotels.html">dedicated document on the use of schema
   @NotNull public static JobPosting.Builder jobPosting() { return new JobPosting.Builder(new HashMap<String,Object>()); }
   /**
    * A motel.
-<br /><br />
-See also the <a href="/docs/hotels.html">dedicated document on the use of schema.org for marking up hotels and other forms of accommodations</a>.
+&lt;br /&gt;&lt;br /&gt;
+See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on the use of schema.org for marking up hotels and other forms of accommodations&lt;/a&gt;.
 
    */
   @NotNull public static Motel.Builder motel() { return new Motel.Builder(new HashMap<String,Object>()); }
@@ -1520,7 +1520,7 @@ See also the <a href="/docs/hotels.html">dedicated document on the use of schema
    */
   @NotNull public static HighSchool.Builder highSchool() { return new HighSchool.Builder(new HashMap<String,Object>()); }
   /**
-   * Properties that take Distances as values are of the form '&lt;Number&gt; &lt;Length unit of measure&gt;'. E.g., '7 ft'.
+   * Properties that take Distances as values are of the form '&amp;lt;Number&amp;gt; &amp;lt;Length unit of measure&amp;gt;'. E.g., '7 ft'.
    */
   @NotNull public static Distance.Builder distance() { return new Distance.Builder(new HashMap<String,Object>()); }
   /**
@@ -1544,7 +1544,7 @@ See also the <a href="/docs/hotels.html">dedicated document on the use of schema
    */
   @NotNull public static SomeProducts.Builder someProducts() { return new SomeProducts.Builder(new HashMap<String,Object>()); }
   /**
-   * A contact point&#x2014;for example, a Customer Complaints department.
+   * A contact point&amp;#x2014;for example, a Customer Complaints department.
    */
   @NotNull public static ContactPoint.Builder contactPoint() { return new ContactPoint.Builder(new HashMap<String,Object>()); }
   /**
@@ -1556,11 +1556,11 @@ See also the <a href="/docs/hotels.html">dedicated document on the use of schema
    */
   @NotNull public static PerformAction.Builder performAction() { return new PerformAction.Builder(new HashMap<String,Object>()); }
   /**
-   * A dance group&#x2014;for example, the Alvin Ailey Dance Theater or Riverdance.
+   * A dance group&amp;#x2014;for example, the Alvin Ailey Dance Theater or Riverdance.
    */
   @NotNull public static DanceGroup.Builder danceGroup() { return new DanceGroup.Builder(new HashMap<String,Object>()); }
   /**
-   * A legislative building&#x2014;for example, the state capitol.
+   * A legislative building&amp;#x2014;for example, the state capitol.
    */
   @NotNull public static LegislativeBuilding.Builder legislativeBuilding() { return new LegislativeBuilding.Builder(new HashMap<String,Object>()); }
   /**
@@ -1628,9 +1628,9 @@ See also the <a href="/docs/hotels.html">dedicated document on the use of schema
    */
   @NotNull public static EmailMessage.Builder emailMessage() { return new EmailMessage.Builder(new HashMap<String,Object>()); }
   /**
-   * A suite in a hotel or other public accommodation, denotes a class of luxury accommodations, the key feature of which is multiple rooms (Source: Wikipedia, the free encyclopedia, see <a href="http://en.wikipedia.org/wiki/Suite_(hotel)">http://en.wikipedia.org/wiki/Suite_(hotel)</a>).
-<br /><br />
-See also the <a href="/docs/hotels.html">dedicated document on the use of schema.org for marking up hotels and other forms of accommodations</a>.
+   * A suite in a hotel or other public accommodation, denotes a class of luxury accommodations, the key feature of which is multiple rooms (Source: Wikipedia, the free encyclopedia, see &lt;a href=&quot;http://en.wikipedia.org/wiki/Suite_(hotel)&quot;&gt;http://en.wikipedia.org/wiki/Suite_(hotel)&lt;/a&gt;).
+&lt;br /&gt;&lt;br /&gt;
+See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on the use of schema.org for marking up hotels and other forms of accommodations&lt;/a&gt;.
 
    */
   @NotNull public static Suite.Builder suite() { return new Suite.Builder(new HashMap<String,Object>()); }
@@ -1669,8 +1669,8 @@ See also the <a href="/docs/hotels.html">dedicated document on the use of schema
   @NotNull public static DriveWheelConfigurationValue.Builder driveWheelConfigurationValue() { return new DriveWheelConfigurationValue.Builder(new HashMap<String,Object>()); }
   /**
    * A hostel - cheap accommodation, often in shared dormitories.
-<br /><br />
-See also the <a href="/docs/hotels.html">dedicated document on the use of schema.org for marking up hotels and other forms of accommodations</a>.
+&lt;br /&gt;&lt;br /&gt;
+See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on the use of schema.org for marking up hotels and other forms of accommodations&lt;/a&gt;.
 
    */
   @NotNull public static Hostel.Builder hostel() { return new Hostel.Builder(new HashMap<String,Object>()); }
@@ -1771,8 +1771,8 @@ See also the <a href="/docs/hotels.html">dedicated document on the use of schema
   @NotNull public static BeautySalon.Builder beautySalon() { return new BeautySalon.Builder(new HashMap<String,Object>()); }
   /**
    * Bed and breakfast.
-<br /><br />
-See also the <a href="/docs/hotels.html">dedicated document on the use of schema.org for marking up hotels and other forms of accommodations</a>.
+&lt;br /&gt;&lt;br /&gt;
+See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on the use of schema.org for marking up hotels and other forms of accommodations&lt;/a&gt;.
 
    */
   @NotNull public static BedAndBreakfast.Builder bedAndBreakfast() { return new BedAndBreakfast.Builder(new HashMap<String,Object>()); }
@@ -1865,7 +1865,7 @@ See also the <a href="/docs/hotels.html">dedicated document on the use of schema
    */
   @NotNull public static LegalService.Builder legalService() { return new LegalService.Builder(new HashMap<String,Object>()); }
   /**
-   * Properties that take Mass as values are of the form '&lt;Number&gt; &lt;Mass unit of measure&gt;'. E.g., '7 kg'.
+   * Properties that take Mass as values are of the form '&amp;lt;Number&amp;gt; &amp;lt;Mass unit of measure&amp;gt;'. E.g., '7 kg'.
    */
   @NotNull public static Mass.Builder mass() { return new Mass.Builder(new HashMap<String,Object>()); }
   /**
@@ -1877,9 +1877,9 @@ See also the <a href="/docs/hotels.html">dedicated document on the use of schema
    */
   @NotNull public static MusicGroup.Builder musicGroup() { return new MusicGroup.Builder(new HashMap<String,Object>()); }
   /**
-   * A meeting room, conference room, or conference hall is a room provided for singular events such as business conferences and meetings (Source: Wikipedia, the free encyclopedia, see <a href="http://en.wikipedia.org/wiki/Conference_hall">http://en.wikipedia.org/wiki/Conference_hall</a>).
-<br /><br />
-See also the <a href="/docs/hotels.html">dedicated document on the use of schema.org for marking up hotels and other forms of accommodations</a>.
+   * A meeting room, conference room, or conference hall is a room provided for singular events such as business conferences and meetings (Source: Wikipedia, the free encyclopedia, see &lt;a href=&quot;http://en.wikipedia.org/wiki/Conference_hall&quot;&gt;http://en.wikipedia.org/wiki/Conference_hall&lt;/a&gt;).
+&lt;br /&gt;&lt;br /&gt;
+See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on the use of schema.org for marking up hotels and other forms of accommodations&lt;/a&gt;.
 
    */
   @NotNull public static MeetingRoom.Builder meetingRoom() { return new MeetingRoom.Builder(new HashMap<String,Object>()); }
@@ -1956,7 +1956,7 @@ See also the <a href="/docs/hotels.html">dedicated document on the use of schema
    */
   @NotNull public static AutoWash.Builder autoWash() { return new AutoWash.Builder(new HashMap<String,Object>()); }
   /**
-   * A BreadcrumbList is an ItemList consisting of a chain of linked Web pages, typically described using at least their URL and their name, and typically ending with the current page.\n\nThe [[position]] property is used to reconstruct the order of the items in a BreadcrumbList The convention is that a breadcrumb list has an [[itemListOrder]] of [[ItemListOrderAscending]] (lower values listed first), and that the first items in this list correspond to the "top" or beginning of the breadcrumb trail, e.g. with a site or section homepage. The specific values of 'position' are not assigned meaning for a BreadcrumbList, but they should be integers, e.g. beginning with '1' for the first item in the list.
+   * A BreadcrumbList is an ItemList consisting of a chain of linked Web pages, typically described using at least their URL and their name, and typically ending with the current page.\n\nThe [[position]] property is used to reconstruct the order of the items in a BreadcrumbList The convention is that a breadcrumb list has an [[itemListOrder]] of [[ItemListOrderAscending]] (lower values listed first), and that the first items in this list correspond to the &quot;top&quot; or beginning of the breadcrumb trail, e.g. with a site or section homepage. The specific values of 'position' are not assigned meaning for a BreadcrumbList, but they should be integers, e.g. beginning with '1' for the first item in the list.
       
    */
   @NotNull public static BreadcrumbList.Builder breadcrumbList() { return new BreadcrumbList.Builder(new HashMap<String,Object>()); }
@@ -2065,7 +2065,7 @@ See also the <a href="/docs/hotels.html">dedicated document on the use of schema
    */
   @NotNull public static LiveBlogPosting.Builder liveBlogPosting() { return new LiveBlogPosting.Builder(new HashMap<String,Object>()); }
   /**
-   * A list of items of any sort&#x2014;for example, Top 10 Movies About Weathermen, or Top 100 Party Songs. Not to be confused with HTML lists, which are often used only for formatting.
+   * A list of items of any sort&amp;#x2014;for example, Top 10 Movies About Weathermen, or Top 100 Party Songs. Not to be confused with HTML lists, which are often used only for formatting.
    */
   @NotNull public static ItemList.Builder itemList() { return new ItemList.Builder(new HashMap<String,Object>()); }
   /**
@@ -2133,11 +2133,11 @@ See also the <a href="/docs/hotels.html">dedicated document on the use of schema
    */
   @NotNull public static UserPlusOnes.Builder userPlusOnes() { return new UserPlusOnes.Builder(new HashMap<String,Object>()); }
   /**
-   * Lists or enumerations—for example, a list of cuisines or music genres, etc.
+   * Lists or enumerations&mdash;for example, a list of cuisines or music genres, etc.
    */
   @NotNull public static Enumeration.Builder enumeration() { return new Enumeration.Builder(new HashMap<String,Object>()); }
   /**
-   * A place offering space for "Recreational Vehicles", Caravans, mobile homes and the like.
+   * A place offering space for &quot;Recreational Vehicles&quot;, Caravans, mobile homes and the like.
    */
   @NotNull public static RVPark.Builder rVPark() { return new RVPark.Builder(new HashMap<String,Object>()); }
   /**
@@ -2205,7 +2205,7 @@ See also the <a href="/docs/hotels.html">dedicated document on the use of schema
    */
   @NotNull public static PlayAction.Builder playAction() { return new PlayAction.Builder(new HashMap<String,Object>()); }
   /**
-   * An offer to transfer some rights to an item or to provide a service — for example, an offer to sell tickets to an event, to rent the DVD of a movie, to stream a TV show over the internet, to repair a motorcycle, or to loan a book.\n\nNote: As the [[businessFunction]] property, which identifies the form of offer (e.g. sell, lease, repair, dispose), defaults to http://purl.org/goodrelations/v1#Sell; an Offer without a defined businessFunction value can be assumed to be an offer to sell.\n\nFor [GTIN](http://www.gs1.org/barcodes/technical/idkeys/gtin)-related fields, see [Check Digit calculator](http://www.gs1.org/barcodes/support/check_digit_calculator) and [validation guide](http://www.gs1us.org/resources/standards/gtin-validation-guide) from [GS1](http://www.gs1.org/).
+   * An offer to transfer some rights to an item or to provide a service &mdash; for example, an offer to sell tickets to an event, to rent the DVD of a movie, to stream a TV show over the internet, to repair a motorcycle, or to loan a book.\n\nNote: As the [[businessFunction]] property, which identifies the form of offer (e.g. sell, lease, repair, dispose), defaults to http://purl.org/goodrelations/v1#Sell; an Offer without a defined businessFunction value can be assumed to be an offer to sell.\n\nFor [GTIN](http://www.gs1.org/barcodes/technical/idkeys/gtin)-related fields, see [Check Digit calculator](http://www.gs1.org/barcodes/support/check_digit_calculator) and [validation guide](http://www.gs1us.org/resources/standards/gtin-validation-guide) from [GS1](http://www.gs1.org/).
    */
   @NotNull public static Offer.Builder offer() { return new Offer.Builder(new HashMap<String,Object>()); }
   /**
@@ -2337,7 +2337,7 @@ See also the <a href="/docs/hotels.html">dedicated document on the use of schema
    */
   @NotNull public static MusicStore.Builder musicStore() { return new MusicStore.Builder(new HashMap<String,Object>()); }
   /**
-   * A [[FAQPage]] is a [[WebPage]] presenting one or more "[Frequently asked questions](https://en.wikipedia.org/wiki/FAQ)" (see also [[QAPage]]).
+   * A [[FAQPage]] is a [[WebPage]] presenting one or more &quot;[Frequently asked questions](https://en.wikipedia.org/wiki/FAQ)&quot; (see also [[QAPage]]).
    */
   @NotNull public static FAQPage.Builder fAQPage() { return new FAQPage.Builder(new HashMap<String,Object>()); }
   /**

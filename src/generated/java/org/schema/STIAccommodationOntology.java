@@ -24,7 +24,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * This element is based on the STI Accommodation Ontology, see <a href="http://ontologies.sti-innsbruck.at/acco/ns.html">http://ontologies.sti-innsbruck.at/acco/ns.html</a> for details.
+ * This element is based on the STI Accommodation Ontology, see &lt;a href=&quot;http://ontologies.sti-innsbruck.at/acco/ns.html&quot;&gt;http://ontologies.sti-innsbruck.at/acco/ns.html&lt;/a&gt; for details.
  *     Many class and property definitions are inspired by or based on abstracts from Wikipedia, the free encyclopedia.
  */
 public class STIAccommodationOntology extends Organization {
@@ -183,14 +183,14 @@ public class STIAccommodationOntology extends Organization {
       return this;
     }
     /**
-     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
+     * The Dun &amp; Bradstreet DUNS number for identifying an organization or business person.
      */
     @NotNull public Builder duns(@NotNull Identifier identifier) {
       putValue("duns", identifier);
       return this;
     }
     /**
-     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
+     * The Dun &amp; Bradstreet DUNS number for identifying an organization or business person.
      */
     @NotNull public Builder duns(@NotNull String duns) {
       putValue("duns", duns);

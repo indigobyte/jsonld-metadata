@@ -446,28 +446,28 @@ public class OrderItem extends Intangible {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("orderQuantity".equals(key) && value instanceof Integer) { orderQuantity((Integer)value); return; }
-      if ("orderQuantitys".equals(key) && value instanceof Integer) { orderQuantity((Integer)value); return; }
-      if ("orderQuantity".equals(key) && value instanceof Long) { orderQuantity((Long)value); return; }
-      if ("orderQuantitys".equals(key) && value instanceof Long) { orderQuantity((Long)value); return; }
-      if ("orderQuantity".equals(key) && value instanceof Float) { orderQuantity((Float)value); return; }
-      if ("orderQuantitys".equals(key) && value instanceof Float) { orderQuantity((Float)value); return; }
-      if ("orderQuantity".equals(key) && value instanceof Double) { orderQuantity((Double)value); return; }
-      if ("orderQuantitys".equals(key) && value instanceof Double) { orderQuantity((Double)value); return; }
-      if ("orderQuantity".equals(key) && value instanceof String) { orderQuantity((String)value); return; }
-      if ("orderQuantitys".equals(key) && value instanceof String) { orderQuantity((String)value); return; }
-      if ("orderItemStatus".equals(key) && value instanceof OrderStatus) { orderItemStatus((OrderStatus)value); return; }
-      if ("orderItemStatuss".equals(key) && value instanceof OrderStatus) { orderItemStatus((OrderStatus)value); return; }
-      if ("orderItemNumber".equals(key) && value instanceof String) { orderItemNumber((String)value); return; }
-      if ("orderItemNumbers".equals(key) && value instanceof String) { orderItemNumber((String)value); return; }
-      if ("orderDelivery".equals(key) && value instanceof ParcelDelivery) { orderDelivery((ParcelDelivery)value); return; }
-      if ("orderDeliverys".equals(key) && value instanceof ParcelDelivery) { orderDelivery((ParcelDelivery)value); return; }
-      if ("orderedItem".equals(key) && value instanceof OrderItem) { orderedItem((OrderItem)value); return; }
-      if ("orderedItems".equals(key) && value instanceof OrderItem) { orderedItem((OrderItem)value); return; }
-      if ("orderedItem".equals(key) && value instanceof Product) { orderedItem((Product)value); return; }
-      if ("orderedItems".equals(key) && value instanceof Product) { orderedItem((Product)value); return; }
-      if ("orderedItem".equals(key) && value instanceof Service) { orderedItem((Service)value); return; }
-      if ("orderedItems".equals(key) && value instanceof Service) { orderedItem((Service)value); return; }
+      if ("orderQuantity".equals(key) && value instanceof Integer) { this.orderQuantity((Integer)value); return; }
+      if ("orderQuantitys".equals(key) && value instanceof Integer) { this.orderQuantity((Integer)value); return; }
+      if ("orderQuantity".equals(key) && value instanceof Long) { this.orderQuantity((Long)value); return; }
+      if ("orderQuantitys".equals(key) && value instanceof Long) { this.orderQuantity((Long)value); return; }
+      if ("orderQuantity".equals(key) && value instanceof Float) { this.orderQuantity((Float)value); return; }
+      if ("orderQuantitys".equals(key) && value instanceof Float) { this.orderQuantity((Float)value); return; }
+      if ("orderQuantity".equals(key) && value instanceof Double) { this.orderQuantity((Double)value); return; }
+      if ("orderQuantitys".equals(key) && value instanceof Double) { this.orderQuantity((Double)value); return; }
+      if ("orderQuantity".equals(key) && value instanceof String) { this.orderQuantity((String)value); return; }
+      if ("orderQuantitys".equals(key) && value instanceof String) { this.orderQuantity((String)value); return; }
+      if ("orderItemStatus".equals(key) && value instanceof OrderStatus) { this.orderItemStatus((OrderStatus)value); return; }
+      if ("orderItemStatuss".equals(key) && value instanceof OrderStatus) { this.orderItemStatus((OrderStatus)value); return; }
+      if ("orderItemNumber".equals(key) && value instanceof String) { this.orderItemNumber((String)value); return; }
+      if ("orderItemNumbers".equals(key) && value instanceof String) { this.orderItemNumber((String)value); return; }
+      if ("orderDelivery".equals(key) && value instanceof ParcelDelivery) { this.orderDelivery((ParcelDelivery)value); return; }
+      if ("orderDeliverys".equals(key) && value instanceof ParcelDelivery) { this.orderDelivery((ParcelDelivery)value); return; }
+      if ("orderedItem".equals(key) && value instanceof OrderItem) { this.orderedItem((OrderItem)value); return; }
+      if ("orderedItems".equals(key) && value instanceof OrderItem) { this.orderedItem((OrderItem)value); return; }
+      if ("orderedItem".equals(key) && value instanceof Product) { this.orderedItem((Product)value); return; }
+      if ("orderedItems".equals(key) && value instanceof Product) { this.orderedItem((Product)value); return; }
+      if ("orderedItem".equals(key) && value instanceof Service) { this.orderedItem((Service)value); return; }
+      if ("orderedItems".equals(key) && value instanceof Service) { this.orderedItem((Service)value); return; }
       super.fromMap(key, value);
     }
   }

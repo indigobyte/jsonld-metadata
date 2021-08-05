@@ -317,13 +317,13 @@ public class Person extends Thing implements Competitor {
     return Arrays.asList((java.util.Date) current);
   }
   /**
-   * The Dun & Bradstreet DUNS number for identifying an organization or business person.
+   * The Dun &amp; Bradstreet DUNS number for identifying an organization or business person.
    */
   @JsonIgnore public Identifier getDunsIdentifier() {
     return (Identifier) getValue("duns");
   }
   /**
-   * The Dun & Bradstreet DUNS number for identifying an organization or business person.
+   * The Dun &amp; Bradstreet DUNS number for identifying an organization or business person.
    */
   @JsonIgnore public Collection<Identifier> getDunsIdentifiers() {
     final Object current = myData.get("duns");
@@ -334,13 +334,13 @@ public class Person extends Thing implements Competitor {
     return Arrays.asList((Identifier) current);
   }
   /**
-   * The Dun & Bradstreet DUNS number for identifying an organization or business person.
+   * The Dun &amp; Bradstreet DUNS number for identifying an organization or business person.
    */
   @JsonIgnore public String getDunsString() {
     return (String) getValue("duns");
   }
   /**
-   * The Dun & Bradstreet DUNS number for identifying an organization or business person.
+   * The Dun &amp; Bradstreet DUNS number for identifying an organization or business person.
    */
   @JsonIgnore public Collection<String> getDunsStrings() {
     final Object current = myData.get("duns");
@@ -419,13 +419,13 @@ public class Person extends Thing implements Competitor {
     return Arrays.asList((Person) current);
   }
   /**
-   * Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While http://schema.org/Male and http://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of "Mixed".
+   * Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While http://schema.org/Male and http://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of &quot;Mixed&quot;.
    */
   @JsonIgnore public GenderType getGenderGenderType() {
     return (GenderType) getValue("gender");
   }
   /**
-   * Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While http://schema.org/Male and http://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of "Mixed".
+   * Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While http://schema.org/Male and http://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of &quot;Mixed&quot;.
    */
   @JsonIgnore public Collection<GenderType> getGenderGenderTypes() {
     final Object current = myData.get("gender");
@@ -436,13 +436,13 @@ public class Person extends Thing implements Competitor {
     return Arrays.asList((GenderType) current);
   }
   /**
-   * Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While http://schema.org/Male and http://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of "Mixed".
+   * Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While http://schema.org/Male and http://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of &quot;Mixed&quot;.
    */
   @JsonIgnore public String getGenderString() {
     return (String) getValue("gender");
   }
   /**
-   * Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While http://schema.org/Male and http://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of "Mixed".
+   * Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While http://schema.org/Male and http://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of &quot;Mixed&quot;.
    */
   @JsonIgnore public Collection<String> getGenderStrings() {
     final Object current = myData.get("gender");
@@ -1382,14 +1382,14 @@ public class Person extends Thing implements Competitor {
       return this;
     }
     /**
-     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
+     * The Dun &amp; Bradstreet DUNS number for identifying an organization or business person.
      */
     @NotNull public Builder duns(@NotNull Identifier identifier) {
       putValue("duns", identifier);
       return this;
     }
     /**
-     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
+     * The Dun &amp; Bradstreet DUNS number for identifying an organization or business person.
      */
     @NotNull public Builder duns(@NotNull String duns) {
       putValue("duns", duns);
@@ -1431,14 +1431,14 @@ public class Person extends Thing implements Competitor {
       return this;
     }
     /**
-     * Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While http://schema.org/Male and http://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of "Mixed".
+     * Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While http://schema.org/Male and http://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of &quot;Mixed&quot;.
      */
     @NotNull public Builder gender(@NotNull GenderType genderType) {
       putValue("gender", genderType);
       return this;
     }
     /**
-     * Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While http://schema.org/Male and http://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of "Mixed".
+     * Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While http://schema.org/Male and http://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of &quot;Mixed&quot;.
      */
     @NotNull public Builder gender(@NotNull String gender) {
       putValue("gender", gender);
@@ -2056,140 +2056,140 @@ public class Person extends Thing implements Competitor {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("hasOfferCatalog".equals(key) && value instanceof OfferCatalog) { hasOfferCatalog((OfferCatalog)value); return; }
-      if ("hasOfferCatalogs".equals(key) && value instanceof OfferCatalog) { hasOfferCatalog((OfferCatalog)value); return; }
-      if ("additionalName".equals(key) && value instanceof String) { additionalName((String)value); return; }
-      if ("additionalNames".equals(key) && value instanceof String) { additionalName((String)value); return; }
-      if ("address".equals(key) && value instanceof PostalAddress) { address((PostalAddress)value); return; }
-      if ("addresss".equals(key) && value instanceof PostalAddress) { address((PostalAddress)value); return; }
-      if ("address".equals(key) && value instanceof String) { address((String)value); return; }
-      if ("addresss".equals(key) && value instanceof String) { address((String)value); return; }
-      if ("affiliation".equals(key) && value instanceof MemberOf) { affiliation((MemberOf)value); return; }
-      if ("affiliations".equals(key) && value instanceof MemberOf) { affiliation((MemberOf)value); return; }
-      if ("affiliation".equals(key) && value instanceof Organization) { affiliation((Organization)value); return; }
-      if ("affiliations".equals(key) && value instanceof Organization) { affiliation((Organization)value); return; }
-      if ("alumniOf".equals(key) && value instanceof EducationalOrganization) { alumniOf((EducationalOrganization)value); return; }
-      if ("alumniOfs".equals(key) && value instanceof EducationalOrganization) { alumniOf((EducationalOrganization)value); return; }
-      if ("alumniOf".equals(key) && value instanceof Organization) { alumniOf((Organization)value); return; }
-      if ("alumniOfs".equals(key) && value instanceof Organization) { alumniOf((Organization)value); return; }
-      if ("award".equals(key) && value instanceof String) { award((String)value); return; }
-      if ("awards".equals(key) && value instanceof String) { award((String)value); return; }
-      if ("birthDate".equals(key) && value instanceof java.util.Date) { birthDate((java.util.Date)value); return; }
-      if ("birthDates".equals(key) && value instanceof java.util.Date) { birthDate((java.util.Date)value); return; }
-      if ("brand".equals(key) && value instanceof Brand) { brand((Brand)value); return; }
-      if ("brands".equals(key) && value instanceof Brand) { brand((Brand)value); return; }
-      if ("brand".equals(key) && value instanceof Organization) { brand((Organization)value); return; }
-      if ("brands".equals(key) && value instanceof Organization) { brand((Organization)value); return; }
-      if ("children".equals(key) && value instanceof Person) { children((Person)value); return; }
-      if ("childrens".equals(key) && value instanceof Person) { children((Person)value); return; }
-      if ("colleague".equals(key) && value instanceof Person) { colleague((Person)value); return; }
-      if ("colleagues".equals(key) && value instanceof Person) { colleague((Person)value); return; }
-      if ("colleague".equals(key) && value instanceof String) { colleague((String)value); return; }
-      if ("colleagues".equals(key) && value instanceof String) { colleague((String)value); return; }
-      if ("contactPoint".equals(key) && value instanceof ContactPoint) { contactPoint((ContactPoint)value); return; }
-      if ("contactPoints".equals(key) && value instanceof ContactPoint) { contactPoint((ContactPoint)value); return; }
-      if ("deathDate".equals(key) && value instanceof java.util.Date) { deathDate((java.util.Date)value); return; }
-      if ("deathDates".equals(key) && value instanceof java.util.Date) { deathDate((java.util.Date)value); return; }
-      if ("duns".equals(key) && value instanceof Identifier) { duns((Identifier)value); return; }
-      if ("dunss".equals(key) && value instanceof Identifier) { duns((Identifier)value); return; }
-      if ("duns".equals(key) && value instanceof String) { duns((String)value); return; }
-      if ("dunss".equals(key) && value instanceof String) { duns((String)value); return; }
-      if ("email".equals(key) && value instanceof String) { email((String)value); return; }
-      if ("emails".equals(key) && value instanceof String) { email((String)value); return; }
-      if ("familyName".equals(key) && value instanceof String) { familyName((String)value); return; }
-      if ("familyNames".equals(key) && value instanceof String) { familyName((String)value); return; }
-      if ("faxNumber".equals(key) && value instanceof String) { faxNumber((String)value); return; }
-      if ("faxNumbers".equals(key) && value instanceof String) { faxNumber((String)value); return; }
-      if ("follows".equals(key) && value instanceof Person) { follows((Person)value); return; }
-      if ("followss".equals(key) && value instanceof Person) { follows((Person)value); return; }
-      if ("gender".equals(key) && value instanceof GenderType) { gender((GenderType)value); return; }
-      if ("genders".equals(key) && value instanceof GenderType) { gender((GenderType)value); return; }
-      if ("gender".equals(key) && value instanceof String) { gender((String)value); return; }
-      if ("genders".equals(key) && value instanceof String) { gender((String)value); return; }
-      if ("givenName".equals(key) && value instanceof String) { givenName((String)value); return; }
-      if ("givenNames".equals(key) && value instanceof String) { givenName((String)value); return; }
-      if ("globalLocationNumber".equals(key) && value instanceof Identifier) { globalLocationNumber((Identifier)value); return; }
-      if ("globalLocationNumbers".equals(key) && value instanceof Identifier) { globalLocationNumber((Identifier)value); return; }
-      if ("globalLocationNumber".equals(key) && value instanceof String) { globalLocationNumber((String)value); return; }
-      if ("globalLocationNumbers".equals(key) && value instanceof String) { globalLocationNumber((String)value); return; }
-      if ("hasPOS".equals(key) && value instanceof Place) { hasPOS((Place)value); return; }
-      if ("hasPOSs".equals(key) && value instanceof Place) { hasPOS((Place)value); return; }
-      if ("height".equals(key) && value instanceof Distance) { height((Distance)value); return; }
-      if ("heights".equals(key) && value instanceof Distance) { height((Distance)value); return; }
-      if ("height".equals(key) && value instanceof QuantitativeValue) { height((QuantitativeValue)value); return; }
-      if ("heights".equals(key) && value instanceof QuantitativeValue) { height((QuantitativeValue)value); return; }
-      if ("homeLocation".equals(key) && value instanceof ContactPoint) { homeLocation((ContactPoint)value); return; }
-      if ("homeLocations".equals(key) && value instanceof ContactPoint) { homeLocation((ContactPoint)value); return; }
-      if ("homeLocation".equals(key) && value instanceof Place) { homeLocation((Place)value); return; }
-      if ("homeLocations".equals(key) && value instanceof Place) { homeLocation((Place)value); return; }
-      if ("honorificPrefix".equals(key) && value instanceof String) { honorificPrefix((String)value); return; }
-      if ("honorificPrefixs".equals(key) && value instanceof String) { honorificPrefix((String)value); return; }
-      if ("honorificSuffix".equals(key) && value instanceof String) { honorificSuffix((String)value); return; }
-      if ("honorificSuffixs".equals(key) && value instanceof String) { honorificSuffix((String)value); return; }
-      if ("isicV4".equals(key) && value instanceof String) { isicV4((String)value); return; }
-      if ("isicV4s".equals(key) && value instanceof String) { isicV4((String)value); return; }
-      if ("jobTitle".equals(key) && value instanceof String) { jobTitle((String)value); return; }
-      if ("jobTitles".equals(key) && value instanceof String) { jobTitle((String)value); return; }
-      if ("knows".equals(key) && value instanceof Person) { knows((Person)value); return; }
-      if ("knowss".equals(key) && value instanceof Person) { knows((Person)value); return; }
-      if ("makesOffer".equals(key) && value instanceof Offer) { makesOffer((Offer)value); return; }
-      if ("makesOffers".equals(key) && value instanceof Offer) { makesOffer((Offer)value); return; }
-      if ("memberOf".equals(key) && value instanceof MemberOf) { memberOf((MemberOf)value); return; }
-      if ("memberOfs".equals(key) && value instanceof MemberOf) { memberOf((MemberOf)value); return; }
-      if ("naics".equals(key) && value instanceof String) { naics((String)value); return; }
-      if ("naicss".equals(key) && value instanceof String) { naics((String)value); return; }
-      if ("nationality".equals(key) && value instanceof Country) { nationality((Country)value); return; }
-      if ("nationalitys".equals(key) && value instanceof Country) { nationality((Country)value); return; }
-      if ("netWorth".equals(key) && value instanceof MonetaryAmount) { netWorth((MonetaryAmount)value); return; }
-      if ("netWorths".equals(key) && value instanceof MonetaryAmount) { netWorth((MonetaryAmount)value); return; }
-      if ("netWorth".equals(key) && value instanceof PriceSpecification) { netWorth((PriceSpecification)value); return; }
-      if ("netWorths".equals(key) && value instanceof PriceSpecification) { netWorth((PriceSpecification)value); return; }
-      if ("owns".equals(key) && value instanceof OwnershipInfo) { owns((OwnershipInfo)value); return; }
-      if ("ownss".equals(key) && value instanceof OwnershipInfo) { owns((OwnershipInfo)value); return; }
-      if ("owns".equals(key) && value instanceof Product) { owns((Product)value); return; }
-      if ("ownss".equals(key) && value instanceof Product) { owns((Product)value); return; }
-      if ("parent".equals(key) && value instanceof Person) { parent((Person)value); return; }
-      if ("parents".equals(key) && value instanceof Person) { parent((Person)value); return; }
-      if ("performerIn".equals(key) && value instanceof Event) { performerIn((Event)value); return; }
-      if ("performerIns".equals(key) && value instanceof Event) { performerIn((Event)value); return; }
-      if ("publishingPrinciples".equals(key) && value instanceof CreativeWork) { publishingPrinciples((CreativeWork)value); return; }
-      if ("publishingPrincipless".equals(key) && value instanceof CreativeWork) { publishingPrinciples((CreativeWork)value); return; }
-      if ("publishingPrinciples".equals(key) && value instanceof String) { publishingPrinciples((String)value); return; }
-      if ("publishingPrincipless".equals(key) && value instanceof String) { publishingPrinciples((String)value); return; }
-      if ("relatedTo".equals(key) && value instanceof Person) { relatedTo((Person)value); return; }
-      if ("relatedTos".equals(key) && value instanceof Person) { relatedTo((Person)value); return; }
-      if ("seeks".equals(key) && value instanceof Demand) { seeks((Demand)value); return; }
-      if ("seekss".equals(key) && value instanceof Demand) { seeks((Demand)value); return; }
-      if ("sibling".equals(key) && value instanceof Person) { sibling((Person)value); return; }
-      if ("siblings".equals(key) && value instanceof Person) { sibling((Person)value); return; }
-      if ("funder".equals(key) && value instanceof Organization) { funder((Organization)value); return; }
-      if ("funders".equals(key) && value instanceof Organization) { funder((Organization)value); return; }
-      if ("funder".equals(key) && value instanceof Person) { funder((Person)value); return; }
-      if ("funders".equals(key) && value instanceof Person) { funder((Person)value); return; }
-      if ("spouse".equals(key) && value instanceof Person) { spouse((Person)value); return; }
-      if ("spouses".equals(key) && value instanceof Person) { spouse((Person)value); return; }
-      if ("taxID".equals(key) && value instanceof Identifier) { taxID((Identifier)value); return; }
-      if ("taxIDs".equals(key) && value instanceof Identifier) { taxID((Identifier)value); return; }
-      if ("taxID".equals(key) && value instanceof String) { taxID((String)value); return; }
-      if ("taxIDs".equals(key) && value instanceof String) { taxID((String)value); return; }
-      if ("telephone".equals(key) && value instanceof String) { telephone((String)value); return; }
-      if ("telephones".equals(key) && value instanceof String) { telephone((String)value); return; }
-      if ("vatID".equals(key) && value instanceof String) { vatID((String)value); return; }
-      if ("vatIDs".equals(key) && value instanceof String) { vatID((String)value); return; }
-      if ("weight".equals(key) && value instanceof QuantitativeValue) { weight((QuantitativeValue)value); return; }
-      if ("weights".equals(key) && value instanceof QuantitativeValue) { weight((QuantitativeValue)value); return; }
-      if ("workLocation".equals(key) && value instanceof ContactPoint) { workLocation((ContactPoint)value); return; }
-      if ("workLocations".equals(key) && value instanceof ContactPoint) { workLocation((ContactPoint)value); return; }
-      if ("workLocation".equals(key) && value instanceof Place) { workLocation((Place)value); return; }
-      if ("workLocations".equals(key) && value instanceof Place) { workLocation((Place)value); return; }
-      if ("worksFor".equals(key) && value instanceof Organization) { worksFor((Organization)value); return; }
-      if ("worksFors".equals(key) && value instanceof Organization) { worksFor((Organization)value); return; }
-      if ("birthPlace".equals(key) && value instanceof Place) { birthPlace((Place)value); return; }
-      if ("birthPlaces".equals(key) && value instanceof Place) { birthPlace((Place)value); return; }
-      if ("deathPlace".equals(key) && value instanceof Place) { deathPlace((Place)value); return; }
-      if ("deathPlaces".equals(key) && value instanceof Place) { deathPlace((Place)value); return; }
-      if ("hasOccupation".equals(key) && value instanceof Occupation) { hasOccupation((Occupation)value); return; }
-      if ("hasOccupations".equals(key) && value instanceof Occupation) { hasOccupation((Occupation)value); return; }
+      if ("hasOfferCatalog".equals(key) && value instanceof OfferCatalog) { this.hasOfferCatalog((OfferCatalog)value); return; }
+      if ("hasOfferCatalogs".equals(key) && value instanceof OfferCatalog) { this.hasOfferCatalog((OfferCatalog)value); return; }
+      if ("additionalName".equals(key) && value instanceof String) { this.additionalName((String)value); return; }
+      if ("additionalNames".equals(key) && value instanceof String) { this.additionalName((String)value); return; }
+      if ("address".equals(key) && value instanceof PostalAddress) { this.address((PostalAddress)value); return; }
+      if ("addresss".equals(key) && value instanceof PostalAddress) { this.address((PostalAddress)value); return; }
+      if ("address".equals(key) && value instanceof String) { this.address((String)value); return; }
+      if ("addresss".equals(key) && value instanceof String) { this.address((String)value); return; }
+      if ("affiliation".equals(key) && value instanceof MemberOf) { this.affiliation((MemberOf)value); return; }
+      if ("affiliations".equals(key) && value instanceof MemberOf) { this.affiliation((MemberOf)value); return; }
+      if ("affiliation".equals(key) && value instanceof Organization) { this.affiliation((Organization)value); return; }
+      if ("affiliations".equals(key) && value instanceof Organization) { this.affiliation((Organization)value); return; }
+      if ("alumniOf".equals(key) && value instanceof EducationalOrganization) { this.alumniOf((EducationalOrganization)value); return; }
+      if ("alumniOfs".equals(key) && value instanceof EducationalOrganization) { this.alumniOf((EducationalOrganization)value); return; }
+      if ("alumniOf".equals(key) && value instanceof Organization) { this.alumniOf((Organization)value); return; }
+      if ("alumniOfs".equals(key) && value instanceof Organization) { this.alumniOf((Organization)value); return; }
+      if ("award".equals(key) && value instanceof String) { this.award((String)value); return; }
+      if ("awards".equals(key) && value instanceof String) { this.award((String)value); return; }
+      if ("birthDate".equals(key) && value instanceof java.util.Date) { this.birthDate((java.util.Date)value); return; }
+      if ("birthDates".equals(key) && value instanceof java.util.Date) { this.birthDate((java.util.Date)value); return; }
+      if ("brand".equals(key) && value instanceof Brand) { this.brand((Brand)value); return; }
+      if ("brands".equals(key) && value instanceof Brand) { this.brand((Brand)value); return; }
+      if ("brand".equals(key) && value instanceof Organization) { this.brand((Organization)value); return; }
+      if ("brands".equals(key) && value instanceof Organization) { this.brand((Organization)value); return; }
+      if ("children".equals(key) && value instanceof Person) { this.children((Person)value); return; }
+      if ("childrens".equals(key) && value instanceof Person) { this.children((Person)value); return; }
+      if ("colleague".equals(key) && value instanceof Person) { this.colleague((Person)value); return; }
+      if ("colleagues".equals(key) && value instanceof Person) { this.colleague((Person)value); return; }
+      if ("colleague".equals(key) && value instanceof String) { this.colleague((String)value); return; }
+      if ("colleagues".equals(key) && value instanceof String) { this.colleague((String)value); return; }
+      if ("contactPoint".equals(key) && value instanceof ContactPoint) { this.contactPoint((ContactPoint)value); return; }
+      if ("contactPoints".equals(key) && value instanceof ContactPoint) { this.contactPoint((ContactPoint)value); return; }
+      if ("deathDate".equals(key) && value instanceof java.util.Date) { this.deathDate((java.util.Date)value); return; }
+      if ("deathDates".equals(key) && value instanceof java.util.Date) { this.deathDate((java.util.Date)value); return; }
+      if ("duns".equals(key) && value instanceof Identifier) { this.duns((Identifier)value); return; }
+      if ("dunss".equals(key) && value instanceof Identifier) { this.duns((Identifier)value); return; }
+      if ("duns".equals(key) && value instanceof String) { this.duns((String)value); return; }
+      if ("dunss".equals(key) && value instanceof String) { this.duns((String)value); return; }
+      if ("email".equals(key) && value instanceof String) { this.email((String)value); return; }
+      if ("emails".equals(key) && value instanceof String) { this.email((String)value); return; }
+      if ("familyName".equals(key) && value instanceof String) { this.familyName((String)value); return; }
+      if ("familyNames".equals(key) && value instanceof String) { this.familyName((String)value); return; }
+      if ("faxNumber".equals(key) && value instanceof String) { this.faxNumber((String)value); return; }
+      if ("faxNumbers".equals(key) && value instanceof String) { this.faxNumber((String)value); return; }
+      if ("follows".equals(key) && value instanceof Person) { this.follows((Person)value); return; }
+      if ("followss".equals(key) && value instanceof Person) { this.follows((Person)value); return; }
+      if ("gender".equals(key) && value instanceof GenderType) { this.gender((GenderType)value); return; }
+      if ("genders".equals(key) && value instanceof GenderType) { this.gender((GenderType)value); return; }
+      if ("gender".equals(key) && value instanceof String) { this.gender((String)value); return; }
+      if ("genders".equals(key) && value instanceof String) { this.gender((String)value); return; }
+      if ("givenName".equals(key) && value instanceof String) { this.givenName((String)value); return; }
+      if ("givenNames".equals(key) && value instanceof String) { this.givenName((String)value); return; }
+      if ("globalLocationNumber".equals(key) && value instanceof Identifier) { this.globalLocationNumber((Identifier)value); return; }
+      if ("globalLocationNumbers".equals(key) && value instanceof Identifier) { this.globalLocationNumber((Identifier)value); return; }
+      if ("globalLocationNumber".equals(key) && value instanceof String) { this.globalLocationNumber((String)value); return; }
+      if ("globalLocationNumbers".equals(key) && value instanceof String) { this.globalLocationNumber((String)value); return; }
+      if ("hasPOS".equals(key) && value instanceof Place) { this.hasPOS((Place)value); return; }
+      if ("hasPOSs".equals(key) && value instanceof Place) { this.hasPOS((Place)value); return; }
+      if ("height".equals(key) && value instanceof Distance) { this.height((Distance)value); return; }
+      if ("heights".equals(key) && value instanceof Distance) { this.height((Distance)value); return; }
+      if ("height".equals(key) && value instanceof QuantitativeValue) { this.height((QuantitativeValue)value); return; }
+      if ("heights".equals(key) && value instanceof QuantitativeValue) { this.height((QuantitativeValue)value); return; }
+      if ("homeLocation".equals(key) && value instanceof ContactPoint) { this.homeLocation((ContactPoint)value); return; }
+      if ("homeLocations".equals(key) && value instanceof ContactPoint) { this.homeLocation((ContactPoint)value); return; }
+      if ("homeLocation".equals(key) && value instanceof Place) { this.homeLocation((Place)value); return; }
+      if ("homeLocations".equals(key) && value instanceof Place) { this.homeLocation((Place)value); return; }
+      if ("honorificPrefix".equals(key) && value instanceof String) { this.honorificPrefix((String)value); return; }
+      if ("honorificPrefixs".equals(key) && value instanceof String) { this.honorificPrefix((String)value); return; }
+      if ("honorificSuffix".equals(key) && value instanceof String) { this.honorificSuffix((String)value); return; }
+      if ("honorificSuffixs".equals(key) && value instanceof String) { this.honorificSuffix((String)value); return; }
+      if ("isicV4".equals(key) && value instanceof String) { this.isicV4((String)value); return; }
+      if ("isicV4s".equals(key) && value instanceof String) { this.isicV4((String)value); return; }
+      if ("jobTitle".equals(key) && value instanceof String) { this.jobTitle((String)value); return; }
+      if ("jobTitles".equals(key) && value instanceof String) { this.jobTitle((String)value); return; }
+      if ("knows".equals(key) && value instanceof Person) { this.knows((Person)value); return; }
+      if ("knowss".equals(key) && value instanceof Person) { this.knows((Person)value); return; }
+      if ("makesOffer".equals(key) && value instanceof Offer) { this.makesOffer((Offer)value); return; }
+      if ("makesOffers".equals(key) && value instanceof Offer) { this.makesOffer((Offer)value); return; }
+      if ("memberOf".equals(key) && value instanceof MemberOf) { this.memberOf((MemberOf)value); return; }
+      if ("memberOfs".equals(key) && value instanceof MemberOf) { this.memberOf((MemberOf)value); return; }
+      if ("naics".equals(key) && value instanceof String) { this.naics((String)value); return; }
+      if ("naicss".equals(key) && value instanceof String) { this.naics((String)value); return; }
+      if ("nationality".equals(key) && value instanceof Country) { this.nationality((Country)value); return; }
+      if ("nationalitys".equals(key) && value instanceof Country) { this.nationality((Country)value); return; }
+      if ("netWorth".equals(key) && value instanceof MonetaryAmount) { this.netWorth((MonetaryAmount)value); return; }
+      if ("netWorths".equals(key) && value instanceof MonetaryAmount) { this.netWorth((MonetaryAmount)value); return; }
+      if ("netWorth".equals(key) && value instanceof PriceSpecification) { this.netWorth((PriceSpecification)value); return; }
+      if ("netWorths".equals(key) && value instanceof PriceSpecification) { this.netWorth((PriceSpecification)value); return; }
+      if ("owns".equals(key) && value instanceof OwnershipInfo) { this.owns((OwnershipInfo)value); return; }
+      if ("ownss".equals(key) && value instanceof OwnershipInfo) { this.owns((OwnershipInfo)value); return; }
+      if ("owns".equals(key) && value instanceof Product) { this.owns((Product)value); return; }
+      if ("ownss".equals(key) && value instanceof Product) { this.owns((Product)value); return; }
+      if ("parent".equals(key) && value instanceof Person) { this.parent((Person)value); return; }
+      if ("parents".equals(key) && value instanceof Person) { this.parent((Person)value); return; }
+      if ("performerIn".equals(key) && value instanceof Event) { this.performerIn((Event)value); return; }
+      if ("performerIns".equals(key) && value instanceof Event) { this.performerIn((Event)value); return; }
+      if ("publishingPrinciples".equals(key) && value instanceof CreativeWork) { this.publishingPrinciples((CreativeWork)value); return; }
+      if ("publishingPrincipless".equals(key) && value instanceof CreativeWork) { this.publishingPrinciples((CreativeWork)value); return; }
+      if ("publishingPrinciples".equals(key) && value instanceof String) { this.publishingPrinciples((String)value); return; }
+      if ("publishingPrincipless".equals(key) && value instanceof String) { this.publishingPrinciples((String)value); return; }
+      if ("relatedTo".equals(key) && value instanceof Person) { this.relatedTo((Person)value); return; }
+      if ("relatedTos".equals(key) && value instanceof Person) { this.relatedTo((Person)value); return; }
+      if ("seeks".equals(key) && value instanceof Demand) { this.seeks((Demand)value); return; }
+      if ("seekss".equals(key) && value instanceof Demand) { this.seeks((Demand)value); return; }
+      if ("sibling".equals(key) && value instanceof Person) { this.sibling((Person)value); return; }
+      if ("siblings".equals(key) && value instanceof Person) { this.sibling((Person)value); return; }
+      if ("funder".equals(key) && value instanceof Organization) { this.funder((Organization)value); return; }
+      if ("funders".equals(key) && value instanceof Organization) { this.funder((Organization)value); return; }
+      if ("funder".equals(key) && value instanceof Person) { this.funder((Person)value); return; }
+      if ("funders".equals(key) && value instanceof Person) { this.funder((Person)value); return; }
+      if ("spouse".equals(key) && value instanceof Person) { this.spouse((Person)value); return; }
+      if ("spouses".equals(key) && value instanceof Person) { this.spouse((Person)value); return; }
+      if ("taxID".equals(key) && value instanceof Identifier) { this.taxID((Identifier)value); return; }
+      if ("taxIDs".equals(key) && value instanceof Identifier) { this.taxID((Identifier)value); return; }
+      if ("taxID".equals(key) && value instanceof String) { this.taxID((String)value); return; }
+      if ("taxIDs".equals(key) && value instanceof String) { this.taxID((String)value); return; }
+      if ("telephone".equals(key) && value instanceof String) { this.telephone((String)value); return; }
+      if ("telephones".equals(key) && value instanceof String) { this.telephone((String)value); return; }
+      if ("vatID".equals(key) && value instanceof String) { this.vatID((String)value); return; }
+      if ("vatIDs".equals(key) && value instanceof String) { this.vatID((String)value); return; }
+      if ("weight".equals(key) && value instanceof QuantitativeValue) { this.weight((QuantitativeValue)value); return; }
+      if ("weights".equals(key) && value instanceof QuantitativeValue) { this.weight((QuantitativeValue)value); return; }
+      if ("workLocation".equals(key) && value instanceof ContactPoint) { this.workLocation((ContactPoint)value); return; }
+      if ("workLocations".equals(key) && value instanceof ContactPoint) { this.workLocation((ContactPoint)value); return; }
+      if ("workLocation".equals(key) && value instanceof Place) { this.workLocation((Place)value); return; }
+      if ("workLocations".equals(key) && value instanceof Place) { this.workLocation((Place)value); return; }
+      if ("worksFor".equals(key) && value instanceof Organization) { this.worksFor((Organization)value); return; }
+      if ("worksFors".equals(key) && value instanceof Organization) { this.worksFor((Organization)value); return; }
+      if ("birthPlace".equals(key) && value instanceof Place) { this.birthPlace((Place)value); return; }
+      if ("birthPlaces".equals(key) && value instanceof Place) { this.birthPlace((Place)value); return; }
+      if ("deathPlace".equals(key) && value instanceof Place) { this.deathPlace((Place)value); return; }
+      if ("deathPlaces".equals(key) && value instanceof Place) { this.deathPlace((Place)value); return; }
+      if ("hasOccupation".equals(key) && value instanceof Occupation) { this.hasOccupation((Occupation)value); return; }
+      if ("hasOccupations".equals(key) && value instanceof Occupation) { this.hasOccupation((Occupation)value); return; }
       super.fromMap(key, value);
     }
   }

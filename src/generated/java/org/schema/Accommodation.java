@@ -26,8 +26,8 @@ import java.util.*;
 /**
  * An accommodation is a place that can accommodate human beings, e.g. a hotel room, a camping pitch, or a meeting room. Many accommodations are for overnight stays, but this is not a mandatory requirement.
  * For more specific types of accommodations not defined in schema.org, one can use additionalType with external vocabularies.
- * <br /><br />
- * See also the <a href="/docs/hotels.html">dedicated document on the use of schema.org for marking up hotels and other forms of accommodations</a>.
+ * &lt;br /&gt;&lt;br /&gt;
+ * See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on the use of schema.org for marking up hotels and other forms of accommodations&lt;/a&gt;.
  * Source: https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology
  */
 public class Accommodation extends Place {
@@ -354,7 +354,7 @@ public class Accommodation extends Place {
       return this;
     }
     /**
-     * A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.\n\nFor example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code "3047" is a branchCode for a particular branch.
+     * A short textual code (also called &quot;store code&quot;) that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.\n\nFor example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code &quot;3047&quot; is a branchCode for a particular branch.
      *       
      */
     @NotNull public Builder branchCode(@NotNull String branchCode) {
@@ -814,26 +814,26 @@ public class Accommodation extends Place {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("amenityFeature".equals(key) && value instanceof LocationFeatureSpecification) { amenityFeature((LocationFeatureSpecification)value); return; }
-      if ("amenityFeatures".equals(key) && value instanceof LocationFeatureSpecification) { amenityFeature((LocationFeatureSpecification)value); return; }
-      if ("numberOfRooms".equals(key) && value instanceof Integer) { numberOfRooms((Integer)value); return; }
-      if ("numberOfRoomss".equals(key) && value instanceof Integer) { numberOfRooms((Integer)value); return; }
-      if ("numberOfRooms".equals(key) && value instanceof Long) { numberOfRooms((Long)value); return; }
-      if ("numberOfRoomss".equals(key) && value instanceof Long) { numberOfRooms((Long)value); return; }
-      if ("numberOfRooms".equals(key) && value instanceof Float) { numberOfRooms((Float)value); return; }
-      if ("numberOfRoomss".equals(key) && value instanceof Float) { numberOfRooms((Float)value); return; }
-      if ("numberOfRooms".equals(key) && value instanceof Double) { numberOfRooms((Double)value); return; }
-      if ("numberOfRoomss".equals(key) && value instanceof Double) { numberOfRooms((Double)value); return; }
-      if ("numberOfRooms".equals(key) && value instanceof String) { numberOfRooms((String)value); return; }
-      if ("numberOfRoomss".equals(key) && value instanceof String) { numberOfRooms((String)value); return; }
-      if ("floorSize".equals(key) && value instanceof QuantitativeValue) { floorSize((QuantitativeValue)value); return; }
-      if ("floorSizes".equals(key) && value instanceof QuantitativeValue) { floorSize((QuantitativeValue)value); return; }
-      if ("permittedUsage".equals(key) && value instanceof String) { permittedUsage((String)value); return; }
-      if ("permittedUsages".equals(key) && value instanceof String) { permittedUsage((String)value); return; }
-      if ("petsAllowed".equals(key) && value instanceof Boolean) { petsAllowed((Boolean)value); return; }
-      if ("petsAlloweds".equals(key) && value instanceof Boolean) { petsAllowed((Boolean)value); return; }
-      if ("petsAllowed".equals(key) && value instanceof String) { petsAllowed((String)value); return; }
-      if ("petsAlloweds".equals(key) && value instanceof String) { petsAllowed((String)value); return; }
+      if ("amenityFeature".equals(key) && value instanceof LocationFeatureSpecification) { this.amenityFeature((LocationFeatureSpecification)value); return; }
+      if ("amenityFeatures".equals(key) && value instanceof LocationFeatureSpecification) { this.amenityFeature((LocationFeatureSpecification)value); return; }
+      if ("numberOfRooms".equals(key) && value instanceof Integer) { this.numberOfRooms((Integer)value); return; }
+      if ("numberOfRoomss".equals(key) && value instanceof Integer) { this.numberOfRooms((Integer)value); return; }
+      if ("numberOfRooms".equals(key) && value instanceof Long) { this.numberOfRooms((Long)value); return; }
+      if ("numberOfRoomss".equals(key) && value instanceof Long) { this.numberOfRooms((Long)value); return; }
+      if ("numberOfRooms".equals(key) && value instanceof Float) { this.numberOfRooms((Float)value); return; }
+      if ("numberOfRoomss".equals(key) && value instanceof Float) { this.numberOfRooms((Float)value); return; }
+      if ("numberOfRooms".equals(key) && value instanceof Double) { this.numberOfRooms((Double)value); return; }
+      if ("numberOfRoomss".equals(key) && value instanceof Double) { this.numberOfRooms((Double)value); return; }
+      if ("numberOfRooms".equals(key) && value instanceof String) { this.numberOfRooms((String)value); return; }
+      if ("numberOfRoomss".equals(key) && value instanceof String) { this.numberOfRooms((String)value); return; }
+      if ("floorSize".equals(key) && value instanceof QuantitativeValue) { this.floorSize((QuantitativeValue)value); return; }
+      if ("floorSizes".equals(key) && value instanceof QuantitativeValue) { this.floorSize((QuantitativeValue)value); return; }
+      if ("permittedUsage".equals(key) && value instanceof String) { this.permittedUsage((String)value); return; }
+      if ("permittedUsages".equals(key) && value instanceof String) { this.permittedUsage((String)value); return; }
+      if ("petsAllowed".equals(key) && value instanceof Boolean) { this.petsAllowed((Boolean)value); return; }
+      if ("petsAlloweds".equals(key) && value instanceof Boolean) { this.petsAllowed((Boolean)value); return; }
+      if ("petsAllowed".equals(key) && value instanceof String) { this.petsAllowed((String)value); return; }
+      if ("petsAlloweds".equals(key) && value instanceof String) { this.petsAllowed((String)value); return; }
       super.fromMap(key, value);
     }
   }

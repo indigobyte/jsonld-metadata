@@ -24,7 +24,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * Used to describe membership in a loyalty programs (e.g. "StarAliance"), traveler clubs (e.g. "AAA"), purchase clubs ("Safeway Club"), etc.
+ * Used to describe membership in a loyalty programs (e.g. &quot;StarAliance&quot;), traveler clubs (e.g. &quot;AAA&quot;), purchase clubs (&quot;Safeway Club&quot;), etc.
  */
 public class ProgramMembership extends Intangible implements MemberOf {
   /**
@@ -295,16 +295,16 @@ public class ProgramMembership extends Intangible implements MemberOf {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("member".equals(key) && value instanceof Organization) { member((Organization)value); return; }
-      if ("members".equals(key) && value instanceof Organization) { member((Organization)value); return; }
-      if ("member".equals(key) && value instanceof Person) { member((Person)value); return; }
-      if ("members".equals(key) && value instanceof Person) { member((Person)value); return; }
-      if ("membershipNumber".equals(key) && value instanceof String) { membershipNumber((String)value); return; }
-      if ("membershipNumbers".equals(key) && value instanceof String) { membershipNumber((String)value); return; }
-      if ("programName".equals(key) && value instanceof String) { programName((String)value); return; }
-      if ("programNames".equals(key) && value instanceof String) { programName((String)value); return; }
-      if ("hostingOrganization".equals(key) && value instanceof Organization) { hostingOrganization((Organization)value); return; }
-      if ("hostingOrganizations".equals(key) && value instanceof Organization) { hostingOrganization((Organization)value); return; }
+      if ("member".equals(key) && value instanceof Organization) { this.member((Organization)value); return; }
+      if ("members".equals(key) && value instanceof Organization) { this.member((Organization)value); return; }
+      if ("member".equals(key) && value instanceof Person) { this.member((Person)value); return; }
+      if ("members".equals(key) && value instanceof Person) { this.member((Person)value); return; }
+      if ("membershipNumber".equals(key) && value instanceof String) { this.membershipNumber((String)value); return; }
+      if ("membershipNumbers".equals(key) && value instanceof String) { this.membershipNumber((String)value); return; }
+      if ("programName".equals(key) && value instanceof String) { this.programName((String)value); return; }
+      if ("programNames".equals(key) && value instanceof String) { this.programName((String)value); return; }
+      if ("hostingOrganization".equals(key) && value instanceof Organization) { this.hostingOrganization((Organization)value); return; }
+      if ("hostingOrganizations".equals(key) && value instanceof Organization) { this.hostingOrganization((Organization)value); return; }
       super.fromMap(key, value);
     }
   }

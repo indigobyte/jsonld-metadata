@@ -274,16 +274,16 @@ public class AlignmentObject extends Intangible {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("alignmentType".equals(key) && value instanceof String) { alignmentType((String)value); return; }
-      if ("alignmentTypes".equals(key) && value instanceof String) { alignmentType((String)value); return; }
-      if ("educationalFramework".equals(key) && value instanceof String) { educationalFramework((String)value); return; }
-      if ("educationalFrameworks".equals(key) && value instanceof String) { educationalFramework((String)value); return; }
-      if ("targetDescription".equals(key) && value instanceof String) { targetDescription((String)value); return; }
-      if ("targetDescriptions".equals(key) && value instanceof String) { targetDescription((String)value); return; }
-      if ("targetName".equals(key) && value instanceof String) { targetName((String)value); return; }
-      if ("targetNames".equals(key) && value instanceof String) { targetName((String)value); return; }
-      if ("targetUrl".equals(key) && value instanceof String) { targetUrl((String)value); return; }
-      if ("targetUrls".equals(key) && value instanceof String) { targetUrl((String)value); return; }
+      if ("alignmentType".equals(key) && value instanceof String) { this.alignmentType((String)value); return; }
+      if ("alignmentTypes".equals(key) && value instanceof String) { this.alignmentType((String)value); return; }
+      if ("educationalFramework".equals(key) && value instanceof String) { this.educationalFramework((String)value); return; }
+      if ("educationalFrameworks".equals(key) && value instanceof String) { this.educationalFramework((String)value); return; }
+      if ("targetDescription".equals(key) && value instanceof String) { this.targetDescription((String)value); return; }
+      if ("targetDescriptions".equals(key) && value instanceof String) { this.targetDescription((String)value); return; }
+      if ("targetName".equals(key) && value instanceof String) { this.targetName((String)value); return; }
+      if ("targetNames".equals(key) && value instanceof String) { this.targetName((String)value); return; }
+      if ("targetUrl".equals(key) && value instanceof String) { this.targetUrl((String)value); return; }
+      if ("targetUrls".equals(key) && value instanceof String) { this.targetUrl((String)value); return; }
       super.fromMap(key, value);
     }
   }

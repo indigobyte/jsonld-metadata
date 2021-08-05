@@ -271,14 +271,14 @@ public class InteractionCounter extends StructuredValue {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("interactionService".equals(key) && value instanceof SoftwareApplication) { interactionService((SoftwareApplication)value); return; }
-      if ("interactionServices".equals(key) && value instanceof SoftwareApplication) { interactionService((SoftwareApplication)value); return; }
-      if ("interactionService".equals(key) && value instanceof WebSite) { interactionService((WebSite)value); return; }
-      if ("interactionServices".equals(key) && value instanceof WebSite) { interactionService((WebSite)value); return; }
-      if ("interactionType".equals(key) && value instanceof Action) { interactionType((Action)value); return; }
-      if ("interactionTypes".equals(key) && value instanceof Action) { interactionType((Action)value); return; }
-      if ("userInteractionCount".equals(key) && value instanceof Integer) { userInteractionCount((Integer)value); return; }
-      if ("userInteractionCounts".equals(key) && value instanceof Integer) { userInteractionCount((Integer)value); return; }
+      if ("interactionService".equals(key) && value instanceof SoftwareApplication) { this.interactionService((SoftwareApplication)value); return; }
+      if ("interactionServices".equals(key) && value instanceof SoftwareApplication) { this.interactionService((SoftwareApplication)value); return; }
+      if ("interactionService".equals(key) && value instanceof WebSite) { this.interactionService((WebSite)value); return; }
+      if ("interactionServices".equals(key) && value instanceof WebSite) { this.interactionService((WebSite)value); return; }
+      if ("interactionType".equals(key) && value instanceof Action) { this.interactionType((Action)value); return; }
+      if ("interactionTypes".equals(key) && value instanceof Action) { this.interactionType((Action)value); return; }
+      if ("userInteractionCount".equals(key) && value instanceof Integer) { this.userInteractionCount((Integer)value); return; }
+      if ("userInteractionCounts".equals(key) && value instanceof Integer) { this.userInteractionCount((Integer)value); return; }
       super.fromMap(key, value);
     }
   }

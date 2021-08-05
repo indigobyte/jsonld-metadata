@@ -350,20 +350,20 @@ public class Permit extends Intangible {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("issuedThrough".equals(key) && value instanceof Service) { issuedThrough((Service)value); return; }
-      if ("issuedThroughs".equals(key) && value instanceof Service) { issuedThrough((Service)value); return; }
-      if ("permitAudience".equals(key) && value instanceof Audience) { permitAudience((Audience)value); return; }
-      if ("permitAudiences".equals(key) && value instanceof Audience) { permitAudience((Audience)value); return; }
-      if ("validFor".equals(key) && value instanceof Duration) { validFor((Duration)value); return; }
-      if ("validFors".equals(key) && value instanceof Duration) { validFor((Duration)value); return; }
-      if ("validFrom".equals(key) && value instanceof java.util.Date) { validFrom((java.util.Date)value); return; }
-      if ("validFroms".equals(key) && value instanceof java.util.Date) { validFrom((java.util.Date)value); return; }
-      if ("validIn".equals(key) && value instanceof AdministrativeArea) { validIn((AdministrativeArea)value); return; }
-      if ("validIns".equals(key) && value instanceof AdministrativeArea) { validIn((AdministrativeArea)value); return; }
-      if ("validUntil".equals(key) && value instanceof java.util.Date) { validUntil((java.util.Date)value); return; }
-      if ("validUntils".equals(key) && value instanceof java.util.Date) { validUntil((java.util.Date)value); return; }
-      if ("issuedBy".equals(key) && value instanceof Organization) { issuedBy((Organization)value); return; }
-      if ("issuedBys".equals(key) && value instanceof Organization) { issuedBy((Organization)value); return; }
+      if ("issuedThrough".equals(key) && value instanceof Service) { this.issuedThrough((Service)value); return; }
+      if ("issuedThroughs".equals(key) && value instanceof Service) { this.issuedThrough((Service)value); return; }
+      if ("permitAudience".equals(key) && value instanceof Audience) { this.permitAudience((Audience)value); return; }
+      if ("permitAudiences".equals(key) && value instanceof Audience) { this.permitAudience((Audience)value); return; }
+      if ("validFor".equals(key) && value instanceof Duration) { this.validFor((Duration)value); return; }
+      if ("validFors".equals(key) && value instanceof Duration) { this.validFor((Duration)value); return; }
+      if ("validFrom".equals(key) && value instanceof java.util.Date) { this.validFrom((java.util.Date)value); return; }
+      if ("validFroms".equals(key) && value instanceof java.util.Date) { this.validFrom((java.util.Date)value); return; }
+      if ("validIn".equals(key) && value instanceof AdministrativeArea) { this.validIn((AdministrativeArea)value); return; }
+      if ("validIns".equals(key) && value instanceof AdministrativeArea) { this.validIn((AdministrativeArea)value); return; }
+      if ("validUntil".equals(key) && value instanceof java.util.Date) { this.validUntil((java.util.Date)value); return; }
+      if ("validUntils".equals(key) && value instanceof java.util.Date) { this.validUntil((java.util.Date)value); return; }
+      if ("issuedBy".equals(key) && value instanceof Organization) { this.issuedBy((Organization)value); return; }
+      if ("issuedBys".equals(key) && value instanceof Organization) { this.issuedBy((Organization)value); return; }
       super.fromMap(key, value);
     }
   }

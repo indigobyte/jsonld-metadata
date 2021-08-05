@@ -28,13 +28,13 @@ import java.util.*;
  */
 public class ListItem extends Intangible {
   /**
-   * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')’.
+   * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')&rsquo;.
    */
   @JsonIgnore public Thing getItem() {
     return (Thing) getValue("item");
   }
   /**
-   * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')’.
+   * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')&rsquo;.
    */
   @JsonIgnore public Collection<Thing> getItems() {
     final Object current = myData.get("item");
@@ -93,14 +93,14 @@ public class ListItem extends Intangible {
       return new ListItem(myData);
     }
     /**
-     * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')’.
+     * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')&rsquo;.
      */
     @NotNull public Builder item(@NotNull Thing thing) {
       putValue("item", thing);
       return this;
     }
     /**
-     * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')’.
+     * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')&rsquo;.
      */
     @NotNull public Builder item(@NotNull Thing.Builder thing) {
       putValue("item", thing.build());
@@ -247,12 +247,12 @@ public class ListItem extends Intangible {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("item".equals(key) && value instanceof Thing) { item((Thing)value); return; }
-      if ("items".equals(key) && value instanceof Thing) { item((Thing)value); return; }
-      if ("previousItem".equals(key) && value instanceof ListItem) { previousItem((ListItem)value); return; }
-      if ("previousItems".equals(key) && value instanceof ListItem) { previousItem((ListItem)value); return; }
-      if ("nextItem".equals(key) && value instanceof ListItem) { nextItem((ListItem)value); return; }
-      if ("nextItems".equals(key) && value instanceof ListItem) { nextItem((ListItem)value); return; }
+      if ("item".equals(key) && value instanceof Thing) { this.item((Thing)value); return; }
+      if ("items".equals(key) && value instanceof Thing) { this.item((Thing)value); return; }
+      if ("previousItem".equals(key) && value instanceof ListItem) { this.previousItem((ListItem)value); return; }
+      if ("previousItems".equals(key) && value instanceof ListItem) { this.previousItem((ListItem)value); return; }
+      if ("nextItem".equals(key) && value instanceof ListItem) { this.nextItem((ListItem)value); return; }
+      if ("nextItems".equals(key) && value instanceof ListItem) { this.nextItem((ListItem)value); return; }
       super.fromMap(key, value);
     }
   }

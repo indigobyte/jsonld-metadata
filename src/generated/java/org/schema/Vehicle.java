@@ -198,13 +198,13 @@ public class Vehicle extends Product {
     return Arrays.asList((EngineSpecification) current);
   }
   /**
-   * The amount of fuel consumed for traveling a particular distance or temporal duration with the given vehicle (e.g. liters per 100 km).\n\n* Note 1: There are unfortunately no standard unit codes for liters per 100 km.  Use [[unitText]] to indicate the unit of measurement, e.g. L/100 km.\n* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.\n* Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use [[valueReference]] to link the value for the fuel consumption to another value.
+   * The amount of fuel consumed for traveling a particular distance or temporal duration with the given vehicle (e.g. liters per 100 km).\n\n* Note 1: There are unfortunately no standard unit codes for liters per 100 km.  Use [[unitText]] to indicate the unit of measurement, e.g. L/100 km.\n* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.\n* Note 3: Often, the absolute value is useful only when related to driving speed (&quot;at 80 km/h&quot;) or usage pattern (&quot;city traffic&quot;). You can use [[valueReference]] to link the value for the fuel consumption to another value.
    */
   @JsonIgnore public QuantitativeValue getFuelConsumption() {
     return (QuantitativeValue) getValue("fuelConsumption");
   }
   /**
-   * The amount of fuel consumed for traveling a particular distance or temporal duration with the given vehicle (e.g. liters per 100 km).\n\n* Note 1: There are unfortunately no standard unit codes for liters per 100 km.  Use [[unitText]] to indicate the unit of measurement, e.g. L/100 km.\n* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.\n* Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use [[valueReference]] to link the value for the fuel consumption to another value.
+   * The amount of fuel consumed for traveling a particular distance or temporal duration with the given vehicle (e.g. liters per 100 km).\n\n* Note 1: There are unfortunately no standard unit codes for liters per 100 km.  Use [[unitText]] to indicate the unit of measurement, e.g. L/100 km.\n* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.\n* Note 3: Often, the absolute value is useful only when related to driving speed (&quot;at 80 km/h&quot;) or usage pattern (&quot;city traffic&quot;). You can use [[valueReference]] to link the value for the fuel consumption to another value.
    */
   @JsonIgnore public Collection<QuantitativeValue> getFuelConsumptions() {
     final Object current = myData.get("fuelConsumption");
@@ -215,13 +215,13 @@ public class Vehicle extends Product {
     return Arrays.asList((QuantitativeValue) current);
   }
   /**
-   * The distance traveled per unit of fuel used; most commonly miles per gallon (mpg) or kilometers per liter (km/L).\n\n* Note 1: There are unfortunately no standard unit codes for miles per gallon or kilometers per liter. Use [[unitText]] to indicate the unit of measurement, e.g. mpg or km/L.\n* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.\n* Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use [[valueReference]] to link the value for the fuel economy to another value.
+   * The distance traveled per unit of fuel used; most commonly miles per gallon (mpg) or kilometers per liter (km/L).\n\n* Note 1: There are unfortunately no standard unit codes for miles per gallon or kilometers per liter. Use [[unitText]] to indicate the unit of measurement, e.g. mpg or km/L.\n* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.\n* Note 3: Often, the absolute value is useful only when related to driving speed (&quot;at 80 km/h&quot;) or usage pattern (&quot;city traffic&quot;). You can use [[valueReference]] to link the value for the fuel economy to another value.
    */
   @JsonIgnore public QuantitativeValue getFuelEfficiency() {
     return (QuantitativeValue) getValue("fuelEfficiency");
   }
   /**
-   * The distance traveled per unit of fuel used; most commonly miles per gallon (mpg) or kilometers per liter (km/L).\n\n* Note 1: There are unfortunately no standard unit codes for miles per gallon or kilometers per liter. Use [[unitText]] to indicate the unit of measurement, e.g. mpg or km/L.\n* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.\n* Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use [[valueReference]] to link the value for the fuel economy to another value.
+   * The distance traveled per unit of fuel used; most commonly miles per gallon (mpg) or kilometers per liter (km/L).\n\n* Note 1: There are unfortunately no standard unit codes for miles per gallon or kilometers per liter. Use [[unitText]] to indicate the unit of measurement, e.g. mpg or km/L.\n* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.\n* Note 3: Often, the absolute value is useful only when related to driving speed (&quot;at 80 km/h&quot;) or usage pattern (&quot;city traffic&quot;). You can use [[valueReference]] to link the value for the fuel economy to another value.
    */
   @JsonIgnore public Collection<QuantitativeValue> getFuelEfficiencys() {
     final Object current = myData.get("fuelEfficiency");
@@ -589,13 +589,13 @@ public class Vehicle extends Product {
     return Arrays.asList((QuantitativeValue) current);
   }
   /**
-   * The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) ("gearbox" for cars).
+   * The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) (&quot;gearbox&quot; for cars).
    */
   @JsonIgnore public QualitativeValue getVehicleTransmissionQualitativeValue() {
     return (QualitativeValue) getValue("vehicleTransmission");
   }
   /**
-   * The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) ("gearbox" for cars).
+   * The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) (&quot;gearbox&quot; for cars).
    */
   @JsonIgnore public Collection<QualitativeValue> getVehicleTransmissionQualitativeValues() {
     final Object current = myData.get("vehicleTransmission");
@@ -606,13 +606,13 @@ public class Vehicle extends Product {
     return Arrays.asList((QualitativeValue) current);
   }
   /**
-   * The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) ("gearbox" for cars).
+   * The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) (&quot;gearbox&quot; for cars).
    */
   @JsonIgnore public String getVehicleTransmissionString() {
     return (String) getValue("vehicleTransmission");
   }
   /**
-   * The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) ("gearbox" for cars).
+   * The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) (&quot;gearbox&quot; for cars).
    */
   @JsonIgnore public Collection<String> getVehicleTransmissionStrings() {
     final Object current = myData.get("vehicleTransmission");
@@ -762,28 +762,28 @@ public class Vehicle extends Product {
       return this;
     }
     /**
-     * The amount of fuel consumed for traveling a particular distance or temporal duration with the given vehicle (e.g. liters per 100 km).\n\n* Note 1: There are unfortunately no standard unit codes for liters per 100 km.  Use [[unitText]] to indicate the unit of measurement, e.g. L/100 km.\n* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.\n* Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use [[valueReference]] to link the value for the fuel consumption to another value.
+     * The amount of fuel consumed for traveling a particular distance or temporal duration with the given vehicle (e.g. liters per 100 km).\n\n* Note 1: There are unfortunately no standard unit codes for liters per 100 km.  Use [[unitText]] to indicate the unit of measurement, e.g. L/100 km.\n* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.\n* Note 3: Often, the absolute value is useful only when related to driving speed (&quot;at 80 km/h&quot;) or usage pattern (&quot;city traffic&quot;). You can use [[valueReference]] to link the value for the fuel consumption to another value.
      */
     @NotNull public Builder fuelConsumption(@NotNull QuantitativeValue quantitativeValue) {
       putValue("fuelConsumption", quantitativeValue);
       return this;
     }
     /**
-     * The amount of fuel consumed for traveling a particular distance or temporal duration with the given vehicle (e.g. liters per 100 km).\n\n* Note 1: There are unfortunately no standard unit codes for liters per 100 km.  Use [[unitText]] to indicate the unit of measurement, e.g. L/100 km.\n* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.\n* Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use [[valueReference]] to link the value for the fuel consumption to another value.
+     * The amount of fuel consumed for traveling a particular distance or temporal duration with the given vehicle (e.g. liters per 100 km).\n\n* Note 1: There are unfortunately no standard unit codes for liters per 100 km.  Use [[unitText]] to indicate the unit of measurement, e.g. L/100 km.\n* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.\n* Note 3: Often, the absolute value is useful only when related to driving speed (&quot;at 80 km/h&quot;) or usage pattern (&quot;city traffic&quot;). You can use [[valueReference]] to link the value for the fuel consumption to another value.
      */
     @NotNull public Builder fuelConsumption(@NotNull QuantitativeValue.Builder quantitativeValue) {
       putValue("fuelConsumption", quantitativeValue.build());
       return this;
     }
     /**
-     * The distance traveled per unit of fuel used; most commonly miles per gallon (mpg) or kilometers per liter (km/L).\n\n* Note 1: There are unfortunately no standard unit codes for miles per gallon or kilometers per liter. Use [[unitText]] to indicate the unit of measurement, e.g. mpg or km/L.\n* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.\n* Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use [[valueReference]] to link the value for the fuel economy to another value.
+     * The distance traveled per unit of fuel used; most commonly miles per gallon (mpg) or kilometers per liter (km/L).\n\n* Note 1: There are unfortunately no standard unit codes for miles per gallon or kilometers per liter. Use [[unitText]] to indicate the unit of measurement, e.g. mpg or km/L.\n* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.\n* Note 3: Often, the absolute value is useful only when related to driving speed (&quot;at 80 km/h&quot;) or usage pattern (&quot;city traffic&quot;). You can use [[valueReference]] to link the value for the fuel economy to another value.
      */
     @NotNull public Builder fuelEfficiency(@NotNull QuantitativeValue quantitativeValue) {
       putValue("fuelEfficiency", quantitativeValue);
       return this;
     }
     /**
-     * The distance traveled per unit of fuel used; most commonly miles per gallon (mpg) or kilometers per liter (km/L).\n\n* Note 1: There are unfortunately no standard unit codes for miles per gallon or kilometers per liter. Use [[unitText]] to indicate the unit of measurement, e.g. mpg or km/L.\n* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.\n* Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use [[valueReference]] to link the value for the fuel economy to another value.
+     * The distance traveled per unit of fuel used; most commonly miles per gallon (mpg) or kilometers per liter (km/L).\n\n* Note 1: There are unfortunately no standard unit codes for miles per gallon or kilometers per liter. Use [[unitText]] to indicate the unit of measurement, e.g. mpg or km/L.\n* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.\n* Note 3: Often, the absolute value is useful only when related to driving speed (&quot;at 80 km/h&quot;) or usage pattern (&quot;city traffic&quot;). You can use [[valueReference]] to link the value for the fuel economy to another value.
      */
     @NotNull public Builder fuelEfficiency(@NotNull QuantitativeValue.Builder quantitativeValue) {
       putValue("fuelEfficiency", quantitativeValue.build());
@@ -986,21 +986,21 @@ public class Vehicle extends Product {
       return this;
     }
     /**
-     * The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) ("gearbox" for cars).
+     * The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) (&quot;gearbox&quot; for cars).
      */
     @NotNull public Builder vehicleTransmission(@NotNull QualitativeValue qualitativeValue) {
       putValue("vehicleTransmission", qualitativeValue);
       return this;
     }
     /**
-     * The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) ("gearbox" for cars).
+     * The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) (&quot;gearbox&quot; for cars).
      */
     @NotNull public Builder vehicleTransmission(@NotNull QualitativeValue.Builder qualitativeValue) {
       putValue("vehicleTransmission", qualitativeValue.build());
       return this;
     }
     /**
-     * The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) ("gearbox" for cars).
+     * The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) (&quot;gearbox&quot; for cars).
      */
     @NotNull public Builder vehicleTransmission(@NotNull String vehicleTransmission) {
       putValue("vehicleTransmission", vehicleTransmission);
@@ -1385,7 +1385,7 @@ public class Vehicle extends Product {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Demand demand) {
@@ -1393,7 +1393,7 @@ public class Vehicle extends Product {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Demand.Builder demand) {
@@ -1401,7 +1401,7 @@ public class Vehicle extends Product {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Offer offer) {
@@ -1409,7 +1409,7 @@ public class Vehicle extends Product {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Offer.Builder offer) {
@@ -1417,14 +1417,14 @@ public class Vehicle extends Product {
       return this;
     }
     /**
-     * The product identifier, such as ISBN. For example: ``` meta itemprop="productID" content="isbn:123-456-789" ```.
+     * The product identifier, such as ISBN. For example: ``` meta itemprop=&quot;productID&quot; content=&quot;isbn:123-456-789&quot; ```.
      */
     @NotNull public Builder productID(@NotNull Identifier identifier) {
       putValue("productID", identifier);
       return this;
     }
     /**
-     * The product identifier, such as ISBN. For example: ``` meta itemprop="productID" content="isbn:123-456-789" ```.
+     * The product identifier, such as ISBN. For example: ``` meta itemprop=&quot;productID&quot; content=&quot;isbn:123-456-789&quot; ```.
      */
     @NotNull public Builder productID(@NotNull String productID) {
       putValue("productID", productID);
@@ -1643,80 +1643,80 @@ public class Vehicle extends Product {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("numberOfDoors".equals(key) && value instanceof Number) { numberOfDoors((Number)value); return; }
-      if ("numberOfDoorss".equals(key) && value instanceof Number) { numberOfDoors((Number)value); return; }
-      if ("numberOfDoors".equals(key) && value instanceof QuantitativeValue) { numberOfDoors((QuantitativeValue)value); return; }
-      if ("numberOfDoorss".equals(key) && value instanceof QuantitativeValue) { numberOfDoors((QuantitativeValue)value); return; }
-      if ("numberOfAirbags".equals(key) && value instanceof Integer) { numberOfAirbags((Integer)value); return; }
-      if ("numberOfAirbagss".equals(key) && value instanceof Integer) { numberOfAirbags((Integer)value); return; }
-      if ("numberOfAirbags".equals(key) && value instanceof Long) { numberOfAirbags((Long)value); return; }
-      if ("numberOfAirbagss".equals(key) && value instanceof Long) { numberOfAirbags((Long)value); return; }
-      if ("numberOfAirbags".equals(key) && value instanceof Float) { numberOfAirbags((Float)value); return; }
-      if ("numberOfAirbagss".equals(key) && value instanceof Float) { numberOfAirbags((Float)value); return; }
-      if ("numberOfAirbags".equals(key) && value instanceof Double) { numberOfAirbags((Double)value); return; }
-      if ("numberOfAirbagss".equals(key) && value instanceof Double) { numberOfAirbags((Double)value); return; }
-      if ("numberOfAirbags".equals(key) && value instanceof String) { numberOfAirbags((String)value); return; }
-      if ("numberOfAirbagss".equals(key) && value instanceof String) { numberOfAirbags((String)value); return; }
-      if ("numberOfAxles".equals(key) && value instanceof Number) { numberOfAxles((Number)value); return; }
-      if ("numberOfAxless".equals(key) && value instanceof Number) { numberOfAxles((Number)value); return; }
-      if ("numberOfAxles".equals(key) && value instanceof QuantitativeValue) { numberOfAxles((QuantitativeValue)value); return; }
-      if ("numberOfAxless".equals(key) && value instanceof QuantitativeValue) { numberOfAxles((QuantitativeValue)value); return; }
-      if ("vehicleEngine".equals(key) && value instanceof EngineSpecification) { vehicleEngine((EngineSpecification)value); return; }
-      if ("vehicleEngines".equals(key) && value instanceof EngineSpecification) { vehicleEngine((EngineSpecification)value); return; }
-      if ("fuelConsumption".equals(key) && value instanceof QuantitativeValue) { fuelConsumption((QuantitativeValue)value); return; }
-      if ("fuelConsumptions".equals(key) && value instanceof QuantitativeValue) { fuelConsumption((QuantitativeValue)value); return; }
-      if ("fuelEfficiency".equals(key) && value instanceof QuantitativeValue) { fuelEfficiency((QuantitativeValue)value); return; }
-      if ("fuelEfficiencys".equals(key) && value instanceof QuantitativeValue) { fuelEfficiency((QuantitativeValue)value); return; }
-      if ("numberOfForwardGears".equals(key) && value instanceof Number) { numberOfForwardGears((Number)value); return; }
-      if ("numberOfForwardGearss".equals(key) && value instanceof Number) { numberOfForwardGears((Number)value); return; }
-      if ("numberOfForwardGears".equals(key) && value instanceof QuantitativeValue) { numberOfForwardGears((QuantitativeValue)value); return; }
-      if ("numberOfForwardGearss".equals(key) && value instanceof QuantitativeValue) { numberOfForwardGears((QuantitativeValue)value); return; }
-      if ("vehicleIdentificationNumber".equals(key) && value instanceof String) { vehicleIdentificationNumber((String)value); return; }
-      if ("vehicleIdentificationNumbers".equals(key) && value instanceof String) { vehicleIdentificationNumber((String)value); return; }
-      if ("cargoVolume".equals(key) && value instanceof QuantitativeValue) { cargoVolume((QuantitativeValue)value); return; }
-      if ("cargoVolumes".equals(key) && value instanceof QuantitativeValue) { cargoVolume((QuantitativeValue)value); return; }
-      if ("vehicleConfiguration".equals(key) && value instanceof String) { vehicleConfiguration((String)value); return; }
-      if ("vehicleConfigurations".equals(key) && value instanceof String) { vehicleConfiguration((String)value); return; }
-      if ("knownVehicleDamages".equals(key) && value instanceof String) { knownVehicleDamages((String)value); return; }
-      if ("knownVehicleDamagess".equals(key) && value instanceof String) { knownVehicleDamages((String)value); return; }
-      if ("dateVehicleFirstRegistered".equals(key) && value instanceof java.util.Date) { dateVehicleFirstRegistered((java.util.Date)value); return; }
-      if ("dateVehicleFirstRegistereds".equals(key) && value instanceof java.util.Date) { dateVehicleFirstRegistered((java.util.Date)value); return; }
-      if ("driveWheelConfiguration".equals(key) && value instanceof DriveWheelConfigurationValue) { driveWheelConfiguration((DriveWheelConfigurationValue)value); return; }
-      if ("driveWheelConfigurations".equals(key) && value instanceof DriveWheelConfigurationValue) { driveWheelConfiguration((DriveWheelConfigurationValue)value); return; }
-      if ("driveWheelConfiguration".equals(key) && value instanceof String) { driveWheelConfiguration((String)value); return; }
-      if ("driveWheelConfigurations".equals(key) && value instanceof String) { driveWheelConfiguration((String)value); return; }
-      if ("fuelType".equals(key) && value instanceof QualitativeValue) { fuelType((QualitativeValue)value); return; }
-      if ("fuelTypes".equals(key) && value instanceof QualitativeValue) { fuelType((QualitativeValue)value); return; }
-      if ("fuelType".equals(key) && value instanceof String) { fuelType((String)value); return; }
-      if ("fuelTypes".equals(key) && value instanceof String) { fuelType((String)value); return; }
-      if ("vehicleInteriorColor".equals(key) && value instanceof String) { vehicleInteriorColor((String)value); return; }
-      if ("vehicleInteriorColors".equals(key) && value instanceof String) { vehicleInteriorColor((String)value); return; }
-      if ("vehicleInteriorType".equals(key) && value instanceof String) { vehicleInteriorType((String)value); return; }
-      if ("vehicleInteriorTypes".equals(key) && value instanceof String) { vehicleInteriorType((String)value); return; }
-      if ("mileageFromOdometer".equals(key) && value instanceof QuantitativeValue) { mileageFromOdometer((QuantitativeValue)value); return; }
-      if ("mileageFromOdometers".equals(key) && value instanceof QuantitativeValue) { mileageFromOdometer((QuantitativeValue)value); return; }
-      if ("vehicleModelDate".equals(key) && value instanceof java.util.Date) { vehicleModelDate((java.util.Date)value); return; }
-      if ("vehicleModelDates".equals(key) && value instanceof java.util.Date) { vehicleModelDate((java.util.Date)value); return; }
-      if ("numberOfPreviousOwners".equals(key) && value instanceof Number) { numberOfPreviousOwners((Number)value); return; }
-      if ("numberOfPreviousOwnerss".equals(key) && value instanceof Number) { numberOfPreviousOwners((Number)value); return; }
-      if ("numberOfPreviousOwners".equals(key) && value instanceof QuantitativeValue) { numberOfPreviousOwners((QuantitativeValue)value); return; }
-      if ("numberOfPreviousOwnerss".equals(key) && value instanceof QuantitativeValue) { numberOfPreviousOwners((QuantitativeValue)value); return; }
-      if ("productionDate".equals(key) && value instanceof java.util.Date) { productionDate((java.util.Date)value); return; }
-      if ("productionDates".equals(key) && value instanceof java.util.Date) { productionDate((java.util.Date)value); return; }
-      if ("purchaseDate".equals(key) && value instanceof java.util.Date) { purchaseDate((java.util.Date)value); return; }
-      if ("purchaseDates".equals(key) && value instanceof java.util.Date) { purchaseDate((java.util.Date)value); return; }
-      if ("vehicleSeatingCapacity".equals(key) && value instanceof Number) { vehicleSeatingCapacity((Number)value); return; }
-      if ("vehicleSeatingCapacitys".equals(key) && value instanceof Number) { vehicleSeatingCapacity((Number)value); return; }
-      if ("vehicleSeatingCapacity".equals(key) && value instanceof QuantitativeValue) { vehicleSeatingCapacity((QuantitativeValue)value); return; }
-      if ("vehicleSeatingCapacitys".equals(key) && value instanceof QuantitativeValue) { vehicleSeatingCapacity((QuantitativeValue)value); return; }
-      if ("vehicleTransmission".equals(key) && value instanceof QualitativeValue) { vehicleTransmission((QualitativeValue)value); return; }
-      if ("vehicleTransmissions".equals(key) && value instanceof QualitativeValue) { vehicleTransmission((QualitativeValue)value); return; }
-      if ("vehicleTransmission".equals(key) && value instanceof String) { vehicleTransmission((String)value); return; }
-      if ("vehicleTransmissions".equals(key) && value instanceof String) { vehicleTransmission((String)value); return; }
-      if ("steeringPosition".equals(key) && value instanceof SteeringPositionValue) { steeringPosition((SteeringPositionValue)value); return; }
-      if ("steeringPositions".equals(key) && value instanceof SteeringPositionValue) { steeringPosition((SteeringPositionValue)value); return; }
-      if ("vehicleSpecialUsage".equals(key) && value instanceof String) { vehicleSpecialUsage((String)value); return; }
-      if ("vehicleSpecialUsages".equals(key) && value instanceof String) { vehicleSpecialUsage((String)value); return; }
+      if ("numberOfDoors".equals(key) && value instanceof Number) { this.numberOfDoors((Number)value); return; }
+      if ("numberOfDoorss".equals(key) && value instanceof Number) { this.numberOfDoors((Number)value); return; }
+      if ("numberOfDoors".equals(key) && value instanceof QuantitativeValue) { this.numberOfDoors((QuantitativeValue)value); return; }
+      if ("numberOfDoorss".equals(key) && value instanceof QuantitativeValue) { this.numberOfDoors((QuantitativeValue)value); return; }
+      if ("numberOfAirbags".equals(key) && value instanceof Integer) { this.numberOfAirbags((Integer)value); return; }
+      if ("numberOfAirbagss".equals(key) && value instanceof Integer) { this.numberOfAirbags((Integer)value); return; }
+      if ("numberOfAirbags".equals(key) && value instanceof Long) { this.numberOfAirbags((Long)value); return; }
+      if ("numberOfAirbagss".equals(key) && value instanceof Long) { this.numberOfAirbags((Long)value); return; }
+      if ("numberOfAirbags".equals(key) && value instanceof Float) { this.numberOfAirbags((Float)value); return; }
+      if ("numberOfAirbagss".equals(key) && value instanceof Float) { this.numberOfAirbags((Float)value); return; }
+      if ("numberOfAirbags".equals(key) && value instanceof Double) { this.numberOfAirbags((Double)value); return; }
+      if ("numberOfAirbagss".equals(key) && value instanceof Double) { this.numberOfAirbags((Double)value); return; }
+      if ("numberOfAirbags".equals(key) && value instanceof String) { this.numberOfAirbags((String)value); return; }
+      if ("numberOfAirbagss".equals(key) && value instanceof String) { this.numberOfAirbags((String)value); return; }
+      if ("numberOfAxles".equals(key) && value instanceof Number) { this.numberOfAxles((Number)value); return; }
+      if ("numberOfAxless".equals(key) && value instanceof Number) { this.numberOfAxles((Number)value); return; }
+      if ("numberOfAxles".equals(key) && value instanceof QuantitativeValue) { this.numberOfAxles((QuantitativeValue)value); return; }
+      if ("numberOfAxless".equals(key) && value instanceof QuantitativeValue) { this.numberOfAxles((QuantitativeValue)value); return; }
+      if ("vehicleEngine".equals(key) && value instanceof EngineSpecification) { this.vehicleEngine((EngineSpecification)value); return; }
+      if ("vehicleEngines".equals(key) && value instanceof EngineSpecification) { this.vehicleEngine((EngineSpecification)value); return; }
+      if ("fuelConsumption".equals(key) && value instanceof QuantitativeValue) { this.fuelConsumption((QuantitativeValue)value); return; }
+      if ("fuelConsumptions".equals(key) && value instanceof QuantitativeValue) { this.fuelConsumption((QuantitativeValue)value); return; }
+      if ("fuelEfficiency".equals(key) && value instanceof QuantitativeValue) { this.fuelEfficiency((QuantitativeValue)value); return; }
+      if ("fuelEfficiencys".equals(key) && value instanceof QuantitativeValue) { this.fuelEfficiency((QuantitativeValue)value); return; }
+      if ("numberOfForwardGears".equals(key) && value instanceof Number) { this.numberOfForwardGears((Number)value); return; }
+      if ("numberOfForwardGearss".equals(key) && value instanceof Number) { this.numberOfForwardGears((Number)value); return; }
+      if ("numberOfForwardGears".equals(key) && value instanceof QuantitativeValue) { this.numberOfForwardGears((QuantitativeValue)value); return; }
+      if ("numberOfForwardGearss".equals(key) && value instanceof QuantitativeValue) { this.numberOfForwardGears((QuantitativeValue)value); return; }
+      if ("vehicleIdentificationNumber".equals(key) && value instanceof String) { this.vehicleIdentificationNumber((String)value); return; }
+      if ("vehicleIdentificationNumbers".equals(key) && value instanceof String) { this.vehicleIdentificationNumber((String)value); return; }
+      if ("cargoVolume".equals(key) && value instanceof QuantitativeValue) { this.cargoVolume((QuantitativeValue)value); return; }
+      if ("cargoVolumes".equals(key) && value instanceof QuantitativeValue) { this.cargoVolume((QuantitativeValue)value); return; }
+      if ("vehicleConfiguration".equals(key) && value instanceof String) { this.vehicleConfiguration((String)value); return; }
+      if ("vehicleConfigurations".equals(key) && value instanceof String) { this.vehicleConfiguration((String)value); return; }
+      if ("knownVehicleDamages".equals(key) && value instanceof String) { this.knownVehicleDamages((String)value); return; }
+      if ("knownVehicleDamagess".equals(key) && value instanceof String) { this.knownVehicleDamages((String)value); return; }
+      if ("dateVehicleFirstRegistered".equals(key) && value instanceof java.util.Date) { this.dateVehicleFirstRegistered((java.util.Date)value); return; }
+      if ("dateVehicleFirstRegistereds".equals(key) && value instanceof java.util.Date) { this.dateVehicleFirstRegistered((java.util.Date)value); return; }
+      if ("driveWheelConfiguration".equals(key) && value instanceof DriveWheelConfigurationValue) { this.driveWheelConfiguration((DriveWheelConfigurationValue)value); return; }
+      if ("driveWheelConfigurations".equals(key) && value instanceof DriveWheelConfigurationValue) { this.driveWheelConfiguration((DriveWheelConfigurationValue)value); return; }
+      if ("driveWheelConfiguration".equals(key) && value instanceof String) { this.driveWheelConfiguration((String)value); return; }
+      if ("driveWheelConfigurations".equals(key) && value instanceof String) { this.driveWheelConfiguration((String)value); return; }
+      if ("fuelType".equals(key) && value instanceof QualitativeValue) { this.fuelType((QualitativeValue)value); return; }
+      if ("fuelTypes".equals(key) && value instanceof QualitativeValue) { this.fuelType((QualitativeValue)value); return; }
+      if ("fuelType".equals(key) && value instanceof String) { this.fuelType((String)value); return; }
+      if ("fuelTypes".equals(key) && value instanceof String) { this.fuelType((String)value); return; }
+      if ("vehicleInteriorColor".equals(key) && value instanceof String) { this.vehicleInteriorColor((String)value); return; }
+      if ("vehicleInteriorColors".equals(key) && value instanceof String) { this.vehicleInteriorColor((String)value); return; }
+      if ("vehicleInteriorType".equals(key) && value instanceof String) { this.vehicleInteriorType((String)value); return; }
+      if ("vehicleInteriorTypes".equals(key) && value instanceof String) { this.vehicleInteriorType((String)value); return; }
+      if ("mileageFromOdometer".equals(key) && value instanceof QuantitativeValue) { this.mileageFromOdometer((QuantitativeValue)value); return; }
+      if ("mileageFromOdometers".equals(key) && value instanceof QuantitativeValue) { this.mileageFromOdometer((QuantitativeValue)value); return; }
+      if ("vehicleModelDate".equals(key) && value instanceof java.util.Date) { this.vehicleModelDate((java.util.Date)value); return; }
+      if ("vehicleModelDates".equals(key) && value instanceof java.util.Date) { this.vehicleModelDate((java.util.Date)value); return; }
+      if ("numberOfPreviousOwners".equals(key) && value instanceof Number) { this.numberOfPreviousOwners((Number)value); return; }
+      if ("numberOfPreviousOwnerss".equals(key) && value instanceof Number) { this.numberOfPreviousOwners((Number)value); return; }
+      if ("numberOfPreviousOwners".equals(key) && value instanceof QuantitativeValue) { this.numberOfPreviousOwners((QuantitativeValue)value); return; }
+      if ("numberOfPreviousOwnerss".equals(key) && value instanceof QuantitativeValue) { this.numberOfPreviousOwners((QuantitativeValue)value); return; }
+      if ("productionDate".equals(key) && value instanceof java.util.Date) { this.productionDate((java.util.Date)value); return; }
+      if ("productionDates".equals(key) && value instanceof java.util.Date) { this.productionDate((java.util.Date)value); return; }
+      if ("purchaseDate".equals(key) && value instanceof java.util.Date) { this.purchaseDate((java.util.Date)value); return; }
+      if ("purchaseDates".equals(key) && value instanceof java.util.Date) { this.purchaseDate((java.util.Date)value); return; }
+      if ("vehicleSeatingCapacity".equals(key) && value instanceof Number) { this.vehicleSeatingCapacity((Number)value); return; }
+      if ("vehicleSeatingCapacitys".equals(key) && value instanceof Number) { this.vehicleSeatingCapacity((Number)value); return; }
+      if ("vehicleSeatingCapacity".equals(key) && value instanceof QuantitativeValue) { this.vehicleSeatingCapacity((QuantitativeValue)value); return; }
+      if ("vehicleSeatingCapacitys".equals(key) && value instanceof QuantitativeValue) { this.vehicleSeatingCapacity((QuantitativeValue)value); return; }
+      if ("vehicleTransmission".equals(key) && value instanceof QualitativeValue) { this.vehicleTransmission((QualitativeValue)value); return; }
+      if ("vehicleTransmissions".equals(key) && value instanceof QualitativeValue) { this.vehicleTransmission((QualitativeValue)value); return; }
+      if ("vehicleTransmission".equals(key) && value instanceof String) { this.vehicleTransmission((String)value); return; }
+      if ("vehicleTransmissions".equals(key) && value instanceof String) { this.vehicleTransmission((String)value); return; }
+      if ("steeringPosition".equals(key) && value instanceof SteeringPositionValue) { this.steeringPosition((SteeringPositionValue)value); return; }
+      if ("steeringPositions".equals(key) && value instanceof SteeringPositionValue) { this.steeringPosition((SteeringPositionValue)value); return; }
+      if ("vehicleSpecialUsage".equals(key) && value instanceof String) { this.vehicleSpecialUsage((String)value); return; }
+      if ("vehicleSpecialUsages".equals(key) && value instanceof String) { this.vehicleSpecialUsage((String)value); return; }
       super.fromMap(key, value);
     }
   }

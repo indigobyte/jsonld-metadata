@@ -125,14 +125,14 @@ public class HowToSupply extends HowToItem implements Supply {
       return this;
     }
     /**
-     * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')’.
+     * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')&rsquo;.
      */
     @NotNull public Builder item(@NotNull Thing thing) {
       putValue("item", thing);
       return this;
     }
     /**
-     * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')’.
+     * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')&rsquo;.
      */
     @NotNull public Builder item(@NotNull Thing.Builder thing) {
       putValue("item", thing.build());
@@ -279,10 +279,10 @@ public class HowToSupply extends HowToItem implements Supply {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("estimatedCost".equals(key) && value instanceof MonetaryAmount) { estimatedCost((MonetaryAmount)value); return; }
-      if ("estimatedCosts".equals(key) && value instanceof MonetaryAmount) { estimatedCost((MonetaryAmount)value); return; }
-      if ("estimatedCost".equals(key) && value instanceof String) { estimatedCost((String)value); return; }
-      if ("estimatedCosts".equals(key) && value instanceof String) { estimatedCost((String)value); return; }
+      if ("estimatedCost".equals(key) && value instanceof MonetaryAmount) { this.estimatedCost((MonetaryAmount)value); return; }
+      if ("estimatedCosts".equals(key) && value instanceof MonetaryAmount) { this.estimatedCost((MonetaryAmount)value); return; }
+      if ("estimatedCost".equals(key) && value instanceof String) { this.estimatedCost((String)value); return; }
+      if ("estimatedCosts".equals(key) && value instanceof String) { this.estimatedCost((String)value); return; }
       super.fromMap(key, value);
     }
   }

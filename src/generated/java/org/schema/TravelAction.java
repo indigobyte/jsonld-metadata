@@ -290,8 +290,8 @@ public class TravelAction extends MoveAction {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("distance".equals(key) && value instanceof Distance) { distance((Distance)value); return; }
-      if ("distances".equals(key) && value instanceof Distance) { distance((Distance)value); return; }
+      if ("distance".equals(key) && value instanceof Distance) { this.distance((Distance)value); return; }
+      if ("distances".equals(key) && value instanceof Distance) { this.distance((Distance)value); return; }
       super.fromMap(key, value);
     }
   }

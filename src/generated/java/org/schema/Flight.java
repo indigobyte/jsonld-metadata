@@ -232,13 +232,13 @@ public class Flight extends Trip {
     return Arrays.asList((String) current);
   }
   /**
-   * The kind of aircraft (e.g., "Boeing 747").
+   * The kind of aircraft (e.g., &quot;Boeing 747&quot;).
    */
   @JsonIgnore public String getAircraftString() {
     return (String) getValue("aircraft");
   }
   /**
-   * The kind of aircraft (e.g., "Boeing 747").
+   * The kind of aircraft (e.g., &quot;Boeing 747&quot;).
    */
   @JsonIgnore public Collection<String> getAircraftStrings() {
     final Object current = myData.get("aircraft");
@@ -249,13 +249,13 @@ public class Flight extends Trip {
     return Arrays.asList((String) current);
   }
   /**
-   * The kind of aircraft (e.g., "Boeing 747").
+   * The kind of aircraft (e.g., &quot;Boeing 747&quot;).
    */
   @JsonIgnore public Vehicle getAircraftVehicle() {
     return (Vehicle) getValue("aircraft");
   }
   /**
-   * The kind of aircraft (e.g., "Boeing 747").
+   * The kind of aircraft (e.g., &quot;Boeing 747&quot;).
    */
   @JsonIgnore public Collection<Vehicle> getAircraftVehicles() {
     final Object current = myData.get("aircraft");
@@ -494,21 +494,21 @@ public class Flight extends Trip {
       return this;
     }
     /**
-     * The kind of aircraft (e.g., "Boeing 747").
+     * The kind of aircraft (e.g., &quot;Boeing 747&quot;).
      */
     @NotNull public Builder aircraft(@NotNull String aircraft) {
       putValue("aircraft", aircraft);
       return this;
     }
     /**
-     * The kind of aircraft (e.g., "Boeing 747").
+     * The kind of aircraft (e.g., &quot;Boeing 747&quot;).
      */
     @NotNull public Builder aircraft(@NotNull Vehicle vehicle) {
       putValue("aircraft", vehicle);
       return this;
     }
     /**
-     * The kind of aircraft (e.g., "Boeing 747").
+     * The kind of aircraft (e.g., &quot;Boeing 747&quot;).
      */
     @NotNull public Builder aircraft(@NotNull Vehicle.Builder vehicle) {
       putValue("aircraft", vehicle.build());
@@ -564,7 +564,7 @@ public class Flight extends Trip {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Demand demand) {
@@ -572,7 +572,7 @@ public class Flight extends Trip {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Demand.Builder demand) {
@@ -580,7 +580,7 @@ public class Flight extends Trip {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Offer offer) {
@@ -588,7 +588,7 @@ public class Flight extends Trip {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Offer.Builder offer) {
@@ -750,46 +750,46 @@ public class Flight extends Trip {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("seller".equals(key) && value instanceof Organization) { seller((Organization)value); return; }
-      if ("sellers".equals(key) && value instanceof Organization) { seller((Organization)value); return; }
-      if ("seller".equals(key) && value instanceof Participant) { seller((Participant)value); return; }
-      if ("sellers".equals(key) && value instanceof Participant) { seller((Participant)value); return; }
-      if ("seller".equals(key) && value instanceof Person) { seller((Person)value); return; }
-      if ("sellers".equals(key) && value instanceof Person) { seller((Person)value); return; }
-      if ("flightNumber".equals(key) && value instanceof Identifier) { flightNumber((Identifier)value); return; }
-      if ("flightNumbers".equals(key) && value instanceof Identifier) { flightNumber((Identifier)value); return; }
-      if ("flightNumber".equals(key) && value instanceof String) { flightNumber((String)value); return; }
-      if ("flightNumbers".equals(key) && value instanceof String) { flightNumber((String)value); return; }
-      if ("departureAirport".equals(key) && value instanceof Airport) { departureAirport((Airport)value); return; }
-      if ("departureAirports".equals(key) && value instanceof Airport) { departureAirport((Airport)value); return; }
-      if ("arrivalAirport".equals(key) && value instanceof Airport) { arrivalAirport((Airport)value); return; }
-      if ("arrivalAirports".equals(key) && value instanceof Airport) { arrivalAirport((Airport)value); return; }
-      if ("departureGate".equals(key) && value instanceof String) { departureGate((String)value); return; }
-      if ("departureGates".equals(key) && value instanceof String) { departureGate((String)value); return; }
-      if ("arrivalGate".equals(key) && value instanceof String) { arrivalGate((String)value); return; }
-      if ("arrivalGates".equals(key) && value instanceof String) { arrivalGate((String)value); return; }
-      if ("boardingPolicy".equals(key) && value instanceof BoardingPolicyType) { boardingPolicy((BoardingPolicyType)value); return; }
-      if ("boardingPolicys".equals(key) && value instanceof BoardingPolicyType) { boardingPolicy((BoardingPolicyType)value); return; }
-      if ("departureTerminal".equals(key) && value instanceof String) { departureTerminal((String)value); return; }
-      if ("departureTerminals".equals(key) && value instanceof String) { departureTerminal((String)value); return; }
-      if ("arrivalTerminal".equals(key) && value instanceof String) { arrivalTerminal((String)value); return; }
-      if ("arrivalTerminals".equals(key) && value instanceof String) { arrivalTerminal((String)value); return; }
-      if ("aircraft".equals(key) && value instanceof String) { aircraft((String)value); return; }
-      if ("aircrafts".equals(key) && value instanceof String) { aircraft((String)value); return; }
-      if ("aircraft".equals(key) && value instanceof Vehicle) { aircraft((Vehicle)value); return; }
-      if ("aircrafts".equals(key) && value instanceof Vehicle) { aircraft((Vehicle)value); return; }
-      if ("mealService".equals(key) && value instanceof String) { mealService((String)value); return; }
-      if ("mealServices".equals(key) && value instanceof String) { mealService((String)value); return; }
-      if ("estimatedFlightDuration".equals(key) && value instanceof Duration) { estimatedFlightDuration((Duration)value); return; }
-      if ("estimatedFlightDurations".equals(key) && value instanceof Duration) { estimatedFlightDuration((Duration)value); return; }
-      if ("estimatedFlightDuration".equals(key) && value instanceof String) { estimatedFlightDuration((String)value); return; }
-      if ("estimatedFlightDurations".equals(key) && value instanceof String) { estimatedFlightDuration((String)value); return; }
-      if ("flightDistance".equals(key) && value instanceof Distance) { flightDistance((Distance)value); return; }
-      if ("flightDistances".equals(key) && value instanceof Distance) { flightDistance((Distance)value); return; }
-      if ("flightDistance".equals(key) && value instanceof String) { flightDistance((String)value); return; }
-      if ("flightDistances".equals(key) && value instanceof String) { flightDistance((String)value); return; }
-      if ("webCheckinTime".equals(key) && value instanceof java.util.Date) { webCheckinTime((java.util.Date)value); return; }
-      if ("webCheckinTimes".equals(key) && value instanceof java.util.Date) { webCheckinTime((java.util.Date)value); return; }
+      if ("seller".equals(key) && value instanceof Organization) { this.seller((Organization)value); return; }
+      if ("sellers".equals(key) && value instanceof Organization) { this.seller((Organization)value); return; }
+      if ("seller".equals(key) && value instanceof Participant) { this.seller((Participant)value); return; }
+      if ("sellers".equals(key) && value instanceof Participant) { this.seller((Participant)value); return; }
+      if ("seller".equals(key) && value instanceof Person) { this.seller((Person)value); return; }
+      if ("sellers".equals(key) && value instanceof Person) { this.seller((Person)value); return; }
+      if ("flightNumber".equals(key) && value instanceof Identifier) { this.flightNumber((Identifier)value); return; }
+      if ("flightNumbers".equals(key) && value instanceof Identifier) { this.flightNumber((Identifier)value); return; }
+      if ("flightNumber".equals(key) && value instanceof String) { this.flightNumber((String)value); return; }
+      if ("flightNumbers".equals(key) && value instanceof String) { this.flightNumber((String)value); return; }
+      if ("departureAirport".equals(key) && value instanceof Airport) { this.departureAirport((Airport)value); return; }
+      if ("departureAirports".equals(key) && value instanceof Airport) { this.departureAirport((Airport)value); return; }
+      if ("arrivalAirport".equals(key) && value instanceof Airport) { this.arrivalAirport((Airport)value); return; }
+      if ("arrivalAirports".equals(key) && value instanceof Airport) { this.arrivalAirport((Airport)value); return; }
+      if ("departureGate".equals(key) && value instanceof String) { this.departureGate((String)value); return; }
+      if ("departureGates".equals(key) && value instanceof String) { this.departureGate((String)value); return; }
+      if ("arrivalGate".equals(key) && value instanceof String) { this.arrivalGate((String)value); return; }
+      if ("arrivalGates".equals(key) && value instanceof String) { this.arrivalGate((String)value); return; }
+      if ("boardingPolicy".equals(key) && value instanceof BoardingPolicyType) { this.boardingPolicy((BoardingPolicyType)value); return; }
+      if ("boardingPolicys".equals(key) && value instanceof BoardingPolicyType) { this.boardingPolicy((BoardingPolicyType)value); return; }
+      if ("departureTerminal".equals(key) && value instanceof String) { this.departureTerminal((String)value); return; }
+      if ("departureTerminals".equals(key) && value instanceof String) { this.departureTerminal((String)value); return; }
+      if ("arrivalTerminal".equals(key) && value instanceof String) { this.arrivalTerminal((String)value); return; }
+      if ("arrivalTerminals".equals(key) && value instanceof String) { this.arrivalTerminal((String)value); return; }
+      if ("aircraft".equals(key) && value instanceof String) { this.aircraft((String)value); return; }
+      if ("aircrafts".equals(key) && value instanceof String) { this.aircraft((String)value); return; }
+      if ("aircraft".equals(key) && value instanceof Vehicle) { this.aircraft((Vehicle)value); return; }
+      if ("aircrafts".equals(key) && value instanceof Vehicle) { this.aircraft((Vehicle)value); return; }
+      if ("mealService".equals(key) && value instanceof String) { this.mealService((String)value); return; }
+      if ("mealServices".equals(key) && value instanceof String) { this.mealService((String)value); return; }
+      if ("estimatedFlightDuration".equals(key) && value instanceof Duration) { this.estimatedFlightDuration((Duration)value); return; }
+      if ("estimatedFlightDurations".equals(key) && value instanceof Duration) { this.estimatedFlightDuration((Duration)value); return; }
+      if ("estimatedFlightDuration".equals(key) && value instanceof String) { this.estimatedFlightDuration((String)value); return; }
+      if ("estimatedFlightDurations".equals(key) && value instanceof String) { this.estimatedFlightDuration((String)value); return; }
+      if ("flightDistance".equals(key) && value instanceof Distance) { this.flightDistance((Distance)value); return; }
+      if ("flightDistances".equals(key) && value instanceof Distance) { this.flightDistance((Distance)value); return; }
+      if ("flightDistance".equals(key) && value instanceof String) { this.flightDistance((String)value); return; }
+      if ("flightDistances".equals(key) && value instanceof String) { this.flightDistance((String)value); return; }
+      if ("webCheckinTime".equals(key) && value instanceof java.util.Date) { this.webCheckinTime((java.util.Date)value); return; }
+      if ("webCheckinTimes".equals(key) && value instanceof java.util.Date) { this.webCheckinTime((java.util.Date)value); return; }
       super.fromMap(key, value);
     }
   }

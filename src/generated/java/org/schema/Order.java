@@ -249,13 +249,13 @@ public class Order extends Intangible {
     return Arrays.asList((String) current);
   }
   /**
-   * The currency of the discount.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
+   * The currency of the discount.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;.
    */
   @JsonIgnore public String getDiscountCurrency() {
     return (String) getValue("discountCurrency");
   }
   /**
-   * The currency of the discount.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
+   * The currency of the discount.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;.
    */
   @JsonIgnore public Collection<String> getDiscountCurrencys() {
     final Object current = myData.get("discountCurrency");
@@ -712,7 +712,7 @@ public class Order extends Intangible {
       return this;
     }
     /**
-     * The currency of the discount.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
+     * The currency of the discount.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;.
      */
     @NotNull public Builder discountCurrency(@NotNull String discountCurrency) {
       putValue("discountCurrency", discountCurrency);
@@ -1013,70 +1013,70 @@ public class Order extends Intangible {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("orderDelivery".equals(key) && value instanceof ParcelDelivery) { orderDelivery((ParcelDelivery)value); return; }
-      if ("orderDeliverys".equals(key) && value instanceof ParcelDelivery) { orderDelivery((ParcelDelivery)value); return; }
-      if ("acceptedOffer".equals(key) && value instanceof Offer) { acceptedOffer((Offer)value); return; }
-      if ("acceptedOffers".equals(key) && value instanceof Offer) { acceptedOffer((Offer)value); return; }
-      if ("billingAddress".equals(key) && value instanceof PostalAddress) { billingAddress((PostalAddress)value); return; }
-      if ("billingAddresss".equals(key) && value instanceof PostalAddress) { billingAddress((PostalAddress)value); return; }
-      if ("confirmationNumber".equals(key) && value instanceof Identifier) { confirmationNumber((Identifier)value); return; }
-      if ("confirmationNumbers".equals(key) && value instanceof Identifier) { confirmationNumber((Identifier)value); return; }
-      if ("confirmationNumber".equals(key) && value instanceof String) { confirmationNumber((String)value); return; }
-      if ("confirmationNumbers".equals(key) && value instanceof String) { confirmationNumber((String)value); return; }
-      if ("customer".equals(key) && value instanceof Organization) { customer((Organization)value); return; }
-      if ("customers".equals(key) && value instanceof Organization) { customer((Organization)value); return; }
-      if ("customer".equals(key) && value instanceof Person) { customer((Person)value); return; }
-      if ("customers".equals(key) && value instanceof Person) { customer((Person)value); return; }
-      if ("discount".equals(key) && value instanceof Integer) { discount((Integer)value); return; }
-      if ("discounts".equals(key) && value instanceof Integer) { discount((Integer)value); return; }
-      if ("discount".equals(key) && value instanceof Long) { discount((Long)value); return; }
-      if ("discounts".equals(key) && value instanceof Long) { discount((Long)value); return; }
-      if ("discount".equals(key) && value instanceof Float) { discount((Float)value); return; }
-      if ("discounts".equals(key) && value instanceof Float) { discount((Float)value); return; }
-      if ("discount".equals(key) && value instanceof Double) { discount((Double)value); return; }
-      if ("discounts".equals(key) && value instanceof Double) { discount((Double)value); return; }
-      if ("discount".equals(key) && value instanceof String) { discount((String)value); return; }
-      if ("discounts".equals(key) && value instanceof String) { discount((String)value); return; }
-      if ("discountCode".equals(key) && value instanceof String) { discountCode((String)value); return; }
-      if ("discountCodes".equals(key) && value instanceof String) { discountCode((String)value); return; }
-      if ("discountCurrency".equals(key) && value instanceof String) { discountCurrency((String)value); return; }
-      if ("discountCurrencys".equals(key) && value instanceof String) { discountCurrency((String)value); return; }
-      if ("isGift".equals(key) && value instanceof Boolean) { isGift((Boolean)value); return; }
-      if ("isGifts".equals(key) && value instanceof Boolean) { isGift((Boolean)value); return; }
-      if ("orderDate".equals(key) && value instanceof java.util.Date) { orderDate((java.util.Date)value); return; }
-      if ("orderDates".equals(key) && value instanceof java.util.Date) { orderDate((java.util.Date)value); return; }
-      if ("orderedItem".equals(key) && value instanceof OrderItem) { orderedItem((OrderItem)value); return; }
-      if ("orderedItems".equals(key) && value instanceof OrderItem) { orderedItem((OrderItem)value); return; }
-      if ("orderedItem".equals(key) && value instanceof Product) { orderedItem((Product)value); return; }
-      if ("orderedItems".equals(key) && value instanceof Product) { orderedItem((Product)value); return; }
-      if ("orderedItem".equals(key) && value instanceof Service) { orderedItem((Service)value); return; }
-      if ("orderedItems".equals(key) && value instanceof Service) { orderedItem((Service)value); return; }
-      if ("orderNumber".equals(key) && value instanceof Identifier) { orderNumber((Identifier)value); return; }
-      if ("orderNumbers".equals(key) && value instanceof Identifier) { orderNumber((Identifier)value); return; }
-      if ("orderNumber".equals(key) && value instanceof String) { orderNumber((String)value); return; }
-      if ("orderNumbers".equals(key) && value instanceof String) { orderNumber((String)value); return; }
-      if ("orderStatus".equals(key) && value instanceof OrderStatus) { orderStatus((OrderStatus)value); return; }
-      if ("orderStatuss".equals(key) && value instanceof OrderStatus) { orderStatus((OrderStatus)value); return; }
-      if ("partOfInvoice".equals(key) && value instanceof Invoice) { partOfInvoice((Invoice)value); return; }
-      if ("partOfInvoices".equals(key) && value instanceof Invoice) { partOfInvoice((Invoice)value); return; }
-      if ("paymentMethod".equals(key) && value instanceof PaymentMethod) { paymentMethod((PaymentMethod)value); return; }
-      if ("paymentMethods".equals(key) && value instanceof PaymentMethod) { paymentMethod((PaymentMethod)value); return; }
-      if ("paymentMethodId".equals(key) && value instanceof String) { paymentMethodId((String)value); return; }
-      if ("paymentMethodIds".equals(key) && value instanceof String) { paymentMethodId((String)value); return; }
-      if ("paymentUrl".equals(key) && value instanceof String) { paymentUrl((String)value); return; }
-      if ("paymentUrls".equals(key) && value instanceof String) { paymentUrl((String)value); return; }
-      if ("seller".equals(key) && value instanceof Organization) { seller((Organization)value); return; }
-      if ("sellers".equals(key) && value instanceof Organization) { seller((Organization)value); return; }
-      if ("seller".equals(key) && value instanceof Participant) { seller((Participant)value); return; }
-      if ("sellers".equals(key) && value instanceof Participant) { seller((Participant)value); return; }
-      if ("seller".equals(key) && value instanceof Person) { seller((Person)value); return; }
-      if ("sellers".equals(key) && value instanceof Person) { seller((Person)value); return; }
-      if ("paymentDueDate".equals(key) && value instanceof java.util.Date) { paymentDueDate((java.util.Date)value); return; }
-      if ("paymentDueDates".equals(key) && value instanceof java.util.Date) { paymentDueDate((java.util.Date)value); return; }
-      if ("broker".equals(key) && value instanceof Organization) { broker((Organization)value); return; }
-      if ("brokers".equals(key) && value instanceof Organization) { broker((Organization)value); return; }
-      if ("broker".equals(key) && value instanceof Person) { broker((Person)value); return; }
-      if ("brokers".equals(key) && value instanceof Person) { broker((Person)value); return; }
+      if ("orderDelivery".equals(key) && value instanceof ParcelDelivery) { this.orderDelivery((ParcelDelivery)value); return; }
+      if ("orderDeliverys".equals(key) && value instanceof ParcelDelivery) { this.orderDelivery((ParcelDelivery)value); return; }
+      if ("acceptedOffer".equals(key) && value instanceof Offer) { this.acceptedOffer((Offer)value); return; }
+      if ("acceptedOffers".equals(key) && value instanceof Offer) { this.acceptedOffer((Offer)value); return; }
+      if ("billingAddress".equals(key) && value instanceof PostalAddress) { this.billingAddress((PostalAddress)value); return; }
+      if ("billingAddresss".equals(key) && value instanceof PostalAddress) { this.billingAddress((PostalAddress)value); return; }
+      if ("confirmationNumber".equals(key) && value instanceof Identifier) { this.confirmationNumber((Identifier)value); return; }
+      if ("confirmationNumbers".equals(key) && value instanceof Identifier) { this.confirmationNumber((Identifier)value); return; }
+      if ("confirmationNumber".equals(key) && value instanceof String) { this.confirmationNumber((String)value); return; }
+      if ("confirmationNumbers".equals(key) && value instanceof String) { this.confirmationNumber((String)value); return; }
+      if ("customer".equals(key) && value instanceof Organization) { this.customer((Organization)value); return; }
+      if ("customers".equals(key) && value instanceof Organization) { this.customer((Organization)value); return; }
+      if ("customer".equals(key) && value instanceof Person) { this.customer((Person)value); return; }
+      if ("customers".equals(key) && value instanceof Person) { this.customer((Person)value); return; }
+      if ("discount".equals(key) && value instanceof Integer) { this.discount((Integer)value); return; }
+      if ("discounts".equals(key) && value instanceof Integer) { this.discount((Integer)value); return; }
+      if ("discount".equals(key) && value instanceof Long) { this.discount((Long)value); return; }
+      if ("discounts".equals(key) && value instanceof Long) { this.discount((Long)value); return; }
+      if ("discount".equals(key) && value instanceof Float) { this.discount((Float)value); return; }
+      if ("discounts".equals(key) && value instanceof Float) { this.discount((Float)value); return; }
+      if ("discount".equals(key) && value instanceof Double) { this.discount((Double)value); return; }
+      if ("discounts".equals(key) && value instanceof Double) { this.discount((Double)value); return; }
+      if ("discount".equals(key) && value instanceof String) { this.discount((String)value); return; }
+      if ("discounts".equals(key) && value instanceof String) { this.discount((String)value); return; }
+      if ("discountCode".equals(key) && value instanceof String) { this.discountCode((String)value); return; }
+      if ("discountCodes".equals(key) && value instanceof String) { this.discountCode((String)value); return; }
+      if ("discountCurrency".equals(key) && value instanceof String) { this.discountCurrency((String)value); return; }
+      if ("discountCurrencys".equals(key) && value instanceof String) { this.discountCurrency((String)value); return; }
+      if ("isGift".equals(key) && value instanceof Boolean) { this.isGift((Boolean)value); return; }
+      if ("isGifts".equals(key) && value instanceof Boolean) { this.isGift((Boolean)value); return; }
+      if ("orderDate".equals(key) && value instanceof java.util.Date) { this.orderDate((java.util.Date)value); return; }
+      if ("orderDates".equals(key) && value instanceof java.util.Date) { this.orderDate((java.util.Date)value); return; }
+      if ("orderedItem".equals(key) && value instanceof OrderItem) { this.orderedItem((OrderItem)value); return; }
+      if ("orderedItems".equals(key) && value instanceof OrderItem) { this.orderedItem((OrderItem)value); return; }
+      if ("orderedItem".equals(key) && value instanceof Product) { this.orderedItem((Product)value); return; }
+      if ("orderedItems".equals(key) && value instanceof Product) { this.orderedItem((Product)value); return; }
+      if ("orderedItem".equals(key) && value instanceof Service) { this.orderedItem((Service)value); return; }
+      if ("orderedItems".equals(key) && value instanceof Service) { this.orderedItem((Service)value); return; }
+      if ("orderNumber".equals(key) && value instanceof Identifier) { this.orderNumber((Identifier)value); return; }
+      if ("orderNumbers".equals(key) && value instanceof Identifier) { this.orderNumber((Identifier)value); return; }
+      if ("orderNumber".equals(key) && value instanceof String) { this.orderNumber((String)value); return; }
+      if ("orderNumbers".equals(key) && value instanceof String) { this.orderNumber((String)value); return; }
+      if ("orderStatus".equals(key) && value instanceof OrderStatus) { this.orderStatus((OrderStatus)value); return; }
+      if ("orderStatuss".equals(key) && value instanceof OrderStatus) { this.orderStatus((OrderStatus)value); return; }
+      if ("partOfInvoice".equals(key) && value instanceof Invoice) { this.partOfInvoice((Invoice)value); return; }
+      if ("partOfInvoices".equals(key) && value instanceof Invoice) { this.partOfInvoice((Invoice)value); return; }
+      if ("paymentMethod".equals(key) && value instanceof PaymentMethod) { this.paymentMethod((PaymentMethod)value); return; }
+      if ("paymentMethods".equals(key) && value instanceof PaymentMethod) { this.paymentMethod((PaymentMethod)value); return; }
+      if ("paymentMethodId".equals(key) && value instanceof String) { this.paymentMethodId((String)value); return; }
+      if ("paymentMethodIds".equals(key) && value instanceof String) { this.paymentMethodId((String)value); return; }
+      if ("paymentUrl".equals(key) && value instanceof String) { this.paymentUrl((String)value); return; }
+      if ("paymentUrls".equals(key) && value instanceof String) { this.paymentUrl((String)value); return; }
+      if ("seller".equals(key) && value instanceof Organization) { this.seller((Organization)value); return; }
+      if ("sellers".equals(key) && value instanceof Organization) { this.seller((Organization)value); return; }
+      if ("seller".equals(key) && value instanceof Participant) { this.seller((Participant)value); return; }
+      if ("sellers".equals(key) && value instanceof Participant) { this.seller((Participant)value); return; }
+      if ("seller".equals(key) && value instanceof Person) { this.seller((Person)value); return; }
+      if ("sellers".equals(key) && value instanceof Person) { this.seller((Person)value); return; }
+      if ("paymentDueDate".equals(key) && value instanceof java.util.Date) { this.paymentDueDate((java.util.Date)value); return; }
+      if ("paymentDueDates".equals(key) && value instanceof java.util.Date) { this.paymentDueDate((java.util.Date)value); return; }
+      if ("broker".equals(key) && value instanceof Organization) { this.broker((Organization)value); return; }
+      if ("brokers".equals(key) && value instanceof Organization) { this.broker((Organization)value); return; }
+      if ("broker".equals(key) && value instanceof Person) { this.broker((Person)value); return; }
+      if ("brokers".equals(key) && value instanceof Person) { this.broker((Person)value); return; }
       super.fromMap(key, value);
     }
   }

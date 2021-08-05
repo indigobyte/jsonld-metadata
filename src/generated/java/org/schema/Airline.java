@@ -230,14 +230,14 @@ public class Airline extends Organization {
       return this;
     }
     /**
-     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
+     * The Dun &amp; Bradstreet DUNS number for identifying an organization or business person.
      */
     @NotNull public Builder duns(@NotNull Identifier identifier) {
       putValue("duns", identifier);
       return this;
     }
     /**
-     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
+     * The Dun &amp; Bradstreet DUNS number for identifying an organization or business person.
      */
     @NotNull public Builder duns(@NotNull String duns) {
       putValue("duns", duns);
@@ -750,10 +750,10 @@ public class Airline extends Organization {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("boardingPolicy".equals(key) && value instanceof BoardingPolicyType) { boardingPolicy((BoardingPolicyType)value); return; }
-      if ("boardingPolicys".equals(key) && value instanceof BoardingPolicyType) { boardingPolicy((BoardingPolicyType)value); return; }
-      if ("iataCode".equals(key) && value instanceof String) { iataCode((String)value); return; }
-      if ("iataCodes".equals(key) && value instanceof String) { iataCode((String)value); return; }
+      if ("boardingPolicy".equals(key) && value instanceof BoardingPolicyType) { this.boardingPolicy((BoardingPolicyType)value); return; }
+      if ("boardingPolicys".equals(key) && value instanceof BoardingPolicyType) { this.boardingPolicy((BoardingPolicyType)value); return; }
+      if ("iataCode".equals(key) && value instanceof String) { this.iataCode((String)value); return; }
+      if ("iataCodes".equals(key) && value instanceof String) { this.iataCode((String)value); return; }
       super.fromMap(key, value);
     }
   }

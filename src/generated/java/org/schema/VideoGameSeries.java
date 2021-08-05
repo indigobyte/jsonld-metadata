@@ -334,13 +334,13 @@ public class VideoGameSeries extends CreativeWorkSeries {
     return Arrays.asList((CreativeWork) current);
   }
   /**
-   * The electronic systems used to play <a href="http://en.wikipedia.org/wiki/Category:Video_game_platforms">video games</a>.
+   * The electronic systems used to play &lt;a href=&quot;http://en.wikipedia.org/wiki/Category:Video_game_platforms&quot;&gt;video games&lt;/a&gt;.
    */
   @JsonIgnore public String getGamePlatformString() {
     return (String) getValue("gamePlatform");
   }
   /**
-   * The electronic systems used to play <a href="http://en.wikipedia.org/wiki/Category:Video_game_platforms">video games</a>.
+   * The electronic systems used to play &lt;a href=&quot;http://en.wikipedia.org/wiki/Category:Video_game_platforms&quot;&gt;video games&lt;/a&gt;.
    */
   @JsonIgnore public Collection<String> getGamePlatformStrings() {
     final Object current = myData.get("gamePlatform");
@@ -351,13 +351,13 @@ public class VideoGameSeries extends CreativeWorkSeries {
     return Arrays.asList((String) current);
   }
   /**
-   * The electronic systems used to play <a href="http://en.wikipedia.org/wiki/Category:Video_game_platforms">video games</a>.
+   * The electronic systems used to play &lt;a href=&quot;http://en.wikipedia.org/wiki/Category:Video_game_platforms&quot;&gt;video games&lt;/a&gt;.
    */
   @JsonIgnore public Thing getGamePlatformThing() {
     return (Thing) getValue("gamePlatform");
   }
   /**
-   * The electronic systems used to play <a href="http://en.wikipedia.org/wiki/Category:Video_game_platforms">video games</a>.
+   * The electronic systems used to play &lt;a href=&quot;http://en.wikipedia.org/wiki/Category:Video_game_platforms&quot;&gt;video games&lt;/a&gt;.
    */
   @JsonIgnore public Collection<Thing> getGamePlatformThings() {
     final Object current = myData.get("gamePlatform");
@@ -650,21 +650,21 @@ public class VideoGameSeries extends CreativeWorkSeries {
       return this;
     }
     /**
-     * The electronic systems used to play <a href="http://en.wikipedia.org/wiki/Category:Video_game_platforms">video games</a>.
+     * The electronic systems used to play &lt;a href=&quot;http://en.wikipedia.org/wiki/Category:Video_game_platforms&quot;&gt;video games&lt;/a&gt;.
      */
     @NotNull public Builder gamePlatform(@NotNull String gamePlatform) {
       putValue("gamePlatform", gamePlatform);
       return this;
     }
     /**
-     * The electronic systems used to play <a href="http://en.wikipedia.org/wiki/Category:Video_game_platforms">video games</a>.
+     * The electronic systems used to play &lt;a href=&quot;http://en.wikipedia.org/wiki/Category:Video_game_platforms&quot;&gt;video games&lt;/a&gt;.
      */
     @NotNull public Builder gamePlatform(@NotNull Thing thing) {
       putValue("gamePlatform", thing);
       return this;
     }
     /**
-     * The electronic systems used to play <a href="http://en.wikipedia.org/wiki/Category:Video_game_platforms">video games</a>.
+     * The electronic systems used to play &lt;a href=&quot;http://en.wikipedia.org/wiki/Category:Video_game_platforms&quot;&gt;video games&lt;/a&gt;.
      */
     @NotNull public Builder gamePlatform(@NotNull Thing.Builder thing) {
       putValue("gamePlatform", thing.build());
@@ -846,52 +846,52 @@ public class VideoGameSeries extends CreativeWorkSeries {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("actor".equals(key) && value instanceof Person) { actor((Person)value); return; }
-      if ("actors".equals(key) && value instanceof Person) { actor((Person)value); return; }
-      if ("director".equals(key) && value instanceof Person) { director((Person)value); return; }
-      if ("directors".equals(key) && value instanceof Person) { director((Person)value); return; }
-      if ("episode".equals(key) && value instanceof Episode) { episode((Episode)value); return; }
-      if ("episodes".equals(key) && value instanceof Episode) { episode((Episode)value); return; }
-      if ("episode".equals(key) && value instanceof HasPart) { episode((HasPart)value); return; }
-      if ("episodes".equals(key) && value instanceof HasPart) { episode((HasPart)value); return; }
-      if ("musicBy".equals(key) && value instanceof MusicGroup) { musicBy((MusicGroup)value); return; }
-      if ("musicBys".equals(key) && value instanceof MusicGroup) { musicBy((MusicGroup)value); return; }
-      if ("musicBy".equals(key) && value instanceof Person) { musicBy((Person)value); return; }
-      if ("musicBys".equals(key) && value instanceof Person) { musicBy((Person)value); return; }
-      if ("numberOfEpisodes".equals(key) && value instanceof Integer) { numberOfEpisodes((Integer)value); return; }
-      if ("numberOfEpisodess".equals(key) && value instanceof Integer) { numberOfEpisodes((Integer)value); return; }
-      if ("numberOfSeasons".equals(key) && value instanceof Integer) { numberOfSeasons((Integer)value); return; }
-      if ("numberOfSeasonss".equals(key) && value instanceof Integer) { numberOfSeasons((Integer)value); return; }
-      if ("productionCompany".equals(key) && value instanceof Organization) { productionCompany((Organization)value); return; }
-      if ("productionCompanys".equals(key) && value instanceof Organization) { productionCompany((Organization)value); return; }
-      if ("containsSeason".equals(key) && value instanceof CreativeWorkSeason) { containsSeason((CreativeWorkSeason)value); return; }
-      if ("containsSeasons".equals(key) && value instanceof CreativeWorkSeason) { containsSeason((CreativeWorkSeason)value); return; }
-      if ("containsSeason".equals(key) && value instanceof HasPart) { containsSeason((HasPart)value); return; }
-      if ("containsSeasons".equals(key) && value instanceof HasPart) { containsSeason((HasPart)value); return; }
-      if ("trailer".equals(key) && value instanceof VideoObject) { trailer((VideoObject)value); return; }
-      if ("trailers".equals(key) && value instanceof VideoObject) { trailer((VideoObject)value); return; }
-      if ("numberOfPlayers".equals(key) && value instanceof QuantitativeValue) { numberOfPlayers((QuantitativeValue)value); return; }
-      if ("numberOfPlayerss".equals(key) && value instanceof QuantitativeValue) { numberOfPlayers((QuantitativeValue)value); return; }
-      if ("quest".equals(key) && value instanceof Thing) { quest((Thing)value); return; }
-      if ("quests".equals(key) && value instanceof Thing) { quest((Thing)value); return; }
-      if ("gameItem".equals(key) && value instanceof Thing) { gameItem((Thing)value); return; }
-      if ("gameItems".equals(key) && value instanceof Thing) { gameItem((Thing)value); return; }
-      if ("characterAttribute".equals(key) && value instanceof Thing) { characterAttribute((Thing)value); return; }
-      if ("characterAttributes".equals(key) && value instanceof Thing) { characterAttribute((Thing)value); return; }
-      if ("playMode".equals(key) && value instanceof GamePlayMode) { playMode((GamePlayMode)value); return; }
-      if ("playModes".equals(key) && value instanceof GamePlayMode) { playMode((GamePlayMode)value); return; }
-      if ("cheatCode".equals(key) && value instanceof CreativeWork) { cheatCode((CreativeWork)value); return; }
-      if ("cheatCodes".equals(key) && value instanceof CreativeWork) { cheatCode((CreativeWork)value); return; }
-      if ("gamePlatform".equals(key) && value instanceof String) { gamePlatform((String)value); return; }
-      if ("gamePlatforms".equals(key) && value instanceof String) { gamePlatform((String)value); return; }
-      if ("gamePlatform".equals(key) && value instanceof Thing) { gamePlatform((Thing)value); return; }
-      if ("gamePlatforms".equals(key) && value instanceof Thing) { gamePlatform((Thing)value); return; }
-      if ("gameLocation".equals(key) && value instanceof Place) { gameLocation((Place)value); return; }
-      if ("gameLocations".equals(key) && value instanceof Place) { gameLocation((Place)value); return; }
-      if ("gameLocation".equals(key) && value instanceof PostalAddress) { gameLocation((PostalAddress)value); return; }
-      if ("gameLocations".equals(key) && value instanceof PostalAddress) { gameLocation((PostalAddress)value); return; }
-      if ("gameLocation".equals(key) && value instanceof String) { gameLocation((String)value); return; }
-      if ("gameLocations".equals(key) && value instanceof String) { gameLocation((String)value); return; }
+      if ("actor".equals(key) && value instanceof Person) { this.actor((Person)value); return; }
+      if ("actors".equals(key) && value instanceof Person) { this.actor((Person)value); return; }
+      if ("director".equals(key) && value instanceof Person) { this.director((Person)value); return; }
+      if ("directors".equals(key) && value instanceof Person) { this.director((Person)value); return; }
+      if ("episode".equals(key) && value instanceof Episode) { this.episode((Episode)value); return; }
+      if ("episodes".equals(key) && value instanceof Episode) { this.episode((Episode)value); return; }
+      if ("episode".equals(key) && value instanceof HasPart) { this.episode((HasPart)value); return; }
+      if ("episodes".equals(key) && value instanceof HasPart) { this.episode((HasPart)value); return; }
+      if ("musicBy".equals(key) && value instanceof MusicGroup) { this.musicBy((MusicGroup)value); return; }
+      if ("musicBys".equals(key) && value instanceof MusicGroup) { this.musicBy((MusicGroup)value); return; }
+      if ("musicBy".equals(key) && value instanceof Person) { this.musicBy((Person)value); return; }
+      if ("musicBys".equals(key) && value instanceof Person) { this.musicBy((Person)value); return; }
+      if ("numberOfEpisodes".equals(key) && value instanceof Integer) { this.numberOfEpisodes((Integer)value); return; }
+      if ("numberOfEpisodess".equals(key) && value instanceof Integer) { this.numberOfEpisodes((Integer)value); return; }
+      if ("numberOfSeasons".equals(key) && value instanceof Integer) { this.numberOfSeasons((Integer)value); return; }
+      if ("numberOfSeasonss".equals(key) && value instanceof Integer) { this.numberOfSeasons((Integer)value); return; }
+      if ("productionCompany".equals(key) && value instanceof Organization) { this.productionCompany((Organization)value); return; }
+      if ("productionCompanys".equals(key) && value instanceof Organization) { this.productionCompany((Organization)value); return; }
+      if ("containsSeason".equals(key) && value instanceof CreativeWorkSeason) { this.containsSeason((CreativeWorkSeason)value); return; }
+      if ("containsSeasons".equals(key) && value instanceof CreativeWorkSeason) { this.containsSeason((CreativeWorkSeason)value); return; }
+      if ("containsSeason".equals(key) && value instanceof HasPart) { this.containsSeason((HasPart)value); return; }
+      if ("containsSeasons".equals(key) && value instanceof HasPart) { this.containsSeason((HasPart)value); return; }
+      if ("trailer".equals(key) && value instanceof VideoObject) { this.trailer((VideoObject)value); return; }
+      if ("trailers".equals(key) && value instanceof VideoObject) { this.trailer((VideoObject)value); return; }
+      if ("numberOfPlayers".equals(key) && value instanceof QuantitativeValue) { this.numberOfPlayers((QuantitativeValue)value); return; }
+      if ("numberOfPlayerss".equals(key) && value instanceof QuantitativeValue) { this.numberOfPlayers((QuantitativeValue)value); return; }
+      if ("quest".equals(key) && value instanceof Thing) { this.quest((Thing)value); return; }
+      if ("quests".equals(key) && value instanceof Thing) { this.quest((Thing)value); return; }
+      if ("gameItem".equals(key) && value instanceof Thing) { this.gameItem((Thing)value); return; }
+      if ("gameItems".equals(key) && value instanceof Thing) { this.gameItem((Thing)value); return; }
+      if ("characterAttribute".equals(key) && value instanceof Thing) { this.characterAttribute((Thing)value); return; }
+      if ("characterAttributes".equals(key) && value instanceof Thing) { this.characterAttribute((Thing)value); return; }
+      if ("playMode".equals(key) && value instanceof GamePlayMode) { this.playMode((GamePlayMode)value); return; }
+      if ("playModes".equals(key) && value instanceof GamePlayMode) { this.playMode((GamePlayMode)value); return; }
+      if ("cheatCode".equals(key) && value instanceof CreativeWork) { this.cheatCode((CreativeWork)value); return; }
+      if ("cheatCodes".equals(key) && value instanceof CreativeWork) { this.cheatCode((CreativeWork)value); return; }
+      if ("gamePlatform".equals(key) && value instanceof String) { this.gamePlatform((String)value); return; }
+      if ("gamePlatforms".equals(key) && value instanceof String) { this.gamePlatform((String)value); return; }
+      if ("gamePlatform".equals(key) && value instanceof Thing) { this.gamePlatform((Thing)value); return; }
+      if ("gamePlatforms".equals(key) && value instanceof Thing) { this.gamePlatform((Thing)value); return; }
+      if ("gameLocation".equals(key) && value instanceof Place) { this.gameLocation((Place)value); return; }
+      if ("gameLocations".equals(key) && value instanceof Place) { this.gameLocation((Place)value); return; }
+      if ("gameLocation".equals(key) && value instanceof PostalAddress) { this.gameLocation((PostalAddress)value); return; }
+      if ("gameLocations".equals(key) && value instanceof PostalAddress) { this.gameLocation((PostalAddress)value); return; }
+      if ("gameLocation".equals(key) && value instanceof String) { this.gameLocation((String)value); return; }
+      if ("gameLocations".equals(key) && value instanceof String) { this.gameLocation((String)value); return; }
       super.fromMap(key, value);
     }
   }

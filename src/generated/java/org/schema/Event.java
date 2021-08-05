@@ -334,14 +334,14 @@ public class Event extends Thing {
     return Arrays.asList((Integer) current);
   }
   /**
-   * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+   * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
    *       
    */
   @JsonIgnore public Demand getOffersDemand() {
     return (Demand) getValue("offers");
   }
   /**
-   * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+   * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
    *       
    */
   @JsonIgnore public Collection<Demand> getOffersDemands() {
@@ -353,14 +353,14 @@ public class Event extends Thing {
     return Arrays.asList((Demand) current);
   }
   /**
-   * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+   * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
    *       
    */
   @JsonIgnore public Offer getOffersOffer() {
     return (Offer) getValue("offers");
   }
   /**
-   * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+   * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
    *       
    */
   @JsonIgnore public Collection<Offer> getOffersOffers() {
@@ -372,13 +372,13 @@ public class Event extends Thing {
     return Arrays.asList((Offer) current);
   }
   /**
-   * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
+   * A performer at the event&amp;#x2014;for example, a presenter, musician, musical group or actor.
    */
   @JsonIgnore public Organization getPerformerOrganization() {
     return (Organization) getValue("performer");
   }
   /**
-   * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
+   * A performer at the event&amp;#x2014;for example, a presenter, musician, musical group or actor.
    */
   @JsonIgnore public Collection<Organization> getPerformerOrganizations() {
     final Object current = myData.get("performer");
@@ -389,13 +389,13 @@ public class Event extends Thing {
     return Arrays.asList((Organization) current);
   }
   /**
-   * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
+   * A performer at the event&amp;#x2014;for example, a presenter, musician, musical group or actor.
    */
   @JsonIgnore public Person getPerformerPerson() {
     return (Person) getValue("performer");
   }
   /**
-   * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
+   * A performer at the event&amp;#x2014;for example, a presenter, musician, musical group or actor.
    */
   @JsonIgnore public Collection<Person> getPerformerPersons() {
     final Object current = myData.get("performer");
@@ -880,7 +880,7 @@ public class Event extends Thing {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Demand demand) {
@@ -888,7 +888,7 @@ public class Event extends Thing {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Demand.Builder demand) {
@@ -896,7 +896,7 @@ public class Event extends Thing {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Offer offer) {
@@ -904,7 +904,7 @@ public class Event extends Thing {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Offer.Builder offer) {
@@ -912,28 +912,28 @@ public class Event extends Thing {
       return this;
     }
     /**
-     * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
+     * A performer at the event&amp;#x2014;for example, a presenter, musician, musical group or actor.
      */
     @NotNull public Builder performer(@NotNull Organization organization) {
       putValue("performer", organization);
       return this;
     }
     /**
-     * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
+     * A performer at the event&amp;#x2014;for example, a presenter, musician, musical group or actor.
      */
     @NotNull public Builder performer(@NotNull Organization.Builder organization) {
       putValue("performer", organization.build());
       return this;
     }
     /**
-     * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
+     * A performer at the event&amp;#x2014;for example, a presenter, musician, musical group or actor.
      */
     @NotNull public Builder performer(@NotNull Person person) {
       putValue("performer", person);
       return this;
     }
     /**
-     * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
+     * A performer at the event&amp;#x2014;for example, a presenter, musician, musical group or actor.
      */
     @NotNull public Builder performer(@NotNull Person.Builder person) {
       putValue("performer", person.build());
@@ -1235,80 +1235,80 @@ public class Event extends Thing {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("actor".equals(key) && value instanceof Person) { actor((Person)value); return; }
-      if ("actors".equals(key) && value instanceof Person) { actor((Person)value); return; }
-      if ("aggregateRating".equals(key) && value instanceof AggregateRating) { aggregateRating((AggregateRating)value); return; }
-      if ("aggregateRatings".equals(key) && value instanceof AggregateRating) { aggregateRating((AggregateRating)value); return; }
-      if ("organizer".equals(key) && value instanceof Organization) { organizer((Organization)value); return; }
-      if ("organizers".equals(key) && value instanceof Organization) { organizer((Organization)value); return; }
-      if ("organizer".equals(key) && value instanceof Person) { organizer((Person)value); return; }
-      if ("organizers".equals(key) && value instanceof Person) { organizer((Person)value); return; }
-      if ("attendee".equals(key) && value instanceof Organization) { attendee((Organization)value); return; }
-      if ("attendees".equals(key) && value instanceof Organization) { attendee((Organization)value); return; }
-      if ("attendee".equals(key) && value instanceof Person) { attendee((Person)value); return; }
-      if ("attendees".equals(key) && value instanceof Person) { attendee((Person)value); return; }
-      if ("audience".equals(key) && value instanceof Audience) { audience((Audience)value); return; }
-      if ("audiences".equals(key) && value instanceof Audience) { audience((Audience)value); return; }
-      if ("contributor".equals(key) && value instanceof Organization) { contributor((Organization)value); return; }
-      if ("contributors".equals(key) && value instanceof Organization) { contributor((Organization)value); return; }
-      if ("contributor".equals(key) && value instanceof Person) { contributor((Person)value); return; }
-      if ("contributors".equals(key) && value instanceof Person) { contributor((Person)value); return; }
-      if ("director".equals(key) && value instanceof Person) { director((Person)value); return; }
-      if ("directors".equals(key) && value instanceof Person) { director((Person)value); return; }
-      if ("doorTime".equals(key) && value instanceof java.util.Date) { doorTime((java.util.Date)value); return; }
-      if ("doorTimes".equals(key) && value instanceof java.util.Date) { doorTime((java.util.Date)value); return; }
-      if ("endDate".equals(key) && value instanceof java.util.Date) { endDate((java.util.Date)value); return; }
-      if ("endDates".equals(key) && value instanceof java.util.Date) { endDate((java.util.Date)value); return; }
-      if ("eventStatus".equals(key) && value instanceof EventStatusType) { eventStatus((EventStatusType)value); return; }
-      if ("eventStatuss".equals(key) && value instanceof EventStatusType) { eventStatus((EventStatusType)value); return; }
-      if ("isAccessibleForFree".equals(key) && value instanceof Boolean) { isAccessibleForFree((Boolean)value); return; }
-      if ("isAccessibleForFrees".equals(key) && value instanceof Boolean) { isAccessibleForFree((Boolean)value); return; }
-      if ("inLanguage".equals(key) && value instanceof Language) { inLanguage((Language)value); return; }
-      if ("inLanguages".equals(key) && value instanceof Language) { inLanguage((Language)value); return; }
-      if ("inLanguage".equals(key) && value instanceof String) { inLanguage((String)value); return; }
-      if ("inLanguages".equals(key) && value instanceof String) { inLanguage((String)value); return; }
-      if ("maximumAttendeeCapacity".equals(key) && value instanceof Integer) { maximumAttendeeCapacity((Integer)value); return; }
-      if ("maximumAttendeeCapacitys".equals(key) && value instanceof Integer) { maximumAttendeeCapacity((Integer)value); return; }
-      if ("remainingAttendeeCapacity".equals(key) && value instanceof Integer) { remainingAttendeeCapacity((Integer)value); return; }
-      if ("remainingAttendeeCapacitys".equals(key) && value instanceof Integer) { remainingAttendeeCapacity((Integer)value); return; }
-      if ("offers".equals(key) && value instanceof Demand) { offers((Demand)value); return; }
-      if ("offerss".equals(key) && value instanceof Demand) { offers((Demand)value); return; }
-      if ("offers".equals(key) && value instanceof Offer) { offers((Offer)value); return; }
-      if ("offerss".equals(key) && value instanceof Offer) { offers((Offer)value); return; }
-      if ("performer".equals(key) && value instanceof Organization) { performer((Organization)value); return; }
-      if ("performers".equals(key) && value instanceof Organization) { performer((Organization)value); return; }
-      if ("performer".equals(key) && value instanceof Person) { performer((Person)value); return; }
-      if ("performers".equals(key) && value instanceof Person) { performer((Person)value); return; }
-      if ("previousStartDate".equals(key) && value instanceof java.util.Date) { previousStartDate((java.util.Date)value); return; }
-      if ("previousStartDates".equals(key) && value instanceof java.util.Date) { previousStartDate((java.util.Date)value); return; }
-      if ("recordedIn".equals(key) && value instanceof CreativeWork) { recordedIn((CreativeWork)value); return; }
-      if ("recordedIns".equals(key) && value instanceof CreativeWork) { recordedIn((CreativeWork)value); return; }
-      if ("review".equals(key) && value instanceof Review) { review((Review)value); return; }
-      if ("reviews".equals(key) && value instanceof Review) { review((Review)value); return; }
-      if ("funder".equals(key) && value instanceof Organization) { funder((Organization)value); return; }
-      if ("funders".equals(key) && value instanceof Organization) { funder((Organization)value); return; }
-      if ("funder".equals(key) && value instanceof Person) { funder((Person)value); return; }
-      if ("funders".equals(key) && value instanceof Person) { funder((Person)value); return; }
-      if ("startDate".equals(key) && value instanceof java.util.Date) { startDate((java.util.Date)value); return; }
-      if ("startDates".equals(key) && value instanceof java.util.Date) { startDate((java.util.Date)value); return; }
-      if ("subEvent".equals(key) && value instanceof Event) { subEvent((Event)value); return; }
-      if ("subEvents".equals(key) && value instanceof Event) { subEvent((Event)value); return; }
-      if ("superEvent".equals(key) && value instanceof Event) { superEvent((Event)value); return; }
-      if ("superEvents".equals(key) && value instanceof Event) { superEvent((Event)value); return; }
-      if ("typicalAgeRange".equals(key) && value instanceof String) { typicalAgeRange((String)value); return; }
-      if ("typicalAgeRanges".equals(key) && value instanceof String) { typicalAgeRange((String)value); return; }
-      if ("workPerformed".equals(key) && value instanceof CreativeWork) { workPerformed((CreativeWork)value); return; }
-      if ("workPerformeds".equals(key) && value instanceof CreativeWork) { workPerformed((CreativeWork)value); return; }
-      if ("workFeatured".equals(key) && value instanceof WorkFeatured) { workFeatured((WorkFeatured)value); return; }
-      if ("workFeatureds".equals(key) && value instanceof WorkFeatured) { workFeatured((WorkFeatured)value); return; }
-      if ("translator".equals(key) && value instanceof Organization) { translator((Organization)value); return; }
-      if ("translators".equals(key) && value instanceof Organization) { translator((Organization)value); return; }
-      if ("translator".equals(key) && value instanceof Person) { translator((Person)value); return; }
-      if ("translators".equals(key) && value instanceof Person) { translator((Person)value); return; }
-      if ("composer".equals(key) && value instanceof Organization) { composer((Organization)value); return; }
-      if ("composers".equals(key) && value instanceof Organization) { composer((Organization)value); return; }
-      if ("composer".equals(key) && value instanceof Person) { composer((Person)value); return; }
-      if ("composers".equals(key) && value instanceof Person) { composer((Person)value); return; }
+      if ("actor".equals(key) && value instanceof Person) { this.actor((Person)value); return; }
+      if ("actors".equals(key) && value instanceof Person) { this.actor((Person)value); return; }
+      if ("aggregateRating".equals(key) && value instanceof AggregateRating) { this.aggregateRating((AggregateRating)value); return; }
+      if ("aggregateRatings".equals(key) && value instanceof AggregateRating) { this.aggregateRating((AggregateRating)value); return; }
+      if ("organizer".equals(key) && value instanceof Organization) { this.organizer((Organization)value); return; }
+      if ("organizers".equals(key) && value instanceof Organization) { this.organizer((Organization)value); return; }
+      if ("organizer".equals(key) && value instanceof Person) { this.organizer((Person)value); return; }
+      if ("organizers".equals(key) && value instanceof Person) { this.organizer((Person)value); return; }
+      if ("attendee".equals(key) && value instanceof Organization) { this.attendee((Organization)value); return; }
+      if ("attendees".equals(key) && value instanceof Organization) { this.attendee((Organization)value); return; }
+      if ("attendee".equals(key) && value instanceof Person) { this.attendee((Person)value); return; }
+      if ("attendees".equals(key) && value instanceof Person) { this.attendee((Person)value); return; }
+      if ("audience".equals(key) && value instanceof Audience) { this.audience((Audience)value); return; }
+      if ("audiences".equals(key) && value instanceof Audience) { this.audience((Audience)value); return; }
+      if ("contributor".equals(key) && value instanceof Organization) { this.contributor((Organization)value); return; }
+      if ("contributors".equals(key) && value instanceof Organization) { this.contributor((Organization)value); return; }
+      if ("contributor".equals(key) && value instanceof Person) { this.contributor((Person)value); return; }
+      if ("contributors".equals(key) && value instanceof Person) { this.contributor((Person)value); return; }
+      if ("director".equals(key) && value instanceof Person) { this.director((Person)value); return; }
+      if ("directors".equals(key) && value instanceof Person) { this.director((Person)value); return; }
+      if ("doorTime".equals(key) && value instanceof java.util.Date) { this.doorTime((java.util.Date)value); return; }
+      if ("doorTimes".equals(key) && value instanceof java.util.Date) { this.doorTime((java.util.Date)value); return; }
+      if ("endDate".equals(key) && value instanceof java.util.Date) { this.endDate((java.util.Date)value); return; }
+      if ("endDates".equals(key) && value instanceof java.util.Date) { this.endDate((java.util.Date)value); return; }
+      if ("eventStatus".equals(key) && value instanceof EventStatusType) { this.eventStatus((EventStatusType)value); return; }
+      if ("eventStatuss".equals(key) && value instanceof EventStatusType) { this.eventStatus((EventStatusType)value); return; }
+      if ("isAccessibleForFree".equals(key) && value instanceof Boolean) { this.isAccessibleForFree((Boolean)value); return; }
+      if ("isAccessibleForFrees".equals(key) && value instanceof Boolean) { this.isAccessibleForFree((Boolean)value); return; }
+      if ("inLanguage".equals(key) && value instanceof Language) { this.inLanguage((Language)value); return; }
+      if ("inLanguages".equals(key) && value instanceof Language) { this.inLanguage((Language)value); return; }
+      if ("inLanguage".equals(key) && value instanceof String) { this.inLanguage((String)value); return; }
+      if ("inLanguages".equals(key) && value instanceof String) { this.inLanguage((String)value); return; }
+      if ("maximumAttendeeCapacity".equals(key) && value instanceof Integer) { this.maximumAttendeeCapacity((Integer)value); return; }
+      if ("maximumAttendeeCapacitys".equals(key) && value instanceof Integer) { this.maximumAttendeeCapacity((Integer)value); return; }
+      if ("remainingAttendeeCapacity".equals(key) && value instanceof Integer) { this.remainingAttendeeCapacity((Integer)value); return; }
+      if ("remainingAttendeeCapacitys".equals(key) && value instanceof Integer) { this.remainingAttendeeCapacity((Integer)value); return; }
+      if ("offers".equals(key) && value instanceof Demand) { this.offers((Demand)value); return; }
+      if ("offerss".equals(key) && value instanceof Demand) { this.offers((Demand)value); return; }
+      if ("offers".equals(key) && value instanceof Offer) { this.offers((Offer)value); return; }
+      if ("offerss".equals(key) && value instanceof Offer) { this.offers((Offer)value); return; }
+      if ("performer".equals(key) && value instanceof Organization) { this.performer((Organization)value); return; }
+      if ("performers".equals(key) && value instanceof Organization) { this.performer((Organization)value); return; }
+      if ("performer".equals(key) && value instanceof Person) { this.performer((Person)value); return; }
+      if ("performers".equals(key) && value instanceof Person) { this.performer((Person)value); return; }
+      if ("previousStartDate".equals(key) && value instanceof java.util.Date) { this.previousStartDate((java.util.Date)value); return; }
+      if ("previousStartDates".equals(key) && value instanceof java.util.Date) { this.previousStartDate((java.util.Date)value); return; }
+      if ("recordedIn".equals(key) && value instanceof CreativeWork) { this.recordedIn((CreativeWork)value); return; }
+      if ("recordedIns".equals(key) && value instanceof CreativeWork) { this.recordedIn((CreativeWork)value); return; }
+      if ("review".equals(key) && value instanceof Review) { this.review((Review)value); return; }
+      if ("reviews".equals(key) && value instanceof Review) { this.review((Review)value); return; }
+      if ("funder".equals(key) && value instanceof Organization) { this.funder((Organization)value); return; }
+      if ("funders".equals(key) && value instanceof Organization) { this.funder((Organization)value); return; }
+      if ("funder".equals(key) && value instanceof Person) { this.funder((Person)value); return; }
+      if ("funders".equals(key) && value instanceof Person) { this.funder((Person)value); return; }
+      if ("startDate".equals(key) && value instanceof java.util.Date) { this.startDate((java.util.Date)value); return; }
+      if ("startDates".equals(key) && value instanceof java.util.Date) { this.startDate((java.util.Date)value); return; }
+      if ("subEvent".equals(key) && value instanceof Event) { this.subEvent((Event)value); return; }
+      if ("subEvents".equals(key) && value instanceof Event) { this.subEvent((Event)value); return; }
+      if ("superEvent".equals(key) && value instanceof Event) { this.superEvent((Event)value); return; }
+      if ("superEvents".equals(key) && value instanceof Event) { this.superEvent((Event)value); return; }
+      if ("typicalAgeRange".equals(key) && value instanceof String) { this.typicalAgeRange((String)value); return; }
+      if ("typicalAgeRanges".equals(key) && value instanceof String) { this.typicalAgeRange((String)value); return; }
+      if ("workPerformed".equals(key) && value instanceof CreativeWork) { this.workPerformed((CreativeWork)value); return; }
+      if ("workPerformeds".equals(key) && value instanceof CreativeWork) { this.workPerformed((CreativeWork)value); return; }
+      if ("workFeatured".equals(key) && value instanceof WorkFeatured) { this.workFeatured((WorkFeatured)value); return; }
+      if ("workFeatureds".equals(key) && value instanceof WorkFeatured) { this.workFeatured((WorkFeatured)value); return; }
+      if ("translator".equals(key) && value instanceof Organization) { this.translator((Organization)value); return; }
+      if ("translators".equals(key) && value instanceof Organization) { this.translator((Organization)value); return; }
+      if ("translator".equals(key) && value instanceof Person) { this.translator((Person)value); return; }
+      if ("translators".equals(key) && value instanceof Person) { this.translator((Person)value); return; }
+      if ("composer".equals(key) && value instanceof Organization) { this.composer((Organization)value); return; }
+      if ("composers".equals(key) && value instanceof Organization) { this.composer((Organization)value); return; }
+      if ("composer".equals(key) && value instanceof Person) { this.composer((Person)value); return; }
+      if ("composers".equals(key) && value instanceof Person) { this.composer((Person)value); return; }
       super.fromMap(key, value);
     }
   }

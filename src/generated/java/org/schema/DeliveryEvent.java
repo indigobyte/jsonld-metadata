@@ -341,7 +341,7 @@ public class DeliveryEvent extends Event {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Demand demand) {
@@ -349,7 +349,7 @@ public class DeliveryEvent extends Event {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Demand.Builder demand) {
@@ -357,7 +357,7 @@ public class DeliveryEvent extends Event {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Offer offer) {
@@ -365,7 +365,7 @@ public class DeliveryEvent extends Event {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Offer.Builder offer) {
@@ -373,28 +373,28 @@ public class DeliveryEvent extends Event {
       return this;
     }
     /**
-     * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
+     * A performer at the event&amp;#x2014;for example, a presenter, musician, musical group or actor.
      */
     @NotNull public Builder performer(@NotNull Organization organization) {
       putValue("performer", organization);
       return this;
     }
     /**
-     * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
+     * A performer at the event&amp;#x2014;for example, a presenter, musician, musical group or actor.
      */
     @NotNull public Builder performer(@NotNull Organization.Builder organization) {
       putValue("performer", organization.build());
       return this;
     }
     /**
-     * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
+     * A performer at the event&amp;#x2014;for example, a presenter, musician, musical group or actor.
      */
     @NotNull public Builder performer(@NotNull Person person) {
       putValue("performer", person);
       return this;
     }
     /**
-     * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
+     * A performer at the event&amp;#x2014;for example, a presenter, musician, musical group or actor.
      */
     @NotNull public Builder performer(@NotNull Person.Builder person) {
       putValue("performer", person.build());
@@ -696,14 +696,14 @@ public class DeliveryEvent extends Event {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("accessCode".equals(key) && value instanceof String) { accessCode((String)value); return; }
-      if ("accessCodes".equals(key) && value instanceof String) { accessCode((String)value); return; }
-      if ("availableFrom".equals(key) && value instanceof java.util.Date) { availableFrom((java.util.Date)value); return; }
-      if ("availableFroms".equals(key) && value instanceof java.util.Date) { availableFrom((java.util.Date)value); return; }
-      if ("availableThrough".equals(key) && value instanceof java.util.Date) { availableThrough((java.util.Date)value); return; }
-      if ("availableThroughs".equals(key) && value instanceof java.util.Date) { availableThrough((java.util.Date)value); return; }
-      if ("hasDeliveryMethod".equals(key) && value instanceof DeliveryMethod) { hasDeliveryMethod((DeliveryMethod)value); return; }
-      if ("hasDeliveryMethods".equals(key) && value instanceof DeliveryMethod) { hasDeliveryMethod((DeliveryMethod)value); return; }
+      if ("accessCode".equals(key) && value instanceof String) { this.accessCode((String)value); return; }
+      if ("accessCodes".equals(key) && value instanceof String) { this.accessCode((String)value); return; }
+      if ("availableFrom".equals(key) && value instanceof java.util.Date) { this.availableFrom((java.util.Date)value); return; }
+      if ("availableFroms".equals(key) && value instanceof java.util.Date) { this.availableFrom((java.util.Date)value); return; }
+      if ("availableThrough".equals(key) && value instanceof java.util.Date) { this.availableThrough((java.util.Date)value); return; }
+      if ("availableThroughs".equals(key) && value instanceof java.util.Date) { this.availableThrough((java.util.Date)value); return; }
+      if ("hasDeliveryMethod".equals(key) && value instanceof DeliveryMethod) { this.hasDeliveryMethod((DeliveryMethod)value); return; }
+      if ("hasDeliveryMethods".equals(key) && value instanceof DeliveryMethod) { this.hasDeliveryMethod((DeliveryMethod)value); return; }
       super.fromMap(key, value);
     }
   }

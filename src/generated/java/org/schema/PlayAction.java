@@ -293,10 +293,10 @@ public class PlayAction extends Action {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("audience".equals(key) && value instanceof Audience) { audience((Audience)value); return; }
-      if ("audiences".equals(key) && value instanceof Audience) { audience((Audience)value); return; }
-      if ("event".equals(key) && value instanceof Event) { event((Event)value); return; }
-      if ("events".equals(key) && value instanceof Event) { event((Event)value); return; }
+      if ("audience".equals(key) && value instanceof Audience) { this.audience((Audience)value); return; }
+      if ("audiences".equals(key) && value instanceof Audience) { this.audience((Audience)value); return; }
+      if ("event".equals(key) && value instanceof Event) { this.event((Event)value); return; }
+      if ("events".equals(key) && value instanceof Event) { this.event((Event)value); return; }
       super.fromMap(key, value);
     }
   }

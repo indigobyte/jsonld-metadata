@@ -16,8 +16,12 @@
 
 package org.schema.generator
 
+import org.apache.commons.text.StringEscapeUtils
+import org.semarglproject.xml.XmlUtils
+import java.beans.XMLEncoder
 import java.io.Closeable
 import java.io.File
+import javax.swing.text.html.HTML
 
 /**
  * @author Victor Kropp
@@ -162,7 +166,7 @@ class Klass(val sourceDirectory: File, val namespace: String?, val name: String,
             appendLine()
             comment?.let {
                 appendLine("/**")
-                it.split("\n").forEach { appendLine(" * $it") }
+                it.split("\n").forEach { appendLine(" * ${StringEscapeUtils.escapeHtml4(it)}") }
                 appendLine(" */")
             }
             annotations?.forEach {
@@ -227,7 +231,7 @@ class Enumeration(val sourceDirectory: File, val namespace: String?, val name: S
             }
             comment?.let {
                 appendLine("/**")
-                it.split("\n").flatMap { it.split("\\n") }.forEach { appendLine(" * $it") }
+                it.split("\n").flatMap { it.split("\\n") }.forEach { appendLine(" * ${StringEscapeUtils.escapeHtml4(it)}") }
                 appendLine(" */")
             }
 
@@ -284,7 +288,7 @@ class Field(val c: Type, val name: String, val type: String, val access: String,
     fun getter(annotations: Collection<String>? = null, comment: String? = null) {
         comment?.let {
             c.text.appendLine("  /**")
-            c.text.appendLine("   * $it")
+            c.text.appendLine("   * ${StringEscapeUtils.escapeHtml4(it)}")
             c.text.appendLine("   */")
         }
         annotations?.forEach { c.text.appendLine("  $it") }
@@ -366,7 +370,7 @@ class Method(val c: Klass, val name: String, val type: String): Closeable {
 private fun appendComment(stringBuilder: StringBuilder, indent: String, comment: String?) {
     comment?.let {
         stringBuilder.appendLine("$indent/**")
-        stringBuilder.appendLine("$indent * ${it.replace("\n", "\n$indent * ")}")
+        stringBuilder.appendLine("$indent * ${StringEscapeUtils.escapeHtml4(it.replace("\n", "\n$indent * "))}")
         stringBuilder.appendLine("$indent */")
     }
 }

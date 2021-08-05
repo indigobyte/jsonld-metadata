@@ -376,14 +376,14 @@ public class ReceiveAction extends TransferAction {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("deliveryMethod".equals(key) && value instanceof DeliveryMethod) { deliveryMethod((DeliveryMethod)value); return; }
-      if ("deliveryMethods".equals(key) && value instanceof DeliveryMethod) { deliveryMethod((DeliveryMethod)value); return; }
-      if ("sender".equals(key) && value instanceof Audience) { sender((Audience)value); return; }
-      if ("senders".equals(key) && value instanceof Audience) { sender((Audience)value); return; }
-      if ("sender".equals(key) && value instanceof Organization) { sender((Organization)value); return; }
-      if ("senders".equals(key) && value instanceof Organization) { sender((Organization)value); return; }
-      if ("sender".equals(key) && value instanceof Person) { sender((Person)value); return; }
-      if ("senders".equals(key) && value instanceof Person) { sender((Person)value); return; }
+      if ("deliveryMethod".equals(key) && value instanceof DeliveryMethod) { this.deliveryMethod((DeliveryMethod)value); return; }
+      if ("deliveryMethods".equals(key) && value instanceof DeliveryMethod) { this.deliveryMethod((DeliveryMethod)value); return; }
+      if ("sender".equals(key) && value instanceof Audience) { this.sender((Audience)value); return; }
+      if ("senders".equals(key) && value instanceof Audience) { this.sender((Audience)value); return; }
+      if ("sender".equals(key) && value instanceof Organization) { this.sender((Organization)value); return; }
+      if ("senders".equals(key) && value instanceof Organization) { this.sender((Organization)value); return; }
+      if ("sender".equals(key) && value instanceof Person) { this.sender((Person)value); return; }
+      if ("senders".equals(key) && value instanceof Person) { this.sender((Person)value); return; }
       super.fromMap(key, value);
     }
   }

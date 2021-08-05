@@ -35,7 +35,7 @@ public class NewsArticle extends Article {
    * 
    * Structured representations of dateline-related information can also be expressed more explicitly using [[locationCreated]] (which represents where a work was created e.g. where a news report was written).  For location depicted or described in the content, use [[contentLocation]].
    * 
-   * Dateline summaries are oriented more towards human readers than towards automated processing, and can vary substantially. Some examples: "BEIRUT, Lebanon, June 2.", "Paris, France", "December 19, 2017 11:43AM Reporting from Washington", "Beijing/Moscow", "QUEZON CITY, Philippines".
+   * Dateline summaries are oriented more towards human readers than towards automated processing, and can vary substantially. Some examples: &quot;BEIRUT, Lebanon, June 2.&quot;, &quot;Paris, France&quot;, &quot;December 19, 2017 11:43AM Reporting from Washington&quot;, &quot;Beijing/Moscow&quot;, &quot;QUEZON CITY, Philippines&quot;.
    *       
    */
   @JsonIgnore public String getDateline() {
@@ -46,7 +46,7 @@ public class NewsArticle extends Article {
    * 
    * Structured representations of dateline-related information can also be expressed more explicitly using [[locationCreated]] (which represents where a work was created e.g. where a news report was written).  For location depicted or described in the content, use [[contentLocation]].
    * 
-   * Dateline summaries are oriented more towards human readers than towards automated processing, and can vary substantially. Some examples: "BEIRUT, Lebanon, June 2.", "Paris, France", "December 19, 2017 11:43AM Reporting from Washington", "Beijing/Moscow", "QUEZON CITY, Philippines".
+   * Dateline summaries are oriented more towards human readers than towards automated processing, and can vary substantially. Some examples: &quot;BEIRUT, Lebanon, June 2.&quot;, &quot;Paris, France&quot;, &quot;December 19, 2017 11:43AM Reporting from Washington&quot;, &quot;Beijing/Moscow&quot;, &quot;QUEZON CITY, Philippines&quot;.
    *       
    */
   @JsonIgnore public Collection<String> getDatelines() {
@@ -144,7 +144,7 @@ public class NewsArticle extends Article {
      * 
      * Structured representations of dateline-related information can also be expressed more explicitly using [[locationCreated]] (which represents where a work was created e.g. where a news report was written).  For location depicted or described in the content, use [[contentLocation]].
      * 
-     * Dateline summaries are oriented more towards human readers than towards automated processing, and can vary substantially. Some examples: "BEIRUT, Lebanon, June 2.", "Paris, France", "December 19, 2017 11:43AM Reporting from Washington", "Beijing/Moscow", "QUEZON CITY, Philippines".
+     * Dateline summaries are oriented more towards human readers than towards automated processing, and can vary substantially. Some examples: &quot;BEIRUT, Lebanon, June 2.&quot;, &quot;Paris, France&quot;, &quot;December 19, 2017 11:43AM Reporting from Washington&quot;, &quot;Beijing/Moscow&quot;, &quot;QUEZON CITY, Philippines&quot;.
      *       
      */
     @NotNull public Builder dateline(@NotNull String dateline) {
@@ -201,35 +201,35 @@ public class NewsArticle extends Article {
       return this;
     }
     /**
-     * The page on which the work ends; for example "138" or "xvi".
+     * The page on which the work ends; for example &quot;138&quot; or &quot;xvi&quot;.
      */
     @NotNull public Builder pageEnd(@NotNull Integer integer) {
       putValue("pageEnd", integer);
       return this;
     }
     /**
-     * The page on which the work ends; for example "138" or "xvi".
+     * The page on which the work ends; for example &quot;138&quot; or &quot;xvi&quot;.
      */
     @NotNull public Builder pageEnd(@NotNull String pageEnd) {
       putValue("pageEnd", pageEnd);
       return this;
     }
     /**
-     * The page on which the work starts; for example "135" or "xiii".
+     * The page on which the work starts; for example &quot;135&quot; or &quot;xiii&quot;.
      */
     @NotNull public Builder pageStart(@NotNull Integer integer) {
       putValue("pageStart", integer);
       return this;
     }
     /**
-     * The page on which the work starts; for example "135" or "xiii".
+     * The page on which the work starts; for example &quot;135&quot; or &quot;xiii&quot;.
      */
     @NotNull public Builder pageStart(@NotNull String pageStart) {
       putValue("pageStart", pageStart);
       return this;
     }
     /**
-     * Any description of pages that is not separated into pageStart and pageEnd; for example, "1-6, 9, 55" or "10-12, 46-49".
+     * Any description of pages that is not separated into pageStart and pageEnd; for example, &quot;1-6, 9, 55&quot; or &quot;10-12, 46-49&quot;.
      */
     @NotNull public Builder pagination(@NotNull String pagination) {
       putValue("pagination", pagination);
@@ -506,21 +506,21 @@ public class NewsArticle extends Article {
       return this;
     }
     /**
-     * Official rating of a piece of content&#x2014;for example,'MPAA PG-13'.
+     * Official rating of a piece of content&amp;#x2014;for example,'MPAA PG-13'.
      */
     @NotNull public Builder contentRating(@NotNull Rating rating) {
       putValue("contentRating", rating);
       return this;
     }
     /**
-     * Official rating of a piece of content&#x2014;for example,'MPAA PG-13'.
+     * Official rating of a piece of content&amp;#x2014;for example,'MPAA PG-13'.
      */
     @NotNull public Builder contentRating(@NotNull Rating.Builder rating) {
       putValue("contentRating", rating.build());
       return this;
     }
     /**
-     * Official rating of a piece of content&#x2014;for example,'MPAA PG-13'.
+     * Official rating of a piece of content&amp;#x2014;for example,'MPAA PG-13'.
      */
     @NotNull public Builder contentRating(@NotNull String contentRating) {
       putValue("contentRating", contentRating);
@@ -902,7 +902,7 @@ public class NewsArticle extends Article {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Demand demand) {
@@ -910,7 +910,7 @@ public class NewsArticle extends Article {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Demand.Builder demand) {
@@ -918,7 +918,7 @@ public class NewsArticle extends Article {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Offer offer) {
@@ -926,7 +926,7 @@ public class NewsArticle extends Article {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Offer.Builder offer) {
@@ -1076,7 +1076,7 @@ public class NewsArticle extends Article {
       return this;
     }
     /**
-     * The "spatial" property can be used in cases when more specific properties
+     * The &quot;spatial&quot; property can be used in cases when more specific properties
      * (e.g. [[locationCreated]], [[spatialCoverage]], [[contentLocation]]) are not known to be appropriate.
      */
     @NotNull public Builder spatial(@NotNull Place place) {
@@ -1084,7 +1084,7 @@ public class NewsArticle extends Article {
       return this;
     }
     /**
-     * The "spatial" property can be used in cases when more specific properties
+     * The &quot;spatial&quot; property can be used in cases when more specific properties
      * (e.g. [[locationCreated]], [[spatialCoverage]], [[contentLocation]]) are not known to be appropriate.
      */
     @NotNull public Builder spatial(@NotNull Place.Builder place) {
@@ -1139,10 +1139,10 @@ public class NewsArticle extends Article {
     }
     /**
      * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
-     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.
-     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
+     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written &quot;2011/2012&quot;). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.
+     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via &quot;1939/1945&quot;.
      * 
-     * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
+     * Open-ended date ranges can be written with &quot;..&quot; in place of the end date. For example, &quot;2015-11/..&quot; indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
      */
     @NotNull public Builder temporalCoverage(@NotNull String temporalCoverage) {
       putValue("temporalCoverage", temporalCoverage);
@@ -1150,17 +1150,17 @@ public class NewsArticle extends Article {
     }
     /**
      * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
-     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.
-     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
+     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written &quot;2011/2012&quot;). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.
+     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via &quot;1939/1945&quot;.
      * 
-     * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
+     * Open-ended date ranges can be written with &quot;..&quot; in place of the end date. For example, &quot;2015-11/..&quot; indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
      */
     @NotNull public Builder temporalCoverage(@NotNull java.util.Date date) {
       putValue("temporalCoverage", date);
       return this;
     }
     /**
-     * The "temporal" property can be used in cases where more specific properties
+     * The &quot;temporal&quot; property can be used in cases where more specific properties
      * (e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]], [[datePublished]]) are not known to be appropriate.
      */
     @NotNull public Builder temporal(@NotNull String temporal) {
@@ -1168,7 +1168,7 @@ public class NewsArticle extends Article {
       return this;
     }
     /**
-     * The "temporal" property can be used in cases where more specific properties
+     * The &quot;temporal&quot; property can be used in cases where more specific properties
      * (e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]], [[datePublished]]) are not known to be appropriate.
      */
     @NotNull public Builder temporal(@NotNull java.util.Date date) {
@@ -1431,7 +1431,7 @@ public class NewsArticle extends Article {
       return this;
     }
     /**
-     * A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as "short descriptions are present but long descriptions will be needed for non-visual users" or "short descriptions are present and no long descriptions are needed."
+     * A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as &quot;short descriptions are present but long descriptions will be needed for non-visual users&quot; or &quot;short descriptions are present and no long descriptions are needed.&quot;
      */
     @NotNull public Builder accessibilitySummary(@NotNull String accessibilitySummary) {
       putValue("accessibilitySummary", accessibilitySummary);
@@ -1550,16 +1550,16 @@ public class NewsArticle extends Article {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("dateline".equals(key) && value instanceof String) { dateline((String)value); return; }
-      if ("datelines".equals(key) && value instanceof String) { dateline((String)value); return; }
-      if ("printColumn".equals(key) && value instanceof String) { printColumn((String)value); return; }
-      if ("printColumns".equals(key) && value instanceof String) { printColumn((String)value); return; }
-      if ("printEdition".equals(key) && value instanceof String) { printEdition((String)value); return; }
-      if ("printEditions".equals(key) && value instanceof String) { printEdition((String)value); return; }
-      if ("printPage".equals(key) && value instanceof String) { printPage((String)value); return; }
-      if ("printPages".equals(key) && value instanceof String) { printPage((String)value); return; }
-      if ("printSection".equals(key) && value instanceof String) { printSection((String)value); return; }
-      if ("printSections".equals(key) && value instanceof String) { printSection((String)value); return; }
+      if ("dateline".equals(key) && value instanceof String) { this.dateline((String)value); return; }
+      if ("datelines".equals(key) && value instanceof String) { this.dateline((String)value); return; }
+      if ("printColumn".equals(key) && value instanceof String) { this.printColumn((String)value); return; }
+      if ("printColumns".equals(key) && value instanceof String) { this.printColumn((String)value); return; }
+      if ("printEdition".equals(key) && value instanceof String) { this.printEdition((String)value); return; }
+      if ("printEditions".equals(key) && value instanceof String) { this.printEdition((String)value); return; }
+      if ("printPage".equals(key) && value instanceof String) { this.printPage((String)value); return; }
+      if ("printPages".equals(key) && value instanceof String) { this.printPage((String)value); return; }
+      if ("printSection".equals(key) && value instanceof String) { this.printSection((String)value); return; }
+      if ("printSections".equals(key) && value instanceof String) { this.printSection((String)value); return; }
       super.fromMap(key, value);
     }
   }

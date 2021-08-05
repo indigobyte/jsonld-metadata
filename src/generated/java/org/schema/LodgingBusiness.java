@@ -421,14 +421,14 @@ public class LodgingBusiness extends LocalBusiness {
       return this;
     }
     /**
-     * The currency accepted.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
+     * The currency accepted.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;.
      */
     @NotNull public Builder currenciesAccepted(@NotNull String currenciesAccepted) {
       putValue("currenciesAccepted", currenciesAccepted);
       return this;
     }
     /**
-     * The general opening hours for a business. Opening hours can be specified as a weekly time range, starting with days, then times per day. Multiple days can be listed with commas ',' separating each day. Day or time ranges are specified using a hyphen '-'.\n\n* Days are specified using the following two-letter combinations: ```Mo```, ```Tu```, ```We```, ```Th```, ```Fr```, ```Sa```, ```Su```.\n* Times are specified using 24:00 time. For example, 3pm is specified as ```15:00```. \n* Here is an example: <code>&lt;time itemprop="openingHours" datetime=&quot;Tu,Th 16:00-20:00&quot;&gt;Tuesdays and Thursdays 4-8pm&lt;/time&gt;</code>.\n* If a business is open 7 days a week, then it can be specified as <code>&lt;time itemprop=&quot;openingHours&quot; datetime=&quot;Mo-Su&quot;&gt;Monday through Sunday, all day&lt;/time&gt;</code>.
+     * The general opening hours for a business. Opening hours can be specified as a weekly time range, starting with days, then times per day. Multiple days can be listed with commas ',' separating each day. Day or time ranges are specified using a hyphen '-'.\n\n* Days are specified using the following two-letter combinations: ```Mo```, ```Tu```, ```We```, ```Th```, ```Fr```, ```Sa```, ```Su```.\n* Times are specified using 24:00 time. For example, 3pm is specified as ```15:00```. \n* Here is an example: &lt;code&gt;&amp;lt;time itemprop=&quot;openingHours&quot; datetime=&amp;quot;Tu,Th 16:00-20:00&amp;quot;&amp;gt;Tuesdays and Thursdays 4-8pm&amp;lt;/time&amp;gt;&lt;/code&gt;.\n* If a business is open 7 days a week, then it can be specified as &lt;code&gt;&amp;lt;time itemprop=&amp;quot;openingHours&amp;quot; datetime=&amp;quot;Mo-Su&amp;quot;&amp;gt;Monday through Sunday, all day&amp;lt;/time&amp;gt;&lt;/code&gt;.
      */
     @NotNull public Builder openingHours(@NotNull String openingHours) {
       putValue("openingHours", openingHours);
@@ -484,7 +484,7 @@ public class LodgingBusiness extends LocalBusiness {
       return this;
     }
     /**
-     * A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.\n\nFor example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code "3047" is a branchCode for a particular branch.
+     * A short textual code (also called &quot;store code&quot;) that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.\n\nFor example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code &quot;3047&quot; is a branchCode for a particular branch.
      *       
      */
     @NotNull public Builder branchCode(@NotNull String branchCode) {
@@ -944,34 +944,34 @@ public class LodgingBusiness extends LocalBusiness {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("audience".equals(key) && value instanceof Audience) { audience((Audience)value); return; }
-      if ("audiences".equals(key) && value instanceof Audience) { audience((Audience)value); return; }
-      if ("availableLanguage".equals(key) && value instanceof Language) { availableLanguage((Language)value); return; }
-      if ("availableLanguages".equals(key) && value instanceof Language) { availableLanguage((Language)value); return; }
-      if ("availableLanguage".equals(key) && value instanceof String) { availableLanguage((String)value); return; }
-      if ("availableLanguages".equals(key) && value instanceof String) { availableLanguage((String)value); return; }
-      if ("checkinTime".equals(key) && value instanceof java.util.Date) { checkinTime((java.util.Date)value); return; }
-      if ("checkinTimes".equals(key) && value instanceof java.util.Date) { checkinTime((java.util.Date)value); return; }
-      if ("checkoutTime".equals(key) && value instanceof java.util.Date) { checkoutTime((java.util.Date)value); return; }
-      if ("checkoutTimes".equals(key) && value instanceof java.util.Date) { checkoutTime((java.util.Date)value); return; }
-      if ("amenityFeature".equals(key) && value instanceof LocationFeatureSpecification) { amenityFeature((LocationFeatureSpecification)value); return; }
-      if ("amenityFeatures".equals(key) && value instanceof LocationFeatureSpecification) { amenityFeature((LocationFeatureSpecification)value); return; }
-      if ("numberOfRooms".equals(key) && value instanceof Integer) { numberOfRooms((Integer)value); return; }
-      if ("numberOfRoomss".equals(key) && value instanceof Integer) { numberOfRooms((Integer)value); return; }
-      if ("numberOfRooms".equals(key) && value instanceof Long) { numberOfRooms((Long)value); return; }
-      if ("numberOfRoomss".equals(key) && value instanceof Long) { numberOfRooms((Long)value); return; }
-      if ("numberOfRooms".equals(key) && value instanceof Float) { numberOfRooms((Float)value); return; }
-      if ("numberOfRoomss".equals(key) && value instanceof Float) { numberOfRooms((Float)value); return; }
-      if ("numberOfRooms".equals(key) && value instanceof Double) { numberOfRooms((Double)value); return; }
-      if ("numberOfRoomss".equals(key) && value instanceof Double) { numberOfRooms((Double)value); return; }
-      if ("numberOfRooms".equals(key) && value instanceof String) { numberOfRooms((String)value); return; }
-      if ("numberOfRoomss".equals(key) && value instanceof String) { numberOfRooms((String)value); return; }
-      if ("petsAllowed".equals(key) && value instanceof Boolean) { petsAllowed((Boolean)value); return; }
-      if ("petsAlloweds".equals(key) && value instanceof Boolean) { petsAllowed((Boolean)value); return; }
-      if ("petsAllowed".equals(key) && value instanceof String) { petsAllowed((String)value); return; }
-      if ("petsAlloweds".equals(key) && value instanceof String) { petsAllowed((String)value); return; }
-      if ("starRating".equals(key) && value instanceof Rating) { starRating((Rating)value); return; }
-      if ("starRatings".equals(key) && value instanceof Rating) { starRating((Rating)value); return; }
+      if ("audience".equals(key) && value instanceof Audience) { this.audience((Audience)value); return; }
+      if ("audiences".equals(key) && value instanceof Audience) { this.audience((Audience)value); return; }
+      if ("availableLanguage".equals(key) && value instanceof Language) { this.availableLanguage((Language)value); return; }
+      if ("availableLanguages".equals(key) && value instanceof Language) { this.availableLanguage((Language)value); return; }
+      if ("availableLanguage".equals(key) && value instanceof String) { this.availableLanguage((String)value); return; }
+      if ("availableLanguages".equals(key) && value instanceof String) { this.availableLanguage((String)value); return; }
+      if ("checkinTime".equals(key) && value instanceof java.util.Date) { this.checkinTime((java.util.Date)value); return; }
+      if ("checkinTimes".equals(key) && value instanceof java.util.Date) { this.checkinTime((java.util.Date)value); return; }
+      if ("checkoutTime".equals(key) && value instanceof java.util.Date) { this.checkoutTime((java.util.Date)value); return; }
+      if ("checkoutTimes".equals(key) && value instanceof java.util.Date) { this.checkoutTime((java.util.Date)value); return; }
+      if ("amenityFeature".equals(key) && value instanceof LocationFeatureSpecification) { this.amenityFeature((LocationFeatureSpecification)value); return; }
+      if ("amenityFeatures".equals(key) && value instanceof LocationFeatureSpecification) { this.amenityFeature((LocationFeatureSpecification)value); return; }
+      if ("numberOfRooms".equals(key) && value instanceof Integer) { this.numberOfRooms((Integer)value); return; }
+      if ("numberOfRoomss".equals(key) && value instanceof Integer) { this.numberOfRooms((Integer)value); return; }
+      if ("numberOfRooms".equals(key) && value instanceof Long) { this.numberOfRooms((Long)value); return; }
+      if ("numberOfRoomss".equals(key) && value instanceof Long) { this.numberOfRooms((Long)value); return; }
+      if ("numberOfRooms".equals(key) && value instanceof Float) { this.numberOfRooms((Float)value); return; }
+      if ("numberOfRoomss".equals(key) && value instanceof Float) { this.numberOfRooms((Float)value); return; }
+      if ("numberOfRooms".equals(key) && value instanceof Double) { this.numberOfRooms((Double)value); return; }
+      if ("numberOfRoomss".equals(key) && value instanceof Double) { this.numberOfRooms((Double)value); return; }
+      if ("numberOfRooms".equals(key) && value instanceof String) { this.numberOfRooms((String)value); return; }
+      if ("numberOfRoomss".equals(key) && value instanceof String) { this.numberOfRooms((String)value); return; }
+      if ("petsAllowed".equals(key) && value instanceof Boolean) { this.petsAllowed((Boolean)value); return; }
+      if ("petsAlloweds".equals(key) && value instanceof Boolean) { this.petsAllowed((Boolean)value); return; }
+      if ("petsAllowed".equals(key) && value instanceof String) { this.petsAllowed((String)value); return; }
+      if ("petsAlloweds".equals(key) && value instanceof String) { this.petsAllowed((String)value); return; }
+      if ("starRating".equals(key) && value instanceof Rating) { this.starRating((Rating)value); return; }
+      if ("starRatings".equals(key) && value instanceof Rating) { this.starRating((Rating)value); return; }
       super.fromMap(key, value);
     }
   }

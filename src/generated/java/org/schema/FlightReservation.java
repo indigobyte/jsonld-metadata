@@ -330,7 +330,7 @@ public class FlightReservation extends Reservation {
       return this;
     }
     /**
-     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
+     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;.
      */
     @NotNull public Builder priceCurrency(@NotNull String priceCurrency) {
       putValue("priceCurrency", priceCurrency);
@@ -477,16 +477,16 @@ public class FlightReservation extends Reservation {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("boardingGroup".equals(key) && value instanceof String) { boardingGroup((String)value); return; }
-      if ("boardingGroups".equals(key) && value instanceof String) { boardingGroup((String)value); return; }
-      if ("passengerSequenceNumber".equals(key) && value instanceof String) { passengerSequenceNumber((String)value); return; }
-      if ("passengerSequenceNumbers".equals(key) && value instanceof String) { passengerSequenceNumber((String)value); return; }
-      if ("securityScreening".equals(key) && value instanceof String) { securityScreening((String)value); return; }
-      if ("securityScreenings".equals(key) && value instanceof String) { securityScreening((String)value); return; }
-      if ("passengerPriorityStatus".equals(key) && value instanceof QualitativeValue) { passengerPriorityStatus((QualitativeValue)value); return; }
-      if ("passengerPriorityStatuss".equals(key) && value instanceof QualitativeValue) { passengerPriorityStatus((QualitativeValue)value); return; }
-      if ("passengerPriorityStatus".equals(key) && value instanceof String) { passengerPriorityStatus((String)value); return; }
-      if ("passengerPriorityStatuss".equals(key) && value instanceof String) { passengerPriorityStatus((String)value); return; }
+      if ("boardingGroup".equals(key) && value instanceof String) { this.boardingGroup((String)value); return; }
+      if ("boardingGroups".equals(key) && value instanceof String) { this.boardingGroup((String)value); return; }
+      if ("passengerSequenceNumber".equals(key) && value instanceof String) { this.passengerSequenceNumber((String)value); return; }
+      if ("passengerSequenceNumbers".equals(key) && value instanceof String) { this.passengerSequenceNumber((String)value); return; }
+      if ("securityScreening".equals(key) && value instanceof String) { this.securityScreening((String)value); return; }
+      if ("securityScreenings".equals(key) && value instanceof String) { this.securityScreening((String)value); return; }
+      if ("passengerPriorityStatus".equals(key) && value instanceof QualitativeValue) { this.passengerPriorityStatus((QualitativeValue)value); return; }
+      if ("passengerPriorityStatuss".equals(key) && value instanceof QualitativeValue) { this.passengerPriorityStatus((QualitativeValue)value); return; }
+      if ("passengerPriorityStatus".equals(key) && value instanceof String) { this.passengerPriorityStatus((String)value); return; }
+      if ("passengerPriorityStatuss".equals(key) && value instanceof String) { this.passengerPriorityStatus((String)value); return; }
       super.fromMap(key, value);
     }
   }

@@ -283,8 +283,8 @@ public class ReplyAction extends CommunicateAction {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("resultComment".equals(key) && value instanceof Comment) { resultComment((Comment)value); return; }
-      if ("resultComments".equals(key) && value instanceof Comment) { resultComment((Comment)value); return; }
+      if ("resultComment".equals(key) && value instanceof Comment) { this.resultComment((Comment)value); return; }
+      if ("resultComments".equals(key) && value instanceof Comment) { this.resultComment((Comment)value); return; }
       super.fromMap(key, value);
     }
   }

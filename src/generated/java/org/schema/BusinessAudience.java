@@ -268,12 +268,12 @@ public class BusinessAudience extends Audience {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("numberOfEmployees".equals(key) && value instanceof QuantitativeValue) { numberOfEmployees((QuantitativeValue)value); return; }
-      if ("numberOfEmployeess".equals(key) && value instanceof QuantitativeValue) { numberOfEmployees((QuantitativeValue)value); return; }
-      if ("yearlyRevenue".equals(key) && value instanceof QuantitativeValue) { yearlyRevenue((QuantitativeValue)value); return; }
-      if ("yearlyRevenues".equals(key) && value instanceof QuantitativeValue) { yearlyRevenue((QuantitativeValue)value); return; }
-      if ("yearsInOperation".equals(key) && value instanceof QuantitativeValue) { yearsInOperation((QuantitativeValue)value); return; }
-      if ("yearsInOperations".equals(key) && value instanceof QuantitativeValue) { yearsInOperation((QuantitativeValue)value); return; }
+      if ("numberOfEmployees".equals(key) && value instanceof QuantitativeValue) { this.numberOfEmployees((QuantitativeValue)value); return; }
+      if ("numberOfEmployeess".equals(key) && value instanceof QuantitativeValue) { this.numberOfEmployees((QuantitativeValue)value); return; }
+      if ("yearlyRevenue".equals(key) && value instanceof QuantitativeValue) { this.yearlyRevenue((QuantitativeValue)value); return; }
+      if ("yearlyRevenues".equals(key) && value instanceof QuantitativeValue) { this.yearlyRevenue((QuantitativeValue)value); return; }
+      if ("yearsInOperation".equals(key) && value instanceof QuantitativeValue) { this.yearsInOperation((QuantitativeValue)value); return; }
+      if ("yearsInOperations".equals(key) && value instanceof QuantitativeValue) { this.yearsInOperation((QuantitativeValue)value); return; }
       super.fromMap(key, value);
     }
   }

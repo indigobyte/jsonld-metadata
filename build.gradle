@@ -20,7 +20,6 @@ sourceSets {
         java {
             srcDir "src/main/java"
             srcDir "src/generated/java"
-            
         }
     }
     test {
@@ -33,6 +32,12 @@ sourceSets {
             srcDir "src/test/resources"
         }
     }
+}
+
+
+java {
+    withJavadocJar()
+    withSourcesJar()
 }
 
 
@@ -62,7 +67,7 @@ publishing {
     publications {
         JsonLdMetadataPublication(MavenPublication) {
             from components.java
-            groupId 'tv.confcast.schema-org'
+            groupId 'com.indigobyte'
             artifactId 'jsonld-metadata'
             version project.version
         }
@@ -138,6 +143,10 @@ test {
 
 rootProject.tasks.named("processTestResources") {
     duplicatesStrategy = 'include'
+}
+
+project.tasks.named("sourcesJar") {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
 
 //tasks.withType(JavaCompile) {

@@ -519,30 +519,30 @@ public class NutritionInformation extends StructuredValue {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("calories".equals(key) && value instanceof Energy) { calories((Energy)value); return; }
-      if ("caloriess".equals(key) && value instanceof Energy) { calories((Energy)value); return; }
-      if ("carbohydrateContent".equals(key) && value instanceof Mass) { carbohydrateContent((Mass)value); return; }
-      if ("carbohydrateContents".equals(key) && value instanceof Mass) { carbohydrateContent((Mass)value); return; }
-      if ("cholesterolContent".equals(key) && value instanceof Mass) { cholesterolContent((Mass)value); return; }
-      if ("cholesterolContents".equals(key) && value instanceof Mass) { cholesterolContent((Mass)value); return; }
-      if ("fiberContent".equals(key) && value instanceof Mass) { fiberContent((Mass)value); return; }
-      if ("fiberContents".equals(key) && value instanceof Mass) { fiberContent((Mass)value); return; }
-      if ("proteinContent".equals(key) && value instanceof Mass) { proteinContent((Mass)value); return; }
-      if ("proteinContents".equals(key) && value instanceof Mass) { proteinContent((Mass)value); return; }
-      if ("saturatedFatContent".equals(key) && value instanceof Mass) { saturatedFatContent((Mass)value); return; }
-      if ("saturatedFatContents".equals(key) && value instanceof Mass) { saturatedFatContent((Mass)value); return; }
-      if ("servingSize".equals(key) && value instanceof String) { servingSize((String)value); return; }
-      if ("servingSizes".equals(key) && value instanceof String) { servingSize((String)value); return; }
-      if ("sodiumContent".equals(key) && value instanceof Mass) { sodiumContent((Mass)value); return; }
-      if ("sodiumContents".equals(key) && value instanceof Mass) { sodiumContent((Mass)value); return; }
-      if ("sugarContent".equals(key) && value instanceof Mass) { sugarContent((Mass)value); return; }
-      if ("sugarContents".equals(key) && value instanceof Mass) { sugarContent((Mass)value); return; }
-      if ("fatContent".equals(key) && value instanceof Mass) { fatContent((Mass)value); return; }
-      if ("fatContents".equals(key) && value instanceof Mass) { fatContent((Mass)value); return; }
-      if ("transFatContent".equals(key) && value instanceof Mass) { transFatContent((Mass)value); return; }
-      if ("transFatContents".equals(key) && value instanceof Mass) { transFatContent((Mass)value); return; }
-      if ("unsaturatedFatContent".equals(key) && value instanceof Mass) { unsaturatedFatContent((Mass)value); return; }
-      if ("unsaturatedFatContents".equals(key) && value instanceof Mass) { unsaturatedFatContent((Mass)value); return; }
+      if ("calories".equals(key) && value instanceof Energy) { this.calories((Energy)value); return; }
+      if ("caloriess".equals(key) && value instanceof Energy) { this.calories((Energy)value); return; }
+      if ("carbohydrateContent".equals(key) && value instanceof Mass) { this.carbohydrateContent((Mass)value); return; }
+      if ("carbohydrateContents".equals(key) && value instanceof Mass) { this.carbohydrateContent((Mass)value); return; }
+      if ("cholesterolContent".equals(key) && value instanceof Mass) { this.cholesterolContent((Mass)value); return; }
+      if ("cholesterolContents".equals(key) && value instanceof Mass) { this.cholesterolContent((Mass)value); return; }
+      if ("fiberContent".equals(key) && value instanceof Mass) { this.fiberContent((Mass)value); return; }
+      if ("fiberContents".equals(key) && value instanceof Mass) { this.fiberContent((Mass)value); return; }
+      if ("proteinContent".equals(key) && value instanceof Mass) { this.proteinContent((Mass)value); return; }
+      if ("proteinContents".equals(key) && value instanceof Mass) { this.proteinContent((Mass)value); return; }
+      if ("saturatedFatContent".equals(key) && value instanceof Mass) { this.saturatedFatContent((Mass)value); return; }
+      if ("saturatedFatContents".equals(key) && value instanceof Mass) { this.saturatedFatContent((Mass)value); return; }
+      if ("servingSize".equals(key) && value instanceof String) { this.servingSize((String)value); return; }
+      if ("servingSizes".equals(key) && value instanceof String) { this.servingSize((String)value); return; }
+      if ("sodiumContent".equals(key) && value instanceof Mass) { this.sodiumContent((Mass)value); return; }
+      if ("sodiumContents".equals(key) && value instanceof Mass) { this.sodiumContent((Mass)value); return; }
+      if ("sugarContent".equals(key) && value instanceof Mass) { this.sugarContent((Mass)value); return; }
+      if ("sugarContents".equals(key) && value instanceof Mass) { this.sugarContent((Mass)value); return; }
+      if ("fatContent".equals(key) && value instanceof Mass) { this.fatContent((Mass)value); return; }
+      if ("fatContents".equals(key) && value instanceof Mass) { this.fatContent((Mass)value); return; }
+      if ("transFatContent".equals(key) && value instanceof Mass) { this.transFatContent((Mass)value); return; }
+      if ("transFatContents".equals(key) && value instanceof Mass) { this.transFatContent((Mass)value); return; }
+      if ("unsaturatedFatContent".equals(key) && value instanceof Mass) { this.unsaturatedFatContent((Mass)value); return; }
+      if ("unsaturatedFatContents".equals(key) && value instanceof Mass) { this.unsaturatedFatContent((Mass)value); return; }
       super.fromMap(key, value);
     }
   }

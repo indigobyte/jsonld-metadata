@@ -24,7 +24,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * A list of items of any sort&#x2014;for example, Top 10 Movies About Weathermen, or Top 100 Party Songs. Not to be confused with HTML lists, which are often used only for formatting.
+ * A list of items of any sort&amp;#x2014;for example, Top 10 Movies About Weathermen, or Top 100 Party Songs. Not to be confused with HTML lists, which are often used only for formatting.
  */
 public class ItemList extends Intangible implements SuggestedAnswer {
   /**
@@ -79,13 +79,13 @@ public class ItemList extends Intangible implements SuggestedAnswer {
     return Arrays.asList((String) current);
   }
   /**
-   * For itemListElement values, you can use simple strings (e.g. "Peter", "Paul", "Mary"), existing entities, or use ListItem.\n\nText values are best if the elements in the list are plain strings. Existing entities are best for a simple, unordered list of existing things in your data. ListItem is used with ordered lists when you want to provide additional context about the element in that list or when the same item might be in different places in different lists.\n\nNote: The order of elements in your mark-up is not sufficient for indicating the order or elements.  Use ListItem with a 'position' property in such cases.
+   * For itemListElement values, you can use simple strings (e.g. &quot;Peter&quot;, &quot;Paul&quot;, &quot;Mary&quot;), existing entities, or use ListItem.\n\nText values are best if the elements in the list are plain strings. Existing entities are best for a simple, unordered list of existing things in your data. ListItem is used with ordered lists when you want to provide additional context about the element in that list or when the same item might be in different places in different lists.\n\nNote: The order of elements in your mark-up is not sufficient for indicating the order or elements.  Use ListItem with a 'position' property in such cases.
    */
   @JsonIgnore public ListItem getItemListElementListItem() {
     return (ListItem) getValue("itemListElement");
   }
   /**
-   * For itemListElement values, you can use simple strings (e.g. "Peter", "Paul", "Mary"), existing entities, or use ListItem.\n\nText values are best if the elements in the list are plain strings. Existing entities are best for a simple, unordered list of existing things in your data. ListItem is used with ordered lists when you want to provide additional context about the element in that list or when the same item might be in different places in different lists.\n\nNote: The order of elements in your mark-up is not sufficient for indicating the order or elements.  Use ListItem with a 'position' property in such cases.
+   * For itemListElement values, you can use simple strings (e.g. &quot;Peter&quot;, &quot;Paul&quot;, &quot;Mary&quot;), existing entities, or use ListItem.\n\nText values are best if the elements in the list are plain strings. Existing entities are best for a simple, unordered list of existing things in your data. ListItem is used with ordered lists when you want to provide additional context about the element in that list or when the same item might be in different places in different lists.\n\nNote: The order of elements in your mark-up is not sufficient for indicating the order or elements.  Use ListItem with a 'position' property in such cases.
    */
   @JsonIgnore public Collection<ListItem> getItemListElementListItems() {
     final Object current = myData.get("itemListElement");
@@ -96,13 +96,13 @@ public class ItemList extends Intangible implements SuggestedAnswer {
     return Arrays.asList((ListItem) current);
   }
   /**
-   * For itemListElement values, you can use simple strings (e.g. "Peter", "Paul", "Mary"), existing entities, or use ListItem.\n\nText values are best if the elements in the list are plain strings. Existing entities are best for a simple, unordered list of existing things in your data. ListItem is used with ordered lists when you want to provide additional context about the element in that list or when the same item might be in different places in different lists.\n\nNote: The order of elements in your mark-up is not sufficient for indicating the order or elements.  Use ListItem with a 'position' property in such cases.
+   * For itemListElement values, you can use simple strings (e.g. &quot;Peter&quot;, &quot;Paul&quot;, &quot;Mary&quot;), existing entities, or use ListItem.\n\nText values are best if the elements in the list are plain strings. Existing entities are best for a simple, unordered list of existing things in your data. ListItem is used with ordered lists when you want to provide additional context about the element in that list or when the same item might be in different places in different lists.\n\nNote: The order of elements in your mark-up is not sufficient for indicating the order or elements.  Use ListItem with a 'position' property in such cases.
    */
   @JsonIgnore public String getItemListElementString() {
     return (String) getValue("itemListElement");
   }
   /**
-   * For itemListElement values, you can use simple strings (e.g. "Peter", "Paul", "Mary"), existing entities, or use ListItem.\n\nText values are best if the elements in the list are plain strings. Existing entities are best for a simple, unordered list of existing things in your data. ListItem is used with ordered lists when you want to provide additional context about the element in that list or when the same item might be in different places in different lists.\n\nNote: The order of elements in your mark-up is not sufficient for indicating the order or elements.  Use ListItem with a 'position' property in such cases.
+   * For itemListElement values, you can use simple strings (e.g. &quot;Peter&quot;, &quot;Paul&quot;, &quot;Mary&quot;), existing entities, or use ListItem.\n\nText values are best if the elements in the list are plain strings. Existing entities are best for a simple, unordered list of existing things in your data. ListItem is used with ordered lists when you want to provide additional context about the element in that list or when the same item might be in different places in different lists.\n\nNote: The order of elements in your mark-up is not sufficient for indicating the order or elements.  Use ListItem with a 'position' property in such cases.
    */
   @JsonIgnore public Collection<String> getItemListElementStrings() {
     final Object current = myData.get("itemListElement");
@@ -113,13 +113,13 @@ public class ItemList extends Intangible implements SuggestedAnswer {
     return Arrays.asList((String) current);
   }
   /**
-   * For itemListElement values, you can use simple strings (e.g. "Peter", "Paul", "Mary"), existing entities, or use ListItem.\n\nText values are best if the elements in the list are plain strings. Existing entities are best for a simple, unordered list of existing things in your data. ListItem is used with ordered lists when you want to provide additional context about the element in that list or when the same item might be in different places in different lists.\n\nNote: The order of elements in your mark-up is not sufficient for indicating the order or elements.  Use ListItem with a 'position' property in such cases.
+   * For itemListElement values, you can use simple strings (e.g. &quot;Peter&quot;, &quot;Paul&quot;, &quot;Mary&quot;), existing entities, or use ListItem.\n\nText values are best if the elements in the list are plain strings. Existing entities are best for a simple, unordered list of existing things in your data. ListItem is used with ordered lists when you want to provide additional context about the element in that list or when the same item might be in different places in different lists.\n\nNote: The order of elements in your mark-up is not sufficient for indicating the order or elements.  Use ListItem with a 'position' property in such cases.
    */
   @JsonIgnore public Thing getItemListElementThing() {
     return (Thing) getValue("itemListElement");
   }
   /**
-   * For itemListElement values, you can use simple strings (e.g. "Peter", "Paul", "Mary"), existing entities, or use ListItem.\n\nText values are best if the elements in the list are plain strings. Existing entities are best for a simple, unordered list of existing things in your data. ListItem is used with ordered lists when you want to provide additional context about the element in that list or when the same item might be in different places in different lists.\n\nNote: The order of elements in your mark-up is not sufficient for indicating the order or elements.  Use ListItem with a 'position' property in such cases.
+   * For itemListElement values, you can use simple strings (e.g. &quot;Peter&quot;, &quot;Paul&quot;, &quot;Mary&quot;), existing entities, or use ListItem.\n\nText values are best if the elements in the list are plain strings. Existing entities are best for a simple, unordered list of existing things in your data. ListItem is used with ordered lists when you want to provide additional context about the element in that list or when the same item might be in different places in different lists.\n\nNote: The order of elements in your mark-up is not sufficient for indicating the order or elements.  Use ListItem with a 'position' property in such cases.
    */
   @JsonIgnore public Collection<Thing> getItemListElementThings() {
     final Object current = myData.get("itemListElement");
@@ -165,35 +165,35 @@ public class ItemList extends Intangible implements SuggestedAnswer {
       return this;
     }
     /**
-     * For itemListElement values, you can use simple strings (e.g. "Peter", "Paul", "Mary"), existing entities, or use ListItem.\n\nText values are best if the elements in the list are plain strings. Existing entities are best for a simple, unordered list of existing things in your data. ListItem is used with ordered lists when you want to provide additional context about the element in that list or when the same item might be in different places in different lists.\n\nNote: The order of elements in your mark-up is not sufficient for indicating the order or elements.  Use ListItem with a 'position' property in such cases.
+     * For itemListElement values, you can use simple strings (e.g. &quot;Peter&quot;, &quot;Paul&quot;, &quot;Mary&quot;), existing entities, or use ListItem.\n\nText values are best if the elements in the list are plain strings. Existing entities are best for a simple, unordered list of existing things in your data. ListItem is used with ordered lists when you want to provide additional context about the element in that list or when the same item might be in different places in different lists.\n\nNote: The order of elements in your mark-up is not sufficient for indicating the order or elements.  Use ListItem with a 'position' property in such cases.
      */
     @NotNull public Builder itemListElement(@NotNull ListItem listItem) {
       putValue("itemListElement", listItem);
       return this;
     }
     /**
-     * For itemListElement values, you can use simple strings (e.g. "Peter", "Paul", "Mary"), existing entities, or use ListItem.\n\nText values are best if the elements in the list are plain strings. Existing entities are best for a simple, unordered list of existing things in your data. ListItem is used with ordered lists when you want to provide additional context about the element in that list or when the same item might be in different places in different lists.\n\nNote: The order of elements in your mark-up is not sufficient for indicating the order or elements.  Use ListItem with a 'position' property in such cases.
+     * For itemListElement values, you can use simple strings (e.g. &quot;Peter&quot;, &quot;Paul&quot;, &quot;Mary&quot;), existing entities, or use ListItem.\n\nText values are best if the elements in the list are plain strings. Existing entities are best for a simple, unordered list of existing things in your data. ListItem is used with ordered lists when you want to provide additional context about the element in that list or when the same item might be in different places in different lists.\n\nNote: The order of elements in your mark-up is not sufficient for indicating the order or elements.  Use ListItem with a 'position' property in such cases.
      */
     @NotNull public Builder itemListElement(@NotNull ListItem.Builder listItem) {
       putValue("itemListElement", listItem.build());
       return this;
     }
     /**
-     * For itemListElement values, you can use simple strings (e.g. "Peter", "Paul", "Mary"), existing entities, or use ListItem.\n\nText values are best if the elements in the list are plain strings. Existing entities are best for a simple, unordered list of existing things in your data. ListItem is used with ordered lists when you want to provide additional context about the element in that list or when the same item might be in different places in different lists.\n\nNote: The order of elements in your mark-up is not sufficient for indicating the order or elements.  Use ListItem with a 'position' property in such cases.
+     * For itemListElement values, you can use simple strings (e.g. &quot;Peter&quot;, &quot;Paul&quot;, &quot;Mary&quot;), existing entities, or use ListItem.\n\nText values are best if the elements in the list are plain strings. Existing entities are best for a simple, unordered list of existing things in your data. ListItem is used with ordered lists when you want to provide additional context about the element in that list or when the same item might be in different places in different lists.\n\nNote: The order of elements in your mark-up is not sufficient for indicating the order or elements.  Use ListItem with a 'position' property in such cases.
      */
     @NotNull public Builder itemListElement(@NotNull String itemListElement) {
       putValue("itemListElement", itemListElement);
       return this;
     }
     /**
-     * For itemListElement values, you can use simple strings (e.g. "Peter", "Paul", "Mary"), existing entities, or use ListItem.\n\nText values are best if the elements in the list are plain strings. Existing entities are best for a simple, unordered list of existing things in your data. ListItem is used with ordered lists when you want to provide additional context about the element in that list or when the same item might be in different places in different lists.\n\nNote: The order of elements in your mark-up is not sufficient for indicating the order or elements.  Use ListItem with a 'position' property in such cases.
+     * For itemListElement values, you can use simple strings (e.g. &quot;Peter&quot;, &quot;Paul&quot;, &quot;Mary&quot;), existing entities, or use ListItem.\n\nText values are best if the elements in the list are plain strings. Existing entities are best for a simple, unordered list of existing things in your data. ListItem is used with ordered lists when you want to provide additional context about the element in that list or when the same item might be in different places in different lists.\n\nNote: The order of elements in your mark-up is not sufficient for indicating the order or elements.  Use ListItem with a 'position' property in such cases.
      */
     @NotNull public Builder itemListElement(@NotNull Thing thing) {
       putValue("itemListElement", thing);
       return this;
     }
     /**
-     * For itemListElement values, you can use simple strings (e.g. "Peter", "Paul", "Mary"), existing entities, or use ListItem.\n\nText values are best if the elements in the list are plain strings. Existing entities are best for a simple, unordered list of existing things in your data. ListItem is used with ordered lists when you want to provide additional context about the element in that list or when the same item might be in different places in different lists.\n\nNote: The order of elements in your mark-up is not sufficient for indicating the order or elements.  Use ListItem with a 'position' property in such cases.
+     * For itemListElement values, you can use simple strings (e.g. &quot;Peter&quot;, &quot;Paul&quot;, &quot;Mary&quot;), existing entities, or use ListItem.\n\nText values are best if the elements in the list are plain strings. Existing entities are best for a simple, unordered list of existing things in your data. ListItem is used with ordered lists when you want to provide additional context about the element in that list or when the same item might be in different places in different lists.\n\nNote: The order of elements in your mark-up is not sufficient for indicating the order or elements.  Use ListItem with a 'position' property in such cases.
      */
     @NotNull public Builder itemListElement(@NotNull Thing.Builder thing) {
       putValue("itemListElement", thing.build());
@@ -312,18 +312,18 @@ public class ItemList extends Intangible implements SuggestedAnswer {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("numberOfItems".equals(key) && value instanceof Integer) { numberOfItems((Integer)value); return; }
-      if ("numberOfItemss".equals(key) && value instanceof Integer) { numberOfItems((Integer)value); return; }
-      if ("itemListOrder".equals(key) && value instanceof ItemListOrderType) { itemListOrder((ItemListOrderType)value); return; }
-      if ("itemListOrders".equals(key) && value instanceof ItemListOrderType) { itemListOrder((ItemListOrderType)value); return; }
-      if ("itemListOrder".equals(key) && value instanceof String) { itemListOrder((String)value); return; }
-      if ("itemListOrders".equals(key) && value instanceof String) { itemListOrder((String)value); return; }
-      if ("itemListElement".equals(key) && value instanceof ListItem) { itemListElement((ListItem)value); return; }
-      if ("itemListElements".equals(key) && value instanceof ListItem) { itemListElement((ListItem)value); return; }
-      if ("itemListElement".equals(key) && value instanceof String) { itemListElement((String)value); return; }
-      if ("itemListElements".equals(key) && value instanceof String) { itemListElement((String)value); return; }
-      if ("itemListElement".equals(key) && value instanceof Thing) { itemListElement((Thing)value); return; }
-      if ("itemListElements".equals(key) && value instanceof Thing) { itemListElement((Thing)value); return; }
+      if ("numberOfItems".equals(key) && value instanceof Integer) { this.numberOfItems((Integer)value); return; }
+      if ("numberOfItemss".equals(key) && value instanceof Integer) { this.numberOfItems((Integer)value); return; }
+      if ("itemListOrder".equals(key) && value instanceof ItemListOrderType) { this.itemListOrder((ItemListOrderType)value); return; }
+      if ("itemListOrders".equals(key) && value instanceof ItemListOrderType) { this.itemListOrder((ItemListOrderType)value); return; }
+      if ("itemListOrder".equals(key) && value instanceof String) { this.itemListOrder((String)value); return; }
+      if ("itemListOrders".equals(key) && value instanceof String) { this.itemListOrder((String)value); return; }
+      if ("itemListElement".equals(key) && value instanceof ListItem) { this.itemListElement((ListItem)value); return; }
+      if ("itemListElements".equals(key) && value instanceof ListItem) { this.itemListElement((ListItem)value); return; }
+      if ("itemListElement".equals(key) && value instanceof String) { this.itemListElement((String)value); return; }
+      if ("itemListElements".equals(key) && value instanceof String) { this.itemListElement((String)value); return; }
+      if ("itemListElement".equals(key) && value instanceof Thing) { this.itemListElement((Thing)value); return; }
+      if ("itemListElements".equals(key) && value instanceof Thing) { this.itemListElement((Thing)value); return; }
       super.fromMap(key, value);
     }
   }

@@ -113,13 +113,13 @@ public class BroadcastChannel extends Intangible {
     return Arrays.asList((BroadcastService) current);
   }
   /**
-   * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
+   * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. &quot;87 FM&quot;.
    */
   @JsonIgnore public BroadcastFrequencySpecification getBroadcastFrequencyBroadcastFrequencySpecification() {
     return (BroadcastFrequencySpecification) getValue("broadcastFrequency");
   }
   /**
-   * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
+   * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. &quot;87 FM&quot;.
    */
   @JsonIgnore public Collection<BroadcastFrequencySpecification> getBroadcastFrequencyBroadcastFrequencySpecifications() {
     final Object current = myData.get("broadcastFrequency");
@@ -130,13 +130,13 @@ public class BroadcastChannel extends Intangible {
     return Arrays.asList((BroadcastFrequencySpecification) current);
   }
   /**
-   * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
+   * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. &quot;87 FM&quot;.
    */
   @JsonIgnore public String getBroadcastFrequencyString() {
     return (String) getValue("broadcastFrequency");
   }
   /**
-   * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
+   * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. &quot;87 FM&quot;.
    */
   @JsonIgnore public Collection<String> getBroadcastFrequencyStrings() {
     final Object current = myData.get("broadcastFrequency");
@@ -210,21 +210,21 @@ public class BroadcastChannel extends Intangible {
       return this;
     }
     /**
-     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
+     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. &quot;87 FM&quot;.
      */
     @NotNull public Builder broadcastFrequency(@NotNull BroadcastFrequencySpecification broadcastFrequencySpecification) {
       putValue("broadcastFrequency", broadcastFrequencySpecification);
       return this;
     }
     /**
-     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
+     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. &quot;87 FM&quot;.
      */
     @NotNull public Builder broadcastFrequency(@NotNull BroadcastFrequencySpecification.Builder broadcastFrequencySpecification) {
       putValue("broadcastFrequency", broadcastFrequencySpecification.build());
       return this;
     }
     /**
-     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
+     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. &quot;87 FM&quot;.
      */
     @NotNull public Builder broadcastFrequency(@NotNull String broadcastFrequency) {
       putValue("broadcastFrequency", broadcastFrequency);
@@ -343,20 +343,20 @@ public class BroadcastChannel extends Intangible {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("genre".equals(key) && value instanceof String) { genre((String)value); return; }
-      if ("genres".equals(key) && value instanceof String) { genre((String)value); return; }
-      if ("broadcastChannelId".equals(key) && value instanceof String) { broadcastChannelId((String)value); return; }
-      if ("broadcastChannelIds".equals(key) && value instanceof String) { broadcastChannelId((String)value); return; }
-      if ("inBroadcastLineup".equals(key) && value instanceof CableOrSatelliteService) { inBroadcastLineup((CableOrSatelliteService)value); return; }
-      if ("inBroadcastLineups".equals(key) && value instanceof CableOrSatelliteService) { inBroadcastLineup((CableOrSatelliteService)value); return; }
-      if ("broadcastServiceTier".equals(key) && value instanceof String) { broadcastServiceTier((String)value); return; }
-      if ("broadcastServiceTiers".equals(key) && value instanceof String) { broadcastServiceTier((String)value); return; }
-      if ("providesBroadcastService".equals(key) && value instanceof BroadcastService) { providesBroadcastService((BroadcastService)value); return; }
-      if ("providesBroadcastServices".equals(key) && value instanceof BroadcastService) { providesBroadcastService((BroadcastService)value); return; }
-      if ("broadcastFrequency".equals(key) && value instanceof BroadcastFrequencySpecification) { broadcastFrequency((BroadcastFrequencySpecification)value); return; }
-      if ("broadcastFrequencys".equals(key) && value instanceof BroadcastFrequencySpecification) { broadcastFrequency((BroadcastFrequencySpecification)value); return; }
-      if ("broadcastFrequency".equals(key) && value instanceof String) { broadcastFrequency((String)value); return; }
-      if ("broadcastFrequencys".equals(key) && value instanceof String) { broadcastFrequency((String)value); return; }
+      if ("genre".equals(key) && value instanceof String) { this.genre((String)value); return; }
+      if ("genres".equals(key) && value instanceof String) { this.genre((String)value); return; }
+      if ("broadcastChannelId".equals(key) && value instanceof String) { this.broadcastChannelId((String)value); return; }
+      if ("broadcastChannelIds".equals(key) && value instanceof String) { this.broadcastChannelId((String)value); return; }
+      if ("inBroadcastLineup".equals(key) && value instanceof CableOrSatelliteService) { this.inBroadcastLineup((CableOrSatelliteService)value); return; }
+      if ("inBroadcastLineups".equals(key) && value instanceof CableOrSatelliteService) { this.inBroadcastLineup((CableOrSatelliteService)value); return; }
+      if ("broadcastServiceTier".equals(key) && value instanceof String) { this.broadcastServiceTier((String)value); return; }
+      if ("broadcastServiceTiers".equals(key) && value instanceof String) { this.broadcastServiceTier((String)value); return; }
+      if ("providesBroadcastService".equals(key) && value instanceof BroadcastService) { this.providesBroadcastService((BroadcastService)value); return; }
+      if ("providesBroadcastServices".equals(key) && value instanceof BroadcastService) { this.providesBroadcastService((BroadcastService)value); return; }
+      if ("broadcastFrequency".equals(key) && value instanceof BroadcastFrequencySpecification) { this.broadcastFrequency((BroadcastFrequencySpecification)value); return; }
+      if ("broadcastFrequencys".equals(key) && value instanceof BroadcastFrequencySpecification) { this.broadcastFrequency((BroadcastFrequencySpecification)value); return; }
+      if ("broadcastFrequency".equals(key) && value instanceof String) { this.broadcastFrequency((String)value); return; }
+      if ("broadcastFrequencys".equals(key) && value instanceof String) { this.broadcastFrequency((String)value); return; }
       super.fromMap(key, value);
     }
   }

@@ -832,21 +832,21 @@ public class SoftwareApplication extends CreativeWork {
       return this;
     }
     /**
-     * Official rating of a piece of content&#x2014;for example,'MPAA PG-13'.
+     * Official rating of a piece of content&amp;#x2014;for example,'MPAA PG-13'.
      */
     @NotNull public Builder contentRating(@NotNull Rating rating) {
       putValue("contentRating", rating);
       return this;
     }
     /**
-     * Official rating of a piece of content&#x2014;for example,'MPAA PG-13'.
+     * Official rating of a piece of content&amp;#x2014;for example,'MPAA PG-13'.
      */
     @NotNull public Builder contentRating(@NotNull Rating.Builder rating) {
       putValue("contentRating", rating.build());
       return this;
     }
     /**
-     * Official rating of a piece of content&#x2014;for example,'MPAA PG-13'.
+     * Official rating of a piece of content&amp;#x2014;for example,'MPAA PG-13'.
      */
     @NotNull public Builder contentRating(@NotNull String contentRating) {
       putValue("contentRating", contentRating);
@@ -1228,7 +1228,7 @@ public class SoftwareApplication extends CreativeWork {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Demand demand) {
@@ -1236,7 +1236,7 @@ public class SoftwareApplication extends CreativeWork {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Demand.Builder demand) {
@@ -1244,7 +1244,7 @@ public class SoftwareApplication extends CreativeWork {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Offer offer) {
@@ -1252,7 +1252,7 @@ public class SoftwareApplication extends CreativeWork {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      */
     @NotNull public Builder offers(@NotNull Offer.Builder offer) {
@@ -1402,7 +1402,7 @@ public class SoftwareApplication extends CreativeWork {
       return this;
     }
     /**
-     * The "spatial" property can be used in cases when more specific properties
+     * The &quot;spatial&quot; property can be used in cases when more specific properties
      * (e.g. [[locationCreated]], [[spatialCoverage]], [[contentLocation]]) are not known to be appropriate.
      */
     @NotNull public Builder spatial(@NotNull Place place) {
@@ -1410,7 +1410,7 @@ public class SoftwareApplication extends CreativeWork {
       return this;
     }
     /**
-     * The "spatial" property can be used in cases when more specific properties
+     * The &quot;spatial&quot; property can be used in cases when more specific properties
      * (e.g. [[locationCreated]], [[spatialCoverage]], [[contentLocation]]) are not known to be appropriate.
      */
     @NotNull public Builder spatial(@NotNull Place.Builder place) {
@@ -1465,10 +1465,10 @@ public class SoftwareApplication extends CreativeWork {
     }
     /**
      * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
-     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.
-     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
+     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written &quot;2011/2012&quot;). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.
+     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via &quot;1939/1945&quot;.
      * 
-     * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
+     * Open-ended date ranges can be written with &quot;..&quot; in place of the end date. For example, &quot;2015-11/..&quot; indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
      */
     @NotNull public Builder temporalCoverage(@NotNull String temporalCoverage) {
       putValue("temporalCoverage", temporalCoverage);
@@ -1476,17 +1476,17 @@ public class SoftwareApplication extends CreativeWork {
     }
     /**
      * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
-     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.
-     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
+     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written &quot;2011/2012&quot;). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.
+     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via &quot;1939/1945&quot;.
      * 
-     * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
+     * Open-ended date ranges can be written with &quot;..&quot; in place of the end date. For example, &quot;2015-11/..&quot; indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
      */
     @NotNull public Builder temporalCoverage(@NotNull java.util.Date date) {
       putValue("temporalCoverage", date);
       return this;
     }
     /**
-     * The "temporal" property can be used in cases where more specific properties
+     * The &quot;temporal&quot; property can be used in cases where more specific properties
      * (e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]], [[datePublished]]) are not known to be appropriate.
      */
     @NotNull public Builder temporal(@NotNull String temporal) {
@@ -1494,7 +1494,7 @@ public class SoftwareApplication extends CreativeWork {
       return this;
     }
     /**
-     * The "temporal" property can be used in cases where more specific properties
+     * The &quot;temporal&quot; property can be used in cases where more specific properties
      * (e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]], [[datePublished]]) are not known to be appropriate.
      */
     @NotNull public Builder temporal(@NotNull java.util.Date date) {
@@ -1757,7 +1757,7 @@ public class SoftwareApplication extends CreativeWork {
       return this;
     }
     /**
-     * A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as "short descriptions are present but long descriptions will be needed for non-visual users" or "short descriptions are present and no long descriptions are needed."
+     * A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as &quot;short descriptions are present but long descriptions will be needed for non-visual users&quot; or &quot;short descriptions are present and no long descriptions are needed.&quot;
      */
     @NotNull public Builder accessibilitySummary(@NotNull String accessibilitySummary) {
       putValue("accessibilitySummary", accessibilitySummary);
@@ -1876,52 +1876,52 @@ public class SoftwareApplication extends CreativeWork {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("applicationCategory".equals(key) && value instanceof String) { applicationCategory((String)value); return; }
-      if ("applicationCategorys".equals(key) && value instanceof String) { applicationCategory((String)value); return; }
-      if ("applicationSubCategory".equals(key) && value instanceof String) { applicationSubCategory((String)value); return; }
-      if ("applicationSubCategorys".equals(key) && value instanceof String) { applicationSubCategory((String)value); return; }
-      if ("applicationSuite".equals(key) && value instanceof String) { applicationSuite((String)value); return; }
-      if ("applicationSuites".equals(key) && value instanceof String) { applicationSuite((String)value); return; }
-      if ("countriesNotSupported".equals(key) && value instanceof String) { countriesNotSupported((String)value); return; }
-      if ("countriesNotSupporteds".equals(key) && value instanceof String) { countriesNotSupported((String)value); return; }
-      if ("countriesSupported".equals(key) && value instanceof String) { countriesSupported((String)value); return; }
-      if ("countriesSupporteds".equals(key) && value instanceof String) { countriesSupported((String)value); return; }
-      if ("availableOnDevice".equals(key) && value instanceof String) { availableOnDevice((String)value); return; }
-      if ("availableOnDevices".equals(key) && value instanceof String) { availableOnDevice((String)value); return; }
-      if ("downloadUrl".equals(key) && value instanceof String) { downloadUrl((String)value); return; }
-      if ("downloadUrls".equals(key) && value instanceof String) { downloadUrl((String)value); return; }
-      if ("featureList".equals(key) && value instanceof String) { featureList((String)value); return; }
-      if ("featureLists".equals(key) && value instanceof String) { featureList((String)value); return; }
-      if ("fileSize".equals(key) && value instanceof String) { fileSize((String)value); return; }
-      if ("fileSizes".equals(key) && value instanceof String) { fileSize((String)value); return; }
-      if ("installUrl".equals(key) && value instanceof String) { installUrl((String)value); return; }
-      if ("installUrls".equals(key) && value instanceof String) { installUrl((String)value); return; }
-      if ("memoryRequirements".equals(key) && value instanceof String) { memoryRequirements((String)value); return; }
-      if ("memoryRequirementss".equals(key) && value instanceof String) { memoryRequirements((String)value); return; }
-      if ("operatingSystem".equals(key) && value instanceof String) { operatingSystem((String)value); return; }
-      if ("operatingSystems".equals(key) && value instanceof String) { operatingSystem((String)value); return; }
-      if ("permissions".equals(key) && value instanceof String) { permissions((String)value); return; }
-      if ("permissionss".equals(key) && value instanceof String) { permissions((String)value); return; }
-      if ("processorRequirements".equals(key) && value instanceof String) { processorRequirements((String)value); return; }
-      if ("processorRequirementss".equals(key) && value instanceof String) { processorRequirements((String)value); return; }
-      if ("releaseNotes".equals(key) && value instanceof String) { releaseNotes((String)value); return; }
-      if ("releaseNotess".equals(key) && value instanceof String) { releaseNotes((String)value); return; }
-      if ("softwareRequirements".equals(key) && value instanceof String) { softwareRequirements((String)value); return; }
-      if ("softwareRequirementss".equals(key) && value instanceof String) { softwareRequirements((String)value); return; }
-      if ("screenshot".equals(key) && value instanceof ImageObject) { screenshot((ImageObject)value); return; }
-      if ("screenshots".equals(key) && value instanceof ImageObject) { screenshot((ImageObject)value); return; }
-      if ("screenshot".equals(key) && value instanceof String) { screenshot((String)value); return; }
-      if ("screenshots".equals(key) && value instanceof String) { screenshot((String)value); return; }
-      if ("softwareVersion".equals(key) && value instanceof String) { softwareVersion((String)value); return; }
-      if ("softwareVersions".equals(key) && value instanceof String) { softwareVersion((String)value); return; }
-      if ("storageRequirements".equals(key) && value instanceof String) { storageRequirements((String)value); return; }
-      if ("storageRequirementss".equals(key) && value instanceof String) { storageRequirements((String)value); return; }
-      if ("supportingData".equals(key) && value instanceof DataFeed) { supportingData((DataFeed)value); return; }
-      if ("supportingDatas".equals(key) && value instanceof DataFeed) { supportingData((DataFeed)value); return; }
-      if ("softwareAddOn".equals(key) && value instanceof SoftwareApplication) { softwareAddOn((SoftwareApplication)value); return; }
-      if ("softwareAddOns".equals(key) && value instanceof SoftwareApplication) { softwareAddOn((SoftwareApplication)value); return; }
-      if ("softwareHelp".equals(key) && value instanceof CreativeWork) { softwareHelp((CreativeWork)value); return; }
-      if ("softwareHelps".equals(key) && value instanceof CreativeWork) { softwareHelp((CreativeWork)value); return; }
+      if ("applicationCategory".equals(key) && value instanceof String) { this.applicationCategory((String)value); return; }
+      if ("applicationCategorys".equals(key) && value instanceof String) { this.applicationCategory((String)value); return; }
+      if ("applicationSubCategory".equals(key) && value instanceof String) { this.applicationSubCategory((String)value); return; }
+      if ("applicationSubCategorys".equals(key) && value instanceof String) { this.applicationSubCategory((String)value); return; }
+      if ("applicationSuite".equals(key) && value instanceof String) { this.applicationSuite((String)value); return; }
+      if ("applicationSuites".equals(key) && value instanceof String) { this.applicationSuite((String)value); return; }
+      if ("countriesNotSupported".equals(key) && value instanceof String) { this.countriesNotSupported((String)value); return; }
+      if ("countriesNotSupporteds".equals(key) && value instanceof String) { this.countriesNotSupported((String)value); return; }
+      if ("countriesSupported".equals(key) && value instanceof String) { this.countriesSupported((String)value); return; }
+      if ("countriesSupporteds".equals(key) && value instanceof String) { this.countriesSupported((String)value); return; }
+      if ("availableOnDevice".equals(key) && value instanceof String) { this.availableOnDevice((String)value); return; }
+      if ("availableOnDevices".equals(key) && value instanceof String) { this.availableOnDevice((String)value); return; }
+      if ("downloadUrl".equals(key) && value instanceof String) { this.downloadUrl((String)value); return; }
+      if ("downloadUrls".equals(key) && value instanceof String) { this.downloadUrl((String)value); return; }
+      if ("featureList".equals(key) && value instanceof String) { this.featureList((String)value); return; }
+      if ("featureLists".equals(key) && value instanceof String) { this.featureList((String)value); return; }
+      if ("fileSize".equals(key) && value instanceof String) { this.fileSize((String)value); return; }
+      if ("fileSizes".equals(key) && value instanceof String) { this.fileSize((String)value); return; }
+      if ("installUrl".equals(key) && value instanceof String) { this.installUrl((String)value); return; }
+      if ("installUrls".equals(key) && value instanceof String) { this.installUrl((String)value); return; }
+      if ("memoryRequirements".equals(key) && value instanceof String) { this.memoryRequirements((String)value); return; }
+      if ("memoryRequirementss".equals(key) && value instanceof String) { this.memoryRequirements((String)value); return; }
+      if ("operatingSystem".equals(key) && value instanceof String) { this.operatingSystem((String)value); return; }
+      if ("operatingSystems".equals(key) && value instanceof String) { this.operatingSystem((String)value); return; }
+      if ("permissions".equals(key) && value instanceof String) { this.permissions((String)value); return; }
+      if ("permissionss".equals(key) && value instanceof String) { this.permissions((String)value); return; }
+      if ("processorRequirements".equals(key) && value instanceof String) { this.processorRequirements((String)value); return; }
+      if ("processorRequirementss".equals(key) && value instanceof String) { this.processorRequirements((String)value); return; }
+      if ("releaseNotes".equals(key) && value instanceof String) { this.releaseNotes((String)value); return; }
+      if ("releaseNotess".equals(key) && value instanceof String) { this.releaseNotes((String)value); return; }
+      if ("softwareRequirements".equals(key) && value instanceof String) { this.softwareRequirements((String)value); return; }
+      if ("softwareRequirementss".equals(key) && value instanceof String) { this.softwareRequirements((String)value); return; }
+      if ("screenshot".equals(key) && value instanceof ImageObject) { this.screenshot((ImageObject)value); return; }
+      if ("screenshots".equals(key) && value instanceof ImageObject) { this.screenshot((ImageObject)value); return; }
+      if ("screenshot".equals(key) && value instanceof String) { this.screenshot((String)value); return; }
+      if ("screenshots".equals(key) && value instanceof String) { this.screenshot((String)value); return; }
+      if ("softwareVersion".equals(key) && value instanceof String) { this.softwareVersion((String)value); return; }
+      if ("softwareVersions".equals(key) && value instanceof String) { this.softwareVersion((String)value); return; }
+      if ("storageRequirements".equals(key) && value instanceof String) { this.storageRequirements((String)value); return; }
+      if ("storageRequirementss".equals(key) && value instanceof String) { this.storageRequirements((String)value); return; }
+      if ("supportingData".equals(key) && value instanceof DataFeed) { this.supportingData((DataFeed)value); return; }
+      if ("supportingDatas".equals(key) && value instanceof DataFeed) { this.supportingData((DataFeed)value); return; }
+      if ("softwareAddOn".equals(key) && value instanceof SoftwareApplication) { this.softwareAddOn((SoftwareApplication)value); return; }
+      if ("softwareAddOns".equals(key) && value instanceof SoftwareApplication) { this.softwareAddOn((SoftwareApplication)value); return; }
+      if ("softwareHelp".equals(key) && value instanceof CreativeWork) { this.softwareHelp((CreativeWork)value); return; }
+      if ("softwareHelps".equals(key) && value instanceof CreativeWork) { this.softwareHelp((CreativeWork)value); return; }
       super.fromMap(key, value);
     }
   }

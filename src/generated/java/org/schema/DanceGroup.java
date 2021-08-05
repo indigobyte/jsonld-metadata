@@ -24,7 +24,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * A dance group&#x2014;for example, the Alvin Ailey Dance Theater or Riverdance.
+ * A dance group&amp;#x2014;for example, the Alvin Ailey Dance Theater or Riverdance.
  */
 public class DanceGroup extends PerformingGroup {
   protected DanceGroup(java.util.Map<String,Object> data) {
@@ -182,14 +182,14 @@ public class DanceGroup extends PerformingGroup {
       return this;
     }
     /**
-     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
+     * The Dun &amp; Bradstreet DUNS number for identifying an organization or business person.
      */
     @NotNull public Builder duns(@NotNull Identifier identifier) {
       putValue("duns", identifier);
       return this;
     }
     /**
-     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
+     * The Dun &amp; Bradstreet DUNS number for identifying an organization or business person.
      */
     @NotNull public Builder duns(@NotNull String duns) {
       putValue("duns", duns);

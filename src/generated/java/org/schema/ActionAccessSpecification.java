@@ -440,26 +440,26 @@ public class ActionAccessSpecification extends Intangible {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("availabilityStarts".equals(key) && value instanceof java.util.Date) { availabilityStarts((java.util.Date)value); return; }
-      if ("availabilityStartss".equals(key) && value instanceof java.util.Date) { availabilityStarts((java.util.Date)value); return; }
-      if ("availabilityEnds".equals(key) && value instanceof java.util.Date) { availabilityEnds((java.util.Date)value); return; }
-      if ("availabilityEndss".equals(key) && value instanceof java.util.Date) { availabilityEnds((java.util.Date)value); return; }
-      if ("category".equals(key) && value instanceof String) { category((String)value); return; }
-      if ("categorys".equals(key) && value instanceof String) { category((String)value); return; }
-      if ("category".equals(key) && value instanceof Thing) { category((Thing)value); return; }
-      if ("categorys".equals(key) && value instanceof Thing) { category((Thing)value); return; }
-      if ("eligibleRegion".equals(key) && value instanceof GeoShape) { eligibleRegion((GeoShape)value); return; }
-      if ("eligibleRegions".equals(key) && value instanceof GeoShape) { eligibleRegion((GeoShape)value); return; }
-      if ("eligibleRegion".equals(key) && value instanceof Place) { eligibleRegion((Place)value); return; }
-      if ("eligibleRegions".equals(key) && value instanceof Place) { eligibleRegion((Place)value); return; }
-      if ("eligibleRegion".equals(key) && value instanceof String) { eligibleRegion((String)value); return; }
-      if ("eligibleRegions".equals(key) && value instanceof String) { eligibleRegion((String)value); return; }
-      if ("expectsAcceptanceOf".equals(key) && value instanceof Offer) { expectsAcceptanceOf((Offer)value); return; }
-      if ("expectsAcceptanceOfs".equals(key) && value instanceof Offer) { expectsAcceptanceOf((Offer)value); return; }
-      if ("requiresSubscription".equals(key) && value instanceof Boolean) { requiresSubscription((Boolean)value); return; }
-      if ("requiresSubscriptions".equals(key) && value instanceof Boolean) { requiresSubscription((Boolean)value); return; }
-      if ("requiresSubscription".equals(key) && value instanceof MediaSubscription) { requiresSubscription((MediaSubscription)value); return; }
-      if ("requiresSubscriptions".equals(key) && value instanceof MediaSubscription) { requiresSubscription((MediaSubscription)value); return; }
+      if ("availabilityStarts".equals(key) && value instanceof java.util.Date) { this.availabilityStarts((java.util.Date)value); return; }
+      if ("availabilityStartss".equals(key) && value instanceof java.util.Date) { this.availabilityStarts((java.util.Date)value); return; }
+      if ("availabilityEnds".equals(key) && value instanceof java.util.Date) { this.availabilityEnds((java.util.Date)value); return; }
+      if ("availabilityEndss".equals(key) && value instanceof java.util.Date) { this.availabilityEnds((java.util.Date)value); return; }
+      if ("category".equals(key) && value instanceof String) { this.category((String)value); return; }
+      if ("categorys".equals(key) && value instanceof String) { this.category((String)value); return; }
+      if ("category".equals(key) && value instanceof Thing) { this.category((Thing)value); return; }
+      if ("categorys".equals(key) && value instanceof Thing) { this.category((Thing)value); return; }
+      if ("eligibleRegion".equals(key) && value instanceof GeoShape) { this.eligibleRegion((GeoShape)value); return; }
+      if ("eligibleRegions".equals(key) && value instanceof GeoShape) { this.eligibleRegion((GeoShape)value); return; }
+      if ("eligibleRegion".equals(key) && value instanceof Place) { this.eligibleRegion((Place)value); return; }
+      if ("eligibleRegions".equals(key) && value instanceof Place) { this.eligibleRegion((Place)value); return; }
+      if ("eligibleRegion".equals(key) && value instanceof String) { this.eligibleRegion((String)value); return; }
+      if ("eligibleRegions".equals(key) && value instanceof String) { this.eligibleRegion((String)value); return; }
+      if ("expectsAcceptanceOf".equals(key) && value instanceof Offer) { this.expectsAcceptanceOf((Offer)value); return; }
+      if ("expectsAcceptanceOfs".equals(key) && value instanceof Offer) { this.expectsAcceptanceOf((Offer)value); return; }
+      if ("requiresSubscription".equals(key) && value instanceof Boolean) { this.requiresSubscription((Boolean)value); return; }
+      if ("requiresSubscriptions".equals(key) && value instanceof Boolean) { this.requiresSubscription((Boolean)value); return; }
+      if ("requiresSubscription".equals(key) && value instanceof MediaSubscription) { this.requiresSubscription((MediaSubscription)value); return; }
+      if ("requiresSubscriptions".equals(key) && value instanceof MediaSubscription) { this.requiresSubscription((MediaSubscription)value); return; }
       super.fromMap(key, value);
     }
   }

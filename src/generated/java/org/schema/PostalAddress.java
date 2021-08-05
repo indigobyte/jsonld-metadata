@@ -280,21 +280,21 @@ public class PostalAddress extends ContactPoint {
       return this;
     }
     /**
-     * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. "iPhone") or a general category of products or services (e.g. "smartphones").
+     * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. &quot;iPhone&quot;) or a general category of products or services (e.g. &quot;smartphones&quot;).
      */
     @NotNull public Builder productSupported(@NotNull Product product) {
       putValue("productSupported", product);
       return this;
     }
     /**
-     * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. "iPhone") or a general category of products or services (e.g. "smartphones").
+     * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. &quot;iPhone&quot;) or a general category of products or services (e.g. &quot;smartphones&quot;).
      */
     @NotNull public Builder productSupported(@NotNull Product.Builder product) {
       putValue("productSupported", product.build());
       return this;
     }
     /**
-     * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. "iPhone") or a general category of products or services (e.g. "smartphones").
+     * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. &quot;iPhone&quot;) or a general category of products or services (e.g. &quot;smartphones&quot;).
      */
     @NotNull public Builder productSupported(@NotNull String productSupported) {
       putValue("productSupported", productSupported);
@@ -420,20 +420,20 @@ public class PostalAddress extends ContactPoint {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("addressCountry".equals(key) && value instanceof Country) { addressCountry((Country)value); return; }
-      if ("addressCountrys".equals(key) && value instanceof Country) { addressCountry((Country)value); return; }
-      if ("addressCountry".equals(key) && value instanceof String) { addressCountry((String)value); return; }
-      if ("addressCountrys".equals(key) && value instanceof String) { addressCountry((String)value); return; }
-      if ("addressLocality".equals(key) && value instanceof String) { addressLocality((String)value); return; }
-      if ("addressLocalitys".equals(key) && value instanceof String) { addressLocality((String)value); return; }
-      if ("addressRegion".equals(key) && value instanceof String) { addressRegion((String)value); return; }
-      if ("addressRegions".equals(key) && value instanceof String) { addressRegion((String)value); return; }
-      if ("postalCode".equals(key) && value instanceof String) { postalCode((String)value); return; }
-      if ("postalCodes".equals(key) && value instanceof String) { postalCode((String)value); return; }
-      if ("postOfficeBoxNumber".equals(key) && value instanceof String) { postOfficeBoxNumber((String)value); return; }
-      if ("postOfficeBoxNumbers".equals(key) && value instanceof String) { postOfficeBoxNumber((String)value); return; }
-      if ("streetAddress".equals(key) && value instanceof String) { streetAddress((String)value); return; }
-      if ("streetAddresss".equals(key) && value instanceof String) { streetAddress((String)value); return; }
+      if ("addressCountry".equals(key) && value instanceof Country) { this.addressCountry((Country)value); return; }
+      if ("addressCountrys".equals(key) && value instanceof Country) { this.addressCountry((Country)value); return; }
+      if ("addressCountry".equals(key) && value instanceof String) { this.addressCountry((String)value); return; }
+      if ("addressCountrys".equals(key) && value instanceof String) { this.addressCountry((String)value); return; }
+      if ("addressLocality".equals(key) && value instanceof String) { this.addressLocality((String)value); return; }
+      if ("addressLocalitys".equals(key) && value instanceof String) { this.addressLocality((String)value); return; }
+      if ("addressRegion".equals(key) && value instanceof String) { this.addressRegion((String)value); return; }
+      if ("addressRegions".equals(key) && value instanceof String) { this.addressRegion((String)value); return; }
+      if ("postalCode".equals(key) && value instanceof String) { this.postalCode((String)value); return; }
+      if ("postalCodes".equals(key) && value instanceof String) { this.postalCode((String)value); return; }
+      if ("postOfficeBoxNumber".equals(key) && value instanceof String) { this.postOfficeBoxNumber((String)value); return; }
+      if ("postOfficeBoxNumbers".equals(key) && value instanceof String) { this.postOfficeBoxNumber((String)value); return; }
+      if ("streetAddress".equals(key) && value instanceof String) { this.streetAddress((String)value); return; }
+      if ("streetAddresss".equals(key) && value instanceof String) { this.streetAddress((String)value); return; }
       super.fromMap(key, value);
     }
   }

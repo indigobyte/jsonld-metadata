@@ -295,16 +295,16 @@ public class Brand extends Intangible {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("aggregateRating".equals(key) && value instanceof AggregateRating) { aggregateRating((AggregateRating)value); return; }
-      if ("aggregateRatings".equals(key) && value instanceof AggregateRating) { aggregateRating((AggregateRating)value); return; }
-      if ("logo".equals(key) && value instanceof ImageObject) { logo((ImageObject)value); return; }
-      if ("logos".equals(key) && value instanceof ImageObject) { logo((ImageObject)value); return; }
-      if ("logo".equals(key) && value instanceof String) { logo((String)value); return; }
-      if ("logos".equals(key) && value instanceof String) { logo((String)value); return; }
-      if ("review".equals(key) && value instanceof Review) { review((Review)value); return; }
-      if ("reviews".equals(key) && value instanceof Review) { review((Review)value); return; }
-      if ("slogan".equals(key) && value instanceof String) { slogan((String)value); return; }
-      if ("slogans".equals(key) && value instanceof String) { slogan((String)value); return; }
+      if ("aggregateRating".equals(key) && value instanceof AggregateRating) { this.aggregateRating((AggregateRating)value); return; }
+      if ("aggregateRatings".equals(key) && value instanceof AggregateRating) { this.aggregateRating((AggregateRating)value); return; }
+      if ("logo".equals(key) && value instanceof ImageObject) { this.logo((ImageObject)value); return; }
+      if ("logos".equals(key) && value instanceof ImageObject) { this.logo((ImageObject)value); return; }
+      if ("logo".equals(key) && value instanceof String) { this.logo((String)value); return; }
+      if ("logos".equals(key) && value instanceof String) { this.logo((String)value); return; }
+      if ("review".equals(key) && value instanceof Review) { this.review((Review)value); return; }
+      if ("reviews".equals(key) && value instanceof Review) { this.review((Review)value); return; }
+      if ("slogan".equals(key) && value instanceof String) { this.slogan((String)value); return; }
+      if ("slogans".equals(key) && value instanceof String) { this.slogan((String)value); return; }
       super.fromMap(key, value);
     }
   }

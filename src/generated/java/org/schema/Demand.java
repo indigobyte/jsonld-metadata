@@ -79,13 +79,13 @@ public class Demand extends Intangible {
     return Arrays.asList((QuantitativeValue) current);
   }
   /**
-   * The availability of this item&#x2014;for example In stock, Out of stock, Pre-order, etc.
+   * The availability of this item&amp;#x2014;for example In stock, Out of stock, Pre-order, etc.
    */
   @JsonIgnore public ItemAvailability getAvailability() {
     return (ItemAvailability) getValue("availability");
   }
   /**
-   * The availability of this item&#x2014;for example In stock, Out of stock, Pre-order, etc.
+   * The availability of this item&amp;#x2014;for example In stock, Out of stock, Pre-order, etc.
    */
   @JsonIgnore public Collection<ItemAvailability> getAvailabilitys() {
     final Object current = myData.get("availability");
@@ -905,7 +905,7 @@ public class Demand extends Intangible {
       return this;
     }
     /**
-     * The availability of this item&#x2014;for example In stock, Out of stock, Pre-order, etc.
+     * The availability of this item&amp;#x2014;for example In stock, Out of stock, Pre-order, etc.
      */
     @NotNull public Builder availability(@NotNull ItemAvailability itemAvailability) {
       putValue("availability", itemAvailability);
@@ -1496,102 +1496,102 @@ public class Demand extends Intangible {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("acceptedPaymentMethod".equals(key) && value instanceof LoanOrCredit) { acceptedPaymentMethod((LoanOrCredit)value); return; }
-      if ("acceptedPaymentMethods".equals(key) && value instanceof LoanOrCredit) { acceptedPaymentMethod((LoanOrCredit)value); return; }
-      if ("acceptedPaymentMethod".equals(key) && value instanceof PaymentMethod) { acceptedPaymentMethod((PaymentMethod)value); return; }
-      if ("acceptedPaymentMethods".equals(key) && value instanceof PaymentMethod) { acceptedPaymentMethod((PaymentMethod)value); return; }
-      if ("advanceBookingRequirement".equals(key) && value instanceof QuantitativeValue) { advanceBookingRequirement((QuantitativeValue)value); return; }
-      if ("advanceBookingRequirements".equals(key) && value instanceof QuantitativeValue) { advanceBookingRequirement((QuantitativeValue)value); return; }
-      if ("availability".equals(key) && value instanceof ItemAvailability) { availability((ItemAvailability)value); return; }
-      if ("availabilitys".equals(key) && value instanceof ItemAvailability) { availability((ItemAvailability)value); return; }
-      if ("availabilityEnds".equals(key) && value instanceof java.util.Date) { availabilityEnds((java.util.Date)value); return; }
-      if ("availabilityEndss".equals(key) && value instanceof java.util.Date) { availabilityEnds((java.util.Date)value); return; }
-      if ("availabilityStarts".equals(key) && value instanceof java.util.Date) { availabilityStarts((java.util.Date)value); return; }
-      if ("availabilityStartss".equals(key) && value instanceof java.util.Date) { availabilityStarts((java.util.Date)value); return; }
-      if ("availableAtOrFrom".equals(key) && value instanceof Place) { availableAtOrFrom((Place)value); return; }
-      if ("availableAtOrFroms".equals(key) && value instanceof Place) { availableAtOrFrom((Place)value); return; }
-      if ("availableDeliveryMethod".equals(key) && value instanceof DeliveryMethod) { availableDeliveryMethod((DeliveryMethod)value); return; }
-      if ("availableDeliveryMethods".equals(key) && value instanceof DeliveryMethod) { availableDeliveryMethod((DeliveryMethod)value); return; }
-      if ("businessFunction".equals(key) && value instanceof BusinessFunction) { businessFunction((BusinessFunction)value); return; }
-      if ("businessFunctions".equals(key) && value instanceof BusinessFunction) { businessFunction((BusinessFunction)value); return; }
-      if ("deliveryLeadTime".equals(key) && value instanceof QuantitativeValue) { deliveryLeadTime((QuantitativeValue)value); return; }
-      if ("deliveryLeadTimes".equals(key) && value instanceof QuantitativeValue) { deliveryLeadTime((QuantitativeValue)value); return; }
-      if ("eligibleCustomerType".equals(key) && value instanceof BusinessEntityType) { eligibleCustomerType((BusinessEntityType)value); return; }
-      if ("eligibleCustomerTypes".equals(key) && value instanceof BusinessEntityType) { eligibleCustomerType((BusinessEntityType)value); return; }
-      if ("eligibleDuration".equals(key) && value instanceof QuantitativeValue) { eligibleDuration((QuantitativeValue)value); return; }
-      if ("eligibleDurations".equals(key) && value instanceof QuantitativeValue) { eligibleDuration((QuantitativeValue)value); return; }
-      if ("eligibleQuantity".equals(key) && value instanceof QuantitativeValue) { eligibleQuantity((QuantitativeValue)value); return; }
-      if ("eligibleQuantitys".equals(key) && value instanceof QuantitativeValue) { eligibleQuantity((QuantitativeValue)value); return; }
-      if ("eligibleRegion".equals(key) && value instanceof GeoShape) { eligibleRegion((GeoShape)value); return; }
-      if ("eligibleRegions".equals(key) && value instanceof GeoShape) { eligibleRegion((GeoShape)value); return; }
-      if ("eligibleRegion".equals(key) && value instanceof Place) { eligibleRegion((Place)value); return; }
-      if ("eligibleRegions".equals(key) && value instanceof Place) { eligibleRegion((Place)value); return; }
-      if ("eligibleRegion".equals(key) && value instanceof String) { eligibleRegion((String)value); return; }
-      if ("eligibleRegions".equals(key) && value instanceof String) { eligibleRegion((String)value); return; }
-      if ("ineligibleRegion".equals(key) && value instanceof GeoShape) { ineligibleRegion((GeoShape)value); return; }
-      if ("ineligibleRegions".equals(key) && value instanceof GeoShape) { ineligibleRegion((GeoShape)value); return; }
-      if ("ineligibleRegion".equals(key) && value instanceof Place) { ineligibleRegion((Place)value); return; }
-      if ("ineligibleRegions".equals(key) && value instanceof Place) { ineligibleRegion((Place)value); return; }
-      if ("ineligibleRegion".equals(key) && value instanceof String) { ineligibleRegion((String)value); return; }
-      if ("ineligibleRegions".equals(key) && value instanceof String) { ineligibleRegion((String)value); return; }
-      if ("eligibleTransactionVolume".equals(key) && value instanceof PriceSpecification) { eligibleTransactionVolume((PriceSpecification)value); return; }
-      if ("eligibleTransactionVolumes".equals(key) && value instanceof PriceSpecification) { eligibleTransactionVolume((PriceSpecification)value); return; }
-      if ("gtin12".equals(key) && value instanceof Identifier) { gtin12((Identifier)value); return; }
-      if ("gtin12s".equals(key) && value instanceof Identifier) { gtin12((Identifier)value); return; }
-      if ("gtin12".equals(key) && value instanceof String) { gtin12((String)value); return; }
-      if ("gtin12s".equals(key) && value instanceof String) { gtin12((String)value); return; }
-      if ("gtin13".equals(key) && value instanceof Identifier) { gtin13((Identifier)value); return; }
-      if ("gtin13s".equals(key) && value instanceof Identifier) { gtin13((Identifier)value); return; }
-      if ("gtin13".equals(key) && value instanceof String) { gtin13((String)value); return; }
-      if ("gtin13s".equals(key) && value instanceof String) { gtin13((String)value); return; }
-      if ("gtin14".equals(key) && value instanceof Identifier) { gtin14((Identifier)value); return; }
-      if ("gtin14s".equals(key) && value instanceof Identifier) { gtin14((Identifier)value); return; }
-      if ("gtin14".equals(key) && value instanceof String) { gtin14((String)value); return; }
-      if ("gtin14s".equals(key) && value instanceof String) { gtin14((String)value); return; }
-      if ("gtin8".equals(key) && value instanceof Identifier) { gtin8((Identifier)value); return; }
-      if ("gtin8s".equals(key) && value instanceof Identifier) { gtin8((Identifier)value); return; }
-      if ("gtin8".equals(key) && value instanceof String) { gtin8((String)value); return; }
-      if ("gtin8s".equals(key) && value instanceof String) { gtin8((String)value); return; }
-      if ("includesObject".equals(key) && value instanceof TypeAndQuantityNode) { includesObject((TypeAndQuantityNode)value); return; }
-      if ("includesObjects".equals(key) && value instanceof TypeAndQuantityNode) { includesObject((TypeAndQuantityNode)value); return; }
-      if ("inventoryLevel".equals(key) && value instanceof QuantitativeValue) { inventoryLevel((QuantitativeValue)value); return; }
-      if ("inventoryLevels".equals(key) && value instanceof QuantitativeValue) { inventoryLevel((QuantitativeValue)value); return; }
-      if ("itemCondition".equals(key) && value instanceof OfferItemCondition) { itemCondition((OfferItemCondition)value); return; }
-      if ("itemConditions".equals(key) && value instanceof OfferItemCondition) { itemCondition((OfferItemCondition)value); return; }
-      if ("itemOffered".equals(key) && value instanceof AggregateOffer) { itemOffered((AggregateOffer)value); return; }
-      if ("itemOffereds".equals(key) && value instanceof AggregateOffer) { itemOffered((AggregateOffer)value); return; }
-      if ("itemOffered".equals(key) && value instanceof CreativeWork) { itemOffered((CreativeWork)value); return; }
-      if ("itemOffereds".equals(key) && value instanceof CreativeWork) { itemOffered((CreativeWork)value); return; }
-      if ("itemOffered".equals(key) && value instanceof Event) { itemOffered((Event)value); return; }
-      if ("itemOffereds".equals(key) && value instanceof Event) { itemOffered((Event)value); return; }
-      if ("itemOffered".equals(key) && value instanceof MenuItem) { itemOffered((MenuItem)value); return; }
-      if ("itemOffereds".equals(key) && value instanceof MenuItem) { itemOffered((MenuItem)value); return; }
-      if ("itemOffered".equals(key) && value instanceof Product) { itemOffered((Product)value); return; }
-      if ("itemOffereds".equals(key) && value instanceof Product) { itemOffered((Product)value); return; }
-      if ("itemOffered".equals(key) && value instanceof Service) { itemOffered((Service)value); return; }
-      if ("itemOffereds".equals(key) && value instanceof Service) { itemOffered((Service)value); return; }
-      if ("itemOffered".equals(key) && value instanceof Trip) { itemOffered((Trip)value); return; }
-      if ("itemOffereds".equals(key) && value instanceof Trip) { itemOffered((Trip)value); return; }
-      if ("mpn".equals(key) && value instanceof String) { mpn((String)value); return; }
-      if ("mpns".equals(key) && value instanceof String) { mpn((String)value); return; }
-      if ("priceSpecification".equals(key) && value instanceof PriceSpecification) { priceSpecification((PriceSpecification)value); return; }
-      if ("priceSpecifications".equals(key) && value instanceof PriceSpecification) { priceSpecification((PriceSpecification)value); return; }
-      if ("seller".equals(key) && value instanceof Organization) { seller((Organization)value); return; }
-      if ("sellers".equals(key) && value instanceof Organization) { seller((Organization)value); return; }
-      if ("seller".equals(key) && value instanceof Participant) { seller((Participant)value); return; }
-      if ("sellers".equals(key) && value instanceof Participant) { seller((Participant)value); return; }
-      if ("seller".equals(key) && value instanceof Person) { seller((Person)value); return; }
-      if ("sellers".equals(key) && value instanceof Person) { seller((Person)value); return; }
-      if ("sku".equals(key) && value instanceof Identifier) { sku((Identifier)value); return; }
-      if ("skus".equals(key) && value instanceof Identifier) { sku((Identifier)value); return; }
-      if ("sku".equals(key) && value instanceof String) { sku((String)value); return; }
-      if ("skus".equals(key) && value instanceof String) { sku((String)value); return; }
-      if ("validFrom".equals(key) && value instanceof java.util.Date) { validFrom((java.util.Date)value); return; }
-      if ("validFroms".equals(key) && value instanceof java.util.Date) { validFrom((java.util.Date)value); return; }
-      if ("validThrough".equals(key) && value instanceof java.util.Date) { validThrough((java.util.Date)value); return; }
-      if ("validThroughs".equals(key) && value instanceof java.util.Date) { validThrough((java.util.Date)value); return; }
-      if ("warranty".equals(key) && value instanceof WarrantyPromise) { warranty((WarrantyPromise)value); return; }
-      if ("warrantys".equals(key) && value instanceof WarrantyPromise) { warranty((WarrantyPromise)value); return; }
+      if ("acceptedPaymentMethod".equals(key) && value instanceof LoanOrCredit) { this.acceptedPaymentMethod((LoanOrCredit)value); return; }
+      if ("acceptedPaymentMethods".equals(key) && value instanceof LoanOrCredit) { this.acceptedPaymentMethod((LoanOrCredit)value); return; }
+      if ("acceptedPaymentMethod".equals(key) && value instanceof PaymentMethod) { this.acceptedPaymentMethod((PaymentMethod)value); return; }
+      if ("acceptedPaymentMethods".equals(key) && value instanceof PaymentMethod) { this.acceptedPaymentMethod((PaymentMethod)value); return; }
+      if ("advanceBookingRequirement".equals(key) && value instanceof QuantitativeValue) { this.advanceBookingRequirement((QuantitativeValue)value); return; }
+      if ("advanceBookingRequirements".equals(key) && value instanceof QuantitativeValue) { this.advanceBookingRequirement((QuantitativeValue)value); return; }
+      if ("availability".equals(key) && value instanceof ItemAvailability) { this.availability((ItemAvailability)value); return; }
+      if ("availabilitys".equals(key) && value instanceof ItemAvailability) { this.availability((ItemAvailability)value); return; }
+      if ("availabilityEnds".equals(key) && value instanceof java.util.Date) { this.availabilityEnds((java.util.Date)value); return; }
+      if ("availabilityEndss".equals(key) && value instanceof java.util.Date) { this.availabilityEnds((java.util.Date)value); return; }
+      if ("availabilityStarts".equals(key) && value instanceof java.util.Date) { this.availabilityStarts((java.util.Date)value); return; }
+      if ("availabilityStartss".equals(key) && value instanceof java.util.Date) { this.availabilityStarts((java.util.Date)value); return; }
+      if ("availableAtOrFrom".equals(key) && value instanceof Place) { this.availableAtOrFrom((Place)value); return; }
+      if ("availableAtOrFroms".equals(key) && value instanceof Place) { this.availableAtOrFrom((Place)value); return; }
+      if ("availableDeliveryMethod".equals(key) && value instanceof DeliveryMethod) { this.availableDeliveryMethod((DeliveryMethod)value); return; }
+      if ("availableDeliveryMethods".equals(key) && value instanceof DeliveryMethod) { this.availableDeliveryMethod((DeliveryMethod)value); return; }
+      if ("businessFunction".equals(key) && value instanceof BusinessFunction) { this.businessFunction((BusinessFunction)value); return; }
+      if ("businessFunctions".equals(key) && value instanceof BusinessFunction) { this.businessFunction((BusinessFunction)value); return; }
+      if ("deliveryLeadTime".equals(key) && value instanceof QuantitativeValue) { this.deliveryLeadTime((QuantitativeValue)value); return; }
+      if ("deliveryLeadTimes".equals(key) && value instanceof QuantitativeValue) { this.deliveryLeadTime((QuantitativeValue)value); return; }
+      if ("eligibleCustomerType".equals(key) && value instanceof BusinessEntityType) { this.eligibleCustomerType((BusinessEntityType)value); return; }
+      if ("eligibleCustomerTypes".equals(key) && value instanceof BusinessEntityType) { this.eligibleCustomerType((BusinessEntityType)value); return; }
+      if ("eligibleDuration".equals(key) && value instanceof QuantitativeValue) { this.eligibleDuration((QuantitativeValue)value); return; }
+      if ("eligibleDurations".equals(key) && value instanceof QuantitativeValue) { this.eligibleDuration((QuantitativeValue)value); return; }
+      if ("eligibleQuantity".equals(key) && value instanceof QuantitativeValue) { this.eligibleQuantity((QuantitativeValue)value); return; }
+      if ("eligibleQuantitys".equals(key) && value instanceof QuantitativeValue) { this.eligibleQuantity((QuantitativeValue)value); return; }
+      if ("eligibleRegion".equals(key) && value instanceof GeoShape) { this.eligibleRegion((GeoShape)value); return; }
+      if ("eligibleRegions".equals(key) && value instanceof GeoShape) { this.eligibleRegion((GeoShape)value); return; }
+      if ("eligibleRegion".equals(key) && value instanceof Place) { this.eligibleRegion((Place)value); return; }
+      if ("eligibleRegions".equals(key) && value instanceof Place) { this.eligibleRegion((Place)value); return; }
+      if ("eligibleRegion".equals(key) && value instanceof String) { this.eligibleRegion((String)value); return; }
+      if ("eligibleRegions".equals(key) && value instanceof String) { this.eligibleRegion((String)value); return; }
+      if ("ineligibleRegion".equals(key) && value instanceof GeoShape) { this.ineligibleRegion((GeoShape)value); return; }
+      if ("ineligibleRegions".equals(key) && value instanceof GeoShape) { this.ineligibleRegion((GeoShape)value); return; }
+      if ("ineligibleRegion".equals(key) && value instanceof Place) { this.ineligibleRegion((Place)value); return; }
+      if ("ineligibleRegions".equals(key) && value instanceof Place) { this.ineligibleRegion((Place)value); return; }
+      if ("ineligibleRegion".equals(key) && value instanceof String) { this.ineligibleRegion((String)value); return; }
+      if ("ineligibleRegions".equals(key) && value instanceof String) { this.ineligibleRegion((String)value); return; }
+      if ("eligibleTransactionVolume".equals(key) && value instanceof PriceSpecification) { this.eligibleTransactionVolume((PriceSpecification)value); return; }
+      if ("eligibleTransactionVolumes".equals(key) && value instanceof PriceSpecification) { this.eligibleTransactionVolume((PriceSpecification)value); return; }
+      if ("gtin12".equals(key) && value instanceof Identifier) { this.gtin12((Identifier)value); return; }
+      if ("gtin12s".equals(key) && value instanceof Identifier) { this.gtin12((Identifier)value); return; }
+      if ("gtin12".equals(key) && value instanceof String) { this.gtin12((String)value); return; }
+      if ("gtin12s".equals(key) && value instanceof String) { this.gtin12((String)value); return; }
+      if ("gtin13".equals(key) && value instanceof Identifier) { this.gtin13((Identifier)value); return; }
+      if ("gtin13s".equals(key) && value instanceof Identifier) { this.gtin13((Identifier)value); return; }
+      if ("gtin13".equals(key) && value instanceof String) { this.gtin13((String)value); return; }
+      if ("gtin13s".equals(key) && value instanceof String) { this.gtin13((String)value); return; }
+      if ("gtin14".equals(key) && value instanceof Identifier) { this.gtin14((Identifier)value); return; }
+      if ("gtin14s".equals(key) && value instanceof Identifier) { this.gtin14((Identifier)value); return; }
+      if ("gtin14".equals(key) && value instanceof String) { this.gtin14((String)value); return; }
+      if ("gtin14s".equals(key) && value instanceof String) { this.gtin14((String)value); return; }
+      if ("gtin8".equals(key) && value instanceof Identifier) { this.gtin8((Identifier)value); return; }
+      if ("gtin8s".equals(key) && value instanceof Identifier) { this.gtin8((Identifier)value); return; }
+      if ("gtin8".equals(key) && value instanceof String) { this.gtin8((String)value); return; }
+      if ("gtin8s".equals(key) && value instanceof String) { this.gtin8((String)value); return; }
+      if ("includesObject".equals(key) && value instanceof TypeAndQuantityNode) { this.includesObject((TypeAndQuantityNode)value); return; }
+      if ("includesObjects".equals(key) && value instanceof TypeAndQuantityNode) { this.includesObject((TypeAndQuantityNode)value); return; }
+      if ("inventoryLevel".equals(key) && value instanceof QuantitativeValue) { this.inventoryLevel((QuantitativeValue)value); return; }
+      if ("inventoryLevels".equals(key) && value instanceof QuantitativeValue) { this.inventoryLevel((QuantitativeValue)value); return; }
+      if ("itemCondition".equals(key) && value instanceof OfferItemCondition) { this.itemCondition((OfferItemCondition)value); return; }
+      if ("itemConditions".equals(key) && value instanceof OfferItemCondition) { this.itemCondition((OfferItemCondition)value); return; }
+      if ("itemOffered".equals(key) && value instanceof AggregateOffer) { this.itemOffered((AggregateOffer)value); return; }
+      if ("itemOffereds".equals(key) && value instanceof AggregateOffer) { this.itemOffered((AggregateOffer)value); return; }
+      if ("itemOffered".equals(key) && value instanceof CreativeWork) { this.itemOffered((CreativeWork)value); return; }
+      if ("itemOffereds".equals(key) && value instanceof CreativeWork) { this.itemOffered((CreativeWork)value); return; }
+      if ("itemOffered".equals(key) && value instanceof Event) { this.itemOffered((Event)value); return; }
+      if ("itemOffereds".equals(key) && value instanceof Event) { this.itemOffered((Event)value); return; }
+      if ("itemOffered".equals(key) && value instanceof MenuItem) { this.itemOffered((MenuItem)value); return; }
+      if ("itemOffereds".equals(key) && value instanceof MenuItem) { this.itemOffered((MenuItem)value); return; }
+      if ("itemOffered".equals(key) && value instanceof Product) { this.itemOffered((Product)value); return; }
+      if ("itemOffereds".equals(key) && value instanceof Product) { this.itemOffered((Product)value); return; }
+      if ("itemOffered".equals(key) && value instanceof Service) { this.itemOffered((Service)value); return; }
+      if ("itemOffereds".equals(key) && value instanceof Service) { this.itemOffered((Service)value); return; }
+      if ("itemOffered".equals(key) && value instanceof Trip) { this.itemOffered((Trip)value); return; }
+      if ("itemOffereds".equals(key) && value instanceof Trip) { this.itemOffered((Trip)value); return; }
+      if ("mpn".equals(key) && value instanceof String) { this.mpn((String)value); return; }
+      if ("mpns".equals(key) && value instanceof String) { this.mpn((String)value); return; }
+      if ("priceSpecification".equals(key) && value instanceof PriceSpecification) { this.priceSpecification((PriceSpecification)value); return; }
+      if ("priceSpecifications".equals(key) && value instanceof PriceSpecification) { this.priceSpecification((PriceSpecification)value); return; }
+      if ("seller".equals(key) && value instanceof Organization) { this.seller((Organization)value); return; }
+      if ("sellers".equals(key) && value instanceof Organization) { this.seller((Organization)value); return; }
+      if ("seller".equals(key) && value instanceof Participant) { this.seller((Participant)value); return; }
+      if ("sellers".equals(key) && value instanceof Participant) { this.seller((Participant)value); return; }
+      if ("seller".equals(key) && value instanceof Person) { this.seller((Person)value); return; }
+      if ("sellers".equals(key) && value instanceof Person) { this.seller((Person)value); return; }
+      if ("sku".equals(key) && value instanceof Identifier) { this.sku((Identifier)value); return; }
+      if ("skus".equals(key) && value instanceof Identifier) { this.sku((Identifier)value); return; }
+      if ("sku".equals(key) && value instanceof String) { this.sku((String)value); return; }
+      if ("skus".equals(key) && value instanceof String) { this.sku((String)value); return; }
+      if ("validFrom".equals(key) && value instanceof java.util.Date) { this.validFrom((java.util.Date)value); return; }
+      if ("validFroms".equals(key) && value instanceof java.util.Date) { this.validFrom((java.util.Date)value); return; }
+      if ("validThrough".equals(key) && value instanceof java.util.Date) { this.validThrough((java.util.Date)value); return; }
+      if ("validThroughs".equals(key) && value instanceof java.util.Date) { this.validThrough((java.util.Date)value); return; }
+      if ("warranty".equals(key) && value instanceof WarrantyPromise) { this.warranty((WarrantyPromise)value); return; }
+      if ("warrantys".equals(key) && value instanceof WarrantyPromise) { this.warranty((WarrantyPromise)value); return; }
       super.fromMap(key, value);
     }
   }

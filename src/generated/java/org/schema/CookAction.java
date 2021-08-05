@@ -427,20 +427,20 @@ public class CookAction extends CreateAction {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("foodEstablishment".equals(key) && value instanceof FoodEstablishment) { foodEstablishment((FoodEstablishment)value); return; }
-      if ("foodEstablishments".equals(key) && value instanceof FoodEstablishment) { foodEstablishment((FoodEstablishment)value); return; }
-      if ("foodEstablishment".equals(key) && value instanceof Location) { foodEstablishment((Location)value); return; }
-      if ("foodEstablishments".equals(key) && value instanceof Location) { foodEstablishment((Location)value); return; }
-      if ("foodEstablishment".equals(key) && value instanceof Place) { foodEstablishment((Place)value); return; }
-      if ("foodEstablishments".equals(key) && value instanceof Place) { foodEstablishment((Place)value); return; }
-      if ("foodEvent".equals(key) && value instanceof FoodEvent) { foodEvent((FoodEvent)value); return; }
-      if ("foodEvents".equals(key) && value instanceof FoodEvent) { foodEvent((FoodEvent)value); return; }
-      if ("foodEvent".equals(key) && value instanceof Location) { foodEvent((Location)value); return; }
-      if ("foodEvents".equals(key) && value instanceof Location) { foodEvent((Location)value); return; }
-      if ("recipe".equals(key) && value instanceof Instrument) { recipe((Instrument)value); return; }
-      if ("recipes".equals(key) && value instanceof Instrument) { recipe((Instrument)value); return; }
-      if ("recipe".equals(key) && value instanceof Recipe) { recipe((Recipe)value); return; }
-      if ("recipes".equals(key) && value instanceof Recipe) { recipe((Recipe)value); return; }
+      if ("foodEstablishment".equals(key) && value instanceof FoodEstablishment) { this.foodEstablishment((FoodEstablishment)value); return; }
+      if ("foodEstablishments".equals(key) && value instanceof FoodEstablishment) { this.foodEstablishment((FoodEstablishment)value); return; }
+      if ("foodEstablishment".equals(key) && value instanceof Location) { this.foodEstablishment((Location)value); return; }
+      if ("foodEstablishments".equals(key) && value instanceof Location) { this.foodEstablishment((Location)value); return; }
+      if ("foodEstablishment".equals(key) && value instanceof Place) { this.foodEstablishment((Place)value); return; }
+      if ("foodEstablishments".equals(key) && value instanceof Place) { this.foodEstablishment((Place)value); return; }
+      if ("foodEvent".equals(key) && value instanceof FoodEvent) { this.foodEvent((FoodEvent)value); return; }
+      if ("foodEvents".equals(key) && value instanceof FoodEvent) { this.foodEvent((FoodEvent)value); return; }
+      if ("foodEvent".equals(key) && value instanceof Location) { this.foodEvent((Location)value); return; }
+      if ("foodEvents".equals(key) && value instanceof Location) { this.foodEvent((Location)value); return; }
+      if ("recipe".equals(key) && value instanceof Instrument) { this.recipe((Instrument)value); return; }
+      if ("recipes".equals(key) && value instanceof Instrument) { this.recipe((Instrument)value); return; }
+      if ("recipe".equals(key) && value instanceof Recipe) { this.recipe((Recipe)value); return; }
+      if ("recipes".equals(key) && value instanceof Recipe) { this.recipe((Recipe)value); return; }
       super.fromMap(key, value);
     }
   }
