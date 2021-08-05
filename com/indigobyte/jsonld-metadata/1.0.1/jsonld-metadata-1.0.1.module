@@ -28,10 +28,10 @@
           "name": "jsonld-metadata-1.0.1.jar",
           "url": "jsonld-metadata-1.0.1.jar",
           "size": 4106784,
-          "sha512": "677d396f53a82df0f009c0741a83ea661041a5d394cc72d10f301fae1379e08fb13a0802ea2ce99d2fc68053e501abd090fbf546b725201d307e74282437b9b1",
-          "sha256": "1241fe9beb2d3cb176278021bedc75498fb895be9b6147e437533b18357692eb",
-          "sha1": "9a258df46622991ee1471c759871d439c9670ba7",
-          "md5": "ac99e651c02f477b9120de22e836ccc0"
+          "sha512": "637ef29b57720636e440f41894176801576cb3b3d16817a6d1299a7f4fecabd393b49fb75916650782610ed88076508b3cd296e85adaff67ba742d83382c9fab",
+          "sha256": "acc074ef9504d7f33b03438b5ba48d231d99f6bff520a4a942075d5b57cd2a7e",
+          "sha1": "54625a568ca976c027c1147e515dcd9f4ab3e37a",
+          "md5": "636f43cdd63ef8de8b4e6ac9f73d67c4"
         }
       ]
     },
@@ -65,10 +65,50 @@
           "name": "jsonld-metadata-1.0.1.jar",
           "url": "jsonld-metadata-1.0.1.jar",
           "size": 4106784,
-          "sha512": "677d396f53a82df0f009c0741a83ea661041a5d394cc72d10f301fae1379e08fb13a0802ea2ce99d2fc68053e501abd090fbf546b725201d307e74282437b9b1",
-          "sha256": "1241fe9beb2d3cb176278021bedc75498fb895be9b6147e437533b18357692eb",
-          "sha1": "9a258df46622991ee1471c759871d439c9670ba7",
-          "md5": "ac99e651c02f477b9120de22e836ccc0"
+          "sha512": "637ef29b57720636e440f41894176801576cb3b3d16817a6d1299a7f4fecabd393b49fb75916650782610ed88076508b3cd296e85adaff67ba742d83382c9fab",
+          "sha256": "acc074ef9504d7f33b03438b5ba48d231d99f6bff520a4a942075d5b57cd2a7e",
+          "sha1": "54625a568ca976c027c1147e515dcd9f4ab3e37a",
+          "md5": "636f43cdd63ef8de8b4e6ac9f73d67c4"
+        }
+      ]
+    },
+    {
+      "name": "javadocElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "javadoc",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "jsonld-metadata-1.0.1-javadoc.jar",
+          "url": "jsonld-metadata-1.0.1-javadoc.jar",
+          "size": 10862959,
+          "sha512": "d6277802c48b9dd6661952263c96784dad013924c11a9a8a176532a9fe0c14eda1b0e1b2ee82e0d9ea3e7dbb63ab8b1f5294f88087ced813e75bdaab697020c3",
+          "sha256": "88c04947664f2fcd7131a5c882b9b16002ab34425dba3210ae470e0c691e979e",
+          "sha1": "1a1a509109a84eb7350278207de1acaee1b73411",
+          "md5": "e14b37f80efd9fadb1c75569aa0f0b0c"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "jsonld-metadata-1.0.1-sources.jar",
+          "url": "jsonld-metadata-1.0.1-sources.jar",
+          "size": 2932348,
+          "sha512": "fb39cf00d18440ab64bf1e276ce33da51b8f42cd1e74d987622ad508d9a85fe6b75505a5917591d0e0897fa4b8a019358a877440a075da938c4e75d941c080be",
+          "sha256": "9ceb2e0577f5e6afa09b9a0674467e92b20812c1e26020377e23397bed1e198e",
+          "sha1": "0f2ae25ba6758355c67210ba259ff4bb840dfa18",
+          "md5": "b2f11ace2a9d240c7131e9bf3027a803"
         }
       ]
     }
