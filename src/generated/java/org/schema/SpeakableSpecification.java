@@ -24,42 +24,42 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * A SpeakableSpecification indicates (typically via [[xpath]] or [[cssSelector]]) sections of a document that are highlighted as particularly [[speakable]]. Instances of this type are expected to be used primarily as values of the [[speakable]] property.Source: https://github.com/schemaorg/schemaorg/issues/1389
+ * A SpeakableSpecification indicates (typically via &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/xpath&quot;&gt;xpath&lt;/a&gt; or &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/cssSelector&quot;&gt;cssSelector&lt;/a&gt;) sections of a document that are highlighted as particularly &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/speakable&quot;&gt;speakable&lt;/a&gt;. Instances of this type are expected to be used primarily as values of the &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/speakable&quot;&gt;speakable&lt;/a&gt; property.Source: https://github.com/schemaorg/schemaorg/issues/1389
  */
 public class SpeakableSpecification extends Intangible {
   /**
-   * A CSS selector, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual &quot;Web page element&quot;.
+   * A CSS selector, e.g. of a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/SpeakableSpecification&quot;&gt;SpeakableSpecification&lt;/a&gt; or &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/WebPageElement&quot;&gt;WebPageElement&lt;/a&gt;. In the latter case, multiple matches within a page can constitute a single conceptual &quot;Web page element&quot;.
    */
-  @JsonIgnore public String getCssSelector() {
-    return (String) getValue("cssSelector");
+  @JsonIgnore public CssSelectorType getCssSelector() {
+    return (CssSelectorType) getValue("cssSelector");
   }
   /**
-   * A CSS selector, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual &quot;Web page element&quot;.
+   * A CSS selector, e.g. of a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/SpeakableSpecification&quot;&gt;SpeakableSpecification&lt;/a&gt; or &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/WebPageElement&quot;&gt;WebPageElement&lt;/a&gt;. In the latter case, multiple matches within a page can constitute a single conceptual &quot;Web page element&quot;.
    */
-  @JsonIgnore public Collection<String> getCssSelectors() {
+  @JsonIgnore public Collection<CssSelectorType> getCssSelectors() {
     final Object current = myData.get("cssSelector");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<String>) current;
+      return (Collection<CssSelectorType>) current;
     }
-    return Arrays.asList((String) current);
+    return Arrays.asList((CssSelectorType) current);
   }
   /**
-   * An XPath, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual &quot;Web page element&quot;.
+   * An XPath, e.g. of a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/SpeakableSpecification&quot;&gt;SpeakableSpecification&lt;/a&gt; or &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/WebPageElement&quot;&gt;WebPageElement&lt;/a&gt;. In the latter case, multiple matches within a page can constitute a single conceptual &quot;Web page element&quot;.
    */
-  @JsonIgnore public String getXpath() {
-    return (String) getValue("xpath");
+  @JsonIgnore public XPathType getXpath() {
+    return (XPathType) getValue("xpath");
   }
   /**
-   * An XPath, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual &quot;Web page element&quot;.
+   * An XPath, e.g. of a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/SpeakableSpecification&quot;&gt;SpeakableSpecification&lt;/a&gt; or &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/WebPageElement&quot;&gt;WebPageElement&lt;/a&gt;. In the latter case, multiple matches within a page can constitute a single conceptual &quot;Web page element&quot;.
    */
-  @JsonIgnore public Collection<String> getXpaths() {
+  @JsonIgnore public Collection<XPathType> getXpaths() {
     final Object current = myData.get("xpath");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<String>) current;
+      return (Collection<XPathType>) current;
     }
-    return Arrays.asList((String) current);
+    return Arrays.asList((XPathType) current);
   }
   protected SpeakableSpecification(java.util.Map<String,Object> data) {
     super(data);
@@ -76,17 +76,38 @@ public class SpeakableSpecification extends Intangible {
       return new SpeakableSpecification(myData);
     }
     /**
-     * A CSS selector, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual &quot;Web page element&quot;.
+     * A CSS selector, e.g. of a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/SpeakableSpecification&quot;&gt;SpeakableSpecification&lt;/a&gt; or &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/WebPageElement&quot;&gt;WebPageElement&lt;/a&gt;. In the latter case, multiple matches within a page can constitute a single conceptual &quot;Web page element&quot;.
      */
-    @NotNull public Builder cssSelector(@NotNull String cssSelector) {
-      putValue("cssSelector", cssSelector);
+    @NotNull public Builder cssSelector(@NotNull CssSelectorType cssSelectorType) {
+      putValue("cssSelector", cssSelectorType);
       return this;
     }
     /**
-     * An XPath, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual &quot;Web page element&quot;.
+     * A CSS selector, e.g. of a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/SpeakableSpecification&quot;&gt;SpeakableSpecification&lt;/a&gt; or &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/WebPageElement&quot;&gt;WebPageElement&lt;/a&gt;. In the latter case, multiple matches within a page can constitute a single conceptual &quot;Web page element&quot;.
      */
-    @NotNull public Builder xpath(@NotNull String xpath) {
-      putValue("xpath", xpath);
+    @NotNull public Builder cssSelector(@NotNull CssSelectorType.Builder cssSelectorType) {
+      putValue("cssSelector", cssSelectorType.build());
+      return this;
+    }
+    /**
+     * An XPath, e.g. of a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/SpeakableSpecification&quot;&gt;SpeakableSpecification&lt;/a&gt; or &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/WebPageElement&quot;&gt;WebPageElement&lt;/a&gt;. In the latter case, multiple matches within a page can constitute a single conceptual &quot;Web page element&quot;.
+     */
+    @NotNull public Builder xpath(@NotNull XPathType xPathType) {
+      putValue("xpath", xPathType);
+      return this;
+    }
+    /**
+     * An XPath, e.g. of a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/SpeakableSpecification&quot;&gt;SpeakableSpecification&lt;/a&gt; or &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/WebPageElement&quot;&gt;WebPageElement&lt;/a&gt;. In the latter case, multiple matches within a page can constitute a single conceptual &quot;Web page element&quot;.
+     */
+    @NotNull public Builder xpath(@NotNull XPathType.Builder xPathType) {
+      putValue("xpath", xPathType.build());
+      return this;
+    }
+    /**
+     * URL of the item.
+     */
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
       return this;
     }
     /**
@@ -97,45 +118,17 @@ public class SpeakableSpecification extends Intangible {
       return this;
     }
     /**
-     * An alias for the item.
-     */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
-      return this;
-    }
-    /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
-      putValue("disambiguatingDescription", disambiguatingDescription);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * A description of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -146,10 +139,24 @@ public class SpeakableSpecification extends Intangible {
       return this;
     }
     /**
-     * URL of the item.
+     * The name of the item.
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
       return this;
     }
     /**
@@ -164,6 +171,27 @@ public class SpeakableSpecification extends Intangible {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
       return this;
     }
     /**
@@ -202,10 +230,10 @@ public class SpeakableSpecification extends Intangible {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("cssSelector".equals(key) && value instanceof String) { this.cssSelector((String)value); return; }
-      if ("cssSelectors".equals(key) && value instanceof String) { this.cssSelector((String)value); return; }
-      if ("xpath".equals(key) && value instanceof String) { this.xpath((String)value); return; }
-      if ("xpaths".equals(key) && value instanceof String) { this.xpath((String)value); return; }
+      if ("cssSelector".equals(key) && value instanceof CssSelectorType) { this.cssSelector((CssSelectorType)value); return; }
+      if ("cssSelectors".equals(key) && value instanceof CssSelectorType) { this.cssSelector((CssSelectorType)value); return; }
+      if ("xpath".equals(key) && value instanceof XPathType) { this.xpath((XPathType)value); return; }
+      if ("xpaths".equals(key) && value instanceof XPathType) { this.xpath((XPathType)value); return; }
       super.fromMap(key, value);
     }
   }

@@ -27,6 +27,91 @@ import java.util.*;
  * A doctor's office.
  */
 public class Physician extends MedicalOrganization {
+  /**
+   * A hospital with which the physician or office is affiliated.
+   */
+  @JsonIgnore public Hospital getHospitalAffiliation() {
+    return (Hospital) getValue("hospitalAffiliation");
+  }
+  /**
+   * A hospital with which the physician or office is affiliated.
+   */
+  @JsonIgnore public Collection<Hospital> getHospitalAffiliations() {
+    final Object current = myData.get("hospitalAffiliation");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Hospital>) current;
+    }
+    return Arrays.asList((Hospital) current);
+  }
+  /**
+   * A medical service available from this provider.
+   */
+  @JsonIgnore public MedicalProcedure getAvailableServiceMedicalProcedure() {
+    return (MedicalProcedure) getValue("availableService");
+  }
+  /**
+   * A medical service available from this provider.
+   */
+  @JsonIgnore public Collection<MedicalProcedure> getAvailableServiceMedicalProcedures() {
+    final Object current = myData.get("availableService");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<MedicalProcedure>) current;
+    }
+    return Arrays.asList((MedicalProcedure) current);
+  }
+  /**
+   * A medical service available from this provider.
+   */
+  @JsonIgnore public MedicalTest getAvailableServiceMedicalTest() {
+    return (MedicalTest) getValue("availableService");
+  }
+  /**
+   * A medical service available from this provider.
+   */
+  @JsonIgnore public Collection<MedicalTest> getAvailableServiceMedicalTests() {
+    final Object current = myData.get("availableService");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<MedicalTest>) current;
+    }
+    return Arrays.asList((MedicalTest) current);
+  }
+  /**
+   * A medical service available from this provider.
+   */
+  @JsonIgnore public MedicalTherapy getAvailableServiceMedicalTherapy() {
+    return (MedicalTherapy) getValue("availableService");
+  }
+  /**
+   * A medical service available from this provider.
+   */
+  @JsonIgnore public Collection<MedicalTherapy> getAvailableServiceMedicalTherapys() {
+    final Object current = myData.get("availableService");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<MedicalTherapy>) current;
+    }
+    return Arrays.asList((MedicalTherapy) current);
+  }
+  /**
+   * A medical specialty of the provider.
+   */
+  @JsonIgnore public MedicalSpecialty getMedicalSpecialty() {
+    return (MedicalSpecialty) getValue("medicalSpecialty");
+  }
+  /**
+   * A medical specialty of the provider.
+   */
+  @JsonIgnore public Collection<MedicalSpecialty> getMedicalSpecialtys() {
+    final Object current = myData.get("medicalSpecialty");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<MedicalSpecialty>) current;
+    }
+    return Arrays.asList((MedicalSpecialty) current);
+  }
   protected Physician(java.util.Map<String,Object> data) {
     super(data);
   }
@@ -42,17 +127,318 @@ public class Physician extends MedicalOrganization {
       return new Physician(myData);
     }
     /**
-     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
+     * A hospital with which the physician or office is affiliated.
      */
-    @NotNull public Builder hasOfferCatalog(@NotNull OfferCatalog offerCatalog) {
-      putValue("hasOfferCatalog", offerCatalog);
+    @NotNull public Builder hospitalAffiliation(@NotNull Hospital hospital) {
+      putValue("hospitalAffiliation", hospital);
       return this;
     }
     /**
-     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
+     * A hospital with which the physician or office is affiliated.
      */
-    @NotNull public Builder hasOfferCatalog(@NotNull OfferCatalog.Builder offerCatalog) {
-      putValue("hasOfferCatalog", offerCatalog.build());
+    @NotNull public Builder hospitalAffiliation(@NotNull Hospital.Builder hospital) {
+      putValue("hospitalAffiliation", hospital.build());
+      return this;
+    }
+    /**
+     * A medical service available from this provider.
+     */
+    @NotNull public Builder availableService(@NotNull MedicalProcedure medicalProcedure) {
+      putValue("availableService", medicalProcedure);
+      return this;
+    }
+    /**
+     * A medical service available from this provider.
+     */
+    @NotNull public Builder availableService(@NotNull MedicalProcedure.Builder medicalProcedure) {
+      putValue("availableService", medicalProcedure.build());
+      return this;
+    }
+    /**
+     * A medical service available from this provider.
+     */
+    @NotNull public Builder availableService(@NotNull MedicalTest medicalTest) {
+      putValue("availableService", medicalTest);
+      return this;
+    }
+    /**
+     * A medical service available from this provider.
+     */
+    @NotNull public Builder availableService(@NotNull MedicalTest.Builder medicalTest) {
+      putValue("availableService", medicalTest.build());
+      return this;
+    }
+    /**
+     * A medical service available from this provider.
+     */
+    @NotNull public Builder availableService(@NotNull MedicalTherapy medicalTherapy) {
+      putValue("availableService", medicalTherapy);
+      return this;
+    }
+    /**
+     * A medical service available from this provider.
+     */
+    @NotNull public Builder availableService(@NotNull MedicalTherapy.Builder medicalTherapy) {
+      putValue("availableService", medicalTherapy.build());
+      return this;
+    }
+    /**
+     * A medical specialty of the provider.
+     */
+    @NotNull public Builder medicalSpecialty(@NotNull MedicalSpecialty medicalSpecialty) {
+      putValue("medicalSpecialty", medicalSpecialty);
+      return this;
+    }
+    /**
+     * A medical specialty of the provider.
+     */
+    @NotNull public Builder medicalSpecialty(@NotNull MedicalSpecialty.Builder medicalSpecialty) {
+      putValue("medicalSpecialty", medicalSpecialty.build());
+      return this;
+    }
+    /**
+     * Whether the provider is accepting new patients.
+     */
+    @NotNull public Builder isAcceptingNewPatients(@NotNull Boolean isAcceptingNewPatients) {
+      putValue("isAcceptingNewPatients", isAcceptingNewPatients);
+      return this;
+    }
+    /**
+     * Name or unique ID of network. (Networks are often reused across different insurance plans).
+     */
+    @NotNull public Builder healthPlanNetworkId(@NotNull String healthPlanNetworkId) {
+      putValue("healthPlanNetworkId", healthPlanNetworkId);
+      return this;
+    }
+    /**
+     * An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
+     */
+    @NotNull public Builder leiCode(@NotNull Identifier identifier) {
+      putValue("leiCode", identifier);
+      return this;
+    }
+    /**
+     * For a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/NewsMediaOrganization&quot;&gt;NewsMediaOrganization&lt;/a&gt; or other news-related &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Organization&quot;&gt;Organization&lt;/a&gt;, a statement about public engagement activities (for news media, the newsroom&rsquo;s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.
+     */
+    @NotNull public Builder actionableFeedbackPolicy(@NotNull PublishingPrinciples publishingPrinciples) {
+      putValue("actionableFeedbackPolicy", publishingPrinciples);
+      return this;
+    }
+    /**
+     * Indicates a MerchantReturnPolicy that may be applicable.
+     */
+    @NotNull public Builder hasMerchantReturnPolicy(@NotNull MerchantReturnPolicy merchantReturnPolicy) {
+      putValue("hasMerchantReturnPolicy", merchantReturnPolicy);
+      return this;
+    }
+    /**
+     * Indicates a MerchantReturnPolicy that may be applicable.
+     */
+    @NotNull public Builder hasMerchantReturnPolicy(@NotNull MerchantReturnPolicy.Builder merchantReturnPolicy) {
+      putValue("hasMerchantReturnPolicy", merchantReturnPolicy.build());
+      return this;
+    }
+    /**
+     * The fax number.
+     */
+    @NotNull public Builder faxNumber(@NotNull String faxNumber) {
+      putValue("faxNumber", faxNumber);
+      return this;
+    }
+    /**
+     * The &lt;a href=&quot;http://www.gs1.org/gln&quot;&gt;Global Location Number&lt;/a&gt; (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
+     */
+    @NotNull public Builder globalLocationNumber(@NotNull String globalLocationNumber) {
+      putValue("globalLocationNumber", globalLocationNumber);
+      return this;
+    }
+    /**
+     * For an &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Organization&quot;&gt;Organization&lt;/a&gt; (typically a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/NewsMediaOrganization&quot;&gt;NewsMediaOrganization&lt;/a&gt;), a statement about policy on use of unnamed sources and the decision process required.
+     */
+    @NotNull public Builder unnamedSourcesPolicy(@NotNull PublishingPrinciples publishingPrinciples) {
+      putValue("unnamedSourcesPolicy", publishingPrinciples);
+      return this;
+    }
+    /**
+     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
+     */
+    @NotNull public Builder interactionStatistic(@NotNull InteractionCounter interactionCounter) {
+      putValue("interactionStatistic", interactionCounter);
+      return this;
+    }
+    /**
+     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
+     */
+    @NotNull public Builder interactionStatistic(@NotNull InteractionCounter.Builder interactionCounter) {
+      putValue("interactionStatistic", interactionCounter.build());
+      return this;
+    }
+    /**
+     * For an &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Organization&quot;&gt;Organization&lt;/a&gt; (e.g. &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/NewsMediaOrganization&quot;&gt;NewsMediaOrganization&lt;/a&gt;), a statement describing (in news media, the newsroom&rsquo;s) disclosure and correction policy for errors.
+     */
+    @NotNull public Builder correctionsPolicy(@NotNull PublishingPrinciples publishingPrinciples) {
+      putValue("correctionsPolicy", publishingPrinciples);
+      return this;
+    }
+    /**
+     * Of a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Person&quot;&gt;Person&lt;/a&gt;, and less typically of an &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Organization&quot;&gt;Organization&lt;/a&gt;, to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/JobPosting&quot;&gt;JobPosting&lt;/a&gt; descriptions.
+     */
+    @NotNull public Builder knowsAbout(@NotNull String knowsAbout) {
+      putValue("knowsAbout", knowsAbout);
+      return this;
+    }
+    /**
+     * Of a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Person&quot;&gt;Person&lt;/a&gt;, and less typically of an &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Organization&quot;&gt;Organization&lt;/a&gt;, to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/JobPosting&quot;&gt;JobPosting&lt;/a&gt; descriptions.
+     */
+    @NotNull public Builder knowsAbout(@NotNull Thing thing) {
+      putValue("knowsAbout", thing);
+      return this;
+    }
+    /**
+     * Of a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Person&quot;&gt;Person&lt;/a&gt;, and less typically of an &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Organization&quot;&gt;Organization&lt;/a&gt;, to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/JobPosting&quot;&gt;JobPosting&lt;/a&gt; descriptions.
+     */
+    @NotNull public Builder knowsAbout(@NotNull Thing.Builder thing) {
+      putValue("knowsAbout", thing.build());
+      return this;
+    }
+    /**
+     * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
+     */
+    @NotNull public Builder member(@NotNull Organization organization) {
+      putValue("member", organization);
+      return this;
+    }
+    /**
+     * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
+     */
+    @NotNull public Builder member(@NotNull Organization.Builder organization) {
+      putValue("member", organization.build());
+      return this;
+    }
+    /**
+     * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
+     */
+    @NotNull public Builder member(@NotNull Person person) {
+      putValue("member", person);
+      return this;
+    }
+    /**
+     * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
+     */
+    @NotNull public Builder member(@NotNull Person.Builder person) {
+      putValue("member", person.build());
+      return this;
+    }
+    /**
+     * The Value-added Tax ID of the organization or person.
+     */
+    @NotNull public Builder vatID(@NotNull String vatID) {
+      putValue("vatID", vatID);
+      return this;
+    }
+    /**
+     * For an &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Organization&quot;&gt;Organization&lt;/a&gt; (often but not necessarily a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/NewsMediaOrganization&quot;&gt;NewsMediaOrganization&lt;/a&gt;), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/funder&quot;&gt;funder&lt;/a&gt; is also available and can be used to make basic funder information machine-readable.
+     */
+    @NotNull public Builder ownershipFundingInfo(@NotNull PublishingPrinciples publishingPrinciples) {
+      putValue("ownershipFundingInfo", publishingPrinciples);
+      return this;
+    }
+    /**
+     * The number of employees in an organization e.g. business.
+     */
+    @NotNull public Builder numberOfEmployees(@NotNull QuantitativeValue quantitativeValue) {
+      putValue("numberOfEmployees", quantitativeValue);
+      return this;
+    }
+    /**
+     * The number of employees in an organization e.g. business.
+     */
+    @NotNull public Builder numberOfEmployees(@NotNull QuantitativeValue.Builder quantitativeValue) {
+      putValue("numberOfEmployees", quantitativeValue.build());
+      return this;
+    }
+    /**
+     * The North American Industry Classification System (NAICS) code for a particular organization or business person.
+     */
+    @NotNull public Builder naics(@NotNull String naics) {
+      putValue("naics", naics);
+      return this;
+    }
+    /**
+     * An award won by or for this item.
+     */
+    @NotNull public Builder award(@NotNull String award) {
+      putValue("award", award);
+      return this;
+    }
+    /**
+     * The place where the Organization was founded.
+     */
+    @NotNull public Builder foundingLocation(@NotNull Place place) {
+      putValue("foundingLocation", place);
+      return this;
+    }
+    /**
+     * The place where the Organization was founded.
+     */
+    @NotNull public Builder foundingLocation(@NotNull Place.Builder place) {
+      putValue("foundingLocation", place.build());
+      return this;
+    }
+    /**
+     * The Dun &amp;amp; Bradstreet DUNS number for identifying an organization or business person.
+     */
+    @NotNull public Builder duns(@NotNull String duns) {
+      putValue("duns", duns);
+      return this;
+    }
+    /**
+     * Of a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Person&quot;&gt;Person&lt;/a&gt;, and less typically of an &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Organization&quot;&gt;Organization&lt;/a&gt;, to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the &lt;a href=&quot;http://tools.ietf.org/html/bcp47&quot;&gt;IETF BCP 47 standard&lt;/a&gt;.
+     */
+    @NotNull public Builder knowsLanguage(@NotNull Language language) {
+      putValue("knowsLanguage", language);
+      return this;
+    }
+    /**
+     * Of a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Person&quot;&gt;Person&lt;/a&gt;, and less typically of an &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Organization&quot;&gt;Organization&lt;/a&gt;, to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the &lt;a href=&quot;http://tools.ietf.org/html/bcp47&quot;&gt;IETF BCP 47 standard&lt;/a&gt;.
+     */
+    @NotNull public Builder knowsLanguage(@NotNull Language.Builder language) {
+      putValue("knowsLanguage", language.build());
+      return this;
+    }
+    /**
+     * Of a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Person&quot;&gt;Person&lt;/a&gt;, and less typically of an &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Organization&quot;&gt;Organization&lt;/a&gt;, to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the &lt;a href=&quot;http://tools.ietf.org/html/bcp47&quot;&gt;IETF BCP 47 standard&lt;/a&gt;.
+     */
+    @NotNull public Builder knowsLanguage(@NotNull String knowsLanguage) {
+      putValue("knowsLanguage", knowsLanguage);
+      return this;
+    }
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     */
+    @NotNull public Builder brand(@NotNull Brand brand) {
+      putValue("brand", brand);
+      return this;
+    }
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     */
+    @NotNull public Builder brand(@NotNull Brand.Builder brand) {
+      putValue("brand", brand.build());
+      return this;
+    }
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     */
+    @NotNull public Builder brand(@NotNull Organization organization) {
+      putValue("brand", organization);
+      return this;
+    }
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     */
+    @NotNull public Builder brand(@NotNull Organization.Builder organization) {
+      putValue("brand", organization.build());
       return this;
     }
     /**
@@ -91,80 +477,73 @@ public class Physician extends MedicalOrganization {
       return this;
     }
     /**
-     * Alumni of an organization.
+     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
      */
-    @NotNull public Builder alumni(@NotNull Person person) {
-      putValue("alumni", person);
+    @NotNull public Builder hasOfferCatalog(@NotNull OfferCatalog offerCatalog) {
+      putValue("hasOfferCatalog", offerCatalog);
       return this;
     }
     /**
-     * Alumni of an organization.
+     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
      */
-    @NotNull public Builder alumni(@NotNull Person.Builder person) {
-      putValue("alumni", person.build());
+    @NotNull public Builder hasOfferCatalog(@NotNull OfferCatalog.Builder offerCatalog) {
+      putValue("hasOfferCatalog", offerCatalog.build());
       return this;
     }
     /**
-     * An award won by or for this item.
+     * Points-of-Sales operated by the organization or person.
      */
-    @NotNull public Builder award(@NotNull String award) {
-      putValue("award", award);
+    @NotNull public Builder hasPOS(@NotNull Place place) {
+      putValue("hasPOS", place);
       return this;
     }
     /**
-     * The larger organization that this organization is a [[subOrganization]] of, if any.
+     * Points-of-Sales operated by the organization or person.
      */
-    @NotNull public Builder parentOrganization(@NotNull Organization organization) {
-      putValue("parentOrganization", organization);
+    @NotNull public Builder hasPOS(@NotNull Place.Builder place) {
+      putValue("hasPOS", place.build());
       return this;
     }
     /**
-     * The larger organization that this organization is a [[subOrganization]] of, if any.
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
      */
-    @NotNull public Builder parentOrganization(@NotNull Organization.Builder organization) {
-      putValue("parentOrganization", organization.build());
+    @NotNull public Builder funder(@NotNull Sponsor sponsor) {
+      putValue("funder", sponsor);
       return this;
     }
     /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
      */
-    @NotNull public Builder brand(@NotNull Brand brand) {
-      putValue("brand", brand);
+    @NotNull public Builder sponsor(@NotNull Sponsor sponsor) {
+      putValue("sponsor", sponsor);
       return this;
     }
     /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     * A pointer to products or services sought by the organization or person (demand).
      */
-    @NotNull public Builder brand(@NotNull Brand.Builder brand) {
-      putValue("brand", brand.build());
+    @NotNull public Builder seeks(@NotNull Demand demand) {
+      putValue("seeks", demand);
       return this;
     }
     /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     * A pointer to products or services sought by the organization or person (demand).
      */
-    @NotNull public Builder brand(@NotNull Organization organization) {
-      putValue("brand", organization);
+    @NotNull public Builder seeks(@NotNull Demand.Builder demand) {
+      putValue("seeks", demand.build());
       return this;
     }
     /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     * For an &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Organization&quot;&gt;Organization&lt;/a&gt; (often but not necessarily a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/NewsMediaOrganization&quot;&gt;NewsMediaOrganization&lt;/a&gt;), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.
      */
-    @NotNull public Builder brand(@NotNull Organization.Builder organization) {
-      putValue("brand", organization.build());
+    @NotNull public Builder diversityStaffingReport(@NotNull PublishingPrinciples publishingPrinciples) {
+      putValue("diversityStaffingReport", publishingPrinciples);
       return this;
     }
     /**
-     * A contact point for a person or organization.
+     * The telephone number.
      */
-    @NotNull public Builder contactPoint(@NotNull ContactPoint contactPoint) {
-      putValue("contactPoint", contactPoint);
-      return this;
-    }
-    /**
-     * A contact point for a person or organization.
-     */
-    @NotNull public Builder contactPoint(@NotNull ContactPoint.Builder contactPoint) {
-      putValue("contactPoint", contactPoint.build());
+    @NotNull public Builder telephone(@NotNull String telephone) {
+      putValue("telephone", telephone);
       return this;
     }
     /**
@@ -182,27 +561,6 @@ public class Physician extends MedicalOrganization {
       return this;
     }
     /**
-     * The Dun &amp; Bradstreet DUNS number for identifying an organization or business person.
-     */
-    @NotNull public Builder duns(@NotNull Identifier identifier) {
-      putValue("duns", identifier);
-      return this;
-    }
-    /**
-     * The Dun &amp; Bradstreet DUNS number for identifying an organization or business person.
-     */
-    @NotNull public Builder duns(@NotNull String duns) {
-      putValue("duns", duns);
-      return this;
-    }
-    /**
-     * Email address.
-     */
-    @NotNull public Builder email(@NotNull String email) {
-      putValue("email", email);
-      return this;
-    }
-    /**
      * Someone working for this organization.
      */
     @NotNull public Builder employee(@NotNull Person person) {
@@ -217,24 +575,59 @@ public class Physician extends MedicalOrganization {
       return this;
     }
     /**
-     * Upcoming or past event associated with this place, organization, or action.
+     * A review of the item.
      */
-    @NotNull public Builder event(@NotNull Event event) {
-      putValue("event", event);
+    @NotNull public Builder review(@NotNull Review review) {
+      putValue("review", review);
       return this;
     }
     /**
-     * Upcoming or past event associated with this place, organization, or action.
+     * A review of the item.
      */
-    @NotNull public Builder event(@NotNull Event.Builder event) {
-      putValue("event", event.build());
+    @NotNull public Builder review(@NotNull Review.Builder review) {
+      putValue("review", review.build());
       return this;
     }
     /**
-     * The fax number.
+     * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
      */
-    @NotNull public Builder faxNumber(@NotNull String faxNumber) {
-      putValue("faxNumber", faxNumber);
+    @NotNull public Builder taxID(@NotNull Identifier identifier) {
+      putValue("taxID", identifier);
+      return this;
+    }
+    /**
+     * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
+     */
+    @NotNull public Builder isicV4(@NotNull String isicV4) {
+      putValue("isicV4", isicV4);
+      return this;
+    }
+    /**
+     * Email address.
+     */
+    @NotNull public Builder email(@NotNull String email) {
+      putValue("email", email);
+      return this;
+    }
+    /**
+     * The date that this organization was founded.
+     */
+    @NotNull public Builder foundingDate(@NotNull java.util.Date date) {
+      putValue("foundingDate", date);
+      return this;
+    }
+    /**
+     * A credential awarded to the Person or Organization.
+     */
+    @NotNull public Builder hasCredential(@NotNull EducationalOccupationalCredential educationalOccupationalCredential) {
+      putValue("hasCredential", educationalOccupationalCredential);
+      return this;
+    }
+    /**
+     * A credential awarded to the Person or Organization.
+     */
+    @NotNull public Builder hasCredential(@NotNull EducationalOccupationalCredential.Builder educationalOccupationalCredential) {
+      putValue("hasCredential", educationalOccupationalCredential.build());
       return this;
     }
     /**
@@ -259,115 +652,10 @@ public class Physician extends MedicalOrganization {
       return this;
     }
     /**
-     * The date that this organization was founded.
+     * A slogan or motto associated with the item.
      */
-    @NotNull public Builder foundingDate(@NotNull java.util.Date date) {
-      putValue("foundingDate", date);
-      return this;
-    }
-    /**
-     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
-     */
-    @NotNull public Builder globalLocationNumber(@NotNull Identifier identifier) {
-      putValue("globalLocationNumber", identifier);
-      return this;
-    }
-    /**
-     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
-     */
-    @NotNull public Builder globalLocationNumber(@NotNull String globalLocationNumber) {
-      putValue("globalLocationNumber", globalLocationNumber);
-      return this;
-    }
-    /**
-     * Points-of-Sales operated by the organization or person.
-     */
-    @NotNull public Builder hasPOS(@NotNull Place place) {
-      putValue("hasPOS", place);
-      return this;
-    }
-    /**
-     * Points-of-Sales operated by the organization or person.
-     */
-    @NotNull public Builder hasPOS(@NotNull Place.Builder place) {
-      putValue("hasPOS", place.build());
-      return this;
-    }
-    /**
-     * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
-     */
-    @NotNull public Builder isicV4(@NotNull String isicV4) {
-      putValue("isicV4", isicV4);
-      return this;
-    }
-    /**
-     * The official name of the organization, e.g. the registered company name.
-     */
-    @NotNull public Builder legalName(@NotNull String legalName) {
-      putValue("legalName", legalName);
-      return this;
-    }
-    /**
-     * An associated logo.
-     */
-    @NotNull public Builder logo(@NotNull ImageObject imageObject) {
-      putValue("logo", imageObject);
-      return this;
-    }
-    /**
-     * An associated logo.
-     */
-    @NotNull public Builder logo(@NotNull ImageObject.Builder imageObject) {
-      putValue("logo", imageObject.build());
-      return this;
-    }
-    /**
-     * An associated logo.
-     */
-    @NotNull public Builder logo(@NotNull String logo) {
-      putValue("logo", logo);
-      return this;
-    }
-    /**
-     * A pointer to products or services offered by the organization or person.
-     */
-    @NotNull public Builder makesOffer(@NotNull Offer offer) {
-      putValue("makesOffer", offer);
-      return this;
-    }
-    /**
-     * A pointer to products or services offered by the organization or person.
-     */
-    @NotNull public Builder makesOffer(@NotNull Offer.Builder offer) {
-      putValue("makesOffer", offer.build());
-      return this;
-    }
-    /**
-     * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
-     */
-    @NotNull public Builder member(@NotNull Organization organization) {
-      putValue("member", organization);
-      return this;
-    }
-    /**
-     * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
-     */
-    @NotNull public Builder member(@NotNull Organization.Builder organization) {
-      putValue("member", organization.build());
-      return this;
-    }
-    /**
-     * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
-     */
-    @NotNull public Builder member(@NotNull Person person) {
-      putValue("member", person);
-      return this;
-    }
-    /**
-     * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
-     */
-    @NotNull public Builder member(@NotNull Person.Builder person) {
-      putValue("member", person.build());
+    @NotNull public Builder slogan(@NotNull String slogan) {
+      putValue("slogan", slogan);
       return this;
     }
     /**
@@ -378,24 +666,38 @@ public class Physician extends MedicalOrganization {
       return this;
     }
     /**
-     * The North American Industry Classification System (NAICS) code for a particular organization or business person.
+     * Upcoming or past event associated with this place, organization, or action.
      */
-    @NotNull public Builder naics(@NotNull String naics) {
-      putValue("naics", naics);
+    @NotNull public Builder event(@NotNull Event event) {
+      putValue("event", event);
       return this;
     }
     /**
-     * The number of employees in an organization e.g. business.
+     * Upcoming or past event associated with this place, organization, or action.
      */
-    @NotNull public Builder numberOfEmployees(@NotNull QuantitativeValue quantitativeValue) {
-      putValue("numberOfEmployees", quantitativeValue);
+    @NotNull public Builder event(@NotNull Event.Builder event) {
+      putValue("event", event.build());
       return this;
     }
     /**
-     * The number of employees in an organization e.g. business.
+     * Statement about ethics policy, e.g. of a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/NewsMediaOrganization&quot;&gt;NewsMediaOrganization&lt;/a&gt; regarding journalistic and publishing practices, or of a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Restaurant&quot;&gt;Restaurant&lt;/a&gt;, a page describing food source policies. In the case of a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/NewsMediaOrganization&quot;&gt;NewsMediaOrganization&lt;/a&gt;, an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.
      */
-    @NotNull public Builder numberOfEmployees(@NotNull QuantitativeValue.Builder quantitativeValue) {
-      putValue("numberOfEmployees", quantitativeValue.build());
+    @NotNull public Builder ethicsPolicy(@NotNull CreativeWork creativeWork) {
+      putValue("ethicsPolicy", creativeWork);
+      return this;
+    }
+    /**
+     * Statement about ethics policy, e.g. of a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/NewsMediaOrganization&quot;&gt;NewsMediaOrganization&lt;/a&gt; regarding journalistic and publishing practices, or of a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Restaurant&quot;&gt;Restaurant&lt;/a&gt;, a page describing food source policies. In the case of a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/NewsMediaOrganization&quot;&gt;NewsMediaOrganization&lt;/a&gt;, an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.
+     */
+    @NotNull public Builder ethicsPolicy(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("ethicsPolicy", creativeWork.build());
+      return this;
+    }
+    /**
+     * Statement about ethics policy, e.g. of a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/NewsMediaOrganization&quot;&gt;NewsMediaOrganization&lt;/a&gt; regarding journalistic and publishing practices, or of a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Restaurant&quot;&gt;Restaurant&lt;/a&gt;, a page describing food source policies. In the case of a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/NewsMediaOrganization&quot;&gt;NewsMediaOrganization&lt;/a&gt;, an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.
+     */
+    @NotNull public Builder ethicsPolicy(@NotNull String ethicsPolicy) {
+      putValue("ethicsPolicy", ethicsPolicy);
       return this;
     }
     /**
@@ -427,96 +729,94 @@ public class Physician extends MedicalOrganization {
       return this;
     }
     /**
-     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
-     * 
-     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
-     * 
+     * Statement on diversity policy by an &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Organization&quot;&gt;Organization&lt;/a&gt; e.g. a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/NewsMediaOrganization&quot;&gt;NewsMediaOrganization&lt;/a&gt;. For a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/NewsMediaOrganization&quot;&gt;NewsMediaOrganization&lt;/a&gt;, a statement describing the newsroom&rsquo;s diversity policy on both staffing and sources, typically providing staffing data.
      */
-    @NotNull public Builder publishingPrinciples(@NotNull CreativeWork creativeWork) {
-      putValue("publishingPrinciples", creativeWork);
+    @NotNull public Builder diversityPolicy(@NotNull CreativeWork creativeWork) {
+      putValue("diversityPolicy", creativeWork);
       return this;
     }
     /**
-     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
-     * 
-     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
-     * 
+     * Statement on diversity policy by an &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Organization&quot;&gt;Organization&lt;/a&gt; e.g. a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/NewsMediaOrganization&quot;&gt;NewsMediaOrganization&lt;/a&gt;. For a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/NewsMediaOrganization&quot;&gt;NewsMediaOrganization&lt;/a&gt;, a statement describing the newsroom&rsquo;s diversity policy on both staffing and sources, typically providing staffing data.
      */
-    @NotNull public Builder publishingPrinciples(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("publishingPrinciples", creativeWork.build());
+    @NotNull public Builder diversityPolicy(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("diversityPolicy", creativeWork.build());
       return this;
     }
     /**
-     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
-     * 
-     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
-     * 
+     * Statement on diversity policy by an &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Organization&quot;&gt;Organization&lt;/a&gt; e.g. a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/NewsMediaOrganization&quot;&gt;NewsMediaOrganization&lt;/a&gt;. For a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/NewsMediaOrganization&quot;&gt;NewsMediaOrganization&lt;/a&gt;, a statement describing the newsroom&rsquo;s diversity policy on both staffing and sources, typically providing staffing data.
      */
-    @NotNull public Builder publishingPrinciples(@NotNull String publishingPrinciples) {
-      putValue("publishingPrinciples", publishingPrinciples);
+    @NotNull public Builder diversityPolicy(@NotNull String diversityPolicy) {
+      putValue("diversityPolicy", diversityPolicy);
       return this;
     }
     /**
-     * A review of the item.
+     * The larger organization that this organization is a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/subOrganization&quot;&gt;subOrganization&lt;/a&gt; of, if any.
      */
-    @NotNull public Builder review(@NotNull Review review) {
-      putValue("review", review);
+    @NotNull public Builder parentOrganization(@NotNull Organization organization) {
+      putValue("parentOrganization", organization);
       return this;
     }
     /**
-     * A review of the item.
+     * The larger organization that this organization is a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/subOrganization&quot;&gt;subOrganization&lt;/a&gt; of, if any.
      */
-    @NotNull public Builder review(@NotNull Review.Builder review) {
-      putValue("review", review.build());
+    @NotNull public Builder parentOrganization(@NotNull Organization.Builder organization) {
+      putValue("parentOrganization", organization.build());
       return this;
     }
     /**
-     * A slogan or motto associated with the item.
+     * An associated logo.
      */
-    @NotNull public Builder slogan(@NotNull String slogan) {
-      putValue("slogan", slogan);
+    @NotNull public Builder logo(@NotNull Image image) {
+      putValue("logo", image);
       return this;
     }
     /**
-     * A pointer to products or services sought by the organization or person (demand).
+     * A contact point for a person or organization.
      */
-    @NotNull public Builder seeks(@NotNull Demand demand) {
-      putValue("seeks", demand);
+    @NotNull public Builder contactPoint(@NotNull ContactPoint contactPoint) {
+      putValue("contactPoint", contactPoint);
       return this;
     }
     /**
-     * A pointer to products or services sought by the organization or person (demand).
+     * A contact point for a person or organization.
      */
-    @NotNull public Builder seeks(@NotNull Demand.Builder demand) {
-      putValue("seeks", demand.build());
+    @NotNull public Builder contactPoint(@NotNull ContactPoint.Builder contactPoint) {
+      putValue("contactPoint", contactPoint.build());
       return this;
     }
     /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
+     * The official name of the organization, e.g. the registered company name.
      */
-    @NotNull public Builder funder(@NotNull Organization organization) {
-      putValue("funder", organization);
+    @NotNull public Builder legalName(@NotNull String legalName) {
+      putValue("legalName", legalName);
       return this;
     }
     /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
+     * A pointer to products or services offered by the organization or person.
      */
-    @NotNull public Builder funder(@NotNull Organization.Builder organization) {
-      putValue("funder", organization.build());
+    @NotNull public Builder makesOffer(@NotNull Offer offer) {
+      putValue("makesOffer", offer);
       return this;
     }
     /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
+     * A pointer to products or services offered by the organization or person.
      */
-    @NotNull public Builder funder(@NotNull Person person) {
-      putValue("funder", person);
+    @NotNull public Builder makesOffer(@NotNull Offer.Builder offer) {
+      putValue("makesOffer", offer.build());
       return this;
     }
     /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
+     * Alumni of an organization.
      */
-    @NotNull public Builder funder(@NotNull Person.Builder person) {
-      putValue("funder", person.build());
+    @NotNull public Builder alumni(@NotNull Person person) {
+      putValue("alumni", person);
+      return this;
+    }
+    /**
+     * Alumni of an organization.
+     */
+    @NotNull public Builder alumni(@NotNull Person.Builder person) {
+      putValue("alumni", person.build());
       return this;
     }
     /**
@@ -534,59 +834,10 @@ public class Physician extends MedicalOrganization {
       return this;
     }
     /**
-     * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
+     * URL of the item.
      */
-    @NotNull public Builder taxID(@NotNull Identifier identifier) {
-      putValue("taxID", identifier);
-      return this;
-    }
-    /**
-     * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
-     */
-    @NotNull public Builder taxID(@NotNull String taxID) {
-      putValue("taxID", taxID);
-      return this;
-    }
-    /**
-     * The telephone number.
-     */
-    @NotNull public Builder telephone(@NotNull String telephone) {
-      putValue("telephone", telephone);
-      return this;
-    }
-    /**
-     * The Value-added Tax ID of the organization or person.
-     */
-    @NotNull public Builder vatID(@NotNull String vatID) {
-      putValue("vatID", vatID);
-      return this;
-    }
-    /**
-     * The place where the Organization was founded.
-     */
-    @NotNull public Builder foundingLocation(@NotNull Place place) {
-      putValue("foundingLocation", place);
-      return this;
-    }
-    /**
-     * The place where the Organization was founded.
-     */
-    @NotNull public Builder foundingLocation(@NotNull Place.Builder place) {
-      putValue("foundingLocation", place.build());
-      return this;
-    }
-    /**
-     * An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
-     */
-    @NotNull public Builder leiCode(@NotNull Identifier identifier) {
-      putValue("leiCode", identifier);
-      return this;
-    }
-    /**
-     * An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
-     */
-    @NotNull public Builder leiCode(@NotNull String leiCode) {
-      putValue("leiCode", leiCode);
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
       return this;
     }
     /**
@@ -597,45 +848,17 @@ public class Physician extends MedicalOrganization {
       return this;
     }
     /**
-     * An alias for the item.
-     */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
-      return this;
-    }
-    /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
-      putValue("disambiguatingDescription", disambiguatingDescription);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * A description of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -646,10 +869,24 @@ public class Physician extends MedicalOrganization {
       return this;
     }
     /**
-     * URL of the item.
+     * The name of the item.
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
       return this;
     }
     /**
@@ -664,6 +901,27 @@ public class Physician extends MedicalOrganization {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
       return this;
     }
     /**
@@ -702,6 +960,16 @@ public class Physician extends MedicalOrganization {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
+      if ("hospitalAffiliation".equals(key) && value instanceof Hospital) { this.hospitalAffiliation((Hospital)value); return; }
+      if ("hospitalAffiliations".equals(key) && value instanceof Hospital) { this.hospitalAffiliation((Hospital)value); return; }
+      if ("availableService".equals(key) && value instanceof MedicalProcedure) { this.availableService((MedicalProcedure)value); return; }
+      if ("availableServices".equals(key) && value instanceof MedicalProcedure) { this.availableService((MedicalProcedure)value); return; }
+      if ("availableService".equals(key) && value instanceof MedicalTest) { this.availableService((MedicalTest)value); return; }
+      if ("availableServices".equals(key) && value instanceof MedicalTest) { this.availableService((MedicalTest)value); return; }
+      if ("availableService".equals(key) && value instanceof MedicalTherapy) { this.availableService((MedicalTherapy)value); return; }
+      if ("availableServices".equals(key) && value instanceof MedicalTherapy) { this.availableService((MedicalTherapy)value); return; }
+      if ("medicalSpecialty".equals(key) && value instanceof MedicalSpecialty) { this.medicalSpecialty((MedicalSpecialty)value); return; }
+      if ("medicalSpecialtys".equals(key) && value instanceof MedicalSpecialty) { this.medicalSpecialty((MedicalSpecialty)value); return; }
       super.fromMap(key, value);
     }
   }

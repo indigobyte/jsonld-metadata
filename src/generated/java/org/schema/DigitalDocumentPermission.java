@@ -28,6 +28,23 @@ import java.util.*;
  */
 public class DigitalDocumentPermission extends Intangible {
   /**
+   * The type of permission granted the person, organization, or audience.
+   */
+  @JsonIgnore public DigitalDocumentPermissionType getPermissionType() {
+    return (DigitalDocumentPermissionType) getValue("permissionType");
+  }
+  /**
+   * The type of permission granted the person, organization, or audience.
+   */
+  @JsonIgnore public Collection<DigitalDocumentPermissionType> getPermissionTypes() {
+    final Object current = myData.get("permissionType");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<DigitalDocumentPermissionType>) current;
+    }
+    return Arrays.asList((DigitalDocumentPermissionType) current);
+  }
+  /**
    * The person, organization, contact point, or audience that has been granted this permission.
    */
   @JsonIgnore public Audience getGranteeAudience() {
@@ -95,23 +112,6 @@ public class DigitalDocumentPermission extends Intangible {
     }
     return Arrays.asList((Person) current);
   }
-  /**
-   * The type of permission granted the person, organization, or audience.
-   */
-  @JsonIgnore public DigitalDocumentPermissionType getPermissionType() {
-    return (DigitalDocumentPermissionType) getValue("permissionType");
-  }
-  /**
-   * The type of permission granted the person, organization, or audience.
-   */
-  @JsonIgnore public Collection<DigitalDocumentPermissionType> getPermissionTypes() {
-    final Object current = myData.get("permissionType");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DigitalDocumentPermissionType>) current;
-    }
-    return Arrays.asList((DigitalDocumentPermissionType) current);
-  }
   protected DigitalDocumentPermission(java.util.Map<String,Object> data) {
     super(data);
   }
@@ -125,6 +125,13 @@ public class DigitalDocumentPermission extends Intangible {
     }
     @NotNull public DigitalDocumentPermission build() {
       return new DigitalDocumentPermission(myData);
+    }
+    /**
+     * The type of permission granted the person, organization, or audience.
+     */
+    @NotNull public Builder permissionType(@NotNull DigitalDocumentPermissionType digitalDocumentPermissionType) {
+      putValue("permissionType", digitalDocumentPermissionType);
+      return this;
     }
     /**
      * The person, organization, contact point, or audience that has been granted this permission.
@@ -183,10 +190,10 @@ public class DigitalDocumentPermission extends Intangible {
       return this;
     }
     /**
-     * The type of permission granted the person, organization, or audience.
+     * URL of the item.
      */
-    @NotNull public Builder permissionType(@NotNull DigitalDocumentPermissionType digitalDocumentPermissionType) {
-      putValue("permissionType", digitalDocumentPermissionType);
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
       return this;
     }
     /**
@@ -197,45 +204,17 @@ public class DigitalDocumentPermission extends Intangible {
       return this;
     }
     /**
-     * An alias for the item.
-     */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
-      return this;
-    }
-    /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
-      putValue("disambiguatingDescription", disambiguatingDescription);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * A description of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -246,10 +225,24 @@ public class DigitalDocumentPermission extends Intangible {
       return this;
     }
     /**
-     * URL of the item.
+     * The name of the item.
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
       return this;
     }
     /**
@@ -264,6 +257,27 @@ public class DigitalDocumentPermission extends Intangible {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
       return this;
     }
     /**
@@ -302,6 +316,8 @@ public class DigitalDocumentPermission extends Intangible {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
+      if ("permissionType".equals(key) && value instanceof DigitalDocumentPermissionType) { this.permissionType((DigitalDocumentPermissionType)value); return; }
+      if ("permissionTypes".equals(key) && value instanceof DigitalDocumentPermissionType) { this.permissionType((DigitalDocumentPermissionType)value); return; }
       if ("grantee".equals(key) && value instanceof Audience) { this.grantee((Audience)value); return; }
       if ("grantees".equals(key) && value instanceof Audience) { this.grantee((Audience)value); return; }
       if ("grantee".equals(key) && value instanceof ContactPoint) { this.grantee((ContactPoint)value); return; }
@@ -310,8 +326,6 @@ public class DigitalDocumentPermission extends Intangible {
       if ("grantees".equals(key) && value instanceof Organization) { this.grantee((Organization)value); return; }
       if ("grantee".equals(key) && value instanceof Person) { this.grantee((Person)value); return; }
       if ("grantees".equals(key) && value instanceof Person) { this.grantee((Person)value); return; }
-      if ("permissionType".equals(key) && value instanceof DigitalDocumentPermissionType) { this.permissionType((DigitalDocumentPermissionType)value); return; }
-      if ("permissionTypes".equals(key) && value instanceof DigitalDocumentPermissionType) { this.permissionType((DigitalDocumentPermissionType)value); return; }
       super.fromMap(key, value);
     }
   }

@@ -24,76 +24,50 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * The act of physically/electronically taking delivery of an object thathas been transferred from an origin to a destination. Reciprocal of SendAction.\n\nRelated actions:\n\n* [[SendAction]]: The reciprocal of ReceiveAction.\n* [[TakeAction]]: Unlike TakeAction, ReceiveAction does not imply that the ownership has been transfered (e.g. I can receive a package, but it does not mean the package is now mine).
+ * The act of physically/electronically taking delivery of an object thathas been transferred from an origin to a destination. Reciprocal of SendAction.&lt;br/&gt;&lt;br/&gt;
+ * 
+ * Related actions:&lt;br/&gt;&lt;br/&gt;
+ * 
+ * &lt;ul&gt;
+ * &lt;li&gt;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/SendAction&quot;&gt;SendAction&lt;/a&gt;: The reciprocal of ReceiveAction.&lt;/li&gt;
+ * &lt;li&gt;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/TakeAction&quot;&gt;TakeAction&lt;/a&gt;: Unlike TakeAction, ReceiveAction does not imply that the ownership has been transfered (e.g. I can receive a package, but it does not mean the package is now mine).&lt;/li&gt;
+ * &lt;/ul&gt;
+ * 
  */
 public class ReceiveAction extends TransferAction {
   /**
-   * A sub property of instrument. The method of delivery.
+   * A sub property of participant. The participant who is at the sending end of the action.
    */
-  @JsonIgnore public DeliveryMethod getDeliveryMethod() {
-    return (DeliveryMethod) getValue("deliveryMethod");
+  @JsonIgnore public Participant getSender() {
+    return (Participant) getValue("sender");
+  }
+  /**
+   * A sub property of participant. The participant who is at the sending end of the action.
+   */
+  @JsonIgnore public Collection<Participant> getSenders() {
+    final Object current = myData.get("sender");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Participant>) current;
+    }
+    return Arrays.asList((Participant) current);
   }
   /**
    * A sub property of instrument. The method of delivery.
    */
-  @JsonIgnore public Collection<DeliveryMethod> getDeliveryMethods() {
+  @JsonIgnore public Instrument getDeliveryMethod() {
+    return (Instrument) getValue("deliveryMethod");
+  }
+  /**
+   * A sub property of instrument. The method of delivery.
+   */
+  @JsonIgnore public Collection<Instrument> getDeliveryMethods() {
     final Object current = myData.get("deliveryMethod");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<DeliveryMethod>) current;
+      return (Collection<Instrument>) current;
     }
-    return Arrays.asList((DeliveryMethod) current);
-  }
-  /**
-   * A sub property of participant. The participant who is at the sending end of the action.
-   */
-  @JsonIgnore public Audience getSenderAudience() {
-    return (Audience) getValue("sender");
-  }
-  /**
-   * A sub property of participant. The participant who is at the sending end of the action.
-   */
-  @JsonIgnore public Collection<Audience> getSenderAudiences() {
-    final Object current = myData.get("sender");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Audience>) current;
-    }
-    return Arrays.asList((Audience) current);
-  }
-  /**
-   * A sub property of participant. The participant who is at the sending end of the action.
-   */
-  @JsonIgnore public Organization getSenderOrganization() {
-    return (Organization) getValue("sender");
-  }
-  /**
-   * A sub property of participant. The participant who is at the sending end of the action.
-   */
-  @JsonIgnore public Collection<Organization> getSenderOrganizations() {
-    final Object current = myData.get("sender");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
-    }
-    return Arrays.asList((Organization) current);
-  }
-  /**
-   * A sub property of participant. The participant who is at the sending end of the action.
-   */
-  @JsonIgnore public Person getSenderPerson() {
-    return (Person) getValue("sender");
-  }
-  /**
-   * A sub property of participant. The participant who is at the sending end of the action.
-   */
-  @JsonIgnore public Collection<Person> getSenderPersons() {
-    final Object current = myData.get("sender");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
-    }
-    return Arrays.asList((Person) current);
+    return Arrays.asList((Instrument) current);
   }
   protected ReceiveAction(java.util.Map<String,Object> data) {
     super(data);
@@ -110,129 +84,40 @@ public class ReceiveAction extends TransferAction {
       return new ReceiveAction(myData);
     }
     /**
+     * A sub property of participant. The participant who is at the sending end of the action.
+     */
+    @NotNull public Builder sender(@NotNull Participant participant) {
+      putValue("sender", participant);
+      return this;
+    }
+    /**
      * A sub property of instrument. The method of delivery.
      */
-    @NotNull public Builder deliveryMethod(@NotNull DeliveryMethod deliveryMethod) {
-      putValue("deliveryMethod", deliveryMethod);
-      return this;
-    }
-    /**
-     * A sub property of participant. The participant who is at the sending end of the action.
-     */
-    @NotNull public Builder sender(@NotNull Audience audience) {
-      putValue("sender", audience);
-      return this;
-    }
-    /**
-     * A sub property of participant. The participant who is at the sending end of the action.
-     */
-    @NotNull public Builder sender(@NotNull Audience.Builder audience) {
-      putValue("sender", audience.build());
-      return this;
-    }
-    /**
-     * A sub property of participant. The participant who is at the sending end of the action.
-     */
-    @NotNull public Builder sender(@NotNull Organization organization) {
-      putValue("sender", organization);
-      return this;
-    }
-    /**
-     * A sub property of participant. The participant who is at the sending end of the action.
-     */
-    @NotNull public Builder sender(@NotNull Organization.Builder organization) {
-      putValue("sender", organization.build());
-      return this;
-    }
-    /**
-     * A sub property of participant. The participant who is at the sending end of the action.
-     */
-    @NotNull public Builder sender(@NotNull Person person) {
-      putValue("sender", person);
-      return this;
-    }
-    /**
-     * A sub property of participant. The participant who is at the sending end of the action.
-     */
-    @NotNull public Builder sender(@NotNull Person.Builder person) {
-      putValue("sender", person.build());
+    @NotNull public Builder deliveryMethod(@NotNull Instrument instrument) {
+      putValue("deliveryMethod", instrument);
       return this;
     }
     /**
      * A sub property of location. The original location of the object or the agent before the action.
      */
-    @NotNull public Builder fromLocation(@NotNull Place place) {
-      putValue("fromLocation", place);
-      return this;
-    }
-    /**
-     * A sub property of location. The original location of the object or the agent before the action.
-     */
-    @NotNull public Builder fromLocation(@NotNull Place.Builder place) {
-      putValue("fromLocation", place.build());
+    @NotNull public Builder fromLocation(@NotNull Location location) {
+      putValue("fromLocation", location);
       return this;
     }
     /**
      * A sub property of location. The final location of the object or the agent after the action.
      */
-    @NotNull public Builder toLocation(@NotNull Place place) {
-      putValue("toLocation", place);
+    @NotNull public Builder toLocation(@NotNull Location location) {
+      putValue("toLocation", location);
       return this;
     }
     /**
-     * A sub property of location. The final location of the object or the agent after the action.
-     */
-    @NotNull public Builder toLocation(@NotNull Place.Builder place) {
-      putValue("toLocation", place.build());
-      return this;
-    }
-    /**
-     * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
-     */
-    @NotNull public Builder agent(@NotNull Organization organization) {
-      putValue("agent", organization);
-      return this;
-    }
-    /**
-     * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
-     */
-    @NotNull public Builder agent(@NotNull Organization.Builder organization) {
-      putValue("agent", organization.build());
-      return this;
-    }
-    /**
-     * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
-     */
-    @NotNull public Builder agent(@NotNull Person person) {
-      putValue("agent", person);
-      return this;
-    }
-    /**
-     * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
-     */
-    @NotNull public Builder agent(@NotNull Person.Builder person) {
-      putValue("agent", person.build());
-      return this;
-    }
-    /**
-     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     */
-    @NotNull public Builder endTime(@NotNull java.util.Date date) {
-      putValue("endTime", date);
-      return this;
-    }
-    /**
-     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from &lt;em&gt;January&lt;/em&gt; to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.&lt;br/&gt;&lt;br/&gt;
+     * 
+     * Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      */
     @NotNull public Builder startTime(@NotNull java.util.Date date) {
       putValue("startTime", date);
-      return this;
-    }
-    /**
-     * Indicates the current disposition of the Action.
-     */
-    @NotNull public Builder actionStatus(@NotNull ActionStatusType actionStatusType) {
-      putValue("actionStatus", actionStatusType);
       return this;
     }
     /**
@@ -250,6 +135,15 @@ public class ReceiveAction extends TransferAction {
       return this;
     }
     /**
+     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to &lt;em&gt;December&lt;/em&gt;. For media, including audio and video, it's the time offset of the end of a clip within a larger file.&lt;br/&gt;&lt;br/&gt;
+     * 
+     * Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     */
+    @NotNull public Builder endTime(@NotNull java.util.Date date) {
+      putValue("endTime", date);
+      return this;
+    }
+    /**
      * Indicates a target EntryPoint for an Action.
      */
     @NotNull public Builder target(@NotNull EntryPoint entryPoint) {
@@ -264,6 +158,48 @@ public class ReceiveAction extends TransferAction {
       return this;
     }
     /**
+     * The direct performer or driver of the action (animate or inanimate). e.g. &lt;em&gt;John&lt;/em&gt; wrote a book.
+     */
+    @NotNull public Builder agent(@NotNull Organization organization) {
+      putValue("agent", organization);
+      return this;
+    }
+    /**
+     * The direct performer or driver of the action (animate or inanimate). e.g. &lt;em&gt;John&lt;/em&gt; wrote a book.
+     */
+    @NotNull public Builder agent(@NotNull Organization.Builder organization) {
+      putValue("agent", organization.build());
+      return this;
+    }
+    /**
+     * The direct performer or driver of the action (animate or inanimate). e.g. &lt;em&gt;John&lt;/em&gt; wrote a book.
+     */
+    @NotNull public Builder agent(@NotNull Person person) {
+      putValue("agent", person);
+      return this;
+    }
+    /**
+     * The direct performer or driver of the action (animate or inanimate). e.g. &lt;em&gt;John&lt;/em&gt; wrote a book.
+     */
+    @NotNull public Builder agent(@NotNull Person.Builder person) {
+      putValue("agent", person.build());
+      return this;
+    }
+    /**
+     * Indicates the current disposition of the Action.
+     */
+    @NotNull public Builder actionStatus(@NotNull ActionStatusType actionStatusType) {
+      putValue("actionStatus", actionStatusType);
+      return this;
+    }
+    /**
+     * URL of the item.
+     */
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
+      return this;
+    }
+    /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      */
     @NotNull public Builder additionalType(@NotNull String additionalType) {
@@ -271,45 +207,17 @@ public class ReceiveAction extends TransferAction {
       return this;
     }
     /**
-     * An alias for the item.
-     */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
-      return this;
-    }
-    /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
-      putValue("disambiguatingDescription", disambiguatingDescription);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * A description of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -320,10 +228,24 @@ public class ReceiveAction extends TransferAction {
       return this;
     }
     /**
-     * URL of the item.
+     * The name of the item.
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
       return this;
     }
     /**
@@ -338,6 +260,27 @@ public class ReceiveAction extends TransferAction {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
       return this;
     }
     /**
@@ -376,14 +319,10 @@ public class ReceiveAction extends TransferAction {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("deliveryMethod".equals(key) && value instanceof DeliveryMethod) { this.deliveryMethod((DeliveryMethod)value); return; }
-      if ("deliveryMethods".equals(key) && value instanceof DeliveryMethod) { this.deliveryMethod((DeliveryMethod)value); return; }
-      if ("sender".equals(key) && value instanceof Audience) { this.sender((Audience)value); return; }
-      if ("senders".equals(key) && value instanceof Audience) { this.sender((Audience)value); return; }
-      if ("sender".equals(key) && value instanceof Organization) { this.sender((Organization)value); return; }
-      if ("senders".equals(key) && value instanceof Organization) { this.sender((Organization)value); return; }
-      if ("sender".equals(key) && value instanceof Person) { this.sender((Person)value); return; }
-      if ("senders".equals(key) && value instanceof Person) { this.sender((Person)value); return; }
+      if ("sender".equals(key) && value instanceof Participant) { this.sender((Participant)value); return; }
+      if ("senders".equals(key) && value instanceof Participant) { this.sender((Participant)value); return; }
+      if ("deliveryMethod".equals(key) && value instanceof Instrument) { this.deliveryMethod((Instrument)value); return; }
+      if ("deliveryMethods".equals(key) && value instanceof Instrument) { this.deliveryMethod((Instrument)value); return; }
       super.fromMap(key, value);
     }
   }

@@ -28,40 +28,6 @@ import java.util.*;
  */
 public class FinancialProduct extends Service {
   /**
-   * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
-   */
-  @JsonIgnore public Number getAnnualPercentageRateNumber() {
-    return (Number) getValue("annualPercentageRate");
-  }
-  /**
-   * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
-   */
-  @JsonIgnore public Collection<Number> getAnnualPercentageRateNumbers() {
-    final Object current = myData.get("annualPercentageRate");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Number>) current;
-    }
-    return Arrays.asList((Number) current);
-  }
-  /**
-   * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
-   */
-  @JsonIgnore public QuantitativeValue getAnnualPercentageRateQuantitativeValue() {
-    return (QuantitativeValue) getValue("annualPercentageRate");
-  }
-  /**
-   * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
-   */
-  @JsonIgnore public Collection<QuantitativeValue> getAnnualPercentageRateQuantitativeValues() {
-    final Object current = myData.get("annualPercentageRate");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
-    }
-    return Arrays.asList((QuantitativeValue) current);
-  }
-  /**
    * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
    */
   @JsonIgnore public String getFeesAndCommissionsSpecification() {
@@ -72,6 +38,91 @@ public class FinancialProduct extends Service {
    */
   @JsonIgnore public Collection<String> getFeesAndCommissionsSpecifications() {
     final Object current = myData.get("feesAndCommissionsSpecification");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
+   */
+  @JsonIgnore public Integer getAnnualPercentageRateInteger() {
+    return (Integer) getValue("annualPercentageRate");
+  }
+  /**
+   * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
+   */
+  @JsonIgnore public Collection<Integer> getAnnualPercentageRateIntegers() {
+    final Object current = myData.get("annualPercentageRate");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Integer>) current;
+    }
+    return Arrays.asList((Integer) current);
+  }
+  /**
+   * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
+   */
+  @JsonIgnore public Long getAnnualPercentageRateLong() {
+    return (Long) getValue("annualPercentageRate");
+  }
+  /**
+   * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
+   */
+  @JsonIgnore public Collection<Long> getAnnualPercentageRateLongs() {
+    final Object current = myData.get("annualPercentageRate");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Long>) current;
+    }
+    return Arrays.asList((Long) current);
+  }
+  /**
+   * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
+   */
+  @JsonIgnore public Float getAnnualPercentageRateFloat() {
+    return (Float) getValue("annualPercentageRate");
+  }
+  /**
+   * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
+   */
+  @JsonIgnore public Collection<Float> getAnnualPercentageRateFloats() {
+    final Object current = myData.get("annualPercentageRate");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Float>) current;
+    }
+    return Arrays.asList((Float) current);
+  }
+  /**
+   * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
+   */
+  @JsonIgnore public Double getAnnualPercentageRateDouble() {
+    return (Double) getValue("annualPercentageRate");
+  }
+  /**
+   * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
+   */
+  @JsonIgnore public Collection<Double> getAnnualPercentageRateDoubles() {
+    final Object current = myData.get("annualPercentageRate");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Double>) current;
+    }
+    return Arrays.asList((Double) current);
+  }
+  /**
+   * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
+   */
+  @JsonIgnore public String getAnnualPercentageRateString() {
+    return (String) getValue("annualPercentageRate");
+  }
+  /**
+   * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
+   */
+  @JsonIgnore public Collection<String> getAnnualPercentageRateStrings() {
+    final Object current = myData.get("annualPercentageRate");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<String>) current;
@@ -127,31 +178,45 @@ public class FinancialProduct extends Service {
       return new FinancialProduct(myData);
     }
     /**
-     * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
-     */
-    @NotNull public Builder annualPercentageRate(@NotNull Number number) {
-      putValue("annualPercentageRate", number);
-      return this;
-    }
-    /**
-     * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
-     */
-    @NotNull public Builder annualPercentageRate(@NotNull QuantitativeValue quantitativeValue) {
-      putValue("annualPercentageRate", quantitativeValue);
-      return this;
-    }
-    /**
-     * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
-     */
-    @NotNull public Builder annualPercentageRate(@NotNull QuantitativeValue.Builder quantitativeValue) {
-      putValue("annualPercentageRate", quantitativeValue.build());
-      return this;
-    }
-    /**
      * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
      */
     @NotNull public Builder feesAndCommissionsSpecification(@NotNull String feesAndCommissionsSpecification) {
       putValue("feesAndCommissionsSpecification", feesAndCommissionsSpecification);
+      return this;
+    }
+    /**
+     * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
+     */
+    @NotNull public Builder annualPercentageRate(@NotNull Integer integer) {
+      putValue("annualPercentageRate", integer);
+      return this;
+    }
+    /**
+     * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
+     */
+    @NotNull public Builder annualPercentageRate(@NotNull Long annualPercentageRate) {
+      putValue("annualPercentageRate", annualPercentageRate);
+      return this;
+    }
+    /**
+     * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
+     */
+    @NotNull public Builder annualPercentageRate(@NotNull Float annualPercentageRate) {
+      putValue("annualPercentageRate", annualPercentageRate);
+      return this;
+    }
+    /**
+     * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
+     */
+    @NotNull public Builder annualPercentageRate(@NotNull Double annualPercentageRate) {
+      putValue("annualPercentageRate", annualPercentageRate);
+      return this;
+    }
+    /**
+     * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
+     */
+    @NotNull public Builder annualPercentageRate(@NotNull String annualPercentageRate) {
+      putValue("annualPercentageRate", annualPercentageRate);
       return this;
     }
     /**
@@ -176,59 +241,59 @@ public class FinancialProduct extends Service {
       return this;
     }
     /**
-     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
+     * The tangible thing generated by the service, e.g. a passport, permit, etc.
      */
-    @NotNull public Builder hasOfferCatalog(@NotNull OfferCatalog offerCatalog) {
-      putValue("hasOfferCatalog", offerCatalog);
+    @NotNull public Builder serviceOutput(@NotNull Thing thing) {
+      putValue("serviceOutput", thing);
       return this;
     }
     /**
-     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
+     * The tangible thing generated by the service, e.g. a passport, permit, etc.
      */
-    @NotNull public Builder hasOfferCatalog(@NotNull OfferCatalog.Builder offerCatalog) {
-      putValue("hasOfferCatalog", offerCatalog.build());
+    @NotNull public Builder serviceOutput(@NotNull Thing.Builder thing) {
+      putValue("serviceOutput", thing.build());
       return this;
     }
     /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
+     * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
      */
-    @NotNull public Builder aggregateRating(@NotNull AggregateRating aggregateRating) {
-      putValue("aggregateRating", aggregateRating);
+    @NotNull public Builder serviceType(@NotNull GovernmentBenefitsType governmentBenefitsType) {
+      putValue("serviceType", governmentBenefitsType);
       return this;
     }
     /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
+     * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
      */
-    @NotNull public Builder aggregateRating(@NotNull AggregateRating.Builder aggregateRating) {
-      putValue("aggregateRating", aggregateRating.build());
+    @NotNull public Builder serviceType(@NotNull String serviceType) {
+      putValue("serviceType", serviceType);
       return this;
     }
     /**
-     * An intended audience, i.e. a group for whom something was created.
+     * A pointer to another, functionally similar product (or multiple products).
      */
-    @NotNull public Builder audience(@NotNull Audience audience) {
-      putValue("audience", audience);
+    @NotNull public Builder isSimilarTo(@NotNull Product product) {
+      putValue("isSimilarTo", product);
       return this;
     }
     /**
-     * An intended audience, i.e. a group for whom something was created.
+     * A pointer to another, functionally similar product (or multiple products).
      */
-    @NotNull public Builder audience(@NotNull Audience.Builder audience) {
-      putValue("audience", audience.build());
+    @NotNull public Builder isSimilarTo(@NotNull Product.Builder product) {
+      putValue("isSimilarTo", product.build());
       return this;
     }
     /**
-     * A means of accessing the service (e.g. a phone bank, a web site, a location, etc.).
+     * A pointer to another, functionally similar product (or multiple products).
      */
-    @NotNull public Builder availableChannel(@NotNull ServiceChannel serviceChannel) {
-      putValue("availableChannel", serviceChannel);
+    @NotNull public Builder isSimilarTo(@NotNull Service service) {
+      putValue("isSimilarTo", service);
       return this;
     }
     /**
-     * A means of accessing the service (e.g. a phone bank, a web site, a location, etc.).
+     * A pointer to another, functionally similar product (or multiple products).
      */
-    @NotNull public Builder availableChannel(@NotNull ServiceChannel.Builder serviceChannel) {
-      putValue("availableChannel", serviceChannel.build());
+    @NotNull public Builder isSimilarTo(@NotNull Service.Builder service) {
+      putValue("isSimilarTo", service.build());
       return this;
     }
     /**
@@ -267,38 +332,31 @@ public class FinancialProduct extends Service {
       return this;
     }
     /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     * The overall rating, based on a collection of reviews or ratings, of the item.
      */
-    @NotNull public Builder category(@NotNull String category) {
-      putValue("category", category);
+    @NotNull public Builder aggregateRating(@NotNull AggregateRating aggregateRating) {
+      putValue("aggregateRating", aggregateRating);
       return this;
     }
     /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     * The overall rating, based on a collection of reviews or ratings, of the item.
      */
-    @NotNull public Builder category(@NotNull Thing thing) {
-      putValue("category", thing);
+    @NotNull public Builder aggregateRating(@NotNull AggregateRating.Builder aggregateRating) {
+      putValue("aggregateRating", aggregateRating.build());
       return this;
     }
     /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
      */
-    @NotNull public Builder category(@NotNull Thing.Builder thing) {
-      putValue("category", thing.build());
+    @NotNull public Builder hasOfferCatalog(@NotNull OfferCatalog offerCatalog) {
+      putValue("hasOfferCatalog", offerCatalog);
       return this;
     }
     /**
-     * The hours during which this service or contact is available.
+     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
      */
-    @NotNull public Builder hoursAvailable(@NotNull OpeningHoursSpecification openingHoursSpecification) {
-      putValue("hoursAvailable", openingHoursSpecification);
-      return this;
-    }
-    /**
-     * The hours during which this service or contact is available.
-     */
-    @NotNull public Builder hoursAvailable(@NotNull OpeningHoursSpecification.Builder openingHoursSpecification) {
-      putValue("hoursAvailable", openingHoursSpecification.build());
+    @NotNull public Builder hasOfferCatalog(@NotNull OfferCatalog.Builder offerCatalog) {
+      putValue("hasOfferCatalog", offerCatalog.build());
       return this;
     }
     /**
@@ -330,129 +388,6 @@ public class FinancialProduct extends Service {
       return this;
     }
     /**
-     * A pointer to another, functionally similar product (or multiple products).
-     */
-    @NotNull public Builder isSimilarTo(@NotNull Product product) {
-      putValue("isSimilarTo", product);
-      return this;
-    }
-    /**
-     * A pointer to another, functionally similar product (or multiple products).
-     */
-    @NotNull public Builder isSimilarTo(@NotNull Product.Builder product) {
-      putValue("isSimilarTo", product.build());
-      return this;
-    }
-    /**
-     * A pointer to another, functionally similar product (or multiple products).
-     */
-    @NotNull public Builder isSimilarTo(@NotNull Service service) {
-      putValue("isSimilarTo", service);
-      return this;
-    }
-    /**
-     * A pointer to another, functionally similar product (or multiple products).
-     */
-    @NotNull public Builder isSimilarTo(@NotNull Service.Builder service) {
-      putValue("isSimilarTo", service.build());
-      return this;
-    }
-    /**
-     * An associated logo.
-     */
-    @NotNull public Builder logo(@NotNull ImageObject imageObject) {
-      putValue("logo", imageObject);
-      return this;
-    }
-    /**
-     * An associated logo.
-     */
-    @NotNull public Builder logo(@NotNull ImageObject.Builder imageObject) {
-      putValue("logo", imageObject.build());
-      return this;
-    }
-    /**
-     * An associated logo.
-     */
-    @NotNull public Builder logo(@NotNull String logo) {
-      putValue("logo", logo);
-      return this;
-    }
-    /**
-     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
-     */
-    @NotNull public Builder offers(@NotNull Demand demand) {
-      putValue("offers", demand);
-      return this;
-    }
-    /**
-     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
-     */
-    @NotNull public Builder offers(@NotNull Demand.Builder demand) {
-      putValue("offers", demand.build());
-      return this;
-    }
-    /**
-     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
-     */
-    @NotNull public Builder offers(@NotNull Offer offer) {
-      putValue("offers", offer);
-      return this;
-    }
-    /**
-     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
-     */
-    @NotNull public Builder offers(@NotNull Offer.Builder offer) {
-      putValue("offers", offer.build());
-      return this;
-    }
-    /**
-     * The tangible thing generated by the service, e.g. a passport, permit, etc.
-     */
-    @NotNull public Builder serviceOutput(@NotNull Thing thing) {
-      putValue("serviceOutput", thing);
-      return this;
-    }
-    /**
-     * The tangible thing generated by the service, e.g. a passport, permit, etc.
-     */
-    @NotNull public Builder serviceOutput(@NotNull Thing.Builder thing) {
-      putValue("serviceOutput", thing.build());
-      return this;
-    }
-    /**
-     * A review of the item.
-     */
-    @NotNull public Builder review(@NotNull Review review) {
-      putValue("review", review);
-      return this;
-    }
-    /**
-     * A review of the item.
-     */
-    @NotNull public Builder review(@NotNull Review.Builder review) {
-      putValue("review", review.build());
-      return this;
-    }
-    /**
-     * A slogan or motto associated with the item.
-     */
-    @NotNull public Builder slogan(@NotNull String slogan) {
-      putValue("slogan", slogan);
-      return this;
-    }
-    /**
-     * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
-     */
-    @NotNull public Builder serviceType(@NotNull String serviceType) {
-      putValue("serviceType", serviceType);
-      return this;
-    }
-    /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
      */
     @NotNull public Builder provider(@NotNull Organization organization) {
@@ -481,10 +416,94 @@ public class FinancialProduct extends Service {
       return this;
     }
     /**
+     * A means of accessing the service (e.g. a phone bank, a web site, a location, etc.).
+     */
+    @NotNull public Builder availableChannel(@NotNull ServiceChannel serviceChannel) {
+      putValue("availableChannel", serviceChannel);
+      return this;
+    }
+    /**
+     * A means of accessing the service (e.g. a phone bank, a web site, a location, etc.).
+     */
+    @NotNull public Builder availableChannel(@NotNull ServiceChannel.Builder serviceChannel) {
+      putValue("availableChannel", serviceChannel.build());
+      return this;
+    }
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     */
+    @NotNull public Builder category(@NotNull Category category) {
+      putValue("category", category);
+      return this;
+    }
+    /**
+     * A review of the item.
+     */
+    @NotNull public Builder review(@NotNull Review review) {
+      putValue("review", review);
+      return this;
+    }
+    /**
+     * A review of the item.
+     */
+    @NotNull public Builder review(@NotNull Review.Builder review) {
+      putValue("review", review.build());
+      return this;
+    }
+    /**
+     * An intended audience, i.e. a group for whom something was created.
+     */
+    @NotNull public Builder audience(@NotNull Audience audience) {
+      putValue("audience", audience);
+      return this;
+    }
+    /**
+     * An intended audience, i.e. a group for whom something was created.
+     */
+    @NotNull public Builder audience(@NotNull Audience.Builder audience) {
+      putValue("audience", audience.build());
+      return this;
+    }
+    /**
+     * The hours during which this service or contact is available.
+     */
+    @NotNull public Builder hoursAvailable(@NotNull OpeningHoursSpecification openingHoursSpecification) {
+      putValue("hoursAvailable", openingHoursSpecification);
+      return this;
+    }
+    /**
+     * The hours during which this service or contact is available.
+     */
+    @NotNull public Builder hoursAvailable(@NotNull OpeningHoursSpecification.Builder openingHoursSpecification) {
+      putValue("hoursAvailable", openingHoursSpecification.build());
+      return this;
+    }
+    /**
+     * A slogan or motto associated with the item.
+     */
+    @NotNull public Builder slogan(@NotNull String slogan) {
+      putValue("slogan", slogan);
+      return this;
+    }
+    /**
      * Indicates the mobility of a provided service (e.g. 'static', 'dynamic').
      */
     @NotNull public Builder providerMobility(@NotNull String providerMobility) {
       putValue("providerMobility", providerMobility);
+      return this;
+    }
+    /**
+     * An associated logo.
+     */
+    @NotNull public Builder logo(@NotNull Image image) {
+      putValue("logo", image);
+      return this;
+    }
+    /**
+     * Human-readable terms of service documentation.
+     */
+    @NotNull public Builder termsOfService(@NotNull String termsOfService) {
+      putValue("termsOfService", termsOfService);
       return this;
     }
     /**
@@ -516,6 +535,41 @@ public class FinancialProduct extends Service {
       return this;
     }
     /**
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt; to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Demand&quot;&gt;Demand&lt;/a&gt;. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     */
+    @NotNull public Builder offers(@NotNull Demand demand) {
+      putValue("offers", demand);
+      return this;
+    }
+    /**
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt; to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Demand&quot;&gt;Demand&lt;/a&gt;. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     */
+    @NotNull public Builder offers(@NotNull Demand.Builder demand) {
+      putValue("offers", demand.build());
+      return this;
+    }
+    /**
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt; to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Demand&quot;&gt;Demand&lt;/a&gt;. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     */
+    @NotNull public Builder offers(@NotNull Offer offer) {
+      putValue("offers", offer);
+      return this;
+    }
+    /**
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt; to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Demand&quot;&gt;Demand&lt;/a&gt;. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     */
+    @NotNull public Builder offers(@NotNull Offer.Builder offer) {
+      putValue("offers", offer.build());
+      return this;
+    }
+    /**
+     * URL of the item.
+     */
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
+      return this;
+    }
+    /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      */
     @NotNull public Builder additionalType(@NotNull String additionalType) {
@@ -523,45 +577,17 @@ public class FinancialProduct extends Service {
       return this;
     }
     /**
-     * An alias for the item.
-     */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
-      return this;
-    }
-    /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
-      putValue("disambiguatingDescription", disambiguatingDescription);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * A description of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -572,10 +598,24 @@ public class FinancialProduct extends Service {
       return this;
     }
     /**
-     * URL of the item.
+     * The name of the item.
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
       return this;
     }
     /**
@@ -590,6 +630,27 @@ public class FinancialProduct extends Service {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
       return this;
     }
     /**
@@ -628,12 +689,18 @@ public class FinancialProduct extends Service {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("annualPercentageRate".equals(key) && value instanceof Number) { this.annualPercentageRate((Number)value); return; }
-      if ("annualPercentageRates".equals(key) && value instanceof Number) { this.annualPercentageRate((Number)value); return; }
-      if ("annualPercentageRate".equals(key) && value instanceof QuantitativeValue) { this.annualPercentageRate((QuantitativeValue)value); return; }
-      if ("annualPercentageRates".equals(key) && value instanceof QuantitativeValue) { this.annualPercentageRate((QuantitativeValue)value); return; }
       if ("feesAndCommissionsSpecification".equals(key) && value instanceof String) { this.feesAndCommissionsSpecification((String)value); return; }
       if ("feesAndCommissionsSpecifications".equals(key) && value instanceof String) { this.feesAndCommissionsSpecification((String)value); return; }
+      if ("annualPercentageRate".equals(key) && value instanceof Integer) { this.annualPercentageRate((Integer)value); return; }
+      if ("annualPercentageRates".equals(key) && value instanceof Integer) { this.annualPercentageRate((Integer)value); return; }
+      if ("annualPercentageRate".equals(key) && value instanceof Long) { this.annualPercentageRate((Long)value); return; }
+      if ("annualPercentageRates".equals(key) && value instanceof Long) { this.annualPercentageRate((Long)value); return; }
+      if ("annualPercentageRate".equals(key) && value instanceof Float) { this.annualPercentageRate((Float)value); return; }
+      if ("annualPercentageRates".equals(key) && value instanceof Float) { this.annualPercentageRate((Float)value); return; }
+      if ("annualPercentageRate".equals(key) && value instanceof Double) { this.annualPercentageRate((Double)value); return; }
+      if ("annualPercentageRates".equals(key) && value instanceof Double) { this.annualPercentageRate((Double)value); return; }
+      if ("annualPercentageRate".equals(key) && value instanceof String) { this.annualPercentageRate((String)value); return; }
+      if ("annualPercentageRates".equals(key) && value instanceof String) { this.annualPercentageRate((String)value); return; }
       if ("interestRate".equals(key) && value instanceof Number) { this.interestRate((Number)value); return; }
       if ("interestRates".equals(key) && value instanceof Number) { this.interestRate((Number)value); return; }
       if ("interestRate".equals(key) && value instanceof QuantitativeValue) { this.interestRate((QuantitativeValue)value); return; }

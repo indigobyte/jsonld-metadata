@@ -28,6 +28,103 @@ import java.util.*;
  */
 public class ActionAccessSpecification extends Intangible {
   /**
+   * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.&lt;br/&gt;&lt;br/&gt;
+   * 
+   * See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/eligibleRegion&quot;&gt;eligibleRegion&lt;/a&gt;.
+   */
+  @JsonIgnore public GeoShape getIneligibleRegionGeoShape() {
+    return (GeoShape) getValue("ineligibleRegion");
+  }
+  /**
+   * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.&lt;br/&gt;&lt;br/&gt;
+   * 
+   * See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/eligibleRegion&quot;&gt;eligibleRegion&lt;/a&gt;.
+   */
+  @JsonIgnore public Collection<GeoShape> getIneligibleRegionGeoShapes() {
+    final Object current = myData.get("ineligibleRegion");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<GeoShape>) current;
+    }
+    return Arrays.asList((GeoShape) current);
+  }
+  /**
+   * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.&lt;br/&gt;&lt;br/&gt;
+   * 
+   * See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/eligibleRegion&quot;&gt;eligibleRegion&lt;/a&gt;.
+   */
+  @JsonIgnore public Place getIneligibleRegionPlace() {
+    return (Place) getValue("ineligibleRegion");
+  }
+  /**
+   * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.&lt;br/&gt;&lt;br/&gt;
+   * 
+   * See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/eligibleRegion&quot;&gt;eligibleRegion&lt;/a&gt;.
+   */
+  @JsonIgnore public Collection<Place> getIneligibleRegionPlaces() {
+    final Object current = myData.get("ineligibleRegion");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Place>) current;
+    }
+    return Arrays.asList((Place) current);
+  }
+  /**
+   * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.&lt;br/&gt;&lt;br/&gt;
+   * 
+   * See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/eligibleRegion&quot;&gt;eligibleRegion&lt;/a&gt;.
+   */
+  @JsonIgnore public String getIneligibleRegionString() {
+    return (String) getValue("ineligibleRegion");
+  }
+  /**
+   * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.&lt;br/&gt;&lt;br/&gt;
+   * 
+   * See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/eligibleRegion&quot;&gt;eligibleRegion&lt;/a&gt;.
+   */
+  @JsonIgnore public Collection<String> getIneligibleRegionStrings() {
+    final Object current = myData.get("ineligibleRegion");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * Indicates if use of the media require a subscription  (either paid or free). Allowed values are &lt;code&gt;true&lt;/code&gt; or &lt;code&gt;false&lt;/code&gt; (note that an earlier version had 'yes', 'no').
+   */
+  @JsonIgnore public Boolean getRequiresSubscriptionBoolean() {
+    return (Boolean) getValue("requiresSubscription");
+  }
+  /**
+   * Indicates if use of the media require a subscription  (either paid or free). Allowed values are &lt;code&gt;true&lt;/code&gt; or &lt;code&gt;false&lt;/code&gt; (note that an earlier version had 'yes', 'no').
+   */
+  @JsonIgnore public Collection<Boolean> getRequiresSubscriptionBooleans() {
+    final Object current = myData.get("requiresSubscription");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Boolean>) current;
+    }
+    return Arrays.asList((Boolean) current);
+  }
+  /**
+   * Indicates if use of the media require a subscription  (either paid or free). Allowed values are &lt;code&gt;true&lt;/code&gt; or &lt;code&gt;false&lt;/code&gt; (note that an earlier version had 'yes', 'no').
+   */
+  @JsonIgnore public MediaSubscription getRequiresSubscriptionMediaSubscription() {
+    return (MediaSubscription) getValue("requiresSubscription");
+  }
+  /**
+   * Indicates if use of the media require a subscription  (either paid or free). Allowed values are &lt;code&gt;true&lt;/code&gt; or &lt;code&gt;false&lt;/code&gt; (note that an earlier version had 'yes', 'no').
+   */
+  @JsonIgnore public Collection<MediaSubscription> getRequiresSubscriptionMediaSubscriptions() {
+    final Object current = myData.get("requiresSubscription");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<MediaSubscription>) current;
+    }
+    return Arrays.asList((MediaSubscription) current);
+  }
+  /**
    * The beginning of the availability of the product or service included in the offer.
    */
   @JsonIgnore public java.util.Date getAvailabilityStarts() {
@@ -43,114 +140,6 @@ public class ActionAccessSpecification extends Intangible {
       return (Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
-  }
-  /**
-   * The end of the availability of the product or service included in the offer.
-   */
-  @JsonIgnore public java.util.Date getAvailabilityEnds() {
-    return (java.util.Date) getValue("availabilityEnds");
-  }
-  /**
-   * The end of the availability of the product or service included in the offer.
-   */
-  @JsonIgnore public Collection<java.util.Date> getAvailabilityEndss() {
-    final Object current = myData.get("availabilityEnds");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
-    }
-    return Arrays.asList((java.util.Date) current);
-  }
-  /**
-   * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-   */
-  @JsonIgnore public String getCategoryString() {
-    return (String) getValue("category");
-  }
-  /**
-   * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-   */
-  @JsonIgnore public Collection<String> getCategoryStrings() {
-    final Object current = myData.get("category");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-   */
-  @JsonIgnore public Thing getCategoryThing() {
-    return (Thing) getValue("category");
-  }
-  /**
-   * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-   */
-  @JsonIgnore public Collection<Thing> getCategoryThings() {
-    final Object current = myData.get("category");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Thing>) current;
-    }
-    return Arrays.asList((Thing) current);
-  }
-  /**
-   * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\n\nSee also [[ineligibleRegion]].
-   *     
-   */
-  @JsonIgnore public GeoShape getEligibleRegionGeoShape() {
-    return (GeoShape) getValue("eligibleRegion");
-  }
-  /**
-   * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\n\nSee also [[ineligibleRegion]].
-   *     
-   */
-  @JsonIgnore public Collection<GeoShape> getEligibleRegionGeoShapes() {
-    final Object current = myData.get("eligibleRegion");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<GeoShape>) current;
-    }
-    return Arrays.asList((GeoShape) current);
-  }
-  /**
-   * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\n\nSee also [[ineligibleRegion]].
-   *     
-   */
-  @JsonIgnore public Place getEligibleRegionPlace() {
-    return (Place) getValue("eligibleRegion");
-  }
-  /**
-   * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\n\nSee also [[ineligibleRegion]].
-   *     
-   */
-  @JsonIgnore public Collection<Place> getEligibleRegionPlaces() {
-    final Object current = myData.get("eligibleRegion");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Place>) current;
-    }
-    return Arrays.asList((Place) current);
-  }
-  /**
-   * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\n\nSee also [[ineligibleRegion]].
-   *     
-   */
-  @JsonIgnore public String getEligibleRegionString() {
-    return (String) getValue("eligibleRegion");
-  }
-  /**
-   * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\n\nSee also [[ineligibleRegion]].
-   *     
-   */
-  @JsonIgnore public Collection<String> getEligibleRegionStrings() {
-    final Object current = myData.get("eligibleRegion");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
   }
   /**
    * An Offer which must be accepted before the user can perform the Action. For example, the user may need to buy a movie before being able to watch it.
@@ -170,38 +159,59 @@ public class ActionAccessSpecification extends Intangible {
     return Arrays.asList((Offer) current);
   }
   /**
-   * Indicates if use of the media require a subscription  (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had 'yes', 'no').
+   * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.&lt;br/&gt;&lt;br/&gt;
+   * 
+   * See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ineligibleRegion&quot;&gt;ineligibleRegion&lt;/a&gt;.
    */
-  @JsonIgnore public Boolean getRequiresSubscriptionBoolean() {
-    return (Boolean) getValue("requiresSubscription");
+  @JsonIgnore public AreaServed getEligibleRegion() {
+    return (AreaServed) getValue("eligibleRegion");
   }
   /**
-   * Indicates if use of the media require a subscription  (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had 'yes', 'no').
+   * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.&lt;br/&gt;&lt;br/&gt;
+   * 
+   * See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ineligibleRegion&quot;&gt;ineligibleRegion&lt;/a&gt;.
    */
-  @JsonIgnore public Collection<Boolean> getRequiresSubscriptionBooleans() {
-    final Object current = myData.get("requiresSubscription");
+  @JsonIgnore public Collection<AreaServed> getEligibleRegions() {
+    final Object current = myData.get("eligibleRegion");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<Boolean>) current;
+      return (Collection<AreaServed>) current;
     }
-    return Arrays.asList((Boolean) current);
+    return Arrays.asList((AreaServed) current);
   }
   /**
-   * Indicates if use of the media require a subscription  (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had 'yes', 'no').
+   * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
    */
-  @JsonIgnore public MediaSubscription getRequiresSubscriptionMediaSubscription() {
-    return (MediaSubscription) getValue("requiresSubscription");
+  @JsonIgnore public Category getCategory() {
+    return (Category) getValue("category");
   }
   /**
-   * Indicates if use of the media require a subscription  (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had 'yes', 'no').
+   * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
    */
-  @JsonIgnore public Collection<MediaSubscription> getRequiresSubscriptionMediaSubscriptions() {
-    final Object current = myData.get("requiresSubscription");
+  @JsonIgnore public Collection<Category> getCategorys() {
+    final Object current = myData.get("category");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<MediaSubscription>) current;
+      return (Collection<Category>) current;
     }
-    return Arrays.asList((MediaSubscription) current);
+    return Arrays.asList((Category) current);
+  }
+  /**
+   * The end of the availability of the product or service included in the offer.
+   */
+  @JsonIgnore public java.util.Date getAvailabilityEnds() {
+    return (java.util.Date) getValue("availabilityEnds");
+  }
+  /**
+   * The end of the availability of the product or service included in the offer.
+   */
+  @JsonIgnore public Collection<java.util.Date> getAvailabilityEndss() {
+    final Object current = myData.get("availabilityEnds");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<java.util.Date>) current;
+    }
+    return Arrays.asList((java.util.Date) current);
   }
   protected ActionAccessSpecification(java.util.Map<String,Object> data) {
     super(data);
@@ -218,78 +228,76 @@ public class ActionAccessSpecification extends Intangible {
       return new ActionAccessSpecification(myData);
     }
     /**
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.&lt;br/&gt;&lt;br/&gt;
+     * 
+     * See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/eligibleRegion&quot;&gt;eligibleRegion&lt;/a&gt;.
+     */
+    @NotNull public Builder ineligibleRegion(@NotNull GeoShape geoShape) {
+      putValue("ineligibleRegion", geoShape);
+      return this;
+    }
+    /**
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.&lt;br/&gt;&lt;br/&gt;
+     * 
+     * See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/eligibleRegion&quot;&gt;eligibleRegion&lt;/a&gt;.
+     */
+    @NotNull public Builder ineligibleRegion(@NotNull GeoShape.Builder geoShape) {
+      putValue("ineligibleRegion", geoShape.build());
+      return this;
+    }
+    /**
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.&lt;br/&gt;&lt;br/&gt;
+     * 
+     * See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/eligibleRegion&quot;&gt;eligibleRegion&lt;/a&gt;.
+     */
+    @NotNull public Builder ineligibleRegion(@NotNull Place place) {
+      putValue("ineligibleRegion", place);
+      return this;
+    }
+    /**
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.&lt;br/&gt;&lt;br/&gt;
+     * 
+     * See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/eligibleRegion&quot;&gt;eligibleRegion&lt;/a&gt;.
+     */
+    @NotNull public Builder ineligibleRegion(@NotNull Place.Builder place) {
+      putValue("ineligibleRegion", place.build());
+      return this;
+    }
+    /**
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.&lt;br/&gt;&lt;br/&gt;
+     * 
+     * See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/eligibleRegion&quot;&gt;eligibleRegion&lt;/a&gt;.
+     */
+    @NotNull public Builder ineligibleRegion(@NotNull String ineligibleRegion) {
+      putValue("ineligibleRegion", ineligibleRegion);
+      return this;
+    }
+    /**
+     * Indicates if use of the media require a subscription  (either paid or free). Allowed values are &lt;code&gt;true&lt;/code&gt; or &lt;code&gt;false&lt;/code&gt; (note that an earlier version had 'yes', 'no').
+     */
+    @NotNull public Builder requiresSubscription(@NotNull Boolean requiresSubscription) {
+      putValue("requiresSubscription", requiresSubscription);
+      return this;
+    }
+    /**
+     * Indicates if use of the media require a subscription  (either paid or free). Allowed values are &lt;code&gt;true&lt;/code&gt; or &lt;code&gt;false&lt;/code&gt; (note that an earlier version had 'yes', 'no').
+     */
+    @NotNull public Builder requiresSubscription(@NotNull MediaSubscription mediaSubscription) {
+      putValue("requiresSubscription", mediaSubscription);
+      return this;
+    }
+    /**
+     * Indicates if use of the media require a subscription  (either paid or free). Allowed values are &lt;code&gt;true&lt;/code&gt; or &lt;code&gt;false&lt;/code&gt; (note that an earlier version had 'yes', 'no').
+     */
+    @NotNull public Builder requiresSubscription(@NotNull MediaSubscription.Builder mediaSubscription) {
+      putValue("requiresSubscription", mediaSubscription.build());
+      return this;
+    }
+    /**
      * The beginning of the availability of the product or service included in the offer.
      */
     @NotNull public Builder availabilityStarts(@NotNull java.util.Date date) {
       putValue("availabilityStarts", date);
-      return this;
-    }
-    /**
-     * The end of the availability of the product or service included in the offer.
-     */
-    @NotNull public Builder availabilityEnds(@NotNull java.util.Date date) {
-      putValue("availabilityEnds", date);
-      return this;
-    }
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     */
-    @NotNull public Builder category(@NotNull String category) {
-      putValue("category", category);
-      return this;
-    }
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     */
-    @NotNull public Builder category(@NotNull Thing thing) {
-      putValue("category", thing);
-      return this;
-    }
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     */
-    @NotNull public Builder category(@NotNull Thing.Builder thing) {
-      putValue("category", thing.build());
-      return this;
-    }
-    /**
-     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\n\nSee also [[ineligibleRegion]].
-     *     
-     */
-    @NotNull public Builder eligibleRegion(@NotNull GeoShape geoShape) {
-      putValue("eligibleRegion", geoShape);
-      return this;
-    }
-    /**
-     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\n\nSee also [[ineligibleRegion]].
-     *     
-     */
-    @NotNull public Builder eligibleRegion(@NotNull GeoShape.Builder geoShape) {
-      putValue("eligibleRegion", geoShape.build());
-      return this;
-    }
-    /**
-     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\n\nSee also [[ineligibleRegion]].
-     *     
-     */
-    @NotNull public Builder eligibleRegion(@NotNull Place place) {
-      putValue("eligibleRegion", place);
-      return this;
-    }
-    /**
-     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\n\nSee also [[ineligibleRegion]].
-     *     
-     */
-    @NotNull public Builder eligibleRegion(@NotNull Place.Builder place) {
-      putValue("eligibleRegion", place.build());
-      return this;
-    }
-    /**
-     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\n\nSee also [[ineligibleRegion]].
-     *     
-     */
-    @NotNull public Builder eligibleRegion(@NotNull String eligibleRegion) {
-      putValue("eligibleRegion", eligibleRegion);
       return this;
     }
     /**
@@ -307,24 +315,33 @@ public class ActionAccessSpecification extends Intangible {
       return this;
     }
     /**
-     * Indicates if use of the media require a subscription  (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had 'yes', 'no').
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.&lt;br/&gt;&lt;br/&gt;
+     * 
+     * See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ineligibleRegion&quot;&gt;ineligibleRegion&lt;/a&gt;.
      */
-    @NotNull public Builder requiresSubscription(@NotNull Boolean requiresSubscription) {
-      putValue("requiresSubscription", requiresSubscription);
+    @NotNull public Builder eligibleRegion(@NotNull AreaServed areaServed) {
+      putValue("eligibleRegion", areaServed);
       return this;
     }
     /**
-     * Indicates if use of the media require a subscription  (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had 'yes', 'no').
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      */
-    @NotNull public Builder requiresSubscription(@NotNull MediaSubscription mediaSubscription) {
-      putValue("requiresSubscription", mediaSubscription);
+    @NotNull public Builder category(@NotNull Category category) {
+      putValue("category", category);
       return this;
     }
     /**
-     * Indicates if use of the media require a subscription  (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had 'yes', 'no').
+     * The end of the availability of the product or service included in the offer.
      */
-    @NotNull public Builder requiresSubscription(@NotNull MediaSubscription.Builder mediaSubscription) {
-      putValue("requiresSubscription", mediaSubscription.build());
+    @NotNull public Builder availabilityEnds(@NotNull java.util.Date date) {
+      putValue("availabilityEnds", date);
+      return this;
+    }
+    /**
+     * URL of the item.
+     */
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
       return this;
     }
     /**
@@ -335,45 +352,17 @@ public class ActionAccessSpecification extends Intangible {
       return this;
     }
     /**
-     * An alias for the item.
-     */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
-      return this;
-    }
-    /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
-      putValue("disambiguatingDescription", disambiguatingDescription);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * A description of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -384,10 +373,24 @@ public class ActionAccessSpecification extends Intangible {
       return this;
     }
     /**
-     * URL of the item.
+     * The name of the item.
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
       return this;
     }
     /**
@@ -402,6 +405,27 @@ public class ActionAccessSpecification extends Intangible {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
       return this;
     }
     /**
@@ -440,26 +464,26 @@ public class ActionAccessSpecification extends Intangible {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("availabilityStarts".equals(key) && value instanceof java.util.Date) { this.availabilityStarts((java.util.Date)value); return; }
-      if ("availabilityStartss".equals(key) && value instanceof java.util.Date) { this.availabilityStarts((java.util.Date)value); return; }
-      if ("availabilityEnds".equals(key) && value instanceof java.util.Date) { this.availabilityEnds((java.util.Date)value); return; }
-      if ("availabilityEndss".equals(key) && value instanceof java.util.Date) { this.availabilityEnds((java.util.Date)value); return; }
-      if ("category".equals(key) && value instanceof String) { this.category((String)value); return; }
-      if ("categorys".equals(key) && value instanceof String) { this.category((String)value); return; }
-      if ("category".equals(key) && value instanceof Thing) { this.category((Thing)value); return; }
-      if ("categorys".equals(key) && value instanceof Thing) { this.category((Thing)value); return; }
-      if ("eligibleRegion".equals(key) && value instanceof GeoShape) { this.eligibleRegion((GeoShape)value); return; }
-      if ("eligibleRegions".equals(key) && value instanceof GeoShape) { this.eligibleRegion((GeoShape)value); return; }
-      if ("eligibleRegion".equals(key) && value instanceof Place) { this.eligibleRegion((Place)value); return; }
-      if ("eligibleRegions".equals(key) && value instanceof Place) { this.eligibleRegion((Place)value); return; }
-      if ("eligibleRegion".equals(key) && value instanceof String) { this.eligibleRegion((String)value); return; }
-      if ("eligibleRegions".equals(key) && value instanceof String) { this.eligibleRegion((String)value); return; }
-      if ("expectsAcceptanceOf".equals(key) && value instanceof Offer) { this.expectsAcceptanceOf((Offer)value); return; }
-      if ("expectsAcceptanceOfs".equals(key) && value instanceof Offer) { this.expectsAcceptanceOf((Offer)value); return; }
+      if ("ineligibleRegion".equals(key) && value instanceof GeoShape) { this.ineligibleRegion((GeoShape)value); return; }
+      if ("ineligibleRegions".equals(key) && value instanceof GeoShape) { this.ineligibleRegion((GeoShape)value); return; }
+      if ("ineligibleRegion".equals(key) && value instanceof Place) { this.ineligibleRegion((Place)value); return; }
+      if ("ineligibleRegions".equals(key) && value instanceof Place) { this.ineligibleRegion((Place)value); return; }
+      if ("ineligibleRegion".equals(key) && value instanceof String) { this.ineligibleRegion((String)value); return; }
+      if ("ineligibleRegions".equals(key) && value instanceof String) { this.ineligibleRegion((String)value); return; }
       if ("requiresSubscription".equals(key) && value instanceof Boolean) { this.requiresSubscription((Boolean)value); return; }
       if ("requiresSubscriptions".equals(key) && value instanceof Boolean) { this.requiresSubscription((Boolean)value); return; }
       if ("requiresSubscription".equals(key) && value instanceof MediaSubscription) { this.requiresSubscription((MediaSubscription)value); return; }
       if ("requiresSubscriptions".equals(key) && value instanceof MediaSubscription) { this.requiresSubscription((MediaSubscription)value); return; }
+      if ("availabilityStarts".equals(key) && value instanceof java.util.Date) { this.availabilityStarts((java.util.Date)value); return; }
+      if ("availabilityStartss".equals(key) && value instanceof java.util.Date) { this.availabilityStarts((java.util.Date)value); return; }
+      if ("expectsAcceptanceOf".equals(key) && value instanceof Offer) { this.expectsAcceptanceOf((Offer)value); return; }
+      if ("expectsAcceptanceOfs".equals(key) && value instanceof Offer) { this.expectsAcceptanceOf((Offer)value); return; }
+      if ("eligibleRegion".equals(key) && value instanceof AreaServed) { this.eligibleRegion((AreaServed)value); return; }
+      if ("eligibleRegions".equals(key) && value instanceof AreaServed) { this.eligibleRegion((AreaServed)value); return; }
+      if ("category".equals(key) && value instanceof Category) { this.category((Category)value); return; }
+      if ("categorys".equals(key) && value instanceof Category) { this.category((Category)value); return; }
+      if ("availabilityEnds".equals(key) && value instanceof java.util.Date) { this.availabilityEnds((java.util.Date)value); return; }
+      if ("availabilityEndss".equals(key) && value instanceof java.util.Date) { this.availabilityEnds((java.util.Date)value); return; }
       super.fromMap(key, value);
     }
   }

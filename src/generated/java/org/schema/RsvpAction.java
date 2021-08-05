@@ -28,6 +28,23 @@ import java.util.*;
  */
 public class RsvpAction extends InformAction {
   /**
+   * The response (yes, no, maybe) to the RSVP.
+   */
+  @JsonIgnore public RsvpResponseType getRsvpResponse() {
+    return (RsvpResponseType) getValue("rsvpResponse");
+  }
+  /**
+   * The response (yes, no, maybe) to the RSVP.
+   */
+  @JsonIgnore public Collection<RsvpResponseType> getRsvpResponses() {
+    final Object current = myData.get("rsvpResponse");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<RsvpResponseType>) current;
+    }
+    return Arrays.asList((RsvpResponseType) current);
+  }
+  /**
    * If responding yes, the number of guests who will attend in addition to the invitee.
    */
   @JsonIgnore public Integer getAdditionalNumberOfGuestsInteger() {
@@ -113,23 +130,6 @@ public class RsvpAction extends InformAction {
     return Arrays.asList((String) current);
   }
   /**
-   * The response (yes, no, maybe) to the RSVP.
-   */
-  @JsonIgnore public RsvpResponseType getRsvpResponse() {
-    return (RsvpResponseType) getValue("rsvpResponse");
-  }
-  /**
-   * The response (yes, no, maybe) to the RSVP.
-   */
-  @JsonIgnore public Collection<RsvpResponseType> getRsvpResponses() {
-    final Object current = myData.get("rsvpResponse");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<RsvpResponseType>) current;
-    }
-    return Arrays.asList((RsvpResponseType) current);
-  }
-  /**
    * Comments, typically from users.
    */
   @JsonIgnore public Comment getComment() {
@@ -159,6 +159,13 @@ public class RsvpAction extends InformAction {
     }
     @NotNull public RsvpAction build() {
       return new RsvpAction(myData);
+    }
+    /**
+     * The response (yes, no, maybe) to the RSVP.
+     */
+    @NotNull public Builder rsvpResponse(@NotNull RsvpResponseType rsvpResponseType) {
+      putValue("rsvpResponse", rsvpResponseType);
+      return this;
     }
     /**
      * If responding yes, the number of guests who will attend in addition to the invitee.
@@ -196,13 +203,6 @@ public class RsvpAction extends InformAction {
       return this;
     }
     /**
-     * The response (yes, no, maybe) to the RSVP.
-     */
-    @NotNull public Builder rsvpResponse(@NotNull RsvpResponseType rsvpResponseType) {
-      putValue("rsvpResponse", rsvpResponseType);
-      return this;
-    }
-    /**
      * Comments, typically from users.
      */
     @NotNull public Builder comment(@NotNull Comment comment) {
@@ -231,73 +231,40 @@ public class RsvpAction extends InformAction {
       return this;
     }
     /**
-     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     * The language of the content or performance or used in an action. Please use one of the language codes from the &lt;a href=&quot;http://tools.ietf.org/html/bcp47&quot;&gt;IETF BCP 47 standard&lt;/a&gt;. See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/availableLanguage&quot;&gt;availableLanguage&lt;/a&gt;.
      */
     @NotNull public Builder inLanguage(@NotNull Language language) {
       putValue("inLanguage", language);
       return this;
     }
     /**
-     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     * The language of the content or performance or used in an action. Please use one of the language codes from the &lt;a href=&quot;http://tools.ietf.org/html/bcp47&quot;&gt;IETF BCP 47 standard&lt;/a&gt;. See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/availableLanguage&quot;&gt;availableLanguage&lt;/a&gt;.
      */
     @NotNull public Builder inLanguage(@NotNull Language.Builder language) {
       putValue("inLanguage", language.build());
       return this;
     }
     /**
-     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     * The language of the content or performance or used in an action. Please use one of the language codes from the &lt;a href=&quot;http://tools.ietf.org/html/bcp47&quot;&gt;IETF BCP 47 standard&lt;/a&gt;. See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/availableLanguage&quot;&gt;availableLanguage&lt;/a&gt;.
      */
     @NotNull public Builder inLanguage(@NotNull String inLanguage) {
       putValue("inLanguage", inLanguage);
       return this;
     }
     /**
-     * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
+     * The subject matter of the content.
      */
-    @NotNull public Builder agent(@NotNull Organization organization) {
-      putValue("agent", organization);
+    @NotNull public Builder about(@NotNull About about) {
+      putValue("about", about);
       return this;
     }
     /**
-     * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
-     */
-    @NotNull public Builder agent(@NotNull Organization.Builder organization) {
-      putValue("agent", organization.build());
-      return this;
-    }
-    /**
-     * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
-     */
-    @NotNull public Builder agent(@NotNull Person person) {
-      putValue("agent", person);
-      return this;
-    }
-    /**
-     * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
-     */
-    @NotNull public Builder agent(@NotNull Person.Builder person) {
-      putValue("agent", person.build());
-      return this;
-    }
-    /**
-     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     */
-    @NotNull public Builder endTime(@NotNull java.util.Date date) {
-      putValue("endTime", date);
-      return this;
-    }
-    /**
-     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from &lt;em&gt;January&lt;/em&gt; to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.&lt;br/&gt;&lt;br/&gt;
+     * 
+     * Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      */
     @NotNull public Builder startTime(@NotNull java.util.Date date) {
       putValue("startTime", date);
-      return this;
-    }
-    /**
-     * Indicates the current disposition of the Action.
-     */
-    @NotNull public Builder actionStatus(@NotNull ActionStatusType actionStatusType) {
-      putValue("actionStatus", actionStatusType);
       return this;
     }
     /**
@@ -315,6 +282,15 @@ public class RsvpAction extends InformAction {
       return this;
     }
     /**
+     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to &lt;em&gt;December&lt;/em&gt;. For media, including audio and video, it's the time offset of the end of a clip within a larger file.&lt;br/&gt;&lt;br/&gt;
+     * 
+     * Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     */
+    @NotNull public Builder endTime(@NotNull java.util.Date date) {
+      putValue("endTime", date);
+      return this;
+    }
+    /**
      * Indicates a target EntryPoint for an Action.
      */
     @NotNull public Builder target(@NotNull EntryPoint entryPoint) {
@@ -329,6 +305,48 @@ public class RsvpAction extends InformAction {
       return this;
     }
     /**
+     * The direct performer or driver of the action (animate or inanimate). e.g. &lt;em&gt;John&lt;/em&gt; wrote a book.
+     */
+    @NotNull public Builder agent(@NotNull Organization organization) {
+      putValue("agent", organization);
+      return this;
+    }
+    /**
+     * The direct performer or driver of the action (animate or inanimate). e.g. &lt;em&gt;John&lt;/em&gt; wrote a book.
+     */
+    @NotNull public Builder agent(@NotNull Organization.Builder organization) {
+      putValue("agent", organization.build());
+      return this;
+    }
+    /**
+     * The direct performer or driver of the action (animate or inanimate). e.g. &lt;em&gt;John&lt;/em&gt; wrote a book.
+     */
+    @NotNull public Builder agent(@NotNull Person person) {
+      putValue("agent", person);
+      return this;
+    }
+    /**
+     * The direct performer or driver of the action (animate or inanimate). e.g. &lt;em&gt;John&lt;/em&gt; wrote a book.
+     */
+    @NotNull public Builder agent(@NotNull Person.Builder person) {
+      putValue("agent", person.build());
+      return this;
+    }
+    /**
+     * Indicates the current disposition of the Action.
+     */
+    @NotNull public Builder actionStatus(@NotNull ActionStatusType actionStatusType) {
+      putValue("actionStatus", actionStatusType);
+      return this;
+    }
+    /**
+     * URL of the item.
+     */
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
+      return this;
+    }
+    /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      */
     @NotNull public Builder additionalType(@NotNull String additionalType) {
@@ -336,45 +354,17 @@ public class RsvpAction extends InformAction {
       return this;
     }
     /**
-     * An alias for the item.
-     */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
-      return this;
-    }
-    /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
-      putValue("disambiguatingDescription", disambiguatingDescription);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * A description of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -385,10 +375,24 @@ public class RsvpAction extends InformAction {
       return this;
     }
     /**
-     * URL of the item.
+     * The name of the item.
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
       return this;
     }
     /**
@@ -403,6 +407,27 @@ public class RsvpAction extends InformAction {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
       return this;
     }
     /**
@@ -441,6 +466,8 @@ public class RsvpAction extends InformAction {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
+      if ("rsvpResponse".equals(key) && value instanceof RsvpResponseType) { this.rsvpResponse((RsvpResponseType)value); return; }
+      if ("rsvpResponses".equals(key) && value instanceof RsvpResponseType) { this.rsvpResponse((RsvpResponseType)value); return; }
       if ("additionalNumberOfGuests".equals(key) && value instanceof Integer) { this.additionalNumberOfGuests((Integer)value); return; }
       if ("additionalNumberOfGuestss".equals(key) && value instanceof Integer) { this.additionalNumberOfGuests((Integer)value); return; }
       if ("additionalNumberOfGuests".equals(key) && value instanceof Long) { this.additionalNumberOfGuests((Long)value); return; }
@@ -451,8 +478,6 @@ public class RsvpAction extends InformAction {
       if ("additionalNumberOfGuestss".equals(key) && value instanceof Double) { this.additionalNumberOfGuests((Double)value); return; }
       if ("additionalNumberOfGuests".equals(key) && value instanceof String) { this.additionalNumberOfGuests((String)value); return; }
       if ("additionalNumberOfGuestss".equals(key) && value instanceof String) { this.additionalNumberOfGuests((String)value); return; }
-      if ("rsvpResponse".equals(key) && value instanceof RsvpResponseType) { this.rsvpResponse((RsvpResponseType)value); return; }
-      if ("rsvpResponses".equals(key) && value instanceof RsvpResponseType) { this.rsvpResponse((RsvpResponseType)value); return; }
       if ("comment".equals(key) && value instanceof Comment) { this.comment((Comment)value); return; }
       if ("comments".equals(key) && value instanceof Comment) { this.comment((Comment)value); return; }
       super.fromMap(key, value);

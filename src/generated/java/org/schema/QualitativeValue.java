@@ -28,74 +28,6 @@ import java.util.*;
  */
 public class QualitativeValue extends Enumeration {
   /**
-   * This ordering relation for qualitative values indicates that the subject is equal to the object.
-   */
-  @JsonIgnore public QualitativeValue getEqual() {
-    return (QualitativeValue) getValue("equal");
-  }
-  /**
-   * This ordering relation for qualitative values indicates that the subject is equal to the object.
-   */
-  @JsonIgnore public Collection<QualitativeValue> getEquals() {
-    final Object current = myData.get("equal");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QualitativeValue>) current;
-    }
-    return Arrays.asList((QualitativeValue) current);
-  }
-  /**
-   * This ordering relation for qualitative values indicates that the subject is greater than the object.
-   */
-  @JsonIgnore public QualitativeValue getGreater() {
-    return (QualitativeValue) getValue("greater");
-  }
-  /**
-   * This ordering relation for qualitative values indicates that the subject is greater than the object.
-   */
-  @JsonIgnore public Collection<QualitativeValue> getGreaters() {
-    final Object current = myData.get("greater");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QualitativeValue>) current;
-    }
-    return Arrays.asList((QualitativeValue) current);
-  }
-  /**
-   * This ordering relation for qualitative values indicates that the subject is greater than or equal to the object.
-   */
-  @JsonIgnore public QualitativeValue getGreaterOrEqual() {
-    return (QualitativeValue) getValue("greaterOrEqual");
-  }
-  /**
-   * This ordering relation for qualitative values indicates that the subject is greater than or equal to the object.
-   */
-  @JsonIgnore public Collection<QualitativeValue> getGreaterOrEquals() {
-    final Object current = myData.get("greaterOrEqual");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QualitativeValue>) current;
-    }
-    return Arrays.asList((QualitativeValue) current);
-  }
-  /**
-   * This ordering relation for qualitative values indicates that the subject is lesser than the object.
-   */
-  @JsonIgnore public QualitativeValue getLesser() {
-    return (QualitativeValue) getValue("lesser");
-  }
-  /**
-   * This ordering relation for qualitative values indicates that the subject is lesser than the object.
-   */
-  @JsonIgnore public Collection<QualitativeValue> getLessers() {
-    final Object current = myData.get("lesser");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QualitativeValue>) current;
-    }
-    return Arrays.asList((QualitativeValue) current);
-  }
-  /**
    * This ordering relation for qualitative values indicates that the subject is lesser than or equal to the object.
    */
   @JsonIgnore public QualitativeValue getLesserOrEqual() {
@@ -106,23 +38,6 @@ public class QualitativeValue extends Enumeration {
    */
   @JsonIgnore public Collection<QualitativeValue> getLesserOrEquals() {
     final Object current = myData.get("lesserOrEqual");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QualitativeValue>) current;
-    }
-    return Arrays.asList((QualitativeValue) current);
-  }
-  /**
-   * This ordering relation for qualitative values indicates that the subject is not equal to the object.
-   */
-  @JsonIgnore public QualitativeValue getNonEqual() {
-    return (QualitativeValue) getValue("nonEqual");
-  }
-  /**
-   * This ordering relation for qualitative values indicates that the subject is not equal to the object.
-   */
-  @JsonIgnore public Collection<QualitativeValue> getNonEquals() {
-    final Object current = myData.get("nonEqual");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<QualitativeValue>) current;
@@ -215,15 +130,17 @@ public class QualitativeValue extends Enumeration {
     return Arrays.asList((StructuredValue) current);
   }
   /**
-   * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.\n\nNote: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
+   * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.&lt;br/&gt;&lt;br/&gt;
    * 
+   * Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
    */
   @JsonIgnore public PropertyValue getAdditionalProperty() {
     return (PropertyValue) getValue("additionalProperty");
   }
   /**
-   * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.\n\nNote: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
+   * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.&lt;br/&gt;&lt;br/&gt;
    * 
+   * Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
    */
   @JsonIgnore public Collection<PropertyValue> getAdditionalPropertys() {
     final Object current = myData.get("additionalProperty");
@@ -232,6 +149,91 @@ public class QualitativeValue extends Enumeration {
       return (Collection<PropertyValue>) current;
     }
     return Arrays.asList((PropertyValue) current);
+  }
+  /**
+   * This ordering relation for qualitative values indicates that the subject is lesser than the object.
+   */
+  @JsonIgnore public QualitativeValue getLesser() {
+    return (QualitativeValue) getValue("lesser");
+  }
+  /**
+   * This ordering relation for qualitative values indicates that the subject is lesser than the object.
+   */
+  @JsonIgnore public Collection<QualitativeValue> getLessers() {
+    final Object current = myData.get("lesser");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<QualitativeValue>) current;
+    }
+    return Arrays.asList((QualitativeValue) current);
+  }
+  /**
+   * This ordering relation for qualitative values indicates that the subject is greater than the object.
+   */
+  @JsonIgnore public QualitativeValue getGreater() {
+    return (QualitativeValue) getValue("greater");
+  }
+  /**
+   * This ordering relation for qualitative values indicates that the subject is greater than the object.
+   */
+  @JsonIgnore public Collection<QualitativeValue> getGreaters() {
+    final Object current = myData.get("greater");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<QualitativeValue>) current;
+    }
+    return Arrays.asList((QualitativeValue) current);
+  }
+  /**
+   * This ordering relation for qualitative values indicates that the subject is not equal to the object.
+   */
+  @JsonIgnore public QualitativeValue getNonEqual() {
+    return (QualitativeValue) getValue("nonEqual");
+  }
+  /**
+   * This ordering relation for qualitative values indicates that the subject is not equal to the object.
+   */
+  @JsonIgnore public Collection<QualitativeValue> getNonEquals() {
+    final Object current = myData.get("nonEqual");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<QualitativeValue>) current;
+    }
+    return Arrays.asList((QualitativeValue) current);
+  }
+  /**
+   * This ordering relation for qualitative values indicates that the subject is equal to the object.
+   */
+  @JsonIgnore public QualitativeValue getEqual() {
+    return (QualitativeValue) getValue("equal");
+  }
+  /**
+   * This ordering relation for qualitative values indicates that the subject is equal to the object.
+   */
+  @JsonIgnore public Collection<QualitativeValue> getEquals() {
+    final Object current = myData.get("equal");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<QualitativeValue>) current;
+    }
+    return Arrays.asList((QualitativeValue) current);
+  }
+  /**
+   * This ordering relation for qualitative values indicates that the subject is greater than or equal to the object.
+   */
+  @JsonIgnore public QualitativeValue getGreaterOrEqual() {
+    return (QualitativeValue) getValue("greaterOrEqual");
+  }
+  /**
+   * This ordering relation for qualitative values indicates that the subject is greater than or equal to the object.
+   */
+  @JsonIgnore public Collection<QualitativeValue> getGreaterOrEquals() {
+    final Object current = myData.get("greaterOrEqual");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<QualitativeValue>) current;
+    }
+    return Arrays.asList((QualitativeValue) current);
   }
   protected QualitativeValue(java.util.Map<String,Object> data) {
     super(data);
@@ -248,62 +250,6 @@ public class QualitativeValue extends Enumeration {
       return new QualitativeValue(myData);
     }
     /**
-     * This ordering relation for qualitative values indicates that the subject is equal to the object.
-     */
-    @NotNull public Builder equal(@NotNull QualitativeValue qualitativeValue) {
-      putValue("equal", qualitativeValue);
-      return this;
-    }
-    /**
-     * This ordering relation for qualitative values indicates that the subject is equal to the object.
-     */
-    @NotNull public Builder equal(@NotNull QualitativeValue.Builder qualitativeValue) {
-      putValue("equal", qualitativeValue.build());
-      return this;
-    }
-    /**
-     * This ordering relation for qualitative values indicates that the subject is greater than the object.
-     */
-    @NotNull public Builder greater(@NotNull QualitativeValue qualitativeValue) {
-      putValue("greater", qualitativeValue);
-      return this;
-    }
-    /**
-     * This ordering relation for qualitative values indicates that the subject is greater than the object.
-     */
-    @NotNull public Builder greater(@NotNull QualitativeValue.Builder qualitativeValue) {
-      putValue("greater", qualitativeValue.build());
-      return this;
-    }
-    /**
-     * This ordering relation for qualitative values indicates that the subject is greater than or equal to the object.
-     */
-    @NotNull public Builder greaterOrEqual(@NotNull QualitativeValue qualitativeValue) {
-      putValue("greaterOrEqual", qualitativeValue);
-      return this;
-    }
-    /**
-     * This ordering relation for qualitative values indicates that the subject is greater than or equal to the object.
-     */
-    @NotNull public Builder greaterOrEqual(@NotNull QualitativeValue.Builder qualitativeValue) {
-      putValue("greaterOrEqual", qualitativeValue.build());
-      return this;
-    }
-    /**
-     * This ordering relation for qualitative values indicates that the subject is lesser than the object.
-     */
-    @NotNull public Builder lesser(@NotNull QualitativeValue qualitativeValue) {
-      putValue("lesser", qualitativeValue);
-      return this;
-    }
-    /**
-     * This ordering relation for qualitative values indicates that the subject is lesser than the object.
-     */
-    @NotNull public Builder lesser(@NotNull QualitativeValue.Builder qualitativeValue) {
-      putValue("lesser", qualitativeValue.build());
-      return this;
-    }
-    /**
      * This ordering relation for qualitative values indicates that the subject is lesser than or equal to the object.
      */
     @NotNull public Builder lesserOrEqual(@NotNull QualitativeValue qualitativeValue) {
@@ -315,20 +261,6 @@ public class QualitativeValue extends Enumeration {
      */
     @NotNull public Builder lesserOrEqual(@NotNull QualitativeValue.Builder qualitativeValue) {
       putValue("lesserOrEqual", qualitativeValue.build());
-      return this;
-    }
-    /**
-     * This ordering relation for qualitative values indicates that the subject is not equal to the object.
-     */
-    @NotNull public Builder nonEqual(@NotNull QualitativeValue qualitativeValue) {
-      putValue("nonEqual", qualitativeValue);
-      return this;
-    }
-    /**
-     * This ordering relation for qualitative values indicates that the subject is not equal to the object.
-     */
-    @NotNull public Builder nonEqual(@NotNull QualitativeValue.Builder qualitativeValue) {
-      putValue("nonEqual", qualitativeValue.build());
       return this;
     }
     /**
@@ -402,19 +334,98 @@ public class QualitativeValue extends Enumeration {
       return this;
     }
     /**
-     * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.\n\nNote: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
+     * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.&lt;br/&gt;&lt;br/&gt;
      * 
+     * Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
      */
     @NotNull public Builder additionalProperty(@NotNull PropertyValue propertyValue) {
       putValue("additionalProperty", propertyValue);
       return this;
     }
     /**
-     * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.\n\nNote: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
+     * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.&lt;br/&gt;&lt;br/&gt;
      * 
+     * Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
      */
     @NotNull public Builder additionalProperty(@NotNull PropertyValue.Builder propertyValue) {
       putValue("additionalProperty", propertyValue.build());
+      return this;
+    }
+    /**
+     * This ordering relation for qualitative values indicates that the subject is lesser than the object.
+     */
+    @NotNull public Builder lesser(@NotNull QualitativeValue qualitativeValue) {
+      putValue("lesser", qualitativeValue);
+      return this;
+    }
+    /**
+     * This ordering relation for qualitative values indicates that the subject is lesser than the object.
+     */
+    @NotNull public Builder lesser(@NotNull QualitativeValue.Builder qualitativeValue) {
+      putValue("lesser", qualitativeValue.build());
+      return this;
+    }
+    /**
+     * This ordering relation for qualitative values indicates that the subject is greater than the object.
+     */
+    @NotNull public Builder greater(@NotNull QualitativeValue qualitativeValue) {
+      putValue("greater", qualitativeValue);
+      return this;
+    }
+    /**
+     * This ordering relation for qualitative values indicates that the subject is greater than the object.
+     */
+    @NotNull public Builder greater(@NotNull QualitativeValue.Builder qualitativeValue) {
+      putValue("greater", qualitativeValue.build());
+      return this;
+    }
+    /**
+     * This ordering relation for qualitative values indicates that the subject is not equal to the object.
+     */
+    @NotNull public Builder nonEqual(@NotNull QualitativeValue qualitativeValue) {
+      putValue("nonEqual", qualitativeValue);
+      return this;
+    }
+    /**
+     * This ordering relation for qualitative values indicates that the subject is not equal to the object.
+     */
+    @NotNull public Builder nonEqual(@NotNull QualitativeValue.Builder qualitativeValue) {
+      putValue("nonEqual", qualitativeValue.build());
+      return this;
+    }
+    /**
+     * This ordering relation for qualitative values indicates that the subject is equal to the object.
+     */
+    @NotNull public Builder equal(@NotNull QualitativeValue qualitativeValue) {
+      putValue("equal", qualitativeValue);
+      return this;
+    }
+    /**
+     * This ordering relation for qualitative values indicates that the subject is equal to the object.
+     */
+    @NotNull public Builder equal(@NotNull QualitativeValue.Builder qualitativeValue) {
+      putValue("equal", qualitativeValue.build());
+      return this;
+    }
+    /**
+     * This ordering relation for qualitative values indicates that the subject is greater than or equal to the object.
+     */
+    @NotNull public Builder greaterOrEqual(@NotNull QualitativeValue qualitativeValue) {
+      putValue("greaterOrEqual", qualitativeValue);
+      return this;
+    }
+    /**
+     * This ordering relation for qualitative values indicates that the subject is greater than or equal to the object.
+     */
+    @NotNull public Builder greaterOrEqual(@NotNull QualitativeValue.Builder qualitativeValue) {
+      putValue("greaterOrEqual", qualitativeValue.build());
+      return this;
+    }
+    /**
+     * URL of the item.
+     */
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
       return this;
     }
     /**
@@ -425,45 +436,17 @@ public class QualitativeValue extends Enumeration {
       return this;
     }
     /**
-     * An alias for the item.
-     */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
-      return this;
-    }
-    /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
-      putValue("disambiguatingDescription", disambiguatingDescription);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * A description of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -474,10 +457,24 @@ public class QualitativeValue extends Enumeration {
       return this;
     }
     /**
-     * URL of the item.
+     * The name of the item.
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
       return this;
     }
     /**
@@ -492,6 +489,27 @@ public class QualitativeValue extends Enumeration {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
       return this;
     }
     /**
@@ -530,18 +548,8 @@ public class QualitativeValue extends Enumeration {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("equal".equals(key) && value instanceof QualitativeValue) { this.equal((QualitativeValue)value); return; }
-      if ("equals".equals(key) && value instanceof QualitativeValue) { this.equal((QualitativeValue)value); return; }
-      if ("greater".equals(key) && value instanceof QualitativeValue) { this.greater((QualitativeValue)value); return; }
-      if ("greaters".equals(key) && value instanceof QualitativeValue) { this.greater((QualitativeValue)value); return; }
-      if ("greaterOrEqual".equals(key) && value instanceof QualitativeValue) { this.greaterOrEqual((QualitativeValue)value); return; }
-      if ("greaterOrEquals".equals(key) && value instanceof QualitativeValue) { this.greaterOrEqual((QualitativeValue)value); return; }
-      if ("lesser".equals(key) && value instanceof QualitativeValue) { this.lesser((QualitativeValue)value); return; }
-      if ("lessers".equals(key) && value instanceof QualitativeValue) { this.lesser((QualitativeValue)value); return; }
       if ("lesserOrEqual".equals(key) && value instanceof QualitativeValue) { this.lesserOrEqual((QualitativeValue)value); return; }
       if ("lesserOrEquals".equals(key) && value instanceof QualitativeValue) { this.lesserOrEqual((QualitativeValue)value); return; }
-      if ("nonEqual".equals(key) && value instanceof QualitativeValue) { this.nonEqual((QualitativeValue)value); return; }
-      if ("nonEquals".equals(key) && value instanceof QualitativeValue) { this.nonEqual((QualitativeValue)value); return; }
       if ("valueReference".equals(key) && value instanceof Enumeration) { this.valueReference((Enumeration)value); return; }
       if ("valueReferences".equals(key) && value instanceof Enumeration) { this.valueReference((Enumeration)value); return; }
       if ("valueReference".equals(key) && value instanceof PropertyValue) { this.valueReference((PropertyValue)value); return; }
@@ -554,6 +562,16 @@ public class QualitativeValue extends Enumeration {
       if ("valueReferences".equals(key) && value instanceof StructuredValue) { this.valueReference((StructuredValue)value); return; }
       if ("additionalProperty".equals(key) && value instanceof PropertyValue) { this.additionalProperty((PropertyValue)value); return; }
       if ("additionalPropertys".equals(key) && value instanceof PropertyValue) { this.additionalProperty((PropertyValue)value); return; }
+      if ("lesser".equals(key) && value instanceof QualitativeValue) { this.lesser((QualitativeValue)value); return; }
+      if ("lessers".equals(key) && value instanceof QualitativeValue) { this.lesser((QualitativeValue)value); return; }
+      if ("greater".equals(key) && value instanceof QualitativeValue) { this.greater((QualitativeValue)value); return; }
+      if ("greaters".equals(key) && value instanceof QualitativeValue) { this.greater((QualitativeValue)value); return; }
+      if ("nonEqual".equals(key) && value instanceof QualitativeValue) { this.nonEqual((QualitativeValue)value); return; }
+      if ("nonEquals".equals(key) && value instanceof QualitativeValue) { this.nonEqual((QualitativeValue)value); return; }
+      if ("equal".equals(key) && value instanceof QualitativeValue) { this.equal((QualitativeValue)value); return; }
+      if ("equals".equals(key) && value instanceof QualitativeValue) { this.equal((QualitativeValue)value); return; }
+      if ("greaterOrEqual".equals(key) && value instanceof QualitativeValue) { this.greaterOrEqual((QualitativeValue)value); return; }
+      if ("greaterOrEquals".equals(key) && value instanceof QualitativeValue) { this.greaterOrEqual((QualitativeValue)value); return; }
       super.fromMap(key, value);
     }
   }

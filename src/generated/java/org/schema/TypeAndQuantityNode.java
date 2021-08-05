@@ -28,6 +28,93 @@ import java.util.*;
  */
 public class TypeAndQuantityNode extends StructuredValue {
   /**
+   * The product that this structured value is referring to.
+   */
+  @JsonIgnore public Product getTypeOfGoodProduct() {
+    return (Product) getValue("typeOfGood");
+  }
+  /**
+   * The product that this structured value is referring to.
+   */
+  @JsonIgnore public Collection<Product> getTypeOfGoodProducts() {
+    final Object current = myData.get("typeOfGood");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Product>) current;
+    }
+    return Arrays.asList((Product) current);
+  }
+  /**
+   * The product that this structured value is referring to.
+   */
+  @JsonIgnore public Service getTypeOfGoodService() {
+    return (Service) getValue("typeOfGood");
+  }
+  /**
+   * The product that this structured value is referring to.
+   */
+  @JsonIgnore public Collection<Service> getTypeOfGoodServices() {
+    final Object current = myData.get("typeOfGood");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Service>) current;
+    }
+    return Arrays.asList((Service) current);
+  }
+  /**
+   * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
+   */
+  @JsonIgnore public String getUnitCode() {
+    return (String) getValue("unitCode");
+  }
+  /**
+   * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
+   */
+  @JsonIgnore public Collection<String> getUnitCodes() {
+    final Object current = myData.get("unitCode");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
+   */
+  @JsonIgnore public BusinessFunction getBusinessFunction() {
+    return (BusinessFunction) getValue("businessFunction");
+  }
+  /**
+   * The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
+   */
+  @JsonIgnore public Collection<BusinessFunction> getBusinessFunctions() {
+    final Object current = myData.get("businessFunction");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<BusinessFunction>) current;
+    }
+    return Arrays.asList((BusinessFunction) current);
+  }
+  /**
+   * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
+   * &lt;a href='unitCode'&gt;unitCode&lt;/a&gt;.
+   */
+  @JsonIgnore public String getUnitText() {
+    return (String) getValue("unitText");
+  }
+  /**
+   * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
+   * &lt;a href='unitCode'&gt;unitCode&lt;/a&gt;.
+   */
+  @JsonIgnore public Collection<String> getUnitTexts() {
+    final Object current = myData.get("unitText");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
    * The quantity of the goods included in the offer.
    */
   @JsonIgnore public Integer getAmountOfThisGoodInteger() {
@@ -112,93 +199,6 @@ public class TypeAndQuantityNode extends StructuredValue {
     }
     return Arrays.asList((String) current);
   }
-  /**
-   * The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
-   */
-  @JsonIgnore public BusinessFunction getBusinessFunction() {
-    return (BusinessFunction) getValue("businessFunction");
-  }
-  /**
-   * The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
-   */
-  @JsonIgnore public Collection<BusinessFunction> getBusinessFunctions() {
-    final Object current = myData.get("businessFunction");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<BusinessFunction>) current;
-    }
-    return Arrays.asList((BusinessFunction) current);
-  }
-  /**
-   * The product that this structured value is referring to.
-   */
-  @JsonIgnore public Product getTypeOfGoodProduct() {
-    return (Product) getValue("typeOfGood");
-  }
-  /**
-   * The product that this structured value is referring to.
-   */
-  @JsonIgnore public Collection<Product> getTypeOfGoodProducts() {
-    final Object current = myData.get("typeOfGood");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Product>) current;
-    }
-    return Arrays.asList((Product) current);
-  }
-  /**
-   * The product that this structured value is referring to.
-   */
-  @JsonIgnore public Service getTypeOfGoodService() {
-    return (Service) getValue("typeOfGood");
-  }
-  /**
-   * The product that this structured value is referring to.
-   */
-  @JsonIgnore public Collection<Service> getTypeOfGoodServices() {
-    final Object current = myData.get("typeOfGood");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Service>) current;
-    }
-    return Arrays.asList((Service) current);
-  }
-  /**
-   * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
-   */
-  @JsonIgnore public String getUnitCode() {
-    return (String) getValue("unitCode");
-  }
-  /**
-   * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
-   */
-  @JsonIgnore public Collection<String> getUnitCodes() {
-    final Object current = myData.get("unitCode");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
-   * &lt;a href='unitCode'&gt;unitCode&lt;/a&gt;.
-   */
-  @JsonIgnore public String getUnitText() {
-    return (String) getValue("unitText");
-  }
-  /**
-   * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
-   * &lt;a href='unitCode'&gt;unitCode&lt;/a&gt;.
-   */
-  @JsonIgnore public Collection<String> getUnitTexts() {
-    final Object current = myData.get("unitText");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
   protected TypeAndQuantityNode(java.util.Map<String,Object> data) {
     super(data);
   }
@@ -212,48 +212,6 @@ public class TypeAndQuantityNode extends StructuredValue {
     }
     @NotNull public TypeAndQuantityNode build() {
       return new TypeAndQuantityNode(myData);
-    }
-    /**
-     * The quantity of the goods included in the offer.
-     */
-    @NotNull public Builder amountOfThisGood(@NotNull Integer integer) {
-      putValue("amountOfThisGood", integer);
-      return this;
-    }
-    /**
-     * The quantity of the goods included in the offer.
-     */
-    @NotNull public Builder amountOfThisGood(@NotNull Long amountOfThisGood) {
-      putValue("amountOfThisGood", amountOfThisGood);
-      return this;
-    }
-    /**
-     * The quantity of the goods included in the offer.
-     */
-    @NotNull public Builder amountOfThisGood(@NotNull Float amountOfThisGood) {
-      putValue("amountOfThisGood", amountOfThisGood);
-      return this;
-    }
-    /**
-     * The quantity of the goods included in the offer.
-     */
-    @NotNull public Builder amountOfThisGood(@NotNull Double amountOfThisGood) {
-      putValue("amountOfThisGood", amountOfThisGood);
-      return this;
-    }
-    /**
-     * The quantity of the goods included in the offer.
-     */
-    @NotNull public Builder amountOfThisGood(@NotNull String amountOfThisGood) {
-      putValue("amountOfThisGood", amountOfThisGood);
-      return this;
-    }
-    /**
-     * The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
-     */
-    @NotNull public Builder businessFunction(@NotNull BusinessFunction businessFunction) {
-      putValue("businessFunction", businessFunction);
-      return this;
     }
     /**
      * The product that this structured value is referring to.
@@ -291,11 +249,60 @@ public class TypeAndQuantityNode extends StructuredValue {
       return this;
     }
     /**
+     * The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
+     */
+    @NotNull public Builder businessFunction(@NotNull BusinessFunction businessFunction) {
+      putValue("businessFunction", businessFunction);
+      return this;
+    }
+    /**
      * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
      * &lt;a href='unitCode'&gt;unitCode&lt;/a&gt;.
      */
     @NotNull public Builder unitText(@NotNull String unitText) {
       putValue("unitText", unitText);
+      return this;
+    }
+    /**
+     * The quantity of the goods included in the offer.
+     */
+    @NotNull public Builder amountOfThisGood(@NotNull Integer integer) {
+      putValue("amountOfThisGood", integer);
+      return this;
+    }
+    /**
+     * The quantity of the goods included in the offer.
+     */
+    @NotNull public Builder amountOfThisGood(@NotNull Long amountOfThisGood) {
+      putValue("amountOfThisGood", amountOfThisGood);
+      return this;
+    }
+    /**
+     * The quantity of the goods included in the offer.
+     */
+    @NotNull public Builder amountOfThisGood(@NotNull Float amountOfThisGood) {
+      putValue("amountOfThisGood", amountOfThisGood);
+      return this;
+    }
+    /**
+     * The quantity of the goods included in the offer.
+     */
+    @NotNull public Builder amountOfThisGood(@NotNull Double amountOfThisGood) {
+      putValue("amountOfThisGood", amountOfThisGood);
+      return this;
+    }
+    /**
+     * The quantity of the goods included in the offer.
+     */
+    @NotNull public Builder amountOfThisGood(@NotNull String amountOfThisGood) {
+      putValue("amountOfThisGood", amountOfThisGood);
+      return this;
+    }
+    /**
+     * URL of the item.
+     */
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
       return this;
     }
     /**
@@ -306,45 +313,17 @@ public class TypeAndQuantityNode extends StructuredValue {
       return this;
     }
     /**
-     * An alias for the item.
-     */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
-      return this;
-    }
-    /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
-      putValue("disambiguatingDescription", disambiguatingDescription);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * A description of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -355,10 +334,24 @@ public class TypeAndQuantityNode extends StructuredValue {
       return this;
     }
     /**
-     * URL of the item.
+     * The name of the item.
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
       return this;
     }
     /**
@@ -373,6 +366,27 @@ public class TypeAndQuantityNode extends StructuredValue {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
       return this;
     }
     /**
@@ -411,6 +425,16 @@ public class TypeAndQuantityNode extends StructuredValue {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
+      if ("typeOfGood".equals(key) && value instanceof Product) { this.typeOfGood((Product)value); return; }
+      if ("typeOfGoods".equals(key) && value instanceof Product) { this.typeOfGood((Product)value); return; }
+      if ("typeOfGood".equals(key) && value instanceof Service) { this.typeOfGood((Service)value); return; }
+      if ("typeOfGoods".equals(key) && value instanceof Service) { this.typeOfGood((Service)value); return; }
+      if ("unitCode".equals(key) && value instanceof String) { this.unitCode((String)value); return; }
+      if ("unitCodes".equals(key) && value instanceof String) { this.unitCode((String)value); return; }
+      if ("businessFunction".equals(key) && value instanceof BusinessFunction) { this.businessFunction((BusinessFunction)value); return; }
+      if ("businessFunctions".equals(key) && value instanceof BusinessFunction) { this.businessFunction((BusinessFunction)value); return; }
+      if ("unitText".equals(key) && value instanceof String) { this.unitText((String)value); return; }
+      if ("unitTexts".equals(key) && value instanceof String) { this.unitText((String)value); return; }
       if ("amountOfThisGood".equals(key) && value instanceof Integer) { this.amountOfThisGood((Integer)value); return; }
       if ("amountOfThisGoods".equals(key) && value instanceof Integer) { this.amountOfThisGood((Integer)value); return; }
       if ("amountOfThisGood".equals(key) && value instanceof Long) { this.amountOfThisGood((Long)value); return; }
@@ -421,16 +445,6 @@ public class TypeAndQuantityNode extends StructuredValue {
       if ("amountOfThisGoods".equals(key) && value instanceof Double) { this.amountOfThisGood((Double)value); return; }
       if ("amountOfThisGood".equals(key) && value instanceof String) { this.amountOfThisGood((String)value); return; }
       if ("amountOfThisGoods".equals(key) && value instanceof String) { this.amountOfThisGood((String)value); return; }
-      if ("businessFunction".equals(key) && value instanceof BusinessFunction) { this.businessFunction((BusinessFunction)value); return; }
-      if ("businessFunctions".equals(key) && value instanceof BusinessFunction) { this.businessFunction((BusinessFunction)value); return; }
-      if ("typeOfGood".equals(key) && value instanceof Product) { this.typeOfGood((Product)value); return; }
-      if ("typeOfGoods".equals(key) && value instanceof Product) { this.typeOfGood((Product)value); return; }
-      if ("typeOfGood".equals(key) && value instanceof Service) { this.typeOfGood((Service)value); return; }
-      if ("typeOfGoods".equals(key) && value instanceof Service) { this.typeOfGood((Service)value); return; }
-      if ("unitCode".equals(key) && value instanceof String) { this.unitCode((String)value); return; }
-      if ("unitCodes".equals(key) && value instanceof String) { this.unitCode((String)value); return; }
-      if ("unitText".equals(key) && value instanceof String) { this.unitText((String)value); return; }
-      if ("unitTexts".equals(key) && value instanceof String) { this.unitText((String)value); return; }
       super.fromMap(key, value);
     }
   }

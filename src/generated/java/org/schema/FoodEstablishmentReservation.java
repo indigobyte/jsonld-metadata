@@ -24,34 +24,23 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * A reservation to dine at a food-related business.\n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations.
+ * A reservation to dine at a food-related business.&lt;br/&gt;&lt;br/&gt;
+ * 
+ * Note: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations.
  */
 public class FoodEstablishmentReservation extends Reservation {
   /**
-   * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-   */
-  @JsonIgnore public java.util.Date getEndTime() {
-    return (java.util.Date) getValue("endTime");
-  }
-  /**
-   * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-   */
-  @JsonIgnore public Collection<java.util.Date> getEndTimes() {
-    final Object current = myData.get("endTime");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
-    }
-    return Arrays.asList((java.util.Date) current);
-  }
-  /**
-   * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+   * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from &lt;em&gt;January&lt;/em&gt; to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.&lt;br/&gt;&lt;br/&gt;
+   * 
+   * Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
    */
   @JsonIgnore public java.util.Date getStartTime() {
     return (java.util.Date) getValue("startTime");
   }
   /**
-   * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+   * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from &lt;em&gt;January&lt;/em&gt; to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.&lt;br/&gt;&lt;br/&gt;
+   * 
+   * Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
    */
   @JsonIgnore public Collection<java.util.Date> getStartTimes() {
     final Object current = myData.get("startTime");
@@ -95,6 +84,27 @@ public class FoodEstablishmentReservation extends Reservation {
     }
     return Arrays.asList((QuantitativeValue) current);
   }
+  /**
+   * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to &lt;em&gt;December&lt;/em&gt;. For media, including audio and video, it's the time offset of the end of a clip within a larger file.&lt;br/&gt;&lt;br/&gt;
+   * 
+   * Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+   */
+  @JsonIgnore public java.util.Date getEndTime() {
+    return (java.util.Date) getValue("endTime");
+  }
+  /**
+   * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to &lt;em&gt;December&lt;/em&gt;. For media, including audio and video, it's the time offset of the end of a clip within a larger file.&lt;br/&gt;&lt;br/&gt;
+   * 
+   * Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+   */
+  @JsonIgnore public Collection<java.util.Date> getEndTimes() {
+    final Object current = myData.get("endTime");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<java.util.Date>) current;
+    }
+    return Arrays.asList((java.util.Date) current);
+  }
   protected FoodEstablishmentReservation(java.util.Map<String,Object> data) {
     super(data);
   }
@@ -110,14 +120,9 @@ public class FoodEstablishmentReservation extends Reservation {
       return new FoodEstablishmentReservation(myData);
     }
     /**
-     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     */
-    @NotNull public Builder endTime(@NotNull java.util.Date date) {
-      putValue("endTime", date);
-      return this;
-    }
-    /**
-     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from &lt;em&gt;January&lt;/em&gt; to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.&lt;br/&gt;&lt;br/&gt;
+     * 
+     * Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      */
     @NotNull public Builder startTime(@NotNull java.util.Date date) {
       putValue("startTime", date);
@@ -145,31 +150,12 @@ public class FoodEstablishmentReservation extends Reservation {
       return this;
     }
     /**
-     * A unique identifier for the reservation.
+     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to &lt;em&gt;December&lt;/em&gt;. For media, including audio and video, it's the time offset of the end of a clip within a larger file.&lt;br/&gt;&lt;br/&gt;
+     * 
+     * Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      */
-    @NotNull public Builder reservationId(@NotNull String reservationId) {
-      putValue("reservationId", reservationId);
-      return this;
-    }
-    /**
-     * The current status of the reservation.
-     */
-    @NotNull public Builder reservationStatus(@NotNull ReservationStatusType reservationStatusType) {
-      putValue("reservationStatus", reservationStatusType);
-      return this;
-    }
-    /**
-     * The thing -- flight, event, restaurant,etc. being reserved.
-     */
-    @NotNull public Builder reservationFor(@NotNull Thing thing) {
-      putValue("reservationFor", thing);
-      return this;
-    }
-    /**
-     * The thing -- flight, event, restaurant,etc. being reserved.
-     */
-    @NotNull public Builder reservationFor(@NotNull Thing.Builder thing) {
-      putValue("reservationFor", thing.build());
+    @NotNull public Builder endTime(@NotNull java.util.Date date) {
+      putValue("endTime", date);
       return this;
     }
     /**
@@ -201,6 +187,36 @@ public class FoodEstablishmentReservation extends Reservation {
       return this;
     }
     /**
+     * The date and time the reservation was modified.
+     */
+    @NotNull public Builder modifiedTime(@NotNull java.util.Date date) {
+      putValue("modifiedTime", date);
+      return this;
+    }
+    /**
+     * Any membership in a frequent flyer, hotel loyalty program, etc. being applied to the reservation.
+     */
+    @NotNull public Builder programMembershipUsed(@NotNull ProgramMembership programMembership) {
+      putValue("programMembershipUsed", programMembership);
+      return this;
+    }
+    /**
+     * Any membership in a frequent flyer, hotel loyalty program, etc. being applied to the reservation.
+     */
+    @NotNull public Builder programMembershipUsed(@NotNull ProgramMembership.Builder programMembership) {
+      putValue("programMembershipUsed", programMembership.build());
+      return this;
+    }
+    /**
+     * The currency of the price, or a price component when attached to &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/PriceSpecification&quot;&gt;PriceSpecification&lt;/a&gt; and its subtypes.&lt;br/&gt;&lt;br/&gt;
+     * 
+     * Use standard formats: &lt;a href=&quot;http://en.wikipedia.org/wiki/ISO_4217&quot;&gt;ISO 4217 currency format&lt;/a&gt; e.g. &quot;USD&quot;; &lt;a href=&quot;https://en.wikipedia.org/wiki/List_of_cryptocurrencies&quot;&gt;Ticker symbol&lt;/a&gt; for cryptocurrencies e.g. &quot;BTC&quot;; well known names for &lt;a href=&quot;https://en.wikipedia.org/wiki/Local_exchange_trading_system&quot;&gt;Local Exchange Tradings Systems&lt;/a&gt; (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;.
+     */
+    @NotNull public Builder priceCurrency(@NotNull String priceCurrency) {
+      putValue("priceCurrency", priceCurrency);
+      return this;
+    }
+    /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
      */
     @NotNull public Builder provider(@NotNull Organization organization) {
@@ -229,34 +245,6 @@ public class FoodEstablishmentReservation extends Reservation {
       return this;
     }
     /**
-     * The date and time the reservation was booked.
-     */
-    @NotNull public Builder bookingTime(@NotNull java.util.Date date) {
-      putValue("bookingTime", date);
-      return this;
-    }
-    /**
-     * The date and time the reservation was modified.
-     */
-    @NotNull public Builder modifiedTime(@NotNull java.util.Date date) {
-      putValue("modifiedTime", date);
-      return this;
-    }
-    /**
-     * Any membership in a frequent flyer, hotel loyalty program, etc. being applied to the reservation.
-     */
-    @NotNull public Builder programMembershipUsed(@NotNull ProgramMembership programMembership) {
-      putValue("programMembershipUsed", programMembership);
-      return this;
-    }
-    /**
-     * Any membership in a frequent flyer, hotel loyalty program, etc. being applied to the reservation.
-     */
-    @NotNull public Builder programMembershipUsed(@NotNull ProgramMembership.Builder programMembership) {
-      putValue("programMembershipUsed", programMembership.build());
-      return this;
-    }
-    /**
      * A ticket associated with the reservation.
      */
     @NotNull public Builder reservedTicket(@NotNull Ticket ticket) {
@@ -271,45 +259,91 @@ public class FoodEstablishmentReservation extends Reservation {
       return this;
     }
     /**
-     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.&lt;br/&gt;&lt;br/&gt;
+     * 
+     * Usage guidelines:&lt;br/&gt;&lt;br/&gt;
+     * 
+     * &lt;ul&gt;
+     * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
+     * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
+     * &lt;/ul&gt;
+     * 
      */
-    @NotNull public Builder totalPrice(@NotNull Integer integer) {
-      putValue("totalPrice", integer);
+    @NotNull public Builder totalPrice(@NotNull Number number) {
+      putValue("totalPrice", number);
       return this;
     }
     /**
-     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.&lt;br/&gt;&lt;br/&gt;
+     * 
+     * Usage guidelines:&lt;br/&gt;&lt;br/&gt;
+     * 
+     * &lt;ul&gt;
+     * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
+     * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
+     * &lt;/ul&gt;
+     * 
      */
-    @NotNull public Builder totalPrice(@NotNull Long totalPrice) {
-      putValue("totalPrice", totalPrice);
+    @NotNull public Builder totalPrice(@NotNull PriceSpecification priceSpecification) {
+      putValue("totalPrice", priceSpecification);
       return this;
     }
     /**
-     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.&lt;br/&gt;&lt;br/&gt;
+     * 
+     * Usage guidelines:&lt;br/&gt;&lt;br/&gt;
+     * 
+     * &lt;ul&gt;
+     * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
+     * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
+     * &lt;/ul&gt;
+     * 
      */
-    @NotNull public Builder totalPrice(@NotNull Float totalPrice) {
-      putValue("totalPrice", totalPrice);
+    @NotNull public Builder totalPrice(@NotNull PriceSpecification.Builder priceSpecification) {
+      putValue("totalPrice", priceSpecification.build());
       return this;
     }
     /**
-     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-     */
-    @NotNull public Builder totalPrice(@NotNull Double totalPrice) {
-      putValue("totalPrice", totalPrice);
-      return this;
-    }
-    /**
-     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.&lt;br/&gt;&lt;br/&gt;
+     * 
+     * Usage guidelines:&lt;br/&gt;&lt;br/&gt;
+     * 
+     * &lt;ul&gt;
+     * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
+     * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
+     * &lt;/ul&gt;
+     * 
      */
     @NotNull public Builder totalPrice(@NotNull String totalPrice) {
       putValue("totalPrice", totalPrice);
       return this;
     }
     /**
-     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;.
+     * The date and time the reservation was booked.
      */
-    @NotNull public Builder priceCurrency(@NotNull String priceCurrency) {
-      putValue("priceCurrency", priceCurrency);
+    @NotNull public Builder bookingTime(@NotNull java.util.Date date) {
+      putValue("bookingTime", date);
+      return this;
+    }
+    /**
+     * A unique identifier for the reservation.
+     */
+    @NotNull public Builder reservationId(@NotNull String reservationId) {
+      putValue("reservationId", reservationId);
+      return this;
+    }
+    /**
+     * The thing -- flight, event, restaurant,etc. being reserved.
+     */
+    @NotNull public Builder reservationFor(@NotNull Thing thing) {
+      putValue("reservationFor", thing);
+      return this;
+    }
+    /**
+     * The thing -- flight, event, restaurant,etc. being reserved.
+     */
+    @NotNull public Builder reservationFor(@NotNull Thing.Builder thing) {
+      putValue("reservationFor", thing.build());
       return this;
     }
     /**
@@ -341,6 +375,20 @@ public class FoodEstablishmentReservation extends Reservation {
       return this;
     }
     /**
+     * The current status of the reservation.
+     */
+    @NotNull public Builder reservationStatus(@NotNull ReservationStatusType reservationStatusType) {
+      putValue("reservationStatus", reservationStatusType);
+      return this;
+    }
+    /**
+     * URL of the item.
+     */
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
+      return this;
+    }
+    /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      */
     @NotNull public Builder additionalType(@NotNull String additionalType) {
@@ -348,45 +396,17 @@ public class FoodEstablishmentReservation extends Reservation {
       return this;
     }
     /**
-     * An alias for the item.
-     */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
-      return this;
-    }
-    /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
-      putValue("disambiguatingDescription", disambiguatingDescription);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * A description of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -397,10 +417,24 @@ public class FoodEstablishmentReservation extends Reservation {
       return this;
     }
     /**
-     * URL of the item.
+     * The name of the item.
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
       return this;
     }
     /**
@@ -415,6 +449,27 @@ public class FoodEstablishmentReservation extends Reservation {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
       return this;
     }
     /**
@@ -453,14 +508,14 @@ public class FoodEstablishmentReservation extends Reservation {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("endTime".equals(key) && value instanceof java.util.Date) { this.endTime((java.util.Date)value); return; }
-      if ("endTimes".equals(key) && value instanceof java.util.Date) { this.endTime((java.util.Date)value); return; }
       if ("startTime".equals(key) && value instanceof java.util.Date) { this.startTime((java.util.Date)value); return; }
       if ("startTimes".equals(key) && value instanceof java.util.Date) { this.startTime((java.util.Date)value); return; }
       if ("partySize".equals(key) && value instanceof Integer) { this.partySize((Integer)value); return; }
       if ("partySizes".equals(key) && value instanceof Integer) { this.partySize((Integer)value); return; }
       if ("partySize".equals(key) && value instanceof QuantitativeValue) { this.partySize((QuantitativeValue)value); return; }
       if ("partySizes".equals(key) && value instanceof QuantitativeValue) { this.partySize((QuantitativeValue)value); return; }
+      if ("endTime".equals(key) && value instanceof java.util.Date) { this.endTime((java.util.Date)value); return; }
+      if ("endTimes".equals(key) && value instanceof java.util.Date) { this.endTime((java.util.Date)value); return; }
       super.fromMap(key, value);
     }
   }

@@ -303,16 +303,15 @@ class GeneratorSink : TripleSink {
             return listOf(getFieldType(field) ?: "")
         }
 
-        val firstType = field.dataTypes.firstOrNull()
-        if (firstType == null || types[firstType] == null) {
-            val interfaceName = field.dataTypes.firstOrNull { types[it]!!.isInterface }
-            if (interfaceName != null) {
-                return listOf(types[interfaceName]!!.name!!)
+        val interfaceName = field.dataTypes.firstOrNull {
+            if (types[it] == null) {
+                false
+            } else {
+                types[it]!!.isInterface
             }
-        } else {
-            // println("Type not found")
         }
-
+        if (interfaceName != null)
+            return listOf(types[interfaceName]!!.name!!)
 
         return field.dataTypes.mapNotNull { getBasicTypeName(types[it]?.name) }.distinct().sorted()
     }

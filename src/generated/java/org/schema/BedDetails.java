@@ -24,43 +24,9 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * An entity holding detailed information about the available bed types, e.g. the quantity of twin beds for a hotel room. For the single case of just one bed of a certain type, you can use bed directly with a text. See also [[BedType]] (under development).Source: https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology
+ * An entity holding detailed information about the available bed types, e.g. the quantity of twin beds for a hotel room. For the single case of just one bed of a certain type, you can use bed directly with a text. See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/BedType&quot;&gt;BedType&lt;/a&gt; (under development).Source: https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology
  */
 public class BedDetails extends Intangible {
-  /**
-   * The type of bed to which the BedDetail refers, i.e. the type of bed available in the quantity indicated by quantity.
-   */
-  @JsonIgnore public BedType getTypeOfBedBedType() {
-    return (BedType) getValue("typeOfBed");
-  }
-  /**
-   * The type of bed to which the BedDetail refers, i.e. the type of bed available in the quantity indicated by quantity.
-   */
-  @JsonIgnore public Collection<BedType> getTypeOfBedBedTypes() {
-    final Object current = myData.get("typeOfBed");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<BedType>) current;
-    }
-    return Arrays.asList((BedType) current);
-  }
-  /**
-   * The type of bed to which the BedDetail refers, i.e. the type of bed available in the quantity indicated by quantity.
-   */
-  @JsonIgnore public String getTypeOfBedString() {
-    return (String) getValue("typeOfBed");
-  }
-  /**
-   * The type of bed to which the BedDetail refers, i.e. the type of bed available in the quantity indicated by quantity.
-   */
-  @JsonIgnore public Collection<String> getTypeOfBedStrings() {
-    final Object current = myData.get("typeOfBed");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
   /**
    * The quantity of the given bed type available in the HotelRoom, Suite, House, or Apartment.
    */
@@ -146,6 +112,40 @@ public class BedDetails extends Intangible {
     }
     return Arrays.asList((String) current);
   }
+  /**
+   * The type of bed to which the BedDetail refers, i.e. the type of bed available in the quantity indicated by quantity.
+   */
+  @JsonIgnore public BedType getTypeOfBedBedType() {
+    return (BedType) getValue("typeOfBed");
+  }
+  /**
+   * The type of bed to which the BedDetail refers, i.e. the type of bed available in the quantity indicated by quantity.
+   */
+  @JsonIgnore public Collection<BedType> getTypeOfBedBedTypes() {
+    final Object current = myData.get("typeOfBed");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<BedType>) current;
+    }
+    return Arrays.asList((BedType) current);
+  }
+  /**
+   * The type of bed to which the BedDetail refers, i.e. the type of bed available in the quantity indicated by quantity.
+   */
+  @JsonIgnore public String getTypeOfBedString() {
+    return (String) getValue("typeOfBed");
+  }
+  /**
+   * The type of bed to which the BedDetail refers, i.e. the type of bed available in the quantity indicated by quantity.
+   */
+  @JsonIgnore public Collection<String> getTypeOfBedStrings() {
+    final Object current = myData.get("typeOfBed");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
   protected BedDetails(java.util.Map<String,Object> data) {
     super(data);
   }
@@ -159,27 +159,6 @@ public class BedDetails extends Intangible {
     }
     @NotNull public BedDetails build() {
       return new BedDetails(myData);
-    }
-    /**
-     * The type of bed to which the BedDetail refers, i.e. the type of bed available in the quantity indicated by quantity.
-     */
-    @NotNull public Builder typeOfBed(@NotNull BedType bedType) {
-      putValue("typeOfBed", bedType);
-      return this;
-    }
-    /**
-     * The type of bed to which the BedDetail refers, i.e. the type of bed available in the quantity indicated by quantity.
-     */
-    @NotNull public Builder typeOfBed(@NotNull BedType.Builder bedType) {
-      putValue("typeOfBed", bedType.build());
-      return this;
-    }
-    /**
-     * The type of bed to which the BedDetail refers, i.e. the type of bed available in the quantity indicated by quantity.
-     */
-    @NotNull public Builder typeOfBed(@NotNull String typeOfBed) {
-      putValue("typeOfBed", typeOfBed);
-      return this;
     }
     /**
      * The quantity of the given bed type available in the HotelRoom, Suite, House, or Apartment.
@@ -217,6 +196,34 @@ public class BedDetails extends Intangible {
       return this;
     }
     /**
+     * The type of bed to which the BedDetail refers, i.e. the type of bed available in the quantity indicated by quantity.
+     */
+    @NotNull public Builder typeOfBed(@NotNull BedType bedType) {
+      putValue("typeOfBed", bedType);
+      return this;
+    }
+    /**
+     * The type of bed to which the BedDetail refers, i.e. the type of bed available in the quantity indicated by quantity.
+     */
+    @NotNull public Builder typeOfBed(@NotNull BedType.Builder bedType) {
+      putValue("typeOfBed", bedType.build());
+      return this;
+    }
+    /**
+     * The type of bed to which the BedDetail refers, i.e. the type of bed available in the quantity indicated by quantity.
+     */
+    @NotNull public Builder typeOfBed(@NotNull String typeOfBed) {
+      putValue("typeOfBed", typeOfBed);
+      return this;
+    }
+    /**
+     * URL of the item.
+     */
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
+      return this;
+    }
+    /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      */
     @NotNull public Builder additionalType(@NotNull String additionalType) {
@@ -224,45 +231,17 @@ public class BedDetails extends Intangible {
       return this;
     }
     /**
-     * An alias for the item.
-     */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
-      return this;
-    }
-    /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
-      putValue("disambiguatingDescription", disambiguatingDescription);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * A description of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -273,10 +252,24 @@ public class BedDetails extends Intangible {
       return this;
     }
     /**
-     * URL of the item.
+     * The name of the item.
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
       return this;
     }
     /**
@@ -291,6 +284,27 @@ public class BedDetails extends Intangible {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
       return this;
     }
     /**
@@ -329,10 +343,6 @@ public class BedDetails extends Intangible {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("typeOfBed".equals(key) && value instanceof BedType) { this.typeOfBed((BedType)value); return; }
-      if ("typeOfBeds".equals(key) && value instanceof BedType) { this.typeOfBed((BedType)value); return; }
-      if ("typeOfBed".equals(key) && value instanceof String) { this.typeOfBed((String)value); return; }
-      if ("typeOfBeds".equals(key) && value instanceof String) { this.typeOfBed((String)value); return; }
       if ("numberOfBeds".equals(key) && value instanceof Integer) { this.numberOfBeds((Integer)value); return; }
       if ("numberOfBedss".equals(key) && value instanceof Integer) { this.numberOfBeds((Integer)value); return; }
       if ("numberOfBeds".equals(key) && value instanceof Long) { this.numberOfBeds((Long)value); return; }
@@ -343,6 +353,10 @@ public class BedDetails extends Intangible {
       if ("numberOfBedss".equals(key) && value instanceof Double) { this.numberOfBeds((Double)value); return; }
       if ("numberOfBeds".equals(key) && value instanceof String) { this.numberOfBeds((String)value); return; }
       if ("numberOfBedss".equals(key) && value instanceof String) { this.numberOfBeds((String)value); return; }
+      if ("typeOfBed".equals(key) && value instanceof BedType) { this.typeOfBed((BedType)value); return; }
+      if ("typeOfBeds".equals(key) && value instanceof BedType) { this.typeOfBed((BedType)value); return; }
+      if ("typeOfBed".equals(key) && value instanceof String) { this.typeOfBed((String)value); return; }
+      if ("typeOfBeds".equals(key) && value instanceof String) { this.typeOfBed((String)value); return; }
       super.fromMap(key, value);
     }
   }

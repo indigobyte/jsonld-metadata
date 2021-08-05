@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * An enumeration of genders.
  */
 public enum GenderType {
-  Male("http://schema.org/Male"), Female("http://schema.org/Female");
+  ;
   GenderType(String value) {
     myValue = value;
   }

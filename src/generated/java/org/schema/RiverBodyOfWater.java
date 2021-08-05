@@ -42,6 +42,206 @@ public class RiverBodyOfWater extends BodyOfWater {
       return new RiverBodyOfWater(myData);
     }
     /**
+     * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries.&quot; (a symmetric relationship, as defined in &lt;a href=&quot;https://en.wikipedia.org/wiki/DE-9IM&quot;&gt;DE-9IM&lt;/a&gt;)
+     */
+    @NotNull public Builder geoDisjoint(@NotNull GeospatialGeometry geospatialGeometry) {
+      putValue("geoDisjoint", geospatialGeometry);
+      return this;
+    }
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries.&quot; (a symmetric relationship, as defined in &lt;a href=&quot;https://en.wikipedia.org/wiki/DE-9IM&quot;&gt;DE-9IM&lt;/a&gt;)
+     */
+    @NotNull public Builder geoDisjoint(@NotNull GeospatialGeometry.Builder geospatialGeometry) {
+      putValue("geoDisjoint", geospatialGeometry.build());
+      return this;
+    }
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries.&quot; (a symmetric relationship, as defined in &lt;a href=&quot;https://en.wikipedia.org/wiki/DE-9IM&quot;&gt;DE-9IM&lt;/a&gt;)
+     */
+    @NotNull public Builder geoDisjoint(@NotNull Place place) {
+      putValue("geoDisjoint", place);
+      return this;
+    }
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries.&quot; (a symmetric relationship, as defined in &lt;a href=&quot;https://en.wikipedia.org/wiki/DE-9IM&quot;&gt;DE-9IM&lt;/a&gt;)
+     */
+    @NotNull public Builder geoDisjoint(@NotNull Place.Builder place) {
+      putValue("geoDisjoint", place.build());
+      return this;
+    }
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in &lt;a href=&quot;https://en.wikipedia.org/wiki/DE-9IM&quot;&gt;DE-9IM&lt;/a&gt;. &quot;Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other&quot; (a symmetric relationship)
+     */
+    @NotNull public Builder geoEquals(@NotNull GeospatialGeometry geospatialGeometry) {
+      putValue("geoEquals", geospatialGeometry);
+      return this;
+    }
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in &lt;a href=&quot;https://en.wikipedia.org/wiki/DE-9IM&quot;&gt;DE-9IM&lt;/a&gt;. &quot;Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other&quot; (a symmetric relationship)
+     */
+    @NotNull public Builder geoEquals(@NotNull GeospatialGeometry.Builder geospatialGeometry) {
+      putValue("geoEquals", geospatialGeometry.build());
+      return this;
+    }
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in &lt;a href=&quot;https://en.wikipedia.org/wiki/DE-9IM&quot;&gt;DE-9IM&lt;/a&gt;. &quot;Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other&quot; (a symmetric relationship)
+     */
+    @NotNull public Builder geoEquals(@NotNull Place place) {
+      putValue("geoEquals", place);
+      return this;
+    }
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in &lt;a href=&quot;https://en.wikipedia.org/wiki/DE-9IM&quot;&gt;DE-9IM&lt;/a&gt;. &quot;Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other&quot; (a symmetric relationship)
+     */
+    @NotNull public Builder geoEquals(@NotNull Place.Builder place) {
+      putValue("geoEquals", place.build());
+      return this;
+    }
+    /**
+     * The fax number.
+     */
+    @NotNull public Builder faxNumber(@NotNull String faxNumber) {
+      putValue("faxNumber", faxNumber);
+      return this;
+    }
+    /**
+     * The &lt;a href=&quot;http://www.gs1.org/gln&quot;&gt;Global Location Number&lt;/a&gt; (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
+     */
+    @NotNull public Builder globalLocationNumber(@NotNull String globalLocationNumber) {
+      putValue("globalLocationNumber", globalLocationNumber);
+      return this;
+    }
+    /**
+     * Indicates whether some facility (e.g. &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/FoodEstablishment&quot;&gt;FoodEstablishment&lt;/a&gt;, &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/CovidTestingFacility&quot;&gt;CovidTestingFacility&lt;/a&gt;) offers a service that can be used by driving through in a car. In the case of &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/CovidTestingFacility&quot;&gt;CovidTestingFacility&lt;/a&gt; such facilities could potentially help with social distancing from other potentially-infected users.
+     */
+    @NotNull public Builder hasDriveThroughService(@NotNull Boolean hasDriveThroughService) {
+      putValue("hasDriveThroughService", hasDriveThroughService);
+      return this;
+    }
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. &quot;Every point of b is a point of (the interior or boundary of) a&quot;. As defined in &lt;a href=&quot;https://en.wikipedia.org/wiki/DE-9IM&quot;&gt;DE-9IM&lt;/a&gt;.
+     */
+    @NotNull public Builder geoCovers(@NotNull GeospatialGeometry geospatialGeometry) {
+      putValue("geoCovers", geospatialGeometry);
+      return this;
+    }
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. &quot;Every point of b is a point of (the interior or boundary of) a&quot;. As defined in &lt;a href=&quot;https://en.wikipedia.org/wiki/DE-9IM&quot;&gt;DE-9IM&lt;/a&gt;.
+     */
+    @NotNull public Builder geoCovers(@NotNull GeospatialGeometry.Builder geospatialGeometry) {
+      putValue("geoCovers", geospatialGeometry.build());
+      return this;
+    }
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. &quot;Every point of b is a point of (the interior or boundary of) a&quot;. As defined in &lt;a href=&quot;https://en.wikipedia.org/wiki/DE-9IM&quot;&gt;DE-9IM&lt;/a&gt;.
+     */
+    @NotNull public Builder geoCovers(@NotNull Place place) {
+      putValue("geoCovers", place);
+      return this;
+    }
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. &quot;Every point of b is a point of (the interior or boundary of) a&quot;. As defined in &lt;a href=&quot;https://en.wikipedia.org/wiki/DE-9IM&quot;&gt;DE-9IM&lt;/a&gt;.
+     */
+    @NotNull public Builder geoCovers(@NotNull Place.Builder place) {
+      putValue("geoCovers", place.build());
+      return this;
+    }
+    /**
+     * A page providing information on how to book a tour of some &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Place&quot;&gt;Place&lt;/a&gt;, such as an &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Accommodation&quot;&gt;Accommodation&lt;/a&gt; or &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ApartmentComplex&quot;&gt;ApartmentComplex&lt;/a&gt; in a real estate setting, as well as other kinds of tours as appropriate.
+     */
+    @NotNull public Builder tourBookingPage(@NotNull String tourBookingPage) {
+      putValue("tourBookingPage", tourBookingPage);
+      return this;
+    }
+    /**
+     * The opening hours of a certain place.
+     */
+    @NotNull public Builder openingHoursSpecification(@NotNull OpeningHoursSpecification openingHoursSpecification) {
+      putValue("openingHoursSpecification", openingHoursSpecification);
+      return this;
+    }
+    /**
+     * The opening hours of a certain place.
+     */
+    @NotNull public Builder openingHoursSpecification(@NotNull OpeningHoursSpecification.Builder openingHoursSpecification) {
+      putValue("openingHoursSpecification", openingHoursSpecification.build());
+      return this;
+    }
+    /**
+     * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.&lt;br/&gt;&lt;br/&gt;
+     * 
+     * Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
+     */
+    @NotNull public Builder additionalProperty(@NotNull PropertyValue propertyValue) {
+      putValue("additionalProperty", propertyValue);
+      return this;
+    }
+    /**
+     * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.&lt;br/&gt;&lt;br/&gt;
+     * 
+     * Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
+     */
+    @NotNull public Builder additionalProperty(@NotNull PropertyValue.Builder propertyValue) {
+      putValue("additionalProperty", propertyValue.build());
+      return this;
+    }
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in &lt;a href=&quot;https://en.wikipedia.org/wiki/DE-9IM&quot;&gt;DE-9IM&lt;/a&gt;.
+     */
+    @NotNull public Builder geoWithin(@NotNull GeospatialGeometry geospatialGeometry) {
+      putValue("geoWithin", geospatialGeometry);
+      return this;
+    }
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in &lt;a href=&quot;https://en.wikipedia.org/wiki/DE-9IM&quot;&gt;DE-9IM&lt;/a&gt;.
+     */
+    @NotNull public Builder geoWithin(@NotNull GeospatialGeometry.Builder geospatialGeometry) {
+      putValue("geoWithin", geospatialGeometry.build());
+      return this;
+    }
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in &lt;a href=&quot;https://en.wikipedia.org/wiki/DE-9IM&quot;&gt;DE-9IM&lt;/a&gt;.
+     */
+    @NotNull public Builder geoWithin(@NotNull Place place) {
+      putValue("geoWithin", place);
+      return this;
+    }
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in &lt;a href=&quot;https://en.wikipedia.org/wiki/DE-9IM&quot;&gt;DE-9IM&lt;/a&gt;.
+     */
+    @NotNull public Builder geoWithin(@NotNull Place.Builder place) {
+      putValue("geoWithin", place.build());
+      return this;
+    }
+    /**
+     * The latitude of a location. For example &lt;code&gt;37.42242&lt;/code&gt; (&lt;a href=&quot;https://en.wikipedia.org/wiki/World_Geodetic_System&quot;&gt;WGS 84&lt;/a&gt;).
+     */
+    @NotNull public Builder latitude(@NotNull Number number) {
+      putValue("latitude", number);
+      return this;
+    }
+    /**
+     * The latitude of a location. For example &lt;code&gt;37.42242&lt;/code&gt; (&lt;a href=&quot;https://en.wikipedia.org/wiki/World_Geodetic_System&quot;&gt;WGS 84&lt;/a&gt;).
+     */
+    @NotNull public Builder latitude(@NotNull String latitude) {
+      putValue("latitude", latitude);
+      return this;
+    }
+    /**
+     * The basic containment relation between a place and one that contains it.
+     */
+    @NotNull public Builder containedInPlace(@NotNull Place place) {
+      putValue("containedInPlace", place);
+      return this;
+    }
+    /**
+     * The basic containment relation between a place and one that contains it.
+     */
+    @NotNull public Builder containedInPlace(@NotNull Place.Builder place) {
+      putValue("containedInPlace", place.build());
+      return this;
+    }
+    /**
      * Physical address of the item.
      */
     @NotNull public Builder address(@NotNull PostalAddress postalAddress) {
@@ -63,6 +263,48 @@ public class RiverBodyOfWater extends BodyOfWater {
       return this;
     }
     /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in &lt;a href=&quot;https://en.wikipedia.org/wiki/DE-9IM&quot;&gt;DE-9IM&lt;/a&gt;.
+     */
+    @NotNull public Builder geoCoveredBy(@NotNull GeospatialGeometry geospatialGeometry) {
+      putValue("geoCoveredBy", geospatialGeometry);
+      return this;
+    }
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in &lt;a href=&quot;https://en.wikipedia.org/wiki/DE-9IM&quot;&gt;DE-9IM&lt;/a&gt;.
+     */
+    @NotNull public Builder geoCoveredBy(@NotNull GeospatialGeometry.Builder geospatialGeometry) {
+      putValue("geoCoveredBy", geospatialGeometry.build());
+      return this;
+    }
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in &lt;a href=&quot;https://en.wikipedia.org/wiki/DE-9IM&quot;&gt;DE-9IM&lt;/a&gt;.
+     */
+    @NotNull public Builder geoCoveredBy(@NotNull Place place) {
+      putValue("geoCoveredBy", place);
+      return this;
+    }
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in &lt;a href=&quot;https://en.wikipedia.org/wiki/DE-9IM&quot;&gt;DE-9IM&lt;/a&gt;.
+     */
+    @NotNull public Builder geoCoveredBy(@NotNull Place.Builder place) {
+      putValue("geoCoveredBy", place.build());
+      return this;
+    }
+    /**
+     * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
+     */
+    @NotNull public Builder amenityFeature(@NotNull LocationFeatureSpecification locationFeatureSpecification) {
+      putValue("amenityFeature", locationFeatureSpecification);
+      return this;
+    }
+    /**
+     * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
+     */
+    @NotNull public Builder amenityFeature(@NotNull LocationFeatureSpecification.Builder locationFeatureSpecification) {
+      putValue("amenityFeature", locationFeatureSpecification.build());
+      return this;
+    }
+    /**
      * The overall rating, based on a collection of reviews or ratings, of the item.
      */
     @NotNull public Builder aggregateRating(@NotNull AggregateRating aggregateRating) {
@@ -77,74 +319,87 @@ public class RiverBodyOfWater extends BodyOfWater {
       return this;
     }
     /**
-     * A short textual code (also called &quot;store code&quot;) that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.\n\nFor example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code &quot;3047&quot; is a branchCode for a particular branch.
-     *       
+     * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. &quot;a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a&quot;. As defined in &lt;a href=&quot;https://en.wikipedia.org/wiki/DE-9IM&quot;&gt;DE-9IM&lt;/a&gt;.
      */
-    @NotNull public Builder branchCode(@NotNull String branchCode) {
-      putValue("branchCode", branchCode);
+    @NotNull public Builder geoContains(@NotNull GeospatialGeometry geospatialGeometry) {
+      putValue("geoContains", geospatialGeometry);
       return this;
     }
     /**
-     * The basic containment relation between a place and one that contains it.
+     * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. &quot;a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a&quot;. As defined in &lt;a href=&quot;https://en.wikipedia.org/wiki/DE-9IM&quot;&gt;DE-9IM&lt;/a&gt;.
      */
-    @NotNull public Builder containedInPlace(@NotNull Place place) {
-      putValue("containedInPlace", place);
+    @NotNull public Builder geoContains(@NotNull GeospatialGeometry.Builder geospatialGeometry) {
+      putValue("geoContains", geospatialGeometry.build());
       return this;
     }
     /**
-     * The basic containment relation between a place and one that contains it.
+     * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. &quot;a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a&quot;. As defined in &lt;a href=&quot;https://en.wikipedia.org/wiki/DE-9IM&quot;&gt;DE-9IM&lt;/a&gt;.
      */
-    @NotNull public Builder containedInPlace(@NotNull Place.Builder place) {
-      putValue("containedInPlace", place.build());
+    @NotNull public Builder geoContains(@NotNull Place place) {
+      putValue("geoContains", place);
       return this;
     }
     /**
-     * The basic containment relation between a place and another that it contains.
+     * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. &quot;a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a&quot;. As defined in &lt;a href=&quot;https://en.wikipedia.org/wiki/DE-9IM&quot;&gt;DE-9IM&lt;/a&gt;.
      */
-    @NotNull public Builder containsPlace(@NotNull Place place) {
-      putValue("containsPlace", place);
+    @NotNull public Builder geoContains(@NotNull Place.Builder place) {
+      putValue("geoContains", place.build());
       return this;
     }
     /**
-     * The basic containment relation between a place and another that it contains.
+     * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in &lt;a href=&quot;https://en.wikipedia.org/wiki/DE-9IM&quot;&gt;DE-9IM&lt;/a&gt;.
      */
-    @NotNull public Builder containsPlace(@NotNull Place.Builder place) {
-      putValue("containsPlace", place.build());
+    @NotNull public Builder geoIntersects(@NotNull GeospatialGeometry geospatialGeometry) {
+      putValue("geoIntersects", geospatialGeometry);
       return this;
     }
     /**
-     * Upcoming or past event associated with this place, organization, or action.
+     * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in &lt;a href=&quot;https://en.wikipedia.org/wiki/DE-9IM&quot;&gt;DE-9IM&lt;/a&gt;.
      */
-    @NotNull public Builder event(@NotNull Event event) {
-      putValue("event", event);
+    @NotNull public Builder geoIntersects(@NotNull GeospatialGeometry.Builder geospatialGeometry) {
+      putValue("geoIntersects", geospatialGeometry.build());
       return this;
     }
     /**
-     * Upcoming or past event associated with this place, organization, or action.
+     * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in &lt;a href=&quot;https://en.wikipedia.org/wiki/DE-9IM&quot;&gt;DE-9IM&lt;/a&gt;.
      */
-    @NotNull public Builder event(@NotNull Event.Builder event) {
-      putValue("event", event.build());
+    @NotNull public Builder geoIntersects(@NotNull Place place) {
+      putValue("geoIntersects", place);
       return this;
     }
     /**
-     * The fax number.
+     * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in &lt;a href=&quot;https://en.wikipedia.org/wiki/DE-9IM&quot;&gt;DE-9IM&lt;/a&gt;.
      */
-    @NotNull public Builder faxNumber(@NotNull String faxNumber) {
-      putValue("faxNumber", faxNumber);
+    @NotNull public Builder geoIntersects(@NotNull Place.Builder place) {
+      putValue("geoIntersects", place.build());
       return this;
     }
     /**
-     * A flag to signal that the item, event, or place is accessible for free.
+     * The telephone number.
      */
-    @NotNull public Builder isAccessibleForFree(@NotNull Boolean isAccessibleForFree) {
-      putValue("isAccessibleForFree", isAccessibleForFree);
+    @NotNull public Builder telephone(@NotNull String telephone) {
+      putValue("telephone", telephone);
       return this;
     }
     /**
-     * A flag to signal that the [[Place]] is open to public visitors.  If this property is omitted there is no assumed default boolean value
+     * The total number of individuals that may attend an event or venue.
      */
-    @NotNull public Builder publicAccess(@NotNull Boolean publicAccess) {
-      putValue("publicAccess", publicAccess);
+    @NotNull public Builder maximumAttendeeCapacity(@NotNull Integer integer) {
+      putValue("maximumAttendeeCapacity", integer);
+      return this;
+    }
+    /**
+     * A review of the item.
+     */
+    @NotNull public Builder review(@NotNull Review review) {
+      putValue("review", review);
+      return this;
+    }
+    /**
+     * A review of the item.
+     */
+    @NotNull public Builder review(@NotNull Review.Builder review) {
+      putValue("review", review.build());
       return this;
     }
     /**
@@ -176,17 +431,59 @@ public class RiverBodyOfWater extends BodyOfWater {
       return this;
     }
     /**
-     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
+     * Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.
      */
-    @NotNull public Builder globalLocationNumber(@NotNull Identifier identifier) {
-      putValue("globalLocationNumber", identifier);
+    @NotNull public Builder smokingAllowed(@NotNull Boolean smokingAllowed) {
+      putValue("smokingAllowed", smokingAllowed);
       return this;
     }
     /**
-     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
+     * The longitude of a location. For example &lt;code&gt;-122.08585&lt;/code&gt; (&lt;a href=&quot;https://en.wikipedia.org/wiki/World_Geodetic_System&quot;&gt;WGS 84&lt;/a&gt;).
      */
-    @NotNull public Builder globalLocationNumber(@NotNull String globalLocationNumber) {
-      putValue("globalLocationNumber", globalLocationNumber);
+    @NotNull public Builder longitude(@NotNull Number number) {
+      putValue("longitude", number);
+      return this;
+    }
+    /**
+     * The longitude of a location. For example &lt;code&gt;-122.08585&lt;/code&gt; (&lt;a href=&quot;https://en.wikipedia.org/wiki/World_Geodetic_System&quot;&gt;WGS 84&lt;/a&gt;).
+     */
+    @NotNull public Builder longitude(@NotNull String longitude) {
+      putValue("longitude", longitude);
+      return this;
+    }
+    /**
+     * A flag to signal that the item, event, or place is accessible for free.
+     */
+    @NotNull public Builder isAccessibleForFree(@NotNull Boolean isAccessibleForFree) {
+      putValue("isAccessibleForFree", isAccessibleForFree);
+      return this;
+    }
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in &lt;a href=&quot;https://en.wikipedia.org/wiki/DE-9IM&quot;&gt;DE-9IM&lt;/a&gt;.
+     */
+    @NotNull public Builder geoOverlaps(@NotNull GeospatialGeometry geospatialGeometry) {
+      putValue("geoOverlaps", geospatialGeometry);
+      return this;
+    }
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in &lt;a href=&quot;https://en.wikipedia.org/wiki/DE-9IM&quot;&gt;DE-9IM&lt;/a&gt;.
+     */
+    @NotNull public Builder geoOverlaps(@NotNull GeospatialGeometry.Builder geospatialGeometry) {
+      putValue("geoOverlaps", geospatialGeometry.build());
+      return this;
+    }
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in &lt;a href=&quot;https://en.wikipedia.org/wiki/DE-9IM&quot;&gt;DE-9IM&lt;/a&gt;.
+     */
+    @NotNull public Builder geoOverlaps(@NotNull Place place) {
+      putValue("geoOverlaps", place);
+      return this;
+    }
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in &lt;a href=&quot;https://en.wikipedia.org/wiki/DE-9IM&quot;&gt;DE-9IM&lt;/a&gt;.
+     */
+    @NotNull public Builder geoOverlaps(@NotNull Place.Builder place) {
+      putValue("geoOverlaps", place.build());
       return this;
     }
     /**
@@ -197,94 +494,112 @@ public class RiverBodyOfWater extends BodyOfWater {
       return this;
     }
     /**
-     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     * A slogan or motto associated with the item.
      */
-    @NotNull public Builder latitude(@NotNull Integer integer) {
-      putValue("latitude", integer);
+    @NotNull public Builder slogan(@NotNull String slogan) {
+      putValue("slogan", slogan);
       return this;
     }
     /**
-     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     * Upcoming or past event associated with this place, organization, or action.
      */
-    @NotNull public Builder latitude(@NotNull Long latitude) {
-      putValue("latitude", latitude);
+    @NotNull public Builder event(@NotNull Event event) {
+      putValue("event", event);
       return this;
     }
     /**
-     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     * Upcoming or past event associated with this place, organization, or action.
      */
-    @NotNull public Builder latitude(@NotNull Float latitude) {
-      putValue("latitude", latitude);
+    @NotNull public Builder event(@NotNull Event.Builder event) {
+      putValue("event", event.build());
       return this;
     }
     /**
-     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     * A photograph of this place.
      */
-    @NotNull public Builder latitude(@NotNull Double latitude) {
-      putValue("latitude", latitude);
+    @NotNull public Builder photo(@NotNull Image image) {
+      putValue("photo", image);
       return this;
     }
     /**
-     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     * Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points.&quot; (a symmetric relationship, as defined in &lt;a href=&quot;https://en.wikipedia.org/wiki/DE-9IM&quot;&gt;DE-9IM&lt;/a&gt; )
      */
-    @NotNull public Builder latitude(@NotNull String latitude) {
-      putValue("latitude", latitude);
+    @NotNull public Builder geoTouches(@NotNull GeospatialGeometry geospatialGeometry) {
+      putValue("geoTouches", geospatialGeometry);
+      return this;
+    }
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points.&quot; (a symmetric relationship, as defined in &lt;a href=&quot;https://en.wikipedia.org/wiki/DE-9IM&quot;&gt;DE-9IM&lt;/a&gt; )
+     */
+    @NotNull public Builder geoTouches(@NotNull GeospatialGeometry.Builder geospatialGeometry) {
+      putValue("geoTouches", geospatialGeometry.build());
+      return this;
+    }
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points.&quot; (a symmetric relationship, as defined in &lt;a href=&quot;https://en.wikipedia.org/wiki/DE-9IM&quot;&gt;DE-9IM&lt;/a&gt; )
+     */
+    @NotNull public Builder geoTouches(@NotNull Place place) {
+      putValue("geoTouches", place);
+      return this;
+    }
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points.&quot; (a symmetric relationship, as defined in &lt;a href=&quot;https://en.wikipedia.org/wiki/DE-9IM&quot;&gt;DE-9IM&lt;/a&gt; )
+     */
+    @NotNull public Builder geoTouches(@NotNull Place.Builder place) {
+      putValue("geoTouches", place.build());
+      return this;
+    }
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: &quot;a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them&quot;. As defined in &lt;a href=&quot;https://en.wikipedia.org/wiki/DE-9IM&quot;&gt;DE-9IM&lt;/a&gt;.
+     */
+    @NotNull public Builder geoCrosses(@NotNull GeospatialGeometry geospatialGeometry) {
+      putValue("geoCrosses", geospatialGeometry);
+      return this;
+    }
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: &quot;a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them&quot;. As defined in &lt;a href=&quot;https://en.wikipedia.org/wiki/DE-9IM&quot;&gt;DE-9IM&lt;/a&gt;.
+     */
+    @NotNull public Builder geoCrosses(@NotNull GeospatialGeometry.Builder geospatialGeometry) {
+      putValue("geoCrosses", geospatialGeometry.build());
+      return this;
+    }
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: &quot;a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them&quot;. As defined in &lt;a href=&quot;https://en.wikipedia.org/wiki/DE-9IM&quot;&gt;DE-9IM&lt;/a&gt;.
+     */
+    @NotNull public Builder geoCrosses(@NotNull Place place) {
+      putValue("geoCrosses", place);
+      return this;
+    }
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: &quot;a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them&quot;. As defined in &lt;a href=&quot;https://en.wikipedia.org/wiki/DE-9IM&quot;&gt;DE-9IM&lt;/a&gt;.
+     */
+    @NotNull public Builder geoCrosses(@NotNull Place.Builder place) {
+      putValue("geoCrosses", place.build());
       return this;
     }
     /**
      * An associated logo.
      */
-    @NotNull public Builder logo(@NotNull ImageObject imageObject) {
-      putValue("logo", imageObject);
+    @NotNull public Builder logo(@NotNull Image image) {
+      putValue("logo", image);
       return this;
     }
     /**
-     * An associated logo.
+     * The special opening hours of a certain place.&lt;br/&gt;&lt;br/&gt;
+     * 
+     * Use this to explicitly override general opening hours brought in scope by &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/openingHoursSpecification&quot;&gt;openingHoursSpecification&lt;/a&gt; or &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/openingHours&quot;&gt;openingHours&lt;/a&gt;.
      */
-    @NotNull public Builder logo(@NotNull ImageObject.Builder imageObject) {
-      putValue("logo", imageObject.build());
+    @NotNull public Builder specialOpeningHoursSpecification(@NotNull OpeningHoursSpecification openingHoursSpecification) {
+      putValue("specialOpeningHoursSpecification", openingHoursSpecification);
       return this;
     }
     /**
-     * An associated logo.
+     * The special opening hours of a certain place.&lt;br/&gt;&lt;br/&gt;
+     * 
+     * Use this to explicitly override general opening hours brought in scope by &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/openingHoursSpecification&quot;&gt;openingHoursSpecification&lt;/a&gt; or &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/openingHours&quot;&gt;openingHours&lt;/a&gt;.
      */
-    @NotNull public Builder logo(@NotNull String logo) {
-      putValue("logo", logo);
-      return this;
-    }
-    /**
-     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
-     */
-    @NotNull public Builder longitude(@NotNull Integer integer) {
-      putValue("longitude", integer);
-      return this;
-    }
-    /**
-     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
-     */
-    @NotNull public Builder longitude(@NotNull Long longitude) {
-      putValue("longitude", longitude);
-      return this;
-    }
-    /**
-     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
-     */
-    @NotNull public Builder longitude(@NotNull Float longitude) {
-      putValue("longitude", longitude);
-      return this;
-    }
-    /**
-     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
-     */
-    @NotNull public Builder longitude(@NotNull Double longitude) {
-      putValue("longitude", longitude);
-      return this;
-    }
-    /**
-     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
-     */
-    @NotNull public Builder longitude(@NotNull String longitude) {
-      putValue("longitude", longitude);
+    @NotNull public Builder specialOpeningHoursSpecification(@NotNull OpeningHoursSpecification.Builder openingHoursSpecification) {
+      putValue("specialOpeningHoursSpecification", openingHoursSpecification.build());
       return this;
     }
     /**
@@ -309,133 +624,40 @@ public class RiverBodyOfWater extends BodyOfWater {
       return this;
     }
     /**
-     * The total number of individuals that may attend an event or venue.
+     * A flag to signal that the &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Place&quot;&gt;Place&lt;/a&gt; is open to public visitors.  If this property is omitted there is no assumed default boolean value
      */
-    @NotNull public Builder maximumAttendeeCapacity(@NotNull Integer integer) {
-      putValue("maximumAttendeeCapacity", integer);
+    @NotNull public Builder publicAccess(@NotNull Boolean publicAccess) {
+      putValue("publicAccess", publicAccess);
       return this;
     }
     /**
-     * The opening hours of a certain place.
-     */
-    @NotNull public Builder openingHoursSpecification(@NotNull OpeningHoursSpecification openingHoursSpecification) {
-      putValue("openingHoursSpecification", openingHoursSpecification);
-      return this;
-    }
-    /**
-     * The opening hours of a certain place.
-     */
-    @NotNull public Builder openingHoursSpecification(@NotNull OpeningHoursSpecification.Builder openingHoursSpecification) {
-      putValue("openingHoursSpecification", openingHoursSpecification.build());
-      return this;
-    }
-    /**
-     * The special opening hours of a certain place.\n\nUse this to explicitly override general opening hours brought in scope by [[openingHoursSpecification]] or [[openingHours]].
-     *       
-     */
-    @NotNull public Builder specialOpeningHoursSpecification(@NotNull OpeningHoursSpecification openingHoursSpecification) {
-      putValue("specialOpeningHoursSpecification", openingHoursSpecification);
-      return this;
-    }
-    /**
-     * The special opening hours of a certain place.\n\nUse this to explicitly override general opening hours brought in scope by [[openingHoursSpecification]] or [[openingHours]].
-     *       
-     */
-    @NotNull public Builder specialOpeningHoursSpecification(@NotNull OpeningHoursSpecification.Builder openingHoursSpecification) {
-      putValue("specialOpeningHoursSpecification", openingHoursSpecification.build());
-      return this;
-    }
-    /**
-     * A photograph of this place.
-     */
-    @NotNull public Builder photo(@NotNull ImageObject imageObject) {
-      putValue("photo", imageObject);
-      return this;
-    }
-    /**
-     * A photograph of this place.
-     */
-    @NotNull public Builder photo(@NotNull ImageObject.Builder imageObject) {
-      putValue("photo", imageObject.build());
-      return this;
-    }
-    /**
-     * A photograph of this place.
-     */
-    @NotNull public Builder photo(@NotNull Photograph photograph) {
-      putValue("photo", photograph);
-      return this;
-    }
-    /**
-     * A photograph of this place.
-     */
-    @NotNull public Builder photo(@NotNull Photograph.Builder photograph) {
-      putValue("photo", photograph.build());
-      return this;
-    }
-    /**
-     * A review of the item.
-     */
-    @NotNull public Builder review(@NotNull Review review) {
-      putValue("review", review);
-      return this;
-    }
-    /**
-     * A review of the item.
-     */
-    @NotNull public Builder review(@NotNull Review.Builder review) {
-      putValue("review", review.build());
-      return this;
-    }
-    /**
-     * A slogan or motto associated with the item.
-     */
-    @NotNull public Builder slogan(@NotNull String slogan) {
-      putValue("slogan", slogan);
-      return this;
-    }
-    /**
-     * The telephone number.
-     */
-    @NotNull public Builder telephone(@NotNull String telephone) {
-      putValue("telephone", telephone);
-      return this;
-    }
-    /**
-     * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.\n\nNote: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
+     * A short textual code (also called &quot;store code&quot;) that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.&lt;br/&gt;&lt;br/&gt;
      * 
+     * For example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code &quot;3047&quot; is a branchCode for a particular branch.
      */
-    @NotNull public Builder additionalProperty(@NotNull PropertyValue propertyValue) {
-      putValue("additionalProperty", propertyValue);
+    @NotNull public Builder branchCode(@NotNull String branchCode) {
+      putValue("branchCode", branchCode);
       return this;
     }
     /**
-     * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.\n\nNote: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
-     * 
+     * The basic containment relation between a place and another that it contains.
      */
-    @NotNull public Builder additionalProperty(@NotNull PropertyValue.Builder propertyValue) {
-      putValue("additionalProperty", propertyValue.build());
+    @NotNull public Builder containsPlace(@NotNull Place place) {
+      putValue("containsPlace", place);
       return this;
     }
     /**
-     * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
+     * The basic containment relation between a place and another that it contains.
      */
-    @NotNull public Builder amenityFeature(@NotNull LocationFeatureSpecification locationFeatureSpecification) {
-      putValue("amenityFeature", locationFeatureSpecification);
+    @NotNull public Builder containsPlace(@NotNull Place.Builder place) {
+      putValue("containsPlace", place.build());
       return this;
     }
     /**
-     * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
+     * URL of the item.
      */
-    @NotNull public Builder amenityFeature(@NotNull LocationFeatureSpecification.Builder locationFeatureSpecification) {
-      putValue("amenityFeature", locationFeatureSpecification.build());
-      return this;
-    }
-    /**
-     * Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.
-     */
-    @NotNull public Builder smokingAllowed(@NotNull Boolean smokingAllowed) {
-      putValue("smokingAllowed", smokingAllowed);
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
       return this;
     }
     /**
@@ -446,45 +668,17 @@ public class RiverBodyOfWater extends BodyOfWater {
       return this;
     }
     /**
-     * An alias for the item.
-     */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
-      return this;
-    }
-    /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
-      putValue("disambiguatingDescription", disambiguatingDescription);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * A description of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -495,10 +689,24 @@ public class RiverBodyOfWater extends BodyOfWater {
       return this;
     }
     /**
-     * URL of the item.
+     * The name of the item.
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
       return this;
     }
     /**
@@ -513,6 +721,27 @@ public class RiverBodyOfWater extends BodyOfWater {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
       return this;
     }
     /**

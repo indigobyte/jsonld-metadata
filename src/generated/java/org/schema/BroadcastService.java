@@ -28,38 +28,72 @@ import java.util.*;
  */
 public class BroadcastService extends Service {
   /**
-   * The organization owning or operating the broadcast service.
+   * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. &quot;87 FM&quot;.
    */
-  @JsonIgnore public Organization getBroadcaster() {
-    return (Organization) getValue("broadcaster");
+  @JsonIgnore public BroadcastFrequencySpecification getBroadcastFrequencyBroadcastFrequencySpecification() {
+    return (BroadcastFrequencySpecification) getValue("broadcastFrequency");
   }
   /**
-   * The organization owning or operating the broadcast service.
+   * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. &quot;87 FM&quot;.
    */
-  @JsonIgnore public Collection<Organization> getBroadcasters() {
-    final Object current = myData.get("broadcaster");
+  @JsonIgnore public Collection<BroadcastFrequencySpecification> getBroadcastFrequencyBroadcastFrequencySpecifications() {
+    final Object current = myData.get("broadcastFrequency");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+      return (Collection<BroadcastFrequencySpecification>) current;
     }
-    return Arrays.asList((Organization) current);
+    return Arrays.asList((BroadcastFrequencySpecification) current);
   }
   /**
-   * A broadcast service to which the broadcast service may belong to such as regional variations of a national channel.
+   * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. &quot;87 FM&quot;.
    */
-  @JsonIgnore public BroadcastService getParentService() {
-    return (BroadcastService) getValue("parentService");
+  @JsonIgnore public String getBroadcastFrequencyString() {
+    return (String) getValue("broadcastFrequency");
   }
   /**
-   * A broadcast service to which the broadcast service may belong to such as regional variations of a national channel.
+   * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. &quot;87 FM&quot;.
    */
-  @JsonIgnore public Collection<BroadcastService> getParentServices() {
-    final Object current = myData.get("parentService");
+  @JsonIgnore public Collection<String> getBroadcastFrequencyStrings() {
+    final Object current = myData.get("broadcastFrequency");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<BroadcastService>) current;
+      return (Collection<String>) current;
     }
-    return Arrays.asList((BroadcastService) current);
+    return Arrays.asList((String) current);
+  }
+  /**
+   * The language of the content or performance or used in an action. Please use one of the language codes from the &lt;a href=&quot;http://tools.ietf.org/html/bcp47&quot;&gt;IETF BCP 47 standard&lt;/a&gt;. See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/availableLanguage&quot;&gt;availableLanguage&lt;/a&gt;.
+   */
+  @JsonIgnore public Language getInLanguageLanguage() {
+    return (Language) getValue("inLanguage");
+  }
+  /**
+   * The language of the content or performance or used in an action. Please use one of the language codes from the &lt;a href=&quot;http://tools.ietf.org/html/bcp47&quot;&gt;IETF BCP 47 standard&lt;/a&gt;. See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/availableLanguage&quot;&gt;availableLanguage&lt;/a&gt;.
+   */
+  @JsonIgnore public Collection<Language> getInLanguageLanguages() {
+    final Object current = myData.get("inLanguage");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Language>) current;
+    }
+    return Arrays.asList((Language) current);
+  }
+  /**
+   * The language of the content or performance or used in an action. Please use one of the language codes from the &lt;a href=&quot;http://tools.ietf.org/html/bcp47&quot;&gt;IETF BCP 47 standard&lt;/a&gt;. See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/availableLanguage&quot;&gt;availableLanguage&lt;/a&gt;.
+   */
+  @JsonIgnore public String getInLanguageString() {
+    return (String) getValue("inLanguage");
+  }
+  /**
+   * The language of the content or performance or used in an action. Please use one of the language codes from the &lt;a href=&quot;http://tools.ietf.org/html/bcp47&quot;&gt;IETF BCP 47 standard&lt;/a&gt;. See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/availableLanguage&quot;&gt;availableLanguage&lt;/a&gt;.
+   */
+  @JsonIgnore public Collection<String> getInLanguageStrings() {
+    final Object current = myData.get("inLanguage");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
   }
   /**
    * The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).
@@ -96,6 +130,57 @@ public class BroadcastService extends Service {
     return Arrays.asList((Organization) current);
   }
   /**
+   * A &lt;a href=&quot;https://en.wikipedia.org/wiki/Call_sign&quot;&gt;callsign&lt;/a&gt;, as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
+   */
+  @JsonIgnore public Identifier getCallSign() {
+    return (Identifier) getValue("callSign");
+  }
+  /**
+   * A &lt;a href=&quot;https://en.wikipedia.org/wiki/Call_sign&quot;&gt;callsign&lt;/a&gt;, as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
+   */
+  @JsonIgnore public Collection<Identifier> getCallSigns() {
+    final Object current = myData.get("callSign");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Identifier>) current;
+    }
+    return Arrays.asList((Identifier) current);
+  }
+  /**
+   * The timezone in &lt;a href=&quot;http://en.wikipedia.org/wiki/ISO_8601&quot;&gt;ISO 8601 format&lt;/a&gt; for which the service bases its broadcasts
+   */
+  @JsonIgnore public String getBroadcastTimezone() {
+    return (String) getValue("broadcastTimezone");
+  }
+  /**
+   * The timezone in &lt;a href=&quot;http://en.wikipedia.org/wiki/ISO_8601&quot;&gt;ISO 8601 format&lt;/a&gt; for which the service bases its broadcasts
+   */
+  @JsonIgnore public Collection<String> getBroadcastTimezones() {
+    final Object current = myData.get("broadcastTimezone");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * The organization owning or operating the broadcast service.
+   */
+  @JsonIgnore public Organization getBroadcaster() {
+    return (Organization) getValue("broadcaster");
+  }
+  /**
+   * The organization owning or operating the broadcast service.
+   */
+  @JsonIgnore public Collection<Organization> getBroadcasters() {
+    final Object current = myData.get("broadcaster");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Organization>) current;
+    }
+    return Arrays.asList((Organization) current);
+  }
+  /**
    * The name displayed in the channel guide. For many US affiliates, it is the network name.
    */
   @JsonIgnore public String getBroadcastDisplayName() {
@@ -113,55 +198,21 @@ public class BroadcastService extends Service {
     return Arrays.asList((String) current);
   }
   /**
-   * The timezone in [ISO 8601 format](http://en.wikipedia.org/wiki/ISO_8601) for which the service bases its broadcasts
+   * A broadcast service to which the broadcast service may belong to such as regional variations of a national channel.
    */
-  @JsonIgnore public String getBroadcastTimezone() {
-    return (String) getValue("broadcastTimezone");
+  @JsonIgnore public BroadcastService getParentService() {
+    return (BroadcastService) getValue("parentService");
   }
   /**
-   * The timezone in [ISO 8601 format](http://en.wikipedia.org/wiki/ISO_8601) for which the service bases its broadcasts
+   * A broadcast service to which the broadcast service may belong to such as regional variations of a national channel.
    */
-  @JsonIgnore public Collection<String> getBroadcastTimezones() {
-    final Object current = myData.get("broadcastTimezone");
+  @JsonIgnore public Collection<BroadcastService> getParentServices() {
+    final Object current = myData.get("parentService");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<String>) current;
+      return (Collection<BroadcastService>) current;
     }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. &quot;87 FM&quot;.
-   */
-  @JsonIgnore public BroadcastFrequencySpecification getBroadcastFrequencyBroadcastFrequencySpecification() {
-    return (BroadcastFrequencySpecification) getValue("broadcastFrequency");
-  }
-  /**
-   * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. &quot;87 FM&quot;.
-   */
-  @JsonIgnore public Collection<BroadcastFrequencySpecification> getBroadcastFrequencyBroadcastFrequencySpecifications() {
-    final Object current = myData.get("broadcastFrequency");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<BroadcastFrequencySpecification>) current;
-    }
-    return Arrays.asList((BroadcastFrequencySpecification) current);
-  }
-  /**
-   * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. &quot;87 FM&quot;.
-   */
-  @JsonIgnore public String getBroadcastFrequencyString() {
-    return (String) getValue("broadcastFrequency");
-  }
-  /**
-   * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. &quot;87 FM&quot;.
-   */
-  @JsonIgnore public Collection<String> getBroadcastFrequencyStrings() {
-    final Object current = myData.get("broadcastFrequency");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
+    return Arrays.asList((BroadcastService) current);
   }
   /**
    * A broadcast channel of a broadcast service.
@@ -195,31 +246,45 @@ public class BroadcastService extends Service {
       return new BroadcastService(myData);
     }
     /**
-     * The organization owning or operating the broadcast service.
+     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. &quot;87 FM&quot;.
      */
-    @NotNull public Builder broadcaster(@NotNull Organization organization) {
-      putValue("broadcaster", organization);
+    @NotNull public Builder broadcastFrequency(@NotNull BroadcastFrequencySpecification broadcastFrequencySpecification) {
+      putValue("broadcastFrequency", broadcastFrequencySpecification);
       return this;
     }
     /**
-     * The organization owning or operating the broadcast service.
+     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. &quot;87 FM&quot;.
      */
-    @NotNull public Builder broadcaster(@NotNull Organization.Builder organization) {
-      putValue("broadcaster", organization.build());
+    @NotNull public Builder broadcastFrequency(@NotNull BroadcastFrequencySpecification.Builder broadcastFrequencySpecification) {
+      putValue("broadcastFrequency", broadcastFrequencySpecification.build());
       return this;
     }
     /**
-     * A broadcast service to which the broadcast service may belong to such as regional variations of a national channel.
+     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. &quot;87 FM&quot;.
      */
-    @NotNull public Builder parentService(@NotNull BroadcastService broadcastService) {
-      putValue("parentService", broadcastService);
+    @NotNull public Builder broadcastFrequency(@NotNull String broadcastFrequency) {
+      putValue("broadcastFrequency", broadcastFrequency);
       return this;
     }
     /**
-     * A broadcast service to which the broadcast service may belong to such as regional variations of a national channel.
+     * The language of the content or performance or used in an action. Please use one of the language codes from the &lt;a href=&quot;http://tools.ietf.org/html/bcp47&quot;&gt;IETF BCP 47 standard&lt;/a&gt;. See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/availableLanguage&quot;&gt;availableLanguage&lt;/a&gt;.
      */
-    @NotNull public Builder parentService(@NotNull BroadcastService.Builder broadcastService) {
-      putValue("parentService", broadcastService.build());
+    @NotNull public Builder inLanguage(@NotNull Language language) {
+      putValue("inLanguage", language);
+      return this;
+    }
+    /**
+     * The language of the content or performance or used in an action. Please use one of the language codes from the &lt;a href=&quot;http://tools.ietf.org/html/bcp47&quot;&gt;IETF BCP 47 standard&lt;/a&gt;. See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/availableLanguage&quot;&gt;availableLanguage&lt;/a&gt;.
+     */
+    @NotNull public Builder inLanguage(@NotNull Language.Builder language) {
+      putValue("inLanguage", language.build());
+      return this;
+    }
+    /**
+     * The language of the content or performance or used in an action. Please use one of the language codes from the &lt;a href=&quot;http://tools.ietf.org/html/bcp47&quot;&gt;IETF BCP 47 standard&lt;/a&gt;. See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/availableLanguage&quot;&gt;availableLanguage&lt;/a&gt;.
+     */
+    @NotNull public Builder inLanguage(@NotNull String inLanguage) {
+      putValue("inLanguage", inLanguage);
       return this;
     }
     /**
@@ -244,6 +309,34 @@ public class BroadcastService extends Service {
       return this;
     }
     /**
+     * A &lt;a href=&quot;https://en.wikipedia.org/wiki/Call_sign&quot;&gt;callsign&lt;/a&gt;, as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
+     */
+    @NotNull public Builder callSign(@NotNull Identifier identifier) {
+      putValue("callSign", identifier);
+      return this;
+    }
+    /**
+     * The timezone in &lt;a href=&quot;http://en.wikipedia.org/wiki/ISO_8601&quot;&gt;ISO 8601 format&lt;/a&gt; for which the service bases its broadcasts
+     */
+    @NotNull public Builder broadcastTimezone(@NotNull String broadcastTimezone) {
+      putValue("broadcastTimezone", broadcastTimezone);
+      return this;
+    }
+    /**
+     * The organization owning or operating the broadcast service.
+     */
+    @NotNull public Builder broadcaster(@NotNull Organization organization) {
+      putValue("broadcaster", organization);
+      return this;
+    }
+    /**
+     * The organization owning or operating the broadcast service.
+     */
+    @NotNull public Builder broadcaster(@NotNull Organization.Builder organization) {
+      putValue("broadcaster", organization.build());
+      return this;
+    }
+    /**
      * The name displayed in the channel guide. For many US affiliates, it is the network name.
      */
     @NotNull public Builder broadcastDisplayName(@NotNull String broadcastDisplayName) {
@@ -251,31 +344,17 @@ public class BroadcastService extends Service {
       return this;
     }
     /**
-     * The timezone in [ISO 8601 format](http://en.wikipedia.org/wiki/ISO_8601) for which the service bases its broadcasts
+     * A broadcast service to which the broadcast service may belong to such as regional variations of a national channel.
      */
-    @NotNull public Builder broadcastTimezone(@NotNull String broadcastTimezone) {
-      putValue("broadcastTimezone", broadcastTimezone);
+    @NotNull public Builder parentService(@NotNull BroadcastService broadcastService) {
+      putValue("parentService", broadcastService);
       return this;
     }
     /**
-     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. &quot;87 FM&quot;.
+     * A broadcast service to which the broadcast service may belong to such as regional variations of a national channel.
      */
-    @NotNull public Builder broadcastFrequency(@NotNull BroadcastFrequencySpecification broadcastFrequencySpecification) {
-      putValue("broadcastFrequency", broadcastFrequencySpecification);
-      return this;
-    }
-    /**
-     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. &quot;87 FM&quot;.
-     */
-    @NotNull public Builder broadcastFrequency(@NotNull BroadcastFrequencySpecification.Builder broadcastFrequencySpecification) {
-      putValue("broadcastFrequency", broadcastFrequencySpecification.build());
-      return this;
-    }
-    /**
-     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. &quot;87 FM&quot;.
-     */
-    @NotNull public Builder broadcastFrequency(@NotNull String broadcastFrequency) {
-      putValue("broadcastFrequency", broadcastFrequency);
+    @NotNull public Builder parentService(@NotNull BroadcastService.Builder broadcastService) {
+      putValue("parentService", broadcastService.build());
       return this;
     }
     /**
@@ -293,59 +372,59 @@ public class BroadcastService extends Service {
       return this;
     }
     /**
-     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
+     * The tangible thing generated by the service, e.g. a passport, permit, etc.
      */
-    @NotNull public Builder hasOfferCatalog(@NotNull OfferCatalog offerCatalog) {
-      putValue("hasOfferCatalog", offerCatalog);
+    @NotNull public Builder serviceOutput(@NotNull Thing thing) {
+      putValue("serviceOutput", thing);
       return this;
     }
     /**
-     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
+     * The tangible thing generated by the service, e.g. a passport, permit, etc.
      */
-    @NotNull public Builder hasOfferCatalog(@NotNull OfferCatalog.Builder offerCatalog) {
-      putValue("hasOfferCatalog", offerCatalog.build());
+    @NotNull public Builder serviceOutput(@NotNull Thing.Builder thing) {
+      putValue("serviceOutput", thing.build());
       return this;
     }
     /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
+     * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
      */
-    @NotNull public Builder aggregateRating(@NotNull AggregateRating aggregateRating) {
-      putValue("aggregateRating", aggregateRating);
+    @NotNull public Builder serviceType(@NotNull GovernmentBenefitsType governmentBenefitsType) {
+      putValue("serviceType", governmentBenefitsType);
       return this;
     }
     /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
+     * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
      */
-    @NotNull public Builder aggregateRating(@NotNull AggregateRating.Builder aggregateRating) {
-      putValue("aggregateRating", aggregateRating.build());
+    @NotNull public Builder serviceType(@NotNull String serviceType) {
+      putValue("serviceType", serviceType);
       return this;
     }
     /**
-     * An intended audience, i.e. a group for whom something was created.
+     * A pointer to another, functionally similar product (or multiple products).
      */
-    @NotNull public Builder audience(@NotNull Audience audience) {
-      putValue("audience", audience);
+    @NotNull public Builder isSimilarTo(@NotNull Product product) {
+      putValue("isSimilarTo", product);
       return this;
     }
     /**
-     * An intended audience, i.e. a group for whom something was created.
+     * A pointer to another, functionally similar product (or multiple products).
      */
-    @NotNull public Builder audience(@NotNull Audience.Builder audience) {
-      putValue("audience", audience.build());
+    @NotNull public Builder isSimilarTo(@NotNull Product.Builder product) {
+      putValue("isSimilarTo", product.build());
       return this;
     }
     /**
-     * A means of accessing the service (e.g. a phone bank, a web site, a location, etc.).
+     * A pointer to another, functionally similar product (or multiple products).
      */
-    @NotNull public Builder availableChannel(@NotNull ServiceChannel serviceChannel) {
-      putValue("availableChannel", serviceChannel);
+    @NotNull public Builder isSimilarTo(@NotNull Service service) {
+      putValue("isSimilarTo", service);
       return this;
     }
     /**
-     * A means of accessing the service (e.g. a phone bank, a web site, a location, etc.).
+     * A pointer to another, functionally similar product (or multiple products).
      */
-    @NotNull public Builder availableChannel(@NotNull ServiceChannel.Builder serviceChannel) {
-      putValue("availableChannel", serviceChannel.build());
+    @NotNull public Builder isSimilarTo(@NotNull Service.Builder service) {
+      putValue("isSimilarTo", service.build());
       return this;
     }
     /**
@@ -384,38 +463,31 @@ public class BroadcastService extends Service {
       return this;
     }
     /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     * The overall rating, based on a collection of reviews or ratings, of the item.
      */
-    @NotNull public Builder category(@NotNull String category) {
-      putValue("category", category);
+    @NotNull public Builder aggregateRating(@NotNull AggregateRating aggregateRating) {
+      putValue("aggregateRating", aggregateRating);
       return this;
     }
     /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     * The overall rating, based on a collection of reviews or ratings, of the item.
      */
-    @NotNull public Builder category(@NotNull Thing thing) {
-      putValue("category", thing);
+    @NotNull public Builder aggregateRating(@NotNull AggregateRating.Builder aggregateRating) {
+      putValue("aggregateRating", aggregateRating.build());
       return this;
     }
     /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
      */
-    @NotNull public Builder category(@NotNull Thing.Builder thing) {
-      putValue("category", thing.build());
+    @NotNull public Builder hasOfferCatalog(@NotNull OfferCatalog offerCatalog) {
+      putValue("hasOfferCatalog", offerCatalog);
       return this;
     }
     /**
-     * The hours during which this service or contact is available.
+     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
      */
-    @NotNull public Builder hoursAvailable(@NotNull OpeningHoursSpecification openingHoursSpecification) {
-      putValue("hoursAvailable", openingHoursSpecification);
-      return this;
-    }
-    /**
-     * The hours during which this service or contact is available.
-     */
-    @NotNull public Builder hoursAvailable(@NotNull OpeningHoursSpecification.Builder openingHoursSpecification) {
-      putValue("hoursAvailable", openingHoursSpecification.build());
+    @NotNull public Builder hasOfferCatalog(@NotNull OfferCatalog.Builder offerCatalog) {
+      putValue("hasOfferCatalog", offerCatalog.build());
       return this;
     }
     /**
@@ -447,129 +519,6 @@ public class BroadcastService extends Service {
       return this;
     }
     /**
-     * A pointer to another, functionally similar product (or multiple products).
-     */
-    @NotNull public Builder isSimilarTo(@NotNull Product product) {
-      putValue("isSimilarTo", product);
-      return this;
-    }
-    /**
-     * A pointer to another, functionally similar product (or multiple products).
-     */
-    @NotNull public Builder isSimilarTo(@NotNull Product.Builder product) {
-      putValue("isSimilarTo", product.build());
-      return this;
-    }
-    /**
-     * A pointer to another, functionally similar product (or multiple products).
-     */
-    @NotNull public Builder isSimilarTo(@NotNull Service service) {
-      putValue("isSimilarTo", service);
-      return this;
-    }
-    /**
-     * A pointer to another, functionally similar product (or multiple products).
-     */
-    @NotNull public Builder isSimilarTo(@NotNull Service.Builder service) {
-      putValue("isSimilarTo", service.build());
-      return this;
-    }
-    /**
-     * An associated logo.
-     */
-    @NotNull public Builder logo(@NotNull ImageObject imageObject) {
-      putValue("logo", imageObject);
-      return this;
-    }
-    /**
-     * An associated logo.
-     */
-    @NotNull public Builder logo(@NotNull ImageObject.Builder imageObject) {
-      putValue("logo", imageObject.build());
-      return this;
-    }
-    /**
-     * An associated logo.
-     */
-    @NotNull public Builder logo(@NotNull String logo) {
-      putValue("logo", logo);
-      return this;
-    }
-    /**
-     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
-     */
-    @NotNull public Builder offers(@NotNull Demand demand) {
-      putValue("offers", demand);
-      return this;
-    }
-    /**
-     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
-     */
-    @NotNull public Builder offers(@NotNull Demand.Builder demand) {
-      putValue("offers", demand.build());
-      return this;
-    }
-    /**
-     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
-     */
-    @NotNull public Builder offers(@NotNull Offer offer) {
-      putValue("offers", offer);
-      return this;
-    }
-    /**
-     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
-     */
-    @NotNull public Builder offers(@NotNull Offer.Builder offer) {
-      putValue("offers", offer.build());
-      return this;
-    }
-    /**
-     * The tangible thing generated by the service, e.g. a passport, permit, etc.
-     */
-    @NotNull public Builder serviceOutput(@NotNull Thing thing) {
-      putValue("serviceOutput", thing);
-      return this;
-    }
-    /**
-     * The tangible thing generated by the service, e.g. a passport, permit, etc.
-     */
-    @NotNull public Builder serviceOutput(@NotNull Thing.Builder thing) {
-      putValue("serviceOutput", thing.build());
-      return this;
-    }
-    /**
-     * A review of the item.
-     */
-    @NotNull public Builder review(@NotNull Review review) {
-      putValue("review", review);
-      return this;
-    }
-    /**
-     * A review of the item.
-     */
-    @NotNull public Builder review(@NotNull Review.Builder review) {
-      putValue("review", review.build());
-      return this;
-    }
-    /**
-     * A slogan or motto associated with the item.
-     */
-    @NotNull public Builder slogan(@NotNull String slogan) {
-      putValue("slogan", slogan);
-      return this;
-    }
-    /**
-     * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
-     */
-    @NotNull public Builder serviceType(@NotNull String serviceType) {
-      putValue("serviceType", serviceType);
-      return this;
-    }
-    /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
      */
     @NotNull public Builder provider(@NotNull Organization organization) {
@@ -598,10 +547,94 @@ public class BroadcastService extends Service {
       return this;
     }
     /**
+     * A means of accessing the service (e.g. a phone bank, a web site, a location, etc.).
+     */
+    @NotNull public Builder availableChannel(@NotNull ServiceChannel serviceChannel) {
+      putValue("availableChannel", serviceChannel);
+      return this;
+    }
+    /**
+     * A means of accessing the service (e.g. a phone bank, a web site, a location, etc.).
+     */
+    @NotNull public Builder availableChannel(@NotNull ServiceChannel.Builder serviceChannel) {
+      putValue("availableChannel", serviceChannel.build());
+      return this;
+    }
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     */
+    @NotNull public Builder category(@NotNull Category category) {
+      putValue("category", category);
+      return this;
+    }
+    /**
+     * A review of the item.
+     */
+    @NotNull public Builder review(@NotNull Review review) {
+      putValue("review", review);
+      return this;
+    }
+    /**
+     * A review of the item.
+     */
+    @NotNull public Builder review(@NotNull Review.Builder review) {
+      putValue("review", review.build());
+      return this;
+    }
+    /**
+     * An intended audience, i.e. a group for whom something was created.
+     */
+    @NotNull public Builder audience(@NotNull Audience audience) {
+      putValue("audience", audience);
+      return this;
+    }
+    /**
+     * An intended audience, i.e. a group for whom something was created.
+     */
+    @NotNull public Builder audience(@NotNull Audience.Builder audience) {
+      putValue("audience", audience.build());
+      return this;
+    }
+    /**
+     * The hours during which this service or contact is available.
+     */
+    @NotNull public Builder hoursAvailable(@NotNull OpeningHoursSpecification openingHoursSpecification) {
+      putValue("hoursAvailable", openingHoursSpecification);
+      return this;
+    }
+    /**
+     * The hours during which this service or contact is available.
+     */
+    @NotNull public Builder hoursAvailable(@NotNull OpeningHoursSpecification.Builder openingHoursSpecification) {
+      putValue("hoursAvailable", openingHoursSpecification.build());
+      return this;
+    }
+    /**
+     * A slogan or motto associated with the item.
+     */
+    @NotNull public Builder slogan(@NotNull String slogan) {
+      putValue("slogan", slogan);
+      return this;
+    }
+    /**
      * Indicates the mobility of a provided service (e.g. 'static', 'dynamic').
      */
     @NotNull public Builder providerMobility(@NotNull String providerMobility) {
       putValue("providerMobility", providerMobility);
+      return this;
+    }
+    /**
+     * An associated logo.
+     */
+    @NotNull public Builder logo(@NotNull Image image) {
+      putValue("logo", image);
+      return this;
+    }
+    /**
+     * Human-readable terms of service documentation.
+     */
+    @NotNull public Builder termsOfService(@NotNull String termsOfService) {
+      putValue("termsOfService", termsOfService);
       return this;
     }
     /**
@@ -633,6 +666,41 @@ public class BroadcastService extends Service {
       return this;
     }
     /**
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt; to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Demand&quot;&gt;Demand&lt;/a&gt;. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     */
+    @NotNull public Builder offers(@NotNull Demand demand) {
+      putValue("offers", demand);
+      return this;
+    }
+    /**
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt; to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Demand&quot;&gt;Demand&lt;/a&gt;. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     */
+    @NotNull public Builder offers(@NotNull Demand.Builder demand) {
+      putValue("offers", demand.build());
+      return this;
+    }
+    /**
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt; to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Demand&quot;&gt;Demand&lt;/a&gt;. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     */
+    @NotNull public Builder offers(@NotNull Offer offer) {
+      putValue("offers", offer);
+      return this;
+    }
+    /**
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt; to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Demand&quot;&gt;Demand&lt;/a&gt;. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     */
+    @NotNull public Builder offers(@NotNull Offer.Builder offer) {
+      putValue("offers", offer.build());
+      return this;
+    }
+    /**
+     * URL of the item.
+     */
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
+      return this;
+    }
+    /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      */
     @NotNull public Builder additionalType(@NotNull String additionalType) {
@@ -640,45 +708,17 @@ public class BroadcastService extends Service {
       return this;
     }
     /**
-     * An alias for the item.
-     */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
-      return this;
-    }
-    /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
-      putValue("disambiguatingDescription", disambiguatingDescription);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * A description of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -689,10 +729,24 @@ public class BroadcastService extends Service {
       return this;
     }
     /**
-     * URL of the item.
+     * The name of the item.
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
       return this;
     }
     /**
@@ -707,6 +761,27 @@ public class BroadcastService extends Service {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
       return this;
     }
     /**
@@ -745,22 +820,28 @@ public class BroadcastService extends Service {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("broadcaster".equals(key) && value instanceof Organization) { this.broadcaster((Organization)value); return; }
-      if ("broadcasters".equals(key) && value instanceof Organization) { this.broadcaster((Organization)value); return; }
-      if ("parentService".equals(key) && value instanceof BroadcastService) { this.parentService((BroadcastService)value); return; }
-      if ("parentServices".equals(key) && value instanceof BroadcastService) { this.parentService((BroadcastService)value); return; }
-      if ("videoFormat".equals(key) && value instanceof String) { this.videoFormat((String)value); return; }
-      if ("videoFormats".equals(key) && value instanceof String) { this.videoFormat((String)value); return; }
-      if ("broadcastAffiliateOf".equals(key) && value instanceof Organization) { this.broadcastAffiliateOf((Organization)value); return; }
-      if ("broadcastAffiliateOfs".equals(key) && value instanceof Organization) { this.broadcastAffiliateOf((Organization)value); return; }
-      if ("broadcastDisplayName".equals(key) && value instanceof String) { this.broadcastDisplayName((String)value); return; }
-      if ("broadcastDisplayNames".equals(key) && value instanceof String) { this.broadcastDisplayName((String)value); return; }
-      if ("broadcastTimezone".equals(key) && value instanceof String) { this.broadcastTimezone((String)value); return; }
-      if ("broadcastTimezones".equals(key) && value instanceof String) { this.broadcastTimezone((String)value); return; }
       if ("broadcastFrequency".equals(key) && value instanceof BroadcastFrequencySpecification) { this.broadcastFrequency((BroadcastFrequencySpecification)value); return; }
       if ("broadcastFrequencys".equals(key) && value instanceof BroadcastFrequencySpecification) { this.broadcastFrequency((BroadcastFrequencySpecification)value); return; }
       if ("broadcastFrequency".equals(key) && value instanceof String) { this.broadcastFrequency((String)value); return; }
       if ("broadcastFrequencys".equals(key) && value instanceof String) { this.broadcastFrequency((String)value); return; }
+      if ("inLanguage".equals(key) && value instanceof Language) { this.inLanguage((Language)value); return; }
+      if ("inLanguages".equals(key) && value instanceof Language) { this.inLanguage((Language)value); return; }
+      if ("inLanguage".equals(key) && value instanceof String) { this.inLanguage((String)value); return; }
+      if ("inLanguages".equals(key) && value instanceof String) { this.inLanguage((String)value); return; }
+      if ("videoFormat".equals(key) && value instanceof String) { this.videoFormat((String)value); return; }
+      if ("videoFormats".equals(key) && value instanceof String) { this.videoFormat((String)value); return; }
+      if ("broadcastAffiliateOf".equals(key) && value instanceof Organization) { this.broadcastAffiliateOf((Organization)value); return; }
+      if ("broadcastAffiliateOfs".equals(key) && value instanceof Organization) { this.broadcastAffiliateOf((Organization)value); return; }
+      if ("callSign".equals(key) && value instanceof Identifier) { this.callSign((Identifier)value); return; }
+      if ("callSigns".equals(key) && value instanceof Identifier) { this.callSign((Identifier)value); return; }
+      if ("broadcastTimezone".equals(key) && value instanceof String) { this.broadcastTimezone((String)value); return; }
+      if ("broadcastTimezones".equals(key) && value instanceof String) { this.broadcastTimezone((String)value); return; }
+      if ("broadcaster".equals(key) && value instanceof Organization) { this.broadcaster((Organization)value); return; }
+      if ("broadcasters".equals(key) && value instanceof Organization) { this.broadcaster((Organization)value); return; }
+      if ("broadcastDisplayName".equals(key) && value instanceof String) { this.broadcastDisplayName((String)value); return; }
+      if ("broadcastDisplayNames".equals(key) && value instanceof String) { this.broadcastDisplayName((String)value); return; }
+      if ("parentService".equals(key) && value instanceof BroadcastService) { this.parentService((BroadcastService)value); return; }
+      if ("parentServices".equals(key) && value instanceof BroadcastService) { this.parentService((BroadcastService)value); return; }
       if ("hasBroadcastChannel".equals(key) && value instanceof BroadcastChannel) { this.hasBroadcastChannel((BroadcastChannel)value); return; }
       if ("hasBroadcastChannels".equals(key) && value instanceof BroadcastChannel) { this.hasBroadcastChannel((BroadcastChannel)value); return; }
       super.fromMap(key, value);

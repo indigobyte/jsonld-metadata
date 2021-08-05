@@ -28,13 +28,30 @@ import java.util.*;
  */
 public class ServiceChannel extends Intangible {
   /**
-   * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
+   * The website to access the service.
+   */
+  @JsonIgnore public String getServiceUrl() {
+    return (String) getValue("serviceUrl");
+  }
+  /**
+   * The website to access the service.
+   */
+  @JsonIgnore public Collection<String> getServiceUrls() {
+    final Object current = myData.get("serviceUrl");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * A language someone may use with or at the item, service or place. Please use one of the language codes from the &lt;a href=&quot;http://tools.ietf.org/html/bcp47&quot;&gt;IETF BCP 47 standard&lt;/a&gt;. See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/inLanguage&quot;&gt;inLanguage&lt;/a&gt;
    */
   @JsonIgnore public Language getAvailableLanguageLanguage() {
     return (Language) getValue("availableLanguage");
   }
   /**
-   * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
+   * A language someone may use with or at the item, service or place. Please use one of the language codes from the &lt;a href=&quot;http://tools.ietf.org/html/bcp47&quot;&gt;IETF BCP 47 standard&lt;/a&gt;. See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/inLanguage&quot;&gt;inLanguage&lt;/a&gt;
    */
   @JsonIgnore public Collection<Language> getAvailableLanguageLanguages() {
     final Object current = myData.get("availableLanguage");
@@ -45,13 +62,13 @@ public class ServiceChannel extends Intangible {
     return Arrays.asList((Language) current);
   }
   /**
-   * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
+   * A language someone may use with or at the item, service or place. Please use one of the language codes from the &lt;a href=&quot;http://tools.ietf.org/html/bcp47&quot;&gt;IETF BCP 47 standard&lt;/a&gt;. See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/inLanguage&quot;&gt;inLanguage&lt;/a&gt;
    */
   @JsonIgnore public String getAvailableLanguageString() {
     return (String) getValue("availableLanguage");
   }
   /**
-   * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
+   * A language someone may use with or at the item, service or place. Please use one of the language codes from the &lt;a href=&quot;http://tools.ietf.org/html/bcp47&quot;&gt;IETF BCP 47 standard&lt;/a&gt;. See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/inLanguage&quot;&gt;inLanguage&lt;/a&gt;
    */
   @JsonIgnore public Collection<String> getAvailableLanguageStrings() {
     final Object current = myData.get("availableLanguage");
@@ -79,6 +96,23 @@ public class ServiceChannel extends Intangible {
     return Arrays.asList((Duration) current);
   }
   /**
+   * The address for accessing the service by mail.
+   */
+  @JsonIgnore public PostalAddress getServicePostalAddress() {
+    return (PostalAddress) getValue("servicePostalAddress");
+  }
+  /**
+   * The address for accessing the service by mail.
+   */
+  @JsonIgnore public Collection<PostalAddress> getServicePostalAddresss() {
+    final Object current = myData.get("servicePostalAddress");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<PostalAddress>) current;
+    }
+    return Arrays.asList((PostalAddress) current);
+  }
+  /**
    * The service provided by this channel.
    */
   @JsonIgnore public Service getProvidesService() {
@@ -94,23 +128,6 @@ public class ServiceChannel extends Intangible {
       return (Collection<Service>) current;
     }
     return Arrays.asList((Service) current);
-  }
-  /**
-   * The location (e.g. civic structure, local business, etc.) where a person can go to access the service.
-   */
-  @JsonIgnore public Place getServiceLocation() {
-    return (Place) getValue("serviceLocation");
-  }
-  /**
-   * The location (e.g. civic structure, local business, etc.) where a person can go to access the service.
-   */
-  @JsonIgnore public Collection<Place> getServiceLocations() {
-    final Object current = myData.get("serviceLocation");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Place>) current;
-    }
-    return Arrays.asList((Place) current);
   }
   /**
    * The phone number to use to access the service.
@@ -130,21 +147,21 @@ public class ServiceChannel extends Intangible {
     return Arrays.asList((ContactPoint) current);
   }
   /**
-   * The address for accessing the service by mail.
+   * The location (e.g. civic structure, local business, etc.) where a person can go to access the service.
    */
-  @JsonIgnore public PostalAddress getServicePostalAddress() {
-    return (PostalAddress) getValue("servicePostalAddress");
+  @JsonIgnore public Place getServiceLocation() {
+    return (Place) getValue("serviceLocation");
   }
   /**
-   * The address for accessing the service by mail.
+   * The location (e.g. civic structure, local business, etc.) where a person can go to access the service.
    */
-  @JsonIgnore public Collection<PostalAddress> getServicePostalAddresss() {
-    final Object current = myData.get("servicePostalAddress");
+  @JsonIgnore public Collection<Place> getServiceLocations() {
+    final Object current = myData.get("serviceLocation");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<PostalAddress>) current;
+      return (Collection<Place>) current;
     }
-    return Arrays.asList((PostalAddress) current);
+    return Arrays.asList((Place) current);
   }
   /**
    * The number to access the service by text message.
@@ -163,23 +180,6 @@ public class ServiceChannel extends Intangible {
     }
     return Arrays.asList((ContactPoint) current);
   }
-  /**
-   * The website to access the service.
-   */
-  @JsonIgnore public String getServiceUrl() {
-    return (String) getValue("serviceUrl");
-  }
-  /**
-   * The website to access the service.
-   */
-  @JsonIgnore public Collection<String> getServiceUrls() {
-    final Object current = myData.get("serviceUrl");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
   protected ServiceChannel(java.util.Map<String,Object> data) {
     super(data);
   }
@@ -195,21 +195,28 @@ public class ServiceChannel extends Intangible {
       return new ServiceChannel(myData);
     }
     /**
-     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
+     * The website to access the service.
+     */
+    @NotNull public Builder serviceUrl(@NotNull String serviceUrl) {
+      putValue("serviceUrl", serviceUrl);
+      return this;
+    }
+    /**
+     * A language someone may use with or at the item, service or place. Please use one of the language codes from the &lt;a href=&quot;http://tools.ietf.org/html/bcp47&quot;&gt;IETF BCP 47 standard&lt;/a&gt;. See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/inLanguage&quot;&gt;inLanguage&lt;/a&gt;
      */
     @NotNull public Builder availableLanguage(@NotNull Language language) {
       putValue("availableLanguage", language);
       return this;
     }
     /**
-     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
+     * A language someone may use with or at the item, service or place. Please use one of the language codes from the &lt;a href=&quot;http://tools.ietf.org/html/bcp47&quot;&gt;IETF BCP 47 standard&lt;/a&gt;. See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/inLanguage&quot;&gt;inLanguage&lt;/a&gt;
      */
     @NotNull public Builder availableLanguage(@NotNull Language.Builder language) {
       putValue("availableLanguage", language.build());
       return this;
     }
     /**
-     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
+     * A language someone may use with or at the item, service or place. Please use one of the language codes from the &lt;a href=&quot;http://tools.ietf.org/html/bcp47&quot;&gt;IETF BCP 47 standard&lt;/a&gt;. See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/inLanguage&quot;&gt;inLanguage&lt;/a&gt;
      */
     @NotNull public Builder availableLanguage(@NotNull String availableLanguage) {
       putValue("availableLanguage", availableLanguage);
@@ -220,48 +227,6 @@ public class ServiceChannel extends Intangible {
      */
     @NotNull public Builder processingTime(@NotNull Duration duration) {
       putValue("processingTime", duration);
-      return this;
-    }
-    /**
-     * The service provided by this channel.
-     */
-    @NotNull public Builder providesService(@NotNull Service service) {
-      putValue("providesService", service);
-      return this;
-    }
-    /**
-     * The service provided by this channel.
-     */
-    @NotNull public Builder providesService(@NotNull Service.Builder service) {
-      putValue("providesService", service.build());
-      return this;
-    }
-    /**
-     * The location (e.g. civic structure, local business, etc.) where a person can go to access the service.
-     */
-    @NotNull public Builder serviceLocation(@NotNull Place place) {
-      putValue("serviceLocation", place);
-      return this;
-    }
-    /**
-     * The location (e.g. civic structure, local business, etc.) where a person can go to access the service.
-     */
-    @NotNull public Builder serviceLocation(@NotNull Place.Builder place) {
-      putValue("serviceLocation", place.build());
-      return this;
-    }
-    /**
-     * The phone number to use to access the service.
-     */
-    @NotNull public Builder servicePhone(@NotNull ContactPoint contactPoint) {
-      putValue("servicePhone", contactPoint);
-      return this;
-    }
-    /**
-     * The phone number to use to access the service.
-     */
-    @NotNull public Builder servicePhone(@NotNull ContactPoint.Builder contactPoint) {
-      putValue("servicePhone", contactPoint.build());
       return this;
     }
     /**
@@ -279,6 +244,48 @@ public class ServiceChannel extends Intangible {
       return this;
     }
     /**
+     * The service provided by this channel.
+     */
+    @NotNull public Builder providesService(@NotNull Service service) {
+      putValue("providesService", service);
+      return this;
+    }
+    /**
+     * The service provided by this channel.
+     */
+    @NotNull public Builder providesService(@NotNull Service.Builder service) {
+      putValue("providesService", service.build());
+      return this;
+    }
+    /**
+     * The phone number to use to access the service.
+     */
+    @NotNull public Builder servicePhone(@NotNull ContactPoint contactPoint) {
+      putValue("servicePhone", contactPoint);
+      return this;
+    }
+    /**
+     * The phone number to use to access the service.
+     */
+    @NotNull public Builder servicePhone(@NotNull ContactPoint.Builder contactPoint) {
+      putValue("servicePhone", contactPoint.build());
+      return this;
+    }
+    /**
+     * The location (e.g. civic structure, local business, etc.) where a person can go to access the service.
+     */
+    @NotNull public Builder serviceLocation(@NotNull Place place) {
+      putValue("serviceLocation", place);
+      return this;
+    }
+    /**
+     * The location (e.g. civic structure, local business, etc.) where a person can go to access the service.
+     */
+    @NotNull public Builder serviceLocation(@NotNull Place.Builder place) {
+      putValue("serviceLocation", place.build());
+      return this;
+    }
+    /**
      * The number to access the service by text message.
      */
     @NotNull public Builder serviceSmsNumber(@NotNull ContactPoint contactPoint) {
@@ -293,10 +300,10 @@ public class ServiceChannel extends Intangible {
       return this;
     }
     /**
-     * The website to access the service.
+     * URL of the item.
      */
-    @NotNull public Builder serviceUrl(@NotNull String serviceUrl) {
-      putValue("serviceUrl", serviceUrl);
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
       return this;
     }
     /**
@@ -307,45 +314,17 @@ public class ServiceChannel extends Intangible {
       return this;
     }
     /**
-     * An alias for the item.
-     */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
-      return this;
-    }
-    /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
-      putValue("disambiguatingDescription", disambiguatingDescription);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * A description of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -356,10 +335,24 @@ public class ServiceChannel extends Intangible {
       return this;
     }
     /**
-     * URL of the item.
+     * The name of the item.
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
       return this;
     }
     /**
@@ -374,6 +367,27 @@ public class ServiceChannel extends Intangible {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
       return this;
     }
     /**
@@ -412,24 +426,24 @@ public class ServiceChannel extends Intangible {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
+      if ("serviceUrl".equals(key) && value instanceof String) { this.serviceUrl((String)value); return; }
+      if ("serviceUrls".equals(key) && value instanceof String) { this.serviceUrl((String)value); return; }
       if ("availableLanguage".equals(key) && value instanceof Language) { this.availableLanguage((Language)value); return; }
       if ("availableLanguages".equals(key) && value instanceof Language) { this.availableLanguage((Language)value); return; }
       if ("availableLanguage".equals(key) && value instanceof String) { this.availableLanguage((String)value); return; }
       if ("availableLanguages".equals(key) && value instanceof String) { this.availableLanguage((String)value); return; }
       if ("processingTime".equals(key) && value instanceof Duration) { this.processingTime((Duration)value); return; }
       if ("processingTimes".equals(key) && value instanceof Duration) { this.processingTime((Duration)value); return; }
-      if ("providesService".equals(key) && value instanceof Service) { this.providesService((Service)value); return; }
-      if ("providesServices".equals(key) && value instanceof Service) { this.providesService((Service)value); return; }
-      if ("serviceLocation".equals(key) && value instanceof Place) { this.serviceLocation((Place)value); return; }
-      if ("serviceLocations".equals(key) && value instanceof Place) { this.serviceLocation((Place)value); return; }
-      if ("servicePhone".equals(key) && value instanceof ContactPoint) { this.servicePhone((ContactPoint)value); return; }
-      if ("servicePhones".equals(key) && value instanceof ContactPoint) { this.servicePhone((ContactPoint)value); return; }
       if ("servicePostalAddress".equals(key) && value instanceof PostalAddress) { this.servicePostalAddress((PostalAddress)value); return; }
       if ("servicePostalAddresss".equals(key) && value instanceof PostalAddress) { this.servicePostalAddress((PostalAddress)value); return; }
+      if ("providesService".equals(key) && value instanceof Service) { this.providesService((Service)value); return; }
+      if ("providesServices".equals(key) && value instanceof Service) { this.providesService((Service)value); return; }
+      if ("servicePhone".equals(key) && value instanceof ContactPoint) { this.servicePhone((ContactPoint)value); return; }
+      if ("servicePhones".equals(key) && value instanceof ContactPoint) { this.servicePhone((ContactPoint)value); return; }
+      if ("serviceLocation".equals(key) && value instanceof Place) { this.serviceLocation((Place)value); return; }
+      if ("serviceLocations".equals(key) && value instanceof Place) { this.serviceLocation((Place)value); return; }
       if ("serviceSmsNumber".equals(key) && value instanceof ContactPoint) { this.serviceSmsNumber((ContactPoint)value); return; }
       if ("serviceSmsNumbers".equals(key) && value instanceof ContactPoint) { this.serviceSmsNumber((ContactPoint)value); return; }
-      if ("serviceUrl".equals(key) && value instanceof String) { this.serviceUrl((String)value); return; }
-      if ("serviceUrls".equals(key) && value instanceof String) { this.serviceUrl((String)value); return; }
       super.fromMap(key, value);
     }
   }

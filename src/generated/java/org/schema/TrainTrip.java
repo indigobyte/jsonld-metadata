@@ -28,16 +28,16 @@ import java.util.*;
  */
 public class TrainTrip extends Trip {
   /**
-   * The unique identifier for the train.
+   * The platform where the train arrives.
    */
-  @JsonIgnore public String getTrainNumber() {
-    return (String) getValue("trainNumber");
+  @JsonIgnore public String getArrivalPlatform() {
+    return (String) getValue("arrivalPlatform");
   }
   /**
-   * The unique identifier for the train.
+   * The platform where the train arrives.
    */
-  @JsonIgnore public Collection<String> getTrainNumbers() {
-    final Object current = myData.get("trainNumber");
+  @JsonIgnore public Collection<String> getArrivalPlatforms() {
+    final Object current = myData.get("arrivalPlatform");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<String>) current;
@@ -79,23 +79,6 @@ public class TrainTrip extends Trip {
     return Arrays.asList((TrainStation) current);
   }
   /**
-   * The station where the train trip ends.
-   */
-  @JsonIgnore public TrainStation getArrivalStation() {
-    return (TrainStation) getValue("arrivalStation");
-  }
-  /**
-   * The station where the train trip ends.
-   */
-  @JsonIgnore public Collection<TrainStation> getArrivalStations() {
-    final Object current = myData.get("arrivalStation");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<TrainStation>) current;
-    }
-    return Arrays.asList((TrainStation) current);
-  }
-  /**
    * The platform from which the train departs.
    */
   @JsonIgnore public String getDeparturePlatform() {
@@ -113,16 +96,33 @@ public class TrainTrip extends Trip {
     return Arrays.asList((String) current);
   }
   /**
-   * The platform where the train arrives.
+   * The station where the train trip ends.
    */
-  @JsonIgnore public String getArrivalPlatform() {
-    return (String) getValue("arrivalPlatform");
+  @JsonIgnore public TrainStation getArrivalStation() {
+    return (TrainStation) getValue("arrivalStation");
   }
   /**
-   * The platform where the train arrives.
+   * The station where the train trip ends.
    */
-  @JsonIgnore public Collection<String> getArrivalPlatforms() {
-    final Object current = myData.get("arrivalPlatform");
+  @JsonIgnore public Collection<TrainStation> getArrivalStations() {
+    final Object current = myData.get("arrivalStation");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<TrainStation>) current;
+    }
+    return Arrays.asList((TrainStation) current);
+  }
+  /**
+   * The unique identifier for the train.
+   */
+  @JsonIgnore public String getTrainNumber() {
+    return (String) getValue("trainNumber");
+  }
+  /**
+   * The unique identifier for the train.
+   */
+  @JsonIgnore public Collection<String> getTrainNumbers() {
+    final Object current = myData.get("trainNumber");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<String>) current;
@@ -144,10 +144,10 @@ public class TrainTrip extends Trip {
       return new TrainTrip(myData);
     }
     /**
-     * The unique identifier for the train.
+     * The platform where the train arrives.
      */
-    @NotNull public Builder trainNumber(@NotNull String trainNumber) {
-      putValue("trainNumber", trainNumber);
+    @NotNull public Builder arrivalPlatform(@NotNull String arrivalPlatform) {
+      putValue("arrivalPlatform", arrivalPlatform);
       return this;
     }
     /**
@@ -172,6 +172,13 @@ public class TrainTrip extends Trip {
       return this;
     }
     /**
+     * The platform from which the train departs.
+     */
+    @NotNull public Builder departurePlatform(@NotNull String departurePlatform) {
+      putValue("departurePlatform", departurePlatform);
+      return this;
+    }
+    /**
      * The station where the train trip ends.
      */
     @NotNull public Builder arrivalStation(@NotNull TrainStation trainStation) {
@@ -186,49 +193,45 @@ public class TrainTrip extends Trip {
       return this;
     }
     /**
-     * The platform from which the train departs.
+     * The unique identifier for the train.
      */
-    @NotNull public Builder departurePlatform(@NotNull String departurePlatform) {
-      putValue("departurePlatform", departurePlatform);
+    @NotNull public Builder trainNumber(@NotNull String trainNumber) {
+      putValue("trainNumber", trainNumber);
       return this;
     }
     /**
-     * The platform where the train arrives.
+     * The expected arrival time.
      */
-    @NotNull public Builder arrivalPlatform(@NotNull String arrivalPlatform) {
-      putValue("arrivalPlatform", arrivalPlatform);
+    @NotNull public Builder arrivalTime(@NotNull java.util.Date date) {
+      putValue("arrivalTime", date);
       return this;
     }
     /**
-     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
+     * Destination(s) ( &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Place&quot;&gt;Place&lt;/a&gt; ) that make up a trip. For a trip where destination order is important use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ItemList&quot;&gt;ItemList&lt;/a&gt; to specify that order (see examples).
      */
-    @NotNull public Builder offers(@NotNull Demand demand) {
-      putValue("offers", demand);
+    @NotNull public Builder itinerary(@NotNull ItemList itemList) {
+      putValue("itinerary", itemList);
       return this;
     }
     /**
-     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
+     * Destination(s) ( &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Place&quot;&gt;Place&lt;/a&gt; ) that make up a trip. For a trip where destination order is important use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ItemList&quot;&gt;ItemList&lt;/a&gt; to specify that order (see examples).
      */
-    @NotNull public Builder offers(@NotNull Demand.Builder demand) {
-      putValue("offers", demand.build());
+    @NotNull public Builder itinerary(@NotNull ItemList.Builder itemList) {
+      putValue("itinerary", itemList.build());
       return this;
     }
     /**
-     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
+     * Destination(s) ( &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Place&quot;&gt;Place&lt;/a&gt; ) that make up a trip. For a trip where destination order is important use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ItemList&quot;&gt;ItemList&lt;/a&gt; to specify that order (see examples).
      */
-    @NotNull public Builder offers(@NotNull Offer offer) {
-      putValue("offers", offer);
+    @NotNull public Builder itinerary(@NotNull Place place) {
+      putValue("itinerary", place);
       return this;
     }
     /**
-     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
+     * Destination(s) ( &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Place&quot;&gt;Place&lt;/a&gt; ) that make up a trip. For a trip where destination order is important use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ItemList&quot;&gt;ItemList&lt;/a&gt; to specify that order (see examples).
      */
-    @NotNull public Builder offers(@NotNull Offer.Builder offer) {
-      putValue("offers", offer.build());
+    @NotNull public Builder itinerary(@NotNull Place.Builder place) {
+      putValue("itinerary", place.build());
       return this;
     }
     /**
@@ -267,10 +270,66 @@ public class TrainTrip extends Trip {
       return this;
     }
     /**
-     * The expected arrival time.
+     * Identifies a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Trip&quot;&gt;Trip&lt;/a&gt; that is a subTrip of this Trip.  For example Day 1, Day 2, etc. of a multi-day trip.
      */
-    @NotNull public Builder arrivalTime(@NotNull java.util.Date date) {
-      putValue("arrivalTime", date);
+    @NotNull public Builder subTrip(@NotNull Trip trip) {
+      putValue("subTrip", trip);
+      return this;
+    }
+    /**
+     * Identifies a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Trip&quot;&gt;Trip&lt;/a&gt; that is a subTrip of this Trip.  For example Day 1, Day 2, etc. of a multi-day trip.
+     */
+    @NotNull public Builder subTrip(@NotNull Trip.Builder trip) {
+      putValue("subTrip", trip.build());
+      return this;
+    }
+    /**
+     * Identifies that this &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Trip&quot;&gt;Trip&lt;/a&gt; is a subTrip of another Trip.  For example Day 1, Day 2, etc. of a multi-day trip.
+     */
+    @NotNull public Builder partOfTrip(@NotNull Trip trip) {
+      putValue("partOfTrip", trip);
+      return this;
+    }
+    /**
+     * Identifies that this &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Trip&quot;&gt;Trip&lt;/a&gt; is a subTrip of another Trip.  For example Day 1, Day 2, etc. of a multi-day trip.
+     */
+    @NotNull public Builder partOfTrip(@NotNull Trip.Builder trip) {
+      putValue("partOfTrip", trip.build());
+      return this;
+    }
+    /**
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt; to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Demand&quot;&gt;Demand&lt;/a&gt;. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     */
+    @NotNull public Builder offers(@NotNull Demand demand) {
+      putValue("offers", demand);
+      return this;
+    }
+    /**
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt; to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Demand&quot;&gt;Demand&lt;/a&gt;. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     */
+    @NotNull public Builder offers(@NotNull Demand.Builder demand) {
+      putValue("offers", demand.build());
+      return this;
+    }
+    /**
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt; to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Demand&quot;&gt;Demand&lt;/a&gt;. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     */
+    @NotNull public Builder offers(@NotNull Offer offer) {
+      putValue("offers", offer);
+      return this;
+    }
+    /**
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt; to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Demand&quot;&gt;Demand&lt;/a&gt;. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     */
+    @NotNull public Builder offers(@NotNull Offer.Builder offer) {
+      putValue("offers", offer.build());
+      return this;
+    }
+    /**
+     * URL of the item.
+     */
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
       return this;
     }
     /**
@@ -281,45 +340,17 @@ public class TrainTrip extends Trip {
       return this;
     }
     /**
-     * An alias for the item.
-     */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
-      return this;
-    }
-    /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
-      putValue("disambiguatingDescription", disambiguatingDescription);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * A description of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -330,10 +361,24 @@ public class TrainTrip extends Trip {
       return this;
     }
     /**
-     * URL of the item.
+     * The name of the item.
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
       return this;
     }
     /**
@@ -348,6 +393,27 @@ public class TrainTrip extends Trip {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
       return this;
     }
     /**
@@ -386,18 +452,18 @@ public class TrainTrip extends Trip {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("trainNumber".equals(key) && value instanceof String) { this.trainNumber((String)value); return; }
-      if ("trainNumbers".equals(key) && value instanceof String) { this.trainNumber((String)value); return; }
+      if ("arrivalPlatform".equals(key) && value instanceof String) { this.arrivalPlatform((String)value); return; }
+      if ("arrivalPlatforms".equals(key) && value instanceof String) { this.arrivalPlatform((String)value); return; }
       if ("trainName".equals(key) && value instanceof String) { this.trainName((String)value); return; }
       if ("trainNames".equals(key) && value instanceof String) { this.trainName((String)value); return; }
       if ("departureStation".equals(key) && value instanceof TrainStation) { this.departureStation((TrainStation)value); return; }
       if ("departureStations".equals(key) && value instanceof TrainStation) { this.departureStation((TrainStation)value); return; }
-      if ("arrivalStation".equals(key) && value instanceof TrainStation) { this.arrivalStation((TrainStation)value); return; }
-      if ("arrivalStations".equals(key) && value instanceof TrainStation) { this.arrivalStation((TrainStation)value); return; }
       if ("departurePlatform".equals(key) && value instanceof String) { this.departurePlatform((String)value); return; }
       if ("departurePlatforms".equals(key) && value instanceof String) { this.departurePlatform((String)value); return; }
-      if ("arrivalPlatform".equals(key) && value instanceof String) { this.arrivalPlatform((String)value); return; }
-      if ("arrivalPlatforms".equals(key) && value instanceof String) { this.arrivalPlatform((String)value); return; }
+      if ("arrivalStation".equals(key) && value instanceof TrainStation) { this.arrivalStation((TrainStation)value); return; }
+      if ("arrivalStations".equals(key) && value instanceof TrainStation) { this.arrivalStation((TrainStation)value); return; }
+      if ("trainNumber".equals(key) && value instanceof String) { this.trainNumber((String)value); return; }
+      if ("trainNumbers".equals(key) && value instanceof String) { this.trainNumber((String)value); return; }
       super.fromMap(key, value);
     }
   }

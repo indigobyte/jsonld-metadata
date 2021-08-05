@@ -28,6 +28,40 @@ import java.util.*;
  */
 public class OwnershipInfo extends StructuredValue {
   /**
+   * The product that this structured value is referring to.
+   */
+  @JsonIgnore public Product getTypeOfGoodProduct() {
+    return (Product) getValue("typeOfGood");
+  }
+  /**
+   * The product that this structured value is referring to.
+   */
+  @JsonIgnore public Collection<Product> getTypeOfGoodProducts() {
+    final Object current = myData.get("typeOfGood");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Product>) current;
+    }
+    return Arrays.asList((Product) current);
+  }
+  /**
+   * The product that this structured value is referring to.
+   */
+  @JsonIgnore public Service getTypeOfGoodService() {
+    return (Service) getValue("typeOfGood");
+  }
+  /**
+   * The product that this structured value is referring to.
+   */
+  @JsonIgnore public Collection<Service> getTypeOfGoodServices() {
+    final Object current = myData.get("typeOfGood");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Service>) current;
+    }
+    return Arrays.asList((Service) current);
+  }
+  /**
    * The organization or person from which the product was acquired.
    */
   @JsonIgnore public Organization getAcquiredFromOrganization() {
@@ -95,40 +129,6 @@ public class OwnershipInfo extends StructuredValue {
     }
     return Arrays.asList((java.util.Date) current);
   }
-  /**
-   * The product that this structured value is referring to.
-   */
-  @JsonIgnore public Product getTypeOfGoodProduct() {
-    return (Product) getValue("typeOfGood");
-  }
-  /**
-   * The product that this structured value is referring to.
-   */
-  @JsonIgnore public Collection<Product> getTypeOfGoodProducts() {
-    final Object current = myData.get("typeOfGood");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Product>) current;
-    }
-    return Arrays.asList((Product) current);
-  }
-  /**
-   * The product that this structured value is referring to.
-   */
-  @JsonIgnore public Service getTypeOfGoodService() {
-    return (Service) getValue("typeOfGood");
-  }
-  /**
-   * The product that this structured value is referring to.
-   */
-  @JsonIgnore public Collection<Service> getTypeOfGoodServices() {
-    final Object current = myData.get("typeOfGood");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Service>) current;
-    }
-    return Arrays.asList((Service) current);
-  }
   protected OwnershipInfo(java.util.Map<String,Object> data) {
     super(data);
   }
@@ -142,6 +142,34 @@ public class OwnershipInfo extends StructuredValue {
     }
     @NotNull public OwnershipInfo build() {
       return new OwnershipInfo(myData);
+    }
+    /**
+     * The product that this structured value is referring to.
+     */
+    @NotNull public Builder typeOfGood(@NotNull Product product) {
+      putValue("typeOfGood", product);
+      return this;
+    }
+    /**
+     * The product that this structured value is referring to.
+     */
+    @NotNull public Builder typeOfGood(@NotNull Product.Builder product) {
+      putValue("typeOfGood", product.build());
+      return this;
+    }
+    /**
+     * The product that this structured value is referring to.
+     */
+    @NotNull public Builder typeOfGood(@NotNull Service service) {
+      putValue("typeOfGood", service);
+      return this;
+    }
+    /**
+     * The product that this structured value is referring to.
+     */
+    @NotNull public Builder typeOfGood(@NotNull Service.Builder service) {
+      putValue("typeOfGood", service.build());
+      return this;
     }
     /**
      * The organization or person from which the product was acquired.
@@ -186,31 +214,10 @@ public class OwnershipInfo extends StructuredValue {
       return this;
     }
     /**
-     * The product that this structured value is referring to.
+     * URL of the item.
      */
-    @NotNull public Builder typeOfGood(@NotNull Product product) {
-      putValue("typeOfGood", product);
-      return this;
-    }
-    /**
-     * The product that this structured value is referring to.
-     */
-    @NotNull public Builder typeOfGood(@NotNull Product.Builder product) {
-      putValue("typeOfGood", product.build());
-      return this;
-    }
-    /**
-     * The product that this structured value is referring to.
-     */
-    @NotNull public Builder typeOfGood(@NotNull Service service) {
-      putValue("typeOfGood", service);
-      return this;
-    }
-    /**
-     * The product that this structured value is referring to.
-     */
-    @NotNull public Builder typeOfGood(@NotNull Service.Builder service) {
-      putValue("typeOfGood", service.build());
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
       return this;
     }
     /**
@@ -221,45 +228,17 @@ public class OwnershipInfo extends StructuredValue {
       return this;
     }
     /**
-     * An alias for the item.
-     */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
-      return this;
-    }
-    /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
-      putValue("disambiguatingDescription", disambiguatingDescription);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * A description of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -270,10 +249,24 @@ public class OwnershipInfo extends StructuredValue {
       return this;
     }
     /**
-     * URL of the item.
+     * The name of the item.
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
       return this;
     }
     /**
@@ -288,6 +281,27 @@ public class OwnershipInfo extends StructuredValue {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
       return this;
     }
     /**
@@ -326,6 +340,10 @@ public class OwnershipInfo extends StructuredValue {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
+      if ("typeOfGood".equals(key) && value instanceof Product) { this.typeOfGood((Product)value); return; }
+      if ("typeOfGoods".equals(key) && value instanceof Product) { this.typeOfGood((Product)value); return; }
+      if ("typeOfGood".equals(key) && value instanceof Service) { this.typeOfGood((Service)value); return; }
+      if ("typeOfGoods".equals(key) && value instanceof Service) { this.typeOfGood((Service)value); return; }
       if ("acquiredFrom".equals(key) && value instanceof Organization) { this.acquiredFrom((Organization)value); return; }
       if ("acquiredFroms".equals(key) && value instanceof Organization) { this.acquiredFrom((Organization)value); return; }
       if ("acquiredFrom".equals(key) && value instanceof Person) { this.acquiredFrom((Person)value); return; }
@@ -334,10 +352,6 @@ public class OwnershipInfo extends StructuredValue {
       if ("ownedFroms".equals(key) && value instanceof java.util.Date) { this.ownedFrom((java.util.Date)value); return; }
       if ("ownedThrough".equals(key) && value instanceof java.util.Date) { this.ownedThrough((java.util.Date)value); return; }
       if ("ownedThroughs".equals(key) && value instanceof java.util.Date) { this.ownedThrough((java.util.Date)value); return; }
-      if ("typeOfGood".equals(key) && value instanceof Product) { this.typeOfGood((Product)value); return; }
-      if ("typeOfGoods".equals(key) && value instanceof Product) { this.typeOfGood((Product)value); return; }
-      if ("typeOfGood".equals(key) && value instanceof Service) { this.typeOfGood((Service)value); return; }
-      if ("typeOfGoods".equals(key) && value instanceof Service) { this.typeOfGood((Service)value); return; }
       super.fromMap(key, value);
     }
   }

@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * Enumerated options related to a ContactPoint.
  */
 public enum ContactPointOption {
-  TollFree("http://schema.org/TollFree"), HearingImpairedSupported("http://schema.org/HearingImpairedSupported");
+  ;
   ContactPointOption(String value) {
     myValue = value;
   }

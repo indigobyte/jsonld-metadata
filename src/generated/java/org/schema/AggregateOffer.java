@@ -24,85 +24,68 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * When a single product is associated with multiple offers (for example, the same pair of shoes is offered by different merchants), then AggregateOffer can be used.\n\nNote: AggregateOffers are normally expected to associate multiple offers that all share the same defined [[businessFunction]] value, or default to http://purl.org/goodrelations/v1#Sell if businessFunction is not explicitly defined.
+ * When a single product is associated with multiple offers (for example, the same pair of shoes is offered by different merchants), then AggregateOffer can be used.&lt;br/&gt;&lt;br/&gt;
+ * 
+ * Note: AggregateOffers are normally expected to associate multiple offers that all share the same defined &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt; value, or default to http://purl.org/goodrelations/v1#Sell if businessFunction is not explicitly defined.
  */
 public class AggregateOffer extends Offer {
   /**
-   * The highest price of all offers available.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+   * The highest price of all offers available.&lt;br/&gt;&lt;br/&gt;
+   * 
+   * Usage guidelines:&lt;br/&gt;&lt;br/&gt;
+   * 
+   * &lt;ul&gt;
+   * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
+   * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
+   * &lt;/ul&gt;
+   * 
    */
-  @JsonIgnore public Integer getHighPriceInteger() {
-    return (Integer) getValue("highPrice");
+  @JsonIgnore public Number getHighPriceNumber() {
+    return (Number) getValue("highPrice");
   }
   /**
-   * The highest price of all offers available.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+   * The highest price of all offers available.&lt;br/&gt;&lt;br/&gt;
+   * 
+   * Usage guidelines:&lt;br/&gt;&lt;br/&gt;
+   * 
+   * &lt;ul&gt;
+   * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
+   * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
+   * &lt;/ul&gt;
+   * 
    */
-  @JsonIgnore public Collection<Integer> getHighPriceIntegers() {
+  @JsonIgnore public Collection<Number> getHighPriceNumbers() {
     final Object current = myData.get("highPrice");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+      return (Collection<Number>) current;
     }
-    return Arrays.asList((Integer) current);
+    return Arrays.asList((Number) current);
   }
   /**
-   * The highest price of all offers available.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-   */
-  @JsonIgnore public Long getHighPriceLong() {
-    return (Long) getValue("highPrice");
-  }
-  /**
-   * The highest price of all offers available.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-   */
-  @JsonIgnore public Collection<Long> getHighPriceLongs() {
-    final Object current = myData.get("highPrice");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
-    }
-    return Arrays.asList((Long) current);
-  }
-  /**
-   * The highest price of all offers available.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-   */
-  @JsonIgnore public Float getHighPriceFloat() {
-    return (Float) getValue("highPrice");
-  }
-  /**
-   * The highest price of all offers available.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-   */
-  @JsonIgnore public Collection<Float> getHighPriceFloats() {
-    final Object current = myData.get("highPrice");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
-    }
-    return Arrays.asList((Float) current);
-  }
-  /**
-   * The highest price of all offers available.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-   */
-  @JsonIgnore public Double getHighPriceDouble() {
-    return (Double) getValue("highPrice");
-  }
-  /**
-   * The highest price of all offers available.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-   */
-  @JsonIgnore public Collection<Double> getHighPriceDoubles() {
-    final Object current = myData.get("highPrice");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
-    }
-    return Arrays.asList((Double) current);
-  }
-  /**
-   * The highest price of all offers available.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+   * The highest price of all offers available.&lt;br/&gt;&lt;br/&gt;
+   * 
+   * Usage guidelines:&lt;br/&gt;&lt;br/&gt;
+   * 
+   * &lt;ul&gt;
+   * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
+   * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
+   * &lt;/ul&gt;
+   * 
    */
   @JsonIgnore public String getHighPriceString() {
     return (String) getValue("highPrice");
   }
   /**
-   * The highest price of all offers available.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+   * The highest price of all offers available.&lt;br/&gt;&lt;br/&gt;
+   * 
+   * Usage guidelines:&lt;br/&gt;&lt;br/&gt;
+   * 
+   * &lt;ul&gt;
+   * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
+   * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
+   * &lt;/ul&gt;
+   * 
    */
   @JsonIgnore public Collection<String> getHighPriceStrings() {
     final Object current = myData.get("highPrice");
@@ -113,81 +96,62 @@ public class AggregateOffer extends Offer {
     return Arrays.asList((String) current);
   }
   /**
-   * The lowest price of all offers available.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+   * The lowest price of all offers available.&lt;br/&gt;&lt;br/&gt;
+   * 
+   * Usage guidelines:&lt;br/&gt;&lt;br/&gt;
+   * 
+   * &lt;ul&gt;
+   * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
+   * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
+   * &lt;/ul&gt;
+   * 
    */
-  @JsonIgnore public Integer getLowPriceInteger() {
-    return (Integer) getValue("lowPrice");
+  @JsonIgnore public Number getLowPriceNumber() {
+    return (Number) getValue("lowPrice");
   }
   /**
-   * The lowest price of all offers available.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+   * The lowest price of all offers available.&lt;br/&gt;&lt;br/&gt;
+   * 
+   * Usage guidelines:&lt;br/&gt;&lt;br/&gt;
+   * 
+   * &lt;ul&gt;
+   * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
+   * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
+   * &lt;/ul&gt;
+   * 
    */
-  @JsonIgnore public Collection<Integer> getLowPriceIntegers() {
+  @JsonIgnore public Collection<Number> getLowPriceNumbers() {
     final Object current = myData.get("lowPrice");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+      return (Collection<Number>) current;
     }
-    return Arrays.asList((Integer) current);
+    return Arrays.asList((Number) current);
   }
   /**
-   * The lowest price of all offers available.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-   */
-  @JsonIgnore public Long getLowPriceLong() {
-    return (Long) getValue("lowPrice");
-  }
-  /**
-   * The lowest price of all offers available.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-   */
-  @JsonIgnore public Collection<Long> getLowPriceLongs() {
-    final Object current = myData.get("lowPrice");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
-    }
-    return Arrays.asList((Long) current);
-  }
-  /**
-   * The lowest price of all offers available.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-   */
-  @JsonIgnore public Float getLowPriceFloat() {
-    return (Float) getValue("lowPrice");
-  }
-  /**
-   * The lowest price of all offers available.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-   */
-  @JsonIgnore public Collection<Float> getLowPriceFloats() {
-    final Object current = myData.get("lowPrice");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
-    }
-    return Arrays.asList((Float) current);
-  }
-  /**
-   * The lowest price of all offers available.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-   */
-  @JsonIgnore public Double getLowPriceDouble() {
-    return (Double) getValue("lowPrice");
-  }
-  /**
-   * The lowest price of all offers available.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-   */
-  @JsonIgnore public Collection<Double> getLowPriceDoubles() {
-    final Object current = myData.get("lowPrice");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
-    }
-    return Arrays.asList((Double) current);
-  }
-  /**
-   * The lowest price of all offers available.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+   * The lowest price of all offers available.&lt;br/&gt;&lt;br/&gt;
+   * 
+   * Usage guidelines:&lt;br/&gt;&lt;br/&gt;
+   * 
+   * &lt;ul&gt;
+   * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
+   * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
+   * &lt;/ul&gt;
+   * 
    */
   @JsonIgnore public String getLowPriceString() {
     return (String) getValue("lowPrice");
   }
   /**
-   * The lowest price of all offers available.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+   * The lowest price of all offers available.&lt;br/&gt;&lt;br/&gt;
+   * 
+   * Usage guidelines:&lt;br/&gt;&lt;br/&gt;
+   * 
+   * &lt;ul&gt;
+   * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
+   * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
+   * &lt;/ul&gt;
+   * 
    */
   @JsonIgnore public Collection<String> getLowPriceStrings() {
     final Object current = myData.get("lowPrice");
@@ -215,15 +179,13 @@ public class AggregateOffer extends Offer {
     return Arrays.asList((Integer) current);
   }
   /**
-   * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-   *       
+   * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt; to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Demand&quot;&gt;Demand&lt;/a&gt;. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
    */
   @JsonIgnore public Demand getOffersDemand() {
     return (Demand) getValue("offers");
   }
   /**
-   * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-   *       
+   * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt; to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Demand&quot;&gt;Demand&lt;/a&gt;. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
    */
   @JsonIgnore public Collection<Demand> getOffersDemands() {
     final Object current = myData.get("offers");
@@ -234,15 +196,13 @@ public class AggregateOffer extends Offer {
     return Arrays.asList((Demand) current);
   }
   /**
-   * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-   *       
+   * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt; to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Demand&quot;&gt;Demand&lt;/a&gt;. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
    */
   @JsonIgnore public Offer getOffersOffer() {
     return (Offer) getValue("offers");
   }
   /**
-   * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-   *       
+   * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt; to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Demand&quot;&gt;Demand&lt;/a&gt;. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
    */
   @JsonIgnore public Collection<Offer> getOffersOffers() {
     final Object current = myData.get("offers");
@@ -267,70 +227,60 @@ public class AggregateOffer extends Offer {
       return new AggregateOffer(myData);
     }
     /**
-     * The highest price of all offers available.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     * The highest price of all offers available.&lt;br/&gt;&lt;br/&gt;
+     * 
+     * Usage guidelines:&lt;br/&gt;&lt;br/&gt;
+     * 
+     * &lt;ul&gt;
+     * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
+     * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
+     * &lt;/ul&gt;
+     * 
      */
-    @NotNull public Builder highPrice(@NotNull Integer integer) {
-      putValue("highPrice", integer);
+    @NotNull public Builder highPrice(@NotNull Number number) {
+      putValue("highPrice", number);
       return this;
     }
     /**
-     * The highest price of all offers available.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-     */
-    @NotNull public Builder highPrice(@NotNull Long highPrice) {
-      putValue("highPrice", highPrice);
-      return this;
-    }
-    /**
-     * The highest price of all offers available.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-     */
-    @NotNull public Builder highPrice(@NotNull Float highPrice) {
-      putValue("highPrice", highPrice);
-      return this;
-    }
-    /**
-     * The highest price of all offers available.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-     */
-    @NotNull public Builder highPrice(@NotNull Double highPrice) {
-      putValue("highPrice", highPrice);
-      return this;
-    }
-    /**
-     * The highest price of all offers available.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     * The highest price of all offers available.&lt;br/&gt;&lt;br/&gt;
+     * 
+     * Usage guidelines:&lt;br/&gt;&lt;br/&gt;
+     * 
+     * &lt;ul&gt;
+     * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
+     * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
+     * &lt;/ul&gt;
+     * 
      */
     @NotNull public Builder highPrice(@NotNull String highPrice) {
       putValue("highPrice", highPrice);
       return this;
     }
     /**
-     * The lowest price of all offers available.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     * The lowest price of all offers available.&lt;br/&gt;&lt;br/&gt;
+     * 
+     * Usage guidelines:&lt;br/&gt;&lt;br/&gt;
+     * 
+     * &lt;ul&gt;
+     * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
+     * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
+     * &lt;/ul&gt;
+     * 
      */
-    @NotNull public Builder lowPrice(@NotNull Integer integer) {
-      putValue("lowPrice", integer);
+    @NotNull public Builder lowPrice(@NotNull Number number) {
+      putValue("lowPrice", number);
       return this;
     }
     /**
-     * The lowest price of all offers available.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-     */
-    @NotNull public Builder lowPrice(@NotNull Long lowPrice) {
-      putValue("lowPrice", lowPrice);
-      return this;
-    }
-    /**
-     * The lowest price of all offers available.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-     */
-    @NotNull public Builder lowPrice(@NotNull Float lowPrice) {
-      putValue("lowPrice", lowPrice);
-      return this;
-    }
-    /**
-     * The lowest price of all offers available.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-     */
-    @NotNull public Builder lowPrice(@NotNull Double lowPrice) {
-      putValue("lowPrice", lowPrice);
-      return this;
-    }
-    /**
-     * The lowest price of all offers available.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     * The lowest price of all offers available.&lt;br/&gt;&lt;br/&gt;
+     * 
+     * Usage guidelines:&lt;br/&gt;&lt;br/&gt;
+     * 
+     * &lt;ul&gt;
+     * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
+     * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
+     * &lt;/ul&gt;
+     * 
      */
     @NotNull public Builder lowPrice(@NotNull String lowPrice) {
       putValue("lowPrice", lowPrice);
@@ -344,98 +294,31 @@ public class AggregateOffer extends Offer {
       return this;
     }
     /**
-     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt; to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Demand&quot;&gt;Demand&lt;/a&gt;. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      */
     @NotNull public Builder offers(@NotNull Demand demand) {
       putValue("offers", demand);
       return this;
     }
     /**
-     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt; to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Demand&quot;&gt;Demand&lt;/a&gt;. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      */
     @NotNull public Builder offers(@NotNull Demand.Builder demand) {
       putValue("offers", demand.build());
       return this;
     }
     /**
-     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt; to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Demand&quot;&gt;Demand&lt;/a&gt;. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      */
     @NotNull public Builder offers(@NotNull Offer offer) {
       putValue("offers", offer);
       return this;
     }
     /**
-     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt; to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Demand&quot;&gt;Demand&lt;/a&gt;. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      */
     @NotNull public Builder offers(@NotNull Offer.Builder offer) {
       putValue("offers", offer.build());
-      return this;
-    }
-    /**
-     * The payment method(s) accepted by seller for this offer.
-     */
-    @NotNull public Builder acceptedPaymentMethod(@NotNull LoanOrCredit loanOrCredit) {
-      putValue("acceptedPaymentMethod", loanOrCredit);
-      return this;
-    }
-    /**
-     * The payment method(s) accepted by seller for this offer.
-     */
-    @NotNull public Builder acceptedPaymentMethod(@NotNull LoanOrCredit.Builder loanOrCredit) {
-      putValue("acceptedPaymentMethod", loanOrCredit.build());
-      return this;
-    }
-    /**
-     * The payment method(s) accepted by seller for this offer.
-     */
-    @NotNull public Builder acceptedPaymentMethod(@NotNull PaymentMethod paymentMethod) {
-      putValue("acceptedPaymentMethod", paymentMethod);
-      return this;
-    }
-    /**
-     * An additional offer that can only be obtained in combination with the first base offer (e.g. supplements and extensions that are available for a surcharge).
-     */
-    @NotNull public Builder addOn(@NotNull Offer offer) {
-      putValue("addOn", offer);
-      return this;
-    }
-    /**
-     * An additional offer that can only be obtained in combination with the first base offer (e.g. supplements and extensions that are available for a surcharge).
-     */
-    @NotNull public Builder addOn(@NotNull Offer.Builder offer) {
-      putValue("addOn", offer.build());
-      return this;
-    }
-    /**
-     * The amount of time that is required between accepting the offer and the actual usage of the resource or service.
-     */
-    @NotNull public Builder advanceBookingRequirement(@NotNull QuantitativeValue quantitativeValue) {
-      putValue("advanceBookingRequirement", quantitativeValue);
-      return this;
-    }
-    /**
-     * The amount of time that is required between accepting the offer and the actual usage of the resource or service.
-     */
-    @NotNull public Builder advanceBookingRequirement(@NotNull QuantitativeValue.Builder quantitativeValue) {
-      putValue("advanceBookingRequirement", quantitativeValue.build());
-      return this;
-    }
-    /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
-     */
-    @NotNull public Builder aggregateRating(@NotNull AggregateRating aggregateRating) {
-      putValue("aggregateRating", aggregateRating);
-      return this;
-    }
-    /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
-     */
-    @NotNull public Builder aggregateRating(@NotNull AggregateRating.Builder aggregateRating) {
-      putValue("aggregateRating", aggregateRating.build());
       return this;
     }
     /**
@@ -443,198 +326,6 @@ public class AggregateOffer extends Offer {
      */
     @NotNull public Builder availability(@NotNull ItemAvailability itemAvailability) {
       putValue("availability", itemAvailability);
-      return this;
-    }
-    /**
-     * The end of the availability of the product or service included in the offer.
-     */
-    @NotNull public Builder availabilityEnds(@NotNull java.util.Date date) {
-      putValue("availabilityEnds", date);
-      return this;
-    }
-    /**
-     * The beginning of the availability of the product or service included in the offer.
-     */
-    @NotNull public Builder availabilityStarts(@NotNull java.util.Date date) {
-      putValue("availabilityStarts", date);
-      return this;
-    }
-    /**
-     * The place(s) from which the offer can be obtained (e.g. store locations).
-     */
-    @NotNull public Builder availableAtOrFrom(@NotNull Place place) {
-      putValue("availableAtOrFrom", place);
-      return this;
-    }
-    /**
-     * The place(s) from which the offer can be obtained (e.g. store locations).
-     */
-    @NotNull public Builder availableAtOrFrom(@NotNull Place.Builder place) {
-      putValue("availableAtOrFrom", place.build());
-      return this;
-    }
-    /**
-     * The delivery method(s) available for this offer.
-     */
-    @NotNull public Builder availableDeliveryMethod(@NotNull DeliveryMethod deliveryMethod) {
-      putValue("availableDeliveryMethod", deliveryMethod);
-      return this;
-    }
-    /**
-     * The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
-     */
-    @NotNull public Builder businessFunction(@NotNull BusinessFunction businessFunction) {
-      putValue("businessFunction", businessFunction);
-      return this;
-    }
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     */
-    @NotNull public Builder category(@NotNull String category) {
-      putValue("category", category);
-      return this;
-    }
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     */
-    @NotNull public Builder category(@NotNull Thing thing) {
-      putValue("category", thing);
-      return this;
-    }
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     */
-    @NotNull public Builder category(@NotNull Thing.Builder thing) {
-      putValue("category", thing.build());
-      return this;
-    }
-    /**
-     * The typical delay between the receipt of the order and the goods either leaving the warehouse or being prepared for pickup, in case the delivery method is on site pickup.
-     */
-    @NotNull public Builder deliveryLeadTime(@NotNull QuantitativeValue quantitativeValue) {
-      putValue("deliveryLeadTime", quantitativeValue);
-      return this;
-    }
-    /**
-     * The typical delay between the receipt of the order and the goods either leaving the warehouse or being prepared for pickup, in case the delivery method is on site pickup.
-     */
-    @NotNull public Builder deliveryLeadTime(@NotNull QuantitativeValue.Builder quantitativeValue) {
-      putValue("deliveryLeadTime", quantitativeValue.build());
-      return this;
-    }
-    /**
-     * The type(s) of customers for which the given offer is valid.
-     */
-    @NotNull public Builder eligibleCustomerType(@NotNull BusinessEntityType businessEntityType) {
-      putValue("eligibleCustomerType", businessEntityType);
-      return this;
-    }
-    /**
-     * The duration for which the given offer is valid.
-     */
-    @NotNull public Builder eligibleDuration(@NotNull QuantitativeValue quantitativeValue) {
-      putValue("eligibleDuration", quantitativeValue);
-      return this;
-    }
-    /**
-     * The duration for which the given offer is valid.
-     */
-    @NotNull public Builder eligibleDuration(@NotNull QuantitativeValue.Builder quantitativeValue) {
-      putValue("eligibleDuration", quantitativeValue.build());
-      return this;
-    }
-    /**
-     * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
-     */
-    @NotNull public Builder eligibleQuantity(@NotNull QuantitativeValue quantitativeValue) {
-      putValue("eligibleQuantity", quantitativeValue);
-      return this;
-    }
-    /**
-     * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
-     */
-    @NotNull public Builder eligibleQuantity(@NotNull QuantitativeValue.Builder quantitativeValue) {
-      putValue("eligibleQuantity", quantitativeValue.build());
-      return this;
-    }
-    /**
-     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\n\nSee also [[ineligibleRegion]].
-     *     
-     */
-    @NotNull public Builder eligibleRegion(@NotNull GeoShape geoShape) {
-      putValue("eligibleRegion", geoShape);
-      return this;
-    }
-    /**
-     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\n\nSee also [[ineligibleRegion]].
-     *     
-     */
-    @NotNull public Builder eligibleRegion(@NotNull GeoShape.Builder geoShape) {
-      putValue("eligibleRegion", geoShape.build());
-      return this;
-    }
-    /**
-     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\n\nSee also [[ineligibleRegion]].
-     *     
-     */
-    @NotNull public Builder eligibleRegion(@NotNull Place place) {
-      putValue("eligibleRegion", place);
-      return this;
-    }
-    /**
-     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\n\nSee also [[ineligibleRegion]].
-     *     
-     */
-    @NotNull public Builder eligibleRegion(@NotNull Place.Builder place) {
-      putValue("eligibleRegion", place.build());
-      return this;
-    }
-    /**
-     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\n\nSee also [[ineligibleRegion]].
-     *     
-     */
-    @NotNull public Builder eligibleRegion(@NotNull String eligibleRegion) {
-      putValue("eligibleRegion", eligibleRegion);
-      return this;
-    }
-    /**
-     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.\n\nSee also [[eligibleRegion]].
-     *       
-     */
-    @NotNull public Builder ineligibleRegion(@NotNull GeoShape geoShape) {
-      putValue("ineligibleRegion", geoShape);
-      return this;
-    }
-    /**
-     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.\n\nSee also [[eligibleRegion]].
-     *       
-     */
-    @NotNull public Builder ineligibleRegion(@NotNull GeoShape.Builder geoShape) {
-      putValue("ineligibleRegion", geoShape.build());
-      return this;
-    }
-    /**
-     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.\n\nSee also [[eligibleRegion]].
-     *       
-     */
-    @NotNull public Builder ineligibleRegion(@NotNull Place place) {
-      putValue("ineligibleRegion", place);
-      return this;
-    }
-    /**
-     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.\n\nSee also [[eligibleRegion]].
-     *       
-     */
-    @NotNull public Builder ineligibleRegion(@NotNull Place.Builder place) {
-      putValue("ineligibleRegion", place.build());
-      return this;
-    }
-    /**
-     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.\n\nSee also [[eligibleRegion]].
-     *       
-     */
-    @NotNull public Builder ineligibleRegion(@NotNull String ineligibleRegion) {
-      putValue("ineligibleRegion", ineligibleRegion);
       return this;
     }
     /**
@@ -652,59 +343,183 @@ public class AggregateOffer extends Offer {
       return this;
     }
     /**
-     * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.&lt;br/&gt;&lt;br/&gt;
+     * 
+     * See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/eligibleRegion&quot;&gt;eligibleRegion&lt;/a&gt;.
      */
-    @NotNull public Builder gtin12(@NotNull Identifier identifier) {
-      putValue("gtin12", identifier);
+    @NotNull public Builder ineligibleRegion(@NotNull GeoShape geoShape) {
+      putValue("ineligibleRegion", geoShape);
       return this;
     }
     /**
-     * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.&lt;br/&gt;&lt;br/&gt;
+     * 
+     * See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/eligibleRegion&quot;&gt;eligibleRegion&lt;/a&gt;.
      */
-    @NotNull public Builder gtin12(@NotNull String gtin12) {
-      putValue("gtin12", gtin12);
+    @NotNull public Builder ineligibleRegion(@NotNull GeoShape.Builder geoShape) {
+      putValue("ineligibleRegion", geoShape.build());
       return this;
     }
     /**
-     * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceeding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.&lt;br/&gt;&lt;br/&gt;
+     * 
+     * See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/eligibleRegion&quot;&gt;eligibleRegion&lt;/a&gt;.
      */
-    @NotNull public Builder gtin13(@NotNull Identifier identifier) {
-      putValue("gtin13", identifier);
+    @NotNull public Builder ineligibleRegion(@NotNull Place place) {
+      putValue("ineligibleRegion", place);
       return this;
     }
     /**
-     * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceeding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.&lt;br/&gt;&lt;br/&gt;
+     * 
+     * See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/eligibleRegion&quot;&gt;eligibleRegion&lt;/a&gt;.
      */
-    @NotNull public Builder gtin13(@NotNull String gtin13) {
-      putValue("gtin13", gtin13);
+    @NotNull public Builder ineligibleRegion(@NotNull Place.Builder place) {
+      putValue("ineligibleRegion", place.build());
       return this;
     }
     /**
-     * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.&lt;br/&gt;&lt;br/&gt;
+     * 
+     * See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/eligibleRegion&quot;&gt;eligibleRegion&lt;/a&gt;.
      */
-    @NotNull public Builder gtin14(@NotNull Identifier identifier) {
-      putValue("gtin14", identifier);
+    @NotNull public Builder ineligibleRegion(@NotNull String ineligibleRegion) {
+      putValue("ineligibleRegion", ineligibleRegion);
       return this;
     }
     /**
-     * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     * The GTIN-14 code of the product, or the product to which the offer refers. See &lt;a href=&quot;http://www.gs1.org/barcodes/technical/idkeys/gtin&quot;&gt;GS1 GTIN Summary&lt;/a&gt; for more details.
      */
-    @NotNull public Builder gtin14(@NotNull String gtin14) {
-      putValue("gtin14", gtin14);
+    @NotNull public Builder gtin14(@NotNull Gtin gtin) {
+      putValue("gtin14", gtin);
       return this;
     }
     /**
-     * The [GTIN-8](http://apps.gs1.org/GDD/glossary/Pages/GTIN-8.aspx) code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     * The duration for which the given offer is valid.
      */
-    @NotNull public Builder gtin8(@NotNull Identifier identifier) {
-      putValue("gtin8", identifier);
+    @NotNull public Builder eligibleDuration(@NotNull QuantitativeValue quantitativeValue) {
+      putValue("eligibleDuration", quantitativeValue);
       return this;
     }
     /**
-     * The [GTIN-8](http://apps.gs1.org/GDD/glossary/Pages/GTIN-8.aspx) code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     * The duration for which the given offer is valid.
      */
-    @NotNull public Builder gtin8(@NotNull String gtin8) {
-      putValue("gtin8", gtin8);
+    @NotNull public Builder eligibleDuration(@NotNull QuantitativeValue.Builder quantitativeValue) {
+      putValue("eligibleDuration", quantitativeValue.build());
+      return this;
+    }
+    /**
+     * The delivery method(s) available for this offer.
+     */
+    @NotNull public Builder availableDeliveryMethod(@NotNull DeliveryMethod deliveryMethod) {
+      putValue("availableDeliveryMethod", deliveryMethod);
+      return this;
+    }
+    /**
+     * One or more detailed price specifications, indicating the unit price and delivery or payment charges.
+     */
+    @NotNull public Builder priceSpecification(@NotNull PriceSpecification priceSpecification) {
+      putValue("priceSpecification", priceSpecification);
+      return this;
+    }
+    /**
+     * One or more detailed price specifications, indicating the unit price and delivery or payment charges.
+     */
+    @NotNull public Builder priceSpecification(@NotNull PriceSpecification.Builder priceSpecification) {
+      putValue("priceSpecification", priceSpecification.build());
+      return this;
+    }
+    /**
+     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+     */
+    @NotNull public Builder seller(@NotNull Participant participant) {
+      putValue("seller", participant);
+      return this;
+    }
+    /**
+     * The overall rating, based on a collection of reviews or ratings, of the item.
+     */
+    @NotNull public Builder aggregateRating(@NotNull AggregateRating aggregateRating) {
+      putValue("aggregateRating", aggregateRating);
+      return this;
+    }
+    /**
+     * The overall rating, based on a collection of reviews or ratings, of the item.
+     */
+    @NotNull public Builder aggregateRating(@NotNull AggregateRating.Builder aggregateRating) {
+      putValue("aggregateRating", aggregateRating.build());
+      return this;
+    }
+    /**
+     * The beginning of the availability of the product or service included in the offer.
+     */
+    @NotNull public Builder availabilityStarts(@NotNull java.util.Date date) {
+      putValue("availabilityStarts", date);
+      return this;
+    }
+    /**
+     * Length of the lease for some &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Accommodation&quot;&gt;Accommodation&lt;/a&gt;, either particular to some &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Offer&quot;&gt;Offer&lt;/a&gt; or in some cases intrinsic to the property.
+     */
+    @NotNull public Builder leaseLength(@NotNull Duration duration) {
+      putValue("leaseLength", duration);
+      return this;
+    }
+    /**
+     * Length of the lease for some &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Accommodation&quot;&gt;Accommodation&lt;/a&gt;, either particular to some &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Offer&quot;&gt;Offer&lt;/a&gt; or in some cases intrinsic to the property.
+     */
+    @NotNull public Builder leaseLength(@NotNull QuantitativeValue quantitativeValue) {
+      putValue("leaseLength", quantitativeValue);
+      return this;
+    }
+    /**
+     * Length of the lease for some &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Accommodation&quot;&gt;Accommodation&lt;/a&gt;, either particular to some &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Offer&quot;&gt;Offer&lt;/a&gt; or in some cases intrinsic to the property.
+     */
+    @NotNull public Builder leaseLength(@NotNull QuantitativeValue.Builder quantitativeValue) {
+      putValue("leaseLength", quantitativeValue.build());
+      return this;
+    }
+    /**
+     * The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
+     */
+    @NotNull public Builder businessFunction(@NotNull BusinessFunction businessFunction) {
+      putValue("businessFunction", businessFunction);
+      return this;
+    }
+    /**
+     * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
+     */
+    @NotNull public Builder eligibleQuantity(@NotNull QuantitativeValue quantitativeValue) {
+      putValue("eligibleQuantity", quantitativeValue);
+      return this;
+    }
+    /**
+     * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
+     */
+    @NotNull public Builder eligibleQuantity(@NotNull QuantitativeValue.Builder quantitativeValue) {
+      putValue("eligibleQuantity", quantitativeValue.build());
+      return this;
+    }
+    /**
+     * The date when the item becomes valid.
+     */
+    @NotNull public Builder validFrom(@NotNull java.util.Date date) {
+      putValue("validFrom", date);
+      return this;
+    }
+    /**
+     * The currency of the price, or a price component when attached to &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/PriceSpecification&quot;&gt;PriceSpecification&lt;/a&gt; and its subtypes.&lt;br/&gt;&lt;br/&gt;
+     * 
+     * Use standard formats: &lt;a href=&quot;http://en.wikipedia.org/wiki/ISO_4217&quot;&gt;ISO 4217 currency format&lt;/a&gt; e.g. &quot;USD&quot;; &lt;a href=&quot;https://en.wikipedia.org/wiki/List_of_cryptocurrencies&quot;&gt;Ticker symbol&lt;/a&gt; for cryptocurrencies e.g. &quot;BTC&quot;; well known names for &lt;a href=&quot;https://en.wikipedia.org/wiki/Local_exchange_trading_system&quot;&gt;Local Exchange Tradings Systems&lt;/a&gt; (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;.
+     */
+    @NotNull public Builder priceCurrency(@NotNull String priceCurrency) {
+      putValue("priceCurrency", priceCurrency);
+      return this;
+    }
+    /**
+     * The &lt;a href=&quot;http://apps.gs1.org/GDD/glossary/Pages/GTIN-8.aspx&quot;&gt;GTIN-8&lt;/a&gt; code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See &lt;a href=&quot;http://www.gs1.org/barcodes/technical/idkeys/gtin&quot;&gt;GS1 GTIN Summary&lt;/a&gt; for more details.
+     */
+    @NotNull public Builder gtin8(@NotNull Gtin gtin) {
+      putValue("gtin8", gtin);
       return this;
     }
     /**
@@ -722,6 +537,203 @@ public class AggregateOffer extends Offer {
       return this;
     }
     /**
+     * The typical delay between the receipt of the order and the goods either leaving the warehouse or being prepared for pickup, in case the delivery method is on site pickup.
+     */
+    @NotNull public Builder deliveryLeadTime(@NotNull QuantitativeValue quantitativeValue) {
+      putValue("deliveryLeadTime", quantitativeValue);
+      return this;
+    }
+    /**
+     * The typical delay between the receipt of the order and the goods either leaving the warehouse or being prepared for pickup, in case the delivery method is on site pickup.
+     */
+    @NotNull public Builder deliveryLeadTime(@NotNull QuantitativeValue.Builder quantitativeValue) {
+      putValue("deliveryLeadTime", quantitativeValue.build());
+      return this;
+    }
+    /**
+     * The serial number or any alphanumeric identifier of a particular product. When attached to an offer, it is a shortcut for the serial number of the product included in the offer.
+     */
+    @NotNull public Builder serialNumber(@NotNull SerialNumber serialNumber) {
+      putValue("serialNumber", serialNumber);
+      return this;
+    }
+    /**
+     * The place(s) from which the offer can be obtained (e.g. store locations).
+     */
+    @NotNull public Builder availableAtOrFrom(@NotNull AreaServed areaServed) {
+      putValue("availableAtOrFrom", areaServed);
+      return this;
+    }
+    /**
+     * The type(s) of customers for which the given offer is valid.
+     */
+    @NotNull public Builder eligibleCustomerType(@NotNull BusinessEntityType businessEntityType) {
+      putValue("eligibleCustomerType", businessEntityType);
+      return this;
+    }
+    /**
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.&lt;br/&gt;&lt;br/&gt;
+     * 
+     * See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ineligibleRegion&quot;&gt;ineligibleRegion&lt;/a&gt;.
+     */
+    @NotNull public Builder eligibleRegion(@NotNull AreaServed areaServed) {
+      putValue("eligibleRegion", areaServed);
+      return this;
+    }
+    /**
+     * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
+     */
+    @NotNull public Builder sku(@NotNull Identifier identifier) {
+      putValue("sku", identifier);
+      return this;
+    }
+    /**
+     * A predefined value from OfferItemCondition or a textual description of the condition of the product or service, or the products or services included in the offer.
+     */
+    @NotNull public Builder itemCondition(@NotNull OfferItemCondition offerItemCondition) {
+      putValue("itemCondition", offerItemCondition);
+      return this;
+    }
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     */
+    @NotNull public Builder category(@NotNull Category category) {
+      putValue("category", category);
+      return this;
+    }
+    /**
+     * A review of the item.
+     */
+    @NotNull public Builder review(@NotNull Review review) {
+      putValue("review", review);
+      return this;
+    }
+    /**
+     * A review of the item.
+     */
+    @NotNull public Builder review(@NotNull Review.Builder review) {
+      putValue("review", review.build());
+      return this;
+    }
+    /**
+     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
+     */
+    @NotNull public Builder validThrough(@NotNull java.util.Date date) {
+      putValue("validThrough", date);
+      return this;
+    }
+    /**
+     * The payment method(s) accepted by seller for this offer.
+     */
+    @NotNull public Builder acceptedPaymentMethod(@NotNull LoanOrCredit loanOrCredit) {
+      putValue("acceptedPaymentMethod", loanOrCredit);
+      return this;
+    }
+    /**
+     * The payment method(s) accepted by seller for this offer.
+     */
+    @NotNull public Builder acceptedPaymentMethod(@NotNull PaymentMethod paymentMethod) {
+      putValue("acceptedPaymentMethod", paymentMethod);
+      return this;
+    }
+    /**
+     * The payment method(s) accepted by seller for this offer.
+     */
+    @NotNull public Builder acceptedPaymentMethod(@NotNull PaymentMethod.Builder paymentMethod) {
+      putValue("acceptedPaymentMethod", paymentMethod.build());
+      return this;
+    }
+    /**
+     * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See &lt;a href=&quot;http://www.gs1.org/barcodes/technical/idkeys/gtin&quot;&gt;GS1 GTIN Summary&lt;/a&gt; for more details.
+     */
+    @NotNull public Builder gtin12(@NotNull Gtin gtin) {
+      putValue("gtin12", gtin);
+      return this;
+    }
+    /**
+     * The end of the availability of the product or service included in the offer.
+     */
+    @NotNull public Builder availabilityEnds(@NotNull java.util.Date date) {
+      putValue("availabilityEnds", date);
+      return this;
+    }
+    /**
+     * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceeding zero. See &lt;a href=&quot;http://www.gs1.org/barcodes/technical/idkeys/gtin&quot;&gt;GS1 GTIN Summary&lt;/a&gt; for more details.
+     */
+    @NotNull public Builder gtin13(@NotNull Identifier identifier) {
+      putValue("gtin13", identifier);
+      return this;
+    }
+    /**
+     * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
+     */
+    @NotNull public Builder mpn(@NotNull String mpn) {
+      putValue("mpn", mpn);
+      return this;
+    }
+    /**
+     * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.&lt;br/&gt;&lt;br/&gt;
+     * 
+     * Usage guidelines:&lt;br/&gt;&lt;br/&gt;
+     * 
+     * &lt;ul&gt;
+     * &lt;li&gt;Use the &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/priceCurrency&quot;&gt;priceCurrency&lt;/a&gt; property (with standard formats: &lt;a href=&quot;http://en.wikipedia.org/wiki/ISO_4217&quot;&gt;ISO 4217 currency format&lt;/a&gt; e.g. &quot;USD&quot;; &lt;a href=&quot;https://en.wikipedia.org/wiki/List_of_cryptocurrencies&quot;&gt;Ticker symbol&lt;/a&gt; for cryptocurrencies e.g. &quot;BTC&quot;; well known names for &lt;a href=&quot;https://en.wikipedia.org/wiki/Local_exchange_trading_system&quot;&gt;Local Exchange Tradings Systems&lt;/a&gt; (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;) instead of including &lt;a href=&quot;http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign&quot;&gt;ambiguous symbols&lt;/a&gt; such as '$' in the value.&lt;/li&gt;
+     * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
+     * &lt;li&gt;Note that both &lt;a href=&quot;http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute&quot;&gt;RDFa&lt;/a&gt; and Microdata syntax allow the use of a &quot;content=&quot; attribute for publishing simple machine-readable values alongside more human-friendly formatting.&lt;/li&gt;
+     * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
+     * &lt;/ul&gt;
+     * 
+     */
+    @NotNull public Builder price(@NotNull Number number) {
+      putValue("price", number);
+      return this;
+    }
+    /**
+     * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.&lt;br/&gt;&lt;br/&gt;
+     * 
+     * Usage guidelines:&lt;br/&gt;&lt;br/&gt;
+     * 
+     * &lt;ul&gt;
+     * &lt;li&gt;Use the &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/priceCurrency&quot;&gt;priceCurrency&lt;/a&gt; property (with standard formats: &lt;a href=&quot;http://en.wikipedia.org/wiki/ISO_4217&quot;&gt;ISO 4217 currency format&lt;/a&gt; e.g. &quot;USD&quot;; &lt;a href=&quot;https://en.wikipedia.org/wiki/List_of_cryptocurrencies&quot;&gt;Ticker symbol&lt;/a&gt; for cryptocurrencies e.g. &quot;BTC&quot;; well known names for &lt;a href=&quot;https://en.wikipedia.org/wiki/Local_exchange_trading_system&quot;&gt;Local Exchange Tradings Systems&lt;/a&gt; (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;) instead of including &lt;a href=&quot;http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign&quot;&gt;ambiguous symbols&lt;/a&gt; such as '$' in the value.&lt;/li&gt;
+     * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
+     * &lt;li&gt;Note that both &lt;a href=&quot;http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute&quot;&gt;RDFa&lt;/a&gt; and Microdata syntax allow the use of a &quot;content=&quot; attribute for publishing simple machine-readable values alongside more human-friendly formatting.&lt;/li&gt;
+     * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
+     * &lt;/ul&gt;
+     * 
+     */
+    @NotNull public Builder price(@NotNull String price) {
+      putValue("price", price);
+      return this;
+    }
+    /**
+     * The warranty promise(s) included in the offer.
+     */
+    @NotNull public Builder warranty(@NotNull WarrantyPromise warrantyPromise) {
+      putValue("warranty", warrantyPromise);
+      return this;
+    }
+    /**
+     * The warranty promise(s) included in the offer.
+     */
+    @NotNull public Builder warranty(@NotNull WarrantyPromise.Builder warrantyPromise) {
+      putValue("warranty", warrantyPromise.build());
+      return this;
+    }
+    /**
+     * An additional offer that can only be obtained in combination with the first base offer (e.g. supplements and extensions that are available for a surcharge).
+     */
+    @NotNull public Builder addOn(@NotNull Offer offer) {
+      putValue("addOn", offer);
+      return this;
+    }
+    /**
+     * An additional offer that can only be obtained in combination with the first base offer (e.g. supplements and extensions that are available for a surcharge).
+     */
+    @NotNull public Builder addOn(@NotNull Offer.Builder offer) {
+      putValue("addOn", offer.build());
+      return this;
+    }
+    /**
      * The current approximate inventory level for the item or items.
      */
     @NotNull public Builder inventoryLevel(@NotNull QuantitativeValue quantitativeValue) {
@@ -736,108 +748,24 @@ public class AggregateOffer extends Offer {
       return this;
     }
     /**
-     * A predefined value from OfferItemCondition or a textual description of the condition of the product or service, or the products or services included in the offer.
+     * The date after which the price is no longer available.
      */
-    @NotNull public Builder itemCondition(@NotNull OfferItemCondition offerItemCondition) {
-      putValue("itemCondition", offerItemCondition);
+    @NotNull public Builder priceValidUntil(@NotNull java.util.Date date) {
+      putValue("priceValidUntil", date);
       return this;
     }
     /**
-     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * The amount of time that is required between accepting the offer and the actual usage of the resource or service.
      */
-    @NotNull public Builder itemOffered(@NotNull AggregateOffer aggregateOffer) {
-      putValue("itemOffered", aggregateOffer);
+    @NotNull public Builder advanceBookingRequirement(@NotNull QuantitativeValue quantitativeValue) {
+      putValue("advanceBookingRequirement", quantitativeValue);
       return this;
     }
     /**
-     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * The amount of time that is required between accepting the offer and the actual usage of the resource or service.
      */
-    @NotNull public Builder itemOffered(@NotNull AggregateOffer.Builder aggregateOffer) {
-      putValue("itemOffered", aggregateOffer.build());
-      return this;
-    }
-    /**
-     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     */
-    @NotNull public Builder itemOffered(@NotNull CreativeWork creativeWork) {
-      putValue("itemOffered", creativeWork);
-      return this;
-    }
-    /**
-     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     */
-    @NotNull public Builder itemOffered(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("itemOffered", creativeWork.build());
-      return this;
-    }
-    /**
-     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     */
-    @NotNull public Builder itemOffered(@NotNull Event event) {
-      putValue("itemOffered", event);
-      return this;
-    }
-    /**
-     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     */
-    @NotNull public Builder itemOffered(@NotNull Event.Builder event) {
-      putValue("itemOffered", event.build());
-      return this;
-    }
-    /**
-     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     */
-    @NotNull public Builder itemOffered(@NotNull MenuItem menuItem) {
-      putValue("itemOffered", menuItem);
-      return this;
-    }
-    /**
-     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     */
-    @NotNull public Builder itemOffered(@NotNull MenuItem.Builder menuItem) {
-      putValue("itemOffered", menuItem.build());
-      return this;
-    }
-    /**
-     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     */
-    @NotNull public Builder itemOffered(@NotNull Product product) {
-      putValue("itemOffered", product);
-      return this;
-    }
-    /**
-     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     */
-    @NotNull public Builder itemOffered(@NotNull Product.Builder product) {
-      putValue("itemOffered", product.build());
-      return this;
-    }
-    /**
-     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     */
-    @NotNull public Builder itemOffered(@NotNull Service service) {
-      putValue("itemOffered", service);
-      return this;
-    }
-    /**
-     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     */
-    @NotNull public Builder itemOffered(@NotNull Service.Builder service) {
-      putValue("itemOffered", service.build());
-      return this;
-    }
-    /**
-     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     */
-    @NotNull public Builder itemOffered(@NotNull Trip trip) {
-      putValue("itemOffered", trip);
-      return this;
-    }
-    /**
-     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     */
-    @NotNull public Builder itemOffered(@NotNull Trip.Builder trip) {
-      putValue("itemOffered", trip.build());
+    @NotNull public Builder advanceBookingRequirement(@NotNull QuantitativeValue.Builder quantitativeValue) {
+      putValue("advanceBookingRequirement", quantitativeValue.build());
       return this;
     }
     /**
@@ -869,169 +797,108 @@ public class AggregateOffer extends Offer {
       return this;
     }
     /**
-     * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
+     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt;, e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      */
-    @NotNull public Builder mpn(@NotNull String mpn) {
-      putValue("mpn", mpn);
+    @NotNull public Builder itemOffered(@NotNull AggregateOffer aggregateOffer) {
+      putValue("itemOffered", aggregateOffer);
       return this;
     }
     /**
-     * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.\n\nUsage guidelines:\n\n* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;) instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.\n* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a &quot;content=&quot; attribute for publishing simple machine-readable values alongside more human-friendly formatting.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
-     *       
+     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt;, e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      */
-    @NotNull public Builder price(@NotNull Integer integer) {
-      putValue("price", integer);
+    @NotNull public Builder itemOffered(@NotNull AggregateOffer.Builder aggregateOffer) {
+      putValue("itemOffered", aggregateOffer.build());
       return this;
     }
     /**
-     * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.\n\nUsage guidelines:\n\n* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;) instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.\n* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a &quot;content=&quot; attribute for publishing simple machine-readable values alongside more human-friendly formatting.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
-     *       
+     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt;, e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      */
-    @NotNull public Builder price(@NotNull Long price) {
-      putValue("price", price);
+    @NotNull public Builder itemOffered(@NotNull CreativeWork creativeWork) {
+      putValue("itemOffered", creativeWork);
       return this;
     }
     /**
-     * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.\n\nUsage guidelines:\n\n* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;) instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.\n* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a &quot;content=&quot; attribute for publishing simple machine-readable values alongside more human-friendly formatting.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
-     *       
+     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt;, e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      */
-    @NotNull public Builder price(@NotNull Float price) {
-      putValue("price", price);
+    @NotNull public Builder itemOffered(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("itemOffered", creativeWork.build());
       return this;
     }
     /**
-     * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.\n\nUsage guidelines:\n\n* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;) instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.\n* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a &quot;content=&quot; attribute for publishing simple machine-readable values alongside more human-friendly formatting.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
-     *       
+     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt;, e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      */
-    @NotNull public Builder price(@NotNull Double price) {
-      putValue("price", price);
+    @NotNull public Builder itemOffered(@NotNull Event event) {
+      putValue("itemOffered", event);
       return this;
     }
     /**
-     * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.\n\nUsage guidelines:\n\n* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;) instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.\n* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a &quot;content=&quot; attribute for publishing simple machine-readable values alongside more human-friendly formatting.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
-     *       
+     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt;, e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      */
-    @NotNull public Builder price(@NotNull String price) {
-      putValue("price", price);
+    @NotNull public Builder itemOffered(@NotNull Event.Builder event) {
+      putValue("itemOffered", event.build());
       return this;
     }
     /**
-     * One or more detailed price specifications, indicating the unit price and delivery or payment charges.
+     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt;, e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      */
-    @NotNull public Builder priceSpecification(@NotNull PriceSpecification priceSpecification) {
-      putValue("priceSpecification", priceSpecification);
+    @NotNull public Builder itemOffered(@NotNull MenuItem menuItem) {
+      putValue("itemOffered", menuItem);
       return this;
     }
     /**
-     * One or more detailed price specifications, indicating the unit price and delivery or payment charges.
+     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt;, e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      */
-    @NotNull public Builder priceSpecification(@NotNull PriceSpecification.Builder priceSpecification) {
-      putValue("priceSpecification", priceSpecification.build());
+    @NotNull public Builder itemOffered(@NotNull MenuItem.Builder menuItem) {
+      putValue("itemOffered", menuItem.build());
       return this;
     }
     /**
-     * The date after which the price is no longer available.
+     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt;, e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      */
-    @NotNull public Builder priceValidUntil(@NotNull java.util.Date date) {
-      putValue("priceValidUntil", date);
+    @NotNull public Builder itemOffered(@NotNull Product product) {
+      putValue("itemOffered", product);
       return this;
     }
     /**
-     * A review of the item.
+     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt;, e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      */
-    @NotNull public Builder review(@NotNull Review review) {
-      putValue("review", review);
+    @NotNull public Builder itemOffered(@NotNull Product.Builder product) {
+      putValue("itemOffered", product.build());
       return this;
     }
     /**
-     * A review of the item.
+     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt;, e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      */
-    @NotNull public Builder review(@NotNull Review.Builder review) {
-      putValue("review", review.build());
+    @NotNull public Builder itemOffered(@NotNull Service service) {
+      putValue("itemOffered", service);
       return this;
     }
     /**
-     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt;, e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      */
-    @NotNull public Builder seller(@NotNull Organization organization) {
-      putValue("seller", organization);
+    @NotNull public Builder itemOffered(@NotNull Service.Builder service) {
+      putValue("itemOffered", service.build());
       return this;
     }
     /**
-     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt;, e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      */
-    @NotNull public Builder seller(@NotNull Organization.Builder organization) {
-      putValue("seller", organization.build());
+    @NotNull public Builder itemOffered(@NotNull Trip trip) {
+      putValue("itemOffered", trip);
       return this;
     }
     /**
-     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt;, e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      */
-    @NotNull public Builder seller(@NotNull Participant participant) {
-      putValue("seller", participant);
+    @NotNull public Builder itemOffered(@NotNull Trip.Builder trip) {
+      putValue("itemOffered", trip.build());
       return this;
     }
     /**
-     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+     * URL of the item.
      */
-    @NotNull public Builder seller(@NotNull Person person) {
-      putValue("seller", person);
-      return this;
-    }
-    /**
-     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
-     */
-    @NotNull public Builder seller(@NotNull Person.Builder person) {
-      putValue("seller", person.build());
-      return this;
-    }
-    /**
-     * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
-     */
-    @NotNull public Builder sku(@NotNull Identifier identifier) {
-      putValue("sku", identifier);
-      return this;
-    }
-    /**
-     * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
-     */
-    @NotNull public Builder sku(@NotNull String sku) {
-      putValue("sku", sku);
-      return this;
-    }
-    /**
-     * The date when the item becomes valid.
-     */
-    @NotNull public Builder validFrom(@NotNull java.util.Date date) {
-      putValue("validFrom", date);
-      return this;
-    }
-    /**
-     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
-     */
-    @NotNull public Builder validThrough(@NotNull java.util.Date date) {
-      putValue("validThrough", date);
-      return this;
-    }
-    /**
-     * The warranty promise(s) included in the offer.
-     */
-    @NotNull public Builder warranty(@NotNull WarrantyPromise warrantyPromise) {
-      putValue("warranty", warrantyPromise);
-      return this;
-    }
-    /**
-     * The warranty promise(s) included in the offer.
-     */
-    @NotNull public Builder warranty(@NotNull WarrantyPromise.Builder warrantyPromise) {
-      putValue("warranty", warrantyPromise.build());
-      return this;
-    }
-    /**
-     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;.
-     */
-    @NotNull public Builder priceCurrency(@NotNull String priceCurrency) {
-      putValue("priceCurrency", priceCurrency);
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
       return this;
     }
     /**
@@ -1042,45 +909,17 @@ public class AggregateOffer extends Offer {
       return this;
     }
     /**
-     * An alias for the item.
-     */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
-      return this;
-    }
-    /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
-      putValue("disambiguatingDescription", disambiguatingDescription);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * A description of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -1091,10 +930,24 @@ public class AggregateOffer extends Offer {
       return this;
     }
     /**
-     * URL of the item.
+     * The name of the item.
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
       return this;
     }
     /**
@@ -1109,6 +962,27 @@ public class AggregateOffer extends Offer {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
       return this;
     }
     /**
@@ -1147,24 +1021,12 @@ public class AggregateOffer extends Offer {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("highPrice".equals(key) && value instanceof Integer) { this.highPrice((Integer)value); return; }
-      if ("highPrices".equals(key) && value instanceof Integer) { this.highPrice((Integer)value); return; }
-      if ("highPrice".equals(key) && value instanceof Long) { this.highPrice((Long)value); return; }
-      if ("highPrices".equals(key) && value instanceof Long) { this.highPrice((Long)value); return; }
-      if ("highPrice".equals(key) && value instanceof Float) { this.highPrice((Float)value); return; }
-      if ("highPrices".equals(key) && value instanceof Float) { this.highPrice((Float)value); return; }
-      if ("highPrice".equals(key) && value instanceof Double) { this.highPrice((Double)value); return; }
-      if ("highPrices".equals(key) && value instanceof Double) { this.highPrice((Double)value); return; }
+      if ("highPrice".equals(key) && value instanceof Number) { this.highPrice((Number)value); return; }
+      if ("highPrices".equals(key) && value instanceof Number) { this.highPrice((Number)value); return; }
       if ("highPrice".equals(key) && value instanceof String) { this.highPrice((String)value); return; }
       if ("highPrices".equals(key) && value instanceof String) { this.highPrice((String)value); return; }
-      if ("lowPrice".equals(key) && value instanceof Integer) { this.lowPrice((Integer)value); return; }
-      if ("lowPrices".equals(key) && value instanceof Integer) { this.lowPrice((Integer)value); return; }
-      if ("lowPrice".equals(key) && value instanceof Long) { this.lowPrice((Long)value); return; }
-      if ("lowPrices".equals(key) && value instanceof Long) { this.lowPrice((Long)value); return; }
-      if ("lowPrice".equals(key) && value instanceof Float) { this.lowPrice((Float)value); return; }
-      if ("lowPrices".equals(key) && value instanceof Float) { this.lowPrice((Float)value); return; }
-      if ("lowPrice".equals(key) && value instanceof Double) { this.lowPrice((Double)value); return; }
-      if ("lowPrices".equals(key) && value instanceof Double) { this.lowPrice((Double)value); return; }
+      if ("lowPrice".equals(key) && value instanceof Number) { this.lowPrice((Number)value); return; }
+      if ("lowPrices".equals(key) && value instanceof Number) { this.lowPrice((Number)value); return; }
       if ("lowPrice".equals(key) && value instanceof String) { this.lowPrice((String)value); return; }
       if ("lowPrices".equals(key) && value instanceof String) { this.lowPrice((String)value); return; }
       if ("offerCount".equals(key) && value instanceof Integer) { this.offerCount((Integer)value); return; }

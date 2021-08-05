@@ -28,21 +28,72 @@ import java.util.*;
  */
 public class BroadcastChannel extends Intangible {
   /**
-   * Genre of the creative work, broadcast channel or group.
+   * The type of service required to have access to the channel (e.g. Standard or Premium).
    */
-  @JsonIgnore public String getGenre() {
-    return (String) getValue("genre");
+  @JsonIgnore public String getBroadcastServiceTier() {
+    return (String) getValue("broadcastServiceTier");
   }
   /**
-   * Genre of the creative work, broadcast channel or group.
+   * The type of service required to have access to the channel (e.g. Standard or Premium).
    */
-  @JsonIgnore public Collection<String> getGenres() {
-    final Object current = myData.get("genre");
+  @JsonIgnore public Collection<String> getBroadcastServiceTiers() {
+    final Object current = myData.get("broadcastServiceTier");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<String>) current;
     }
     return Arrays.asList((String) current);
+  }
+  /**
+   * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. &quot;87 FM&quot;.
+   */
+  @JsonIgnore public BroadcastFrequencySpecification getBroadcastFrequencyBroadcastFrequencySpecification() {
+    return (BroadcastFrequencySpecification) getValue("broadcastFrequency");
+  }
+  /**
+   * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. &quot;87 FM&quot;.
+   */
+  @JsonIgnore public Collection<BroadcastFrequencySpecification> getBroadcastFrequencyBroadcastFrequencySpecifications() {
+    final Object current = myData.get("broadcastFrequency");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<BroadcastFrequencySpecification>) current;
+    }
+    return Arrays.asList((BroadcastFrequencySpecification) current);
+  }
+  /**
+   * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. &quot;87 FM&quot;.
+   */
+  @JsonIgnore public String getBroadcastFrequencyString() {
+    return (String) getValue("broadcastFrequency");
+  }
+  /**
+   * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. &quot;87 FM&quot;.
+   */
+  @JsonIgnore public Collection<String> getBroadcastFrequencyStrings() {
+    final Object current = myData.get("broadcastFrequency");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * Genre of the creative work, broadcast channel or group.
+   */
+  @JsonIgnore public Genre getGenre() {
+    return (Genre) getValue("genre");
+  }
+  /**
+   * Genre of the creative work, broadcast channel or group.
+   */
+  @JsonIgnore public Collection<Genre> getGenres() {
+    final Object current = myData.get("genre");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Genre>) current;
+    }
+    return Arrays.asList((Genre) current);
   }
   /**
    * The unique address by which the BroadcastService can be identified in a provider lineup. In US, this is typically a number.
@@ -79,23 +130,6 @@ public class BroadcastChannel extends Intangible {
     return Arrays.asList((CableOrSatelliteService) current);
   }
   /**
-   * The type of service required to have access to the channel (e.g. Standard or Premium).
-   */
-  @JsonIgnore public String getBroadcastServiceTier() {
-    return (String) getValue("broadcastServiceTier");
-  }
-  /**
-   * The type of service required to have access to the channel (e.g. Standard or Premium).
-   */
-  @JsonIgnore public Collection<String> getBroadcastServiceTiers() {
-    final Object current = myData.get("broadcastServiceTier");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
    * The BroadcastService offered on this channel.
    */
   @JsonIgnore public BroadcastService getProvidesBroadcastService() {
@@ -112,40 +146,6 @@ public class BroadcastChannel extends Intangible {
     }
     return Arrays.asList((BroadcastService) current);
   }
-  /**
-   * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. &quot;87 FM&quot;.
-   */
-  @JsonIgnore public BroadcastFrequencySpecification getBroadcastFrequencyBroadcastFrequencySpecification() {
-    return (BroadcastFrequencySpecification) getValue("broadcastFrequency");
-  }
-  /**
-   * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. &quot;87 FM&quot;.
-   */
-  @JsonIgnore public Collection<BroadcastFrequencySpecification> getBroadcastFrequencyBroadcastFrequencySpecifications() {
-    final Object current = myData.get("broadcastFrequency");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<BroadcastFrequencySpecification>) current;
-    }
-    return Arrays.asList((BroadcastFrequencySpecification) current);
-  }
-  /**
-   * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. &quot;87 FM&quot;.
-   */
-  @JsonIgnore public String getBroadcastFrequencyString() {
-    return (String) getValue("broadcastFrequency");
-  }
-  /**
-   * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. &quot;87 FM&quot;.
-   */
-  @JsonIgnore public Collection<String> getBroadcastFrequencyStrings() {
-    final Object current = myData.get("broadcastFrequency");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
   protected BroadcastChannel(java.util.Map<String,Object> data) {
     super(data);
   }
@@ -161,9 +161,37 @@ public class BroadcastChannel extends Intangible {
       return new BroadcastChannel(myData);
     }
     /**
+     * The type of service required to have access to the channel (e.g. Standard or Premium).
+     */
+    @NotNull public Builder broadcastServiceTier(@NotNull String broadcastServiceTier) {
+      putValue("broadcastServiceTier", broadcastServiceTier);
+      return this;
+    }
+    /**
+     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. &quot;87 FM&quot;.
+     */
+    @NotNull public Builder broadcastFrequency(@NotNull BroadcastFrequencySpecification broadcastFrequencySpecification) {
+      putValue("broadcastFrequency", broadcastFrequencySpecification);
+      return this;
+    }
+    /**
+     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. &quot;87 FM&quot;.
+     */
+    @NotNull public Builder broadcastFrequency(@NotNull BroadcastFrequencySpecification.Builder broadcastFrequencySpecification) {
+      putValue("broadcastFrequency", broadcastFrequencySpecification.build());
+      return this;
+    }
+    /**
+     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. &quot;87 FM&quot;.
+     */
+    @NotNull public Builder broadcastFrequency(@NotNull String broadcastFrequency) {
+      putValue("broadcastFrequency", broadcastFrequency);
+      return this;
+    }
+    /**
      * Genre of the creative work, broadcast channel or group.
      */
-    @NotNull public Builder genre(@NotNull String genre) {
+    @NotNull public Builder genre(@NotNull Genre genre) {
       putValue("genre", genre);
       return this;
     }
@@ -189,13 +217,6 @@ public class BroadcastChannel extends Intangible {
       return this;
     }
     /**
-     * The type of service required to have access to the channel (e.g. Standard or Premium).
-     */
-    @NotNull public Builder broadcastServiceTier(@NotNull String broadcastServiceTier) {
-      putValue("broadcastServiceTier", broadcastServiceTier);
-      return this;
-    }
-    /**
      * The BroadcastService offered on this channel.
      */
     @NotNull public Builder providesBroadcastService(@NotNull BroadcastService broadcastService) {
@@ -210,24 +231,10 @@ public class BroadcastChannel extends Intangible {
       return this;
     }
     /**
-     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. &quot;87 FM&quot;.
+     * URL of the item.
      */
-    @NotNull public Builder broadcastFrequency(@NotNull BroadcastFrequencySpecification broadcastFrequencySpecification) {
-      putValue("broadcastFrequency", broadcastFrequencySpecification);
-      return this;
-    }
-    /**
-     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. &quot;87 FM&quot;.
-     */
-    @NotNull public Builder broadcastFrequency(@NotNull BroadcastFrequencySpecification.Builder broadcastFrequencySpecification) {
-      putValue("broadcastFrequency", broadcastFrequencySpecification.build());
-      return this;
-    }
-    /**
-     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. &quot;87 FM&quot;.
-     */
-    @NotNull public Builder broadcastFrequency(@NotNull String broadcastFrequency) {
-      putValue("broadcastFrequency", broadcastFrequency);
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
       return this;
     }
     /**
@@ -238,45 +245,17 @@ public class BroadcastChannel extends Intangible {
       return this;
     }
     /**
-     * An alias for the item.
-     */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
-      return this;
-    }
-    /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
-      putValue("disambiguatingDescription", disambiguatingDescription);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * A description of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -287,10 +266,24 @@ public class BroadcastChannel extends Intangible {
       return this;
     }
     /**
-     * URL of the item.
+     * The name of the item.
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
       return this;
     }
     /**
@@ -305,6 +298,27 @@ public class BroadcastChannel extends Intangible {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
       return this;
     }
     /**
@@ -343,20 +357,20 @@ public class BroadcastChannel extends Intangible {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("genre".equals(key) && value instanceof String) { this.genre((String)value); return; }
-      if ("genres".equals(key) && value instanceof String) { this.genre((String)value); return; }
-      if ("broadcastChannelId".equals(key) && value instanceof String) { this.broadcastChannelId((String)value); return; }
-      if ("broadcastChannelIds".equals(key) && value instanceof String) { this.broadcastChannelId((String)value); return; }
-      if ("inBroadcastLineup".equals(key) && value instanceof CableOrSatelliteService) { this.inBroadcastLineup((CableOrSatelliteService)value); return; }
-      if ("inBroadcastLineups".equals(key) && value instanceof CableOrSatelliteService) { this.inBroadcastLineup((CableOrSatelliteService)value); return; }
       if ("broadcastServiceTier".equals(key) && value instanceof String) { this.broadcastServiceTier((String)value); return; }
       if ("broadcastServiceTiers".equals(key) && value instanceof String) { this.broadcastServiceTier((String)value); return; }
-      if ("providesBroadcastService".equals(key) && value instanceof BroadcastService) { this.providesBroadcastService((BroadcastService)value); return; }
-      if ("providesBroadcastServices".equals(key) && value instanceof BroadcastService) { this.providesBroadcastService((BroadcastService)value); return; }
       if ("broadcastFrequency".equals(key) && value instanceof BroadcastFrequencySpecification) { this.broadcastFrequency((BroadcastFrequencySpecification)value); return; }
       if ("broadcastFrequencys".equals(key) && value instanceof BroadcastFrequencySpecification) { this.broadcastFrequency((BroadcastFrequencySpecification)value); return; }
       if ("broadcastFrequency".equals(key) && value instanceof String) { this.broadcastFrequency((String)value); return; }
       if ("broadcastFrequencys".equals(key) && value instanceof String) { this.broadcastFrequency((String)value); return; }
+      if ("genre".equals(key) && value instanceof Genre) { this.genre((Genre)value); return; }
+      if ("genres".equals(key) && value instanceof Genre) { this.genre((Genre)value); return; }
+      if ("broadcastChannelId".equals(key) && value instanceof String) { this.broadcastChannelId((String)value); return; }
+      if ("broadcastChannelIds".equals(key) && value instanceof String) { this.broadcastChannelId((String)value); return; }
+      if ("inBroadcastLineup".equals(key) && value instanceof CableOrSatelliteService) { this.inBroadcastLineup((CableOrSatelliteService)value); return; }
+      if ("inBroadcastLineups".equals(key) && value instanceof CableOrSatelliteService) { this.inBroadcastLineup((CableOrSatelliteService)value); return; }
+      if ("providesBroadcastService".equals(key) && value instanceof BroadcastService) { this.providesBroadcastService((BroadcastService)value); return; }
+      if ("providesBroadcastServices".equals(key) && value instanceof BroadcastService) { this.providesBroadcastService((BroadcastService)value); return; }
       super.fromMap(key, value);
     }
   }

@@ -26,5 +26,5 @@ import java.util.*;
 /**
  * A sub-property of instrument. A supply consumed when performing instructions or a direction.
  */
-public interface Supply extends Instrument {
+public interface Supply {
 }

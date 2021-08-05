@@ -28,57 +28,6 @@ import java.util.*;
  */
 public class PeopleAudience extends Audience {
   /**
-   * Audiences defined by a person's gender.
-   */
-  @JsonIgnore public String getRequiredGender() {
-    return (String) getValue("requiredGender");
-  }
-  /**
-   * Audiences defined by a person's gender.
-   */
-  @JsonIgnore public Collection<String> getRequiredGenders() {
-    final Object current = myData.get("requiredGender");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * Audiences defined by a person's maximum age.
-   */
-  @JsonIgnore public Integer getRequiredMaxAge() {
-    return (Integer) getValue("requiredMaxAge");
-  }
-  /**
-   * Audiences defined by a person's maximum age.
-   */
-  @JsonIgnore public Collection<Integer> getRequiredMaxAges() {
-    final Object current = myData.get("requiredMaxAge");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
-    }
-    return Arrays.asList((Integer) current);
-  }
-  /**
-   * Audiences defined by a person's minimum age.
-   */
-  @JsonIgnore public Integer getRequiredMinAge() {
-    return (Integer) getValue("requiredMinAge");
-  }
-  /**
-   * Audiences defined by a person's minimum age.
-   */
-  @JsonIgnore public Collection<Integer> getRequiredMinAges() {
-    final Object current = myData.get("requiredMinAge");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
-    }
-    return Arrays.asList((Integer) current);
-  }
-  /**
    * The gender of the person or audience.
    */
   @JsonIgnore public String getSuggestedGender() {
@@ -181,6 +130,74 @@ public class PeopleAudience extends Audience {
     return Arrays.asList((String) current);
   }
   /**
+   * Audiences defined by a person's minimum age.
+   */
+  @JsonIgnore public Integer getRequiredMinAge() {
+    return (Integer) getValue("requiredMinAge");
+  }
+  /**
+   * Audiences defined by a person's minimum age.
+   */
+  @JsonIgnore public Collection<Integer> getRequiredMinAges() {
+    final Object current = myData.get("requiredMinAge");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Integer>) current;
+    }
+    return Arrays.asList((Integer) current);
+  }
+  /**
+   * Audiences defined by a person's maximum age.
+   */
+  @JsonIgnore public Integer getRequiredMaxAge() {
+    return (Integer) getValue("requiredMaxAge");
+  }
+  /**
+   * Audiences defined by a person's maximum age.
+   */
+  @JsonIgnore public Collection<Integer> getRequiredMaxAges() {
+    final Object current = myData.get("requiredMaxAge");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Integer>) current;
+    }
+    return Arrays.asList((Integer) current);
+  }
+  /**
+   * Audiences defined by a person's gender.
+   */
+  @JsonIgnore public String getRequiredGender() {
+    return (String) getValue("requiredGender");
+  }
+  /**
+   * Audiences defined by a person's gender.
+   */
+  @JsonIgnore public Collection<String> getRequiredGenders() {
+    final Object current = myData.get("requiredGender");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * Specifying the health condition(s) of a patient, medical study, or other target audience.
+   */
+  @JsonIgnore public MedicalCondition getHealthCondition() {
+    return (MedicalCondition) getValue("healthCondition");
+  }
+  /**
+   * Specifying the health condition(s) of a patient, medical study, or other target audience.
+   */
+  @JsonIgnore public Collection<MedicalCondition> getHealthConditions() {
+    final Object current = myData.get("healthCondition");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<MedicalCondition>) current;
+    }
+    return Arrays.asList((MedicalCondition) current);
+  }
+  /**
    * Minimal age recommended for viewing content.
    */
   @JsonIgnore public Integer getSuggestedMinAgeInteger() {
@@ -280,27 +297,6 @@ public class PeopleAudience extends Audience {
       return new PeopleAudience(myData);
     }
     /**
-     * Audiences defined by a person's gender.
-     */
-    @NotNull public Builder requiredGender(@NotNull String requiredGender) {
-      putValue("requiredGender", requiredGender);
-      return this;
-    }
-    /**
-     * Audiences defined by a person's maximum age.
-     */
-    @NotNull public Builder requiredMaxAge(@NotNull Integer integer) {
-      putValue("requiredMaxAge", integer);
-      return this;
-    }
-    /**
-     * Audiences defined by a person's minimum age.
-     */
-    @NotNull public Builder requiredMinAge(@NotNull Integer integer) {
-      putValue("requiredMinAge", integer);
-      return this;
-    }
-    /**
      * The gender of the person or audience.
      */
     @NotNull public Builder suggestedGender(@NotNull String suggestedGender) {
@@ -340,6 +336,41 @@ public class PeopleAudience extends Audience {
      */
     @NotNull public Builder suggestedMaxAge(@NotNull String suggestedMaxAge) {
       putValue("suggestedMaxAge", suggestedMaxAge);
+      return this;
+    }
+    /**
+     * Audiences defined by a person's minimum age.
+     */
+    @NotNull public Builder requiredMinAge(@NotNull Integer integer) {
+      putValue("requiredMinAge", integer);
+      return this;
+    }
+    /**
+     * Audiences defined by a person's maximum age.
+     */
+    @NotNull public Builder requiredMaxAge(@NotNull Integer integer) {
+      putValue("requiredMaxAge", integer);
+      return this;
+    }
+    /**
+     * Audiences defined by a person's gender.
+     */
+    @NotNull public Builder requiredGender(@NotNull String requiredGender) {
+      putValue("requiredGender", requiredGender);
+      return this;
+    }
+    /**
+     * Specifying the health condition(s) of a patient, medical study, or other target audience.
+     */
+    @NotNull public Builder healthCondition(@NotNull MedicalCondition medicalCondition) {
+      putValue("healthCondition", medicalCondition);
+      return this;
+    }
+    /**
+     * Specifying the health condition(s) of a patient, medical study, or other target audience.
+     */
+    @NotNull public Builder healthCondition(@NotNull MedicalCondition.Builder medicalCondition) {
+      putValue("healthCondition", medicalCondition.build());
       return this;
     }
     /**
@@ -399,6 +430,13 @@ public class PeopleAudience extends Audience {
       return this;
     }
     /**
+     * URL of the item.
+     */
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
+      return this;
+    }
+    /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      */
     @NotNull public Builder additionalType(@NotNull String additionalType) {
@@ -406,45 +444,17 @@ public class PeopleAudience extends Audience {
       return this;
     }
     /**
-     * An alias for the item.
-     */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
-      return this;
-    }
-    /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
-      putValue("disambiguatingDescription", disambiguatingDescription);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * A description of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -455,10 +465,24 @@ public class PeopleAudience extends Audience {
       return this;
     }
     /**
-     * URL of the item.
+     * The name of the item.
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
       return this;
     }
     /**
@@ -473,6 +497,27 @@ public class PeopleAudience extends Audience {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
       return this;
     }
     /**
@@ -511,12 +556,6 @@ public class PeopleAudience extends Audience {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("requiredGender".equals(key) && value instanceof String) { this.requiredGender((String)value); return; }
-      if ("requiredGenders".equals(key) && value instanceof String) { this.requiredGender((String)value); return; }
-      if ("requiredMaxAge".equals(key) && value instanceof Integer) { this.requiredMaxAge((Integer)value); return; }
-      if ("requiredMaxAges".equals(key) && value instanceof Integer) { this.requiredMaxAge((Integer)value); return; }
-      if ("requiredMinAge".equals(key) && value instanceof Integer) { this.requiredMinAge((Integer)value); return; }
-      if ("requiredMinAges".equals(key) && value instanceof Integer) { this.requiredMinAge((Integer)value); return; }
       if ("suggestedGender".equals(key) && value instanceof String) { this.suggestedGender((String)value); return; }
       if ("suggestedGenders".equals(key) && value instanceof String) { this.suggestedGender((String)value); return; }
       if ("suggestedMaxAge".equals(key) && value instanceof Integer) { this.suggestedMaxAge((Integer)value); return; }
@@ -529,6 +568,14 @@ public class PeopleAudience extends Audience {
       if ("suggestedMaxAges".equals(key) && value instanceof Double) { this.suggestedMaxAge((Double)value); return; }
       if ("suggestedMaxAge".equals(key) && value instanceof String) { this.suggestedMaxAge((String)value); return; }
       if ("suggestedMaxAges".equals(key) && value instanceof String) { this.suggestedMaxAge((String)value); return; }
+      if ("requiredMinAge".equals(key) && value instanceof Integer) { this.requiredMinAge((Integer)value); return; }
+      if ("requiredMinAges".equals(key) && value instanceof Integer) { this.requiredMinAge((Integer)value); return; }
+      if ("requiredMaxAge".equals(key) && value instanceof Integer) { this.requiredMaxAge((Integer)value); return; }
+      if ("requiredMaxAges".equals(key) && value instanceof Integer) { this.requiredMaxAge((Integer)value); return; }
+      if ("requiredGender".equals(key) && value instanceof String) { this.requiredGender((String)value); return; }
+      if ("requiredGenders".equals(key) && value instanceof String) { this.requiredGender((String)value); return; }
+      if ("healthCondition".equals(key) && value instanceof MedicalCondition) { this.healthCondition((MedicalCondition)value); return; }
+      if ("healthConditions".equals(key) && value instanceof MedicalCondition) { this.healthCondition((MedicalCondition)value); return; }
       if ("suggestedMinAge".equals(key) && value instanceof Integer) { this.suggestedMinAge((Integer)value); return; }
       if ("suggestedMinAges".equals(key) && value instanceof Integer) { this.suggestedMinAge((Integer)value); return; }
       if ("suggestedMinAge".equals(key) && value instanceof Long) { this.suggestedMinAge((Long)value); return; }

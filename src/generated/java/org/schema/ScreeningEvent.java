@@ -28,6 +28,57 @@ import java.util.*;
  */
 public class ScreeningEvent extends Event {
   /**
+   * The movie presented during this event.
+   */
+  @JsonIgnore public WorkFeatured getWorkPresented() {
+    return (WorkFeatured) getValue("workPresented");
+  }
+  /**
+   * The movie presented during this event.
+   */
+  @JsonIgnore public Collection<WorkFeatured> getWorkPresenteds() {
+    final Object current = myData.get("workPresented");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<WorkFeatured>) current;
+    }
+    return Arrays.asList((WorkFeatured) current);
+  }
+  /**
+   * Languages in which subtitles/captions are available, in &lt;a href=&quot;http://tools.ietf.org/html/bcp47&quot;&gt;IETF BCP 47 standard format&lt;/a&gt;.
+   */
+  @JsonIgnore public Language getSubtitleLanguageLanguage() {
+    return (Language) getValue("subtitleLanguage");
+  }
+  /**
+   * Languages in which subtitles/captions are available, in &lt;a href=&quot;http://tools.ietf.org/html/bcp47&quot;&gt;IETF BCP 47 standard format&lt;/a&gt;.
+   */
+  @JsonIgnore public Collection<Language> getSubtitleLanguageLanguages() {
+    final Object current = myData.get("subtitleLanguage");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Language>) current;
+    }
+    return Arrays.asList((Language) current);
+  }
+  /**
+   * Languages in which subtitles/captions are available, in &lt;a href=&quot;http://tools.ietf.org/html/bcp47&quot;&gt;IETF BCP 47 standard format&lt;/a&gt;.
+   */
+  @JsonIgnore public String getSubtitleLanguageString() {
+    return (String) getValue("subtitleLanguage");
+  }
+  /**
+   * Languages in which subtitles/captions are available, in &lt;a href=&quot;http://tools.ietf.org/html/bcp47&quot;&gt;IETF BCP 47 standard format&lt;/a&gt;.
+   */
+  @JsonIgnore public Collection<String> getSubtitleLanguageStrings() {
+    final Object current = myData.get("subtitleLanguage");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
    * The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).
    */
   @JsonIgnore public String getVideoFormat() {
@@ -44,57 +95,6 @@ public class ScreeningEvent extends Event {
     }
     return Arrays.asList((String) current);
   }
-  /**
-   * Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
-   */
-  @JsonIgnore public Language getSubtitleLanguageLanguage() {
-    return (Language) getValue("subtitleLanguage");
-  }
-  /**
-   * Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
-   */
-  @JsonIgnore public Collection<Language> getSubtitleLanguageLanguages() {
-    final Object current = myData.get("subtitleLanguage");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Language>) current;
-    }
-    return Arrays.asList((Language) current);
-  }
-  /**
-   * Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
-   */
-  @JsonIgnore public String getSubtitleLanguageString() {
-    return (String) getValue("subtitleLanguage");
-  }
-  /**
-   * Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
-   */
-  @JsonIgnore public Collection<String> getSubtitleLanguageStrings() {
-    final Object current = myData.get("subtitleLanguage");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * The movie presented during this event.
-   */
-  @JsonIgnore public Movie getWorkPresented() {
-    return (Movie) getValue("workPresented");
-  }
-  /**
-   * The movie presented during this event.
-   */
-  @JsonIgnore public Collection<Movie> getWorkPresenteds() {
-    final Object current = myData.get("workPresented");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Movie>) current;
-    }
-    return Arrays.asList((Movie) current);
-  }
   protected ScreeningEvent(java.util.Map<String,Object> data) {
     super(data);
   }
@@ -110,6 +110,34 @@ public class ScreeningEvent extends Event {
       return new ScreeningEvent(myData);
     }
     /**
+     * The movie presented during this event.
+     */
+    @NotNull public Builder workPresented(@NotNull WorkFeatured workFeatured) {
+      putValue("workPresented", workFeatured);
+      return this;
+    }
+    /**
+     * Languages in which subtitles/captions are available, in &lt;a href=&quot;http://tools.ietf.org/html/bcp47&quot;&gt;IETF BCP 47 standard format&lt;/a&gt;.
+     */
+    @NotNull public Builder subtitleLanguage(@NotNull Language language) {
+      putValue("subtitleLanguage", language);
+      return this;
+    }
+    /**
+     * Languages in which subtitles/captions are available, in &lt;a href=&quot;http://tools.ietf.org/html/bcp47&quot;&gt;IETF BCP 47 standard format&lt;/a&gt;.
+     */
+    @NotNull public Builder subtitleLanguage(@NotNull Language.Builder language) {
+      putValue("subtitleLanguage", language.build());
+      return this;
+    }
+    /**
+     * Languages in which subtitles/captions are available, in &lt;a href=&quot;http://tools.ietf.org/html/bcp47&quot;&gt;IETF BCP 47 standard format&lt;/a&gt;.
+     */
+    @NotNull public Builder subtitleLanguage(@NotNull String subtitleLanguage) {
+      putValue("subtitleLanguage", subtitleLanguage);
+      return this;
+    }
+    /**
      * The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).
      */
     @NotNull public Builder videoFormat(@NotNull String videoFormat) {
@@ -117,66 +145,24 @@ public class ScreeningEvent extends Event {
       return this;
     }
     /**
-     * Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
+     * The start date and time of the item (in &lt;a href=&quot;http://en.wikipedia.org/wiki/ISO_8601&quot;&gt;ISO 8601 date format&lt;/a&gt;).
      */
-    @NotNull public Builder subtitleLanguage(@NotNull Language language) {
-      putValue("subtitleLanguage", language);
+    @NotNull public Builder startDate(@NotNull java.util.Date date) {
+      putValue("startDate", date);
       return this;
     }
     /**
-     * Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
+     * The number of attendee places for an event that remain unallocated.
      */
-    @NotNull public Builder subtitleLanguage(@NotNull Language.Builder language) {
-      putValue("subtitleLanguage", language.build());
+    @NotNull public Builder remainingAttendeeCapacity(@NotNull Integer integer) {
+      putValue("remainingAttendeeCapacity", integer);
       return this;
     }
     /**
-     * Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
+     * A work performed in some event, for example a play performed in a TheaterEvent.
      */
-    @NotNull public Builder subtitleLanguage(@NotNull String subtitleLanguage) {
-      putValue("subtitleLanguage", subtitleLanguage);
-      return this;
-    }
-    /**
-     * The movie presented during this event.
-     */
-    @NotNull public Builder workPresented(@NotNull Movie movie) {
-      putValue("workPresented", movie);
-      return this;
-    }
-    /**
-     * The movie presented during this event.
-     */
-    @NotNull public Builder workPresented(@NotNull Movie.Builder movie) {
-      putValue("workPresented", movie.build());
-      return this;
-    }
-    /**
-     * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
-     */
-    @NotNull public Builder actor(@NotNull Person person) {
-      putValue("actor", person);
-      return this;
-    }
-    /**
-     * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
-     */
-    @NotNull public Builder actor(@NotNull Person.Builder person) {
-      putValue("actor", person.build());
-      return this;
-    }
-    /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
-     */
-    @NotNull public Builder aggregateRating(@NotNull AggregateRating aggregateRating) {
-      putValue("aggregateRating", aggregateRating);
-      return this;
-    }
-    /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
-     */
-    @NotNull public Builder aggregateRating(@NotNull AggregateRating.Builder aggregateRating) {
-      putValue("aggregateRating", aggregateRating.build());
+    @NotNull public Builder workPerformed(@NotNull WorkFeatured workFeatured) {
+      putValue("workPerformed", workFeatured);
       return this;
     }
     /**
@@ -208,182 +194,66 @@ public class ScreeningEvent extends Event {
       return this;
     }
     /**
-     * A person or organization attending the event.
-     */
-    @NotNull public Builder attendee(@NotNull Organization organization) {
-      putValue("attendee", organization);
-      return this;
-    }
-    /**
-     * A person or organization attending the event.
-     */
-    @NotNull public Builder attendee(@NotNull Organization.Builder organization) {
-      putValue("attendee", organization.build());
-      return this;
-    }
-    /**
-     * A person or organization attending the event.
-     */
-    @NotNull public Builder attendee(@NotNull Person person) {
-      putValue("attendee", person);
-      return this;
-    }
-    /**
-     * A person or organization attending the event.
-     */
-    @NotNull public Builder attendee(@NotNull Person.Builder person) {
-      putValue("attendee", person.build());
-      return this;
-    }
-    /**
-     * An intended audience, i.e. a group for whom something was created.
-     */
-    @NotNull public Builder audience(@NotNull Audience audience) {
-      putValue("audience", audience);
-      return this;
-    }
-    /**
-     * An intended audience, i.e. a group for whom something was created.
-     */
-    @NotNull public Builder audience(@NotNull Audience.Builder audience) {
-      putValue("audience", audience.build());
-      return this;
-    }
-    /**
-     * A secondary contributor to the CreativeWork or Event.
-     */
-    @NotNull public Builder contributor(@NotNull Organization organization) {
-      putValue("contributor", organization);
-      return this;
-    }
-    /**
-     * A secondary contributor to the CreativeWork or Event.
-     */
-    @NotNull public Builder contributor(@NotNull Organization.Builder organization) {
-      putValue("contributor", organization.build());
-      return this;
-    }
-    /**
-     * A secondary contributor to the CreativeWork or Event.
-     */
-    @NotNull public Builder contributor(@NotNull Person person) {
-      putValue("contributor", person);
-      return this;
-    }
-    /**
-     * A secondary contributor to the CreativeWork or Event.
-     */
-    @NotNull public Builder contributor(@NotNull Person.Builder person) {
-      putValue("contributor", person.build());
-      return this;
-    }
-    /**
-     * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
-     */
-    @NotNull public Builder director(@NotNull Person person) {
-      putValue("director", person);
-      return this;
-    }
-    /**
-     * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
-     */
-    @NotNull public Builder director(@NotNull Person.Builder person) {
-      putValue("director", person.build());
-      return this;
-    }
-    /**
-     * The time admission will commence.
-     */
-    @NotNull public Builder doorTime(@NotNull java.util.Date date) {
-      putValue("doorTime", date);
-      return this;
-    }
-    /**
-     * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-     */
-    @NotNull public Builder endDate(@NotNull java.util.Date date) {
-      putValue("endDate", date);
-      return this;
-    }
-    /**
-     * An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.
-     */
-    @NotNull public Builder eventStatus(@NotNull EventStatusType eventStatusType) {
-      putValue("eventStatus", eventStatusType);
-      return this;
-    }
-    /**
-     * A flag to signal that the item, event, or place is accessible for free.
-     */
-    @NotNull public Builder isAccessibleForFree(@NotNull Boolean isAccessibleForFree) {
-      putValue("isAccessibleForFree", isAccessibleForFree);
-      return this;
-    }
-    /**
-     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     * The language of the content or performance or used in an action. Please use one of the language codes from the &lt;a href=&quot;http://tools.ietf.org/html/bcp47&quot;&gt;IETF BCP 47 standard&lt;/a&gt;. See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/availableLanguage&quot;&gt;availableLanguage&lt;/a&gt;.
      */
     @NotNull public Builder inLanguage(@NotNull Language language) {
       putValue("inLanguage", language);
       return this;
     }
     /**
-     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     * The language of the content or performance or used in an action. Please use one of the language codes from the &lt;a href=&quot;http://tools.ietf.org/html/bcp47&quot;&gt;IETF BCP 47 standard&lt;/a&gt;. See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/availableLanguage&quot;&gt;availableLanguage&lt;/a&gt;.
      */
     @NotNull public Builder inLanguage(@NotNull Language.Builder language) {
       putValue("inLanguage", language.build());
       return this;
     }
     /**
-     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     * The language of the content or performance or used in an action. Please use one of the language codes from the &lt;a href=&quot;http://tools.ietf.org/html/bcp47&quot;&gt;IETF BCP 47 standard&lt;/a&gt;. See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/availableLanguage&quot;&gt;availableLanguage&lt;/a&gt;.
      */
     @NotNull public Builder inLanguage(@NotNull String inLanguage) {
       putValue("inLanguage", inLanguage);
       return this;
     }
     /**
-     * The total number of individuals that may attend an event or venue.
+     * The end date and time of the item (in &lt;a href=&quot;http://en.wikipedia.org/wiki/ISO_8601&quot;&gt;ISO 8601 date format&lt;/a&gt;).
      */
-    @NotNull public Builder maximumAttendeeCapacity(@NotNull Integer integer) {
-      putValue("maximumAttendeeCapacity", integer);
+    @NotNull public Builder endDate(@NotNull java.util.Date date) {
+      putValue("endDate", date);
       return this;
     }
     /**
-     * The number of attendee places for an event that remain unallocated.
+     * The duration of the item (movie, audio recording, event, etc.) in &lt;a href=&quot;http://en.wikipedia.org/wiki/ISO_8601&quot;&gt;ISO 8601 date format&lt;/a&gt;.
      */
-    @NotNull public Builder remainingAttendeeCapacity(@NotNull Integer integer) {
-      putValue("remainingAttendeeCapacity", integer);
+    @NotNull public Builder duration(@NotNull Duration duration) {
+      putValue("duration", duration);
       return this;
     }
     /**
-     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
+     * The maximum physical attendee capacity of an &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Event&quot;&gt;Event&lt;/a&gt; whose &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/eventAttendanceMode&quot;&gt;eventAttendanceMode&lt;/a&gt; is &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/OnlineEventAttendanceMode&quot;&gt;OnlineEventAttendanceMode&lt;/a&gt; (or the online aspects, in the case of a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/MixedEventAttendanceMode&quot;&gt;MixedEventAttendanceMode&lt;/a&gt;).
      */
-    @NotNull public Builder offers(@NotNull Demand demand) {
-      putValue("offers", demand);
+    @NotNull public Builder maximumVirtualAttendeeCapacity(@NotNull Integer integer) {
+      putValue("maximumVirtualAttendeeCapacity", integer);
       return this;
     }
     /**
-     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
+     * The overall rating, based on a collection of reviews or ratings, of the item.
      */
-    @NotNull public Builder offers(@NotNull Demand.Builder demand) {
-      putValue("offers", demand.build());
+    @NotNull public Builder aggregateRating(@NotNull AggregateRating aggregateRating) {
+      putValue("aggregateRating", aggregateRating);
       return this;
     }
     /**
-     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
+     * The overall rating, based on a collection of reviews or ratings, of the item.
      */
-    @NotNull public Builder offers(@NotNull Offer offer) {
-      putValue("offers", offer);
+    @NotNull public Builder aggregateRating(@NotNull AggregateRating.Builder aggregateRating) {
+      putValue("aggregateRating", aggregateRating.build());
       return this;
     }
     /**
-     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
+     * Used in conjunction with eventStatus for rescheduled or cancelled events. This property contains the previously scheduled start date. For rescheduled events, the startDate property should be used for the newly scheduled start date. In the (rare) case of an event that has been postponed and rescheduled multiple times, this field may be repeated.
      */
-    @NotNull public Builder offers(@NotNull Offer.Builder offer) {
-      putValue("offers", offer.build());
+    @NotNull public Builder previousStartDate(@NotNull java.util.Date date) {
+      putValue("previousStartDate", date);
       return this;
     }
     /**
@@ -415,158 +285,45 @@ public class ScreeningEvent extends Event {
       return this;
     }
     /**
-     * Used in conjunction with eventStatus for rescheduled or cancelled events. This property contains the previously scheduled start date. For rescheduled events, the startDate property should be used for the newly scheduled start date. In the (rare) case of an event that has been postponed and rescheduled multiple times, this field may be repeated.
-     */
-    @NotNull public Builder previousStartDate(@NotNull java.util.Date date) {
-      putValue("previousStartDate", date);
-      return this;
-    }
-    /**
-     * The CreativeWork that captured all or part of this Event.
-     */
-    @NotNull public Builder recordedIn(@NotNull CreativeWork creativeWork) {
-      putValue("recordedIn", creativeWork);
-      return this;
-    }
-    /**
-     * The CreativeWork that captured all or part of this Event.
-     */
-    @NotNull public Builder recordedIn(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("recordedIn", creativeWork.build());
-      return this;
-    }
-    /**
-     * A review of the item.
-     */
-    @NotNull public Builder review(@NotNull Review review) {
-      putValue("review", review);
-      return this;
-    }
-    /**
-     * A review of the item.
-     */
-    @NotNull public Builder review(@NotNull Review.Builder review) {
-      putValue("review", review.build());
-      return this;
-    }
-    /**
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      */
-    @NotNull public Builder funder(@NotNull Organization organization) {
-      putValue("funder", organization);
+    @NotNull public Builder funder(@NotNull Sponsor sponsor) {
+      putValue("funder", sponsor);
       return this;
     }
     /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
+     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
      */
-    @NotNull public Builder funder(@NotNull Organization.Builder organization) {
-      putValue("funder", organization.build());
+    @NotNull public Builder sponsor(@NotNull Sponsor sponsor) {
+      putValue("sponsor", sponsor);
       return this;
     }
     /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
+     * A person or organization attending the event.
      */
-    @NotNull public Builder funder(@NotNull Person person) {
-      putValue("funder", person);
+    @NotNull public Builder attendee(@NotNull Organization organization) {
+      putValue("attendee", organization);
       return this;
     }
     /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
+     * A person or organization attending the event.
      */
-    @NotNull public Builder funder(@NotNull Person.Builder person) {
-      putValue("funder", person.build());
+    @NotNull public Builder attendee(@NotNull Organization.Builder organization) {
+      putValue("attendee", organization.build());
       return this;
     }
     /**
-     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
+     * A person or organization attending the event.
      */
-    @NotNull public Builder startDate(@NotNull java.util.Date date) {
-      putValue("startDate", date);
+    @NotNull public Builder attendee(@NotNull Person person) {
+      putValue("attendee", person);
       return this;
     }
     /**
-     * An Event that is part of this event. For example, a conference event includes many presentations, each of which is a subEvent of the conference.
+     * A person or organization attending the event.
      */
-    @NotNull public Builder subEvent(@NotNull Event event) {
-      putValue("subEvent", event);
-      return this;
-    }
-    /**
-     * An Event that is part of this event. For example, a conference event includes many presentations, each of which is a subEvent of the conference.
-     */
-    @NotNull public Builder subEvent(@NotNull Event.Builder event) {
-      putValue("subEvent", event.build());
-      return this;
-    }
-    /**
-     * An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent.
-     */
-    @NotNull public Builder superEvent(@NotNull Event event) {
-      putValue("superEvent", event);
-      return this;
-    }
-    /**
-     * An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent.
-     */
-    @NotNull public Builder superEvent(@NotNull Event.Builder event) {
-      putValue("superEvent", event.build());
-      return this;
-    }
-    /**
-     * The typical expected age range, e.g. '7-9', '11-'.
-     */
-    @NotNull public Builder typicalAgeRange(@NotNull String typicalAgeRange) {
-      putValue("typicalAgeRange", typicalAgeRange);
-      return this;
-    }
-    /**
-     * A work performed in some event, for example a play performed in a TheaterEvent.
-     */
-    @NotNull public Builder workPerformed(@NotNull CreativeWork creativeWork) {
-      putValue("workPerformed", creativeWork);
-      return this;
-    }
-    /**
-     * A work performed in some event, for example a play performed in a TheaterEvent.
-     */
-    @NotNull public Builder workPerformed(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("workPerformed", creativeWork.build());
-      return this;
-    }
-    /**
-     * A work featured in some event, e.g. exhibited in an ExhibitionEvent.
-     *        Specific subproperties are available for workPerformed (e.g. a play), or a workPresented (a Movie at a ScreeningEvent).
-     */
-    @NotNull public Builder workFeatured(@NotNull WorkFeatured workFeatured) {
-      putValue("workFeatured", workFeatured);
-      return this;
-    }
-    /**
-     * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
-     */
-    @NotNull public Builder translator(@NotNull Organization organization) {
-      putValue("translator", organization);
-      return this;
-    }
-    /**
-     * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
-     */
-    @NotNull public Builder translator(@NotNull Organization.Builder organization) {
-      putValue("translator", organization.build());
-      return this;
-    }
-    /**
-     * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
-     */
-    @NotNull public Builder translator(@NotNull Person person) {
-      putValue("translator", person);
-      return this;
-    }
-    /**
-     * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
-     */
-    @NotNull public Builder translator(@NotNull Person.Builder person) {
-      putValue("translator", person.build());
+    @NotNull public Builder attendee(@NotNull Person.Builder person) {
+      putValue("attendee", person.build());
       return this;
     }
     /**
@@ -598,6 +355,261 @@ public class ScreeningEvent extends Event {
       return this;
     }
     /**
+     * The eventAttendanceMode of an event indicates whether it occurs online, offline, or a mix.
+     */
+    @NotNull public Builder eventAttendanceMode(@NotNull EventAttendanceModeEnumeration eventAttendanceModeEnumeration) {
+      putValue("eventAttendanceMode", eventAttendanceModeEnumeration);
+      return this;
+    }
+    /**
+     * The total number of individuals that may attend an event or venue.
+     */
+    @NotNull public Builder maximumAttendeeCapacity(@NotNull Integer integer) {
+      putValue("maximumAttendeeCapacity", integer);
+      return this;
+    }
+    /**
+     * A secondary contributor to the CreativeWork or Event.
+     */
+    @NotNull public Builder contributor(@NotNull Organization organization) {
+      putValue("contributor", organization);
+      return this;
+    }
+    /**
+     * A secondary contributor to the CreativeWork or Event.
+     */
+    @NotNull public Builder contributor(@NotNull Organization.Builder organization) {
+      putValue("contributor", organization.build());
+      return this;
+    }
+    /**
+     * A secondary contributor to the CreativeWork or Event.
+     */
+    @NotNull public Builder contributor(@NotNull Person person) {
+      putValue("contributor", person);
+      return this;
+    }
+    /**
+     * A secondary contributor to the CreativeWork or Event.
+     */
+    @NotNull public Builder contributor(@NotNull Person.Builder person) {
+      putValue("contributor", person.build());
+      return this;
+    }
+    /**
+     * An Event that is part of this event. For example, a conference event includes many presentations, each of which is a subEvent of the conference.
+     */
+    @NotNull public Builder subEvent(@NotNull Event event) {
+      putValue("subEvent", event);
+      return this;
+    }
+    /**
+     * An Event that is part of this event. For example, a conference event includes many presentations, each of which is a subEvent of the conference.
+     */
+    @NotNull public Builder subEvent(@NotNull Event.Builder event) {
+      putValue("subEvent", event.build());
+      return this;
+    }
+    /**
+     * A review of the item.
+     */
+    @NotNull public Builder review(@NotNull Review review) {
+      putValue("review", review);
+      return this;
+    }
+    /**
+     * A review of the item.
+     */
+    @NotNull public Builder review(@NotNull Review.Builder review) {
+      putValue("review", review.build());
+      return this;
+    }
+    /**
+     * An intended audience, i.e. a group for whom something was created.
+     */
+    @NotNull public Builder audience(@NotNull Audience audience) {
+      putValue("audience", audience);
+      return this;
+    }
+    /**
+     * An intended audience, i.e. a group for whom something was created.
+     */
+    @NotNull public Builder audience(@NotNull Audience.Builder audience) {
+      putValue("audience", audience.build());
+      return this;
+    }
+    /**
+     * A flag to signal that the item, event, or place is accessible for free.
+     */
+    @NotNull public Builder isAccessibleForFree(@NotNull Boolean isAccessibleForFree) {
+      putValue("isAccessibleForFree", isAccessibleForFree);
+      return this;
+    }
+    /**
+     * The typical expected age range, e.g. '7-9', '11-'.
+     */
+    @NotNull public Builder typicalAgeRange(@NotNull String typicalAgeRange) {
+      putValue("typicalAgeRange", typicalAgeRange);
+      return this;
+    }
+    /**
+     * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
+     */
+    @NotNull public Builder translator(@NotNull Organization organization) {
+      putValue("translator", organization);
+      return this;
+    }
+    /**
+     * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
+     */
+    @NotNull public Builder translator(@NotNull Organization.Builder organization) {
+      putValue("translator", organization.build());
+      return this;
+    }
+    /**
+     * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
+     */
+    @NotNull public Builder translator(@NotNull Person person) {
+      putValue("translator", person);
+      return this;
+    }
+    /**
+     * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
+     */
+    @NotNull public Builder translator(@NotNull Person.Builder person) {
+      putValue("translator", person.build());
+      return this;
+    }
+    /**
+     * Associates an &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Event&quot;&gt;Event&lt;/a&gt; with a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Schedule&quot;&gt;Schedule&lt;/a&gt;. There are circumstances where it is preferable to share a schedule for a series of
+     *       repeating events rather than data on the individual events themselves. For example, a website or application might prefer to publish a schedule for a weekly
+     *       gym class rather than provide data on every event. A schedule could be processed by applications to add forthcoming events to a calendar. An &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Event&quot;&gt;Event&lt;/a&gt; that
+     *       is associated with a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Schedule&quot;&gt;Schedule&lt;/a&gt; using this property should not have &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/startDate&quot;&gt;startDate&lt;/a&gt; or &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/endDate&quot;&gt;endDate&lt;/a&gt; properties. These are instead defined within the associated
+     *       &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Schedule&quot;&gt;Schedule&lt;/a&gt;, this avoids any ambiguity for clients using the data. The property might have repeated values to specify different schedules, e.g. for different months
+     *       or seasons.
+     */
+    @NotNull public Builder eventSchedule(@NotNull Schedule schedule) {
+      putValue("eventSchedule", schedule);
+      return this;
+    }
+    /**
+     * Associates an &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Event&quot;&gt;Event&lt;/a&gt; with a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Schedule&quot;&gt;Schedule&lt;/a&gt;. There are circumstances where it is preferable to share a schedule for a series of
+     *       repeating events rather than data on the individual events themselves. For example, a website or application might prefer to publish a schedule for a weekly
+     *       gym class rather than provide data on every event. A schedule could be processed by applications to add forthcoming events to a calendar. An &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Event&quot;&gt;Event&lt;/a&gt; that
+     *       is associated with a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Schedule&quot;&gt;Schedule&lt;/a&gt; using this property should not have &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/startDate&quot;&gt;startDate&lt;/a&gt; or &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/endDate&quot;&gt;endDate&lt;/a&gt; properties. These are instead defined within the associated
+     *       &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Schedule&quot;&gt;Schedule&lt;/a&gt;, this avoids any ambiguity for clients using the data. The property might have repeated values to specify different schedules, e.g. for different months
+     *       or seasons.
+     */
+    @NotNull public Builder eventSchedule(@NotNull Schedule.Builder schedule) {
+      putValue("eventSchedule", schedule.build());
+      return this;
+    }
+    /**
+     * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
+     */
+    @NotNull public Builder director(@NotNull Person person) {
+      putValue("director", person);
+      return this;
+    }
+    /**
+     * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
+     */
+    @NotNull public Builder director(@NotNull Person.Builder person) {
+      putValue("director", person.build());
+      return this;
+    }
+    /**
+     * The maximum physical attendee capacity of an &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Event&quot;&gt;Event&lt;/a&gt; whose &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/eventAttendanceMode&quot;&gt;eventAttendanceMode&lt;/a&gt; is &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/OfflineEventAttendanceMode&quot;&gt;OfflineEventAttendanceMode&lt;/a&gt; (or the offline aspects, in the case of a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/MixedEventAttendanceMode&quot;&gt;MixedEventAttendanceMode&lt;/a&gt;).
+     */
+    @NotNull public Builder maximumPhysicalAttendeeCapacity(@NotNull Integer integer) {
+      putValue("maximumPhysicalAttendeeCapacity", integer);
+      return this;
+    }
+    /**
+     * The time admission will commence.
+     */
+    @NotNull public Builder doorTime(@NotNull java.util.Date date) {
+      putValue("doorTime", date);
+      return this;
+    }
+    /**
+     * An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.
+     */
+    @NotNull public Builder eventStatus(@NotNull EventStatusType eventStatusType) {
+      putValue("eventStatus", eventStatusType);
+      return this;
+    }
+    /**
+     * The subject matter of the content.
+     */
+    @NotNull public Builder about(@NotNull About about) {
+      putValue("about", about);
+      return this;
+    }
+    /**
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt; to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Demand&quot;&gt;Demand&lt;/a&gt;. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     */
+    @NotNull public Builder offers(@NotNull Demand demand) {
+      putValue("offers", demand);
+      return this;
+    }
+    /**
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt; to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Demand&quot;&gt;Demand&lt;/a&gt;. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     */
+    @NotNull public Builder offers(@NotNull Demand.Builder demand) {
+      putValue("offers", demand.build());
+      return this;
+    }
+    /**
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt; to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Demand&quot;&gt;Demand&lt;/a&gt;. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     */
+    @NotNull public Builder offers(@NotNull Offer offer) {
+      putValue("offers", offer);
+      return this;
+    }
+    /**
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt; to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Demand&quot;&gt;Demand&lt;/a&gt;. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     */
+    @NotNull public Builder offers(@NotNull Offer.Builder offer) {
+      putValue("offers", offer.build());
+      return this;
+    }
+    /**
+     * An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent.
+     */
+    @NotNull public Builder superEvent(@NotNull Event event) {
+      putValue("superEvent", event);
+      return this;
+    }
+    /**
+     * An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent.
+     */
+    @NotNull public Builder superEvent(@NotNull Event.Builder event) {
+      putValue("superEvent", event.build());
+      return this;
+    }
+    /**
+     * The CreativeWork that captured all or part of this Event.
+     */
+    @NotNull public Builder recordedIn(@NotNull CreativeWork creativeWork) {
+      putValue("recordedIn", creativeWork);
+      return this;
+    }
+    /**
+     * The CreativeWork that captured all or part of this Event.
+     */
+    @NotNull public Builder recordedIn(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("recordedIn", creativeWork.build());
+      return this;
+    }
+    /**
+     * URL of the item.
+     */
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
+      return this;
+    }
+    /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      */
     @NotNull public Builder additionalType(@NotNull String additionalType) {
@@ -605,45 +617,17 @@ public class ScreeningEvent extends Event {
       return this;
     }
     /**
-     * An alias for the item.
-     */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
-      return this;
-    }
-    /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
-      putValue("disambiguatingDescription", disambiguatingDescription);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * A description of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -654,10 +638,24 @@ public class ScreeningEvent extends Event {
       return this;
     }
     /**
-     * URL of the item.
+     * The name of the item.
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
       return this;
     }
     /**
@@ -672,6 +670,27 @@ public class ScreeningEvent extends Event {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
       return this;
     }
     /**
@@ -710,14 +729,14 @@ public class ScreeningEvent extends Event {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("videoFormat".equals(key) && value instanceof String) { this.videoFormat((String)value); return; }
-      if ("videoFormats".equals(key) && value instanceof String) { this.videoFormat((String)value); return; }
+      if ("workPresented".equals(key) && value instanceof WorkFeatured) { this.workPresented((WorkFeatured)value); return; }
+      if ("workPresenteds".equals(key) && value instanceof WorkFeatured) { this.workPresented((WorkFeatured)value); return; }
       if ("subtitleLanguage".equals(key) && value instanceof Language) { this.subtitleLanguage((Language)value); return; }
       if ("subtitleLanguages".equals(key) && value instanceof Language) { this.subtitleLanguage((Language)value); return; }
       if ("subtitleLanguage".equals(key) && value instanceof String) { this.subtitleLanguage((String)value); return; }
       if ("subtitleLanguages".equals(key) && value instanceof String) { this.subtitleLanguage((String)value); return; }
-      if ("workPresented".equals(key) && value instanceof Movie) { this.workPresented((Movie)value); return; }
-      if ("workPresenteds".equals(key) && value instanceof Movie) { this.workPresented((Movie)value); return; }
+      if ("videoFormat".equals(key) && value instanceof String) { this.videoFormat((String)value); return; }
+      if ("videoFormats".equals(key) && value instanceof String) { this.videoFormat((String)value); return; }
       super.fromMap(key, value);
     }
   }

@@ -28,23 +28,6 @@ import java.util.*;
  */
 public class LocationFeatureSpecification extends PropertyValue {
   /**
-   * The hours during which this service or contact is available.
-   */
-  @JsonIgnore public OpeningHoursSpecification getHoursAvailable() {
-    return (OpeningHoursSpecification) getValue("hoursAvailable");
-  }
-  /**
-   * The hours during which this service or contact is available.
-   */
-  @JsonIgnore public Collection<OpeningHoursSpecification> getHoursAvailables() {
-    final Object current = myData.get("hoursAvailable");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<OpeningHoursSpecification>) current;
-    }
-    return Arrays.asList((OpeningHoursSpecification) current);
-  }
-  /**
    * The date when the item becomes valid.
    */
   @JsonIgnore public java.util.Date getValidFrom() {
@@ -60,6 +43,23 @@ public class LocationFeatureSpecification extends PropertyValue {
       return (Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
+  }
+  /**
+   * The hours during which this service or contact is available.
+   */
+  @JsonIgnore public OpeningHoursSpecification getHoursAvailable() {
+    return (OpeningHoursSpecification) getValue("hoursAvailable");
+  }
+  /**
+   * The hours during which this service or contact is available.
+   */
+  @JsonIgnore public Collection<OpeningHoursSpecification> getHoursAvailables() {
+    final Object current = myData.get("hoursAvailable");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<OpeningHoursSpecification>) current;
+    }
+    return Arrays.asList((OpeningHoursSpecification) current);
   }
   /**
    * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
@@ -93,6 +93,13 @@ public class LocationFeatureSpecification extends PropertyValue {
       return new LocationFeatureSpecification(myData);
     }
     /**
+     * The date when the item becomes valid.
+     */
+    @NotNull public Builder validFrom(@NotNull java.util.Date date) {
+      putValue("validFrom", date);
+      return this;
+    }
+    /**
      * The hours during which this service or contact is available.
      */
     @NotNull public Builder hoursAvailable(@NotNull OpeningHoursSpecification openingHoursSpecification) {
@@ -107,13 +114,6 @@ public class LocationFeatureSpecification extends PropertyValue {
       return this;
     }
     /**
-     * The date when the item becomes valid.
-     */
-    @NotNull public Builder validFrom(@NotNull java.util.Date date) {
-      putValue("validFrom", date);
-      return this;
-    }
-    /**
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      */
     @NotNull public Builder validThrough(@NotNull java.util.Date date) {
@@ -121,115 +121,13 @@ public class LocationFeatureSpecification extends PropertyValue {
       return this;
     }
     /**
-     * The upper value of some characteristic or property.
+     * A commonly used identifier for the characteristic represented by the property, e.g. a manufacturer or a standard code for a property. propertyID can be
+     * (1) a prefixed string, mainly meant to be used with standards for product properties; (2) a site-specific, non-prefixed string (e.g. the primary key of the property or the vendor-specific id of the property), or (3)
+     * a URL indicating the type of the property, either pointing to an external vocabulary, or a Web resource that describes the property (e.g. a glossary entry).
+     * Standards bodies should promote a standard prefix for the identifiers of properties from their standards.
      */
-    @NotNull public Builder maxValue(@NotNull Integer integer) {
-      putValue("maxValue", integer);
-      return this;
-    }
-    /**
-     * The upper value of some characteristic or property.
-     */
-    @NotNull public Builder maxValue(@NotNull Long maxValue) {
-      putValue("maxValue", maxValue);
-      return this;
-    }
-    /**
-     * The upper value of some characteristic or property.
-     */
-    @NotNull public Builder maxValue(@NotNull Float maxValue) {
-      putValue("maxValue", maxValue);
-      return this;
-    }
-    /**
-     * The upper value of some characteristic or property.
-     */
-    @NotNull public Builder maxValue(@NotNull Double maxValue) {
-      putValue("maxValue", maxValue);
-      return this;
-    }
-    /**
-     * The upper value of some characteristic or property.
-     */
-    @NotNull public Builder maxValue(@NotNull String maxValue) {
-      putValue("maxValue", maxValue);
-      return this;
-    }
-    /**
-     * The lower value of some characteristic or property.
-     */
-    @NotNull public Builder minValue(@NotNull Integer integer) {
-      putValue("minValue", integer);
-      return this;
-    }
-    /**
-     * The lower value of some characteristic or property.
-     */
-    @NotNull public Builder minValue(@NotNull Long minValue) {
-      putValue("minValue", minValue);
-      return this;
-    }
-    /**
-     * The lower value of some characteristic or property.
-     */
-    @NotNull public Builder minValue(@NotNull Float minValue) {
-      putValue("minValue", minValue);
-      return this;
-    }
-    /**
-     * The lower value of some characteristic or property.
-     */
-    @NotNull public Builder minValue(@NotNull Double minValue) {
-      putValue("minValue", minValue);
-      return this;
-    }
-    /**
-     * The lower value of some characteristic or property.
-     */
-    @NotNull public Builder minValue(@NotNull String minValue) {
-      putValue("minValue", minValue);
-      return this;
-    }
-    /**
-     * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
-     */
-    @NotNull public Builder unitCode(@NotNull String unitCode) {
-      putValue("unitCode", unitCode);
-      return this;
-    }
-    /**
-     * The value of the quantitative value or property value node.\n\n* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.\n* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-     */
-    @NotNull public Builder value(@NotNull Integer integer) {
-      putValue("value", integer);
-      return this;
-    }
-    /**
-     * The value of the quantitative value or property value node.\n\n* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.\n* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-     */
-    @NotNull public Builder value(@NotNull Long value) {
-      putValue("value", value);
-      return this;
-    }
-    /**
-     * The value of the quantitative value or property value node.\n\n* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.\n* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-     */
-    @NotNull public Builder value(@NotNull Float value) {
-      putValue("value", value);
-      return this;
-    }
-    /**
-     * The value of the quantitative value or property value node.\n\n* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.\n* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-     */
-    @NotNull public Builder value(@NotNull Double value) {
-      putValue("value", value);
-      return this;
-    }
-    /**
-     * The value of the quantitative value or property value node.\n\n* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.\n* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-     */
-    @NotNull public Builder value(@NotNull String value) {
-      putValue("value", value);
+    @NotNull public Builder propertyID(@NotNull String propertyID) {
+      putValue("propertyID", propertyID);
       return this;
     }
     /**
@@ -303,6 +201,172 @@ public class LocationFeatureSpecification extends PropertyValue {
       return this;
     }
     /**
+     * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
+     */
+    @NotNull public Builder unitCode(@NotNull String unitCode) {
+      putValue("unitCode", unitCode);
+      return this;
+    }
+    /**
+     * The upper value of some characteristic or property.
+     */
+    @NotNull public Builder maxValue(@NotNull Integer integer) {
+      putValue("maxValue", integer);
+      return this;
+    }
+    /**
+     * The upper value of some characteristic or property.
+     */
+    @NotNull public Builder maxValue(@NotNull Long maxValue) {
+      putValue("maxValue", maxValue);
+      return this;
+    }
+    /**
+     * The upper value of some characteristic or property.
+     */
+    @NotNull public Builder maxValue(@NotNull Float maxValue) {
+      putValue("maxValue", maxValue);
+      return this;
+    }
+    /**
+     * The upper value of some characteristic or property.
+     */
+    @NotNull public Builder maxValue(@NotNull Double maxValue) {
+      putValue("maxValue", maxValue);
+      return this;
+    }
+    /**
+     * The upper value of some characteristic or property.
+     */
+    @NotNull public Builder maxValue(@NotNull String maxValue) {
+      putValue("maxValue", maxValue);
+      return this;
+    }
+    /**
+     * The value of the quantitative value or property value node.&lt;br/&gt;&lt;br/&gt;
+     * 
+     * &lt;ul&gt;
+     * &lt;li&gt;For &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/QuantitativeValue&quot;&gt;QuantitativeValue&lt;/a&gt; and &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/MonetaryAmount&quot;&gt;MonetaryAmount&lt;/a&gt;, the recommended type for values is 'Number'.&lt;/li&gt;
+     * &lt;li&gt;For &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/PropertyValue&quot;&gt;PropertyValue&lt;/a&gt;, it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.&lt;/li&gt;
+     * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
+     * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
+     * &lt;/ul&gt;
+     * 
+     */
+    @NotNull public Builder value(@NotNull Boolean value) {
+      putValue("value", value);
+      return this;
+    }
+    /**
+     * The value of the quantitative value or property value node.&lt;br/&gt;&lt;br/&gt;
+     * 
+     * &lt;ul&gt;
+     * &lt;li&gt;For &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/QuantitativeValue&quot;&gt;QuantitativeValue&lt;/a&gt; and &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/MonetaryAmount&quot;&gt;MonetaryAmount&lt;/a&gt;, the recommended type for values is 'Number'.&lt;/li&gt;
+     * &lt;li&gt;For &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/PropertyValue&quot;&gt;PropertyValue&lt;/a&gt;, it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.&lt;/li&gt;
+     * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
+     * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
+     * &lt;/ul&gt;
+     * 
+     */
+    @NotNull public Builder value(@NotNull Number number) {
+      putValue("value", number);
+      return this;
+    }
+    /**
+     * The value of the quantitative value or property value node.&lt;br/&gt;&lt;br/&gt;
+     * 
+     * &lt;ul&gt;
+     * &lt;li&gt;For &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/QuantitativeValue&quot;&gt;QuantitativeValue&lt;/a&gt; and &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/MonetaryAmount&quot;&gt;MonetaryAmount&lt;/a&gt;, the recommended type for values is 'Number'.&lt;/li&gt;
+     * &lt;li&gt;For &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/PropertyValue&quot;&gt;PropertyValue&lt;/a&gt;, it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.&lt;/li&gt;
+     * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
+     * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
+     * &lt;/ul&gt;
+     * 
+     */
+    @NotNull public Builder value(@NotNull String value) {
+      putValue("value", value);
+      return this;
+    }
+    /**
+     * The value of the quantitative value or property value node.&lt;br/&gt;&lt;br/&gt;
+     * 
+     * &lt;ul&gt;
+     * &lt;li&gt;For &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/QuantitativeValue&quot;&gt;QuantitativeValue&lt;/a&gt; and &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/MonetaryAmount&quot;&gt;MonetaryAmount&lt;/a&gt;, the recommended type for values is 'Number'.&lt;/li&gt;
+     * &lt;li&gt;For &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/PropertyValue&quot;&gt;PropertyValue&lt;/a&gt;, it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.&lt;/li&gt;
+     * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
+     * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
+     * &lt;/ul&gt;
+     * 
+     */
+    @NotNull public Builder value(@NotNull StructuredValue structuredValue) {
+      putValue("value", structuredValue);
+      return this;
+    }
+    /**
+     * The value of the quantitative value or property value node.&lt;br/&gt;&lt;br/&gt;
+     * 
+     * &lt;ul&gt;
+     * &lt;li&gt;For &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/QuantitativeValue&quot;&gt;QuantitativeValue&lt;/a&gt; and &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/MonetaryAmount&quot;&gt;MonetaryAmount&lt;/a&gt;, the recommended type for values is 'Number'.&lt;/li&gt;
+     * &lt;li&gt;For &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/PropertyValue&quot;&gt;PropertyValue&lt;/a&gt;, it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.&lt;/li&gt;
+     * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
+     * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
+     * &lt;/ul&gt;
+     * 
+     */
+    @NotNull public Builder value(@NotNull StructuredValue.Builder structuredValue) {
+      putValue("value", structuredValue.build());
+      return this;
+    }
+    /**
+     * The lower value of some characteristic or property.
+     */
+    @NotNull public Builder minValue(@NotNull Integer integer) {
+      putValue("minValue", integer);
+      return this;
+    }
+    /**
+     * The lower value of some characteristic or property.
+     */
+    @NotNull public Builder minValue(@NotNull Long minValue) {
+      putValue("minValue", minValue);
+      return this;
+    }
+    /**
+     * The lower value of some characteristic or property.
+     */
+    @NotNull public Builder minValue(@NotNull Float minValue) {
+      putValue("minValue", minValue);
+      return this;
+    }
+    /**
+     * The lower value of some characteristic or property.
+     */
+    @NotNull public Builder minValue(@NotNull Double minValue) {
+      putValue("minValue", minValue);
+      return this;
+    }
+    /**
+     * The lower value of some characteristic or property.
+     */
+    @NotNull public Builder minValue(@NotNull String minValue) {
+      putValue("minValue", minValue);
+      return this;
+    }
+    /**
+     * A technique or technology used in a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Dataset&quot;&gt;Dataset&lt;/a&gt; (or &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/DataDownload&quot;&gt;DataDownload&lt;/a&gt;, &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/DataCatalog&quot;&gt;DataCatalog&lt;/a&gt;),
+     * corresponding to the method used for measuring the corresponding variable(s) (described using &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/variableMeasured&quot;&gt;variableMeasured&lt;/a&gt;). This is oriented towards scientific and scholarly dataset publication but may have broader applicability; it is not intended as a full representation of measurement, but rather as a high level summary for dataset discovery.&lt;br/&gt;&lt;br/&gt;
+     * 
+     * For example, if &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/variableMeasured&quot;&gt;variableMeasured&lt;/a&gt; is: molecule concentration, &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/measurementTechnique&quot;&gt;measurementTechnique&lt;/a&gt; could be: &quot;mass spectrometry&quot; or &quot;nmr spectroscopy&quot; or &quot;colorimetry&quot; or &quot;immunofluorescence&quot;.&lt;br/&gt;&lt;br/&gt;
+     * 
+     * If the &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/variableMeasured&quot;&gt;variableMeasured&lt;/a&gt; is &quot;depression rating&quot;, the &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/measurementTechnique&quot;&gt;measurementTechnique&lt;/a&gt; could be &quot;Zung Scale&quot; or &quot;HAM-D&quot; or &quot;Beck Depression Inventory&quot;.&lt;br/&gt;&lt;br/&gt;
+     * 
+     * If there are several &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/variableMeasured&quot;&gt;variableMeasured&lt;/a&gt; properties recorded for some given data object, use a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/PropertyValue&quot;&gt;PropertyValue&lt;/a&gt; for each &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/variableMeasured&quot;&gt;variableMeasured&lt;/a&gt; and attach the corresponding &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/measurementTechnique&quot;&gt;measurementTechnique&lt;/a&gt;.
+     */
+    @NotNull public Builder measurementTechnique(@NotNull String measurementTechnique) {
+      putValue("measurementTechnique", measurementTechnique);
+      return this;
+    }
+    /**
      * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
      * &lt;a href='unitCode'&gt;unitCode&lt;/a&gt;.
      */
@@ -311,13 +375,10 @@ public class LocationFeatureSpecification extends PropertyValue {
       return this;
     }
     /**
-     * A commonly used identifier for the characteristic represented by the property, e.g. a manufacturer or a standard code for a property. propertyID can be
-     * (1) a prefixed string, mainly meant to be used with standards for product properties; (2) a site-specific, non-prefixed string (e.g. the primary key of the property or the vendor-specific id of the property), or (3)
-     * a URL indicating the type of the property, either pointing to an external vocabulary, or a Web resource that describes the property (e.g. a glossary entry).
-     * Standards bodies should promote a standard prefix for the identifiers of properties from their standards.
+     * URL of the item.
      */
-    @NotNull public Builder propertyID(@NotNull String propertyID) {
-      putValue("propertyID", propertyID);
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
       return this;
     }
     /**
@@ -328,45 +389,17 @@ public class LocationFeatureSpecification extends PropertyValue {
       return this;
     }
     /**
-     * An alias for the item.
-     */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
-      return this;
-    }
-    /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
-      putValue("disambiguatingDescription", disambiguatingDescription);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * A description of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -377,10 +410,24 @@ public class LocationFeatureSpecification extends PropertyValue {
       return this;
     }
     /**
-     * URL of the item.
+     * The name of the item.
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
       return this;
     }
     /**
@@ -395,6 +442,27 @@ public class LocationFeatureSpecification extends PropertyValue {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
       return this;
     }
     /**
@@ -433,10 +501,10 @@ public class LocationFeatureSpecification extends PropertyValue {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("hoursAvailable".equals(key) && value instanceof OpeningHoursSpecification) { this.hoursAvailable((OpeningHoursSpecification)value); return; }
-      if ("hoursAvailables".equals(key) && value instanceof OpeningHoursSpecification) { this.hoursAvailable((OpeningHoursSpecification)value); return; }
       if ("validFrom".equals(key) && value instanceof java.util.Date) { this.validFrom((java.util.Date)value); return; }
       if ("validFroms".equals(key) && value instanceof java.util.Date) { this.validFrom((java.util.Date)value); return; }
+      if ("hoursAvailable".equals(key) && value instanceof OpeningHoursSpecification) { this.hoursAvailable((OpeningHoursSpecification)value); return; }
+      if ("hoursAvailables".equals(key) && value instanceof OpeningHoursSpecification) { this.hoursAvailable((OpeningHoursSpecification)value); return; }
       if ("validThrough".equals(key) && value instanceof java.util.Date) { this.validThrough((java.util.Date)value); return; }
       if ("validThroughs".equals(key) && value instanceof java.util.Date) { this.validThrough((java.util.Date)value); return; }
       super.fromMap(key, value);

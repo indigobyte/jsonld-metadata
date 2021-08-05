@@ -30,36 +30,70 @@ public class HowToItem extends ListItem {
   /**
    * The required quantity of the item(s).
    */
-  @JsonIgnore public Number getRequiredQuantityNumber() {
-    return (Number) getValue("requiredQuantity");
+  @JsonIgnore public Integer getRequiredQuantityInteger() {
+    return (Integer) getValue("requiredQuantity");
   }
   /**
    * The required quantity of the item(s).
    */
-  @JsonIgnore public Collection<Number> getRequiredQuantityNumbers() {
+  @JsonIgnore public Collection<Integer> getRequiredQuantityIntegers() {
     final Object current = myData.get("requiredQuantity");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<Number>) current;
+      return (Collection<Integer>) current;
     }
-    return Arrays.asList((Number) current);
+    return Arrays.asList((Integer) current);
   }
   /**
    * The required quantity of the item(s).
    */
-  @JsonIgnore public QuantitativeValue getRequiredQuantityQuantitativeValue() {
-    return (QuantitativeValue) getValue("requiredQuantity");
+  @JsonIgnore public Long getRequiredQuantityLong() {
+    return (Long) getValue("requiredQuantity");
   }
   /**
    * The required quantity of the item(s).
    */
-  @JsonIgnore public Collection<QuantitativeValue> getRequiredQuantityQuantitativeValues() {
+  @JsonIgnore public Collection<Long> getRequiredQuantityLongs() {
     final Object current = myData.get("requiredQuantity");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+      return (Collection<Long>) current;
     }
-    return Arrays.asList((QuantitativeValue) current);
+    return Arrays.asList((Long) current);
+  }
+  /**
+   * The required quantity of the item(s).
+   */
+  @JsonIgnore public Float getRequiredQuantityFloat() {
+    return (Float) getValue("requiredQuantity");
+  }
+  /**
+   * The required quantity of the item(s).
+   */
+  @JsonIgnore public Collection<Float> getRequiredQuantityFloats() {
+    final Object current = myData.get("requiredQuantity");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Float>) current;
+    }
+    return Arrays.asList((Float) current);
+  }
+  /**
+   * The required quantity of the item(s).
+   */
+  @JsonIgnore public Double getRequiredQuantityDouble() {
+    return (Double) getValue("requiredQuantity");
+  }
+  /**
+   * The required quantity of the item(s).
+   */
+  @JsonIgnore public Collection<Double> getRequiredQuantityDoubles() {
+    final Object current = myData.get("requiredQuantity");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Double>) current;
+    }
+    return Arrays.asList((Double) current);
   }
   /**
    * The required quantity of the item(s).
@@ -95,22 +129,29 @@ public class HowToItem extends ListItem {
     /**
      * The required quantity of the item(s).
      */
-    @NotNull public Builder requiredQuantity(@NotNull Number number) {
-      putValue("requiredQuantity", number);
+    @NotNull public Builder requiredQuantity(@NotNull Integer integer) {
+      putValue("requiredQuantity", integer);
       return this;
     }
     /**
      * The required quantity of the item(s).
      */
-    @NotNull public Builder requiredQuantity(@NotNull QuantitativeValue quantitativeValue) {
-      putValue("requiredQuantity", quantitativeValue);
+    @NotNull public Builder requiredQuantity(@NotNull Long requiredQuantity) {
+      putValue("requiredQuantity", requiredQuantity);
       return this;
     }
     /**
      * The required quantity of the item(s).
      */
-    @NotNull public Builder requiredQuantity(@NotNull QuantitativeValue.Builder quantitativeValue) {
-      putValue("requiredQuantity", quantitativeValue.build());
+    @NotNull public Builder requiredQuantity(@NotNull Float requiredQuantity) {
+      putValue("requiredQuantity", requiredQuantity);
+      return this;
+    }
+    /**
+     * The required quantity of the item(s).
+     */
+    @NotNull public Builder requiredQuantity(@NotNull Double requiredQuantity) {
+      putValue("requiredQuantity", requiredQuantity);
       return this;
     }
     /**
@@ -163,6 +204,13 @@ public class HowToItem extends ListItem {
       return this;
     }
     /**
+     * URL of the item.
+     */
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
+      return this;
+    }
+    /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      */
     @NotNull public Builder additionalType(@NotNull String additionalType) {
@@ -170,45 +218,17 @@ public class HowToItem extends ListItem {
       return this;
     }
     /**
-     * An alias for the item.
-     */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
-      return this;
-    }
-    /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
-      putValue("disambiguatingDescription", disambiguatingDescription);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * A description of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -219,10 +239,24 @@ public class HowToItem extends ListItem {
       return this;
     }
     /**
-     * URL of the item.
+     * The name of the item.
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
       return this;
     }
     /**
@@ -237,6 +271,27 @@ public class HowToItem extends ListItem {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
       return this;
     }
     /**
@@ -275,10 +330,14 @@ public class HowToItem extends ListItem {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("requiredQuantity".equals(key) && value instanceof Number) { this.requiredQuantity((Number)value); return; }
-      if ("requiredQuantitys".equals(key) && value instanceof Number) { this.requiredQuantity((Number)value); return; }
-      if ("requiredQuantity".equals(key) && value instanceof QuantitativeValue) { this.requiredQuantity((QuantitativeValue)value); return; }
-      if ("requiredQuantitys".equals(key) && value instanceof QuantitativeValue) { this.requiredQuantity((QuantitativeValue)value); return; }
+      if ("requiredQuantity".equals(key) && value instanceof Integer) { this.requiredQuantity((Integer)value); return; }
+      if ("requiredQuantitys".equals(key) && value instanceof Integer) { this.requiredQuantity((Integer)value); return; }
+      if ("requiredQuantity".equals(key) && value instanceof Long) { this.requiredQuantity((Long)value); return; }
+      if ("requiredQuantitys".equals(key) && value instanceof Long) { this.requiredQuantity((Long)value); return; }
+      if ("requiredQuantity".equals(key) && value instanceof Float) { this.requiredQuantity((Float)value); return; }
+      if ("requiredQuantitys".equals(key) && value instanceof Float) { this.requiredQuantity((Float)value); return; }
+      if ("requiredQuantity".equals(key) && value instanceof Double) { this.requiredQuantity((Double)value); return; }
+      if ("requiredQuantitys".equals(key) && value instanceof Double) { this.requiredQuantity((Double)value); return; }
       if ("requiredQuantity".equals(key) && value instanceof String) { this.requiredQuantity((String)value); return; }
       if ("requiredQuantitys".equals(key) && value instanceof String) { this.requiredQuantity((String)value); return; }
       super.fromMap(key, value);

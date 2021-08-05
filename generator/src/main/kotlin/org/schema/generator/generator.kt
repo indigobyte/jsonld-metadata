@@ -16,6 +16,7 @@
 
 package org.schema.generator
 
+import org.semarglproject.rdf.RdfXmlParser
 import org.semarglproject.rdf.rdfa.RdfaParser
 import org.semarglproject.source.StreamProcessor
 import java.io.File
@@ -48,9 +49,12 @@ private const val NAMESPACE_KOTLIN = "$NAMESPACE.kotlin"
 
 fun main() {
     val sink = GeneratorSink()
-    val processor = StreamProcessor(RdfaParser.connect(sink))
+    val processor = StreamProcessor(
+        RdfXmlParser.connect(sink)
+        //RdfaParser.connect(sink)
+    )
 
-    File("resources").listFiles { f -> f.extension == "rdfa" }?.forEach {
+    File("resources").listFiles { f -> f.extension == "rdf" }?.forEach {
         println("Processing ${it.name}")
         processor.process(FileInputStream(it), "http://schema.org/")
     }

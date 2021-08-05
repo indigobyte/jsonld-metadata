@@ -28,6 +28,23 @@ import java.util.*;
  */
 public class GeoShape extends StructuredValue {
   /**
+   * A polygon is the area enclosed by a point-to-point path for which the starting and ending points are the same. A polygon is expressed as a series of four or more space delimited points where the first and final points are identical.
+   */
+  @JsonIgnore public String getPolygon() {
+    return (String) getValue("polygon");
+  }
+  /**
+   * A polygon is the area enclosed by a point-to-point path for which the starting and ending points are the same. A polygon is expressed as a series of four or more space delimited points where the first and final points are identical.
+   */
+  @JsonIgnore public Collection<String> getPolygons() {
+    final Object current = myData.get("polygon");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
    * Physical address of the item.
    */
   @JsonIgnore public PostalAddress getAddressPostalAddress() {
@@ -62,50 +79,16 @@ public class GeoShape extends StructuredValue {
     return Arrays.asList((String) current);
   }
   /**
-   * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
+   * A line is a point-to-point path consisting of two or more points. A line is expressed as a series of two or more point objects separated by space.
    */
-  @JsonIgnore public Country getAddressCountryCountry() {
-    return (Country) getValue("addressCountry");
+  @JsonIgnore public String getLine() {
+    return (String) getValue("line");
   }
   /**
-   * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
+   * A line is a point-to-point path consisting of two or more points. A line is expressed as a series of two or more point objects separated by space.
    */
-  @JsonIgnore public Collection<Country> getAddressCountryCountrys() {
-    final Object current = myData.get("addressCountry");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Country>) current;
-    }
-    return Arrays.asList((Country) current);
-  }
-  /**
-   * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
-   */
-  @JsonIgnore public String getAddressCountryString() {
-    return (String) getValue("addressCountry");
-  }
-  /**
-   * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
-   */
-  @JsonIgnore public Collection<String> getAddressCountryStrings() {
-    final Object current = myData.get("addressCountry");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * A box is the area enclosed by the rectangle formed by two points. The first point is the lower corner, the second point is the upper corner. A box is expressed as two points separated by a space character.
-   */
-  @JsonIgnore public String getBox() {
-    return (String) getValue("box");
-  }
-  /**
-   * A box is the area enclosed by the rectangle formed by two points. The first point is the lower corner, the second point is the upper corner. A box is expressed as two points separated by a space character.
-   */
-  @JsonIgnore public Collection<String> getBoxs() {
-    final Object current = myData.get("box");
+  @JsonIgnore public Collection<String> getLines() {
+    final Object current = myData.get("line");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<String>) current;
@@ -130,118 +113,33 @@ public class GeoShape extends StructuredValue {
     return Arrays.asList((String) current);
   }
   /**
-   * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
+   * The country. For example, USA. You can also provide the two-letter &lt;a href=&quot;http://en.wikipedia.org/wiki/ISO_3166-1&quot;&gt;ISO 3166-1 alpha-2 country code&lt;/a&gt;.
    */
-  @JsonIgnore public Integer getElevationInteger() {
-    return (Integer) getValue("elevation");
+  @JsonIgnore public Country getAddressCountryCountry() {
+    return (Country) getValue("addressCountry");
   }
   /**
-   * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
+   * The country. For example, USA. You can also provide the two-letter &lt;a href=&quot;http://en.wikipedia.org/wiki/ISO_3166-1&quot;&gt;ISO 3166-1 alpha-2 country code&lt;/a&gt;.
    */
-  @JsonIgnore public Collection<Integer> getElevationIntegers() {
-    final Object current = myData.get("elevation");
+  @JsonIgnore public Collection<Country> getAddressCountryCountrys() {
+    final Object current = myData.get("addressCountry");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+      return (Collection<Country>) current;
     }
-    return Arrays.asList((Integer) current);
+    return Arrays.asList((Country) current);
   }
   /**
-   * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
+   * The country. For example, USA. You can also provide the two-letter &lt;a href=&quot;http://en.wikipedia.org/wiki/ISO_3166-1&quot;&gt;ISO 3166-1 alpha-2 country code&lt;/a&gt;.
    */
-  @JsonIgnore public Long getElevationLong() {
-    return (Long) getValue("elevation");
+  @JsonIgnore public String getAddressCountryString() {
+    return (String) getValue("addressCountry");
   }
   /**
-   * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
+   * The country. For example, USA. You can also provide the two-letter &lt;a href=&quot;http://en.wikipedia.org/wiki/ISO_3166-1&quot;&gt;ISO 3166-1 alpha-2 country code&lt;/a&gt;.
    */
-  @JsonIgnore public Collection<Long> getElevationLongs() {
-    final Object current = myData.get("elevation");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
-    }
-    return Arrays.asList((Long) current);
-  }
-  /**
-   * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
-   */
-  @JsonIgnore public Float getElevationFloat() {
-    return (Float) getValue("elevation");
-  }
-  /**
-   * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
-   */
-  @JsonIgnore public Collection<Float> getElevationFloats() {
-    final Object current = myData.get("elevation");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
-    }
-    return Arrays.asList((Float) current);
-  }
-  /**
-   * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
-   */
-  @JsonIgnore public Double getElevationDouble() {
-    return (Double) getValue("elevation");
-  }
-  /**
-   * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
-   */
-  @JsonIgnore public Collection<Double> getElevationDoubles() {
-    final Object current = myData.get("elevation");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
-    }
-    return Arrays.asList((Double) current);
-  }
-  /**
-   * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
-   */
-  @JsonIgnore public String getElevationString() {
-    return (String) getValue("elevation");
-  }
-  /**
-   * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
-   */
-  @JsonIgnore public Collection<String> getElevationStrings() {
-    final Object current = myData.get("elevation");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * A line is a point-to-point path consisting of two or more points. A line is expressed as a series of two or more point objects separated by space.
-   */
-  @JsonIgnore public String getLine() {
-    return (String) getValue("line");
-  }
-  /**
-   * A line is a point-to-point path consisting of two or more points. A line is expressed as a series of two or more point objects separated by space.
-   */
-  @JsonIgnore public Collection<String> getLines() {
-    final Object current = myData.get("line");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * A polygon is the area enclosed by a point-to-point path for which the starting and ending points are the same. A polygon is expressed as a series of four or more space delimited points where the first and final points are identical.
-   */
-  @JsonIgnore public String getPolygon() {
-    return (String) getValue("polygon");
-  }
-  /**
-   * A polygon is the area enclosed by a point-to-point path for which the starting and ending points are the same. A polygon is expressed as a series of four or more space delimited points where the first and final points are identical.
-   */
-  @JsonIgnore public Collection<String> getPolygons() {
-    final Object current = myData.get("polygon");
+  @JsonIgnore public Collection<String> getAddressCountryStrings() {
+    final Object current = myData.get("addressCountry");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<String>) current;
@@ -265,6 +163,57 @@ public class GeoShape extends StructuredValue {
     }
     return Arrays.asList((String) current);
   }
+  /**
+   * The elevation of a location (&lt;a href=&quot;https://en.wikipedia.org/wiki/World_Geodetic_System&quot;&gt;WGS 84&lt;/a&gt;). Values may be of the form 'NUMBER UNIT&lt;em&gt;OF&lt;/em&gt;MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
+   */
+  @JsonIgnore public Number getElevationNumber() {
+    return (Number) getValue("elevation");
+  }
+  /**
+   * The elevation of a location (&lt;a href=&quot;https://en.wikipedia.org/wiki/World_Geodetic_System&quot;&gt;WGS 84&lt;/a&gt;). Values may be of the form 'NUMBER UNIT&lt;em&gt;OF&lt;/em&gt;MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
+   */
+  @JsonIgnore public Collection<Number> getElevationNumbers() {
+    final Object current = myData.get("elevation");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Number>) current;
+    }
+    return Arrays.asList((Number) current);
+  }
+  /**
+   * The elevation of a location (&lt;a href=&quot;https://en.wikipedia.org/wiki/World_Geodetic_System&quot;&gt;WGS 84&lt;/a&gt;). Values may be of the form 'NUMBER UNIT&lt;em&gt;OF&lt;/em&gt;MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
+   */
+  @JsonIgnore public String getElevationString() {
+    return (String) getValue("elevation");
+  }
+  /**
+   * The elevation of a location (&lt;a href=&quot;https://en.wikipedia.org/wiki/World_Geodetic_System&quot;&gt;WGS 84&lt;/a&gt;). Values may be of the form 'NUMBER UNIT&lt;em&gt;OF&lt;/em&gt;MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
+   */
+  @JsonIgnore public Collection<String> getElevationStrings() {
+    final Object current = myData.get("elevation");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * A box is the area enclosed by the rectangle formed by two points. The first point is the lower corner, the second point is the upper corner. A box is expressed as two points separated by a space character.
+   */
+  @JsonIgnore public String getBox() {
+    return (String) getValue("box");
+  }
+  /**
+   * A box is the area enclosed by the rectangle formed by two points. The first point is the lower corner, the second point is the upper corner. A box is expressed as two points separated by a space character.
+   */
+  @JsonIgnore public Collection<String> getBoxs() {
+    final Object current = myData.get("box");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
   protected GeoShape(java.util.Map<String,Object> data) {
     super(data);
   }
@@ -278,6 +227,13 @@ public class GeoShape extends StructuredValue {
     }
     @NotNull public GeoShape build() {
       return new GeoShape(myData);
+    }
+    /**
+     * A polygon is the area enclosed by a point-to-point path for which the starting and ending points are the same. A polygon is expressed as a series of four or more space delimited points where the first and final points are identical.
+     */
+    @NotNull public Builder polygon(@NotNull String polygon) {
+      putValue("polygon", polygon);
+      return this;
     }
     /**
      * Physical address of the item.
@@ -301,31 +257,10 @@ public class GeoShape extends StructuredValue {
       return this;
     }
     /**
-     * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
+     * A line is a point-to-point path consisting of two or more points. A line is expressed as a series of two or more point objects separated by space.
      */
-    @NotNull public Builder addressCountry(@NotNull Country country) {
-      putValue("addressCountry", country);
-      return this;
-    }
-    /**
-     * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
-     */
-    @NotNull public Builder addressCountry(@NotNull Country.Builder country) {
-      putValue("addressCountry", country.build());
-      return this;
-    }
-    /**
-     * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
-     */
-    @NotNull public Builder addressCountry(@NotNull String addressCountry) {
-      putValue("addressCountry", addressCountry);
-      return this;
-    }
-    /**
-     * A box is the area enclosed by the rectangle formed by two points. The first point is the lower corner, the second point is the upper corner. A box is expressed as two points separated by a space character.
-     */
-    @NotNull public Builder box(@NotNull String box) {
-      putValue("box", box);
+    @NotNull public Builder line(@NotNull String line) {
+      putValue("line", line);
       return this;
     }
     /**
@@ -336,52 +271,24 @@ public class GeoShape extends StructuredValue {
       return this;
     }
     /**
-     * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
+     * The country. For example, USA. You can also provide the two-letter &lt;a href=&quot;http://en.wikipedia.org/wiki/ISO_3166-1&quot;&gt;ISO 3166-1 alpha-2 country code&lt;/a&gt;.
      */
-    @NotNull public Builder elevation(@NotNull Integer integer) {
-      putValue("elevation", integer);
+    @NotNull public Builder addressCountry(@NotNull Country country) {
+      putValue("addressCountry", country);
       return this;
     }
     /**
-     * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
+     * The country. For example, USA. You can also provide the two-letter &lt;a href=&quot;http://en.wikipedia.org/wiki/ISO_3166-1&quot;&gt;ISO 3166-1 alpha-2 country code&lt;/a&gt;.
      */
-    @NotNull public Builder elevation(@NotNull Long elevation) {
-      putValue("elevation", elevation);
+    @NotNull public Builder addressCountry(@NotNull Country.Builder country) {
+      putValue("addressCountry", country.build());
       return this;
     }
     /**
-     * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
+     * The country. For example, USA. You can also provide the two-letter &lt;a href=&quot;http://en.wikipedia.org/wiki/ISO_3166-1&quot;&gt;ISO 3166-1 alpha-2 country code&lt;/a&gt;.
      */
-    @NotNull public Builder elevation(@NotNull Float elevation) {
-      putValue("elevation", elevation);
-      return this;
-    }
-    /**
-     * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
-     */
-    @NotNull public Builder elevation(@NotNull Double elevation) {
-      putValue("elevation", elevation);
-      return this;
-    }
-    /**
-     * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
-     */
-    @NotNull public Builder elevation(@NotNull String elevation) {
-      putValue("elevation", elevation);
-      return this;
-    }
-    /**
-     * A line is a point-to-point path consisting of two or more points. A line is expressed as a series of two or more point objects separated by space.
-     */
-    @NotNull public Builder line(@NotNull String line) {
-      putValue("line", line);
-      return this;
-    }
-    /**
-     * A polygon is the area enclosed by a point-to-point path for which the starting and ending points are the same. A polygon is expressed as a series of four or more space delimited points where the first and final points are identical.
-     */
-    @NotNull public Builder polygon(@NotNull String polygon) {
-      putValue("polygon", polygon);
+    @NotNull public Builder addressCountry(@NotNull String addressCountry) {
+      putValue("addressCountry", addressCountry);
       return this;
     }
     /**
@@ -392,6 +299,34 @@ public class GeoShape extends StructuredValue {
       return this;
     }
     /**
+     * The elevation of a location (&lt;a href=&quot;https://en.wikipedia.org/wiki/World_Geodetic_System&quot;&gt;WGS 84&lt;/a&gt;). Values may be of the form 'NUMBER UNIT&lt;em&gt;OF&lt;/em&gt;MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
+     */
+    @NotNull public Builder elevation(@NotNull Number number) {
+      putValue("elevation", number);
+      return this;
+    }
+    /**
+     * The elevation of a location (&lt;a href=&quot;https://en.wikipedia.org/wiki/World_Geodetic_System&quot;&gt;WGS 84&lt;/a&gt;). Values may be of the form 'NUMBER UNIT&lt;em&gt;OF&lt;/em&gt;MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
+     */
+    @NotNull public Builder elevation(@NotNull String elevation) {
+      putValue("elevation", elevation);
+      return this;
+    }
+    /**
+     * A box is the area enclosed by the rectangle formed by two points. The first point is the lower corner, the second point is the upper corner. A box is expressed as two points separated by a space character.
+     */
+    @NotNull public Builder box(@NotNull String box) {
+      putValue("box", box);
+      return this;
+    }
+    /**
+     * URL of the item.
+     */
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
+      return this;
+    }
+    /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      */
     @NotNull public Builder additionalType(@NotNull String additionalType) {
@@ -399,45 +334,17 @@ public class GeoShape extends StructuredValue {
       return this;
     }
     /**
-     * An alias for the item.
-     */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
-      return this;
-    }
-    /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
-      putValue("disambiguatingDescription", disambiguatingDescription);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * A description of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -448,10 +355,24 @@ public class GeoShape extends StructuredValue {
       return this;
     }
     /**
-     * URL of the item.
+     * The name of the item.
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
       return this;
     }
     /**
@@ -466,6 +387,27 @@ public class GeoShape extends StructuredValue {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
       return this;
     }
     /**
@@ -504,34 +446,28 @@ public class GeoShape extends StructuredValue {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
+      if ("polygon".equals(key) && value instanceof String) { this.polygon((String)value); return; }
+      if ("polygons".equals(key) && value instanceof String) { this.polygon((String)value); return; }
       if ("address".equals(key) && value instanceof PostalAddress) { this.address((PostalAddress)value); return; }
       if ("addresss".equals(key) && value instanceof PostalAddress) { this.address((PostalAddress)value); return; }
       if ("address".equals(key) && value instanceof String) { this.address((String)value); return; }
       if ("addresss".equals(key) && value instanceof String) { this.address((String)value); return; }
+      if ("line".equals(key) && value instanceof String) { this.line((String)value); return; }
+      if ("lines".equals(key) && value instanceof String) { this.line((String)value); return; }
+      if ("circle".equals(key) && value instanceof String) { this.circle((String)value); return; }
+      if ("circles".equals(key) && value instanceof String) { this.circle((String)value); return; }
       if ("addressCountry".equals(key) && value instanceof Country) { this.addressCountry((Country)value); return; }
       if ("addressCountrys".equals(key) && value instanceof Country) { this.addressCountry((Country)value); return; }
       if ("addressCountry".equals(key) && value instanceof String) { this.addressCountry((String)value); return; }
       if ("addressCountrys".equals(key) && value instanceof String) { this.addressCountry((String)value); return; }
-      if ("box".equals(key) && value instanceof String) { this.box((String)value); return; }
-      if ("boxs".equals(key) && value instanceof String) { this.box((String)value); return; }
-      if ("circle".equals(key) && value instanceof String) { this.circle((String)value); return; }
-      if ("circles".equals(key) && value instanceof String) { this.circle((String)value); return; }
-      if ("elevation".equals(key) && value instanceof Integer) { this.elevation((Integer)value); return; }
-      if ("elevations".equals(key) && value instanceof Integer) { this.elevation((Integer)value); return; }
-      if ("elevation".equals(key) && value instanceof Long) { this.elevation((Long)value); return; }
-      if ("elevations".equals(key) && value instanceof Long) { this.elevation((Long)value); return; }
-      if ("elevation".equals(key) && value instanceof Float) { this.elevation((Float)value); return; }
-      if ("elevations".equals(key) && value instanceof Float) { this.elevation((Float)value); return; }
-      if ("elevation".equals(key) && value instanceof Double) { this.elevation((Double)value); return; }
-      if ("elevations".equals(key) && value instanceof Double) { this.elevation((Double)value); return; }
-      if ("elevation".equals(key) && value instanceof String) { this.elevation((String)value); return; }
-      if ("elevations".equals(key) && value instanceof String) { this.elevation((String)value); return; }
-      if ("line".equals(key) && value instanceof String) { this.line((String)value); return; }
-      if ("lines".equals(key) && value instanceof String) { this.line((String)value); return; }
-      if ("polygon".equals(key) && value instanceof String) { this.polygon((String)value); return; }
-      if ("polygons".equals(key) && value instanceof String) { this.polygon((String)value); return; }
       if ("postalCode".equals(key) && value instanceof String) { this.postalCode((String)value); return; }
       if ("postalCodes".equals(key) && value instanceof String) { this.postalCode((String)value); return; }
+      if ("elevation".equals(key) && value instanceof Number) { this.elevation((Number)value); return; }
+      if ("elevations".equals(key) && value instanceof Number) { this.elevation((Number)value); return; }
+      if ("elevation".equals(key) && value instanceof String) { this.elevation((String)value); return; }
+      if ("elevations".equals(key) && value instanceof String) { this.elevation((String)value); return; }
+      if ("box".equals(key) && value instanceof String) { this.box((String)value); return; }
+      if ("boxs".equals(key) && value instanceof String) { this.box((String)value); return; }
       super.fromMap(key, value);
     }
   }

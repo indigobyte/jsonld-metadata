@@ -21,20 +21,22 @@ package org.schema;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * A payment method is a standardized procedure for transferring the monetary amount for a purchase. Payment methods are characterized by the legal and technical structures used, and by the organization or group carrying out the transaction.
+ * A payment method is a standardized procedure for transferring the monetary amount for a purchase. Payment methods are characterized by the legal and technical structures used, and by the organization or group carrying out the transaction.&lt;br/&gt;&lt;br/&gt;
  * 
- * Commonly used values:
+ * Commonly used values:&lt;br/&gt;&lt;br/&gt;
  * 
- * * http://purl.org/goodrelations/v1#ByBankTransferInAdvance
- * * http://purl.org/goodrelations/v1#ByInvoice
- * * http://purl.org/goodrelations/v1#Cash
- * * http://purl.org/goodrelations/v1#CheckInAdvance
- * * http://purl.org/goodrelations/v1#COD
- * * http://purl.org/goodrelations/v1#DirectDebit
- * * http://purl.org/goodrelations/v1#GoogleCheckout
- * * http://purl.org/goodrelations/v1#PayPal
- * * http://purl.org/goodrelations/v1#PaySwarm
- *         
+ * &lt;ul&gt;
+ * &lt;li&gt;http://purl.org/goodrelations/v1#ByBankTransferInAdvance&lt;/li&gt;
+ * &lt;li&gt;http://purl.org/goodrelations/v1#ByInvoice&lt;/li&gt;
+ * &lt;li&gt;http://purl.org/goodrelations/v1#Cash&lt;/li&gt;
+ * &lt;li&gt;http://purl.org/goodrelations/v1#CheckInAdvance&lt;/li&gt;
+ * &lt;li&gt;http://purl.org/goodrelations/v1#COD&lt;/li&gt;
+ * &lt;li&gt;http://purl.org/goodrelations/v1#DirectDebit&lt;/li&gt;
+ * &lt;li&gt;http://purl.org/goodrelations/v1#GoogleCheckout&lt;/li&gt;
+ * &lt;li&gt;http://purl.org/goodrelations/v1#PayPal&lt;/li&gt;
+ * &lt;li&gt;http://purl.org/goodrelations/v1#PaySwarm&lt;/li&gt;
+ * &lt;/ul&gt;
+ * 
  */
 public enum PaymentMethod {
   PaymentCard("http://schema.org/PaymentCard");

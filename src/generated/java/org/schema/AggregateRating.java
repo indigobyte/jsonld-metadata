@@ -45,23 +45,6 @@ public class AggregateRating extends Rating {
     return Arrays.asList((Thing) current);
   }
   /**
-   * The count of total number of ratings.
-   */
-  @JsonIgnore public Integer getRatingCount() {
-    return (Integer) getValue("ratingCount");
-  }
-  /**
-   * The count of total number of ratings.
-   */
-  @JsonIgnore public Collection<Integer> getRatingCounts() {
-    final Object current = myData.get("ratingCount");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
-    }
-    return Arrays.asList((Integer) current);
-  }
-  /**
    * The count of total number of reviews.
    */
   @JsonIgnore public Integer getReviewCount() {
@@ -72,6 +55,23 @@ public class AggregateRating extends Rating {
    */
   @JsonIgnore public Collection<Integer> getReviewCounts() {
     final Object current = myData.get("reviewCount");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Integer>) current;
+    }
+    return Arrays.asList((Integer) current);
+  }
+  /**
+   * The count of total number of ratings.
+   */
+  @JsonIgnore public Integer getRatingCount() {
+    return (Integer) getValue("ratingCount");
+  }
+  /**
+   * The count of total number of ratings.
+   */
+  @JsonIgnore public Collection<Integer> getRatingCounts() {
+    final Object current = myData.get("ratingCount");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<Integer>) current;
@@ -107,6 +107,13 @@ public class AggregateRating extends Rating {
       return this;
     }
     /**
+     * The count of total number of reviews.
+     */
+    @NotNull public Builder reviewCount(@NotNull Integer integer) {
+      putValue("reviewCount", integer);
+      return this;
+    }
+    /**
      * The count of total number of ratings.
      */
     @NotNull public Builder ratingCount(@NotNull Integer integer) {
@@ -114,10 +121,38 @@ public class AggregateRating extends Rating {
       return this;
     }
     /**
-     * The count of total number of reviews.
+     * A short explanation (e.g. one to two sentences) providing background context and other information that led to the conclusion expressed in the rating. This is particularly applicable to ratings associated with &quot;fact check&quot; markup using &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ClaimReview&quot;&gt;ClaimReview&lt;/a&gt;.
      */
-    @NotNull public Builder reviewCount(@NotNull Integer integer) {
-      putValue("reviewCount", integer);
+    @NotNull public Builder ratingExplanation(@NotNull String ratingExplanation) {
+      putValue("ratingExplanation", ratingExplanation);
+      return this;
+    }
+    /**
+     * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
+     */
+    @NotNull public Builder bestRating(@NotNull Number number) {
+      putValue("bestRating", number);
+      return this;
+    }
+    /**
+     * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
+     */
+    @NotNull public Builder bestRating(@NotNull String bestRating) {
+      putValue("bestRating", bestRating);
+      return this;
+    }
+    /**
+     * The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.
+     */
+    @NotNull public Builder worstRating(@NotNull Number number) {
+      putValue("worstRating", number);
+      return this;
+    }
+    /**
+     * The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.
+     */
+    @NotNull public Builder worstRating(@NotNull String worstRating) {
+      putValue("worstRating", worstRating);
       return this;
     }
     /**
@@ -149,87 +184,78 @@ public class AggregateRating extends Rating {
       return this;
     }
     /**
-     * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
+     * The rating for the content.&lt;br/&gt;&lt;br/&gt;
+     * 
+     * Usage guidelines:&lt;br/&gt;&lt;br/&gt;
+     * 
+     * &lt;ul&gt;
+     * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
+     * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
+     * &lt;/ul&gt;
+     * 
      */
-    @NotNull public Builder bestRating(@NotNull Integer integer) {
-      putValue("bestRating", integer);
+    @NotNull public Builder ratingValue(@NotNull Integer integer) {
+      putValue("ratingValue", integer);
       return this;
     }
     /**
-     * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
+     * The rating for the content.&lt;br/&gt;&lt;br/&gt;
+     * 
+     * Usage guidelines:&lt;br/&gt;&lt;br/&gt;
+     * 
+     * &lt;ul&gt;
+     * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
+     * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
+     * &lt;/ul&gt;
+     * 
      */
-    @NotNull public Builder bestRating(@NotNull Long bestRating) {
-      putValue("bestRating", bestRating);
-      return this;
-    }
-    /**
-     * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
-     */
-    @NotNull public Builder bestRating(@NotNull Float bestRating) {
-      putValue("bestRating", bestRating);
-      return this;
-    }
-    /**
-     * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
-     */
-    @NotNull public Builder bestRating(@NotNull Double bestRating) {
-      putValue("bestRating", bestRating);
-      return this;
-    }
-    /**
-     * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
-     */
-    @NotNull public Builder bestRating(@NotNull String bestRating) {
-      putValue("bestRating", bestRating);
-      return this;
-    }
-    /**
-     * The rating for the content.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-     */
-    @NotNull public Builder ratingValue(@NotNull Number number) {
-      putValue("ratingValue", number);
-      return this;
-    }
-    /**
-     * The rating for the content.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-     */
-    @NotNull public Builder ratingValue(@NotNull String ratingValue) {
+    @NotNull public Builder ratingValue(@NotNull Long ratingValue) {
       putValue("ratingValue", ratingValue);
       return this;
     }
     /**
-     * The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.
+     * The rating for the content.&lt;br/&gt;&lt;br/&gt;
+     * 
+     * Usage guidelines:&lt;br/&gt;&lt;br/&gt;
+     * 
+     * &lt;ul&gt;
+     * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
+     * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
+     * &lt;/ul&gt;
+     * 
      */
-    @NotNull public Builder worstRating(@NotNull Integer integer) {
-      putValue("worstRating", integer);
+    @NotNull public Builder ratingValue(@NotNull Float ratingValue) {
+      putValue("ratingValue", ratingValue);
       return this;
     }
     /**
-     * The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.
+     * The rating for the content.&lt;br/&gt;&lt;br/&gt;
+     * 
+     * Usage guidelines:&lt;br/&gt;&lt;br/&gt;
+     * 
+     * &lt;ul&gt;
+     * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
+     * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
+     * &lt;/ul&gt;
+     * 
      */
-    @NotNull public Builder worstRating(@NotNull Long worstRating) {
-      putValue("worstRating", worstRating);
+    @NotNull public Builder ratingValue(@NotNull Double ratingValue) {
+      putValue("ratingValue", ratingValue);
       return this;
     }
     /**
-     * The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.
+     * The rating for the content.&lt;br/&gt;&lt;br/&gt;
+     * 
+     * Usage guidelines:&lt;br/&gt;&lt;br/&gt;
+     * 
+     * &lt;ul&gt;
+     * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
+     * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
+     * &lt;/ul&gt;
+     * 
      */
-    @NotNull public Builder worstRating(@NotNull Float worstRating) {
-      putValue("worstRating", worstRating);
-      return this;
-    }
-    /**
-     * The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.
-     */
-    @NotNull public Builder worstRating(@NotNull Double worstRating) {
-      putValue("worstRating", worstRating);
-      return this;
-    }
-    /**
-     * The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.
-     */
-    @NotNull public Builder worstRating(@NotNull String worstRating) {
-      putValue("worstRating", worstRating);
+    @NotNull public Builder ratingValue(@NotNull String ratingValue) {
+      putValue("ratingValue", ratingValue);
       return this;
     }
     /**
@@ -240,6 +266,13 @@ public class AggregateRating extends Rating {
       return this;
     }
     /**
+     * URL of the item.
+     */
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
+      return this;
+    }
+    /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      */
     @NotNull public Builder additionalType(@NotNull String additionalType) {
@@ -247,45 +280,17 @@ public class AggregateRating extends Rating {
       return this;
     }
     /**
-     * An alias for the item.
-     */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
-      return this;
-    }
-    /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
-      putValue("disambiguatingDescription", disambiguatingDescription);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * A description of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -296,10 +301,24 @@ public class AggregateRating extends Rating {
       return this;
     }
     /**
-     * URL of the item.
+     * The name of the item.
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
       return this;
     }
     /**
@@ -314,6 +333,27 @@ public class AggregateRating extends Rating {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
       return this;
     }
     /**
@@ -354,10 +394,10 @@ public class AggregateRating extends Rating {
     @Override protected void fromMap(String key, Object value) {
       if ("itemReviewed".equals(key) && value instanceof Thing) { this.itemReviewed((Thing)value); return; }
       if ("itemRevieweds".equals(key) && value instanceof Thing) { this.itemReviewed((Thing)value); return; }
-      if ("ratingCount".equals(key) && value instanceof Integer) { this.ratingCount((Integer)value); return; }
-      if ("ratingCounts".equals(key) && value instanceof Integer) { this.ratingCount((Integer)value); return; }
       if ("reviewCount".equals(key) && value instanceof Integer) { this.reviewCount((Integer)value); return; }
       if ("reviewCounts".equals(key) && value instanceof Integer) { this.reviewCount((Integer)value); return; }
+      if ("ratingCount".equals(key) && value instanceof Integer) { this.ratingCount((Integer)value); return; }
+      if ("ratingCounts".equals(key) && value instanceof Integer) { this.ratingCount((Integer)value); return; }
       super.fromMap(key, value);
     }
   }

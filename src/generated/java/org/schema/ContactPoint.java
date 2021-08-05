@@ -28,55 +28,21 @@ import java.util.*;
  */
 public class ContactPoint extends StructuredValue {
   /**
-   * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
+   * The fax number.
    */
-  @JsonIgnore public Language getAvailableLanguageLanguage() {
-    return (Language) getValue("availableLanguage");
+  @JsonIgnore public String getFaxNumber() {
+    return (String) getValue("faxNumber");
   }
   /**
-   * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
+   * The fax number.
    */
-  @JsonIgnore public Collection<Language> getAvailableLanguageLanguages() {
-    final Object current = myData.get("availableLanguage");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Language>) current;
-    }
-    return Arrays.asList((Language) current);
-  }
-  /**
-   * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
-   */
-  @JsonIgnore public String getAvailableLanguageString() {
-    return (String) getValue("availableLanguage");
-  }
-  /**
-   * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
-   */
-  @JsonIgnore public Collection<String> getAvailableLanguageStrings() {
-    final Object current = myData.get("availableLanguage");
+  @JsonIgnore public Collection<String> getFaxNumbers() {
+    final Object current = myData.get("faxNumber");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<String>) current;
     }
     return Arrays.asList((String) current);
-  }
-  /**
-   * An option available on this contact point (e.g. a toll-free number or support for hearing-impaired callers).
-   */
-  @JsonIgnore public ContactPointOption getContactOption() {
-    return (ContactPointOption) getValue("contactOption");
-  }
-  /**
-   * An option available on this contact point (e.g. a toll-free number or support for hearing-impaired callers).
-   */
-  @JsonIgnore public Collection<ContactPointOption> getContactOptions() {
-    final Object current = myData.get("contactOption");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<ContactPointOption>) current;
-    }
-    return Arrays.asList((ContactPointOption) current);
   }
   /**
    * A person or organization can have different contact points, for different purposes. For example, a sales contact point, a PR contact point and so on. This property is used to specify the kind of contact point.
@@ -96,6 +62,57 @@ public class ContactPoint extends StructuredValue {
     return Arrays.asList((String) current);
   }
   /**
+   * The telephone number.
+   */
+  @JsonIgnore public String getTelephone() {
+    return (String) getValue("telephone");
+  }
+  /**
+   * The telephone number.
+   */
+  @JsonIgnore public Collection<String> getTelephones() {
+    final Object current = myData.get("telephone");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * A language someone may use with or at the item, service or place. Please use one of the language codes from the &lt;a href=&quot;http://tools.ietf.org/html/bcp47&quot;&gt;IETF BCP 47 standard&lt;/a&gt;. See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/inLanguage&quot;&gt;inLanguage&lt;/a&gt;
+   */
+  @JsonIgnore public Language getAvailableLanguageLanguage() {
+    return (Language) getValue("availableLanguage");
+  }
+  /**
+   * A language someone may use with or at the item, service or place. Please use one of the language codes from the &lt;a href=&quot;http://tools.ietf.org/html/bcp47&quot;&gt;IETF BCP 47 standard&lt;/a&gt;. See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/inLanguage&quot;&gt;inLanguage&lt;/a&gt;
+   */
+  @JsonIgnore public Collection<Language> getAvailableLanguageLanguages() {
+    final Object current = myData.get("availableLanguage");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Language>) current;
+    }
+    return Arrays.asList((Language) current);
+  }
+  /**
+   * A language someone may use with or at the item, service or place. Please use one of the language codes from the &lt;a href=&quot;http://tools.ietf.org/html/bcp47&quot;&gt;IETF BCP 47 standard&lt;/a&gt;. See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/inLanguage&quot;&gt;inLanguage&lt;/a&gt;
+   */
+  @JsonIgnore public String getAvailableLanguageString() {
+    return (String) getValue("availableLanguage");
+  }
+  /**
+   * A language someone may use with or at the item, service or place. Please use one of the language codes from the &lt;a href=&quot;http://tools.ietf.org/html/bcp47&quot;&gt;IETF BCP 47 standard&lt;/a&gt;. See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/inLanguage&quot;&gt;inLanguage&lt;/a&gt;
+   */
+  @JsonIgnore public Collection<String> getAvailableLanguageStrings() {
+    final Object current = myData.get("availableLanguage");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
    * Email address.
    */
   @JsonIgnore public String getEmail() {
@@ -106,23 +123,6 @@ public class ContactPoint extends StructuredValue {
    */
   @JsonIgnore public Collection<String> getEmails() {
     final Object current = myData.get("email");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * The fax number.
-   */
-  @JsonIgnore public String getFaxNumber() {
-    return (String) getValue("faxNumber");
-  }
-  /**
-   * The fax number.
-   */
-  @JsonIgnore public Collection<String> getFaxNumbers() {
-    final Object current = myData.get("faxNumber");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<String>) current;
@@ -181,21 +181,21 @@ public class ContactPoint extends StructuredValue {
     return Arrays.asList((String) current);
   }
   /**
-   * The telephone number.
+   * An option available on this contact point (e.g. a toll-free number or support for hearing-impaired callers).
    */
-  @JsonIgnore public String getTelephone() {
-    return (String) getValue("telephone");
+  @JsonIgnore public ContactPointOption getContactOption() {
+    return (ContactPointOption) getValue("contactOption");
   }
   /**
-   * The telephone number.
+   * An option available on this contact point (e.g. a toll-free number or support for hearing-impaired callers).
    */
-  @JsonIgnore public Collection<String> getTelephones() {
-    final Object current = myData.get("telephone");
+  @JsonIgnore public Collection<ContactPointOption> getContactOptions() {
+    final Object current = myData.get("contactOption");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<String>) current;
+      return (Collection<ContactPointOption>) current;
     }
-    return Arrays.asList((String) current);
+    return Arrays.asList((ContactPointOption) current);
   }
   protected ContactPoint(java.util.Map<String,Object> data) {
     super(data);
@@ -212,31 +212,10 @@ public class ContactPoint extends StructuredValue {
       return new ContactPoint(myData);
     }
     /**
-     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
+     * The fax number.
      */
-    @NotNull public Builder availableLanguage(@NotNull Language language) {
-      putValue("availableLanguage", language);
-      return this;
-    }
-    /**
-     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
-     */
-    @NotNull public Builder availableLanguage(@NotNull Language.Builder language) {
-      putValue("availableLanguage", language.build());
-      return this;
-    }
-    /**
-     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
-     */
-    @NotNull public Builder availableLanguage(@NotNull String availableLanguage) {
-      putValue("availableLanguage", availableLanguage);
-      return this;
-    }
-    /**
-     * An option available on this contact point (e.g. a toll-free number or support for hearing-impaired callers).
-     */
-    @NotNull public Builder contactOption(@NotNull ContactPointOption contactPointOption) {
-      putValue("contactOption", contactPointOption);
+    @NotNull public Builder faxNumber(@NotNull String faxNumber) {
+      putValue("faxNumber", faxNumber);
       return this;
     }
     /**
@@ -247,17 +226,38 @@ public class ContactPoint extends StructuredValue {
       return this;
     }
     /**
+     * The telephone number.
+     */
+    @NotNull public Builder telephone(@NotNull String telephone) {
+      putValue("telephone", telephone);
+      return this;
+    }
+    /**
+     * A language someone may use with or at the item, service or place. Please use one of the language codes from the &lt;a href=&quot;http://tools.ietf.org/html/bcp47&quot;&gt;IETF BCP 47 standard&lt;/a&gt;. See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/inLanguage&quot;&gt;inLanguage&lt;/a&gt;
+     */
+    @NotNull public Builder availableLanguage(@NotNull Language language) {
+      putValue("availableLanguage", language);
+      return this;
+    }
+    /**
+     * A language someone may use with or at the item, service or place. Please use one of the language codes from the &lt;a href=&quot;http://tools.ietf.org/html/bcp47&quot;&gt;IETF BCP 47 standard&lt;/a&gt;. See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/inLanguage&quot;&gt;inLanguage&lt;/a&gt;
+     */
+    @NotNull public Builder availableLanguage(@NotNull Language.Builder language) {
+      putValue("availableLanguage", language.build());
+      return this;
+    }
+    /**
+     * A language someone may use with or at the item, service or place. Please use one of the language codes from the &lt;a href=&quot;http://tools.ietf.org/html/bcp47&quot;&gt;IETF BCP 47 standard&lt;/a&gt;. See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/inLanguage&quot;&gt;inLanguage&lt;/a&gt;
+     */
+    @NotNull public Builder availableLanguage(@NotNull String availableLanguage) {
+      putValue("availableLanguage", availableLanguage);
+      return this;
+    }
+    /**
      * Email address.
      */
     @NotNull public Builder email(@NotNull String email) {
       putValue("email", email);
-      return this;
-    }
-    /**
-     * The fax number.
-     */
-    @NotNull public Builder faxNumber(@NotNull String faxNumber) {
-      putValue("faxNumber", faxNumber);
       return this;
     }
     /**
@@ -296,10 +296,17 @@ public class ContactPoint extends StructuredValue {
       return this;
     }
     /**
-     * The telephone number.
+     * An option available on this contact point (e.g. a toll-free number or support for hearing-impaired callers).
      */
-    @NotNull public Builder telephone(@NotNull String telephone) {
-      putValue("telephone", telephone);
+    @NotNull public Builder contactOption(@NotNull ContactPointOption contactPointOption) {
+      putValue("contactOption", contactPointOption);
+      return this;
+    }
+    /**
+     * URL of the item.
+     */
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
       return this;
     }
     /**
@@ -310,45 +317,17 @@ public class ContactPoint extends StructuredValue {
       return this;
     }
     /**
-     * An alias for the item.
-     */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
-      return this;
-    }
-    /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
-      putValue("disambiguatingDescription", disambiguatingDescription);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * A description of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -359,10 +338,24 @@ public class ContactPoint extends StructuredValue {
       return this;
     }
     /**
-     * URL of the item.
+     * The name of the item.
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
       return this;
     }
     /**
@@ -377,6 +370,27 @@ public class ContactPoint extends StructuredValue {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
       return this;
     }
     /**
@@ -415,26 +429,26 @@ public class ContactPoint extends StructuredValue {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
+      if ("faxNumber".equals(key) && value instanceof String) { this.faxNumber((String)value); return; }
+      if ("faxNumbers".equals(key) && value instanceof String) { this.faxNumber((String)value); return; }
+      if ("contactType".equals(key) && value instanceof String) { this.contactType((String)value); return; }
+      if ("contactTypes".equals(key) && value instanceof String) { this.contactType((String)value); return; }
+      if ("telephone".equals(key) && value instanceof String) { this.telephone((String)value); return; }
+      if ("telephones".equals(key) && value instanceof String) { this.telephone((String)value); return; }
       if ("availableLanguage".equals(key) && value instanceof Language) { this.availableLanguage((Language)value); return; }
       if ("availableLanguages".equals(key) && value instanceof Language) { this.availableLanguage((Language)value); return; }
       if ("availableLanguage".equals(key) && value instanceof String) { this.availableLanguage((String)value); return; }
       if ("availableLanguages".equals(key) && value instanceof String) { this.availableLanguage((String)value); return; }
-      if ("contactOption".equals(key) && value instanceof ContactPointOption) { this.contactOption((ContactPointOption)value); return; }
-      if ("contactOptions".equals(key) && value instanceof ContactPointOption) { this.contactOption((ContactPointOption)value); return; }
-      if ("contactType".equals(key) && value instanceof String) { this.contactType((String)value); return; }
-      if ("contactTypes".equals(key) && value instanceof String) { this.contactType((String)value); return; }
       if ("email".equals(key) && value instanceof String) { this.email((String)value); return; }
       if ("emails".equals(key) && value instanceof String) { this.email((String)value); return; }
-      if ("faxNumber".equals(key) && value instanceof String) { this.faxNumber((String)value); return; }
-      if ("faxNumbers".equals(key) && value instanceof String) { this.faxNumber((String)value); return; }
       if ("hoursAvailable".equals(key) && value instanceof OpeningHoursSpecification) { this.hoursAvailable((OpeningHoursSpecification)value); return; }
       if ("hoursAvailables".equals(key) && value instanceof OpeningHoursSpecification) { this.hoursAvailable((OpeningHoursSpecification)value); return; }
       if ("productSupported".equals(key) && value instanceof Product) { this.productSupported((Product)value); return; }
       if ("productSupporteds".equals(key) && value instanceof Product) { this.productSupported((Product)value); return; }
       if ("productSupported".equals(key) && value instanceof String) { this.productSupported((String)value); return; }
       if ("productSupporteds".equals(key) && value instanceof String) { this.productSupported((String)value); return; }
-      if ("telephone".equals(key) && value instanceof String) { this.telephone((String)value); return; }
-      if ("telephones".equals(key) && value instanceof String) { this.telephone((String)value); return; }
+      if ("contactOption".equals(key) && value instanceof ContactPointOption) { this.contactOption((ContactPointOption)value); return; }
+      if ("contactOptions".equals(key) && value instanceof ContactPointOption) { this.contactOption((ContactPointOption)value); return; }
       super.fromMap(key, value);
     }
   }

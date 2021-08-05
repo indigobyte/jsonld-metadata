@@ -28,13 +28,17 @@ import java.util.*;
  */
 public class MonetaryAmountDistribution extends QuantitativeValueDistribution {
   /**
-   * The currency in which the monetary amount is expressed.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;.
+   * The currency in which the monetary amount is expressed.&lt;br/&gt;&lt;br/&gt;
+   * 
+   * Use standard formats: &lt;a href=&quot;http://en.wikipedia.org/wiki/ISO_4217&quot;&gt;ISO 4217 currency format&lt;/a&gt; e.g. &quot;USD&quot;; &lt;a href=&quot;https://en.wikipedia.org/wiki/List_of_cryptocurrencies&quot;&gt;Ticker symbol&lt;/a&gt; for cryptocurrencies e.g. &quot;BTC&quot;; well known names for &lt;a href=&quot;https://en.wikipedia.org/wiki/Local_exchange_trading_system&quot;&gt;Local Exchange Tradings Systems&lt;/a&gt; (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;.
    */
   @JsonIgnore public String getCurrency() {
     return (String) getValue("currency");
   }
   /**
-   * The currency in which the monetary amount is expressed.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;.
+   * The currency in which the monetary amount is expressed.&lt;br/&gt;&lt;br/&gt;
+   * 
+   * Use standard formats: &lt;a href=&quot;http://en.wikipedia.org/wiki/ISO_4217&quot;&gt;ISO 4217 currency format&lt;/a&gt; e.g. &quot;USD&quot;; &lt;a href=&quot;https://en.wikipedia.org/wiki/List_of_cryptocurrencies&quot;&gt;Ticker symbol&lt;/a&gt; for cryptocurrencies e.g. &quot;BTC&quot;; well known names for &lt;a href=&quot;https://en.wikipedia.org/wiki/Local_exchange_trading_system&quot;&gt;Local Exchange Tradings Systems&lt;/a&gt; (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;.
    */
   @JsonIgnore public Collection<String> getCurrencys() {
     final Object current = myData.get("currency");
@@ -59,45 +63,89 @@ public class MonetaryAmountDistribution extends QuantitativeValueDistribution {
       return new MonetaryAmountDistribution(myData);
     }
     /**
-     * The currency in which the monetary amount is expressed.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;.
+     * The currency in which the monetary amount is expressed.&lt;br/&gt;&lt;br/&gt;
+     * 
+     * Use standard formats: &lt;a href=&quot;http://en.wikipedia.org/wiki/ISO_4217&quot;&gt;ISO 4217 currency format&lt;/a&gt; e.g. &quot;USD&quot;; &lt;a href=&quot;https://en.wikipedia.org/wiki/List_of_cryptocurrencies&quot;&gt;Ticker symbol&lt;/a&gt; for cryptocurrencies e.g. &quot;BTC&quot;; well known names for &lt;a href=&quot;https://en.wikipedia.org/wiki/Local_exchange_trading_system&quot;&gt;Local Exchange Tradings Systems&lt;/a&gt; (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;.
      */
     @NotNull public Builder currency(@NotNull String currency) {
       putValue("currency", currency);
       return this;
     }
     /**
-     * The 10th percentile value.
+     * The 90th percentile value.
      */
-    @NotNull public Builder percentile10(@NotNull Integer integer) {
-      putValue("percentile10", integer);
+    @NotNull public Builder percentile90(@NotNull Integer integer) {
+      putValue("percentile90", integer);
       return this;
     }
     /**
-     * The 10th percentile value.
+     * The 90th percentile value.
      */
-    @NotNull public Builder percentile10(@NotNull Long percentile10) {
-      putValue("percentile10", percentile10);
+    @NotNull public Builder percentile90(@NotNull Long percentile90) {
+      putValue("percentile90", percentile90);
       return this;
     }
     /**
-     * The 10th percentile value.
+     * The 90th percentile value.
      */
-    @NotNull public Builder percentile10(@NotNull Float percentile10) {
-      putValue("percentile10", percentile10);
+    @NotNull public Builder percentile90(@NotNull Float percentile90) {
+      putValue("percentile90", percentile90);
       return this;
     }
     /**
-     * The 10th percentile value.
+     * The 90th percentile value.
      */
-    @NotNull public Builder percentile10(@NotNull Double percentile10) {
-      putValue("percentile10", percentile10);
+    @NotNull public Builder percentile90(@NotNull Double percentile90) {
+      putValue("percentile90", percentile90);
       return this;
     }
     /**
-     * The 10th percentile value.
+     * The 90th percentile value.
      */
-    @NotNull public Builder percentile10(@NotNull String percentile10) {
-      putValue("percentile10", percentile10);
+    @NotNull public Builder percentile90(@NotNull String percentile90) {
+      putValue("percentile90", percentile90);
+      return this;
+    }
+    /**
+     * The 75th percentile value.
+     */
+    @NotNull public Builder percentile75(@NotNull Integer integer) {
+      putValue("percentile75", integer);
+      return this;
+    }
+    /**
+     * The 75th percentile value.
+     */
+    @NotNull public Builder percentile75(@NotNull Long percentile75) {
+      putValue("percentile75", percentile75);
+      return this;
+    }
+    /**
+     * The 75th percentile value.
+     */
+    @NotNull public Builder percentile75(@NotNull Float percentile75) {
+      putValue("percentile75", percentile75);
+      return this;
+    }
+    /**
+     * The 75th percentile value.
+     */
+    @NotNull public Builder percentile75(@NotNull Double percentile75) {
+      putValue("percentile75", percentile75);
+      return this;
+    }
+    /**
+     * The 75th percentile value.
+     */
+    @NotNull public Builder percentile75(@NotNull String percentile75) {
+      putValue("percentile75", percentile75);
+      return this;
+    }
+    /**
+     * The duration of the item (movie, audio recording, event, etc.) in &lt;a href=&quot;http://en.wikipedia.org/wiki/ISO_8601&quot;&gt;ISO 8601 date format&lt;/a&gt;.
+     */
+    @NotNull public Builder duration(@NotNull Duration duration) {
+      putValue("duration", duration);
       return this;
     }
     /**
@@ -171,73 +219,45 @@ public class MonetaryAmountDistribution extends QuantitativeValueDistribution {
       return this;
     }
     /**
-     * The 75th percentile value.
+     * The 10th percentile value.
      */
-    @NotNull public Builder percentile75(@NotNull Integer integer) {
-      putValue("percentile75", integer);
+    @NotNull public Builder percentile10(@NotNull Integer integer) {
+      putValue("percentile10", integer);
       return this;
     }
     /**
-     * The 75th percentile value.
+     * The 10th percentile value.
      */
-    @NotNull public Builder percentile75(@NotNull Long percentile75) {
-      putValue("percentile75", percentile75);
+    @NotNull public Builder percentile10(@NotNull Long percentile10) {
+      putValue("percentile10", percentile10);
       return this;
     }
     /**
-     * The 75th percentile value.
+     * The 10th percentile value.
      */
-    @NotNull public Builder percentile75(@NotNull Float percentile75) {
-      putValue("percentile75", percentile75);
+    @NotNull public Builder percentile10(@NotNull Float percentile10) {
+      putValue("percentile10", percentile10);
       return this;
     }
     /**
-     * The 75th percentile value.
+     * The 10th percentile value.
      */
-    @NotNull public Builder percentile75(@NotNull Double percentile75) {
-      putValue("percentile75", percentile75);
+    @NotNull public Builder percentile10(@NotNull Double percentile10) {
+      putValue("percentile10", percentile10);
       return this;
     }
     /**
-     * The 75th percentile value.
+     * The 10th percentile value.
      */
-    @NotNull public Builder percentile75(@NotNull String percentile75) {
-      putValue("percentile75", percentile75);
+    @NotNull public Builder percentile10(@NotNull String percentile10) {
+      putValue("percentile10", percentile10);
       return this;
     }
     /**
-     * The 90th percentile value.
+     * URL of the item.
      */
-    @NotNull public Builder percentile90(@NotNull Integer integer) {
-      putValue("percentile90", integer);
-      return this;
-    }
-    /**
-     * The 90th percentile value.
-     */
-    @NotNull public Builder percentile90(@NotNull Long percentile90) {
-      putValue("percentile90", percentile90);
-      return this;
-    }
-    /**
-     * The 90th percentile value.
-     */
-    @NotNull public Builder percentile90(@NotNull Float percentile90) {
-      putValue("percentile90", percentile90);
-      return this;
-    }
-    /**
-     * The 90th percentile value.
-     */
-    @NotNull public Builder percentile90(@NotNull Double percentile90) {
-      putValue("percentile90", percentile90);
-      return this;
-    }
-    /**
-     * The 90th percentile value.
-     */
-    @NotNull public Builder percentile90(@NotNull String percentile90) {
-      putValue("percentile90", percentile90);
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
       return this;
     }
     /**
@@ -248,45 +268,17 @@ public class MonetaryAmountDistribution extends QuantitativeValueDistribution {
       return this;
     }
     /**
-     * An alias for the item.
-     */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
-      return this;
-    }
-    /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
-      putValue("disambiguatingDescription", disambiguatingDescription);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * A description of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -297,10 +289,24 @@ public class MonetaryAmountDistribution extends QuantitativeValueDistribution {
       return this;
     }
     /**
-     * URL of the item.
+     * The name of the item.
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
       return this;
     }
     /**
@@ -315,6 +321,27 @@ public class MonetaryAmountDistribution extends QuantitativeValueDistribution {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
       return this;
     }
     /**

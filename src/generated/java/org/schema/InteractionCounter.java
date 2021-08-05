@@ -28,6 +28,40 @@ import java.util.*;
  */
 public class InteractionCounter extends StructuredValue {
   /**
+   * The Action representing the type of interaction. For up votes, +1s, etc. use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/LikeAction&quot;&gt;LikeAction&lt;/a&gt;. For down votes use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/DislikeAction&quot;&gt;DislikeAction&lt;/a&gt;. Otherwise, use the most specific Action.
+   */
+  @JsonIgnore public Action getInteractionType() {
+    return (Action) getValue("interactionType");
+  }
+  /**
+   * The Action representing the type of interaction. For up votes, +1s, etc. use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/LikeAction&quot;&gt;LikeAction&lt;/a&gt;. For down votes use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/DislikeAction&quot;&gt;DislikeAction&lt;/a&gt;. Otherwise, use the most specific Action.
+   */
+  @JsonIgnore public Collection<Action> getInteractionTypes() {
+    final Object current = myData.get("interactionType");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Action>) current;
+    }
+    return Arrays.asList((Action) current);
+  }
+  /**
+   * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication.
+   */
+  @JsonIgnore public Integer getUserInteractionCount() {
+    return (Integer) getValue("userInteractionCount");
+  }
+  /**
+   * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication.
+   */
+  @JsonIgnore public Collection<Integer> getUserInteractionCounts() {
+    final Object current = myData.get("userInteractionCount");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Integer>) current;
+    }
+    return Arrays.asList((Integer) current);
+  }
+  /**
    * The WebSite or SoftwareApplication where the interactions took place.
    */
   @JsonIgnore public SoftwareApplication getInteractionServiceSoftwareApplication() {
@@ -61,40 +95,6 @@ public class InteractionCounter extends StructuredValue {
     }
     return Arrays.asList((WebSite) current);
   }
-  /**
-   * The Action representing the type of interaction. For up votes, +1s, etc. use [[LikeAction]]. For down votes use [[DislikeAction]]. Otherwise, use the most specific Action.
-   */
-  @JsonIgnore public Action getInteractionType() {
-    return (Action) getValue("interactionType");
-  }
-  /**
-   * The Action representing the type of interaction. For up votes, +1s, etc. use [[LikeAction]]. For down votes use [[DislikeAction]]. Otherwise, use the most specific Action.
-   */
-  @JsonIgnore public Collection<Action> getInteractionTypes() {
-    final Object current = myData.get("interactionType");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Action>) current;
-    }
-    return Arrays.asList((Action) current);
-  }
-  /**
-   * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication.
-   */
-  @JsonIgnore public Integer getUserInteractionCount() {
-    return (Integer) getValue("userInteractionCount");
-  }
-  /**
-   * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication.
-   */
-  @JsonIgnore public Collection<Integer> getUserInteractionCounts() {
-    final Object current = myData.get("userInteractionCount");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
-    }
-    return Arrays.asList((Integer) current);
-  }
   protected InteractionCounter(java.util.Map<String,Object> data) {
     super(data);
   }
@@ -108,6 +108,27 @@ public class InteractionCounter extends StructuredValue {
     }
     @NotNull public InteractionCounter build() {
       return new InteractionCounter(myData);
+    }
+    /**
+     * The Action representing the type of interaction. For up votes, +1s, etc. use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/LikeAction&quot;&gt;LikeAction&lt;/a&gt;. For down votes use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/DislikeAction&quot;&gt;DislikeAction&lt;/a&gt;. Otherwise, use the most specific Action.
+     */
+    @NotNull public Builder interactionType(@NotNull Action action) {
+      putValue("interactionType", action);
+      return this;
+    }
+    /**
+     * The Action representing the type of interaction. For up votes, +1s, etc. use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/LikeAction&quot;&gt;LikeAction&lt;/a&gt;. For down votes use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/DislikeAction&quot;&gt;DislikeAction&lt;/a&gt;. Otherwise, use the most specific Action.
+     */
+    @NotNull public Builder interactionType(@NotNull Action.Builder action) {
+      putValue("interactionType", action.build());
+      return this;
+    }
+    /**
+     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication.
+     */
+    @NotNull public Builder userInteractionCount(@NotNull Integer integer) {
+      putValue("userInteractionCount", integer);
+      return this;
     }
     /**
      * The WebSite or SoftwareApplication where the interactions took place.
@@ -138,24 +159,10 @@ public class InteractionCounter extends StructuredValue {
       return this;
     }
     /**
-     * The Action representing the type of interaction. For up votes, +1s, etc. use [[LikeAction]]. For down votes use [[DislikeAction]]. Otherwise, use the most specific Action.
+     * URL of the item.
      */
-    @NotNull public Builder interactionType(@NotNull Action action) {
-      putValue("interactionType", action);
-      return this;
-    }
-    /**
-     * The Action representing the type of interaction. For up votes, +1s, etc. use [[LikeAction]]. For down votes use [[DislikeAction]]. Otherwise, use the most specific Action.
-     */
-    @NotNull public Builder interactionType(@NotNull Action.Builder action) {
-      putValue("interactionType", action.build());
-      return this;
-    }
-    /**
-     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication.
-     */
-    @NotNull public Builder userInteractionCount(@NotNull Integer integer) {
-      putValue("userInteractionCount", integer);
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
       return this;
     }
     /**
@@ -166,45 +173,17 @@ public class InteractionCounter extends StructuredValue {
       return this;
     }
     /**
-     * An alias for the item.
-     */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
-      return this;
-    }
-    /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
-      putValue("disambiguatingDescription", disambiguatingDescription);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * A description of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -215,10 +194,24 @@ public class InteractionCounter extends StructuredValue {
       return this;
     }
     /**
-     * URL of the item.
+     * The name of the item.
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
       return this;
     }
     /**
@@ -233,6 +226,27 @@ public class InteractionCounter extends StructuredValue {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
       return this;
     }
     /**
@@ -271,14 +285,14 @@ public class InteractionCounter extends StructuredValue {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("interactionService".equals(key) && value instanceof SoftwareApplication) { this.interactionService((SoftwareApplication)value); return; }
-      if ("interactionServices".equals(key) && value instanceof SoftwareApplication) { this.interactionService((SoftwareApplication)value); return; }
-      if ("interactionService".equals(key) && value instanceof WebSite) { this.interactionService((WebSite)value); return; }
-      if ("interactionServices".equals(key) && value instanceof WebSite) { this.interactionService((WebSite)value); return; }
       if ("interactionType".equals(key) && value instanceof Action) { this.interactionType((Action)value); return; }
       if ("interactionTypes".equals(key) && value instanceof Action) { this.interactionType((Action)value); return; }
       if ("userInteractionCount".equals(key) && value instanceof Integer) { this.userInteractionCount((Integer)value); return; }
       if ("userInteractionCounts".equals(key) && value instanceof Integer) { this.userInteractionCount((Integer)value); return; }
+      if ("interactionService".equals(key) && value instanceof SoftwareApplication) { this.interactionService((SoftwareApplication)value); return; }
+      if ("interactionServices".equals(key) && value instanceof SoftwareApplication) { this.interactionService((SoftwareApplication)value); return; }
+      if ("interactionService".equals(key) && value instanceof WebSite) { this.interactionService((WebSite)value); return; }
+      if ("interactionServices".equals(key) && value instanceof WebSite) { this.interactionService((WebSite)value); return; }
       super.fromMap(key, value);
     }
   }

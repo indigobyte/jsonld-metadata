@@ -28,84 +28,84 @@ import java.util.*;
  */
 public class BroadcastFrequencySpecification extends Intangible {
   /**
-   * The frequency in MHz for a particular broadcast.
+   * The modulation (e.g. FM, AM, etc) used by a particular broadcast service
    */
-  @JsonIgnore public Integer getBroadcastFrequencyValueInteger() {
-    return (Integer) getValue("broadcastFrequencyValue");
+  @JsonIgnore public QualitativeValue getBroadcastSignalModulationQualitativeValue() {
+    return (QualitativeValue) getValue("broadcastSignalModulation");
+  }
+  /**
+   * The modulation (e.g. FM, AM, etc) used by a particular broadcast service
+   */
+  @JsonIgnore public Collection<QualitativeValue> getBroadcastSignalModulationQualitativeValues() {
+    final Object current = myData.get("broadcastSignalModulation");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<QualitativeValue>) current;
+    }
+    return Arrays.asList((QualitativeValue) current);
+  }
+  /**
+   * The modulation (e.g. FM, AM, etc) used by a particular broadcast service
+   */
+  @JsonIgnore public String getBroadcastSignalModulationString() {
+    return (String) getValue("broadcastSignalModulation");
+  }
+  /**
+   * The modulation (e.g. FM, AM, etc) used by a particular broadcast service
+   */
+  @JsonIgnore public Collection<String> getBroadcastSignalModulationStrings() {
+    final Object current = myData.get("broadcastSignalModulation");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
   }
   /**
    * The frequency in MHz for a particular broadcast.
    */
-  @JsonIgnore public Collection<Integer> getBroadcastFrequencyValueIntegers() {
+  @JsonIgnore public Number getBroadcastFrequencyValueNumber() {
+    return (Number) getValue("broadcastFrequencyValue");
+  }
+  /**
+   * The frequency in MHz for a particular broadcast.
+   */
+  @JsonIgnore public Collection<Number> getBroadcastFrequencyValueNumbers() {
     final Object current = myData.get("broadcastFrequencyValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+      return (Collection<Number>) current;
     }
-    return Arrays.asList((Integer) current);
+    return Arrays.asList((Number) current);
   }
   /**
    * The frequency in MHz for a particular broadcast.
    */
-  @JsonIgnore public Long getBroadcastFrequencyValueLong() {
-    return (Long) getValue("broadcastFrequencyValue");
+  @JsonIgnore public QuantitativeValue getBroadcastFrequencyValueQuantitativeValue() {
+    return (QuantitativeValue) getValue("broadcastFrequencyValue");
   }
   /**
    * The frequency in MHz for a particular broadcast.
    */
-  @JsonIgnore public Collection<Long> getBroadcastFrequencyValueLongs() {
+  @JsonIgnore public Collection<QuantitativeValue> getBroadcastFrequencyValueQuantitativeValues() {
     final Object current = myData.get("broadcastFrequencyValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<Long>) current;
+      return (Collection<QuantitativeValue>) current;
     }
-    return Arrays.asList((Long) current);
+    return Arrays.asList((QuantitativeValue) current);
   }
   /**
-   * The frequency in MHz for a particular broadcast.
+   * The subchannel used for the broadcast.
    */
-  @JsonIgnore public Float getBroadcastFrequencyValueFloat() {
-    return (Float) getValue("broadcastFrequencyValue");
+  @JsonIgnore public String getBroadcastSubChannel() {
+    return (String) getValue("broadcastSubChannel");
   }
   /**
-   * The frequency in MHz for a particular broadcast.
+   * The subchannel used for the broadcast.
    */
-  @JsonIgnore public Collection<Float> getBroadcastFrequencyValueFloats() {
-    final Object current = myData.get("broadcastFrequencyValue");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
-    }
-    return Arrays.asList((Float) current);
-  }
-  /**
-   * The frequency in MHz for a particular broadcast.
-   */
-  @JsonIgnore public Double getBroadcastFrequencyValueDouble() {
-    return (Double) getValue("broadcastFrequencyValue");
-  }
-  /**
-   * The frequency in MHz for a particular broadcast.
-   */
-  @JsonIgnore public Collection<Double> getBroadcastFrequencyValueDoubles() {
-    final Object current = myData.get("broadcastFrequencyValue");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
-    }
-    return Arrays.asList((Double) current);
-  }
-  /**
-   * The frequency in MHz for a particular broadcast.
-   */
-  @JsonIgnore public String getBroadcastFrequencyValueString() {
-    return (String) getValue("broadcastFrequencyValue");
-  }
-  /**
-   * The frequency in MHz for a particular broadcast.
-   */
-  @JsonIgnore public Collection<String> getBroadcastFrequencyValueStrings() {
-    final Object current = myData.get("broadcastFrequencyValue");
+  @JsonIgnore public Collection<String> getBroadcastSubChannels() {
+    final Object current = myData.get("broadcastSubChannel");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<String>) current;
@@ -127,38 +127,59 @@ public class BroadcastFrequencySpecification extends Intangible {
       return new BroadcastFrequencySpecification(myData);
     }
     /**
-     * The frequency in MHz for a particular broadcast.
+     * The modulation (e.g. FM, AM, etc) used by a particular broadcast service
      */
-    @NotNull public Builder broadcastFrequencyValue(@NotNull Integer integer) {
-      putValue("broadcastFrequencyValue", integer);
+    @NotNull public Builder broadcastSignalModulation(@NotNull QualitativeValue qualitativeValue) {
+      putValue("broadcastSignalModulation", qualitativeValue);
+      return this;
+    }
+    /**
+     * The modulation (e.g. FM, AM, etc) used by a particular broadcast service
+     */
+    @NotNull public Builder broadcastSignalModulation(@NotNull QualitativeValue.Builder qualitativeValue) {
+      putValue("broadcastSignalModulation", qualitativeValue.build());
+      return this;
+    }
+    /**
+     * The modulation (e.g. FM, AM, etc) used by a particular broadcast service
+     */
+    @NotNull public Builder broadcastSignalModulation(@NotNull String broadcastSignalModulation) {
+      putValue("broadcastSignalModulation", broadcastSignalModulation);
       return this;
     }
     /**
      * The frequency in MHz for a particular broadcast.
      */
-    @NotNull public Builder broadcastFrequencyValue(@NotNull Long broadcastFrequencyValue) {
-      putValue("broadcastFrequencyValue", broadcastFrequencyValue);
+    @NotNull public Builder broadcastFrequencyValue(@NotNull Number number) {
+      putValue("broadcastFrequencyValue", number);
       return this;
     }
     /**
      * The frequency in MHz for a particular broadcast.
      */
-    @NotNull public Builder broadcastFrequencyValue(@NotNull Float broadcastFrequencyValue) {
-      putValue("broadcastFrequencyValue", broadcastFrequencyValue);
+    @NotNull public Builder broadcastFrequencyValue(@NotNull QuantitativeValue quantitativeValue) {
+      putValue("broadcastFrequencyValue", quantitativeValue);
       return this;
     }
     /**
      * The frequency in MHz for a particular broadcast.
      */
-    @NotNull public Builder broadcastFrequencyValue(@NotNull Double broadcastFrequencyValue) {
-      putValue("broadcastFrequencyValue", broadcastFrequencyValue);
+    @NotNull public Builder broadcastFrequencyValue(@NotNull QuantitativeValue.Builder quantitativeValue) {
+      putValue("broadcastFrequencyValue", quantitativeValue.build());
       return this;
     }
     /**
-     * The frequency in MHz for a particular broadcast.
+     * The subchannel used for the broadcast.
      */
-    @NotNull public Builder broadcastFrequencyValue(@NotNull String broadcastFrequencyValue) {
-      putValue("broadcastFrequencyValue", broadcastFrequencyValue);
+    @NotNull public Builder broadcastSubChannel(@NotNull String broadcastSubChannel) {
+      putValue("broadcastSubChannel", broadcastSubChannel);
+      return this;
+    }
+    /**
+     * URL of the item.
+     */
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
       return this;
     }
     /**
@@ -169,45 +190,17 @@ public class BroadcastFrequencySpecification extends Intangible {
       return this;
     }
     /**
-     * An alias for the item.
-     */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
-      return this;
-    }
-    /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
-      putValue("disambiguatingDescription", disambiguatingDescription);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * A description of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -218,10 +211,24 @@ public class BroadcastFrequencySpecification extends Intangible {
       return this;
     }
     /**
-     * URL of the item.
+     * The name of the item.
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
       return this;
     }
     /**
@@ -236,6 +243,27 @@ public class BroadcastFrequencySpecification extends Intangible {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
       return this;
     }
     /**
@@ -274,16 +302,16 @@ public class BroadcastFrequencySpecification extends Intangible {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("broadcastFrequencyValue".equals(key) && value instanceof Integer) { this.broadcastFrequencyValue((Integer)value); return; }
-      if ("broadcastFrequencyValues".equals(key) && value instanceof Integer) { this.broadcastFrequencyValue((Integer)value); return; }
-      if ("broadcastFrequencyValue".equals(key) && value instanceof Long) { this.broadcastFrequencyValue((Long)value); return; }
-      if ("broadcastFrequencyValues".equals(key) && value instanceof Long) { this.broadcastFrequencyValue((Long)value); return; }
-      if ("broadcastFrequencyValue".equals(key) && value instanceof Float) { this.broadcastFrequencyValue((Float)value); return; }
-      if ("broadcastFrequencyValues".equals(key) && value instanceof Float) { this.broadcastFrequencyValue((Float)value); return; }
-      if ("broadcastFrequencyValue".equals(key) && value instanceof Double) { this.broadcastFrequencyValue((Double)value); return; }
-      if ("broadcastFrequencyValues".equals(key) && value instanceof Double) { this.broadcastFrequencyValue((Double)value); return; }
-      if ("broadcastFrequencyValue".equals(key) && value instanceof String) { this.broadcastFrequencyValue((String)value); return; }
-      if ("broadcastFrequencyValues".equals(key) && value instanceof String) { this.broadcastFrequencyValue((String)value); return; }
+      if ("broadcastSignalModulation".equals(key) && value instanceof QualitativeValue) { this.broadcastSignalModulation((QualitativeValue)value); return; }
+      if ("broadcastSignalModulations".equals(key) && value instanceof QualitativeValue) { this.broadcastSignalModulation((QualitativeValue)value); return; }
+      if ("broadcastSignalModulation".equals(key) && value instanceof String) { this.broadcastSignalModulation((String)value); return; }
+      if ("broadcastSignalModulations".equals(key) && value instanceof String) { this.broadcastSignalModulation((String)value); return; }
+      if ("broadcastFrequencyValue".equals(key) && value instanceof Number) { this.broadcastFrequencyValue((Number)value); return; }
+      if ("broadcastFrequencyValues".equals(key) && value instanceof Number) { this.broadcastFrequencyValue((Number)value); return; }
+      if ("broadcastFrequencyValue".equals(key) && value instanceof QuantitativeValue) { this.broadcastFrequencyValue((QuantitativeValue)value); return; }
+      if ("broadcastFrequencyValues".equals(key) && value instanceof QuantitativeValue) { this.broadcastFrequencyValue((QuantitativeValue)value); return; }
+      if ("broadcastSubChannel".equals(key) && value instanceof String) { this.broadcastSubChannel((String)value); return; }
+      if ("broadcastSubChannels".equals(key) && value instanceof String) { this.broadcastSubChannel((String)value); return; }
       super.fromMap(key, value);
     }
   }

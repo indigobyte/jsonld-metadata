@@ -28,6 +28,23 @@ import java.util.*;
  */
 public class Ticket extends Intangible {
   /**
+   * The date the ticket was issued.
+   */
+  @JsonIgnore public java.util.Date getDateIssued() {
+    return (java.util.Date) getValue("dateIssued");
+  }
+  /**
+   * The date the ticket was issued.
+   */
+  @JsonIgnore public Collection<java.util.Date> getDateIssueds() {
+    final Object current = myData.get("dateIssued");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<java.util.Date>) current;
+    }
+    return Arrays.asList((java.util.Date) current);
+  }
+  /**
    * The person or organization the reservation or ticket is for.
    */
   @JsonIgnore public Organization getUnderNameOrganization() {
@@ -62,142 +79,6 @@ public class Ticket extends Intangible {
     return Arrays.asList((Person) current);
   }
   /**
-   * The total price for the reservation or ticket, including applicable taxes, shipping, etc.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-   */
-  @JsonIgnore public Integer getTotalPriceInteger() {
-    return (Integer) getValue("totalPrice");
-  }
-  /**
-   * The total price for the reservation or ticket, including applicable taxes, shipping, etc.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-   */
-  @JsonIgnore public Collection<Integer> getTotalPriceIntegers() {
-    final Object current = myData.get("totalPrice");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
-    }
-    return Arrays.asList((Integer) current);
-  }
-  /**
-   * The total price for the reservation or ticket, including applicable taxes, shipping, etc.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-   */
-  @JsonIgnore public Long getTotalPriceLong() {
-    return (Long) getValue("totalPrice");
-  }
-  /**
-   * The total price for the reservation or ticket, including applicable taxes, shipping, etc.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-   */
-  @JsonIgnore public Collection<Long> getTotalPriceLongs() {
-    final Object current = myData.get("totalPrice");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
-    }
-    return Arrays.asList((Long) current);
-  }
-  /**
-   * The total price for the reservation or ticket, including applicable taxes, shipping, etc.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-   */
-  @JsonIgnore public Float getTotalPriceFloat() {
-    return (Float) getValue("totalPrice");
-  }
-  /**
-   * The total price for the reservation or ticket, including applicable taxes, shipping, etc.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-   */
-  @JsonIgnore public Collection<Float> getTotalPriceFloats() {
-    final Object current = myData.get("totalPrice");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
-    }
-    return Arrays.asList((Float) current);
-  }
-  /**
-   * The total price for the reservation or ticket, including applicable taxes, shipping, etc.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-   */
-  @JsonIgnore public Double getTotalPriceDouble() {
-    return (Double) getValue("totalPrice");
-  }
-  /**
-   * The total price for the reservation or ticket, including applicable taxes, shipping, etc.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-   */
-  @JsonIgnore public Collection<Double> getTotalPriceDoubles() {
-    final Object current = myData.get("totalPrice");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
-    }
-    return Arrays.asList((Double) current);
-  }
-  /**
-   * The total price for the reservation or ticket, including applicable taxes, shipping, etc.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-   */
-  @JsonIgnore public String getTotalPriceString() {
-    return (String) getValue("totalPrice");
-  }
-  /**
-   * The total price for the reservation or ticket, including applicable taxes, shipping, etc.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-   */
-  @JsonIgnore public Collection<String> getTotalPriceStrings() {
-    final Object current = myData.get("totalPrice");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;.
-   */
-  @JsonIgnore public String getPriceCurrency() {
-    return (String) getValue("priceCurrency");
-  }
-  /**
-   * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;.
-   */
-  @JsonIgnore public Collection<String> getPriceCurrencys() {
-    final Object current = myData.get("priceCurrency");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * The organization issuing the ticket or permit.
-   */
-  @JsonIgnore public Organization getIssuedBy() {
-    return (Organization) getValue("issuedBy");
-  }
-  /**
-   * The organization issuing the ticket or permit.
-   */
-  @JsonIgnore public Collection<Organization> getIssuedBys() {
-    final Object current = myData.get("issuedBy");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
-    }
-    return Arrays.asList((Organization) current);
-  }
-  /**
-   * The date the ticket was issued.
-   */
-  @JsonIgnore public java.util.Date getDateIssued() {
-    return (java.util.Date) getValue("dateIssued");
-  }
-  /**
-   * The date the ticket was issued.
-   */
-  @JsonIgnore public Collection<java.util.Date> getDateIssueds() {
-    final Object current = myData.get("dateIssued");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
-    }
-    return Arrays.asList((java.util.Date) current);
-  }
-  /**
    * The seat associated with the ticket.
    */
   @JsonIgnore public Seat getTicketedSeat() {
@@ -213,6 +94,27 @@ public class Ticket extends Intangible {
       return (Collection<Seat>) current;
     }
     return Arrays.asList((Seat) current);
+  }
+  /**
+   * The currency of the price, or a price component when attached to &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/PriceSpecification&quot;&gt;PriceSpecification&lt;/a&gt; and its subtypes.&lt;br/&gt;&lt;br/&gt;
+   * 
+   * Use standard formats: &lt;a href=&quot;http://en.wikipedia.org/wiki/ISO_4217&quot;&gt;ISO 4217 currency format&lt;/a&gt; e.g. &quot;USD&quot;; &lt;a href=&quot;https://en.wikipedia.org/wiki/List_of_cryptocurrencies&quot;&gt;Ticker symbol&lt;/a&gt; for cryptocurrencies e.g. &quot;BTC&quot;; well known names for &lt;a href=&quot;https://en.wikipedia.org/wiki/Local_exchange_trading_system&quot;&gt;Local Exchange Tradings Systems&lt;/a&gt; (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;.
+   */
+  @JsonIgnore public String getPriceCurrency() {
+    return (String) getValue("priceCurrency");
+  }
+  /**
+   * The currency of the price, or a price component when attached to &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/PriceSpecification&quot;&gt;PriceSpecification&lt;/a&gt; and its subtypes.&lt;br/&gt;&lt;br/&gt;
+   * 
+   * Use standard formats: &lt;a href=&quot;http://en.wikipedia.org/wiki/ISO_4217&quot;&gt;ISO 4217 currency format&lt;/a&gt; e.g. &quot;USD&quot;; &lt;a href=&quot;https://en.wikipedia.org/wiki/List_of_cryptocurrencies&quot;&gt;Ticker symbol&lt;/a&gt; for cryptocurrencies e.g. &quot;BTC&quot;; well known names for &lt;a href=&quot;https://en.wikipedia.org/wiki/Local_exchange_trading_system&quot;&gt;Local Exchange Tradings Systems&lt;/a&gt; (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;.
+   */
+  @JsonIgnore public Collection<String> getPriceCurrencys() {
+    final Object current = myData.get("priceCurrency");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
   }
   /**
    * The unique identifier for the ticket.
@@ -248,6 +150,122 @@ public class Ticket extends Intangible {
     }
     return Arrays.asList((String) current);
   }
+  /**
+   * The organization issuing the ticket or permit.
+   */
+  @JsonIgnore public Organization getIssuedBy() {
+    return (Organization) getValue("issuedBy");
+  }
+  /**
+   * The organization issuing the ticket or permit.
+   */
+  @JsonIgnore public Collection<Organization> getIssuedBys() {
+    final Object current = myData.get("issuedBy");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Organization>) current;
+    }
+    return Arrays.asList((Organization) current);
+  }
+  /**
+   * The total price for the reservation or ticket, including applicable taxes, shipping, etc.&lt;br/&gt;&lt;br/&gt;
+   * 
+   * Usage guidelines:&lt;br/&gt;&lt;br/&gt;
+   * 
+   * &lt;ul&gt;
+   * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
+   * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
+   * &lt;/ul&gt;
+   * 
+   */
+  @JsonIgnore public Number getTotalPriceNumber() {
+    return (Number) getValue("totalPrice");
+  }
+  /**
+   * The total price for the reservation or ticket, including applicable taxes, shipping, etc.&lt;br/&gt;&lt;br/&gt;
+   * 
+   * Usage guidelines:&lt;br/&gt;&lt;br/&gt;
+   * 
+   * &lt;ul&gt;
+   * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
+   * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
+   * &lt;/ul&gt;
+   * 
+   */
+  @JsonIgnore public Collection<Number> getTotalPriceNumbers() {
+    final Object current = myData.get("totalPrice");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Number>) current;
+    }
+    return Arrays.asList((Number) current);
+  }
+  /**
+   * The total price for the reservation or ticket, including applicable taxes, shipping, etc.&lt;br/&gt;&lt;br/&gt;
+   * 
+   * Usage guidelines:&lt;br/&gt;&lt;br/&gt;
+   * 
+   * &lt;ul&gt;
+   * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
+   * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
+   * &lt;/ul&gt;
+   * 
+   */
+  @JsonIgnore public PriceSpecification getTotalPricePriceSpecification() {
+    return (PriceSpecification) getValue("totalPrice");
+  }
+  /**
+   * The total price for the reservation or ticket, including applicable taxes, shipping, etc.&lt;br/&gt;&lt;br/&gt;
+   * 
+   * Usage guidelines:&lt;br/&gt;&lt;br/&gt;
+   * 
+   * &lt;ul&gt;
+   * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
+   * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
+   * &lt;/ul&gt;
+   * 
+   */
+  @JsonIgnore public Collection<PriceSpecification> getTotalPricePriceSpecifications() {
+    final Object current = myData.get("totalPrice");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<PriceSpecification>) current;
+    }
+    return Arrays.asList((PriceSpecification) current);
+  }
+  /**
+   * The total price for the reservation or ticket, including applicable taxes, shipping, etc.&lt;br/&gt;&lt;br/&gt;
+   * 
+   * Usage guidelines:&lt;br/&gt;&lt;br/&gt;
+   * 
+   * &lt;ul&gt;
+   * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
+   * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
+   * &lt;/ul&gt;
+   * 
+   */
+  @JsonIgnore public String getTotalPriceString() {
+    return (String) getValue("totalPrice");
+  }
+  /**
+   * The total price for the reservation or ticket, including applicable taxes, shipping, etc.&lt;br/&gt;&lt;br/&gt;
+   * 
+   * Usage guidelines:&lt;br/&gt;&lt;br/&gt;
+   * 
+   * &lt;ul&gt;
+   * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
+   * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
+   * &lt;/ul&gt;
+   * 
+   */
+  @JsonIgnore public Collection<String> getTotalPriceStrings() {
+    final Object current = myData.get("totalPrice");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
   protected Ticket(java.util.Map<String,Object> data) {
     super(data);
   }
@@ -261,6 +279,13 @@ public class Ticket extends Intangible {
     }
     @NotNull public Ticket build() {
       return new Ticket(myData);
+    }
+    /**
+     * The date the ticket was issued.
+     */
+    @NotNull public Builder dateIssued(@NotNull java.util.Date date) {
+      putValue("dateIssued", date);
+      return this;
     }
     /**
      * The person or organization the reservation or ticket is for.
@@ -291,69 +316,6 @@ public class Ticket extends Intangible {
       return this;
     }
     /**
-     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-     */
-    @NotNull public Builder totalPrice(@NotNull Integer integer) {
-      putValue("totalPrice", integer);
-      return this;
-    }
-    /**
-     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-     */
-    @NotNull public Builder totalPrice(@NotNull Long totalPrice) {
-      putValue("totalPrice", totalPrice);
-      return this;
-    }
-    /**
-     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-     */
-    @NotNull public Builder totalPrice(@NotNull Float totalPrice) {
-      putValue("totalPrice", totalPrice);
-      return this;
-    }
-    /**
-     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-     */
-    @NotNull public Builder totalPrice(@NotNull Double totalPrice) {
-      putValue("totalPrice", totalPrice);
-      return this;
-    }
-    /**
-     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-     */
-    @NotNull public Builder totalPrice(@NotNull String totalPrice) {
-      putValue("totalPrice", totalPrice);
-      return this;
-    }
-    /**
-     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;.
-     */
-    @NotNull public Builder priceCurrency(@NotNull String priceCurrency) {
-      putValue("priceCurrency", priceCurrency);
-      return this;
-    }
-    /**
-     * The organization issuing the ticket or permit.
-     */
-    @NotNull public Builder issuedBy(@NotNull Organization organization) {
-      putValue("issuedBy", organization);
-      return this;
-    }
-    /**
-     * The organization issuing the ticket or permit.
-     */
-    @NotNull public Builder issuedBy(@NotNull Organization.Builder organization) {
-      putValue("issuedBy", organization.build());
-      return this;
-    }
-    /**
-     * The date the ticket was issued.
-     */
-    @NotNull public Builder dateIssued(@NotNull java.util.Date date) {
-      putValue("dateIssued", date);
-      return this;
-    }
-    /**
      * The seat associated with the ticket.
      */
     @NotNull public Builder ticketedSeat(@NotNull Seat seat) {
@@ -365,6 +327,15 @@ public class Ticket extends Intangible {
      */
     @NotNull public Builder ticketedSeat(@NotNull Seat.Builder seat) {
       putValue("ticketedSeat", seat.build());
+      return this;
+    }
+    /**
+     * The currency of the price, or a price component when attached to &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/PriceSpecification&quot;&gt;PriceSpecification&lt;/a&gt; and its subtypes.&lt;br/&gt;&lt;br/&gt;
+     * 
+     * Use standard formats: &lt;a href=&quot;http://en.wikipedia.org/wiki/ISO_4217&quot;&gt;ISO 4217 currency format&lt;/a&gt; e.g. &quot;USD&quot;; &lt;a href=&quot;https://en.wikipedia.org/wiki/List_of_cryptocurrencies&quot;&gt;Ticker symbol&lt;/a&gt; for cryptocurrencies e.g. &quot;BTC&quot;; well known names for &lt;a href=&quot;https://en.wikipedia.org/wiki/Local_exchange_trading_system&quot;&gt;Local Exchange Tradings Systems&lt;/a&gt; (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;.
+     */
+    @NotNull public Builder priceCurrency(@NotNull String priceCurrency) {
+      putValue("priceCurrency", priceCurrency);
       return this;
     }
     /**
@@ -382,6 +353,87 @@ public class Ticket extends Intangible {
       return this;
     }
     /**
+     * The organization issuing the ticket or permit.
+     */
+    @NotNull public Builder issuedBy(@NotNull Organization organization) {
+      putValue("issuedBy", organization);
+      return this;
+    }
+    /**
+     * The organization issuing the ticket or permit.
+     */
+    @NotNull public Builder issuedBy(@NotNull Organization.Builder organization) {
+      putValue("issuedBy", organization.build());
+      return this;
+    }
+    /**
+     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.&lt;br/&gt;&lt;br/&gt;
+     * 
+     * Usage guidelines:&lt;br/&gt;&lt;br/&gt;
+     * 
+     * &lt;ul&gt;
+     * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
+     * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
+     * &lt;/ul&gt;
+     * 
+     */
+    @NotNull public Builder totalPrice(@NotNull Number number) {
+      putValue("totalPrice", number);
+      return this;
+    }
+    /**
+     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.&lt;br/&gt;&lt;br/&gt;
+     * 
+     * Usage guidelines:&lt;br/&gt;&lt;br/&gt;
+     * 
+     * &lt;ul&gt;
+     * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
+     * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
+     * &lt;/ul&gt;
+     * 
+     */
+    @NotNull public Builder totalPrice(@NotNull PriceSpecification priceSpecification) {
+      putValue("totalPrice", priceSpecification);
+      return this;
+    }
+    /**
+     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.&lt;br/&gt;&lt;br/&gt;
+     * 
+     * Usage guidelines:&lt;br/&gt;&lt;br/&gt;
+     * 
+     * &lt;ul&gt;
+     * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
+     * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
+     * &lt;/ul&gt;
+     * 
+     */
+    @NotNull public Builder totalPrice(@NotNull PriceSpecification.Builder priceSpecification) {
+      putValue("totalPrice", priceSpecification.build());
+      return this;
+    }
+    /**
+     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.&lt;br/&gt;&lt;br/&gt;
+     * 
+     * Usage guidelines:&lt;br/&gt;&lt;br/&gt;
+     * 
+     * &lt;ul&gt;
+     * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
+     * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
+     * &lt;/ul&gt;
+     * 
+     */
+    @NotNull public Builder totalPrice(@NotNull String totalPrice) {
+      putValue("totalPrice", totalPrice);
+      return this;
+    }
+    /**
+     * URL of the item.
+     */
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
+      return this;
+    }
+    /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      */
     @NotNull public Builder additionalType(@NotNull String additionalType) {
@@ -389,45 +441,17 @@ public class Ticket extends Intangible {
       return this;
     }
     /**
-     * An alias for the item.
-     */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
-      return this;
-    }
-    /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
-      putValue("disambiguatingDescription", disambiguatingDescription);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * A description of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -438,10 +462,24 @@ public class Ticket extends Intangible {
       return this;
     }
     /**
-     * URL of the item.
+     * The name of the item.
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
       return this;
     }
     /**
@@ -456,6 +494,27 @@ public class Ticket extends Intangible {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
       return this;
     }
     /**
@@ -494,32 +553,28 @@ public class Ticket extends Intangible {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
+      if ("dateIssued".equals(key) && value instanceof java.util.Date) { this.dateIssued((java.util.Date)value); return; }
+      if ("dateIssueds".equals(key) && value instanceof java.util.Date) { this.dateIssued((java.util.Date)value); return; }
       if ("underName".equals(key) && value instanceof Organization) { this.underName((Organization)value); return; }
       if ("underNames".equals(key) && value instanceof Organization) { this.underName((Organization)value); return; }
       if ("underName".equals(key) && value instanceof Person) { this.underName((Person)value); return; }
       if ("underNames".equals(key) && value instanceof Person) { this.underName((Person)value); return; }
-      if ("totalPrice".equals(key) && value instanceof Integer) { this.totalPrice((Integer)value); return; }
-      if ("totalPrices".equals(key) && value instanceof Integer) { this.totalPrice((Integer)value); return; }
-      if ("totalPrice".equals(key) && value instanceof Long) { this.totalPrice((Long)value); return; }
-      if ("totalPrices".equals(key) && value instanceof Long) { this.totalPrice((Long)value); return; }
-      if ("totalPrice".equals(key) && value instanceof Float) { this.totalPrice((Float)value); return; }
-      if ("totalPrices".equals(key) && value instanceof Float) { this.totalPrice((Float)value); return; }
-      if ("totalPrice".equals(key) && value instanceof Double) { this.totalPrice((Double)value); return; }
-      if ("totalPrices".equals(key) && value instanceof Double) { this.totalPrice((Double)value); return; }
-      if ("totalPrice".equals(key) && value instanceof String) { this.totalPrice((String)value); return; }
-      if ("totalPrices".equals(key) && value instanceof String) { this.totalPrice((String)value); return; }
-      if ("priceCurrency".equals(key) && value instanceof String) { this.priceCurrency((String)value); return; }
-      if ("priceCurrencys".equals(key) && value instanceof String) { this.priceCurrency((String)value); return; }
-      if ("issuedBy".equals(key) && value instanceof Organization) { this.issuedBy((Organization)value); return; }
-      if ("issuedBys".equals(key) && value instanceof Organization) { this.issuedBy((Organization)value); return; }
-      if ("dateIssued".equals(key) && value instanceof java.util.Date) { this.dateIssued((java.util.Date)value); return; }
-      if ("dateIssueds".equals(key) && value instanceof java.util.Date) { this.dateIssued((java.util.Date)value); return; }
       if ("ticketedSeat".equals(key) && value instanceof Seat) { this.ticketedSeat((Seat)value); return; }
       if ("ticketedSeats".equals(key) && value instanceof Seat) { this.ticketedSeat((Seat)value); return; }
+      if ("priceCurrency".equals(key) && value instanceof String) { this.priceCurrency((String)value); return; }
+      if ("priceCurrencys".equals(key) && value instanceof String) { this.priceCurrency((String)value); return; }
       if ("ticketNumber".equals(key) && value instanceof String) { this.ticketNumber((String)value); return; }
       if ("ticketNumbers".equals(key) && value instanceof String) { this.ticketNumber((String)value); return; }
       if ("ticketToken".equals(key) && value instanceof String) { this.ticketToken((String)value); return; }
       if ("ticketTokens".equals(key) && value instanceof String) { this.ticketToken((String)value); return; }
+      if ("issuedBy".equals(key) && value instanceof Organization) { this.issuedBy((Organization)value); return; }
+      if ("issuedBys".equals(key) && value instanceof Organization) { this.issuedBy((Organization)value); return; }
+      if ("totalPrice".equals(key) && value instanceof Number) { this.totalPrice((Number)value); return; }
+      if ("totalPrices".equals(key) && value instanceof Number) { this.totalPrice((Number)value); return; }
+      if ("totalPrice".equals(key) && value instanceof PriceSpecification) { this.totalPrice((PriceSpecification)value); return; }
+      if ("totalPrices".equals(key) && value instanceof PriceSpecification) { this.totalPrice((PriceSpecification)value); return; }
+      if ("totalPrice".equals(key) && value instanceof String) { this.totalPrice((String)value); return; }
+      if ("totalPrices".equals(key) && value instanceof String) { this.totalPrice((String)value); return; }
       super.fromMap(key, value);
     }
   }

@@ -28,40 +28,6 @@ import java.util.*;
  */
 public class BusTrip extends Trip {
   /**
-   * The unique identifier for the bus.
-   */
-  @JsonIgnore public String getBusNumber() {
-    return (String) getValue("busNumber");
-  }
-  /**
-   * The unique identifier for the bus.
-   */
-  @JsonIgnore public Collection<String> getBusNumbers() {
-    final Object current = myData.get("busNumber");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * The name of the bus (e.g. Bolt Express).
-   */
-  @JsonIgnore public String getBusName() {
-    return (String) getValue("busName");
-  }
-  /**
-   * The name of the bus (e.g. Bolt Express).
-   */
-  @JsonIgnore public Collection<String> getBusNames() {
-    final Object current = myData.get("busName");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
    * The stop or station from which the bus departs.
    */
   @JsonIgnore public BusStation getDepartureBusStopBusStation() {
@@ -94,6 +60,40 @@ public class BusTrip extends Trip {
       return (Collection<BusStop>) current;
     }
     return Arrays.asList((BusStop) current);
+  }
+  /**
+   * The unique identifier for the bus.
+   */
+  @JsonIgnore public String getBusNumber() {
+    return (String) getValue("busNumber");
+  }
+  /**
+   * The unique identifier for the bus.
+   */
+  @JsonIgnore public Collection<String> getBusNumbers() {
+    final Object current = myData.get("busNumber");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * The name of the bus (e.g. Bolt Express).
+   */
+  @JsonIgnore public String getBusName() {
+    return (String) getValue("busName");
+  }
+  /**
+   * The name of the bus (e.g. Bolt Express).
+   */
+  @JsonIgnore public Collection<String> getBusNames() {
+    final Object current = myData.get("busName");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
   }
   /**
    * The stop or station from which the bus arrives.
@@ -144,20 +144,6 @@ public class BusTrip extends Trip {
       return new BusTrip(myData);
     }
     /**
-     * The unique identifier for the bus.
-     */
-    @NotNull public Builder busNumber(@NotNull String busNumber) {
-      putValue("busNumber", busNumber);
-      return this;
-    }
-    /**
-     * The name of the bus (e.g. Bolt Express).
-     */
-    @NotNull public Builder busName(@NotNull String busName) {
-      putValue("busName", busName);
-      return this;
-    }
-    /**
      * The stop or station from which the bus departs.
      */
     @NotNull public Builder departureBusStop(@NotNull BusStation busStation) {
@@ -183,6 +169,20 @@ public class BusTrip extends Trip {
      */
     @NotNull public Builder departureBusStop(@NotNull BusStop.Builder busStop) {
       putValue("departureBusStop", busStop.build());
+      return this;
+    }
+    /**
+     * The unique identifier for the bus.
+     */
+    @NotNull public Builder busNumber(@NotNull String busNumber) {
+      putValue("busNumber", busNumber);
+      return this;
+    }
+    /**
+     * The name of the bus (e.g. Bolt Express).
+     */
+    @NotNull public Builder busName(@NotNull String busName) {
+      putValue("busName", busName);
       return this;
     }
     /**
@@ -214,35 +214,38 @@ public class BusTrip extends Trip {
       return this;
     }
     /**
-     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
+     * The expected arrival time.
      */
-    @NotNull public Builder offers(@NotNull Demand demand) {
-      putValue("offers", demand);
+    @NotNull public Builder arrivalTime(@NotNull java.util.Date date) {
+      putValue("arrivalTime", date);
       return this;
     }
     /**
-     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
+     * Destination(s) ( &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Place&quot;&gt;Place&lt;/a&gt; ) that make up a trip. For a trip where destination order is important use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ItemList&quot;&gt;ItemList&lt;/a&gt; to specify that order (see examples).
      */
-    @NotNull public Builder offers(@NotNull Demand.Builder demand) {
-      putValue("offers", demand.build());
+    @NotNull public Builder itinerary(@NotNull ItemList itemList) {
+      putValue("itinerary", itemList);
       return this;
     }
     /**
-     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
+     * Destination(s) ( &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Place&quot;&gt;Place&lt;/a&gt; ) that make up a trip. For a trip where destination order is important use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ItemList&quot;&gt;ItemList&lt;/a&gt; to specify that order (see examples).
      */
-    @NotNull public Builder offers(@NotNull Offer offer) {
-      putValue("offers", offer);
+    @NotNull public Builder itinerary(@NotNull ItemList.Builder itemList) {
+      putValue("itinerary", itemList.build());
       return this;
     }
     /**
-     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
+     * Destination(s) ( &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Place&quot;&gt;Place&lt;/a&gt; ) that make up a trip. For a trip where destination order is important use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ItemList&quot;&gt;ItemList&lt;/a&gt; to specify that order (see examples).
      */
-    @NotNull public Builder offers(@NotNull Offer.Builder offer) {
-      putValue("offers", offer.build());
+    @NotNull public Builder itinerary(@NotNull Place place) {
+      putValue("itinerary", place);
+      return this;
+    }
+    /**
+     * Destination(s) ( &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Place&quot;&gt;Place&lt;/a&gt; ) that make up a trip. For a trip where destination order is important use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ItemList&quot;&gt;ItemList&lt;/a&gt; to specify that order (see examples).
+     */
+    @NotNull public Builder itinerary(@NotNull Place.Builder place) {
+      putValue("itinerary", place.build());
       return this;
     }
     /**
@@ -281,10 +284,66 @@ public class BusTrip extends Trip {
       return this;
     }
     /**
-     * The expected arrival time.
+     * Identifies a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Trip&quot;&gt;Trip&lt;/a&gt; that is a subTrip of this Trip.  For example Day 1, Day 2, etc. of a multi-day trip.
      */
-    @NotNull public Builder arrivalTime(@NotNull java.util.Date date) {
-      putValue("arrivalTime", date);
+    @NotNull public Builder subTrip(@NotNull Trip trip) {
+      putValue("subTrip", trip);
+      return this;
+    }
+    /**
+     * Identifies a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Trip&quot;&gt;Trip&lt;/a&gt; that is a subTrip of this Trip.  For example Day 1, Day 2, etc. of a multi-day trip.
+     */
+    @NotNull public Builder subTrip(@NotNull Trip.Builder trip) {
+      putValue("subTrip", trip.build());
+      return this;
+    }
+    /**
+     * Identifies that this &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Trip&quot;&gt;Trip&lt;/a&gt; is a subTrip of another Trip.  For example Day 1, Day 2, etc. of a multi-day trip.
+     */
+    @NotNull public Builder partOfTrip(@NotNull Trip trip) {
+      putValue("partOfTrip", trip);
+      return this;
+    }
+    /**
+     * Identifies that this &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Trip&quot;&gt;Trip&lt;/a&gt; is a subTrip of another Trip.  For example Day 1, Day 2, etc. of a multi-day trip.
+     */
+    @NotNull public Builder partOfTrip(@NotNull Trip.Builder trip) {
+      putValue("partOfTrip", trip.build());
+      return this;
+    }
+    /**
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt; to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Demand&quot;&gt;Demand&lt;/a&gt;. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     */
+    @NotNull public Builder offers(@NotNull Demand demand) {
+      putValue("offers", demand);
+      return this;
+    }
+    /**
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt; to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Demand&quot;&gt;Demand&lt;/a&gt;. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     */
+    @NotNull public Builder offers(@NotNull Demand.Builder demand) {
+      putValue("offers", demand.build());
+      return this;
+    }
+    /**
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt; to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Demand&quot;&gt;Demand&lt;/a&gt;. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     */
+    @NotNull public Builder offers(@NotNull Offer offer) {
+      putValue("offers", offer);
+      return this;
+    }
+    /**
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt; to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Demand&quot;&gt;Demand&lt;/a&gt;. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     */
+    @NotNull public Builder offers(@NotNull Offer.Builder offer) {
+      putValue("offers", offer.build());
+      return this;
+    }
+    /**
+     * URL of the item.
+     */
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
       return this;
     }
     /**
@@ -295,45 +354,17 @@ public class BusTrip extends Trip {
       return this;
     }
     /**
-     * An alias for the item.
-     */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
-      return this;
-    }
-    /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
-      putValue("disambiguatingDescription", disambiguatingDescription);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * A description of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -344,10 +375,24 @@ public class BusTrip extends Trip {
       return this;
     }
     /**
-     * URL of the item.
+     * The name of the item.
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
       return this;
     }
     /**
@@ -362,6 +407,27 @@ public class BusTrip extends Trip {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
       return this;
     }
     /**
@@ -400,14 +466,14 @@ public class BusTrip extends Trip {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("busNumber".equals(key) && value instanceof String) { this.busNumber((String)value); return; }
-      if ("busNumbers".equals(key) && value instanceof String) { this.busNumber((String)value); return; }
-      if ("busName".equals(key) && value instanceof String) { this.busName((String)value); return; }
-      if ("busNames".equals(key) && value instanceof String) { this.busName((String)value); return; }
       if ("departureBusStop".equals(key) && value instanceof BusStation) { this.departureBusStop((BusStation)value); return; }
       if ("departureBusStops".equals(key) && value instanceof BusStation) { this.departureBusStop((BusStation)value); return; }
       if ("departureBusStop".equals(key) && value instanceof BusStop) { this.departureBusStop((BusStop)value); return; }
       if ("departureBusStops".equals(key) && value instanceof BusStop) { this.departureBusStop((BusStop)value); return; }
+      if ("busNumber".equals(key) && value instanceof String) { this.busNumber((String)value); return; }
+      if ("busNumbers".equals(key) && value instanceof String) { this.busNumber((String)value); return; }
+      if ("busName".equals(key) && value instanceof String) { this.busName((String)value); return; }
+      if ("busNames".equals(key) && value instanceof String) { this.busName((String)value); return; }
       if ("arrivalBusStop".equals(key) && value instanceof BusStation) { this.arrivalBusStop((BusStation)value); return; }
       if ("arrivalBusStops".equals(key) && value instanceof BusStation) { this.arrivalBusStop((BusStation)value); return; }
       if ("arrivalBusStop".equals(key) && value instanceof BusStop) { this.arrivalBusStop((BusStop)value); return; }

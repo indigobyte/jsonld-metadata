@@ -21,14 +21,16 @@ package org.schema;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * A range of of services that will be provided to a customer free of charge in case of a defect or malfunction of a product.
+ * A range of of services that will be provided to a customer free of charge in case of a defect or malfunction of a product.&lt;br/&gt;&lt;br/&gt;
  * 
- * Commonly used values:
+ * Commonly used values:&lt;br/&gt;&lt;br/&gt;
  * 
- * * http://purl.org/goodrelations/v1#Labor-BringIn
- * * http://purl.org/goodrelations/v1#PartsAndLabor-BringIn
- * * http://purl.org/goodrelations/v1#PartsAndLabor-PickUp
- *       
+ * &lt;ul&gt;
+ * &lt;li&gt;http://purl.org/goodrelations/v1#Labor-BringIn&lt;/li&gt;
+ * &lt;li&gt;http://purl.org/goodrelations/v1#PartsAndLabor-BringIn&lt;/li&gt;
+ * &lt;li&gt;http://purl.org/goodrelations/v1#PartsAndLabor-PickUp&lt;/li&gt;
+ * &lt;/ul&gt;
+ * 
  */
 public enum WarrantyScope {
   ;

@@ -27,7 +27,7 @@ import java.util.*;
  * The most generic type of item.
  */
 @JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
-public class Thing {
+public class Thing implements About, Category {
   @JsonProperty("@type") public String getJsonLdType() {
     return getClass().getSimpleName();
   }
@@ -42,6 +42,23 @@ public class Thing {
       return ((Collection) current).iterator().next();
     }
     return current;
+  }
+  /**
+   * URL of the item.
+   */
+  @JsonIgnore public String getUrl() {
+    return (String) getValue("url");
+  }
+  /**
+   * URL of the item.
+   */
+  @JsonIgnore public Collection<String> getUrls() {
+    final Object current = myData.get("url");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
   }
   /**
    * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -61,67 +78,50 @@ public class Thing {
     return Arrays.asList((String) current);
   }
   /**
-   * An alias for the item.
+   * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
    */
-  @JsonIgnore public String getAlternateName() {
-    return (String) getValue("alternateName");
-  }
-  /**
-   * An alias for the item.
-   */
-  @JsonIgnore public Collection<String> getAlternateNames() {
-    final Object current = myData.get("alternateName");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
+  @JsonIgnore public Description getDisambiguatingDescription() {
+    return (Description) getValue("disambiguatingDescription");
   }
   /**
    * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
    */
-  @JsonIgnore public String getDisambiguatingDescription() {
-    return (String) getValue("disambiguatingDescription");
-  }
-  /**
-   * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-   */
-  @JsonIgnore public Collection<String> getDisambiguatingDescriptions() {
+  @JsonIgnore public Collection<Description> getDisambiguatingDescriptions() {
     final Object current = myData.get("disambiguatingDescription");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<String>) current;
+      return (Collection<Description>) current;
     }
-    return Arrays.asList((String) current);
+    return Arrays.asList((Description) current);
   }
   /**
-   * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+   * A description of the item.
    */
-  @JsonIgnore public CreativeWork getMainEntityOfPageCreativeWork() {
-    return (CreativeWork) getValue("mainEntityOfPage");
+  @JsonIgnore public Description getDescription() {
+    return (Description) getValue("description");
   }
   /**
-   * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+   * A description of the item.
    */
-  @JsonIgnore public Collection<CreativeWork> getMainEntityOfPageCreativeWorks() {
-    final Object current = myData.get("mainEntityOfPage");
+  @JsonIgnore public Collection<Description> getDescriptions() {
+    final Object current = myData.get("description");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<CreativeWork>) current;
+      return (Collection<Description>) current;
     }
-    return Arrays.asList((CreativeWork) current);
+    return Arrays.asList((Description) current);
   }
   /**
-   * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+   * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
    */
-  @JsonIgnore public String getMainEntityOfPageString() {
-    return (String) getValue("mainEntityOfPage");
+  @JsonIgnore public String getSameAs() {
+    return (String) getValue("sameAs");
   }
   /**
-   * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+   * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
    */
-  @JsonIgnore public Collection<String> getMainEntityOfPageStrings() {
-    final Object current = myData.get("mainEntityOfPage");
+  @JsonIgnore public Collection<String> getSameAss() {
+    final Object current = myData.get("sameAs");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<String>) current;
@@ -146,16 +146,16 @@ public class Thing {
     return Arrays.asList((String) current);
   }
   /**
-   * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+   * An alias for the item.
    */
-  @JsonIgnore public String getSameAs() {
-    return (String) getValue("sameAs");
+  @JsonIgnore public String getAlternateName() {
+    return (String) getValue("alternateName");
   }
   /**
-   * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+   * An alias for the item.
    */
-  @JsonIgnore public Collection<String> getSameAss() {
-    final Object current = myData.get("sameAs");
+  @JsonIgnore public Collection<String> getAlternateNames() {
+    final Object current = myData.get("alternateName");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<String>) current;
@@ -163,21 +163,21 @@ public class Thing {
     return Arrays.asList((String) current);
   }
   /**
-   * URL of the item.
+   * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
    */
-  @JsonIgnore public String getUrl() {
-    return (String) getValue("url");
+  @JsonIgnore public Image getImage() {
+    return (Image) getValue("image");
   }
   /**
-   * URL of the item.
+   * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
    */
-  @JsonIgnore public Collection<String> getUrls() {
-    final Object current = myData.get("url");
+  @JsonIgnore public Collection<Image> getImages() {
+    final Object current = myData.get("image");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<String>) current;
+      return (Collection<Image>) current;
     }
-    return Arrays.asList((String) current);
+    return Arrays.asList((Image) current);
   }
   /**
    * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -195,6 +195,40 @@ public class Thing {
       return (Collection<Action>) current;
     }
     return Arrays.asList((Action) current);
+  }
+  /**
+   * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+   */
+  @JsonIgnore public CreativeWork getMainEntityOfPageCreativeWork() {
+    return (CreativeWork) getValue("mainEntityOfPage");
+  }
+  /**
+   * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+   */
+  @JsonIgnore public Collection<CreativeWork> getMainEntityOfPageCreativeWorks() {
+    final Object current = myData.get("mainEntityOfPage");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<CreativeWork>) current;
+    }
+    return Arrays.asList((CreativeWork) current);
+  }
+  /**
+   * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+   */
+  @JsonIgnore public String getMainEntityOfPageString() {
+    return (String) getValue("mainEntityOfPage");
+  }
+  /**
+   * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+   */
+  @JsonIgnore public Collection<String> getMainEntityOfPageStrings() {
+    final Object current = myData.get("mainEntityOfPage");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
   }
   /**
    * A CreativeWork or Event about this Thing.
@@ -276,6 +310,13 @@ public class Thing {
       return new Thing(myData);
     }
     /**
+     * URL of the item.
+     */
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
+      return this;
+    }
+    /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      */
     @NotNull public Builder additionalType(@NotNull String additionalType) {
@@ -283,45 +324,17 @@ public class Thing {
       return this;
     }
     /**
-     * An alias for the item.
-     */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
-      return this;
-    }
-    /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
-      putValue("disambiguatingDescription", disambiguatingDescription);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * A description of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -332,10 +345,24 @@ public class Thing {
       return this;
     }
     /**
-     * URL of the item.
+     * The name of the item.
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
       return this;
     }
     /**
@@ -350,6 +377,27 @@ public class Thing {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
       return this;
     }
     /**
@@ -407,24 +455,28 @@ public class Thing {
       }
     }
     protected void fromMap(String key, Object value) {
+      if ("url".equals(key) && value instanceof String) { this.url((String)value); return; }
+      if ("urls".equals(key) && value instanceof String) { this.url((String)value); return; }
       if ("additionalType".equals(key) && value instanceof String) { this.additionalType((String)value); return; }
       if ("additionalTypes".equals(key) && value instanceof String) { this.additionalType((String)value); return; }
+      if ("disambiguatingDescription".equals(key) && value instanceof Description) { this.disambiguatingDescription((Description)value); return; }
+      if ("disambiguatingDescriptions".equals(key) && value instanceof Description) { this.disambiguatingDescription((Description)value); return; }
+      if ("description".equals(key) && value instanceof Description) { this.description((Description)value); return; }
+      if ("descriptions".equals(key) && value instanceof Description) { this.description((Description)value); return; }
+      if ("sameAs".equals(key) && value instanceof String) { this.sameAs((String)value); return; }
+      if ("sameAss".equals(key) && value instanceof String) { this.sameAs((String)value); return; }
+      if ("name".equals(key) && value instanceof String) { this.name((String)value); return; }
+      if ("names".equals(key) && value instanceof String) { this.name((String)value); return; }
       if ("alternateName".equals(key) && value instanceof String) { this.alternateName((String)value); return; }
       if ("alternateNames".equals(key) && value instanceof String) { this.alternateName((String)value); return; }
-      if ("disambiguatingDescription".equals(key) && value instanceof String) { this.disambiguatingDescription((String)value); return; }
-      if ("disambiguatingDescriptions".equals(key) && value instanceof String) { this.disambiguatingDescription((String)value); return; }
+      if ("image".equals(key) && value instanceof Image) { this.image((Image)value); return; }
+      if ("images".equals(key) && value instanceof Image) { this.image((Image)value); return; }
+      if ("potentialAction".equals(key) && value instanceof Action) { this.potentialAction((Action)value); return; }
+      if ("potentialActions".equals(key) && value instanceof Action) { this.potentialAction((Action)value); return; }
       if ("mainEntityOfPage".equals(key) && value instanceof CreativeWork) { this.mainEntityOfPage((CreativeWork)value); return; }
       if ("mainEntityOfPages".equals(key) && value instanceof CreativeWork) { this.mainEntityOfPage((CreativeWork)value); return; }
       if ("mainEntityOfPage".equals(key) && value instanceof String) { this.mainEntityOfPage((String)value); return; }
       if ("mainEntityOfPages".equals(key) && value instanceof String) { this.mainEntityOfPage((String)value); return; }
-      if ("name".equals(key) && value instanceof String) { this.name((String)value); return; }
-      if ("names".equals(key) && value instanceof String) { this.name((String)value); return; }
-      if ("sameAs".equals(key) && value instanceof String) { this.sameAs((String)value); return; }
-      if ("sameAss".equals(key) && value instanceof String) { this.sameAs((String)value); return; }
-      if ("url".equals(key) && value instanceof String) { this.url((String)value); return; }
-      if ("urls".equals(key) && value instanceof String) { this.url((String)value); return; }
-      if ("potentialAction".equals(key) && value instanceof Action) { this.potentialAction((Action)value); return; }
-      if ("potentialActions".equals(key) && value instanceof Action) { this.potentialAction((Action)value); return; }
       if ("subjectOf".equals(key) && value instanceof CreativeWork) { this.subjectOf((CreativeWork)value); return; }
       if ("subjectOfs".equals(key) && value instanceof CreativeWork) { this.subjectOf((CreativeWork)value); return; }
       if ("subjectOf".equals(key) && value instanceof Event) { this.subjectOf((Event)value); return; }

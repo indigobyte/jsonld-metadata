@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * The kind of release which this album is: single, EP or album.
  */
 public enum MusicAlbumReleaseType {
-  EPRelease("http://schema.org/EPRelease"), AlbumRelease("http://schema.org/AlbumRelease"), SingleRelease("http://schema.org/SingleRelease"), BroadcastRelease("http://schema.org/BroadcastRelease");
+  ;
   MusicAlbumReleaseType(String value) {
     myValue = value;
   }

@@ -24,42 +24,36 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * The act of forming a personal connection with someone/something (object) unidirectionally/asymmetrically to get updates polled from.\n\nRelated actions:\n\n* [[BefriendAction]]: Unlike BefriendAction, FollowAction implies that the connection is *not* necessarily reciprocal.\n* [[SubscribeAction]]: Unlike SubscribeAction, FollowAction implies that the follower acts as an active agent constantly/actively polling for updates.\n* [[RegisterAction]]: Unlike RegisterAction, FollowAction implies that the agent is interested in continuing receiving updates from the object.\n* [[JoinAction]]: Unlike JoinAction, FollowAction implies that the agent is interested in getting updates from the object.\n* [[TrackAction]]: Unlike TrackAction, FollowAction refers to the polling of updates of all aspects of animate objects rather than the location of inanimate objects (e.g. you track a package, but you don't follow it).
+ * The act of forming a personal connection with someone/something (object) unidirectionally/asymmetrically to get updates polled from.&lt;br/&gt;&lt;br/&gt;
+ * 
+ * Related actions:&lt;br/&gt;&lt;br/&gt;
+ * 
+ * &lt;ul&gt;
+ * &lt;li&gt;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/BefriendAction&quot;&gt;BefriendAction&lt;/a&gt;: Unlike BefriendAction, FollowAction implies that the connection is &lt;em&gt;not&lt;/em&gt; necessarily reciprocal.&lt;/li&gt;
+ * &lt;li&gt;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/SubscribeAction&quot;&gt;SubscribeAction&lt;/a&gt;: Unlike SubscribeAction, FollowAction implies that the follower acts as an active agent constantly/actively polling for updates.&lt;/li&gt;
+ * &lt;li&gt;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/RegisterAction&quot;&gt;RegisterAction&lt;/a&gt;: Unlike RegisterAction, FollowAction implies that the agent is interested in continuing receiving updates from the object.&lt;/li&gt;
+ * &lt;li&gt;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/JoinAction&quot;&gt;JoinAction&lt;/a&gt;: Unlike JoinAction, FollowAction implies that the agent is interested in getting updates from the object.&lt;/li&gt;
+ * &lt;li&gt;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/TrackAction&quot;&gt;TrackAction&lt;/a&gt;: Unlike TrackAction, FollowAction refers to the polling of updates of all aspects of animate objects rather than the location of inanimate objects (e.g. you track a package, but you don't follow it).&lt;/li&gt;
+ * &lt;/ul&gt;
+ * 
  */
 public class FollowAction extends InteractAction {
   /**
    * A sub property of object. The person or organization being followed.
    */
-  @JsonIgnore public Organization getFolloweeOrganization() {
-    return (Organization) getValue("followee");
+  @JsonIgnore public Object getFollowee() {
+    return (Object) getValue("followee");
   }
   /**
    * A sub property of object. The person or organization being followed.
    */
-  @JsonIgnore public Collection<Organization> getFolloweeOrganizations() {
+  @JsonIgnore public Collection<Object> getFollowees() {
     final Object current = myData.get("followee");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+      return (Collection<Object>) current;
     }
-    return Arrays.asList((Organization) current);
-  }
-  /**
-   * A sub property of object. The person or organization being followed.
-   */
-  @JsonIgnore public Person getFolloweePerson() {
-    return (Person) getValue("followee");
-  }
-  /**
-   * A sub property of object. The person or organization being followed.
-   */
-  @JsonIgnore public Collection<Person> getFolloweePersons() {
-    final Object current = myData.get("followee");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
-    }
-    return Arrays.asList((Person) current);
+    return Arrays.asList((Object) current);
   }
   protected FollowAction(java.util.Map<String,Object> data) {
     super(data);
@@ -78,78 +72,17 @@ public class FollowAction extends InteractAction {
     /**
      * A sub property of object. The person or organization being followed.
      */
-    @NotNull public Builder followee(@NotNull Organization organization) {
-      putValue("followee", organization);
+    @NotNull public Builder followee(@NotNull Object object) {
+      putValue("followee", object);
       return this;
     }
     /**
-     * A sub property of object. The person or organization being followed.
-     */
-    @NotNull public Builder followee(@NotNull Organization.Builder organization) {
-      putValue("followee", organization.build());
-      return this;
-    }
-    /**
-     * A sub property of object. The person or organization being followed.
-     */
-    @NotNull public Builder followee(@NotNull Person person) {
-      putValue("followee", person);
-      return this;
-    }
-    /**
-     * A sub property of object. The person or organization being followed.
-     */
-    @NotNull public Builder followee(@NotNull Person.Builder person) {
-      putValue("followee", person.build());
-      return this;
-    }
-    /**
-     * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
-     */
-    @NotNull public Builder agent(@NotNull Organization organization) {
-      putValue("agent", organization);
-      return this;
-    }
-    /**
-     * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
-     */
-    @NotNull public Builder agent(@NotNull Organization.Builder organization) {
-      putValue("agent", organization.build());
-      return this;
-    }
-    /**
-     * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
-     */
-    @NotNull public Builder agent(@NotNull Person person) {
-      putValue("agent", person);
-      return this;
-    }
-    /**
-     * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
-     */
-    @NotNull public Builder agent(@NotNull Person.Builder person) {
-      putValue("agent", person.build());
-      return this;
-    }
-    /**
-     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     */
-    @NotNull public Builder endTime(@NotNull java.util.Date date) {
-      putValue("endTime", date);
-      return this;
-    }
-    /**
-     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from &lt;em&gt;January&lt;/em&gt; to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.&lt;br/&gt;&lt;br/&gt;
+     * 
+     * Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      */
     @NotNull public Builder startTime(@NotNull java.util.Date date) {
       putValue("startTime", date);
-      return this;
-    }
-    /**
-     * Indicates the current disposition of the Action.
-     */
-    @NotNull public Builder actionStatus(@NotNull ActionStatusType actionStatusType) {
-      putValue("actionStatus", actionStatusType);
       return this;
     }
     /**
@@ -167,6 +100,15 @@ public class FollowAction extends InteractAction {
       return this;
     }
     /**
+     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to &lt;em&gt;December&lt;/em&gt;. For media, including audio and video, it's the time offset of the end of a clip within a larger file.&lt;br/&gt;&lt;br/&gt;
+     * 
+     * Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     */
+    @NotNull public Builder endTime(@NotNull java.util.Date date) {
+      putValue("endTime", date);
+      return this;
+    }
+    /**
      * Indicates a target EntryPoint for an Action.
      */
     @NotNull public Builder target(@NotNull EntryPoint entryPoint) {
@@ -181,6 +123,48 @@ public class FollowAction extends InteractAction {
       return this;
     }
     /**
+     * The direct performer or driver of the action (animate or inanimate). e.g. &lt;em&gt;John&lt;/em&gt; wrote a book.
+     */
+    @NotNull public Builder agent(@NotNull Organization organization) {
+      putValue("agent", organization);
+      return this;
+    }
+    /**
+     * The direct performer or driver of the action (animate or inanimate). e.g. &lt;em&gt;John&lt;/em&gt; wrote a book.
+     */
+    @NotNull public Builder agent(@NotNull Organization.Builder organization) {
+      putValue("agent", organization.build());
+      return this;
+    }
+    /**
+     * The direct performer or driver of the action (animate or inanimate). e.g. &lt;em&gt;John&lt;/em&gt; wrote a book.
+     */
+    @NotNull public Builder agent(@NotNull Person person) {
+      putValue("agent", person);
+      return this;
+    }
+    /**
+     * The direct performer or driver of the action (animate or inanimate). e.g. &lt;em&gt;John&lt;/em&gt; wrote a book.
+     */
+    @NotNull public Builder agent(@NotNull Person.Builder person) {
+      putValue("agent", person.build());
+      return this;
+    }
+    /**
+     * Indicates the current disposition of the Action.
+     */
+    @NotNull public Builder actionStatus(@NotNull ActionStatusType actionStatusType) {
+      putValue("actionStatus", actionStatusType);
+      return this;
+    }
+    /**
+     * URL of the item.
+     */
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
+      return this;
+    }
+    /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      */
     @NotNull public Builder additionalType(@NotNull String additionalType) {
@@ -188,45 +172,17 @@ public class FollowAction extends InteractAction {
       return this;
     }
     /**
-     * An alias for the item.
-     */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
-      return this;
-    }
-    /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
-      putValue("disambiguatingDescription", disambiguatingDescription);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * A description of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -237,10 +193,24 @@ public class FollowAction extends InteractAction {
       return this;
     }
     /**
-     * URL of the item.
+     * The name of the item.
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
       return this;
     }
     /**
@@ -255,6 +225,27 @@ public class FollowAction extends InteractAction {
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
       return this;
     }
     /**
@@ -293,10 +284,8 @@ public class FollowAction extends InteractAction {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("followee".equals(key) && value instanceof Organization) { this.followee((Organization)value); return; }
-      if ("followees".equals(key) && value instanceof Organization) { this.followee((Organization)value); return; }
-      if ("followee".equals(key) && value instanceof Person) { this.followee((Person)value); return; }
-      if ("followees".equals(key) && value instanceof Person) { this.followee((Person)value); return; }
+      if ("followee".equals(key) && value instanceof Object) { this.followee((Object)value); return; }
+      if ("followees".equals(key) && value instanceof Object) { this.followee((Object)value); return; }
       super.fromMap(key, value);
     }
   }
