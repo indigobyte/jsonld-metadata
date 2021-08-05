@@ -38,6 +38,12 @@ afterEvaluate {
     System.setProperty('line.separator', '\n');
 }
 
+/**
+ * 1st approach: Setting encoding during compilation in Java and Test classes
+ */
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
+
 java {
     withJavadocJar()
     withSourcesJar()

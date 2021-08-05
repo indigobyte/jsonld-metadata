@@ -14,7 +14,10 @@ class ClassesGenerator(private val sink: GeneratorSink, private val banner: Stri
             if (type.parentType == null && type.name != "Thing" && !type.isInterface) continue
             if (type.name == "http://schema.org/Enumeration" || (type.parentType?.let{ sink.types[it] }?.isEnum == true)) continue
 
-            val typeName = type.name!!.capitalize()
+            var typeName = type.name!!.capitalize()
+            if (typeName.get(0) !in 'A'..'Z') {
+                typeName = "_$typeName"
+            }
 
             if (type.isEnum) {
                 p.enumeration(typeName) {
