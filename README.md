@@ -25,3 +25,21 @@ final ObjectMapper objectMapper = new ObjectMapper();
 objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
 objectMapper.writeValue(System.out, event);
 ```
+
+# Updating schema.org schema
+
+- Find schema.org schema.
+- Convert it to RDFa format.
+- Replace file `generator/resources/schema.rdfa`.
+- Run `generator/src/main/kotlin/org/schema/generator/generator.kt`'s main function. 
+Must set working directory to `generator` before running.
+
+# Building new version
+- Update `version` inside `gradle.properties` file.
+- Build this via `gradle clean build`
+- Checkout `mvn-repo` branch of this repository into separate folder.
+- Create `build/mvnRepo` folder.
+- Put contents of `mvn-repo` branch of this git repository into `build/mvnRepo` folder.
+As the result, you'll get `build/mvnRepo/tv` folder.
+- Run `gradle :publishJsonLdMetadataPublicationPublicationToMvnRepoRepository`
+- Commit and push `build/mvnRepo` folder to `mvn-repo` git branch.

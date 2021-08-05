@@ -62,9 +62,15 @@ publishing {
     publications {
         JsonLdMetadataPublication(MavenPublication) {
             from components.java
-            groupId 'org.schema'
+            groupId 'tv.confcast.schema-org'
             artifactId 'jsonld-metadata'
             version project.version
+        }
+    }
+    repositories {
+        maven {
+            name = 'mvnRepo'
+            url = layout.buildDirectory.dir("mvnRepo")
         }
     }
 }
