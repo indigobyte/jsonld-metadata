@@ -34,6 +34,9 @@ sourceSets {
     }
 }
 
+afterEvaluate {
+    System.setProperty('line.separator', '\n');
+}
 
 java {
     withJavadocJar()
