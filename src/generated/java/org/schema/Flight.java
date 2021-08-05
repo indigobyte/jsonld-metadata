@@ -30,13 +30,30 @@ public class Flight extends Trip {
   /**
    * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
    */
-  @JsonIgnore public Participant getSeller() {
+  @JsonIgnore public Organization getSellerOrganization() {
+    return (Organization) getValue("seller");
+  }
+  /**
+   * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+   */
+  @JsonIgnore public Collection<Organization> getSellerOrganizations() {
+    final Object current = myData.get("seller");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Organization>) current;
+    }
+    return Arrays.asList((Organization) current);
+  }
+  /**
+   * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+   */
+  @JsonIgnore public Participant getSellerParticipant() {
     return (Participant) getValue("seller");
   }
   /**
    * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
    */
-  @JsonIgnore public Collection<Participant> getSellers() {
+  @JsonIgnore public Collection<Participant> getSellerParticipants() {
     final Object current = myData.get("seller");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
@@ -45,21 +62,55 @@ public class Flight extends Trip {
     return Arrays.asList((Participant) current);
   }
   /**
+   * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+   */
+  @JsonIgnore public Person getSellerPerson() {
+    return (Person) getValue("seller");
+  }
+  /**
+   * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+   */
+  @JsonIgnore public Collection<Person> getSellerPersons() {
+    final Object current = myData.get("seller");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Person>) current;
+    }
+    return Arrays.asList((Person) current);
+  }
+  /**
    * The unique identifier for a flight including the airline IATA code. For example, if describing United flight 110, where the IATA code for United is 'UA', the flightNumber is 'UA110'.
    */
-  @JsonIgnore public Identifier getFlightNumber() {
+  @JsonIgnore public Identifier getFlightNumberIdentifier() {
     return (Identifier) getValue("flightNumber");
   }
   /**
    * The unique identifier for a flight including the airline IATA code. For example, if describing United flight 110, where the IATA code for United is 'UA', the flightNumber is 'UA110'.
    */
-  @JsonIgnore public Collection<Identifier> getFlightNumbers() {
+  @JsonIgnore public Collection<Identifier> getFlightNumberIdentifiers() {
     final Object current = myData.get("flightNumber");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<Identifier>) current;
     }
     return Arrays.asList((Identifier) current);
+  }
+  /**
+   * The unique identifier for a flight including the airline IATA code. For example, if describing United flight 110, where the IATA code for United is 'UA', the flightNumber is 'UA110'.
+   */
+  @JsonIgnore public String getFlightNumberString() {
+    return (String) getValue("flightNumber");
+  }
+  /**
+   * The unique identifier for a flight including the airline IATA code. For example, if describing United flight 110, where the IATA code for United is 'UA', the flightNumber is 'UA110'.
+   */
+  @JsonIgnore public Collection<String> getFlightNumberStrings() {
+    final Object current = myData.get("flightNumber");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
   }
   /**
    * The airport where the flight originates.
@@ -333,8 +384,36 @@ public class Flight extends Trip {
     /**
      * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
      */
+    @NotNull public Builder seller(@NotNull Organization organization) {
+      putValue("seller", organization);
+      return this;
+    }
+    /**
+     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+     */
+    @NotNull public Builder seller(@NotNull Organization.Builder organization) {
+      putValue("seller", organization.build());
+      return this;
+    }
+    /**
+     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+     */
     @NotNull public Builder seller(@NotNull Participant participant) {
       putValue("seller", participant);
+      return this;
+    }
+    /**
+     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+     */
+    @NotNull public Builder seller(@NotNull Person person) {
+      putValue("seller", person);
+      return this;
+    }
+    /**
+     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+     */
+    @NotNull public Builder seller(@NotNull Person.Builder person) {
+      putValue("seller", person.build());
       return this;
     }
     /**
@@ -342,6 +421,13 @@ public class Flight extends Trip {
      */
     @NotNull public Builder flightNumber(@NotNull Identifier identifier) {
       putValue("flightNumber", identifier);
+      return this;
+    }
+    /**
+     * The unique identifier for a flight including the airline IATA code. For example, if describing United flight 110, where the IATA code for United is 'UA', the flightNumber is 'UA110'.
+     */
+    @NotNull public Builder flightNumber(@NotNull String flightNumber) {
+      putValue("flightNumber", flightNumber);
       return this;
     }
     /**
@@ -478,14 +564,32 @@ public class Flight extends Trip {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event.
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     */
+    @NotNull public Builder offers(@NotNull Demand demand) {
+      putValue("offers", demand);
+      return this;
+    }
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     */
+    @NotNull public Builder offers(@NotNull Demand.Builder demand) {
+      putValue("offers", demand.build());
+      return this;
+    }
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
      */
     @NotNull public Builder offers(@NotNull Offer offer) {
       putValue("offers", offer);
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event.
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
      */
     @NotNull public Builder offers(@NotNull Offer.Builder offer) {
       putValue("offers", offer.build());
@@ -646,10 +750,16 @@ public class Flight extends Trip {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
+      if ("seller".equals(key) && value instanceof Organization) { seller((Organization)value); return; }
+      if ("sellers".equals(key) && value instanceof Organization) { seller((Organization)value); return; }
       if ("seller".equals(key) && value instanceof Participant) { seller((Participant)value); return; }
       if ("sellers".equals(key) && value instanceof Participant) { seller((Participant)value); return; }
+      if ("seller".equals(key) && value instanceof Person) { seller((Person)value); return; }
+      if ("sellers".equals(key) && value instanceof Person) { seller((Person)value); return; }
       if ("flightNumber".equals(key) && value instanceof Identifier) { flightNumber((Identifier)value); return; }
       if ("flightNumbers".equals(key) && value instanceof Identifier) { flightNumber((Identifier)value); return; }
+      if ("flightNumber".equals(key) && value instanceof String) { flightNumber((String)value); return; }
+      if ("flightNumbers".equals(key) && value instanceof String) { flightNumber((String)value); return; }
       if ("departureAirport".equals(key) && value instanceof Airport) { departureAirport((Airport)value); return; }
       if ("departureAirports".equals(key) && value instanceof Airport) { departureAirport((Airport)value); return; }
       if ("arrivalAirport".equals(key) && value instanceof Airport) { arrivalAirport((Airport)value); return; }

@@ -81,19 +81,36 @@ public class Order extends Intangible {
   /**
    * A number that confirms the given order or payment has been received.
    */
-  @JsonIgnore public Identifier getConfirmationNumber() {
+  @JsonIgnore public Identifier getConfirmationNumberIdentifier() {
     return (Identifier) getValue("confirmationNumber");
   }
   /**
    * A number that confirms the given order or payment has been received.
    */
-  @JsonIgnore public Collection<Identifier> getConfirmationNumbers() {
+  @JsonIgnore public Collection<Identifier> getConfirmationNumberIdentifiers() {
     final Object current = myData.get("confirmationNumber");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<Identifier>) current;
     }
     return Arrays.asList((Identifier) current);
+  }
+  /**
+   * A number that confirms the given order or payment has been received.
+   */
+  @JsonIgnore public String getConfirmationNumberString() {
+    return (String) getValue("confirmationNumber");
+  }
+  /**
+   * A number that confirms the given order or payment has been received.
+   */
+  @JsonIgnore public Collection<String> getConfirmationNumberStrings() {
+    final Object current = myData.get("confirmationNumber");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
   }
   /**
    * Party placing the order or paying the invoice.
@@ -336,19 +353,36 @@ public class Order extends Intangible {
   /**
    * The identifier of the transaction.
    */
-  @JsonIgnore public Identifier getOrderNumber() {
+  @JsonIgnore public Identifier getOrderNumberIdentifier() {
     return (Identifier) getValue("orderNumber");
   }
   /**
    * The identifier of the transaction.
    */
-  @JsonIgnore public Collection<Identifier> getOrderNumbers() {
+  @JsonIgnore public Collection<Identifier> getOrderNumberIdentifiers() {
     final Object current = myData.get("orderNumber");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<Identifier>) current;
     }
     return Arrays.asList((Identifier) current);
+  }
+  /**
+   * The identifier of the transaction.
+   */
+  @JsonIgnore public String getOrderNumberString() {
+    return (String) getValue("orderNumber");
+  }
+  /**
+   * The identifier of the transaction.
+   */
+  @JsonIgnore public Collection<String> getOrderNumberStrings() {
+    final Object current = myData.get("orderNumber");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
   }
   /**
    * The current status of the order.
@@ -438,19 +472,53 @@ public class Order extends Intangible {
   /**
    * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
    */
-  @JsonIgnore public Participant getSeller() {
+  @JsonIgnore public Organization getSellerOrganization() {
+    return (Organization) getValue("seller");
+  }
+  /**
+   * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+   */
+  @JsonIgnore public Collection<Organization> getSellerOrganizations() {
+    final Object current = myData.get("seller");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Organization>) current;
+    }
+    return Arrays.asList((Organization) current);
+  }
+  /**
+   * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+   */
+  @JsonIgnore public Participant getSellerParticipant() {
     return (Participant) getValue("seller");
   }
   /**
    * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
    */
-  @JsonIgnore public Collection<Participant> getSellers() {
+  @JsonIgnore public Collection<Participant> getSellerParticipants() {
     final Object current = myData.get("seller");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<Participant>) current;
     }
     return Arrays.asList((Participant) current);
+  }
+  /**
+   * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+   */
+  @JsonIgnore public Person getSellerPerson() {
+    return (Person) getValue("seller");
+  }
+  /**
+   * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+   */
+  @JsonIgnore public Collection<Person> getSellerPersons() {
+    final Object current = myData.get("seller");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Person>) current;
+    }
+    return Arrays.asList((Person) current);
   }
   /**
    * The date that payment is due.
@@ -564,6 +632,13 @@ public class Order extends Intangible {
      */
     @NotNull public Builder confirmationNumber(@NotNull Identifier identifier) {
       putValue("confirmationNumber", identifier);
+      return this;
+    }
+    /**
+     * A number that confirms the given order or payment has been received.
+     */
+    @NotNull public Builder confirmationNumber(@NotNull String confirmationNumber) {
+      putValue("confirmationNumber", confirmationNumber);
       return this;
     }
     /**
@@ -707,6 +782,13 @@ public class Order extends Intangible {
       return this;
     }
     /**
+     * The identifier of the transaction.
+     */
+    @NotNull public Builder orderNumber(@NotNull String orderNumber) {
+      putValue("orderNumber", orderNumber);
+      return this;
+    }
+    /**
      * The current status of the order.
      */
     @NotNull public Builder orderStatus(@NotNull OrderStatus orderStatus) {
@@ -751,8 +833,36 @@ public class Order extends Intangible {
     /**
      * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
      */
+    @NotNull public Builder seller(@NotNull Organization organization) {
+      putValue("seller", organization);
+      return this;
+    }
+    /**
+     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+     */
+    @NotNull public Builder seller(@NotNull Organization.Builder organization) {
+      putValue("seller", organization.build());
+      return this;
+    }
+    /**
+     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+     */
     @NotNull public Builder seller(@NotNull Participant participant) {
       putValue("seller", participant);
+      return this;
+    }
+    /**
+     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+     */
+    @NotNull public Builder seller(@NotNull Person person) {
+      putValue("seller", person);
+      return this;
+    }
+    /**
+     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+     */
+    @NotNull public Builder seller(@NotNull Person.Builder person) {
+      putValue("seller", person.build());
       return this;
     }
     /**
@@ -911,6 +1021,8 @@ public class Order extends Intangible {
       if ("billingAddresss".equals(key) && value instanceof PostalAddress) { billingAddress((PostalAddress)value); return; }
       if ("confirmationNumber".equals(key) && value instanceof Identifier) { confirmationNumber((Identifier)value); return; }
       if ("confirmationNumbers".equals(key) && value instanceof Identifier) { confirmationNumber((Identifier)value); return; }
+      if ("confirmationNumber".equals(key) && value instanceof String) { confirmationNumber((String)value); return; }
+      if ("confirmationNumbers".equals(key) && value instanceof String) { confirmationNumber((String)value); return; }
       if ("customer".equals(key) && value instanceof Organization) { customer((Organization)value); return; }
       if ("customers".equals(key) && value instanceof Organization) { customer((Organization)value); return; }
       if ("customer".equals(key) && value instanceof Person) { customer((Person)value); return; }
@@ -941,6 +1053,8 @@ public class Order extends Intangible {
       if ("orderedItems".equals(key) && value instanceof Service) { orderedItem((Service)value); return; }
       if ("orderNumber".equals(key) && value instanceof Identifier) { orderNumber((Identifier)value); return; }
       if ("orderNumbers".equals(key) && value instanceof Identifier) { orderNumber((Identifier)value); return; }
+      if ("orderNumber".equals(key) && value instanceof String) { orderNumber((String)value); return; }
+      if ("orderNumbers".equals(key) && value instanceof String) { orderNumber((String)value); return; }
       if ("orderStatus".equals(key) && value instanceof OrderStatus) { orderStatus((OrderStatus)value); return; }
       if ("orderStatuss".equals(key) && value instanceof OrderStatus) { orderStatus((OrderStatus)value); return; }
       if ("partOfInvoice".equals(key) && value instanceof Invoice) { partOfInvoice((Invoice)value); return; }
@@ -951,8 +1065,12 @@ public class Order extends Intangible {
       if ("paymentMethodIds".equals(key) && value instanceof String) { paymentMethodId((String)value); return; }
       if ("paymentUrl".equals(key) && value instanceof String) { paymentUrl((String)value); return; }
       if ("paymentUrls".equals(key) && value instanceof String) { paymentUrl((String)value); return; }
+      if ("seller".equals(key) && value instanceof Organization) { seller((Organization)value); return; }
+      if ("sellers".equals(key) && value instanceof Organization) { seller((Organization)value); return; }
       if ("seller".equals(key) && value instanceof Participant) { seller((Participant)value); return; }
       if ("sellers".equals(key) && value instanceof Participant) { seller((Participant)value); return; }
+      if ("seller".equals(key) && value instanceof Person) { seller((Person)value); return; }
+      if ("sellers".equals(key) && value instanceof Person) { seller((Person)value); return; }
       if ("paymentDueDate".equals(key) && value instanceof java.util.Date) { paymentDueDate((java.util.Date)value); return; }
       if ("paymentDueDates".equals(key) && value instanceof java.util.Date) { paymentDueDate((java.util.Date)value); return; }
       if ("broker".equals(key) && value instanceof Organization) { broker((Organization)value); return; }

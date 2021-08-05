@@ -191,6 +191,13 @@ public class MBZ extends Organization {
       return this;
     }
     /**
+     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
+     */
+    @NotNull public Builder duns(@NotNull String duns) {
+      putValue("duns", duns);
+      return this;
+    }
+    /**
      * Email address.
      */
     @NotNull public Builder email(@NotNull String email) {
@@ -265,6 +272,13 @@ public class MBZ extends Organization {
      */
     @NotNull public Builder globalLocationNumber(@NotNull Identifier identifier) {
       putValue("globalLocationNumber", identifier);
+      return this;
+    }
+    /**
+     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
+     */
+    @NotNull public Builder globalLocationNumber(@NotNull String globalLocationNumber) {
+      putValue("globalLocationNumber", globalLocationNumber);
       return this;
     }
     /**
@@ -529,6 +543,13 @@ public class MBZ extends Organization {
       return this;
     }
     /**
+     * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
+     */
+    @NotNull public Builder taxID(@NotNull String taxID) {
+      putValue("taxID", taxID);
+      return this;
+    }
+    /**
      * The telephone number.
      */
     @NotNull public Builder telephone(@NotNull String telephone) {
@@ -561,6 +582,13 @@ public class MBZ extends Organization {
      */
     @NotNull public Builder leiCode(@NotNull Identifier identifier) {
       putValue("leiCode", identifier);
+      return this;
+    }
+    /**
+     * An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
+     */
+    @NotNull public Builder leiCode(@NotNull String leiCode) {
+      putValue("leiCode", leiCode);
       return this;
     }
     /**

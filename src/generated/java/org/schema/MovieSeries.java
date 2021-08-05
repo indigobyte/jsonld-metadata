@@ -249,6 +249,13 @@ public class MovieSeries extends CreativeWorkSeries {
       return this;
     }
     /**
+     * The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
+     */
+    @NotNull public Builder issn(@NotNull String issn) {
+      putValue("issn", issn);
+      return this;
+    }
+    /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      */
     @NotNull public Builder additionalType(@NotNull String additionalType) {

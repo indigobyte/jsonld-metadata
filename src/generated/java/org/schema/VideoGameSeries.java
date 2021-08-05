@@ -64,13 +64,30 @@ public class VideoGameSeries extends CreativeWorkSeries {
   /**
    * An episode of a tv, radio or game media within a series or season.
    */
-  @JsonIgnore public HasPart getEpisode() {
+  @JsonIgnore public Episode getEpisodeEpisode() {
+    return (Episode) getValue("episode");
+  }
+  /**
+   * An episode of a tv, radio or game media within a series or season.
+   */
+  @JsonIgnore public Collection<Episode> getEpisodeEpisodes() {
+    final Object current = myData.get("episode");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Episode>) current;
+    }
+    return Arrays.asList((Episode) current);
+  }
+  /**
+   * An episode of a tv, radio or game media within a series or season.
+   */
+  @JsonIgnore public HasPart getEpisodeHasPart() {
     return (HasPart) getValue("episode");
   }
   /**
    * An episode of a tv, radio or game media within a series or season.
    */
-  @JsonIgnore public Collection<HasPart> getEpisodes() {
+  @JsonIgnore public Collection<HasPart> getEpisodeHasParts() {
     final Object current = myData.get("episode");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
@@ -166,13 +183,30 @@ public class VideoGameSeries extends CreativeWorkSeries {
   /**
    * A season that is part of the media series.
    */
-  @JsonIgnore public HasPart getContainsSeason() {
+  @JsonIgnore public CreativeWorkSeason getContainsSeasonCreativeWorkSeason() {
+    return (CreativeWorkSeason) getValue("containsSeason");
+  }
+  /**
+   * A season that is part of the media series.
+   */
+  @JsonIgnore public Collection<CreativeWorkSeason> getContainsSeasonCreativeWorkSeasons() {
+    final Object current = myData.get("containsSeason");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<CreativeWorkSeason>) current;
+    }
+    return Arrays.asList((CreativeWorkSeason) current);
+  }
+  /**
+   * A season that is part of the media series.
+   */
+  @JsonIgnore public HasPart getContainsSeasonHasPart() {
     return (HasPart) getValue("containsSeason");
   }
   /**
    * A season that is part of the media series.
    */
-  @JsonIgnore public Collection<HasPart> getContainsSeasons() {
+  @JsonIgnore public Collection<HasPart> getContainsSeasonHasParts() {
     final Object current = myData.get("containsSeason");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
@@ -429,6 +463,20 @@ public class VideoGameSeries extends CreativeWorkSeries {
     /**
      * An episode of a tv, radio or game media within a series or season.
      */
+    @NotNull public Builder episode(@NotNull Episode episode) {
+      putValue("episode", episode);
+      return this;
+    }
+    /**
+     * An episode of a tv, radio or game media within a series or season.
+     */
+    @NotNull public Builder episode(@NotNull Episode.Builder episode) {
+      putValue("episode", episode.build());
+      return this;
+    }
+    /**
+     * An episode of a tv, radio or game media within a series or season.
+     */
     @NotNull public Builder episode(@NotNull HasPart hasPart) {
       putValue("episode", hasPart);
       return this;
@@ -487,6 +535,20 @@ public class VideoGameSeries extends CreativeWorkSeries {
      */
     @NotNull public Builder productionCompany(@NotNull Organization.Builder organization) {
       putValue("productionCompany", organization.build());
+      return this;
+    }
+    /**
+     * A season that is part of the media series.
+     */
+    @NotNull public Builder containsSeason(@NotNull CreativeWorkSeason creativeWorkSeason) {
+      putValue("containsSeason", creativeWorkSeason);
+      return this;
+    }
+    /**
+     * A season that is part of the media series.
+     */
+    @NotNull public Builder containsSeason(@NotNull CreativeWorkSeason.Builder creativeWorkSeason) {
+      putValue("containsSeason", creativeWorkSeason.build());
       return this;
     }
     /**
@@ -665,6 +727,13 @@ public class VideoGameSeries extends CreativeWorkSeries {
       return this;
     }
     /**
+     * The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
+     */
+    @NotNull public Builder issn(@NotNull String issn) {
+      putValue("issn", issn);
+      return this;
+    }
+    /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      */
     @NotNull public Builder additionalType(@NotNull String additionalType) {
@@ -781,6 +850,8 @@ public class VideoGameSeries extends CreativeWorkSeries {
       if ("actors".equals(key) && value instanceof Person) { actor((Person)value); return; }
       if ("director".equals(key) && value instanceof Person) { director((Person)value); return; }
       if ("directors".equals(key) && value instanceof Person) { director((Person)value); return; }
+      if ("episode".equals(key) && value instanceof Episode) { episode((Episode)value); return; }
+      if ("episodes".equals(key) && value instanceof Episode) { episode((Episode)value); return; }
       if ("episode".equals(key) && value instanceof HasPart) { episode((HasPart)value); return; }
       if ("episodes".equals(key) && value instanceof HasPart) { episode((HasPart)value); return; }
       if ("musicBy".equals(key) && value instanceof MusicGroup) { musicBy((MusicGroup)value); return; }
@@ -793,6 +864,8 @@ public class VideoGameSeries extends CreativeWorkSeries {
       if ("numberOfSeasonss".equals(key) && value instanceof Integer) { numberOfSeasons((Integer)value); return; }
       if ("productionCompany".equals(key) && value instanceof Organization) { productionCompany((Organization)value); return; }
       if ("productionCompanys".equals(key) && value instanceof Organization) { productionCompany((Organization)value); return; }
+      if ("containsSeason".equals(key) && value instanceof CreativeWorkSeason) { containsSeason((CreativeWorkSeason)value); return; }
+      if ("containsSeasons".equals(key) && value instanceof CreativeWorkSeason) { containsSeason((CreativeWorkSeason)value); return; }
       if ("containsSeason".equals(key) && value instanceof HasPart) { containsSeason((HasPart)value); return; }
       if ("containsSeasons".equals(key) && value instanceof HasPart) { containsSeason((HasPart)value); return; }
       if ("trailer".equals(key) && value instanceof VideoObject) { trailer((VideoObject)value); return; }

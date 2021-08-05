@@ -200,13 +200,13 @@ public class Product extends Thing {
   /**
    * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
    */
-  @JsonIgnore public Identifier getGtin12() {
+  @JsonIgnore public Identifier getGtin12Identifier() {
     return (Identifier) getValue("gtin12");
   }
   /**
    * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
    */
-  @JsonIgnore public Collection<Identifier> getGtin12s() {
+  @JsonIgnore public Collection<Identifier> getGtin12Identifiers() {
     final Object current = myData.get("gtin12");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
@@ -215,15 +215,32 @@ public class Product extends Thing {
     return Arrays.asList((Identifier) current);
   }
   /**
+   * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+   */
+  @JsonIgnore public String getGtin12String() {
+    return (String) getValue("gtin12");
+  }
+  /**
+   * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+   */
+  @JsonIgnore public Collection<String> getGtin12Strings() {
+    final Object current = myData.get("gtin12");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
    * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceeding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
    */
-  @JsonIgnore public Identifier getGtin13() {
+  @JsonIgnore public Identifier getGtin13Identifier() {
     return (Identifier) getValue("gtin13");
   }
   /**
    * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceeding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
    */
-  @JsonIgnore public Collection<Identifier> getGtin13s() {
+  @JsonIgnore public Collection<Identifier> getGtin13Identifiers() {
     final Object current = myData.get("gtin13");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
@@ -232,15 +249,32 @@ public class Product extends Thing {
     return Arrays.asList((Identifier) current);
   }
   /**
+   * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceeding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+   */
+  @JsonIgnore public String getGtin13String() {
+    return (String) getValue("gtin13");
+  }
+  /**
+   * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceeding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+   */
+  @JsonIgnore public Collection<String> getGtin13Strings() {
+    final Object current = myData.get("gtin13");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
    * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
    */
-  @JsonIgnore public Identifier getGtin14() {
+  @JsonIgnore public Identifier getGtin14Identifier() {
     return (Identifier) getValue("gtin14");
   }
   /**
    * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
    */
-  @JsonIgnore public Collection<Identifier> getGtin14s() {
+  @JsonIgnore public Collection<Identifier> getGtin14Identifiers() {
     final Object current = myData.get("gtin14");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
@@ -249,21 +283,55 @@ public class Product extends Thing {
     return Arrays.asList((Identifier) current);
   }
   /**
+   * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+   */
+  @JsonIgnore public String getGtin14String() {
+    return (String) getValue("gtin14");
+  }
+  /**
+   * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+   */
+  @JsonIgnore public Collection<String> getGtin14Strings() {
+    final Object current = myData.get("gtin14");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
    * The [GTIN-8](http://apps.gs1.org/GDD/glossary/Pages/GTIN-8.aspx) code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
    */
-  @JsonIgnore public Identifier getGtin8() {
+  @JsonIgnore public Identifier getGtin8Identifier() {
     return (Identifier) getValue("gtin8");
   }
   /**
    * The [GTIN-8](http://apps.gs1.org/GDD/glossary/Pages/GTIN-8.aspx) code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
    */
-  @JsonIgnore public Collection<Identifier> getGtin8s() {
+  @JsonIgnore public Collection<Identifier> getGtin8Identifiers() {
     final Object current = myData.get("gtin8");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<Identifier>) current;
     }
     return Arrays.asList((Identifier) current);
+  }
+  /**
+   * The [GTIN-8](http://apps.gs1.org/GDD/glossary/Pages/GTIN-8.aspx) code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+   */
+  @JsonIgnore public String getGtin8String() {
+    return (String) getValue("gtin8");
+  }
+  /**
+   * The [GTIN-8](http://apps.gs1.org/GDD/glossary/Pages/GTIN-8.aspx) code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+   */
+  @JsonIgnore public Collection<String> getGtin8Strings() {
+    final Object current = myData.get("gtin8");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
   }
   /**
    * The height of the item.
@@ -521,15 +589,36 @@ public class Product extends Thing {
     return Arrays.asList((Organization) current);
   }
   /**
-   * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event.
+   * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+   *       
    */
-  @JsonIgnore public Offer getOffers() {
+  @JsonIgnore public Demand getOffersDemand() {
+    return (Demand) getValue("offers");
+  }
+  /**
+   * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+   *       
+   */
+  @JsonIgnore public Collection<Demand> getOffersDemands() {
+    final Object current = myData.get("offers");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Demand>) current;
+    }
+    return Arrays.asList((Demand) current);
+  }
+  /**
+   * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+   *       
+   */
+  @JsonIgnore public Offer getOffersOffer() {
     return (Offer) getValue("offers");
   }
   /**
-   * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event.
+   * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+   *       
    */
-  @JsonIgnore public Collection<Offer> getOfferss() {
+  @JsonIgnore public Collection<Offer> getOffersOffers() {
     final Object current = myData.get("offers");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
@@ -540,19 +629,36 @@ public class Product extends Thing {
   /**
    * The product identifier, such as ISBN. For example: ``` meta itemprop="productID" content="isbn:123-456-789" ```.
    */
-  @JsonIgnore public Identifier getProductID() {
+  @JsonIgnore public Identifier getProductIDIdentifier() {
     return (Identifier) getValue("productID");
   }
   /**
    * The product identifier, such as ISBN. For example: ``` meta itemprop="productID" content="isbn:123-456-789" ```.
    */
-  @JsonIgnore public Collection<Identifier> getProductIDs() {
+  @JsonIgnore public Collection<Identifier> getProductIDIdentifiers() {
     final Object current = myData.get("productID");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<Identifier>) current;
     }
     return Arrays.asList((Identifier) current);
+  }
+  /**
+   * The product identifier, such as ISBN. For example: ``` meta itemprop="productID" content="isbn:123-456-789" ```.
+   */
+  @JsonIgnore public String getProductIDString() {
+    return (String) getValue("productID");
+  }
+  /**
+   * The product identifier, such as ISBN. For example: ``` meta itemprop="productID" content="isbn:123-456-789" ```.
+   */
+  @JsonIgnore public Collection<String> getProductIDStrings() {
+    final Object current = myData.get("productID");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
   }
   /**
    * The release date of a product or product model. This can be used to distinguish the exact variant of a product.
@@ -608,19 +714,36 @@ public class Product extends Thing {
   /**
    * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
    */
-  @JsonIgnore public Identifier getSku() {
+  @JsonIgnore public Identifier getSkuIdentifier() {
     return (Identifier) getValue("sku");
   }
   /**
    * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
    */
-  @JsonIgnore public Collection<Identifier> getSkus() {
+  @JsonIgnore public Collection<Identifier> getSkuIdentifiers() {
     final Object current = myData.get("sku");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<Identifier>) current;
     }
     return Arrays.asList((Identifier) current);
+  }
+  /**
+   * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
+   */
+  @JsonIgnore public String getSkuString() {
+    return (String) getValue("sku");
+  }
+  /**
+   * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
+   */
+  @JsonIgnore public Collection<String> getSkuStrings() {
+    final Object current = myData.get("sku");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
   }
   /**
    * The weight of the product or person.
@@ -867,10 +990,24 @@ public class Product extends Thing {
       return this;
     }
     /**
+     * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     */
+    @NotNull public Builder gtin12(@NotNull String gtin12) {
+      putValue("gtin12", gtin12);
+      return this;
+    }
+    /**
      * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceeding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      */
     @NotNull public Builder gtin13(@NotNull Identifier identifier) {
       putValue("gtin13", identifier);
+      return this;
+    }
+    /**
+     * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceeding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     */
+    @NotNull public Builder gtin13(@NotNull String gtin13) {
+      putValue("gtin13", gtin13);
       return this;
     }
     /**
@@ -881,10 +1018,24 @@ public class Product extends Thing {
       return this;
     }
     /**
+     * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     */
+    @NotNull public Builder gtin14(@NotNull String gtin14) {
+      putValue("gtin14", gtin14);
+      return this;
+    }
+    /**
      * The [GTIN-8](http://apps.gs1.org/GDD/glossary/Pages/GTIN-8.aspx) code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      */
     @NotNull public Builder gtin8(@NotNull Identifier identifier) {
       putValue("gtin8", identifier);
+      return this;
+    }
+    /**
+     * The [GTIN-8](http://apps.gs1.org/GDD/glossary/Pages/GTIN-8.aspx) code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     */
+    @NotNull public Builder gtin8(@NotNull String gtin8) {
+      putValue("gtin8", gtin8);
       return this;
     }
     /**
@@ -1070,14 +1221,32 @@ public class Product extends Thing {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event.
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     */
+    @NotNull public Builder offers(@NotNull Demand demand) {
+      putValue("offers", demand);
+      return this;
+    }
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     */
+    @NotNull public Builder offers(@NotNull Demand.Builder demand) {
+      putValue("offers", demand.build());
+      return this;
+    }
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
      */
     @NotNull public Builder offers(@NotNull Offer offer) {
       putValue("offers", offer);
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event.
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
      */
     @NotNull public Builder offers(@NotNull Offer.Builder offer) {
       putValue("offers", offer.build());
@@ -1088,6 +1257,13 @@ public class Product extends Thing {
      */
     @NotNull public Builder productID(@NotNull Identifier identifier) {
       putValue("productID", identifier);
+      return this;
+    }
+    /**
+     * The product identifier, such as ISBN. For example: ``` meta itemprop="productID" content="isbn:123-456-789" ```.
+     */
+    @NotNull public Builder productID(@NotNull String productID) {
+      putValue("productID", productID);
       return this;
     }
     /**
@@ -1123,6 +1299,13 @@ public class Product extends Thing {
      */
     @NotNull public Builder sku(@NotNull Identifier identifier) {
       putValue("sku", identifier);
+      return this;
+    }
+    /**
+     * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
+     */
+    @NotNull public Builder sku(@NotNull String sku) {
+      putValue("sku", sku);
       return this;
     }
     /**
@@ -1332,12 +1515,20 @@ public class Product extends Thing {
       if ("depths".equals(key) && value instanceof QuantitativeValue) { depth((QuantitativeValue)value); return; }
       if ("gtin12".equals(key) && value instanceof Identifier) { gtin12((Identifier)value); return; }
       if ("gtin12s".equals(key) && value instanceof Identifier) { gtin12((Identifier)value); return; }
+      if ("gtin12".equals(key) && value instanceof String) { gtin12((String)value); return; }
+      if ("gtin12s".equals(key) && value instanceof String) { gtin12((String)value); return; }
       if ("gtin13".equals(key) && value instanceof Identifier) { gtin13((Identifier)value); return; }
       if ("gtin13s".equals(key) && value instanceof Identifier) { gtin13((Identifier)value); return; }
+      if ("gtin13".equals(key) && value instanceof String) { gtin13((String)value); return; }
+      if ("gtin13s".equals(key) && value instanceof String) { gtin13((String)value); return; }
       if ("gtin14".equals(key) && value instanceof Identifier) { gtin14((Identifier)value); return; }
       if ("gtin14s".equals(key) && value instanceof Identifier) { gtin14((Identifier)value); return; }
+      if ("gtin14".equals(key) && value instanceof String) { gtin14((String)value); return; }
+      if ("gtin14s".equals(key) && value instanceof String) { gtin14((String)value); return; }
       if ("gtin8".equals(key) && value instanceof Identifier) { gtin8((Identifier)value); return; }
       if ("gtin8s".equals(key) && value instanceof Identifier) { gtin8((Identifier)value); return; }
+      if ("gtin8".equals(key) && value instanceof String) { gtin8((String)value); return; }
+      if ("gtin8s".equals(key) && value instanceof String) { gtin8((String)value); return; }
       if ("height".equals(key) && value instanceof Distance) { height((Distance)value); return; }
       if ("heights".equals(key) && value instanceof Distance) { height((Distance)value); return; }
       if ("height".equals(key) && value instanceof QuantitativeValue) { height((QuantitativeValue)value); return; }
@@ -1368,10 +1559,14 @@ public class Product extends Thing {
       if ("mpns".equals(key) && value instanceof String) { mpn((String)value); return; }
       if ("manufacturer".equals(key) && value instanceof Organization) { manufacturer((Organization)value); return; }
       if ("manufacturers".equals(key) && value instanceof Organization) { manufacturer((Organization)value); return; }
+      if ("offers".equals(key) && value instanceof Demand) { offers((Demand)value); return; }
+      if ("offerss".equals(key) && value instanceof Demand) { offers((Demand)value); return; }
       if ("offers".equals(key) && value instanceof Offer) { offers((Offer)value); return; }
       if ("offerss".equals(key) && value instanceof Offer) { offers((Offer)value); return; }
       if ("productID".equals(key) && value instanceof Identifier) { productID((Identifier)value); return; }
       if ("productIDs".equals(key) && value instanceof Identifier) { productID((Identifier)value); return; }
+      if ("productID".equals(key) && value instanceof String) { productID((String)value); return; }
+      if ("productIDs".equals(key) && value instanceof String) { productID((String)value); return; }
       if ("releaseDate".equals(key) && value instanceof java.util.Date) { releaseDate((java.util.Date)value); return; }
       if ("releaseDates".equals(key) && value instanceof java.util.Date) { releaseDate((java.util.Date)value); return; }
       if ("review".equals(key) && value instanceof Review) { review((Review)value); return; }
@@ -1380,6 +1575,8 @@ public class Product extends Thing {
       if ("slogans".equals(key) && value instanceof String) { slogan((String)value); return; }
       if ("sku".equals(key) && value instanceof Identifier) { sku((Identifier)value); return; }
       if ("skus".equals(key) && value instanceof Identifier) { sku((Identifier)value); return; }
+      if ("sku".equals(key) && value instanceof String) { sku((String)value); return; }
+      if ("skus".equals(key) && value instanceof String) { sku((String)value); return; }
       if ("weight".equals(key) && value instanceof QuantitativeValue) { weight((QuantitativeValue)value); return; }
       if ("weights".equals(key) && value instanceof QuantitativeValue) { weight((QuantitativeValue)value); return; }
       if ("width".equals(key) && value instanceof Distance) { width((Distance)value); return; }

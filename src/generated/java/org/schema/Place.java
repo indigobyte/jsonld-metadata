@@ -236,19 +236,36 @@ public class Place extends Thing {
   /**
    * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
    */
-  @JsonIgnore public Identifier getGlobalLocationNumber() {
+  @JsonIgnore public Identifier getGlobalLocationNumberIdentifier() {
     return (Identifier) getValue("globalLocationNumber");
   }
   /**
    * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
    */
-  @JsonIgnore public Collection<Identifier> getGlobalLocationNumbers() {
+  @JsonIgnore public Collection<Identifier> getGlobalLocationNumberIdentifiers() {
     final Object current = myData.get("globalLocationNumber");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<Identifier>) current;
     }
     return Arrays.asList((Identifier) current);
+  }
+  /**
+   * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
+   */
+  @JsonIgnore public String getGlobalLocationNumberString() {
+    return (String) getValue("globalLocationNumber");
+  }
+  /**
+   * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
+   */
+  @JsonIgnore public Collection<String> getGlobalLocationNumberStrings() {
+    final Object current = myData.get("globalLocationNumber");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
   }
   /**
    * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
@@ -261,6 +278,91 @@ public class Place extends Thing {
    */
   @JsonIgnore public Collection<String> getIsicV4s() {
     final Object current = myData.get("isicV4");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+   */
+  @JsonIgnore public Integer getLatitudeInteger() {
+    return (Integer) getValue("latitude");
+  }
+  /**
+   * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+   */
+  @JsonIgnore public Collection<Integer> getLatitudeIntegers() {
+    final Object current = myData.get("latitude");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Integer>) current;
+    }
+    return Arrays.asList((Integer) current);
+  }
+  /**
+   * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+   */
+  @JsonIgnore public Long getLatitudeLong() {
+    return (Long) getValue("latitude");
+  }
+  /**
+   * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+   */
+  @JsonIgnore public Collection<Long> getLatitudeLongs() {
+    final Object current = myData.get("latitude");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Long>) current;
+    }
+    return Arrays.asList((Long) current);
+  }
+  /**
+   * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+   */
+  @JsonIgnore public Float getLatitudeFloat() {
+    return (Float) getValue("latitude");
+  }
+  /**
+   * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+   */
+  @JsonIgnore public Collection<Float> getLatitudeFloats() {
+    final Object current = myData.get("latitude");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Float>) current;
+    }
+    return Arrays.asList((Float) current);
+  }
+  /**
+   * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+   */
+  @JsonIgnore public Double getLatitudeDouble() {
+    return (Double) getValue("latitude");
+  }
+  /**
+   * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+   */
+  @JsonIgnore public Collection<Double> getLatitudeDoubles() {
+    final Object current = myData.get("latitude");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Double>) current;
+    }
+    return Arrays.asList((Double) current);
+  }
+  /**
+   * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+   */
+  @JsonIgnore public String getLatitudeString() {
+    return (String) getValue("latitude");
+  }
+  /**
+   * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+   */
+  @JsonIgnore public Collection<String> getLatitudeStrings() {
+    final Object current = myData.get("latitude");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<String>) current;
@@ -295,6 +397,91 @@ public class Place extends Thing {
    */
   @JsonIgnore public Collection<String> getLogoStrings() {
     final Object current = myData.get("logo");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+   */
+  @JsonIgnore public Integer getLongitudeInteger() {
+    return (Integer) getValue("longitude");
+  }
+  /**
+   * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+   */
+  @JsonIgnore public Collection<Integer> getLongitudeIntegers() {
+    final Object current = myData.get("longitude");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Integer>) current;
+    }
+    return Arrays.asList((Integer) current);
+  }
+  /**
+   * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+   */
+  @JsonIgnore public Long getLongitudeLong() {
+    return (Long) getValue("longitude");
+  }
+  /**
+   * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+   */
+  @JsonIgnore public Collection<Long> getLongitudeLongs() {
+    final Object current = myData.get("longitude");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Long>) current;
+    }
+    return Arrays.asList((Long) current);
+  }
+  /**
+   * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+   */
+  @JsonIgnore public Float getLongitudeFloat() {
+    return (Float) getValue("longitude");
+  }
+  /**
+   * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+   */
+  @JsonIgnore public Collection<Float> getLongitudeFloats() {
+    final Object current = myData.get("longitude");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Float>) current;
+    }
+    return Arrays.asList((Float) current);
+  }
+  /**
+   * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+   */
+  @JsonIgnore public Double getLongitudeDouble() {
+    return (Double) getValue("longitude");
+  }
+  /**
+   * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+   */
+  @JsonIgnore public Collection<Double> getLongitudeDoubles() {
+    final Object current = myData.get("longitude");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Double>) current;
+    }
+    return Arrays.asList((Double) current);
+  }
+  /**
+   * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+   */
+  @JsonIgnore public String getLongitudeString() {
+    return (String) getValue("longitude");
+  }
+  /**
+   * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+   */
+  @JsonIgnore public Collection<String> getLongitudeStrings() {
+    final Object current = myData.get("longitude");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<String>) current;
@@ -682,10 +869,52 @@ public class Place extends Thing {
       return this;
     }
     /**
+     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
+     */
+    @NotNull public Builder globalLocationNumber(@NotNull String globalLocationNumber) {
+      putValue("globalLocationNumber", globalLocationNumber);
+      return this;
+    }
+    /**
      * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
      */
     @NotNull public Builder isicV4(@NotNull String isicV4) {
       putValue("isicV4", isicV4);
+      return this;
+    }
+    /**
+     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     */
+    @NotNull public Builder latitude(@NotNull Integer integer) {
+      putValue("latitude", integer);
+      return this;
+    }
+    /**
+     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     */
+    @NotNull public Builder latitude(@NotNull Long latitude) {
+      putValue("latitude", latitude);
+      return this;
+    }
+    /**
+     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     */
+    @NotNull public Builder latitude(@NotNull Float latitude) {
+      putValue("latitude", latitude);
+      return this;
+    }
+    /**
+     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     */
+    @NotNull public Builder latitude(@NotNull Double latitude) {
+      putValue("latitude", latitude);
+      return this;
+    }
+    /**
+     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     */
+    @NotNull public Builder latitude(@NotNull String latitude) {
+      putValue("latitude", latitude);
       return this;
     }
     /**
@@ -707,6 +936,41 @@ public class Place extends Thing {
      */
     @NotNull public Builder logo(@NotNull String logo) {
       putValue("logo", logo);
+      return this;
+    }
+    /**
+     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     */
+    @NotNull public Builder longitude(@NotNull Integer integer) {
+      putValue("longitude", integer);
+      return this;
+    }
+    /**
+     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     */
+    @NotNull public Builder longitude(@NotNull Long longitude) {
+      putValue("longitude", longitude);
+      return this;
+    }
+    /**
+     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     */
+    @NotNull public Builder longitude(@NotNull Float longitude) {
+      putValue("longitude", longitude);
+      return this;
+    }
+    /**
+     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     */
+    @NotNull public Builder longitude(@NotNull Double longitude) {
+      putValue("longitude", longitude);
+      return this;
+    }
+    /**
+     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     */
+    @NotNull public Builder longitude(@NotNull String longitude) {
+      putValue("longitude", longitude);
       return this;
     }
     /**
@@ -999,12 +1263,34 @@ public class Place extends Thing {
       if ("geos".equals(key) && value instanceof GeoShape) { geo((GeoShape)value); return; }
       if ("globalLocationNumber".equals(key) && value instanceof Identifier) { globalLocationNumber((Identifier)value); return; }
       if ("globalLocationNumbers".equals(key) && value instanceof Identifier) { globalLocationNumber((Identifier)value); return; }
+      if ("globalLocationNumber".equals(key) && value instanceof String) { globalLocationNumber((String)value); return; }
+      if ("globalLocationNumbers".equals(key) && value instanceof String) { globalLocationNumber((String)value); return; }
       if ("isicV4".equals(key) && value instanceof String) { isicV4((String)value); return; }
       if ("isicV4s".equals(key) && value instanceof String) { isicV4((String)value); return; }
+      if ("latitude".equals(key) && value instanceof Integer) { latitude((Integer)value); return; }
+      if ("latitudes".equals(key) && value instanceof Integer) { latitude((Integer)value); return; }
+      if ("latitude".equals(key) && value instanceof Long) { latitude((Long)value); return; }
+      if ("latitudes".equals(key) && value instanceof Long) { latitude((Long)value); return; }
+      if ("latitude".equals(key) && value instanceof Float) { latitude((Float)value); return; }
+      if ("latitudes".equals(key) && value instanceof Float) { latitude((Float)value); return; }
+      if ("latitude".equals(key) && value instanceof Double) { latitude((Double)value); return; }
+      if ("latitudes".equals(key) && value instanceof Double) { latitude((Double)value); return; }
+      if ("latitude".equals(key) && value instanceof String) { latitude((String)value); return; }
+      if ("latitudes".equals(key) && value instanceof String) { latitude((String)value); return; }
       if ("logo".equals(key) && value instanceof ImageObject) { logo((ImageObject)value); return; }
       if ("logos".equals(key) && value instanceof ImageObject) { logo((ImageObject)value); return; }
       if ("logo".equals(key) && value instanceof String) { logo((String)value); return; }
       if ("logos".equals(key) && value instanceof String) { logo((String)value); return; }
+      if ("longitude".equals(key) && value instanceof Integer) { longitude((Integer)value); return; }
+      if ("longitudes".equals(key) && value instanceof Integer) { longitude((Integer)value); return; }
+      if ("longitude".equals(key) && value instanceof Long) { longitude((Long)value); return; }
+      if ("longitudes".equals(key) && value instanceof Long) { longitude((Long)value); return; }
+      if ("longitude".equals(key) && value instanceof Float) { longitude((Float)value); return; }
+      if ("longitudes".equals(key) && value instanceof Float) { longitude((Float)value); return; }
+      if ("longitude".equals(key) && value instanceof Double) { longitude((Double)value); return; }
+      if ("longitudes".equals(key) && value instanceof Double) { longitude((Double)value); return; }
+      if ("longitude".equals(key) && value instanceof String) { longitude((String)value); return; }
+      if ("longitudes".equals(key) && value instanceof String) { longitude((String)value); return; }
       if ("hasMap".equals(key) && value instanceof Map) { hasMap((Map)value); return; }
       if ("hasMaps".equals(key) && value instanceof Map) { hasMap((Map)value); return; }
       if ("hasMap".equals(key) && value instanceof String) { hasMap((String)value); return; }

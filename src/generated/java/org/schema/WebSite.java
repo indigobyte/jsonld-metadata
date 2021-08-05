@@ -30,19 +30,36 @@ public class WebSite extends CreativeWork {
   /**
    * The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
    */
-  @JsonIgnore public Identifier getIssn() {
+  @JsonIgnore public Identifier getIssnIdentifier() {
     return (Identifier) getValue("issn");
   }
   /**
    * The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
    */
-  @JsonIgnore public Collection<Identifier> getIssns() {
+  @JsonIgnore public Collection<Identifier> getIssnIdentifiers() {
     final Object current = myData.get("issn");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<Identifier>) current;
     }
     return Arrays.asList((Identifier) current);
+  }
+  /**
+   * The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
+   */
+  @JsonIgnore public String getIssnString() {
+    return (String) getValue("issn");
+  }
+  /**
+   * The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
+   */
+  @JsonIgnore public Collection<String> getIssnStrings() {
+    final Object current = myData.get("issn");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
   }
   protected WebSite(java.util.Map<String,Object> data) {
     super(data);
@@ -63,6 +80,13 @@ public class WebSite extends CreativeWork {
      */
     @NotNull public Builder issn(@NotNull Identifier identifier) {
       putValue("issn", identifier);
+      return this;
+    }
+    /**
+     * The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
+     */
+    @NotNull public Builder issn(@NotNull String issn) {
+      putValue("issn", issn);
       return this;
     }
     /**
@@ -644,6 +668,20 @@ public class WebSite extends CreativeWork {
       return this;
     }
     /**
+     * Indicates the primary entity described in some page or other CreativeWork.
+     */
+    @NotNull public Builder mainEntity(@NotNull Thing thing) {
+      putValue("mainEntity", thing);
+      return this;
+    }
+    /**
+     * Indicates the primary entity described in some page or other CreativeWork.
+     */
+    @NotNull public Builder mainEntity(@NotNull Thing.Builder thing) {
+      putValue("mainEntity", thing.build());
+      return this;
+    }
+    /**
      * Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.
      */
     @NotNull public Builder mentions(@NotNull Thing thing) {
@@ -658,14 +696,32 @@ public class WebSite extends CreativeWork {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event.
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     */
+    @NotNull public Builder offers(@NotNull Demand demand) {
+      putValue("offers", demand);
+      return this;
+    }
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     */
+    @NotNull public Builder offers(@NotNull Demand.Builder demand) {
+      putValue("offers", demand.build());
+      return this;
+    }
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
      */
     @NotNull public Builder offers(@NotNull Offer offer) {
       putValue("offers", offer);
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event.
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
      */
     @NotNull public Builder offers(@NotNull Offer.Builder offer) {
       putValue("offers", offer.build());
@@ -1290,6 +1346,8 @@ public class WebSite extends CreativeWork {
     @Override protected void fromMap(String key, Object value) {
       if ("issn".equals(key) && value instanceof Identifier) { issn((Identifier)value); return; }
       if ("issns".equals(key) && value instanceof Identifier) { issn((Identifier)value); return; }
+      if ("issn".equals(key) && value instanceof String) { issn((String)value); return; }
+      if ("issns".equals(key) && value instanceof String) { issn((String)value); return; }
       super.fromMap(key, value);
     }
   }

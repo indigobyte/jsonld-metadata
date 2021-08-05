@@ -26,7 +26,7 @@ import java.util.*;
 /**
  * An educational organization.
  */
-public class EducationalOrganization extends Organization {
+public class EducationalOrganization extends CivicStructure {
   /**
    * Alumni of an organization.
    */
@@ -51,7 +51,7 @@ public class EducationalOrganization extends Organization {
   /**
    * Builder for {@link EducationalOrganization}
    */
-  public static class Builder extends Organization.Builder {
+  public static class Builder extends CivicStructure.Builder {
     public Builder(@NotNull HashMap<String,Object> data) {
       super(data);
     }
@@ -73,17 +73,10 @@ public class EducationalOrganization extends Organization {
       return this;
     }
     /**
-     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
+     * The general opening hours for a business. Opening hours can be specified as a weekly time range, starting with days, then times per day. Multiple days can be listed with commas ',' separating each day. Day or time ranges are specified using a hyphen '-'.\n\n* Days are specified using the following two-letter combinations: ```Mo```, ```Tu```, ```We```, ```Th```, ```Fr```, ```Sa```, ```Su```.\n* Times are specified using 24:00 time. For example, 3pm is specified as ```15:00```. \n* Here is an example: <code>&lt;time itemprop="openingHours" datetime=&quot;Tu,Th 16:00-20:00&quot;&gt;Tuesdays and Thursdays 4-8pm&lt;/time&gt;</code>.\n* If a business is open 7 days a week, then it can be specified as <code>&lt;time itemprop=&quot;openingHours&quot; datetime=&quot;Mo-Su&quot;&gt;Monday through Sunday, all day&lt;/time&gt;</code>.
      */
-    @NotNull public Builder hasOfferCatalog(@NotNull OfferCatalog offerCatalog) {
-      putValue("hasOfferCatalog", offerCatalog);
-      return this;
-    }
-    /**
-     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
-     */
-    @NotNull public Builder hasOfferCatalog(@NotNull OfferCatalog.Builder offerCatalog) {
-      putValue("hasOfferCatalog", offerCatalog.build());
+    @NotNull public Builder openingHours(@NotNull String openingHours) {
+      putValue("openingHours", openingHours);
       return this;
     }
     /**
@@ -122,108 +115,39 @@ public class EducationalOrganization extends Organization {
       return this;
     }
     /**
-     * An award won by or for this item.
+     * A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.\n\nFor example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code "3047" is a branchCode for a particular branch.
+     *       
      */
-    @NotNull public Builder award(@NotNull String award) {
-      putValue("award", award);
+    @NotNull public Builder branchCode(@NotNull String branchCode) {
+      putValue("branchCode", branchCode);
       return this;
     }
     /**
-     * The larger organization that this organization is a [[subOrganization]] of, if any.
+     * The basic containment relation between a place and one that contains it.
      */
-    @NotNull public Builder parentOrganization(@NotNull Organization organization) {
-      putValue("parentOrganization", organization);
+    @NotNull public Builder containedInPlace(@NotNull Place place) {
+      putValue("containedInPlace", place);
       return this;
     }
     /**
-     * The larger organization that this organization is a [[subOrganization]] of, if any.
+     * The basic containment relation between a place and one that contains it.
      */
-    @NotNull public Builder parentOrganization(@NotNull Organization.Builder organization) {
-      putValue("parentOrganization", organization.build());
+    @NotNull public Builder containedInPlace(@NotNull Place.Builder place) {
+      putValue("containedInPlace", place.build());
       return this;
     }
     /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     * The basic containment relation between a place and another that it contains.
      */
-    @NotNull public Builder brand(@NotNull Brand brand) {
-      putValue("brand", brand);
+    @NotNull public Builder containsPlace(@NotNull Place place) {
+      putValue("containsPlace", place);
       return this;
     }
     /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     * The basic containment relation between a place and another that it contains.
      */
-    @NotNull public Builder brand(@NotNull Brand.Builder brand) {
-      putValue("brand", brand.build());
-      return this;
-    }
-    /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
-     */
-    @NotNull public Builder brand(@NotNull Organization organization) {
-      putValue("brand", organization);
-      return this;
-    }
-    /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
-     */
-    @NotNull public Builder brand(@NotNull Organization.Builder organization) {
-      putValue("brand", organization.build());
-      return this;
-    }
-    /**
-     * A contact point for a person or organization.
-     */
-    @NotNull public Builder contactPoint(@NotNull ContactPoint contactPoint) {
-      putValue("contactPoint", contactPoint);
-      return this;
-    }
-    /**
-     * A contact point for a person or organization.
-     */
-    @NotNull public Builder contactPoint(@NotNull ContactPoint.Builder contactPoint) {
-      putValue("contactPoint", contactPoint.build());
-      return this;
-    }
-    /**
-     * A relationship between an organization and a department of that organization, also described as an organization (allowing different urls, logos, opening hours). For example: a store with a pharmacy, or a bakery with a cafe.
-     */
-    @NotNull public Builder department(@NotNull Organization organization) {
-      putValue("department", organization);
-      return this;
-    }
-    /**
-     * A relationship between an organization and a department of that organization, also described as an organization (allowing different urls, logos, opening hours). For example: a store with a pharmacy, or a bakery with a cafe.
-     */
-    @NotNull public Builder department(@NotNull Organization.Builder organization) {
-      putValue("department", organization.build());
-      return this;
-    }
-    /**
-     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
-     */
-    @NotNull public Builder duns(@NotNull Identifier identifier) {
-      putValue("duns", identifier);
-      return this;
-    }
-    /**
-     * Email address.
-     */
-    @NotNull public Builder email(@NotNull String email) {
-      putValue("email", email);
-      return this;
-    }
-    /**
-     * Someone working for this organization.
-     */
-    @NotNull public Builder employee(@NotNull Person person) {
-      putValue("employee", person);
-      return this;
-    }
-    /**
-     * Someone working for this organization.
-     */
-    @NotNull public Builder employee(@NotNull Person.Builder person) {
-      putValue("employee", person.build());
+    @NotNull public Builder containsPlace(@NotNull Place.Builder place) {
+      putValue("containsPlace", place.build());
       return this;
     }
     /**
@@ -248,31 +172,45 @@ public class EducationalOrganization extends Organization {
       return this;
     }
     /**
-     * A person who founded this organization.
+     * A flag to signal that the item, event, or place is accessible for free.
      */
-    @NotNull public Builder founder(@NotNull Person person) {
-      putValue("founder", person);
+    @NotNull public Builder isAccessibleForFree(@NotNull Boolean isAccessibleForFree) {
+      putValue("isAccessibleForFree", isAccessibleForFree);
       return this;
     }
     /**
-     * A person who founded this organization.
+     * A flag to signal that the [[Place]] is open to public visitors.  If this property is omitted there is no assumed default boolean value
      */
-    @NotNull public Builder founder(@NotNull Person.Builder person) {
-      putValue("founder", person.build());
+    @NotNull public Builder publicAccess(@NotNull Boolean publicAccess) {
+      putValue("publicAccess", publicAccess);
       return this;
     }
     /**
-     * The date that this organization was dissolved.
+     * The geo coordinates of the place.
      */
-    @NotNull public Builder dissolutionDate(@NotNull java.util.Date date) {
-      putValue("dissolutionDate", date);
+    @NotNull public Builder geo(@NotNull GeoCoordinates geoCoordinates) {
+      putValue("geo", geoCoordinates);
       return this;
     }
     /**
-     * The date that this organization was founded.
+     * The geo coordinates of the place.
      */
-    @NotNull public Builder foundingDate(@NotNull java.util.Date date) {
-      putValue("foundingDate", date);
+    @NotNull public Builder geo(@NotNull GeoCoordinates.Builder geoCoordinates) {
+      putValue("geo", geoCoordinates.build());
+      return this;
+    }
+    /**
+     * The geo coordinates of the place.
+     */
+    @NotNull public Builder geo(@NotNull GeoShape geoShape) {
+      putValue("geo", geoShape);
+      return this;
+    }
+    /**
+     * The geo coordinates of the place.
+     */
+    @NotNull public Builder geo(@NotNull GeoShape.Builder geoShape) {
+      putValue("geo", geoShape.build());
       return this;
     }
     /**
@@ -283,17 +221,10 @@ public class EducationalOrganization extends Organization {
       return this;
     }
     /**
-     * Points-of-Sales operated by the organization or person.
+     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
      */
-    @NotNull public Builder hasPOS(@NotNull Place place) {
-      putValue("hasPOS", place);
-      return this;
-    }
-    /**
-     * Points-of-Sales operated by the organization or person.
-     */
-    @NotNull public Builder hasPOS(@NotNull Place.Builder place) {
-      putValue("hasPOS", place.build());
+    @NotNull public Builder globalLocationNumber(@NotNull String globalLocationNumber) {
+      putValue("globalLocationNumber", globalLocationNumber);
       return this;
     }
     /**
@@ -304,10 +235,38 @@ public class EducationalOrganization extends Organization {
       return this;
     }
     /**
-     * The official name of the organization, e.g. the registered company name.
+     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
      */
-    @NotNull public Builder legalName(@NotNull String legalName) {
-      putValue("legalName", legalName);
+    @NotNull public Builder latitude(@NotNull Integer integer) {
+      putValue("latitude", integer);
+      return this;
+    }
+    /**
+     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     */
+    @NotNull public Builder latitude(@NotNull Long latitude) {
+      putValue("latitude", latitude);
+      return this;
+    }
+    /**
+     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     */
+    @NotNull public Builder latitude(@NotNull Float latitude) {
+      putValue("latitude", latitude);
+      return this;
+    }
+    /**
+     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     */
+    @NotNull public Builder latitude(@NotNull Double latitude) {
+      putValue("latitude", latitude);
+      return this;
+    }
+    /**
+     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     */
+    @NotNull public Builder latitude(@NotNull String latitude) {
+      putValue("latitude", latitude);
       return this;
     }
     /**
@@ -332,131 +291,124 @@ public class EducationalOrganization extends Organization {
       return this;
     }
     /**
-     * A pointer to products or services offered by the organization or person.
+     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
      */
-    @NotNull public Builder makesOffer(@NotNull Offer offer) {
-      putValue("makesOffer", offer);
+    @NotNull public Builder longitude(@NotNull Integer integer) {
+      putValue("longitude", integer);
       return this;
     }
     /**
-     * A pointer to products or services offered by the organization or person.
+     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
      */
-    @NotNull public Builder makesOffer(@NotNull Offer.Builder offer) {
-      putValue("makesOffer", offer.build());
+    @NotNull public Builder longitude(@NotNull Long longitude) {
+      putValue("longitude", longitude);
       return this;
     }
     /**
-     * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
+     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
      */
-    @NotNull public Builder member(@NotNull Organization organization) {
-      putValue("member", organization);
+    @NotNull public Builder longitude(@NotNull Float longitude) {
+      putValue("longitude", longitude);
       return this;
     }
     /**
-     * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
+     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
      */
-    @NotNull public Builder member(@NotNull Organization.Builder organization) {
-      putValue("member", organization.build());
+    @NotNull public Builder longitude(@NotNull Double longitude) {
+      putValue("longitude", longitude);
       return this;
     }
     /**
-     * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
+     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
      */
-    @NotNull public Builder member(@NotNull Person person) {
-      putValue("member", person);
+    @NotNull public Builder longitude(@NotNull String longitude) {
+      putValue("longitude", longitude);
       return this;
     }
     /**
-     * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
+     * A URL to a map of the place.
      */
-    @NotNull public Builder member(@NotNull Person.Builder person) {
-      putValue("member", person.build());
+    @NotNull public Builder hasMap(@NotNull Map map) {
+      putValue("hasMap", map);
       return this;
     }
     /**
-     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
+     * A URL to a map of the place.
      */
-    @NotNull public Builder memberOf(@NotNull MemberOf memberOf) {
-      putValue("memberOf", memberOf);
+    @NotNull public Builder hasMap(@NotNull Map.Builder map) {
+      putValue("hasMap", map.build());
       return this;
     }
     /**
-     * The North American Industry Classification System (NAICS) code for a particular organization or business person.
+     * A URL to a map of the place.
      */
-    @NotNull public Builder naics(@NotNull String naics) {
-      putValue("naics", naics);
+    @NotNull public Builder hasMap(@NotNull String hasMap) {
+      putValue("hasMap", hasMap);
       return this;
     }
     /**
-     * The number of employees in an organization e.g. business.
+     * The total number of individuals that may attend an event or venue.
      */
-    @NotNull public Builder numberOfEmployees(@NotNull QuantitativeValue quantitativeValue) {
-      putValue("numberOfEmployees", quantitativeValue);
+    @NotNull public Builder maximumAttendeeCapacity(@NotNull Integer integer) {
+      putValue("maximumAttendeeCapacity", integer);
       return this;
     }
     /**
-     * The number of employees in an organization e.g. business.
+     * The opening hours of a certain place.
      */
-    @NotNull public Builder numberOfEmployees(@NotNull QuantitativeValue.Builder quantitativeValue) {
-      putValue("numberOfEmployees", quantitativeValue.build());
+    @NotNull public Builder openingHoursSpecification(@NotNull OpeningHoursSpecification openingHoursSpecification) {
+      putValue("openingHoursSpecification", openingHoursSpecification);
       return this;
     }
     /**
-     * Products owned by the organization or person.
+     * The opening hours of a certain place.
      */
-    @NotNull public Builder owns(@NotNull OwnershipInfo ownershipInfo) {
-      putValue("owns", ownershipInfo);
+    @NotNull public Builder openingHoursSpecification(@NotNull OpeningHoursSpecification.Builder openingHoursSpecification) {
+      putValue("openingHoursSpecification", openingHoursSpecification.build());
       return this;
     }
     /**
-     * Products owned by the organization or person.
+     * The special opening hours of a certain place.\n\nUse this to explicitly override general opening hours brought in scope by [[openingHoursSpecification]] or [[openingHours]].
+     *       
      */
-    @NotNull public Builder owns(@NotNull OwnershipInfo.Builder ownershipInfo) {
-      putValue("owns", ownershipInfo.build());
+    @NotNull public Builder specialOpeningHoursSpecification(@NotNull OpeningHoursSpecification openingHoursSpecification) {
+      putValue("specialOpeningHoursSpecification", openingHoursSpecification);
       return this;
     }
     /**
-     * Products owned by the organization or person.
+     * The special opening hours of a certain place.\n\nUse this to explicitly override general opening hours brought in scope by [[openingHoursSpecification]] or [[openingHours]].
+     *       
      */
-    @NotNull public Builder owns(@NotNull Product product) {
-      putValue("owns", product);
+    @NotNull public Builder specialOpeningHoursSpecification(@NotNull OpeningHoursSpecification.Builder openingHoursSpecification) {
+      putValue("specialOpeningHoursSpecification", openingHoursSpecification.build());
       return this;
     }
     /**
-     * Products owned by the organization or person.
+     * A photograph of this place.
      */
-    @NotNull public Builder owns(@NotNull Product.Builder product) {
-      putValue("owns", product.build());
+    @NotNull public Builder photo(@NotNull ImageObject imageObject) {
+      putValue("photo", imageObject);
       return this;
     }
     /**
-     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
-     * 
-     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
-     * 
+     * A photograph of this place.
      */
-    @NotNull public Builder publishingPrinciples(@NotNull CreativeWork creativeWork) {
-      putValue("publishingPrinciples", creativeWork);
+    @NotNull public Builder photo(@NotNull ImageObject.Builder imageObject) {
+      putValue("photo", imageObject.build());
       return this;
     }
     /**
-     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
-     * 
-     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
-     * 
+     * A photograph of this place.
      */
-    @NotNull public Builder publishingPrinciples(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("publishingPrinciples", creativeWork.build());
+    @NotNull public Builder photo(@NotNull Photograph photograph) {
+      putValue("photo", photograph);
       return this;
     }
     /**
-     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
-     * 
-     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
-     * 
+     * A photograph of this place.
      */
-    @NotNull public Builder publishingPrinciples(@NotNull String publishingPrinciples) {
-      putValue("publishingPrinciples", publishingPrinciples);
+    @NotNull public Builder photo(@NotNull Photograph.Builder photograph) {
+      putValue("photo", photograph.build());
       return this;
     }
     /**
@@ -481,69 +433,6 @@ public class EducationalOrganization extends Organization {
       return this;
     }
     /**
-     * A pointer to products or services sought by the organization or person (demand).
-     */
-    @NotNull public Builder seeks(@NotNull Demand demand) {
-      putValue("seeks", demand);
-      return this;
-    }
-    /**
-     * A pointer to products or services sought by the organization or person (demand).
-     */
-    @NotNull public Builder seeks(@NotNull Demand.Builder demand) {
-      putValue("seeks", demand.build());
-      return this;
-    }
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     */
-    @NotNull public Builder funder(@NotNull Organization organization) {
-      putValue("funder", organization);
-      return this;
-    }
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     */
-    @NotNull public Builder funder(@NotNull Organization.Builder organization) {
-      putValue("funder", organization.build());
-      return this;
-    }
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     */
-    @NotNull public Builder funder(@NotNull Person person) {
-      putValue("funder", person);
-      return this;
-    }
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     */
-    @NotNull public Builder funder(@NotNull Person.Builder person) {
-      putValue("funder", person.build());
-      return this;
-    }
-    /**
-     * A relationship between two organizations where the first includes the second, e.g., as a subsidiary. See also: the more specific 'department' property.
-     */
-    @NotNull public Builder subOrganization(@NotNull Organization organization) {
-      putValue("subOrganization", organization);
-      return this;
-    }
-    /**
-     * A relationship between two organizations where the first includes the second, e.g., as a subsidiary. See also: the more specific 'department' property.
-     */
-    @NotNull public Builder subOrganization(@NotNull Organization.Builder organization) {
-      putValue("subOrganization", organization.build());
-      return this;
-    }
-    /**
-     * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
-     */
-    @NotNull public Builder taxID(@NotNull Identifier identifier) {
-      putValue("taxID", identifier);
-      return this;
-    }
-    /**
      * The telephone number.
      */
     @NotNull public Builder telephone(@NotNull String telephone) {
@@ -551,31 +440,40 @@ public class EducationalOrganization extends Organization {
       return this;
     }
     /**
-     * The Value-added Tax ID of the organization or person.
+     * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.\n\nNote: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
+     * 
      */
-    @NotNull public Builder vatID(@NotNull String vatID) {
-      putValue("vatID", vatID);
+    @NotNull public Builder additionalProperty(@NotNull PropertyValue propertyValue) {
+      putValue("additionalProperty", propertyValue);
       return this;
     }
     /**
-     * The place where the Organization was founded.
+     * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.\n\nNote: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
+     * 
      */
-    @NotNull public Builder foundingLocation(@NotNull Place place) {
-      putValue("foundingLocation", place);
+    @NotNull public Builder additionalProperty(@NotNull PropertyValue.Builder propertyValue) {
+      putValue("additionalProperty", propertyValue.build());
       return this;
     }
     /**
-     * The place where the Organization was founded.
+     * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
      */
-    @NotNull public Builder foundingLocation(@NotNull Place.Builder place) {
-      putValue("foundingLocation", place.build());
+    @NotNull public Builder amenityFeature(@NotNull LocationFeatureSpecification locationFeatureSpecification) {
+      putValue("amenityFeature", locationFeatureSpecification);
       return this;
     }
     /**
-     * An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
+     * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
      */
-    @NotNull public Builder leiCode(@NotNull Identifier identifier) {
-      putValue("leiCode", identifier);
+    @NotNull public Builder amenityFeature(@NotNull LocationFeatureSpecification.Builder locationFeatureSpecification) {
+      putValue("amenityFeature", locationFeatureSpecification.build());
+      return this;
+    }
+    /**
+     * Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.
+     */
+    @NotNull public Builder smokingAllowed(@NotNull Boolean smokingAllowed) {
+      putValue("smokingAllowed", smokingAllowed);
       return this;
     }
     /**

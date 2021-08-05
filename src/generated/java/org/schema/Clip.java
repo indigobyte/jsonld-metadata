@@ -47,19 +47,53 @@ public class Clip extends CreativeWork {
   /**
    * Position of the clip within an ordered group of clips.
    */
-  @JsonIgnore public Position getClipNumber() {
+  @JsonIgnore public Integer getClipNumberInteger() {
+    return (Integer) getValue("clipNumber");
+  }
+  /**
+   * Position of the clip within an ordered group of clips.
+   */
+  @JsonIgnore public Collection<Integer> getClipNumberIntegers() {
+    final Object current = myData.get("clipNumber");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Integer>) current;
+    }
+    return Arrays.asList((Integer) current);
+  }
+  /**
+   * Position of the clip within an ordered group of clips.
+   */
+  @JsonIgnore public Position getClipNumberPosition() {
     return (Position) getValue("clipNumber");
   }
   /**
    * Position of the clip within an ordered group of clips.
    */
-  @JsonIgnore public Collection<Position> getClipNumbers() {
+  @JsonIgnore public Collection<Position> getClipNumberPositions() {
     final Object current = myData.get("clipNumber");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<Position>) current;
     }
     return Arrays.asList((Position) current);
+  }
+  /**
+   * Position of the clip within an ordered group of clips.
+   */
+  @JsonIgnore public String getClipNumberString() {
+    return (String) getValue("clipNumber");
+  }
+  /**
+   * Position of the clip within an ordered group of clips.
+   */
+  @JsonIgnore public Collection<String> getClipNumberStrings() {
+    final Object current = myData.get("clipNumber");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
   }
   /**
    * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
@@ -115,13 +149,30 @@ public class Clip extends CreativeWork {
   /**
    * The episode to which this clip belongs.
    */
-  @JsonIgnore public IsPartOf getPartOfEpisode() {
+  @JsonIgnore public Episode getPartOfEpisodeEpisode() {
+    return (Episode) getValue("partOfEpisode");
+  }
+  /**
+   * The episode to which this clip belongs.
+   */
+  @JsonIgnore public Collection<Episode> getPartOfEpisodeEpisodes() {
+    final Object current = myData.get("partOfEpisode");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Episode>) current;
+    }
+    return Arrays.asList((Episode) current);
+  }
+  /**
+   * The episode to which this clip belongs.
+   */
+  @JsonIgnore public IsPartOf getPartOfEpisodeIsPartOf() {
     return (IsPartOf) getValue("partOfEpisode");
   }
   /**
    * The episode to which this clip belongs.
    */
-  @JsonIgnore public Collection<IsPartOf> getPartOfEpisodes() {
+  @JsonIgnore public Collection<IsPartOf> getPartOfEpisodeIsPartOfs() {
     final Object current = myData.get("partOfEpisode");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
@@ -132,13 +183,30 @@ public class Clip extends CreativeWork {
   /**
    * The season to which this episode belongs.
    */
-  @JsonIgnore public IsPartOf getPartOfSeason() {
+  @JsonIgnore public CreativeWorkSeason getPartOfSeasonCreativeWorkSeason() {
+    return (CreativeWorkSeason) getValue("partOfSeason");
+  }
+  /**
+   * The season to which this episode belongs.
+   */
+  @JsonIgnore public Collection<CreativeWorkSeason> getPartOfSeasonCreativeWorkSeasons() {
+    final Object current = myData.get("partOfSeason");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<CreativeWorkSeason>) current;
+    }
+    return Arrays.asList((CreativeWorkSeason) current);
+  }
+  /**
+   * The season to which this episode belongs.
+   */
+  @JsonIgnore public IsPartOf getPartOfSeasonIsPartOf() {
     return (IsPartOf) getValue("partOfSeason");
   }
   /**
    * The season to which this episode belongs.
    */
-  @JsonIgnore public Collection<IsPartOf> getPartOfSeasons() {
+  @JsonIgnore public Collection<IsPartOf> getPartOfSeasonIsPartOfs() {
     final Object current = myData.get("partOfSeason");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
@@ -149,13 +217,30 @@ public class Clip extends CreativeWork {
   /**
    * The series to which this episode or season belongs.
    */
-  @JsonIgnore public IsPartOf getPartOfSeries() {
+  @JsonIgnore public CreativeWorkSeries getPartOfSeriesCreativeWorkSeries() {
+    return (CreativeWorkSeries) getValue("partOfSeries");
+  }
+  /**
+   * The series to which this episode or season belongs.
+   */
+  @JsonIgnore public Collection<CreativeWorkSeries> getPartOfSeriesCreativeWorkSeriess() {
+    final Object current = myData.get("partOfSeries");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<CreativeWorkSeries>) current;
+    }
+    return Arrays.asList((CreativeWorkSeries) current);
+  }
+  /**
+   * The series to which this episode or season belongs.
+   */
+  @JsonIgnore public IsPartOf getPartOfSeriesIsPartOf() {
     return (IsPartOf) getValue("partOfSeries");
   }
   /**
    * The series to which this episode or season belongs.
    */
-  @JsonIgnore public Collection<IsPartOf> getPartOfSeriess() {
+  @JsonIgnore public Collection<IsPartOf> getPartOfSeriesIsPartOfs() {
     final Object current = myData.get("partOfSeries");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
@@ -194,8 +279,22 @@ public class Clip extends CreativeWork {
     /**
      * Position of the clip within an ordered group of clips.
      */
+    @NotNull public Builder clipNumber(@NotNull Integer integer) {
+      putValue("clipNumber", integer);
+      return this;
+    }
+    /**
+     * Position of the clip within an ordered group of clips.
+     */
     @NotNull public Builder clipNumber(@NotNull Position position) {
       putValue("clipNumber", position);
+      return this;
+    }
+    /**
+     * Position of the clip within an ordered group of clips.
+     */
+    @NotNull public Builder clipNumber(@NotNull String clipNumber) {
+      putValue("clipNumber", clipNumber);
       return this;
     }
     /**
@@ -243,6 +342,20 @@ public class Clip extends CreativeWork {
     /**
      * The episode to which this clip belongs.
      */
+    @NotNull public Builder partOfEpisode(@NotNull Episode episode) {
+      putValue("partOfEpisode", episode);
+      return this;
+    }
+    /**
+     * The episode to which this clip belongs.
+     */
+    @NotNull public Builder partOfEpisode(@NotNull Episode.Builder episode) {
+      putValue("partOfEpisode", episode.build());
+      return this;
+    }
+    /**
+     * The episode to which this clip belongs.
+     */
     @NotNull public Builder partOfEpisode(@NotNull IsPartOf isPartOf) {
       putValue("partOfEpisode", isPartOf);
       return this;
@@ -250,8 +363,36 @@ public class Clip extends CreativeWork {
     /**
      * The season to which this episode belongs.
      */
+    @NotNull public Builder partOfSeason(@NotNull CreativeWorkSeason creativeWorkSeason) {
+      putValue("partOfSeason", creativeWorkSeason);
+      return this;
+    }
+    /**
+     * The season to which this episode belongs.
+     */
+    @NotNull public Builder partOfSeason(@NotNull CreativeWorkSeason.Builder creativeWorkSeason) {
+      putValue("partOfSeason", creativeWorkSeason.build());
+      return this;
+    }
+    /**
+     * The season to which this episode belongs.
+     */
     @NotNull public Builder partOfSeason(@NotNull IsPartOf isPartOf) {
       putValue("partOfSeason", isPartOf);
+      return this;
+    }
+    /**
+     * The series to which this episode or season belongs.
+     */
+    @NotNull public Builder partOfSeries(@NotNull CreativeWorkSeries creativeWorkSeries) {
+      putValue("partOfSeries", creativeWorkSeries);
+      return this;
+    }
+    /**
+     * The series to which this episode or season belongs.
+     */
+    @NotNull public Builder partOfSeries(@NotNull CreativeWorkSeries.Builder creativeWorkSeries) {
+      putValue("partOfSeries", creativeWorkSeries.build());
       return this;
     }
     /**
@@ -840,6 +981,20 @@ public class Clip extends CreativeWork {
       return this;
     }
     /**
+     * Indicates the primary entity described in some page or other CreativeWork.
+     */
+    @NotNull public Builder mainEntity(@NotNull Thing thing) {
+      putValue("mainEntity", thing);
+      return this;
+    }
+    /**
+     * Indicates the primary entity described in some page or other CreativeWork.
+     */
+    @NotNull public Builder mainEntity(@NotNull Thing.Builder thing) {
+      putValue("mainEntity", thing.build());
+      return this;
+    }
+    /**
      * Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.
      */
     @NotNull public Builder mentions(@NotNull Thing thing) {
@@ -854,14 +1009,32 @@ public class Clip extends CreativeWork {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event.
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     */
+    @NotNull public Builder offers(@NotNull Demand demand) {
+      putValue("offers", demand);
+      return this;
+    }
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     */
+    @NotNull public Builder offers(@NotNull Demand.Builder demand) {
+      putValue("offers", demand.build());
+      return this;
+    }
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
      */
     @NotNull public Builder offers(@NotNull Offer offer) {
       putValue("offers", offer);
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event.
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
      */
     @NotNull public Builder offers(@NotNull Offer.Builder offer) {
       putValue("offers", offer.build());
@@ -1486,18 +1659,28 @@ public class Clip extends CreativeWork {
     @Override protected void fromMap(String key, Object value) {
       if ("actor".equals(key) && value instanceof Person) { actor((Person)value); return; }
       if ("actors".equals(key) && value instanceof Person) { actor((Person)value); return; }
+      if ("clipNumber".equals(key) && value instanceof Integer) { clipNumber((Integer)value); return; }
+      if ("clipNumbers".equals(key) && value instanceof Integer) { clipNumber((Integer)value); return; }
       if ("clipNumber".equals(key) && value instanceof Position) { clipNumber((Position)value); return; }
       if ("clipNumbers".equals(key) && value instanceof Position) { clipNumber((Position)value); return; }
+      if ("clipNumber".equals(key) && value instanceof String) { clipNumber((String)value); return; }
+      if ("clipNumbers".equals(key) && value instanceof String) { clipNumber((String)value); return; }
       if ("director".equals(key) && value instanceof Person) { director((Person)value); return; }
       if ("directors".equals(key) && value instanceof Person) { director((Person)value); return; }
       if ("musicBy".equals(key) && value instanceof MusicGroup) { musicBy((MusicGroup)value); return; }
       if ("musicBys".equals(key) && value instanceof MusicGroup) { musicBy((MusicGroup)value); return; }
       if ("musicBy".equals(key) && value instanceof Person) { musicBy((Person)value); return; }
       if ("musicBys".equals(key) && value instanceof Person) { musicBy((Person)value); return; }
+      if ("partOfEpisode".equals(key) && value instanceof Episode) { partOfEpisode((Episode)value); return; }
+      if ("partOfEpisodes".equals(key) && value instanceof Episode) { partOfEpisode((Episode)value); return; }
       if ("partOfEpisode".equals(key) && value instanceof IsPartOf) { partOfEpisode((IsPartOf)value); return; }
       if ("partOfEpisodes".equals(key) && value instanceof IsPartOf) { partOfEpisode((IsPartOf)value); return; }
+      if ("partOfSeason".equals(key) && value instanceof CreativeWorkSeason) { partOfSeason((CreativeWorkSeason)value); return; }
+      if ("partOfSeasons".equals(key) && value instanceof CreativeWorkSeason) { partOfSeason((CreativeWorkSeason)value); return; }
       if ("partOfSeason".equals(key) && value instanceof IsPartOf) { partOfSeason((IsPartOf)value); return; }
       if ("partOfSeasons".equals(key) && value instanceof IsPartOf) { partOfSeason((IsPartOf)value); return; }
+      if ("partOfSeries".equals(key) && value instanceof CreativeWorkSeries) { partOfSeries((CreativeWorkSeries)value); return; }
+      if ("partOfSeriess".equals(key) && value instanceof CreativeWorkSeries) { partOfSeries((CreativeWorkSeries)value); return; }
       if ("partOfSeries".equals(key) && value instanceof IsPartOf) { partOfSeries((IsPartOf)value); return; }
       if ("partOfSeriess".equals(key) && value instanceof IsPartOf) { partOfSeries((IsPartOf)value); return; }
       super.fromMap(key, value);

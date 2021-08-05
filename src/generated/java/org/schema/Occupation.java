@@ -217,13 +217,13 @@ public class Occupation extends Intangible {
     return Arrays.asList((String) current);
   }
   /**
-   * Skills required to fulfill this role or in this Occupation.
+   * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is desired or required to fulfill this role or to work in this occupation.
    */
   @JsonIgnore public String getSkills() {
     return (String) getValue("skills");
   }
   /**
-   * Skills required to fulfill this role or in this Occupation.
+   * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is desired or required to fulfill this role or to work in this occupation.
    */
   @JsonIgnore public Collection<String> getSkillss() {
     final Object current = myData.get("skills");
@@ -333,7 +333,7 @@ public class Occupation extends Intangible {
       return this;
     }
     /**
-     * Skills required to fulfill this role or in this Occupation.
+     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is desired or required to fulfill this role or to work in this occupation.
      */
     @NotNull public Builder skills(@NotNull String skills) {
       putValue("skills", skills);

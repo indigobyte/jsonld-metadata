@@ -64,19 +64,36 @@ public class Invoice extends Intangible {
   /**
    * A number that confirms the given order or payment has been received.
    */
-  @JsonIgnore public Identifier getConfirmationNumber() {
+  @JsonIgnore public Identifier getConfirmationNumberIdentifier() {
     return (Identifier) getValue("confirmationNumber");
   }
   /**
    * A number that confirms the given order or payment has been received.
    */
-  @JsonIgnore public Collection<Identifier> getConfirmationNumbers() {
+  @JsonIgnore public Collection<Identifier> getConfirmationNumberIdentifiers() {
     final Object current = myData.get("confirmationNumber");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<Identifier>) current;
     }
     return Arrays.asList((Identifier) current);
+  }
+  /**
+   * A number that confirms the given order or payment has been received.
+   */
+  @JsonIgnore public String getConfirmationNumberString() {
+    return (String) getValue("confirmationNumber");
+  }
+  /**
+   * A number that confirms the given order or payment has been received.
+   */
+  @JsonIgnore public Collection<String> getConfirmationNumberStrings() {
+    final Object current = myData.get("confirmationNumber");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
   }
   /**
    * Party placing the order or paying the invoice.
@@ -302,19 +319,36 @@ public class Invoice extends Intangible {
   /**
    * The identifier for the account the payment will be applied to.
    */
-  @JsonIgnore public Identifier getAccountId() {
+  @JsonIgnore public Identifier getAccountIdIdentifier() {
     return (Identifier) getValue("accountId");
   }
   /**
    * The identifier for the account the payment will be applied to.
    */
-  @JsonIgnore public Collection<Identifier> getAccountIds() {
+  @JsonIgnore public Collection<Identifier> getAccountIdIdentifiers() {
     final Object current = myData.get("accountId");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<Identifier>) current;
     }
     return Arrays.asList((Identifier) current);
+  }
+  /**
+   * The identifier for the account the payment will be applied to.
+   */
+  @JsonIgnore public String getAccountIdString() {
+    return (String) getValue("accountId");
+  }
+  /**
+   * The identifier for the account the payment will be applied to.
+   */
+  @JsonIgnore public Collection<String> getAccountIdStrings() {
+    final Object current = myData.get("accountId");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
   }
   /**
    * The date the invoice is scheduled to be paid.
@@ -441,6 +475,13 @@ public class Invoice extends Intangible {
      */
     @NotNull public Builder confirmationNumber(@NotNull Identifier identifier) {
       putValue("confirmationNumber", identifier);
+      return this;
+    }
+    /**
+     * A number that confirms the given order or payment has been received.
+     */
+    @NotNull public Builder confirmationNumber(@NotNull String confirmationNumber) {
+      putValue("confirmationNumber", confirmationNumber);
       return this;
     }
     /**
@@ -612,6 +653,13 @@ public class Invoice extends Intangible {
       return this;
     }
     /**
+     * The identifier for the account the payment will be applied to.
+     */
+    @NotNull public Builder accountId(@NotNull String accountId) {
+      putValue("accountId", accountId);
+      return this;
+    }
+    /**
      * The date the invoice is scheduled to be paid.
      */
     @NotNull public Builder scheduledPaymentDate(@NotNull java.util.Date date) {
@@ -772,6 +820,8 @@ public class Invoice extends Intangible {
       if ("categorys".equals(key) && value instanceof Thing) { category((Thing)value); return; }
       if ("confirmationNumber".equals(key) && value instanceof Identifier) { confirmationNumber((Identifier)value); return; }
       if ("confirmationNumbers".equals(key) && value instanceof Identifier) { confirmationNumber((Identifier)value); return; }
+      if ("confirmationNumber".equals(key) && value instanceof String) { confirmationNumber((String)value); return; }
+      if ("confirmationNumbers".equals(key) && value instanceof String) { confirmationNumber((String)value); return; }
       if ("customer".equals(key) && value instanceof Organization) { customer((Organization)value); return; }
       if ("customers".equals(key) && value instanceof Organization) { customer((Organization)value); return; }
       if ("customer".equals(key) && value instanceof Person) { customer((Person)value); return; }
@@ -800,6 +850,8 @@ public class Invoice extends Intangible {
       if ("minimumPaymentDues".equals(key) && value instanceof PriceSpecification) { minimumPaymentDue((PriceSpecification)value); return; }
       if ("accountId".equals(key) && value instanceof Identifier) { accountId((Identifier)value); return; }
       if ("accountIds".equals(key) && value instanceof Identifier) { accountId((Identifier)value); return; }
+      if ("accountId".equals(key) && value instanceof String) { accountId((String)value); return; }
+      if ("accountIds".equals(key) && value instanceof String) { accountId((String)value); return; }
       if ("scheduledPaymentDate".equals(key) && value instanceof java.util.Date) { scheduledPaymentDate((java.util.Date)value); return; }
       if ("scheduledPaymentDates".equals(key) && value instanceof java.util.Date) { scheduledPaymentDate((java.util.Date)value); return; }
       if ("billingPeriod".equals(key) && value instanceof Duration) { billingPeriod((Duration)value); return; }

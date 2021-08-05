@@ -990,19 +990,36 @@ public class CreativeWork extends Thing implements WorkFeatured, Step {
   /**
    * Indicates the primary entity described in some page or other CreativeWork.
    */
-  @JsonIgnore public About getMainEntity() {
+  @JsonIgnore public About getMainEntityAbout() {
     return (About) getValue("mainEntity");
   }
   /**
    * Indicates the primary entity described in some page or other CreativeWork.
    */
-  @JsonIgnore public Collection<About> getMainEntitys() {
+  @JsonIgnore public Collection<About> getMainEntityAbouts() {
     final Object current = myData.get("mainEntity");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<About>) current;
     }
     return Arrays.asList((About) current);
+  }
+  /**
+   * Indicates the primary entity described in some page or other CreativeWork.
+   */
+  @JsonIgnore public Thing getMainEntityThing() {
+    return (Thing) getValue("mainEntity");
+  }
+  /**
+   * Indicates the primary entity described in some page or other CreativeWork.
+   */
+  @JsonIgnore public Collection<Thing> getMainEntityThings() {
+    final Object current = myData.get("mainEntity");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Thing>) current;
+    }
+    return Arrays.asList((Thing) current);
   }
   /**
    * Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.
@@ -1022,15 +1039,36 @@ public class CreativeWork extends Thing implements WorkFeatured, Step {
     return Arrays.asList((Thing) current);
   }
   /**
-   * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event.
+   * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+   *       
    */
-  @JsonIgnore public Offer getOffers() {
+  @JsonIgnore public Demand getOffersDemand() {
+    return (Demand) getValue("offers");
+  }
+  /**
+   * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+   *       
+   */
+  @JsonIgnore public Collection<Demand> getOffersDemands() {
+    final Object current = myData.get("offers");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Demand>) current;
+    }
+    return Arrays.asList((Demand) current);
+  }
+  /**
+   * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+   *       
+   */
+  @JsonIgnore public Offer getOffersOffer() {
     return (Offer) getValue("offers");
   }
   /**
-   * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event.
+   * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+   *       
    */
-  @JsonIgnore public Collection<Offer> getOfferss() {
+  @JsonIgnore public Collection<Offer> getOffersOffers() {
     final Object current = myData.get("offers");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
@@ -2404,6 +2442,20 @@ public class CreativeWork extends Thing implements WorkFeatured, Step {
       return this;
     }
     /**
+     * Indicates the primary entity described in some page or other CreativeWork.
+     */
+    @NotNull public Builder mainEntity(@NotNull Thing thing) {
+      putValue("mainEntity", thing);
+      return this;
+    }
+    /**
+     * Indicates the primary entity described in some page or other CreativeWork.
+     */
+    @NotNull public Builder mainEntity(@NotNull Thing.Builder thing) {
+      putValue("mainEntity", thing.build());
+      return this;
+    }
+    /**
      * Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.
      */
     @NotNull public Builder mentions(@NotNull Thing thing) {
@@ -2418,14 +2470,32 @@ public class CreativeWork extends Thing implements WorkFeatured, Step {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event.
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     */
+    @NotNull public Builder offers(@NotNull Demand demand) {
+      putValue("offers", demand);
+      return this;
+    }
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     */
+    @NotNull public Builder offers(@NotNull Demand.Builder demand) {
+      putValue("offers", demand.build());
+      return this;
+    }
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
      */
     @NotNull public Builder offers(@NotNull Offer offer) {
       putValue("offers", offer);
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event.
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
      */
     @NotNull public Builder offers(@NotNull Offer.Builder offer) {
       putValue("offers", offer.build());
@@ -3162,8 +3232,12 @@ public class CreativeWork extends Thing implements WorkFeatured, Step {
       if ("learningResourceTypes".equals(key) && value instanceof String) { learningResourceType((String)value); return; }
       if ("mainEntity".equals(key) && value instanceof About) { mainEntity((About)value); return; }
       if ("mainEntitys".equals(key) && value instanceof About) { mainEntity((About)value); return; }
+      if ("mainEntity".equals(key) && value instanceof Thing) { mainEntity((Thing)value); return; }
+      if ("mainEntitys".equals(key) && value instanceof Thing) { mainEntity((Thing)value); return; }
       if ("mentions".equals(key) && value instanceof Thing) { mentions((Thing)value); return; }
       if ("mentionss".equals(key) && value instanceof Thing) { mentions((Thing)value); return; }
+      if ("offers".equals(key) && value instanceof Demand) { offers((Demand)value); return; }
+      if ("offerss".equals(key) && value instanceof Demand) { offers((Demand)value); return; }
       if ("offers".equals(key) && value instanceof Offer) { offers((Offer)value); return; }
       if ("offerss".equals(key) && value instanceof Offer) { offers((Offer)value); return; }
       if ("producer".equals(key) && value instanceof Organization) { producer((Organization)value); return; }

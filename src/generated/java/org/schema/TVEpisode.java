@@ -200,8 +200,36 @@ public class TVEpisode extends Episode {
     /**
      * The season to which this episode belongs.
      */
+    @NotNull public Builder partOfSeason(@NotNull CreativeWorkSeason creativeWorkSeason) {
+      putValue("partOfSeason", creativeWorkSeason);
+      return this;
+    }
+    /**
+     * The season to which this episode belongs.
+     */
+    @NotNull public Builder partOfSeason(@NotNull CreativeWorkSeason.Builder creativeWorkSeason) {
+      putValue("partOfSeason", creativeWorkSeason.build());
+      return this;
+    }
+    /**
+     * The season to which this episode belongs.
+     */
     @NotNull public Builder partOfSeason(@NotNull IsPartOf isPartOf) {
       putValue("partOfSeason", isPartOf);
+      return this;
+    }
+    /**
+     * The series to which this episode or season belongs.
+     */
+    @NotNull public Builder partOfSeries(@NotNull CreativeWorkSeries creativeWorkSeries) {
+      putValue("partOfSeries", creativeWorkSeries);
+      return this;
+    }
+    /**
+     * The series to which this episode or season belongs.
+     */
+    @NotNull public Builder partOfSeries(@NotNull CreativeWorkSeries.Builder creativeWorkSeries) {
+      putValue("partOfSeries", creativeWorkSeries.build());
       return this;
     }
     /**
@@ -818,6 +846,20 @@ public class TVEpisode extends Episode {
       return this;
     }
     /**
+     * Indicates the primary entity described in some page or other CreativeWork.
+     */
+    @NotNull public Builder mainEntity(@NotNull Thing thing) {
+      putValue("mainEntity", thing);
+      return this;
+    }
+    /**
+     * Indicates the primary entity described in some page or other CreativeWork.
+     */
+    @NotNull public Builder mainEntity(@NotNull Thing.Builder thing) {
+      putValue("mainEntity", thing.build());
+      return this;
+    }
+    /**
      * Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.
      */
     @NotNull public Builder mentions(@NotNull Thing thing) {
@@ -832,14 +874,32 @@ public class TVEpisode extends Episode {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event.
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     */
+    @NotNull public Builder offers(@NotNull Demand demand) {
+      putValue("offers", demand);
+      return this;
+    }
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     */
+    @NotNull public Builder offers(@NotNull Demand.Builder demand) {
+      putValue("offers", demand.build());
+      return this;
+    }
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
      */
     @NotNull public Builder offers(@NotNull Offer offer) {
       putValue("offers", offer);
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event.
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
      */
     @NotNull public Builder offers(@NotNull Offer.Builder offer) {
       putValue("offers", offer.build());

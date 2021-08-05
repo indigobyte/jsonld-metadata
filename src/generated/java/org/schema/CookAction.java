@@ -30,13 +30,30 @@ public class CookAction extends CreateAction {
   /**
    * A sub property of location. The specific food establishment where the action occurred.
    */
-  @JsonIgnore public Location getFoodEstablishment() {
+  @JsonIgnore public FoodEstablishment getFoodEstablishmentFoodEstablishment() {
+    return (FoodEstablishment) getValue("foodEstablishment");
+  }
+  /**
+   * A sub property of location. The specific food establishment where the action occurred.
+   */
+  @JsonIgnore public Collection<FoodEstablishment> getFoodEstablishmentFoodEstablishments() {
+    final Object current = myData.get("foodEstablishment");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<FoodEstablishment>) current;
+    }
+    return Arrays.asList((FoodEstablishment) current);
+  }
+  /**
+   * A sub property of location. The specific food establishment where the action occurred.
+   */
+  @JsonIgnore public Location getFoodEstablishmentLocation() {
     return (Location) getValue("foodEstablishment");
   }
   /**
    * A sub property of location. The specific food establishment where the action occurred.
    */
-  @JsonIgnore public Collection<Location> getFoodEstablishments() {
+  @JsonIgnore public Collection<Location> getFoodEstablishmentLocations() {
     final Object current = myData.get("foodEstablishment");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
@@ -45,15 +62,49 @@ public class CookAction extends CreateAction {
     return Arrays.asList((Location) current);
   }
   /**
+   * A sub property of location. The specific food establishment where the action occurred.
+   */
+  @JsonIgnore public Place getFoodEstablishmentPlace() {
+    return (Place) getValue("foodEstablishment");
+  }
+  /**
+   * A sub property of location. The specific food establishment where the action occurred.
+   */
+  @JsonIgnore public Collection<Place> getFoodEstablishmentPlaces() {
+    final Object current = myData.get("foodEstablishment");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Place>) current;
+    }
+    return Arrays.asList((Place) current);
+  }
+  /**
    * A sub property of location. The specific food event where the action occurred.
    */
-  @JsonIgnore public Location getFoodEvent() {
+  @JsonIgnore public FoodEvent getFoodEventFoodEvent() {
+    return (FoodEvent) getValue("foodEvent");
+  }
+  /**
+   * A sub property of location. The specific food event where the action occurred.
+   */
+  @JsonIgnore public Collection<FoodEvent> getFoodEventFoodEvents() {
+    final Object current = myData.get("foodEvent");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<FoodEvent>) current;
+    }
+    return Arrays.asList((FoodEvent) current);
+  }
+  /**
+   * A sub property of location. The specific food event where the action occurred.
+   */
+  @JsonIgnore public Location getFoodEventLocation() {
     return (Location) getValue("foodEvent");
   }
   /**
    * A sub property of location. The specific food event where the action occurred.
    */
-  @JsonIgnore public Collection<Location> getFoodEvents() {
+  @JsonIgnore public Collection<Location> getFoodEventLocations() {
     final Object current = myData.get("foodEvent");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
@@ -64,19 +115,36 @@ public class CookAction extends CreateAction {
   /**
    * A sub property of instrument. The recipe/instructions used to perform the action.
    */
-  @JsonIgnore public Instrument getRecipe() {
+  @JsonIgnore public Instrument getRecipeInstrument() {
     return (Instrument) getValue("recipe");
   }
   /**
    * A sub property of instrument. The recipe/instructions used to perform the action.
    */
-  @JsonIgnore public Collection<Instrument> getRecipes() {
+  @JsonIgnore public Collection<Instrument> getRecipeInstruments() {
     final Object current = myData.get("recipe");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<Instrument>) current;
     }
     return Arrays.asList((Instrument) current);
+  }
+  /**
+   * A sub property of instrument. The recipe/instructions used to perform the action.
+   */
+  @JsonIgnore public Recipe getRecipeRecipe() {
+    return (Recipe) getValue("recipe");
+  }
+  /**
+   * A sub property of instrument. The recipe/instructions used to perform the action.
+   */
+  @JsonIgnore public Collection<Recipe> getRecipeRecipes() {
+    final Object current = myData.get("recipe");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Recipe>) current;
+    }
+    return Arrays.asList((Recipe) current);
   }
   protected CookAction(java.util.Map<String,Object> data) {
     super(data);
@@ -95,8 +163,50 @@ public class CookAction extends CreateAction {
     /**
      * A sub property of location. The specific food establishment where the action occurred.
      */
+    @NotNull public Builder foodEstablishment(@NotNull FoodEstablishment foodEstablishment) {
+      putValue("foodEstablishment", foodEstablishment);
+      return this;
+    }
+    /**
+     * A sub property of location. The specific food establishment where the action occurred.
+     */
+    @NotNull public Builder foodEstablishment(@NotNull FoodEstablishment.Builder foodEstablishment) {
+      putValue("foodEstablishment", foodEstablishment.build());
+      return this;
+    }
+    /**
+     * A sub property of location. The specific food establishment where the action occurred.
+     */
     @NotNull public Builder foodEstablishment(@NotNull Location location) {
       putValue("foodEstablishment", location);
+      return this;
+    }
+    /**
+     * A sub property of location. The specific food establishment where the action occurred.
+     */
+    @NotNull public Builder foodEstablishment(@NotNull Place place) {
+      putValue("foodEstablishment", place);
+      return this;
+    }
+    /**
+     * A sub property of location. The specific food establishment where the action occurred.
+     */
+    @NotNull public Builder foodEstablishment(@NotNull Place.Builder place) {
+      putValue("foodEstablishment", place.build());
+      return this;
+    }
+    /**
+     * A sub property of location. The specific food event where the action occurred.
+     */
+    @NotNull public Builder foodEvent(@NotNull FoodEvent foodEvent) {
+      putValue("foodEvent", foodEvent);
+      return this;
+    }
+    /**
+     * A sub property of location. The specific food event where the action occurred.
+     */
+    @NotNull public Builder foodEvent(@NotNull FoodEvent.Builder foodEvent) {
+      putValue("foodEvent", foodEvent.build());
       return this;
     }
     /**
@@ -111,6 +221,20 @@ public class CookAction extends CreateAction {
      */
     @NotNull public Builder recipe(@NotNull Instrument instrument) {
       putValue("recipe", instrument);
+      return this;
+    }
+    /**
+     * A sub property of instrument. The recipe/instructions used to perform the action.
+     */
+    @NotNull public Builder recipe(@NotNull Recipe recipe) {
+      putValue("recipe", recipe);
+      return this;
+    }
+    /**
+     * A sub property of instrument. The recipe/instructions used to perform the action.
+     */
+    @NotNull public Builder recipe(@NotNull Recipe.Builder recipe) {
+      putValue("recipe", recipe.build());
       return this;
     }
     /**
@@ -303,12 +427,20 @@ public class CookAction extends CreateAction {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
+      if ("foodEstablishment".equals(key) && value instanceof FoodEstablishment) { foodEstablishment((FoodEstablishment)value); return; }
+      if ("foodEstablishments".equals(key) && value instanceof FoodEstablishment) { foodEstablishment((FoodEstablishment)value); return; }
       if ("foodEstablishment".equals(key) && value instanceof Location) { foodEstablishment((Location)value); return; }
       if ("foodEstablishments".equals(key) && value instanceof Location) { foodEstablishment((Location)value); return; }
+      if ("foodEstablishment".equals(key) && value instanceof Place) { foodEstablishment((Place)value); return; }
+      if ("foodEstablishments".equals(key) && value instanceof Place) { foodEstablishment((Place)value); return; }
+      if ("foodEvent".equals(key) && value instanceof FoodEvent) { foodEvent((FoodEvent)value); return; }
+      if ("foodEvents".equals(key) && value instanceof FoodEvent) { foodEvent((FoodEvent)value); return; }
       if ("foodEvent".equals(key) && value instanceof Location) { foodEvent((Location)value); return; }
       if ("foodEvents".equals(key) && value instanceof Location) { foodEvent((Location)value); return; }
       if ("recipe".equals(key) && value instanceof Instrument) { recipe((Instrument)value); return; }
       if ("recipes".equals(key) && value instanceof Instrument) { recipe((Instrument)value); return; }
+      if ("recipe".equals(key) && value instanceof Recipe) { recipe((Recipe)value); return; }
+      if ("recipes".equals(key) && value instanceof Recipe) { recipe((Recipe)value); return; }
       super.fromMap(key, value);
     }
   }

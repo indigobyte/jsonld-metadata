@@ -30,19 +30,53 @@ public class BuyAction extends TradeAction {
   /**
    * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
    */
-  @JsonIgnore public Participant getSeller() {
+  @JsonIgnore public Organization getSellerOrganization() {
+    return (Organization) getValue("seller");
+  }
+  /**
+   * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+   */
+  @JsonIgnore public Collection<Organization> getSellerOrganizations() {
+    final Object current = myData.get("seller");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Organization>) current;
+    }
+    return Arrays.asList((Organization) current);
+  }
+  /**
+   * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+   */
+  @JsonIgnore public Participant getSellerParticipant() {
     return (Participant) getValue("seller");
   }
   /**
    * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
    */
-  @JsonIgnore public Collection<Participant> getSellers() {
+  @JsonIgnore public Collection<Participant> getSellerParticipants() {
     final Object current = myData.get("seller");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<Participant>) current;
     }
     return Arrays.asList((Participant) current);
+  }
+  /**
+   * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+   */
+  @JsonIgnore public Person getSellerPerson() {
+    return (Person) getValue("seller");
+  }
+  /**
+   * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+   */
+  @JsonIgnore public Collection<Person> getSellerPersons() {
+    final Object current = myData.get("seller");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Person>) current;
+    }
+    return Arrays.asList((Person) current);
   }
   protected BuyAction(java.util.Map<String,Object> data) {
     super(data);
@@ -61,8 +95,36 @@ public class BuyAction extends TradeAction {
     /**
      * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
      */
+    @NotNull public Builder seller(@NotNull Organization organization) {
+      putValue("seller", organization);
+      return this;
+    }
+    /**
+     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+     */
+    @NotNull public Builder seller(@NotNull Organization.Builder organization) {
+      putValue("seller", organization.build());
+      return this;
+    }
+    /**
+     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+     */
     @NotNull public Builder seller(@NotNull Participant participant) {
       putValue("seller", participant);
+      return this;
+    }
+    /**
+     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+     */
+    @NotNull public Builder seller(@NotNull Person person) {
+      putValue("seller", person);
+      return this;
+    }
+    /**
+     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+     */
+    @NotNull public Builder seller(@NotNull Person.Builder person) {
+      putValue("seller", person.build());
       return this;
     }
     /**
@@ -316,8 +378,12 @@ public class BuyAction extends TradeAction {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
+      if ("seller".equals(key) && value instanceof Organization) { seller((Organization)value); return; }
+      if ("sellers".equals(key) && value instanceof Organization) { seller((Organization)value); return; }
       if ("seller".equals(key) && value instanceof Participant) { seller((Participant)value); return; }
       if ("sellers".equals(key) && value instanceof Participant) { seller((Participant)value); return; }
+      if ("seller".equals(key) && value instanceof Person) { seller((Person)value); return; }
+      if ("sellers".equals(key) && value instanceof Person) { seller((Person)value); return; }
       super.fromMap(key, value);
     }
   }

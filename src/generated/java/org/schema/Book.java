@@ -81,19 +81,36 @@ public class Book extends CreativeWork {
   /**
    * The ISBN of the book.
    */
-  @JsonIgnore public Identifier getIsbn() {
+  @JsonIgnore public Identifier getIsbnIdentifier() {
     return (Identifier) getValue("isbn");
   }
   /**
    * The ISBN of the book.
    */
-  @JsonIgnore public Collection<Identifier> getIsbns() {
+  @JsonIgnore public Collection<Identifier> getIsbnIdentifiers() {
     final Object current = myData.get("isbn");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<Identifier>) current;
     }
     return Arrays.asList((Identifier) current);
+  }
+  /**
+   * The ISBN of the book.
+   */
+  @JsonIgnore public String getIsbnString() {
+    return (String) getValue("isbn");
+  }
+  /**
+   * The ISBN of the book.
+   */
+  @JsonIgnore public Collection<String> getIsbnStrings() {
+    final Object current = myData.get("isbn");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
   }
   /**
    * The number of pages in the book.
@@ -159,6 +176,13 @@ public class Book extends CreativeWork {
      */
     @NotNull public Builder isbn(@NotNull Identifier identifier) {
       putValue("isbn", identifier);
+      return this;
+    }
+    /**
+     * The ISBN of the book.
+     */
+    @NotNull public Builder isbn(@NotNull String isbn) {
+      putValue("isbn", isbn);
       return this;
     }
     /**
@@ -747,6 +771,20 @@ public class Book extends CreativeWork {
       return this;
     }
     /**
+     * Indicates the primary entity described in some page or other CreativeWork.
+     */
+    @NotNull public Builder mainEntity(@NotNull Thing thing) {
+      putValue("mainEntity", thing);
+      return this;
+    }
+    /**
+     * Indicates the primary entity described in some page or other CreativeWork.
+     */
+    @NotNull public Builder mainEntity(@NotNull Thing.Builder thing) {
+      putValue("mainEntity", thing.build());
+      return this;
+    }
+    /**
      * Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.
      */
     @NotNull public Builder mentions(@NotNull Thing thing) {
@@ -761,14 +799,32 @@ public class Book extends CreativeWork {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event.
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     */
+    @NotNull public Builder offers(@NotNull Demand demand) {
+      putValue("offers", demand);
+      return this;
+    }
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     */
+    @NotNull public Builder offers(@NotNull Demand.Builder demand) {
+      putValue("offers", demand.build());
+      return this;
+    }
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
      */
     @NotNull public Builder offers(@NotNull Offer offer) {
       putValue("offers", offer);
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event.
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
      */
     @NotNull public Builder offers(@NotNull Offer.Builder offer) {
       putValue("offers", offer.build());
@@ -1399,6 +1455,8 @@ public class Book extends CreativeWork {
       if ("illustrators".equals(key) && value instanceof Person) { illustrator((Person)value); return; }
       if ("isbn".equals(key) && value instanceof Identifier) { isbn((Identifier)value); return; }
       if ("isbns".equals(key) && value instanceof Identifier) { isbn((Identifier)value); return; }
+      if ("isbn".equals(key) && value instanceof String) { isbn((String)value); return; }
+      if ("isbns".equals(key) && value instanceof String) { isbn((String)value); return; }
       if ("numberOfPages".equals(key) && value instanceof Integer) { numberOfPages((Integer)value); return; }
       if ("numberOfPagess".equals(key) && value instanceof Integer) { numberOfPages((Integer)value); return; }
       super.fromMap(key, value);

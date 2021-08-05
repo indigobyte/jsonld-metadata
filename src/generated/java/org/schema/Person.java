@@ -98,19 +98,36 @@ public class Person extends Thing implements Competitor {
   /**
    * An organization that this person is affiliated with. For example, a school/university, a club, or a team.
    */
-  @JsonIgnore public MemberOf getAffiliation() {
+  @JsonIgnore public MemberOf getAffiliationMemberOf() {
     return (MemberOf) getValue("affiliation");
   }
   /**
    * An organization that this person is affiliated with. For example, a school/university, a club, or a team.
    */
-  @JsonIgnore public Collection<MemberOf> getAffiliations() {
+  @JsonIgnore public Collection<MemberOf> getAffiliationMemberOfs() {
     final Object current = myData.get("affiliation");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<MemberOf>) current;
     }
     return Arrays.asList((MemberOf) current);
+  }
+  /**
+   * An organization that this person is affiliated with. For example, a school/university, a club, or a team.
+   */
+  @JsonIgnore public Organization getAffiliationOrganization() {
+    return (Organization) getValue("affiliation");
+  }
+  /**
+   * An organization that this person is affiliated with. For example, a school/university, a club, or a team.
+   */
+  @JsonIgnore public Collection<Organization> getAffiliationOrganizations() {
+    final Object current = myData.get("affiliation");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Organization>) current;
+    }
+    return Arrays.asList((Organization) current);
   }
   /**
    * An organization that the person is an alumni of.
@@ -302,19 +319,36 @@ public class Person extends Thing implements Competitor {
   /**
    * The Dun & Bradstreet DUNS number for identifying an organization or business person.
    */
-  @JsonIgnore public Identifier getDuns() {
+  @JsonIgnore public Identifier getDunsIdentifier() {
     return (Identifier) getValue("duns");
   }
   /**
    * The Dun & Bradstreet DUNS number for identifying an organization or business person.
    */
-  @JsonIgnore public Collection<Identifier> getDunss() {
+  @JsonIgnore public Collection<Identifier> getDunsIdentifiers() {
     final Object current = myData.get("duns");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<Identifier>) current;
     }
     return Arrays.asList((Identifier) current);
+  }
+  /**
+   * The Dun & Bradstreet DUNS number for identifying an organization or business person.
+   */
+  @JsonIgnore public String getDunsString() {
+    return (String) getValue("duns");
+  }
+  /**
+   * The Dun & Bradstreet DUNS number for identifying an organization or business person.
+   */
+  @JsonIgnore public Collection<String> getDunsStrings() {
+    final Object current = myData.get("duns");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
   }
   /**
    * Email address.
@@ -385,13 +419,13 @@ public class Person extends Thing implements Competitor {
     return Arrays.asList((Person) current);
   }
   /**
-   * Gender of the person. While http://schema.org/Male and http://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender.
+   * Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While http://schema.org/Male and http://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of "Mixed".
    */
   @JsonIgnore public GenderType getGenderGenderType() {
     return (GenderType) getValue("gender");
   }
   /**
-   * Gender of the person. While http://schema.org/Male and http://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender.
+   * Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While http://schema.org/Male and http://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of "Mixed".
    */
   @JsonIgnore public Collection<GenderType> getGenderGenderTypes() {
     final Object current = myData.get("gender");
@@ -402,13 +436,13 @@ public class Person extends Thing implements Competitor {
     return Arrays.asList((GenderType) current);
   }
   /**
-   * Gender of the person. While http://schema.org/Male and http://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender.
+   * Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While http://schema.org/Male and http://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of "Mixed".
    */
   @JsonIgnore public String getGenderString() {
     return (String) getValue("gender");
   }
   /**
-   * Gender of the person. While http://schema.org/Male and http://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender.
+   * Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While http://schema.org/Male and http://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of "Mixed".
    */
   @JsonIgnore public Collection<String> getGenderStrings() {
     final Object current = myData.get("gender");
@@ -438,19 +472,36 @@ public class Person extends Thing implements Competitor {
   /**
    * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
    */
-  @JsonIgnore public Identifier getGlobalLocationNumber() {
+  @JsonIgnore public Identifier getGlobalLocationNumberIdentifier() {
     return (Identifier) getValue("globalLocationNumber");
   }
   /**
    * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
    */
-  @JsonIgnore public Collection<Identifier> getGlobalLocationNumbers() {
+  @JsonIgnore public Collection<Identifier> getGlobalLocationNumberIdentifiers() {
     final Object current = myData.get("globalLocationNumber");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<Identifier>) current;
     }
     return Arrays.asList((Identifier) current);
+  }
+  /**
+   * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
+   */
+  @JsonIgnore public String getGlobalLocationNumberString() {
+    return (String) getValue("globalLocationNumber");
+  }
+  /**
+   * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
+   */
+  @JsonIgnore public Collection<String> getGlobalLocationNumberStrings() {
+    final Object current = myData.get("globalLocationNumber");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
   }
   /**
    * Points-of-Sales operated by the organization or person.
@@ -943,19 +994,36 @@ public class Person extends Thing implements Competitor {
   /**
    * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
    */
-  @JsonIgnore public Identifier getTaxID() {
+  @JsonIgnore public Identifier getTaxIDIdentifier() {
     return (Identifier) getValue("taxID");
   }
   /**
    * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
    */
-  @JsonIgnore public Collection<Identifier> getTaxIDs() {
+  @JsonIgnore public Collection<Identifier> getTaxIDIdentifiers() {
     final Object current = myData.get("taxID");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<Identifier>) current;
     }
     return Arrays.asList((Identifier) current);
+  }
+  /**
+   * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
+   */
+  @JsonIgnore public String getTaxIDString() {
+    return (String) getValue("taxID");
+  }
+  /**
+   * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
+   */
+  @JsonIgnore public Collection<String> getTaxIDStrings() {
+    final Object current = myData.get("taxID");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
   }
   /**
    * The telephone number.
@@ -1174,6 +1242,20 @@ public class Person extends Thing implements Competitor {
       return this;
     }
     /**
+     * An organization that this person is affiliated with. For example, a school/university, a club, or a team.
+     */
+    @NotNull public Builder affiliation(@NotNull Organization organization) {
+      putValue("affiliation", organization);
+      return this;
+    }
+    /**
+     * An organization that this person is affiliated with. For example, a school/university, a club, or a team.
+     */
+    @NotNull public Builder affiliation(@NotNull Organization.Builder organization) {
+      putValue("affiliation", organization.build());
+      return this;
+    }
+    /**
      * An organization that the person is an alumni of.
      */
     @NotNull public Builder alumniOf(@NotNull EducationalOrganization educationalOrganization) {
@@ -1307,6 +1389,13 @@ public class Person extends Thing implements Competitor {
       return this;
     }
     /**
+     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
+     */
+    @NotNull public Builder duns(@NotNull String duns) {
+      putValue("duns", duns);
+      return this;
+    }
+    /**
      * Email address.
      */
     @NotNull public Builder email(@NotNull String email) {
@@ -1342,14 +1431,14 @@ public class Person extends Thing implements Competitor {
       return this;
     }
     /**
-     * Gender of the person. While http://schema.org/Male and http://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender.
+     * Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While http://schema.org/Male and http://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of "Mixed".
      */
     @NotNull public Builder gender(@NotNull GenderType genderType) {
       putValue("gender", genderType);
       return this;
     }
     /**
-     * Gender of the person. While http://schema.org/Male and http://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender.
+     * Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While http://schema.org/Male and http://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of "Mixed".
      */
     @NotNull public Builder gender(@NotNull String gender) {
       putValue("gender", gender);
@@ -1367,6 +1456,13 @@ public class Person extends Thing implements Competitor {
      */
     @NotNull public Builder globalLocationNumber(@NotNull Identifier identifier) {
       putValue("globalLocationNumber", identifier);
+      return this;
+    }
+    /**
+     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
+     */
+    @NotNull public Builder globalLocationNumber(@NotNull String globalLocationNumber) {
+      putValue("globalLocationNumber", globalLocationNumber);
       return this;
     }
     /**
@@ -1729,6 +1825,13 @@ public class Person extends Thing implements Competitor {
       return this;
     }
     /**
+     * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
+     */
+    @NotNull public Builder taxID(@NotNull String taxID) {
+      putValue("taxID", taxID);
+      return this;
+    }
+    /**
      * The telephone number.
      */
     @NotNull public Builder telephone(@NotNull String telephone) {
@@ -1963,6 +2066,8 @@ public class Person extends Thing implements Competitor {
       if ("addresss".equals(key) && value instanceof String) { address((String)value); return; }
       if ("affiliation".equals(key) && value instanceof MemberOf) { affiliation((MemberOf)value); return; }
       if ("affiliations".equals(key) && value instanceof MemberOf) { affiliation((MemberOf)value); return; }
+      if ("affiliation".equals(key) && value instanceof Organization) { affiliation((Organization)value); return; }
+      if ("affiliations".equals(key) && value instanceof Organization) { affiliation((Organization)value); return; }
       if ("alumniOf".equals(key) && value instanceof EducationalOrganization) { alumniOf((EducationalOrganization)value); return; }
       if ("alumniOfs".equals(key) && value instanceof EducationalOrganization) { alumniOf((EducationalOrganization)value); return; }
       if ("alumniOf".equals(key) && value instanceof Organization) { alumniOf((Organization)value); return; }
@@ -1987,6 +2092,8 @@ public class Person extends Thing implements Competitor {
       if ("deathDates".equals(key) && value instanceof java.util.Date) { deathDate((java.util.Date)value); return; }
       if ("duns".equals(key) && value instanceof Identifier) { duns((Identifier)value); return; }
       if ("dunss".equals(key) && value instanceof Identifier) { duns((Identifier)value); return; }
+      if ("duns".equals(key) && value instanceof String) { duns((String)value); return; }
+      if ("dunss".equals(key) && value instanceof String) { duns((String)value); return; }
       if ("email".equals(key) && value instanceof String) { email((String)value); return; }
       if ("emails".equals(key) && value instanceof String) { email((String)value); return; }
       if ("familyName".equals(key) && value instanceof String) { familyName((String)value); return; }
@@ -2003,6 +2110,8 @@ public class Person extends Thing implements Competitor {
       if ("givenNames".equals(key) && value instanceof String) { givenName((String)value); return; }
       if ("globalLocationNumber".equals(key) && value instanceof Identifier) { globalLocationNumber((Identifier)value); return; }
       if ("globalLocationNumbers".equals(key) && value instanceof Identifier) { globalLocationNumber((Identifier)value); return; }
+      if ("globalLocationNumber".equals(key) && value instanceof String) { globalLocationNumber((String)value); return; }
+      if ("globalLocationNumbers".equals(key) && value instanceof String) { globalLocationNumber((String)value); return; }
       if ("hasPOS".equals(key) && value instanceof Place) { hasPOS((Place)value); return; }
       if ("hasPOSs".equals(key) && value instanceof Place) { hasPOS((Place)value); return; }
       if ("height".equals(key) && value instanceof Distance) { height((Distance)value); return; }
@@ -2061,6 +2170,8 @@ public class Person extends Thing implements Competitor {
       if ("spouses".equals(key) && value instanceof Person) { spouse((Person)value); return; }
       if ("taxID".equals(key) && value instanceof Identifier) { taxID((Identifier)value); return; }
       if ("taxIDs".equals(key) && value instanceof Identifier) { taxID((Identifier)value); return; }
+      if ("taxID".equals(key) && value instanceof String) { taxID((String)value); return; }
+      if ("taxIDs".equals(key) && value instanceof String) { taxID((String)value); return; }
       if ("telephone".equals(key) && value instanceof String) { telephone((String)value); return; }
       if ("telephones".equals(key) && value instanceof String) { telephone((String)value); return; }
       if ("vatID".equals(key) && value instanceof String) { vatID((String)value); return; }

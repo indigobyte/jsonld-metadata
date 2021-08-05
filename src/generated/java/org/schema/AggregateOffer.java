@@ -24,7 +24,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * When a single product is associated with multiple offers (for example, the same pair of shoes is offered by different merchants), then AggregateOffer can be used.
+ * When a single product is associated with multiple offers (for example, the same pair of shoes is offered by different merchants), then AggregateOffer can be used.\n\nNote: AggregateOffers are normally expected to associate multiple offers that all share the same defined [[businessFunction]] value, or default to http://purl.org/goodrelations/v1#Sell if businessFunction is not explicitly defined.
  */
 public class AggregateOffer extends Offer {
   /**
@@ -215,15 +215,36 @@ public class AggregateOffer extends Offer {
     return Arrays.asList((Integer) current);
   }
   /**
-   * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event.
+   * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+   *       
    */
-  @JsonIgnore public Offer getOffers() {
+  @JsonIgnore public Demand getOffersDemand() {
+    return (Demand) getValue("offers");
+  }
+  /**
+   * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+   *       
+   */
+  @JsonIgnore public Collection<Demand> getOffersDemands() {
+    final Object current = myData.get("offers");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Demand>) current;
+    }
+    return Arrays.asList((Demand) current);
+  }
+  /**
+   * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+   *       
+   */
+  @JsonIgnore public Offer getOffersOffer() {
     return (Offer) getValue("offers");
   }
   /**
-   * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event.
+   * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+   *       
    */
-  @JsonIgnore public Collection<Offer> getOfferss() {
+  @JsonIgnore public Collection<Offer> getOffersOffers() {
     final Object current = myData.get("offers");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
@@ -323,14 +344,32 @@ public class AggregateOffer extends Offer {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event.
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     */
+    @NotNull public Builder offers(@NotNull Demand demand) {
+      putValue("offers", demand);
+      return this;
+    }
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     */
+    @NotNull public Builder offers(@NotNull Demand.Builder demand) {
+      putValue("offers", demand.build());
+      return this;
+    }
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
      */
     @NotNull public Builder offers(@NotNull Offer offer) {
       putValue("offers", offer);
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event.
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
      */
     @NotNull public Builder offers(@NotNull Offer.Builder offer) {
       putValue("offers", offer.build());
@@ -620,10 +659,24 @@ public class AggregateOffer extends Offer {
       return this;
     }
     /**
+     * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     */
+    @NotNull public Builder gtin12(@NotNull String gtin12) {
+      putValue("gtin12", gtin12);
+      return this;
+    }
+    /**
      * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceeding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      */
     @NotNull public Builder gtin13(@NotNull Identifier identifier) {
       putValue("gtin13", identifier);
+      return this;
+    }
+    /**
+     * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceeding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     */
+    @NotNull public Builder gtin13(@NotNull String gtin13) {
+      putValue("gtin13", gtin13);
       return this;
     }
     /**
@@ -634,10 +687,24 @@ public class AggregateOffer extends Offer {
       return this;
     }
     /**
+     * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     */
+    @NotNull public Builder gtin14(@NotNull String gtin14) {
+      putValue("gtin14", gtin14);
+      return this;
+    }
+    /**
      * The [GTIN-8](http://apps.gs1.org/GDD/glossary/Pages/GTIN-8.aspx) code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      */
     @NotNull public Builder gtin8(@NotNull Identifier identifier) {
       putValue("gtin8", identifier);
+      return this;
+    }
+    /**
+     * The [GTIN-8](http://apps.gs1.org/GDD/glossary/Pages/GTIN-8.aspx) code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     */
+    @NotNull public Builder gtin8(@NotNull String gtin8) {
+      putValue("gtin8", gtin8);
       return this;
     }
     /**
@@ -676,31 +743,101 @@ public class AggregateOffer extends Offer {
       return this;
     }
     /**
-     * The item being offered.
+     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     */
+    @NotNull public Builder itemOffered(@NotNull AggregateOffer aggregateOffer) {
+      putValue("itemOffered", aggregateOffer);
+      return this;
+    }
+    /**
+     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     */
+    @NotNull public Builder itemOffered(@NotNull AggregateOffer.Builder aggregateOffer) {
+      putValue("itemOffered", aggregateOffer.build());
+      return this;
+    }
+    /**
+     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     */
+    @NotNull public Builder itemOffered(@NotNull CreativeWork creativeWork) {
+      putValue("itemOffered", creativeWork);
+      return this;
+    }
+    /**
+     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     */
+    @NotNull public Builder itemOffered(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("itemOffered", creativeWork.build());
+      return this;
+    }
+    /**
+     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     */
+    @NotNull public Builder itemOffered(@NotNull Event event) {
+      putValue("itemOffered", event);
+      return this;
+    }
+    /**
+     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     */
+    @NotNull public Builder itemOffered(@NotNull Event.Builder event) {
+      putValue("itemOffered", event.build());
+      return this;
+    }
+    /**
+     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     */
+    @NotNull public Builder itemOffered(@NotNull MenuItem menuItem) {
+      putValue("itemOffered", menuItem);
+      return this;
+    }
+    /**
+     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     */
+    @NotNull public Builder itemOffered(@NotNull MenuItem.Builder menuItem) {
+      putValue("itemOffered", menuItem.build());
+      return this;
+    }
+    /**
+     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      */
     @NotNull public Builder itemOffered(@NotNull Product product) {
       putValue("itemOffered", product);
       return this;
     }
     /**
-     * The item being offered.
+     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      */
     @NotNull public Builder itemOffered(@NotNull Product.Builder product) {
       putValue("itemOffered", product.build());
       return this;
     }
     /**
-     * The item being offered.
+     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      */
     @NotNull public Builder itemOffered(@NotNull Service service) {
       putValue("itemOffered", service);
       return this;
     }
     /**
-     * The item being offered.
+     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      */
     @NotNull public Builder itemOffered(@NotNull Service.Builder service) {
       putValue("itemOffered", service.build());
+      return this;
+    }
+    /**
+     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     */
+    @NotNull public Builder itemOffered(@NotNull Trip trip) {
+      putValue("itemOffered", trip);
+      return this;
+    }
+    /**
+     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     */
+    @NotNull public Builder itemOffered(@NotNull Trip.Builder trip) {
+      putValue("itemOffered", trip.build());
       return this;
     }
     /**
@@ -816,8 +953,36 @@ public class AggregateOffer extends Offer {
     /**
      * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
      */
+    @NotNull public Builder seller(@NotNull Organization organization) {
+      putValue("seller", organization);
+      return this;
+    }
+    /**
+     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+     */
+    @NotNull public Builder seller(@NotNull Organization.Builder organization) {
+      putValue("seller", organization.build());
+      return this;
+    }
+    /**
+     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+     */
     @NotNull public Builder seller(@NotNull Participant participant) {
       putValue("seller", participant);
+      return this;
+    }
+    /**
+     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+     */
+    @NotNull public Builder seller(@NotNull Person person) {
+      putValue("seller", person);
+      return this;
+    }
+    /**
+     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+     */
+    @NotNull public Builder seller(@NotNull Person.Builder person) {
+      putValue("seller", person.build());
       return this;
     }
     /**
@@ -825,6 +990,13 @@ public class AggregateOffer extends Offer {
      */
     @NotNull public Builder sku(@NotNull Identifier identifier) {
       putValue("sku", identifier);
+      return this;
+    }
+    /**
+     * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
+     */
+    @NotNull public Builder sku(@NotNull String sku) {
+      putValue("sku", sku);
       return this;
     }
     /**
@@ -997,6 +1169,8 @@ public class AggregateOffer extends Offer {
       if ("lowPrices".equals(key) && value instanceof String) { lowPrice((String)value); return; }
       if ("offerCount".equals(key) && value instanceof Integer) { offerCount((Integer)value); return; }
       if ("offerCounts".equals(key) && value instanceof Integer) { offerCount((Integer)value); return; }
+      if ("offers".equals(key) && value instanceof Demand) { offers((Demand)value); return; }
+      if ("offerss".equals(key) && value instanceof Demand) { offers((Demand)value); return; }
       if ("offers".equals(key) && value instanceof Offer) { offers((Offer)value); return; }
       if ("offerss".equals(key) && value instanceof Offer) { offers((Offer)value); return; }
       super.fromMap(key, value);

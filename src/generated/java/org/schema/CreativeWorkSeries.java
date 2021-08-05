@@ -65,19 +65,36 @@ public class CreativeWorkSeries extends Series {
   /**
    * The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
    */
-  @JsonIgnore public Identifier getIssn() {
+  @JsonIgnore public Identifier getIssnIdentifier() {
     return (Identifier) getValue("issn");
   }
   /**
    * The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
    */
-  @JsonIgnore public Collection<Identifier> getIssns() {
+  @JsonIgnore public Collection<Identifier> getIssnIdentifiers() {
     final Object current = myData.get("issn");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<Identifier>) current;
     }
     return Arrays.asList((Identifier) current);
+  }
+  /**
+   * The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
+   */
+  @JsonIgnore public String getIssnString() {
+    return (String) getValue("issn");
+  }
+  /**
+   * The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
+   */
+  @JsonIgnore public Collection<String> getIssnStrings() {
+    final Object current = myData.get("issn");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
   }
   protected CreativeWorkSeries(java.util.Map<String,Object> data) {
     super(data);
@@ -112,6 +129,13 @@ public class CreativeWorkSeries extends Series {
      */
     @NotNull public Builder issn(@NotNull Identifier identifier) {
       putValue("issn", identifier);
+      return this;
+    }
+    /**
+     * The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
+     */
+    @NotNull public Builder issn(@NotNull String issn) {
+      putValue("issn", issn);
       return this;
     }
     /**
@@ -233,6 +257,8 @@ public class CreativeWorkSeries extends Series {
       if ("startDates".equals(key) && value instanceof java.util.Date) { startDate((java.util.Date)value); return; }
       if ("issn".equals(key) && value instanceof Identifier) { issn((Identifier)value); return; }
       if ("issns".equals(key) && value instanceof Identifier) { issn((Identifier)value); return; }
+      if ("issn".equals(key) && value instanceof String) { issn((String)value); return; }
+      if ("issns".equals(key) && value instanceof String) { issn((String)value); return; }
       super.fromMap(key, value);
     }
   }

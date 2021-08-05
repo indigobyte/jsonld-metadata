@@ -24,200 +24,186 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * A music recording (track), usually a single song.
+ * Web page type: Media gallery page. A mixed-media page that can contains media such as images, videos, and other multimedia.
  */
-public class MusicRecording extends CreativeWork {
-  /**
-   * The artist that performed this album or recording.
-   */
-  @JsonIgnore public MusicGroup getByArtistMusicGroup() {
-    return (MusicGroup) getValue("byArtist");
-  }
-  /**
-   * The artist that performed this album or recording.
-   */
-  @JsonIgnore public Collection<MusicGroup> getByArtistMusicGroups() {
-    final Object current = myData.get("byArtist");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MusicGroup>) current;
-    }
-    return Arrays.asList((MusicGroup) current);
-  }
-  /**
-   * The artist that performed this album or recording.
-   */
-  @JsonIgnore public Person getByArtistPerson() {
-    return (Person) getValue("byArtist");
-  }
-  /**
-   * The artist that performed this album or recording.
-   */
-  @JsonIgnore public Collection<Person> getByArtistPersons() {
-    final Object current = myData.get("byArtist");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
-    }
-    return Arrays.asList((Person) current);
-  }
-  /**
-   * The album to which this recording belongs.
-   */
-  @JsonIgnore public MusicAlbum getInAlbum() {
-    return (MusicAlbum) getValue("inAlbum");
-  }
-  /**
-   * The album to which this recording belongs.
-   */
-  @JsonIgnore public Collection<MusicAlbum> getInAlbums() {
-    final Object current = myData.get("inAlbum");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MusicAlbum>) current;
-    }
-    return Arrays.asList((MusicAlbum) current);
-  }
-  /**
-   * The playlist to which this recording belongs.
-   */
-  @JsonIgnore public MusicPlaylist getInPlaylist() {
-    return (MusicPlaylist) getValue("inPlaylist");
-  }
-  /**
-   * The playlist to which this recording belongs.
-   */
-  @JsonIgnore public Collection<MusicPlaylist> getInPlaylists() {
-    final Object current = myData.get("inPlaylist");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MusicPlaylist>) current;
-    }
-    return Arrays.asList((MusicPlaylist) current);
-  }
-  /**
-   * The International Standard Recording Code for the recording.
-   */
-  @JsonIgnore public String getIsrcCode() {
-    return (String) getValue("isrcCode");
-  }
-  /**
-   * The International Standard Recording Code for the recording.
-   */
-  @JsonIgnore public Collection<String> getIsrcCodes() {
-    final Object current = myData.get("isrcCode");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * The composition this track is a recording of.
-   */
-  @JsonIgnore public MusicComposition getRecordingOf() {
-    return (MusicComposition) getValue("recordingOf");
-  }
-  /**
-   * The composition this track is a recording of.
-   */
-  @JsonIgnore public Collection<MusicComposition> getRecordingOfs() {
-    final Object current = myData.get("recordingOf");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MusicComposition>) current;
-    }
-    return Arrays.asList((MusicComposition) current);
-  }
-  protected MusicRecording(java.util.Map<String,Object> data) {
+public class MediaGallery extends CollectionPage {
+  protected MediaGallery(java.util.Map<String,Object> data) {
     super(data);
   }
   
   /**
-   * Builder for {@link MusicRecording}
+   * Builder for {@link MediaGallery}
    */
-  public static class Builder extends CreativeWork.Builder {
+  public static class Builder extends CollectionPage.Builder {
     public Builder(@NotNull HashMap<String,Object> data) {
       super(data);
     }
-    @NotNull public MusicRecording build() {
-      return new MusicRecording(myData);
+    @NotNull public MediaGallery build() {
+      return new MediaGallery(myData);
     }
     /**
-     * The artist that performed this album or recording.
+     * A set of links that can help a user understand and navigate a website hierarchy.
      */
-    @NotNull public Builder byArtist(@NotNull MusicGroup musicGroup) {
-      putValue("byArtist", musicGroup);
+    @NotNull public Builder breadcrumb(@NotNull BreadcrumbList breadcrumbList) {
+      putValue("breadcrumb", breadcrumbList);
       return this;
     }
     /**
-     * The artist that performed this album or recording.
+     * A set of links that can help a user understand and navigate a website hierarchy.
      */
-    @NotNull public Builder byArtist(@NotNull MusicGroup.Builder musicGroup) {
-      putValue("byArtist", musicGroup.build());
+    @NotNull public Builder breadcrumb(@NotNull BreadcrumbList.Builder breadcrumbList) {
+      putValue("breadcrumb", breadcrumbList.build());
       return this;
     }
     /**
-     * The artist that performed this album or recording.
+     * A set of links that can help a user understand and navigate a website hierarchy.
      */
-    @NotNull public Builder byArtist(@NotNull Person person) {
-      putValue("byArtist", person);
+    @NotNull public Builder breadcrumb(@NotNull String breadcrumb) {
+      putValue("breadcrumb", breadcrumb);
       return this;
     }
     /**
-     * The artist that performed this album or recording.
+     * Date on which the content on this web page was last reviewed for accuracy and/or completeness.
      */
-    @NotNull public Builder byArtist(@NotNull Person.Builder person) {
-      putValue("byArtist", person.build());
+    @NotNull public Builder lastReviewed(@NotNull java.util.Date date) {
+      putValue("lastReviewed", date);
       return this;
     }
     /**
-     * The album to which this recording belongs.
+     * Indicates if this web page element is the main subject of the page.
      */
-    @NotNull public Builder inAlbum(@NotNull MusicAlbum musicAlbum) {
-      putValue("inAlbum", musicAlbum);
+    @NotNull public Builder mainContentOfPage(@NotNull WebPageElement webPageElement) {
+      putValue("mainContentOfPage", webPageElement);
       return this;
     }
     /**
-     * The album to which this recording belongs.
+     * Indicates if this web page element is the main subject of the page.
      */
-    @NotNull public Builder inAlbum(@NotNull MusicAlbum.Builder musicAlbum) {
-      putValue("inAlbum", musicAlbum.build());
+    @NotNull public Builder mainContentOfPage(@NotNull WebPageElement.Builder webPageElement) {
+      putValue("mainContentOfPage", webPageElement.build());
       return this;
     }
     /**
-     * The playlist to which this recording belongs.
+     * Indicates the main image on the page.
      */
-    @NotNull public Builder inPlaylist(@NotNull MusicPlaylist musicPlaylist) {
-      putValue("inPlaylist", musicPlaylist);
+    @NotNull public Builder primaryImageOfPage(@NotNull ImageObject imageObject) {
+      putValue("primaryImageOfPage", imageObject);
       return this;
     }
     /**
-     * The playlist to which this recording belongs.
+     * Indicates the main image on the page.
      */
-    @NotNull public Builder inPlaylist(@NotNull MusicPlaylist.Builder musicPlaylist) {
-      putValue("inPlaylist", musicPlaylist.build());
+    @NotNull public Builder primaryImageOfPage(@NotNull ImageObject.Builder imageObject) {
+      putValue("primaryImageOfPage", imageObject.build());
       return this;
     }
     /**
-     * The International Standard Recording Code for the recording.
+     * A link related to this web page, for example to other related web pages.
      */
-    @NotNull public Builder isrcCode(@NotNull String isrcCode) {
-      putValue("isrcCode", isrcCode);
+    @NotNull public Builder relatedLink(@NotNull String relatedLink) {
+      putValue("relatedLink", relatedLink);
       return this;
     }
     /**
-     * The composition this track is a recording of.
+     * People or organizations that have reviewed the content on this web page for accuracy and/or completeness.
      */
-    @NotNull public Builder recordingOf(@NotNull MusicComposition musicComposition) {
-      putValue("recordingOf", musicComposition);
+    @NotNull public Builder reviewedBy(@NotNull Organization organization) {
+      putValue("reviewedBy", organization);
       return this;
     }
     /**
-     * The composition this track is a recording of.
+     * People or organizations that have reviewed the content on this web page for accuracy and/or completeness.
      */
-    @NotNull public Builder recordingOf(@NotNull MusicComposition.Builder musicComposition) {
-      putValue("recordingOf", musicComposition.build());
+    @NotNull public Builder reviewedBy(@NotNull Organization.Builder organization) {
+      putValue("reviewedBy", organization.build());
+      return this;
+    }
+    /**
+     * People or organizations that have reviewed the content on this web page for accuracy and/or completeness.
+     */
+    @NotNull public Builder reviewedBy(@NotNull Person person) {
+      putValue("reviewedBy", person);
+      return this;
+    }
+    /**
+     * People or organizations that have reviewed the content on this web page for accuracy and/or completeness.
+     */
+    @NotNull public Builder reviewedBy(@NotNull Person.Builder person) {
+      putValue("reviewedBy", person.build());
+      return this;
+    }
+    /**
+     * One of the more significant URLs on the page. Typically, these are the non-navigation links that are clicked on the most.
+     */
+    @NotNull public Builder significantLink(@NotNull String significantLink) {
+      putValue("significantLink", significantLink);
+      return this;
+    }
+    /**
+     * One of the domain specialities to which this web page's content applies.
+     */
+    @NotNull public Builder specialty(@NotNull Specialty specialty) {
+      putValue("specialty", specialty);
+      return this;
+    }
+    /**
+     * Indicates sections of a Web page that are particularly 'speakable' in the sense of being highlighted as being especially appropriate for text-to-speech conversion. Other sections of a page may also be usefully spoken in particular circumstances; the 'speakable' property serves to indicate the parts most likely to be generally useful for speech.
+     * 
+     * The *speakable* property can be repeated an arbitrary number of times, with three kinds of possible 'content-locator' values:
+     * 
+     * 1.) *id-value* URL references - uses *id-value* of an element in the page being annotated. The simplest use of *speakable* has (potentially relative) URL values, referencing identified sections of the document concerned.
+     * 
+     * 2.) CSS Selectors - addresses content in the annotated page, eg. via class attribute. Use the [[cssSelector]] property.
+     * 
+     * 3.)  XPaths - addresses content via XPaths (assuming an XML view of the content). Use the [[xpath]] property.
+     * 
+     * 
+     * For more sophisticated markup of speakable sections beyond simple ID references, either CSS selectors or XPath expressions to pick out document section(s) as speakable. For this
+     * we define a supporting type, [[SpeakableSpecification]]  which is defined to be a possible value of the *speakable* property.
+     *          
+     */
+    @NotNull public Builder speakable(@NotNull SpeakableSpecification speakableSpecification) {
+      putValue("speakable", speakableSpecification);
+      return this;
+    }
+    /**
+     * Indicates sections of a Web page that are particularly 'speakable' in the sense of being highlighted as being especially appropriate for text-to-speech conversion. Other sections of a page may also be usefully spoken in particular circumstances; the 'speakable' property serves to indicate the parts most likely to be generally useful for speech.
+     * 
+     * The *speakable* property can be repeated an arbitrary number of times, with three kinds of possible 'content-locator' values:
+     * 
+     * 1.) *id-value* URL references - uses *id-value* of an element in the page being annotated. The simplest use of *speakable* has (potentially relative) URL values, referencing identified sections of the document concerned.
+     * 
+     * 2.) CSS Selectors - addresses content in the annotated page, eg. via class attribute. Use the [[cssSelector]] property.
+     * 
+     * 3.)  XPaths - addresses content via XPaths (assuming an XML view of the content). Use the [[xpath]] property.
+     * 
+     * 
+     * For more sophisticated markup of speakable sections beyond simple ID references, either CSS selectors or XPath expressions to pick out document section(s) as speakable. For this
+     * we define a supporting type, [[SpeakableSpecification]]  which is defined to be a possible value of the *speakable* property.
+     *          
+     */
+    @NotNull public Builder speakable(@NotNull SpeakableSpecification.Builder speakableSpecification) {
+      putValue("speakable", speakableSpecification.build());
+      return this;
+    }
+    /**
+     * Indicates sections of a Web page that are particularly 'speakable' in the sense of being highlighted as being especially appropriate for text-to-speech conversion. Other sections of a page may also be usefully spoken in particular circumstances; the 'speakable' property serves to indicate the parts most likely to be generally useful for speech.
+     * 
+     * The *speakable* property can be repeated an arbitrary number of times, with three kinds of possible 'content-locator' values:
+     * 
+     * 1.) *id-value* URL references - uses *id-value* of an element in the page being annotated. The simplest use of *speakable* has (potentially relative) URL values, referencing identified sections of the document concerned.
+     * 
+     * 2.) CSS Selectors - addresses content in the annotated page, eg. via class attribute. Use the [[cssSelector]] property.
+     * 
+     * 3.)  XPaths - addresses content via XPaths (assuming an XML view of the content). Use the [[xpath]] property.
+     * 
+     * 
+     * For more sophisticated markup of speakable sections beyond simple ID references, either CSS selectors or XPath expressions to pick out document section(s) as speakable. For this
+     * we define a supporting type, [[SpeakableSpecification]]  which is defined to be a possible value of the *speakable* property.
+     *          
+     */
+    @NotNull public Builder speakable(@NotNull String speakable) {
+      putValue("speakable", speakable);
       return this;
     }
     /**
@@ -1475,18 +1461,6 @@ public class MusicRecording extends CreativeWork {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("byArtist".equals(key) && value instanceof MusicGroup) { byArtist((MusicGroup)value); return; }
-      if ("byArtists".equals(key) && value instanceof MusicGroup) { byArtist((MusicGroup)value); return; }
-      if ("byArtist".equals(key) && value instanceof Person) { byArtist((Person)value); return; }
-      if ("byArtists".equals(key) && value instanceof Person) { byArtist((Person)value); return; }
-      if ("inAlbum".equals(key) && value instanceof MusicAlbum) { inAlbum((MusicAlbum)value); return; }
-      if ("inAlbums".equals(key) && value instanceof MusicAlbum) { inAlbum((MusicAlbum)value); return; }
-      if ("inPlaylist".equals(key) && value instanceof MusicPlaylist) { inPlaylist((MusicPlaylist)value); return; }
-      if ("inPlaylists".equals(key) && value instanceof MusicPlaylist) { inPlaylist((MusicPlaylist)value); return; }
-      if ("isrcCode".equals(key) && value instanceof String) { isrcCode((String)value); return; }
-      if ("isrcCodes".equals(key) && value instanceof String) { isrcCode((String)value); return; }
-      if ("recordingOf".equals(key) && value instanceof MusicComposition) { recordingOf((MusicComposition)value); return; }
-      if ("recordingOfs".equals(key) && value instanceof MusicComposition) { recordingOf((MusicComposition)value); return; }
       super.fromMap(key, value);
     }
   }

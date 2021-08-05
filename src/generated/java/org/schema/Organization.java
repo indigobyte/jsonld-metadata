@@ -217,19 +217,36 @@ public class Organization extends Thing implements MemberOf {
   /**
    * The Dun & Bradstreet DUNS number for identifying an organization or business person.
    */
-  @JsonIgnore public Identifier getDuns() {
+  @JsonIgnore public Identifier getDunsIdentifier() {
     return (Identifier) getValue("duns");
   }
   /**
    * The Dun & Bradstreet DUNS number for identifying an organization or business person.
    */
-  @JsonIgnore public Collection<Identifier> getDunss() {
+  @JsonIgnore public Collection<Identifier> getDunsIdentifiers() {
     final Object current = myData.get("duns");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<Identifier>) current;
     }
     return Arrays.asList((Identifier) current);
+  }
+  /**
+   * The Dun & Bradstreet DUNS number for identifying an organization or business person.
+   */
+  @JsonIgnore public String getDunsString() {
+    return (String) getValue("duns");
+  }
+  /**
+   * The Dun & Bradstreet DUNS number for identifying an organization or business person.
+   */
+  @JsonIgnore public Collection<String> getDunsStrings() {
+    final Object current = myData.get("duns");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
   }
   /**
    * Email address.
@@ -353,19 +370,36 @@ public class Organization extends Thing implements MemberOf {
   /**
    * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
    */
-  @JsonIgnore public Identifier getGlobalLocationNumber() {
+  @JsonIgnore public Identifier getGlobalLocationNumberIdentifier() {
     return (Identifier) getValue("globalLocationNumber");
   }
   /**
    * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
    */
-  @JsonIgnore public Collection<Identifier> getGlobalLocationNumbers() {
+  @JsonIgnore public Collection<Identifier> getGlobalLocationNumberIdentifiers() {
     final Object current = myData.get("globalLocationNumber");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<Identifier>) current;
     }
     return Arrays.asList((Identifier) current);
+  }
+  /**
+   * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
+   */
+  @JsonIgnore public String getGlobalLocationNumberString() {
+    return (String) getValue("globalLocationNumber");
+  }
+  /**
+   * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
+   */
+  @JsonIgnore public Collection<String> getGlobalLocationNumberStrings() {
+    final Object current = myData.get("globalLocationNumber");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
   }
   /**
    * Points-of-Sales operated by the organization or person.
@@ -739,19 +773,36 @@ public class Organization extends Thing implements MemberOf {
   /**
    * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
    */
-  @JsonIgnore public Identifier getTaxID() {
+  @JsonIgnore public Identifier getTaxIDIdentifier() {
     return (Identifier) getValue("taxID");
   }
   /**
    * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
    */
-  @JsonIgnore public Collection<Identifier> getTaxIDs() {
+  @JsonIgnore public Collection<Identifier> getTaxIDIdentifiers() {
     final Object current = myData.get("taxID");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<Identifier>) current;
     }
     return Arrays.asList((Identifier) current);
+  }
+  /**
+   * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
+   */
+  @JsonIgnore public String getTaxIDString() {
+    return (String) getValue("taxID");
+  }
+  /**
+   * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
+   */
+  @JsonIgnore public Collection<String> getTaxIDStrings() {
+    final Object current = myData.get("taxID");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
   }
   /**
    * The telephone number.
@@ -807,19 +858,36 @@ public class Organization extends Thing implements MemberOf {
   /**
    * An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
    */
-  @JsonIgnore public Identifier getLeiCode() {
+  @JsonIgnore public Identifier getLeiCodeIdentifier() {
     return (Identifier) getValue("leiCode");
   }
   /**
    * An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
    */
-  @JsonIgnore public Collection<Identifier> getLeiCodes() {
+  @JsonIgnore public Collection<Identifier> getLeiCodeIdentifiers() {
     final Object current = myData.get("leiCode");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<Identifier>) current;
     }
     return Arrays.asList((Identifier) current);
+  }
+  /**
+   * An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
+   */
+  @JsonIgnore public String getLeiCodeString() {
+    return (String) getValue("leiCode");
+  }
+  /**
+   * An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
+   */
+  @JsonIgnore public Collection<String> getLeiCodeStrings() {
+    final Object current = myData.get("leiCode");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
   }
   protected Organization(java.util.Map<String,Object> data) {
     super(data);
@@ -983,6 +1051,13 @@ public class Organization extends Thing implements MemberOf {
       return this;
     }
     /**
+     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
+     */
+    @NotNull public Builder duns(@NotNull String duns) {
+      putValue("duns", duns);
+      return this;
+    }
+    /**
      * Email address.
      */
     @NotNull public Builder email(@NotNull String email) {
@@ -1057,6 +1132,13 @@ public class Organization extends Thing implements MemberOf {
      */
     @NotNull public Builder globalLocationNumber(@NotNull Identifier identifier) {
       putValue("globalLocationNumber", identifier);
+      return this;
+    }
+    /**
+     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
+     */
+    @NotNull public Builder globalLocationNumber(@NotNull String globalLocationNumber) {
+      putValue("globalLocationNumber", globalLocationNumber);
       return this;
     }
     /**
@@ -1321,6 +1403,13 @@ public class Organization extends Thing implements MemberOf {
       return this;
     }
     /**
+     * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
+     */
+    @NotNull public Builder taxID(@NotNull String taxID) {
+      putValue("taxID", taxID);
+      return this;
+    }
+    /**
      * The telephone number.
      */
     @NotNull public Builder telephone(@NotNull String telephone) {
@@ -1353,6 +1442,13 @@ public class Organization extends Thing implements MemberOf {
      */
     @NotNull public Builder leiCode(@NotNull Identifier identifier) {
       putValue("leiCode", identifier);
+      return this;
+    }
+    /**
+     * An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
+     */
+    @NotNull public Builder leiCode(@NotNull String leiCode) {
+      putValue("leiCode", leiCode);
       return this;
     }
     /**
@@ -1492,6 +1588,8 @@ public class Organization extends Thing implements MemberOf {
       if ("departments".equals(key) && value instanceof Organization) { department((Organization)value); return; }
       if ("duns".equals(key) && value instanceof Identifier) { duns((Identifier)value); return; }
       if ("dunss".equals(key) && value instanceof Identifier) { duns((Identifier)value); return; }
+      if ("duns".equals(key) && value instanceof String) { duns((String)value); return; }
+      if ("dunss".equals(key) && value instanceof String) { duns((String)value); return; }
       if ("email".equals(key) && value instanceof String) { email((String)value); return; }
       if ("emails".equals(key) && value instanceof String) { email((String)value); return; }
       if ("employee".equals(key) && value instanceof Person) { employee((Person)value); return; }
@@ -1508,6 +1606,8 @@ public class Organization extends Thing implements MemberOf {
       if ("foundingDates".equals(key) && value instanceof java.util.Date) { foundingDate((java.util.Date)value); return; }
       if ("globalLocationNumber".equals(key) && value instanceof Identifier) { globalLocationNumber((Identifier)value); return; }
       if ("globalLocationNumbers".equals(key) && value instanceof Identifier) { globalLocationNumber((Identifier)value); return; }
+      if ("globalLocationNumber".equals(key) && value instanceof String) { globalLocationNumber((String)value); return; }
+      if ("globalLocationNumbers".equals(key) && value instanceof String) { globalLocationNumber((String)value); return; }
       if ("hasPOS".equals(key) && value instanceof Place) { hasPOS((Place)value); return; }
       if ("hasPOSs".equals(key) && value instanceof Place) { hasPOS((Place)value); return; }
       if ("isicV4".equals(key) && value instanceof String) { isicV4((String)value); return; }
@@ -1552,6 +1652,8 @@ public class Organization extends Thing implements MemberOf {
       if ("subOrganizations".equals(key) && value instanceof Organization) { subOrganization((Organization)value); return; }
       if ("taxID".equals(key) && value instanceof Identifier) { taxID((Identifier)value); return; }
       if ("taxIDs".equals(key) && value instanceof Identifier) { taxID((Identifier)value); return; }
+      if ("taxID".equals(key) && value instanceof String) { taxID((String)value); return; }
+      if ("taxIDs".equals(key) && value instanceof String) { taxID((String)value); return; }
       if ("telephone".equals(key) && value instanceof String) { telephone((String)value); return; }
       if ("telephones".equals(key) && value instanceof String) { telephone((String)value); return; }
       if ("vatID".equals(key) && value instanceof String) { vatID((String)value); return; }
@@ -1560,6 +1662,8 @@ public class Organization extends Thing implements MemberOf {
       if ("foundingLocations".equals(key) && value instanceof Place) { foundingLocation((Place)value); return; }
       if ("leiCode".equals(key) && value instanceof Identifier) { leiCode((Identifier)value); return; }
       if ("leiCodes".equals(key) && value instanceof Identifier) { leiCode((Identifier)value); return; }
+      if ("leiCode".equals(key) && value instanceof String) { leiCode((String)value); return; }
+      if ("leiCodes".equals(key) && value instanceof String) { leiCode((String)value); return; }
       super.fromMap(key, value);
     }
   }

@@ -30,13 +30,13 @@ public class SportsEvent extends Event {
   /**
    * The home team in a sports event.
    */
-  @JsonIgnore public Competitor getHomeTeam() {
+  @JsonIgnore public Competitor getHomeTeamCompetitor() {
     return (Competitor) getValue("homeTeam");
   }
   /**
    * The home team in a sports event.
    */
-  @JsonIgnore public Collection<Competitor> getHomeTeams() {
+  @JsonIgnore public Collection<Competitor> getHomeTeamCompetitors() {
     final Object current = myData.get("homeTeam");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
@@ -45,21 +45,89 @@ public class SportsEvent extends Event {
     return Arrays.asList((Competitor) current);
   }
   /**
+   * The home team in a sports event.
+   */
+  @JsonIgnore public Person getHomeTeamPerson() {
+    return (Person) getValue("homeTeam");
+  }
+  /**
+   * The home team in a sports event.
+   */
+  @JsonIgnore public Collection<Person> getHomeTeamPersons() {
+    final Object current = myData.get("homeTeam");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Person>) current;
+    }
+    return Arrays.asList((Person) current);
+  }
+  /**
+   * The home team in a sports event.
+   */
+  @JsonIgnore public SportsTeam getHomeTeamSportsTeam() {
+    return (SportsTeam) getValue("homeTeam");
+  }
+  /**
+   * The home team in a sports event.
+   */
+  @JsonIgnore public Collection<SportsTeam> getHomeTeamSportsTeams() {
+    final Object current = myData.get("homeTeam");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<SportsTeam>) current;
+    }
+    return Arrays.asList((SportsTeam) current);
+  }
+  /**
    * The away team in a sports event.
    */
-  @JsonIgnore public Competitor getAwayTeam() {
+  @JsonIgnore public Competitor getAwayTeamCompetitor() {
     return (Competitor) getValue("awayTeam");
   }
   /**
    * The away team in a sports event.
    */
-  @JsonIgnore public Collection<Competitor> getAwayTeams() {
+  @JsonIgnore public Collection<Competitor> getAwayTeamCompetitors() {
     final Object current = myData.get("awayTeam");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<Competitor>) current;
     }
     return Arrays.asList((Competitor) current);
+  }
+  /**
+   * The away team in a sports event.
+   */
+  @JsonIgnore public Person getAwayTeamPerson() {
+    return (Person) getValue("awayTeam");
+  }
+  /**
+   * The away team in a sports event.
+   */
+  @JsonIgnore public Collection<Person> getAwayTeamPersons() {
+    final Object current = myData.get("awayTeam");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Person>) current;
+    }
+    return Arrays.asList((Person) current);
+  }
+  /**
+   * The away team in a sports event.
+   */
+  @JsonIgnore public SportsTeam getAwayTeamSportsTeam() {
+    return (SportsTeam) getValue("awayTeam");
+  }
+  /**
+   * The away team in a sports event.
+   */
+  @JsonIgnore public Collection<SportsTeam> getAwayTeamSportsTeams() {
+    final Object current = myData.get("awayTeam");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<SportsTeam>) current;
+    }
+    return Arrays.asList((SportsTeam) current);
   }
   /**
    * A competitor in a sports event.
@@ -100,10 +168,66 @@ public class SportsEvent extends Event {
       return this;
     }
     /**
+     * The home team in a sports event.
+     */
+    @NotNull public Builder homeTeam(@NotNull Person person) {
+      putValue("homeTeam", person);
+      return this;
+    }
+    /**
+     * The home team in a sports event.
+     */
+    @NotNull public Builder homeTeam(@NotNull Person.Builder person) {
+      putValue("homeTeam", person.build());
+      return this;
+    }
+    /**
+     * The home team in a sports event.
+     */
+    @NotNull public Builder homeTeam(@NotNull SportsTeam sportsTeam) {
+      putValue("homeTeam", sportsTeam);
+      return this;
+    }
+    /**
+     * The home team in a sports event.
+     */
+    @NotNull public Builder homeTeam(@NotNull SportsTeam.Builder sportsTeam) {
+      putValue("homeTeam", sportsTeam.build());
+      return this;
+    }
+    /**
      * The away team in a sports event.
      */
     @NotNull public Builder awayTeam(@NotNull Competitor competitor) {
       putValue("awayTeam", competitor);
+      return this;
+    }
+    /**
+     * The away team in a sports event.
+     */
+    @NotNull public Builder awayTeam(@NotNull Person person) {
+      putValue("awayTeam", person);
+      return this;
+    }
+    /**
+     * The away team in a sports event.
+     */
+    @NotNull public Builder awayTeam(@NotNull Person.Builder person) {
+      putValue("awayTeam", person.build());
+      return this;
+    }
+    /**
+     * The away team in a sports event.
+     */
+    @NotNull public Builder awayTeam(@NotNull SportsTeam sportsTeam) {
+      putValue("awayTeam", sportsTeam);
+      return this;
+    }
+    /**
+     * The away team in a sports event.
+     */
+    @NotNull public Builder awayTeam(@NotNull SportsTeam.Builder sportsTeam) {
+      putValue("awayTeam", sportsTeam.build());
       return this;
     }
     /**
@@ -317,14 +441,32 @@ public class SportsEvent extends Event {
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event.
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     */
+    @NotNull public Builder offers(@NotNull Demand demand) {
+      putValue("offers", demand);
+      return this;
+    }
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     */
+    @NotNull public Builder offers(@NotNull Demand.Builder demand) {
+      putValue("offers", demand.build());
+      return this;
+    }
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
      */
     @NotNull public Builder offers(@NotNull Offer offer) {
       putValue("offers", offer);
       return this;
     }
     /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event.
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
      */
     @NotNull public Builder offers(@NotNull Offer.Builder offer) {
       putValue("offers", offer.build());
@@ -656,8 +798,16 @@ public class SportsEvent extends Event {
     @Override protected void fromMap(String key, Object value) {
       if ("homeTeam".equals(key) && value instanceof Competitor) { homeTeam((Competitor)value); return; }
       if ("homeTeams".equals(key) && value instanceof Competitor) { homeTeam((Competitor)value); return; }
+      if ("homeTeam".equals(key) && value instanceof Person) { homeTeam((Person)value); return; }
+      if ("homeTeams".equals(key) && value instanceof Person) { homeTeam((Person)value); return; }
+      if ("homeTeam".equals(key) && value instanceof SportsTeam) { homeTeam((SportsTeam)value); return; }
+      if ("homeTeams".equals(key) && value instanceof SportsTeam) { homeTeam((SportsTeam)value); return; }
       if ("awayTeam".equals(key) && value instanceof Competitor) { awayTeam((Competitor)value); return; }
       if ("awayTeams".equals(key) && value instanceof Competitor) { awayTeam((Competitor)value); return; }
+      if ("awayTeam".equals(key) && value instanceof Person) { awayTeam((Person)value); return; }
+      if ("awayTeams".equals(key) && value instanceof Person) { awayTeam((Person)value); return; }
+      if ("awayTeam".equals(key) && value instanceof SportsTeam) { awayTeam((SportsTeam)value); return; }
+      if ("awayTeams".equals(key) && value instanceof SportsTeam) { awayTeam((SportsTeam)value); return; }
       if ("competitor".equals(key) && value instanceof Competitor) { competitor((Competitor)value); return; }
       if ("competitors".equals(key) && value instanceof Competitor) { competitor((Competitor)value); return; }
       super.fromMap(key, value);

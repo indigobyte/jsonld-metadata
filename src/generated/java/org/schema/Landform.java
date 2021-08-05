@@ -183,10 +183,52 @@ public class Landform extends Place {
       return this;
     }
     /**
+     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
+     */
+    @NotNull public Builder globalLocationNumber(@NotNull String globalLocationNumber) {
+      putValue("globalLocationNumber", globalLocationNumber);
+      return this;
+    }
+    /**
      * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
      */
     @NotNull public Builder isicV4(@NotNull String isicV4) {
       putValue("isicV4", isicV4);
+      return this;
+    }
+    /**
+     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     */
+    @NotNull public Builder latitude(@NotNull Integer integer) {
+      putValue("latitude", integer);
+      return this;
+    }
+    /**
+     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     */
+    @NotNull public Builder latitude(@NotNull Long latitude) {
+      putValue("latitude", latitude);
+      return this;
+    }
+    /**
+     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     */
+    @NotNull public Builder latitude(@NotNull Float latitude) {
+      putValue("latitude", latitude);
+      return this;
+    }
+    /**
+     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     */
+    @NotNull public Builder latitude(@NotNull Double latitude) {
+      putValue("latitude", latitude);
+      return this;
+    }
+    /**
+     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     */
+    @NotNull public Builder latitude(@NotNull String latitude) {
+      putValue("latitude", latitude);
       return this;
     }
     /**
@@ -208,6 +250,41 @@ public class Landform extends Place {
      */
     @NotNull public Builder logo(@NotNull String logo) {
       putValue("logo", logo);
+      return this;
+    }
+    /**
+     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     */
+    @NotNull public Builder longitude(@NotNull Integer integer) {
+      putValue("longitude", integer);
+      return this;
+    }
+    /**
+     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     */
+    @NotNull public Builder longitude(@NotNull Long longitude) {
+      putValue("longitude", longitude);
+      return this;
+    }
+    /**
+     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     */
+    @NotNull public Builder longitude(@NotNull Float longitude) {
+      putValue("longitude", longitude);
+      return this;
+    }
+    /**
+     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     */
+    @NotNull public Builder longitude(@NotNull Double longitude) {
+      putValue("longitude", longitude);
+      return this;
+    }
+    /**
+     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     */
+    @NotNull public Builder longitude(@NotNull String longitude) {
+      putValue("longitude", longitude);
       return this;
     }
     /**

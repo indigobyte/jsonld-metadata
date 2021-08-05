@@ -86,6 +86,10 @@ See also the dedicated [document on the use of schema.org for marking up hotels 
    */
   @NotNull public static GardenStore.Builder gardenStore() { return new GardenStore.Builder(new HashMap<String,Object>()); }
   /**
+   * Web page type: Media gallery page. A mixed-media page that can contains media such as images, videos, and other multimedia.
+   */
+  @NotNull public static MediaGallery.Builder mediaGallery() { return new MediaGallery.Builder(new HashMap<String,Object>()); }
+  /**
    * A resort is a place used for relaxation or recreation, attracting visitors for holidays or vacations. Resorts are places, towns or sometimes commercial establishment operated by a single company (Source: Wikipedia, the free encyclopedia, see <a href="http://en.wikipedia.org/wiki/Resort">http://en.wikipedia.org/wiki/Resort</a>).
 <br /><br />
 See also the <a href="/docs/hotels.html">dedicated document on the use of schema.org for marking up hotels and other forms of accommodations</a>.
@@ -1837,7 +1841,7 @@ See also the <a href="/docs/hotels.html">dedicated document on the use of schema
    */
   @NotNull public static Winery.Builder winery() { return new Winery.Builder(new HashMap<String,Object>()); }
   /**
-   * When a single product is associated with multiple offers (for example, the same pair of shoes is offered by different merchants), then AggregateOffer can be used.
+   * When a single product is associated with multiple offers (for example, the same pair of shoes is offered by different merchants), then AggregateOffer can be used.\n\nNote: AggregateOffers are normally expected to associate multiple offers that all share the same defined [[businessFunction]] value, or default to http://purl.org/goodrelations/v1#Sell if businessFunction is not explicitly defined.
    */
   @NotNull public static AggregateOffer.Builder aggregateOffer() { return new AggregateOffer.Builder(new HashMap<String,Object>()); }
   /**
@@ -2201,7 +2205,7 @@ See also the <a href="/docs/hotels.html">dedicated document on the use of schema
    */
   @NotNull public static PlayAction.Builder playAction() { return new PlayAction.Builder(new HashMap<String,Object>()); }
   /**
-   * An offer to transfer some rights to an item or to provide a service — for example, an offer to sell tickets to an event, to rent the DVD of a movie, to stream a TV show over the internet, to repair a motorcycle, or to loan a book.\n\nFor [GTIN](http://www.gs1.org/barcodes/technical/idkeys/gtin)-related fields, see [Check Digit calculator](http://www.gs1.org/barcodes/support/check_digit_calculator) and [validation guide](http://www.gs1us.org/resources/standards/gtin-validation-guide) from [GS1](http://www.gs1.org/).
+   * An offer to transfer some rights to an item or to provide a service — for example, an offer to sell tickets to an event, to rent the DVD of a movie, to stream a TV show over the internet, to repair a motorcycle, or to loan a book.\n\nNote: As the [[businessFunction]] property, which identifies the form of offer (e.g. sell, lease, repair, dispose), defaults to http://purl.org/goodrelations/v1#Sell; an Offer without a defined businessFunction value can be assumed to be an offer to sell.\n\nFor [GTIN](http://www.gs1.org/barcodes/technical/idkeys/gtin)-related fields, see [Check Digit calculator](http://www.gs1.org/barcodes/support/check_digit_calculator) and [validation guide](http://www.gs1us.org/resources/standards/gtin-validation-guide) from [GS1](http://www.gs1.org/).
    */
   @NotNull public static Offer.Builder offer() { return new Offer.Builder(new HashMap<String,Object>()); }
   /**
@@ -2533,6 +2537,7 @@ See also the dedicated [document on the use of schema.org for marking up hotels 
     if ("CampingPitch".equals(type)) { return new CampingPitch.Builder(new HashMap<String,Object>()); }
     if ("TVClip".equals(type)) { return new TVClip.Builder(new HashMap<String,Object>()); }
     if ("GardenStore".equals(type)) { return new GardenStore.Builder(new HashMap<String,Object>()); }
+    if ("MediaGallery".equals(type)) { return new MediaGallery.Builder(new HashMap<String,Object>()); }
     if ("Resort".equals(type)) { return new Resort.Builder(new HashMap<String,Object>()); }
     if ("WearAction".equals(type)) { return new WearAction.Builder(new HashMap<String,Object>()); }
     if ("ClaimReview".equals(type)) { return new ClaimReview.Builder(new HashMap<String,Object>()); }
