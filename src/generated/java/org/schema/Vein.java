@@ -28,6 +28,23 @@ import java.util.*;
  */
 public class Vein extends Vessel {
   /**
+   * The vasculature that the vein drains into.
+   */
+  @JsonIgnore public Vessel getDrainsTo() {
+    return (Vessel) getValue("drainsTo");
+  }
+  /**
+   * The vasculature that the vein drains into.
+   */
+  @JsonIgnore public Collection<Vessel> getDrainsTos() {
+    final Object current = myData.get("drainsTo");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Vessel>) current;
+    }
+    return Arrays.asList((Vessel) current);
+  }
+  /**
    * The anatomical or organ system drained by this vessel; generally refers to a specific part of an organ.
    */
   @JsonIgnore public AnatomicalStructure getRegionDrainedAnatomicalStructure() {
@@ -62,23 +79,6 @@ public class Vein extends Vessel {
     return Arrays.asList((AnatomicalSystem) current);
   }
   /**
-   * The vasculature that the vein drains into.
-   */
-  @JsonIgnore public Vessel getDrainsTo() {
-    return (Vessel) getValue("drainsTo");
-  }
-  /**
-   * The vasculature that the vein drains into.
-   */
-  @JsonIgnore public Collection<Vessel> getDrainsTos() {
-    final Object current = myData.get("drainsTo");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Vessel>) current;
-    }
-    return Arrays.asList((Vessel) current);
-  }
-  /**
    * The anatomical or organ system that the vein flows into; a larger structure that the vein connects to.
    */
   @JsonIgnore public AnatomicalStructure getTributary() {
@@ -110,6 +110,20 @@ public class Vein extends Vessel {
       return new Vein(myData);
     }
     /**
+     * The vasculature that the vein drains into.
+     */
+    @NotNull public Builder drainsTo(@NotNull Vessel vessel) {
+      putValue("drainsTo", vessel);
+      return this;
+    }
+    /**
+     * The vasculature that the vein drains into.
+     */
+    @NotNull public Builder drainsTo(@NotNull Vessel.Builder vessel) {
+      putValue("drainsTo", vessel.build());
+      return this;
+    }
+    /**
      * The anatomical or organ system drained by this vessel; generally refers to a specific part of an organ.
      */
     @NotNull public Builder regionDrained(@NotNull AnatomicalStructure anatomicalStructure) {
@@ -138,20 +152,6 @@ public class Vein extends Vessel {
       return this;
     }
     /**
-     * The vasculature that the vein drains into.
-     */
-    @NotNull public Builder drainsTo(@NotNull Vessel vessel) {
-      putValue("drainsTo", vessel);
-      return this;
-    }
-    /**
-     * The vasculature that the vein drains into.
-     */
-    @NotNull public Builder drainsTo(@NotNull Vessel.Builder vessel) {
-      putValue("drainsTo", vessel.build());
-      return this;
-    }
-    /**
      * The anatomical or organ system that the vein flows into; a larger structure that the vein connects to.
      */
     @NotNull public Builder tributary(@NotNull AnatomicalStructure anatomicalStructure) {
@@ -166,38 +166,17 @@ public class Vein extends Vessel {
       return this;
     }
     /**
-     * An image containing a diagram that illustrates the structure and/or its component substructures and/or connections with other structures.
+     * Component (sub-)structure(s) that comprise this anatomical structure.
      */
-    @NotNull public Builder diagram(@NotNull ImageObject imageObject) {
-      putValue("diagram", imageObject);
+    @NotNull public Builder subStructure(@NotNull AnatomicalStructure anatomicalStructure) {
+      putValue("subStructure", anatomicalStructure);
       return this;
     }
     /**
-     * An image containing a diagram that illustrates the structure and/or its component substructures and/or connections with other structures.
+     * Component (sub-)structure(s) that comprise this anatomical structure.
      */
-    @NotNull public Builder diagram(@NotNull ImageObject.Builder imageObject) {
-      putValue("diagram", imageObject.build());
-      return this;
-    }
-    /**
-     * Other anatomical structures to which this structure is connected.
-     */
-    @NotNull public Builder connectedTo(@NotNull AnatomicalStructure anatomicalStructure) {
-      putValue("connectedTo", anatomicalStructure);
-      return this;
-    }
-    /**
-     * Other anatomical structures to which this structure is connected.
-     */
-    @NotNull public Builder connectedTo(@NotNull AnatomicalStructure.Builder anatomicalStructure) {
-      putValue("connectedTo", anatomicalStructure.build());
-      return this;
-    }
-    /**
-     * If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.
-     */
-    @NotNull public Builder associatedPathophysiology(@NotNull String associatedPathophysiology) {
-      putValue("associatedPathophysiology", associatedPathophysiology);
+    @NotNull public Builder subStructure(@NotNull AnatomicalStructure.Builder anatomicalStructure) {
+      putValue("subStructure", anatomicalStructure.build());
       return this;
     }
     /**
@@ -215,6 +194,20 @@ public class Vein extends Vessel {
       return this;
     }
     /**
+     * Other anatomical structures to which this structure is connected.
+     */
+    @NotNull public Builder connectedTo(@NotNull AnatomicalStructure anatomicalStructure) {
+      putValue("connectedTo", anatomicalStructure);
+      return this;
+    }
+    /**
+     * Other anatomical structures to which this structure is connected.
+     */
+    @NotNull public Builder connectedTo(@NotNull AnatomicalStructure.Builder anatomicalStructure) {
+      putValue("connectedTo", anatomicalStructure.build());
+      return this;
+    }
+    /**
      * The anatomical or organ system that this structure is part of.
      */
     @NotNull public Builder partOfSystem(@NotNull AnatomicalSystem anatomicalSystem) {
@@ -229,17 +222,24 @@ public class Vein extends Vessel {
       return this;
     }
     /**
-     * Component (sub-)structure(s) that comprise this anatomical structure.
+     * An image containing a diagram that illustrates the structure and/or its component substructures and/or connections with other structures.
      */
-    @NotNull public Builder subStructure(@NotNull AnatomicalStructure anatomicalStructure) {
-      putValue("subStructure", anatomicalStructure);
+    @NotNull public Builder diagram(@NotNull ImageObject imageObject) {
+      putValue("diagram", imageObject);
       return this;
     }
     /**
-     * Component (sub-)structure(s) that comprise this anatomical structure.
+     * An image containing a diagram that illustrates the structure and/or its component substructures and/or connections with other structures.
      */
-    @NotNull public Builder subStructure(@NotNull AnatomicalStructure.Builder anatomicalStructure) {
-      putValue("subStructure", anatomicalStructure.build());
+    @NotNull public Builder diagram(@NotNull ImageObject.Builder imageObject) {
+      putValue("diagram", imageObject.build());
+      return this;
+    }
+    /**
+     * If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.
+     */
+    @NotNull public Builder associatedPathophysiology(@NotNull String associatedPathophysiology) {
+      putValue("associatedPathophysiology", associatedPathophysiology);
       return this;
     }
     /**
@@ -261,34 +261,6 @@ public class Vein extends Vessel {
      */
     @NotNull public Builder bodyLocation(@NotNull String bodyLocation) {
       putValue("bodyLocation", bodyLocation);
-      return this;
-    }
-    /**
-     * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
-     */
-    @NotNull public Builder recognizingAuthority(@NotNull Organization organization) {
-      putValue("recognizingAuthority", organization);
-      return this;
-    }
-    /**
-     * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
-     */
-    @NotNull public Builder recognizingAuthority(@NotNull Organization.Builder organization) {
-      putValue("recognizingAuthority", organization.build());
-      return this;
-    }
-    /**
-     * A medical guideline related to this entity.
-     */
-    @NotNull public Builder guideline(@NotNull MedicalGuideline medicalGuideline) {
-      putValue("guideline", medicalGuideline);
-      return this;
-    }
-    /**
-     * A medical guideline related to this entity.
-     */
-    @NotNull public Builder guideline(@NotNull MedicalGuideline.Builder medicalGuideline) {
-      putValue("guideline", medicalGuideline.build());
       return this;
     }
     /**
@@ -320,20 +292,6 @@ public class Vein extends Vessel {
       return this;
     }
     /**
-     * A medical study or trial related to this entity.
-     */
-    @NotNull public Builder study(@NotNull MedicalStudy medicalStudy) {
-      putValue("study", medicalStudy);
-      return this;
-    }
-    /**
-     * A medical study or trial related to this entity.
-     */
-    @NotNull public Builder study(@NotNull MedicalStudy.Builder medicalStudy) {
-      putValue("study", medicalStudy.build());
-      return this;
-    }
-    /**
      * A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.
      */
     @NotNull public Builder code(@NotNull MedicalCode medicalCode) {
@@ -345,20 +303,6 @@ public class Vein extends Vessel {
      */
     @NotNull public Builder code(@NotNull MedicalCode.Builder medicalCode) {
       putValue("code", medicalCode.build());
-      return this;
-    }
-    /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
-     */
-    @NotNull public Builder medicineSystem(@NotNull MedicineSystem medicineSystem) {
-      putValue("medicineSystem", medicineSystem);
-      return this;
-    }
-    /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
-     */
-    @NotNull public Builder medicineSystem(@NotNull MedicineSystem.Builder medicineSystem) {
-      putValue("medicineSystem", medicineSystem.build());
       return this;
     }
     /**
@@ -376,59 +320,59 @@ public class Vein extends Vessel {
       return this;
     }
     /**
-     * URL of the item.
+     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
+    @NotNull public Builder medicineSystem(@NotNull MedicineSystem medicineSystem) {
+      putValue("medicineSystem", medicineSystem);
       return this;
     }
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      */
-    @NotNull public Builder additionalType(@NotNull String additionalType) {
-      putValue("additionalType", additionalType);
+    @NotNull public Builder medicineSystem(@NotNull MedicineSystem.Builder medicineSystem) {
+      putValue("medicineSystem", medicineSystem.build());
       return this;
     }
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * A medical study or trial related to this entity.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
-      putValue("disambiguatingDescription", description);
+    @NotNull public Builder study(@NotNull MedicalStudy medicalStudy) {
+      putValue("study", medicalStudy);
       return this;
     }
     /**
-     * A description of the item.
+     * A medical study or trial related to this entity.
      */
-    @NotNull public Builder description(@NotNull Description description) {
-      putValue("description", description);
+    @NotNull public Builder study(@NotNull MedicalStudy.Builder medicalStudy) {
+      putValue("study", medicalStudy.build());
       return this;
     }
     /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     * A medical guideline related to this entity.
      */
-    @NotNull public Builder sameAs(@NotNull String sameAs) {
-      putValue("sameAs", sameAs);
+    @NotNull public Builder guideline(@NotNull MedicalGuideline medicalGuideline) {
+      putValue("guideline", medicalGuideline);
       return this;
     }
     /**
-     * The name of the item.
+     * A medical guideline related to this entity.
      */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
+    @NotNull public Builder guideline(@NotNull MedicalGuideline.Builder medicalGuideline) {
+      putValue("guideline", medicalGuideline.build());
       return this;
     }
     /**
-     * An alias for the item.
+     * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
      */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
+    @NotNull public Builder recognizingAuthority(@NotNull Organization organization) {
+      putValue("recognizingAuthority", organization);
       return this;
     }
     /**
-     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
+     * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
      */
-    @NotNull public Builder image(@NotNull Image image) {
-      putValue("image", image);
+    @NotNull public Builder recognizingAuthority(@NotNull Organization.Builder organization) {
+      putValue("recognizingAuthority", organization.build());
       return this;
     }
     /**
@@ -446,24 +390,45 @@ public class Vein extends Vessel {
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * URL of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
+    @NotNull public Builder additionalType(@NotNull String additionalType) {
+      putValue("additionalType", additionalType);
+      return this;
+    }
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     */
+    @NotNull public Builder sameAs(@NotNull String sameAs) {
+      putValue("sameAs", sameAs);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * The name of the item.
+     */
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -494,6 +459,27 @@ public class Vein extends Vessel {
       putValue("subjectOf", event.build());
       return this;
     }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -502,12 +488,12 @@ public class Vein extends Vessel {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
+      if ("drainsTo".equals(key) && value instanceof Vessel) { this.drainsTo((Vessel)value); return; }
+      if ("drainsTos".equals(key) && value instanceof Vessel) { this.drainsTo((Vessel)value); return; }
       if ("regionDrained".equals(key) && value instanceof AnatomicalStructure) { this.regionDrained((AnatomicalStructure)value); return; }
       if ("regionDraineds".equals(key) && value instanceof AnatomicalStructure) { this.regionDrained((AnatomicalStructure)value); return; }
       if ("regionDrained".equals(key) && value instanceof AnatomicalSystem) { this.regionDrained((AnatomicalSystem)value); return; }
       if ("regionDraineds".equals(key) && value instanceof AnatomicalSystem) { this.regionDrained((AnatomicalSystem)value); return; }
-      if ("drainsTo".equals(key) && value instanceof Vessel) { this.drainsTo((Vessel)value); return; }
-      if ("drainsTos".equals(key) && value instanceof Vessel) { this.drainsTo((Vessel)value); return; }
       if ("tributary".equals(key) && value instanceof AnatomicalStructure) { this.tributary((AnatomicalStructure)value); return; }
       if ("tributarys".equals(key) && value instanceof AnatomicalStructure) { this.tributary((AnatomicalStructure)value); return; }
       super.fromMap(key, value);

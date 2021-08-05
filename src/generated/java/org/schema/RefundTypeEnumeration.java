@@ -21,7 +21,7 @@ package org.schema;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * RefundTypeEnumeration enumerates several kinds of product return refund types.
+ * Enumerates several kinds of product return refund types.
  */
 public enum RefundTypeEnumeration {
   ;

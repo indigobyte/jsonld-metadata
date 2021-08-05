@@ -24,20 +24,105 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * A US-style health insurance plan, including PPOs, EPOs, and HMOs.Source: https://github.com/schemaorg/schemaorg/issues/1062
+ * A US-style health insurance plan, including PPOs, EPOs, and HMOs. 
  */
 public class HealthInsurancePlan extends Intangible {
   /**
-   * The standard for interpreting thePlan ID. The preferred is &quot;HIOS&quot;. See the Centers for Medicare &amp;amp; Medicaid Services for more details.
+   * Formularies covered by this plan.
    */
-  @JsonIgnore public String getUsesHealthPlanIdStandard() {
-    return (String) getValue("usesHealthPlanIdStandard");
+  @JsonIgnore public HealthPlanFormulary getIncludesHealthPlanFormulary() {
+    return (HealthPlanFormulary) getValue("includesHealthPlanFormulary");
   }
   /**
-   * The standard for interpreting thePlan ID. The preferred is &quot;HIOS&quot;. See the Centers for Medicare &amp;amp; Medicaid Services for more details.
+   * Formularies covered by this plan.
    */
-  @JsonIgnore public Collection<String> getUsesHealthPlanIdStandards() {
-    final Object current = myData.get("usesHealthPlanIdStandard");
+  @JsonIgnore public Collection<HealthPlanFormulary> getIncludesHealthPlanFormularys() {
+    final Object current = myData.get("includesHealthPlanFormulary");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<HealthPlanFormulary>) current;
+    }
+    return Arrays.asList((HealthPlanFormulary) current);
+  }
+  /**
+   * A contact point for a person or organization.
+   */
+  @JsonIgnore public ContactPoint getContactPoint() {
+    return (ContactPoint) getValue("contactPoint");
+  }
+  /**
+   * A contact point for a person or organization.
+   */
+  @JsonIgnore public Collection<ContactPoint> getContactPoints() {
+    final Object current = myData.get("contactPoint");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<ContactPoint>) current;
+    }
+    return Arrays.asList((ContactPoint) current);
+  }
+  /**
+   * The 14-character, HIOS-generated Plan ID number. (Plan IDs must be unique, even across different markets.)
+   */
+  @JsonIgnore public String getHealthPlanId() {
+    return (String) getValue("healthPlanId");
+  }
+  /**
+   * The 14-character, HIOS-generated Plan ID number. (Plan IDs must be unique, even across different markets.)
+   */
+  @JsonIgnore public Collection<String> getHealthPlanIds() {
+    final Object current = myData.get("healthPlanId");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * The tier(s) of drugs offered by this formulary or insurance plan.
+   */
+  @JsonIgnore public String getHealthPlanDrugTier() {
+    return (String) getValue("healthPlanDrugTier");
+  }
+  /**
+   * The tier(s) of drugs offered by this formulary or insurance plan.
+   */
+  @JsonIgnore public Collection<String> getHealthPlanDrugTiers() {
+    final Object current = myData.get("healthPlanDrugTier");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * The URL that goes directly to the plan brochure for the specific standard plan or plan variation.
+   */
+  @JsonIgnore public String getHealthPlanMarketingUrl() {
+    return (String) getValue("healthPlanMarketingUrl");
+  }
+  /**
+   * The URL that goes directly to the plan brochure for the specific standard plan or plan variation.
+   */
+  @JsonIgnore public Collection<String> getHealthPlanMarketingUrls() {
+    final Object current = myData.get("healthPlanMarketingUrl");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * TODO.
+   */
+  @JsonIgnore public String getHealthPlanDrugOption() {
+    return (String) getValue("healthPlanDrugOption");
+  }
+  /**
+   * TODO.
+   */
+  @JsonIgnore public Collection<String> getHealthPlanDrugOptions() {
+    final Object current = myData.get("healthPlanDrugOption");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<String>) current;
@@ -79,106 +164,21 @@ public class HealthInsurancePlan extends Intangible {
     return Arrays.asList((String) current);
   }
   /**
-   * TODO.
+   * The standard for interpreting thePlan ID. The preferred is &quot;HIOS&quot;. See the Centers for Medicare &amp; Medicaid Services for more details.
    */
-  @JsonIgnore public String getHealthPlanDrugOption() {
-    return (String) getValue("healthPlanDrugOption");
+  @JsonIgnore public String getUsesHealthPlanIdStandard() {
+    return (String) getValue("usesHealthPlanIdStandard");
   }
   /**
-   * TODO.
+   * The standard for interpreting thePlan ID. The preferred is &quot;HIOS&quot;. See the Centers for Medicare &amp; Medicaid Services for more details.
    */
-  @JsonIgnore public Collection<String> getHealthPlanDrugOptions() {
-    final Object current = myData.get("healthPlanDrugOption");
+  @JsonIgnore public Collection<String> getUsesHealthPlanIdStandards() {
+    final Object current = myData.get("usesHealthPlanIdStandard");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<String>) current;
     }
     return Arrays.asList((String) current);
-  }
-  /**
-   * Formularies covered by this plan.
-   */
-  @JsonIgnore public HealthPlanFormulary getIncludesHealthPlanFormulary() {
-    return (HealthPlanFormulary) getValue("includesHealthPlanFormulary");
-  }
-  /**
-   * Formularies covered by this plan.
-   */
-  @JsonIgnore public Collection<HealthPlanFormulary> getIncludesHealthPlanFormularys() {
-    final Object current = myData.get("includesHealthPlanFormulary");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<HealthPlanFormulary>) current;
-    }
-    return Arrays.asList((HealthPlanFormulary) current);
-  }
-  /**
-   * The tier(s) of drugs offered by this formulary or insurance plan.
-   */
-  @JsonIgnore public String getHealthPlanDrugTier() {
-    return (String) getValue("healthPlanDrugTier");
-  }
-  /**
-   * The tier(s) of drugs offered by this formulary or insurance plan.
-   */
-  @JsonIgnore public Collection<String> getHealthPlanDrugTiers() {
-    final Object current = myData.get("healthPlanDrugTier");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * The 14-character, HIOS-generated Plan ID number. (Plan IDs must be unique, even across different markets.)
-   */
-  @JsonIgnore public String getHealthPlanId() {
-    return (String) getValue("healthPlanId");
-  }
-  /**
-   * The 14-character, HIOS-generated Plan ID number. (Plan IDs must be unique, even across different markets.)
-   */
-  @JsonIgnore public Collection<String> getHealthPlanIds() {
-    final Object current = myData.get("healthPlanId");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * The URL that goes directly to the plan brochure for the specific standard plan or plan variation.
-   */
-  @JsonIgnore public String getHealthPlanMarketingUrl() {
-    return (String) getValue("healthPlanMarketingUrl");
-  }
-  /**
-   * The URL that goes directly to the plan brochure for the specific standard plan or plan variation.
-   */
-  @JsonIgnore public Collection<String> getHealthPlanMarketingUrls() {
-    final Object current = myData.get("healthPlanMarketingUrl");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * A contact point for a person or organization.
-   */
-  @JsonIgnore public ContactPoint getContactPoint() {
-    return (ContactPoint) getValue("contactPoint");
-  }
-  /**
-   * A contact point for a person or organization.
-   */
-  @JsonIgnore public Collection<ContactPoint> getContactPoints() {
-    final Object current = myData.get("contactPoint");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<ContactPoint>) current;
-    }
-    return Arrays.asList((ContactPoint) current);
   }
   protected HealthInsurancePlan(java.util.Map<String,Object> data) {
     super(data);
@@ -195,10 +195,59 @@ public class HealthInsurancePlan extends Intangible {
       return new HealthInsurancePlan(myData);
     }
     /**
-     * The standard for interpreting thePlan ID. The preferred is &quot;HIOS&quot;. See the Centers for Medicare &amp;amp; Medicaid Services for more details.
+     * Formularies covered by this plan.
      */
-    @NotNull public Builder usesHealthPlanIdStandard(@NotNull String usesHealthPlanIdStandard) {
-      putValue("usesHealthPlanIdStandard", usesHealthPlanIdStandard);
+    @NotNull public Builder includesHealthPlanFormulary(@NotNull HealthPlanFormulary healthPlanFormulary) {
+      putValue("includesHealthPlanFormulary", healthPlanFormulary);
+      return this;
+    }
+    /**
+     * Formularies covered by this plan.
+     */
+    @NotNull public Builder includesHealthPlanFormulary(@NotNull HealthPlanFormulary.Builder healthPlanFormulary) {
+      putValue("includesHealthPlanFormulary", healthPlanFormulary.build());
+      return this;
+    }
+    /**
+     * A contact point for a person or organization.
+     */
+    @NotNull public Builder contactPoint(@NotNull ContactPoint contactPoint) {
+      putValue("contactPoint", contactPoint);
+      return this;
+    }
+    /**
+     * A contact point for a person or organization.
+     */
+    @NotNull public Builder contactPoint(@NotNull ContactPoint.Builder contactPoint) {
+      putValue("contactPoint", contactPoint.build());
+      return this;
+    }
+    /**
+     * The 14-character, HIOS-generated Plan ID number. (Plan IDs must be unique, even across different markets.)
+     */
+    @NotNull public Builder healthPlanId(@NotNull String healthPlanId) {
+      putValue("healthPlanId", healthPlanId);
+      return this;
+    }
+    /**
+     * The tier(s) of drugs offered by this formulary or insurance plan.
+     */
+    @NotNull public Builder healthPlanDrugTier(@NotNull String healthPlanDrugTier) {
+      putValue("healthPlanDrugTier", healthPlanDrugTier);
+      return this;
+    }
+    /**
+     * The URL that goes directly to the plan brochure for the specific standard plan or plan variation.
+     */
+    @NotNull public Builder healthPlanMarketingUrl(@NotNull String healthPlanMarketingUrl) {
+      putValue("healthPlanMarketingUrl", healthPlanMarketingUrl);
+      return this;
+    }
+    /**
+     * TODO.
+     */
+    @NotNull public Builder healthPlanDrugOption(@NotNull String healthPlanDrugOption) {
+      putValue("healthPlanDrugOption", healthPlanDrugOption);
       return this;
     }
     /**
@@ -223,115 +272,10 @@ public class HealthInsurancePlan extends Intangible {
       return this;
     }
     /**
-     * TODO.
+     * The standard for interpreting thePlan ID. The preferred is &quot;HIOS&quot;. See the Centers for Medicare &amp; Medicaid Services for more details.
      */
-    @NotNull public Builder healthPlanDrugOption(@NotNull String healthPlanDrugOption) {
-      putValue("healthPlanDrugOption", healthPlanDrugOption);
-      return this;
-    }
-    /**
-     * Formularies covered by this plan.
-     */
-    @NotNull public Builder includesHealthPlanFormulary(@NotNull HealthPlanFormulary healthPlanFormulary) {
-      putValue("includesHealthPlanFormulary", healthPlanFormulary);
-      return this;
-    }
-    /**
-     * Formularies covered by this plan.
-     */
-    @NotNull public Builder includesHealthPlanFormulary(@NotNull HealthPlanFormulary.Builder healthPlanFormulary) {
-      putValue("includesHealthPlanFormulary", healthPlanFormulary.build());
-      return this;
-    }
-    /**
-     * The tier(s) of drugs offered by this formulary or insurance plan.
-     */
-    @NotNull public Builder healthPlanDrugTier(@NotNull String healthPlanDrugTier) {
-      putValue("healthPlanDrugTier", healthPlanDrugTier);
-      return this;
-    }
-    /**
-     * The 14-character, HIOS-generated Plan ID number. (Plan IDs must be unique, even across different markets.)
-     */
-    @NotNull public Builder healthPlanId(@NotNull String healthPlanId) {
-      putValue("healthPlanId", healthPlanId);
-      return this;
-    }
-    /**
-     * The URL that goes directly to the plan brochure for the specific standard plan or plan variation.
-     */
-    @NotNull public Builder healthPlanMarketingUrl(@NotNull String healthPlanMarketingUrl) {
-      putValue("healthPlanMarketingUrl", healthPlanMarketingUrl);
-      return this;
-    }
-    /**
-     * A contact point for a person or organization.
-     */
-    @NotNull public Builder contactPoint(@NotNull ContactPoint contactPoint) {
-      putValue("contactPoint", contactPoint);
-      return this;
-    }
-    /**
-     * A contact point for a person or organization.
-     */
-    @NotNull public Builder contactPoint(@NotNull ContactPoint.Builder contactPoint) {
-      putValue("contactPoint", contactPoint.build());
-      return this;
-    }
-    /**
-     * URL of the item.
-     */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
-      return this;
-    }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     */
-    @NotNull public Builder additionalType(@NotNull String additionalType) {
-      putValue("additionalType", additionalType);
-      return this;
-    }
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     */
-    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
-      putValue("disambiguatingDescription", description);
-      return this;
-    }
-    /**
-     * A description of the item.
-     */
-    @NotNull public Builder description(@NotNull Description description) {
-      putValue("description", description);
-      return this;
-    }
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     */
-    @NotNull public Builder sameAs(@NotNull String sameAs) {
-      putValue("sameAs", sameAs);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
-      return this;
-    }
-    /**
-     * An alias for the item.
-     */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
-      return this;
-    }
-    /**
-     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
-     */
-    @NotNull public Builder image(@NotNull Image image) {
-      putValue("image", image);
+    @NotNull public Builder usesHealthPlanIdStandard(@NotNull String usesHealthPlanIdStandard) {
+      putValue("usesHealthPlanIdStandard", usesHealthPlanIdStandard);
       return this;
     }
     /**
@@ -349,24 +293,45 @@ public class HealthInsurancePlan extends Intangible {
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * URL of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
+    @NotNull public Builder additionalType(@NotNull String additionalType) {
+      putValue("additionalType", additionalType);
+      return this;
+    }
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     */
+    @NotNull public Builder sameAs(@NotNull String sameAs) {
+      putValue("sameAs", sameAs);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * The name of the item.
+     */
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -397,6 +362,27 @@ public class HealthInsurancePlan extends Intangible {
       putValue("subjectOf", event.build());
       return this;
     }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -405,24 +391,24 @@ public class HealthInsurancePlan extends Intangible {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("usesHealthPlanIdStandard".equals(key) && value instanceof String) { this.usesHealthPlanIdStandard((String)value); return; }
-      if ("usesHealthPlanIdStandards".equals(key) && value instanceof String) { this.usesHealthPlanIdStandard((String)value); return; }
+      if ("includesHealthPlanFormulary".equals(key) && value instanceof HealthPlanFormulary) { this.includesHealthPlanFormulary((HealthPlanFormulary)value); return; }
+      if ("includesHealthPlanFormularys".equals(key) && value instanceof HealthPlanFormulary) { this.includesHealthPlanFormulary((HealthPlanFormulary)value); return; }
+      if ("contactPoint".equals(key) && value instanceof ContactPoint) { this.contactPoint((ContactPoint)value); return; }
+      if ("contactPoints".equals(key) && value instanceof ContactPoint) { this.contactPoint((ContactPoint)value); return; }
+      if ("healthPlanId".equals(key) && value instanceof String) { this.healthPlanId((String)value); return; }
+      if ("healthPlanIds".equals(key) && value instanceof String) { this.healthPlanId((String)value); return; }
+      if ("healthPlanDrugTier".equals(key) && value instanceof String) { this.healthPlanDrugTier((String)value); return; }
+      if ("healthPlanDrugTiers".equals(key) && value instanceof String) { this.healthPlanDrugTier((String)value); return; }
+      if ("healthPlanMarketingUrl".equals(key) && value instanceof String) { this.healthPlanMarketingUrl((String)value); return; }
+      if ("healthPlanMarketingUrls".equals(key) && value instanceof String) { this.healthPlanMarketingUrl((String)value); return; }
+      if ("healthPlanDrugOption".equals(key) && value instanceof String) { this.healthPlanDrugOption((String)value); return; }
+      if ("healthPlanDrugOptions".equals(key) && value instanceof String) { this.healthPlanDrugOption((String)value); return; }
       if ("includesHealthPlanNetwork".equals(key) && value instanceof HealthPlanNetwork) { this.includesHealthPlanNetwork((HealthPlanNetwork)value); return; }
       if ("includesHealthPlanNetworks".equals(key) && value instanceof HealthPlanNetwork) { this.includesHealthPlanNetwork((HealthPlanNetwork)value); return; }
       if ("benefitsSummaryUrl".equals(key) && value instanceof String) { this.benefitsSummaryUrl((String)value); return; }
       if ("benefitsSummaryUrls".equals(key) && value instanceof String) { this.benefitsSummaryUrl((String)value); return; }
-      if ("healthPlanDrugOption".equals(key) && value instanceof String) { this.healthPlanDrugOption((String)value); return; }
-      if ("healthPlanDrugOptions".equals(key) && value instanceof String) { this.healthPlanDrugOption((String)value); return; }
-      if ("includesHealthPlanFormulary".equals(key) && value instanceof HealthPlanFormulary) { this.includesHealthPlanFormulary((HealthPlanFormulary)value); return; }
-      if ("includesHealthPlanFormularys".equals(key) && value instanceof HealthPlanFormulary) { this.includesHealthPlanFormulary((HealthPlanFormulary)value); return; }
-      if ("healthPlanDrugTier".equals(key) && value instanceof String) { this.healthPlanDrugTier((String)value); return; }
-      if ("healthPlanDrugTiers".equals(key) && value instanceof String) { this.healthPlanDrugTier((String)value); return; }
-      if ("healthPlanId".equals(key) && value instanceof String) { this.healthPlanId((String)value); return; }
-      if ("healthPlanIds".equals(key) && value instanceof String) { this.healthPlanId((String)value); return; }
-      if ("healthPlanMarketingUrl".equals(key) && value instanceof String) { this.healthPlanMarketingUrl((String)value); return; }
-      if ("healthPlanMarketingUrls".equals(key) && value instanceof String) { this.healthPlanMarketingUrl((String)value); return; }
-      if ("contactPoint".equals(key) && value instanceof ContactPoint) { this.contactPoint((ContactPoint)value); return; }
-      if ("contactPoints".equals(key) && value instanceof ContactPoint) { this.contactPoint((ContactPoint)value); return; }
+      if ("usesHealthPlanIdStandard".equals(key) && value instanceof String) { this.usesHealthPlanIdStandard((String)value); return; }
+      if ("usesHealthPlanIdStandards".equals(key) && value instanceof String) { this.usesHealthPlanIdStandard((String)value); return; }
       super.fromMap(key, value);
     }
   }

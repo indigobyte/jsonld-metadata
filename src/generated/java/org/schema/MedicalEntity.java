@@ -28,40 +28,6 @@ import java.util.*;
  */
 public class MedicalEntity extends Thing {
   /**
-   * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
-   */
-  @JsonIgnore public Organization getRecognizingAuthority() {
-    return (Organization) getValue("recognizingAuthority");
-  }
-  /**
-   * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
-   */
-  @JsonIgnore public Collection<Organization> getRecognizingAuthoritys() {
-    final Object current = myData.get("recognizingAuthority");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
-    }
-    return Arrays.asList((Organization) current);
-  }
-  /**
-   * A medical guideline related to this entity.
-   */
-  @JsonIgnore public MedicalGuideline getGuideline() {
-    return (MedicalGuideline) getValue("guideline");
-  }
-  /**
-   * A medical guideline related to this entity.
-   */
-  @JsonIgnore public Collection<MedicalGuideline> getGuidelines() {
-    final Object current = myData.get("guideline");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MedicalGuideline>) current;
-    }
-    return Arrays.asList((MedicalGuideline) current);
-  }
-  /**
    * The drug or supplement's legal status, including any controlled substance schedules that apply.
    */
   @JsonIgnore public DrugLegalStatus getLegalStatusDrugLegalStatus() {
@@ -113,23 +79,6 @@ public class MedicalEntity extends Thing {
     return Arrays.asList((String) current);
   }
   /**
-   * A medical study or trial related to this entity.
-   */
-  @JsonIgnore public MedicalStudy getStudy() {
-    return (MedicalStudy) getValue("study");
-  }
-  /**
-   * A medical study or trial related to this entity.
-   */
-  @JsonIgnore public Collection<MedicalStudy> getStudys() {
-    final Object current = myData.get("study");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MedicalStudy>) current;
-    }
-    return Arrays.asList((MedicalStudy) current);
-  }
-  /**
    * A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.
    */
   @JsonIgnore public MedicalCode getCode() {
@@ -145,6 +94,23 @@ public class MedicalEntity extends Thing {
       return (Collection<MedicalCode>) current;
     }
     return Arrays.asList((MedicalCode) current);
+  }
+  /**
+   * If applicable, a medical specialty in which this entity is relevant.
+   */
+  @JsonIgnore public MedicalSpecialty getRelevantSpecialty() {
+    return (MedicalSpecialty) getValue("relevantSpecialty");
+  }
+  /**
+   * If applicable, a medical specialty in which this entity is relevant.
+   */
+  @JsonIgnore public Collection<MedicalSpecialty> getRelevantSpecialtys() {
+    final Object current = myData.get("relevantSpecialty");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<MedicalSpecialty>) current;
+    }
+    return Arrays.asList((MedicalSpecialty) current);
   }
   /**
    * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
@@ -164,21 +130,55 @@ public class MedicalEntity extends Thing {
     return Arrays.asList((MedicineSystem) current);
   }
   /**
-   * If applicable, a medical specialty in which this entity is relevant.
+   * A medical study or trial related to this entity.
    */
-  @JsonIgnore public MedicalSpecialty getRelevantSpecialty() {
-    return (MedicalSpecialty) getValue("relevantSpecialty");
+  @JsonIgnore public MedicalStudy getStudy() {
+    return (MedicalStudy) getValue("study");
   }
   /**
-   * If applicable, a medical specialty in which this entity is relevant.
+   * A medical study or trial related to this entity.
    */
-  @JsonIgnore public Collection<MedicalSpecialty> getRelevantSpecialtys() {
-    final Object current = myData.get("relevantSpecialty");
+  @JsonIgnore public Collection<MedicalStudy> getStudys() {
+    final Object current = myData.get("study");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<MedicalSpecialty>) current;
+      return (Collection<MedicalStudy>) current;
     }
-    return Arrays.asList((MedicalSpecialty) current);
+    return Arrays.asList((MedicalStudy) current);
+  }
+  /**
+   * A medical guideline related to this entity.
+   */
+  @JsonIgnore public MedicalGuideline getGuideline() {
+    return (MedicalGuideline) getValue("guideline");
+  }
+  /**
+   * A medical guideline related to this entity.
+   */
+  @JsonIgnore public Collection<MedicalGuideline> getGuidelines() {
+    final Object current = myData.get("guideline");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<MedicalGuideline>) current;
+    }
+    return Arrays.asList((MedicalGuideline) current);
+  }
+  /**
+   * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
+   */
+  @JsonIgnore public Organization getRecognizingAuthority() {
+    return (Organization) getValue("recognizingAuthority");
+  }
+  /**
+   * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
+   */
+  @JsonIgnore public Collection<Organization> getRecognizingAuthoritys() {
+    final Object current = myData.get("recognizingAuthority");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Organization>) current;
+    }
+    return Arrays.asList((Organization) current);
   }
   protected MedicalEntity(java.util.Map<String,Object> data) {
     super(data);
@@ -193,34 +193,6 @@ public class MedicalEntity extends Thing {
     }
     @NotNull public MedicalEntity build() {
       return new MedicalEntity(myData);
-    }
-    /**
-     * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
-     */
-    @NotNull public Builder recognizingAuthority(@NotNull Organization organization) {
-      putValue("recognizingAuthority", organization);
-      return this;
-    }
-    /**
-     * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
-     */
-    @NotNull public Builder recognizingAuthority(@NotNull Organization.Builder organization) {
-      putValue("recognizingAuthority", organization.build());
-      return this;
-    }
-    /**
-     * A medical guideline related to this entity.
-     */
-    @NotNull public Builder guideline(@NotNull MedicalGuideline medicalGuideline) {
-      putValue("guideline", medicalGuideline);
-      return this;
-    }
-    /**
-     * A medical guideline related to this entity.
-     */
-    @NotNull public Builder guideline(@NotNull MedicalGuideline.Builder medicalGuideline) {
-      putValue("guideline", medicalGuideline.build());
-      return this;
     }
     /**
      * The drug or supplement's legal status, including any controlled substance schedules that apply.
@@ -251,20 +223,6 @@ public class MedicalEntity extends Thing {
       return this;
     }
     /**
-     * A medical study or trial related to this entity.
-     */
-    @NotNull public Builder study(@NotNull MedicalStudy medicalStudy) {
-      putValue("study", medicalStudy);
-      return this;
-    }
-    /**
-     * A medical study or trial related to this entity.
-     */
-    @NotNull public Builder study(@NotNull MedicalStudy.Builder medicalStudy) {
-      putValue("study", medicalStudy.build());
-      return this;
-    }
-    /**
      * A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.
      */
     @NotNull public Builder code(@NotNull MedicalCode medicalCode) {
@@ -276,20 +234,6 @@ public class MedicalEntity extends Thing {
      */
     @NotNull public Builder code(@NotNull MedicalCode.Builder medicalCode) {
       putValue("code", medicalCode.build());
-      return this;
-    }
-    /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
-     */
-    @NotNull public Builder medicineSystem(@NotNull MedicineSystem medicineSystem) {
-      putValue("medicineSystem", medicineSystem);
-      return this;
-    }
-    /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
-     */
-    @NotNull public Builder medicineSystem(@NotNull MedicineSystem.Builder medicineSystem) {
-      putValue("medicineSystem", medicineSystem.build());
       return this;
     }
     /**
@@ -307,59 +251,59 @@ public class MedicalEntity extends Thing {
       return this;
     }
     /**
-     * URL of the item.
+     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
+    @NotNull public Builder medicineSystem(@NotNull MedicineSystem medicineSystem) {
+      putValue("medicineSystem", medicineSystem);
       return this;
     }
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      */
-    @NotNull public Builder additionalType(@NotNull String additionalType) {
-      putValue("additionalType", additionalType);
+    @NotNull public Builder medicineSystem(@NotNull MedicineSystem.Builder medicineSystem) {
+      putValue("medicineSystem", medicineSystem.build());
       return this;
     }
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * A medical study or trial related to this entity.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
-      putValue("disambiguatingDescription", description);
+    @NotNull public Builder study(@NotNull MedicalStudy medicalStudy) {
+      putValue("study", medicalStudy);
       return this;
     }
     /**
-     * A description of the item.
+     * A medical study or trial related to this entity.
      */
-    @NotNull public Builder description(@NotNull Description description) {
-      putValue("description", description);
+    @NotNull public Builder study(@NotNull MedicalStudy.Builder medicalStudy) {
+      putValue("study", medicalStudy.build());
       return this;
     }
     /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     * A medical guideline related to this entity.
      */
-    @NotNull public Builder sameAs(@NotNull String sameAs) {
-      putValue("sameAs", sameAs);
+    @NotNull public Builder guideline(@NotNull MedicalGuideline medicalGuideline) {
+      putValue("guideline", medicalGuideline);
       return this;
     }
     /**
-     * The name of the item.
+     * A medical guideline related to this entity.
      */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
+    @NotNull public Builder guideline(@NotNull MedicalGuideline.Builder medicalGuideline) {
+      putValue("guideline", medicalGuideline.build());
       return this;
     }
     /**
-     * An alias for the item.
+     * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
      */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
+    @NotNull public Builder recognizingAuthority(@NotNull Organization organization) {
+      putValue("recognizingAuthority", organization);
       return this;
     }
     /**
-     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
+     * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
      */
-    @NotNull public Builder image(@NotNull Image image) {
-      putValue("image", image);
+    @NotNull public Builder recognizingAuthority(@NotNull Organization.Builder organization) {
+      putValue("recognizingAuthority", organization.build());
       return this;
     }
     /**
@@ -377,24 +321,45 @@ public class MedicalEntity extends Thing {
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * URL of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
+    @NotNull public Builder additionalType(@NotNull String additionalType) {
+      putValue("additionalType", additionalType);
+      return this;
+    }
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     */
+    @NotNull public Builder sameAs(@NotNull String sameAs) {
+      putValue("sameAs", sameAs);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * The name of the item.
+     */
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -425,6 +390,27 @@ public class MedicalEntity extends Thing {
       putValue("subjectOf", event.build());
       return this;
     }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -433,24 +419,24 @@ public class MedicalEntity extends Thing {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("recognizingAuthority".equals(key) && value instanceof Organization) { this.recognizingAuthority((Organization)value); return; }
-      if ("recognizingAuthoritys".equals(key) && value instanceof Organization) { this.recognizingAuthority((Organization)value); return; }
-      if ("guideline".equals(key) && value instanceof MedicalGuideline) { this.guideline((MedicalGuideline)value); return; }
-      if ("guidelines".equals(key) && value instanceof MedicalGuideline) { this.guideline((MedicalGuideline)value); return; }
       if ("legalStatus".equals(key) && value instanceof DrugLegalStatus) { this.legalStatus((DrugLegalStatus)value); return; }
       if ("legalStatuss".equals(key) && value instanceof DrugLegalStatus) { this.legalStatus((DrugLegalStatus)value); return; }
       if ("legalStatus".equals(key) && value instanceof MedicalEnumeration) { this.legalStatus((MedicalEnumeration)value); return; }
       if ("legalStatuss".equals(key) && value instanceof MedicalEnumeration) { this.legalStatus((MedicalEnumeration)value); return; }
       if ("legalStatus".equals(key) && value instanceof String) { this.legalStatus((String)value); return; }
       if ("legalStatuss".equals(key) && value instanceof String) { this.legalStatus((String)value); return; }
-      if ("study".equals(key) && value instanceof MedicalStudy) { this.study((MedicalStudy)value); return; }
-      if ("studys".equals(key) && value instanceof MedicalStudy) { this.study((MedicalStudy)value); return; }
       if ("code".equals(key) && value instanceof MedicalCode) { this.code((MedicalCode)value); return; }
       if ("codes".equals(key) && value instanceof MedicalCode) { this.code((MedicalCode)value); return; }
-      if ("medicineSystem".equals(key) && value instanceof MedicineSystem) { this.medicineSystem((MedicineSystem)value); return; }
-      if ("medicineSystems".equals(key) && value instanceof MedicineSystem) { this.medicineSystem((MedicineSystem)value); return; }
       if ("relevantSpecialty".equals(key) && value instanceof MedicalSpecialty) { this.relevantSpecialty((MedicalSpecialty)value); return; }
       if ("relevantSpecialtys".equals(key) && value instanceof MedicalSpecialty) { this.relevantSpecialty((MedicalSpecialty)value); return; }
+      if ("medicineSystem".equals(key) && value instanceof MedicineSystem) { this.medicineSystem((MedicineSystem)value); return; }
+      if ("medicineSystems".equals(key) && value instanceof MedicineSystem) { this.medicineSystem((MedicineSystem)value); return; }
+      if ("study".equals(key) && value instanceof MedicalStudy) { this.study((MedicalStudy)value); return; }
+      if ("studys".equals(key) && value instanceof MedicalStudy) { this.study((MedicalStudy)value); return; }
+      if ("guideline".equals(key) && value instanceof MedicalGuideline) { this.guideline((MedicalGuideline)value); return; }
+      if ("guidelines".equals(key) && value instanceof MedicalGuideline) { this.guideline((MedicalGuideline)value); return; }
+      if ("recognizingAuthority".equals(key) && value instanceof Organization) { this.recognizingAuthority((Organization)value); return; }
+      if ("recognizingAuthoritys".equals(key) && value instanceof Organization) { this.recognizingAuthority((Organization)value); return; }
       super.fromMap(key, value);
     }
   }

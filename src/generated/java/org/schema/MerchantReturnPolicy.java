@@ -24,71 +24,54 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * A MerchantReturnPolicy provides information about product return policies associated with an &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Organization&quot;&gt;Organization&lt;/a&gt; or &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Product&quot;&gt;Product&lt;/a&gt;.Source: https://github.com/schemaorg/schemaorg/issues/2288
+ * A MerchantReturnPolicy provides information about product return policies associated with an [[Organization]], [[Product]], or [[Offer]].
  */
 public class MerchantReturnPolicy extends Intangible {
   /**
-   * The merchantReturnDays property indicates the number of days (from purchase) within which relevant merchant return policy is applicable.
+   * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
    */
-  @JsonIgnore public Integer getMerchantReturnDays() {
-    return (Integer) getValue("merchantReturnDays");
+  @JsonIgnore public OfferItemCondition getItemCondition() {
+    return (OfferItemCondition) getValue("itemCondition");
   }
   /**
-   * The merchantReturnDays property indicates the number of days (from purchase) within which relevant merchant return policy is applicable.
+   * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
    */
-  @JsonIgnore public Collection<Integer> getMerchantReturnDayss() {
-    final Object current = myData.get("merchantReturnDays");
+  @JsonIgnore public Collection<OfferItemCondition> getItemConditions() {
+    final Object current = myData.get("itemCondition");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+      return (Collection<OfferItemCondition>) current;
     }
-    return Arrays.asList((Integer) current);
+    return Arrays.asList((OfferItemCondition) current);
   }
   /**
-   * A refundType, from an enumerated list.
+   * Amount of shipping costs for product returns (for any reason). Applicable when property [[returnFees]] equals [[ReturnShippingFees]].
    */
-  @JsonIgnore public RefundTypeEnumeration getRefundType() {
-    return (RefundTypeEnumeration) getValue("refundType");
+  @JsonIgnore public MonetaryAmount getReturnShippingFeesAmount() {
+    return (MonetaryAmount) getValue("returnShippingFeesAmount");
   }
   /**
-   * A refundType, from an enumerated list.
+   * Amount of shipping costs for product returns (for any reason). Applicable when property [[returnFees]] equals [[ReturnShippingFees]].
    */
-  @JsonIgnore public Collection<RefundTypeEnumeration> getRefundTypes() {
-    final Object current = myData.get("refundType");
+  @JsonIgnore public Collection<MonetaryAmount> getReturnShippingFeesAmounts() {
+    final Object current = myData.get("returnShippingFeesAmount");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<RefundTypeEnumeration>) current;
+      return (Collection<MonetaryAmount>) current;
     }
-    return Arrays.asList((RefundTypeEnumeration) current);
+    return Arrays.asList((MonetaryAmount) current);
   }
   /**
-   * Are in-store returns offered?
+   * The type of return fees for returns of defect products.
    */
-  @JsonIgnore public Boolean getInStoreReturnsOffered() {
-    return (Boolean) getValue("inStoreReturnsOffered");
+  @JsonIgnore public ReturnFeesEnumeration getItemDefectReturnFees() {
+    return (ReturnFeesEnumeration) getValue("itemDefectReturnFees");
   }
   /**
-   * Are in-store returns offered?
+   * The type of return fees for returns of defect products.
    */
-  @JsonIgnore public Collection<Boolean> getInStoreReturnsOffereds() {
-    final Object current = myData.get("inStoreReturnsOffered");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Boolean>) current;
-    }
-    return Arrays.asList((Boolean) current);
-  }
-  /**
-   * Indicates (via enumerated options) the return fees policy for a MerchantReturnPolicy
-   */
-  @JsonIgnore public ReturnFeesEnumeration getReturnFees() {
-    return (ReturnFeesEnumeration) getValue("returnFees");
-  }
-  /**
-   * Indicates (via enumerated options) the return fees policy for a MerchantReturnPolicy
-   */
-  @JsonIgnore public Collection<ReturnFeesEnumeration> getReturnFeess() {
-    final Object current = myData.get("returnFees");
+  @JsonIgnore public Collection<ReturnFeesEnumeration> getItemDefectReturnFeess() {
+    final Object current = myData.get("itemDefectReturnFees");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<ReturnFeesEnumeration>) current;
@@ -96,13 +79,13 @@ public class MerchantReturnPolicy extends Intangible {
     return Arrays.asList((ReturnFeesEnumeration) current);
   }
   /**
-   * Indicates a Web page or service by URL, for product return.
+   * Specifies a Web page or service by URL, for product returns.
    */
   @JsonIgnore public String getMerchantReturnLink() {
     return (String) getValue("merchantReturnLink");
   }
   /**
-   * Indicates a Web page or service by URL, for product return.
+   * Specifies a Web page or service by URL, for product returns.
    */
   @JsonIgnore public Collection<String> getMerchantReturnLinks() {
     final Object current = myData.get("merchantReturnLink");
@@ -113,13 +96,304 @@ public class MerchantReturnPolicy extends Intangible {
     return Arrays.asList((String) current);
   }
   /**
-   * A returnPolicyCategory expresses at most one of several enumerated kinds of return.
+   * Use [[MonetaryAmount]] to specify a fixed restocking fee for product returns, or use [[Number]] to specify a percentage of the product price paid by the customer.
+   */
+  @JsonIgnore public MonetaryAmount getRestockingFeeMonetaryAmount() {
+    return (MonetaryAmount) getValue("restockingFee");
+  }
+  /**
+   * Use [[MonetaryAmount]] to specify a fixed restocking fee for product returns, or use [[Number]] to specify a percentage of the product price paid by the customer.
+   */
+  @JsonIgnore public Collection<MonetaryAmount> getRestockingFeeMonetaryAmounts() {
+    final Object current = myData.get("restockingFee");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<MonetaryAmount>) current;
+    }
+    return Arrays.asList((MonetaryAmount) current);
+  }
+  /**
+   * Use [[MonetaryAmount]] to specify a fixed restocking fee for product returns, or use [[Number]] to specify a percentage of the product price paid by the customer.
+   */
+  @JsonIgnore public Number getRestockingFeeNumber() {
+    return (Number) getValue("restockingFee");
+  }
+  /**
+   * Use [[MonetaryAmount]] to specify a fixed restocking fee for product returns, or use [[Number]] to specify a percentage of the product price paid by the customer.
+   */
+  @JsonIgnore public Collection<Number> getRestockingFeeNumbers() {
+    final Object current = myData.get("restockingFee");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Number>) current;
+    }
+    return Arrays.asList((Number) current);
+  }
+  /**
+   * The country where the product has to be sent to for returns, for example &quot;Ireland&quot; using the [[name]] property of [[Country]]. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1). Note that this can be different from the country where the product was originally shipped from or sent too.
+   */
+  @JsonIgnore public Country getReturnPolicyCountryCountry() {
+    return (Country) getValue("returnPolicyCountry");
+  }
+  /**
+   * The country where the product has to be sent to for returns, for example &quot;Ireland&quot; using the [[name]] property of [[Country]]. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1). Note that this can be different from the country where the product was originally shipped from or sent too.
+   */
+  @JsonIgnore public Collection<Country> getReturnPolicyCountryCountrys() {
+    final Object current = myData.get("returnPolicyCountry");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Country>) current;
+    }
+    return Arrays.asList((Country) current);
+  }
+  /**
+   * The country where the product has to be sent to for returns, for example &quot;Ireland&quot; using the [[name]] property of [[Country]]. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1). Note that this can be different from the country where the product was originally shipped from or sent too.
+   */
+  @JsonIgnore public String getReturnPolicyCountryString() {
+    return (String) getValue("returnPolicyCountry");
+  }
+  /**
+   * The country where the product has to be sent to for returns, for example &quot;Ireland&quot; using the [[name]] property of [[Country]]. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1). Note that this can be different from the country where the product was originally shipped from or sent too.
+   */
+  @JsonIgnore public Collection<String> getReturnPolicyCountryStrings() {
+    final Object current = myData.get("returnPolicyCountry");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * The method (from an enumeration) by which the customer obtains a return shipping label for a product returned for any reason.
+   */
+  @JsonIgnore public ReturnLabelSourceEnumeration getReturnLabelSource() {
+    return (ReturnLabelSourceEnumeration) getValue("returnLabelSource");
+  }
+  /**
+   * The method (from an enumeration) by which the customer obtains a return shipping label for a product returned for any reason.
+   */
+  @JsonIgnore public Collection<ReturnLabelSourceEnumeration> getReturnLabelSources() {
+    final Object current = myData.get("returnLabelSource");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<ReturnLabelSourceEnumeration>) current;
+    }
+    return Arrays.asList((ReturnLabelSourceEnumeration) current);
+  }
+  /**
+   * The type of return fees if the product is returned due to customer remorse.
+   */
+  @JsonIgnore public ReturnFeesEnumeration getCustomerRemorseReturnFees() {
+    return (ReturnFeesEnumeration) getValue("customerRemorseReturnFees");
+  }
+  /**
+   * The type of return fees if the product is returned due to customer remorse.
+   */
+  @JsonIgnore public Collection<ReturnFeesEnumeration> getCustomerRemorseReturnFeess() {
+    final Object current = myData.get("customerRemorseReturnFees");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<ReturnFeesEnumeration>) current;
+    }
+    return Arrays.asList((ReturnFeesEnumeration) current);
+  }
+  /**
+   * The method (from an enumeration) by which the customer obtains a return shipping label for a defect product.
+   */
+  @JsonIgnore public ReturnLabelSourceEnumeration getItemDefectReturnLabelSource() {
+    return (ReturnLabelSourceEnumeration) getValue("itemDefectReturnLabelSource");
+  }
+  /**
+   * The method (from an enumeration) by which the customer obtains a return shipping label for a defect product.
+   */
+  @JsonIgnore public Collection<ReturnLabelSourceEnumeration> getItemDefectReturnLabelSources() {
+    final Object current = myData.get("itemDefectReturnLabelSource");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<ReturnLabelSourceEnumeration>) current;
+    }
+    return Arrays.asList((ReturnLabelSourceEnumeration) current);
+  }
+  /**
+   * The method (from an enumeration) by which the customer obtains a return shipping label for a product returned due to customer remorse.
+   */
+  @JsonIgnore public ReturnLabelSourceEnumeration getCustomerRemorseReturnLabelSource() {
+    return (ReturnLabelSourceEnumeration) getValue("customerRemorseReturnLabelSource");
+  }
+  /**
+   * The method (from an enumeration) by which the customer obtains a return shipping label for a product returned due to customer remorse.
+   */
+  @JsonIgnore public Collection<ReturnLabelSourceEnumeration> getCustomerRemorseReturnLabelSources() {
+    final Object current = myData.get("customerRemorseReturnLabelSource");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<ReturnLabelSourceEnumeration>) current;
+    }
+    return Arrays.asList((ReturnLabelSourceEnumeration) current);
+  }
+  /**
+   * A refund type, from an enumerated list.
+   */
+  @JsonIgnore public RefundTypeEnumeration getRefundType() {
+    return (RefundTypeEnumeration) getValue("refundType");
+  }
+  /**
+   * A refund type, from an enumerated list.
+   */
+  @JsonIgnore public Collection<RefundTypeEnumeration> getRefundTypes() {
+    final Object current = myData.get("refundType");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<RefundTypeEnumeration>) current;
+    }
+    return Arrays.asList((RefundTypeEnumeration) current);
+  }
+  /**
+   * Are in-store returns offered? (for more advanced return methods use the [[returnMethod]] property)
+   */
+  @JsonIgnore public Boolean getInStoreReturnsOffered() {
+    return (Boolean) getValue("inStoreReturnsOffered");
+  }
+  /**
+   * Are in-store returns offered? (for more advanced return methods use the [[returnMethod]] property)
+   */
+  @JsonIgnore public Collection<Boolean> getInStoreReturnsOffereds() {
+    final Object current = myData.get("inStoreReturnsOffered");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Boolean>) current;
+    }
+    return Arrays.asList((Boolean) current);
+  }
+  /**
+   * The type of return method offered, specified from an enumeration.
+   */
+  @JsonIgnore public ReturnMethodEnumeration getReturnMethod() {
+    return (ReturnMethodEnumeration) getValue("returnMethod");
+  }
+  /**
+   * The type of return method offered, specified from an enumeration.
+   */
+  @JsonIgnore public Collection<ReturnMethodEnumeration> getReturnMethods() {
+    final Object current = myData.get("returnMethod");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<ReturnMethodEnumeration>) current;
+    }
+    return Arrays.asList((ReturnMethodEnumeration) current);
+  }
+  /**
+   * Seasonal override of a return policy.
+   */
+  @JsonIgnore public MerchantReturnPolicySeasonalOverride getReturnPolicySeasonalOverride() {
+    return (MerchantReturnPolicySeasonalOverride) getValue("returnPolicySeasonalOverride");
+  }
+  /**
+   * Seasonal override of a return policy.
+   */
+  @JsonIgnore public Collection<MerchantReturnPolicySeasonalOverride> getReturnPolicySeasonalOverrides() {
+    final Object current = myData.get("returnPolicySeasonalOverride");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<MerchantReturnPolicySeasonalOverride>) current;
+    }
+    return Arrays.asList((MerchantReturnPolicySeasonalOverride) current);
+  }
+  /**
+   * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.\n\nNote: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
+   * 
+   */
+  @JsonIgnore public PropertyValue getAdditionalProperty() {
+    return (PropertyValue) getValue("additionalProperty");
+  }
+  /**
+   * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.\n\nNote: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
+   * 
+   */
+  @JsonIgnore public Collection<PropertyValue> getAdditionalPropertys() {
+    final Object current = myData.get("additionalProperty");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<PropertyValue>) current;
+    }
+    return Arrays.asList((PropertyValue) current);
+  }
+  /**
+   * Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the [[returnPolicyCategory]] property is specified as [[MerchantReturnFiniteReturnWindow]].
+   */
+  @JsonIgnore public Integer getMerchantReturnDaysInteger() {
+    return (Integer) getValue("merchantReturnDays");
+  }
+  /**
+   * Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the [[returnPolicyCategory]] property is specified as [[MerchantReturnFiniteReturnWindow]].
+   */
+  @JsonIgnore public Collection<Integer> getMerchantReturnDaysIntegers() {
+    final Object current = myData.get("merchantReturnDays");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Integer>) current;
+    }
+    return Arrays.asList((Integer) current);
+  }
+  /**
+   * Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the [[returnPolicyCategory]] property is specified as [[MerchantReturnFiniteReturnWindow]].
+   */
+  @JsonIgnore public java.util.Date getMerchantReturnDaysDate() {
+    return (java.util.Date) getValue("merchantReturnDays");
+  }
+  /**
+   * Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the [[returnPolicyCategory]] property is specified as [[MerchantReturnFiniteReturnWindow]].
+   */
+  @JsonIgnore public Collection<java.util.Date> getMerchantReturnDaysDates() {
+    final Object current = myData.get("merchantReturnDays");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<java.util.Date>) current;
+    }
+    return Arrays.asList((java.util.Date) current);
+  }
+  /**
+   * The amount of shipping costs if a product is returned due to customer remorse. Applicable when property [[customerRemorseReturnFees]] equals [[ReturnShippingFees]].
+   */
+  @JsonIgnore public MonetaryAmount getCustomerRemorseReturnShippingFeesAmount() {
+    return (MonetaryAmount) getValue("customerRemorseReturnShippingFeesAmount");
+  }
+  /**
+   * The amount of shipping costs if a product is returned due to customer remorse. Applicable when property [[customerRemorseReturnFees]] equals [[ReturnShippingFees]].
+   */
+  @JsonIgnore public Collection<MonetaryAmount> getCustomerRemorseReturnShippingFeesAmounts() {
+    final Object current = myData.get("customerRemorseReturnShippingFeesAmount");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<MonetaryAmount>) current;
+    }
+    return Arrays.asList((MonetaryAmount) current);
+  }
+  /**
+   * The type of return fees for purchased products (for any return reason)
+   */
+  @JsonIgnore public ReturnFeesEnumeration getReturnFees() {
+    return (ReturnFeesEnumeration) getValue("returnFees");
+  }
+  /**
+   * The type of return fees for purchased products (for any return reason)
+   */
+  @JsonIgnore public Collection<ReturnFeesEnumeration> getReturnFeess() {
+    final Object current = myData.get("returnFees");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<ReturnFeesEnumeration>) current;
+    }
+    return Arrays.asList((ReturnFeesEnumeration) current);
+  }
+  /**
+   * Specifies an applicable return policy (from an enumeration).
    */
   @JsonIgnore public MerchantReturnEnumeration getReturnPolicyCategory() {
     return (MerchantReturnEnumeration) getValue("returnPolicyCategory");
   }
   /**
-   * A returnPolicyCategory expresses at most one of several enumerated kinds of return.
+   * Specifies an applicable return policy (from an enumeration).
    */
   @JsonIgnore public Collection<MerchantReturnEnumeration> getReturnPolicyCategorys() {
     final Object current = myData.get("returnPolicyCategory");
@@ -128,6 +402,23 @@ public class MerchantReturnPolicy extends Intangible {
       return (Collection<MerchantReturnEnumeration>) current;
     }
     return Arrays.asList((MerchantReturnEnumeration) current);
+  }
+  /**
+   * Amount of shipping costs for defect product returns. Applicable when property [[itemDefectReturnFees]] equals [[ReturnShippingFees]].
+   */
+  @JsonIgnore public MonetaryAmount getItemDefectReturnShippingFeesAmount() {
+    return (MonetaryAmount) getValue("itemDefectReturnShippingFeesAmount");
+  }
+  /**
+   * Amount of shipping costs for defect product returns. Applicable when property [[itemDefectReturnFees]] equals [[ReturnShippingFees]].
+   */
+  @JsonIgnore public Collection<MonetaryAmount> getItemDefectReturnShippingFeesAmounts() {
+    final Object current = myData.get("itemDefectReturnShippingFeesAmount");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<MonetaryAmount>) current;
+    }
+    return Arrays.asList((MonetaryAmount) current);
   }
   protected MerchantReturnPolicy(java.util.Map<String,Object> data) {
     super(data);
@@ -144,101 +435,215 @@ public class MerchantReturnPolicy extends Intangible {
       return new MerchantReturnPolicy(myData);
     }
     /**
-     * The merchantReturnDays property indicates the number of days (from purchase) within which relevant merchant return policy is applicable.
+     * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
      */
-    @NotNull public Builder merchantReturnDays(@NotNull Integer integer) {
-      putValue("merchantReturnDays", integer);
+    @NotNull public Builder itemCondition(@NotNull OfferItemCondition offerItemCondition) {
+      putValue("itemCondition", offerItemCondition);
       return this;
     }
     /**
-     * A refundType, from an enumerated list.
+     * Amount of shipping costs for product returns (for any reason). Applicable when property [[returnFees]] equals [[ReturnShippingFees]].
      */
-    @NotNull public Builder refundType(@NotNull RefundTypeEnumeration refundTypeEnumeration) {
-      putValue("refundType", refundTypeEnumeration);
+    @NotNull public Builder returnShippingFeesAmount(@NotNull MonetaryAmount monetaryAmount) {
+      putValue("returnShippingFeesAmount", monetaryAmount);
       return this;
     }
     /**
-     * Are in-store returns offered?
+     * Amount of shipping costs for product returns (for any reason). Applicable when property [[returnFees]] equals [[ReturnShippingFees]].
      */
-    @NotNull public Builder inStoreReturnsOffered(@NotNull Boolean inStoreReturnsOffered) {
-      putValue("inStoreReturnsOffered", inStoreReturnsOffered);
+    @NotNull public Builder returnShippingFeesAmount(@NotNull MonetaryAmount.Builder monetaryAmount) {
+      putValue("returnShippingFeesAmount", monetaryAmount.build());
       return this;
     }
     /**
-     * Indicates (via enumerated options) the return fees policy for a MerchantReturnPolicy
+     * The type of return fees for returns of defect products.
      */
-    @NotNull public Builder returnFees(@NotNull ReturnFeesEnumeration returnFeesEnumeration) {
-      putValue("returnFees", returnFeesEnumeration);
+    @NotNull public Builder itemDefectReturnFees(@NotNull ReturnFeesEnumeration returnFeesEnumeration) {
+      putValue("itemDefectReturnFees", returnFeesEnumeration);
       return this;
     }
     /**
-     * Indicates a Web page or service by URL, for product return.
+     * Specifies a Web page or service by URL, for product returns.
      */
     @NotNull public Builder merchantReturnLink(@NotNull String merchantReturnLink) {
       putValue("merchantReturnLink", merchantReturnLink);
       return this;
     }
     /**
-     * A returnPolicyCategory expresses at most one of several enumerated kinds of return.
+     * Use [[MonetaryAmount]] to specify a fixed restocking fee for product returns, or use [[Number]] to specify a percentage of the product price paid by the customer.
+     */
+    @NotNull public Builder restockingFee(@NotNull MonetaryAmount monetaryAmount) {
+      putValue("restockingFee", monetaryAmount);
+      return this;
+    }
+    /**
+     * Use [[MonetaryAmount]] to specify a fixed restocking fee for product returns, or use [[Number]] to specify a percentage of the product price paid by the customer.
+     */
+    @NotNull public Builder restockingFee(@NotNull MonetaryAmount.Builder monetaryAmount) {
+      putValue("restockingFee", monetaryAmount.build());
+      return this;
+    }
+    /**
+     * Use [[MonetaryAmount]] to specify a fixed restocking fee for product returns, or use [[Number]] to specify a percentage of the product price paid by the customer.
+     */
+    @NotNull public Builder restockingFee(@NotNull Number number) {
+      putValue("restockingFee", number);
+      return this;
+    }
+    /**
+     * The country where the product has to be sent to for returns, for example &quot;Ireland&quot; using the [[name]] property of [[Country]]. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1). Note that this can be different from the country where the product was originally shipped from or sent too.
+     */
+    @NotNull public Builder returnPolicyCountry(@NotNull Country country) {
+      putValue("returnPolicyCountry", country);
+      return this;
+    }
+    /**
+     * The country where the product has to be sent to for returns, for example &quot;Ireland&quot; using the [[name]] property of [[Country]]. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1). Note that this can be different from the country where the product was originally shipped from or sent too.
+     */
+    @NotNull public Builder returnPolicyCountry(@NotNull Country.Builder country) {
+      putValue("returnPolicyCountry", country.build());
+      return this;
+    }
+    /**
+     * The country where the product has to be sent to for returns, for example &quot;Ireland&quot; using the [[name]] property of [[Country]]. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1). Note that this can be different from the country where the product was originally shipped from or sent too.
+     */
+    @NotNull public Builder returnPolicyCountry(@NotNull String returnPolicyCountry) {
+      putValue("returnPolicyCountry", returnPolicyCountry);
+      return this;
+    }
+    /**
+     * The method (from an enumeration) by which the customer obtains a return shipping label for a product returned for any reason.
+     */
+    @NotNull public Builder returnLabelSource(@NotNull ReturnLabelSourceEnumeration returnLabelSourceEnumeration) {
+      putValue("returnLabelSource", returnLabelSourceEnumeration);
+      return this;
+    }
+    /**
+     * The type of return fees if the product is returned due to customer remorse.
+     */
+    @NotNull public Builder customerRemorseReturnFees(@NotNull ReturnFeesEnumeration returnFeesEnumeration) {
+      putValue("customerRemorseReturnFees", returnFeesEnumeration);
+      return this;
+    }
+    /**
+     * The method (from an enumeration) by which the customer obtains a return shipping label for a defect product.
+     */
+    @NotNull public Builder itemDefectReturnLabelSource(@NotNull ReturnLabelSourceEnumeration returnLabelSourceEnumeration) {
+      putValue("itemDefectReturnLabelSource", returnLabelSourceEnumeration);
+      return this;
+    }
+    /**
+     * The method (from an enumeration) by which the customer obtains a return shipping label for a product returned due to customer remorse.
+     */
+    @NotNull public Builder customerRemorseReturnLabelSource(@NotNull ReturnLabelSourceEnumeration returnLabelSourceEnumeration) {
+      putValue("customerRemorseReturnLabelSource", returnLabelSourceEnumeration);
+      return this;
+    }
+    /**
+     * A refund type, from an enumerated list.
+     */
+    @NotNull public Builder refundType(@NotNull RefundTypeEnumeration refundTypeEnumeration) {
+      putValue("refundType", refundTypeEnumeration);
+      return this;
+    }
+    /**
+     * Are in-store returns offered? (for more advanced return methods use the [[returnMethod]] property)
+     */
+    @NotNull public Builder inStoreReturnsOffered(@NotNull Boolean inStoreReturnsOffered) {
+      putValue("inStoreReturnsOffered", inStoreReturnsOffered);
+      return this;
+    }
+    /**
+     * The type of return method offered, specified from an enumeration.
+     */
+    @NotNull public Builder returnMethod(@NotNull ReturnMethodEnumeration returnMethodEnumeration) {
+      putValue("returnMethod", returnMethodEnumeration);
+      return this;
+    }
+    /**
+     * Seasonal override of a return policy.
+     */
+    @NotNull public Builder returnPolicySeasonalOverride(@NotNull MerchantReturnPolicySeasonalOverride merchantReturnPolicySeasonalOverride) {
+      putValue("returnPolicySeasonalOverride", merchantReturnPolicySeasonalOverride);
+      return this;
+    }
+    /**
+     * Seasonal override of a return policy.
+     */
+    @NotNull public Builder returnPolicySeasonalOverride(@NotNull MerchantReturnPolicySeasonalOverride.Builder merchantReturnPolicySeasonalOverride) {
+      putValue("returnPolicySeasonalOverride", merchantReturnPolicySeasonalOverride.build());
+      return this;
+    }
+    /**
+     * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.\n\nNote: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
+     * 
+     */
+    @NotNull public Builder additionalProperty(@NotNull PropertyValue propertyValue) {
+      putValue("additionalProperty", propertyValue);
+      return this;
+    }
+    /**
+     * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.\n\nNote: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
+     * 
+     */
+    @NotNull public Builder additionalProperty(@NotNull PropertyValue.Builder propertyValue) {
+      putValue("additionalProperty", propertyValue.build());
+      return this;
+    }
+    /**
+     * Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the [[returnPolicyCategory]] property is specified as [[MerchantReturnFiniteReturnWindow]].
+     */
+    @NotNull public Builder merchantReturnDays(@NotNull Integer integer) {
+      putValue("merchantReturnDays", integer);
+      return this;
+    }
+    /**
+     * Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the [[returnPolicyCategory]] property is specified as [[MerchantReturnFiniteReturnWindow]].
+     */
+    @NotNull public Builder merchantReturnDays(@NotNull java.util.Date date) {
+      putValue("merchantReturnDays", date);
+      return this;
+    }
+    /**
+     * The amount of shipping costs if a product is returned due to customer remorse. Applicable when property [[customerRemorseReturnFees]] equals [[ReturnShippingFees]].
+     */
+    @NotNull public Builder customerRemorseReturnShippingFeesAmount(@NotNull MonetaryAmount monetaryAmount) {
+      putValue("customerRemorseReturnShippingFeesAmount", monetaryAmount);
+      return this;
+    }
+    /**
+     * The amount of shipping costs if a product is returned due to customer remorse. Applicable when property [[customerRemorseReturnFees]] equals [[ReturnShippingFees]].
+     */
+    @NotNull public Builder customerRemorseReturnShippingFeesAmount(@NotNull MonetaryAmount.Builder monetaryAmount) {
+      putValue("customerRemorseReturnShippingFeesAmount", monetaryAmount.build());
+      return this;
+    }
+    /**
+     * The type of return fees for purchased products (for any return reason)
+     */
+    @NotNull public Builder returnFees(@NotNull ReturnFeesEnumeration returnFeesEnumeration) {
+      putValue("returnFees", returnFeesEnumeration);
+      return this;
+    }
+    /**
+     * Specifies an applicable return policy (from an enumeration).
      */
     @NotNull public Builder returnPolicyCategory(@NotNull MerchantReturnEnumeration merchantReturnEnumeration) {
       putValue("returnPolicyCategory", merchantReturnEnumeration);
       return this;
     }
     /**
-     * URL of the item.
+     * Amount of shipping costs for defect product returns. Applicable when property [[itemDefectReturnFees]] equals [[ReturnShippingFees]].
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
+    @NotNull public Builder itemDefectReturnShippingFeesAmount(@NotNull MonetaryAmount monetaryAmount) {
+      putValue("itemDefectReturnShippingFeesAmount", monetaryAmount);
       return this;
     }
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * Amount of shipping costs for defect product returns. Applicable when property [[itemDefectReturnFees]] equals [[ReturnShippingFees]].
      */
-    @NotNull public Builder additionalType(@NotNull String additionalType) {
-      putValue("additionalType", additionalType);
-      return this;
-    }
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     */
-    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
-      putValue("disambiguatingDescription", description);
-      return this;
-    }
-    /**
-     * A description of the item.
-     */
-    @NotNull public Builder description(@NotNull Description description) {
-      putValue("description", description);
-      return this;
-    }
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     */
-    @NotNull public Builder sameAs(@NotNull String sameAs) {
-      putValue("sameAs", sameAs);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
-      return this;
-    }
-    /**
-     * An alias for the item.
-     */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
-      return this;
-    }
-    /**
-     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
-     */
-    @NotNull public Builder image(@NotNull Image image) {
-      putValue("image", image);
+    @NotNull public Builder itemDefectReturnShippingFeesAmount(@NotNull MonetaryAmount.Builder monetaryAmount) {
+      putValue("itemDefectReturnShippingFeesAmount", monetaryAmount.build());
       return this;
     }
     /**
@@ -256,24 +661,45 @@ public class MerchantReturnPolicy extends Intangible {
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * URL of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
+    @NotNull public Builder additionalType(@NotNull String additionalType) {
+      putValue("additionalType", additionalType);
+      return this;
+    }
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     */
+    @NotNull public Builder sameAs(@NotNull String sameAs) {
+      putValue("sameAs", sameAs);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * The name of the item.
+     */
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -304,6 +730,27 @@ public class MerchantReturnPolicy extends Intangible {
       putValue("subjectOf", event.build());
       return this;
     }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -312,18 +759,52 @@ public class MerchantReturnPolicy extends Intangible {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("merchantReturnDays".equals(key) && value instanceof Integer) { this.merchantReturnDays((Integer)value); return; }
-      if ("merchantReturnDayss".equals(key) && value instanceof Integer) { this.merchantReturnDays((Integer)value); return; }
+      if ("itemCondition".equals(key) && value instanceof OfferItemCondition) { this.itemCondition((OfferItemCondition)value); return; }
+      if ("itemConditions".equals(key) && value instanceof OfferItemCondition) { this.itemCondition((OfferItemCondition)value); return; }
+      if ("returnShippingFeesAmount".equals(key) && value instanceof MonetaryAmount) { this.returnShippingFeesAmount((MonetaryAmount)value); return; }
+      if ("returnShippingFeesAmounts".equals(key) && value instanceof MonetaryAmount) { this.returnShippingFeesAmount((MonetaryAmount)value); return; }
+      if ("itemDefectReturnFees".equals(key) && value instanceof ReturnFeesEnumeration) { this.itemDefectReturnFees((ReturnFeesEnumeration)value); return; }
+      if ("itemDefectReturnFeess".equals(key) && value instanceof ReturnFeesEnumeration) { this.itemDefectReturnFees((ReturnFeesEnumeration)value); return; }
+      if ("merchantReturnLink".equals(key) && value instanceof String) { this.merchantReturnLink((String)value); return; }
+      if ("merchantReturnLinks".equals(key) && value instanceof String) { this.merchantReturnLink((String)value); return; }
+      if ("restockingFee".equals(key) && value instanceof MonetaryAmount) { this.restockingFee((MonetaryAmount)value); return; }
+      if ("restockingFees".equals(key) && value instanceof MonetaryAmount) { this.restockingFee((MonetaryAmount)value); return; }
+      if ("restockingFee".equals(key) && value instanceof Number) { this.restockingFee((Number)value); return; }
+      if ("restockingFees".equals(key) && value instanceof Number) { this.restockingFee((Number)value); return; }
+      if ("returnPolicyCountry".equals(key) && value instanceof Country) { this.returnPolicyCountry((Country)value); return; }
+      if ("returnPolicyCountrys".equals(key) && value instanceof Country) { this.returnPolicyCountry((Country)value); return; }
+      if ("returnPolicyCountry".equals(key) && value instanceof String) { this.returnPolicyCountry((String)value); return; }
+      if ("returnPolicyCountrys".equals(key) && value instanceof String) { this.returnPolicyCountry((String)value); return; }
+      if ("returnLabelSource".equals(key) && value instanceof ReturnLabelSourceEnumeration) { this.returnLabelSource((ReturnLabelSourceEnumeration)value); return; }
+      if ("returnLabelSources".equals(key) && value instanceof ReturnLabelSourceEnumeration) { this.returnLabelSource((ReturnLabelSourceEnumeration)value); return; }
+      if ("customerRemorseReturnFees".equals(key) && value instanceof ReturnFeesEnumeration) { this.customerRemorseReturnFees((ReturnFeesEnumeration)value); return; }
+      if ("customerRemorseReturnFeess".equals(key) && value instanceof ReturnFeesEnumeration) { this.customerRemorseReturnFees((ReturnFeesEnumeration)value); return; }
+      if ("itemDefectReturnLabelSource".equals(key) && value instanceof ReturnLabelSourceEnumeration) { this.itemDefectReturnLabelSource((ReturnLabelSourceEnumeration)value); return; }
+      if ("itemDefectReturnLabelSources".equals(key) && value instanceof ReturnLabelSourceEnumeration) { this.itemDefectReturnLabelSource((ReturnLabelSourceEnumeration)value); return; }
+      if ("customerRemorseReturnLabelSource".equals(key) && value instanceof ReturnLabelSourceEnumeration) { this.customerRemorseReturnLabelSource((ReturnLabelSourceEnumeration)value); return; }
+      if ("customerRemorseReturnLabelSources".equals(key) && value instanceof ReturnLabelSourceEnumeration) { this.customerRemorseReturnLabelSource((ReturnLabelSourceEnumeration)value); return; }
       if ("refundType".equals(key) && value instanceof RefundTypeEnumeration) { this.refundType((RefundTypeEnumeration)value); return; }
       if ("refundTypes".equals(key) && value instanceof RefundTypeEnumeration) { this.refundType((RefundTypeEnumeration)value); return; }
       if ("inStoreReturnsOffered".equals(key) && value instanceof Boolean) { this.inStoreReturnsOffered((Boolean)value); return; }
       if ("inStoreReturnsOffereds".equals(key) && value instanceof Boolean) { this.inStoreReturnsOffered((Boolean)value); return; }
+      if ("returnMethod".equals(key) && value instanceof ReturnMethodEnumeration) { this.returnMethod((ReturnMethodEnumeration)value); return; }
+      if ("returnMethods".equals(key) && value instanceof ReturnMethodEnumeration) { this.returnMethod((ReturnMethodEnumeration)value); return; }
+      if ("returnPolicySeasonalOverride".equals(key) && value instanceof MerchantReturnPolicySeasonalOverride) { this.returnPolicySeasonalOverride((MerchantReturnPolicySeasonalOverride)value); return; }
+      if ("returnPolicySeasonalOverrides".equals(key) && value instanceof MerchantReturnPolicySeasonalOverride) { this.returnPolicySeasonalOverride((MerchantReturnPolicySeasonalOverride)value); return; }
+      if ("additionalProperty".equals(key) && value instanceof PropertyValue) { this.additionalProperty((PropertyValue)value); return; }
+      if ("additionalPropertys".equals(key) && value instanceof PropertyValue) { this.additionalProperty((PropertyValue)value); return; }
+      if ("merchantReturnDays".equals(key) && value instanceof Integer) { this.merchantReturnDays((Integer)value); return; }
+      if ("merchantReturnDayss".equals(key) && value instanceof Integer) { this.merchantReturnDays((Integer)value); return; }
+      if ("merchantReturnDays".equals(key) && value instanceof java.util.Date) { this.merchantReturnDays((java.util.Date)value); return; }
+      if ("merchantReturnDayss".equals(key) && value instanceof java.util.Date) { this.merchantReturnDays((java.util.Date)value); return; }
+      if ("customerRemorseReturnShippingFeesAmount".equals(key) && value instanceof MonetaryAmount) { this.customerRemorseReturnShippingFeesAmount((MonetaryAmount)value); return; }
+      if ("customerRemorseReturnShippingFeesAmounts".equals(key) && value instanceof MonetaryAmount) { this.customerRemorseReturnShippingFeesAmount((MonetaryAmount)value); return; }
       if ("returnFees".equals(key) && value instanceof ReturnFeesEnumeration) { this.returnFees((ReturnFeesEnumeration)value); return; }
       if ("returnFeess".equals(key) && value instanceof ReturnFeesEnumeration) { this.returnFees((ReturnFeesEnumeration)value); return; }
-      if ("merchantReturnLink".equals(key) && value instanceof String) { this.merchantReturnLink((String)value); return; }
-      if ("merchantReturnLinks".equals(key) && value instanceof String) { this.merchantReturnLink((String)value); return; }
       if ("returnPolicyCategory".equals(key) && value instanceof MerchantReturnEnumeration) { this.returnPolicyCategory((MerchantReturnEnumeration)value); return; }
       if ("returnPolicyCategorys".equals(key) && value instanceof MerchantReturnEnumeration) { this.returnPolicyCategory((MerchantReturnEnumeration)value); return; }
+      if ("itemDefectReturnShippingFeesAmount".equals(key) && value instanceof MonetaryAmount) { this.itemDefectReturnShippingFeesAmount((MonetaryAmount)value); return; }
+      if ("itemDefectReturnShippingFeesAmounts".equals(key) && value instanceof MonetaryAmount) { this.itemDefectReturnShippingFeesAmount((MonetaryAmount)value); return; }
       super.fromMap(key, value);
     }
   }

@@ -21,7 +21,7 @@ package org.schema;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * ReturnFeesEnumeration expresses policies for return fees.
+ * Enumerates several kinds of policies for product return fees.
  */
 public enum ReturnFeesEnumeration {
   ;

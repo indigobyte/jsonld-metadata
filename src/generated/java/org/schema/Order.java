@@ -28,38 +28,21 @@ import java.util.*;
  */
 public class Order extends Intangible {
   /**
-   * The billing address for the order.
+   * The offer(s) -- e.g., product, quantity and price combinations -- included in the order.
    */
-  @JsonIgnore public PostalAddress getBillingAddress() {
-    return (PostalAddress) getValue("billingAddress");
+  @JsonIgnore public Offer getAcceptedOffer() {
+    return (Offer) getValue("acceptedOffer");
   }
   /**
-   * The billing address for the order.
+   * The offer(s) -- e.g., product, quantity and price combinations -- included in the order.
    */
-  @JsonIgnore public Collection<PostalAddress> getBillingAddresss() {
-    final Object current = myData.get("billingAddress");
+  @JsonIgnore public Collection<Offer> getAcceptedOffers() {
+    final Object current = myData.get("acceptedOffer");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<PostalAddress>) current;
+      return (Collection<Offer>) current;
     }
-    return Arrays.asList((PostalAddress) current);
-  }
-  /**
-   * An identifier for the method of payment used (e.g. the last 4 digits of the credit card).
-   */
-  @JsonIgnore public String getPaymentMethodId() {
-    return (String) getValue("paymentMethodId");
-  }
-  /**
-   * An identifier for the method of payment used (e.g. the last 4 digits of the credit card).
-   */
-  @JsonIgnore public Collection<String> getPaymentMethodIds() {
-    final Object current = myData.get("paymentMethodId");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
+    return Arrays.asList((Offer) current);
   }
   /**
    * The current status of the order.
@@ -79,139 +62,16 @@ public class Order extends Intangible {
     return Arrays.asList((OrderStatus) current);
   }
   /**
-   * The delivery of the parcel related to this order or order item.
+   * An identifier for the method of payment used (e.g. the last 4 digits of the credit card).
    */
-  @JsonIgnore public ParcelDelivery getOrderDelivery() {
-    return (ParcelDelivery) getValue("orderDelivery");
+  @JsonIgnore public String getPaymentMethodId() {
+    return (String) getValue("paymentMethodId");
   }
   /**
-   * The delivery of the parcel related to this order or order item.
+   * An identifier for the method of payment used (e.g. the last 4 digits of the credit card).
    */
-  @JsonIgnore public Collection<ParcelDelivery> getOrderDeliverys() {
-    final Object current = myData.get("orderDelivery");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<ParcelDelivery>) current;
-    }
-    return Arrays.asList((ParcelDelivery) current);
-  }
-  /**
-   * The order is being paid as part of the referenced Invoice.
-   */
-  @JsonIgnore public Invoice getPartOfInvoice() {
-    return (Invoice) getValue("partOfInvoice");
-  }
-  /**
-   * The order is being paid as part of the referenced Invoice.
-   */
-  @JsonIgnore public Collection<Invoice> getPartOfInvoices() {
-    final Object current = myData.get("partOfInvoice");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Invoice>) current;
-    }
-    return Arrays.asList((Invoice) current);
-  }
-  /**
-   * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
-   */
-  @JsonIgnore public Participant getSeller() {
-    return (Participant) getValue("seller");
-  }
-  /**
-   * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
-   */
-  @JsonIgnore public Collection<Participant> getSellers() {
-    final Object current = myData.get("seller");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Participant>) current;
-    }
-    return Arrays.asList((Participant) current);
-  }
-  /**
-   * The identifier of the transaction.
-   */
-  @JsonIgnore public Identifier getOrderNumber() {
-    return (Identifier) getValue("orderNumber");
-  }
-  /**
-   * The identifier of the transaction.
-   */
-  @JsonIgnore public Collection<Identifier> getOrderNumbers() {
-    final Object current = myData.get("orderNumber");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Identifier>) current;
-    }
-    return Arrays.asList((Identifier) current);
-  }
-  /**
-   * The name of the credit card or other method of payment for the order.
-   */
-  @JsonIgnore public PaymentMethod getPaymentMethod() {
-    return (PaymentMethod) getValue("paymentMethod");
-  }
-  /**
-   * The name of the credit card or other method of payment for the order.
-   */
-  @JsonIgnore public Collection<PaymentMethod> getPaymentMethods() {
-    final Object current = myData.get("paymentMethod");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<PaymentMethod>) current;
-    }
-    return Arrays.asList((PaymentMethod) current);
-  }
-  /**
-   * Any discount applied (to an Order).
-   */
-  @JsonIgnore public Number getDiscountNumber() {
-    return (Number) getValue("discount");
-  }
-  /**
-   * Any discount applied (to an Order).
-   */
-  @JsonIgnore public Collection<Number> getDiscountNumbers() {
-    final Object current = myData.get("discount");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Number>) current;
-    }
-    return Arrays.asList((Number) current);
-  }
-  /**
-   * Any discount applied (to an Order).
-   */
-  @JsonIgnore public String getDiscountString() {
-    return (String) getValue("discount");
-  }
-  /**
-   * Any discount applied (to an Order).
-   */
-  @JsonIgnore public Collection<String> getDiscountStrings() {
-    final Object current = myData.get("discount");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * The currency of the discount.&lt;br/&gt;&lt;br/&gt;
-   * 
-   * Use standard formats: &lt;a href=&quot;http://en.wikipedia.org/wiki/ISO_4217&quot;&gt;ISO 4217 currency format&lt;/a&gt; e.g. &quot;USD&quot;; &lt;a href=&quot;https://en.wikipedia.org/wiki/List_of_cryptocurrencies&quot;&gt;Ticker symbol&lt;/a&gt; for cryptocurrencies e.g. &quot;BTC&quot;; well known names for &lt;a href=&quot;https://en.wikipedia.org/wiki/Local_exchange_trading_system&quot;&gt;Local Exchange Tradings Systems&lt;/a&gt; (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;.
-   */
-  @JsonIgnore public String getDiscountCurrency() {
-    return (String) getValue("discountCurrency");
-  }
-  /**
-   * The currency of the discount.&lt;br/&gt;&lt;br/&gt;
-   * 
-   * Use standard formats: &lt;a href=&quot;http://en.wikipedia.org/wiki/ISO_4217&quot;&gt;ISO 4217 currency format&lt;/a&gt; e.g. &quot;USD&quot;; &lt;a href=&quot;https://en.wikipedia.org/wiki/List_of_cryptocurrencies&quot;&gt;Ticker symbol&lt;/a&gt; for cryptocurrencies e.g. &quot;BTC&quot;; well known names for &lt;a href=&quot;https://en.wikipedia.org/wiki/Local_exchange_trading_system&quot;&gt;Local Exchange Tradings Systems&lt;/a&gt; (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;.
-   */
-  @JsonIgnore public Collection<String> getDiscountCurrencys() {
-    final Object current = myData.get("discountCurrency");
+  @JsonIgnore public Collection<String> getPaymentMethodIds() {
+    final Object current = myData.get("paymentMethodId");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<String>) current;
@@ -253,21 +113,21 @@ public class Order extends Intangible {
     return Arrays.asList((Person) current);
   }
   /**
-   * Code used to redeem a discount.
+   * Was the offer accepted as a gift for someone other than the buyer.
    */
-  @JsonIgnore public String getDiscountCode() {
-    return (String) getValue("discountCode");
+  @JsonIgnore public Boolean getIsGift() {
+    return (Boolean) getValue("isGift");
   }
   /**
-   * Code used to redeem a discount.
+   * Was the offer accepted as a gift for someone other than the buyer.
    */
-  @JsonIgnore public Collection<String> getDiscountCodes() {
-    final Object current = myData.get("discountCode");
+  @JsonIgnore public Collection<Boolean> getIsGifts() {
+    final Object current = myData.get("isGift");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<String>) current;
+      return (Collection<Boolean>) current;
     }
-    return Arrays.asList((String) current);
+    return Arrays.asList((Boolean) current);
   }
   /**
    * The item ordered.
@@ -321,21 +181,38 @@ public class Order extends Intangible {
     return Arrays.asList((Service) current);
   }
   /**
-   * A number that confirms the given order or payment has been received.
+   * The URL for sending a payment.
    */
-  @JsonIgnore public Identifier getConfirmationNumber() {
-    return (Identifier) getValue("confirmationNumber");
+  @JsonIgnore public String getPaymentUrl() {
+    return (String) getValue("paymentUrl");
   }
   /**
-   * A number that confirms the given order or payment has been received.
+   * The URL for sending a payment.
    */
-  @JsonIgnore public Collection<Identifier> getConfirmationNumbers() {
-    final Object current = myData.get("confirmationNumber");
+  @JsonIgnore public Collection<String> getPaymentUrls() {
+    final Object current = myData.get("paymentUrl");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<Identifier>) current;
+      return (Collection<String>) current;
     }
-    return Arrays.asList((Identifier) current);
+    return Arrays.asList((String) current);
+  }
+  /**
+   * Code used to redeem a discount.
+   */
+  @JsonIgnore public String getDiscountCode() {
+    return (String) getValue("discountCode");
+  }
+  /**
+   * Code used to redeem a discount.
+   */
+  @JsonIgnore public Collection<String> getDiscountCodes() {
+    final Object current = myData.get("discountCode");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
   }
   /**
    * The date that payment is due.
@@ -355,6 +232,125 @@ public class Order extends Intangible {
     return Arrays.asList((java.util.Date) current);
   }
   /**
+   * The currency of the discount.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;.
+   */
+  @JsonIgnore public String getDiscountCurrency() {
+    return (String) getValue("discountCurrency");
+  }
+  /**
+   * The currency of the discount.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;.
+   */
+  @JsonIgnore public Collection<String> getDiscountCurrencys() {
+    final Object current = myData.get("discountCurrency");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * Any discount applied (to an Order).
+   */
+  @JsonIgnore public Integer getDiscountInteger() {
+    return (Integer) getValue("discount");
+  }
+  /**
+   * Any discount applied (to an Order).
+   */
+  @JsonIgnore public Collection<Integer> getDiscountIntegers() {
+    final Object current = myData.get("discount");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Integer>) current;
+    }
+    return Arrays.asList((Integer) current);
+  }
+  /**
+   * Any discount applied (to an Order).
+   */
+  @JsonIgnore public Long getDiscountLong() {
+    return (Long) getValue("discount");
+  }
+  /**
+   * Any discount applied (to an Order).
+   */
+  @JsonIgnore public Collection<Long> getDiscountLongs() {
+    final Object current = myData.get("discount");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Long>) current;
+    }
+    return Arrays.asList((Long) current);
+  }
+  /**
+   * Any discount applied (to an Order).
+   */
+  @JsonIgnore public Float getDiscountFloat() {
+    return (Float) getValue("discount");
+  }
+  /**
+   * Any discount applied (to an Order).
+   */
+  @JsonIgnore public Collection<Float> getDiscountFloats() {
+    final Object current = myData.get("discount");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Float>) current;
+    }
+    return Arrays.asList((Float) current);
+  }
+  /**
+   * Any discount applied (to an Order).
+   */
+  @JsonIgnore public Double getDiscountDouble() {
+    return (Double) getValue("discount");
+  }
+  /**
+   * Any discount applied (to an Order).
+   */
+  @JsonIgnore public Collection<Double> getDiscountDoubles() {
+    final Object current = myData.get("discount");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Double>) current;
+    }
+    return Arrays.asList((Double) current);
+  }
+  /**
+   * Any discount applied (to an Order).
+   */
+  @JsonIgnore public String getDiscountString() {
+    return (String) getValue("discount");
+  }
+  /**
+   * Any discount applied (to an Order).
+   */
+  @JsonIgnore public Collection<String> getDiscountStrings() {
+    final Object current = myData.get("discount");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * The delivery of the parcel related to this order or order item.
+   */
+  @JsonIgnore public ParcelDelivery getOrderDelivery() {
+    return (ParcelDelivery) getValue("orderDelivery");
+  }
+  /**
+   * The delivery of the parcel related to this order or order item.
+   */
+  @JsonIgnore public Collection<ParcelDelivery> getOrderDeliverys() {
+    final Object current = myData.get("orderDelivery");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<ParcelDelivery>) current;
+    }
+    return Arrays.asList((ParcelDelivery) current);
+  }
+  /**
    * Date order was placed.
    */
   @JsonIgnore public java.util.Date getOrderDate() {
@@ -372,21 +368,106 @@ public class Order extends Intangible {
     return Arrays.asList((java.util.Date) current);
   }
   /**
-   * The offer(s) -- e.g., product, quantity and price combinations -- included in the order.
+   * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
    */
-  @JsonIgnore public Offer getAcceptedOffer() {
-    return (Offer) getValue("acceptedOffer");
+  @JsonIgnore public Participant getSeller() {
+    return (Participant) getValue("seller");
   }
   /**
-   * The offer(s) -- e.g., product, quantity and price combinations -- included in the order.
+   * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
    */
-  @JsonIgnore public Collection<Offer> getAcceptedOffers() {
-    final Object current = myData.get("acceptedOffer");
+  @JsonIgnore public Collection<Participant> getSellers() {
+    final Object current = myData.get("seller");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<Offer>) current;
+      return (Collection<Participant>) current;
     }
-    return Arrays.asList((Offer) current);
+    return Arrays.asList((Participant) current);
+  }
+  /**
+   * The order is being paid as part of the referenced Invoice.
+   */
+  @JsonIgnore public Invoice getPartOfInvoice() {
+    return (Invoice) getValue("partOfInvoice");
+  }
+  /**
+   * The order is being paid as part of the referenced Invoice.
+   */
+  @JsonIgnore public Collection<Invoice> getPartOfInvoices() {
+    final Object current = myData.get("partOfInvoice");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Invoice>) current;
+    }
+    return Arrays.asList((Invoice) current);
+  }
+  /**
+   * A number that confirms the given order or payment has been received.
+   */
+  @JsonIgnore public String getConfirmationNumber() {
+    return (String) getValue("confirmationNumber");
+  }
+  /**
+   * A number that confirms the given order or payment has been received.
+   */
+  @JsonIgnore public Collection<String> getConfirmationNumbers() {
+    final Object current = myData.get("confirmationNumber");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * The billing address for the order.
+   */
+  @JsonIgnore public PostalAddress getBillingAddress() {
+    return (PostalAddress) getValue("billingAddress");
+  }
+  /**
+   * The billing address for the order.
+   */
+  @JsonIgnore public Collection<PostalAddress> getBillingAddresss() {
+    final Object current = myData.get("billingAddress");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<PostalAddress>) current;
+    }
+    return Arrays.asList((PostalAddress) current);
+  }
+  /**
+   * The name of the credit card or other method of payment for the order.
+   */
+  @JsonIgnore public PaymentMethod getPaymentMethod() {
+    return (PaymentMethod) getValue("paymentMethod");
+  }
+  /**
+   * The name of the credit card or other method of payment for the order.
+   */
+  @JsonIgnore public Collection<PaymentMethod> getPaymentMethods() {
+    final Object current = myData.get("paymentMethod");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<PaymentMethod>) current;
+    }
+    return Arrays.asList((PaymentMethod) current);
+  }
+  /**
+   * The identifier of the transaction.
+   */
+  @JsonIgnore public Identifier getOrderNumber() {
+    return (Identifier) getValue("orderNumber");
+  }
+  /**
+   * The identifier of the transaction.
+   */
+  @JsonIgnore public Collection<Identifier> getOrderNumbers() {
+    final Object current = myData.get("orderNumber");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Identifier>) current;
+    }
+    return Arrays.asList((Identifier) current);
   }
   /**
    * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
@@ -422,40 +503,6 @@ public class Order extends Intangible {
     }
     return Arrays.asList((Person) current);
   }
-  /**
-   * Was the offer accepted as a gift for someone other than the buyer.
-   */
-  @JsonIgnore public Boolean getIsGift() {
-    return (Boolean) getValue("isGift");
-  }
-  /**
-   * Was the offer accepted as a gift for someone other than the buyer.
-   */
-  @JsonIgnore public Collection<Boolean> getIsGifts() {
-    final Object current = myData.get("isGift");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Boolean>) current;
-    }
-    return Arrays.asList((Boolean) current);
-  }
-  /**
-   * The URL for sending a payment.
-   */
-  @JsonIgnore public String getPaymentUrl() {
-    return (String) getValue("paymentUrl");
-  }
-  /**
-   * The URL for sending a payment.
-   */
-  @JsonIgnore public Collection<String> getPaymentUrls() {
-    final Object current = myData.get("paymentUrl");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
   protected Order(java.util.Map<String,Object> data) {
     super(data);
   }
@@ -471,24 +518,17 @@ public class Order extends Intangible {
       return new Order(myData);
     }
     /**
-     * The billing address for the order.
+     * The offer(s) -- e.g., product, quantity and price combinations -- included in the order.
      */
-    @NotNull public Builder billingAddress(@NotNull PostalAddress postalAddress) {
-      putValue("billingAddress", postalAddress);
+    @NotNull public Builder acceptedOffer(@NotNull Offer offer) {
+      putValue("acceptedOffer", offer);
       return this;
     }
     /**
-     * The billing address for the order.
+     * The offer(s) -- e.g., product, quantity and price combinations -- included in the order.
      */
-    @NotNull public Builder billingAddress(@NotNull PostalAddress.Builder postalAddress) {
-      putValue("billingAddress", postalAddress.build());
-      return this;
-    }
-    /**
-     * An identifier for the method of payment used (e.g. the last 4 digits of the credit card).
-     */
-    @NotNull public Builder paymentMethodId(@NotNull String paymentMethodId) {
-      putValue("paymentMethodId", paymentMethodId);
+    @NotNull public Builder acceptedOffer(@NotNull Offer.Builder offer) {
+      putValue("acceptedOffer", offer.build());
       return this;
     }
     /**
@@ -499,75 +539,17 @@ public class Order extends Intangible {
       return this;
     }
     /**
-     * The delivery of the parcel related to this order or order item.
+     * The current status of the order.
      */
-    @NotNull public Builder orderDelivery(@NotNull ParcelDelivery parcelDelivery) {
-      putValue("orderDelivery", parcelDelivery);
+    @NotNull public Builder orderStatus(@NotNull OrderStatus.Builder orderStatus) {
+      putValue("orderStatus", orderStatus.build());
       return this;
     }
     /**
-     * The delivery of the parcel related to this order or order item.
+     * An identifier for the method of payment used (e.g. the last 4 digits of the credit card).
      */
-    @NotNull public Builder orderDelivery(@NotNull ParcelDelivery.Builder parcelDelivery) {
-      putValue("orderDelivery", parcelDelivery.build());
-      return this;
-    }
-    /**
-     * The order is being paid as part of the referenced Invoice.
-     */
-    @NotNull public Builder partOfInvoice(@NotNull Invoice invoice) {
-      putValue("partOfInvoice", invoice);
-      return this;
-    }
-    /**
-     * The order is being paid as part of the referenced Invoice.
-     */
-    @NotNull public Builder partOfInvoice(@NotNull Invoice.Builder invoice) {
-      putValue("partOfInvoice", invoice.build());
-      return this;
-    }
-    /**
-     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
-     */
-    @NotNull public Builder seller(@NotNull Participant participant) {
-      putValue("seller", participant);
-      return this;
-    }
-    /**
-     * The identifier of the transaction.
-     */
-    @NotNull public Builder orderNumber(@NotNull Identifier identifier) {
-      putValue("orderNumber", identifier);
-      return this;
-    }
-    /**
-     * The name of the credit card or other method of payment for the order.
-     */
-    @NotNull public Builder paymentMethod(@NotNull PaymentMethod paymentMethod) {
-      putValue("paymentMethod", paymentMethod);
-      return this;
-    }
-    /**
-     * Any discount applied (to an Order).
-     */
-    @NotNull public Builder discount(@NotNull Number number) {
-      putValue("discount", number);
-      return this;
-    }
-    /**
-     * Any discount applied (to an Order).
-     */
-    @NotNull public Builder discount(@NotNull String discount) {
-      putValue("discount", discount);
-      return this;
-    }
-    /**
-     * The currency of the discount.&lt;br/&gt;&lt;br/&gt;
-     * 
-     * Use standard formats: &lt;a href=&quot;http://en.wikipedia.org/wiki/ISO_4217&quot;&gt;ISO 4217 currency format&lt;/a&gt; e.g. &quot;USD&quot;; &lt;a href=&quot;https://en.wikipedia.org/wiki/List_of_cryptocurrencies&quot;&gt;Ticker symbol&lt;/a&gt; for cryptocurrencies e.g. &quot;BTC&quot;; well known names for &lt;a href=&quot;https://en.wikipedia.org/wiki/Local_exchange_trading_system&quot;&gt;Local Exchange Tradings Systems&lt;/a&gt; (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;.
-     */
-    @NotNull public Builder discountCurrency(@NotNull String discountCurrency) {
-      putValue("discountCurrency", discountCurrency);
+    @NotNull public Builder paymentMethodId(@NotNull String paymentMethodId) {
+      putValue("paymentMethodId", paymentMethodId);
       return this;
     }
     /**
@@ -599,10 +581,10 @@ public class Order extends Intangible {
       return this;
     }
     /**
-     * Code used to redeem a discount.
+     * Was the offer accepted as a gift for someone other than the buyer.
      */
-    @NotNull public Builder discountCode(@NotNull String discountCode) {
-      putValue("discountCode", discountCode);
+    @NotNull public Builder isGift(@NotNull Boolean isGift) {
+      putValue("isGift", isGift);
       return this;
     }
     /**
@@ -648,10 +630,17 @@ public class Order extends Intangible {
       return this;
     }
     /**
-     * A number that confirms the given order or payment has been received.
+     * The URL for sending a payment.
      */
-    @NotNull public Builder confirmationNumber(@NotNull Identifier identifier) {
-      putValue("confirmationNumber", identifier);
+    @NotNull public Builder paymentUrl(@NotNull String paymentUrl) {
+      putValue("paymentUrl", paymentUrl);
+      return this;
+    }
+    /**
+     * Code used to redeem a discount.
+     */
+    @NotNull public Builder discountCode(@NotNull String discountCode) {
+      putValue("discountCode", discountCode);
       return this;
     }
     /**
@@ -662,6 +651,62 @@ public class Order extends Intangible {
       return this;
     }
     /**
+     * The currency of the discount.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;.
+     */
+    @NotNull public Builder discountCurrency(@NotNull String discountCurrency) {
+      putValue("discountCurrency", discountCurrency);
+      return this;
+    }
+    /**
+     * Any discount applied (to an Order).
+     */
+    @NotNull public Builder discount(@NotNull Integer integer) {
+      putValue("discount", integer);
+      return this;
+    }
+    /**
+     * Any discount applied (to an Order).
+     */
+    @NotNull public Builder discount(@NotNull Long discount) {
+      putValue("discount", discount);
+      return this;
+    }
+    /**
+     * Any discount applied (to an Order).
+     */
+    @NotNull public Builder discount(@NotNull Float discount) {
+      putValue("discount", discount);
+      return this;
+    }
+    /**
+     * Any discount applied (to an Order).
+     */
+    @NotNull public Builder discount(@NotNull Double discount) {
+      putValue("discount", discount);
+      return this;
+    }
+    /**
+     * Any discount applied (to an Order).
+     */
+    @NotNull public Builder discount(@NotNull String discount) {
+      putValue("discount", discount);
+      return this;
+    }
+    /**
+     * The delivery of the parcel related to this order or order item.
+     */
+    @NotNull public Builder orderDelivery(@NotNull ParcelDelivery parcelDelivery) {
+      putValue("orderDelivery", parcelDelivery);
+      return this;
+    }
+    /**
+     * The delivery of the parcel related to this order or order item.
+     */
+    @NotNull public Builder orderDelivery(@NotNull ParcelDelivery.Builder parcelDelivery) {
+      putValue("orderDelivery", parcelDelivery.build());
+      return this;
+    }
+    /**
      * Date order was placed.
      */
     @NotNull public Builder orderDate(@NotNull java.util.Date date) {
@@ -669,17 +714,59 @@ public class Order extends Intangible {
       return this;
     }
     /**
-     * The offer(s) -- e.g., product, quantity and price combinations -- included in the order.
+     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
      */
-    @NotNull public Builder acceptedOffer(@NotNull Offer offer) {
-      putValue("acceptedOffer", offer);
+    @NotNull public Builder seller(@NotNull Participant participant) {
+      putValue("seller", participant);
       return this;
     }
     /**
-     * The offer(s) -- e.g., product, quantity and price combinations -- included in the order.
+     * The order is being paid as part of the referenced Invoice.
      */
-    @NotNull public Builder acceptedOffer(@NotNull Offer.Builder offer) {
-      putValue("acceptedOffer", offer.build());
+    @NotNull public Builder partOfInvoice(@NotNull Invoice invoice) {
+      putValue("partOfInvoice", invoice);
+      return this;
+    }
+    /**
+     * The order is being paid as part of the referenced Invoice.
+     */
+    @NotNull public Builder partOfInvoice(@NotNull Invoice.Builder invoice) {
+      putValue("partOfInvoice", invoice.build());
+      return this;
+    }
+    /**
+     * A number that confirms the given order or payment has been received.
+     */
+    @NotNull public Builder confirmationNumber(@NotNull String confirmationNumber) {
+      putValue("confirmationNumber", confirmationNumber);
+      return this;
+    }
+    /**
+     * The billing address for the order.
+     */
+    @NotNull public Builder billingAddress(@NotNull PostalAddress postalAddress) {
+      putValue("billingAddress", postalAddress);
+      return this;
+    }
+    /**
+     * The billing address for the order.
+     */
+    @NotNull public Builder billingAddress(@NotNull PostalAddress.Builder postalAddress) {
+      putValue("billingAddress", postalAddress.build());
+      return this;
+    }
+    /**
+     * The name of the credit card or other method of payment for the order.
+     */
+    @NotNull public Builder paymentMethod(@NotNull PaymentMethod paymentMethod) {
+      putValue("paymentMethod", paymentMethod);
+      return this;
+    }
+    /**
+     * The identifier of the transaction.
+     */
+    @NotNull public Builder orderNumber(@NotNull Identifier identifier) {
+      putValue("orderNumber", identifier);
       return this;
     }
     /**
@@ -711,17 +798,24 @@ public class Order extends Intangible {
       return this;
     }
     /**
-     * Was the offer accepted as a gift for someone other than the buyer.
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
-    @NotNull public Builder isGift(@NotNull Boolean isGift) {
-      putValue("isGift", isGift);
+    @NotNull public Builder potentialAction(@NotNull Action action) {
+      putValue("potentialAction", action);
       return this;
     }
     /**
-     * The URL for sending a payment.
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
-    @NotNull public Builder paymentUrl(@NotNull String paymentUrl) {
-      putValue("paymentUrl", paymentUrl);
+    @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
+      putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     */
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
@@ -739,31 +833,10 @@ public class Order extends Intangible {
       return this;
     }
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     */
-    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
-      putValue("disambiguatingDescription", description);
-      return this;
-    }
-    /**
-     * A description of the item.
-     */
-    @NotNull public Builder description(@NotNull Description description) {
-      putValue("description", description);
-      return this;
-    }
-    /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      */
     @NotNull public Builder sameAs(@NotNull String sameAs) {
       putValue("sameAs", sameAs);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
       return this;
     }
     /**
@@ -774,45 +847,10 @@ public class Order extends Intangible {
       return this;
     }
     /**
-     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
+     * The name of the item.
      */
-    @NotNull public Builder image(@NotNull Image image) {
-      putValue("image", image);
-      return this;
-    }
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     */
-    @NotNull public Builder potentialAction(@NotNull Action action) {
-      putValue("potentialAction", action);
-      return this;
-    }
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     */
-    @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
-      putValue("potentialAction", action.build());
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -843,6 +881,27 @@ public class Order extends Intangible {
       putValue("subjectOf", event.build());
       return this;
     }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -851,56 +910,62 @@ public class Order extends Intangible {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("billingAddress".equals(key) && value instanceof PostalAddress) { this.billingAddress((PostalAddress)value); return; }
-      if ("billingAddresss".equals(key) && value instanceof PostalAddress) { this.billingAddress((PostalAddress)value); return; }
-      if ("paymentMethodId".equals(key) && value instanceof String) { this.paymentMethodId((String)value); return; }
-      if ("paymentMethodIds".equals(key) && value instanceof String) { this.paymentMethodId((String)value); return; }
+      if ("acceptedOffer".equals(key) && value instanceof Offer) { this.acceptedOffer((Offer)value); return; }
+      if ("acceptedOffers".equals(key) && value instanceof Offer) { this.acceptedOffer((Offer)value); return; }
       if ("orderStatus".equals(key) && value instanceof OrderStatus) { this.orderStatus((OrderStatus)value); return; }
       if ("orderStatuss".equals(key) && value instanceof OrderStatus) { this.orderStatus((OrderStatus)value); return; }
-      if ("orderDelivery".equals(key) && value instanceof ParcelDelivery) { this.orderDelivery((ParcelDelivery)value); return; }
-      if ("orderDeliverys".equals(key) && value instanceof ParcelDelivery) { this.orderDelivery((ParcelDelivery)value); return; }
-      if ("partOfInvoice".equals(key) && value instanceof Invoice) { this.partOfInvoice((Invoice)value); return; }
-      if ("partOfInvoices".equals(key) && value instanceof Invoice) { this.partOfInvoice((Invoice)value); return; }
-      if ("seller".equals(key) && value instanceof Participant) { this.seller((Participant)value); return; }
-      if ("sellers".equals(key) && value instanceof Participant) { this.seller((Participant)value); return; }
-      if ("orderNumber".equals(key) && value instanceof Identifier) { this.orderNumber((Identifier)value); return; }
-      if ("orderNumbers".equals(key) && value instanceof Identifier) { this.orderNumber((Identifier)value); return; }
-      if ("paymentMethod".equals(key) && value instanceof PaymentMethod) { this.paymentMethod((PaymentMethod)value); return; }
-      if ("paymentMethods".equals(key) && value instanceof PaymentMethod) { this.paymentMethod((PaymentMethod)value); return; }
-      if ("discount".equals(key) && value instanceof Number) { this.discount((Number)value); return; }
-      if ("discounts".equals(key) && value instanceof Number) { this.discount((Number)value); return; }
-      if ("discount".equals(key) && value instanceof String) { this.discount((String)value); return; }
-      if ("discounts".equals(key) && value instanceof String) { this.discount((String)value); return; }
-      if ("discountCurrency".equals(key) && value instanceof String) { this.discountCurrency((String)value); return; }
-      if ("discountCurrencys".equals(key) && value instanceof String) { this.discountCurrency((String)value); return; }
+      if ("paymentMethodId".equals(key) && value instanceof String) { this.paymentMethodId((String)value); return; }
+      if ("paymentMethodIds".equals(key) && value instanceof String) { this.paymentMethodId((String)value); return; }
       if ("customer".equals(key) && value instanceof Organization) { this.customer((Organization)value); return; }
       if ("customers".equals(key) && value instanceof Organization) { this.customer((Organization)value); return; }
       if ("customer".equals(key) && value instanceof Person) { this.customer((Person)value); return; }
       if ("customers".equals(key) && value instanceof Person) { this.customer((Person)value); return; }
-      if ("discountCode".equals(key) && value instanceof String) { this.discountCode((String)value); return; }
-      if ("discountCodes".equals(key) && value instanceof String) { this.discountCode((String)value); return; }
+      if ("isGift".equals(key) && value instanceof Boolean) { this.isGift((Boolean)value); return; }
+      if ("isGifts".equals(key) && value instanceof Boolean) { this.isGift((Boolean)value); return; }
       if ("orderedItem".equals(key) && value instanceof OrderItem) { this.orderedItem((OrderItem)value); return; }
       if ("orderedItems".equals(key) && value instanceof OrderItem) { this.orderedItem((OrderItem)value); return; }
       if ("orderedItem".equals(key) && value instanceof Product) { this.orderedItem((Product)value); return; }
       if ("orderedItems".equals(key) && value instanceof Product) { this.orderedItem((Product)value); return; }
       if ("orderedItem".equals(key) && value instanceof Service) { this.orderedItem((Service)value); return; }
       if ("orderedItems".equals(key) && value instanceof Service) { this.orderedItem((Service)value); return; }
-      if ("confirmationNumber".equals(key) && value instanceof Identifier) { this.confirmationNumber((Identifier)value); return; }
-      if ("confirmationNumbers".equals(key) && value instanceof Identifier) { this.confirmationNumber((Identifier)value); return; }
+      if ("paymentUrl".equals(key) && value instanceof String) { this.paymentUrl((String)value); return; }
+      if ("paymentUrls".equals(key) && value instanceof String) { this.paymentUrl((String)value); return; }
+      if ("discountCode".equals(key) && value instanceof String) { this.discountCode((String)value); return; }
+      if ("discountCodes".equals(key) && value instanceof String) { this.discountCode((String)value); return; }
       if ("paymentDueDate".equals(key) && value instanceof java.util.Date) { this.paymentDueDate((java.util.Date)value); return; }
       if ("paymentDueDates".equals(key) && value instanceof java.util.Date) { this.paymentDueDate((java.util.Date)value); return; }
+      if ("discountCurrency".equals(key) && value instanceof String) { this.discountCurrency((String)value); return; }
+      if ("discountCurrencys".equals(key) && value instanceof String) { this.discountCurrency((String)value); return; }
+      if ("discount".equals(key) && value instanceof Integer) { this.discount((Integer)value); return; }
+      if ("discounts".equals(key) && value instanceof Integer) { this.discount((Integer)value); return; }
+      if ("discount".equals(key) && value instanceof Long) { this.discount((Long)value); return; }
+      if ("discounts".equals(key) && value instanceof Long) { this.discount((Long)value); return; }
+      if ("discount".equals(key) && value instanceof Float) { this.discount((Float)value); return; }
+      if ("discounts".equals(key) && value instanceof Float) { this.discount((Float)value); return; }
+      if ("discount".equals(key) && value instanceof Double) { this.discount((Double)value); return; }
+      if ("discounts".equals(key) && value instanceof Double) { this.discount((Double)value); return; }
+      if ("discount".equals(key) && value instanceof String) { this.discount((String)value); return; }
+      if ("discounts".equals(key) && value instanceof String) { this.discount((String)value); return; }
+      if ("orderDelivery".equals(key) && value instanceof ParcelDelivery) { this.orderDelivery((ParcelDelivery)value); return; }
+      if ("orderDeliverys".equals(key) && value instanceof ParcelDelivery) { this.orderDelivery((ParcelDelivery)value); return; }
       if ("orderDate".equals(key) && value instanceof java.util.Date) { this.orderDate((java.util.Date)value); return; }
       if ("orderDates".equals(key) && value instanceof java.util.Date) { this.orderDate((java.util.Date)value); return; }
-      if ("acceptedOffer".equals(key) && value instanceof Offer) { this.acceptedOffer((Offer)value); return; }
-      if ("acceptedOffers".equals(key) && value instanceof Offer) { this.acceptedOffer((Offer)value); return; }
+      if ("seller".equals(key) && value instanceof Participant) { this.seller((Participant)value); return; }
+      if ("sellers".equals(key) && value instanceof Participant) { this.seller((Participant)value); return; }
+      if ("partOfInvoice".equals(key) && value instanceof Invoice) { this.partOfInvoice((Invoice)value); return; }
+      if ("partOfInvoices".equals(key) && value instanceof Invoice) { this.partOfInvoice((Invoice)value); return; }
+      if ("confirmationNumber".equals(key) && value instanceof String) { this.confirmationNumber((String)value); return; }
+      if ("confirmationNumbers".equals(key) && value instanceof String) { this.confirmationNumber((String)value); return; }
+      if ("billingAddress".equals(key) && value instanceof PostalAddress) { this.billingAddress((PostalAddress)value); return; }
+      if ("billingAddresss".equals(key) && value instanceof PostalAddress) { this.billingAddress((PostalAddress)value); return; }
+      if ("paymentMethod".equals(key) && value instanceof PaymentMethod) { this.paymentMethod((PaymentMethod)value); return; }
+      if ("paymentMethods".equals(key) && value instanceof PaymentMethod) { this.paymentMethod((PaymentMethod)value); return; }
+      if ("orderNumber".equals(key) && value instanceof Identifier) { this.orderNumber((Identifier)value); return; }
+      if ("orderNumbers".equals(key) && value instanceof Identifier) { this.orderNumber((Identifier)value); return; }
       if ("broker".equals(key) && value instanceof Organization) { this.broker((Organization)value); return; }
       if ("brokers".equals(key) && value instanceof Organization) { this.broker((Organization)value); return; }
       if ("broker".equals(key) && value instanceof Person) { this.broker((Person)value); return; }
       if ("brokers".equals(key) && value instanceof Person) { this.broker((Person)value); return; }
-      if ("isGift".equals(key) && value instanceof Boolean) { this.isGift((Boolean)value); return; }
-      if ("isGifts".equals(key) && value instanceof Boolean) { this.isGift((Boolean)value); return; }
-      if ("paymentUrl".equals(key) && value instanceof String) { this.paymentUrl((String)value); return; }
-      if ("paymentUrls".equals(key) && value instanceof String) { this.paymentUrl((String)value); return; }
       super.fromMap(key, value);
     }
   }

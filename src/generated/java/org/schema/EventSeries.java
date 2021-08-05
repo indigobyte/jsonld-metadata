@@ -24,21 +24,22 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * A series of &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Event&quot;&gt;Event&lt;/a&gt;s. Included events can relate with the series using the &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/superEvent&quot;&gt;superEvent&lt;/a&gt; property.&lt;br/&gt;&lt;br/&gt;
+ * A series of [[Event]]s. Included events can relate with the series using the [[superEvent]] property.
  * 
  * An EventSeries is a collection of events that share some unifying characteristic. For example, &quot;The Olympic Games&quot; is a series, which
- * is repeated regularly. The &quot;2012 London Olympics&quot; can be presented both as an &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Event&quot;&gt;Event&lt;/a&gt; in the series &quot;Olympic Games&quot;, and as an
- * &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/EventSeries&quot;&gt;EventSeries&lt;/a&gt; that included a number of sporting competitions as Events.&lt;br/&gt;&lt;br/&gt;
+ * is repeated regularly. The &quot;2012 London Olympics&quot; can be presented both as an [[Event]] in the series &quot;Olympic Games&quot;, and as an
+ * [[EventSeries]] that included a number of sporting competitions as Events.
  * 
- * The nature of the association between the events in an &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/EventSeries&quot;&gt;EventSeries&lt;/a&gt; can vary, but typical examples could
- * include a thematic event series (e.g. topical meetups or classes), or a series of regular events that share a location, attendee group and/or organizers.&lt;br/&gt;&lt;br/&gt;
+ * The nature of the association between the events in an [[EventSeries]] can vary, but typical examples could
+ * include a thematic event series (e.g. topical meetups or classes), or a series of regular events that share a location, attendee group and/or organizers.
  * 
  * EventSeries has been defined as a kind of Event to make it easy for publishers to use it in an Event context without
  * worrying about which kinds of series are really event-like enough to call an Event. In general an EventSeries
  * may seem more Event-like when the period of time is compact and when aspects such as location are fixed, but
- * it may also sometimes prove useful to describe a longer-term series as an Event.Source: https://github.com/schemaorg/schemaorg/issues/447
+ * it may also sometimes prove useful to describe a longer-term series as an Event.
+ *    
  */
-public class EventSeries extends Event {
+public class EventSeries extends Series {
   protected EventSeries(java.util.Map<String,Object> data) {
     super(data);
   }
@@ -46,7 +47,7 @@ public class EventSeries extends Event {
   /**
    * Builder for {@link EventSeries}
    */
-  public static class Builder extends Event.Builder {
+  public static class Builder extends Series.Builder {
     public Builder(@NotNull HashMap<String,Object> data) {
       super(data);
     }
@@ -54,461 +55,24 @@ public class EventSeries extends Event {
       return new EventSeries(myData);
     }
     /**
-     * The start date and time of the item (in &lt;a href=&quot;http://en.wikipedia.org/wiki/ISO_8601&quot;&gt;ISO 8601 date format&lt;/a&gt;).
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
-    @NotNull public Builder startDate(@NotNull java.util.Date date) {
-      putValue("startDate", date);
+    @NotNull public Builder potentialAction(@NotNull Action action) {
+      putValue("potentialAction", action);
       return this;
     }
     /**
-     * The number of attendee places for an event that remain unallocated.
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
-    @NotNull public Builder remainingAttendeeCapacity(@NotNull Integer integer) {
-      putValue("remainingAttendeeCapacity", integer);
+    @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
+      putValue("potentialAction", action.build());
       return this;
     }
     /**
-     * A work performed in some event, for example a play performed in a TheaterEvent.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder workPerformed(@NotNull WorkFeatured workFeatured) {
-      putValue("workPerformed", workFeatured);
-      return this;
-    }
-    /**
-     * An organizer of an Event.
-     */
-    @NotNull public Builder organizer(@NotNull Organization organization) {
-      putValue("organizer", organization);
-      return this;
-    }
-    /**
-     * An organizer of an Event.
-     */
-    @NotNull public Builder organizer(@NotNull Organization.Builder organization) {
-      putValue("organizer", organization.build());
-      return this;
-    }
-    /**
-     * An organizer of an Event.
-     */
-    @NotNull public Builder organizer(@NotNull Person person) {
-      putValue("organizer", person);
-      return this;
-    }
-    /**
-     * An organizer of an Event.
-     */
-    @NotNull public Builder organizer(@NotNull Person.Builder person) {
-      putValue("organizer", person.build());
-      return this;
-    }
-    /**
-     * The language of the content or performance or used in an action. Please use one of the language codes from the &lt;a href=&quot;http://tools.ietf.org/html/bcp47&quot;&gt;IETF BCP 47 standard&lt;/a&gt;. See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/availableLanguage&quot;&gt;availableLanguage&lt;/a&gt;.
-     */
-    @NotNull public Builder inLanguage(@NotNull Language language) {
-      putValue("inLanguage", language);
-      return this;
-    }
-    /**
-     * The language of the content or performance or used in an action. Please use one of the language codes from the &lt;a href=&quot;http://tools.ietf.org/html/bcp47&quot;&gt;IETF BCP 47 standard&lt;/a&gt;. See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/availableLanguage&quot;&gt;availableLanguage&lt;/a&gt;.
-     */
-    @NotNull public Builder inLanguage(@NotNull Language.Builder language) {
-      putValue("inLanguage", language.build());
-      return this;
-    }
-    /**
-     * The language of the content or performance or used in an action. Please use one of the language codes from the &lt;a href=&quot;http://tools.ietf.org/html/bcp47&quot;&gt;IETF BCP 47 standard&lt;/a&gt;. See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/availableLanguage&quot;&gt;availableLanguage&lt;/a&gt;.
-     */
-    @NotNull public Builder inLanguage(@NotNull String inLanguage) {
-      putValue("inLanguage", inLanguage);
-      return this;
-    }
-    /**
-     * The end date and time of the item (in &lt;a href=&quot;http://en.wikipedia.org/wiki/ISO_8601&quot;&gt;ISO 8601 date format&lt;/a&gt;).
-     */
-    @NotNull public Builder endDate(@NotNull java.util.Date date) {
-      putValue("endDate", date);
-      return this;
-    }
-    /**
-     * The duration of the item (movie, audio recording, event, etc.) in &lt;a href=&quot;http://en.wikipedia.org/wiki/ISO_8601&quot;&gt;ISO 8601 date format&lt;/a&gt;.
-     */
-    @NotNull public Builder duration(@NotNull Duration duration) {
-      putValue("duration", duration);
-      return this;
-    }
-    /**
-     * The maximum physical attendee capacity of an &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Event&quot;&gt;Event&lt;/a&gt; whose &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/eventAttendanceMode&quot;&gt;eventAttendanceMode&lt;/a&gt; is &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/OnlineEventAttendanceMode&quot;&gt;OnlineEventAttendanceMode&lt;/a&gt; (or the online aspects, in the case of a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/MixedEventAttendanceMode&quot;&gt;MixedEventAttendanceMode&lt;/a&gt;).
-     */
-    @NotNull public Builder maximumVirtualAttendeeCapacity(@NotNull Integer integer) {
-      putValue("maximumVirtualAttendeeCapacity", integer);
-      return this;
-    }
-    /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
-     */
-    @NotNull public Builder aggregateRating(@NotNull AggregateRating aggregateRating) {
-      putValue("aggregateRating", aggregateRating);
-      return this;
-    }
-    /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
-     */
-    @NotNull public Builder aggregateRating(@NotNull AggregateRating.Builder aggregateRating) {
-      putValue("aggregateRating", aggregateRating.build());
-      return this;
-    }
-    /**
-     * Used in conjunction with eventStatus for rescheduled or cancelled events. This property contains the previously scheduled start date. For rescheduled events, the startDate property should be used for the newly scheduled start date. In the (rare) case of an event that has been postponed and rescheduled multiple times, this field may be repeated.
-     */
-    @NotNull public Builder previousStartDate(@NotNull java.util.Date date) {
-      putValue("previousStartDate", date);
-      return this;
-    }
-    /**
-     * A performer at the event&amp;#x2014;for example, a presenter, musician, musical group or actor.
-     */
-    @NotNull public Builder performer(@NotNull Organization organization) {
-      putValue("performer", organization);
-      return this;
-    }
-    /**
-     * A performer at the event&amp;#x2014;for example, a presenter, musician, musical group or actor.
-     */
-    @NotNull public Builder performer(@NotNull Organization.Builder organization) {
-      putValue("performer", organization.build());
-      return this;
-    }
-    /**
-     * A performer at the event&amp;#x2014;for example, a presenter, musician, musical group or actor.
-     */
-    @NotNull public Builder performer(@NotNull Person person) {
-      putValue("performer", person);
-      return this;
-    }
-    /**
-     * A performer at the event&amp;#x2014;for example, a presenter, musician, musical group or actor.
-     */
-    @NotNull public Builder performer(@NotNull Person.Builder person) {
-      putValue("performer", person.build());
-      return this;
-    }
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     */
-    @NotNull public Builder funder(@NotNull Sponsor sponsor) {
-      putValue("funder", sponsor);
-      return this;
-    }
-    /**
-     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
-     */
-    @NotNull public Builder sponsor(@NotNull Sponsor sponsor) {
-      putValue("sponsor", sponsor);
-      return this;
-    }
-    /**
-     * A person or organization attending the event.
-     */
-    @NotNull public Builder attendee(@NotNull Organization organization) {
-      putValue("attendee", organization);
-      return this;
-    }
-    /**
-     * A person or organization attending the event.
-     */
-    @NotNull public Builder attendee(@NotNull Organization.Builder organization) {
-      putValue("attendee", organization.build());
-      return this;
-    }
-    /**
-     * A person or organization attending the event.
-     */
-    @NotNull public Builder attendee(@NotNull Person person) {
-      putValue("attendee", person);
-      return this;
-    }
-    /**
-     * A person or organization attending the event.
-     */
-    @NotNull public Builder attendee(@NotNull Person.Builder person) {
-      putValue("attendee", person.build());
-      return this;
-    }
-    /**
-     * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
-     */
-    @NotNull public Builder composer(@NotNull Organization organization) {
-      putValue("composer", organization);
-      return this;
-    }
-    /**
-     * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
-     */
-    @NotNull public Builder composer(@NotNull Organization.Builder organization) {
-      putValue("composer", organization.build());
-      return this;
-    }
-    /**
-     * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
-     */
-    @NotNull public Builder composer(@NotNull Person person) {
-      putValue("composer", person);
-      return this;
-    }
-    /**
-     * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
-     */
-    @NotNull public Builder composer(@NotNull Person.Builder person) {
-      putValue("composer", person.build());
-      return this;
-    }
-    /**
-     * The eventAttendanceMode of an event indicates whether it occurs online, offline, or a mix.
-     */
-    @NotNull public Builder eventAttendanceMode(@NotNull EventAttendanceModeEnumeration eventAttendanceModeEnumeration) {
-      putValue("eventAttendanceMode", eventAttendanceModeEnumeration);
-      return this;
-    }
-    /**
-     * The total number of individuals that may attend an event or venue.
-     */
-    @NotNull public Builder maximumAttendeeCapacity(@NotNull Integer integer) {
-      putValue("maximumAttendeeCapacity", integer);
-      return this;
-    }
-    /**
-     * A secondary contributor to the CreativeWork or Event.
-     */
-    @NotNull public Builder contributor(@NotNull Organization organization) {
-      putValue("contributor", organization);
-      return this;
-    }
-    /**
-     * A secondary contributor to the CreativeWork or Event.
-     */
-    @NotNull public Builder contributor(@NotNull Organization.Builder organization) {
-      putValue("contributor", organization.build());
-      return this;
-    }
-    /**
-     * A secondary contributor to the CreativeWork or Event.
-     */
-    @NotNull public Builder contributor(@NotNull Person person) {
-      putValue("contributor", person);
-      return this;
-    }
-    /**
-     * A secondary contributor to the CreativeWork or Event.
-     */
-    @NotNull public Builder contributor(@NotNull Person.Builder person) {
-      putValue("contributor", person.build());
-      return this;
-    }
-    /**
-     * An Event that is part of this event. For example, a conference event includes many presentations, each of which is a subEvent of the conference.
-     */
-    @NotNull public Builder subEvent(@NotNull Event event) {
-      putValue("subEvent", event);
-      return this;
-    }
-    /**
-     * An Event that is part of this event. For example, a conference event includes many presentations, each of which is a subEvent of the conference.
-     */
-    @NotNull public Builder subEvent(@NotNull Event.Builder event) {
-      putValue("subEvent", event.build());
-      return this;
-    }
-    /**
-     * A review of the item.
-     */
-    @NotNull public Builder review(@NotNull Review review) {
-      putValue("review", review);
-      return this;
-    }
-    /**
-     * A review of the item.
-     */
-    @NotNull public Builder review(@NotNull Review.Builder review) {
-      putValue("review", review.build());
-      return this;
-    }
-    /**
-     * An intended audience, i.e. a group for whom something was created.
-     */
-    @NotNull public Builder audience(@NotNull Audience audience) {
-      putValue("audience", audience);
-      return this;
-    }
-    /**
-     * An intended audience, i.e. a group for whom something was created.
-     */
-    @NotNull public Builder audience(@NotNull Audience.Builder audience) {
-      putValue("audience", audience.build());
-      return this;
-    }
-    /**
-     * A flag to signal that the item, event, or place is accessible for free.
-     */
-    @NotNull public Builder isAccessibleForFree(@NotNull Boolean isAccessibleForFree) {
-      putValue("isAccessibleForFree", isAccessibleForFree);
-      return this;
-    }
-    /**
-     * The typical expected age range, e.g. '7-9', '11-'.
-     */
-    @NotNull public Builder typicalAgeRange(@NotNull String typicalAgeRange) {
-      putValue("typicalAgeRange", typicalAgeRange);
-      return this;
-    }
-    /**
-     * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
-     */
-    @NotNull public Builder translator(@NotNull Organization organization) {
-      putValue("translator", organization);
-      return this;
-    }
-    /**
-     * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
-     */
-    @NotNull public Builder translator(@NotNull Organization.Builder organization) {
-      putValue("translator", organization.build());
-      return this;
-    }
-    /**
-     * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
-     */
-    @NotNull public Builder translator(@NotNull Person person) {
-      putValue("translator", person);
-      return this;
-    }
-    /**
-     * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
-     */
-    @NotNull public Builder translator(@NotNull Person.Builder person) {
-      putValue("translator", person.build());
-      return this;
-    }
-    /**
-     * Associates an &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Event&quot;&gt;Event&lt;/a&gt; with a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Schedule&quot;&gt;Schedule&lt;/a&gt;. There are circumstances where it is preferable to share a schedule for a series of
-     *       repeating events rather than data on the individual events themselves. For example, a website or application might prefer to publish a schedule for a weekly
-     *       gym class rather than provide data on every event. A schedule could be processed by applications to add forthcoming events to a calendar. An &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Event&quot;&gt;Event&lt;/a&gt; that
-     *       is associated with a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Schedule&quot;&gt;Schedule&lt;/a&gt; using this property should not have &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/startDate&quot;&gt;startDate&lt;/a&gt; or &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/endDate&quot;&gt;endDate&lt;/a&gt; properties. These are instead defined within the associated
-     *       &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Schedule&quot;&gt;Schedule&lt;/a&gt;, this avoids any ambiguity for clients using the data. The property might have repeated values to specify different schedules, e.g. for different months
-     *       or seasons.
-     */
-    @NotNull public Builder eventSchedule(@NotNull Schedule schedule) {
-      putValue("eventSchedule", schedule);
-      return this;
-    }
-    /**
-     * Associates an &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Event&quot;&gt;Event&lt;/a&gt; with a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Schedule&quot;&gt;Schedule&lt;/a&gt;. There are circumstances where it is preferable to share a schedule for a series of
-     *       repeating events rather than data on the individual events themselves. For example, a website or application might prefer to publish a schedule for a weekly
-     *       gym class rather than provide data on every event. A schedule could be processed by applications to add forthcoming events to a calendar. An &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Event&quot;&gt;Event&lt;/a&gt; that
-     *       is associated with a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Schedule&quot;&gt;Schedule&lt;/a&gt; using this property should not have &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/startDate&quot;&gt;startDate&lt;/a&gt; or &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/endDate&quot;&gt;endDate&lt;/a&gt; properties. These are instead defined within the associated
-     *       &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Schedule&quot;&gt;Schedule&lt;/a&gt;, this avoids any ambiguity for clients using the data. The property might have repeated values to specify different schedules, e.g. for different months
-     *       or seasons.
-     */
-    @NotNull public Builder eventSchedule(@NotNull Schedule.Builder schedule) {
-      putValue("eventSchedule", schedule.build());
-      return this;
-    }
-    /**
-     * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
-     */
-    @NotNull public Builder director(@NotNull Person person) {
-      putValue("director", person);
-      return this;
-    }
-    /**
-     * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
-     */
-    @NotNull public Builder director(@NotNull Person.Builder person) {
-      putValue("director", person.build());
-      return this;
-    }
-    /**
-     * The maximum physical attendee capacity of an &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Event&quot;&gt;Event&lt;/a&gt; whose &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/eventAttendanceMode&quot;&gt;eventAttendanceMode&lt;/a&gt; is &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/OfflineEventAttendanceMode&quot;&gt;OfflineEventAttendanceMode&lt;/a&gt; (or the offline aspects, in the case of a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/MixedEventAttendanceMode&quot;&gt;MixedEventAttendanceMode&lt;/a&gt;).
-     */
-    @NotNull public Builder maximumPhysicalAttendeeCapacity(@NotNull Integer integer) {
-      putValue("maximumPhysicalAttendeeCapacity", integer);
-      return this;
-    }
-    /**
-     * The time admission will commence.
-     */
-    @NotNull public Builder doorTime(@NotNull java.util.Date date) {
-      putValue("doorTime", date);
-      return this;
-    }
-    /**
-     * An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.
-     */
-    @NotNull public Builder eventStatus(@NotNull EventStatusType eventStatusType) {
-      putValue("eventStatus", eventStatusType);
-      return this;
-    }
-    /**
-     * The subject matter of the content.
-     */
-    @NotNull public Builder about(@NotNull About about) {
-      putValue("about", about);
-      return this;
-    }
-    /**
-     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt; to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Demand&quot;&gt;Demand&lt;/a&gt;. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     */
-    @NotNull public Builder offers(@NotNull Demand demand) {
-      putValue("offers", demand);
-      return this;
-    }
-    /**
-     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt; to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Demand&quot;&gt;Demand&lt;/a&gt;. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     */
-    @NotNull public Builder offers(@NotNull Demand.Builder demand) {
-      putValue("offers", demand.build());
-      return this;
-    }
-    /**
-     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt; to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Demand&quot;&gt;Demand&lt;/a&gt;. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     */
-    @NotNull public Builder offers(@NotNull Offer offer) {
-      putValue("offers", offer);
-      return this;
-    }
-    /**
-     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt; to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Demand&quot;&gt;Demand&lt;/a&gt;. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     */
-    @NotNull public Builder offers(@NotNull Offer.Builder offer) {
-      putValue("offers", offer.build());
-      return this;
-    }
-    /**
-     * An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent.
-     */
-    @NotNull public Builder superEvent(@NotNull Event event) {
-      putValue("superEvent", event);
-      return this;
-    }
-    /**
-     * An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent.
-     */
-    @NotNull public Builder superEvent(@NotNull Event.Builder event) {
-      putValue("superEvent", event.build());
-      return this;
-    }
-    /**
-     * The CreativeWork that captured all or part of this Event.
-     */
-    @NotNull public Builder recordedIn(@NotNull CreativeWork creativeWork) {
-      putValue("recordedIn", creativeWork);
-      return this;
-    }
-    /**
-     * The CreativeWork that captured all or part of this Event.
-     */
-    @NotNull public Builder recordedIn(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("recordedIn", creativeWork.build());
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
@@ -526,31 +90,10 @@ public class EventSeries extends Event {
       return this;
     }
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     */
-    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
-      putValue("disambiguatingDescription", description);
-      return this;
-    }
-    /**
-     * A description of the item.
-     */
-    @NotNull public Builder description(@NotNull Description description) {
-      putValue("description", description);
-      return this;
-    }
-    /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      */
     @NotNull public Builder sameAs(@NotNull String sameAs) {
       putValue("sameAs", sameAs);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
       return this;
     }
     /**
@@ -561,45 +104,10 @@ public class EventSeries extends Event {
       return this;
     }
     /**
-     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
+     * The name of the item.
      */
-    @NotNull public Builder image(@NotNull Image image) {
-      putValue("image", image);
-      return this;
-    }
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     */
-    @NotNull public Builder potentialAction(@NotNull Action action) {
-      putValue("potentialAction", action);
-      return this;
-    }
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     */
-    @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
-      putValue("potentialAction", action.build());
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -628,6 +136,27 @@ public class EventSeries extends Event {
      */
     @NotNull public Builder subjectOf(@NotNull Event.Builder event) {
       putValue("subjectOf", event.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
       return this;
     }
     @NotNull public Builder id(@NotNull String id) {

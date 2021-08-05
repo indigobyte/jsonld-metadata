@@ -28,13 +28,13 @@ import java.util.*;
  */
 public class CommunicateAction extends InteractAction {
   /**
-   * The language of the content or performance or used in an action. Please use one of the language codes from the &lt;a href=&quot;http://tools.ietf.org/html/bcp47&quot;&gt;IETF BCP 47 standard&lt;/a&gt;. See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/availableLanguage&quot;&gt;availableLanguage&lt;/a&gt;.
+   * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
    */
   @JsonIgnore public Language getInLanguageLanguage() {
     return (Language) getValue("inLanguage");
   }
   /**
-   * The language of the content or performance or used in an action. Please use one of the language codes from the &lt;a href=&quot;http://tools.ietf.org/html/bcp47&quot;&gt;IETF BCP 47 standard&lt;/a&gt;. See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/availableLanguage&quot;&gt;availableLanguage&lt;/a&gt;.
+   * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
    */
   @JsonIgnore public Collection<Language> getInLanguageLanguages() {
     final Object current = myData.get("inLanguage");
@@ -45,13 +45,13 @@ public class CommunicateAction extends InteractAction {
     return Arrays.asList((Language) current);
   }
   /**
-   * The language of the content or performance or used in an action. Please use one of the language codes from the &lt;a href=&quot;http://tools.ietf.org/html/bcp47&quot;&gt;IETF BCP 47 standard&lt;/a&gt;. See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/availableLanguage&quot;&gt;availableLanguage&lt;/a&gt;.
+   * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
    */
   @JsonIgnore public String getInLanguageString() {
     return (String) getValue("inLanguage");
   }
   /**
-   * The language of the content or performance or used in an action. Please use one of the language codes from the &lt;a href=&quot;http://tools.ietf.org/html/bcp47&quot;&gt;IETF BCP 47 standard&lt;/a&gt;. See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/availableLanguage&quot;&gt;availableLanguage&lt;/a&gt;.
+   * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
    */
   @JsonIgnore public Collection<String> getInLanguageStrings() {
     final Object current = myData.get("inLanguage");
@@ -60,23 +60,6 @@ public class CommunicateAction extends InteractAction {
       return (Collection<String>) current;
     }
     return Arrays.asList((String) current);
-  }
-  /**
-   * The subject matter of the content.
-   */
-  @JsonIgnore public About getAbout() {
-    return (About) getValue("about");
-  }
-  /**
-   * The subject matter of the content.
-   */
-  @JsonIgnore public Collection<About> getAbouts() {
-    final Object current = myData.get("about");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<About>) current;
-    }
-    return Arrays.asList((About) current);
   }
   protected CommunicateAction(java.util.Map<String,Object> data) {
     super(data);
@@ -93,63 +76,31 @@ public class CommunicateAction extends InteractAction {
       return new CommunicateAction(myData);
     }
     /**
-     * The language of the content or performance or used in an action. Please use one of the language codes from the &lt;a href=&quot;http://tools.ietf.org/html/bcp47&quot;&gt;IETF BCP 47 standard&lt;/a&gt;. See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/availableLanguage&quot;&gt;availableLanguage&lt;/a&gt;.
+     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
      */
     @NotNull public Builder inLanguage(@NotNull Language language) {
       putValue("inLanguage", language);
       return this;
     }
     /**
-     * The language of the content or performance or used in an action. Please use one of the language codes from the &lt;a href=&quot;http://tools.ietf.org/html/bcp47&quot;&gt;IETF BCP 47 standard&lt;/a&gt;. See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/availableLanguage&quot;&gt;availableLanguage&lt;/a&gt;.
+     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
      */
     @NotNull public Builder inLanguage(@NotNull Language.Builder language) {
       putValue("inLanguage", language.build());
       return this;
     }
     /**
-     * The language of the content or performance or used in an action. Please use one of the language codes from the &lt;a href=&quot;http://tools.ietf.org/html/bcp47&quot;&gt;IETF BCP 47 standard&lt;/a&gt;. See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/availableLanguage&quot;&gt;availableLanguage&lt;/a&gt;.
+     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
      */
     @NotNull public Builder inLanguage(@NotNull String inLanguage) {
       putValue("inLanguage", inLanguage);
       return this;
     }
     /**
-     * The subject matter of the content.
-     */
-    @NotNull public Builder about(@NotNull About about) {
-      putValue("about", about);
-      return this;
-    }
-    /**
-     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from &lt;em&gt;January&lt;/em&gt; to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.&lt;br/&gt;&lt;br/&gt;
-     * 
-     * Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      */
     @NotNull public Builder startTime(@NotNull java.util.Date date) {
       putValue("startTime", date);
-      return this;
-    }
-    /**
-     * For failed actions, more information on the cause of the failure.
-     */
-    @NotNull public Builder error(@NotNull Thing thing) {
-      putValue("error", thing);
-      return this;
-    }
-    /**
-     * For failed actions, more information on the cause of the failure.
-     */
-    @NotNull public Builder error(@NotNull Thing.Builder thing) {
-      putValue("error", thing.build());
-      return this;
-    }
-    /**
-     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to &lt;em&gt;December&lt;/em&gt;. For media, including audio and video, it's the time offset of the end of a clip within a larger file.&lt;br/&gt;&lt;br/&gt;
-     * 
-     * Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     */
-    @NotNull public Builder endTime(@NotNull java.util.Date date) {
-      putValue("endTime", date);
       return this;
     }
     /**
@@ -167,34 +118,6 @@ public class CommunicateAction extends InteractAction {
       return this;
     }
     /**
-     * The direct performer or driver of the action (animate or inanimate). e.g. &lt;em&gt;John&lt;/em&gt; wrote a book.
-     */
-    @NotNull public Builder agent(@NotNull Organization organization) {
-      putValue("agent", organization);
-      return this;
-    }
-    /**
-     * The direct performer or driver of the action (animate or inanimate). e.g. &lt;em&gt;John&lt;/em&gt; wrote a book.
-     */
-    @NotNull public Builder agent(@NotNull Organization.Builder organization) {
-      putValue("agent", organization.build());
-      return this;
-    }
-    /**
-     * The direct performer or driver of the action (animate or inanimate). e.g. &lt;em&gt;John&lt;/em&gt; wrote a book.
-     */
-    @NotNull public Builder agent(@NotNull Person person) {
-      putValue("agent", person);
-      return this;
-    }
-    /**
-     * The direct performer or driver of the action (animate or inanimate). e.g. &lt;em&gt;John&lt;/em&gt; wrote a book.
-     */
-    @NotNull public Builder agent(@NotNull Person.Builder person) {
-      putValue("agent", person.build());
-      return this;
-    }
-    /**
      * Indicates the current disposition of the Action.
      */
     @NotNull public Builder actionStatus(@NotNull ActionStatusType actionStatusType) {
@@ -202,59 +125,59 @@ public class CommunicateAction extends InteractAction {
       return this;
     }
     /**
-     * URL of the item.
+     * Indicates the current disposition of the Action.
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
+    @NotNull public Builder actionStatus(@NotNull ActionStatusType.Builder actionStatusType) {
+      putValue("actionStatus", actionStatusType.build());
       return this;
     }
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
      */
-    @NotNull public Builder additionalType(@NotNull String additionalType) {
-      putValue("additionalType", additionalType);
+    @NotNull public Builder agent(@NotNull Organization organization) {
+      putValue("agent", organization);
       return this;
     }
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
-      putValue("disambiguatingDescription", description);
+    @NotNull public Builder agent(@NotNull Organization.Builder organization) {
+      putValue("agent", organization.build());
       return this;
     }
     /**
-     * A description of the item.
+     * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
      */
-    @NotNull public Builder description(@NotNull Description description) {
-      putValue("description", description);
+    @NotNull public Builder agent(@NotNull Person person) {
+      putValue("agent", person);
       return this;
     }
     /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
      */
-    @NotNull public Builder sameAs(@NotNull String sameAs) {
-      putValue("sameAs", sameAs);
+    @NotNull public Builder agent(@NotNull Person.Builder person) {
+      putValue("agent", person.build());
       return this;
     }
     /**
-     * The name of the item.
+     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
+    @NotNull public Builder endTime(@NotNull java.util.Date date) {
+      putValue("endTime", date);
       return this;
     }
     /**
-     * An alias for the item.
+     * For failed actions, more information on the cause of the failure.
      */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
+    @NotNull public Builder error(@NotNull Thing thing) {
+      putValue("error", thing);
       return this;
     }
     /**
-     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
+     * For failed actions, more information on the cause of the failure.
      */
-    @NotNull public Builder image(@NotNull Image image) {
-      putValue("image", image);
+    @NotNull public Builder error(@NotNull Thing.Builder thing) {
+      putValue("error", thing.build());
       return this;
     }
     /**
@@ -272,24 +195,45 @@ public class CommunicateAction extends InteractAction {
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * URL of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
+    @NotNull public Builder additionalType(@NotNull String additionalType) {
+      putValue("additionalType", additionalType);
+      return this;
+    }
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     */
+    @NotNull public Builder sameAs(@NotNull String sameAs) {
+      putValue("sameAs", sameAs);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * The name of the item.
+     */
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -320,6 +264,27 @@ public class CommunicateAction extends InteractAction {
       putValue("subjectOf", event.build());
       return this;
     }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -332,8 +297,6 @@ public class CommunicateAction extends InteractAction {
       if ("inLanguages".equals(key) && value instanceof Language) { this.inLanguage((Language)value); return; }
       if ("inLanguage".equals(key) && value instanceof String) { this.inLanguage((String)value); return; }
       if ("inLanguages".equals(key) && value instanceof String) { this.inLanguage((String)value); return; }
-      if ("about".equals(key) && value instanceof About) { this.about((About)value); return; }
-      if ("abouts".equals(key) && value instanceof About) { this.about((About)value); return; }
       super.fromMap(key, value);
     }
   }

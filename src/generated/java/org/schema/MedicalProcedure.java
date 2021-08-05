@@ -28,23 +28,6 @@ import java.util.*;
  */
 public class MedicalProcedure extends MedicalEntity {
   /**
-   * How the procedure is performed.
-   */
-  @JsonIgnore public String getHowPerformed() {
-    return (String) getValue("howPerformed");
-  }
-  /**
-   * How the procedure is performed.
-   */
-  @JsonIgnore public Collection<String> getHowPerformeds() {
-    final Object current = myData.get("howPerformed");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
    * The status of the study (enumerated).
    */
   @JsonIgnore public EventStatusType getStatusEventStatusType() {
@@ -147,16 +130,16 @@ public class MedicalProcedure extends MedicalEntity {
     return Arrays.asList((MedicalProcedureType) current);
   }
   /**
-   * Location in the body of the anatomical structure.
+   * How the procedure is performed.
    */
-  @JsonIgnore public String getBodyLocation() {
-    return (String) getValue("bodyLocation");
+  @JsonIgnore public String getHowPerformed() {
+    return (String) getValue("howPerformed");
   }
   /**
-   * Location in the body of the anatomical structure.
+   * How the procedure is performed.
    */
-  @JsonIgnore public Collection<String> getBodyLocations() {
-    final Object current = myData.get("bodyLocation");
+  @JsonIgnore public Collection<String> getHowPerformeds() {
+    final Object current = myData.get("howPerformed");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<String>) current;
@@ -180,6 +163,23 @@ public class MedicalProcedure extends MedicalEntity {
     }
     return Arrays.asList((String) current);
   }
+  /**
+   * Location in the body of the anatomical structure.
+   */
+  @JsonIgnore public String getBodyLocation() {
+    return (String) getValue("bodyLocation");
+  }
+  /**
+   * Location in the body of the anatomical structure.
+   */
+  @JsonIgnore public Collection<String> getBodyLocations() {
+    final Object current = myData.get("bodyLocation");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
   protected MedicalProcedure(java.util.Map<String,Object> data) {
     super(data);
   }
@@ -195,17 +195,17 @@ public class MedicalProcedure extends MedicalEntity {
       return new MedicalProcedure(myData);
     }
     /**
-     * How the procedure is performed.
+     * The status of the study (enumerated).
      */
-    @NotNull public Builder howPerformed(@NotNull String howPerformed) {
-      putValue("howPerformed", howPerformed);
+    @NotNull public Builder status(@NotNull EventStatusType eventStatusType) {
+      putValue("status", eventStatusType);
       return this;
     }
     /**
      * The status of the study (enumerated).
      */
-    @NotNull public Builder status(@NotNull EventStatusType eventStatusType) {
-      putValue("status", eventStatusType);
+    @NotNull public Builder status(@NotNull EventStatusType.Builder eventStatusType) {
+      putValue("status", eventStatusType.build());
       return this;
     }
     /**
@@ -265,10 +265,10 @@ public class MedicalProcedure extends MedicalEntity {
       return this;
     }
     /**
-     * Location in the body of the anatomical structure.
+     * How the procedure is performed.
      */
-    @NotNull public Builder bodyLocation(@NotNull String bodyLocation) {
-      putValue("bodyLocation", bodyLocation);
+    @NotNull public Builder howPerformed(@NotNull String howPerformed) {
+      putValue("howPerformed", howPerformed);
       return this;
     }
     /**
@@ -279,31 +279,10 @@ public class MedicalProcedure extends MedicalEntity {
       return this;
     }
     /**
-     * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
+     * Location in the body of the anatomical structure.
      */
-    @NotNull public Builder recognizingAuthority(@NotNull Organization organization) {
-      putValue("recognizingAuthority", organization);
-      return this;
-    }
-    /**
-     * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
-     */
-    @NotNull public Builder recognizingAuthority(@NotNull Organization.Builder organization) {
-      putValue("recognizingAuthority", organization.build());
-      return this;
-    }
-    /**
-     * A medical guideline related to this entity.
-     */
-    @NotNull public Builder guideline(@NotNull MedicalGuideline medicalGuideline) {
-      putValue("guideline", medicalGuideline);
-      return this;
-    }
-    /**
-     * A medical guideline related to this entity.
-     */
-    @NotNull public Builder guideline(@NotNull MedicalGuideline.Builder medicalGuideline) {
-      putValue("guideline", medicalGuideline.build());
+    @NotNull public Builder bodyLocation(@NotNull String bodyLocation) {
+      putValue("bodyLocation", bodyLocation);
       return this;
     }
     /**
@@ -335,20 +314,6 @@ public class MedicalProcedure extends MedicalEntity {
       return this;
     }
     /**
-     * A medical study or trial related to this entity.
-     */
-    @NotNull public Builder study(@NotNull MedicalStudy medicalStudy) {
-      putValue("study", medicalStudy);
-      return this;
-    }
-    /**
-     * A medical study or trial related to this entity.
-     */
-    @NotNull public Builder study(@NotNull MedicalStudy.Builder medicalStudy) {
-      putValue("study", medicalStudy.build());
-      return this;
-    }
-    /**
      * A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.
      */
     @NotNull public Builder code(@NotNull MedicalCode medicalCode) {
@@ -360,20 +325,6 @@ public class MedicalProcedure extends MedicalEntity {
      */
     @NotNull public Builder code(@NotNull MedicalCode.Builder medicalCode) {
       putValue("code", medicalCode.build());
-      return this;
-    }
-    /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
-     */
-    @NotNull public Builder medicineSystem(@NotNull MedicineSystem medicineSystem) {
-      putValue("medicineSystem", medicineSystem);
-      return this;
-    }
-    /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
-     */
-    @NotNull public Builder medicineSystem(@NotNull MedicineSystem.Builder medicineSystem) {
-      putValue("medicineSystem", medicineSystem.build());
       return this;
     }
     /**
@@ -391,59 +342,59 @@ public class MedicalProcedure extends MedicalEntity {
       return this;
     }
     /**
-     * URL of the item.
+     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
+    @NotNull public Builder medicineSystem(@NotNull MedicineSystem medicineSystem) {
+      putValue("medicineSystem", medicineSystem);
       return this;
     }
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      */
-    @NotNull public Builder additionalType(@NotNull String additionalType) {
-      putValue("additionalType", additionalType);
+    @NotNull public Builder medicineSystem(@NotNull MedicineSystem.Builder medicineSystem) {
+      putValue("medicineSystem", medicineSystem.build());
       return this;
     }
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * A medical study or trial related to this entity.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
-      putValue("disambiguatingDescription", description);
+    @NotNull public Builder study(@NotNull MedicalStudy medicalStudy) {
+      putValue("study", medicalStudy);
       return this;
     }
     /**
-     * A description of the item.
+     * A medical study or trial related to this entity.
      */
-    @NotNull public Builder description(@NotNull Description description) {
-      putValue("description", description);
+    @NotNull public Builder study(@NotNull MedicalStudy.Builder medicalStudy) {
+      putValue("study", medicalStudy.build());
       return this;
     }
     /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     * A medical guideline related to this entity.
      */
-    @NotNull public Builder sameAs(@NotNull String sameAs) {
-      putValue("sameAs", sameAs);
+    @NotNull public Builder guideline(@NotNull MedicalGuideline medicalGuideline) {
+      putValue("guideline", medicalGuideline);
       return this;
     }
     /**
-     * The name of the item.
+     * A medical guideline related to this entity.
      */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
+    @NotNull public Builder guideline(@NotNull MedicalGuideline.Builder medicalGuideline) {
+      putValue("guideline", medicalGuideline.build());
       return this;
     }
     /**
-     * An alias for the item.
+     * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
      */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
+    @NotNull public Builder recognizingAuthority(@NotNull Organization organization) {
+      putValue("recognizingAuthority", organization);
       return this;
     }
     /**
-     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
+     * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
      */
-    @NotNull public Builder image(@NotNull Image image) {
-      putValue("image", image);
+    @NotNull public Builder recognizingAuthority(@NotNull Organization.Builder organization) {
+      putValue("recognizingAuthority", organization.build());
       return this;
     }
     /**
@@ -461,24 +412,45 @@ public class MedicalProcedure extends MedicalEntity {
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * URL of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
+    @NotNull public Builder additionalType(@NotNull String additionalType) {
+      putValue("additionalType", additionalType);
+      return this;
+    }
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     */
+    @NotNull public Builder sameAs(@NotNull String sameAs) {
+      putValue("sameAs", sameAs);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * The name of the item.
+     */
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -509,6 +481,27 @@ public class MedicalProcedure extends MedicalEntity {
       putValue("subjectOf", event.build());
       return this;
     }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -517,8 +510,6 @@ public class MedicalProcedure extends MedicalEntity {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("howPerformed".equals(key) && value instanceof String) { this.howPerformed((String)value); return; }
-      if ("howPerformeds".equals(key) && value instanceof String) { this.howPerformed((String)value); return; }
       if ("status".equals(key) && value instanceof EventStatusType) { this.status((EventStatusType)value); return; }
       if ("statuss".equals(key) && value instanceof EventStatusType) { this.status((EventStatusType)value); return; }
       if ("status".equals(key) && value instanceof MedicalStudyStatus) { this.status((MedicalStudyStatus)value); return; }
@@ -531,10 +522,12 @@ public class MedicalProcedure extends MedicalEntity {
       if ("preparations".equals(key) && value instanceof String) { this.preparation((String)value); return; }
       if ("procedureType".equals(key) && value instanceof MedicalProcedureType) { this.procedureType((MedicalProcedureType)value); return; }
       if ("procedureTypes".equals(key) && value instanceof MedicalProcedureType) { this.procedureType((MedicalProcedureType)value); return; }
-      if ("bodyLocation".equals(key) && value instanceof String) { this.bodyLocation((String)value); return; }
-      if ("bodyLocations".equals(key) && value instanceof String) { this.bodyLocation((String)value); return; }
+      if ("howPerformed".equals(key) && value instanceof String) { this.howPerformed((String)value); return; }
+      if ("howPerformeds".equals(key) && value instanceof String) { this.howPerformed((String)value); return; }
       if ("followup".equals(key) && value instanceof String) { this.followup((String)value); return; }
       if ("followups".equals(key) && value instanceof String) { this.followup((String)value); return; }
+      if ("bodyLocation".equals(key) && value instanceof String) { this.bodyLocation((String)value); return; }
+      if ("bodyLocations".equals(key) && value instanceof String) { this.bodyLocation((String)value); return; }
       super.fromMap(key, value);
     }
   }

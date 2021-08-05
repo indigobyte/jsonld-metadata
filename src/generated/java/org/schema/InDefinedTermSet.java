@@ -24,7 +24,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * A &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/DefinedTermSet&quot;&gt;DefinedTermSet&lt;/a&gt; that contains this term.Source: https://github.com/schemaorg/schemaorg/issues/894
+ * A [[DefinedTermSet]] that contains this term.
  */
 public interface InDefinedTermSet extends IsPartOf {
 }

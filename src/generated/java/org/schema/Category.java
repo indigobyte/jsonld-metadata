@@ -24,7 +24,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.Source: https://github.com/schemaorg/schemaorg/issues/1741
+ * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
  */
 public interface Category {
 }

@@ -28,57 +28,6 @@ import java.util.*;
  */
 public class PhysicalActivity extends LifestyleModification {
   /**
-   * Changes in the normal mechanical, physical, and biochemical functions that are associated with this activity or condition.
-   */
-  @JsonIgnore public String getPathophysiology() {
-    return (String) getValue("pathophysiology");
-  }
-  /**
-   * Changes in the normal mechanical, physical, and biochemical functions that are associated with this activity or condition.
-   */
-  @JsonIgnore public Collection<String> getPathophysiologys() {
-    final Object current = myData.get("pathophysiology");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-   */
-  @JsonIgnore public Category getCategory() {
-    return (Category) getValue("category");
-  }
-  /**
-   * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-   */
-  @JsonIgnore public Collection<Category> getCategorys() {
-    final Object current = myData.get("category");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Category>) current;
-    }
-    return Arrays.asList((Category) current);
-  }
-  /**
-   * The characteristics of associated patients, such as age, gender, race etc.
-   */
-  @JsonIgnore public String getEpidemiology() {
-    return (String) getValue("epidemiology");
-  }
-  /**
-   * The characteristics of associated patients, such as age, gender, race etc.
-   */
-  @JsonIgnore public Collection<String> getEpidemiologys() {
-    final Object current = myData.get("epidemiology");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
    * The anatomy of the underlying organ system or structures associated with this entity.
    */
   @JsonIgnore public AnatomicalStructure getAssociatedAnatomyAnatomicalStructure() {
@@ -129,6 +78,57 @@ public class PhysicalActivity extends LifestyleModification {
     }
     return Arrays.asList((SuperficialAnatomy) current);
   }
+  /**
+   * Changes in the normal mechanical, physical, and biochemical functions that are associated with this activity or condition.
+   */
+  @JsonIgnore public String getPathophysiology() {
+    return (String) getValue("pathophysiology");
+  }
+  /**
+   * Changes in the normal mechanical, physical, and biochemical functions that are associated with this activity or condition.
+   */
+  @JsonIgnore public Collection<String> getPathophysiologys() {
+    final Object current = myData.get("pathophysiology");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+   */
+  @JsonIgnore public Category getCategory() {
+    return (Category) getValue("category");
+  }
+  /**
+   * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+   */
+  @JsonIgnore public Collection<Category> getCategorys() {
+    final Object current = myData.get("category");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Category>) current;
+    }
+    return Arrays.asList((Category) current);
+  }
+  /**
+   * The characteristics of associated patients, such as age, gender, race etc.
+   */
+  @JsonIgnore public String getEpidemiology() {
+    return (String) getValue("epidemiology");
+  }
+  /**
+   * The characteristics of associated patients, such as age, gender, race etc.
+   */
+  @JsonIgnore public Collection<String> getEpidemiologys() {
+    final Object current = myData.get("epidemiology");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
   protected PhysicalActivity(java.util.Map<String,Object> data) {
     super(data);
   }
@@ -142,27 +142,6 @@ public class PhysicalActivity extends LifestyleModification {
     }
     @NotNull public PhysicalActivity build() {
       return new PhysicalActivity(myData);
-    }
-    /**
-     * Changes in the normal mechanical, physical, and biochemical functions that are associated with this activity or condition.
-     */
-    @NotNull public Builder pathophysiology(@NotNull String pathophysiology) {
-      putValue("pathophysiology", pathophysiology);
-      return this;
-    }
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     */
-    @NotNull public Builder category(@NotNull Category category) {
-      putValue("category", category);
-      return this;
-    }
-    /**
-     * The characteristics of associated patients, such as age, gender, race etc.
-     */
-    @NotNull public Builder epidemiology(@NotNull String epidemiology) {
-      putValue("epidemiology", epidemiology);
-      return this;
     }
     /**
      * The anatomy of the underlying organ system or structures associated with this entity.
@@ -207,31 +186,24 @@ public class PhysicalActivity extends LifestyleModification {
       return this;
     }
     /**
-     * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
+     * Changes in the normal mechanical, physical, and biochemical functions that are associated with this activity or condition.
      */
-    @NotNull public Builder recognizingAuthority(@NotNull Organization organization) {
-      putValue("recognizingAuthority", organization);
+    @NotNull public Builder pathophysiology(@NotNull String pathophysiology) {
+      putValue("pathophysiology", pathophysiology);
       return this;
     }
     /**
-     * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      */
-    @NotNull public Builder recognizingAuthority(@NotNull Organization.Builder organization) {
-      putValue("recognizingAuthority", organization.build());
+    @NotNull public Builder category(@NotNull Category category) {
+      putValue("category", category);
       return this;
     }
     /**
-     * A medical guideline related to this entity.
+     * The characteristics of associated patients, such as age, gender, race etc.
      */
-    @NotNull public Builder guideline(@NotNull MedicalGuideline medicalGuideline) {
-      putValue("guideline", medicalGuideline);
-      return this;
-    }
-    /**
-     * A medical guideline related to this entity.
-     */
-    @NotNull public Builder guideline(@NotNull MedicalGuideline.Builder medicalGuideline) {
-      putValue("guideline", medicalGuideline.build());
+    @NotNull public Builder epidemiology(@NotNull String epidemiology) {
+      putValue("epidemiology", epidemiology);
       return this;
     }
     /**
@@ -263,20 +235,6 @@ public class PhysicalActivity extends LifestyleModification {
       return this;
     }
     /**
-     * A medical study or trial related to this entity.
-     */
-    @NotNull public Builder study(@NotNull MedicalStudy medicalStudy) {
-      putValue("study", medicalStudy);
-      return this;
-    }
-    /**
-     * A medical study or trial related to this entity.
-     */
-    @NotNull public Builder study(@NotNull MedicalStudy.Builder medicalStudy) {
-      putValue("study", medicalStudy.build());
-      return this;
-    }
-    /**
      * A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.
      */
     @NotNull public Builder code(@NotNull MedicalCode medicalCode) {
@@ -288,20 +246,6 @@ public class PhysicalActivity extends LifestyleModification {
      */
     @NotNull public Builder code(@NotNull MedicalCode.Builder medicalCode) {
       putValue("code", medicalCode.build());
-      return this;
-    }
-    /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
-     */
-    @NotNull public Builder medicineSystem(@NotNull MedicineSystem medicineSystem) {
-      putValue("medicineSystem", medicineSystem);
-      return this;
-    }
-    /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
-     */
-    @NotNull public Builder medicineSystem(@NotNull MedicineSystem.Builder medicineSystem) {
-      putValue("medicineSystem", medicineSystem.build());
       return this;
     }
     /**
@@ -319,59 +263,59 @@ public class PhysicalActivity extends LifestyleModification {
       return this;
     }
     /**
-     * URL of the item.
+     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
+    @NotNull public Builder medicineSystem(@NotNull MedicineSystem medicineSystem) {
+      putValue("medicineSystem", medicineSystem);
       return this;
     }
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      */
-    @NotNull public Builder additionalType(@NotNull String additionalType) {
-      putValue("additionalType", additionalType);
+    @NotNull public Builder medicineSystem(@NotNull MedicineSystem.Builder medicineSystem) {
+      putValue("medicineSystem", medicineSystem.build());
       return this;
     }
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * A medical study or trial related to this entity.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
-      putValue("disambiguatingDescription", description);
+    @NotNull public Builder study(@NotNull MedicalStudy medicalStudy) {
+      putValue("study", medicalStudy);
       return this;
     }
     /**
-     * A description of the item.
+     * A medical study or trial related to this entity.
      */
-    @NotNull public Builder description(@NotNull Description description) {
-      putValue("description", description);
+    @NotNull public Builder study(@NotNull MedicalStudy.Builder medicalStudy) {
+      putValue("study", medicalStudy.build());
       return this;
     }
     /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     * A medical guideline related to this entity.
      */
-    @NotNull public Builder sameAs(@NotNull String sameAs) {
-      putValue("sameAs", sameAs);
+    @NotNull public Builder guideline(@NotNull MedicalGuideline medicalGuideline) {
+      putValue("guideline", medicalGuideline);
       return this;
     }
     /**
-     * The name of the item.
+     * A medical guideline related to this entity.
      */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
+    @NotNull public Builder guideline(@NotNull MedicalGuideline.Builder medicalGuideline) {
+      putValue("guideline", medicalGuideline.build());
       return this;
     }
     /**
-     * An alias for the item.
+     * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
      */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
+    @NotNull public Builder recognizingAuthority(@NotNull Organization organization) {
+      putValue("recognizingAuthority", organization);
       return this;
     }
     /**
-     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
+     * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
      */
-    @NotNull public Builder image(@NotNull Image image) {
-      putValue("image", image);
+    @NotNull public Builder recognizingAuthority(@NotNull Organization.Builder organization) {
+      putValue("recognizingAuthority", organization.build());
       return this;
     }
     /**
@@ -389,24 +333,45 @@ public class PhysicalActivity extends LifestyleModification {
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * URL of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
+    @NotNull public Builder additionalType(@NotNull String additionalType) {
+      putValue("additionalType", additionalType);
+      return this;
+    }
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     */
+    @NotNull public Builder sameAs(@NotNull String sameAs) {
+      putValue("sameAs", sameAs);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * The name of the item.
+     */
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -437,6 +402,27 @@ public class PhysicalActivity extends LifestyleModification {
       putValue("subjectOf", event.build());
       return this;
     }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -445,18 +431,18 @@ public class PhysicalActivity extends LifestyleModification {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("pathophysiology".equals(key) && value instanceof String) { this.pathophysiology((String)value); return; }
-      if ("pathophysiologys".equals(key) && value instanceof String) { this.pathophysiology((String)value); return; }
-      if ("category".equals(key) && value instanceof Category) { this.category((Category)value); return; }
-      if ("categorys".equals(key) && value instanceof Category) { this.category((Category)value); return; }
-      if ("epidemiology".equals(key) && value instanceof String) { this.epidemiology((String)value); return; }
-      if ("epidemiologys".equals(key) && value instanceof String) { this.epidemiology((String)value); return; }
       if ("associatedAnatomy".equals(key) && value instanceof AnatomicalStructure) { this.associatedAnatomy((AnatomicalStructure)value); return; }
       if ("associatedAnatomys".equals(key) && value instanceof AnatomicalStructure) { this.associatedAnatomy((AnatomicalStructure)value); return; }
       if ("associatedAnatomy".equals(key) && value instanceof AnatomicalSystem) { this.associatedAnatomy((AnatomicalSystem)value); return; }
       if ("associatedAnatomys".equals(key) && value instanceof AnatomicalSystem) { this.associatedAnatomy((AnatomicalSystem)value); return; }
       if ("associatedAnatomy".equals(key) && value instanceof SuperficialAnatomy) { this.associatedAnatomy((SuperficialAnatomy)value); return; }
       if ("associatedAnatomys".equals(key) && value instanceof SuperficialAnatomy) { this.associatedAnatomy((SuperficialAnatomy)value); return; }
+      if ("pathophysiology".equals(key) && value instanceof String) { this.pathophysiology((String)value); return; }
+      if ("pathophysiologys".equals(key) && value instanceof String) { this.pathophysiology((String)value); return; }
+      if ("category".equals(key) && value instanceof Category) { this.category((Category)value); return; }
+      if ("categorys".equals(key) && value instanceof Category) { this.category((Category)value); return; }
+      if ("epidemiology".equals(key) && value instanceof String) { this.epidemiology((String)value); return; }
+      if ("epidemiologys".equals(key) && value instanceof String) { this.epidemiology((String)value); return; }
       super.fromMap(key, value);
     }
   }

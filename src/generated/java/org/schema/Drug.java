@@ -28,101 +28,33 @@ import java.util.*;
  */
 public class Drug extends Substance {
   /**
-   * Any information related to overdose on a drug, including signs or symptoms, treatments, contact information for emergency response.
+   * The manufacturer of the product.
    */
-  @JsonIgnore public String getOverdosage() {
-    return (String) getValue("overdosage");
+  @JsonIgnore public Organization getManufacturer() {
+    return (Organization) getValue("manufacturer");
   }
   /**
-   * Any information related to overdose on a drug, including signs or symptoms, treatments, contact information for emergency response.
+   * The manufacturer of the product.
    */
-  @JsonIgnore public Collection<String> getOverdosages() {
-    final Object current = myData.get("overdosage");
+  @JsonIgnore public Collection<Organization> getManufacturers() {
+    final Object current = myData.get("manufacturer");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<String>) current;
+      return (Collection<Organization>) current;
     }
-    return Arrays.asList((String) current);
+    return Arrays.asList((Organization) current);
   }
   /**
-   * Proprietary name given to the diet plan, typically by its originator or creator.
+   * An active ingredient, typically chemical compounds and/or biologic substances.
    */
-  @JsonIgnore public String getProprietaryName() {
-    return (String) getValue("proprietaryName");
+  @JsonIgnore public String getActiveIngredient() {
+    return (String) getValue("activeIngredient");
   }
   /**
-   * Proprietary name given to the diet plan, typically by its originator or creator.
+   * An active ingredient, typically chemical compounds and/or biologic substances.
    */
-  @JsonIgnore public Collection<String> getProprietaryNames() {
-    final Object current = myData.get("proprietaryName");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * The insurance plans that cover this drug.
-   */
-  @JsonIgnore public HealthInsurancePlan getIncludedInHealthInsurancePlan() {
-    return (HealthInsurancePlan) getValue("includedInHealthInsurancePlan");
-  }
-  /**
-   * The insurance plans that cover this drug.
-   */
-  @JsonIgnore public Collection<HealthInsurancePlan> getIncludedInHealthInsurancePlans() {
-    final Object current = myData.get("includedInHealthInsurancePlan");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<HealthInsurancePlan>) current;
-    }
-    return Arrays.asList((HealthInsurancePlan) current);
-  }
-  /**
-   * True if the drug is available in a generic form (regardless of name).
-   */
-  @JsonIgnore public Boolean getIsAvailableGenerically() {
-    return (Boolean) getValue("isAvailableGenerically");
-  }
-  /**
-   * True if the drug is available in a generic form (regardless of name).
-   */
-  @JsonIgnore public Collection<Boolean> getIsAvailableGenericallys() {
-    final Object current = myData.get("isAvailableGenerically");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Boolean>) current;
-    }
-    return Arrays.asList((Boolean) current);
-  }
-  /**
-   * Any precaution, guidance, contraindication, etc. related to consumption of specific foods while taking this drug.
-   */
-  @JsonIgnore public String getFoodWarning() {
-    return (String) getValue("foodWarning");
-  }
-  /**
-   * Any precaution, guidance, contraindication, etc. related to consumption of specific foods while taking this drug.
-   */
-  @JsonIgnore public Collection<String> getFoodWarnings() {
-    final Object current = myData.get("foodWarning");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * Any FDA or other warnings about the drug (text or URL).
-   */
-  @JsonIgnore public String getWarning() {
-    return (String) getValue("warning");
-  }
-  /**
-   * Any FDA or other warnings about the drug (text or URL).
-   */
-  @JsonIgnore public Collection<String> getWarnings() {
-    final Object current = myData.get("warning");
+  @JsonIgnore public Collection<String> getActiveIngredients() {
+    final Object current = myData.get("activeIngredient");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<String>) current;
@@ -147,225 +79,55 @@ public class Drug extends Substance {
     return Arrays.asList((MaximumDoseSchedule) current);
   }
   /**
-   * An active ingredient, typically chemical compounds and/or biologic substances.
+   * The insurance plans that cover this drug.
    */
-  @JsonIgnore public String getActiveIngredient() {
-    return (String) getValue("activeIngredient");
+  @JsonIgnore public HealthInsurancePlan getIncludedInHealthInsurancePlan() {
+    return (HealthInsurancePlan) getValue("includedInHealthInsurancePlan");
   }
   /**
-   * An active ingredient, typically chemical compounds and/or biologic substances.
+   * The insurance plans that cover this drug.
    */
-  @JsonIgnore public Collection<String> getActiveIngredients() {
-    final Object current = myData.get("activeIngredient");
+  @JsonIgnore public Collection<HealthInsurancePlan> getIncludedInHealthInsurancePlans() {
+    final Object current = myData.get("includedInHealthInsurancePlan");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<HealthInsurancePlan>) current;
+    }
+    return Arrays.asList((HealthInsurancePlan) current);
+  }
+  /**
+   * Any other drug related to this one, for example commonly-prescribed alternatives.
+   */
+  @JsonIgnore public Drug getRelatedDrug() {
+    return (Drug) getValue("relatedDrug");
+  }
+  /**
+   * Any other drug related to this one, for example commonly-prescribed alternatives.
+   */
+  @JsonIgnore public Collection<Drug> getRelatedDrugs() {
+    final Object current = myData.get("relatedDrug");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Drug>) current;
+    }
+    return Arrays.asList((Drug) current);
+  }
+  /**
+   * Any precaution, guidance, contraindication, etc. related to consumption of specific foods while taking this drug.
+   */
+  @JsonIgnore public String getFoodWarning() {
+    return (String) getValue("foodWarning");
+  }
+  /**
+   * Any precaution, guidance, contraindication, etc. related to consumption of specific foods while taking this drug.
+   */
+  @JsonIgnore public Collection<String> getFoodWarnings() {
+    final Object current = myData.get("foodWarning");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<String>) current;
     }
     return Arrays.asList((String) current);
-  }
-  /**
-   * The RxCUI drug identifier from RXNORM.
-   */
-  @JsonIgnore public String getRxcui() {
-    return (String) getValue("rxcui");
-  }
-  /**
-   * The RxCUI drug identifier from RXNORM.
-   */
-  @JsonIgnore public Collection<String> getRxcuis() {
-    final Object current = myData.get("rxcui");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * Link to the drug's label details.
-   */
-  @JsonIgnore public String getLabelDetails() {
-    return (String) getValue("labelDetails");
-  }
-  /**
-   * Link to the drug's label details.
-   */
-  @JsonIgnore public Collection<String> getLabelDetailss() {
-    final Object current = myData.get("labelDetails");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * An available dosage strength for the drug.
-   */
-  @JsonIgnore public DrugStrength getAvailableStrength() {
-    return (DrugStrength) getValue("availableStrength");
-  }
-  /**
-   * An available dosage strength for the drug.
-   */
-  @JsonIgnore public Collection<DrugStrength> getAvailableStrengths() {
-    final Object current = myData.get("availableStrength");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DrugStrength>) current;
-    }
-    return Arrays.asList((DrugStrength) current);
-  }
-  /**
-   * Link to prescribing information for the drug.
-   */
-  @JsonIgnore public String getPrescribingInfo() {
-    return (String) getValue("prescribingInfo");
-  }
-  /**
-   * Link to prescribing information for the drug.
-   */
-  @JsonIgnore public Collection<String> getPrescribingInfos() {
-    final Object current = myData.get("prescribingInfo");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * A route by which this drug may be administered, e.g. 'oral'.
-   */
-  @JsonIgnore public String getAdministrationRoute() {
-    return (String) getValue("administrationRoute");
-  }
-  /**
-   * A route by which this drug may be administered, e.g. 'oral'.
-   */
-  @JsonIgnore public Collection<String> getAdministrationRoutes() {
-    final Object current = myData.get("administrationRoute");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * A dosage form in which this drug/supplement is available, e.g. 'tablet', 'suspension', 'injection'.
-   */
-  @JsonIgnore public String getDosageForm() {
-    return (String) getValue("dosageForm");
-  }
-  /**
-   * A dosage form in which this drug/supplement is available, e.g. 'tablet', 'suspension', 'injection'.
-   */
-  @JsonIgnore public Collection<String> getDosageForms() {
-    final Object current = myData.get("dosageForm");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * True if this item's name is a proprietary/brand name (vs. generic name).
-   */
-  @JsonIgnore public Boolean getIsProprietary() {
-    return (Boolean) getValue("isProprietary");
-  }
-  /**
-   * True if this item's name is a proprietary/brand name (vs. generic name).
-   */
-  @JsonIgnore public Collection<Boolean> getIsProprietarys() {
-    final Object current = myData.get("isProprietary");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Boolean>) current;
-    }
-    return Arrays.asList((Boolean) current);
-  }
-  /**
-   * A dosing schedule for the drug for a given population, either observed, recommended, or maximum dose based on the type used.
-   */
-  @JsonIgnore public DoseSchedule getDoseSchedule() {
-    return (DoseSchedule) getValue("doseSchedule");
-  }
-  /**
-   * A dosing schedule for the drug for a given population, either observed, recommended, or maximum dose based on the type used.
-   */
-  @JsonIgnore public Collection<DoseSchedule> getDoseSchedules() {
-    final Object current = myData.get("doseSchedule");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DoseSchedule>) current;
-    }
-    return Arrays.asList((DoseSchedule) current);
-  }
-  /**
-   * Any precaution, guidance, contraindication, etc. related to this drug's use during pregnancy.
-   */
-  @JsonIgnore public String getPregnancyWarning() {
-    return (String) getValue("pregnancyWarning");
-  }
-  /**
-   * Any precaution, guidance, contraindication, etc. related to this drug's use during pregnancy.
-   */
-  @JsonIgnore public Collection<String> getPregnancyWarnings() {
-    final Object current = myData.get("pregnancyWarning");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * The class of drug this belongs to (e.g., statins).
-   */
-  @JsonIgnore public DrugClass getDrugClass() {
-    return (DrugClass) getValue("drugClass");
-  }
-  /**
-   * The class of drug this belongs to (e.g., statins).
-   */
-  @JsonIgnore public Collection<DrugClass> getDrugClasss() {
-    final Object current = myData.get("drugClass");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DrugClass>) current;
-    }
-    return Arrays.asList((DrugClass) current);
-  }
-  /**
-   * Pregnancy category of this drug.
-   */
-  @JsonIgnore public DrugPregnancyCategory getPregnancyCategory() {
-    return (DrugPregnancyCategory) getValue("pregnancyCategory");
-  }
-  /**
-   * Pregnancy category of this drug.
-   */
-  @JsonIgnore public Collection<DrugPregnancyCategory> getPregnancyCategorys() {
-    final Object current = myData.get("pregnancyCategory");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DrugPregnancyCategory>) current;
-    }
-    return Arrays.asList((DrugPregnancyCategory) current);
-  }
-  /**
-   * The manufacturer of the product.
-   */
-  @JsonIgnore public Organization getManufacturer() {
-    return (Organization) getValue("manufacturer");
-  }
-  /**
-   * The manufacturer of the product.
-   */
-  @JsonIgnore public Collection<Organization> getManufacturers() {
-    final Object current = myData.get("manufacturer");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
-    }
-    return Arrays.asList((Organization) current);
   }
   /**
    * The drug or supplement's legal status, including any controlled substance schedules that apply.
@@ -419,21 +181,123 @@ public class Drug extends Substance {
     return Arrays.asList((String) current);
   }
   /**
-   * The generic name of this drug or supplement.
+   * Any information related to overdose on a drug, including signs or symptoms, treatments, contact information for emergency response.
    */
-  @JsonIgnore public String getNonProprietaryName() {
-    return (String) getValue("nonProprietaryName");
+  @JsonIgnore public String getOverdosage() {
+    return (String) getValue("overdosage");
   }
   /**
-   * The generic name of this drug or supplement.
+   * Any information related to overdose on a drug, including signs or symptoms, treatments, contact information for emergency response.
    */
-  @JsonIgnore public Collection<String> getNonProprietaryNames() {
-    final Object current = myData.get("nonProprietaryName");
+  @JsonIgnore public Collection<String> getOverdosages() {
+    final Object current = myData.get("overdosage");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<String>) current;
     }
     return Arrays.asList((String) current);
+  }
+  /**
+   * The class of drug this belongs to (e.g., statins).
+   */
+  @JsonIgnore public DrugClass getDrugClass() {
+    return (DrugClass) getValue("drugClass");
+  }
+  /**
+   * The class of drug this belongs to (e.g., statins).
+   */
+  @JsonIgnore public Collection<DrugClass> getDrugClasss() {
+    final Object current = myData.get("drugClass");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<DrugClass>) current;
+    }
+    return Arrays.asList((DrugClass) current);
+  }
+  /**
+   * An available dosage strength for the drug.
+   */
+  @JsonIgnore public DrugStrength getAvailableStrength() {
+    return (DrugStrength) getValue("availableStrength");
+  }
+  /**
+   * An available dosage strength for the drug.
+   */
+  @JsonIgnore public Collection<DrugStrength> getAvailableStrengths() {
+    final Object current = myData.get("availableStrength");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<DrugStrength>) current;
+    }
+    return Arrays.asList((DrugStrength) current);
+  }
+  /**
+   * A route by which this drug may be administered, e.g. 'oral'.
+   */
+  @JsonIgnore public String getAdministrationRoute() {
+    return (String) getValue("administrationRoute");
+  }
+  /**
+   * A route by which this drug may be administered, e.g. 'oral'.
+   */
+  @JsonIgnore public Collection<String> getAdministrationRoutes() {
+    final Object current = myData.get("administrationRoute");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * Link to prescribing information for the drug.
+   */
+  @JsonIgnore public String getPrescribingInfo() {
+    return (String) getValue("prescribingInfo");
+  }
+  /**
+   * Link to prescribing information for the drug.
+   */
+  @JsonIgnore public Collection<String> getPrescribingInfos() {
+    final Object current = myData.get("prescribingInfo");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * Any precaution, guidance, contraindication, etc. related to this drug's use by breastfeeding mothers.
+   */
+  @JsonIgnore public String getBreastfeedingWarning() {
+    return (String) getValue("breastfeedingWarning");
+  }
+  /**
+   * Any precaution, guidance, contraindication, etc. related to this drug's use by breastfeeding mothers.
+   */
+  @JsonIgnore public Collection<String> getBreastfeedingWarnings() {
+    final Object current = myData.get("breastfeedingWarning");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * True if this item's name is a proprietary/brand name (vs. generic name).
+   */
+  @JsonIgnore public Boolean getIsProprietary() {
+    return (Boolean) getValue("isProprietary");
+  }
+  /**
+   * True if this item's name is a proprietary/brand name (vs. generic name).
+   */
+  @JsonIgnore public Collection<Boolean> getIsProprietarys() {
+    final Object current = myData.get("isProprietary");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Boolean>) current;
+    }
+    return Arrays.asList((Boolean) current);
   }
   /**
    * Another drug that is known to interact with this drug in a way that impacts the effect of this drug or causes a risk to the patient. Note: disease interactions are typically captured as contraindications.
@@ -453,16 +317,135 @@ public class Drug extends Substance {
     return Arrays.asList((Drug) current);
   }
   /**
-   * Description of the absorption and elimination of drugs, including their concentration (pharmacokinetics, pK) and biological effects (pharmacodynamics, pD).
+   * The generic name of this drug or supplement.
    */
-  @JsonIgnore public String getClinicalPharmacology() {
-    return (String) getValue("clinicalPharmacology");
+  @JsonIgnore public String getNonProprietaryName() {
+    return (String) getValue("nonProprietaryName");
   }
   /**
-   * Description of the absorption and elimination of drugs, including their concentration (pharmacokinetics, pK) and biological effects (pharmacodynamics, pD).
+   * The generic name of this drug or supplement.
    */
-  @JsonIgnore public Collection<String> getClinicalPharmacologys() {
-    final Object current = myData.get("clinicalPharmacology");
+  @JsonIgnore public Collection<String> getNonProprietaryNames() {
+    final Object current = myData.get("nonProprietaryName");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * True if the drug is available in a generic form (regardless of name).
+   */
+  @JsonIgnore public Boolean getIsAvailableGenerically() {
+    return (Boolean) getValue("isAvailableGenerically");
+  }
+  /**
+   * True if the drug is available in a generic form (regardless of name).
+   */
+  @JsonIgnore public Collection<Boolean> getIsAvailableGenericallys() {
+    final Object current = myData.get("isAvailableGenerically");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Boolean>) current;
+    }
+    return Arrays.asList((Boolean) current);
+  }
+  /**
+   * Pregnancy category of this drug.
+   */
+  @JsonIgnore public DrugPregnancyCategory getPregnancyCategory() {
+    return (DrugPregnancyCategory) getValue("pregnancyCategory");
+  }
+  /**
+   * Pregnancy category of this drug.
+   */
+  @JsonIgnore public Collection<DrugPregnancyCategory> getPregnancyCategorys() {
+    final Object current = myData.get("pregnancyCategory");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<DrugPregnancyCategory>) current;
+    }
+    return Arrays.asList((DrugPregnancyCategory) current);
+  }
+  /**
+   * Any precaution, guidance, contraindication, etc. related to this drug's use during pregnancy.
+   */
+  @JsonIgnore public String getPregnancyWarning() {
+    return (String) getValue("pregnancyWarning");
+  }
+  /**
+   * Any precaution, guidance, contraindication, etc. related to this drug's use during pregnancy.
+   */
+  @JsonIgnore public Collection<String> getPregnancyWarnings() {
+    final Object current = myData.get("pregnancyWarning");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * The specific biochemical interaction through which this drug or supplement produces its pharmacological effect.
+   */
+  @JsonIgnore public String getMechanismOfAction() {
+    return (String) getValue("mechanismOfAction");
+  }
+  /**
+   * The specific biochemical interaction through which this drug or supplement produces its pharmacological effect.
+   */
+  @JsonIgnore public Collection<String> getMechanismOfActions() {
+    final Object current = myData.get("mechanismOfAction");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * A dosing schedule for the drug for a given population, either observed, recommended, or maximum dose based on the type used.
+   */
+  @JsonIgnore public DoseSchedule getDoseSchedule() {
+    return (DoseSchedule) getValue("doseSchedule");
+  }
+  /**
+   * A dosing schedule for the drug for a given population, either observed, recommended, or maximum dose based on the type used.
+   */
+  @JsonIgnore public Collection<DoseSchedule> getDoseSchedules() {
+    final Object current = myData.get("doseSchedule");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<DoseSchedule>) current;
+    }
+    return Arrays.asList((DoseSchedule) current);
+  }
+  /**
+   * Any precaution, guidance, contraindication, etc. related to consumption of alcohol while taking this drug.
+   */
+  @JsonIgnore public String getAlcoholWarning() {
+    return (String) getValue("alcoholWarning");
+  }
+  /**
+   * Any precaution, guidance, contraindication, etc. related to consumption of alcohol while taking this drug.
+   */
+  @JsonIgnore public Collection<String> getAlcoholWarnings() {
+    final Object current = myData.get("alcoholWarning");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * Link to the drug's label details.
+   */
+  @JsonIgnore public String getLabelDetails() {
+    return (String) getValue("labelDetails");
+  }
+  /**
+   * Link to the drug's label details.
+   */
+  @JsonIgnore public Collection<String> getLabelDetailss() {
+    final Object current = myData.get("labelDetails");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<String>) current;
@@ -504,50 +487,16 @@ public class Drug extends Substance {
     return Arrays.asList((String) current);
   }
   /**
-   * Any precaution, guidance, contraindication, etc. related to this drug's use by breastfeeding mothers.
+   * A dosage form in which this drug/supplement is available, e.g. 'tablet', 'suspension', 'injection'.
    */
-  @JsonIgnore public String getBreastfeedingWarning() {
-    return (String) getValue("breastfeedingWarning");
+  @JsonIgnore public String getDosageForm() {
+    return (String) getValue("dosageForm");
   }
   /**
-   * Any precaution, guidance, contraindication, etc. related to this drug's use by breastfeeding mothers.
+   * A dosage form in which this drug/supplement is available, e.g. 'tablet', 'suspension', 'injection'.
    */
-  @JsonIgnore public Collection<String> getBreastfeedingWarnings() {
-    final Object current = myData.get("breastfeedingWarning");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * The specific biochemical interaction through which this drug or supplement produces its pharmacological effect.
-   */
-  @JsonIgnore public String getMechanismOfAction() {
-    return (String) getValue("mechanismOfAction");
-  }
-  /**
-   * The specific biochemical interaction through which this drug or supplement produces its pharmacological effect.
-   */
-  @JsonIgnore public Collection<String> getMechanismOfActions() {
-    final Object current = myData.get("mechanismOfAction");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * Any precaution, guidance, contraindication, etc. related to consumption of alcohol while taking this drug.
-   */
-  @JsonIgnore public String getAlcoholWarning() {
-    return (String) getValue("alcoholWarning");
-  }
-  /**
-   * Any precaution, guidance, contraindication, etc. related to consumption of alcohol while taking this drug.
-   */
-  @JsonIgnore public Collection<String> getAlcoholWarnings() {
-    final Object current = myData.get("alcoholWarning");
+  @JsonIgnore public Collection<String> getDosageForms() {
+    final Object current = myData.get("dosageForm");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<String>) current;
@@ -572,21 +521,72 @@ public class Drug extends Substance {
     return Arrays.asList((String) current);
   }
   /**
-   * Any other drug related to this one, for example commonly-prescribed alternatives.
+   * The RxCUI drug identifier from RXNORM.
    */
-  @JsonIgnore public Drug getRelatedDrug() {
-    return (Drug) getValue("relatedDrug");
+  @JsonIgnore public String getRxcui() {
+    return (String) getValue("rxcui");
   }
   /**
-   * Any other drug related to this one, for example commonly-prescribed alternatives.
+   * The RxCUI drug identifier from RXNORM.
    */
-  @JsonIgnore public Collection<Drug> getRelatedDrugs() {
-    final Object current = myData.get("relatedDrug");
+  @JsonIgnore public Collection<String> getRxcuis() {
+    final Object current = myData.get("rxcui");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<Drug>) current;
+      return (Collection<String>) current;
     }
-    return Arrays.asList((Drug) current);
+    return Arrays.asList((String) current);
+  }
+  /**
+   * Proprietary name given to the diet plan, typically by its originator or creator.
+   */
+  @JsonIgnore public String getProprietaryName() {
+    return (String) getValue("proprietaryName");
+  }
+  /**
+   * Proprietary name given to the diet plan, typically by its originator or creator.
+   */
+  @JsonIgnore public Collection<String> getProprietaryNames() {
+    final Object current = myData.get("proprietaryName");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * Description of the absorption and elimination of drugs, including their concentration (pharmacokinetics, pK) and biological effects (pharmacodynamics, pD).
+   */
+  @JsonIgnore public String getClinicalPharmacology() {
+    return (String) getValue("clinicalPharmacology");
+  }
+  /**
+   * Description of the absorption and elimination of drugs, including their concentration (pharmacokinetics, pK) and biological effects (pharmacodynamics, pD).
+   */
+  @JsonIgnore public Collection<String> getClinicalPharmacologys() {
+    final Object current = myData.get("clinicalPharmacology");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * Any FDA or other warnings about the drug (text or URL).
+   */
+  @JsonIgnore public String getWarning() {
+    return (String) getValue("warning");
+  }
+  /**
+   * Any FDA or other warnings about the drug (text or URL).
+   */
+  @JsonIgnore public Collection<String> getWarnings() {
+    final Object current = myData.get("warning");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
   }
   protected Drug(java.util.Map<String,Object> data) {
     super(data);
@@ -603,52 +603,24 @@ public class Drug extends Substance {
       return new Drug(myData);
     }
     /**
-     * Any information related to overdose on a drug, including signs or symptoms, treatments, contact information for emergency response.
+     * The manufacturer of the product.
      */
-    @NotNull public Builder overdosage(@NotNull String overdosage) {
-      putValue("overdosage", overdosage);
+    @NotNull public Builder manufacturer(@NotNull Organization organization) {
+      putValue("manufacturer", organization);
       return this;
     }
     /**
-     * Proprietary name given to the diet plan, typically by its originator or creator.
+     * The manufacturer of the product.
      */
-    @NotNull public Builder proprietaryName(@NotNull String proprietaryName) {
-      putValue("proprietaryName", proprietaryName);
+    @NotNull public Builder manufacturer(@NotNull Organization.Builder organization) {
+      putValue("manufacturer", organization.build());
       return this;
     }
     /**
-     * The insurance plans that cover this drug.
+     * An active ingredient, typically chemical compounds and/or biologic substances.
      */
-    @NotNull public Builder includedInHealthInsurancePlan(@NotNull HealthInsurancePlan healthInsurancePlan) {
-      putValue("includedInHealthInsurancePlan", healthInsurancePlan);
-      return this;
-    }
-    /**
-     * The insurance plans that cover this drug.
-     */
-    @NotNull public Builder includedInHealthInsurancePlan(@NotNull HealthInsurancePlan.Builder healthInsurancePlan) {
-      putValue("includedInHealthInsurancePlan", healthInsurancePlan.build());
-      return this;
-    }
-    /**
-     * True if the drug is available in a generic form (regardless of name).
-     */
-    @NotNull public Builder isAvailableGenerically(@NotNull Boolean isAvailableGenerically) {
-      putValue("isAvailableGenerically", isAvailableGenerically);
-      return this;
-    }
-    /**
-     * Any precaution, guidance, contraindication, etc. related to consumption of specific foods while taking this drug.
-     */
-    @NotNull public Builder foodWarning(@NotNull String foodWarning) {
-      putValue("foodWarning", foodWarning);
-      return this;
-    }
-    /**
-     * Any FDA or other warnings about the drug (text or URL).
-     */
-    @NotNull public Builder warning(@NotNull String warning) {
-      putValue("warning", warning);
+    @NotNull public Builder activeIngredient(@NotNull String activeIngredient) {
+      putValue("activeIngredient", activeIngredient);
       return this;
     }
     /**
@@ -666,129 +638,38 @@ public class Drug extends Substance {
       return this;
     }
     /**
-     * An active ingredient, typically chemical compounds and/or biologic substances.
+     * The insurance plans that cover this drug.
      */
-    @NotNull public Builder activeIngredient(@NotNull String activeIngredient) {
-      putValue("activeIngredient", activeIngredient);
+    @NotNull public Builder includedInHealthInsurancePlan(@NotNull HealthInsurancePlan healthInsurancePlan) {
+      putValue("includedInHealthInsurancePlan", healthInsurancePlan);
       return this;
     }
     /**
-     * The RxCUI drug identifier from RXNORM.
+     * The insurance plans that cover this drug.
      */
-    @NotNull public Builder rxcui(@NotNull String rxcui) {
-      putValue("rxcui", rxcui);
+    @NotNull public Builder includedInHealthInsurancePlan(@NotNull HealthInsurancePlan.Builder healthInsurancePlan) {
+      putValue("includedInHealthInsurancePlan", healthInsurancePlan.build());
       return this;
     }
     /**
-     * Link to the drug's label details.
+     * Any other drug related to this one, for example commonly-prescribed alternatives.
      */
-    @NotNull public Builder labelDetails(@NotNull String labelDetails) {
-      putValue("labelDetails", labelDetails);
+    @NotNull public Builder relatedDrug(@NotNull Drug drug) {
+      putValue("relatedDrug", drug);
       return this;
     }
     /**
-     * An available dosage strength for the drug.
+     * Any other drug related to this one, for example commonly-prescribed alternatives.
      */
-    @NotNull public Builder availableStrength(@NotNull DrugStrength drugStrength) {
-      putValue("availableStrength", drugStrength);
+    @NotNull public Builder relatedDrug(@NotNull Drug.Builder drug) {
+      putValue("relatedDrug", drug.build());
       return this;
     }
     /**
-     * An available dosage strength for the drug.
+     * Any precaution, guidance, contraindication, etc. related to consumption of specific foods while taking this drug.
      */
-    @NotNull public Builder availableStrength(@NotNull DrugStrength.Builder drugStrength) {
-      putValue("availableStrength", drugStrength.build());
-      return this;
-    }
-    /**
-     * Link to prescribing information for the drug.
-     */
-    @NotNull public Builder prescribingInfo(@NotNull String prescribingInfo) {
-      putValue("prescribingInfo", prescribingInfo);
-      return this;
-    }
-    /**
-     * A route by which this drug may be administered, e.g. 'oral'.
-     */
-    @NotNull public Builder administrationRoute(@NotNull String administrationRoute) {
-      putValue("administrationRoute", administrationRoute);
-      return this;
-    }
-    /**
-     * A dosage form in which this drug/supplement is available, e.g. 'tablet', 'suspension', 'injection'.
-     */
-    @NotNull public Builder dosageForm(@NotNull String dosageForm) {
-      putValue("dosageForm", dosageForm);
-      return this;
-    }
-    /**
-     * True if this item's name is a proprietary/brand name (vs. generic name).
-     */
-    @NotNull public Builder isProprietary(@NotNull Boolean isProprietary) {
-      putValue("isProprietary", isProprietary);
-      return this;
-    }
-    /**
-     * A dosing schedule for the drug for a given population, either observed, recommended, or maximum dose based on the type used.
-     */
-    @NotNull public Builder doseSchedule(@NotNull DoseSchedule doseSchedule) {
-      putValue("doseSchedule", doseSchedule);
-      return this;
-    }
-    /**
-     * A dosing schedule for the drug for a given population, either observed, recommended, or maximum dose based on the type used.
-     */
-    @NotNull public Builder doseSchedule(@NotNull DoseSchedule.Builder doseSchedule) {
-      putValue("doseSchedule", doseSchedule.build());
-      return this;
-    }
-    /**
-     * Any precaution, guidance, contraindication, etc. related to this drug's use during pregnancy.
-     */
-    @NotNull public Builder pregnancyWarning(@NotNull String pregnancyWarning) {
-      putValue("pregnancyWarning", pregnancyWarning);
-      return this;
-    }
-    /**
-     * The class of drug this belongs to (e.g., statins).
-     */
-    @NotNull public Builder drugClass(@NotNull DrugClass drugClass) {
-      putValue("drugClass", drugClass);
-      return this;
-    }
-    /**
-     * The class of drug this belongs to (e.g., statins).
-     */
-    @NotNull public Builder drugClass(@NotNull DrugClass.Builder drugClass) {
-      putValue("drugClass", drugClass.build());
-      return this;
-    }
-    /**
-     * Pregnancy category of this drug.
-     */
-    @NotNull public Builder pregnancyCategory(@NotNull DrugPregnancyCategory drugPregnancyCategory) {
-      putValue("pregnancyCategory", drugPregnancyCategory);
-      return this;
-    }
-    /**
-     * Pregnancy category of this drug.
-     */
-    @NotNull public Builder pregnancyCategory(@NotNull DrugPregnancyCategory.Builder drugPregnancyCategory) {
-      putValue("pregnancyCategory", drugPregnancyCategory.build());
-      return this;
-    }
-    /**
-     * The manufacturer of the product.
-     */
-    @NotNull public Builder manufacturer(@NotNull Organization organization) {
-      putValue("manufacturer", organization);
-      return this;
-    }
-    /**
-     * The manufacturer of the product.
-     */
-    @NotNull public Builder manufacturer(@NotNull Organization.Builder organization) {
-      putValue("manufacturer", organization.build());
+    @NotNull public Builder foodWarning(@NotNull String foodWarning) {
+      putValue("foodWarning", foodWarning);
       return this;
     }
     /**
@@ -820,10 +701,66 @@ public class Drug extends Substance {
       return this;
     }
     /**
-     * The generic name of this drug or supplement.
+     * Any information related to overdose on a drug, including signs or symptoms, treatments, contact information for emergency response.
      */
-    @NotNull public Builder nonProprietaryName(@NotNull String nonProprietaryName) {
-      putValue("nonProprietaryName", nonProprietaryName);
+    @NotNull public Builder overdosage(@NotNull String overdosage) {
+      putValue("overdosage", overdosage);
+      return this;
+    }
+    /**
+     * The class of drug this belongs to (e.g., statins).
+     */
+    @NotNull public Builder drugClass(@NotNull DrugClass drugClass) {
+      putValue("drugClass", drugClass);
+      return this;
+    }
+    /**
+     * The class of drug this belongs to (e.g., statins).
+     */
+    @NotNull public Builder drugClass(@NotNull DrugClass.Builder drugClass) {
+      putValue("drugClass", drugClass.build());
+      return this;
+    }
+    /**
+     * An available dosage strength for the drug.
+     */
+    @NotNull public Builder availableStrength(@NotNull DrugStrength drugStrength) {
+      putValue("availableStrength", drugStrength);
+      return this;
+    }
+    /**
+     * An available dosage strength for the drug.
+     */
+    @NotNull public Builder availableStrength(@NotNull DrugStrength.Builder drugStrength) {
+      putValue("availableStrength", drugStrength.build());
+      return this;
+    }
+    /**
+     * A route by which this drug may be administered, e.g. 'oral'.
+     */
+    @NotNull public Builder administrationRoute(@NotNull String administrationRoute) {
+      putValue("administrationRoute", administrationRoute);
+      return this;
+    }
+    /**
+     * Link to prescribing information for the drug.
+     */
+    @NotNull public Builder prescribingInfo(@NotNull String prescribingInfo) {
+      putValue("prescribingInfo", prescribingInfo);
+      return this;
+    }
+    /**
+     * Any precaution, guidance, contraindication, etc. related to this drug's use by breastfeeding mothers.
+     */
+    @NotNull public Builder breastfeedingWarning(@NotNull String breastfeedingWarning) {
+      putValue("breastfeedingWarning", breastfeedingWarning);
+      return this;
+    }
+    /**
+     * True if this item's name is a proprietary/brand name (vs. generic name).
+     */
+    @NotNull public Builder isProprietary(@NotNull Boolean isProprietary) {
+      putValue("isProprietary", isProprietary);
       return this;
     }
     /**
@@ -841,10 +778,73 @@ public class Drug extends Substance {
       return this;
     }
     /**
-     * Description of the absorption and elimination of drugs, including their concentration (pharmacokinetics, pK) and biological effects (pharmacodynamics, pD).
+     * The generic name of this drug or supplement.
      */
-    @NotNull public Builder clinicalPharmacology(@NotNull String clinicalPharmacology) {
-      putValue("clinicalPharmacology", clinicalPharmacology);
+    @NotNull public Builder nonProprietaryName(@NotNull String nonProprietaryName) {
+      putValue("nonProprietaryName", nonProprietaryName);
+      return this;
+    }
+    /**
+     * True if the drug is available in a generic form (regardless of name).
+     */
+    @NotNull public Builder isAvailableGenerically(@NotNull Boolean isAvailableGenerically) {
+      putValue("isAvailableGenerically", isAvailableGenerically);
+      return this;
+    }
+    /**
+     * Pregnancy category of this drug.
+     */
+    @NotNull public Builder pregnancyCategory(@NotNull DrugPregnancyCategory drugPregnancyCategory) {
+      putValue("pregnancyCategory", drugPregnancyCategory);
+      return this;
+    }
+    /**
+     * Pregnancy category of this drug.
+     */
+    @NotNull public Builder pregnancyCategory(@NotNull DrugPregnancyCategory.Builder drugPregnancyCategory) {
+      putValue("pregnancyCategory", drugPregnancyCategory.build());
+      return this;
+    }
+    /**
+     * Any precaution, guidance, contraindication, etc. related to this drug's use during pregnancy.
+     */
+    @NotNull public Builder pregnancyWarning(@NotNull String pregnancyWarning) {
+      putValue("pregnancyWarning", pregnancyWarning);
+      return this;
+    }
+    /**
+     * The specific biochemical interaction through which this drug or supplement produces its pharmacological effect.
+     */
+    @NotNull public Builder mechanismOfAction(@NotNull String mechanismOfAction) {
+      putValue("mechanismOfAction", mechanismOfAction);
+      return this;
+    }
+    /**
+     * A dosing schedule for the drug for a given population, either observed, recommended, or maximum dose based on the type used.
+     */
+    @NotNull public Builder doseSchedule(@NotNull DoseSchedule doseSchedule) {
+      putValue("doseSchedule", doseSchedule);
+      return this;
+    }
+    /**
+     * A dosing schedule for the drug for a given population, either observed, recommended, or maximum dose based on the type used.
+     */
+    @NotNull public Builder doseSchedule(@NotNull DoseSchedule.Builder doseSchedule) {
+      putValue("doseSchedule", doseSchedule.build());
+      return this;
+    }
+    /**
+     * Any precaution, guidance, contraindication, etc. related to consumption of alcohol while taking this drug.
+     */
+    @NotNull public Builder alcoholWarning(@NotNull String alcoholWarning) {
+      putValue("alcoholWarning", alcoholWarning);
+      return this;
+    }
+    /**
+     * Link to the drug's label details.
+     */
+    @NotNull public Builder labelDetails(@NotNull String labelDetails) {
+      putValue("labelDetails", labelDetails);
       return this;
     }
     /**
@@ -869,24 +869,10 @@ public class Drug extends Substance {
       return this;
     }
     /**
-     * Any precaution, guidance, contraindication, etc. related to this drug's use by breastfeeding mothers.
+     * A dosage form in which this drug/supplement is available, e.g. 'tablet', 'suspension', 'injection'.
      */
-    @NotNull public Builder breastfeedingWarning(@NotNull String breastfeedingWarning) {
-      putValue("breastfeedingWarning", breastfeedingWarning);
-      return this;
-    }
-    /**
-     * The specific biochemical interaction through which this drug or supplement produces its pharmacological effect.
-     */
-    @NotNull public Builder mechanismOfAction(@NotNull String mechanismOfAction) {
-      putValue("mechanismOfAction", mechanismOfAction);
-      return this;
-    }
-    /**
-     * Any precaution, guidance, contraindication, etc. related to consumption of alcohol while taking this drug.
-     */
-    @NotNull public Builder alcoholWarning(@NotNull String alcoholWarning) {
-      putValue("alcoholWarning", alcoholWarning);
+    @NotNull public Builder dosageForm(@NotNull String dosageForm) {
+      putValue("dosageForm", dosageForm);
       return this;
     }
     /**
@@ -897,59 +883,31 @@ public class Drug extends Substance {
       return this;
     }
     /**
-     * Any other drug related to this one, for example commonly-prescribed alternatives.
+     * The RxCUI drug identifier from RXNORM.
      */
-    @NotNull public Builder relatedDrug(@NotNull Drug drug) {
-      putValue("relatedDrug", drug);
+    @NotNull public Builder rxcui(@NotNull String rxcui) {
+      putValue("rxcui", rxcui);
       return this;
     }
     /**
-     * Any other drug related to this one, for example commonly-prescribed alternatives.
+     * Proprietary name given to the diet plan, typically by its originator or creator.
      */
-    @NotNull public Builder relatedDrug(@NotNull Drug.Builder drug) {
-      putValue("relatedDrug", drug.build());
+    @NotNull public Builder proprietaryName(@NotNull String proprietaryName) {
+      putValue("proprietaryName", proprietaryName);
       return this;
     }
     /**
-     * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
+     * Description of the absorption and elimination of drugs, including their concentration (pharmacokinetics, pK) and biological effects (pharmacodynamics, pD).
      */
-    @NotNull public Builder recognizingAuthority(@NotNull Organization organization) {
-      putValue("recognizingAuthority", organization);
+    @NotNull public Builder clinicalPharmacology(@NotNull String clinicalPharmacology) {
+      putValue("clinicalPharmacology", clinicalPharmacology);
       return this;
     }
     /**
-     * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
+     * Any FDA or other warnings about the drug (text or URL).
      */
-    @NotNull public Builder recognizingAuthority(@NotNull Organization.Builder organization) {
-      putValue("recognizingAuthority", organization.build());
-      return this;
-    }
-    /**
-     * A medical guideline related to this entity.
-     */
-    @NotNull public Builder guideline(@NotNull MedicalGuideline medicalGuideline) {
-      putValue("guideline", medicalGuideline);
-      return this;
-    }
-    /**
-     * A medical guideline related to this entity.
-     */
-    @NotNull public Builder guideline(@NotNull MedicalGuideline.Builder medicalGuideline) {
-      putValue("guideline", medicalGuideline.build());
-      return this;
-    }
-    /**
-     * A medical study or trial related to this entity.
-     */
-    @NotNull public Builder study(@NotNull MedicalStudy medicalStudy) {
-      putValue("study", medicalStudy);
-      return this;
-    }
-    /**
-     * A medical study or trial related to this entity.
-     */
-    @NotNull public Builder study(@NotNull MedicalStudy.Builder medicalStudy) {
-      putValue("study", medicalStudy.build());
+    @NotNull public Builder warning(@NotNull String warning) {
+      putValue("warning", warning);
       return this;
     }
     /**
@@ -967,20 +925,6 @@ public class Drug extends Substance {
       return this;
     }
     /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
-     */
-    @NotNull public Builder medicineSystem(@NotNull MedicineSystem medicineSystem) {
-      putValue("medicineSystem", medicineSystem);
-      return this;
-    }
-    /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
-     */
-    @NotNull public Builder medicineSystem(@NotNull MedicineSystem.Builder medicineSystem) {
-      putValue("medicineSystem", medicineSystem.build());
-      return this;
-    }
-    /**
      * If applicable, a medical specialty in which this entity is relevant.
      */
     @NotNull public Builder relevantSpecialty(@NotNull MedicalSpecialty medicalSpecialty) {
@@ -995,59 +939,59 @@ public class Drug extends Substance {
       return this;
     }
     /**
-     * URL of the item.
+     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
+    @NotNull public Builder medicineSystem(@NotNull MedicineSystem medicineSystem) {
+      putValue("medicineSystem", medicineSystem);
       return this;
     }
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      */
-    @NotNull public Builder additionalType(@NotNull String additionalType) {
-      putValue("additionalType", additionalType);
+    @NotNull public Builder medicineSystem(@NotNull MedicineSystem.Builder medicineSystem) {
+      putValue("medicineSystem", medicineSystem.build());
       return this;
     }
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * A medical study or trial related to this entity.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
-      putValue("disambiguatingDescription", description);
+    @NotNull public Builder study(@NotNull MedicalStudy medicalStudy) {
+      putValue("study", medicalStudy);
       return this;
     }
     /**
-     * A description of the item.
+     * A medical study or trial related to this entity.
      */
-    @NotNull public Builder description(@NotNull Description description) {
-      putValue("description", description);
+    @NotNull public Builder study(@NotNull MedicalStudy.Builder medicalStudy) {
+      putValue("study", medicalStudy.build());
       return this;
     }
     /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     * A medical guideline related to this entity.
      */
-    @NotNull public Builder sameAs(@NotNull String sameAs) {
-      putValue("sameAs", sameAs);
+    @NotNull public Builder guideline(@NotNull MedicalGuideline medicalGuideline) {
+      putValue("guideline", medicalGuideline);
       return this;
     }
     /**
-     * The name of the item.
+     * A medical guideline related to this entity.
      */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
+    @NotNull public Builder guideline(@NotNull MedicalGuideline.Builder medicalGuideline) {
+      putValue("guideline", medicalGuideline.build());
       return this;
     }
     /**
-     * An alias for the item.
+     * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
      */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
+    @NotNull public Builder recognizingAuthority(@NotNull Organization organization) {
+      putValue("recognizingAuthority", organization);
       return this;
     }
     /**
-     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
+     * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
      */
-    @NotNull public Builder image(@NotNull Image image) {
-      putValue("image", image);
+    @NotNull public Builder recognizingAuthority(@NotNull Organization.Builder organization) {
+      putValue("recognizingAuthority", organization.build());
       return this;
     }
     /**
@@ -1065,24 +1009,45 @@ public class Drug extends Substance {
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * URL of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
+    @NotNull public Builder additionalType(@NotNull String additionalType) {
+      putValue("additionalType", additionalType);
+      return this;
+    }
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     */
+    @NotNull public Builder sameAs(@NotNull String sameAs) {
+      putValue("sameAs", sameAs);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * The name of the item.
+     */
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -1113,6 +1078,27 @@ public class Drug extends Substance {
       putValue("subjectOf", event.build());
       return this;
     }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -1121,72 +1107,72 @@ public class Drug extends Substance {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("overdosage".equals(key) && value instanceof String) { this.overdosage((String)value); return; }
-      if ("overdosages".equals(key) && value instanceof String) { this.overdosage((String)value); return; }
-      if ("proprietaryName".equals(key) && value instanceof String) { this.proprietaryName((String)value); return; }
-      if ("proprietaryNames".equals(key) && value instanceof String) { this.proprietaryName((String)value); return; }
-      if ("includedInHealthInsurancePlan".equals(key) && value instanceof HealthInsurancePlan) { this.includedInHealthInsurancePlan((HealthInsurancePlan)value); return; }
-      if ("includedInHealthInsurancePlans".equals(key) && value instanceof HealthInsurancePlan) { this.includedInHealthInsurancePlan((HealthInsurancePlan)value); return; }
-      if ("isAvailableGenerically".equals(key) && value instanceof Boolean) { this.isAvailableGenerically((Boolean)value); return; }
-      if ("isAvailableGenericallys".equals(key) && value instanceof Boolean) { this.isAvailableGenerically((Boolean)value); return; }
-      if ("foodWarning".equals(key) && value instanceof String) { this.foodWarning((String)value); return; }
-      if ("foodWarnings".equals(key) && value instanceof String) { this.foodWarning((String)value); return; }
-      if ("warning".equals(key) && value instanceof String) { this.warning((String)value); return; }
-      if ("warnings".equals(key) && value instanceof String) { this.warning((String)value); return; }
-      if ("maximumIntake".equals(key) && value instanceof MaximumDoseSchedule) { this.maximumIntake((MaximumDoseSchedule)value); return; }
-      if ("maximumIntakes".equals(key) && value instanceof MaximumDoseSchedule) { this.maximumIntake((MaximumDoseSchedule)value); return; }
-      if ("activeIngredient".equals(key) && value instanceof String) { this.activeIngredient((String)value); return; }
-      if ("activeIngredients".equals(key) && value instanceof String) { this.activeIngredient((String)value); return; }
-      if ("rxcui".equals(key) && value instanceof String) { this.rxcui((String)value); return; }
-      if ("rxcuis".equals(key) && value instanceof String) { this.rxcui((String)value); return; }
-      if ("labelDetails".equals(key) && value instanceof String) { this.labelDetails((String)value); return; }
-      if ("labelDetailss".equals(key) && value instanceof String) { this.labelDetails((String)value); return; }
-      if ("availableStrength".equals(key) && value instanceof DrugStrength) { this.availableStrength((DrugStrength)value); return; }
-      if ("availableStrengths".equals(key) && value instanceof DrugStrength) { this.availableStrength((DrugStrength)value); return; }
-      if ("prescribingInfo".equals(key) && value instanceof String) { this.prescribingInfo((String)value); return; }
-      if ("prescribingInfos".equals(key) && value instanceof String) { this.prescribingInfo((String)value); return; }
-      if ("administrationRoute".equals(key) && value instanceof String) { this.administrationRoute((String)value); return; }
-      if ("administrationRoutes".equals(key) && value instanceof String) { this.administrationRoute((String)value); return; }
-      if ("dosageForm".equals(key) && value instanceof String) { this.dosageForm((String)value); return; }
-      if ("dosageForms".equals(key) && value instanceof String) { this.dosageForm((String)value); return; }
-      if ("isProprietary".equals(key) && value instanceof Boolean) { this.isProprietary((Boolean)value); return; }
-      if ("isProprietarys".equals(key) && value instanceof Boolean) { this.isProprietary((Boolean)value); return; }
-      if ("doseSchedule".equals(key) && value instanceof DoseSchedule) { this.doseSchedule((DoseSchedule)value); return; }
-      if ("doseSchedules".equals(key) && value instanceof DoseSchedule) { this.doseSchedule((DoseSchedule)value); return; }
-      if ("pregnancyWarning".equals(key) && value instanceof String) { this.pregnancyWarning((String)value); return; }
-      if ("pregnancyWarnings".equals(key) && value instanceof String) { this.pregnancyWarning((String)value); return; }
-      if ("drugClass".equals(key) && value instanceof DrugClass) { this.drugClass((DrugClass)value); return; }
-      if ("drugClasss".equals(key) && value instanceof DrugClass) { this.drugClass((DrugClass)value); return; }
-      if ("pregnancyCategory".equals(key) && value instanceof DrugPregnancyCategory) { this.pregnancyCategory((DrugPregnancyCategory)value); return; }
-      if ("pregnancyCategorys".equals(key) && value instanceof DrugPregnancyCategory) { this.pregnancyCategory((DrugPregnancyCategory)value); return; }
       if ("manufacturer".equals(key) && value instanceof Organization) { this.manufacturer((Organization)value); return; }
       if ("manufacturers".equals(key) && value instanceof Organization) { this.manufacturer((Organization)value); return; }
+      if ("activeIngredient".equals(key) && value instanceof String) { this.activeIngredient((String)value); return; }
+      if ("activeIngredients".equals(key) && value instanceof String) { this.activeIngredient((String)value); return; }
+      if ("maximumIntake".equals(key) && value instanceof MaximumDoseSchedule) { this.maximumIntake((MaximumDoseSchedule)value); return; }
+      if ("maximumIntakes".equals(key) && value instanceof MaximumDoseSchedule) { this.maximumIntake((MaximumDoseSchedule)value); return; }
+      if ("includedInHealthInsurancePlan".equals(key) && value instanceof HealthInsurancePlan) { this.includedInHealthInsurancePlan((HealthInsurancePlan)value); return; }
+      if ("includedInHealthInsurancePlans".equals(key) && value instanceof HealthInsurancePlan) { this.includedInHealthInsurancePlan((HealthInsurancePlan)value); return; }
+      if ("relatedDrug".equals(key) && value instanceof Drug) { this.relatedDrug((Drug)value); return; }
+      if ("relatedDrugs".equals(key) && value instanceof Drug) { this.relatedDrug((Drug)value); return; }
+      if ("foodWarning".equals(key) && value instanceof String) { this.foodWarning((String)value); return; }
+      if ("foodWarnings".equals(key) && value instanceof String) { this.foodWarning((String)value); return; }
       if ("legalStatus".equals(key) && value instanceof DrugLegalStatus) { this.legalStatus((DrugLegalStatus)value); return; }
       if ("legalStatuss".equals(key) && value instanceof DrugLegalStatus) { this.legalStatus((DrugLegalStatus)value); return; }
       if ("legalStatus".equals(key) && value instanceof MedicalEnumeration) { this.legalStatus((MedicalEnumeration)value); return; }
       if ("legalStatuss".equals(key) && value instanceof MedicalEnumeration) { this.legalStatus((MedicalEnumeration)value); return; }
       if ("legalStatus".equals(key) && value instanceof String) { this.legalStatus((String)value); return; }
       if ("legalStatuss".equals(key) && value instanceof String) { this.legalStatus((String)value); return; }
-      if ("nonProprietaryName".equals(key) && value instanceof String) { this.nonProprietaryName((String)value); return; }
-      if ("nonProprietaryNames".equals(key) && value instanceof String) { this.nonProprietaryName((String)value); return; }
+      if ("overdosage".equals(key) && value instanceof String) { this.overdosage((String)value); return; }
+      if ("overdosages".equals(key) && value instanceof String) { this.overdosage((String)value); return; }
+      if ("drugClass".equals(key) && value instanceof DrugClass) { this.drugClass((DrugClass)value); return; }
+      if ("drugClasss".equals(key) && value instanceof DrugClass) { this.drugClass((DrugClass)value); return; }
+      if ("availableStrength".equals(key) && value instanceof DrugStrength) { this.availableStrength((DrugStrength)value); return; }
+      if ("availableStrengths".equals(key) && value instanceof DrugStrength) { this.availableStrength((DrugStrength)value); return; }
+      if ("administrationRoute".equals(key) && value instanceof String) { this.administrationRoute((String)value); return; }
+      if ("administrationRoutes".equals(key) && value instanceof String) { this.administrationRoute((String)value); return; }
+      if ("prescribingInfo".equals(key) && value instanceof String) { this.prescribingInfo((String)value); return; }
+      if ("prescribingInfos".equals(key) && value instanceof String) { this.prescribingInfo((String)value); return; }
+      if ("breastfeedingWarning".equals(key) && value instanceof String) { this.breastfeedingWarning((String)value); return; }
+      if ("breastfeedingWarnings".equals(key) && value instanceof String) { this.breastfeedingWarning((String)value); return; }
+      if ("isProprietary".equals(key) && value instanceof Boolean) { this.isProprietary((Boolean)value); return; }
+      if ("isProprietarys".equals(key) && value instanceof Boolean) { this.isProprietary((Boolean)value); return; }
       if ("interactingDrug".equals(key) && value instanceof Drug) { this.interactingDrug((Drug)value); return; }
       if ("interactingDrugs".equals(key) && value instanceof Drug) { this.interactingDrug((Drug)value); return; }
-      if ("clinicalPharmacology".equals(key) && value instanceof String) { this.clinicalPharmacology((String)value); return; }
-      if ("clinicalPharmacologys".equals(key) && value instanceof String) { this.clinicalPharmacology((String)value); return; }
+      if ("nonProprietaryName".equals(key) && value instanceof String) { this.nonProprietaryName((String)value); return; }
+      if ("nonProprietaryNames".equals(key) && value instanceof String) { this.nonProprietaryName((String)value); return; }
+      if ("isAvailableGenerically".equals(key) && value instanceof Boolean) { this.isAvailableGenerically((Boolean)value); return; }
+      if ("isAvailableGenericallys".equals(key) && value instanceof Boolean) { this.isAvailableGenerically((Boolean)value); return; }
+      if ("pregnancyCategory".equals(key) && value instanceof DrugPregnancyCategory) { this.pregnancyCategory((DrugPregnancyCategory)value); return; }
+      if ("pregnancyCategorys".equals(key) && value instanceof DrugPregnancyCategory) { this.pregnancyCategory((DrugPregnancyCategory)value); return; }
+      if ("pregnancyWarning".equals(key) && value instanceof String) { this.pregnancyWarning((String)value); return; }
+      if ("pregnancyWarnings".equals(key) && value instanceof String) { this.pregnancyWarning((String)value); return; }
+      if ("mechanismOfAction".equals(key) && value instanceof String) { this.mechanismOfAction((String)value); return; }
+      if ("mechanismOfActions".equals(key) && value instanceof String) { this.mechanismOfAction((String)value); return; }
+      if ("doseSchedule".equals(key) && value instanceof DoseSchedule) { this.doseSchedule((DoseSchedule)value); return; }
+      if ("doseSchedules".equals(key) && value instanceof DoseSchedule) { this.doseSchedule((DoseSchedule)value); return; }
+      if ("alcoholWarning".equals(key) && value instanceof String) { this.alcoholWarning((String)value); return; }
+      if ("alcoholWarnings".equals(key) && value instanceof String) { this.alcoholWarning((String)value); return; }
+      if ("labelDetails".equals(key) && value instanceof String) { this.labelDetails((String)value); return; }
+      if ("labelDetailss".equals(key) && value instanceof String) { this.labelDetails((String)value); return; }
       if ("prescriptionStatus".equals(key) && value instanceof DrugPrescriptionStatus) { this.prescriptionStatus((DrugPrescriptionStatus)value); return; }
       if ("prescriptionStatuss".equals(key) && value instanceof DrugPrescriptionStatus) { this.prescriptionStatus((DrugPrescriptionStatus)value); return; }
       if ("prescriptionStatus".equals(key) && value instanceof String) { this.prescriptionStatus((String)value); return; }
       if ("prescriptionStatuss".equals(key) && value instanceof String) { this.prescriptionStatus((String)value); return; }
-      if ("breastfeedingWarning".equals(key) && value instanceof String) { this.breastfeedingWarning((String)value); return; }
-      if ("breastfeedingWarnings".equals(key) && value instanceof String) { this.breastfeedingWarning((String)value); return; }
-      if ("mechanismOfAction".equals(key) && value instanceof String) { this.mechanismOfAction((String)value); return; }
-      if ("mechanismOfActions".equals(key) && value instanceof String) { this.mechanismOfAction((String)value); return; }
-      if ("alcoholWarning".equals(key) && value instanceof String) { this.alcoholWarning((String)value); return; }
-      if ("alcoholWarnings".equals(key) && value instanceof String) { this.alcoholWarning((String)value); return; }
+      if ("dosageForm".equals(key) && value instanceof String) { this.dosageForm((String)value); return; }
+      if ("dosageForms".equals(key) && value instanceof String) { this.dosageForm((String)value); return; }
       if ("drugUnit".equals(key) && value instanceof String) { this.drugUnit((String)value); return; }
       if ("drugUnits".equals(key) && value instanceof String) { this.drugUnit((String)value); return; }
-      if ("relatedDrug".equals(key) && value instanceof Drug) { this.relatedDrug((Drug)value); return; }
-      if ("relatedDrugs".equals(key) && value instanceof Drug) { this.relatedDrug((Drug)value); return; }
+      if ("rxcui".equals(key) && value instanceof String) { this.rxcui((String)value); return; }
+      if ("rxcuis".equals(key) && value instanceof String) { this.rxcui((String)value); return; }
+      if ("proprietaryName".equals(key) && value instanceof String) { this.proprietaryName((String)value); return; }
+      if ("proprietaryNames".equals(key) && value instanceof String) { this.proprietaryName((String)value); return; }
+      if ("clinicalPharmacology".equals(key) && value instanceof String) { this.clinicalPharmacology((String)value); return; }
+      if ("clinicalPharmacologys".equals(key) && value instanceof String) { this.clinicalPharmacology((String)value); return; }
+      if ("warning".equals(key) && value instanceof String) { this.warning((String)value); return; }
+      if ("warnings".equals(key) && value instanceof String) { this.warning((String)value); return; }
       super.fromMap(key, value);
     }
   }

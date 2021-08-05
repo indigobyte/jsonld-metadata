@@ -21,24 +21,22 @@ package org.schema;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * A delivery method is a standardized procedure for transferring the product or service to the destination of fulfillment chosen by the customer. Delivery methods are characterized by the means of transportation used, and by the organization or group that is the contracting party for the sending organization or person.&lt;br/&gt;&lt;br/&gt;
+ * A delivery method is a standardized procedure for transferring the product or service to the destination of fulfillment chosen by the customer. Delivery methods are characterized by the means of transportation used, and by the organization or group that is the contracting party for the sending organization or person.
  * 
- * Commonly used values:&lt;br/&gt;&lt;br/&gt;
+ * Commonly used values:
  * 
- * &lt;ul&gt;
- * &lt;li&gt;http://purl.org/goodrelations/v1#DeliveryModeDirectDownload&lt;/li&gt;
- * &lt;li&gt;http://purl.org/goodrelations/v1#DeliveryModeFreight&lt;/li&gt;
- * &lt;li&gt;http://purl.org/goodrelations/v1#DeliveryModeMail&lt;/li&gt;
- * &lt;li&gt;http://purl.org/goodrelations/v1#DeliveryModeOwnFleet&lt;/li&gt;
- * &lt;li&gt;http://purl.org/goodrelations/v1#DeliveryModePickUp&lt;/li&gt;
- * &lt;li&gt;http://purl.org/goodrelations/v1#DHL&lt;/li&gt;
- * &lt;li&gt;http://purl.org/goodrelations/v1#FederalExpress&lt;/li&gt;
- * &lt;li&gt;http://purl.org/goodrelations/v1#UPS&lt;/li&gt;
- * &lt;/ul&gt;
- * 
+ * * http://purl.org/goodrelations/v1#DeliveryModeDirectDownload
+ * * http://purl.org/goodrelations/v1#DeliveryModeFreight
+ * * http://purl.org/goodrelations/v1#DeliveryModeMail
+ * * http://purl.org/goodrelations/v1#DeliveryModeOwnFleet
+ * * http://purl.org/goodrelations/v1#DeliveryModePickUp
+ * * http://purl.org/goodrelations/v1#DHL
+ * * http://purl.org/goodrelations/v1#FederalExpress
+ * * http://purl.org/goodrelations/v1#UPS
+ *         
  */
 public enum DeliveryMethod {
-  ParcelService("http://schema.org/ParcelService"), LockerDelivery("http://schema.org/LockerDelivery");
+  ;
   DeliveryMethod(String value) {
     myValue = value;
   }

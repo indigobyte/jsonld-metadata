@@ -28,16 +28,33 @@ import java.util.*;
  */
 public class DietarySupplement extends Substance {
   /**
-   * Proprietary name given to the diet plan, typically by its originator or creator.
+   * The manufacturer of the product.
    */
-  @JsonIgnore public String getProprietaryName() {
-    return (String) getValue("proprietaryName");
+  @JsonIgnore public Organization getManufacturer() {
+    return (Organization) getValue("manufacturer");
   }
   /**
-   * Proprietary name given to the diet plan, typically by its originator or creator.
+   * The manufacturer of the product.
    */
-  @JsonIgnore public Collection<String> getProprietaryNames() {
-    final Object current = myData.get("proprietaryName");
+  @JsonIgnore public Collection<Organization> getManufacturers() {
+    final Object current = myData.get("manufacturer");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Organization>) current;
+    }
+    return Arrays.asList((Organization) current);
+  }
+  /**
+   * An active ingredient, typically chemical compounds and/or biologic substances.
+   */
+  @JsonIgnore public String getActiveIngredient() {
+    return (String) getValue("activeIngredient");
+  }
+  /**
+   * An active ingredient, typically chemical compounds and/or biologic substances.
+   */
+  @JsonIgnore public Collection<String> getActiveIngredients() {
+    final Object current = myData.get("activeIngredient");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<String>) current;
@@ -62,57 +79,6 @@ public class DietarySupplement extends Substance {
     return Arrays.asList((MaximumDoseSchedule) current);
   }
   /**
-   * An active ingredient, typically chemical compounds and/or biologic substances.
-   */
-  @JsonIgnore public String getActiveIngredient() {
-    return (String) getValue("activeIngredient");
-  }
-  /**
-   * An active ingredient, typically chemical compounds and/or biologic substances.
-   */
-  @JsonIgnore public Collection<String> getActiveIngredients() {
-    final Object current = myData.get("activeIngredient");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * Characteristics of the population for which this is intended, or which typically uses it, e.g. 'adults'.
-   */
-  @JsonIgnore public String getTargetPopulation() {
-    return (String) getValue("targetPopulation");
-  }
-  /**
-   * Characteristics of the population for which this is intended, or which typically uses it, e.g. 'adults'.
-   */
-  @JsonIgnore public Collection<String> getTargetPopulations() {
-    final Object current = myData.get("targetPopulation");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * True if this item's name is a proprietary/brand name (vs. generic name).
-   */
-  @JsonIgnore public Boolean getIsProprietary() {
-    return (Boolean) getValue("isProprietary");
-  }
-  /**
-   * True if this item's name is a proprietary/brand name (vs. generic name).
-   */
-  @JsonIgnore public Collection<Boolean> getIsProprietarys() {
-    final Object current = myData.get("isProprietary");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Boolean>) current;
-    }
-    return Arrays.asList((Boolean) current);
-  }
-  /**
    * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
    */
   @JsonIgnore public RecommendedDoseSchedule getRecommendedIntake() {
@@ -128,23 +94,6 @@ public class DietarySupplement extends Substance {
       return (Collection<RecommendedDoseSchedule>) current;
     }
     return Arrays.asList((RecommendedDoseSchedule) current);
-  }
-  /**
-   * The manufacturer of the product.
-   */
-  @JsonIgnore public Organization getManufacturer() {
-    return (Organization) getValue("manufacturer");
-  }
-  /**
-   * The manufacturer of the product.
-   */
-  @JsonIgnore public Collection<Organization> getManufacturers() {
-    final Object current = myData.get("manufacturer");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
-    }
-    return Arrays.asList((Organization) current);
   }
   /**
    * The drug or supplement's legal status, including any controlled substance schedules that apply.
@@ -198,21 +147,21 @@ public class DietarySupplement extends Substance {
     return Arrays.asList((String) current);
   }
   /**
-   * Any potential safety concern associated with the supplement. May include interactions with other drugs and foods, pregnancy, breastfeeding, known adverse reactions, and documented efficacy of the supplement.
+   * True if this item's name is a proprietary/brand name (vs. generic name).
    */
-  @JsonIgnore public String getSafetyConsideration() {
-    return (String) getValue("safetyConsideration");
+  @JsonIgnore public Boolean getIsProprietary() {
+    return (Boolean) getValue("isProprietary");
   }
   /**
-   * Any potential safety concern associated with the supplement. May include interactions with other drugs and foods, pregnancy, breastfeeding, known adverse reactions, and documented efficacy of the supplement.
+   * True if this item's name is a proprietary/brand name (vs. generic name).
    */
-  @JsonIgnore public Collection<String> getSafetyConsiderations() {
-    final Object current = myData.get("safetyConsideration");
+  @JsonIgnore public Collection<Boolean> getIsProprietarys() {
+    final Object current = myData.get("isProprietary");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<String>) current;
+      return (Collection<Boolean>) current;
     }
-    return Arrays.asList((String) current);
+    return Arrays.asList((Boolean) current);
   }
   /**
    * The generic name of this drug or supplement.
@@ -225,6 +174,23 @@ public class DietarySupplement extends Substance {
    */
   @JsonIgnore public Collection<String> getNonProprietaryNames() {
     final Object current = myData.get("nonProprietaryName");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * Characteristics of the population for which this is intended, or which typically uses it, e.g. 'adults'.
+   */
+  @JsonIgnore public String getTargetPopulation() {
+    return (String) getValue("targetPopulation");
+  }
+  /**
+   * Characteristics of the population for which this is intended, or which typically uses it, e.g. 'adults'.
+   */
+  @JsonIgnore public Collection<String> getTargetPopulations() {
+    final Object current = myData.get("targetPopulation");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<String>) current;
@@ -248,6 +214,40 @@ public class DietarySupplement extends Substance {
     }
     return Arrays.asList((String) current);
   }
+  /**
+   * Any potential safety concern associated with the supplement. May include interactions with other drugs and foods, pregnancy, breastfeeding, known adverse reactions, and documented efficacy of the supplement.
+   */
+  @JsonIgnore public String getSafetyConsideration() {
+    return (String) getValue("safetyConsideration");
+  }
+  /**
+   * Any potential safety concern associated with the supplement. May include interactions with other drugs and foods, pregnancy, breastfeeding, known adverse reactions, and documented efficacy of the supplement.
+   */
+  @JsonIgnore public Collection<String> getSafetyConsiderations() {
+    final Object current = myData.get("safetyConsideration");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * Proprietary name given to the diet plan, typically by its originator or creator.
+   */
+  @JsonIgnore public String getProprietaryName() {
+    return (String) getValue("proprietaryName");
+  }
+  /**
+   * Proprietary name given to the diet plan, typically by its originator or creator.
+   */
+  @JsonIgnore public Collection<String> getProprietaryNames() {
+    final Object current = myData.get("proprietaryName");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
   protected DietarySupplement(java.util.Map<String,Object> data) {
     super(data);
   }
@@ -263,10 +263,24 @@ public class DietarySupplement extends Substance {
       return new DietarySupplement(myData);
     }
     /**
-     * Proprietary name given to the diet plan, typically by its originator or creator.
+     * The manufacturer of the product.
      */
-    @NotNull public Builder proprietaryName(@NotNull String proprietaryName) {
-      putValue("proprietaryName", proprietaryName);
+    @NotNull public Builder manufacturer(@NotNull Organization organization) {
+      putValue("manufacturer", organization);
+      return this;
+    }
+    /**
+     * The manufacturer of the product.
+     */
+    @NotNull public Builder manufacturer(@NotNull Organization.Builder organization) {
+      putValue("manufacturer", organization.build());
+      return this;
+    }
+    /**
+     * An active ingredient, typically chemical compounds and/or biologic substances.
+     */
+    @NotNull public Builder activeIngredient(@NotNull String activeIngredient) {
+      putValue("activeIngredient", activeIngredient);
       return this;
     }
     /**
@@ -284,27 +298,6 @@ public class DietarySupplement extends Substance {
       return this;
     }
     /**
-     * An active ingredient, typically chemical compounds and/or biologic substances.
-     */
-    @NotNull public Builder activeIngredient(@NotNull String activeIngredient) {
-      putValue("activeIngredient", activeIngredient);
-      return this;
-    }
-    /**
-     * Characteristics of the population for which this is intended, or which typically uses it, e.g. 'adults'.
-     */
-    @NotNull public Builder targetPopulation(@NotNull String targetPopulation) {
-      putValue("targetPopulation", targetPopulation);
-      return this;
-    }
-    /**
-     * True if this item's name is a proprietary/brand name (vs. generic name).
-     */
-    @NotNull public Builder isProprietary(@NotNull Boolean isProprietary) {
-      putValue("isProprietary", isProprietary);
-      return this;
-    }
-    /**
      * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
      */
     @NotNull public Builder recommendedIntake(@NotNull RecommendedDoseSchedule recommendedDoseSchedule) {
@@ -316,20 +309,6 @@ public class DietarySupplement extends Substance {
      */
     @NotNull public Builder recommendedIntake(@NotNull RecommendedDoseSchedule.Builder recommendedDoseSchedule) {
       putValue("recommendedIntake", recommendedDoseSchedule.build());
-      return this;
-    }
-    /**
-     * The manufacturer of the product.
-     */
-    @NotNull public Builder manufacturer(@NotNull Organization organization) {
-      putValue("manufacturer", organization);
-      return this;
-    }
-    /**
-     * The manufacturer of the product.
-     */
-    @NotNull public Builder manufacturer(@NotNull Organization.Builder organization) {
-      putValue("manufacturer", organization.build());
       return this;
     }
     /**
@@ -361,10 +340,10 @@ public class DietarySupplement extends Substance {
       return this;
     }
     /**
-     * Any potential safety concern associated with the supplement. May include interactions with other drugs and foods, pregnancy, breastfeeding, known adverse reactions, and documented efficacy of the supplement.
+     * True if this item's name is a proprietary/brand name (vs. generic name).
      */
-    @NotNull public Builder safetyConsideration(@NotNull String safetyConsideration) {
-      putValue("safetyConsideration", safetyConsideration);
+    @NotNull public Builder isProprietary(@NotNull Boolean isProprietary) {
+      putValue("isProprietary", isProprietary);
       return this;
     }
     /**
@@ -375,6 +354,13 @@ public class DietarySupplement extends Substance {
       return this;
     }
     /**
+     * Characteristics of the population for which this is intended, or which typically uses it, e.g. 'adults'.
+     */
+    @NotNull public Builder targetPopulation(@NotNull String targetPopulation) {
+      putValue("targetPopulation", targetPopulation);
+      return this;
+    }
+    /**
      * The specific biochemical interaction through which this drug or supplement produces its pharmacological effect.
      */
     @NotNull public Builder mechanismOfAction(@NotNull String mechanismOfAction) {
@@ -382,45 +368,17 @@ public class DietarySupplement extends Substance {
       return this;
     }
     /**
-     * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
+     * Any potential safety concern associated with the supplement. May include interactions with other drugs and foods, pregnancy, breastfeeding, known adverse reactions, and documented efficacy of the supplement.
      */
-    @NotNull public Builder recognizingAuthority(@NotNull Organization organization) {
-      putValue("recognizingAuthority", organization);
+    @NotNull public Builder safetyConsideration(@NotNull String safetyConsideration) {
+      putValue("safetyConsideration", safetyConsideration);
       return this;
     }
     /**
-     * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
+     * Proprietary name given to the diet plan, typically by its originator or creator.
      */
-    @NotNull public Builder recognizingAuthority(@NotNull Organization.Builder organization) {
-      putValue("recognizingAuthority", organization.build());
-      return this;
-    }
-    /**
-     * A medical guideline related to this entity.
-     */
-    @NotNull public Builder guideline(@NotNull MedicalGuideline medicalGuideline) {
-      putValue("guideline", medicalGuideline);
-      return this;
-    }
-    /**
-     * A medical guideline related to this entity.
-     */
-    @NotNull public Builder guideline(@NotNull MedicalGuideline.Builder medicalGuideline) {
-      putValue("guideline", medicalGuideline.build());
-      return this;
-    }
-    /**
-     * A medical study or trial related to this entity.
-     */
-    @NotNull public Builder study(@NotNull MedicalStudy medicalStudy) {
-      putValue("study", medicalStudy);
-      return this;
-    }
-    /**
-     * A medical study or trial related to this entity.
-     */
-    @NotNull public Builder study(@NotNull MedicalStudy.Builder medicalStudy) {
-      putValue("study", medicalStudy.build());
+    @NotNull public Builder proprietaryName(@NotNull String proprietaryName) {
+      putValue("proprietaryName", proprietaryName);
       return this;
     }
     /**
@@ -438,20 +396,6 @@ public class DietarySupplement extends Substance {
       return this;
     }
     /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
-     */
-    @NotNull public Builder medicineSystem(@NotNull MedicineSystem medicineSystem) {
-      putValue("medicineSystem", medicineSystem);
-      return this;
-    }
-    /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
-     */
-    @NotNull public Builder medicineSystem(@NotNull MedicineSystem.Builder medicineSystem) {
-      putValue("medicineSystem", medicineSystem.build());
-      return this;
-    }
-    /**
      * If applicable, a medical specialty in which this entity is relevant.
      */
     @NotNull public Builder relevantSpecialty(@NotNull MedicalSpecialty medicalSpecialty) {
@@ -466,59 +410,59 @@ public class DietarySupplement extends Substance {
       return this;
     }
     /**
-     * URL of the item.
+     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
+    @NotNull public Builder medicineSystem(@NotNull MedicineSystem medicineSystem) {
+      putValue("medicineSystem", medicineSystem);
       return this;
     }
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      */
-    @NotNull public Builder additionalType(@NotNull String additionalType) {
-      putValue("additionalType", additionalType);
+    @NotNull public Builder medicineSystem(@NotNull MedicineSystem.Builder medicineSystem) {
+      putValue("medicineSystem", medicineSystem.build());
       return this;
     }
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * A medical study or trial related to this entity.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
-      putValue("disambiguatingDescription", description);
+    @NotNull public Builder study(@NotNull MedicalStudy medicalStudy) {
+      putValue("study", medicalStudy);
       return this;
     }
     /**
-     * A description of the item.
+     * A medical study or trial related to this entity.
      */
-    @NotNull public Builder description(@NotNull Description description) {
-      putValue("description", description);
+    @NotNull public Builder study(@NotNull MedicalStudy.Builder medicalStudy) {
+      putValue("study", medicalStudy.build());
       return this;
     }
     /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     * A medical guideline related to this entity.
      */
-    @NotNull public Builder sameAs(@NotNull String sameAs) {
-      putValue("sameAs", sameAs);
+    @NotNull public Builder guideline(@NotNull MedicalGuideline medicalGuideline) {
+      putValue("guideline", medicalGuideline);
       return this;
     }
     /**
-     * The name of the item.
+     * A medical guideline related to this entity.
      */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
+    @NotNull public Builder guideline(@NotNull MedicalGuideline.Builder medicalGuideline) {
+      putValue("guideline", medicalGuideline.build());
       return this;
     }
     /**
-     * An alias for the item.
+     * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
      */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
+    @NotNull public Builder recognizingAuthority(@NotNull Organization organization) {
+      putValue("recognizingAuthority", organization);
       return this;
     }
     /**
-     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
+     * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
      */
-    @NotNull public Builder image(@NotNull Image image) {
-      putValue("image", image);
+    @NotNull public Builder recognizingAuthority(@NotNull Organization.Builder organization) {
+      putValue("recognizingAuthority", organization.build());
       return this;
     }
     /**
@@ -536,24 +480,45 @@ public class DietarySupplement extends Substance {
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * URL of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
+    @NotNull public Builder additionalType(@NotNull String additionalType) {
+      putValue("additionalType", additionalType);
+      return this;
+    }
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     */
+    @NotNull public Builder sameAs(@NotNull String sameAs) {
+      putValue("sameAs", sameAs);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * The name of the item.
+     */
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -584,6 +549,27 @@ public class DietarySupplement extends Substance {
       putValue("subjectOf", event.build());
       return this;
     }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -592,32 +578,32 @@ public class DietarySupplement extends Substance {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("proprietaryName".equals(key) && value instanceof String) { this.proprietaryName((String)value); return; }
-      if ("proprietaryNames".equals(key) && value instanceof String) { this.proprietaryName((String)value); return; }
-      if ("maximumIntake".equals(key) && value instanceof MaximumDoseSchedule) { this.maximumIntake((MaximumDoseSchedule)value); return; }
-      if ("maximumIntakes".equals(key) && value instanceof MaximumDoseSchedule) { this.maximumIntake((MaximumDoseSchedule)value); return; }
-      if ("activeIngredient".equals(key) && value instanceof String) { this.activeIngredient((String)value); return; }
-      if ("activeIngredients".equals(key) && value instanceof String) { this.activeIngredient((String)value); return; }
-      if ("targetPopulation".equals(key) && value instanceof String) { this.targetPopulation((String)value); return; }
-      if ("targetPopulations".equals(key) && value instanceof String) { this.targetPopulation((String)value); return; }
-      if ("isProprietary".equals(key) && value instanceof Boolean) { this.isProprietary((Boolean)value); return; }
-      if ("isProprietarys".equals(key) && value instanceof Boolean) { this.isProprietary((Boolean)value); return; }
-      if ("recommendedIntake".equals(key) && value instanceof RecommendedDoseSchedule) { this.recommendedIntake((RecommendedDoseSchedule)value); return; }
-      if ("recommendedIntakes".equals(key) && value instanceof RecommendedDoseSchedule) { this.recommendedIntake((RecommendedDoseSchedule)value); return; }
       if ("manufacturer".equals(key) && value instanceof Organization) { this.manufacturer((Organization)value); return; }
       if ("manufacturers".equals(key) && value instanceof Organization) { this.manufacturer((Organization)value); return; }
+      if ("activeIngredient".equals(key) && value instanceof String) { this.activeIngredient((String)value); return; }
+      if ("activeIngredients".equals(key) && value instanceof String) { this.activeIngredient((String)value); return; }
+      if ("maximumIntake".equals(key) && value instanceof MaximumDoseSchedule) { this.maximumIntake((MaximumDoseSchedule)value); return; }
+      if ("maximumIntakes".equals(key) && value instanceof MaximumDoseSchedule) { this.maximumIntake((MaximumDoseSchedule)value); return; }
+      if ("recommendedIntake".equals(key) && value instanceof RecommendedDoseSchedule) { this.recommendedIntake((RecommendedDoseSchedule)value); return; }
+      if ("recommendedIntakes".equals(key) && value instanceof RecommendedDoseSchedule) { this.recommendedIntake((RecommendedDoseSchedule)value); return; }
       if ("legalStatus".equals(key) && value instanceof DrugLegalStatus) { this.legalStatus((DrugLegalStatus)value); return; }
       if ("legalStatuss".equals(key) && value instanceof DrugLegalStatus) { this.legalStatus((DrugLegalStatus)value); return; }
       if ("legalStatus".equals(key) && value instanceof MedicalEnumeration) { this.legalStatus((MedicalEnumeration)value); return; }
       if ("legalStatuss".equals(key) && value instanceof MedicalEnumeration) { this.legalStatus((MedicalEnumeration)value); return; }
       if ("legalStatus".equals(key) && value instanceof String) { this.legalStatus((String)value); return; }
       if ("legalStatuss".equals(key) && value instanceof String) { this.legalStatus((String)value); return; }
-      if ("safetyConsideration".equals(key) && value instanceof String) { this.safetyConsideration((String)value); return; }
-      if ("safetyConsiderations".equals(key) && value instanceof String) { this.safetyConsideration((String)value); return; }
+      if ("isProprietary".equals(key) && value instanceof Boolean) { this.isProprietary((Boolean)value); return; }
+      if ("isProprietarys".equals(key) && value instanceof Boolean) { this.isProprietary((Boolean)value); return; }
       if ("nonProprietaryName".equals(key) && value instanceof String) { this.nonProprietaryName((String)value); return; }
       if ("nonProprietaryNames".equals(key) && value instanceof String) { this.nonProprietaryName((String)value); return; }
+      if ("targetPopulation".equals(key) && value instanceof String) { this.targetPopulation((String)value); return; }
+      if ("targetPopulations".equals(key) && value instanceof String) { this.targetPopulation((String)value); return; }
       if ("mechanismOfAction".equals(key) && value instanceof String) { this.mechanismOfAction((String)value); return; }
       if ("mechanismOfActions".equals(key) && value instanceof String) { this.mechanismOfAction((String)value); return; }
+      if ("safetyConsideration".equals(key) && value instanceof String) { this.safetyConsideration((String)value); return; }
+      if ("safetyConsiderations".equals(key) && value instanceof String) { this.safetyConsideration((String)value); return; }
+      if ("proprietaryName".equals(key) && value instanceof String) { this.proprietaryName((String)value); return; }
+      if ("proprietaryNames".equals(key) && value instanceof String) { this.proprietaryName((String)value); return; }
       super.fromMap(key, value);
     }
   }

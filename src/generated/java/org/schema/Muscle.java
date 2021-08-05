@@ -28,55 +28,21 @@ import java.util.*;
  */
 public class Muscle extends AnatomicalStructure {
   /**
-   * The muscle whose action counteracts the specified muscle.
+   * The underlying innervation associated with the muscle.
    */
-  @JsonIgnore public Muscle getAntagonist() {
-    return (Muscle) getValue("antagonist");
+  @JsonIgnore public Nerve getNerve() {
+    return (Nerve) getValue("nerve");
   }
   /**
-   * The muscle whose action counteracts the specified muscle.
+   * The underlying innervation associated with the muscle.
    */
-  @JsonIgnore public Collection<Muscle> getAntagonists() {
-    final Object current = myData.get("antagonist");
+  @JsonIgnore public Collection<Nerve> getNerves() {
+    final Object current = myData.get("nerve");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<Muscle>) current;
+      return (Collection<Nerve>) current;
     }
-    return Arrays.asList((Muscle) current);
-  }
-  /**
-   * The place of attachment of a muscle, or what the muscle moves.
-   */
-  @JsonIgnore public AnatomicalStructure getInsertion() {
-    return (AnatomicalStructure) getValue("insertion");
-  }
-  /**
-   * The place of attachment of a muscle, or what the muscle moves.
-   */
-  @JsonIgnore public Collection<AnatomicalStructure> getInsertions() {
-    final Object current = myData.get("insertion");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<AnatomicalStructure>) current;
-    }
-    return Arrays.asList((AnatomicalStructure) current);
-  }
-  /**
-   * The movement the muscle generates.
-   */
-  @JsonIgnore public String getMuscleAction() {
-    return (String) getValue("muscleAction");
-  }
-  /**
-   * The movement the muscle generates.
-   */
-  @JsonIgnore public Collection<String> getMuscleActions() {
-    final Object current = myData.get("muscleAction");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
+    return Arrays.asList((Nerve) current);
   }
   /**
    * The blood vessel that carries blood from the heart to the muscle.
@@ -96,21 +62,55 @@ public class Muscle extends AnatomicalStructure {
     return Arrays.asList((Vessel) current);
   }
   /**
-   * The underlying innervation associated with the muscle.
+   * The movement the muscle generates.
    */
-  @JsonIgnore public Nerve getNerve() {
-    return (Nerve) getValue("nerve");
+  @JsonIgnore public String getMuscleAction() {
+    return (String) getValue("muscleAction");
   }
   /**
-   * The underlying innervation associated with the muscle.
+   * The movement the muscle generates.
    */
-  @JsonIgnore public Collection<Nerve> getNerves() {
-    final Object current = myData.get("nerve");
+  @JsonIgnore public Collection<String> getMuscleActions() {
+    final Object current = myData.get("muscleAction");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<Nerve>) current;
+      return (Collection<String>) current;
     }
-    return Arrays.asList((Nerve) current);
+    return Arrays.asList((String) current);
+  }
+  /**
+   * The place of attachment of a muscle, or what the muscle moves.
+   */
+  @JsonIgnore public AnatomicalStructure getInsertion() {
+    return (AnatomicalStructure) getValue("insertion");
+  }
+  /**
+   * The place of attachment of a muscle, or what the muscle moves.
+   */
+  @JsonIgnore public Collection<AnatomicalStructure> getInsertions() {
+    final Object current = myData.get("insertion");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<AnatomicalStructure>) current;
+    }
+    return Arrays.asList((AnatomicalStructure) current);
+  }
+  /**
+   * The muscle whose action counteracts the specified muscle.
+   */
+  @JsonIgnore public Muscle getAntagonist() {
+    return (Muscle) getValue("antagonist");
+  }
+  /**
+   * The muscle whose action counteracts the specified muscle.
+   */
+  @JsonIgnore public Collection<Muscle> getAntagonists() {
+    final Object current = myData.get("antagonist");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Muscle>) current;
+    }
+    return Arrays.asList((Muscle) current);
   }
   protected Muscle(java.util.Map<String,Object> data) {
     super(data);
@@ -127,38 +127,17 @@ public class Muscle extends AnatomicalStructure {
       return new Muscle(myData);
     }
     /**
-     * The muscle whose action counteracts the specified muscle.
+     * The underlying innervation associated with the muscle.
      */
-    @NotNull public Builder antagonist(@NotNull Muscle muscle) {
-      putValue("antagonist", muscle);
+    @NotNull public Builder nerve(@NotNull Nerve nerve) {
+      putValue("nerve", nerve);
       return this;
     }
     /**
-     * The muscle whose action counteracts the specified muscle.
+     * The underlying innervation associated with the muscle.
      */
-    @NotNull public Builder antagonist(@NotNull Muscle.Builder muscle) {
-      putValue("antagonist", muscle.build());
-      return this;
-    }
-    /**
-     * The place of attachment of a muscle, or what the muscle moves.
-     */
-    @NotNull public Builder insertion(@NotNull AnatomicalStructure anatomicalStructure) {
-      putValue("insertion", anatomicalStructure);
-      return this;
-    }
-    /**
-     * The place of attachment of a muscle, or what the muscle moves.
-     */
-    @NotNull public Builder insertion(@NotNull AnatomicalStructure.Builder anatomicalStructure) {
-      putValue("insertion", anatomicalStructure.build());
-      return this;
-    }
-    /**
-     * The movement the muscle generates.
-     */
-    @NotNull public Builder muscleAction(@NotNull String muscleAction) {
-      putValue("muscleAction", muscleAction);
+    @NotNull public Builder nerve(@NotNull Nerve.Builder nerve) {
+      putValue("nerve", nerve.build());
       return this;
     }
     /**
@@ -176,52 +155,52 @@ public class Muscle extends AnatomicalStructure {
       return this;
     }
     /**
-     * The underlying innervation associated with the muscle.
+     * The movement the muscle generates.
      */
-    @NotNull public Builder nerve(@NotNull Nerve nerve) {
-      putValue("nerve", nerve);
+    @NotNull public Builder muscleAction(@NotNull String muscleAction) {
+      putValue("muscleAction", muscleAction);
       return this;
     }
     /**
-     * The underlying innervation associated with the muscle.
+     * The place of attachment of a muscle, or what the muscle moves.
      */
-    @NotNull public Builder nerve(@NotNull Nerve.Builder nerve) {
-      putValue("nerve", nerve.build());
+    @NotNull public Builder insertion(@NotNull AnatomicalStructure anatomicalStructure) {
+      putValue("insertion", anatomicalStructure);
       return this;
     }
     /**
-     * An image containing a diagram that illustrates the structure and/or its component substructures and/or connections with other structures.
+     * The place of attachment of a muscle, or what the muscle moves.
      */
-    @NotNull public Builder diagram(@NotNull ImageObject imageObject) {
-      putValue("diagram", imageObject);
+    @NotNull public Builder insertion(@NotNull AnatomicalStructure.Builder anatomicalStructure) {
+      putValue("insertion", anatomicalStructure.build());
       return this;
     }
     /**
-     * An image containing a diagram that illustrates the structure and/or its component substructures and/or connections with other structures.
+     * The muscle whose action counteracts the specified muscle.
      */
-    @NotNull public Builder diagram(@NotNull ImageObject.Builder imageObject) {
-      putValue("diagram", imageObject.build());
+    @NotNull public Builder antagonist(@NotNull Muscle muscle) {
+      putValue("antagonist", muscle);
       return this;
     }
     /**
-     * Other anatomical structures to which this structure is connected.
+     * The muscle whose action counteracts the specified muscle.
      */
-    @NotNull public Builder connectedTo(@NotNull AnatomicalStructure anatomicalStructure) {
-      putValue("connectedTo", anatomicalStructure);
+    @NotNull public Builder antagonist(@NotNull Muscle.Builder muscle) {
+      putValue("antagonist", muscle.build());
       return this;
     }
     /**
-     * Other anatomical structures to which this structure is connected.
+     * Component (sub-)structure(s) that comprise this anatomical structure.
      */
-    @NotNull public Builder connectedTo(@NotNull AnatomicalStructure.Builder anatomicalStructure) {
-      putValue("connectedTo", anatomicalStructure.build());
+    @NotNull public Builder subStructure(@NotNull AnatomicalStructure anatomicalStructure) {
+      putValue("subStructure", anatomicalStructure);
       return this;
     }
     /**
-     * If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.
+     * Component (sub-)structure(s) that comprise this anatomical structure.
      */
-    @NotNull public Builder associatedPathophysiology(@NotNull String associatedPathophysiology) {
-      putValue("associatedPathophysiology", associatedPathophysiology);
+    @NotNull public Builder subStructure(@NotNull AnatomicalStructure.Builder anatomicalStructure) {
+      putValue("subStructure", anatomicalStructure.build());
       return this;
     }
     /**
@@ -239,6 +218,20 @@ public class Muscle extends AnatomicalStructure {
       return this;
     }
     /**
+     * Other anatomical structures to which this structure is connected.
+     */
+    @NotNull public Builder connectedTo(@NotNull AnatomicalStructure anatomicalStructure) {
+      putValue("connectedTo", anatomicalStructure);
+      return this;
+    }
+    /**
+     * Other anatomical structures to which this structure is connected.
+     */
+    @NotNull public Builder connectedTo(@NotNull AnatomicalStructure.Builder anatomicalStructure) {
+      putValue("connectedTo", anatomicalStructure.build());
+      return this;
+    }
+    /**
      * The anatomical or organ system that this structure is part of.
      */
     @NotNull public Builder partOfSystem(@NotNull AnatomicalSystem anatomicalSystem) {
@@ -253,17 +246,24 @@ public class Muscle extends AnatomicalStructure {
       return this;
     }
     /**
-     * Component (sub-)structure(s) that comprise this anatomical structure.
+     * An image containing a diagram that illustrates the structure and/or its component substructures and/or connections with other structures.
      */
-    @NotNull public Builder subStructure(@NotNull AnatomicalStructure anatomicalStructure) {
-      putValue("subStructure", anatomicalStructure);
+    @NotNull public Builder diagram(@NotNull ImageObject imageObject) {
+      putValue("diagram", imageObject);
       return this;
     }
     /**
-     * Component (sub-)structure(s) that comprise this anatomical structure.
+     * An image containing a diagram that illustrates the structure and/or its component substructures and/or connections with other structures.
      */
-    @NotNull public Builder subStructure(@NotNull AnatomicalStructure.Builder anatomicalStructure) {
-      putValue("subStructure", anatomicalStructure.build());
+    @NotNull public Builder diagram(@NotNull ImageObject.Builder imageObject) {
+      putValue("diagram", imageObject.build());
+      return this;
+    }
+    /**
+     * If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.
+     */
+    @NotNull public Builder associatedPathophysiology(@NotNull String associatedPathophysiology) {
+      putValue("associatedPathophysiology", associatedPathophysiology);
       return this;
     }
     /**
@@ -285,34 +285,6 @@ public class Muscle extends AnatomicalStructure {
      */
     @NotNull public Builder bodyLocation(@NotNull String bodyLocation) {
       putValue("bodyLocation", bodyLocation);
-      return this;
-    }
-    /**
-     * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
-     */
-    @NotNull public Builder recognizingAuthority(@NotNull Organization organization) {
-      putValue("recognizingAuthority", organization);
-      return this;
-    }
-    /**
-     * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
-     */
-    @NotNull public Builder recognizingAuthority(@NotNull Organization.Builder organization) {
-      putValue("recognizingAuthority", organization.build());
-      return this;
-    }
-    /**
-     * A medical guideline related to this entity.
-     */
-    @NotNull public Builder guideline(@NotNull MedicalGuideline medicalGuideline) {
-      putValue("guideline", medicalGuideline);
-      return this;
-    }
-    /**
-     * A medical guideline related to this entity.
-     */
-    @NotNull public Builder guideline(@NotNull MedicalGuideline.Builder medicalGuideline) {
-      putValue("guideline", medicalGuideline.build());
       return this;
     }
     /**
@@ -344,20 +316,6 @@ public class Muscle extends AnatomicalStructure {
       return this;
     }
     /**
-     * A medical study or trial related to this entity.
-     */
-    @NotNull public Builder study(@NotNull MedicalStudy medicalStudy) {
-      putValue("study", medicalStudy);
-      return this;
-    }
-    /**
-     * A medical study or trial related to this entity.
-     */
-    @NotNull public Builder study(@NotNull MedicalStudy.Builder medicalStudy) {
-      putValue("study", medicalStudy.build());
-      return this;
-    }
-    /**
      * A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.
      */
     @NotNull public Builder code(@NotNull MedicalCode medicalCode) {
@@ -369,20 +327,6 @@ public class Muscle extends AnatomicalStructure {
      */
     @NotNull public Builder code(@NotNull MedicalCode.Builder medicalCode) {
       putValue("code", medicalCode.build());
-      return this;
-    }
-    /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
-     */
-    @NotNull public Builder medicineSystem(@NotNull MedicineSystem medicineSystem) {
-      putValue("medicineSystem", medicineSystem);
-      return this;
-    }
-    /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
-     */
-    @NotNull public Builder medicineSystem(@NotNull MedicineSystem.Builder medicineSystem) {
-      putValue("medicineSystem", medicineSystem.build());
       return this;
     }
     /**
@@ -400,59 +344,59 @@ public class Muscle extends AnatomicalStructure {
       return this;
     }
     /**
-     * URL of the item.
+     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
+    @NotNull public Builder medicineSystem(@NotNull MedicineSystem medicineSystem) {
+      putValue("medicineSystem", medicineSystem);
       return this;
     }
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      */
-    @NotNull public Builder additionalType(@NotNull String additionalType) {
-      putValue("additionalType", additionalType);
+    @NotNull public Builder medicineSystem(@NotNull MedicineSystem.Builder medicineSystem) {
+      putValue("medicineSystem", medicineSystem.build());
       return this;
     }
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * A medical study or trial related to this entity.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
-      putValue("disambiguatingDescription", description);
+    @NotNull public Builder study(@NotNull MedicalStudy medicalStudy) {
+      putValue("study", medicalStudy);
       return this;
     }
     /**
-     * A description of the item.
+     * A medical study or trial related to this entity.
      */
-    @NotNull public Builder description(@NotNull Description description) {
-      putValue("description", description);
+    @NotNull public Builder study(@NotNull MedicalStudy.Builder medicalStudy) {
+      putValue("study", medicalStudy.build());
       return this;
     }
     /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     * A medical guideline related to this entity.
      */
-    @NotNull public Builder sameAs(@NotNull String sameAs) {
-      putValue("sameAs", sameAs);
+    @NotNull public Builder guideline(@NotNull MedicalGuideline medicalGuideline) {
+      putValue("guideline", medicalGuideline);
       return this;
     }
     /**
-     * The name of the item.
+     * A medical guideline related to this entity.
      */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
+    @NotNull public Builder guideline(@NotNull MedicalGuideline.Builder medicalGuideline) {
+      putValue("guideline", medicalGuideline.build());
       return this;
     }
     /**
-     * An alias for the item.
+     * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
      */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
+    @NotNull public Builder recognizingAuthority(@NotNull Organization organization) {
+      putValue("recognizingAuthority", organization);
       return this;
     }
     /**
-     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
+     * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
      */
-    @NotNull public Builder image(@NotNull Image image) {
-      putValue("image", image);
+    @NotNull public Builder recognizingAuthority(@NotNull Organization.Builder organization) {
+      putValue("recognizingAuthority", organization.build());
       return this;
     }
     /**
@@ -470,24 +414,45 @@ public class Muscle extends AnatomicalStructure {
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * URL of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
+    @NotNull public Builder additionalType(@NotNull String additionalType) {
+      putValue("additionalType", additionalType);
+      return this;
+    }
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     */
+    @NotNull public Builder sameAs(@NotNull String sameAs) {
+      putValue("sameAs", sameAs);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * The name of the item.
+     */
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -518,6 +483,27 @@ public class Muscle extends AnatomicalStructure {
       putValue("subjectOf", event.build());
       return this;
     }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -526,16 +512,16 @@ public class Muscle extends AnatomicalStructure {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("antagonist".equals(key) && value instanceof Muscle) { this.antagonist((Muscle)value); return; }
-      if ("antagonists".equals(key) && value instanceof Muscle) { this.antagonist((Muscle)value); return; }
-      if ("insertion".equals(key) && value instanceof AnatomicalStructure) { this.insertion((AnatomicalStructure)value); return; }
-      if ("insertions".equals(key) && value instanceof AnatomicalStructure) { this.insertion((AnatomicalStructure)value); return; }
-      if ("muscleAction".equals(key) && value instanceof String) { this.muscleAction((String)value); return; }
-      if ("muscleActions".equals(key) && value instanceof String) { this.muscleAction((String)value); return; }
-      if ("bloodSupply".equals(key) && value instanceof Vessel) { this.bloodSupply((Vessel)value); return; }
-      if ("bloodSupplys".equals(key) && value instanceof Vessel) { this.bloodSupply((Vessel)value); return; }
       if ("nerve".equals(key) && value instanceof Nerve) { this.nerve((Nerve)value); return; }
       if ("nerves".equals(key) && value instanceof Nerve) { this.nerve((Nerve)value); return; }
+      if ("bloodSupply".equals(key) && value instanceof Vessel) { this.bloodSupply((Vessel)value); return; }
+      if ("bloodSupplys".equals(key) && value instanceof Vessel) { this.bloodSupply((Vessel)value); return; }
+      if ("muscleAction".equals(key) && value instanceof String) { this.muscleAction((String)value); return; }
+      if ("muscleActions".equals(key) && value instanceof String) { this.muscleAction((String)value); return; }
+      if ("insertion".equals(key) && value instanceof AnatomicalStructure) { this.insertion((AnatomicalStructure)value); return; }
+      if ("insertions".equals(key) && value instanceof AnatomicalStructure) { this.insertion((AnatomicalStructure)value); return; }
+      if ("antagonist".equals(key) && value instanceof Muscle) { this.antagonist((Muscle)value); return; }
+      if ("antagonists".equals(key) && value instanceof Muscle) { this.antagonist((Muscle)value); return; }
       super.fromMap(key, value);
     }
   }

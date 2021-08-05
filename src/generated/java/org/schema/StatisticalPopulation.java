@@ -24,21 +24,22 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * A StatisticalPopulation is a set of instances of a certain given type that satisfy some set of constraints. The property &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/populationType&quot;&gt;populationType&lt;/a&gt; is used to specify the type. Any property that can be used on instances of that type can appear on the statistical population. For example, a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/StatisticalPopulation&quot;&gt;StatisticalPopulation&lt;/a&gt; representing all &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Person&quot;&gt;Person&lt;/a&gt;s with a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/homeLocation&quot;&gt;homeLocation&lt;/a&gt; of East Podunk California, would be described by applying the appropriate &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/homeLocation&quot;&gt;homeLocation&lt;/a&gt; and &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/populationType&quot;&gt;populationType&lt;/a&gt; properties to a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/StatisticalPopulation&quot;&gt;StatisticalPopulation&lt;/a&gt; item that stands for that set of people.
- * The properties &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/numConstraints&quot;&gt;numConstraints&lt;/a&gt; and &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/constrainingProperties&quot;&gt;constrainingProperties&lt;/a&gt; are used to specify which of the populations properties are used to specify the population. Note that the sense of &quot;population&quot; used here is the general sense of a statistical
- * population, and does not imply that the population consists of people. For example, a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/populationType&quot;&gt;populationType&lt;/a&gt; of &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Event&quot;&gt;Event&lt;/a&gt; or &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/NewsArticle&quot;&gt;NewsArticle&lt;/a&gt; could be used. See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Observation&quot;&gt;Observation&lt;/a&gt;, and the &lt;a href=&quot;/docs/data-and-datasets.html&quot;&gt;data and datasets&lt;/a&gt; overview for more details.Source: https://github.com/schemaorg/schemaorg/issues/2291
+ * A StatisticalPopulation is a set of instances of a certain given type that satisfy some set of constraints. The property [[populationType]] is used to specify the type. Any property that can be used on instances of that type can appear on the statistical population. For example, a [[StatisticalPopulation]] representing all [[Person]]s with a [[homeLocation]] of East Podunk California, would be described by applying the appropriate [[homeLocation]] and [[populationType]] properties to a [[StatisticalPopulation]] item that stands for that set of people.
+ * The properties [[numConstraints]] and [[constrainingProperty]] are used to specify which of the populations properties are used to specify the population. Note that the sense of &quot;population&quot; used here is the general sense of a statistical
+ * population, and does not imply that the population consists of people. For example, a [[populationType]] of [[Event]] or [[NewsArticle]] could be used. See also [[Observation]], and the [data and datasets](/docs/data-and-datasets.html) overview for more details.
+ *   
  */
 public class StatisticalPopulation extends Intangible {
   /**
-   * Indicates a property used as a constraint to define a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/StatisticalPopulation&quot;&gt;StatisticalPopulation&lt;/a&gt; with respect to the set of entities
-   *   corresponding to an indicated type (via &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/populationType&quot;&gt;populationType&lt;/a&gt;).
+   * Indicates a property used as a constraint to define a [[StatisticalPopulation]] with respect to the set of entities
+   *   corresponding to an indicated type (via [[populationType]]).
    */
   @JsonIgnore public Integer getConstrainingProperty() {
     return (Integer) getValue("constrainingProperty");
   }
   /**
-   * Indicates a property used as a constraint to define a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/StatisticalPopulation&quot;&gt;StatisticalPopulation&lt;/a&gt; with respect to the set of entities
-   *   corresponding to an indicated type (via &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/populationType&quot;&gt;populationType&lt;/a&gt;).
+   * Indicates a property used as a constraint to define a [[StatisticalPopulation]] with respect to the set of entities
+   *   corresponding to an indicated type (via [[populationType]]).
    */
   @JsonIgnore public Collection<Integer> getConstrainingPropertys() {
     final Object current = myData.get("constrainingProperty");
@@ -49,13 +50,13 @@ public class StatisticalPopulation extends Intangible {
     return Arrays.asList((Integer) current);
   }
   /**
-   * Indicates the number of constraints (not counting &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/populationType&quot;&gt;populationType&lt;/a&gt;) defined for a particular &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/StatisticalPopulation&quot;&gt;StatisticalPopulation&lt;/a&gt;. This helps applications understand if they have access to a sufficiently complete description of a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/StatisticalPopulation&quot;&gt;StatisticalPopulation&lt;/a&gt;.
+   * Indicates the number of constraints (not counting [[populationType]]) defined for a particular [[StatisticalPopulation]]. This helps applications understand if they have access to a sufficiently complete description of a [[StatisticalPopulation]].
    */
   @JsonIgnore public Integer getNumConstraints() {
     return (Integer) getValue("numConstraints");
   }
   /**
-   * Indicates the number of constraints (not counting &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/populationType&quot;&gt;populationType&lt;/a&gt;) defined for a particular &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/StatisticalPopulation&quot;&gt;StatisticalPopulation&lt;/a&gt;. This helps applications understand if they have access to a sufficiently complete description of a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/StatisticalPopulation&quot;&gt;StatisticalPopulation&lt;/a&gt;.
+   * Indicates the number of constraints (not counting [[populationType]]) defined for a particular [[StatisticalPopulation]]. This helps applications understand if they have access to a sufficiently complete description of a [[StatisticalPopulation]].
    */
   @JsonIgnore public Collection<Integer> getNumConstraintss() {
     final Object current = myData.get("numConstraints");
@@ -80,74 +81,18 @@ public class StatisticalPopulation extends Intangible {
       return new StatisticalPopulation(myData);
     }
     /**
-     * Indicates a property used as a constraint to define a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/StatisticalPopulation&quot;&gt;StatisticalPopulation&lt;/a&gt; with respect to the set of entities
-     *   corresponding to an indicated type (via &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/populationType&quot;&gt;populationType&lt;/a&gt;).
+     * Indicates a property used as a constraint to define a [[StatisticalPopulation]] with respect to the set of entities
+     *   corresponding to an indicated type (via [[populationType]]).
      */
     @NotNull public Builder constrainingProperty(@NotNull Integer integer) {
       putValue("constrainingProperty", integer);
       return this;
     }
     /**
-     * Indicates the number of constraints (not counting &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/populationType&quot;&gt;populationType&lt;/a&gt;) defined for a particular &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/StatisticalPopulation&quot;&gt;StatisticalPopulation&lt;/a&gt;. This helps applications understand if they have access to a sufficiently complete description of a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/StatisticalPopulation&quot;&gt;StatisticalPopulation&lt;/a&gt;.
+     * Indicates the number of constraints (not counting [[populationType]]) defined for a particular [[StatisticalPopulation]]. This helps applications understand if they have access to a sufficiently complete description of a [[StatisticalPopulation]].
      */
     @NotNull public Builder numConstraints(@NotNull Integer integer) {
       putValue("numConstraints", integer);
-      return this;
-    }
-    /**
-     * URL of the item.
-     */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
-      return this;
-    }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     */
-    @NotNull public Builder additionalType(@NotNull String additionalType) {
-      putValue("additionalType", additionalType);
-      return this;
-    }
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     */
-    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
-      putValue("disambiguatingDescription", description);
-      return this;
-    }
-    /**
-     * A description of the item.
-     */
-    @NotNull public Builder description(@NotNull Description description) {
-      putValue("description", description);
-      return this;
-    }
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     */
-    @NotNull public Builder sameAs(@NotNull String sameAs) {
-      putValue("sameAs", sameAs);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
-      return this;
-    }
-    /**
-     * An alias for the item.
-     */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
-      return this;
-    }
-    /**
-     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
-     */
-    @NotNull public Builder image(@NotNull Image image) {
-      putValue("image", image);
       return this;
     }
     /**
@@ -165,24 +110,45 @@ public class StatisticalPopulation extends Intangible {
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * URL of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
+    @NotNull public Builder additionalType(@NotNull String additionalType) {
+      putValue("additionalType", additionalType);
+      return this;
+    }
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     */
+    @NotNull public Builder sameAs(@NotNull String sameAs) {
+      putValue("sameAs", sameAs);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * The name of the item.
+     */
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -211,6 +177,27 @@ public class StatisticalPopulation extends Intangible {
      */
     @NotNull public Builder subjectOf(@NotNull Event.Builder event) {
       putValue("subjectOf", event.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
       return this;
     }
     @NotNull public Builder id(@NotNull String id) {

@@ -24,7 +24,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * A code that identifies this &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/DefinedTerm&quot;&gt;DefinedTerm&lt;/a&gt; within a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/DefinedTermSet&quot;&gt;DefinedTermSet&lt;/a&gt;Source: https://github.com/schemaorg/schemaorg/issues/894
+ * A code that identifies this [[DefinedTerm]] within a [[DefinedTermSet]]
  */
 public interface TermCode {
 }

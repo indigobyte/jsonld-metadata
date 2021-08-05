@@ -24,7 +24,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * Indicates that this legislation (or part of a legislation) somehow transfers another legislation in a different legislative context. This is an informative link, and it has no legal value. For legally-binding links of transposition, use the &lt;a href=&quot;/legislationTransposes&quot;&gt;legislationTransposes&lt;/a&gt; property. For example an informative consolidated law of a European Union's member state &quot;applies&quot; the consolidated version of the European Directive implemented in it.Source: https://github.com/schemaorg/schemaorg/issues/1156Equivalent class: http://data.europa.eu/eli/ontology#implements
+ * Indicates that this legislation (or part of a legislation) somehow transfers another legislation in a different legislative context. This is an informative link, and it has no legal value. For legally-binding links of transposition, use the &lt;a href=&quot;/legislationTransposes&quot;&gt;legislationTransposes&lt;/a&gt; property. For example an informative consolidated law of a European Union's member state &quot;applies&quot; the consolidated version of the European Directive implemented in it.Equivalent class: http://data.europa.eu/eli/ontology#implements
  */
 public interface LegislationApplies {
 }

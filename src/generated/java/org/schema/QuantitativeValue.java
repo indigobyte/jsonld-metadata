@@ -24,17 +24,34 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * A point value or interval for product characteristics and other purposes.Source: http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass
+ *  A point value or interval for product characteristics and other purposes.
  */
 public class QuantitativeValue extends StructuredValue implements Yield {
   /**
-   * A pointer to a secondary value that provides additional information on the original value, e.g. a reference temperature.
+   * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+   */
+  @JsonIgnore public DefinedTerm getValueReferenceDefinedTerm() {
+    return (DefinedTerm) getValue("valueReference");
+  }
+  /**
+   * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+   */
+  @JsonIgnore public Collection<DefinedTerm> getValueReferenceDefinedTerms() {
+    final Object current = myData.get("valueReference");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<DefinedTerm>) current;
+    }
+    return Arrays.asList((DefinedTerm) current);
+  }
+  /**
+   * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
    */
   @JsonIgnore public Enumeration getValueReferenceEnumeration() {
     return (Enumeration) getValue("valueReference");
   }
   /**
-   * A pointer to a secondary value that provides additional information on the original value, e.g. a reference temperature.
+   * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
    */
   @JsonIgnore public Collection<Enumeration> getValueReferenceEnumerations() {
     final Object current = myData.get("valueReference");
@@ -45,13 +62,30 @@ public class QuantitativeValue extends StructuredValue implements Yield {
     return Arrays.asList((Enumeration) current);
   }
   /**
-   * A pointer to a secondary value that provides additional information on the original value, e.g. a reference temperature.
+   * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+   */
+  @JsonIgnore public MeasurementTypeEnumeration getValueReferenceMeasurementTypeEnumeration() {
+    return (MeasurementTypeEnumeration) getValue("valueReference");
+  }
+  /**
+   * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+   */
+  @JsonIgnore public Collection<MeasurementTypeEnumeration> getValueReferenceMeasurementTypeEnumerations() {
+    final Object current = myData.get("valueReference");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<MeasurementTypeEnumeration>) current;
+    }
+    return Arrays.asList((MeasurementTypeEnumeration) current);
+  }
+  /**
+   * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
    */
   @JsonIgnore public PropertyValue getValueReferencePropertyValue() {
     return (PropertyValue) getValue("valueReference");
   }
   /**
-   * A pointer to a secondary value that provides additional information on the original value, e.g. a reference temperature.
+   * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
    */
   @JsonIgnore public Collection<PropertyValue> getValueReferencePropertyValues() {
     final Object current = myData.get("valueReference");
@@ -62,13 +96,13 @@ public class QuantitativeValue extends StructuredValue implements Yield {
     return Arrays.asList((PropertyValue) current);
   }
   /**
-   * A pointer to a secondary value that provides additional information on the original value, e.g. a reference temperature.
+   * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
    */
   @JsonIgnore public QualitativeValue getValueReferenceQualitativeValue() {
     return (QualitativeValue) getValue("valueReference");
   }
   /**
-   * A pointer to a secondary value that provides additional information on the original value, e.g. a reference temperature.
+   * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
    */
   @JsonIgnore public Collection<QualitativeValue> getValueReferenceQualitativeValues() {
     final Object current = myData.get("valueReference");
@@ -79,13 +113,13 @@ public class QuantitativeValue extends StructuredValue implements Yield {
     return Arrays.asList((QualitativeValue) current);
   }
   /**
-   * A pointer to a secondary value that provides additional information on the original value, e.g. a reference temperature.
+   * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
    */
   @JsonIgnore public QuantitativeValue getValueReferenceQuantitativeValue() {
     return (QuantitativeValue) getValue("valueReference");
   }
   /**
-   * A pointer to a secondary value that provides additional information on the original value, e.g. a reference temperature.
+   * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
    */
   @JsonIgnore public Collection<QuantitativeValue> getValueReferenceQuantitativeValues() {
     final Object current = myData.get("valueReference");
@@ -96,13 +130,30 @@ public class QuantitativeValue extends StructuredValue implements Yield {
     return Arrays.asList((QuantitativeValue) current);
   }
   /**
-   * A pointer to a secondary value that provides additional information on the original value, e.g. a reference temperature.
+   * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+   */
+  @JsonIgnore public String getValueReferenceString() {
+    return (String) getValue("valueReference");
+  }
+  /**
+   * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+   */
+  @JsonIgnore public Collection<String> getValueReferenceStrings() {
+    final Object current = myData.get("valueReference");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
    */
   @JsonIgnore public StructuredValue getValueReferenceStructuredValue() {
     return (StructuredValue) getValue("valueReference");
   }
   /**
-   * A pointer to a secondary value that provides additional information on the original value, e.g. a reference temperature.
+   * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
    */
   @JsonIgnore public Collection<StructuredValue> getValueReferenceStructuredValues() {
     final Object current = myData.get("valueReference");
@@ -113,21 +164,72 @@ public class QuantitativeValue extends StructuredValue implements Yield {
     return Arrays.asList((StructuredValue) current);
   }
   /**
-   * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
+   * The value of the quantitative value or property value node.\n\n* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.\n* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
    */
-  @JsonIgnore public String getUnitCode() {
-    return (String) getValue("unitCode");
+  @JsonIgnore public Boolean getValueBoolean() {
+    return (Boolean) getValue("value");
   }
   /**
-   * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
+   * The value of the quantitative value or property value node.\n\n* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.\n* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
    */
-  @JsonIgnore public Collection<String> getUnitCodes() {
-    final Object current = myData.get("unitCode");
+  @JsonIgnore public Collection<Boolean> getValueBooleans() {
+    final Object current = myData.get("value");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Boolean>) current;
+    }
+    return Arrays.asList((Boolean) current);
+  }
+  /**
+   * The value of the quantitative value or property value node.\n\n* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.\n* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+   */
+  @JsonIgnore public Number getValueNumber() {
+    return (Number) getValue("value");
+  }
+  /**
+   * The value of the quantitative value or property value node.\n\n* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.\n* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+   */
+  @JsonIgnore public Collection<Number> getValueNumbers() {
+    final Object current = myData.get("value");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Number>) current;
+    }
+    return Arrays.asList((Number) current);
+  }
+  /**
+   * The value of the quantitative value or property value node.\n\n* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.\n* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+   */
+  @JsonIgnore public String getValueString() {
+    return (String) getValue("value");
+  }
+  /**
+   * The value of the quantitative value or property value node.\n\n* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.\n* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+   */
+  @JsonIgnore public Collection<String> getValueStrings() {
+    final Object current = myData.get("value");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<String>) current;
     }
     return Arrays.asList((String) current);
+  }
+  /**
+   * The value of the quantitative value or property value node.\n\n* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.\n* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+   */
+  @JsonIgnore public StructuredValue getValueStructuredValue() {
+    return (StructuredValue) getValue("value");
+  }
+  /**
+   * The value of the quantitative value or property value node.\n\n* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.\n* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+   */
+  @JsonIgnore public Collection<StructuredValue> getValueStructuredValues() {
+    final Object current = myData.get("value");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<StructuredValue>) current;
+    }
+    return Arrays.asList((StructuredValue) current);
   }
   /**
    * The upper value of some characteristic or property.
@@ -215,98 +317,18 @@ public class QuantitativeValue extends StructuredValue implements Yield {
     return Arrays.asList((String) current);
   }
   /**
-   * The value of the quantitative value or property value node.&lt;br/&gt;&lt;br/&gt;
-   * 
-   * &lt;ul&gt;
-   * &lt;li&gt;For &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/QuantitativeValue&quot;&gt;QuantitativeValue&lt;/a&gt; and &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/MonetaryAmount&quot;&gt;MonetaryAmount&lt;/a&gt;, the recommended type for values is 'Number'.&lt;/li&gt;
-   * &lt;li&gt;For &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/PropertyValue&quot;&gt;PropertyValue&lt;/a&gt;, it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.&lt;/li&gt;
-   * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
-   * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
-   * &lt;/ul&gt;
-   * 
+   * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
+   * &lt;a href='unitCode'&gt;unitCode&lt;/a&gt;.
    */
-  @JsonIgnore public Boolean getValueBoolean() {
-    return (Boolean) getValue("value");
+  @JsonIgnore public String getUnitText() {
+    return (String) getValue("unitText");
   }
   /**
-   * The value of the quantitative value or property value node.&lt;br/&gt;&lt;br/&gt;
-   * 
-   * &lt;ul&gt;
-   * &lt;li&gt;For &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/QuantitativeValue&quot;&gt;QuantitativeValue&lt;/a&gt; and &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/MonetaryAmount&quot;&gt;MonetaryAmount&lt;/a&gt;, the recommended type for values is 'Number'.&lt;/li&gt;
-   * &lt;li&gt;For &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/PropertyValue&quot;&gt;PropertyValue&lt;/a&gt;, it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.&lt;/li&gt;
-   * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
-   * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
-   * &lt;/ul&gt;
-   * 
+   * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
+   * &lt;a href='unitCode'&gt;unitCode&lt;/a&gt;.
    */
-  @JsonIgnore public Collection<Boolean> getValueBooleans() {
-    final Object current = myData.get("value");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Boolean>) current;
-    }
-    return Arrays.asList((Boolean) current);
-  }
-  /**
-   * The value of the quantitative value or property value node.&lt;br/&gt;&lt;br/&gt;
-   * 
-   * &lt;ul&gt;
-   * &lt;li&gt;For &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/QuantitativeValue&quot;&gt;QuantitativeValue&lt;/a&gt; and &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/MonetaryAmount&quot;&gt;MonetaryAmount&lt;/a&gt;, the recommended type for values is 'Number'.&lt;/li&gt;
-   * &lt;li&gt;For &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/PropertyValue&quot;&gt;PropertyValue&lt;/a&gt;, it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.&lt;/li&gt;
-   * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
-   * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
-   * &lt;/ul&gt;
-   * 
-   */
-  @JsonIgnore public Number getValueNumber() {
-    return (Number) getValue("value");
-  }
-  /**
-   * The value of the quantitative value or property value node.&lt;br/&gt;&lt;br/&gt;
-   * 
-   * &lt;ul&gt;
-   * &lt;li&gt;For &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/QuantitativeValue&quot;&gt;QuantitativeValue&lt;/a&gt; and &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/MonetaryAmount&quot;&gt;MonetaryAmount&lt;/a&gt;, the recommended type for values is 'Number'.&lt;/li&gt;
-   * &lt;li&gt;For &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/PropertyValue&quot;&gt;PropertyValue&lt;/a&gt;, it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.&lt;/li&gt;
-   * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
-   * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
-   * &lt;/ul&gt;
-   * 
-   */
-  @JsonIgnore public Collection<Number> getValueNumbers() {
-    final Object current = myData.get("value");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Number>) current;
-    }
-    return Arrays.asList((Number) current);
-  }
-  /**
-   * The value of the quantitative value or property value node.&lt;br/&gt;&lt;br/&gt;
-   * 
-   * &lt;ul&gt;
-   * &lt;li&gt;For &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/QuantitativeValue&quot;&gt;QuantitativeValue&lt;/a&gt; and &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/MonetaryAmount&quot;&gt;MonetaryAmount&lt;/a&gt;, the recommended type for values is 'Number'.&lt;/li&gt;
-   * &lt;li&gt;For &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/PropertyValue&quot;&gt;PropertyValue&lt;/a&gt;, it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.&lt;/li&gt;
-   * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
-   * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
-   * &lt;/ul&gt;
-   * 
-   */
-  @JsonIgnore public String getValueString() {
-    return (String) getValue("value");
-  }
-  /**
-   * The value of the quantitative value or property value node.&lt;br/&gt;&lt;br/&gt;
-   * 
-   * &lt;ul&gt;
-   * &lt;li&gt;For &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/QuantitativeValue&quot;&gt;QuantitativeValue&lt;/a&gt; and &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/MonetaryAmount&quot;&gt;MonetaryAmount&lt;/a&gt;, the recommended type for values is 'Number'.&lt;/li&gt;
-   * &lt;li&gt;For &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/PropertyValue&quot;&gt;PropertyValue&lt;/a&gt;, it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.&lt;/li&gt;
-   * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
-   * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
-   * &lt;/ul&gt;
-   * 
-   */
-  @JsonIgnore public Collection<String> getValueStrings() {
-    final Object current = myData.get("value");
+  @JsonIgnore public Collection<String> getUnitTexts() {
+    final Object current = myData.get("unitText");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<String>) current;
@@ -314,50 +336,15 @@ public class QuantitativeValue extends StructuredValue implements Yield {
     return Arrays.asList((String) current);
   }
   /**
-   * The value of the quantitative value or property value node.&lt;br/&gt;&lt;br/&gt;
+   * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.\n\nNote: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
    * 
-   * &lt;ul&gt;
-   * &lt;li&gt;For &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/QuantitativeValue&quot;&gt;QuantitativeValue&lt;/a&gt; and &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/MonetaryAmount&quot;&gt;MonetaryAmount&lt;/a&gt;, the recommended type for values is 'Number'.&lt;/li&gt;
-   * &lt;li&gt;For &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/PropertyValue&quot;&gt;PropertyValue&lt;/a&gt;, it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.&lt;/li&gt;
-   * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
-   * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
-   * &lt;/ul&gt;
-   * 
-   */
-  @JsonIgnore public StructuredValue getValueStructuredValue() {
-    return (StructuredValue) getValue("value");
-  }
-  /**
-   * The value of the quantitative value or property value node.&lt;br/&gt;&lt;br/&gt;
-   * 
-   * &lt;ul&gt;
-   * &lt;li&gt;For &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/QuantitativeValue&quot;&gt;QuantitativeValue&lt;/a&gt; and &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/MonetaryAmount&quot;&gt;MonetaryAmount&lt;/a&gt;, the recommended type for values is 'Number'.&lt;/li&gt;
-   * &lt;li&gt;For &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/PropertyValue&quot;&gt;PropertyValue&lt;/a&gt;, it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.&lt;/li&gt;
-   * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
-   * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
-   * &lt;/ul&gt;
-   * 
-   */
-  @JsonIgnore public Collection<StructuredValue> getValueStructuredValues() {
-    final Object current = myData.get("value");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<StructuredValue>) current;
-    }
-    return Arrays.asList((StructuredValue) current);
-  }
-  /**
-   * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.&lt;br/&gt;&lt;br/&gt;
-   * 
-   * Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
    */
   @JsonIgnore public PropertyValue getAdditionalProperty() {
     return (PropertyValue) getValue("additionalProperty");
   }
   /**
-   * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.&lt;br/&gt;&lt;br/&gt;
+   * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.\n\nNote: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
    * 
-   * Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
    */
   @JsonIgnore public Collection<PropertyValue> getAdditionalPropertys() {
     final Object current = myData.get("additionalProperty");
@@ -366,6 +353,23 @@ public class QuantitativeValue extends StructuredValue implements Yield {
       return (Collection<PropertyValue>) current;
     }
     return Arrays.asList((PropertyValue) current);
+  }
+  /**
+   * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
+   */
+  @JsonIgnore public String getUnitCode() {
+    return (String) getValue("unitCode");
+  }
+  /**
+   * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
+   */
+  @JsonIgnore public Collection<String> getUnitCodes() {
+    final Object current = myData.get("unitCode");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
   }
   /**
    * The lower value of some characteristic or property.
@@ -452,25 +456,6 @@ public class QuantitativeValue extends StructuredValue implements Yield {
     }
     return Arrays.asList((String) current);
   }
-  /**
-   * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
-   * &lt;a href='unitCode'&gt;unitCode&lt;/a&gt;.
-   */
-  @JsonIgnore public String getUnitText() {
-    return (String) getValue("unitText");
-  }
-  /**
-   * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
-   * &lt;a href='unitCode'&gt;unitCode&lt;/a&gt;.
-   */
-  @JsonIgnore public Collection<String> getUnitTexts() {
-    final Object current = myData.get("unitText");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
   protected QuantitativeValue(java.util.Map<String,Object> data) {
     super(data);
   }
@@ -486,80 +471,129 @@ public class QuantitativeValue extends StructuredValue implements Yield {
       return new QuantitativeValue(myData);
     }
     /**
-     * A pointer to a secondary value that provides additional information on the original value, e.g. a reference temperature.
+     * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+     */
+    @NotNull public Builder valueReference(@NotNull DefinedTerm definedTerm) {
+      putValue("valueReference", definedTerm);
+      return this;
+    }
+    /**
+     * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+     */
+    @NotNull public Builder valueReference(@NotNull DefinedTerm.Builder definedTerm) {
+      putValue("valueReference", definedTerm.build());
+      return this;
+    }
+    /**
+     * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
      */
     @NotNull public Builder valueReference(@NotNull Enumeration enumeration) {
       putValue("valueReference", enumeration);
       return this;
     }
     /**
-     * A pointer to a secondary value that provides additional information on the original value, e.g. a reference temperature.
+     * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
      */
-    @NotNull public Builder valueReference(@NotNull Enumeration.Builder enumeration) {
-      putValue("valueReference", enumeration.build());
+    @NotNull public Builder valueReference(@NotNull MeasurementTypeEnumeration measurementTypeEnumeration) {
+      putValue("valueReference", measurementTypeEnumeration);
       return this;
     }
     /**
-     * A pointer to a secondary value that provides additional information on the original value, e.g. a reference temperature.
+     * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
      */
     @NotNull public Builder valueReference(@NotNull PropertyValue propertyValue) {
       putValue("valueReference", propertyValue);
       return this;
     }
     /**
-     * A pointer to a secondary value that provides additional information on the original value, e.g. a reference temperature.
+     * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
      */
     @NotNull public Builder valueReference(@NotNull PropertyValue.Builder propertyValue) {
       putValue("valueReference", propertyValue.build());
       return this;
     }
     /**
-     * A pointer to a secondary value that provides additional information on the original value, e.g. a reference temperature.
+     * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
      */
     @NotNull public Builder valueReference(@NotNull QualitativeValue qualitativeValue) {
       putValue("valueReference", qualitativeValue);
       return this;
     }
     /**
-     * A pointer to a secondary value that provides additional information on the original value, e.g. a reference temperature.
+     * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
      */
     @NotNull public Builder valueReference(@NotNull QualitativeValue.Builder qualitativeValue) {
       putValue("valueReference", qualitativeValue.build());
       return this;
     }
     /**
-     * A pointer to a secondary value that provides additional information on the original value, e.g. a reference temperature.
+     * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
      */
     @NotNull public Builder valueReference(@NotNull QuantitativeValue quantitativeValue) {
       putValue("valueReference", quantitativeValue);
       return this;
     }
     /**
-     * A pointer to a secondary value that provides additional information on the original value, e.g. a reference temperature.
+     * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
      */
     @NotNull public Builder valueReference(@NotNull QuantitativeValue.Builder quantitativeValue) {
       putValue("valueReference", quantitativeValue.build());
       return this;
     }
     /**
-     * A pointer to a secondary value that provides additional information on the original value, e.g. a reference temperature.
+     * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+     */
+    @NotNull public Builder valueReference(@NotNull String valueReference) {
+      putValue("valueReference", valueReference);
+      return this;
+    }
+    /**
+     * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
      */
     @NotNull public Builder valueReference(@NotNull StructuredValue structuredValue) {
       putValue("valueReference", structuredValue);
       return this;
     }
     /**
-     * A pointer to a secondary value that provides additional information on the original value, e.g. a reference temperature.
+     * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
      */
     @NotNull public Builder valueReference(@NotNull StructuredValue.Builder structuredValue) {
       putValue("valueReference", structuredValue.build());
       return this;
     }
     /**
-     * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
+     * The value of the quantitative value or property value node.\n\n* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.\n* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      */
-    @NotNull public Builder unitCode(@NotNull String unitCode) {
-      putValue("unitCode", unitCode);
+    @NotNull public Builder value(@NotNull Boolean value) {
+      putValue("value", value);
+      return this;
+    }
+    /**
+     * The value of the quantitative value or property value node.\n\n* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.\n* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     */
+    @NotNull public Builder value(@NotNull Number number) {
+      putValue("value", number);
+      return this;
+    }
+    /**
+     * The value of the quantitative value or property value node.\n\n* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.\n* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     */
+    @NotNull public Builder value(@NotNull String value) {
+      putValue("value", value);
+      return this;
+    }
+    /**
+     * The value of the quantitative value or property value node.\n\n* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.\n* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     */
+    @NotNull public Builder value(@NotNull StructuredValue structuredValue) {
+      putValue("value", structuredValue);
+      return this;
+    }
+    /**
+     * The value of the quantitative value or property value node.\n\n* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.\n* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     */
+    @NotNull public Builder value(@NotNull StructuredValue.Builder structuredValue) {
+      putValue("value", structuredValue.build());
       return this;
     }
     /**
@@ -598,96 +632,34 @@ public class QuantitativeValue extends StructuredValue implements Yield {
       return this;
     }
     /**
-     * The value of the quantitative value or property value node.&lt;br/&gt;&lt;br/&gt;
-     * 
-     * &lt;ul&gt;
-     * &lt;li&gt;For &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/QuantitativeValue&quot;&gt;QuantitativeValue&lt;/a&gt; and &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/MonetaryAmount&quot;&gt;MonetaryAmount&lt;/a&gt;, the recommended type for values is 'Number'.&lt;/li&gt;
-     * &lt;li&gt;For &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/PropertyValue&quot;&gt;PropertyValue&lt;/a&gt;, it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.&lt;/li&gt;
-     * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
-     * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
-     * &lt;/ul&gt;
-     * 
+     * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
+     * &lt;a href='unitCode'&gt;unitCode&lt;/a&gt;.
      */
-    @NotNull public Builder value(@NotNull Boolean value) {
-      putValue("value", value);
+    @NotNull public Builder unitText(@NotNull String unitText) {
+      putValue("unitText", unitText);
       return this;
     }
     /**
-     * The value of the quantitative value or property value node.&lt;br/&gt;&lt;br/&gt;
+     * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.\n\nNote: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
      * 
-     * &lt;ul&gt;
-     * &lt;li&gt;For &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/QuantitativeValue&quot;&gt;QuantitativeValue&lt;/a&gt; and &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/MonetaryAmount&quot;&gt;MonetaryAmount&lt;/a&gt;, the recommended type for values is 'Number'.&lt;/li&gt;
-     * &lt;li&gt;For &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/PropertyValue&quot;&gt;PropertyValue&lt;/a&gt;, it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.&lt;/li&gt;
-     * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
-     * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
-     * &lt;/ul&gt;
-     * 
-     */
-    @NotNull public Builder value(@NotNull Number number) {
-      putValue("value", number);
-      return this;
-    }
-    /**
-     * The value of the quantitative value or property value node.&lt;br/&gt;&lt;br/&gt;
-     * 
-     * &lt;ul&gt;
-     * &lt;li&gt;For &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/QuantitativeValue&quot;&gt;QuantitativeValue&lt;/a&gt; and &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/MonetaryAmount&quot;&gt;MonetaryAmount&lt;/a&gt;, the recommended type for values is 'Number'.&lt;/li&gt;
-     * &lt;li&gt;For &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/PropertyValue&quot;&gt;PropertyValue&lt;/a&gt;, it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.&lt;/li&gt;
-     * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
-     * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
-     * &lt;/ul&gt;
-     * 
-     */
-    @NotNull public Builder value(@NotNull String value) {
-      putValue("value", value);
-      return this;
-    }
-    /**
-     * The value of the quantitative value or property value node.&lt;br/&gt;&lt;br/&gt;
-     * 
-     * &lt;ul&gt;
-     * &lt;li&gt;For &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/QuantitativeValue&quot;&gt;QuantitativeValue&lt;/a&gt; and &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/MonetaryAmount&quot;&gt;MonetaryAmount&lt;/a&gt;, the recommended type for values is 'Number'.&lt;/li&gt;
-     * &lt;li&gt;For &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/PropertyValue&quot;&gt;PropertyValue&lt;/a&gt;, it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.&lt;/li&gt;
-     * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
-     * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
-     * &lt;/ul&gt;
-     * 
-     */
-    @NotNull public Builder value(@NotNull StructuredValue structuredValue) {
-      putValue("value", structuredValue);
-      return this;
-    }
-    /**
-     * The value of the quantitative value or property value node.&lt;br/&gt;&lt;br/&gt;
-     * 
-     * &lt;ul&gt;
-     * &lt;li&gt;For &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/QuantitativeValue&quot;&gt;QuantitativeValue&lt;/a&gt; and &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/MonetaryAmount&quot;&gt;MonetaryAmount&lt;/a&gt;, the recommended type for values is 'Number'.&lt;/li&gt;
-     * &lt;li&gt;For &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/PropertyValue&quot;&gt;PropertyValue&lt;/a&gt;, it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.&lt;/li&gt;
-     * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
-     * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
-     * &lt;/ul&gt;
-     * 
-     */
-    @NotNull public Builder value(@NotNull StructuredValue.Builder structuredValue) {
-      putValue("value", structuredValue.build());
-      return this;
-    }
-    /**
-     * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.&lt;br/&gt;&lt;br/&gt;
-     * 
-     * Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
      */
     @NotNull public Builder additionalProperty(@NotNull PropertyValue propertyValue) {
       putValue("additionalProperty", propertyValue);
       return this;
     }
     /**
-     * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.&lt;br/&gt;&lt;br/&gt;
+     * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.\n\nNote: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
      * 
-     * Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
      */
     @NotNull public Builder additionalProperty(@NotNull PropertyValue.Builder propertyValue) {
       putValue("additionalProperty", propertyValue.build());
+      return this;
+    }
+    /**
+     * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
+     */
+    @NotNull public Builder unitCode(@NotNull String unitCode) {
+      putValue("unitCode", unitCode);
       return this;
     }
     /**
@@ -726,11 +698,24 @@ public class QuantitativeValue extends StructuredValue implements Yield {
       return this;
     }
     /**
-     * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
-     * &lt;a href='unitCode'&gt;unitCode&lt;/a&gt;.
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
-    @NotNull public Builder unitText(@NotNull String unitText) {
-      putValue("unitText", unitText);
+    @NotNull public Builder potentialAction(@NotNull Action action) {
+      putValue("potentialAction", action);
+      return this;
+    }
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     */
+    @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
+      putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     */
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
@@ -748,31 +733,10 @@ public class QuantitativeValue extends StructuredValue implements Yield {
       return this;
     }
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     */
-    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
-      putValue("disambiguatingDescription", description);
-      return this;
-    }
-    /**
-     * A description of the item.
-     */
-    @NotNull public Builder description(@NotNull Description description) {
-      putValue("description", description);
-      return this;
-    }
-    /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      */
     @NotNull public Builder sameAs(@NotNull String sameAs) {
       putValue("sameAs", sameAs);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
       return this;
     }
     /**
@@ -783,45 +747,10 @@ public class QuantitativeValue extends StructuredValue implements Yield {
       return this;
     }
     /**
-     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
+     * The name of the item.
      */
-    @NotNull public Builder image(@NotNull Image image) {
-      putValue("image", image);
-      return this;
-    }
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     */
-    @NotNull public Builder potentialAction(@NotNull Action action) {
-      putValue("potentialAction", action);
-      return this;
-    }
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     */
-    @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
-      putValue("potentialAction", action.build());
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -852,6 +781,27 @@ public class QuantitativeValue extends StructuredValue implements Yield {
       putValue("subjectOf", event.build());
       return this;
     }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -860,18 +810,30 @@ public class QuantitativeValue extends StructuredValue implements Yield {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
+      if ("valueReference".equals(key) && value instanceof DefinedTerm) { this.valueReference((DefinedTerm)value); return; }
+      if ("valueReferences".equals(key) && value instanceof DefinedTerm) { this.valueReference((DefinedTerm)value); return; }
       if ("valueReference".equals(key) && value instanceof Enumeration) { this.valueReference((Enumeration)value); return; }
       if ("valueReferences".equals(key) && value instanceof Enumeration) { this.valueReference((Enumeration)value); return; }
+      if ("valueReference".equals(key) && value instanceof MeasurementTypeEnumeration) { this.valueReference((MeasurementTypeEnumeration)value); return; }
+      if ("valueReferences".equals(key) && value instanceof MeasurementTypeEnumeration) { this.valueReference((MeasurementTypeEnumeration)value); return; }
       if ("valueReference".equals(key) && value instanceof PropertyValue) { this.valueReference((PropertyValue)value); return; }
       if ("valueReferences".equals(key) && value instanceof PropertyValue) { this.valueReference((PropertyValue)value); return; }
       if ("valueReference".equals(key) && value instanceof QualitativeValue) { this.valueReference((QualitativeValue)value); return; }
       if ("valueReferences".equals(key) && value instanceof QualitativeValue) { this.valueReference((QualitativeValue)value); return; }
       if ("valueReference".equals(key) && value instanceof QuantitativeValue) { this.valueReference((QuantitativeValue)value); return; }
       if ("valueReferences".equals(key) && value instanceof QuantitativeValue) { this.valueReference((QuantitativeValue)value); return; }
+      if ("valueReference".equals(key) && value instanceof String) { this.valueReference((String)value); return; }
+      if ("valueReferences".equals(key) && value instanceof String) { this.valueReference((String)value); return; }
       if ("valueReference".equals(key) && value instanceof StructuredValue) { this.valueReference((StructuredValue)value); return; }
       if ("valueReferences".equals(key) && value instanceof StructuredValue) { this.valueReference((StructuredValue)value); return; }
-      if ("unitCode".equals(key) && value instanceof String) { this.unitCode((String)value); return; }
-      if ("unitCodes".equals(key) && value instanceof String) { this.unitCode((String)value); return; }
+      if ("value".equals(key) && value instanceof Boolean) { this.value((Boolean)value); return; }
+      if ("values".equals(key) && value instanceof Boolean) { this.value((Boolean)value); return; }
+      if ("value".equals(key) && value instanceof Number) { this.value((Number)value); return; }
+      if ("values".equals(key) && value instanceof Number) { this.value((Number)value); return; }
+      if ("value".equals(key) && value instanceof String) { this.value((String)value); return; }
+      if ("values".equals(key) && value instanceof String) { this.value((String)value); return; }
+      if ("value".equals(key) && value instanceof StructuredValue) { this.value((StructuredValue)value); return; }
+      if ("values".equals(key) && value instanceof StructuredValue) { this.value((StructuredValue)value); return; }
       if ("maxValue".equals(key) && value instanceof Integer) { this.maxValue((Integer)value); return; }
       if ("maxValues".equals(key) && value instanceof Integer) { this.maxValue((Integer)value); return; }
       if ("maxValue".equals(key) && value instanceof Long) { this.maxValue((Long)value); return; }
@@ -882,16 +844,12 @@ public class QuantitativeValue extends StructuredValue implements Yield {
       if ("maxValues".equals(key) && value instanceof Double) { this.maxValue((Double)value); return; }
       if ("maxValue".equals(key) && value instanceof String) { this.maxValue((String)value); return; }
       if ("maxValues".equals(key) && value instanceof String) { this.maxValue((String)value); return; }
-      if ("value".equals(key) && value instanceof Boolean) { this.value((Boolean)value); return; }
-      if ("values".equals(key) && value instanceof Boolean) { this.value((Boolean)value); return; }
-      if ("value".equals(key) && value instanceof Number) { this.value((Number)value); return; }
-      if ("values".equals(key) && value instanceof Number) { this.value((Number)value); return; }
-      if ("value".equals(key) && value instanceof String) { this.value((String)value); return; }
-      if ("values".equals(key) && value instanceof String) { this.value((String)value); return; }
-      if ("value".equals(key) && value instanceof StructuredValue) { this.value((StructuredValue)value); return; }
-      if ("values".equals(key) && value instanceof StructuredValue) { this.value((StructuredValue)value); return; }
+      if ("unitText".equals(key) && value instanceof String) { this.unitText((String)value); return; }
+      if ("unitTexts".equals(key) && value instanceof String) { this.unitText((String)value); return; }
       if ("additionalProperty".equals(key) && value instanceof PropertyValue) { this.additionalProperty((PropertyValue)value); return; }
       if ("additionalPropertys".equals(key) && value instanceof PropertyValue) { this.additionalProperty((PropertyValue)value); return; }
+      if ("unitCode".equals(key) && value instanceof String) { this.unitCode((String)value); return; }
+      if ("unitCodes".equals(key) && value instanceof String) { this.unitCode((String)value); return; }
       if ("minValue".equals(key) && value instanceof Integer) { this.minValue((Integer)value); return; }
       if ("minValues".equals(key) && value instanceof Integer) { this.minValue((Integer)value); return; }
       if ("minValue".equals(key) && value instanceof Long) { this.minValue((Long)value); return; }
@@ -902,8 +860,6 @@ public class QuantitativeValue extends StructuredValue implements Yield {
       if ("minValues".equals(key) && value instanceof Double) { this.minValue((Double)value); return; }
       if ("minValue".equals(key) && value instanceof String) { this.minValue((String)value); return; }
       if ("minValues".equals(key) && value instanceof String) { this.minValue((String)value); return; }
-      if ("unitText".equals(key) && value instanceof String) { this.unitText((String)value); return; }
-      if ("unitTexts".equals(key) && value instanceof String) { this.unitText((String)value); return; }
       super.fromMap(key, value);
     }
   }

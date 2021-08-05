@@ -24,7 +24,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * The subject matter of the content.Source: https://github.com/schemaorg/schemaorg/issues/1670
+ * 
  */
 public interface About {
 }

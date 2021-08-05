@@ -28,84 +28,16 @@ import java.util.*;
  */
 public class Rating extends Intangible {
   /**
-   * A short explanation (e.g. one to two sentences) providing background context and other information that led to the conclusion expressed in the rating. This is particularly applicable to ratings associated with &quot;fact check&quot; markup using &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ClaimReview&quot;&gt;ClaimReview&lt;/a&gt;.
+   * A short explanation (e.g. one to two sentences) providing background context and other information that led to the conclusion expressed in the rating. This is particularly applicable to ratings associated with &quot;fact check&quot; markup using [[ClaimReview]].
    */
   @JsonIgnore public String getRatingExplanation() {
     return (String) getValue("ratingExplanation");
   }
   /**
-   * A short explanation (e.g. one to two sentences) providing background context and other information that led to the conclusion expressed in the rating. This is particularly applicable to ratings associated with &quot;fact check&quot; markup using &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ClaimReview&quot;&gt;ClaimReview&lt;/a&gt;.
+   * A short explanation (e.g. one to two sentences) providing background context and other information that led to the conclusion expressed in the rating. This is particularly applicable to ratings associated with &quot;fact check&quot; markup using [[ClaimReview]].
    */
   @JsonIgnore public Collection<String> getRatingExplanations() {
     final Object current = myData.get("ratingExplanation");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
-   */
-  @JsonIgnore public Number getBestRatingNumber() {
-    return (Number) getValue("bestRating");
-  }
-  /**
-   * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
-   */
-  @JsonIgnore public Collection<Number> getBestRatingNumbers() {
-    final Object current = myData.get("bestRating");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Number>) current;
-    }
-    return Arrays.asList((Number) current);
-  }
-  /**
-   * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
-   */
-  @JsonIgnore public String getBestRatingString() {
-    return (String) getValue("bestRating");
-  }
-  /**
-   * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
-   */
-  @JsonIgnore public Collection<String> getBestRatingStrings() {
-    final Object current = myData.get("bestRating");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.
-   */
-  @JsonIgnore public Number getWorstRatingNumber() {
-    return (Number) getValue("worstRating");
-  }
-  /**
-   * The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.
-   */
-  @JsonIgnore public Collection<Number> getWorstRatingNumbers() {
-    final Object current = myData.get("worstRating");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Number>) current;
-    }
-    return Arrays.asList((Number) current);
-  }
-  /**
-   * The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.
-   */
-  @JsonIgnore public String getWorstRatingString() {
-    return (String) getValue("worstRating");
-  }
-  /**
-   * The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.
-   */
-  @JsonIgnore public Collection<String> getWorstRatingStrings() {
-    final Object current = myData.get("worstRating");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<String>) current;
@@ -147,164 +79,33 @@ public class Rating extends Intangible {
     return Arrays.asList((Person) current);
   }
   /**
-   * The rating for the content.&lt;br/&gt;&lt;br/&gt;
-   * 
-   * Usage guidelines:&lt;br/&gt;&lt;br/&gt;
-   * 
-   * &lt;ul&gt;
-   * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
-   * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
-   * &lt;/ul&gt;
-   * 
+   * The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.
    */
-  @JsonIgnore public Integer getRatingValueInteger() {
-    return (Integer) getValue("ratingValue");
+  @JsonIgnore public Number getWorstRatingNumber() {
+    return (Number) getValue("worstRating");
   }
   /**
-   * The rating for the content.&lt;br/&gt;&lt;br/&gt;
-   * 
-   * Usage guidelines:&lt;br/&gt;&lt;br/&gt;
-   * 
-   * &lt;ul&gt;
-   * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
-   * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
-   * &lt;/ul&gt;
-   * 
+   * The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.
    */
-  @JsonIgnore public Collection<Integer> getRatingValueIntegers() {
-    final Object current = myData.get("ratingValue");
+  @JsonIgnore public Collection<Number> getWorstRatingNumbers() {
+    final Object current = myData.get("worstRating");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+      return (Collection<Number>) current;
     }
-    return Arrays.asList((Integer) current);
+    return Arrays.asList((Number) current);
   }
   /**
-   * The rating for the content.&lt;br/&gt;&lt;br/&gt;
-   * 
-   * Usage guidelines:&lt;br/&gt;&lt;br/&gt;
-   * 
-   * &lt;ul&gt;
-   * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
-   * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
-   * &lt;/ul&gt;
-   * 
+   * The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.
    */
-  @JsonIgnore public Long getRatingValueLong() {
-    return (Long) getValue("ratingValue");
+  @JsonIgnore public String getWorstRatingString() {
+    return (String) getValue("worstRating");
   }
   /**
-   * The rating for the content.&lt;br/&gt;&lt;br/&gt;
-   * 
-   * Usage guidelines:&lt;br/&gt;&lt;br/&gt;
-   * 
-   * &lt;ul&gt;
-   * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
-   * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
-   * &lt;/ul&gt;
-   * 
+   * The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.
    */
-  @JsonIgnore public Collection<Long> getRatingValueLongs() {
-    final Object current = myData.get("ratingValue");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
-    }
-    return Arrays.asList((Long) current);
-  }
-  /**
-   * The rating for the content.&lt;br/&gt;&lt;br/&gt;
-   * 
-   * Usage guidelines:&lt;br/&gt;&lt;br/&gt;
-   * 
-   * &lt;ul&gt;
-   * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
-   * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
-   * &lt;/ul&gt;
-   * 
-   */
-  @JsonIgnore public Float getRatingValueFloat() {
-    return (Float) getValue("ratingValue");
-  }
-  /**
-   * The rating for the content.&lt;br/&gt;&lt;br/&gt;
-   * 
-   * Usage guidelines:&lt;br/&gt;&lt;br/&gt;
-   * 
-   * &lt;ul&gt;
-   * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
-   * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
-   * &lt;/ul&gt;
-   * 
-   */
-  @JsonIgnore public Collection<Float> getRatingValueFloats() {
-    final Object current = myData.get("ratingValue");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
-    }
-    return Arrays.asList((Float) current);
-  }
-  /**
-   * The rating for the content.&lt;br/&gt;&lt;br/&gt;
-   * 
-   * Usage guidelines:&lt;br/&gt;&lt;br/&gt;
-   * 
-   * &lt;ul&gt;
-   * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
-   * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
-   * &lt;/ul&gt;
-   * 
-   */
-  @JsonIgnore public Double getRatingValueDouble() {
-    return (Double) getValue("ratingValue");
-  }
-  /**
-   * The rating for the content.&lt;br/&gt;&lt;br/&gt;
-   * 
-   * Usage guidelines:&lt;br/&gt;&lt;br/&gt;
-   * 
-   * &lt;ul&gt;
-   * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
-   * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
-   * &lt;/ul&gt;
-   * 
-   */
-  @JsonIgnore public Collection<Double> getRatingValueDoubles() {
-    final Object current = myData.get("ratingValue");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
-    }
-    return Arrays.asList((Double) current);
-  }
-  /**
-   * The rating for the content.&lt;br/&gt;&lt;br/&gt;
-   * 
-   * Usage guidelines:&lt;br/&gt;&lt;br/&gt;
-   * 
-   * &lt;ul&gt;
-   * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
-   * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
-   * &lt;/ul&gt;
-   * 
-   */
-  @JsonIgnore public String getRatingValueString() {
-    return (String) getValue("ratingValue");
-  }
-  /**
-   * The rating for the content.&lt;br/&gt;&lt;br/&gt;
-   * 
-   * Usage guidelines:&lt;br/&gt;&lt;br/&gt;
-   * 
-   * &lt;ul&gt;
-   * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
-   * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
-   * &lt;/ul&gt;
-   * 
-   */
-  @JsonIgnore public Collection<String> getRatingValueStrings() {
-    final Object current = myData.get("ratingValue");
+  @JsonIgnore public Collection<String> getWorstRatingStrings() {
+    final Object current = myData.get("worstRating");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<String>) current;
@@ -328,6 +129,176 @@ public class Rating extends Intangible {
     }
     return Arrays.asList((String) current);
   }
+  /**
+   * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
+   */
+  @JsonIgnore public Integer getBestRatingInteger() {
+    return (Integer) getValue("bestRating");
+  }
+  /**
+   * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
+   */
+  @JsonIgnore public Collection<Integer> getBestRatingIntegers() {
+    final Object current = myData.get("bestRating");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Integer>) current;
+    }
+    return Arrays.asList((Integer) current);
+  }
+  /**
+   * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
+   */
+  @JsonIgnore public Long getBestRatingLong() {
+    return (Long) getValue("bestRating");
+  }
+  /**
+   * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
+   */
+  @JsonIgnore public Collection<Long> getBestRatingLongs() {
+    final Object current = myData.get("bestRating");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Long>) current;
+    }
+    return Arrays.asList((Long) current);
+  }
+  /**
+   * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
+   */
+  @JsonIgnore public Float getBestRatingFloat() {
+    return (Float) getValue("bestRating");
+  }
+  /**
+   * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
+   */
+  @JsonIgnore public Collection<Float> getBestRatingFloats() {
+    final Object current = myData.get("bestRating");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Float>) current;
+    }
+    return Arrays.asList((Float) current);
+  }
+  /**
+   * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
+   */
+  @JsonIgnore public Double getBestRatingDouble() {
+    return (Double) getValue("bestRating");
+  }
+  /**
+   * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
+   */
+  @JsonIgnore public Collection<Double> getBestRatingDoubles() {
+    final Object current = myData.get("bestRating");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Double>) current;
+    }
+    return Arrays.asList((Double) current);
+  }
+  /**
+   * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
+   */
+  @JsonIgnore public String getBestRatingString() {
+    return (String) getValue("bestRating");
+  }
+  /**
+   * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
+   */
+  @JsonIgnore public Collection<String> getBestRatingStrings() {
+    final Object current = myData.get("bestRating");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * The rating for the content.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+   */
+  @JsonIgnore public Integer getRatingValueInteger() {
+    return (Integer) getValue("ratingValue");
+  }
+  /**
+   * The rating for the content.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+   */
+  @JsonIgnore public Collection<Integer> getRatingValueIntegers() {
+    final Object current = myData.get("ratingValue");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Integer>) current;
+    }
+    return Arrays.asList((Integer) current);
+  }
+  /**
+   * The rating for the content.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+   */
+  @JsonIgnore public Long getRatingValueLong() {
+    return (Long) getValue("ratingValue");
+  }
+  /**
+   * The rating for the content.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+   */
+  @JsonIgnore public Collection<Long> getRatingValueLongs() {
+    final Object current = myData.get("ratingValue");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Long>) current;
+    }
+    return Arrays.asList((Long) current);
+  }
+  /**
+   * The rating for the content.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+   */
+  @JsonIgnore public Float getRatingValueFloat() {
+    return (Float) getValue("ratingValue");
+  }
+  /**
+   * The rating for the content.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+   */
+  @JsonIgnore public Collection<Float> getRatingValueFloats() {
+    final Object current = myData.get("ratingValue");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Float>) current;
+    }
+    return Arrays.asList((Float) current);
+  }
+  /**
+   * The rating for the content.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+   */
+  @JsonIgnore public Double getRatingValueDouble() {
+    return (Double) getValue("ratingValue");
+  }
+  /**
+   * The rating for the content.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+   */
+  @JsonIgnore public Collection<Double> getRatingValueDoubles() {
+    final Object current = myData.get("ratingValue");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Double>) current;
+    }
+    return Arrays.asList((Double) current);
+  }
+  /**
+   * The rating for the content.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+   */
+  @JsonIgnore public String getRatingValueString() {
+    return (String) getValue("ratingValue");
+  }
+  /**
+   * The rating for the content.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+   */
+  @JsonIgnore public Collection<String> getRatingValueStrings() {
+    final Object current = myData.get("ratingValue");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
   protected Rating(java.util.Map<String,Object> data) {
     super(data);
   }
@@ -343,38 +314,10 @@ public class Rating extends Intangible {
       return new Rating(myData);
     }
     /**
-     * A short explanation (e.g. one to two sentences) providing background context and other information that led to the conclusion expressed in the rating. This is particularly applicable to ratings associated with &quot;fact check&quot; markup using &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ClaimReview&quot;&gt;ClaimReview&lt;/a&gt;.
+     * A short explanation (e.g. one to two sentences) providing background context and other information that led to the conclusion expressed in the rating. This is particularly applicable to ratings associated with &quot;fact check&quot; markup using [[ClaimReview]].
      */
     @NotNull public Builder ratingExplanation(@NotNull String ratingExplanation) {
       putValue("ratingExplanation", ratingExplanation);
-      return this;
-    }
-    /**
-     * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
-     */
-    @NotNull public Builder bestRating(@NotNull Number number) {
-      putValue("bestRating", number);
-      return this;
-    }
-    /**
-     * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
-     */
-    @NotNull public Builder bestRating(@NotNull String bestRating) {
-      putValue("bestRating", bestRating);
-      return this;
-    }
-    /**
-     * The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.
-     */
-    @NotNull public Builder worstRating(@NotNull Number number) {
-      putValue("worstRating", number);
-      return this;
-    }
-    /**
-     * The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.
-     */
-    @NotNull public Builder worstRating(@NotNull String worstRating) {
-      putValue("worstRating", worstRating);
       return this;
     }
     /**
@@ -406,78 +349,17 @@ public class Rating extends Intangible {
       return this;
     }
     /**
-     * The rating for the content.&lt;br/&gt;&lt;br/&gt;
-     * 
-     * Usage guidelines:&lt;br/&gt;&lt;br/&gt;
-     * 
-     * &lt;ul&gt;
-     * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
-     * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
-     * &lt;/ul&gt;
-     * 
+     * The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.
      */
-    @NotNull public Builder ratingValue(@NotNull Integer integer) {
-      putValue("ratingValue", integer);
+    @NotNull public Builder worstRating(@NotNull Number number) {
+      putValue("worstRating", number);
       return this;
     }
     /**
-     * The rating for the content.&lt;br/&gt;&lt;br/&gt;
-     * 
-     * Usage guidelines:&lt;br/&gt;&lt;br/&gt;
-     * 
-     * &lt;ul&gt;
-     * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
-     * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
-     * &lt;/ul&gt;
-     * 
+     * The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.
      */
-    @NotNull public Builder ratingValue(@NotNull Long ratingValue) {
-      putValue("ratingValue", ratingValue);
-      return this;
-    }
-    /**
-     * The rating for the content.&lt;br/&gt;&lt;br/&gt;
-     * 
-     * Usage guidelines:&lt;br/&gt;&lt;br/&gt;
-     * 
-     * &lt;ul&gt;
-     * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
-     * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
-     * &lt;/ul&gt;
-     * 
-     */
-    @NotNull public Builder ratingValue(@NotNull Float ratingValue) {
-      putValue("ratingValue", ratingValue);
-      return this;
-    }
-    /**
-     * The rating for the content.&lt;br/&gt;&lt;br/&gt;
-     * 
-     * Usage guidelines:&lt;br/&gt;&lt;br/&gt;
-     * 
-     * &lt;ul&gt;
-     * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
-     * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
-     * &lt;/ul&gt;
-     * 
-     */
-    @NotNull public Builder ratingValue(@NotNull Double ratingValue) {
-      putValue("ratingValue", ratingValue);
-      return this;
-    }
-    /**
-     * The rating for the content.&lt;br/&gt;&lt;br/&gt;
-     * 
-     * Usage guidelines:&lt;br/&gt;&lt;br/&gt;
-     * 
-     * &lt;ul&gt;
-     * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
-     * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
-     * &lt;/ul&gt;
-     * 
-     */
-    @NotNull public Builder ratingValue(@NotNull String ratingValue) {
-      putValue("ratingValue", ratingValue);
+    @NotNull public Builder worstRating(@NotNull String worstRating) {
+      putValue("worstRating", worstRating);
       return this;
     }
     /**
@@ -488,59 +370,73 @@ public class Rating extends Intangible {
       return this;
     }
     /**
-     * URL of the item.
+     * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
+    @NotNull public Builder bestRating(@NotNull Integer integer) {
+      putValue("bestRating", integer);
       return this;
     }
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
      */
-    @NotNull public Builder additionalType(@NotNull String additionalType) {
-      putValue("additionalType", additionalType);
+    @NotNull public Builder bestRating(@NotNull Long bestRating) {
+      putValue("bestRating", bestRating);
       return this;
     }
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
-      putValue("disambiguatingDescription", description);
+    @NotNull public Builder bestRating(@NotNull Float bestRating) {
+      putValue("bestRating", bestRating);
       return this;
     }
     /**
-     * A description of the item.
+     * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
      */
-    @NotNull public Builder description(@NotNull Description description) {
-      putValue("description", description);
+    @NotNull public Builder bestRating(@NotNull Double bestRating) {
+      putValue("bestRating", bestRating);
       return this;
     }
     /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
      */
-    @NotNull public Builder sameAs(@NotNull String sameAs) {
-      putValue("sameAs", sameAs);
+    @NotNull public Builder bestRating(@NotNull String bestRating) {
+      putValue("bestRating", bestRating);
       return this;
     }
     /**
-     * The name of the item.
+     * The rating for the content.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
+    @NotNull public Builder ratingValue(@NotNull Integer integer) {
+      putValue("ratingValue", integer);
       return this;
     }
     /**
-     * An alias for the item.
+     * The rating for the content.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
+    @NotNull public Builder ratingValue(@NotNull Long ratingValue) {
+      putValue("ratingValue", ratingValue);
       return this;
     }
     /**
-     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
+     * The rating for the content.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      */
-    @NotNull public Builder image(@NotNull Image image) {
-      putValue("image", image);
+    @NotNull public Builder ratingValue(@NotNull Float ratingValue) {
+      putValue("ratingValue", ratingValue);
+      return this;
+    }
+    /**
+     * The rating for the content.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     */
+    @NotNull public Builder ratingValue(@NotNull Double ratingValue) {
+      putValue("ratingValue", ratingValue);
+      return this;
+    }
+    /**
+     * The rating for the content.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     */
+    @NotNull public Builder ratingValue(@NotNull String ratingValue) {
+      putValue("ratingValue", ratingValue);
       return this;
     }
     /**
@@ -558,24 +454,45 @@ public class Rating extends Intangible {
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * URL of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
+    @NotNull public Builder additionalType(@NotNull String additionalType) {
+      putValue("additionalType", additionalType);
+      return this;
+    }
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     */
+    @NotNull public Builder sameAs(@NotNull String sameAs) {
+      putValue("sameAs", sameAs);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * The name of the item.
+     */
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -606,6 +523,27 @@ public class Rating extends Intangible {
       putValue("subjectOf", event.build());
       return this;
     }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -616,18 +554,26 @@ public class Rating extends Intangible {
     @Override protected void fromMap(String key, Object value) {
       if ("ratingExplanation".equals(key) && value instanceof String) { this.ratingExplanation((String)value); return; }
       if ("ratingExplanations".equals(key) && value instanceof String) { this.ratingExplanation((String)value); return; }
-      if ("bestRating".equals(key) && value instanceof Number) { this.bestRating((Number)value); return; }
-      if ("bestRatings".equals(key) && value instanceof Number) { this.bestRating((Number)value); return; }
-      if ("bestRating".equals(key) && value instanceof String) { this.bestRating((String)value); return; }
-      if ("bestRatings".equals(key) && value instanceof String) { this.bestRating((String)value); return; }
-      if ("worstRating".equals(key) && value instanceof Number) { this.worstRating((Number)value); return; }
-      if ("worstRatings".equals(key) && value instanceof Number) { this.worstRating((Number)value); return; }
-      if ("worstRating".equals(key) && value instanceof String) { this.worstRating((String)value); return; }
-      if ("worstRatings".equals(key) && value instanceof String) { this.worstRating((String)value); return; }
       if ("author".equals(key) && value instanceof Organization) { this.author((Organization)value); return; }
       if ("authors".equals(key) && value instanceof Organization) { this.author((Organization)value); return; }
       if ("author".equals(key) && value instanceof Person) { this.author((Person)value); return; }
       if ("authors".equals(key) && value instanceof Person) { this.author((Person)value); return; }
+      if ("worstRating".equals(key) && value instanceof Number) { this.worstRating((Number)value); return; }
+      if ("worstRatings".equals(key) && value instanceof Number) { this.worstRating((Number)value); return; }
+      if ("worstRating".equals(key) && value instanceof String) { this.worstRating((String)value); return; }
+      if ("worstRatings".equals(key) && value instanceof String) { this.worstRating((String)value); return; }
+      if ("reviewAspect".equals(key) && value instanceof String) { this.reviewAspect((String)value); return; }
+      if ("reviewAspects".equals(key) && value instanceof String) { this.reviewAspect((String)value); return; }
+      if ("bestRating".equals(key) && value instanceof Integer) { this.bestRating((Integer)value); return; }
+      if ("bestRatings".equals(key) && value instanceof Integer) { this.bestRating((Integer)value); return; }
+      if ("bestRating".equals(key) && value instanceof Long) { this.bestRating((Long)value); return; }
+      if ("bestRatings".equals(key) && value instanceof Long) { this.bestRating((Long)value); return; }
+      if ("bestRating".equals(key) && value instanceof Float) { this.bestRating((Float)value); return; }
+      if ("bestRatings".equals(key) && value instanceof Float) { this.bestRating((Float)value); return; }
+      if ("bestRating".equals(key) && value instanceof Double) { this.bestRating((Double)value); return; }
+      if ("bestRatings".equals(key) && value instanceof Double) { this.bestRating((Double)value); return; }
+      if ("bestRating".equals(key) && value instanceof String) { this.bestRating((String)value); return; }
+      if ("bestRatings".equals(key) && value instanceof String) { this.bestRating((String)value); return; }
       if ("ratingValue".equals(key) && value instanceof Integer) { this.ratingValue((Integer)value); return; }
       if ("ratingValues".equals(key) && value instanceof Integer) { this.ratingValue((Integer)value); return; }
       if ("ratingValue".equals(key) && value instanceof Long) { this.ratingValue((Long)value); return; }
@@ -638,8 +584,6 @@ public class Rating extends Intangible {
       if ("ratingValues".equals(key) && value instanceof Double) { this.ratingValue((Double)value); return; }
       if ("ratingValue".equals(key) && value instanceof String) { this.ratingValue((String)value); return; }
       if ("ratingValues".equals(key) && value instanceof String) { this.ratingValue((String)value); return; }
-      if ("reviewAspect".equals(key) && value instanceof String) { this.reviewAspect((String)value); return; }
-      if ("reviewAspects".equals(key) && value instanceof String) { this.reviewAspect((String)value); return; }
       super.fromMap(key, value);
     }
   }

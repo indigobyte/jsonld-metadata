@@ -24,11 +24,26 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * A reservation for lodging at a hotel, motel, inn, etc.&lt;br/&gt;&lt;br/&gt;
- * 
- * Note: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations.
+ * A reservation for lodging at a hotel, motel, inn, etc.\n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations.
  */
 public class LodgingReservation extends Reservation {
+  /**
+   * The latest someone may check out of a lodging establishment.
+   */
+  @JsonIgnore public java.util.Date getCheckoutTime() {
+    return (java.util.Date) getValue("checkoutTime");
+  }
+  /**
+   * The latest someone may check out of a lodging establishment.
+   */
+  @JsonIgnore public Collection<java.util.Date> getCheckoutTimes() {
+    final Object current = myData.get("checkoutTime");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<java.util.Date>) current;
+    }
+    return Arrays.asList((java.util.Date) current);
+  }
   /**
    * A full description of the lodging unit.
    */
@@ -47,40 +62,6 @@ public class LodgingReservation extends Reservation {
     return Arrays.asList((String) current);
   }
   /**
-   * The number of children staying in the unit.
-   */
-  @JsonIgnore public Integer getNumChildrenInteger() {
-    return (Integer) getValue("numChildren");
-  }
-  /**
-   * The number of children staying in the unit.
-   */
-  @JsonIgnore public Collection<Integer> getNumChildrenIntegers() {
-    final Object current = myData.get("numChildren");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
-    }
-    return Arrays.asList((Integer) current);
-  }
-  /**
-   * The number of children staying in the unit.
-   */
-  @JsonIgnore public QuantitativeValue getNumChildrenQuantitativeValue() {
-    return (QuantitativeValue) getValue("numChildren");
-  }
-  /**
-   * The number of children staying in the unit.
-   */
-  @JsonIgnore public Collection<QuantitativeValue> getNumChildrenQuantitativeValues() {
-    final Object current = myData.get("numChildren");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
-    }
-    return Arrays.asList((QuantitativeValue) current);
-  }
-  /**
    * The earliest someone may check into a lodging establishment.
    */
   @JsonIgnore public java.util.Date getCheckinTime() {
@@ -91,57 +72,6 @@ public class LodgingReservation extends Reservation {
    */
   @JsonIgnore public Collection<java.util.Date> getCheckinTimes() {
     final Object current = myData.get("checkinTime");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
-    }
-    return Arrays.asList((java.util.Date) current);
-  }
-  /**
-   * Textual description of the unit type (including suite vs. room, size of bed, etc.).
-   */
-  @JsonIgnore public QualitativeValue getLodgingUnitTypeQualitativeValue() {
-    return (QualitativeValue) getValue("lodgingUnitType");
-  }
-  /**
-   * Textual description of the unit type (including suite vs. room, size of bed, etc.).
-   */
-  @JsonIgnore public Collection<QualitativeValue> getLodgingUnitTypeQualitativeValues() {
-    final Object current = myData.get("lodgingUnitType");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QualitativeValue>) current;
-    }
-    return Arrays.asList((QualitativeValue) current);
-  }
-  /**
-   * Textual description of the unit type (including suite vs. room, size of bed, etc.).
-   */
-  @JsonIgnore public String getLodgingUnitTypeString() {
-    return (String) getValue("lodgingUnitType");
-  }
-  /**
-   * Textual description of the unit type (including suite vs. room, size of bed, etc.).
-   */
-  @JsonIgnore public Collection<String> getLodgingUnitTypeStrings() {
-    final Object current = myData.get("lodgingUnitType");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * The latest someone may check out of a lodging establishment.
-   */
-  @JsonIgnore public java.util.Date getCheckoutTime() {
-    return (java.util.Date) getValue("checkoutTime");
-  }
-  /**
-   * The latest someone may check out of a lodging establishment.
-   */
-  @JsonIgnore public Collection<java.util.Date> getCheckoutTimes() {
-    final Object current = myData.get("checkoutTime");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<java.util.Date>) current;
@@ -182,6 +112,74 @@ public class LodgingReservation extends Reservation {
     }
     return Arrays.asList((QuantitativeValue) current);
   }
+  /**
+   * The number of children staying in the unit.
+   */
+  @JsonIgnore public Integer getNumChildrenInteger() {
+    return (Integer) getValue("numChildren");
+  }
+  /**
+   * The number of children staying in the unit.
+   */
+  @JsonIgnore public Collection<Integer> getNumChildrenIntegers() {
+    final Object current = myData.get("numChildren");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Integer>) current;
+    }
+    return Arrays.asList((Integer) current);
+  }
+  /**
+   * The number of children staying in the unit.
+   */
+  @JsonIgnore public QuantitativeValue getNumChildrenQuantitativeValue() {
+    return (QuantitativeValue) getValue("numChildren");
+  }
+  /**
+   * The number of children staying in the unit.
+   */
+  @JsonIgnore public Collection<QuantitativeValue> getNumChildrenQuantitativeValues() {
+    final Object current = myData.get("numChildren");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<QuantitativeValue>) current;
+    }
+    return Arrays.asList((QuantitativeValue) current);
+  }
+  /**
+   * Textual description of the unit type (including suite vs. room, size of bed, etc.).
+   */
+  @JsonIgnore public QualitativeValue getLodgingUnitTypeQualitativeValue() {
+    return (QualitativeValue) getValue("lodgingUnitType");
+  }
+  /**
+   * Textual description of the unit type (including suite vs. room, size of bed, etc.).
+   */
+  @JsonIgnore public Collection<QualitativeValue> getLodgingUnitTypeQualitativeValues() {
+    final Object current = myData.get("lodgingUnitType");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<QualitativeValue>) current;
+    }
+    return Arrays.asList((QualitativeValue) current);
+  }
+  /**
+   * Textual description of the unit type (including suite vs. room, size of bed, etc.).
+   */
+  @JsonIgnore public String getLodgingUnitTypeString() {
+    return (String) getValue("lodgingUnitType");
+  }
+  /**
+   * Textual description of the unit type (including suite vs. room, size of bed, etc.).
+   */
+  @JsonIgnore public Collection<String> getLodgingUnitTypeStrings() {
+    final Object current = myData.get("lodgingUnitType");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
   protected LodgingReservation(java.util.Map<String,Object> data) {
     super(data);
   }
@@ -197,10 +195,45 @@ public class LodgingReservation extends Reservation {
       return new LodgingReservation(myData);
     }
     /**
+     * The latest someone may check out of a lodging establishment.
+     */
+    @NotNull public Builder checkoutTime(@NotNull java.util.Date date) {
+      putValue("checkoutTime", date);
+      return this;
+    }
+    /**
      * A full description of the lodging unit.
      */
     @NotNull public Builder lodgingUnitDescription(@NotNull String lodgingUnitDescription) {
       putValue("lodgingUnitDescription", lodgingUnitDescription);
+      return this;
+    }
+    /**
+     * The earliest someone may check into a lodging establishment.
+     */
+    @NotNull public Builder checkinTime(@NotNull java.util.Date date) {
+      putValue("checkinTime", date);
+      return this;
+    }
+    /**
+     * The number of adults staying in the unit.
+     */
+    @NotNull public Builder numAdults(@NotNull Integer integer) {
+      putValue("numAdults", integer);
+      return this;
+    }
+    /**
+     * The number of adults staying in the unit.
+     */
+    @NotNull public Builder numAdults(@NotNull QuantitativeValue quantitativeValue) {
+      putValue("numAdults", quantitativeValue);
+      return this;
+    }
+    /**
+     * The number of adults staying in the unit.
+     */
+    @NotNull public Builder numAdults(@NotNull QuantitativeValue.Builder quantitativeValue) {
+      putValue("numAdults", quantitativeValue.build());
       return this;
     }
     /**
@@ -225,13 +258,6 @@ public class LodgingReservation extends Reservation {
       return this;
     }
     /**
-     * The earliest someone may check into a lodging establishment.
-     */
-    @NotNull public Builder checkinTime(@NotNull java.util.Date date) {
-      putValue("checkinTime", date);
-      return this;
-    }
-    /**
      * Textual description of the unit type (including suite vs. room, size of bed, etc.).
      */
     @NotNull public Builder lodgingUnitType(@NotNull QualitativeValue qualitativeValue) {
@@ -250,34 +276,6 @@ public class LodgingReservation extends Reservation {
      */
     @NotNull public Builder lodgingUnitType(@NotNull String lodgingUnitType) {
       putValue("lodgingUnitType", lodgingUnitType);
-      return this;
-    }
-    /**
-     * The latest someone may check out of a lodging establishment.
-     */
-    @NotNull public Builder checkoutTime(@NotNull java.util.Date date) {
-      putValue("checkoutTime", date);
-      return this;
-    }
-    /**
-     * The number of adults staying in the unit.
-     */
-    @NotNull public Builder numAdults(@NotNull Integer integer) {
-      putValue("numAdults", integer);
-      return this;
-    }
-    /**
-     * The number of adults staying in the unit.
-     */
-    @NotNull public Builder numAdults(@NotNull QuantitativeValue quantitativeValue) {
-      putValue("numAdults", quantitativeValue);
-      return this;
-    }
-    /**
-     * The number of adults staying in the unit.
-     */
-    @NotNull public Builder numAdults(@NotNull QuantitativeValue.Builder quantitativeValue) {
-      putValue("numAdults", quantitativeValue.build());
       return this;
     }
     /**
@@ -309,33 +307,17 @@ public class LodgingReservation extends Reservation {
       return this;
     }
     /**
-     * The date and time the reservation was modified.
+     * The current status of the reservation.
      */
-    @NotNull public Builder modifiedTime(@NotNull java.util.Date date) {
-      putValue("modifiedTime", date);
+    @NotNull public Builder reservationStatus(@NotNull ReservationStatusType reservationStatusType) {
+      putValue("reservationStatus", reservationStatusType);
       return this;
     }
     /**
-     * Any membership in a frequent flyer, hotel loyalty program, etc. being applied to the reservation.
+     * The current status of the reservation.
      */
-    @NotNull public Builder programMembershipUsed(@NotNull ProgramMembership programMembership) {
-      putValue("programMembershipUsed", programMembership);
-      return this;
-    }
-    /**
-     * Any membership in a frequent flyer, hotel loyalty program, etc. being applied to the reservation.
-     */
-    @NotNull public Builder programMembershipUsed(@NotNull ProgramMembership.Builder programMembership) {
-      putValue("programMembershipUsed", programMembership.build());
-      return this;
-    }
-    /**
-     * The currency of the price, or a price component when attached to &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/PriceSpecification&quot;&gt;PriceSpecification&lt;/a&gt; and its subtypes.&lt;br/&gt;&lt;br/&gt;
-     * 
-     * Use standard formats: &lt;a href=&quot;http://en.wikipedia.org/wiki/ISO_4217&quot;&gt;ISO 4217 currency format&lt;/a&gt; e.g. &quot;USD&quot;; &lt;a href=&quot;https://en.wikipedia.org/wiki/List_of_cryptocurrencies&quot;&gt;Ticker symbol&lt;/a&gt; for cryptocurrencies e.g. &quot;BTC&quot;; well known names for &lt;a href=&quot;https://en.wikipedia.org/wiki/Local_exchange_trading_system&quot;&gt;Local Exchange Tradings Systems&lt;/a&gt; (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;.
-     */
-    @NotNull public Builder priceCurrency(@NotNull String priceCurrency) {
-      putValue("priceCurrency", priceCurrency);
+    @NotNull public Builder reservationStatus(@NotNull ReservationStatusType.Builder reservationStatusType) {
+      putValue("reservationStatus", reservationStatusType.build());
       return this;
     }
     /**
@@ -381,77 +363,10 @@ public class LodgingReservation extends Reservation {
       return this;
     }
     /**
-     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.&lt;br/&gt;&lt;br/&gt;
-     * 
-     * Usage guidelines:&lt;br/&gt;&lt;br/&gt;
-     * 
-     * &lt;ul&gt;
-     * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
-     * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
-     * &lt;/ul&gt;
-     * 
-     */
-    @NotNull public Builder totalPrice(@NotNull Number number) {
-      putValue("totalPrice", number);
-      return this;
-    }
-    /**
-     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.&lt;br/&gt;&lt;br/&gt;
-     * 
-     * Usage guidelines:&lt;br/&gt;&lt;br/&gt;
-     * 
-     * &lt;ul&gt;
-     * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
-     * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
-     * &lt;/ul&gt;
-     * 
-     */
-    @NotNull public Builder totalPrice(@NotNull PriceSpecification priceSpecification) {
-      putValue("totalPrice", priceSpecification);
-      return this;
-    }
-    /**
-     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.&lt;br/&gt;&lt;br/&gt;
-     * 
-     * Usage guidelines:&lt;br/&gt;&lt;br/&gt;
-     * 
-     * &lt;ul&gt;
-     * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
-     * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
-     * &lt;/ul&gt;
-     * 
-     */
-    @NotNull public Builder totalPrice(@NotNull PriceSpecification.Builder priceSpecification) {
-      putValue("totalPrice", priceSpecification.build());
-      return this;
-    }
-    /**
-     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.&lt;br/&gt;&lt;br/&gt;
-     * 
-     * Usage guidelines:&lt;br/&gt;&lt;br/&gt;
-     * 
-     * &lt;ul&gt;
-     * &lt;li&gt;Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.&lt;/li&gt;
-     * &lt;li&gt;Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.&lt;/li&gt;
-     * &lt;/ul&gt;
-     * 
-     */
-    @NotNull public Builder totalPrice(@NotNull String totalPrice) {
-      putValue("totalPrice", totalPrice);
-      return this;
-    }
-    /**
      * The date and time the reservation was booked.
      */
     @NotNull public Builder bookingTime(@NotNull java.util.Date date) {
       putValue("bookingTime", date);
-      return this;
-    }
-    /**
-     * A unique identifier for the reservation.
-     */
-    @NotNull public Builder reservationId(@NotNull String reservationId) {
-      putValue("reservationId", reservationId);
       return this;
     }
     /**
@@ -466,6 +381,69 @@ public class LodgingReservation extends Reservation {
      */
     @NotNull public Builder reservationFor(@NotNull Thing.Builder thing) {
       putValue("reservationFor", thing.build());
+      return this;
+    }
+    /**
+     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     */
+    @NotNull public Builder totalPrice(@NotNull Number number) {
+      putValue("totalPrice", number);
+      return this;
+    }
+    /**
+     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     */
+    @NotNull public Builder totalPrice(@NotNull PriceSpecification priceSpecification) {
+      putValue("totalPrice", priceSpecification);
+      return this;
+    }
+    /**
+     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     */
+    @NotNull public Builder totalPrice(@NotNull PriceSpecification.Builder priceSpecification) {
+      putValue("totalPrice", priceSpecification.build());
+      return this;
+    }
+    /**
+     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     */
+    @NotNull public Builder totalPrice(@NotNull String totalPrice) {
+      putValue("totalPrice", totalPrice);
+      return this;
+    }
+    /**
+     * The date and time the reservation was modified.
+     */
+    @NotNull public Builder modifiedTime(@NotNull java.util.Date date) {
+      putValue("modifiedTime", date);
+      return this;
+    }
+    /**
+     * A unique identifier for the reservation.
+     */
+    @NotNull public Builder reservationId(@NotNull String reservationId) {
+      putValue("reservationId", reservationId);
+      return this;
+    }
+    /**
+     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;.
+     */
+    @NotNull public Builder priceCurrency(@NotNull String priceCurrency) {
+      putValue("priceCurrency", priceCurrency);
+      return this;
+    }
+    /**
+     * Any membership in a frequent flyer, hotel loyalty program, etc. being applied to the reservation.
+     */
+    @NotNull public Builder programMembershipUsed(@NotNull ProgramMembership programMembership) {
+      putValue("programMembershipUsed", programMembership);
+      return this;
+    }
+    /**
+     * Any membership in a frequent flyer, hotel loyalty program, etc. being applied to the reservation.
+     */
+    @NotNull public Builder programMembershipUsed(@NotNull ProgramMembership.Builder programMembership) {
+      putValue("programMembershipUsed", programMembership.build());
       return this;
     }
     /**
@@ -497,10 +475,24 @@ public class LodgingReservation extends Reservation {
       return this;
     }
     /**
-     * The current status of the reservation.
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
-    @NotNull public Builder reservationStatus(@NotNull ReservationStatusType reservationStatusType) {
-      putValue("reservationStatus", reservationStatusType);
+    @NotNull public Builder potentialAction(@NotNull Action action) {
+      putValue("potentialAction", action);
+      return this;
+    }
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     */
+    @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
+      putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     */
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
@@ -518,31 +510,10 @@ public class LodgingReservation extends Reservation {
       return this;
     }
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     */
-    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
-      putValue("disambiguatingDescription", description);
-      return this;
-    }
-    /**
-     * A description of the item.
-     */
-    @NotNull public Builder description(@NotNull Description description) {
-      putValue("description", description);
-      return this;
-    }
-    /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      */
     @NotNull public Builder sameAs(@NotNull String sameAs) {
       putValue("sameAs", sameAs);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
       return this;
     }
     /**
@@ -553,45 +524,10 @@ public class LodgingReservation extends Reservation {
       return this;
     }
     /**
-     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
+     * The name of the item.
      */
-    @NotNull public Builder image(@NotNull Image image) {
-      putValue("image", image);
-      return this;
-    }
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     */
-    @NotNull public Builder potentialAction(@NotNull Action action) {
-      putValue("potentialAction", action);
-      return this;
-    }
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     */
-    @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
-      putValue("potentialAction", action.build());
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -622,6 +558,27 @@ public class LodgingReservation extends Reservation {
       putValue("subjectOf", event.build());
       return this;
     }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -630,24 +587,24 @@ public class LodgingReservation extends Reservation {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("lodgingUnitDescription".equals(key) && value instanceof String) { this.lodgingUnitDescription((String)value); return; }
-      if ("lodgingUnitDescriptions".equals(key) && value instanceof String) { this.lodgingUnitDescription((String)value); return; }
-      if ("numChildren".equals(key) && value instanceof Integer) { this.numChildren((Integer)value); return; }
-      if ("numChildrens".equals(key) && value instanceof Integer) { this.numChildren((Integer)value); return; }
-      if ("numChildren".equals(key) && value instanceof QuantitativeValue) { this.numChildren((QuantitativeValue)value); return; }
-      if ("numChildrens".equals(key) && value instanceof QuantitativeValue) { this.numChildren((QuantitativeValue)value); return; }
-      if ("checkinTime".equals(key) && value instanceof java.util.Date) { this.checkinTime((java.util.Date)value); return; }
-      if ("checkinTimes".equals(key) && value instanceof java.util.Date) { this.checkinTime((java.util.Date)value); return; }
-      if ("lodgingUnitType".equals(key) && value instanceof QualitativeValue) { this.lodgingUnitType((QualitativeValue)value); return; }
-      if ("lodgingUnitTypes".equals(key) && value instanceof QualitativeValue) { this.lodgingUnitType((QualitativeValue)value); return; }
-      if ("lodgingUnitType".equals(key) && value instanceof String) { this.lodgingUnitType((String)value); return; }
-      if ("lodgingUnitTypes".equals(key) && value instanceof String) { this.lodgingUnitType((String)value); return; }
       if ("checkoutTime".equals(key) && value instanceof java.util.Date) { this.checkoutTime((java.util.Date)value); return; }
       if ("checkoutTimes".equals(key) && value instanceof java.util.Date) { this.checkoutTime((java.util.Date)value); return; }
+      if ("lodgingUnitDescription".equals(key) && value instanceof String) { this.lodgingUnitDescription((String)value); return; }
+      if ("lodgingUnitDescriptions".equals(key) && value instanceof String) { this.lodgingUnitDescription((String)value); return; }
+      if ("checkinTime".equals(key) && value instanceof java.util.Date) { this.checkinTime((java.util.Date)value); return; }
+      if ("checkinTimes".equals(key) && value instanceof java.util.Date) { this.checkinTime((java.util.Date)value); return; }
       if ("numAdults".equals(key) && value instanceof Integer) { this.numAdults((Integer)value); return; }
       if ("numAdultss".equals(key) && value instanceof Integer) { this.numAdults((Integer)value); return; }
       if ("numAdults".equals(key) && value instanceof QuantitativeValue) { this.numAdults((QuantitativeValue)value); return; }
       if ("numAdultss".equals(key) && value instanceof QuantitativeValue) { this.numAdults((QuantitativeValue)value); return; }
+      if ("numChildren".equals(key) && value instanceof Integer) { this.numChildren((Integer)value); return; }
+      if ("numChildrens".equals(key) && value instanceof Integer) { this.numChildren((Integer)value); return; }
+      if ("numChildren".equals(key) && value instanceof QuantitativeValue) { this.numChildren((QuantitativeValue)value); return; }
+      if ("numChildrens".equals(key) && value instanceof QuantitativeValue) { this.numChildren((QuantitativeValue)value); return; }
+      if ("lodgingUnitType".equals(key) && value instanceof QualitativeValue) { this.lodgingUnitType((QualitativeValue)value); return; }
+      if ("lodgingUnitTypes".equals(key) && value instanceof QualitativeValue) { this.lodgingUnitType((QualitativeValue)value); return; }
+      if ("lodgingUnitType".equals(key) && value instanceof String) { this.lodgingUnitType((String)value); return; }
+      if ("lodgingUnitTypes".equals(key) && value instanceof String) { this.lodgingUnitType((String)value); return; }
       super.fromMap(key, value);
     }
   }

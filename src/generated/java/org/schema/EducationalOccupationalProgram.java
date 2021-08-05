@@ -24,54 +24,54 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * A program offered by an institution which determines the learning progress to achieve an outcome, usually a credential like a degree or certificate. This would define a discrete set of opportunities (e.g., job, courses) that together constitute a program with a clear start, end, set of requirements, and transition to a new occupational opportunity (e.g., a job), or sometimes a higher educational opportunity (e.g., an advanced degree).Source: https://github.com/schemaorg/schemaorg/issues/2289
+ * A program offered by an institution which determines the learning progress to achieve an outcome, usually a credential like a degree or certificate. This would define a discrete set of opportunities (e.g., job, courses) that together constitute a program with a clear start, end, set of requirements, and transition to a new occupational opportunity (e.g., a job), or sometimes a higher educational opportunity (e.g., an advanced degree).
  */
 public class EducationalOccupationalProgram extends Intangible {
   /**
-   * The start date and time of the item (in &lt;a href=&quot;http://en.wikipedia.org/wiki/ISO_8601&quot;&gt;ISO 8601 date format&lt;/a&gt;).
+   * The number of credits or units awarded by a Course or required to complete an EducationalOccupationalProgram.
    */
-  @JsonIgnore public java.util.Date getStartDate() {
-    return (java.util.Date) getValue("startDate");
+  @JsonIgnore public Integer getNumberOfCreditsInteger() {
+    return (Integer) getValue("numberOfCredits");
   }
   /**
-   * The start date and time of the item (in &lt;a href=&quot;http://en.wikipedia.org/wiki/ISO_8601&quot;&gt;ISO 8601 date format&lt;/a&gt;).
+   * The number of credits or units awarded by a Course or required to complete an EducationalOccupationalProgram.
    */
-  @JsonIgnore public Collection<java.util.Date> getStartDates() {
-    final Object current = myData.get("startDate");
+  @JsonIgnore public Collection<Integer> getNumberOfCreditsIntegers() {
+    final Object current = myData.get("numberOfCredits");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+      return (Collection<Integer>) current;
     }
-    return Arrays.asList((java.util.Date) current);
+    return Arrays.asList((Integer) current);
   }
   /**
-   * A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.
+   * The number of credits or units awarded by a Course or required to complete an EducationalOccupationalProgram.
    */
-  @JsonIgnore public EducationalOccupationalCredential getEducationalCredentialAwardedEducationalOccupationalCredential() {
-    return (EducationalOccupationalCredential) getValue("educationalCredentialAwarded");
+  @JsonIgnore public StructuredValue getNumberOfCreditsStructuredValue() {
+    return (StructuredValue) getValue("numberOfCredits");
   }
   /**
-   * A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.
+   * The number of credits or units awarded by a Course or required to complete an EducationalOccupationalProgram.
    */
-  @JsonIgnore public Collection<EducationalOccupationalCredential> getEducationalCredentialAwardedEducationalOccupationalCredentials() {
-    final Object current = myData.get("educationalCredentialAwarded");
+  @JsonIgnore public Collection<StructuredValue> getNumberOfCreditsStructuredValues() {
+    final Object current = myData.get("numberOfCredits");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<EducationalOccupationalCredential>) current;
+      return (Collection<StructuredValue>) current;
     }
-    return Arrays.asList((EducationalOccupationalCredential) current);
+    return Arrays.asList((StructuredValue) current);
   }
   /**
-   * A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.
+   * The time of day the program normally runs. For example, &quot;evenings&quot;.
    */
-  @JsonIgnore public String getEducationalCredentialAwardedString() {
-    return (String) getValue("educationalCredentialAwarded");
+  @JsonIgnore public String getTimeOfDay() {
+    return (String) getValue("timeOfDay");
   }
   /**
-   * A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.
+   * The time of day the program normally runs. For example, &quot;evenings&quot;.
    */
-  @JsonIgnore public Collection<String> getEducationalCredentialAwardedStrings() {
-    final Object current = myData.get("educationalCredentialAwarded");
+  @JsonIgnore public Collection<String> getTimeOfDays() {
+    final Object current = myData.get("timeOfDay");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<String>) current;
@@ -79,38 +79,38 @@ public class EducationalOccupationalProgram extends Intangible {
     return Arrays.asList((String) current);
   }
   /**
-   * The amount of time in a term as defined by the institution. A term is a length of time where students take one or more classes. Semesters and quarters are common units for term.
+   * The number of credits or units a full-time student would be expected to take in 1 term however 'term' is defined by the institution.
    */
-  @JsonIgnore public Duration getTermDuration() {
-    return (Duration) getValue("termDuration");
+  @JsonIgnore public Integer getTypicalCreditsPerTermInteger() {
+    return (Integer) getValue("typicalCreditsPerTerm");
   }
   /**
-   * The amount of time in a term as defined by the institution. A term is a length of time where students take one or more classes. Semesters and quarters are common units for term.
+   * The number of credits or units a full-time student would be expected to take in 1 term however 'term' is defined by the institution.
    */
-  @JsonIgnore public Collection<Duration> getTermDurations() {
-    final Object current = myData.get("termDuration");
+  @JsonIgnore public Collection<Integer> getTypicalCreditsPerTermIntegers() {
+    final Object current = myData.get("typicalCreditsPerTerm");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<Duration>) current;
+      return (Collection<Integer>) current;
     }
-    return Arrays.asList((Duration) current);
+    return Arrays.asList((Integer) current);
   }
   /**
-   * The estimated salary earned while in the program.
+   * The number of credits or units a full-time student would be expected to take in 1 term however 'term' is defined by the institution.
    */
-  @JsonIgnore public MonetaryAmountDistribution getTrainingSalary() {
-    return (MonetaryAmountDistribution) getValue("trainingSalary");
+  @JsonIgnore public StructuredValue getTypicalCreditsPerTermStructuredValue() {
+    return (StructuredValue) getValue("typicalCreditsPerTerm");
   }
   /**
-   * The estimated salary earned while in the program.
+   * The number of credits or units a full-time student would be expected to take in 1 term however 'term' is defined by the institution.
    */
-  @JsonIgnore public Collection<MonetaryAmountDistribution> getTrainingSalarys() {
-    final Object current = myData.get("trainingSalary");
+  @JsonIgnore public Collection<StructuredValue> getTypicalCreditsPerTermStructuredValues() {
+    final Object current = myData.get("typicalCreditsPerTerm");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<MonetaryAmountDistribution>) current;
+      return (Collection<StructuredValue>) current;
     }
-    return Arrays.asList((MonetaryAmountDistribution) current);
+    return Arrays.asList((StructuredValue) current);
   }
   /**
    * The expected length of time to complete the program if attending full-time.
@@ -128,6 +128,40 @@ public class EducationalOccupationalProgram extends Intangible {
       return (Collection<Duration>) current;
     }
     return Arrays.asList((Duration) current);
+  }
+  /**
+   * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+   */
+  @JsonIgnore public Organization getProviderOrganization() {
+    return (Organization) getValue("provider");
+  }
+  /**
+   * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+   */
+  @JsonIgnore public Collection<Organization> getProviderOrganizations() {
+    final Object current = myData.get("provider");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Organization>) current;
+    }
+    return Arrays.asList((Organization) current);
+  }
+  /**
+   * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+   */
+  @JsonIgnore public Person getProviderPerson() {
+    return (Person) getValue("provider");
+  }
+  /**
+   * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+   */
+  @JsonIgnore public Collection<Person> getProviderPersons() {
+    final Object current = myData.get("provider");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Person>) current;
+    }
+    return Arrays.asList((Person) current);
   }
   /**
    * A financial aid type or program which students may use to pay for tuition or fees associated with the program.
@@ -164,16 +198,37 @@ public class EducationalOccupationalProgram extends Intangible {
     return Arrays.asList((String) current);
   }
   /**
-   * Similar to courseMode, The medium or means of delivery of the program as a whole. The value may either be a text label (e.g. &quot;online&quot;, &quot;onsite&quot; or &quot;blended&quot;; &quot;synchronous&quot; or &quot;asynchronous&quot;; &quot;full-time&quot; or &quot;part-time&quot;) or a URL reference to a term from a controlled vocabulary (e.g. https://ceds.ed.gov/element/001311#Asynchronous ).
+   * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.\n
+   * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
    */
-  @JsonIgnore public String getEducationalProgramMode() {
-    return (String) getValue("educationalProgramMode");
+  @JsonIgnore public CategoryCode getOccupationalCategoryCategoryCode() {
+    return (CategoryCode) getValue("occupationalCategory");
   }
   /**
-   * Similar to courseMode, The medium or means of delivery of the program as a whole. The value may either be a text label (e.g. &quot;online&quot;, &quot;onsite&quot; or &quot;blended&quot;; &quot;synchronous&quot; or &quot;asynchronous&quot;; &quot;full-time&quot; or &quot;part-time&quot;) or a URL reference to a term from a controlled vocabulary (e.g. https://ceds.ed.gov/element/001311#Asynchronous ).
+   * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.\n
+   * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
    */
-  @JsonIgnore public Collection<String> getEducationalProgramModes() {
-    final Object current = myData.get("educationalProgramMode");
+  @JsonIgnore public Collection<CategoryCode> getOccupationalCategoryCategoryCodes() {
+    final Object current = myData.get("occupationalCategory");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<CategoryCode>) current;
+    }
+    return Arrays.asList((CategoryCode) current);
+  }
+  /**
+   * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.\n
+   * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
+   */
+  @JsonIgnore public String getOccupationalCategoryString() {
+    return (String) getValue("occupationalCategory");
+  }
+  /**
+   * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.\n
+   * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
+   */
+  @JsonIgnore public Collection<String> getOccupationalCategoryStrings() {
+    final Object current = myData.get("occupationalCategory");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<String>) current;
@@ -181,50 +236,16 @@ public class EducationalOccupationalProgram extends Intangible {
     return Arrays.asList((String) current);
   }
   /**
-   * The time of day the program normally runs. For example, &quot;evenings&quot;.
+   * A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.
    */
-  @JsonIgnore public String getTimeOfDay() {
-    return (String) getValue("timeOfDay");
+  @JsonIgnore public EducationalOccupationalCredential getEducationalCredentialAwardedEducationalOccupationalCredential() {
+    return (EducationalOccupationalCredential) getValue("educationalCredentialAwarded");
   }
   /**
-   * The time of day the program normally runs. For example, &quot;evenings&quot;.
+   * A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.
    */
-  @JsonIgnore public Collection<String> getTimeOfDays() {
-    final Object current = myData.get("timeOfDay");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * The end date and time of the item (in &lt;a href=&quot;http://en.wikipedia.org/wiki/ISO_8601&quot;&gt;ISO 8601 date format&lt;/a&gt;).
-   */
-  @JsonIgnore public java.util.Date getEndDate() {
-    return (java.util.Date) getValue("endDate");
-  }
-  /**
-   * The end date and time of the item (in &lt;a href=&quot;http://en.wikipedia.org/wiki/ISO_8601&quot;&gt;ISO 8601 date format&lt;/a&gt;).
-   */
-  @JsonIgnore public Collection<java.util.Date> getEndDates() {
-    final Object current = myData.get("endDate");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
-    }
-    return Arrays.asList((java.util.Date) current);
-  }
-  /**
-   * A description of the qualification, award, certificate, diploma or other occupational credential awarded as a consequence of successful completion of this course or program.
-   */
-  @JsonIgnore public EducationalOccupationalCredential getOccupationalCredentialAwardedEducationalOccupationalCredential() {
-    return (EducationalOccupationalCredential) getValue("occupationalCredentialAwarded");
-  }
-  /**
-   * A description of the qualification, award, certificate, diploma or other occupational credential awarded as a consequence of successful completion of this course or program.
-   */
-  @JsonIgnore public Collection<EducationalOccupationalCredential> getOccupationalCredentialAwardedEducationalOccupationalCredentials() {
-    final Object current = myData.get("occupationalCredentialAwarded");
+  @JsonIgnore public Collection<EducationalOccupationalCredential> getEducationalCredentialAwardedEducationalOccupationalCredentials() {
+    final Object current = myData.get("educationalCredentialAwarded");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<EducationalOccupationalCredential>) current;
@@ -232,72 +253,21 @@ public class EducationalOccupationalProgram extends Intangible {
     return Arrays.asList((EducationalOccupationalCredential) current);
   }
   /**
-   * A description of the qualification, award, certificate, diploma or other occupational credential awarded as a consequence of successful completion of this course or program.
+   * A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.
    */
-  @JsonIgnore public String getOccupationalCredentialAwardedString() {
-    return (String) getValue("occupationalCredentialAwarded");
+  @JsonIgnore public String getEducationalCredentialAwardedString() {
+    return (String) getValue("educationalCredentialAwarded");
   }
   /**
-   * A description of the qualification, award, certificate, diploma or other occupational credential awarded as a consequence of successful completion of this course or program.
+   * A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.
    */
-  @JsonIgnore public Collection<String> getOccupationalCredentialAwardedStrings() {
-    final Object current = myData.get("occupationalCredentialAwarded");
+  @JsonIgnore public Collection<String> getEducationalCredentialAwardedStrings() {
+    final Object current = myData.get("educationalCredentialAwarded");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<String>) current;
     }
     return Arrays.asList((String) current);
-  }
-  /**
-   * The date at which the program stops collecting applications for the next enrollment cycle.
-   */
-  @JsonIgnore public java.util.Date getApplicationDeadline() {
-    return (java.util.Date) getValue("applicationDeadline");
-  }
-  /**
-   * The date at which the program stops collecting applications for the next enrollment cycle.
-   */
-  @JsonIgnore public Collection<java.util.Date> getApplicationDeadlines() {
-    final Object current = myData.get("applicationDeadline");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
-    }
-    return Arrays.asList((java.util.Date) current);
-  }
-  /**
-   * The number of credits or units awarded by a Course or required to complete an EducationalOccupationalProgram.
-   */
-  @JsonIgnore public Integer getNumberOfCreditsInteger() {
-    return (Integer) getValue("numberOfCredits");
-  }
-  /**
-   * The number of credits or units awarded by a Course or required to complete an EducationalOccupationalProgram.
-   */
-  @JsonIgnore public Collection<Integer> getNumberOfCreditsIntegers() {
-    final Object current = myData.get("numberOfCredits");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
-    }
-    return Arrays.asList((Integer) current);
-  }
-  /**
-   * The number of credits or units awarded by a Course or required to complete an EducationalOccupationalProgram.
-   */
-  @JsonIgnore public StructuredValue getNumberOfCreditsStructuredValue() {
-    return (StructuredValue) getValue("numberOfCredits");
-  }
-  /**
-   * The number of credits or units awarded by a Course or required to complete an EducationalOccupationalProgram.
-   */
-  @JsonIgnore public Collection<StructuredValue> getNumberOfCreditsStructuredValues() {
-    final Object current = myData.get("numberOfCredits");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<StructuredValue>) current;
-    }
-    return Arrays.asList((StructuredValue) current);
   }
   /**
    * Prerequisites for enrolling in the program.
@@ -402,46 +372,123 @@ public class EducationalOccupationalProgram extends Intangible {
     return Arrays.asList((String) current);
   }
   /**
-   * A category describing the job, preferably using a term from a taxonomy such as &lt;a href=&quot;http://www.onetcenter.org/taxonomy.html&quot;&gt;BLS O*NET-SOC&lt;/a&gt;, &lt;a href=&quot;https://www.ilo.org/public/english/bureau/stat/isco/isco08/&quot;&gt;ISCO-08&lt;/a&gt; or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.&lt;br/&gt;&lt;br/&gt;
-   * 
-   * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
+   * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
    */
-  @JsonIgnore public CategoryCode getOccupationalCategoryCategoryCode() {
-    return (CategoryCode) getValue("occupationalCategory");
+  @JsonIgnore public java.util.Date getStartDate() {
+    return (java.util.Date) getValue("startDate");
   }
   /**
-   * A category describing the job, preferably using a term from a taxonomy such as &lt;a href=&quot;http://www.onetcenter.org/taxonomy.html&quot;&gt;BLS O*NET-SOC&lt;/a&gt;, &lt;a href=&quot;https://www.ilo.org/public/english/bureau/stat/isco/isco08/&quot;&gt;ISCO-08&lt;/a&gt; or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.&lt;br/&gt;&lt;br/&gt;
-   * 
-   * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
+   * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
    */
-  @JsonIgnore public Collection<CategoryCode> getOccupationalCategoryCategoryCodes() {
-    final Object current = myData.get("occupationalCategory");
+  @JsonIgnore public Collection<java.util.Date> getStartDates() {
+    final Object current = myData.get("startDate");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<CategoryCode>) current;
+      return (Collection<java.util.Date>) current;
     }
-    return Arrays.asList((CategoryCode) current);
+    return Arrays.asList((java.util.Date) current);
   }
   /**
-   * A category describing the job, preferably using a term from a taxonomy such as &lt;a href=&quot;http://www.onetcenter.org/taxonomy.html&quot;&gt;BLS O*NET-SOC&lt;/a&gt;, &lt;a href=&quot;https://www.ilo.org/public/english/bureau/stat/isco/isco08/&quot;&gt;ISCO-08&lt;/a&gt; or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.&lt;br/&gt;&lt;br/&gt;
-   * 
-   * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
+   * The expected salary upon completing the training.
    */
-  @JsonIgnore public String getOccupationalCategoryString() {
-    return (String) getValue("occupationalCategory");
+  @JsonIgnore public MonetaryAmountDistribution getSalaryUponCompletion() {
+    return (MonetaryAmountDistribution) getValue("salaryUponCompletion");
   }
   /**
-   * A category describing the job, preferably using a term from a taxonomy such as &lt;a href=&quot;http://www.onetcenter.org/taxonomy.html&quot;&gt;BLS O*NET-SOC&lt;/a&gt;, &lt;a href=&quot;https://www.ilo.org/public/english/bureau/stat/isco/isco08/&quot;&gt;ISCO-08&lt;/a&gt; or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.&lt;br/&gt;&lt;br/&gt;
-   * 
-   * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
+   * The expected salary upon completing the training.
    */
-  @JsonIgnore public Collection<String> getOccupationalCategoryStrings() {
-    final Object current = myData.get("occupationalCategory");
+  @JsonIgnore public Collection<MonetaryAmountDistribution> getSalaryUponCompletions() {
+    final Object current = myData.get("salaryUponCompletion");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<MonetaryAmountDistribution>) current;
+    }
+    return Arrays.asList((MonetaryAmountDistribution) current);
+  }
+  /**
+   * Similar to courseMode, The medium or means of delivery of the program as a whole. The value may either be a text label (e.g. &quot;online&quot;, &quot;onsite&quot; or &quot;blended&quot;; &quot;synchronous&quot; or &quot;asynchronous&quot;; &quot;full-time&quot; or &quot;part-time&quot;) or a URL reference to a term from a controlled vocabulary (e.g. https://ceds.ed.gov/element/001311#Asynchronous ).
+   */
+  @JsonIgnore public String getEducationalProgramMode() {
+    return (String) getValue("educationalProgramMode");
+  }
+  /**
+   * Similar to courseMode, The medium or means of delivery of the program as a whole. The value may either be a text label (e.g. &quot;online&quot;, &quot;onsite&quot; or &quot;blended&quot;; &quot;synchronous&quot; or &quot;asynchronous&quot;; &quot;full-time&quot; or &quot;part-time&quot;) or a URL reference to a term from a controlled vocabulary (e.g. https://ceds.ed.gov/element/001311#Asynchronous ).
+   */
+  @JsonIgnore public Collection<String> getEducationalProgramModes() {
+    final Object current = myData.get("educationalProgramMode");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<String>) current;
     }
     return Arrays.asList((String) current);
+  }
+  /**
+   * The date at which the program begins collecting applications for the next enrollment cycle.
+   */
+  @JsonIgnore public java.util.Date getApplicationStartDate() {
+    return (java.util.Date) getValue("applicationStartDate");
+  }
+  /**
+   * The date at which the program begins collecting applications for the next enrollment cycle.
+   */
+  @JsonIgnore public Collection<java.util.Date> getApplicationStartDates() {
+    final Object current = myData.get("applicationStartDate");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<java.util.Date>) current;
+    }
+    return Arrays.asList((java.util.Date) current);
+  }
+  /**
+   * The estimated salary earned while in the program.
+   */
+  @JsonIgnore public MonetaryAmountDistribution getTrainingSalary() {
+    return (MonetaryAmountDistribution) getValue("trainingSalary");
+  }
+  /**
+   * The estimated salary earned while in the program.
+   */
+  @JsonIgnore public Collection<MonetaryAmountDistribution> getTrainingSalarys() {
+    final Object current = myData.get("trainingSalary");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<MonetaryAmountDistribution>) current;
+    }
+    return Arrays.asList((MonetaryAmountDistribution) current);
+  }
+  /**
+   * The date at which the program stops collecting applications for the next enrollment cycle.
+   */
+  @JsonIgnore public java.util.Date getApplicationDeadline() {
+    return (java.util.Date) getValue("applicationDeadline");
+  }
+  /**
+   * The date at which the program stops collecting applications for the next enrollment cycle.
+   */
+  @JsonIgnore public Collection<java.util.Date> getApplicationDeadlines() {
+    final Object current = myData.get("applicationDeadline");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<java.util.Date>) current;
+    }
+    return Arrays.asList((java.util.Date) current);
+  }
+  /**
+   * The maximum number of students who may be enrolled in the program.
+   */
+  @JsonIgnore public Integer getMaximumEnrollment() {
+    return (Integer) getValue("maximumEnrollment");
+  }
+  /**
+   * The maximum number of students who may be enrolled in the program.
+   */
+  @JsonIgnore public Collection<Integer> getMaximumEnrollments() {
+    final Object current = myData.get("maximumEnrollment");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Integer>) current;
+    }
+    return Arrays.asList((Integer) current);
   }
   /**
    * The number of times terms of study are offered per year. Semesters and quarters are common units for term. For example, if the student can only take 2 semesters for the program in one year, then termsPerYear should be 2.
@@ -529,55 +576,72 @@ public class EducationalOccupationalProgram extends Intangible {
     return Arrays.asList((String) current);
   }
   /**
-   * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+   * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
    */
-  @JsonIgnore public Organization getProviderOrganization() {
-    return (Organization) getValue("provider");
+  @JsonIgnore public java.util.Date getEndDate() {
+    return (java.util.Date) getValue("endDate");
   }
   /**
-   * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+   * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
    */
-  @JsonIgnore public Collection<Organization> getProviderOrganizations() {
-    final Object current = myData.get("provider");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
-    }
-    return Arrays.asList((Organization) current);
-  }
-  /**
-   * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-   */
-  @JsonIgnore public Person getProviderPerson() {
-    return (Person) getValue("provider");
-  }
-  /**
-   * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-   */
-  @JsonIgnore public Collection<Person> getProviderPersons() {
-    final Object current = myData.get("provider");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
-    }
-    return Arrays.asList((Person) current);
-  }
-  /**
-   * The date at which the program begins collecting applications for the next enrollment cycle.
-   */
-  @JsonIgnore public java.util.Date getApplicationStartDate() {
-    return (java.util.Date) getValue("applicationStartDate");
-  }
-  /**
-   * The date at which the program begins collecting applications for the next enrollment cycle.
-   */
-  @JsonIgnore public Collection<java.util.Date> getApplicationStartDates() {
-    final Object current = myData.get("applicationStartDate");
+  @JsonIgnore public Collection<java.util.Date> getEndDates() {
+    final Object current = myData.get("endDate");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
+  }
+  /**
+   * A description of the qualification, award, certificate, diploma or other occupational credential awarded as a consequence of successful completion of this course or program.
+   */
+  @JsonIgnore public EducationalOccupationalCredential getOccupationalCredentialAwardedEducationalOccupationalCredential() {
+    return (EducationalOccupationalCredential) getValue("occupationalCredentialAwarded");
+  }
+  /**
+   * A description of the qualification, award, certificate, diploma or other occupational credential awarded as a consequence of successful completion of this course or program.
+   */
+  @JsonIgnore public Collection<EducationalOccupationalCredential> getOccupationalCredentialAwardedEducationalOccupationalCredentials() {
+    final Object current = myData.get("occupationalCredentialAwarded");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<EducationalOccupationalCredential>) current;
+    }
+    return Arrays.asList((EducationalOccupationalCredential) current);
+  }
+  /**
+   * A description of the qualification, award, certificate, diploma or other occupational credential awarded as a consequence of successful completion of this course or program.
+   */
+  @JsonIgnore public String getOccupationalCredentialAwardedString() {
+    return (String) getValue("occupationalCredentialAwarded");
+  }
+  /**
+   * A description of the qualification, award, certificate, diploma or other occupational credential awarded as a consequence of successful completion of this course or program.
+   */
+  @JsonIgnore public Collection<String> getOccupationalCredentialAwardedStrings() {
+    final Object current = myData.get("occupationalCredentialAwarded");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * A course or class that is one of the learning opportunities that constitute an educational / occupational program. No information is implied about whether the course is mandatory or optional; no guarantee is implied about whether the course will be available to everyone on the program.
+   */
+  @JsonIgnore public Course getHasCourse() {
+    return (Course) getValue("hasCourse");
+  }
+  /**
+   * A course or class that is one of the learning opportunities that constitute an educational / occupational program. No information is implied about whether the course is mandatory or optional; no guarantee is implied about whether the course will be available to everyone on the program.
+   */
+  @JsonIgnore public Collection<Course> getHasCourses() {
+    final Object current = myData.get("hasCourse");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Course>) current;
+    }
+    return Arrays.asList((Course) current);
   }
   /**
    * The day of the week for which these opening hours are valid.
@@ -597,81 +661,32 @@ public class EducationalOccupationalProgram extends Intangible {
     return Arrays.asList((DayOfWeek) current);
   }
   /**
-   * The expected salary upon completing the training.
+   * The amount of time in a term as defined by the institution. A term is a length of time where students take one or more classes. Semesters and quarters are common units for term.
    */
-  @JsonIgnore public MonetaryAmountDistribution getSalaryUponCompletion() {
-    return (MonetaryAmountDistribution) getValue("salaryUponCompletion");
+  @JsonIgnore public Duration getTermDuration() {
+    return (Duration) getValue("termDuration");
   }
   /**
-   * The expected salary upon completing the training.
+   * The amount of time in a term as defined by the institution. A term is a length of time where students take one or more classes. Semesters and quarters are common units for term.
    */
-  @JsonIgnore public Collection<MonetaryAmountDistribution> getSalaryUponCompletions() {
-    final Object current = myData.get("salaryUponCompletion");
+  @JsonIgnore public Collection<Duration> getTermDurations() {
+    final Object current = myData.get("termDuration");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<MonetaryAmountDistribution>) current;
+      return (Collection<Duration>) current;
     }
-    return Arrays.asList((MonetaryAmountDistribution) current);
+    return Arrays.asList((Duration) current);
   }
   /**
-   * The maximum number of students who may be enrolled in the program.
-   */
-  @JsonIgnore public Integer getMaximumEnrollment() {
-    return (Integer) getValue("maximumEnrollment");
-  }
-  /**
-   * The maximum number of students who may be enrolled in the program.
-   */
-  @JsonIgnore public Collection<Integer> getMaximumEnrollments() {
-    final Object current = myData.get("maximumEnrollment");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
-    }
-    return Arrays.asList((Integer) current);
-  }
-  /**
-   * The number of credits or units a full-time student would be expected to take in 1 term however 'term' is defined by the institution.
-   */
-  @JsonIgnore public Integer getTypicalCreditsPerTermInteger() {
-    return (Integer) getValue("typicalCreditsPerTerm");
-  }
-  /**
-   * The number of credits or units a full-time student would be expected to take in 1 term however 'term' is defined by the institution.
-   */
-  @JsonIgnore public Collection<Integer> getTypicalCreditsPerTermIntegers() {
-    final Object current = myData.get("typicalCreditsPerTerm");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
-    }
-    return Arrays.asList((Integer) current);
-  }
-  /**
-   * The number of credits or units a full-time student would be expected to take in 1 term however 'term' is defined by the institution.
-   */
-  @JsonIgnore public StructuredValue getTypicalCreditsPerTermStructuredValue() {
-    return (StructuredValue) getValue("typicalCreditsPerTerm");
-  }
-  /**
-   * The number of credits or units a full-time student would be expected to take in 1 term however 'term' is defined by the institution.
-   */
-  @JsonIgnore public Collection<StructuredValue> getTypicalCreditsPerTermStructuredValues() {
-    final Object current = myData.get("typicalCreditsPerTerm");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<StructuredValue>) current;
-    }
-    return Arrays.asList((StructuredValue) current);
-  }
-  /**
-   * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt; to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Demand&quot;&gt;Demand&lt;/a&gt;. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+   * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+   *       
    */
   @JsonIgnore public Demand getOffersDemand() {
     return (Demand) getValue("offers");
   }
   /**
-   * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt; to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Demand&quot;&gt;Demand&lt;/a&gt;. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+   * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+   *       
    */
   @JsonIgnore public Collection<Demand> getOffersDemands() {
     final Object current = myData.get("offers");
@@ -682,13 +697,15 @@ public class EducationalOccupationalProgram extends Intangible {
     return Arrays.asList((Demand) current);
   }
   /**
-   * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt; to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Demand&quot;&gt;Demand&lt;/a&gt;. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+   * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+   *       
    */
   @JsonIgnore public Offer getOffersOffer() {
     return (Offer) getValue("offers");
   }
   /**
-   * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt; to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Demand&quot;&gt;Demand&lt;/a&gt;. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+   * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+   *       
    */
   @JsonIgnore public Collection<Offer> getOffersOffers() {
     final Object current = myData.get("offers");
@@ -713,52 +730,52 @@ public class EducationalOccupationalProgram extends Intangible {
       return new EducationalOccupationalProgram(myData);
     }
     /**
-     * The start date and time of the item (in &lt;a href=&quot;http://en.wikipedia.org/wiki/ISO_8601&quot;&gt;ISO 8601 date format&lt;/a&gt;).
+     * The number of credits or units awarded by a Course or required to complete an EducationalOccupationalProgram.
      */
-    @NotNull public Builder startDate(@NotNull java.util.Date date) {
-      putValue("startDate", date);
+    @NotNull public Builder numberOfCredits(@NotNull Integer integer) {
+      putValue("numberOfCredits", integer);
       return this;
     }
     /**
-     * A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.
+     * The number of credits or units awarded by a Course or required to complete an EducationalOccupationalProgram.
      */
-    @NotNull public Builder educationalCredentialAwarded(@NotNull EducationalOccupationalCredential educationalOccupationalCredential) {
-      putValue("educationalCredentialAwarded", educationalOccupationalCredential);
+    @NotNull public Builder numberOfCredits(@NotNull StructuredValue structuredValue) {
+      putValue("numberOfCredits", structuredValue);
       return this;
     }
     /**
-     * A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.
+     * The number of credits or units awarded by a Course or required to complete an EducationalOccupationalProgram.
      */
-    @NotNull public Builder educationalCredentialAwarded(@NotNull EducationalOccupationalCredential.Builder educationalOccupationalCredential) {
-      putValue("educationalCredentialAwarded", educationalOccupationalCredential.build());
+    @NotNull public Builder numberOfCredits(@NotNull StructuredValue.Builder structuredValue) {
+      putValue("numberOfCredits", structuredValue.build());
       return this;
     }
     /**
-     * A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.
+     * The time of day the program normally runs. For example, &quot;evenings&quot;.
      */
-    @NotNull public Builder educationalCredentialAwarded(@NotNull String educationalCredentialAwarded) {
-      putValue("educationalCredentialAwarded", educationalCredentialAwarded);
+    @NotNull public Builder timeOfDay(@NotNull String timeOfDay) {
+      putValue("timeOfDay", timeOfDay);
       return this;
     }
     /**
-     * The amount of time in a term as defined by the institution. A term is a length of time where students take one or more classes. Semesters and quarters are common units for term.
+     * The number of credits or units a full-time student would be expected to take in 1 term however 'term' is defined by the institution.
      */
-    @NotNull public Builder termDuration(@NotNull Duration duration) {
-      putValue("termDuration", duration);
+    @NotNull public Builder typicalCreditsPerTerm(@NotNull Integer integer) {
+      putValue("typicalCreditsPerTerm", integer);
       return this;
     }
     /**
-     * The estimated salary earned while in the program.
+     * The number of credits or units a full-time student would be expected to take in 1 term however 'term' is defined by the institution.
      */
-    @NotNull public Builder trainingSalary(@NotNull MonetaryAmountDistribution monetaryAmountDistribution) {
-      putValue("trainingSalary", monetaryAmountDistribution);
+    @NotNull public Builder typicalCreditsPerTerm(@NotNull StructuredValue structuredValue) {
+      putValue("typicalCreditsPerTerm", structuredValue);
       return this;
     }
     /**
-     * The estimated salary earned while in the program.
+     * The number of credits or units a full-time student would be expected to take in 1 term however 'term' is defined by the institution.
      */
-    @NotNull public Builder trainingSalary(@NotNull MonetaryAmountDistribution.Builder monetaryAmountDistribution) {
-      putValue("trainingSalary", monetaryAmountDistribution.build());
+    @NotNull public Builder typicalCreditsPerTerm(@NotNull StructuredValue.Builder structuredValue) {
+      putValue("typicalCreditsPerTerm", structuredValue.build());
       return this;
     }
     /**
@@ -766,6 +783,34 @@ public class EducationalOccupationalProgram extends Intangible {
      */
     @NotNull public Builder timeToComplete(@NotNull Duration duration) {
       putValue("timeToComplete", duration);
+      return this;
+    }
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     */
+    @NotNull public Builder provider(@NotNull Organization organization) {
+      putValue("provider", organization);
+      return this;
+    }
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     */
+    @NotNull public Builder provider(@NotNull Organization.Builder organization) {
+      putValue("provider", organization.build());
+      return this;
+    }
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     */
+    @NotNull public Builder provider(@NotNull Person person) {
+      putValue("provider", person);
+      return this;
+    }
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     */
+    @NotNull public Builder provider(@NotNull Person.Builder person) {
+      putValue("provider", person.build());
       return this;
     }
     /**
@@ -790,73 +835,48 @@ public class EducationalOccupationalProgram extends Intangible {
       return this;
     }
     /**
-     * Similar to courseMode, The medium or means of delivery of the program as a whole. The value may either be a text label (e.g. &quot;online&quot;, &quot;onsite&quot; or &quot;blended&quot;; &quot;synchronous&quot; or &quot;asynchronous&quot;; &quot;full-time&quot; or &quot;part-time&quot;) or a URL reference to a term from a controlled vocabulary (e.g. https://ceds.ed.gov/element/001311#Asynchronous ).
+     * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.\n
+     * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
      */
-    @NotNull public Builder educationalProgramMode(@NotNull String educationalProgramMode) {
-      putValue("educationalProgramMode", educationalProgramMode);
+    @NotNull public Builder occupationalCategory(@NotNull CategoryCode categoryCode) {
+      putValue("occupationalCategory", categoryCode);
       return this;
     }
     /**
-     * The time of day the program normally runs. For example, &quot;evenings&quot;.
+     * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.\n
+     * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
      */
-    @NotNull public Builder timeOfDay(@NotNull String timeOfDay) {
-      putValue("timeOfDay", timeOfDay);
+    @NotNull public Builder occupationalCategory(@NotNull CategoryCode.Builder categoryCode) {
+      putValue("occupationalCategory", categoryCode.build());
       return this;
     }
     /**
-     * The end date and time of the item (in &lt;a href=&quot;http://en.wikipedia.org/wiki/ISO_8601&quot;&gt;ISO 8601 date format&lt;/a&gt;).
+     * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.\n
+     * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
      */
-    @NotNull public Builder endDate(@NotNull java.util.Date date) {
-      putValue("endDate", date);
+    @NotNull public Builder occupationalCategory(@NotNull String occupationalCategory) {
+      putValue("occupationalCategory", occupationalCategory);
       return this;
     }
     /**
-     * A description of the qualification, award, certificate, diploma or other occupational credential awarded as a consequence of successful completion of this course or program.
+     * A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.
      */
-    @NotNull public Builder occupationalCredentialAwarded(@NotNull EducationalOccupationalCredential educationalOccupationalCredential) {
-      putValue("occupationalCredentialAwarded", educationalOccupationalCredential);
+    @NotNull public Builder educationalCredentialAwarded(@NotNull EducationalOccupationalCredential educationalOccupationalCredential) {
+      putValue("educationalCredentialAwarded", educationalOccupationalCredential);
       return this;
     }
     /**
-     * A description of the qualification, award, certificate, diploma or other occupational credential awarded as a consequence of successful completion of this course or program.
+     * A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.
      */
-    @NotNull public Builder occupationalCredentialAwarded(@NotNull EducationalOccupationalCredential.Builder educationalOccupationalCredential) {
-      putValue("occupationalCredentialAwarded", educationalOccupationalCredential.build());
+    @NotNull public Builder educationalCredentialAwarded(@NotNull EducationalOccupationalCredential.Builder educationalOccupationalCredential) {
+      putValue("educationalCredentialAwarded", educationalOccupationalCredential.build());
       return this;
     }
     /**
-     * A description of the qualification, award, certificate, diploma or other occupational credential awarded as a consequence of successful completion of this course or program.
+     * A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.
      */
-    @NotNull public Builder occupationalCredentialAwarded(@NotNull String occupationalCredentialAwarded) {
-      putValue("occupationalCredentialAwarded", occupationalCredentialAwarded);
-      return this;
-    }
-    /**
-     * The date at which the program stops collecting applications for the next enrollment cycle.
-     */
-    @NotNull public Builder applicationDeadline(@NotNull java.util.Date date) {
-      putValue("applicationDeadline", date);
-      return this;
-    }
-    /**
-     * The number of credits or units awarded by a Course or required to complete an EducationalOccupationalProgram.
-     */
-    @NotNull public Builder numberOfCredits(@NotNull Integer integer) {
-      putValue("numberOfCredits", integer);
-      return this;
-    }
-    /**
-     * The number of credits or units awarded by a Course or required to complete an EducationalOccupationalProgram.
-     */
-    @NotNull public Builder numberOfCredits(@NotNull StructuredValue structuredValue) {
-      putValue("numberOfCredits", structuredValue);
-      return this;
-    }
-    /**
-     * The number of credits or units awarded by a Course or required to complete an EducationalOccupationalProgram.
-     */
-    @NotNull public Builder numberOfCredits(@NotNull StructuredValue.Builder structuredValue) {
-      putValue("numberOfCredits", structuredValue.build());
+    @NotNull public Builder educationalCredentialAwarded(@NotNull String educationalCredentialAwarded) {
+      putValue("educationalCredentialAwarded", educationalCredentialAwarded);
       return this;
     }
     /**
@@ -930,30 +950,66 @@ public class EducationalOccupationalProgram extends Intangible {
       return this;
     }
     /**
-     * A category describing the job, preferably using a term from a taxonomy such as &lt;a href=&quot;http://www.onetcenter.org/taxonomy.html&quot;&gt;BLS O*NET-SOC&lt;/a&gt;, &lt;a href=&quot;https://www.ilo.org/public/english/bureau/stat/isco/isco08/&quot;&gt;ISCO-08&lt;/a&gt; or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.&lt;br/&gt;&lt;br/&gt;
-     * 
-     * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
+     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      */
-    @NotNull public Builder occupationalCategory(@NotNull CategoryCode categoryCode) {
-      putValue("occupationalCategory", categoryCode);
+    @NotNull public Builder startDate(@NotNull java.util.Date date) {
+      putValue("startDate", date);
       return this;
     }
     /**
-     * A category describing the job, preferably using a term from a taxonomy such as &lt;a href=&quot;http://www.onetcenter.org/taxonomy.html&quot;&gt;BLS O*NET-SOC&lt;/a&gt;, &lt;a href=&quot;https://www.ilo.org/public/english/bureau/stat/isco/isco08/&quot;&gt;ISCO-08&lt;/a&gt; or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.&lt;br/&gt;&lt;br/&gt;
-     * 
-     * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
+     * The expected salary upon completing the training.
      */
-    @NotNull public Builder occupationalCategory(@NotNull CategoryCode.Builder categoryCode) {
-      putValue("occupationalCategory", categoryCode.build());
+    @NotNull public Builder salaryUponCompletion(@NotNull MonetaryAmountDistribution monetaryAmountDistribution) {
+      putValue("salaryUponCompletion", monetaryAmountDistribution);
       return this;
     }
     /**
-     * A category describing the job, preferably using a term from a taxonomy such as &lt;a href=&quot;http://www.onetcenter.org/taxonomy.html&quot;&gt;BLS O*NET-SOC&lt;/a&gt;, &lt;a href=&quot;https://www.ilo.org/public/english/bureau/stat/isco/isco08/&quot;&gt;ISCO-08&lt;/a&gt; or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.&lt;br/&gt;&lt;br/&gt;
-     * 
-     * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
+     * The expected salary upon completing the training.
      */
-    @NotNull public Builder occupationalCategory(@NotNull String occupationalCategory) {
-      putValue("occupationalCategory", occupationalCategory);
+    @NotNull public Builder salaryUponCompletion(@NotNull MonetaryAmountDistribution.Builder monetaryAmountDistribution) {
+      putValue("salaryUponCompletion", monetaryAmountDistribution.build());
+      return this;
+    }
+    /**
+     * Similar to courseMode, The medium or means of delivery of the program as a whole. The value may either be a text label (e.g. &quot;online&quot;, &quot;onsite&quot; or &quot;blended&quot;; &quot;synchronous&quot; or &quot;asynchronous&quot;; &quot;full-time&quot; or &quot;part-time&quot;) or a URL reference to a term from a controlled vocabulary (e.g. https://ceds.ed.gov/element/001311#Asynchronous ).
+     */
+    @NotNull public Builder educationalProgramMode(@NotNull String educationalProgramMode) {
+      putValue("educationalProgramMode", educationalProgramMode);
+      return this;
+    }
+    /**
+     * The date at which the program begins collecting applications for the next enrollment cycle.
+     */
+    @NotNull public Builder applicationStartDate(@NotNull java.util.Date date) {
+      putValue("applicationStartDate", date);
+      return this;
+    }
+    /**
+     * The estimated salary earned while in the program.
+     */
+    @NotNull public Builder trainingSalary(@NotNull MonetaryAmountDistribution monetaryAmountDistribution) {
+      putValue("trainingSalary", monetaryAmountDistribution);
+      return this;
+    }
+    /**
+     * The estimated salary earned while in the program.
+     */
+    @NotNull public Builder trainingSalary(@NotNull MonetaryAmountDistribution.Builder monetaryAmountDistribution) {
+      putValue("trainingSalary", monetaryAmountDistribution.build());
+      return this;
+    }
+    /**
+     * The date at which the program stops collecting applications for the next enrollment cycle.
+     */
+    @NotNull public Builder applicationDeadline(@NotNull java.util.Date date) {
+      putValue("applicationDeadline", date);
+      return this;
+    }
+    /**
+     * The maximum number of students who may be enrolled in the program.
+     */
+    @NotNull public Builder maximumEnrollment(@NotNull Integer integer) {
+      putValue("maximumEnrollment", integer);
       return this;
     }
     /**
@@ -992,38 +1048,45 @@ public class EducationalOccupationalProgram extends Intangible {
       return this;
     }
     /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      */
-    @NotNull public Builder provider(@NotNull Organization organization) {
-      putValue("provider", organization);
+    @NotNull public Builder endDate(@NotNull java.util.Date date) {
+      putValue("endDate", date);
       return this;
     }
     /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     * A description of the qualification, award, certificate, diploma or other occupational credential awarded as a consequence of successful completion of this course or program.
      */
-    @NotNull public Builder provider(@NotNull Organization.Builder organization) {
-      putValue("provider", organization.build());
+    @NotNull public Builder occupationalCredentialAwarded(@NotNull EducationalOccupationalCredential educationalOccupationalCredential) {
+      putValue("occupationalCredentialAwarded", educationalOccupationalCredential);
       return this;
     }
     /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     * A description of the qualification, award, certificate, diploma or other occupational credential awarded as a consequence of successful completion of this course or program.
      */
-    @NotNull public Builder provider(@NotNull Person person) {
-      putValue("provider", person);
+    @NotNull public Builder occupationalCredentialAwarded(@NotNull EducationalOccupationalCredential.Builder educationalOccupationalCredential) {
+      putValue("occupationalCredentialAwarded", educationalOccupationalCredential.build());
       return this;
     }
     /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     * A description of the qualification, award, certificate, diploma or other occupational credential awarded as a consequence of successful completion of this course or program.
      */
-    @NotNull public Builder provider(@NotNull Person.Builder person) {
-      putValue("provider", person.build());
+    @NotNull public Builder occupationalCredentialAwarded(@NotNull String occupationalCredentialAwarded) {
+      putValue("occupationalCredentialAwarded", occupationalCredentialAwarded);
       return this;
     }
     /**
-     * The date at which the program begins collecting applications for the next enrollment cycle.
+     * A course or class that is one of the learning opportunities that constitute an educational / occupational program. No information is implied about whether the course is mandatory or optional; no guarantee is implied about whether the course will be available to everyone on the program.
      */
-    @NotNull public Builder applicationStartDate(@NotNull java.util.Date date) {
-      putValue("applicationStartDate", date);
+    @NotNull public Builder hasCourse(@NotNull Course course) {
+      putValue("hasCourse", course);
+      return this;
+    }
+    /**
+     * A course or class that is one of the learning opportunities that constitute an educational / occupational program. No information is implied about whether the course is mandatory or optional; no guarantee is implied about whether the course will be available to everyone on the program.
+     */
+    @NotNull public Builder hasCourse(@NotNull Course.Builder course) {
+      putValue("hasCourse", course.build());
       return this;
     }
     /**
@@ -1034,129 +1097,42 @@ public class EducationalOccupationalProgram extends Intangible {
       return this;
     }
     /**
-     * The expected salary upon completing the training.
+     * The amount of time in a term as defined by the institution. A term is a length of time where students take one or more classes. Semesters and quarters are common units for term.
      */
-    @NotNull public Builder salaryUponCompletion(@NotNull MonetaryAmountDistribution monetaryAmountDistribution) {
-      putValue("salaryUponCompletion", monetaryAmountDistribution);
+    @NotNull public Builder termDuration(@NotNull Duration duration) {
+      putValue("termDuration", duration);
       return this;
     }
     /**
-     * The expected salary upon completing the training.
-     */
-    @NotNull public Builder salaryUponCompletion(@NotNull MonetaryAmountDistribution.Builder monetaryAmountDistribution) {
-      putValue("salaryUponCompletion", monetaryAmountDistribution.build());
-      return this;
-    }
-    /**
-     * The maximum number of students who may be enrolled in the program.
-     */
-    @NotNull public Builder maximumEnrollment(@NotNull Integer integer) {
-      putValue("maximumEnrollment", integer);
-      return this;
-    }
-    /**
-     * The number of credits or units a full-time student would be expected to take in 1 term however 'term' is defined by the institution.
-     */
-    @NotNull public Builder typicalCreditsPerTerm(@NotNull Integer integer) {
-      putValue("typicalCreditsPerTerm", integer);
-      return this;
-    }
-    /**
-     * The number of credits or units a full-time student would be expected to take in 1 term however 'term' is defined by the institution.
-     */
-    @NotNull public Builder typicalCreditsPerTerm(@NotNull StructuredValue structuredValue) {
-      putValue("typicalCreditsPerTerm", structuredValue);
-      return this;
-    }
-    /**
-     * The number of credits or units a full-time student would be expected to take in 1 term however 'term' is defined by the institution.
-     */
-    @NotNull public Builder typicalCreditsPerTerm(@NotNull StructuredValue.Builder structuredValue) {
-      putValue("typicalCreditsPerTerm", structuredValue.build());
-      return this;
-    }
-    /**
-     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt; to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Demand&quot;&gt;Demand&lt;/a&gt;. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
      */
     @NotNull public Builder offers(@NotNull Demand demand) {
       putValue("offers", demand);
       return this;
     }
     /**
-     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt; to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Demand&quot;&gt;Demand&lt;/a&gt;. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
      */
     @NotNull public Builder offers(@NotNull Demand.Builder demand) {
       putValue("offers", demand.build());
       return this;
     }
     /**
-     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt; to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Demand&quot;&gt;Demand&lt;/a&gt;. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
      */
     @NotNull public Builder offers(@NotNull Offer offer) {
       putValue("offers", offer);
       return this;
     }
     /**
-     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt; to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Demand&quot;&gt;Demand&lt;/a&gt;. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
      */
     @NotNull public Builder offers(@NotNull Offer.Builder offer) {
       putValue("offers", offer.build());
-      return this;
-    }
-    /**
-     * URL of the item.
-     */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
-      return this;
-    }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     */
-    @NotNull public Builder additionalType(@NotNull String additionalType) {
-      putValue("additionalType", additionalType);
-      return this;
-    }
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     */
-    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
-      putValue("disambiguatingDescription", description);
-      return this;
-    }
-    /**
-     * A description of the item.
-     */
-    @NotNull public Builder description(@NotNull Description description) {
-      putValue("description", description);
-      return this;
-    }
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     */
-    @NotNull public Builder sameAs(@NotNull String sameAs) {
-      putValue("sameAs", sameAs);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
-      return this;
-    }
-    /**
-     * An alias for the item.
-     */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
-      return this;
-    }
-    /**
-     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
-     */
-    @NotNull public Builder image(@NotNull Image image) {
-      putValue("image", image);
       return this;
     }
     /**
@@ -1174,24 +1150,45 @@ public class EducationalOccupationalProgram extends Intangible {
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * URL of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
+    @NotNull public Builder additionalType(@NotNull String additionalType) {
+      putValue("additionalType", additionalType);
+      return this;
+    }
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     */
+    @NotNull public Builder sameAs(@NotNull String sameAs) {
+      putValue("sameAs", sameAs);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * The name of the item.
+     */
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -1222,6 +1219,27 @@ public class EducationalOccupationalProgram extends Intangible {
       putValue("subjectOf", event.build());
       return this;
     }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -1230,38 +1248,34 @@ public class EducationalOccupationalProgram extends Intangible {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("startDate".equals(key) && value instanceof java.util.Date) { this.startDate((java.util.Date)value); return; }
-      if ("startDates".equals(key) && value instanceof java.util.Date) { this.startDate((java.util.Date)value); return; }
-      if ("educationalCredentialAwarded".equals(key) && value instanceof EducationalOccupationalCredential) { this.educationalCredentialAwarded((EducationalOccupationalCredential)value); return; }
-      if ("educationalCredentialAwardeds".equals(key) && value instanceof EducationalOccupationalCredential) { this.educationalCredentialAwarded((EducationalOccupationalCredential)value); return; }
-      if ("educationalCredentialAwarded".equals(key) && value instanceof String) { this.educationalCredentialAwarded((String)value); return; }
-      if ("educationalCredentialAwardeds".equals(key) && value instanceof String) { this.educationalCredentialAwarded((String)value); return; }
-      if ("termDuration".equals(key) && value instanceof Duration) { this.termDuration((Duration)value); return; }
-      if ("termDurations".equals(key) && value instanceof Duration) { this.termDuration((Duration)value); return; }
-      if ("trainingSalary".equals(key) && value instanceof MonetaryAmountDistribution) { this.trainingSalary((MonetaryAmountDistribution)value); return; }
-      if ("trainingSalarys".equals(key) && value instanceof MonetaryAmountDistribution) { this.trainingSalary((MonetaryAmountDistribution)value); return; }
-      if ("timeToComplete".equals(key) && value instanceof Duration) { this.timeToComplete((Duration)value); return; }
-      if ("timeToCompletes".equals(key) && value instanceof Duration) { this.timeToComplete((Duration)value); return; }
-      if ("financialAidEligible".equals(key) && value instanceof DefinedTerm) { this.financialAidEligible((DefinedTerm)value); return; }
-      if ("financialAidEligibles".equals(key) && value instanceof DefinedTerm) { this.financialAidEligible((DefinedTerm)value); return; }
-      if ("financialAidEligible".equals(key) && value instanceof String) { this.financialAidEligible((String)value); return; }
-      if ("financialAidEligibles".equals(key) && value instanceof String) { this.financialAidEligible((String)value); return; }
-      if ("educationalProgramMode".equals(key) && value instanceof String) { this.educationalProgramMode((String)value); return; }
-      if ("educationalProgramModes".equals(key) && value instanceof String) { this.educationalProgramMode((String)value); return; }
-      if ("timeOfDay".equals(key) && value instanceof String) { this.timeOfDay((String)value); return; }
-      if ("timeOfDays".equals(key) && value instanceof String) { this.timeOfDay((String)value); return; }
-      if ("endDate".equals(key) && value instanceof java.util.Date) { this.endDate((java.util.Date)value); return; }
-      if ("endDates".equals(key) && value instanceof java.util.Date) { this.endDate((java.util.Date)value); return; }
-      if ("occupationalCredentialAwarded".equals(key) && value instanceof EducationalOccupationalCredential) { this.occupationalCredentialAwarded((EducationalOccupationalCredential)value); return; }
-      if ("occupationalCredentialAwardeds".equals(key) && value instanceof EducationalOccupationalCredential) { this.occupationalCredentialAwarded((EducationalOccupationalCredential)value); return; }
-      if ("occupationalCredentialAwarded".equals(key) && value instanceof String) { this.occupationalCredentialAwarded((String)value); return; }
-      if ("occupationalCredentialAwardeds".equals(key) && value instanceof String) { this.occupationalCredentialAwarded((String)value); return; }
-      if ("applicationDeadline".equals(key) && value instanceof java.util.Date) { this.applicationDeadline((java.util.Date)value); return; }
-      if ("applicationDeadlines".equals(key) && value instanceof java.util.Date) { this.applicationDeadline((java.util.Date)value); return; }
       if ("numberOfCredits".equals(key) && value instanceof Integer) { this.numberOfCredits((Integer)value); return; }
       if ("numberOfCreditss".equals(key) && value instanceof Integer) { this.numberOfCredits((Integer)value); return; }
       if ("numberOfCredits".equals(key) && value instanceof StructuredValue) { this.numberOfCredits((StructuredValue)value); return; }
       if ("numberOfCreditss".equals(key) && value instanceof StructuredValue) { this.numberOfCredits((StructuredValue)value); return; }
+      if ("timeOfDay".equals(key) && value instanceof String) { this.timeOfDay((String)value); return; }
+      if ("timeOfDays".equals(key) && value instanceof String) { this.timeOfDay((String)value); return; }
+      if ("typicalCreditsPerTerm".equals(key) && value instanceof Integer) { this.typicalCreditsPerTerm((Integer)value); return; }
+      if ("typicalCreditsPerTerms".equals(key) && value instanceof Integer) { this.typicalCreditsPerTerm((Integer)value); return; }
+      if ("typicalCreditsPerTerm".equals(key) && value instanceof StructuredValue) { this.typicalCreditsPerTerm((StructuredValue)value); return; }
+      if ("typicalCreditsPerTerms".equals(key) && value instanceof StructuredValue) { this.typicalCreditsPerTerm((StructuredValue)value); return; }
+      if ("timeToComplete".equals(key) && value instanceof Duration) { this.timeToComplete((Duration)value); return; }
+      if ("timeToCompletes".equals(key) && value instanceof Duration) { this.timeToComplete((Duration)value); return; }
+      if ("provider".equals(key) && value instanceof Organization) { this.provider((Organization)value); return; }
+      if ("providers".equals(key) && value instanceof Organization) { this.provider((Organization)value); return; }
+      if ("provider".equals(key) && value instanceof Person) { this.provider((Person)value); return; }
+      if ("providers".equals(key) && value instanceof Person) { this.provider((Person)value); return; }
+      if ("financialAidEligible".equals(key) && value instanceof DefinedTerm) { this.financialAidEligible((DefinedTerm)value); return; }
+      if ("financialAidEligibles".equals(key) && value instanceof DefinedTerm) { this.financialAidEligible((DefinedTerm)value); return; }
+      if ("financialAidEligible".equals(key) && value instanceof String) { this.financialAidEligible((String)value); return; }
+      if ("financialAidEligibles".equals(key) && value instanceof String) { this.financialAidEligible((String)value); return; }
+      if ("occupationalCategory".equals(key) && value instanceof CategoryCode) { this.occupationalCategory((CategoryCode)value); return; }
+      if ("occupationalCategorys".equals(key) && value instanceof CategoryCode) { this.occupationalCategory((CategoryCode)value); return; }
+      if ("occupationalCategory".equals(key) && value instanceof String) { this.occupationalCategory((String)value); return; }
+      if ("occupationalCategorys".equals(key) && value instanceof String) { this.occupationalCategory((String)value); return; }
+      if ("educationalCredentialAwarded".equals(key) && value instanceof EducationalOccupationalCredential) { this.educationalCredentialAwarded((EducationalOccupationalCredential)value); return; }
+      if ("educationalCredentialAwardeds".equals(key) && value instanceof EducationalOccupationalCredential) { this.educationalCredentialAwarded((EducationalOccupationalCredential)value); return; }
+      if ("educationalCredentialAwarded".equals(key) && value instanceof String) { this.educationalCredentialAwarded((String)value); return; }
+      if ("educationalCredentialAwardeds".equals(key) && value instanceof String) { this.educationalCredentialAwarded((String)value); return; }
       if ("programPrerequisites".equals(key) && value instanceof AlignmentObject) { this.programPrerequisites((AlignmentObject)value); return; }
       if ("programPrerequisitess".equals(key) && value instanceof AlignmentObject) { this.programPrerequisites((AlignmentObject)value); return; }
       if ("programPrerequisites".equals(key) && value instanceof Course) { this.programPrerequisites((Course)value); return; }
@@ -1274,10 +1288,20 @@ public class EducationalOccupationalProgram extends Intangible {
       if ("programTypes".equals(key) && value instanceof DefinedTerm) { this.programType((DefinedTerm)value); return; }
       if ("programType".equals(key) && value instanceof String) { this.programType((String)value); return; }
       if ("programTypes".equals(key) && value instanceof String) { this.programType((String)value); return; }
-      if ("occupationalCategory".equals(key) && value instanceof CategoryCode) { this.occupationalCategory((CategoryCode)value); return; }
-      if ("occupationalCategorys".equals(key) && value instanceof CategoryCode) { this.occupationalCategory((CategoryCode)value); return; }
-      if ("occupationalCategory".equals(key) && value instanceof String) { this.occupationalCategory((String)value); return; }
-      if ("occupationalCategorys".equals(key) && value instanceof String) { this.occupationalCategory((String)value); return; }
+      if ("startDate".equals(key) && value instanceof java.util.Date) { this.startDate((java.util.Date)value); return; }
+      if ("startDates".equals(key) && value instanceof java.util.Date) { this.startDate((java.util.Date)value); return; }
+      if ("salaryUponCompletion".equals(key) && value instanceof MonetaryAmountDistribution) { this.salaryUponCompletion((MonetaryAmountDistribution)value); return; }
+      if ("salaryUponCompletions".equals(key) && value instanceof MonetaryAmountDistribution) { this.salaryUponCompletion((MonetaryAmountDistribution)value); return; }
+      if ("educationalProgramMode".equals(key) && value instanceof String) { this.educationalProgramMode((String)value); return; }
+      if ("educationalProgramModes".equals(key) && value instanceof String) { this.educationalProgramMode((String)value); return; }
+      if ("applicationStartDate".equals(key) && value instanceof java.util.Date) { this.applicationStartDate((java.util.Date)value); return; }
+      if ("applicationStartDates".equals(key) && value instanceof java.util.Date) { this.applicationStartDate((java.util.Date)value); return; }
+      if ("trainingSalary".equals(key) && value instanceof MonetaryAmountDistribution) { this.trainingSalary((MonetaryAmountDistribution)value); return; }
+      if ("trainingSalarys".equals(key) && value instanceof MonetaryAmountDistribution) { this.trainingSalary((MonetaryAmountDistribution)value); return; }
+      if ("applicationDeadline".equals(key) && value instanceof java.util.Date) { this.applicationDeadline((java.util.Date)value); return; }
+      if ("applicationDeadlines".equals(key) && value instanceof java.util.Date) { this.applicationDeadline((java.util.Date)value); return; }
+      if ("maximumEnrollment".equals(key) && value instanceof Integer) { this.maximumEnrollment((Integer)value); return; }
+      if ("maximumEnrollments".equals(key) && value instanceof Integer) { this.maximumEnrollment((Integer)value); return; }
       if ("termsPerYear".equals(key) && value instanceof Integer) { this.termsPerYear((Integer)value); return; }
       if ("termsPerYears".equals(key) && value instanceof Integer) { this.termsPerYear((Integer)value); return; }
       if ("termsPerYear".equals(key) && value instanceof Long) { this.termsPerYear((Long)value); return; }
@@ -1288,22 +1312,18 @@ public class EducationalOccupationalProgram extends Intangible {
       if ("termsPerYears".equals(key) && value instanceof Double) { this.termsPerYear((Double)value); return; }
       if ("termsPerYear".equals(key) && value instanceof String) { this.termsPerYear((String)value); return; }
       if ("termsPerYears".equals(key) && value instanceof String) { this.termsPerYear((String)value); return; }
-      if ("provider".equals(key) && value instanceof Organization) { this.provider((Organization)value); return; }
-      if ("providers".equals(key) && value instanceof Organization) { this.provider((Organization)value); return; }
-      if ("provider".equals(key) && value instanceof Person) { this.provider((Person)value); return; }
-      if ("providers".equals(key) && value instanceof Person) { this.provider((Person)value); return; }
-      if ("applicationStartDate".equals(key) && value instanceof java.util.Date) { this.applicationStartDate((java.util.Date)value); return; }
-      if ("applicationStartDates".equals(key) && value instanceof java.util.Date) { this.applicationStartDate((java.util.Date)value); return; }
+      if ("endDate".equals(key) && value instanceof java.util.Date) { this.endDate((java.util.Date)value); return; }
+      if ("endDates".equals(key) && value instanceof java.util.Date) { this.endDate((java.util.Date)value); return; }
+      if ("occupationalCredentialAwarded".equals(key) && value instanceof EducationalOccupationalCredential) { this.occupationalCredentialAwarded((EducationalOccupationalCredential)value); return; }
+      if ("occupationalCredentialAwardeds".equals(key) && value instanceof EducationalOccupationalCredential) { this.occupationalCredentialAwarded((EducationalOccupationalCredential)value); return; }
+      if ("occupationalCredentialAwarded".equals(key) && value instanceof String) { this.occupationalCredentialAwarded((String)value); return; }
+      if ("occupationalCredentialAwardeds".equals(key) && value instanceof String) { this.occupationalCredentialAwarded((String)value); return; }
+      if ("hasCourse".equals(key) && value instanceof Course) { this.hasCourse((Course)value); return; }
+      if ("hasCourses".equals(key) && value instanceof Course) { this.hasCourse((Course)value); return; }
       if ("dayOfWeek".equals(key) && value instanceof DayOfWeek) { this.dayOfWeek((DayOfWeek)value); return; }
       if ("dayOfWeeks".equals(key) && value instanceof DayOfWeek) { this.dayOfWeek((DayOfWeek)value); return; }
-      if ("salaryUponCompletion".equals(key) && value instanceof MonetaryAmountDistribution) { this.salaryUponCompletion((MonetaryAmountDistribution)value); return; }
-      if ("salaryUponCompletions".equals(key) && value instanceof MonetaryAmountDistribution) { this.salaryUponCompletion((MonetaryAmountDistribution)value); return; }
-      if ("maximumEnrollment".equals(key) && value instanceof Integer) { this.maximumEnrollment((Integer)value); return; }
-      if ("maximumEnrollments".equals(key) && value instanceof Integer) { this.maximumEnrollment((Integer)value); return; }
-      if ("typicalCreditsPerTerm".equals(key) && value instanceof Integer) { this.typicalCreditsPerTerm((Integer)value); return; }
-      if ("typicalCreditsPerTerms".equals(key) && value instanceof Integer) { this.typicalCreditsPerTerm((Integer)value); return; }
-      if ("typicalCreditsPerTerm".equals(key) && value instanceof StructuredValue) { this.typicalCreditsPerTerm((StructuredValue)value); return; }
-      if ("typicalCreditsPerTerms".equals(key) && value instanceof StructuredValue) { this.typicalCreditsPerTerm((StructuredValue)value); return; }
+      if ("termDuration".equals(key) && value instanceof Duration) { this.termDuration((Duration)value); return; }
+      if ("termDurations".equals(key) && value instanceof Duration) { this.termDuration((Duration)value); return; }
       if ("offers".equals(key) && value instanceof Demand) { this.offers((Demand)value); return; }
       if ("offerss".equals(key) && value instanceof Demand) { this.offers((Demand)value); return; }
       if ("offers".equals(key) && value instanceof Offer) { this.offers((Offer)value); return; }

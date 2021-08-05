@@ -27,41 +27,76 @@ import java.util.*;
  * A GeoCircle is a GeoShape representing a circular geographic area. As it is a GeoShape
  *           it provides the simple textual property 'circle', but also allows the combination of postalCode alongside geoRadius.
  *           The center of the circle can be indicated via the 'geoMidpoint' property, or more approximately using 'address', 'postalCode'.
+ *        
  */
 public class GeoCircle extends GeoShape {
   /**
    * Indicates the approximate radius of a GeoCircle (metres unless indicated otherwise via Distance notation).
    */
-  @JsonIgnore public Distance getGeoRadiusDistance() {
-    return (Distance) getValue("geoRadius");
+  @JsonIgnore public Integer getGeoRadiusInteger() {
+    return (Integer) getValue("geoRadius");
   }
   /**
    * Indicates the approximate radius of a GeoCircle (metres unless indicated otherwise via Distance notation).
    */
-  @JsonIgnore public Collection<Distance> getGeoRadiusDistances() {
+  @JsonIgnore public Collection<Integer> getGeoRadiusIntegers() {
     final Object current = myData.get("geoRadius");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<Distance>) current;
+      return (Collection<Integer>) current;
     }
-    return Arrays.asList((Distance) current);
+    return Arrays.asList((Integer) current);
   }
   /**
    * Indicates the approximate radius of a GeoCircle (metres unless indicated otherwise via Distance notation).
    */
-  @JsonIgnore public Number getGeoRadiusNumber() {
-    return (Number) getValue("geoRadius");
+  @JsonIgnore public Long getGeoRadiusLong() {
+    return (Long) getValue("geoRadius");
   }
   /**
    * Indicates the approximate radius of a GeoCircle (metres unless indicated otherwise via Distance notation).
    */
-  @JsonIgnore public Collection<Number> getGeoRadiusNumbers() {
+  @JsonIgnore public Collection<Long> getGeoRadiusLongs() {
     final Object current = myData.get("geoRadius");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<Number>) current;
+      return (Collection<Long>) current;
     }
-    return Arrays.asList((Number) current);
+    return Arrays.asList((Long) current);
+  }
+  /**
+   * Indicates the approximate radius of a GeoCircle (metres unless indicated otherwise via Distance notation).
+   */
+  @JsonIgnore public Float getGeoRadiusFloat() {
+    return (Float) getValue("geoRadius");
+  }
+  /**
+   * Indicates the approximate radius of a GeoCircle (metres unless indicated otherwise via Distance notation).
+   */
+  @JsonIgnore public Collection<Float> getGeoRadiusFloats() {
+    final Object current = myData.get("geoRadius");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Float>) current;
+    }
+    return Arrays.asList((Float) current);
+  }
+  /**
+   * Indicates the approximate radius of a GeoCircle (metres unless indicated otherwise via Distance notation).
+   */
+  @JsonIgnore public Double getGeoRadiusDouble() {
+    return (Double) getValue("geoRadius");
+  }
+  /**
+   * Indicates the approximate radius of a GeoCircle (metres unless indicated otherwise via Distance notation).
+   */
+  @JsonIgnore public Collection<Double> getGeoRadiusDoubles() {
+    final Object current = myData.get("geoRadius");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Double>) current;
+    }
+    return Arrays.asList((Double) current);
   }
   /**
    * Indicates the approximate radius of a GeoCircle (metres unless indicated otherwise via Distance notation).
@@ -114,22 +149,29 @@ public class GeoCircle extends GeoShape {
     /**
      * Indicates the approximate radius of a GeoCircle (metres unless indicated otherwise via Distance notation).
      */
-    @NotNull public Builder geoRadius(@NotNull Distance distance) {
-      putValue("geoRadius", distance);
+    @NotNull public Builder geoRadius(@NotNull Integer integer) {
+      putValue("geoRadius", integer);
       return this;
     }
     /**
      * Indicates the approximate radius of a GeoCircle (metres unless indicated otherwise via Distance notation).
      */
-    @NotNull public Builder geoRadius(@NotNull Distance.Builder distance) {
-      putValue("geoRadius", distance.build());
+    @NotNull public Builder geoRadius(@NotNull Long geoRadius) {
+      putValue("geoRadius", geoRadius);
       return this;
     }
     /**
      * Indicates the approximate radius of a GeoCircle (metres unless indicated otherwise via Distance notation).
      */
-    @NotNull public Builder geoRadius(@NotNull Number number) {
-      putValue("geoRadius", number);
+    @NotNull public Builder geoRadius(@NotNull Float geoRadius) {
+      putValue("geoRadius", geoRadius);
+      return this;
+    }
+    /**
+     * Indicates the approximate radius of a GeoCircle (metres unless indicated otherwise via Distance notation).
+     */
+    @NotNull public Builder geoRadius(@NotNull Double geoRadius) {
+      putValue("geoRadius", geoRadius);
       return this;
     }
     /**
@@ -154,10 +196,38 @@ public class GeoCircle extends GeoShape {
       return this;
     }
     /**
-     * A polygon is the area enclosed by a point-to-point path for which the starting and ending points are the same. A polygon is expressed as a series of four or more space delimited points where the first and final points are identical.
+     * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
      */
-    @NotNull public Builder polygon(@NotNull String polygon) {
-      putValue("polygon", polygon);
+    @NotNull public Builder elevation(@NotNull Integer integer) {
+      putValue("elevation", integer);
+      return this;
+    }
+    /**
+     * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
+     */
+    @NotNull public Builder elevation(@NotNull Long elevation) {
+      putValue("elevation", elevation);
+      return this;
+    }
+    /**
+     * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
+     */
+    @NotNull public Builder elevation(@NotNull Float elevation) {
+      putValue("elevation", elevation);
+      return this;
+    }
+    /**
+     * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
+     */
+    @NotNull public Builder elevation(@NotNull Double elevation) {
+      putValue("elevation", elevation);
+      return this;
+    }
+    /**
+     * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
+     */
+    @NotNull public Builder elevation(@NotNull String elevation) {
+      putValue("elevation", elevation);
       return this;
     }
     /**
@@ -189,34 +259,6 @@ public class GeoCircle extends GeoShape {
       return this;
     }
     /**
-     * A circle is the circular region of a specified radius centered at a specified latitude and longitude. A circle is expressed as a pair followed by a radius in meters.
-     */
-    @NotNull public Builder circle(@NotNull String circle) {
-      putValue("circle", circle);
-      return this;
-    }
-    /**
-     * The country. For example, USA. You can also provide the two-letter &lt;a href=&quot;http://en.wikipedia.org/wiki/ISO_3166-1&quot;&gt;ISO 3166-1 alpha-2 country code&lt;/a&gt;.
-     */
-    @NotNull public Builder addressCountry(@NotNull Country country) {
-      putValue("addressCountry", country);
-      return this;
-    }
-    /**
-     * The country. For example, USA. You can also provide the two-letter &lt;a href=&quot;http://en.wikipedia.org/wiki/ISO_3166-1&quot;&gt;ISO 3166-1 alpha-2 country code&lt;/a&gt;.
-     */
-    @NotNull public Builder addressCountry(@NotNull Country.Builder country) {
-      putValue("addressCountry", country.build());
-      return this;
-    }
-    /**
-     * The country. For example, USA. You can also provide the two-letter &lt;a href=&quot;http://en.wikipedia.org/wiki/ISO_3166-1&quot;&gt;ISO 3166-1 alpha-2 country code&lt;/a&gt;.
-     */
-    @NotNull public Builder addressCountry(@NotNull String addressCountry) {
-      putValue("addressCountry", addressCountry);
-      return this;
-    }
-    /**
      * The postal code. For example, 94043.
      */
     @NotNull public Builder postalCode(@NotNull String postalCode) {
@@ -224,17 +266,31 @@ public class GeoCircle extends GeoShape {
       return this;
     }
     /**
-     * The elevation of a location (&lt;a href=&quot;https://en.wikipedia.org/wiki/World_Geodetic_System&quot;&gt;WGS 84&lt;/a&gt;). Values may be of the form 'NUMBER UNIT&lt;em&gt;OF&lt;/em&gt;MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
+     * A polygon is the area enclosed by a point-to-point path for which the starting and ending points are the same. A polygon is expressed as a series of four or more space delimited points where the first and final points are identical.
      */
-    @NotNull public Builder elevation(@NotNull Number number) {
-      putValue("elevation", number);
+    @NotNull public Builder polygon(@NotNull String polygon) {
+      putValue("polygon", polygon);
       return this;
     }
     /**
-     * The elevation of a location (&lt;a href=&quot;https://en.wikipedia.org/wiki/World_Geodetic_System&quot;&gt;WGS 84&lt;/a&gt;). Values may be of the form 'NUMBER UNIT&lt;em&gt;OF&lt;/em&gt;MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
+     * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
      */
-    @NotNull public Builder elevation(@NotNull String elevation) {
-      putValue("elevation", elevation);
+    @NotNull public Builder addressCountry(@NotNull Country country) {
+      putValue("addressCountry", country);
+      return this;
+    }
+    /**
+     * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
+     */
+    @NotNull public Builder addressCountry(@NotNull Country.Builder country) {
+      putValue("addressCountry", country.build());
+      return this;
+    }
+    /**
+     * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
+     */
+    @NotNull public Builder addressCountry(@NotNull String addressCountry) {
+      putValue("addressCountry", addressCountry);
       return this;
     }
     /**
@@ -245,59 +301,10 @@ public class GeoCircle extends GeoShape {
       return this;
     }
     /**
-     * URL of the item.
+     * A circle is the circular region of a specified radius centered at a specified latitude and longitude. A circle is expressed as a pair followed by a radius in meters.
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
-      return this;
-    }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     */
-    @NotNull public Builder additionalType(@NotNull String additionalType) {
-      putValue("additionalType", additionalType);
-      return this;
-    }
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     */
-    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
-      putValue("disambiguatingDescription", description);
-      return this;
-    }
-    /**
-     * A description of the item.
-     */
-    @NotNull public Builder description(@NotNull Description description) {
-      putValue("description", description);
-      return this;
-    }
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     */
-    @NotNull public Builder sameAs(@NotNull String sameAs) {
-      putValue("sameAs", sameAs);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
-      return this;
-    }
-    /**
-     * An alias for the item.
-     */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
-      return this;
-    }
-    /**
-     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
-     */
-    @NotNull public Builder image(@NotNull Image image) {
-      putValue("image", image);
+    @NotNull public Builder circle(@NotNull String circle) {
+      putValue("circle", circle);
       return this;
     }
     /**
@@ -315,24 +322,45 @@ public class GeoCircle extends GeoShape {
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * URL of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
+    @NotNull public Builder additionalType(@NotNull String additionalType) {
+      putValue("additionalType", additionalType);
+      return this;
+    }
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     */
+    @NotNull public Builder sameAs(@NotNull String sameAs) {
+      putValue("sameAs", sameAs);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * The name of the item.
+     */
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -363,6 +391,27 @@ public class GeoCircle extends GeoShape {
       putValue("subjectOf", event.build());
       return this;
     }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -371,10 +420,14 @@ public class GeoCircle extends GeoShape {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("geoRadius".equals(key) && value instanceof Distance) { this.geoRadius((Distance)value); return; }
-      if ("geoRadiuss".equals(key) && value instanceof Distance) { this.geoRadius((Distance)value); return; }
-      if ("geoRadius".equals(key) && value instanceof Number) { this.geoRadius((Number)value); return; }
-      if ("geoRadiuss".equals(key) && value instanceof Number) { this.geoRadius((Number)value); return; }
+      if ("geoRadius".equals(key) && value instanceof Integer) { this.geoRadius((Integer)value); return; }
+      if ("geoRadiuss".equals(key) && value instanceof Integer) { this.geoRadius((Integer)value); return; }
+      if ("geoRadius".equals(key) && value instanceof Long) { this.geoRadius((Long)value); return; }
+      if ("geoRadiuss".equals(key) && value instanceof Long) { this.geoRadius((Long)value); return; }
+      if ("geoRadius".equals(key) && value instanceof Float) { this.geoRadius((Float)value); return; }
+      if ("geoRadiuss".equals(key) && value instanceof Float) { this.geoRadius((Float)value); return; }
+      if ("geoRadius".equals(key) && value instanceof Double) { this.geoRadius((Double)value); return; }
+      if ("geoRadiuss".equals(key) && value instanceof Double) { this.geoRadius((Double)value); return; }
       if ("geoRadius".equals(key) && value instanceof String) { this.geoRadius((String)value); return; }
       if ("geoRadiuss".equals(key) && value instanceof String) { this.geoRadius((String)value); return; }
       if ("geoMidpoint".equals(key) && value instanceof GeoCoordinates) { this.geoMidpoint((GeoCoordinates)value); return; }

@@ -79,72 +79,38 @@ public class Invoice extends Intangible {
     return Arrays.asList((PriceSpecification) current);
   }
   /**
-   * The minimum payment required at this time.
+   * Party placing the order or paying the invoice.
    */
-  @JsonIgnore public MonetaryAmount getMinimumPaymentDueMonetaryAmount() {
-    return (MonetaryAmount) getValue("minimumPaymentDue");
+  @JsonIgnore public Organization getCustomerOrganization() {
+    return (Organization) getValue("customer");
   }
   /**
-   * The minimum payment required at this time.
+   * Party placing the order or paying the invoice.
    */
-  @JsonIgnore public Collection<MonetaryAmount> getMinimumPaymentDueMonetaryAmounts() {
-    final Object current = myData.get("minimumPaymentDue");
+  @JsonIgnore public Collection<Organization> getCustomerOrganizations() {
+    final Object current = myData.get("customer");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<MonetaryAmount>) current;
+      return (Collection<Organization>) current;
     }
-    return Arrays.asList((MonetaryAmount) current);
+    return Arrays.asList((Organization) current);
   }
   /**
-   * The minimum payment required at this time.
+   * Party placing the order or paying the invoice.
    */
-  @JsonIgnore public PriceSpecification getMinimumPaymentDuePriceSpecification() {
-    return (PriceSpecification) getValue("minimumPaymentDue");
+  @JsonIgnore public Person getCustomerPerson() {
+    return (Person) getValue("customer");
   }
   /**
-   * The minimum payment required at this time.
+   * Party placing the order or paying the invoice.
    */
-  @JsonIgnore public Collection<PriceSpecification> getMinimumPaymentDuePriceSpecifications() {
-    final Object current = myData.get("minimumPaymentDue");
+  @JsonIgnore public Collection<Person> getCustomerPersons() {
+    final Object current = myData.get("customer");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<PriceSpecification>) current;
+      return (Collection<Person>) current;
     }
-    return Arrays.asList((PriceSpecification) current);
-  }
-  /**
-   * The name of the credit card or other method of payment for the order.
-   */
-  @JsonIgnore public PaymentMethod getPaymentMethod() {
-    return (PaymentMethod) getValue("paymentMethod");
-  }
-  /**
-   * The name of the credit card or other method of payment for the order.
-   */
-  @JsonIgnore public Collection<PaymentMethod> getPaymentMethods() {
-    final Object current = myData.get("paymentMethod");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<PaymentMethod>) current;
-    }
-    return Arrays.asList((PaymentMethod) current);
-  }
-  /**
-   * The date the invoice is scheduled to be paid.
-   */
-  @JsonIgnore public java.util.Date getScheduledPaymentDate() {
-    return (java.util.Date) getValue("scheduledPaymentDate");
-  }
-  /**
-   * The date the invoice is scheduled to be paid.
-   */
-  @JsonIgnore public Collection<java.util.Date> getScheduledPaymentDates() {
-    final Object current = myData.get("scheduledPaymentDate");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
-    }
-    return Arrays.asList((java.util.Date) current);
+    return Arrays.asList((Person) current);
   }
   /**
    * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
@@ -181,174 +147,21 @@ public class Invoice extends Intangible {
     return Arrays.asList((Person) current);
   }
   /**
-   * Party placing the order or paying the invoice.
+   * The date the invoice is scheduled to be paid.
    */
-  @JsonIgnore public Organization getCustomerOrganization() {
-    return (Organization) getValue("customer");
+  @JsonIgnore public java.util.Date getScheduledPaymentDate() {
+    return (java.util.Date) getValue("scheduledPaymentDate");
   }
   /**
-   * Party placing the order or paying the invoice.
+   * The date the invoice is scheduled to be paid.
    */
-  @JsonIgnore public Collection<Organization> getCustomerOrganizations() {
-    final Object current = myData.get("customer");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
-    }
-    return Arrays.asList((Organization) current);
-  }
-  /**
-   * Party placing the order or paying the invoice.
-   */
-  @JsonIgnore public Person getCustomerPerson() {
-    return (Person) getValue("customer");
-  }
-  /**
-   * Party placing the order or paying the invoice.
-   */
-  @JsonIgnore public Collection<Person> getCustomerPersons() {
-    final Object current = myData.get("customer");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
-    }
-    return Arrays.asList((Person) current);
-  }
-  /**
-   * The Order(s) related to this Invoice. One or more Orders may be combined into a single Invoice.
-   */
-  @JsonIgnore public Order getReferencesOrder() {
-    return (Order) getValue("referencesOrder");
-  }
-  /**
-   * The Order(s) related to this Invoice. One or more Orders may be combined into a single Invoice.
-   */
-  @JsonIgnore public Collection<Order> getReferencesOrders() {
-    final Object current = myData.get("referencesOrder");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Order>) current;
-    }
-    return Arrays.asList((Order) current);
-  }
-  /**
-   * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-   */
-  @JsonIgnore public Category getCategory() {
-    return (Category) getValue("category");
-  }
-  /**
-   * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-   */
-  @JsonIgnore public Collection<Category> getCategorys() {
-    final Object current = myData.get("category");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Category>) current;
-    }
-    return Arrays.asList((Category) current);
-  }
-  /**
-   * A number that confirms the given order or payment has been received.
-   */
-  @JsonIgnore public Identifier getConfirmationNumber() {
-    return (Identifier) getValue("confirmationNumber");
-  }
-  /**
-   * A number that confirms the given order or payment has been received.
-   */
-  @JsonIgnore public Collection<Identifier> getConfirmationNumbers() {
-    final Object current = myData.get("confirmationNumber");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Identifier>) current;
-    }
-    return Arrays.asList((Identifier) current);
-  }
-  /**
-   * The date that payment is due.
-   */
-  @JsonIgnore public java.util.Date getPaymentDueDate() {
-    return (java.util.Date) getValue("paymentDueDate");
-  }
-  /**
-   * The date that payment is due.
-   */
-  @JsonIgnore public Collection<java.util.Date> getPaymentDueDates() {
-    final Object current = myData.get("paymentDueDate");
+  @JsonIgnore public Collection<java.util.Date> getScheduledPaymentDates() {
+    final Object current = myData.get("scheduledPaymentDate");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
-  }
-  /**
-   * The identifier for the account the payment will be applied to.
-   */
-  @JsonIgnore public Identifier getAccountId() {
-    return (Identifier) getValue("accountId");
-  }
-  /**
-   * The identifier for the account the payment will be applied to.
-   */
-  @JsonIgnore public Collection<Identifier> getAccountIds() {
-    final Object current = myData.get("accountId");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Identifier>) current;
-    }
-    return Arrays.asList((Identifier) current);
-  }
-  /**
-   * The time interval used to compute the invoice.
-   */
-  @JsonIgnore public Duration getBillingPeriod() {
-    return (Duration) getValue("billingPeriod");
-  }
-  /**
-   * The time interval used to compute the invoice.
-   */
-  @JsonIgnore public Collection<Duration> getBillingPeriods() {
-    final Object current = myData.get("billingPeriod");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Duration>) current;
-    }
-    return Arrays.asList((Duration) current);
-  }
-  /**
-   * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
-   */
-  @JsonIgnore public Organization getBrokerOrganization() {
-    return (Organization) getValue("broker");
-  }
-  /**
-   * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
-   */
-  @JsonIgnore public Collection<Organization> getBrokerOrganizations() {
-    final Object current = myData.get("broker");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
-    }
-    return Arrays.asList((Organization) current);
-  }
-  /**
-   * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
-   */
-  @JsonIgnore public Person getBrokerPerson() {
-    return (Person) getValue("broker");
-  }
-  /**
-   * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
-   */
-  @JsonIgnore public Collection<Person> getBrokerPersons() {
-    final Object current = myData.get("broker");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
-    }
-    return Arrays.asList((Person) current);
   }
   /**
    * The status of payment; whether the invoice has been paid or not.
@@ -383,6 +196,193 @@ public class Invoice extends Intangible {
       return (Collection<String>) current;
     }
     return Arrays.asList((String) current);
+  }
+  /**
+   * The date that payment is due.
+   */
+  @JsonIgnore public java.util.Date getPaymentDueDate() {
+    return (java.util.Date) getValue("paymentDueDate");
+  }
+  /**
+   * The date that payment is due.
+   */
+  @JsonIgnore public Collection<java.util.Date> getPaymentDueDates() {
+    final Object current = myData.get("paymentDueDate");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<java.util.Date>) current;
+    }
+    return Arrays.asList((java.util.Date) current);
+  }
+  /**
+   * The minimum payment required at this time.
+   */
+  @JsonIgnore public MonetaryAmount getMinimumPaymentDueMonetaryAmount() {
+    return (MonetaryAmount) getValue("minimumPaymentDue");
+  }
+  /**
+   * The minimum payment required at this time.
+   */
+  @JsonIgnore public Collection<MonetaryAmount> getMinimumPaymentDueMonetaryAmounts() {
+    final Object current = myData.get("minimumPaymentDue");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<MonetaryAmount>) current;
+    }
+    return Arrays.asList((MonetaryAmount) current);
+  }
+  /**
+   * The minimum payment required at this time.
+   */
+  @JsonIgnore public PriceSpecification getMinimumPaymentDuePriceSpecification() {
+    return (PriceSpecification) getValue("minimumPaymentDue");
+  }
+  /**
+   * The minimum payment required at this time.
+   */
+  @JsonIgnore public Collection<PriceSpecification> getMinimumPaymentDuePriceSpecifications() {
+    final Object current = myData.get("minimumPaymentDue");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<PriceSpecification>) current;
+    }
+    return Arrays.asList((PriceSpecification) current);
+  }
+  /**
+   * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+   */
+  @JsonIgnore public Category getCategory() {
+    return (Category) getValue("category");
+  }
+  /**
+   * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+   */
+  @JsonIgnore public Collection<Category> getCategorys() {
+    final Object current = myData.get("category");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Category>) current;
+    }
+    return Arrays.asList((Category) current);
+  }
+  /**
+   * The identifier for the account the payment will be applied to.
+   */
+  @JsonIgnore public String getAccountId() {
+    return (String) getValue("accountId");
+  }
+  /**
+   * The identifier for the account the payment will be applied to.
+   */
+  @JsonIgnore public Collection<String> getAccountIds() {
+    final Object current = myData.get("accountId");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * The Order(s) related to this Invoice. One or more Orders may be combined into a single Invoice.
+   */
+  @JsonIgnore public Order getReferencesOrder() {
+    return (Order) getValue("referencesOrder");
+  }
+  /**
+   * The Order(s) related to this Invoice. One or more Orders may be combined into a single Invoice.
+   */
+  @JsonIgnore public Collection<Order> getReferencesOrders() {
+    final Object current = myData.get("referencesOrder");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Order>) current;
+    }
+    return Arrays.asList((Order) current);
+  }
+  /**
+   * The time interval used to compute the invoice.
+   */
+  @JsonIgnore public Duration getBillingPeriod() {
+    return (Duration) getValue("billingPeriod");
+  }
+  /**
+   * The time interval used to compute the invoice.
+   */
+  @JsonIgnore public Collection<Duration> getBillingPeriods() {
+    final Object current = myData.get("billingPeriod");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Duration>) current;
+    }
+    return Arrays.asList((Duration) current);
+  }
+  /**
+   * A number that confirms the given order or payment has been received.
+   */
+  @JsonIgnore public String getConfirmationNumber() {
+    return (String) getValue("confirmationNumber");
+  }
+  /**
+   * A number that confirms the given order or payment has been received.
+   */
+  @JsonIgnore public Collection<String> getConfirmationNumbers() {
+    final Object current = myData.get("confirmationNumber");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * The name of the credit card or other method of payment for the order.
+   */
+  @JsonIgnore public PaymentMethod getPaymentMethod() {
+    return (PaymentMethod) getValue("paymentMethod");
+  }
+  /**
+   * The name of the credit card or other method of payment for the order.
+   */
+  @JsonIgnore public Collection<PaymentMethod> getPaymentMethods() {
+    final Object current = myData.get("paymentMethod");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<PaymentMethod>) current;
+    }
+    return Arrays.asList((PaymentMethod) current);
+  }
+  /**
+   * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
+   */
+  @JsonIgnore public Organization getBrokerOrganization() {
+    return (Organization) getValue("broker");
+  }
+  /**
+   * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
+   */
+  @JsonIgnore public Collection<Organization> getBrokerOrganizations() {
+    final Object current = myData.get("broker");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Organization>) current;
+    }
+    return Arrays.asList((Organization) current);
+  }
+  /**
+   * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
+   */
+  @JsonIgnore public Person getBrokerPerson() {
+    return (Person) getValue("broker");
+  }
+  /**
+   * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
+   */
+  @JsonIgnore public Collection<Person> getBrokerPersons() {
+    final Object current = myData.get("broker");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Person>) current;
+    }
+    return Arrays.asList((Person) current);
   }
   protected Invoice(java.util.Map<String,Object> data) {
     super(data);
@@ -434,45 +434,31 @@ public class Invoice extends Intangible {
       return this;
     }
     /**
-     * The minimum payment required at this time.
+     * Party placing the order or paying the invoice.
      */
-    @NotNull public Builder minimumPaymentDue(@NotNull MonetaryAmount monetaryAmount) {
-      putValue("minimumPaymentDue", monetaryAmount);
+    @NotNull public Builder customer(@NotNull Organization organization) {
+      putValue("customer", organization);
       return this;
     }
     /**
-     * The minimum payment required at this time.
+     * Party placing the order or paying the invoice.
      */
-    @NotNull public Builder minimumPaymentDue(@NotNull MonetaryAmount.Builder monetaryAmount) {
-      putValue("minimumPaymentDue", monetaryAmount.build());
+    @NotNull public Builder customer(@NotNull Organization.Builder organization) {
+      putValue("customer", organization.build());
       return this;
     }
     /**
-     * The minimum payment required at this time.
+     * Party placing the order or paying the invoice.
      */
-    @NotNull public Builder minimumPaymentDue(@NotNull PriceSpecification priceSpecification) {
-      putValue("minimumPaymentDue", priceSpecification);
+    @NotNull public Builder customer(@NotNull Person person) {
+      putValue("customer", person);
       return this;
     }
     /**
-     * The minimum payment required at this time.
+     * Party placing the order or paying the invoice.
      */
-    @NotNull public Builder minimumPaymentDue(@NotNull PriceSpecification.Builder priceSpecification) {
-      putValue("minimumPaymentDue", priceSpecification.build());
-      return this;
-    }
-    /**
-     * The name of the credit card or other method of payment for the order.
-     */
-    @NotNull public Builder paymentMethod(@NotNull PaymentMethod paymentMethod) {
-      putValue("paymentMethod", paymentMethod);
-      return this;
-    }
-    /**
-     * The date the invoice is scheduled to be paid.
-     */
-    @NotNull public Builder scheduledPaymentDate(@NotNull java.util.Date date) {
-      putValue("scheduledPaymentDate", date);
+    @NotNull public Builder customer(@NotNull Person.Builder person) {
+      putValue("customer", person.build());
       return this;
     }
     /**
@@ -504,31 +490,80 @@ public class Invoice extends Intangible {
       return this;
     }
     /**
-     * Party placing the order or paying the invoice.
+     * The date the invoice is scheduled to be paid.
      */
-    @NotNull public Builder customer(@NotNull Organization organization) {
-      putValue("customer", organization);
+    @NotNull public Builder scheduledPaymentDate(@NotNull java.util.Date date) {
+      putValue("scheduledPaymentDate", date);
       return this;
     }
     /**
-     * Party placing the order or paying the invoice.
+     * The status of payment; whether the invoice has been paid or not.
      */
-    @NotNull public Builder customer(@NotNull Organization.Builder organization) {
-      putValue("customer", organization.build());
+    @NotNull public Builder paymentStatus(@NotNull PaymentStatusType paymentStatusType) {
+      putValue("paymentStatus", paymentStatusType);
       return this;
     }
     /**
-     * Party placing the order or paying the invoice.
+     * The status of payment; whether the invoice has been paid or not.
      */
-    @NotNull public Builder customer(@NotNull Person person) {
-      putValue("customer", person);
+    @NotNull public Builder paymentStatus(@NotNull PaymentStatusType.Builder paymentStatusType) {
+      putValue("paymentStatus", paymentStatusType.build());
       return this;
     }
     /**
-     * Party placing the order or paying the invoice.
+     * The status of payment; whether the invoice has been paid or not.
      */
-    @NotNull public Builder customer(@NotNull Person.Builder person) {
-      putValue("customer", person.build());
+    @NotNull public Builder paymentStatus(@NotNull String paymentStatus) {
+      putValue("paymentStatus", paymentStatus);
+      return this;
+    }
+    /**
+     * The date that payment is due.
+     */
+    @NotNull public Builder paymentDueDate(@NotNull java.util.Date date) {
+      putValue("paymentDueDate", date);
+      return this;
+    }
+    /**
+     * The minimum payment required at this time.
+     */
+    @NotNull public Builder minimumPaymentDue(@NotNull MonetaryAmount monetaryAmount) {
+      putValue("minimumPaymentDue", monetaryAmount);
+      return this;
+    }
+    /**
+     * The minimum payment required at this time.
+     */
+    @NotNull public Builder minimumPaymentDue(@NotNull MonetaryAmount.Builder monetaryAmount) {
+      putValue("minimumPaymentDue", monetaryAmount.build());
+      return this;
+    }
+    /**
+     * The minimum payment required at this time.
+     */
+    @NotNull public Builder minimumPaymentDue(@NotNull PriceSpecification priceSpecification) {
+      putValue("minimumPaymentDue", priceSpecification);
+      return this;
+    }
+    /**
+     * The minimum payment required at this time.
+     */
+    @NotNull public Builder minimumPaymentDue(@NotNull PriceSpecification.Builder priceSpecification) {
+      putValue("minimumPaymentDue", priceSpecification.build());
+      return this;
+    }
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     */
+    @NotNull public Builder category(@NotNull Category category) {
+      putValue("category", category);
+      return this;
+    }
+    /**
+     * The identifier for the account the payment will be applied to.
+     */
+    @NotNull public Builder accountId(@NotNull String accountId) {
+      putValue("accountId", accountId);
       return this;
     }
     /**
@@ -546,38 +581,24 @@ public class Invoice extends Intangible {
       return this;
     }
     /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     * The time interval used to compute the invoice.
      */
-    @NotNull public Builder category(@NotNull Category category) {
-      putValue("category", category);
+    @NotNull public Builder billingPeriod(@NotNull Duration duration) {
+      putValue("billingPeriod", duration);
       return this;
     }
     /**
      * A number that confirms the given order or payment has been received.
      */
-    @NotNull public Builder confirmationNumber(@NotNull Identifier identifier) {
-      putValue("confirmationNumber", identifier);
+    @NotNull public Builder confirmationNumber(@NotNull String confirmationNumber) {
+      putValue("confirmationNumber", confirmationNumber);
       return this;
     }
     /**
-     * The date that payment is due.
+     * The name of the credit card or other method of payment for the order.
      */
-    @NotNull public Builder paymentDueDate(@NotNull java.util.Date date) {
-      putValue("paymentDueDate", date);
-      return this;
-    }
-    /**
-     * The identifier for the account the payment will be applied to.
-     */
-    @NotNull public Builder accountId(@NotNull Identifier identifier) {
-      putValue("accountId", identifier);
-      return this;
-    }
-    /**
-     * The time interval used to compute the invoice.
-     */
-    @NotNull public Builder billingPeriod(@NotNull Duration duration) {
-      putValue("billingPeriod", duration);
+    @NotNull public Builder paymentMethod(@NotNull PaymentMethod paymentMethod) {
+      putValue("paymentMethod", paymentMethod);
       return this;
     }
     /**
@@ -609,17 +630,24 @@ public class Invoice extends Intangible {
       return this;
     }
     /**
-     * The status of payment; whether the invoice has been paid or not.
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
-    @NotNull public Builder paymentStatus(@NotNull PaymentStatusType paymentStatusType) {
-      putValue("paymentStatus", paymentStatusType);
+    @NotNull public Builder potentialAction(@NotNull Action action) {
+      putValue("potentialAction", action);
       return this;
     }
     /**
-     * The status of payment; whether the invoice has been paid or not.
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
-    @NotNull public Builder paymentStatus(@NotNull String paymentStatus) {
-      putValue("paymentStatus", paymentStatus);
+    @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
+      putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     */
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
@@ -637,31 +665,10 @@ public class Invoice extends Intangible {
       return this;
     }
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     */
-    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
-      putValue("disambiguatingDescription", description);
-      return this;
-    }
-    /**
-     * A description of the item.
-     */
-    @NotNull public Builder description(@NotNull Description description) {
-      putValue("description", description);
-      return this;
-    }
-    /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      */
     @NotNull public Builder sameAs(@NotNull String sameAs) {
       putValue("sameAs", sameAs);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
       return this;
     }
     /**
@@ -672,45 +679,10 @@ public class Invoice extends Intangible {
       return this;
     }
     /**
-     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
+     * The name of the item.
      */
-    @NotNull public Builder image(@NotNull Image image) {
-      putValue("image", image);
-      return this;
-    }
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     */
-    @NotNull public Builder potentialAction(@NotNull Action action) {
-      putValue("potentialAction", action);
-      return this;
-    }
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     */
-    @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
-      putValue("potentialAction", action.build());
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -741,6 +713,27 @@ public class Invoice extends Intangible {
       putValue("subjectOf", event.build());
       return this;
     }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -755,42 +748,42 @@ public class Invoice extends Intangible {
       if ("totalPaymentDues".equals(key) && value instanceof MonetaryAmount) { this.totalPaymentDue((MonetaryAmount)value); return; }
       if ("totalPaymentDue".equals(key) && value instanceof PriceSpecification) { this.totalPaymentDue((PriceSpecification)value); return; }
       if ("totalPaymentDues".equals(key) && value instanceof PriceSpecification) { this.totalPaymentDue((PriceSpecification)value); return; }
-      if ("minimumPaymentDue".equals(key) && value instanceof MonetaryAmount) { this.minimumPaymentDue((MonetaryAmount)value); return; }
-      if ("minimumPaymentDues".equals(key) && value instanceof MonetaryAmount) { this.minimumPaymentDue((MonetaryAmount)value); return; }
-      if ("minimumPaymentDue".equals(key) && value instanceof PriceSpecification) { this.minimumPaymentDue((PriceSpecification)value); return; }
-      if ("minimumPaymentDues".equals(key) && value instanceof PriceSpecification) { this.minimumPaymentDue((PriceSpecification)value); return; }
-      if ("paymentMethod".equals(key) && value instanceof PaymentMethod) { this.paymentMethod((PaymentMethod)value); return; }
-      if ("paymentMethods".equals(key) && value instanceof PaymentMethod) { this.paymentMethod((PaymentMethod)value); return; }
-      if ("scheduledPaymentDate".equals(key) && value instanceof java.util.Date) { this.scheduledPaymentDate((java.util.Date)value); return; }
-      if ("scheduledPaymentDates".equals(key) && value instanceof java.util.Date) { this.scheduledPaymentDate((java.util.Date)value); return; }
-      if ("provider".equals(key) && value instanceof Organization) { this.provider((Organization)value); return; }
-      if ("providers".equals(key) && value instanceof Organization) { this.provider((Organization)value); return; }
-      if ("provider".equals(key) && value instanceof Person) { this.provider((Person)value); return; }
-      if ("providers".equals(key) && value instanceof Person) { this.provider((Person)value); return; }
       if ("customer".equals(key) && value instanceof Organization) { this.customer((Organization)value); return; }
       if ("customers".equals(key) && value instanceof Organization) { this.customer((Organization)value); return; }
       if ("customer".equals(key) && value instanceof Person) { this.customer((Person)value); return; }
       if ("customers".equals(key) && value instanceof Person) { this.customer((Person)value); return; }
-      if ("referencesOrder".equals(key) && value instanceof Order) { this.referencesOrder((Order)value); return; }
-      if ("referencesOrders".equals(key) && value instanceof Order) { this.referencesOrder((Order)value); return; }
-      if ("category".equals(key) && value instanceof Category) { this.category((Category)value); return; }
-      if ("categorys".equals(key) && value instanceof Category) { this.category((Category)value); return; }
-      if ("confirmationNumber".equals(key) && value instanceof Identifier) { this.confirmationNumber((Identifier)value); return; }
-      if ("confirmationNumbers".equals(key) && value instanceof Identifier) { this.confirmationNumber((Identifier)value); return; }
-      if ("paymentDueDate".equals(key) && value instanceof java.util.Date) { this.paymentDueDate((java.util.Date)value); return; }
-      if ("paymentDueDates".equals(key) && value instanceof java.util.Date) { this.paymentDueDate((java.util.Date)value); return; }
-      if ("accountId".equals(key) && value instanceof Identifier) { this.accountId((Identifier)value); return; }
-      if ("accountIds".equals(key) && value instanceof Identifier) { this.accountId((Identifier)value); return; }
-      if ("billingPeriod".equals(key) && value instanceof Duration) { this.billingPeriod((Duration)value); return; }
-      if ("billingPeriods".equals(key) && value instanceof Duration) { this.billingPeriod((Duration)value); return; }
-      if ("broker".equals(key) && value instanceof Organization) { this.broker((Organization)value); return; }
-      if ("brokers".equals(key) && value instanceof Organization) { this.broker((Organization)value); return; }
-      if ("broker".equals(key) && value instanceof Person) { this.broker((Person)value); return; }
-      if ("brokers".equals(key) && value instanceof Person) { this.broker((Person)value); return; }
+      if ("provider".equals(key) && value instanceof Organization) { this.provider((Organization)value); return; }
+      if ("providers".equals(key) && value instanceof Organization) { this.provider((Organization)value); return; }
+      if ("provider".equals(key) && value instanceof Person) { this.provider((Person)value); return; }
+      if ("providers".equals(key) && value instanceof Person) { this.provider((Person)value); return; }
+      if ("scheduledPaymentDate".equals(key) && value instanceof java.util.Date) { this.scheduledPaymentDate((java.util.Date)value); return; }
+      if ("scheduledPaymentDates".equals(key) && value instanceof java.util.Date) { this.scheduledPaymentDate((java.util.Date)value); return; }
       if ("paymentStatus".equals(key) && value instanceof PaymentStatusType) { this.paymentStatus((PaymentStatusType)value); return; }
       if ("paymentStatuss".equals(key) && value instanceof PaymentStatusType) { this.paymentStatus((PaymentStatusType)value); return; }
       if ("paymentStatus".equals(key) && value instanceof String) { this.paymentStatus((String)value); return; }
       if ("paymentStatuss".equals(key) && value instanceof String) { this.paymentStatus((String)value); return; }
+      if ("paymentDueDate".equals(key) && value instanceof java.util.Date) { this.paymentDueDate((java.util.Date)value); return; }
+      if ("paymentDueDates".equals(key) && value instanceof java.util.Date) { this.paymentDueDate((java.util.Date)value); return; }
+      if ("minimumPaymentDue".equals(key) && value instanceof MonetaryAmount) { this.minimumPaymentDue((MonetaryAmount)value); return; }
+      if ("minimumPaymentDues".equals(key) && value instanceof MonetaryAmount) { this.minimumPaymentDue((MonetaryAmount)value); return; }
+      if ("minimumPaymentDue".equals(key) && value instanceof PriceSpecification) { this.minimumPaymentDue((PriceSpecification)value); return; }
+      if ("minimumPaymentDues".equals(key) && value instanceof PriceSpecification) { this.minimumPaymentDue((PriceSpecification)value); return; }
+      if ("category".equals(key) && value instanceof Category) { this.category((Category)value); return; }
+      if ("categorys".equals(key) && value instanceof Category) { this.category((Category)value); return; }
+      if ("accountId".equals(key) && value instanceof String) { this.accountId((String)value); return; }
+      if ("accountIds".equals(key) && value instanceof String) { this.accountId((String)value); return; }
+      if ("referencesOrder".equals(key) && value instanceof Order) { this.referencesOrder((Order)value); return; }
+      if ("referencesOrders".equals(key) && value instanceof Order) { this.referencesOrder((Order)value); return; }
+      if ("billingPeriod".equals(key) && value instanceof Duration) { this.billingPeriod((Duration)value); return; }
+      if ("billingPeriods".equals(key) && value instanceof Duration) { this.billingPeriod((Duration)value); return; }
+      if ("confirmationNumber".equals(key) && value instanceof String) { this.confirmationNumber((String)value); return; }
+      if ("confirmationNumbers".equals(key) && value instanceof String) { this.confirmationNumber((String)value); return; }
+      if ("paymentMethod".equals(key) && value instanceof PaymentMethod) { this.paymentMethod((PaymentMethod)value); return; }
+      if ("paymentMethods".equals(key) && value instanceof PaymentMethod) { this.paymentMethod((PaymentMethod)value); return; }
+      if ("broker".equals(key) && value instanceof Organization) { this.broker((Organization)value); return; }
+      if ("brokers".equals(key) && value instanceof Organization) { this.broker((Organization)value); return; }
+      if ("broker".equals(key) && value instanceof Person) { this.broker((Person)value); return; }
+      if ("brokers".equals(key) && value instanceof Person) { this.broker((Person)value); return; }
       super.fromMap(key, value);
     }
   }

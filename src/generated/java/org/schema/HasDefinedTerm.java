@@ -24,7 +24,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * A Defined Term contained in this term set.Source: https://github.com/schemaorg/schemaorg/issues/894
+ * A Defined Term contained in this term set.
  */
 public interface HasDefinedTerm {
 }

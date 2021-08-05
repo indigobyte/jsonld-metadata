@@ -28,40 +28,6 @@ import java.util.*;
  */
 public class DataFeedItem extends Intangible {
   /**
-   * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')&rsquo;.
-   */
-  @JsonIgnore public Thing getItem() {
-    return (Thing) getValue("item");
-  }
-  /**
-   * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')&rsquo;.
-   */
-  @JsonIgnore public Collection<Thing> getItems() {
-    final Object current = myData.get("item");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Thing>) current;
-    }
-    return Arrays.asList((Thing) current);
-  }
-  /**
-   * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
-   */
-  @JsonIgnore public java.util.Date getDateModified() {
-    return (java.util.Date) getValue("dateModified");
-  }
-  /**
-   * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
-   */
-  @JsonIgnore public Collection<java.util.Date> getDateModifieds() {
-    final Object current = myData.get("dateModified");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
-    }
-    return Arrays.asList((java.util.Date) current);
-  }
-  /**
    * The date on which the CreativeWork was created or the item was added to a DataFeed.
    */
   @JsonIgnore public DateCreated getDateCreated() {
@@ -95,6 +61,40 @@ public class DataFeedItem extends Intangible {
     }
     return Arrays.asList((java.util.Date) current);
   }
+  /**
+   * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
+   */
+  @JsonIgnore public java.util.Date getDateModified() {
+    return (java.util.Date) getValue("dateModified");
+  }
+  /**
+   * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
+   */
+  @JsonIgnore public Collection<java.util.Date> getDateModifieds() {
+    final Object current = myData.get("dateModified");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<java.util.Date>) current;
+    }
+    return Arrays.asList((java.util.Date) current);
+  }
+  /**
+   * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')&rsquo;.
+   */
+  @JsonIgnore public Thing getItem() {
+    return (Thing) getValue("item");
+  }
+  /**
+   * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')&rsquo;.
+   */
+  @JsonIgnore public Collection<Thing> getItems() {
+    final Object current = myData.get("item");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Thing>) current;
+    }
+    return Arrays.asList((Thing) current);
+  }
   protected DataFeedItem(java.util.Map<String,Object> data) {
     super(data);
   }
@@ -108,27 +108,6 @@ public class DataFeedItem extends Intangible {
     }
     @NotNull public DataFeedItem build() {
       return new DataFeedItem(myData);
-    }
-    /**
-     * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')&rsquo;.
-     */
-    @NotNull public Builder item(@NotNull Thing thing) {
-      putValue("item", thing);
-      return this;
-    }
-    /**
-     * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')&rsquo;.
-     */
-    @NotNull public Builder item(@NotNull Thing.Builder thing) {
-      putValue("item", thing.build());
-      return this;
-    }
-    /**
-     * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
-     */
-    @NotNull public Builder dateModified(@NotNull java.util.Date date) {
-      putValue("dateModified", date);
-      return this;
     }
     /**
      * The date on which the CreativeWork was created or the item was added to a DataFeed.
@@ -145,59 +124,24 @@ public class DataFeedItem extends Intangible {
       return this;
     }
     /**
-     * URL of the item.
+     * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
+    @NotNull public Builder dateModified(@NotNull java.util.Date date) {
+      putValue("dateModified", date);
       return this;
     }
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')&rsquo;.
      */
-    @NotNull public Builder additionalType(@NotNull String additionalType) {
-      putValue("additionalType", additionalType);
+    @NotNull public Builder item(@NotNull Thing thing) {
+      putValue("item", thing);
       return this;
     }
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')&rsquo;.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
-      putValue("disambiguatingDescription", description);
-      return this;
-    }
-    /**
-     * A description of the item.
-     */
-    @NotNull public Builder description(@NotNull Description description) {
-      putValue("description", description);
-      return this;
-    }
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     */
-    @NotNull public Builder sameAs(@NotNull String sameAs) {
-      putValue("sameAs", sameAs);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
-      return this;
-    }
-    /**
-     * An alias for the item.
-     */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
-      return this;
-    }
-    /**
-     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
-     */
-    @NotNull public Builder image(@NotNull Image image) {
-      putValue("image", image);
+    @NotNull public Builder item(@NotNull Thing.Builder thing) {
+      putValue("item", thing.build());
       return this;
     }
     /**
@@ -215,24 +159,45 @@ public class DataFeedItem extends Intangible {
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * URL of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
+    @NotNull public Builder additionalType(@NotNull String additionalType) {
+      putValue("additionalType", additionalType);
+      return this;
+    }
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     */
+    @NotNull public Builder sameAs(@NotNull String sameAs) {
+      putValue("sameAs", sameAs);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * The name of the item.
+     */
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -263,6 +228,27 @@ public class DataFeedItem extends Intangible {
       putValue("subjectOf", event.build());
       return this;
     }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -271,14 +257,14 @@ public class DataFeedItem extends Intangible {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("item".equals(key) && value instanceof Thing) { this.item((Thing)value); return; }
-      if ("items".equals(key) && value instanceof Thing) { this.item((Thing)value); return; }
-      if ("dateModified".equals(key) && value instanceof java.util.Date) { this.dateModified((java.util.Date)value); return; }
-      if ("dateModifieds".equals(key) && value instanceof java.util.Date) { this.dateModified((java.util.Date)value); return; }
       if ("dateCreated".equals(key) && value instanceof DateCreated) { this.dateCreated((DateCreated)value); return; }
       if ("dateCreateds".equals(key) && value instanceof DateCreated) { this.dateCreated((DateCreated)value); return; }
       if ("dateDeleted".equals(key) && value instanceof java.util.Date) { this.dateDeleted((java.util.Date)value); return; }
       if ("dateDeleteds".equals(key) && value instanceof java.util.Date) { this.dateDeleted((java.util.Date)value); return; }
+      if ("dateModified".equals(key) && value instanceof java.util.Date) { this.dateModified((java.util.Date)value); return; }
+      if ("dateModifieds".equals(key) && value instanceof java.util.Date) { this.dateModified((java.util.Date)value); return; }
+      if ("item".equals(key) && value instanceof Thing) { this.item((Thing)value); return; }
+      if ("items".equals(key) && value instanceof Thing) { this.item((Thing)value); return; }
       super.fromMap(key, value);
     }
   }

@@ -28,11 +28,15 @@ objectMapper.writeValue(System.out, event);
 
 # Updating schema.org schema
 
-- Find schema.org schema.
-- Convert it to RDFa format.
-- Replace file `generator/resources/schema.rdfa`.
+- Find schema.org schema in RDF format. **It must be HTTP schema, not HTTPS!**. You can find it at 
+[GitHub](https://github.com/schemaorg/schemaorg/tree/main/data/releases). Take "all" schema instead of "current" since
+"current" one uses definitions from "all", and there will be "not found/undefined" errors when using "current" schema instead of 
+"all".
+- Replace file `generator/resources/schemaorg-all-http.rdf` with the new version.
+- Delete `src/generated` and `src/generated-test` folders.
 - Run `generator/src/main/kotlin/org/schema/generator/generator.kt`'s main function. 
-Must set working directory to `generator` before running.
+Must set working directory to `generator` before running. Generated files will be placed in `src/generated` and 
+`src/generated-test`.
 
 # Building new version
 - Update `version` inside `gradle.properties` file.

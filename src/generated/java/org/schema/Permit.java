@@ -28,23 +28,6 @@ import java.util.*;
  */
 public class Permit extends Intangible {
   /**
-   * The date when the item is no longer valid.
-   */
-  @JsonIgnore public java.util.Date getValidUntil() {
-    return (java.util.Date) getValue("validUntil");
-  }
-  /**
-   * The date when the item is no longer valid.
-   */
-  @JsonIgnore public Collection<java.util.Date> getValidUntils() {
-    final Object current = myData.get("validUntil");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
-    }
-    return Arrays.asList((java.util.Date) current);
-  }
-  /**
    * The date when the item becomes valid.
    */
   @JsonIgnore public java.util.Date getValidFrom() {
@@ -60,57 +43,6 @@ public class Permit extends Intangible {
       return (Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
-  }
-  /**
-   * The organization issuing the ticket or permit.
-   */
-  @JsonIgnore public Organization getIssuedBy() {
-    return (Organization) getValue("issuedBy");
-  }
-  /**
-   * The organization issuing the ticket or permit.
-   */
-  @JsonIgnore public Collection<Organization> getIssuedBys() {
-    final Object current = myData.get("issuedBy");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
-    }
-    return Arrays.asList((Organization) current);
-  }
-  /**
-   * The target audience for this permit.
-   */
-  @JsonIgnore public Audience getPermitAudience() {
-    return (Audience) getValue("permitAudience");
-  }
-  /**
-   * The target audience for this permit.
-   */
-  @JsonIgnore public Collection<Audience> getPermitAudiences() {
-    final Object current = myData.get("permitAudience");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Audience>) current;
-    }
-    return Arrays.asList((Audience) current);
-  }
-  /**
-   * The service through with the permit was granted.
-   */
-  @JsonIgnore public Service getIssuedThrough() {
-    return (Service) getValue("issuedThrough");
-  }
-  /**
-   * The service through with the permit was granted.
-   */
-  @JsonIgnore public Collection<Service> getIssuedThroughs() {
-    final Object current = myData.get("issuedThrough");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Service>) current;
-    }
-    return Arrays.asList((Service) current);
   }
   /**
    * The geographic area where a permit or similar thing is valid.
@@ -130,6 +62,40 @@ public class Permit extends Intangible {
     return Arrays.asList((AdministrativeArea) current);
   }
   /**
+   * The date when the item is no longer valid.
+   */
+  @JsonIgnore public java.util.Date getValidUntil() {
+    return (java.util.Date) getValue("validUntil");
+  }
+  /**
+   * The date when the item is no longer valid.
+   */
+  @JsonIgnore public Collection<java.util.Date> getValidUntils() {
+    final Object current = myData.get("validUntil");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<java.util.Date>) current;
+    }
+    return Arrays.asList((java.util.Date) current);
+  }
+  /**
+   * The target audience for this permit.
+   */
+  @JsonIgnore public Audience getPermitAudience() {
+    return (Audience) getValue("permitAudience");
+  }
+  /**
+   * The target audience for this permit.
+   */
+  @JsonIgnore public Collection<Audience> getPermitAudiences() {
+    final Object current = myData.get("permitAudience");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Audience>) current;
+    }
+    return Arrays.asList((Audience) current);
+  }
+  /**
    * The duration of validity of a permit or similar thing.
    */
   @JsonIgnore public Duration getValidFor() {
@@ -146,6 +112,40 @@ public class Permit extends Intangible {
     }
     return Arrays.asList((Duration) current);
   }
+  /**
+   * The organization issuing the ticket or permit.
+   */
+  @JsonIgnore public Organization getIssuedBy() {
+    return (Organization) getValue("issuedBy");
+  }
+  /**
+   * The organization issuing the ticket or permit.
+   */
+  @JsonIgnore public Collection<Organization> getIssuedBys() {
+    final Object current = myData.get("issuedBy");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Organization>) current;
+    }
+    return Arrays.asList((Organization) current);
+  }
+  /**
+   * The service through with the permit was granted.
+   */
+  @JsonIgnore public Service getIssuedThrough() {
+    return (Service) getValue("issuedThrough");
+  }
+  /**
+   * The service through with the permit was granted.
+   */
+  @JsonIgnore public Collection<Service> getIssuedThroughs() {
+    final Object current = myData.get("issuedThrough");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Service>) current;
+    }
+    return Arrays.asList((Service) current);
+  }
   protected Permit(java.util.Map<String,Object> data) {
     super(data);
   }
@@ -161,59 +161,10 @@ public class Permit extends Intangible {
       return new Permit(myData);
     }
     /**
-     * The date when the item is no longer valid.
-     */
-    @NotNull public Builder validUntil(@NotNull java.util.Date date) {
-      putValue("validUntil", date);
-      return this;
-    }
-    /**
      * The date when the item becomes valid.
      */
     @NotNull public Builder validFrom(@NotNull java.util.Date date) {
       putValue("validFrom", date);
-      return this;
-    }
-    /**
-     * The organization issuing the ticket or permit.
-     */
-    @NotNull public Builder issuedBy(@NotNull Organization organization) {
-      putValue("issuedBy", organization);
-      return this;
-    }
-    /**
-     * The organization issuing the ticket or permit.
-     */
-    @NotNull public Builder issuedBy(@NotNull Organization.Builder organization) {
-      putValue("issuedBy", organization.build());
-      return this;
-    }
-    /**
-     * The target audience for this permit.
-     */
-    @NotNull public Builder permitAudience(@NotNull Audience audience) {
-      putValue("permitAudience", audience);
-      return this;
-    }
-    /**
-     * The target audience for this permit.
-     */
-    @NotNull public Builder permitAudience(@NotNull Audience.Builder audience) {
-      putValue("permitAudience", audience.build());
-      return this;
-    }
-    /**
-     * The service through with the permit was granted.
-     */
-    @NotNull public Builder issuedThrough(@NotNull Service service) {
-      putValue("issuedThrough", service);
-      return this;
-    }
-    /**
-     * The service through with the permit was granted.
-     */
-    @NotNull public Builder issuedThrough(@NotNull Service.Builder service) {
-      putValue("issuedThrough", service.build());
       return this;
     }
     /**
@@ -231,6 +182,27 @@ public class Permit extends Intangible {
       return this;
     }
     /**
+     * The date when the item is no longer valid.
+     */
+    @NotNull public Builder validUntil(@NotNull java.util.Date date) {
+      putValue("validUntil", date);
+      return this;
+    }
+    /**
+     * The target audience for this permit.
+     */
+    @NotNull public Builder permitAudience(@NotNull Audience audience) {
+      putValue("permitAudience", audience);
+      return this;
+    }
+    /**
+     * The target audience for this permit.
+     */
+    @NotNull public Builder permitAudience(@NotNull Audience.Builder audience) {
+      putValue("permitAudience", audience.build());
+      return this;
+    }
+    /**
      * The duration of validity of a permit or similar thing.
      */
     @NotNull public Builder validFor(@NotNull Duration duration) {
@@ -238,59 +210,31 @@ public class Permit extends Intangible {
       return this;
     }
     /**
-     * URL of the item.
+     * The organization issuing the ticket or permit.
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
+    @NotNull public Builder issuedBy(@NotNull Organization organization) {
+      putValue("issuedBy", organization);
       return this;
     }
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * The organization issuing the ticket or permit.
      */
-    @NotNull public Builder additionalType(@NotNull String additionalType) {
-      putValue("additionalType", additionalType);
+    @NotNull public Builder issuedBy(@NotNull Organization.Builder organization) {
+      putValue("issuedBy", organization.build());
       return this;
     }
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * The service through with the permit was granted.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
-      putValue("disambiguatingDescription", description);
+    @NotNull public Builder issuedThrough(@NotNull Service service) {
+      putValue("issuedThrough", service);
       return this;
     }
     /**
-     * A description of the item.
+     * The service through with the permit was granted.
      */
-    @NotNull public Builder description(@NotNull Description description) {
-      putValue("description", description);
-      return this;
-    }
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     */
-    @NotNull public Builder sameAs(@NotNull String sameAs) {
-      putValue("sameAs", sameAs);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
-      return this;
-    }
-    /**
-     * An alias for the item.
-     */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
-      return this;
-    }
-    /**
-     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
-     */
-    @NotNull public Builder image(@NotNull Image image) {
-      putValue("image", image);
+    @NotNull public Builder issuedThrough(@NotNull Service.Builder service) {
+      putValue("issuedThrough", service.build());
       return this;
     }
     /**
@@ -308,24 +252,45 @@ public class Permit extends Intangible {
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * URL of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
+    @NotNull public Builder additionalType(@NotNull String additionalType) {
+      putValue("additionalType", additionalType);
+      return this;
+    }
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     */
+    @NotNull public Builder sameAs(@NotNull String sameAs) {
+      putValue("sameAs", sameAs);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * The name of the item.
+     */
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -356,6 +321,27 @@ public class Permit extends Intangible {
       putValue("subjectOf", event.build());
       return this;
     }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -364,20 +350,20 @@ public class Permit extends Intangible {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("validUntil".equals(key) && value instanceof java.util.Date) { this.validUntil((java.util.Date)value); return; }
-      if ("validUntils".equals(key) && value instanceof java.util.Date) { this.validUntil((java.util.Date)value); return; }
       if ("validFrom".equals(key) && value instanceof java.util.Date) { this.validFrom((java.util.Date)value); return; }
       if ("validFroms".equals(key) && value instanceof java.util.Date) { this.validFrom((java.util.Date)value); return; }
-      if ("issuedBy".equals(key) && value instanceof Organization) { this.issuedBy((Organization)value); return; }
-      if ("issuedBys".equals(key) && value instanceof Organization) { this.issuedBy((Organization)value); return; }
-      if ("permitAudience".equals(key) && value instanceof Audience) { this.permitAudience((Audience)value); return; }
-      if ("permitAudiences".equals(key) && value instanceof Audience) { this.permitAudience((Audience)value); return; }
-      if ("issuedThrough".equals(key) && value instanceof Service) { this.issuedThrough((Service)value); return; }
-      if ("issuedThroughs".equals(key) && value instanceof Service) { this.issuedThrough((Service)value); return; }
       if ("validIn".equals(key) && value instanceof AdministrativeArea) { this.validIn((AdministrativeArea)value); return; }
       if ("validIns".equals(key) && value instanceof AdministrativeArea) { this.validIn((AdministrativeArea)value); return; }
+      if ("validUntil".equals(key) && value instanceof java.util.Date) { this.validUntil((java.util.Date)value); return; }
+      if ("validUntils".equals(key) && value instanceof java.util.Date) { this.validUntil((java.util.Date)value); return; }
+      if ("permitAudience".equals(key) && value instanceof Audience) { this.permitAudience((Audience)value); return; }
+      if ("permitAudiences".equals(key) && value instanceof Audience) { this.permitAudience((Audience)value); return; }
       if ("validFor".equals(key) && value instanceof Duration) { this.validFor((Duration)value); return; }
       if ("validFors".equals(key) && value instanceof Duration) { this.validFor((Duration)value); return; }
+      if ("issuedBy".equals(key) && value instanceof Organization) { this.issuedBy((Organization)value); return; }
+      if ("issuedBys".equals(key) && value instanceof Organization) { this.issuedBy((Organization)value); return; }
+      if ("issuedThrough".equals(key) && value instanceof Service) { this.issuedThrough((Service)value); return; }
+      if ("issuedThroughs".equals(key) && value instanceof Service) { this.issuedThrough((Service)value); return; }
       super.fromMap(key, value);
     }
   }

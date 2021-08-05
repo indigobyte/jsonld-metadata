@@ -24,7 +24,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * A brand is a name used by an organization or business person for labeling a product, product group, or similar.Source: http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass
+ * A brand is a name used by an organization or business person for labeling a product, product group, or similar.
  */
 public class Brand extends Intangible {
   /**
@@ -43,6 +43,23 @@ public class Brand extends Intangible {
       return (Collection<AggregateRating>) current;
     }
     return Arrays.asList((AggregateRating) current);
+  }
+  /**
+   * An associated logo.
+   */
+  @JsonIgnore public Image getLogo() {
+    return (Image) getValue("logo");
+  }
+  /**
+   * An associated logo.
+   */
+  @JsonIgnore public Collection<Image> getLogos() {
+    final Object current = myData.get("logo");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Image>) current;
+    }
+    return Arrays.asList((Image) current);
   }
   /**
    * A review of the item.
@@ -78,23 +95,6 @@ public class Brand extends Intangible {
     }
     return Arrays.asList((String) current);
   }
-  /**
-   * An associated logo.
-   */
-  @JsonIgnore public Image getLogo() {
-    return (Image) getValue("logo");
-  }
-  /**
-   * An associated logo.
-   */
-  @JsonIgnore public Collection<Image> getLogos() {
-    final Object current = myData.get("logo");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Image>) current;
-    }
-    return Arrays.asList((Image) current);
-  }
   protected Brand(java.util.Map<String,Object> data) {
     super(data);
   }
@@ -124,6 +124,13 @@ public class Brand extends Intangible {
       return this;
     }
     /**
+     * An associated logo.
+     */
+    @NotNull public Builder logo(@NotNull Image image) {
+      putValue("logo", image);
+      return this;
+    }
+    /**
      * A review of the item.
      */
     @NotNull public Builder review(@NotNull Review review) {
@@ -145,10 +152,24 @@ public class Brand extends Intangible {
       return this;
     }
     /**
-     * An associated logo.
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
-    @NotNull public Builder logo(@NotNull Image image) {
-      putValue("logo", image);
+    @NotNull public Builder potentialAction(@NotNull Action action) {
+      putValue("potentialAction", action);
+      return this;
+    }
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     */
+    @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
+      putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     */
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
@@ -166,31 +187,10 @@ public class Brand extends Intangible {
       return this;
     }
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     */
-    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
-      putValue("disambiguatingDescription", description);
-      return this;
-    }
-    /**
-     * A description of the item.
-     */
-    @NotNull public Builder description(@NotNull Description description) {
-      putValue("description", description);
-      return this;
-    }
-    /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      */
     @NotNull public Builder sameAs(@NotNull String sameAs) {
       putValue("sameAs", sameAs);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
       return this;
     }
     /**
@@ -201,45 +201,10 @@ public class Brand extends Intangible {
       return this;
     }
     /**
-     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
+     * The name of the item.
      */
-    @NotNull public Builder image(@NotNull Image image) {
-      putValue("image", image);
-      return this;
-    }
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     */
-    @NotNull public Builder potentialAction(@NotNull Action action) {
-      putValue("potentialAction", action);
-      return this;
-    }
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     */
-    @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
-      putValue("potentialAction", action.build());
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -270,6 +235,27 @@ public class Brand extends Intangible {
       putValue("subjectOf", event.build());
       return this;
     }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -280,12 +266,12 @@ public class Brand extends Intangible {
     @Override protected void fromMap(String key, Object value) {
       if ("aggregateRating".equals(key) && value instanceof AggregateRating) { this.aggregateRating((AggregateRating)value); return; }
       if ("aggregateRatings".equals(key) && value instanceof AggregateRating) { this.aggregateRating((AggregateRating)value); return; }
+      if ("logo".equals(key) && value instanceof Image) { this.logo((Image)value); return; }
+      if ("logos".equals(key) && value instanceof Image) { this.logo((Image)value); return; }
       if ("review".equals(key) && value instanceof Review) { this.review((Review)value); return; }
       if ("reviews".equals(key) && value instanceof Review) { this.review((Review)value); return; }
       if ("slogan".equals(key) && value instanceof String) { this.slogan((String)value); return; }
       if ("slogans".equals(key) && value instanceof String) { this.slogan((String)value); return; }
-      if ("logo".equals(key) && value instanceof Image) { this.logo((Image)value); return; }
-      if ("logos".equals(key) && value instanceof Image) { this.logo((Image)value); return; }
       super.fromMap(key, value);
     }
   }

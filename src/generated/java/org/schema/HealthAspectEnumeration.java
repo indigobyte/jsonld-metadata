@@ -21,7 +21,7 @@ package org.schema;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * HealthAspectEnumeration enumerates several aspects of health content online, each of which might be described using &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/hasHealthAspect&quot;&gt;hasHealthAspect&lt;/a&gt; and &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/HealthTopicContent&quot;&gt;HealthTopicContent&lt;/a&gt;.
+ * HealthAspectEnumeration enumerates several aspects of health content online, each of which might be described using [[hasHealthAspect]] and [[HealthTopicContent]].
  */
 public enum HealthAspectEnumeration {
   ;

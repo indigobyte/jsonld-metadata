@@ -26,5 +26,5 @@ import java.util.*;
 /**
  * 
  */
-public interface Identifier extends SerialNumber {
+public interface Identifier {
 }

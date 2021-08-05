@@ -24,77 +24,9 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * A description of costs to the patient under a given network or formulary.Source: https://github.com/schemaorg/schemaorg/issues/1062
+ * A description of costs to the patient under a given network or formulary.
  */
 public class HealthPlanCostSharingSpecification extends Intangible {
-  /**
-   * Whether the coinsurance applies before or after deductible, etc. TODO: Is this a closed set?
-   */
-  @JsonIgnore public String getHealthPlanCoinsuranceOption() {
-    return (String) getValue("healthPlanCoinsuranceOption");
-  }
-  /**
-   * Whether the coinsurance applies before or after deductible, etc. TODO: Is this a closed set?
-   */
-  @JsonIgnore public Collection<String> getHealthPlanCoinsuranceOptions() {
-    final Object current = myData.get("healthPlanCoinsuranceOption");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * The category or type of pharmacy associated with this cost sharing.
-   */
-  @JsonIgnore public String getHealthPlanPharmacyCategory() {
-    return (String) getValue("healthPlanPharmacyCategory");
-  }
-  /**
-   * The category or type of pharmacy associated with this cost sharing.
-   */
-  @JsonIgnore public Collection<String> getHealthPlanPharmacyCategorys() {
-    final Object current = myData.get("healthPlanPharmacyCategory");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * Whether The copay amount.
-   */
-  @JsonIgnore public PriceSpecification getHealthPlanCopay() {
-    return (PriceSpecification) getValue("healthPlanCopay");
-  }
-  /**
-   * Whether The copay amount.
-   */
-  @JsonIgnore public Collection<PriceSpecification> getHealthPlanCopays() {
-    final Object current = myData.get("healthPlanCopay");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<PriceSpecification>) current;
-    }
-    return Arrays.asList((PriceSpecification) current);
-  }
-  /**
-   * Whether the copay is before or after deductible, etc. TODO: Is this a closed set?
-   */
-  @JsonIgnore public String getHealthPlanCopayOption() {
-    return (String) getValue("healthPlanCopayOption");
-  }
-  /**
-   * Whether the copay is before or after deductible, etc. TODO: Is this a closed set?
-   */
-  @JsonIgnore public Collection<String> getHealthPlanCopayOptions() {
-    final Object current = myData.get("healthPlanCopayOption");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
   /**
    * Whether The rate of coinsurance expressed as a number between 0.0 and 1.0.
    */
@@ -180,6 +112,74 @@ public class HealthPlanCostSharingSpecification extends Intangible {
     }
     return Arrays.asList((String) current);
   }
+  /**
+   * Whether the copay is before or after deductible, etc. TODO: Is this a closed set?
+   */
+  @JsonIgnore public String getHealthPlanCopayOption() {
+    return (String) getValue("healthPlanCopayOption");
+  }
+  /**
+   * Whether the copay is before or after deductible, etc. TODO: Is this a closed set?
+   */
+  @JsonIgnore public Collection<String> getHealthPlanCopayOptions() {
+    final Object current = myData.get("healthPlanCopayOption");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * Whether the coinsurance applies before or after deductible, etc. TODO: Is this a closed set?
+   */
+  @JsonIgnore public String getHealthPlanCoinsuranceOption() {
+    return (String) getValue("healthPlanCoinsuranceOption");
+  }
+  /**
+   * Whether the coinsurance applies before or after deductible, etc. TODO: Is this a closed set?
+   */
+  @JsonIgnore public Collection<String> getHealthPlanCoinsuranceOptions() {
+    final Object current = myData.get("healthPlanCoinsuranceOption");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * Whether The copay amount.
+   */
+  @JsonIgnore public PriceSpecification getHealthPlanCopay() {
+    return (PriceSpecification) getValue("healthPlanCopay");
+  }
+  /**
+   * Whether The copay amount.
+   */
+  @JsonIgnore public Collection<PriceSpecification> getHealthPlanCopays() {
+    final Object current = myData.get("healthPlanCopay");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<PriceSpecification>) current;
+    }
+    return Arrays.asList((PriceSpecification) current);
+  }
+  /**
+   * The category or type of pharmacy associated with this cost sharing.
+   */
+  @JsonIgnore public String getHealthPlanPharmacyCategory() {
+    return (String) getValue("healthPlanPharmacyCategory");
+  }
+  /**
+   * The category or type of pharmacy associated with this cost sharing.
+   */
+  @JsonIgnore public Collection<String> getHealthPlanPharmacyCategorys() {
+    final Object current = myData.get("healthPlanPharmacyCategory");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
   protected HealthPlanCostSharingSpecification(java.util.Map<String,Object> data) {
     super(data);
   }
@@ -193,41 +193,6 @@ public class HealthPlanCostSharingSpecification extends Intangible {
     }
     @NotNull public HealthPlanCostSharingSpecification build() {
       return new HealthPlanCostSharingSpecification(myData);
-    }
-    /**
-     * Whether the coinsurance applies before or after deductible, etc. TODO: Is this a closed set?
-     */
-    @NotNull public Builder healthPlanCoinsuranceOption(@NotNull String healthPlanCoinsuranceOption) {
-      putValue("healthPlanCoinsuranceOption", healthPlanCoinsuranceOption);
-      return this;
-    }
-    /**
-     * The category or type of pharmacy associated with this cost sharing.
-     */
-    @NotNull public Builder healthPlanPharmacyCategory(@NotNull String healthPlanPharmacyCategory) {
-      putValue("healthPlanPharmacyCategory", healthPlanPharmacyCategory);
-      return this;
-    }
-    /**
-     * Whether The copay amount.
-     */
-    @NotNull public Builder healthPlanCopay(@NotNull PriceSpecification priceSpecification) {
-      putValue("healthPlanCopay", priceSpecification);
-      return this;
-    }
-    /**
-     * Whether The copay amount.
-     */
-    @NotNull public Builder healthPlanCopay(@NotNull PriceSpecification.Builder priceSpecification) {
-      putValue("healthPlanCopay", priceSpecification.build());
-      return this;
-    }
-    /**
-     * Whether the copay is before or after deductible, etc. TODO: Is this a closed set?
-     */
-    @NotNull public Builder healthPlanCopayOption(@NotNull String healthPlanCopayOption) {
-      putValue("healthPlanCopayOption", healthPlanCopayOption);
-      return this;
     }
     /**
      * Whether The rate of coinsurance expressed as a number between 0.0 and 1.0.
@@ -265,59 +230,38 @@ public class HealthPlanCostSharingSpecification extends Intangible {
       return this;
     }
     /**
-     * URL of the item.
+     * Whether the copay is before or after deductible, etc. TODO: Is this a closed set?
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
+    @NotNull public Builder healthPlanCopayOption(@NotNull String healthPlanCopayOption) {
+      putValue("healthPlanCopayOption", healthPlanCopayOption);
       return this;
     }
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * Whether the coinsurance applies before or after deductible, etc. TODO: Is this a closed set?
      */
-    @NotNull public Builder additionalType(@NotNull String additionalType) {
-      putValue("additionalType", additionalType);
+    @NotNull public Builder healthPlanCoinsuranceOption(@NotNull String healthPlanCoinsuranceOption) {
+      putValue("healthPlanCoinsuranceOption", healthPlanCoinsuranceOption);
       return this;
     }
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * Whether The copay amount.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
-      putValue("disambiguatingDescription", description);
+    @NotNull public Builder healthPlanCopay(@NotNull PriceSpecification priceSpecification) {
+      putValue("healthPlanCopay", priceSpecification);
       return this;
     }
     /**
-     * A description of the item.
+     * Whether The copay amount.
      */
-    @NotNull public Builder description(@NotNull Description description) {
-      putValue("description", description);
+    @NotNull public Builder healthPlanCopay(@NotNull PriceSpecification.Builder priceSpecification) {
+      putValue("healthPlanCopay", priceSpecification.build());
       return this;
     }
     /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     * The category or type of pharmacy associated with this cost sharing.
      */
-    @NotNull public Builder sameAs(@NotNull String sameAs) {
-      putValue("sameAs", sameAs);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
-      return this;
-    }
-    /**
-     * An alias for the item.
-     */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
-      return this;
-    }
-    /**
-     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
-     */
-    @NotNull public Builder image(@NotNull Image image) {
-      putValue("image", image);
+    @NotNull public Builder healthPlanPharmacyCategory(@NotNull String healthPlanPharmacyCategory) {
+      putValue("healthPlanPharmacyCategory", healthPlanPharmacyCategory);
       return this;
     }
     /**
@@ -335,24 +279,45 @@ public class HealthPlanCostSharingSpecification extends Intangible {
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * URL of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
+    @NotNull public Builder additionalType(@NotNull String additionalType) {
+      putValue("additionalType", additionalType);
+      return this;
+    }
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     */
+    @NotNull public Builder sameAs(@NotNull String sameAs) {
+      putValue("sameAs", sameAs);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * The name of the item.
+     */
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -383,6 +348,27 @@ public class HealthPlanCostSharingSpecification extends Intangible {
       putValue("subjectOf", event.build());
       return this;
     }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -391,14 +377,6 @@ public class HealthPlanCostSharingSpecification extends Intangible {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("healthPlanCoinsuranceOption".equals(key) && value instanceof String) { this.healthPlanCoinsuranceOption((String)value); return; }
-      if ("healthPlanCoinsuranceOptions".equals(key) && value instanceof String) { this.healthPlanCoinsuranceOption((String)value); return; }
-      if ("healthPlanPharmacyCategory".equals(key) && value instanceof String) { this.healthPlanPharmacyCategory((String)value); return; }
-      if ("healthPlanPharmacyCategorys".equals(key) && value instanceof String) { this.healthPlanPharmacyCategory((String)value); return; }
-      if ("healthPlanCopay".equals(key) && value instanceof PriceSpecification) { this.healthPlanCopay((PriceSpecification)value); return; }
-      if ("healthPlanCopays".equals(key) && value instanceof PriceSpecification) { this.healthPlanCopay((PriceSpecification)value); return; }
-      if ("healthPlanCopayOption".equals(key) && value instanceof String) { this.healthPlanCopayOption((String)value); return; }
-      if ("healthPlanCopayOptions".equals(key) && value instanceof String) { this.healthPlanCopayOption((String)value); return; }
       if ("healthPlanCoinsuranceRate".equals(key) && value instanceof Integer) { this.healthPlanCoinsuranceRate((Integer)value); return; }
       if ("healthPlanCoinsuranceRates".equals(key) && value instanceof Integer) { this.healthPlanCoinsuranceRate((Integer)value); return; }
       if ("healthPlanCoinsuranceRate".equals(key) && value instanceof Long) { this.healthPlanCoinsuranceRate((Long)value); return; }
@@ -409,6 +387,14 @@ public class HealthPlanCostSharingSpecification extends Intangible {
       if ("healthPlanCoinsuranceRates".equals(key) && value instanceof Double) { this.healthPlanCoinsuranceRate((Double)value); return; }
       if ("healthPlanCoinsuranceRate".equals(key) && value instanceof String) { this.healthPlanCoinsuranceRate((String)value); return; }
       if ("healthPlanCoinsuranceRates".equals(key) && value instanceof String) { this.healthPlanCoinsuranceRate((String)value); return; }
+      if ("healthPlanCopayOption".equals(key) && value instanceof String) { this.healthPlanCopayOption((String)value); return; }
+      if ("healthPlanCopayOptions".equals(key) && value instanceof String) { this.healthPlanCopayOption((String)value); return; }
+      if ("healthPlanCoinsuranceOption".equals(key) && value instanceof String) { this.healthPlanCoinsuranceOption((String)value); return; }
+      if ("healthPlanCoinsuranceOptions".equals(key) && value instanceof String) { this.healthPlanCoinsuranceOption((String)value); return; }
+      if ("healthPlanCopay".equals(key) && value instanceof PriceSpecification) { this.healthPlanCopay((PriceSpecification)value); return; }
+      if ("healthPlanCopays".equals(key) && value instanceof PriceSpecification) { this.healthPlanCopay((PriceSpecification)value); return; }
+      if ("healthPlanPharmacyCategory".equals(key) && value instanceof String) { this.healthPlanPharmacyCategory((String)value); return; }
+      if ("healthPlanPharmacyCategorys".equals(key) && value instanceof String) { this.healthPlanPharmacyCategory((String)value); return; }
       super.fromMap(key, value);
     }
   }

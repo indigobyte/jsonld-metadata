@@ -28,40 +28,6 @@ import java.util.*;
  */
 public class Seat extends Intangible {
   /**
-   * The type/class of the seat.
-   */
-  @JsonIgnore public QualitativeValue getSeatingTypeQualitativeValue() {
-    return (QualitativeValue) getValue("seatingType");
-  }
-  /**
-   * The type/class of the seat.
-   */
-  @JsonIgnore public Collection<QualitativeValue> getSeatingTypeQualitativeValues() {
-    final Object current = myData.get("seatingType");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QualitativeValue>) current;
-    }
-    return Arrays.asList((QualitativeValue) current);
-  }
-  /**
-   * The type/class of the seat.
-   */
-  @JsonIgnore public String getSeatingTypeString() {
-    return (String) getValue("seatingType");
-  }
-  /**
-   * The type/class of the seat.
-   */
-  @JsonIgnore public Collection<String> getSeatingTypeStrings() {
-    final Object current = myData.get("seatingType");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
    * The section location of the reserved seat (e.g. Orchestra).
    */
   @JsonIgnore public String getSeatSection() {
@@ -89,6 +55,40 @@ public class Seat extends Intangible {
    */
   @JsonIgnore public Collection<String> getSeatRows() {
     final Object current = myData.get("seatRow");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * The type/class of the seat.
+   */
+  @JsonIgnore public QualitativeValue getSeatingTypeQualitativeValue() {
+    return (QualitativeValue) getValue("seatingType");
+  }
+  /**
+   * The type/class of the seat.
+   */
+  @JsonIgnore public Collection<QualitativeValue> getSeatingTypeQualitativeValues() {
+    final Object current = myData.get("seatingType");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<QualitativeValue>) current;
+    }
+    return Arrays.asList((QualitativeValue) current);
+  }
+  /**
+   * The type/class of the seat.
+   */
+  @JsonIgnore public String getSeatingTypeString() {
+    return (String) getValue("seatingType");
+  }
+  /**
+   * The type/class of the seat.
+   */
+  @JsonIgnore public Collection<String> getSeatingTypeStrings() {
+    final Object current = myData.get("seatingType");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<String>) current;
@@ -127,6 +127,20 @@ public class Seat extends Intangible {
       return new Seat(myData);
     }
     /**
+     * The section location of the reserved seat (e.g. Orchestra).
+     */
+    @NotNull public Builder seatSection(@NotNull String seatSection) {
+      putValue("seatSection", seatSection);
+      return this;
+    }
+    /**
+     * The row location of the reserved seat (e.g., B).
+     */
+    @NotNull public Builder seatRow(@NotNull String seatRow) {
+      putValue("seatRow", seatRow);
+      return this;
+    }
+    /**
      * The type/class of the seat.
      */
     @NotNull public Builder seatingType(@NotNull QualitativeValue qualitativeValue) {
@@ -148,80 +162,10 @@ public class Seat extends Intangible {
       return this;
     }
     /**
-     * The section location of the reserved seat (e.g. Orchestra).
-     */
-    @NotNull public Builder seatSection(@NotNull String seatSection) {
-      putValue("seatSection", seatSection);
-      return this;
-    }
-    /**
-     * The row location of the reserved seat (e.g., B).
-     */
-    @NotNull public Builder seatRow(@NotNull String seatRow) {
-      putValue("seatRow", seatRow);
-      return this;
-    }
-    /**
      * The location of the reserved seat (e.g., 27).
      */
     @NotNull public Builder seatNumber(@NotNull String seatNumber) {
       putValue("seatNumber", seatNumber);
-      return this;
-    }
-    /**
-     * URL of the item.
-     */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
-      return this;
-    }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     */
-    @NotNull public Builder additionalType(@NotNull String additionalType) {
-      putValue("additionalType", additionalType);
-      return this;
-    }
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     */
-    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
-      putValue("disambiguatingDescription", description);
-      return this;
-    }
-    /**
-     * A description of the item.
-     */
-    @NotNull public Builder description(@NotNull Description description) {
-      putValue("description", description);
-      return this;
-    }
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     */
-    @NotNull public Builder sameAs(@NotNull String sameAs) {
-      putValue("sameAs", sameAs);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
-      return this;
-    }
-    /**
-     * An alias for the item.
-     */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
-      return this;
-    }
-    /**
-     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
-     */
-    @NotNull public Builder image(@NotNull Image image) {
-      putValue("image", image);
       return this;
     }
     /**
@@ -239,24 +183,45 @@ public class Seat extends Intangible {
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * URL of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
+    @NotNull public Builder additionalType(@NotNull String additionalType) {
+      putValue("additionalType", additionalType);
+      return this;
+    }
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     */
+    @NotNull public Builder sameAs(@NotNull String sameAs) {
+      putValue("sameAs", sameAs);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * The name of the item.
+     */
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -287,6 +252,27 @@ public class Seat extends Intangible {
       putValue("subjectOf", event.build());
       return this;
     }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -295,14 +281,14 @@ public class Seat extends Intangible {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("seatingType".equals(key) && value instanceof QualitativeValue) { this.seatingType((QualitativeValue)value); return; }
-      if ("seatingTypes".equals(key) && value instanceof QualitativeValue) { this.seatingType((QualitativeValue)value); return; }
-      if ("seatingType".equals(key) && value instanceof String) { this.seatingType((String)value); return; }
-      if ("seatingTypes".equals(key) && value instanceof String) { this.seatingType((String)value); return; }
       if ("seatSection".equals(key) && value instanceof String) { this.seatSection((String)value); return; }
       if ("seatSections".equals(key) && value instanceof String) { this.seatSection((String)value); return; }
       if ("seatRow".equals(key) && value instanceof String) { this.seatRow((String)value); return; }
       if ("seatRows".equals(key) && value instanceof String) { this.seatRow((String)value); return; }
+      if ("seatingType".equals(key) && value instanceof QualitativeValue) { this.seatingType((QualitativeValue)value); return; }
+      if ("seatingTypes".equals(key) && value instanceof QualitativeValue) { this.seatingType((QualitativeValue)value); return; }
+      if ("seatingType".equals(key) && value instanceof String) { this.seatingType((String)value); return; }
+      if ("seatingTypes".equals(key) && value instanceof String) { this.seatingType((String)value); return; }
       if ("seatNumber".equals(key) && value instanceof String) { this.seatNumber((String)value); return; }
       if ("seatNumbers".equals(key) && value instanceof String) { this.seatNumber((String)value); return; }
       super.fromMap(key, value);

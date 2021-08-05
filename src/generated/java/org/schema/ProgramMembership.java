@@ -79,6 +79,23 @@ public class ProgramMembership extends Intangible implements MemberOf {
     return Arrays.asList((Person) current);
   }
   /**
+   * The organization (airline, travelers' club, etc.) the membership is made with.
+   */
+  @JsonIgnore public Organization getHostingOrganization() {
+    return (Organization) getValue("hostingOrganization");
+  }
+  /**
+   * The organization (airline, travelers' club, etc.) the membership is made with.
+   */
+  @JsonIgnore public Collection<Organization> getHostingOrganizations() {
+    final Object current = myData.get("hostingOrganization");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Organization>) current;
+    }
+    return Arrays.asList((Organization) current);
+  }
+  /**
    * A unique identifier for the membership.
    */
   @JsonIgnore public String getMembershipNumber() {
@@ -180,23 +197,6 @@ public class ProgramMembership extends Intangible implements MemberOf {
     }
     return Arrays.asList((String) current);
   }
-  /**
-   * The organization (airline, travelers' club, etc.) the membership is made with.
-   */
-  @JsonIgnore public Organization getHostingOrganization() {
-    return (Organization) getValue("hostingOrganization");
-  }
-  /**
-   * The organization (airline, travelers' club, etc.) the membership is made with.
-   */
-  @JsonIgnore public Collection<Organization> getHostingOrganizations() {
-    final Object current = myData.get("hostingOrganization");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
-    }
-    return Arrays.asList((Organization) current);
-  }
   protected ProgramMembership(java.util.Map<String,Object> data) {
     super(data);
   }
@@ -247,6 +247,20 @@ public class ProgramMembership extends Intangible implements MemberOf {
       return this;
     }
     /**
+     * The organization (airline, travelers' club, etc.) the membership is made with.
+     */
+    @NotNull public Builder hostingOrganization(@NotNull Organization organization) {
+      putValue("hostingOrganization", organization);
+      return this;
+    }
+    /**
+     * The organization (airline, travelers' club, etc.) the membership is made with.
+     */
+    @NotNull public Builder hostingOrganization(@NotNull Organization.Builder organization) {
+      putValue("hostingOrganization", organization.build());
+      return this;
+    }
+    /**
      * A unique identifier for the membership.
      */
     @NotNull public Builder membershipNumber(@NotNull String membershipNumber) {
@@ -289,17 +303,24 @@ public class ProgramMembership extends Intangible implements MemberOf {
       return this;
     }
     /**
-     * The organization (airline, travelers' club, etc.) the membership is made with.
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
-    @NotNull public Builder hostingOrganization(@NotNull Organization organization) {
-      putValue("hostingOrganization", organization);
+    @NotNull public Builder potentialAction(@NotNull Action action) {
+      putValue("potentialAction", action);
       return this;
     }
     /**
-     * The organization (airline, travelers' club, etc.) the membership is made with.
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
-    @NotNull public Builder hostingOrganization(@NotNull Organization.Builder organization) {
-      putValue("hostingOrganization", organization.build());
+    @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
+      putValue("potentialAction", action.build());
+      return this;
+    }
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     */
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
@@ -317,31 +338,10 @@ public class ProgramMembership extends Intangible implements MemberOf {
       return this;
     }
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     */
-    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
-      putValue("disambiguatingDescription", description);
-      return this;
-    }
-    /**
-     * A description of the item.
-     */
-    @NotNull public Builder description(@NotNull Description description) {
-      putValue("description", description);
-      return this;
-    }
-    /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      */
     @NotNull public Builder sameAs(@NotNull String sameAs) {
       putValue("sameAs", sameAs);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
       return this;
     }
     /**
@@ -352,45 +352,10 @@ public class ProgramMembership extends Intangible implements MemberOf {
       return this;
     }
     /**
-     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
+     * The name of the item.
      */
-    @NotNull public Builder image(@NotNull Image image) {
-      putValue("image", image);
-      return this;
-    }
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     */
-    @NotNull public Builder potentialAction(@NotNull Action action) {
-      putValue("potentialAction", action);
-      return this;
-    }
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     */
-    @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
-      putValue("potentialAction", action.build());
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -421,6 +386,27 @@ public class ProgramMembership extends Intangible implements MemberOf {
       putValue("subjectOf", event.build());
       return this;
     }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -435,6 +421,8 @@ public class ProgramMembership extends Intangible implements MemberOf {
       if ("members".equals(key) && value instanceof Organization) { this.member((Organization)value); return; }
       if ("member".equals(key) && value instanceof Person) { this.member((Person)value); return; }
       if ("members".equals(key) && value instanceof Person) { this.member((Person)value); return; }
+      if ("hostingOrganization".equals(key) && value instanceof Organization) { this.hostingOrganization((Organization)value); return; }
+      if ("hostingOrganizations".equals(key) && value instanceof Organization) { this.hostingOrganization((Organization)value); return; }
       if ("membershipNumber".equals(key) && value instanceof String) { this.membershipNumber((String)value); return; }
       if ("membershipNumbers".equals(key) && value instanceof String) { this.membershipNumber((String)value); return; }
       if ("membershipPointsEarned".equals(key) && value instanceof Integer) { this.membershipPointsEarned((Integer)value); return; }
@@ -447,8 +435,6 @@ public class ProgramMembership extends Intangible implements MemberOf {
       if ("membershipPointsEarneds".equals(key) && value instanceof Double) { this.membershipPointsEarned((Double)value); return; }
       if ("membershipPointsEarned".equals(key) && value instanceof String) { this.membershipPointsEarned((String)value); return; }
       if ("membershipPointsEarneds".equals(key) && value instanceof String) { this.membershipPointsEarned((String)value); return; }
-      if ("hostingOrganization".equals(key) && value instanceof Organization) { this.hostingOrganization((Organization)value); return; }
-      if ("hostingOrganizations".equals(key) && value instanceof Organization) { this.hostingOrganization((Organization)value); return; }
       super.fromMap(key, value);
     }
   }

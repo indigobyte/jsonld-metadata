@@ -24,43 +24,9 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * A structured value providing information about when a certain organization or person owned a certain product.Source: http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass
+ * A structured value providing information about when a certain organization or person owned a certain product.
  */
 public class OwnershipInfo extends StructuredValue {
-  /**
-   * The product that this structured value is referring to.
-   */
-  @JsonIgnore public Product getTypeOfGoodProduct() {
-    return (Product) getValue("typeOfGood");
-  }
-  /**
-   * The product that this structured value is referring to.
-   */
-  @JsonIgnore public Collection<Product> getTypeOfGoodProducts() {
-    final Object current = myData.get("typeOfGood");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Product>) current;
-    }
-    return Arrays.asList((Product) current);
-  }
-  /**
-   * The product that this structured value is referring to.
-   */
-  @JsonIgnore public Service getTypeOfGoodService() {
-    return (Service) getValue("typeOfGood");
-  }
-  /**
-   * The product that this structured value is referring to.
-   */
-  @JsonIgnore public Collection<Service> getTypeOfGoodServices() {
-    final Object current = myData.get("typeOfGood");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Service>) current;
-    }
-    return Arrays.asList((Service) current);
-  }
   /**
    * The organization or person from which the product was acquired.
    */
@@ -96,23 +62,6 @@ public class OwnershipInfo extends StructuredValue {
     return Arrays.asList((Person) current);
   }
   /**
-   * The date and time of obtaining the product.
-   */
-  @JsonIgnore public java.util.Date getOwnedFrom() {
-    return (java.util.Date) getValue("ownedFrom");
-  }
-  /**
-   * The date and time of obtaining the product.
-   */
-  @JsonIgnore public Collection<java.util.Date> getOwnedFroms() {
-    final Object current = myData.get("ownedFrom");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
-    }
-    return Arrays.asList((java.util.Date) current);
-  }
-  /**
    * The date and time of giving up ownership on the product.
    */
   @JsonIgnore public java.util.Date getOwnedThrough() {
@@ -123,6 +72,57 @@ public class OwnershipInfo extends StructuredValue {
    */
   @JsonIgnore public Collection<java.util.Date> getOwnedThroughs() {
     final Object current = myData.get("ownedThrough");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<java.util.Date>) current;
+    }
+    return Arrays.asList((java.util.Date) current);
+  }
+  /**
+   * The product that this structured value is referring to.
+   */
+  @JsonIgnore public Product getTypeOfGoodProduct() {
+    return (Product) getValue("typeOfGood");
+  }
+  /**
+   * The product that this structured value is referring to.
+   */
+  @JsonIgnore public Collection<Product> getTypeOfGoodProducts() {
+    final Object current = myData.get("typeOfGood");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Product>) current;
+    }
+    return Arrays.asList((Product) current);
+  }
+  /**
+   * The product that this structured value is referring to.
+   */
+  @JsonIgnore public Service getTypeOfGoodService() {
+    return (Service) getValue("typeOfGood");
+  }
+  /**
+   * The product that this structured value is referring to.
+   */
+  @JsonIgnore public Collection<Service> getTypeOfGoodServices() {
+    final Object current = myData.get("typeOfGood");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Service>) current;
+    }
+    return Arrays.asList((Service) current);
+  }
+  /**
+   * The date and time of obtaining the product.
+   */
+  @JsonIgnore public java.util.Date getOwnedFrom() {
+    return (java.util.Date) getValue("ownedFrom");
+  }
+  /**
+   * The date and time of obtaining the product.
+   */
+  @JsonIgnore public Collection<java.util.Date> getOwnedFroms() {
+    final Object current = myData.get("ownedFrom");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<java.util.Date>) current;
@@ -142,34 +142,6 @@ public class OwnershipInfo extends StructuredValue {
     }
     @NotNull public OwnershipInfo build() {
       return new OwnershipInfo(myData);
-    }
-    /**
-     * The product that this structured value is referring to.
-     */
-    @NotNull public Builder typeOfGood(@NotNull Product product) {
-      putValue("typeOfGood", product);
-      return this;
-    }
-    /**
-     * The product that this structured value is referring to.
-     */
-    @NotNull public Builder typeOfGood(@NotNull Product.Builder product) {
-      putValue("typeOfGood", product.build());
-      return this;
-    }
-    /**
-     * The product that this structured value is referring to.
-     */
-    @NotNull public Builder typeOfGood(@NotNull Service service) {
-      putValue("typeOfGood", service);
-      return this;
-    }
-    /**
-     * The product that this structured value is referring to.
-     */
-    @NotNull public Builder typeOfGood(@NotNull Service.Builder service) {
-      putValue("typeOfGood", service.build());
-      return this;
     }
     /**
      * The organization or person from which the product was acquired.
@@ -200,13 +172,6 @@ public class OwnershipInfo extends StructuredValue {
       return this;
     }
     /**
-     * The date and time of obtaining the product.
-     */
-    @NotNull public Builder ownedFrom(@NotNull java.util.Date date) {
-      putValue("ownedFrom", date);
-      return this;
-    }
-    /**
      * The date and time of giving up ownership on the product.
      */
     @NotNull public Builder ownedThrough(@NotNull java.util.Date date) {
@@ -214,59 +179,38 @@ public class OwnershipInfo extends StructuredValue {
       return this;
     }
     /**
-     * URL of the item.
+     * The product that this structured value is referring to.
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
+    @NotNull public Builder typeOfGood(@NotNull Product product) {
+      putValue("typeOfGood", product);
       return this;
     }
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * The product that this structured value is referring to.
      */
-    @NotNull public Builder additionalType(@NotNull String additionalType) {
-      putValue("additionalType", additionalType);
+    @NotNull public Builder typeOfGood(@NotNull Product.Builder product) {
+      putValue("typeOfGood", product.build());
       return this;
     }
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * The product that this structured value is referring to.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
-      putValue("disambiguatingDescription", description);
+    @NotNull public Builder typeOfGood(@NotNull Service service) {
+      putValue("typeOfGood", service);
       return this;
     }
     /**
-     * A description of the item.
+     * The product that this structured value is referring to.
      */
-    @NotNull public Builder description(@NotNull Description description) {
-      putValue("description", description);
+    @NotNull public Builder typeOfGood(@NotNull Service.Builder service) {
+      putValue("typeOfGood", service.build());
       return this;
     }
     /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     * The date and time of obtaining the product.
      */
-    @NotNull public Builder sameAs(@NotNull String sameAs) {
-      putValue("sameAs", sameAs);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
-      return this;
-    }
-    /**
-     * An alias for the item.
-     */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
-      return this;
-    }
-    /**
-     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
-     */
-    @NotNull public Builder image(@NotNull Image image) {
-      putValue("image", image);
+    @NotNull public Builder ownedFrom(@NotNull java.util.Date date) {
+      putValue("ownedFrom", date);
       return this;
     }
     /**
@@ -284,24 +228,45 @@ public class OwnershipInfo extends StructuredValue {
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * URL of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
+    @NotNull public Builder additionalType(@NotNull String additionalType) {
+      putValue("additionalType", additionalType);
+      return this;
+    }
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     */
+    @NotNull public Builder sameAs(@NotNull String sameAs) {
+      putValue("sameAs", sameAs);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * The name of the item.
+     */
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -332,6 +297,27 @@ public class OwnershipInfo extends StructuredValue {
       putValue("subjectOf", event.build());
       return this;
     }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -340,18 +326,18 @@ public class OwnershipInfo extends StructuredValue {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("typeOfGood".equals(key) && value instanceof Product) { this.typeOfGood((Product)value); return; }
-      if ("typeOfGoods".equals(key) && value instanceof Product) { this.typeOfGood((Product)value); return; }
-      if ("typeOfGood".equals(key) && value instanceof Service) { this.typeOfGood((Service)value); return; }
-      if ("typeOfGoods".equals(key) && value instanceof Service) { this.typeOfGood((Service)value); return; }
       if ("acquiredFrom".equals(key) && value instanceof Organization) { this.acquiredFrom((Organization)value); return; }
       if ("acquiredFroms".equals(key) && value instanceof Organization) { this.acquiredFrom((Organization)value); return; }
       if ("acquiredFrom".equals(key) && value instanceof Person) { this.acquiredFrom((Person)value); return; }
       if ("acquiredFroms".equals(key) && value instanceof Person) { this.acquiredFrom((Person)value); return; }
-      if ("ownedFrom".equals(key) && value instanceof java.util.Date) { this.ownedFrom((java.util.Date)value); return; }
-      if ("ownedFroms".equals(key) && value instanceof java.util.Date) { this.ownedFrom((java.util.Date)value); return; }
       if ("ownedThrough".equals(key) && value instanceof java.util.Date) { this.ownedThrough((java.util.Date)value); return; }
       if ("ownedThroughs".equals(key) && value instanceof java.util.Date) { this.ownedThrough((java.util.Date)value); return; }
+      if ("typeOfGood".equals(key) && value instanceof Product) { this.typeOfGood((Product)value); return; }
+      if ("typeOfGoods".equals(key) && value instanceof Product) { this.typeOfGood((Product)value); return; }
+      if ("typeOfGood".equals(key) && value instanceof Service) { this.typeOfGood((Service)value); return; }
+      if ("typeOfGoods".equals(key) && value instanceof Service) { this.typeOfGood((Service)value); return; }
+      if ("ownedFrom".equals(key) && value instanceof java.util.Date) { this.ownedFrom((java.util.Date)value); return; }
+      if ("ownedFroms".equals(key) && value instanceof java.util.Date) { this.ownedFrom((java.util.Date)value); return; }
       super.fromMap(key, value);
     }
   }

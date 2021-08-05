@@ -24,7 +24,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * Indicates a legal jurisdiction, e.g. of some legislation, or where some government service is based.Source: https://github.com/schemaorg/schemaorg/issues/2534
+ * Indicates a legal jurisdiction, e.g. of some legislation, or where some government service is based.
  */
 public interface Jurisdiction {
 }

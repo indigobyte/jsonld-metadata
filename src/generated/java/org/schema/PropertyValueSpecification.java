@@ -24,25 +24,178 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * A Property value specification.Source: http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_ActionCollabClass
+ * A Property value specification.
  */
 public class PropertyValueSpecification extends Intangible {
   /**
-   * Specifies a regular expression for testing literal values according to the HTML spec.
+   * Specifies the minimum allowed range for number of characters in a literal value.
    */
-  @JsonIgnore public String getValuePattern() {
-    return (String) getValue("valuePattern");
+  @JsonIgnore public Integer getValueMinLengthInteger() {
+    return (Integer) getValue("valueMinLength");
   }
   /**
-   * Specifies a regular expression for testing literal values according to the HTML spec.
+   * Specifies the minimum allowed range for number of characters in a literal value.
    */
-  @JsonIgnore public Collection<String> getValuePatterns() {
-    final Object current = myData.get("valuePattern");
+  @JsonIgnore public Collection<Integer> getValueMinLengthIntegers() {
+    final Object current = myData.get("valueMinLength");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Integer>) current;
+    }
+    return Arrays.asList((Integer) current);
+  }
+  /**
+   * Specifies the minimum allowed range for number of characters in a literal value.
+   */
+  @JsonIgnore public Long getValueMinLengthLong() {
+    return (Long) getValue("valueMinLength");
+  }
+  /**
+   * Specifies the minimum allowed range for number of characters in a literal value.
+   */
+  @JsonIgnore public Collection<Long> getValueMinLengthLongs() {
+    final Object current = myData.get("valueMinLength");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Long>) current;
+    }
+    return Arrays.asList((Long) current);
+  }
+  /**
+   * Specifies the minimum allowed range for number of characters in a literal value.
+   */
+  @JsonIgnore public Float getValueMinLengthFloat() {
+    return (Float) getValue("valueMinLength");
+  }
+  /**
+   * Specifies the minimum allowed range for number of characters in a literal value.
+   */
+  @JsonIgnore public Collection<Float> getValueMinLengthFloats() {
+    final Object current = myData.get("valueMinLength");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Float>) current;
+    }
+    return Arrays.asList((Float) current);
+  }
+  /**
+   * Specifies the minimum allowed range for number of characters in a literal value.
+   */
+  @JsonIgnore public Double getValueMinLengthDouble() {
+    return (Double) getValue("valueMinLength");
+  }
+  /**
+   * Specifies the minimum allowed range for number of characters in a literal value.
+   */
+  @JsonIgnore public Collection<Double> getValueMinLengthDoubles() {
+    final Object current = myData.get("valueMinLength");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Double>) current;
+    }
+    return Arrays.asList((Double) current);
+  }
+  /**
+   * Specifies the minimum allowed range for number of characters in a literal value.
+   */
+  @JsonIgnore public String getValueMinLengthString() {
+    return (String) getValue("valueMinLength");
+  }
+  /**
+   * Specifies the minimum allowed range for number of characters in a literal value.
+   */
+  @JsonIgnore public Collection<String> getValueMinLengthStrings() {
+    final Object current = myData.get("valueMinLength");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<String>) current;
     }
     return Arrays.asList((String) current);
+  }
+  /**
+   * Indicates the name of the PropertyValueSpecification to be used in URL templates and form encoding in a manner analogous to HTML's input@name.
+   */
+  @JsonIgnore public String getValueName() {
+    return (String) getValue("valueName");
+  }
+  /**
+   * Indicates the name of the PropertyValueSpecification to be used in URL templates and form encoding in a manner analogous to HTML's input@name.
+   */
+  @JsonIgnore public Collection<String> getValueNames() {
+    final Object current = myData.get("valueName");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * Whether or not a property is mutable.  Default is false. Specifying this for a property that also has a value makes it act similar to a &quot;hidden&quot; input in an HTML form.
+   */
+  @JsonIgnore public Boolean getReadonlyValue() {
+    return (Boolean) getValue("readonlyValue");
+  }
+  /**
+   * Whether or not a property is mutable.  Default is false. Specifying this for a property that also has a value makes it act similar to a &quot;hidden&quot; input in an HTML form.
+   */
+  @JsonIgnore public Collection<Boolean> getReadonlyValues() {
+    final Object current = myData.get("readonlyValue");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Boolean>) current;
+    }
+    return Arrays.asList((Boolean) current);
+  }
+  /**
+   * Whether multiple values are allowed for the property.  Default is false.
+   */
+  @JsonIgnore public Boolean getMultipleValues() {
+    return (Boolean) getValue("multipleValues");
+  }
+  /**
+   * Whether multiple values are allowed for the property.  Default is false.
+   */
+  @JsonIgnore public Collection<Boolean> getMultipleValuess() {
+    final Object current = myData.get("multipleValues");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Boolean>) current;
+    }
+    return Arrays.asList((Boolean) current);
+  }
+  /**
+   * The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.
+   */
+  @JsonIgnore public String getDefaultValueString() {
+    return (String) getValue("defaultValue");
+  }
+  /**
+   * The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.
+   */
+  @JsonIgnore public Collection<String> getDefaultValueStrings() {
+    final Object current = myData.get("defaultValue");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.
+   */
+  @JsonIgnore public Thing getDefaultValueThing() {
+    return (Thing) getValue("defaultValue");
+  }
+  /**
+   * The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.
+   */
+  @JsonIgnore public Collection<Thing> getDefaultValueThings() {
+    final Object current = myData.get("defaultValue");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Thing>) current;
+    }
+    return Arrays.asList((Thing) current);
   }
   /**
    * The upper value of some characteristic or property.
@@ -123,108 +276,6 @@ public class PropertyValueSpecification extends Intangible {
    */
   @JsonIgnore public Collection<String> getMaxValueStrings() {
     final Object current = myData.get("maxValue");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * Whether multiple values are allowed for the property.  Default is false.
-   */
-  @JsonIgnore public Boolean getMultipleValues() {
-    return (Boolean) getValue("multipleValues");
-  }
-  /**
-   * Whether multiple values are allowed for the property.  Default is false.
-   */
-  @JsonIgnore public Collection<Boolean> getMultipleValuess() {
-    final Object current = myData.get("multipleValues");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Boolean>) current;
-    }
-    return Arrays.asList((Boolean) current);
-  }
-  /**
-   * The lower value of some characteristic or property.
-   */
-  @JsonIgnore public Integer getMinValueInteger() {
-    return (Integer) getValue("minValue");
-  }
-  /**
-   * The lower value of some characteristic or property.
-   */
-  @JsonIgnore public Collection<Integer> getMinValueIntegers() {
-    final Object current = myData.get("minValue");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
-    }
-    return Arrays.asList((Integer) current);
-  }
-  /**
-   * The lower value of some characteristic or property.
-   */
-  @JsonIgnore public Long getMinValueLong() {
-    return (Long) getValue("minValue");
-  }
-  /**
-   * The lower value of some characteristic or property.
-   */
-  @JsonIgnore public Collection<Long> getMinValueLongs() {
-    final Object current = myData.get("minValue");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
-    }
-    return Arrays.asList((Long) current);
-  }
-  /**
-   * The lower value of some characteristic or property.
-   */
-  @JsonIgnore public Float getMinValueFloat() {
-    return (Float) getValue("minValue");
-  }
-  /**
-   * The lower value of some characteristic or property.
-   */
-  @JsonIgnore public Collection<Float> getMinValueFloats() {
-    final Object current = myData.get("minValue");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
-    }
-    return Arrays.asList((Float) current);
-  }
-  /**
-   * The lower value of some characteristic or property.
-   */
-  @JsonIgnore public Double getMinValueDouble() {
-    return (Double) getValue("minValue");
-  }
-  /**
-   * The lower value of some characteristic or property.
-   */
-  @JsonIgnore public Collection<Double> getMinValueDoubles() {
-    final Object current = myData.get("minValue");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
-    }
-    return Arrays.asList((Double) current);
-  }
-  /**
-   * The lower value of some characteristic or property.
-   */
-  @JsonIgnore public String getMinValueString() {
-    return (String) getValue("minValue");
-  }
-  /**
-   * The lower value of some characteristic or property.
-   */
-  @JsonIgnore public Collection<String> getMinValueStrings() {
-    final Object current = myData.get("minValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<String>) current;
@@ -317,16 +368,118 @@ public class PropertyValueSpecification extends Intangible {
     return Arrays.asList((String) current);
   }
   /**
-   * Indicates the name of the PropertyValueSpecification to be used in URL templates and form encoding in a manner analogous to HTML's input@name.
+   * Whether the property must be filled in to complete the action.  Default is false.
    */
-  @JsonIgnore public String getValueName() {
-    return (String) getValue("valueName");
+  @JsonIgnore public Boolean getValueRequired() {
+    return (Boolean) getValue("valueRequired");
   }
   /**
-   * Indicates the name of the PropertyValueSpecification to be used in URL templates and form encoding in a manner analogous to HTML's input@name.
+   * Whether the property must be filled in to complete the action.  Default is false.
    */
-  @JsonIgnore public Collection<String> getValueNames() {
-    final Object current = myData.get("valueName");
+  @JsonIgnore public Collection<Boolean> getValueRequireds() {
+    final Object current = myData.get("valueRequired");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Boolean>) current;
+    }
+    return Arrays.asList((Boolean) current);
+  }
+  /**
+   * Specifies a regular expression for testing literal values according to the HTML spec.
+   */
+  @JsonIgnore public String getValuePattern() {
+    return (String) getValue("valuePattern");
+  }
+  /**
+   * Specifies a regular expression for testing literal values according to the HTML spec.
+   */
+  @JsonIgnore public Collection<String> getValuePatterns() {
+    final Object current = myData.get("valuePattern");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * The lower value of some characteristic or property.
+   */
+  @JsonIgnore public Integer getMinValueInteger() {
+    return (Integer) getValue("minValue");
+  }
+  /**
+   * The lower value of some characteristic or property.
+   */
+  @JsonIgnore public Collection<Integer> getMinValueIntegers() {
+    final Object current = myData.get("minValue");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Integer>) current;
+    }
+    return Arrays.asList((Integer) current);
+  }
+  /**
+   * The lower value of some characteristic or property.
+   */
+  @JsonIgnore public Long getMinValueLong() {
+    return (Long) getValue("minValue");
+  }
+  /**
+   * The lower value of some characteristic or property.
+   */
+  @JsonIgnore public Collection<Long> getMinValueLongs() {
+    final Object current = myData.get("minValue");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Long>) current;
+    }
+    return Arrays.asList((Long) current);
+  }
+  /**
+   * The lower value of some characteristic or property.
+   */
+  @JsonIgnore public Float getMinValueFloat() {
+    return (Float) getValue("minValue");
+  }
+  /**
+   * The lower value of some characteristic or property.
+   */
+  @JsonIgnore public Collection<Float> getMinValueFloats() {
+    final Object current = myData.get("minValue");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Float>) current;
+    }
+    return Arrays.asList((Float) current);
+  }
+  /**
+   * The lower value of some characteristic or property.
+   */
+  @JsonIgnore public Double getMinValueDouble() {
+    return (Double) getValue("minValue");
+  }
+  /**
+   * The lower value of some characteristic or property.
+   */
+  @JsonIgnore public Collection<Double> getMinValueDoubles() {
+    final Object current = myData.get("minValue");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Double>) current;
+    }
+    return Arrays.asList((Double) current);
+  }
+  /**
+   * The lower value of some characteristic or property.
+   */
+  @JsonIgnore public String getMinValueString() {
+    return (String) getValue("minValue");
+  }
+  /**
+   * The lower value of some characteristic or property.
+   */
+  @JsonIgnore public Collection<String> getMinValueStrings() {
+    final Object current = myData.get("minValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<String>) current;
@@ -418,159 +571,6 @@ public class PropertyValueSpecification extends Intangible {
     }
     return Arrays.asList((String) current);
   }
-  /**
-   * Whether or not a property is mutable.  Default is false. Specifying this for a property that also has a value makes it act similar to a &quot;hidden&quot; input in an HTML form.
-   */
-  @JsonIgnore public Boolean getReadonlyValue() {
-    return (Boolean) getValue("readonlyValue");
-  }
-  /**
-   * Whether or not a property is mutable.  Default is false. Specifying this for a property that also has a value makes it act similar to a &quot;hidden&quot; input in an HTML form.
-   */
-  @JsonIgnore public Collection<Boolean> getReadonlyValues() {
-    final Object current = myData.get("readonlyValue");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Boolean>) current;
-    }
-    return Arrays.asList((Boolean) current);
-  }
-  /**
-   * The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.
-   */
-  @JsonIgnore public String getDefaultValueString() {
-    return (String) getValue("defaultValue");
-  }
-  /**
-   * The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.
-   */
-  @JsonIgnore public Collection<String> getDefaultValueStrings() {
-    final Object current = myData.get("defaultValue");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.
-   */
-  @JsonIgnore public Thing getDefaultValueThing() {
-    return (Thing) getValue("defaultValue");
-  }
-  /**
-   * The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.
-   */
-  @JsonIgnore public Collection<Thing> getDefaultValueThings() {
-    final Object current = myData.get("defaultValue");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Thing>) current;
-    }
-    return Arrays.asList((Thing) current);
-  }
-  /**
-   * Whether the property must be filled in to complete the action.  Default is false.
-   */
-  @JsonIgnore public Boolean getValueRequired() {
-    return (Boolean) getValue("valueRequired");
-  }
-  /**
-   * Whether the property must be filled in to complete the action.  Default is false.
-   */
-  @JsonIgnore public Collection<Boolean> getValueRequireds() {
-    final Object current = myData.get("valueRequired");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Boolean>) current;
-    }
-    return Arrays.asList((Boolean) current);
-  }
-  /**
-   * Specifies the minimum allowed range for number of characters in a literal value.
-   */
-  @JsonIgnore public Integer getValueMinLengthInteger() {
-    return (Integer) getValue("valueMinLength");
-  }
-  /**
-   * Specifies the minimum allowed range for number of characters in a literal value.
-   */
-  @JsonIgnore public Collection<Integer> getValueMinLengthIntegers() {
-    final Object current = myData.get("valueMinLength");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
-    }
-    return Arrays.asList((Integer) current);
-  }
-  /**
-   * Specifies the minimum allowed range for number of characters in a literal value.
-   */
-  @JsonIgnore public Long getValueMinLengthLong() {
-    return (Long) getValue("valueMinLength");
-  }
-  /**
-   * Specifies the minimum allowed range for number of characters in a literal value.
-   */
-  @JsonIgnore public Collection<Long> getValueMinLengthLongs() {
-    final Object current = myData.get("valueMinLength");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
-    }
-    return Arrays.asList((Long) current);
-  }
-  /**
-   * Specifies the minimum allowed range for number of characters in a literal value.
-   */
-  @JsonIgnore public Float getValueMinLengthFloat() {
-    return (Float) getValue("valueMinLength");
-  }
-  /**
-   * Specifies the minimum allowed range for number of characters in a literal value.
-   */
-  @JsonIgnore public Collection<Float> getValueMinLengthFloats() {
-    final Object current = myData.get("valueMinLength");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
-    }
-    return Arrays.asList((Float) current);
-  }
-  /**
-   * Specifies the minimum allowed range for number of characters in a literal value.
-   */
-  @JsonIgnore public Double getValueMinLengthDouble() {
-    return (Double) getValue("valueMinLength");
-  }
-  /**
-   * Specifies the minimum allowed range for number of characters in a literal value.
-   */
-  @JsonIgnore public Collection<Double> getValueMinLengthDoubles() {
-    final Object current = myData.get("valueMinLength");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
-    }
-    return Arrays.asList((Double) current);
-  }
-  /**
-   * Specifies the minimum allowed range for number of characters in a literal value.
-   */
-  @JsonIgnore public String getValueMinLengthString() {
-    return (String) getValue("valueMinLength");
-  }
-  /**
-   * Specifies the minimum allowed range for number of characters in a literal value.
-   */
-  @JsonIgnore public Collection<String> getValueMinLengthStrings() {
-    final Object current = myData.get("valueMinLength");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
   protected PropertyValueSpecification(java.util.Map<String,Object> data) {
     super(data);
   }
@@ -586,10 +586,80 @@ public class PropertyValueSpecification extends Intangible {
       return new PropertyValueSpecification(myData);
     }
     /**
-     * Specifies a regular expression for testing literal values according to the HTML spec.
+     * Specifies the minimum allowed range for number of characters in a literal value.
      */
-    @NotNull public Builder valuePattern(@NotNull String valuePattern) {
-      putValue("valuePattern", valuePattern);
+    @NotNull public Builder valueMinLength(@NotNull Integer integer) {
+      putValue("valueMinLength", integer);
+      return this;
+    }
+    /**
+     * Specifies the minimum allowed range for number of characters in a literal value.
+     */
+    @NotNull public Builder valueMinLength(@NotNull Long valueMinLength) {
+      putValue("valueMinLength", valueMinLength);
+      return this;
+    }
+    /**
+     * Specifies the minimum allowed range for number of characters in a literal value.
+     */
+    @NotNull public Builder valueMinLength(@NotNull Float valueMinLength) {
+      putValue("valueMinLength", valueMinLength);
+      return this;
+    }
+    /**
+     * Specifies the minimum allowed range for number of characters in a literal value.
+     */
+    @NotNull public Builder valueMinLength(@NotNull Double valueMinLength) {
+      putValue("valueMinLength", valueMinLength);
+      return this;
+    }
+    /**
+     * Specifies the minimum allowed range for number of characters in a literal value.
+     */
+    @NotNull public Builder valueMinLength(@NotNull String valueMinLength) {
+      putValue("valueMinLength", valueMinLength);
+      return this;
+    }
+    /**
+     * Indicates the name of the PropertyValueSpecification to be used in URL templates and form encoding in a manner analogous to HTML's input@name.
+     */
+    @NotNull public Builder valueName(@NotNull String valueName) {
+      putValue("valueName", valueName);
+      return this;
+    }
+    /**
+     * Whether or not a property is mutable.  Default is false. Specifying this for a property that also has a value makes it act similar to a &quot;hidden&quot; input in an HTML form.
+     */
+    @NotNull public Builder readonlyValue(@NotNull Boolean readonlyValue) {
+      putValue("readonlyValue", readonlyValue);
+      return this;
+    }
+    /**
+     * Whether multiple values are allowed for the property.  Default is false.
+     */
+    @NotNull public Builder multipleValues(@NotNull Boolean multipleValues) {
+      putValue("multipleValues", multipleValues);
+      return this;
+    }
+    /**
+     * The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.
+     */
+    @NotNull public Builder defaultValue(@NotNull String defaultValue) {
+      putValue("defaultValue", defaultValue);
+      return this;
+    }
+    /**
+     * The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.
+     */
+    @NotNull public Builder defaultValue(@NotNull Thing thing) {
+      putValue("defaultValue", thing);
+      return this;
+    }
+    /**
+     * The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.
+     */
+    @NotNull public Builder defaultValue(@NotNull Thing.Builder thing) {
+      putValue("defaultValue", thing.build());
       return this;
     }
     /**
@@ -628,10 +698,52 @@ public class PropertyValueSpecification extends Intangible {
       return this;
     }
     /**
-     * Whether multiple values are allowed for the property.  Default is false.
+     * The stepValue attribute indicates the granularity that is expected (and required) of the value in a PropertyValueSpecification.
      */
-    @NotNull public Builder multipleValues(@NotNull Boolean multipleValues) {
-      putValue("multipleValues", multipleValues);
+    @NotNull public Builder stepValue(@NotNull Integer integer) {
+      putValue("stepValue", integer);
+      return this;
+    }
+    /**
+     * The stepValue attribute indicates the granularity that is expected (and required) of the value in a PropertyValueSpecification.
+     */
+    @NotNull public Builder stepValue(@NotNull Long stepValue) {
+      putValue("stepValue", stepValue);
+      return this;
+    }
+    /**
+     * The stepValue attribute indicates the granularity that is expected (and required) of the value in a PropertyValueSpecification.
+     */
+    @NotNull public Builder stepValue(@NotNull Float stepValue) {
+      putValue("stepValue", stepValue);
+      return this;
+    }
+    /**
+     * The stepValue attribute indicates the granularity that is expected (and required) of the value in a PropertyValueSpecification.
+     */
+    @NotNull public Builder stepValue(@NotNull Double stepValue) {
+      putValue("stepValue", stepValue);
+      return this;
+    }
+    /**
+     * The stepValue attribute indicates the granularity that is expected (and required) of the value in a PropertyValueSpecification.
+     */
+    @NotNull public Builder stepValue(@NotNull String stepValue) {
+      putValue("stepValue", stepValue);
+      return this;
+    }
+    /**
+     * Whether the property must be filled in to complete the action.  Default is false.
+     */
+    @NotNull public Builder valueRequired(@NotNull Boolean valueRequired) {
+      putValue("valueRequired", valueRequired);
+      return this;
+    }
+    /**
+     * Specifies a regular expression for testing literal values according to the HTML spec.
+     */
+    @NotNull public Builder valuePattern(@NotNull String valuePattern) {
+      putValue("valuePattern", valuePattern);
       return this;
     }
     /**
@@ -670,48 +782,6 @@ public class PropertyValueSpecification extends Intangible {
       return this;
     }
     /**
-     * The stepValue attribute indicates the granularity that is expected (and required) of the value in a PropertyValueSpecification.
-     */
-    @NotNull public Builder stepValue(@NotNull Integer integer) {
-      putValue("stepValue", integer);
-      return this;
-    }
-    /**
-     * The stepValue attribute indicates the granularity that is expected (and required) of the value in a PropertyValueSpecification.
-     */
-    @NotNull public Builder stepValue(@NotNull Long stepValue) {
-      putValue("stepValue", stepValue);
-      return this;
-    }
-    /**
-     * The stepValue attribute indicates the granularity that is expected (and required) of the value in a PropertyValueSpecification.
-     */
-    @NotNull public Builder stepValue(@NotNull Float stepValue) {
-      putValue("stepValue", stepValue);
-      return this;
-    }
-    /**
-     * The stepValue attribute indicates the granularity that is expected (and required) of the value in a PropertyValueSpecification.
-     */
-    @NotNull public Builder stepValue(@NotNull Double stepValue) {
-      putValue("stepValue", stepValue);
-      return this;
-    }
-    /**
-     * The stepValue attribute indicates the granularity that is expected (and required) of the value in a PropertyValueSpecification.
-     */
-    @NotNull public Builder stepValue(@NotNull String stepValue) {
-      putValue("stepValue", stepValue);
-      return this;
-    }
-    /**
-     * Indicates the name of the PropertyValueSpecification to be used in URL templates and form encoding in a manner analogous to HTML's input@name.
-     */
-    @NotNull public Builder valueName(@NotNull String valueName) {
-      putValue("valueName", valueName);
-      return this;
-    }
-    /**
      * Specifies the allowed range for number of characters in a literal value.
      */
     @NotNull public Builder valueMaxLength(@NotNull Integer integer) {
@@ -747,73 +817,24 @@ public class PropertyValueSpecification extends Intangible {
       return this;
     }
     /**
-     * Whether or not a property is mutable.  Default is false. Specifying this for a property that also has a value makes it act similar to a &quot;hidden&quot; input in an HTML form.
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
-    @NotNull public Builder readonlyValue(@NotNull Boolean readonlyValue) {
-      putValue("readonlyValue", readonlyValue);
+    @NotNull public Builder potentialAction(@NotNull Action action) {
+      putValue("potentialAction", action);
       return this;
     }
     /**
-     * The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
-    @NotNull public Builder defaultValue(@NotNull String defaultValue) {
-      putValue("defaultValue", defaultValue);
+    @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
+      putValue("potentialAction", action.build());
       return this;
     }
     /**
-     * The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder defaultValue(@NotNull Thing thing) {
-      putValue("defaultValue", thing);
-      return this;
-    }
-    /**
-     * The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.
-     */
-    @NotNull public Builder defaultValue(@NotNull Thing.Builder thing) {
-      putValue("defaultValue", thing.build());
-      return this;
-    }
-    /**
-     * Whether the property must be filled in to complete the action.  Default is false.
-     */
-    @NotNull public Builder valueRequired(@NotNull Boolean valueRequired) {
-      putValue("valueRequired", valueRequired);
-      return this;
-    }
-    /**
-     * Specifies the minimum allowed range for number of characters in a literal value.
-     */
-    @NotNull public Builder valueMinLength(@NotNull Integer integer) {
-      putValue("valueMinLength", integer);
-      return this;
-    }
-    /**
-     * Specifies the minimum allowed range for number of characters in a literal value.
-     */
-    @NotNull public Builder valueMinLength(@NotNull Long valueMinLength) {
-      putValue("valueMinLength", valueMinLength);
-      return this;
-    }
-    /**
-     * Specifies the minimum allowed range for number of characters in a literal value.
-     */
-    @NotNull public Builder valueMinLength(@NotNull Float valueMinLength) {
-      putValue("valueMinLength", valueMinLength);
-      return this;
-    }
-    /**
-     * Specifies the minimum allowed range for number of characters in a literal value.
-     */
-    @NotNull public Builder valueMinLength(@NotNull Double valueMinLength) {
-      putValue("valueMinLength", valueMinLength);
-      return this;
-    }
-    /**
-     * Specifies the minimum allowed range for number of characters in a literal value.
-     */
-    @NotNull public Builder valueMinLength(@NotNull String valueMinLength) {
-      putValue("valueMinLength", valueMinLength);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
@@ -831,31 +852,10 @@ public class PropertyValueSpecification extends Intangible {
       return this;
     }
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     */
-    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
-      putValue("disambiguatingDescription", description);
-      return this;
-    }
-    /**
-     * A description of the item.
-     */
-    @NotNull public Builder description(@NotNull Description description) {
-      putValue("description", description);
-      return this;
-    }
-    /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      */
     @NotNull public Builder sameAs(@NotNull String sameAs) {
       putValue("sameAs", sameAs);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
       return this;
     }
     /**
@@ -866,45 +866,10 @@ public class PropertyValueSpecification extends Intangible {
       return this;
     }
     /**
-     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
+     * The name of the item.
      */
-    @NotNull public Builder image(@NotNull Image image) {
-      putValue("image", image);
-      return this;
-    }
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     */
-    @NotNull public Builder potentialAction(@NotNull Action action) {
-      putValue("potentialAction", action);
-      return this;
-    }
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     */
-    @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
-      putValue("potentialAction", action.build());
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -935,6 +900,27 @@ public class PropertyValueSpecification extends Intangible {
       putValue("subjectOf", event.build());
       return this;
     }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -943,60 +929,6 @@ public class PropertyValueSpecification extends Intangible {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("valuePattern".equals(key) && value instanceof String) { this.valuePattern((String)value); return; }
-      if ("valuePatterns".equals(key) && value instanceof String) { this.valuePattern((String)value); return; }
-      if ("maxValue".equals(key) && value instanceof Integer) { this.maxValue((Integer)value); return; }
-      if ("maxValues".equals(key) && value instanceof Integer) { this.maxValue((Integer)value); return; }
-      if ("maxValue".equals(key) && value instanceof Long) { this.maxValue((Long)value); return; }
-      if ("maxValues".equals(key) && value instanceof Long) { this.maxValue((Long)value); return; }
-      if ("maxValue".equals(key) && value instanceof Float) { this.maxValue((Float)value); return; }
-      if ("maxValues".equals(key) && value instanceof Float) { this.maxValue((Float)value); return; }
-      if ("maxValue".equals(key) && value instanceof Double) { this.maxValue((Double)value); return; }
-      if ("maxValues".equals(key) && value instanceof Double) { this.maxValue((Double)value); return; }
-      if ("maxValue".equals(key) && value instanceof String) { this.maxValue((String)value); return; }
-      if ("maxValues".equals(key) && value instanceof String) { this.maxValue((String)value); return; }
-      if ("multipleValues".equals(key) && value instanceof Boolean) { this.multipleValues((Boolean)value); return; }
-      if ("multipleValuess".equals(key) && value instanceof Boolean) { this.multipleValues((Boolean)value); return; }
-      if ("minValue".equals(key) && value instanceof Integer) { this.minValue((Integer)value); return; }
-      if ("minValues".equals(key) && value instanceof Integer) { this.minValue((Integer)value); return; }
-      if ("minValue".equals(key) && value instanceof Long) { this.minValue((Long)value); return; }
-      if ("minValues".equals(key) && value instanceof Long) { this.minValue((Long)value); return; }
-      if ("minValue".equals(key) && value instanceof Float) { this.minValue((Float)value); return; }
-      if ("minValues".equals(key) && value instanceof Float) { this.minValue((Float)value); return; }
-      if ("minValue".equals(key) && value instanceof Double) { this.minValue((Double)value); return; }
-      if ("minValues".equals(key) && value instanceof Double) { this.minValue((Double)value); return; }
-      if ("minValue".equals(key) && value instanceof String) { this.minValue((String)value); return; }
-      if ("minValues".equals(key) && value instanceof String) { this.minValue((String)value); return; }
-      if ("stepValue".equals(key) && value instanceof Integer) { this.stepValue((Integer)value); return; }
-      if ("stepValues".equals(key) && value instanceof Integer) { this.stepValue((Integer)value); return; }
-      if ("stepValue".equals(key) && value instanceof Long) { this.stepValue((Long)value); return; }
-      if ("stepValues".equals(key) && value instanceof Long) { this.stepValue((Long)value); return; }
-      if ("stepValue".equals(key) && value instanceof Float) { this.stepValue((Float)value); return; }
-      if ("stepValues".equals(key) && value instanceof Float) { this.stepValue((Float)value); return; }
-      if ("stepValue".equals(key) && value instanceof Double) { this.stepValue((Double)value); return; }
-      if ("stepValues".equals(key) && value instanceof Double) { this.stepValue((Double)value); return; }
-      if ("stepValue".equals(key) && value instanceof String) { this.stepValue((String)value); return; }
-      if ("stepValues".equals(key) && value instanceof String) { this.stepValue((String)value); return; }
-      if ("valueName".equals(key) && value instanceof String) { this.valueName((String)value); return; }
-      if ("valueNames".equals(key) && value instanceof String) { this.valueName((String)value); return; }
-      if ("valueMaxLength".equals(key) && value instanceof Integer) { this.valueMaxLength((Integer)value); return; }
-      if ("valueMaxLengths".equals(key) && value instanceof Integer) { this.valueMaxLength((Integer)value); return; }
-      if ("valueMaxLength".equals(key) && value instanceof Long) { this.valueMaxLength((Long)value); return; }
-      if ("valueMaxLengths".equals(key) && value instanceof Long) { this.valueMaxLength((Long)value); return; }
-      if ("valueMaxLength".equals(key) && value instanceof Float) { this.valueMaxLength((Float)value); return; }
-      if ("valueMaxLengths".equals(key) && value instanceof Float) { this.valueMaxLength((Float)value); return; }
-      if ("valueMaxLength".equals(key) && value instanceof Double) { this.valueMaxLength((Double)value); return; }
-      if ("valueMaxLengths".equals(key) && value instanceof Double) { this.valueMaxLength((Double)value); return; }
-      if ("valueMaxLength".equals(key) && value instanceof String) { this.valueMaxLength((String)value); return; }
-      if ("valueMaxLengths".equals(key) && value instanceof String) { this.valueMaxLength((String)value); return; }
-      if ("readonlyValue".equals(key) && value instanceof Boolean) { this.readonlyValue((Boolean)value); return; }
-      if ("readonlyValues".equals(key) && value instanceof Boolean) { this.readonlyValue((Boolean)value); return; }
-      if ("defaultValue".equals(key) && value instanceof String) { this.defaultValue((String)value); return; }
-      if ("defaultValues".equals(key) && value instanceof String) { this.defaultValue((String)value); return; }
-      if ("defaultValue".equals(key) && value instanceof Thing) { this.defaultValue((Thing)value); return; }
-      if ("defaultValues".equals(key) && value instanceof Thing) { this.defaultValue((Thing)value); return; }
-      if ("valueRequired".equals(key) && value instanceof Boolean) { this.valueRequired((Boolean)value); return; }
-      if ("valueRequireds".equals(key) && value instanceof Boolean) { this.valueRequired((Boolean)value); return; }
       if ("valueMinLength".equals(key) && value instanceof Integer) { this.valueMinLength((Integer)value); return; }
       if ("valueMinLengths".equals(key) && value instanceof Integer) { this.valueMinLength((Integer)value); return; }
       if ("valueMinLength".equals(key) && value instanceof Long) { this.valueMinLength((Long)value); return; }
@@ -1007,6 +939,60 @@ public class PropertyValueSpecification extends Intangible {
       if ("valueMinLengths".equals(key) && value instanceof Double) { this.valueMinLength((Double)value); return; }
       if ("valueMinLength".equals(key) && value instanceof String) { this.valueMinLength((String)value); return; }
       if ("valueMinLengths".equals(key) && value instanceof String) { this.valueMinLength((String)value); return; }
+      if ("valueName".equals(key) && value instanceof String) { this.valueName((String)value); return; }
+      if ("valueNames".equals(key) && value instanceof String) { this.valueName((String)value); return; }
+      if ("readonlyValue".equals(key) && value instanceof Boolean) { this.readonlyValue((Boolean)value); return; }
+      if ("readonlyValues".equals(key) && value instanceof Boolean) { this.readonlyValue((Boolean)value); return; }
+      if ("multipleValues".equals(key) && value instanceof Boolean) { this.multipleValues((Boolean)value); return; }
+      if ("multipleValuess".equals(key) && value instanceof Boolean) { this.multipleValues((Boolean)value); return; }
+      if ("defaultValue".equals(key) && value instanceof String) { this.defaultValue((String)value); return; }
+      if ("defaultValues".equals(key) && value instanceof String) { this.defaultValue((String)value); return; }
+      if ("defaultValue".equals(key) && value instanceof Thing) { this.defaultValue((Thing)value); return; }
+      if ("defaultValues".equals(key) && value instanceof Thing) { this.defaultValue((Thing)value); return; }
+      if ("maxValue".equals(key) && value instanceof Integer) { this.maxValue((Integer)value); return; }
+      if ("maxValues".equals(key) && value instanceof Integer) { this.maxValue((Integer)value); return; }
+      if ("maxValue".equals(key) && value instanceof Long) { this.maxValue((Long)value); return; }
+      if ("maxValues".equals(key) && value instanceof Long) { this.maxValue((Long)value); return; }
+      if ("maxValue".equals(key) && value instanceof Float) { this.maxValue((Float)value); return; }
+      if ("maxValues".equals(key) && value instanceof Float) { this.maxValue((Float)value); return; }
+      if ("maxValue".equals(key) && value instanceof Double) { this.maxValue((Double)value); return; }
+      if ("maxValues".equals(key) && value instanceof Double) { this.maxValue((Double)value); return; }
+      if ("maxValue".equals(key) && value instanceof String) { this.maxValue((String)value); return; }
+      if ("maxValues".equals(key) && value instanceof String) { this.maxValue((String)value); return; }
+      if ("stepValue".equals(key) && value instanceof Integer) { this.stepValue((Integer)value); return; }
+      if ("stepValues".equals(key) && value instanceof Integer) { this.stepValue((Integer)value); return; }
+      if ("stepValue".equals(key) && value instanceof Long) { this.stepValue((Long)value); return; }
+      if ("stepValues".equals(key) && value instanceof Long) { this.stepValue((Long)value); return; }
+      if ("stepValue".equals(key) && value instanceof Float) { this.stepValue((Float)value); return; }
+      if ("stepValues".equals(key) && value instanceof Float) { this.stepValue((Float)value); return; }
+      if ("stepValue".equals(key) && value instanceof Double) { this.stepValue((Double)value); return; }
+      if ("stepValues".equals(key) && value instanceof Double) { this.stepValue((Double)value); return; }
+      if ("stepValue".equals(key) && value instanceof String) { this.stepValue((String)value); return; }
+      if ("stepValues".equals(key) && value instanceof String) { this.stepValue((String)value); return; }
+      if ("valueRequired".equals(key) && value instanceof Boolean) { this.valueRequired((Boolean)value); return; }
+      if ("valueRequireds".equals(key) && value instanceof Boolean) { this.valueRequired((Boolean)value); return; }
+      if ("valuePattern".equals(key) && value instanceof String) { this.valuePattern((String)value); return; }
+      if ("valuePatterns".equals(key) && value instanceof String) { this.valuePattern((String)value); return; }
+      if ("minValue".equals(key) && value instanceof Integer) { this.minValue((Integer)value); return; }
+      if ("minValues".equals(key) && value instanceof Integer) { this.minValue((Integer)value); return; }
+      if ("minValue".equals(key) && value instanceof Long) { this.minValue((Long)value); return; }
+      if ("minValues".equals(key) && value instanceof Long) { this.minValue((Long)value); return; }
+      if ("minValue".equals(key) && value instanceof Float) { this.minValue((Float)value); return; }
+      if ("minValues".equals(key) && value instanceof Float) { this.minValue((Float)value); return; }
+      if ("minValue".equals(key) && value instanceof Double) { this.minValue((Double)value); return; }
+      if ("minValues".equals(key) && value instanceof Double) { this.minValue((Double)value); return; }
+      if ("minValue".equals(key) && value instanceof String) { this.minValue((String)value); return; }
+      if ("minValues".equals(key) && value instanceof String) { this.minValue((String)value); return; }
+      if ("valueMaxLength".equals(key) && value instanceof Integer) { this.valueMaxLength((Integer)value); return; }
+      if ("valueMaxLengths".equals(key) && value instanceof Integer) { this.valueMaxLength((Integer)value); return; }
+      if ("valueMaxLength".equals(key) && value instanceof Long) { this.valueMaxLength((Long)value); return; }
+      if ("valueMaxLengths".equals(key) && value instanceof Long) { this.valueMaxLength((Long)value); return; }
+      if ("valueMaxLength".equals(key) && value instanceof Float) { this.valueMaxLength((Float)value); return; }
+      if ("valueMaxLengths".equals(key) && value instanceof Float) { this.valueMaxLength((Float)value); return; }
+      if ("valueMaxLength".equals(key) && value instanceof Double) { this.valueMaxLength((Double)value); return; }
+      if ("valueMaxLengths".equals(key) && value instanceof Double) { this.valueMaxLength((Double)value); return; }
+      if ("valueMaxLength".equals(key) && value instanceof String) { this.valueMaxLength((String)value); return; }
+      if ("valueMaxLengths".equals(key) && value instanceof String) { this.valueMaxLength((String)value); return; }
       super.fromMap(key, value);
     }
   }

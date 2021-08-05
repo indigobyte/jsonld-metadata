@@ -24,28 +24,96 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * OfferShippingDetails represents information about shipping destinations.&lt;br/&gt;&lt;br/&gt;
+ * OfferShippingDetails represents information about shipping destinations.
  * 
- * Multiple of these entities can be used to represent different shipping rates for different destinations:&lt;br/&gt;&lt;br/&gt;
+ * Multiple of these entities can be used to represent different shipping rates for different destinations:
  * 
- * One entity for Alaska/Hawaii. A different one for continental US.A different one for all France.&lt;br/&gt;&lt;br/&gt;
+ * One entity for Alaska/Hawaii. A different one for continental US.A different one for all France.
  * 
- * Multiple of these entities can be used to represent different shipping costs and delivery times.&lt;br/&gt;&lt;br/&gt;
+ * Multiple of these entities can be used to represent different shipping costs and delivery times.
  * 
- * Two entities that are identical but differ in rate and time:&lt;br/&gt;&lt;br/&gt;
+ * Two entities that are identical but differ in rate and time:
  * 
  * e.g. Cheaper and slower: $5 in 5-7days
- * or Fast and expensive: $15 in 1-2 daysSource: https://github.com/schemaorg/schemaorg/issues/2506
+ * or Fast and expensive: $15 in 1-2 days.
  */
 public class OfferShippingDetails extends StructuredValue {
   /**
-   * indicates (posssibly multiple) shipping destinations. These can be defined in several ways e.g. postalCode ranges.
+   * Label to match an [[OfferShippingDetails]] with a [[ShippingRateSettings]] (within the context of a [[shippingSettingsLink]] cross-reference).
+   */
+  @JsonIgnore public String getShippingLabel() {
+    return (String) getValue("shippingLabel");
+  }
+  /**
+   * Label to match an [[OfferShippingDetails]] with a [[ShippingRateSettings]] (within the context of a [[shippingSettingsLink]] cross-reference).
+   */
+  @JsonIgnore public Collection<String> getShippingLabels() {
+    final Object current = myData.get("shippingLabel");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * The shipping rate is the cost of shipping to the specified destination. Typically, the maxValue and currency values (of the [[MonetaryAmount]]) are most appropriate.
+   */
+  @JsonIgnore public MonetaryAmount getShippingRate() {
+    return (MonetaryAmount) getValue("shippingRate");
+  }
+  /**
+   * The shipping rate is the cost of shipping to the specified destination. Typically, the maxValue and currency values (of the [[MonetaryAmount]]) are most appropriate.
+   */
+  @JsonIgnore public Collection<MonetaryAmount> getShippingRates() {
+    final Object current = myData.get("shippingRate");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<MonetaryAmount>) current;
+    }
+    return Arrays.asList((MonetaryAmount) current);
+  }
+  /**
+   * The total delay between the receipt of the order and the goods reaching the final customer.
+   */
+  @JsonIgnore public ShippingDeliveryTime getDeliveryTime() {
+    return (ShippingDeliveryTime) getValue("deliveryTime");
+  }
+  /**
+   * The total delay between the receipt of the order and the goods reaching the final customer.
+   */
+  @JsonIgnore public Collection<ShippingDeliveryTime> getDeliveryTimes() {
+    final Object current = myData.get("deliveryTime");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<ShippingDeliveryTime>) current;
+    }
+    return Arrays.asList((ShippingDeliveryTime) current);
+  }
+  /**
+   * Label to match an [[OfferShippingDetails]] with a [[DeliveryTimeSettings]] (within the context of a [[shippingSettingsLink]] cross-reference).
+   */
+  @JsonIgnore public String getTransitTimeLabel() {
+    return (String) getValue("transitTimeLabel");
+  }
+  /**
+   * Label to match an [[OfferShippingDetails]] with a [[DeliveryTimeSettings]] (within the context of a [[shippingSettingsLink]] cross-reference).
+   */
+  @JsonIgnore public Collection<String> getTransitTimeLabels() {
+    final Object current = myData.get("transitTimeLabel");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * indicates (possibly multiple) shipping destinations. These can be defined in several ways e.g. postalCode ranges.
    */
   @JsonIgnore public DefinedRegion getShippingDestination() {
     return (DefinedRegion) getValue("shippingDestination");
   }
   /**
-   * indicates (posssibly multiple) shipping destinations. These can be defined in several ways e.g. postalCode ranges.
+   * indicates (possibly multiple) shipping destinations. These can be defined in several ways e.g. postalCode ranges.
    */
   @JsonIgnore public Collection<DefinedRegion> getShippingDestinations() {
     final Object current = myData.get("shippingDestination");
@@ -54,6 +122,40 @@ public class OfferShippingDetails extends StructuredValue {
       return (Collection<DefinedRegion>) current;
     }
     return Arrays.asList((DefinedRegion) current);
+  }
+  /**
+   * Indicates when shipping to a particular [[shippingDestination]] is not available.
+   */
+  @JsonIgnore public Boolean getDoesNotShip() {
+    return (Boolean) getValue("doesNotShip");
+  }
+  /**
+   * Indicates when shipping to a particular [[shippingDestination]] is not available.
+   */
+  @JsonIgnore public Collection<Boolean> getDoesNotShips() {
+    final Object current = myData.get("doesNotShip");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Boolean>) current;
+    }
+    return Arrays.asList((Boolean) current);
+  }
+  /**
+   * Link to a page containing [[ShippingRateSettings]] and [[DeliveryTimeSettings]] details.
+   */
+  @JsonIgnore public String getShippingSettingsLink() {
+    return (String) getValue("shippingSettingsLink");
+  }
+  /**
+   * Link to a page containing [[ShippingRateSettings]] and [[DeliveryTimeSettings]] details.
+   */
+  @JsonIgnore public Collection<String> getShippingSettingsLinks() {
+    final Object current = myData.get("shippingSettingsLink");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
   }
   protected OfferShippingDetails(java.util.Map<String,Object> data) {
     super(data);
@@ -70,73 +172,73 @@ public class OfferShippingDetails extends StructuredValue {
       return new OfferShippingDetails(myData);
     }
     /**
-     * indicates (posssibly multiple) shipping destinations. These can be defined in several ways e.g. postalCode ranges.
+     * Label to match an [[OfferShippingDetails]] with a [[ShippingRateSettings]] (within the context of a [[shippingSettingsLink]] cross-reference).
+     */
+    @NotNull public Builder shippingLabel(@NotNull String shippingLabel) {
+      putValue("shippingLabel", shippingLabel);
+      return this;
+    }
+    /**
+     * The shipping rate is the cost of shipping to the specified destination. Typically, the maxValue and currency values (of the [[MonetaryAmount]]) are most appropriate.
+     */
+    @NotNull public Builder shippingRate(@NotNull MonetaryAmount monetaryAmount) {
+      putValue("shippingRate", monetaryAmount);
+      return this;
+    }
+    /**
+     * The shipping rate is the cost of shipping to the specified destination. Typically, the maxValue and currency values (of the [[MonetaryAmount]]) are most appropriate.
+     */
+    @NotNull public Builder shippingRate(@NotNull MonetaryAmount.Builder monetaryAmount) {
+      putValue("shippingRate", monetaryAmount.build());
+      return this;
+    }
+    /**
+     * The total delay between the receipt of the order and the goods reaching the final customer.
+     */
+    @NotNull public Builder deliveryTime(@NotNull ShippingDeliveryTime shippingDeliveryTime) {
+      putValue("deliveryTime", shippingDeliveryTime);
+      return this;
+    }
+    /**
+     * The total delay between the receipt of the order and the goods reaching the final customer.
+     */
+    @NotNull public Builder deliveryTime(@NotNull ShippingDeliveryTime.Builder shippingDeliveryTime) {
+      putValue("deliveryTime", shippingDeliveryTime.build());
+      return this;
+    }
+    /**
+     * Label to match an [[OfferShippingDetails]] with a [[DeliveryTimeSettings]] (within the context of a [[shippingSettingsLink]] cross-reference).
+     */
+    @NotNull public Builder transitTimeLabel(@NotNull String transitTimeLabel) {
+      putValue("transitTimeLabel", transitTimeLabel);
+      return this;
+    }
+    /**
+     * indicates (possibly multiple) shipping destinations. These can be defined in several ways e.g. postalCode ranges.
      */
     @NotNull public Builder shippingDestination(@NotNull DefinedRegion definedRegion) {
       putValue("shippingDestination", definedRegion);
       return this;
     }
     /**
-     * indicates (posssibly multiple) shipping destinations. These can be defined in several ways e.g. postalCode ranges.
+     * indicates (possibly multiple) shipping destinations. These can be defined in several ways e.g. postalCode ranges.
      */
     @NotNull public Builder shippingDestination(@NotNull DefinedRegion.Builder definedRegion) {
       putValue("shippingDestination", definedRegion.build());
       return this;
     }
     /**
-     * URL of the item.
+     * Indicates when shipping to a particular [[shippingDestination]] is not available.
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
+    @NotNull public Builder doesNotShip(@NotNull Boolean doesNotShip) {
+      putValue("doesNotShip", doesNotShip);
       return this;
     }
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * Link to a page containing [[ShippingRateSettings]] and [[DeliveryTimeSettings]] details.
      */
-    @NotNull public Builder additionalType(@NotNull String additionalType) {
-      putValue("additionalType", additionalType);
-      return this;
-    }
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     */
-    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
-      putValue("disambiguatingDescription", description);
-      return this;
-    }
-    /**
-     * A description of the item.
-     */
-    @NotNull public Builder description(@NotNull Description description) {
-      putValue("description", description);
-      return this;
-    }
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     */
-    @NotNull public Builder sameAs(@NotNull String sameAs) {
-      putValue("sameAs", sameAs);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
-      return this;
-    }
-    /**
-     * An alias for the item.
-     */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
-      return this;
-    }
-    /**
-     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
-     */
-    @NotNull public Builder image(@NotNull Image image) {
-      putValue("image", image);
+    @NotNull public Builder shippingSettingsLink(@NotNull String shippingSettingsLink) {
+      putValue("shippingSettingsLink", shippingSettingsLink);
       return this;
     }
     /**
@@ -154,24 +256,45 @@ public class OfferShippingDetails extends StructuredValue {
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * URL of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
+    @NotNull public Builder additionalType(@NotNull String additionalType) {
+      putValue("additionalType", additionalType);
+      return this;
+    }
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     */
+    @NotNull public Builder sameAs(@NotNull String sameAs) {
+      putValue("sameAs", sameAs);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * The name of the item.
+     */
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -202,6 +325,27 @@ public class OfferShippingDetails extends StructuredValue {
       putValue("subjectOf", event.build());
       return this;
     }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -210,8 +354,20 @@ public class OfferShippingDetails extends StructuredValue {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
+      if ("shippingLabel".equals(key) && value instanceof String) { this.shippingLabel((String)value); return; }
+      if ("shippingLabels".equals(key) && value instanceof String) { this.shippingLabel((String)value); return; }
+      if ("shippingRate".equals(key) && value instanceof MonetaryAmount) { this.shippingRate((MonetaryAmount)value); return; }
+      if ("shippingRates".equals(key) && value instanceof MonetaryAmount) { this.shippingRate((MonetaryAmount)value); return; }
+      if ("deliveryTime".equals(key) && value instanceof ShippingDeliveryTime) { this.deliveryTime((ShippingDeliveryTime)value); return; }
+      if ("deliveryTimes".equals(key) && value instanceof ShippingDeliveryTime) { this.deliveryTime((ShippingDeliveryTime)value); return; }
+      if ("transitTimeLabel".equals(key) && value instanceof String) { this.transitTimeLabel((String)value); return; }
+      if ("transitTimeLabels".equals(key) && value instanceof String) { this.transitTimeLabel((String)value); return; }
       if ("shippingDestination".equals(key) && value instanceof DefinedRegion) { this.shippingDestination((DefinedRegion)value); return; }
       if ("shippingDestinations".equals(key) && value instanceof DefinedRegion) { this.shippingDestination((DefinedRegion)value); return; }
+      if ("doesNotShip".equals(key) && value instanceof Boolean) { this.doesNotShip((Boolean)value); return; }
+      if ("doesNotShips".equals(key) && value instanceof Boolean) { this.doesNotShip((Boolean)value); return; }
+      if ("shippingSettingsLink".equals(key) && value instanceof String) { this.shippingSettingsLink((String)value); return; }
+      if ("shippingSettingsLinks".equals(key) && value instanceof String) { this.shippingSettingsLink((String)value); return; }
       super.fromMap(key, value);
     }
   }

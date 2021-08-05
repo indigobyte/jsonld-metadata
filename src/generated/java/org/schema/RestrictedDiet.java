@@ -21,7 +21,7 @@ package org.schema;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * A diet restricted to certain foods or preparations for cultural, religious, health or lifestyle reasons.
+ * A diet restricted to certain foods or preparations for cultural, religious, health or lifestyle reasons. 
  */
 public enum RestrictedDiet {
   ;

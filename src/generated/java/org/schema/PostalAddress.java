@@ -28,6 +28,23 @@ import java.util.*;
  */
 public class PostalAddress extends ContactPoint {
   /**
+   * The locality in which the street address is, and which is in the region. For example, Mountain View.
+   */
+  @JsonIgnore public String getAddressLocality() {
+    return (String) getValue("addressLocality");
+  }
+  /**
+   * The locality in which the street address is, and which is in the region. For example, Mountain View.
+   */
+  @JsonIgnore public Collection<String> getAddressLocalitys() {
+    final Object current = myData.get("addressLocality");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
    * The street address. For example, 1600 Amphitheatre Pkwy.
    */
   @JsonIgnore public String getStreetAddress() {
@@ -38,6 +55,23 @@ public class PostalAddress extends ContactPoint {
    */
   @JsonIgnore public Collection<String> getStreetAddresss() {
     final Object current = myData.get("streetAddress");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country) 
+   */
+  @JsonIgnore public String getAddressRegion() {
+    return (String) getValue("addressRegion");
+  }
+  /**
+   * The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country) 
+   */
+  @JsonIgnore public Collection<String> getAddressRegions() {
+    final Object current = myData.get("addressRegion");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<String>) current;
@@ -62,74 +96,6 @@ public class PostalAddress extends ContactPoint {
     return Arrays.asList((String) current);
   }
   /**
-   * The locality in which the street address is, and which is in the region. For example, Mountain View.
-   */
-  @JsonIgnore public String getAddressLocality() {
-    return (String) getValue("addressLocality");
-  }
-  /**
-   * The locality in which the street address is, and which is in the region. For example, Mountain View.
-   */
-  @JsonIgnore public Collection<String> getAddressLocalitys() {
-    final Object current = myData.get("addressLocality");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * The country. For example, USA. You can also provide the two-letter &lt;a href=&quot;http://en.wikipedia.org/wiki/ISO_3166-1&quot;&gt;ISO 3166-1 alpha-2 country code&lt;/a&gt;.
-   */
-  @JsonIgnore public Country getAddressCountryCountry() {
-    return (Country) getValue("addressCountry");
-  }
-  /**
-   * The country. For example, USA. You can also provide the two-letter &lt;a href=&quot;http://en.wikipedia.org/wiki/ISO_3166-1&quot;&gt;ISO 3166-1 alpha-2 country code&lt;/a&gt;.
-   */
-  @JsonIgnore public Collection<Country> getAddressCountryCountrys() {
-    final Object current = myData.get("addressCountry");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Country>) current;
-    }
-    return Arrays.asList((Country) current);
-  }
-  /**
-   * The country. For example, USA. You can also provide the two-letter &lt;a href=&quot;http://en.wikipedia.org/wiki/ISO_3166-1&quot;&gt;ISO 3166-1 alpha-2 country code&lt;/a&gt;.
-   */
-  @JsonIgnore public String getAddressCountryString() {
-    return (String) getValue("addressCountry");
-  }
-  /**
-   * The country. For example, USA. You can also provide the two-letter &lt;a href=&quot;http://en.wikipedia.org/wiki/ISO_3166-1&quot;&gt;ISO 3166-1 alpha-2 country code&lt;/a&gt;.
-   */
-  @JsonIgnore public Collection<String> getAddressCountryStrings() {
-    final Object current = myData.get("addressCountry");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * The region in which the locality is, and which is in the country. For example, California or another appropriate first-level &lt;a href=&quot;https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country&quot;&gt;Administrative division&lt;/a&gt;
-   */
-  @JsonIgnore public String getAddressRegion() {
-    return (String) getValue("addressRegion");
-  }
-  /**
-   * The region in which the locality is, and which is in the country. For example, California or another appropriate first-level &lt;a href=&quot;https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country&quot;&gt;Administrative division&lt;/a&gt;
-   */
-  @JsonIgnore public Collection<String> getAddressRegions() {
-    final Object current = myData.get("addressRegion");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
    * The postal code. For example, 94043.
    */
   @JsonIgnore public String getPostalCode() {
@@ -140,6 +106,40 @@ public class PostalAddress extends ContactPoint {
    */
   @JsonIgnore public Collection<String> getPostalCodes() {
     final Object current = myData.get("postalCode");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
+   */
+  @JsonIgnore public Country getAddressCountryCountry() {
+    return (Country) getValue("addressCountry");
+  }
+  /**
+   * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
+   */
+  @JsonIgnore public Collection<Country> getAddressCountryCountrys() {
+    final Object current = myData.get("addressCountry");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Country>) current;
+    }
+    return Arrays.asList((Country) current);
+  }
+  /**
+   * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
+   */
+  @JsonIgnore public String getAddressCountryString() {
+    return (String) getValue("addressCountry");
+  }
+  /**
+   * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
+   */
+  @JsonIgnore public Collection<String> getAddressCountryStrings() {
+    final Object current = myData.get("addressCountry");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<String>) current;
@@ -161,10 +161,24 @@ public class PostalAddress extends ContactPoint {
       return new PostalAddress(myData);
     }
     /**
+     * The locality in which the street address is, and which is in the region. For example, Mountain View.
+     */
+    @NotNull public Builder addressLocality(@NotNull String addressLocality) {
+      putValue("addressLocality", addressLocality);
+      return this;
+    }
+    /**
      * The street address. For example, 1600 Amphitheatre Pkwy.
      */
     @NotNull public Builder streetAddress(@NotNull String streetAddress) {
       putValue("streetAddress", streetAddress);
+      return this;
+    }
+    /**
+     * The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country) 
+     */
+    @NotNull public Builder addressRegion(@NotNull String addressRegion) {
+      putValue("addressRegion", addressRegion);
       return this;
     }
     /**
@@ -175,41 +189,6 @@ public class PostalAddress extends ContactPoint {
       return this;
     }
     /**
-     * The locality in which the street address is, and which is in the region. For example, Mountain View.
-     */
-    @NotNull public Builder addressLocality(@NotNull String addressLocality) {
-      putValue("addressLocality", addressLocality);
-      return this;
-    }
-    /**
-     * The country. For example, USA. You can also provide the two-letter &lt;a href=&quot;http://en.wikipedia.org/wiki/ISO_3166-1&quot;&gt;ISO 3166-1 alpha-2 country code&lt;/a&gt;.
-     */
-    @NotNull public Builder addressCountry(@NotNull Country country) {
-      putValue("addressCountry", country);
-      return this;
-    }
-    /**
-     * The country. For example, USA. You can also provide the two-letter &lt;a href=&quot;http://en.wikipedia.org/wiki/ISO_3166-1&quot;&gt;ISO 3166-1 alpha-2 country code&lt;/a&gt;.
-     */
-    @NotNull public Builder addressCountry(@NotNull Country.Builder country) {
-      putValue("addressCountry", country.build());
-      return this;
-    }
-    /**
-     * The country. For example, USA. You can also provide the two-letter &lt;a href=&quot;http://en.wikipedia.org/wiki/ISO_3166-1&quot;&gt;ISO 3166-1 alpha-2 country code&lt;/a&gt;.
-     */
-    @NotNull public Builder addressCountry(@NotNull String addressCountry) {
-      putValue("addressCountry", addressCountry);
-      return this;
-    }
-    /**
-     * The region in which the locality is, and which is in the country. For example, California or another appropriate first-level &lt;a href=&quot;https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country&quot;&gt;Administrative division&lt;/a&gt;
-     */
-    @NotNull public Builder addressRegion(@NotNull String addressRegion) {
-      putValue("addressRegion", addressRegion);
-      return this;
-    }
-    /**
      * The postal code. For example, 94043.
      */
     @NotNull public Builder postalCode(@NotNull String postalCode) {
@@ -217,66 +196,24 @@ public class PostalAddress extends ContactPoint {
       return this;
     }
     /**
-     * The fax number.
+     * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
      */
-    @NotNull public Builder faxNumber(@NotNull String faxNumber) {
-      putValue("faxNumber", faxNumber);
+    @NotNull public Builder addressCountry(@NotNull Country country) {
+      putValue("addressCountry", country);
       return this;
     }
     /**
-     * A person or organization can have different contact points, for different purposes. For example, a sales contact point, a PR contact point and so on. This property is used to specify the kind of contact point.
+     * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
      */
-    @NotNull public Builder contactType(@NotNull String contactType) {
-      putValue("contactType", contactType);
+    @NotNull public Builder addressCountry(@NotNull Country.Builder country) {
+      putValue("addressCountry", country.build());
       return this;
     }
     /**
-     * The telephone number.
+     * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
      */
-    @NotNull public Builder telephone(@NotNull String telephone) {
-      putValue("telephone", telephone);
-      return this;
-    }
-    /**
-     * A language someone may use with or at the item, service or place. Please use one of the language codes from the &lt;a href=&quot;http://tools.ietf.org/html/bcp47&quot;&gt;IETF BCP 47 standard&lt;/a&gt;. See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/inLanguage&quot;&gt;inLanguage&lt;/a&gt;
-     */
-    @NotNull public Builder availableLanguage(@NotNull Language language) {
-      putValue("availableLanguage", language);
-      return this;
-    }
-    /**
-     * A language someone may use with or at the item, service or place. Please use one of the language codes from the &lt;a href=&quot;http://tools.ietf.org/html/bcp47&quot;&gt;IETF BCP 47 standard&lt;/a&gt;. See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/inLanguage&quot;&gt;inLanguage&lt;/a&gt;
-     */
-    @NotNull public Builder availableLanguage(@NotNull Language.Builder language) {
-      putValue("availableLanguage", language.build());
-      return this;
-    }
-    /**
-     * A language someone may use with or at the item, service or place. Please use one of the language codes from the &lt;a href=&quot;http://tools.ietf.org/html/bcp47&quot;&gt;IETF BCP 47 standard&lt;/a&gt;. See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/inLanguage&quot;&gt;inLanguage&lt;/a&gt;
-     */
-    @NotNull public Builder availableLanguage(@NotNull String availableLanguage) {
-      putValue("availableLanguage", availableLanguage);
-      return this;
-    }
-    /**
-     * Email address.
-     */
-    @NotNull public Builder email(@NotNull String email) {
-      putValue("email", email);
-      return this;
-    }
-    /**
-     * The hours during which this service or contact is available.
-     */
-    @NotNull public Builder hoursAvailable(@NotNull OpeningHoursSpecification openingHoursSpecification) {
-      putValue("hoursAvailable", openingHoursSpecification);
-      return this;
-    }
-    /**
-     * The hours during which this service or contact is available.
-     */
-    @NotNull public Builder hoursAvailable(@NotNull OpeningHoursSpecification.Builder openingHoursSpecification) {
-      putValue("hoursAvailable", openingHoursSpecification.build());
+    @NotNull public Builder addressCountry(@NotNull String addressCountry) {
+      putValue("addressCountry", addressCountry);
       return this;
     }
     /**
@@ -301,6 +238,27 @@ public class PostalAddress extends ContactPoint {
       return this;
     }
     /**
+     * Email address.
+     */
+    @NotNull public Builder email(@NotNull String email) {
+      putValue("email", email);
+      return this;
+    }
+    /**
+     * The telephone number.
+     */
+    @NotNull public Builder telephone(@NotNull String telephone) {
+      putValue("telephone", telephone);
+      return this;
+    }
+    /**
+     * A person or organization can have different contact points, for different purposes. For example, a sales contact point, a PR contact point and so on. This property is used to specify the kind of contact point.
+     */
+    @NotNull public Builder contactType(@NotNull String contactType) {
+      putValue("contactType", contactType);
+      return this;
+    }
+    /**
      * An option available on this contact point (e.g. a toll-free number or support for hearing-impaired callers).
      */
     @NotNull public Builder contactOption(@NotNull ContactPointOption contactPointOption) {
@@ -308,59 +266,45 @@ public class PostalAddress extends ContactPoint {
       return this;
     }
     /**
-     * URL of the item.
+     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
+    @NotNull public Builder availableLanguage(@NotNull Language language) {
+      putValue("availableLanguage", language);
       return this;
     }
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
      */
-    @NotNull public Builder additionalType(@NotNull String additionalType) {
-      putValue("additionalType", additionalType);
+    @NotNull public Builder availableLanguage(@NotNull Language.Builder language) {
+      putValue("availableLanguage", language.build());
       return this;
     }
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
-      putValue("disambiguatingDescription", description);
+    @NotNull public Builder availableLanguage(@NotNull String availableLanguage) {
+      putValue("availableLanguage", availableLanguage);
       return this;
     }
     /**
-     * A description of the item.
+     * The fax number.
      */
-    @NotNull public Builder description(@NotNull Description description) {
-      putValue("description", description);
+    @NotNull public Builder faxNumber(@NotNull String faxNumber) {
+      putValue("faxNumber", faxNumber);
       return this;
     }
     /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     * The hours during which this service or contact is available.
      */
-    @NotNull public Builder sameAs(@NotNull String sameAs) {
-      putValue("sameAs", sameAs);
+    @NotNull public Builder hoursAvailable(@NotNull OpeningHoursSpecification openingHoursSpecification) {
+      putValue("hoursAvailable", openingHoursSpecification);
       return this;
     }
     /**
-     * The name of the item.
+     * The hours during which this service or contact is available.
      */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
-      return this;
-    }
-    /**
-     * An alias for the item.
-     */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
-      return this;
-    }
-    /**
-     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
-     */
-    @NotNull public Builder image(@NotNull Image image) {
-      putValue("image", image);
+    @NotNull public Builder hoursAvailable(@NotNull OpeningHoursSpecification.Builder openingHoursSpecification) {
+      putValue("hoursAvailable", openingHoursSpecification.build());
       return this;
     }
     /**
@@ -378,24 +322,45 @@ public class PostalAddress extends ContactPoint {
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * URL of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
+    @NotNull public Builder additionalType(@NotNull String additionalType) {
+      putValue("additionalType", additionalType);
+      return this;
+    }
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     */
+    @NotNull public Builder sameAs(@NotNull String sameAs) {
+      putValue("sameAs", sameAs);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * The name of the item.
+     */
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -426,6 +391,27 @@ public class PostalAddress extends ContactPoint {
       putValue("subjectOf", event.build());
       return this;
     }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -434,20 +420,20 @@ public class PostalAddress extends ContactPoint {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("streetAddress".equals(key) && value instanceof String) { this.streetAddress((String)value); return; }
-      if ("streetAddresss".equals(key) && value instanceof String) { this.streetAddress((String)value); return; }
-      if ("postOfficeBoxNumber".equals(key) && value instanceof String) { this.postOfficeBoxNumber((String)value); return; }
-      if ("postOfficeBoxNumbers".equals(key) && value instanceof String) { this.postOfficeBoxNumber((String)value); return; }
       if ("addressLocality".equals(key) && value instanceof String) { this.addressLocality((String)value); return; }
       if ("addressLocalitys".equals(key) && value instanceof String) { this.addressLocality((String)value); return; }
+      if ("streetAddress".equals(key) && value instanceof String) { this.streetAddress((String)value); return; }
+      if ("streetAddresss".equals(key) && value instanceof String) { this.streetAddress((String)value); return; }
+      if ("addressRegion".equals(key) && value instanceof String) { this.addressRegion((String)value); return; }
+      if ("addressRegions".equals(key) && value instanceof String) { this.addressRegion((String)value); return; }
+      if ("postOfficeBoxNumber".equals(key) && value instanceof String) { this.postOfficeBoxNumber((String)value); return; }
+      if ("postOfficeBoxNumbers".equals(key) && value instanceof String) { this.postOfficeBoxNumber((String)value); return; }
+      if ("postalCode".equals(key) && value instanceof String) { this.postalCode((String)value); return; }
+      if ("postalCodes".equals(key) && value instanceof String) { this.postalCode((String)value); return; }
       if ("addressCountry".equals(key) && value instanceof Country) { this.addressCountry((Country)value); return; }
       if ("addressCountrys".equals(key) && value instanceof Country) { this.addressCountry((Country)value); return; }
       if ("addressCountry".equals(key) && value instanceof String) { this.addressCountry((String)value); return; }
       if ("addressCountrys".equals(key) && value instanceof String) { this.addressCountry((String)value); return; }
-      if ("addressRegion".equals(key) && value instanceof String) { this.addressRegion((String)value); return; }
-      if ("addressRegions".equals(key) && value instanceof String) { this.addressRegion((String)value); return; }
-      if ("postalCode".equals(key) && value instanceof String) { this.postalCode((String)value); return; }
-      if ("postalCodes".equals(key) && value instanceof String) { this.postalCode((String)value); return; }
       super.fromMap(key, value);
     }
   }

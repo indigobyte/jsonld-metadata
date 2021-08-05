@@ -24,93 +24,42 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * A monetary grant.Source: https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FundInfoCollab
+ * A monetary grant.
  */
 public class MonetaryGrant extends Grant {
   /**
    * The amount of money.
    */
-  @JsonIgnore public Integer getAmountInteger() {
-    return (Integer) getValue("amount");
+  @JsonIgnore public MonetaryAmount getAmountMonetaryAmount() {
+    return (MonetaryAmount) getValue("amount");
   }
   /**
    * The amount of money.
    */
-  @JsonIgnore public Collection<Integer> getAmountIntegers() {
+  @JsonIgnore public Collection<MonetaryAmount> getAmountMonetaryAmounts() {
     final Object current = myData.get("amount");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+      return (Collection<MonetaryAmount>) current;
     }
-    return Arrays.asList((Integer) current);
+    return Arrays.asList((MonetaryAmount) current);
   }
   /**
    * The amount of money.
    */
-  @JsonIgnore public Long getAmountLong() {
-    return (Long) getValue("amount");
+  @JsonIgnore public Number getAmountNumber() {
+    return (Number) getValue("amount");
   }
   /**
    * The amount of money.
    */
-  @JsonIgnore public Collection<Long> getAmountLongs() {
+  @JsonIgnore public Collection<Number> getAmountNumbers() {
     final Object current = myData.get("amount");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<Long>) current;
+      return (Collection<Number>) current;
     }
-    return Arrays.asList((Long) current);
-  }
-  /**
-   * The amount of money.
-   */
-  @JsonIgnore public Float getAmountFloat() {
-    return (Float) getValue("amount");
-  }
-  /**
-   * The amount of money.
-   */
-  @JsonIgnore public Collection<Float> getAmountFloats() {
-    final Object current = myData.get("amount");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
-    }
-    return Arrays.asList((Float) current);
-  }
-  /**
-   * The amount of money.
-   */
-  @JsonIgnore public Double getAmountDouble() {
-    return (Double) getValue("amount");
-  }
-  /**
-   * The amount of money.
-   */
-  @JsonIgnore public Collection<Double> getAmountDoubles() {
-    final Object current = myData.get("amount");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
-    }
-    return Arrays.asList((Double) current);
-  }
-  /**
-   * The amount of money.
-   */
-  @JsonIgnore public String getAmountString() {
-    return (String) getValue("amount");
-  }
-  /**
-   * The amount of money.
-   */
-  @JsonIgnore public Collection<String> getAmountStrings() {
-    final Object current = myData.get("amount");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
+    return Arrays.asList((Number) current);
   }
   /**
    * A person or organization that supports (sponsors) something through some kind of financial contribution.
@@ -146,36 +95,22 @@ public class MonetaryGrant extends Grant {
     /**
      * The amount of money.
      */
-    @NotNull public Builder amount(@NotNull Integer integer) {
-      putValue("amount", integer);
+    @NotNull public Builder amount(@NotNull MonetaryAmount monetaryAmount) {
+      putValue("amount", monetaryAmount);
       return this;
     }
     /**
      * The amount of money.
      */
-    @NotNull public Builder amount(@NotNull Long amount) {
-      putValue("amount", amount);
+    @NotNull public Builder amount(@NotNull MonetaryAmount.Builder monetaryAmount) {
+      putValue("amount", monetaryAmount.build());
       return this;
     }
     /**
      * The amount of money.
      */
-    @NotNull public Builder amount(@NotNull Float amount) {
-      putValue("amount", amount);
-      return this;
-    }
-    /**
-     * The amount of money.
-     */
-    @NotNull public Builder amount(@NotNull Double amount) {
-      putValue("amount", amount);
-      return this;
-    }
-    /**
-     * The amount of money.
-     */
-    @NotNull public Builder amount(@NotNull String amount) {
-      putValue("amount", amount);
+    @NotNull public Builder amount(@NotNull Number number) {
+      putValue("amount", number);
       return this;
     }
     /**
@@ -186,14 +121,14 @@ public class MonetaryGrant extends Grant {
       return this;
     }
     /**
-     * Indicates an item funded or sponsored through a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Grant&quot;&gt;Grant&lt;/a&gt;.
+     * Indicates an item funded or sponsored through a [[Grant]].
      */
     @NotNull public Builder fundedItem(@NotNull Thing thing) {
       putValue("fundedItem", thing);
       return this;
     }
     /**
-     * Indicates an item funded or sponsored through a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Grant&quot;&gt;Grant&lt;/a&gt;.
+     * Indicates an item funded or sponsored through a [[Grant]].
      */
     @NotNull public Builder fundedItem(@NotNull Thing.Builder thing) {
       putValue("fundedItem", thing.build());
@@ -204,62 +139,6 @@ public class MonetaryGrant extends Grant {
      */
     @NotNull public Builder sponsor(@NotNull Sponsor sponsor) {
       putValue("sponsor", sponsor);
-      return this;
-    }
-    /**
-     * URL of the item.
-     */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
-      return this;
-    }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     */
-    @NotNull public Builder additionalType(@NotNull String additionalType) {
-      putValue("additionalType", additionalType);
-      return this;
-    }
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     */
-    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
-      putValue("disambiguatingDescription", description);
-      return this;
-    }
-    /**
-     * A description of the item.
-     */
-    @NotNull public Builder description(@NotNull Description description) {
-      putValue("description", description);
-      return this;
-    }
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     */
-    @NotNull public Builder sameAs(@NotNull String sameAs) {
-      putValue("sameAs", sameAs);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
-      return this;
-    }
-    /**
-     * An alias for the item.
-     */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
-      return this;
-    }
-    /**
-     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
-     */
-    @NotNull public Builder image(@NotNull Image image) {
-      putValue("image", image);
       return this;
     }
     /**
@@ -277,24 +156,45 @@ public class MonetaryGrant extends Grant {
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * URL of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
+    @NotNull public Builder additionalType(@NotNull String additionalType) {
+      putValue("additionalType", additionalType);
+      return this;
+    }
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     */
+    @NotNull public Builder sameAs(@NotNull String sameAs) {
+      putValue("sameAs", sameAs);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * The name of the item.
+     */
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -325,6 +225,27 @@ public class MonetaryGrant extends Grant {
       putValue("subjectOf", event.build());
       return this;
     }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -333,16 +254,10 @@ public class MonetaryGrant extends Grant {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("amount".equals(key) && value instanceof Integer) { this.amount((Integer)value); return; }
-      if ("amounts".equals(key) && value instanceof Integer) { this.amount((Integer)value); return; }
-      if ("amount".equals(key) && value instanceof Long) { this.amount((Long)value); return; }
-      if ("amounts".equals(key) && value instanceof Long) { this.amount((Long)value); return; }
-      if ("amount".equals(key) && value instanceof Float) { this.amount((Float)value); return; }
-      if ("amounts".equals(key) && value instanceof Float) { this.amount((Float)value); return; }
-      if ("amount".equals(key) && value instanceof Double) { this.amount((Double)value); return; }
-      if ("amounts".equals(key) && value instanceof Double) { this.amount((Double)value); return; }
-      if ("amount".equals(key) && value instanceof String) { this.amount((String)value); return; }
-      if ("amounts".equals(key) && value instanceof String) { this.amount((String)value); return; }
+      if ("amount".equals(key) && value instanceof MonetaryAmount) { this.amount((MonetaryAmount)value); return; }
+      if ("amounts".equals(key) && value instanceof MonetaryAmount) { this.amount((MonetaryAmount)value); return; }
+      if ("amount".equals(key) && value instanceof Number) { this.amount((Number)value); return; }
+      if ("amounts".equals(key) && value instanceof Number) { this.amount((Number)value); return; }
       if ("funder".equals(key) && value instanceof Sponsor) { this.funder((Sponsor)value); return; }
       if ("funders".equals(key) && value instanceof Sponsor) { this.funder((Sponsor)value); return; }
       super.fromMap(key, value);

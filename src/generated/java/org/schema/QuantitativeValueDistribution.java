@@ -24,281 +24,9 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * A statistical distribution of values.Source: https://github.com/schemaorg/schemaorg/issues/1698
+ * A statistical distribution of values.
  */
 public class QuantitativeValueDistribution extends StructuredValue {
-  /**
-   * The 90th percentile value.
-   */
-  @JsonIgnore public Integer getPercentile90Integer() {
-    return (Integer) getValue("percentile90");
-  }
-  /**
-   * The 90th percentile value.
-   */
-  @JsonIgnore public Collection<Integer> getPercentile90Integers() {
-    final Object current = myData.get("percentile90");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
-    }
-    return Arrays.asList((Integer) current);
-  }
-  /**
-   * The 90th percentile value.
-   */
-  @JsonIgnore public Long getPercentile90Long() {
-    return (Long) getValue("percentile90");
-  }
-  /**
-   * The 90th percentile value.
-   */
-  @JsonIgnore public Collection<Long> getPercentile90Longs() {
-    final Object current = myData.get("percentile90");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
-    }
-    return Arrays.asList((Long) current);
-  }
-  /**
-   * The 90th percentile value.
-   */
-  @JsonIgnore public Float getPercentile90Float() {
-    return (Float) getValue("percentile90");
-  }
-  /**
-   * The 90th percentile value.
-   */
-  @JsonIgnore public Collection<Float> getPercentile90Floats() {
-    final Object current = myData.get("percentile90");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
-    }
-    return Arrays.asList((Float) current);
-  }
-  /**
-   * The 90th percentile value.
-   */
-  @JsonIgnore public Double getPercentile90Double() {
-    return (Double) getValue("percentile90");
-  }
-  /**
-   * The 90th percentile value.
-   */
-  @JsonIgnore public Collection<Double> getPercentile90Doubles() {
-    final Object current = myData.get("percentile90");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
-    }
-    return Arrays.asList((Double) current);
-  }
-  /**
-   * The 90th percentile value.
-   */
-  @JsonIgnore public String getPercentile90String() {
-    return (String) getValue("percentile90");
-  }
-  /**
-   * The 90th percentile value.
-   */
-  @JsonIgnore public Collection<String> getPercentile90Strings() {
-    final Object current = myData.get("percentile90");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * The 75th percentile value.
-   */
-  @JsonIgnore public Integer getPercentile75Integer() {
-    return (Integer) getValue("percentile75");
-  }
-  /**
-   * The 75th percentile value.
-   */
-  @JsonIgnore public Collection<Integer> getPercentile75Integers() {
-    final Object current = myData.get("percentile75");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
-    }
-    return Arrays.asList((Integer) current);
-  }
-  /**
-   * The 75th percentile value.
-   */
-  @JsonIgnore public Long getPercentile75Long() {
-    return (Long) getValue("percentile75");
-  }
-  /**
-   * The 75th percentile value.
-   */
-  @JsonIgnore public Collection<Long> getPercentile75Longs() {
-    final Object current = myData.get("percentile75");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
-    }
-    return Arrays.asList((Long) current);
-  }
-  /**
-   * The 75th percentile value.
-   */
-  @JsonIgnore public Float getPercentile75Float() {
-    return (Float) getValue("percentile75");
-  }
-  /**
-   * The 75th percentile value.
-   */
-  @JsonIgnore public Collection<Float> getPercentile75Floats() {
-    final Object current = myData.get("percentile75");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
-    }
-    return Arrays.asList((Float) current);
-  }
-  /**
-   * The 75th percentile value.
-   */
-  @JsonIgnore public Double getPercentile75Double() {
-    return (Double) getValue("percentile75");
-  }
-  /**
-   * The 75th percentile value.
-   */
-  @JsonIgnore public Collection<Double> getPercentile75Doubles() {
-    final Object current = myData.get("percentile75");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
-    }
-    return Arrays.asList((Double) current);
-  }
-  /**
-   * The 75th percentile value.
-   */
-  @JsonIgnore public String getPercentile75String() {
-    return (String) getValue("percentile75");
-  }
-  /**
-   * The 75th percentile value.
-   */
-  @JsonIgnore public Collection<String> getPercentile75Strings() {
-    final Object current = myData.get("percentile75");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * The duration of the item (movie, audio recording, event, etc.) in &lt;a href=&quot;http://en.wikipedia.org/wiki/ISO_8601&quot;&gt;ISO 8601 date format&lt;/a&gt;.
-   */
-  @JsonIgnore public Duration getDuration() {
-    return (Duration) getValue("duration");
-  }
-  /**
-   * The duration of the item (movie, audio recording, event, etc.) in &lt;a href=&quot;http://en.wikipedia.org/wiki/ISO_8601&quot;&gt;ISO 8601 date format&lt;/a&gt;.
-   */
-  @JsonIgnore public Collection<Duration> getDurations() {
-    final Object current = myData.get("duration");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Duration>) current;
-    }
-    return Arrays.asList((Duration) current);
-  }
-  /**
-   * The 25th percentile value.
-   */
-  @JsonIgnore public Integer getPercentile25Integer() {
-    return (Integer) getValue("percentile25");
-  }
-  /**
-   * The 25th percentile value.
-   */
-  @JsonIgnore public Collection<Integer> getPercentile25Integers() {
-    final Object current = myData.get("percentile25");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
-    }
-    return Arrays.asList((Integer) current);
-  }
-  /**
-   * The 25th percentile value.
-   */
-  @JsonIgnore public Long getPercentile25Long() {
-    return (Long) getValue("percentile25");
-  }
-  /**
-   * The 25th percentile value.
-   */
-  @JsonIgnore public Collection<Long> getPercentile25Longs() {
-    final Object current = myData.get("percentile25");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
-    }
-    return Arrays.asList((Long) current);
-  }
-  /**
-   * The 25th percentile value.
-   */
-  @JsonIgnore public Float getPercentile25Float() {
-    return (Float) getValue("percentile25");
-  }
-  /**
-   * The 25th percentile value.
-   */
-  @JsonIgnore public Collection<Float> getPercentile25Floats() {
-    final Object current = myData.get("percentile25");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
-    }
-    return Arrays.asList((Float) current);
-  }
-  /**
-   * The 25th percentile value.
-   */
-  @JsonIgnore public Double getPercentile25Double() {
-    return (Double) getValue("percentile25");
-  }
-  /**
-   * The 25th percentile value.
-   */
-  @JsonIgnore public Collection<Double> getPercentile25Doubles() {
-    final Object current = myData.get("percentile25");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
-    }
-    return Arrays.asList((Double) current);
-  }
-  /**
-   * The 25th percentile value.
-   */
-  @JsonIgnore public String getPercentile25String() {
-    return (String) getValue("percentile25");
-  }
-  /**
-   * The 25th percentile value.
-   */
-  @JsonIgnore public Collection<String> getPercentile25Strings() {
-    final Object current = myData.get("percentile25");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
   /**
    * The median value.
    */
@@ -469,6 +197,278 @@ public class QuantitativeValueDistribution extends StructuredValue {
     }
     return Arrays.asList((String) current);
   }
+  /**
+   * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
+   */
+  @JsonIgnore public Duration getDuration() {
+    return (Duration) getValue("duration");
+  }
+  /**
+   * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
+   */
+  @JsonIgnore public Collection<Duration> getDurations() {
+    final Object current = myData.get("duration");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Duration>) current;
+    }
+    return Arrays.asList((Duration) current);
+  }
+  /**
+   * The 25th percentile value.
+   */
+  @JsonIgnore public Integer getPercentile25Integer() {
+    return (Integer) getValue("percentile25");
+  }
+  /**
+   * The 25th percentile value.
+   */
+  @JsonIgnore public Collection<Integer> getPercentile25Integers() {
+    final Object current = myData.get("percentile25");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Integer>) current;
+    }
+    return Arrays.asList((Integer) current);
+  }
+  /**
+   * The 25th percentile value.
+   */
+  @JsonIgnore public Long getPercentile25Long() {
+    return (Long) getValue("percentile25");
+  }
+  /**
+   * The 25th percentile value.
+   */
+  @JsonIgnore public Collection<Long> getPercentile25Longs() {
+    final Object current = myData.get("percentile25");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Long>) current;
+    }
+    return Arrays.asList((Long) current);
+  }
+  /**
+   * The 25th percentile value.
+   */
+  @JsonIgnore public Float getPercentile25Float() {
+    return (Float) getValue("percentile25");
+  }
+  /**
+   * The 25th percentile value.
+   */
+  @JsonIgnore public Collection<Float> getPercentile25Floats() {
+    final Object current = myData.get("percentile25");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Float>) current;
+    }
+    return Arrays.asList((Float) current);
+  }
+  /**
+   * The 25th percentile value.
+   */
+  @JsonIgnore public Double getPercentile25Double() {
+    return (Double) getValue("percentile25");
+  }
+  /**
+   * The 25th percentile value.
+   */
+  @JsonIgnore public Collection<Double> getPercentile25Doubles() {
+    final Object current = myData.get("percentile25");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Double>) current;
+    }
+    return Arrays.asList((Double) current);
+  }
+  /**
+   * The 25th percentile value.
+   */
+  @JsonIgnore public String getPercentile25String() {
+    return (String) getValue("percentile25");
+  }
+  /**
+   * The 25th percentile value.
+   */
+  @JsonIgnore public Collection<String> getPercentile25Strings() {
+    final Object current = myData.get("percentile25");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * The 75th percentile value.
+   */
+  @JsonIgnore public Integer getPercentile75Integer() {
+    return (Integer) getValue("percentile75");
+  }
+  /**
+   * The 75th percentile value.
+   */
+  @JsonIgnore public Collection<Integer> getPercentile75Integers() {
+    final Object current = myData.get("percentile75");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Integer>) current;
+    }
+    return Arrays.asList((Integer) current);
+  }
+  /**
+   * The 75th percentile value.
+   */
+  @JsonIgnore public Long getPercentile75Long() {
+    return (Long) getValue("percentile75");
+  }
+  /**
+   * The 75th percentile value.
+   */
+  @JsonIgnore public Collection<Long> getPercentile75Longs() {
+    final Object current = myData.get("percentile75");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Long>) current;
+    }
+    return Arrays.asList((Long) current);
+  }
+  /**
+   * The 75th percentile value.
+   */
+  @JsonIgnore public Float getPercentile75Float() {
+    return (Float) getValue("percentile75");
+  }
+  /**
+   * The 75th percentile value.
+   */
+  @JsonIgnore public Collection<Float> getPercentile75Floats() {
+    final Object current = myData.get("percentile75");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Float>) current;
+    }
+    return Arrays.asList((Float) current);
+  }
+  /**
+   * The 75th percentile value.
+   */
+  @JsonIgnore public Double getPercentile75Double() {
+    return (Double) getValue("percentile75");
+  }
+  /**
+   * The 75th percentile value.
+   */
+  @JsonIgnore public Collection<Double> getPercentile75Doubles() {
+    final Object current = myData.get("percentile75");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Double>) current;
+    }
+    return Arrays.asList((Double) current);
+  }
+  /**
+   * The 75th percentile value.
+   */
+  @JsonIgnore public String getPercentile75String() {
+    return (String) getValue("percentile75");
+  }
+  /**
+   * The 75th percentile value.
+   */
+  @JsonIgnore public Collection<String> getPercentile75Strings() {
+    final Object current = myData.get("percentile75");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * The 90th percentile value.
+   */
+  @JsonIgnore public Integer getPercentile90Integer() {
+    return (Integer) getValue("percentile90");
+  }
+  /**
+   * The 90th percentile value.
+   */
+  @JsonIgnore public Collection<Integer> getPercentile90Integers() {
+    final Object current = myData.get("percentile90");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Integer>) current;
+    }
+    return Arrays.asList((Integer) current);
+  }
+  /**
+   * The 90th percentile value.
+   */
+  @JsonIgnore public Long getPercentile90Long() {
+    return (Long) getValue("percentile90");
+  }
+  /**
+   * The 90th percentile value.
+   */
+  @JsonIgnore public Collection<Long> getPercentile90Longs() {
+    final Object current = myData.get("percentile90");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Long>) current;
+    }
+    return Arrays.asList((Long) current);
+  }
+  /**
+   * The 90th percentile value.
+   */
+  @JsonIgnore public Float getPercentile90Float() {
+    return (Float) getValue("percentile90");
+  }
+  /**
+   * The 90th percentile value.
+   */
+  @JsonIgnore public Collection<Float> getPercentile90Floats() {
+    final Object current = myData.get("percentile90");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Float>) current;
+    }
+    return Arrays.asList((Float) current);
+  }
+  /**
+   * The 90th percentile value.
+   */
+  @JsonIgnore public Double getPercentile90Double() {
+    return (Double) getValue("percentile90");
+  }
+  /**
+   * The 90th percentile value.
+   */
+  @JsonIgnore public Collection<Double> getPercentile90Doubles() {
+    final Object current = myData.get("percentile90");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Double>) current;
+    }
+    return Arrays.asList((Double) current);
+  }
+  /**
+   * The 90th percentile value.
+   */
+  @JsonIgnore public String getPercentile90String() {
+    return (String) getValue("percentile90");
+  }
+  /**
+   * The 90th percentile value.
+   */
+  @JsonIgnore public Collection<String> getPercentile90Strings() {
+    final Object current = myData.get("percentile90");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
   protected QuantitativeValueDistribution(java.util.Map<String,Object> data) {
     super(data);
   }
@@ -482,118 +482,6 @@ public class QuantitativeValueDistribution extends StructuredValue {
     }
     @NotNull public QuantitativeValueDistribution build() {
       return new QuantitativeValueDistribution(myData);
-    }
-    /**
-     * The 90th percentile value.
-     */
-    @NotNull public Builder percentile90(@NotNull Integer integer) {
-      putValue("percentile90", integer);
-      return this;
-    }
-    /**
-     * The 90th percentile value.
-     */
-    @NotNull public Builder percentile90(@NotNull Long percentile90) {
-      putValue("percentile90", percentile90);
-      return this;
-    }
-    /**
-     * The 90th percentile value.
-     */
-    @NotNull public Builder percentile90(@NotNull Float percentile90) {
-      putValue("percentile90", percentile90);
-      return this;
-    }
-    /**
-     * The 90th percentile value.
-     */
-    @NotNull public Builder percentile90(@NotNull Double percentile90) {
-      putValue("percentile90", percentile90);
-      return this;
-    }
-    /**
-     * The 90th percentile value.
-     */
-    @NotNull public Builder percentile90(@NotNull String percentile90) {
-      putValue("percentile90", percentile90);
-      return this;
-    }
-    /**
-     * The 75th percentile value.
-     */
-    @NotNull public Builder percentile75(@NotNull Integer integer) {
-      putValue("percentile75", integer);
-      return this;
-    }
-    /**
-     * The 75th percentile value.
-     */
-    @NotNull public Builder percentile75(@NotNull Long percentile75) {
-      putValue("percentile75", percentile75);
-      return this;
-    }
-    /**
-     * The 75th percentile value.
-     */
-    @NotNull public Builder percentile75(@NotNull Float percentile75) {
-      putValue("percentile75", percentile75);
-      return this;
-    }
-    /**
-     * The 75th percentile value.
-     */
-    @NotNull public Builder percentile75(@NotNull Double percentile75) {
-      putValue("percentile75", percentile75);
-      return this;
-    }
-    /**
-     * The 75th percentile value.
-     */
-    @NotNull public Builder percentile75(@NotNull String percentile75) {
-      putValue("percentile75", percentile75);
-      return this;
-    }
-    /**
-     * The duration of the item (movie, audio recording, event, etc.) in &lt;a href=&quot;http://en.wikipedia.org/wiki/ISO_8601&quot;&gt;ISO 8601 date format&lt;/a&gt;.
-     */
-    @NotNull public Builder duration(@NotNull Duration duration) {
-      putValue("duration", duration);
-      return this;
-    }
-    /**
-     * The 25th percentile value.
-     */
-    @NotNull public Builder percentile25(@NotNull Integer integer) {
-      putValue("percentile25", integer);
-      return this;
-    }
-    /**
-     * The 25th percentile value.
-     */
-    @NotNull public Builder percentile25(@NotNull Long percentile25) {
-      putValue("percentile25", percentile25);
-      return this;
-    }
-    /**
-     * The 25th percentile value.
-     */
-    @NotNull public Builder percentile25(@NotNull Float percentile25) {
-      putValue("percentile25", percentile25);
-      return this;
-    }
-    /**
-     * The 25th percentile value.
-     */
-    @NotNull public Builder percentile25(@NotNull Double percentile25) {
-      putValue("percentile25", percentile25);
-      return this;
-    }
-    /**
-     * The 25th percentile value.
-     */
-    @NotNull public Builder percentile25(@NotNull String percentile25) {
-      putValue("percentile25", percentile25);
-      return this;
     }
     /**
      * The median value.
@@ -666,59 +554,115 @@ public class QuantitativeValueDistribution extends StructuredValue {
       return this;
     }
     /**
-     * URL of the item.
+     * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
+    @NotNull public Builder duration(@NotNull Duration duration) {
+      putValue("duration", duration);
       return this;
     }
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * The 25th percentile value.
      */
-    @NotNull public Builder additionalType(@NotNull String additionalType) {
-      putValue("additionalType", additionalType);
+    @NotNull public Builder percentile25(@NotNull Integer integer) {
+      putValue("percentile25", integer);
       return this;
     }
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * The 25th percentile value.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
-      putValue("disambiguatingDescription", description);
+    @NotNull public Builder percentile25(@NotNull Long percentile25) {
+      putValue("percentile25", percentile25);
       return this;
     }
     /**
-     * A description of the item.
+     * The 25th percentile value.
      */
-    @NotNull public Builder description(@NotNull Description description) {
-      putValue("description", description);
+    @NotNull public Builder percentile25(@NotNull Float percentile25) {
+      putValue("percentile25", percentile25);
       return this;
     }
     /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     * The 25th percentile value.
      */
-    @NotNull public Builder sameAs(@NotNull String sameAs) {
-      putValue("sameAs", sameAs);
+    @NotNull public Builder percentile25(@NotNull Double percentile25) {
+      putValue("percentile25", percentile25);
       return this;
     }
     /**
-     * The name of the item.
+     * The 25th percentile value.
      */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
+    @NotNull public Builder percentile25(@NotNull String percentile25) {
+      putValue("percentile25", percentile25);
       return this;
     }
     /**
-     * An alias for the item.
+     * The 75th percentile value.
      */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
+    @NotNull public Builder percentile75(@NotNull Integer integer) {
+      putValue("percentile75", integer);
       return this;
     }
     /**
-     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
+     * The 75th percentile value.
      */
-    @NotNull public Builder image(@NotNull Image image) {
-      putValue("image", image);
+    @NotNull public Builder percentile75(@NotNull Long percentile75) {
+      putValue("percentile75", percentile75);
+      return this;
+    }
+    /**
+     * The 75th percentile value.
+     */
+    @NotNull public Builder percentile75(@NotNull Float percentile75) {
+      putValue("percentile75", percentile75);
+      return this;
+    }
+    /**
+     * The 75th percentile value.
+     */
+    @NotNull public Builder percentile75(@NotNull Double percentile75) {
+      putValue("percentile75", percentile75);
+      return this;
+    }
+    /**
+     * The 75th percentile value.
+     */
+    @NotNull public Builder percentile75(@NotNull String percentile75) {
+      putValue("percentile75", percentile75);
+      return this;
+    }
+    /**
+     * The 90th percentile value.
+     */
+    @NotNull public Builder percentile90(@NotNull Integer integer) {
+      putValue("percentile90", integer);
+      return this;
+    }
+    /**
+     * The 90th percentile value.
+     */
+    @NotNull public Builder percentile90(@NotNull Long percentile90) {
+      putValue("percentile90", percentile90);
+      return this;
+    }
+    /**
+     * The 90th percentile value.
+     */
+    @NotNull public Builder percentile90(@NotNull Float percentile90) {
+      putValue("percentile90", percentile90);
+      return this;
+    }
+    /**
+     * The 90th percentile value.
+     */
+    @NotNull public Builder percentile90(@NotNull Double percentile90) {
+      putValue("percentile90", percentile90);
+      return this;
+    }
+    /**
+     * The 90th percentile value.
+     */
+    @NotNull public Builder percentile90(@NotNull String percentile90) {
+      putValue("percentile90", percentile90);
       return this;
     }
     /**
@@ -736,24 +680,45 @@ public class QuantitativeValueDistribution extends StructuredValue {
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * URL of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
+    @NotNull public Builder additionalType(@NotNull String additionalType) {
+      putValue("additionalType", additionalType);
+      return this;
+    }
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     */
+    @NotNull public Builder sameAs(@NotNull String sameAs) {
+      putValue("sameAs", sameAs);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * The name of the item.
+     */
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -784,6 +749,27 @@ public class QuantitativeValueDistribution extends StructuredValue {
       putValue("subjectOf", event.build());
       return this;
     }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -792,38 +778,6 @@ public class QuantitativeValueDistribution extends StructuredValue {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("percentile90".equals(key) && value instanceof Integer) { this.percentile90((Integer)value); return; }
-      if ("percentile90s".equals(key) && value instanceof Integer) { this.percentile90((Integer)value); return; }
-      if ("percentile90".equals(key) && value instanceof Long) { this.percentile90((Long)value); return; }
-      if ("percentile90s".equals(key) && value instanceof Long) { this.percentile90((Long)value); return; }
-      if ("percentile90".equals(key) && value instanceof Float) { this.percentile90((Float)value); return; }
-      if ("percentile90s".equals(key) && value instanceof Float) { this.percentile90((Float)value); return; }
-      if ("percentile90".equals(key) && value instanceof Double) { this.percentile90((Double)value); return; }
-      if ("percentile90s".equals(key) && value instanceof Double) { this.percentile90((Double)value); return; }
-      if ("percentile90".equals(key) && value instanceof String) { this.percentile90((String)value); return; }
-      if ("percentile90s".equals(key) && value instanceof String) { this.percentile90((String)value); return; }
-      if ("percentile75".equals(key) && value instanceof Integer) { this.percentile75((Integer)value); return; }
-      if ("percentile75s".equals(key) && value instanceof Integer) { this.percentile75((Integer)value); return; }
-      if ("percentile75".equals(key) && value instanceof Long) { this.percentile75((Long)value); return; }
-      if ("percentile75s".equals(key) && value instanceof Long) { this.percentile75((Long)value); return; }
-      if ("percentile75".equals(key) && value instanceof Float) { this.percentile75((Float)value); return; }
-      if ("percentile75s".equals(key) && value instanceof Float) { this.percentile75((Float)value); return; }
-      if ("percentile75".equals(key) && value instanceof Double) { this.percentile75((Double)value); return; }
-      if ("percentile75s".equals(key) && value instanceof Double) { this.percentile75((Double)value); return; }
-      if ("percentile75".equals(key) && value instanceof String) { this.percentile75((String)value); return; }
-      if ("percentile75s".equals(key) && value instanceof String) { this.percentile75((String)value); return; }
-      if ("duration".equals(key) && value instanceof Duration) { this.duration((Duration)value); return; }
-      if ("durations".equals(key) && value instanceof Duration) { this.duration((Duration)value); return; }
-      if ("percentile25".equals(key) && value instanceof Integer) { this.percentile25((Integer)value); return; }
-      if ("percentile25s".equals(key) && value instanceof Integer) { this.percentile25((Integer)value); return; }
-      if ("percentile25".equals(key) && value instanceof Long) { this.percentile25((Long)value); return; }
-      if ("percentile25s".equals(key) && value instanceof Long) { this.percentile25((Long)value); return; }
-      if ("percentile25".equals(key) && value instanceof Float) { this.percentile25((Float)value); return; }
-      if ("percentile25s".equals(key) && value instanceof Float) { this.percentile25((Float)value); return; }
-      if ("percentile25".equals(key) && value instanceof Double) { this.percentile25((Double)value); return; }
-      if ("percentile25s".equals(key) && value instanceof Double) { this.percentile25((Double)value); return; }
-      if ("percentile25".equals(key) && value instanceof String) { this.percentile25((String)value); return; }
-      if ("percentile25s".equals(key) && value instanceof String) { this.percentile25((String)value); return; }
       if ("median".equals(key) && value instanceof Integer) { this.median((Integer)value); return; }
       if ("medians".equals(key) && value instanceof Integer) { this.median((Integer)value); return; }
       if ("median".equals(key) && value instanceof Long) { this.median((Long)value); return; }
@@ -844,6 +798,38 @@ public class QuantitativeValueDistribution extends StructuredValue {
       if ("percentile10s".equals(key) && value instanceof Double) { this.percentile10((Double)value); return; }
       if ("percentile10".equals(key) && value instanceof String) { this.percentile10((String)value); return; }
       if ("percentile10s".equals(key) && value instanceof String) { this.percentile10((String)value); return; }
+      if ("duration".equals(key) && value instanceof Duration) { this.duration((Duration)value); return; }
+      if ("durations".equals(key) && value instanceof Duration) { this.duration((Duration)value); return; }
+      if ("percentile25".equals(key) && value instanceof Integer) { this.percentile25((Integer)value); return; }
+      if ("percentile25s".equals(key) && value instanceof Integer) { this.percentile25((Integer)value); return; }
+      if ("percentile25".equals(key) && value instanceof Long) { this.percentile25((Long)value); return; }
+      if ("percentile25s".equals(key) && value instanceof Long) { this.percentile25((Long)value); return; }
+      if ("percentile25".equals(key) && value instanceof Float) { this.percentile25((Float)value); return; }
+      if ("percentile25s".equals(key) && value instanceof Float) { this.percentile25((Float)value); return; }
+      if ("percentile25".equals(key) && value instanceof Double) { this.percentile25((Double)value); return; }
+      if ("percentile25s".equals(key) && value instanceof Double) { this.percentile25((Double)value); return; }
+      if ("percentile25".equals(key) && value instanceof String) { this.percentile25((String)value); return; }
+      if ("percentile25s".equals(key) && value instanceof String) { this.percentile25((String)value); return; }
+      if ("percentile75".equals(key) && value instanceof Integer) { this.percentile75((Integer)value); return; }
+      if ("percentile75s".equals(key) && value instanceof Integer) { this.percentile75((Integer)value); return; }
+      if ("percentile75".equals(key) && value instanceof Long) { this.percentile75((Long)value); return; }
+      if ("percentile75s".equals(key) && value instanceof Long) { this.percentile75((Long)value); return; }
+      if ("percentile75".equals(key) && value instanceof Float) { this.percentile75((Float)value); return; }
+      if ("percentile75s".equals(key) && value instanceof Float) { this.percentile75((Float)value); return; }
+      if ("percentile75".equals(key) && value instanceof Double) { this.percentile75((Double)value); return; }
+      if ("percentile75s".equals(key) && value instanceof Double) { this.percentile75((Double)value); return; }
+      if ("percentile75".equals(key) && value instanceof String) { this.percentile75((String)value); return; }
+      if ("percentile75s".equals(key) && value instanceof String) { this.percentile75((String)value); return; }
+      if ("percentile90".equals(key) && value instanceof Integer) { this.percentile90((Integer)value); return; }
+      if ("percentile90s".equals(key) && value instanceof Integer) { this.percentile90((Integer)value); return; }
+      if ("percentile90".equals(key) && value instanceof Long) { this.percentile90((Long)value); return; }
+      if ("percentile90s".equals(key) && value instanceof Long) { this.percentile90((Long)value); return; }
+      if ("percentile90".equals(key) && value instanceof Float) { this.percentile90((Float)value); return; }
+      if ("percentile90s".equals(key) && value instanceof Float) { this.percentile90((Float)value); return; }
+      if ("percentile90".equals(key) && value instanceof Double) { this.percentile90((Double)value); return; }
+      if ("percentile90s".equals(key) && value instanceof Double) { this.percentile90((Double)value); return; }
+      if ("percentile90".equals(key) && value instanceof String) { this.percentile90((String)value); return; }
+      if ("percentile90s".equals(key) && value instanceof String) { this.percentile90((String)value); return; }
       super.fromMap(key, value);
     }
   }

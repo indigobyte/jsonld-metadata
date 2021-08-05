@@ -28,91 +28,6 @@ import java.util.*;
  */
 public class OrderItem extends Intangible {
   /**
-   * The delivery of the parcel related to this order or order item.
-   */
-  @JsonIgnore public ParcelDelivery getOrderDelivery() {
-    return (ParcelDelivery) getValue("orderDelivery");
-  }
-  /**
-   * The delivery of the parcel related to this order or order item.
-   */
-  @JsonIgnore public Collection<ParcelDelivery> getOrderDeliverys() {
-    final Object current = myData.get("orderDelivery");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<ParcelDelivery>) current;
-    }
-    return Arrays.asList((ParcelDelivery) current);
-  }
-  /**
-   * The current status of the order item.
-   */
-  @JsonIgnore public OrderStatus getOrderItemStatus() {
-    return (OrderStatus) getValue("orderItemStatus");
-  }
-  /**
-   * The current status of the order item.
-   */
-  @JsonIgnore public Collection<OrderStatus> getOrderItemStatuss() {
-    final Object current = myData.get("orderItemStatus");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<OrderStatus>) current;
-    }
-    return Arrays.asList((OrderStatus) current);
-  }
-  /**
-   * The item ordered.
-   */
-  @JsonIgnore public OrderItem getOrderedItemOrderItem() {
-    return (OrderItem) getValue("orderedItem");
-  }
-  /**
-   * The item ordered.
-   */
-  @JsonIgnore public Collection<OrderItem> getOrderedItemOrderItems() {
-    final Object current = myData.get("orderedItem");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<OrderItem>) current;
-    }
-    return Arrays.asList((OrderItem) current);
-  }
-  /**
-   * The item ordered.
-   */
-  @JsonIgnore public Product getOrderedItemProduct() {
-    return (Product) getValue("orderedItem");
-  }
-  /**
-   * The item ordered.
-   */
-  @JsonIgnore public Collection<Product> getOrderedItemProducts() {
-    final Object current = myData.get("orderedItem");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Product>) current;
-    }
-    return Arrays.asList((Product) current);
-  }
-  /**
-   * The item ordered.
-   */
-  @JsonIgnore public Service getOrderedItemService() {
-    return (Service) getValue("orderedItem");
-  }
-  /**
-   * The item ordered.
-   */
-  @JsonIgnore public Collection<Service> getOrderedItemServices() {
-    final Object current = myData.get("orderedItem");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Service>) current;
-    }
-    return Arrays.asList((Service) current);
-  }
-  /**
    * The number of the item ordered. If the property is not set, assume the quantity is one.
    */
   @JsonIgnore public Integer getOrderQuantityInteger() {
@@ -198,6 +113,91 @@ public class OrderItem extends Intangible {
     return Arrays.asList((String) current);
   }
   /**
+   * The item ordered.
+   */
+  @JsonIgnore public OrderItem getOrderedItemOrderItem() {
+    return (OrderItem) getValue("orderedItem");
+  }
+  /**
+   * The item ordered.
+   */
+  @JsonIgnore public Collection<OrderItem> getOrderedItemOrderItems() {
+    final Object current = myData.get("orderedItem");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<OrderItem>) current;
+    }
+    return Arrays.asList((OrderItem) current);
+  }
+  /**
+   * The item ordered.
+   */
+  @JsonIgnore public Product getOrderedItemProduct() {
+    return (Product) getValue("orderedItem");
+  }
+  /**
+   * The item ordered.
+   */
+  @JsonIgnore public Collection<Product> getOrderedItemProducts() {
+    final Object current = myData.get("orderedItem");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Product>) current;
+    }
+    return Arrays.asList((Product) current);
+  }
+  /**
+   * The item ordered.
+   */
+  @JsonIgnore public Service getOrderedItemService() {
+    return (Service) getValue("orderedItem");
+  }
+  /**
+   * The item ordered.
+   */
+  @JsonIgnore public Collection<Service> getOrderedItemServices() {
+    final Object current = myData.get("orderedItem");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Service>) current;
+    }
+    return Arrays.asList((Service) current);
+  }
+  /**
+   * The current status of the order item.
+   */
+  @JsonIgnore public OrderStatus getOrderItemStatus() {
+    return (OrderStatus) getValue("orderItemStatus");
+  }
+  /**
+   * The current status of the order item.
+   */
+  @JsonIgnore public Collection<OrderStatus> getOrderItemStatuss() {
+    final Object current = myData.get("orderItemStatus");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<OrderStatus>) current;
+    }
+    return Arrays.asList((OrderStatus) current);
+  }
+  /**
+   * The delivery of the parcel related to this order or order item.
+   */
+  @JsonIgnore public ParcelDelivery getOrderDelivery() {
+    return (ParcelDelivery) getValue("orderDelivery");
+  }
+  /**
+   * The delivery of the parcel related to this order or order item.
+   */
+  @JsonIgnore public Collection<ParcelDelivery> getOrderDeliverys() {
+    final Object current = myData.get("orderDelivery");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<ParcelDelivery>) current;
+    }
+    return Arrays.asList((ParcelDelivery) current);
+  }
+  /**
    * The identifier of the order item.
    */
   @JsonIgnore public String getOrderItemNumber() {
@@ -229,24 +229,38 @@ public class OrderItem extends Intangible {
       return new OrderItem(myData);
     }
     /**
-     * The delivery of the parcel related to this order or order item.
+     * The number of the item ordered. If the property is not set, assume the quantity is one.
      */
-    @NotNull public Builder orderDelivery(@NotNull ParcelDelivery parcelDelivery) {
-      putValue("orderDelivery", parcelDelivery);
+    @NotNull public Builder orderQuantity(@NotNull Integer integer) {
+      putValue("orderQuantity", integer);
       return this;
     }
     /**
-     * The delivery of the parcel related to this order or order item.
+     * The number of the item ordered. If the property is not set, assume the quantity is one.
      */
-    @NotNull public Builder orderDelivery(@NotNull ParcelDelivery.Builder parcelDelivery) {
-      putValue("orderDelivery", parcelDelivery.build());
+    @NotNull public Builder orderQuantity(@NotNull Long orderQuantity) {
+      putValue("orderQuantity", orderQuantity);
       return this;
     }
     /**
-     * The current status of the order item.
+     * The number of the item ordered. If the property is not set, assume the quantity is one.
      */
-    @NotNull public Builder orderItemStatus(@NotNull OrderStatus orderStatus) {
-      putValue("orderItemStatus", orderStatus);
+    @NotNull public Builder orderQuantity(@NotNull Float orderQuantity) {
+      putValue("orderQuantity", orderQuantity);
+      return this;
+    }
+    /**
+     * The number of the item ordered. If the property is not set, assume the quantity is one.
+     */
+    @NotNull public Builder orderQuantity(@NotNull Double orderQuantity) {
+      putValue("orderQuantity", orderQuantity);
+      return this;
+    }
+    /**
+     * The number of the item ordered. If the property is not set, assume the quantity is one.
+     */
+    @NotNull public Builder orderQuantity(@NotNull String orderQuantity) {
+      putValue("orderQuantity", orderQuantity);
       return this;
     }
     /**
@@ -292,38 +306,31 @@ public class OrderItem extends Intangible {
       return this;
     }
     /**
-     * The number of the item ordered. If the property is not set, assume the quantity is one.
+     * The current status of the order item.
      */
-    @NotNull public Builder orderQuantity(@NotNull Integer integer) {
-      putValue("orderQuantity", integer);
+    @NotNull public Builder orderItemStatus(@NotNull OrderStatus orderStatus) {
+      putValue("orderItemStatus", orderStatus);
       return this;
     }
     /**
-     * The number of the item ordered. If the property is not set, assume the quantity is one.
+     * The current status of the order item.
      */
-    @NotNull public Builder orderQuantity(@NotNull Long orderQuantity) {
-      putValue("orderQuantity", orderQuantity);
+    @NotNull public Builder orderItemStatus(@NotNull OrderStatus.Builder orderStatus) {
+      putValue("orderItemStatus", orderStatus.build());
       return this;
     }
     /**
-     * The number of the item ordered. If the property is not set, assume the quantity is one.
+     * The delivery of the parcel related to this order or order item.
      */
-    @NotNull public Builder orderQuantity(@NotNull Float orderQuantity) {
-      putValue("orderQuantity", orderQuantity);
+    @NotNull public Builder orderDelivery(@NotNull ParcelDelivery parcelDelivery) {
+      putValue("orderDelivery", parcelDelivery);
       return this;
     }
     /**
-     * The number of the item ordered. If the property is not set, assume the quantity is one.
+     * The delivery of the parcel related to this order or order item.
      */
-    @NotNull public Builder orderQuantity(@NotNull Double orderQuantity) {
-      putValue("orderQuantity", orderQuantity);
-      return this;
-    }
-    /**
-     * The number of the item ordered. If the property is not set, assume the quantity is one.
-     */
-    @NotNull public Builder orderQuantity(@NotNull String orderQuantity) {
-      putValue("orderQuantity", orderQuantity);
+    @NotNull public Builder orderDelivery(@NotNull ParcelDelivery.Builder parcelDelivery) {
+      putValue("orderDelivery", parcelDelivery.build());
       return this;
     }
     /**
@@ -331,62 +338,6 @@ public class OrderItem extends Intangible {
      */
     @NotNull public Builder orderItemNumber(@NotNull String orderItemNumber) {
       putValue("orderItemNumber", orderItemNumber);
-      return this;
-    }
-    /**
-     * URL of the item.
-     */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
-      return this;
-    }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     */
-    @NotNull public Builder additionalType(@NotNull String additionalType) {
-      putValue("additionalType", additionalType);
-      return this;
-    }
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     */
-    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
-      putValue("disambiguatingDescription", description);
-      return this;
-    }
-    /**
-     * A description of the item.
-     */
-    @NotNull public Builder description(@NotNull Description description) {
-      putValue("description", description);
-      return this;
-    }
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     */
-    @NotNull public Builder sameAs(@NotNull String sameAs) {
-      putValue("sameAs", sameAs);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
-      return this;
-    }
-    /**
-     * An alias for the item.
-     */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
-      return this;
-    }
-    /**
-     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
-     */
-    @NotNull public Builder image(@NotNull Image image) {
-      putValue("image", image);
       return this;
     }
     /**
@@ -404,24 +355,45 @@ public class OrderItem extends Intangible {
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * URL of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
+    @NotNull public Builder additionalType(@NotNull String additionalType) {
+      putValue("additionalType", additionalType);
+      return this;
+    }
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     */
+    @NotNull public Builder sameAs(@NotNull String sameAs) {
+      putValue("sameAs", sameAs);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * The name of the item.
+     */
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -452,6 +424,27 @@ public class OrderItem extends Intangible {
       putValue("subjectOf", event.build());
       return this;
     }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -460,16 +453,6 @@ public class OrderItem extends Intangible {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("orderDelivery".equals(key) && value instanceof ParcelDelivery) { this.orderDelivery((ParcelDelivery)value); return; }
-      if ("orderDeliverys".equals(key) && value instanceof ParcelDelivery) { this.orderDelivery((ParcelDelivery)value); return; }
-      if ("orderItemStatus".equals(key) && value instanceof OrderStatus) { this.orderItemStatus((OrderStatus)value); return; }
-      if ("orderItemStatuss".equals(key) && value instanceof OrderStatus) { this.orderItemStatus((OrderStatus)value); return; }
-      if ("orderedItem".equals(key) && value instanceof OrderItem) { this.orderedItem((OrderItem)value); return; }
-      if ("orderedItems".equals(key) && value instanceof OrderItem) { this.orderedItem((OrderItem)value); return; }
-      if ("orderedItem".equals(key) && value instanceof Product) { this.orderedItem((Product)value); return; }
-      if ("orderedItems".equals(key) && value instanceof Product) { this.orderedItem((Product)value); return; }
-      if ("orderedItem".equals(key) && value instanceof Service) { this.orderedItem((Service)value); return; }
-      if ("orderedItems".equals(key) && value instanceof Service) { this.orderedItem((Service)value); return; }
       if ("orderQuantity".equals(key) && value instanceof Integer) { this.orderQuantity((Integer)value); return; }
       if ("orderQuantitys".equals(key) && value instanceof Integer) { this.orderQuantity((Integer)value); return; }
       if ("orderQuantity".equals(key) && value instanceof Long) { this.orderQuantity((Long)value); return; }
@@ -480,6 +463,16 @@ public class OrderItem extends Intangible {
       if ("orderQuantitys".equals(key) && value instanceof Double) { this.orderQuantity((Double)value); return; }
       if ("orderQuantity".equals(key) && value instanceof String) { this.orderQuantity((String)value); return; }
       if ("orderQuantitys".equals(key) && value instanceof String) { this.orderQuantity((String)value); return; }
+      if ("orderedItem".equals(key) && value instanceof OrderItem) { this.orderedItem((OrderItem)value); return; }
+      if ("orderedItems".equals(key) && value instanceof OrderItem) { this.orderedItem((OrderItem)value); return; }
+      if ("orderedItem".equals(key) && value instanceof Product) { this.orderedItem((Product)value); return; }
+      if ("orderedItems".equals(key) && value instanceof Product) { this.orderedItem((Product)value); return; }
+      if ("orderedItem".equals(key) && value instanceof Service) { this.orderedItem((Service)value); return; }
+      if ("orderedItems".equals(key) && value instanceof Service) { this.orderedItem((Service)value); return; }
+      if ("orderItemStatus".equals(key) && value instanceof OrderStatus) { this.orderItemStatus((OrderStatus)value); return; }
+      if ("orderItemStatuss".equals(key) && value instanceof OrderStatus) { this.orderItemStatus((OrderStatus)value); return; }
+      if ("orderDelivery".equals(key) && value instanceof ParcelDelivery) { this.orderDelivery((ParcelDelivery)value); return; }
+      if ("orderDeliverys".equals(key) && value instanceof ParcelDelivery) { this.orderDelivery((ParcelDelivery)value); return; }
       if ("orderItemNumber".equals(key) && value instanceof String) { this.orderItemNumber((String)value); return; }
       if ("orderItemNumbers".equals(key) && value instanceof String) { this.orderItemNumber((String)value); return; }
       super.fromMap(key, value);

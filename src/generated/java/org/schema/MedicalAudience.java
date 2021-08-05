@@ -24,7 +24,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * Target audiences for medical web pages. Enumerated type.
+ * Target audiences for medical web pages.
  */
 public class MedicalAudience extends PeopleAudience {
   protected MedicalAudience(java.util.Map<String,Object> data) {
@@ -42,45 +42,52 @@ public class MedicalAudience extends PeopleAudience {
       return new MedicalAudience(myData);
     }
     /**
-     * The gender of the person or audience.
+     * Minimum recommended age in years for the audience or user.
      */
-    @NotNull public Builder suggestedGender(@NotNull String suggestedGender) {
-      putValue("suggestedGender", suggestedGender);
+    @NotNull public Builder suggestedMinAge(@NotNull Integer integer) {
+      putValue("suggestedMinAge", integer);
       return this;
     }
     /**
-     * Maximal age recommended for viewing content.
+     * Minimum recommended age in years for the audience or user.
      */
-    @NotNull public Builder suggestedMaxAge(@NotNull Integer integer) {
-      putValue("suggestedMaxAge", integer);
+    @NotNull public Builder suggestedMinAge(@NotNull Long suggestedMinAge) {
+      putValue("suggestedMinAge", suggestedMinAge);
       return this;
     }
     /**
-     * Maximal age recommended for viewing content.
+     * Minimum recommended age in years for the audience or user.
      */
-    @NotNull public Builder suggestedMaxAge(@NotNull Long suggestedMaxAge) {
-      putValue("suggestedMaxAge", suggestedMaxAge);
+    @NotNull public Builder suggestedMinAge(@NotNull Float suggestedMinAge) {
+      putValue("suggestedMinAge", suggestedMinAge);
       return this;
     }
     /**
-     * Maximal age recommended for viewing content.
+     * Minimum recommended age in years for the audience or user.
      */
-    @NotNull public Builder suggestedMaxAge(@NotNull Float suggestedMaxAge) {
-      putValue("suggestedMaxAge", suggestedMaxAge);
+    @NotNull public Builder suggestedMinAge(@NotNull Double suggestedMinAge) {
+      putValue("suggestedMinAge", suggestedMinAge);
       return this;
     }
     /**
-     * Maximal age recommended for viewing content.
+     * Minimum recommended age in years for the audience or user.
      */
-    @NotNull public Builder suggestedMaxAge(@NotNull Double suggestedMaxAge) {
-      putValue("suggestedMaxAge", suggestedMaxAge);
+    @NotNull public Builder suggestedMinAge(@NotNull String suggestedMinAge) {
+      putValue("suggestedMinAge", suggestedMinAge);
       return this;
     }
     /**
-     * Maximal age recommended for viewing content.
+     * A suggested range of body measurements for the intended audience or person, for example inseam between 32 and 34 inches or height between 170 and 190 cm. Typically found on a size chart for wearable products.
      */
-    @NotNull public Builder suggestedMaxAge(@NotNull String suggestedMaxAge) {
-      putValue("suggestedMaxAge", suggestedMaxAge);
+    @NotNull public Builder suggestedMeasurement(@NotNull QuantitativeValue quantitativeValue) {
+      putValue("suggestedMeasurement", quantitativeValue);
+      return this;
+    }
+    /**
+     * A suggested range of body measurements for the intended audience or person, for example inseam between 32 and 34 inches or height between 170 and 190 cm. Typically found on a size chart for wearable products.
+     */
+    @NotNull public Builder suggestedMeasurement(@NotNull QuantitativeValue.Builder quantitativeValue) {
+      putValue("suggestedMeasurement", quantitativeValue.build());
       return this;
     }
     /**
@@ -91,17 +98,45 @@ public class MedicalAudience extends PeopleAudience {
       return this;
     }
     /**
-     * Audiences defined by a person's maximum age.
-     */
-    @NotNull public Builder requiredMaxAge(@NotNull Integer integer) {
-      putValue("requiredMaxAge", integer);
-      return this;
-    }
-    /**
      * Audiences defined by a person's gender.
      */
     @NotNull public Builder requiredGender(@NotNull String requiredGender) {
       putValue("requiredGender", requiredGender);
+      return this;
+    }
+    /**
+     * The suggested gender of the intended person or audience, for example &quot;male&quot;, &quot;female&quot;, or &quot;unisex&quot;.
+     */
+    @NotNull public Builder suggestedGender(@NotNull GenderType genderType) {
+      putValue("suggestedGender", genderType);
+      return this;
+    }
+    /**
+     * The suggested gender of the intended person or audience, for example &quot;male&quot;, &quot;female&quot;, or &quot;unisex&quot;.
+     */
+    @NotNull public Builder suggestedGender(@NotNull String suggestedGender) {
+      putValue("suggestedGender", suggestedGender);
+      return this;
+    }
+    /**
+     * The age or age range for the intended audience or person, for example 3-12 months for infants, 1-5 years for toddlers.
+     */
+    @NotNull public Builder suggestedAge(@NotNull QuantitativeValue quantitativeValue) {
+      putValue("suggestedAge", quantitativeValue);
+      return this;
+    }
+    /**
+     * The age or age range for the intended audience or person, for example 3-12 months for infants, 1-5 years for toddlers.
+     */
+    @NotNull public Builder suggestedAge(@NotNull QuantitativeValue.Builder quantitativeValue) {
+      putValue("suggestedAge", quantitativeValue.build());
+      return this;
+    }
+    /**
+     * Audiences defined by a person's maximum age.
+     */
+    @NotNull public Builder requiredMaxAge(@NotNull Integer integer) {
+      putValue("requiredMaxAge", integer);
       return this;
     }
     /**
@@ -119,38 +154,38 @@ public class MedicalAudience extends PeopleAudience {
       return this;
     }
     /**
-     * Minimal age recommended for viewing content.
+     * Maximum recommended age in years for the audience or user.
      */
-    @NotNull public Builder suggestedMinAge(@NotNull Integer integer) {
-      putValue("suggestedMinAge", integer);
+    @NotNull public Builder suggestedMaxAge(@NotNull Integer integer) {
+      putValue("suggestedMaxAge", integer);
       return this;
     }
     /**
-     * Minimal age recommended for viewing content.
+     * Maximum recommended age in years for the audience or user.
      */
-    @NotNull public Builder suggestedMinAge(@NotNull Long suggestedMinAge) {
-      putValue("suggestedMinAge", suggestedMinAge);
+    @NotNull public Builder suggestedMaxAge(@NotNull Long suggestedMaxAge) {
+      putValue("suggestedMaxAge", suggestedMaxAge);
       return this;
     }
     /**
-     * Minimal age recommended for viewing content.
+     * Maximum recommended age in years for the audience or user.
      */
-    @NotNull public Builder suggestedMinAge(@NotNull Float suggestedMinAge) {
-      putValue("suggestedMinAge", suggestedMinAge);
+    @NotNull public Builder suggestedMaxAge(@NotNull Float suggestedMaxAge) {
+      putValue("suggestedMaxAge", suggestedMaxAge);
       return this;
     }
     /**
-     * Minimal age recommended for viewing content.
+     * Maximum recommended age in years for the audience or user.
      */
-    @NotNull public Builder suggestedMinAge(@NotNull Double suggestedMinAge) {
-      putValue("suggestedMinAge", suggestedMinAge);
+    @NotNull public Builder suggestedMaxAge(@NotNull Double suggestedMaxAge) {
+      putValue("suggestedMaxAge", suggestedMaxAge);
       return this;
     }
     /**
-     * Minimal age recommended for viewing content.
+     * Maximum recommended age in years for the audience or user.
      */
-    @NotNull public Builder suggestedMinAge(@NotNull String suggestedMinAge) {
-      putValue("suggestedMinAge", suggestedMinAge);
+    @NotNull public Builder suggestedMaxAge(@NotNull String suggestedMaxAge) {
+      putValue("suggestedMaxAge", suggestedMaxAge);
       return this;
     }
     /**
@@ -175,62 +210,6 @@ public class MedicalAudience extends PeopleAudience {
       return this;
     }
     /**
-     * URL of the item.
-     */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
-      return this;
-    }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     */
-    @NotNull public Builder additionalType(@NotNull String additionalType) {
-      putValue("additionalType", additionalType);
-      return this;
-    }
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     */
-    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
-      putValue("disambiguatingDescription", description);
-      return this;
-    }
-    /**
-     * A description of the item.
-     */
-    @NotNull public Builder description(@NotNull Description description) {
-      putValue("description", description);
-      return this;
-    }
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     */
-    @NotNull public Builder sameAs(@NotNull String sameAs) {
-      putValue("sameAs", sameAs);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
-      return this;
-    }
-    /**
-     * An alias for the item.
-     */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
-      return this;
-    }
-    /**
-     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
-     */
-    @NotNull public Builder image(@NotNull Image image) {
-      putValue("image", image);
-      return this;
-    }
-    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -245,24 +224,45 @@ public class MedicalAudience extends PeopleAudience {
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * URL of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
+    @NotNull public Builder additionalType(@NotNull String additionalType) {
+      putValue("additionalType", additionalType);
+      return this;
+    }
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     */
+    @NotNull public Builder sameAs(@NotNull String sameAs) {
+      putValue("sameAs", sameAs);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * The name of the item.
+     */
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -291,6 +291,27 @@ public class MedicalAudience extends PeopleAudience {
      */
     @NotNull public Builder subjectOf(@NotNull Event.Builder event) {
       putValue("subjectOf", event.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
       return this;
     }
     @NotNull public Builder id(@NotNull String id) {

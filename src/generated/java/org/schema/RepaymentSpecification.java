@@ -24,111 +24,9 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * A structured value representing repayment.Source: https://github.com/schemaorg/schemaorg/issues/1253
+ * A structured value representing repayment.
  */
 public class RepaymentSpecification extends StructuredValue {
-  /**
-   * The amount to be paid as a penalty in the event of early payment of the loan.
-   */
-  @JsonIgnore public MonetaryAmount getEarlyPrepaymentPenalty() {
-    return (MonetaryAmount) getValue("earlyPrepaymentPenalty");
-  }
-  /**
-   * The amount to be paid as a penalty in the event of early payment of the loan.
-   */
-  @JsonIgnore public Collection<MonetaryAmount> getEarlyPrepaymentPenaltys() {
-    final Object current = myData.get("earlyPrepaymentPenalty");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MonetaryAmount>) current;
-    }
-    return Arrays.asList((MonetaryAmount) current);
-  }
-  /**
-   * The number of payments contractually required at origination to repay the loan. For monthly paying loans this is the number of months from the contractual first payment date to the maturity date.
-   */
-  @JsonIgnore public Integer getNumberOfLoanPaymentsInteger() {
-    return (Integer) getValue("numberOfLoanPayments");
-  }
-  /**
-   * The number of payments contractually required at origination to repay the loan. For monthly paying loans this is the number of months from the contractual first payment date to the maturity date.
-   */
-  @JsonIgnore public Collection<Integer> getNumberOfLoanPaymentsIntegers() {
-    final Object current = myData.get("numberOfLoanPayments");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
-    }
-    return Arrays.asList((Integer) current);
-  }
-  /**
-   * The number of payments contractually required at origination to repay the loan. For monthly paying loans this is the number of months from the contractual first payment date to the maturity date.
-   */
-  @JsonIgnore public Long getNumberOfLoanPaymentsLong() {
-    return (Long) getValue("numberOfLoanPayments");
-  }
-  /**
-   * The number of payments contractually required at origination to repay the loan. For monthly paying loans this is the number of months from the contractual first payment date to the maturity date.
-   */
-  @JsonIgnore public Collection<Long> getNumberOfLoanPaymentsLongs() {
-    final Object current = myData.get("numberOfLoanPayments");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
-    }
-    return Arrays.asList((Long) current);
-  }
-  /**
-   * The number of payments contractually required at origination to repay the loan. For monthly paying loans this is the number of months from the contractual first payment date to the maturity date.
-   */
-  @JsonIgnore public Float getNumberOfLoanPaymentsFloat() {
-    return (Float) getValue("numberOfLoanPayments");
-  }
-  /**
-   * The number of payments contractually required at origination to repay the loan. For monthly paying loans this is the number of months from the contractual first payment date to the maturity date.
-   */
-  @JsonIgnore public Collection<Float> getNumberOfLoanPaymentsFloats() {
-    final Object current = myData.get("numberOfLoanPayments");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
-    }
-    return Arrays.asList((Float) current);
-  }
-  /**
-   * The number of payments contractually required at origination to repay the loan. For monthly paying loans this is the number of months from the contractual first payment date to the maturity date.
-   */
-  @JsonIgnore public Double getNumberOfLoanPaymentsDouble() {
-    return (Double) getValue("numberOfLoanPayments");
-  }
-  /**
-   * The number of payments contractually required at origination to repay the loan. For monthly paying loans this is the number of months from the contractual first payment date to the maturity date.
-   */
-  @JsonIgnore public Collection<Double> getNumberOfLoanPaymentsDoubles() {
-    final Object current = myData.get("numberOfLoanPayments");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
-    }
-    return Arrays.asList((Double) current);
-  }
-  /**
-   * The number of payments contractually required at origination to repay the loan. For monthly paying loans this is the number of months from the contractual first payment date to the maturity date.
-   */
-  @JsonIgnore public String getNumberOfLoanPaymentsString() {
-    return (String) getValue("numberOfLoanPayments");
-  }
-  /**
-   * The number of payments contractually required at origination to repay the loan. For monthly paying loans this is the number of months from the contractual first payment date to the maturity date.
-   */
-  @JsonIgnore public Collection<String> getNumberOfLoanPaymentsStrings() {
-    final Object current = myData.get("numberOfLoanPayments");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
   /**
    * a type of payment made in cash during the onset of the purchase of an expensive good/service. The payment typically represents only a percentage of the full purchase price.
    */
@@ -213,6 +111,23 @@ public class RepaymentSpecification extends StructuredValue {
       return (Collection<String>) current;
     }
     return Arrays.asList((String) current);
+  }
+  /**
+   * The amount of money to pay in a single payment.
+   */
+  @JsonIgnore public MonetaryAmount getLoanPaymentAmount() {
+    return (MonetaryAmount) getValue("loanPaymentAmount");
+  }
+  /**
+   * The amount of money to pay in a single payment.
+   */
+  @JsonIgnore public Collection<MonetaryAmount> getLoanPaymentAmounts() {
+    final Object current = myData.get("loanPaymentAmount");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<MonetaryAmount>) current;
+    }
+    return Arrays.asList((MonetaryAmount) current);
   }
   /**
    * Frequency of payments due, i.e. number of months between payments. This is defined as a frequency, i.e. the reciprocal of a period of time.
@@ -300,16 +215,101 @@ public class RepaymentSpecification extends StructuredValue {
     return Arrays.asList((String) current);
   }
   /**
-   * The amount of money to pay in a single payment.
+   * The number of payments contractually required at origination to repay the loan. For monthly paying loans this is the number of months from the contractual first payment date to the maturity date.
    */
-  @JsonIgnore public MonetaryAmount getLoanPaymentAmount() {
-    return (MonetaryAmount) getValue("loanPaymentAmount");
+  @JsonIgnore public Integer getNumberOfLoanPaymentsInteger() {
+    return (Integer) getValue("numberOfLoanPayments");
   }
   /**
-   * The amount of money to pay in a single payment.
+   * The number of payments contractually required at origination to repay the loan. For monthly paying loans this is the number of months from the contractual first payment date to the maturity date.
    */
-  @JsonIgnore public Collection<MonetaryAmount> getLoanPaymentAmounts() {
-    final Object current = myData.get("loanPaymentAmount");
+  @JsonIgnore public Collection<Integer> getNumberOfLoanPaymentsIntegers() {
+    final Object current = myData.get("numberOfLoanPayments");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Integer>) current;
+    }
+    return Arrays.asList((Integer) current);
+  }
+  /**
+   * The number of payments contractually required at origination to repay the loan. For monthly paying loans this is the number of months from the contractual first payment date to the maturity date.
+   */
+  @JsonIgnore public Long getNumberOfLoanPaymentsLong() {
+    return (Long) getValue("numberOfLoanPayments");
+  }
+  /**
+   * The number of payments contractually required at origination to repay the loan. For monthly paying loans this is the number of months from the contractual first payment date to the maturity date.
+   */
+  @JsonIgnore public Collection<Long> getNumberOfLoanPaymentsLongs() {
+    final Object current = myData.get("numberOfLoanPayments");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Long>) current;
+    }
+    return Arrays.asList((Long) current);
+  }
+  /**
+   * The number of payments contractually required at origination to repay the loan. For monthly paying loans this is the number of months from the contractual first payment date to the maturity date.
+   */
+  @JsonIgnore public Float getNumberOfLoanPaymentsFloat() {
+    return (Float) getValue("numberOfLoanPayments");
+  }
+  /**
+   * The number of payments contractually required at origination to repay the loan. For monthly paying loans this is the number of months from the contractual first payment date to the maturity date.
+   */
+  @JsonIgnore public Collection<Float> getNumberOfLoanPaymentsFloats() {
+    final Object current = myData.get("numberOfLoanPayments");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Float>) current;
+    }
+    return Arrays.asList((Float) current);
+  }
+  /**
+   * The number of payments contractually required at origination to repay the loan. For monthly paying loans this is the number of months from the contractual first payment date to the maturity date.
+   */
+  @JsonIgnore public Double getNumberOfLoanPaymentsDouble() {
+    return (Double) getValue("numberOfLoanPayments");
+  }
+  /**
+   * The number of payments contractually required at origination to repay the loan. For monthly paying loans this is the number of months from the contractual first payment date to the maturity date.
+   */
+  @JsonIgnore public Collection<Double> getNumberOfLoanPaymentsDoubles() {
+    final Object current = myData.get("numberOfLoanPayments");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Double>) current;
+    }
+    return Arrays.asList((Double) current);
+  }
+  /**
+   * The number of payments contractually required at origination to repay the loan. For monthly paying loans this is the number of months from the contractual first payment date to the maturity date.
+   */
+  @JsonIgnore public String getNumberOfLoanPaymentsString() {
+    return (String) getValue("numberOfLoanPayments");
+  }
+  /**
+   * The number of payments contractually required at origination to repay the loan. For monthly paying loans this is the number of months from the contractual first payment date to the maturity date.
+   */
+  @JsonIgnore public Collection<String> getNumberOfLoanPaymentsStrings() {
+    final Object current = myData.get("numberOfLoanPayments");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * The amount to be paid as a penalty in the event of early payment of the loan.
+   */
+  @JsonIgnore public MonetaryAmount getEarlyPrepaymentPenalty() {
+    return (MonetaryAmount) getValue("earlyPrepaymentPenalty");
+  }
+  /**
+   * The amount to be paid as a penalty in the event of early payment of the loan.
+   */
+  @JsonIgnore public Collection<MonetaryAmount> getEarlyPrepaymentPenaltys() {
+    final Object current = myData.get("earlyPrepaymentPenalty");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<MonetaryAmount>) current;
@@ -329,55 +329,6 @@ public class RepaymentSpecification extends StructuredValue {
     }
     @NotNull public RepaymentSpecification build() {
       return new RepaymentSpecification(myData);
-    }
-    /**
-     * The amount to be paid as a penalty in the event of early payment of the loan.
-     */
-    @NotNull public Builder earlyPrepaymentPenalty(@NotNull MonetaryAmount monetaryAmount) {
-      putValue("earlyPrepaymentPenalty", monetaryAmount);
-      return this;
-    }
-    /**
-     * The amount to be paid as a penalty in the event of early payment of the loan.
-     */
-    @NotNull public Builder earlyPrepaymentPenalty(@NotNull MonetaryAmount.Builder monetaryAmount) {
-      putValue("earlyPrepaymentPenalty", monetaryAmount.build());
-      return this;
-    }
-    /**
-     * The number of payments contractually required at origination to repay the loan. For monthly paying loans this is the number of months from the contractual first payment date to the maturity date.
-     */
-    @NotNull public Builder numberOfLoanPayments(@NotNull Integer integer) {
-      putValue("numberOfLoanPayments", integer);
-      return this;
-    }
-    /**
-     * The number of payments contractually required at origination to repay the loan. For monthly paying loans this is the number of months from the contractual first payment date to the maturity date.
-     */
-    @NotNull public Builder numberOfLoanPayments(@NotNull Long numberOfLoanPayments) {
-      putValue("numberOfLoanPayments", numberOfLoanPayments);
-      return this;
-    }
-    /**
-     * The number of payments contractually required at origination to repay the loan. For monthly paying loans this is the number of months from the contractual first payment date to the maturity date.
-     */
-    @NotNull public Builder numberOfLoanPayments(@NotNull Float numberOfLoanPayments) {
-      putValue("numberOfLoanPayments", numberOfLoanPayments);
-      return this;
-    }
-    /**
-     * The number of payments contractually required at origination to repay the loan. For monthly paying loans this is the number of months from the contractual first payment date to the maturity date.
-     */
-    @NotNull public Builder numberOfLoanPayments(@NotNull Double numberOfLoanPayments) {
-      putValue("numberOfLoanPayments", numberOfLoanPayments);
-      return this;
-    }
-    /**
-     * The number of payments contractually required at origination to repay the loan. For monthly paying loans this is the number of months from the contractual first payment date to the maturity date.
-     */
-    @NotNull public Builder numberOfLoanPayments(@NotNull String numberOfLoanPayments) {
-      putValue("numberOfLoanPayments", numberOfLoanPayments);
-      return this;
     }
     /**
      * a type of payment made in cash during the onset of the purchase of an expensive good/service. The payment typically represents only a percentage of the full purchase price.
@@ -412,6 +363,20 @@ public class RepaymentSpecification extends StructuredValue {
      */
     @NotNull public Builder downPayment(@NotNull String downPayment) {
       putValue("downPayment", downPayment);
+      return this;
+    }
+    /**
+     * The amount of money to pay in a single payment.
+     */
+    @NotNull public Builder loanPaymentAmount(@NotNull MonetaryAmount monetaryAmount) {
+      putValue("loanPaymentAmount", monetaryAmount);
+      return this;
+    }
+    /**
+     * The amount of money to pay in a single payment.
+     */
+    @NotNull public Builder loanPaymentAmount(@NotNull MonetaryAmount.Builder monetaryAmount) {
+      putValue("loanPaymentAmount", monetaryAmount.build());
       return this;
     }
     /**
@@ -450,73 +415,52 @@ public class RepaymentSpecification extends StructuredValue {
       return this;
     }
     /**
-     * The amount of money to pay in a single payment.
+     * The number of payments contractually required at origination to repay the loan. For monthly paying loans this is the number of months from the contractual first payment date to the maturity date.
      */
-    @NotNull public Builder loanPaymentAmount(@NotNull MonetaryAmount monetaryAmount) {
-      putValue("loanPaymentAmount", monetaryAmount);
+    @NotNull public Builder numberOfLoanPayments(@NotNull Integer integer) {
+      putValue("numberOfLoanPayments", integer);
       return this;
     }
     /**
-     * The amount of money to pay in a single payment.
+     * The number of payments contractually required at origination to repay the loan. For monthly paying loans this is the number of months from the contractual first payment date to the maturity date.
      */
-    @NotNull public Builder loanPaymentAmount(@NotNull MonetaryAmount.Builder monetaryAmount) {
-      putValue("loanPaymentAmount", monetaryAmount.build());
+    @NotNull public Builder numberOfLoanPayments(@NotNull Long numberOfLoanPayments) {
+      putValue("numberOfLoanPayments", numberOfLoanPayments);
       return this;
     }
     /**
-     * URL of the item.
+     * The number of payments contractually required at origination to repay the loan. For monthly paying loans this is the number of months from the contractual first payment date to the maturity date.
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
+    @NotNull public Builder numberOfLoanPayments(@NotNull Float numberOfLoanPayments) {
+      putValue("numberOfLoanPayments", numberOfLoanPayments);
       return this;
     }
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * The number of payments contractually required at origination to repay the loan. For monthly paying loans this is the number of months from the contractual first payment date to the maturity date.
      */
-    @NotNull public Builder additionalType(@NotNull String additionalType) {
-      putValue("additionalType", additionalType);
+    @NotNull public Builder numberOfLoanPayments(@NotNull Double numberOfLoanPayments) {
+      putValue("numberOfLoanPayments", numberOfLoanPayments);
       return this;
     }
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * The number of payments contractually required at origination to repay the loan. For monthly paying loans this is the number of months from the contractual first payment date to the maturity date.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
-      putValue("disambiguatingDescription", description);
+    @NotNull public Builder numberOfLoanPayments(@NotNull String numberOfLoanPayments) {
+      putValue("numberOfLoanPayments", numberOfLoanPayments);
       return this;
     }
     /**
-     * A description of the item.
+     * The amount to be paid as a penalty in the event of early payment of the loan.
      */
-    @NotNull public Builder description(@NotNull Description description) {
-      putValue("description", description);
+    @NotNull public Builder earlyPrepaymentPenalty(@NotNull MonetaryAmount monetaryAmount) {
+      putValue("earlyPrepaymentPenalty", monetaryAmount);
       return this;
     }
     /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     * The amount to be paid as a penalty in the event of early payment of the loan.
      */
-    @NotNull public Builder sameAs(@NotNull String sameAs) {
-      putValue("sameAs", sameAs);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
-      return this;
-    }
-    /**
-     * An alias for the item.
-     */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
-      return this;
-    }
-    /**
-     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
-     */
-    @NotNull public Builder image(@NotNull Image image) {
-      putValue("image", image);
+    @NotNull public Builder earlyPrepaymentPenalty(@NotNull MonetaryAmount.Builder monetaryAmount) {
+      putValue("earlyPrepaymentPenalty", monetaryAmount.build());
       return this;
     }
     /**
@@ -534,24 +478,45 @@ public class RepaymentSpecification extends StructuredValue {
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * URL of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
+    @NotNull public Builder additionalType(@NotNull String additionalType) {
+      putValue("additionalType", additionalType);
+      return this;
+    }
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     */
+    @NotNull public Builder sameAs(@NotNull String sameAs) {
+      putValue("sameAs", sameAs);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * The name of the item.
+     */
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -582,6 +547,27 @@ public class RepaymentSpecification extends StructuredValue {
       putValue("subjectOf", event.build());
       return this;
     }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -590,18 +576,6 @@ public class RepaymentSpecification extends StructuredValue {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("earlyPrepaymentPenalty".equals(key) && value instanceof MonetaryAmount) { this.earlyPrepaymentPenalty((MonetaryAmount)value); return; }
-      if ("earlyPrepaymentPenaltys".equals(key) && value instanceof MonetaryAmount) { this.earlyPrepaymentPenalty((MonetaryAmount)value); return; }
-      if ("numberOfLoanPayments".equals(key) && value instanceof Integer) { this.numberOfLoanPayments((Integer)value); return; }
-      if ("numberOfLoanPaymentss".equals(key) && value instanceof Integer) { this.numberOfLoanPayments((Integer)value); return; }
-      if ("numberOfLoanPayments".equals(key) && value instanceof Long) { this.numberOfLoanPayments((Long)value); return; }
-      if ("numberOfLoanPaymentss".equals(key) && value instanceof Long) { this.numberOfLoanPayments((Long)value); return; }
-      if ("numberOfLoanPayments".equals(key) && value instanceof Float) { this.numberOfLoanPayments((Float)value); return; }
-      if ("numberOfLoanPaymentss".equals(key) && value instanceof Float) { this.numberOfLoanPayments((Float)value); return; }
-      if ("numberOfLoanPayments".equals(key) && value instanceof Double) { this.numberOfLoanPayments((Double)value); return; }
-      if ("numberOfLoanPaymentss".equals(key) && value instanceof Double) { this.numberOfLoanPayments((Double)value); return; }
-      if ("numberOfLoanPayments".equals(key) && value instanceof String) { this.numberOfLoanPayments((String)value); return; }
-      if ("numberOfLoanPaymentss".equals(key) && value instanceof String) { this.numberOfLoanPayments((String)value); return; }
       if ("downPayment".equals(key) && value instanceof Integer) { this.downPayment((Integer)value); return; }
       if ("downPayments".equals(key) && value instanceof Integer) { this.downPayment((Integer)value); return; }
       if ("downPayment".equals(key) && value instanceof Long) { this.downPayment((Long)value); return; }
@@ -612,6 +586,8 @@ public class RepaymentSpecification extends StructuredValue {
       if ("downPayments".equals(key) && value instanceof Double) { this.downPayment((Double)value); return; }
       if ("downPayment".equals(key) && value instanceof String) { this.downPayment((String)value); return; }
       if ("downPayments".equals(key) && value instanceof String) { this.downPayment((String)value); return; }
+      if ("loanPaymentAmount".equals(key) && value instanceof MonetaryAmount) { this.loanPaymentAmount((MonetaryAmount)value); return; }
+      if ("loanPaymentAmounts".equals(key) && value instanceof MonetaryAmount) { this.loanPaymentAmount((MonetaryAmount)value); return; }
       if ("loanPaymentFrequency".equals(key) && value instanceof Integer) { this.loanPaymentFrequency((Integer)value); return; }
       if ("loanPaymentFrequencys".equals(key) && value instanceof Integer) { this.loanPaymentFrequency((Integer)value); return; }
       if ("loanPaymentFrequency".equals(key) && value instanceof Long) { this.loanPaymentFrequency((Long)value); return; }
@@ -622,8 +598,18 @@ public class RepaymentSpecification extends StructuredValue {
       if ("loanPaymentFrequencys".equals(key) && value instanceof Double) { this.loanPaymentFrequency((Double)value); return; }
       if ("loanPaymentFrequency".equals(key) && value instanceof String) { this.loanPaymentFrequency((String)value); return; }
       if ("loanPaymentFrequencys".equals(key) && value instanceof String) { this.loanPaymentFrequency((String)value); return; }
-      if ("loanPaymentAmount".equals(key) && value instanceof MonetaryAmount) { this.loanPaymentAmount((MonetaryAmount)value); return; }
-      if ("loanPaymentAmounts".equals(key) && value instanceof MonetaryAmount) { this.loanPaymentAmount((MonetaryAmount)value); return; }
+      if ("numberOfLoanPayments".equals(key) && value instanceof Integer) { this.numberOfLoanPayments((Integer)value); return; }
+      if ("numberOfLoanPaymentss".equals(key) && value instanceof Integer) { this.numberOfLoanPayments((Integer)value); return; }
+      if ("numberOfLoanPayments".equals(key) && value instanceof Long) { this.numberOfLoanPayments((Long)value); return; }
+      if ("numberOfLoanPaymentss".equals(key) && value instanceof Long) { this.numberOfLoanPayments((Long)value); return; }
+      if ("numberOfLoanPayments".equals(key) && value instanceof Float) { this.numberOfLoanPayments((Float)value); return; }
+      if ("numberOfLoanPaymentss".equals(key) && value instanceof Float) { this.numberOfLoanPayments((Float)value); return; }
+      if ("numberOfLoanPayments".equals(key) && value instanceof Double) { this.numberOfLoanPayments((Double)value); return; }
+      if ("numberOfLoanPaymentss".equals(key) && value instanceof Double) { this.numberOfLoanPayments((Double)value); return; }
+      if ("numberOfLoanPayments".equals(key) && value instanceof String) { this.numberOfLoanPayments((String)value); return; }
+      if ("numberOfLoanPaymentss".equals(key) && value instanceof String) { this.numberOfLoanPayments((String)value); return; }
+      if ("earlyPrepaymentPenalty".equals(key) && value instanceof MonetaryAmount) { this.earlyPrepaymentPenalty((MonetaryAmount)value); return; }
+      if ("earlyPrepaymentPenaltys".equals(key) && value instanceof MonetaryAmount) { this.earlyPrepaymentPenalty((MonetaryAmount)value); return; }
       super.fromMap(key, value);
     }
   }

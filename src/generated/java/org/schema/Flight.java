@@ -28,57 +28,6 @@ import java.util.*;
  */
 public class Flight extends Trip {
   /**
-   * The airport where the flight originates.
-   */
-  @JsonIgnore public Airport getDepartureAirport() {
-    return (Airport) getValue("departureAirport");
-  }
-  /**
-   * The airport where the flight originates.
-   */
-  @JsonIgnore public Collection<Airport> getDepartureAirports() {
-    final Object current = myData.get("departureAirport");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Airport>) current;
-    }
-    return Arrays.asList((Airport) current);
-  }
-  /**
-   * The unique identifier for a flight including the airline IATA code. For example, if describing United flight 110, where the IATA code for United is 'UA', the flightNumber is 'UA110'.
-   */
-  @JsonIgnore public String getFlightNumber() {
-    return (String) getValue("flightNumber");
-  }
-  /**
-   * The unique identifier for a flight including the airline IATA code. For example, if describing United flight 110, where the IATA code for United is 'UA', the flightNumber is 'UA110'.
-   */
-  @JsonIgnore public Collection<String> getFlightNumbers() {
-    final Object current = myData.get("flightNumber");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * Identifier of the flight's arrival terminal.
-   */
-  @JsonIgnore public String getArrivalTerminal() {
-    return (String) getValue("arrivalTerminal");
-  }
-  /**
-   * Identifier of the flight's arrival terminal.
-   */
-  @JsonIgnore public Collection<String> getArrivalTerminals() {
-    final Object current = myData.get("arrivalTerminal");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
    * Identifier of the flight's arrival gate.
    */
   @JsonIgnore public String getArrivalGate() {
@@ -89,108 +38,6 @@ public class Flight extends Trip {
    */
   @JsonIgnore public Collection<String> getArrivalGates() {
     final Object current = myData.get("arrivalGate");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * Description of the meals that will be provided or available for purchase.
-   */
-  @JsonIgnore public String getMealService() {
-    return (String) getValue("mealService");
-  }
-  /**
-   * Description of the meals that will be provided or available for purchase.
-   */
-  @JsonIgnore public Collection<String> getMealServices() {
-    final Object current = myData.get("mealService");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
-   */
-  @JsonIgnore public Participant getSeller() {
-    return (Participant) getValue("seller");
-  }
-  /**
-   * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
-   */
-  @JsonIgnore public Collection<Participant> getSellers() {
-    final Object current = myData.get("seller");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Participant>) current;
-    }
-    return Arrays.asList((Participant) current);
-  }
-  /**
-   * The distance of the flight.
-   */
-  @JsonIgnore public Distance getFlightDistanceDistance() {
-    return (Distance) getValue("flightDistance");
-  }
-  /**
-   * The distance of the flight.
-   */
-  @JsonIgnore public Collection<Distance> getFlightDistanceDistances() {
-    final Object current = myData.get("flightDistance");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Distance>) current;
-    }
-    return Arrays.asList((Distance) current);
-  }
-  /**
-   * The distance of the flight.
-   */
-  @JsonIgnore public String getFlightDistanceString() {
-    return (String) getValue("flightDistance");
-  }
-  /**
-   * The distance of the flight.
-   */
-  @JsonIgnore public Collection<String> getFlightDistanceStrings() {
-    final Object current = myData.get("flightDistance");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * The estimated time the flight will take.
-   */
-  @JsonIgnore public Duration getEstimatedFlightDurationDuration() {
-    return (Duration) getValue("estimatedFlightDuration");
-  }
-  /**
-   * The estimated time the flight will take.
-   */
-  @JsonIgnore public Collection<Duration> getEstimatedFlightDurationDurations() {
-    final Object current = myData.get("estimatedFlightDuration");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Duration>) current;
-    }
-    return Arrays.asList((Duration) current);
-  }
-  /**
-   * The estimated time the flight will take.
-   */
-  @JsonIgnore public String getEstimatedFlightDurationString() {
-    return (String) getValue("estimatedFlightDuration");
-  }
-  /**
-   * The estimated time the flight will take.
-   */
-  @JsonIgnore public Collection<String> getEstimatedFlightDurationStrings() {
-    final Object current = myData.get("estimatedFlightDuration");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<String>) current;
@@ -249,38 +96,55 @@ public class Flight extends Trip {
     return Arrays.asList((String) current);
   }
   /**
-   * The airport where the flight terminates.
+   * Description of the meals that will be provided or available for purchase.
    */
-  @JsonIgnore public Airport getArrivalAirport() {
-    return (Airport) getValue("arrivalAirport");
+  @JsonIgnore public String getMealService() {
+    return (String) getValue("mealService");
   }
   /**
-   * The airport where the flight terminates.
+   * Description of the meals that will be provided or available for purchase.
    */
-  @JsonIgnore public Collection<Airport> getArrivalAirports() {
-    final Object current = myData.get("arrivalAirport");
+  @JsonIgnore public Collection<String> getMealServices() {
+    final Object current = myData.get("mealService");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<Airport>) current;
+      return (Collection<String>) current;
     }
-    return Arrays.asList((Airport) current);
+    return Arrays.asList((String) current);
   }
   /**
-   * The time when a passenger can check into the flight online.
+   * The estimated time the flight will take.
    */
-  @JsonIgnore public java.util.Date getWebCheckinTime() {
-    return (java.util.Date) getValue("webCheckinTime");
+  @JsonIgnore public Duration getEstimatedFlightDurationDuration() {
+    return (Duration) getValue("estimatedFlightDuration");
   }
   /**
-   * The time when a passenger can check into the flight online.
+   * The estimated time the flight will take.
    */
-  @JsonIgnore public Collection<java.util.Date> getWebCheckinTimes() {
-    final Object current = myData.get("webCheckinTime");
+  @JsonIgnore public Collection<Duration> getEstimatedFlightDurationDurations() {
+    final Object current = myData.get("estimatedFlightDuration");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+      return (Collection<Duration>) current;
     }
-    return Arrays.asList((java.util.Date) current);
+    return Arrays.asList((Duration) current);
+  }
+  /**
+   * The estimated time the flight will take.
+   */
+  @JsonIgnore public String getEstimatedFlightDurationString() {
+    return (String) getValue("estimatedFlightDuration");
+  }
+  /**
+   * The estimated time the flight will take.
+   */
+  @JsonIgnore public Collection<String> getEstimatedFlightDurationStrings() {
+    final Object current = myData.get("estimatedFlightDuration");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
   }
   /**
    * The type of boarding policy used by the airline (e.g. zone-based or group-based).
@@ -316,6 +180,142 @@ public class Flight extends Trip {
     }
     return Arrays.asList((String) current);
   }
+  /**
+   * The distance of the flight.
+   */
+  @JsonIgnore public Distance getFlightDistanceDistance() {
+    return (Distance) getValue("flightDistance");
+  }
+  /**
+   * The distance of the flight.
+   */
+  @JsonIgnore public Collection<Distance> getFlightDistanceDistances() {
+    final Object current = myData.get("flightDistance");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Distance>) current;
+    }
+    return Arrays.asList((Distance) current);
+  }
+  /**
+   * The distance of the flight.
+   */
+  @JsonIgnore public String getFlightDistanceString() {
+    return (String) getValue("flightDistance");
+  }
+  /**
+   * The distance of the flight.
+   */
+  @JsonIgnore public Collection<String> getFlightDistanceStrings() {
+    final Object current = myData.get("flightDistance");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * The unique identifier for a flight including the airline IATA code. For example, if describing United flight 110, where the IATA code for United is 'UA', the flightNumber is 'UA110'.
+   */
+  @JsonIgnore public String getFlightNumber() {
+    return (String) getValue("flightNumber");
+  }
+  /**
+   * The unique identifier for a flight including the airline IATA code. For example, if describing United flight 110, where the IATA code for United is 'UA', the flightNumber is 'UA110'.
+   */
+  @JsonIgnore public Collection<String> getFlightNumbers() {
+    final Object current = myData.get("flightNumber");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * Identifier of the flight's arrival terminal.
+   */
+  @JsonIgnore public String getArrivalTerminal() {
+    return (String) getValue("arrivalTerminal");
+  }
+  /**
+   * Identifier of the flight's arrival terminal.
+   */
+  @JsonIgnore public Collection<String> getArrivalTerminals() {
+    final Object current = myData.get("arrivalTerminal");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+   */
+  @JsonIgnore public Participant getSeller() {
+    return (Participant) getValue("seller");
+  }
+  /**
+   * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+   */
+  @JsonIgnore public Collection<Participant> getSellers() {
+    final Object current = myData.get("seller");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Participant>) current;
+    }
+    return Arrays.asList((Participant) current);
+  }
+  /**
+   * The airport where the flight originates.
+   */
+  @JsonIgnore public Airport getDepartureAirport() {
+    return (Airport) getValue("departureAirport");
+  }
+  /**
+   * The airport where the flight originates.
+   */
+  @JsonIgnore public Collection<Airport> getDepartureAirports() {
+    final Object current = myData.get("departureAirport");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Airport>) current;
+    }
+    return Arrays.asList((Airport) current);
+  }
+  /**
+   * The airport where the flight terminates.
+   */
+  @JsonIgnore public Airport getArrivalAirport() {
+    return (Airport) getValue("arrivalAirport");
+  }
+  /**
+   * The airport where the flight terminates.
+   */
+  @JsonIgnore public Collection<Airport> getArrivalAirports() {
+    final Object current = myData.get("arrivalAirport");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Airport>) current;
+    }
+    return Arrays.asList((Airport) current);
+  }
+  /**
+   * The time when a passenger can check into the flight online.
+   */
+  @JsonIgnore public java.util.Date getWebCheckinTime() {
+    return (java.util.Date) getValue("webCheckinTime");
+  }
+  /**
+   * The time when a passenger can check into the flight online.
+   */
+  @JsonIgnore public Collection<java.util.Date> getWebCheckinTimes() {
+    final Object current = myData.get("webCheckinTime");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<java.util.Date>) current;
+    }
+    return Arrays.asList((java.util.Date) current);
+  }
   protected Flight(java.util.Map<String,Object> data) {
     super(data);
   }
@@ -331,87 +331,10 @@ public class Flight extends Trip {
       return new Flight(myData);
     }
     /**
-     * The airport where the flight originates.
-     */
-    @NotNull public Builder departureAirport(@NotNull Airport airport) {
-      putValue("departureAirport", airport);
-      return this;
-    }
-    /**
-     * The airport where the flight originates.
-     */
-    @NotNull public Builder departureAirport(@NotNull Airport.Builder airport) {
-      putValue("departureAirport", airport.build());
-      return this;
-    }
-    /**
-     * The unique identifier for a flight including the airline IATA code. For example, if describing United flight 110, where the IATA code for United is 'UA', the flightNumber is 'UA110'.
-     */
-    @NotNull public Builder flightNumber(@NotNull String flightNumber) {
-      putValue("flightNumber", flightNumber);
-      return this;
-    }
-    /**
-     * Identifier of the flight's arrival terminal.
-     */
-    @NotNull public Builder arrivalTerminal(@NotNull String arrivalTerminal) {
-      putValue("arrivalTerminal", arrivalTerminal);
-      return this;
-    }
-    /**
      * Identifier of the flight's arrival gate.
      */
     @NotNull public Builder arrivalGate(@NotNull String arrivalGate) {
       putValue("arrivalGate", arrivalGate);
-      return this;
-    }
-    /**
-     * Description of the meals that will be provided or available for purchase.
-     */
-    @NotNull public Builder mealService(@NotNull String mealService) {
-      putValue("mealService", mealService);
-      return this;
-    }
-    /**
-     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
-     */
-    @NotNull public Builder seller(@NotNull Participant participant) {
-      putValue("seller", participant);
-      return this;
-    }
-    /**
-     * The distance of the flight.
-     */
-    @NotNull public Builder flightDistance(@NotNull Distance distance) {
-      putValue("flightDistance", distance);
-      return this;
-    }
-    /**
-     * The distance of the flight.
-     */
-    @NotNull public Builder flightDistance(@NotNull Distance.Builder distance) {
-      putValue("flightDistance", distance.build());
-      return this;
-    }
-    /**
-     * The distance of the flight.
-     */
-    @NotNull public Builder flightDistance(@NotNull String flightDistance) {
-      putValue("flightDistance", flightDistance);
-      return this;
-    }
-    /**
-     * The estimated time the flight will take.
-     */
-    @NotNull public Builder estimatedFlightDuration(@NotNull Duration duration) {
-      putValue("estimatedFlightDuration", duration);
-      return this;
-    }
-    /**
-     * The estimated time the flight will take.
-     */
-    @NotNull public Builder estimatedFlightDuration(@NotNull String estimatedFlightDuration) {
-      putValue("estimatedFlightDuration", estimatedFlightDuration);
       return this;
     }
     /**
@@ -443,6 +366,97 @@ public class Flight extends Trip {
       return this;
     }
     /**
+     * Description of the meals that will be provided or available for purchase.
+     */
+    @NotNull public Builder mealService(@NotNull String mealService) {
+      putValue("mealService", mealService);
+      return this;
+    }
+    /**
+     * The estimated time the flight will take.
+     */
+    @NotNull public Builder estimatedFlightDuration(@NotNull Duration duration) {
+      putValue("estimatedFlightDuration", duration);
+      return this;
+    }
+    /**
+     * The estimated time the flight will take.
+     */
+    @NotNull public Builder estimatedFlightDuration(@NotNull String estimatedFlightDuration) {
+      putValue("estimatedFlightDuration", estimatedFlightDuration);
+      return this;
+    }
+    /**
+     * The type of boarding policy used by the airline (e.g. zone-based or group-based).
+     */
+    @NotNull public Builder boardingPolicy(@NotNull BoardingPolicyType boardingPolicyType) {
+      putValue("boardingPolicy", boardingPolicyType);
+      return this;
+    }
+    /**
+     * Identifier of the flight's departure gate.
+     */
+    @NotNull public Builder departureGate(@NotNull String departureGate) {
+      putValue("departureGate", departureGate);
+      return this;
+    }
+    /**
+     * The distance of the flight.
+     */
+    @NotNull public Builder flightDistance(@NotNull Distance distance) {
+      putValue("flightDistance", distance);
+      return this;
+    }
+    /**
+     * The distance of the flight.
+     */
+    @NotNull public Builder flightDistance(@NotNull Distance.Builder distance) {
+      putValue("flightDistance", distance.build());
+      return this;
+    }
+    /**
+     * The distance of the flight.
+     */
+    @NotNull public Builder flightDistance(@NotNull String flightDistance) {
+      putValue("flightDistance", flightDistance);
+      return this;
+    }
+    /**
+     * The unique identifier for a flight including the airline IATA code. For example, if describing United flight 110, where the IATA code for United is 'UA', the flightNumber is 'UA110'.
+     */
+    @NotNull public Builder flightNumber(@NotNull String flightNumber) {
+      putValue("flightNumber", flightNumber);
+      return this;
+    }
+    /**
+     * Identifier of the flight's arrival terminal.
+     */
+    @NotNull public Builder arrivalTerminal(@NotNull String arrivalTerminal) {
+      putValue("arrivalTerminal", arrivalTerminal);
+      return this;
+    }
+    /**
+     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+     */
+    @NotNull public Builder seller(@NotNull Participant participant) {
+      putValue("seller", participant);
+      return this;
+    }
+    /**
+     * The airport where the flight originates.
+     */
+    @NotNull public Builder departureAirport(@NotNull Airport airport) {
+      putValue("departureAirport", airport);
+      return this;
+    }
+    /**
+     * The airport where the flight originates.
+     */
+    @NotNull public Builder departureAirport(@NotNull Airport.Builder airport) {
+      putValue("departureAirport", airport.build());
+      return this;
+    }
+    /**
      * The airport where the flight terminates.
      */
     @NotNull public Builder arrivalAirport(@NotNull Airport airport) {
@@ -461,55 +475,6 @@ public class Flight extends Trip {
      */
     @NotNull public Builder webCheckinTime(@NotNull java.util.Date date) {
       putValue("webCheckinTime", date);
-      return this;
-    }
-    /**
-     * The type of boarding policy used by the airline (e.g. zone-based or group-based).
-     */
-    @NotNull public Builder boardingPolicy(@NotNull BoardingPolicyType boardingPolicyType) {
-      putValue("boardingPolicy", boardingPolicyType);
-      return this;
-    }
-    /**
-     * Identifier of the flight's departure gate.
-     */
-    @NotNull public Builder departureGate(@NotNull String departureGate) {
-      putValue("departureGate", departureGate);
-      return this;
-    }
-    /**
-     * The expected arrival time.
-     */
-    @NotNull public Builder arrivalTime(@NotNull java.util.Date date) {
-      putValue("arrivalTime", date);
-      return this;
-    }
-    /**
-     * Destination(s) ( &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Place&quot;&gt;Place&lt;/a&gt; ) that make up a trip. For a trip where destination order is important use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ItemList&quot;&gt;ItemList&lt;/a&gt; to specify that order (see examples).
-     */
-    @NotNull public Builder itinerary(@NotNull ItemList itemList) {
-      putValue("itinerary", itemList);
-      return this;
-    }
-    /**
-     * Destination(s) ( &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Place&quot;&gt;Place&lt;/a&gt; ) that make up a trip. For a trip where destination order is important use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ItemList&quot;&gt;ItemList&lt;/a&gt; to specify that order (see examples).
-     */
-    @NotNull public Builder itinerary(@NotNull ItemList.Builder itemList) {
-      putValue("itinerary", itemList.build());
-      return this;
-    }
-    /**
-     * Destination(s) ( &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Place&quot;&gt;Place&lt;/a&gt; ) that make up a trip. For a trip where destination order is important use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ItemList&quot;&gt;ItemList&lt;/a&gt; to specify that order (see examples).
-     */
-    @NotNull public Builder itinerary(@NotNull Place place) {
-      putValue("itinerary", place);
-      return this;
-    }
-    /**
-     * Destination(s) ( &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Place&quot;&gt;Place&lt;/a&gt; ) that make up a trip. For a trip where destination order is important use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ItemList&quot;&gt;ItemList&lt;/a&gt; to specify that order (see examples).
-     */
-    @NotNull public Builder itinerary(@NotNull Place.Builder place) {
-      putValue("itinerary", place.build());
       return this;
     }
     /**
@@ -541,6 +506,13 @@ public class Flight extends Trip {
       return this;
     }
     /**
+     * The expected arrival time.
+     */
+    @NotNull public Builder arrivalTime(@NotNull java.util.Date date) {
+      putValue("arrivalTime", date);
+      return this;
+    }
+    /**
      * The expected departure time.
      */
     @NotNull public Builder departureTime(@NotNull java.util.Date date) {
@@ -548,115 +520,91 @@ public class Flight extends Trip {
       return this;
     }
     /**
-     * Identifies a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Trip&quot;&gt;Trip&lt;/a&gt; that is a subTrip of this Trip.  For example Day 1, Day 2, etc. of a multi-day trip.
+     * Destination(s) ( [[Place]] ) that make up a trip. For a trip where destination order is important use [[ItemList]] to specify that order (see examples).
      */
-    @NotNull public Builder subTrip(@NotNull Trip trip) {
-      putValue("subTrip", trip);
+    @NotNull public Builder itinerary(@NotNull ItemList itemList) {
+      putValue("itinerary", itemList);
       return this;
     }
     /**
-     * Identifies a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Trip&quot;&gt;Trip&lt;/a&gt; that is a subTrip of this Trip.  For example Day 1, Day 2, etc. of a multi-day trip.
+     * Destination(s) ( [[Place]] ) that make up a trip. For a trip where destination order is important use [[ItemList]] to specify that order (see examples).
      */
-    @NotNull public Builder subTrip(@NotNull Trip.Builder trip) {
-      putValue("subTrip", trip.build());
+    @NotNull public Builder itinerary(@NotNull ItemList.Builder itemList) {
+      putValue("itinerary", itemList.build());
       return this;
     }
     /**
-     * Identifies that this &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Trip&quot;&gt;Trip&lt;/a&gt; is a subTrip of another Trip.  For example Day 1, Day 2, etc. of a multi-day trip.
+     * Destination(s) ( [[Place]] ) that make up a trip. For a trip where destination order is important use [[ItemList]] to specify that order (see examples).
      */
-    @NotNull public Builder partOfTrip(@NotNull Trip trip) {
-      putValue("partOfTrip", trip);
+    @NotNull public Builder itinerary(@NotNull Place place) {
+      putValue("itinerary", place);
       return this;
     }
     /**
-     * Identifies that this &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Trip&quot;&gt;Trip&lt;/a&gt; is a subTrip of another Trip.  For example Day 1, Day 2, etc. of a multi-day trip.
+     * Destination(s) ( [[Place]] ) that make up a trip. For a trip where destination order is important use [[ItemList]] to specify that order (see examples).
      */
-    @NotNull public Builder partOfTrip(@NotNull Trip.Builder trip) {
-      putValue("partOfTrip", trip.build());
+    @NotNull public Builder itinerary(@NotNull Place.Builder place) {
+      putValue("itinerary", place.build());
       return this;
     }
     /**
-     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt; to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Demand&quot;&gt;Demand&lt;/a&gt;. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
      */
     @NotNull public Builder offers(@NotNull Demand demand) {
       putValue("offers", demand);
       return this;
     }
     /**
-     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt; to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Demand&quot;&gt;Demand&lt;/a&gt;. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
      */
     @NotNull public Builder offers(@NotNull Demand.Builder demand) {
       putValue("offers", demand.build());
       return this;
     }
     /**
-     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt; to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Demand&quot;&gt;Demand&lt;/a&gt;. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
      */
     @NotNull public Builder offers(@NotNull Offer offer) {
       putValue("offers", offer);
       return this;
     }
     /**
-     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt; to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Demand&quot;&gt;Demand&lt;/a&gt;. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
      */
     @NotNull public Builder offers(@NotNull Offer.Builder offer) {
       putValue("offers", offer.build());
       return this;
     }
     /**
-     * URL of the item.
+     * Identifies that this [[Trip]] is a subTrip of another Trip.  For example Day 1, Day 2, etc. of a multi-day trip.
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
+    @NotNull public Builder partOfTrip(@NotNull Trip trip) {
+      putValue("partOfTrip", trip);
       return this;
     }
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * Identifies that this [[Trip]] is a subTrip of another Trip.  For example Day 1, Day 2, etc. of a multi-day trip.
      */
-    @NotNull public Builder additionalType(@NotNull String additionalType) {
-      putValue("additionalType", additionalType);
+    @NotNull public Builder partOfTrip(@NotNull Trip.Builder trip) {
+      putValue("partOfTrip", trip.build());
       return this;
     }
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * Identifies a [[Trip]] that is a subTrip of this Trip.  For example Day 1, Day 2, etc. of a multi-day trip.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
-      putValue("disambiguatingDescription", description);
+    @NotNull public Builder subTrip(@NotNull Trip trip) {
+      putValue("subTrip", trip);
       return this;
     }
     /**
-     * A description of the item.
+     * Identifies a [[Trip]] that is a subTrip of this Trip.  For example Day 1, Day 2, etc. of a multi-day trip.
      */
-    @NotNull public Builder description(@NotNull Description description) {
-      putValue("description", description);
-      return this;
-    }
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     */
-    @NotNull public Builder sameAs(@NotNull String sameAs) {
-      putValue("sameAs", sameAs);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
-      return this;
-    }
-    /**
-     * An alias for the item.
-     */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
-      return this;
-    }
-    /**
-     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
-     */
-    @NotNull public Builder image(@NotNull Image image) {
-      putValue("image", image);
+    @NotNull public Builder subTrip(@NotNull Trip.Builder trip) {
+      putValue("subTrip", trip.build());
       return this;
     }
     /**
@@ -674,24 +622,45 @@ public class Flight extends Trip {
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * URL of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
+    @NotNull public Builder additionalType(@NotNull String additionalType) {
+      putValue("additionalType", additionalType);
+      return this;
+    }
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     */
+    @NotNull public Builder sameAs(@NotNull String sameAs) {
+      putValue("sameAs", sameAs);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * The name of the item.
+     */
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -722,6 +691,27 @@ public class Flight extends Trip {
       putValue("subjectOf", event.build());
       return this;
     }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -730,40 +720,40 @@ public class Flight extends Trip {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("departureAirport".equals(key) && value instanceof Airport) { this.departureAirport((Airport)value); return; }
-      if ("departureAirports".equals(key) && value instanceof Airport) { this.departureAirport((Airport)value); return; }
-      if ("flightNumber".equals(key) && value instanceof String) { this.flightNumber((String)value); return; }
-      if ("flightNumbers".equals(key) && value instanceof String) { this.flightNumber((String)value); return; }
-      if ("arrivalTerminal".equals(key) && value instanceof String) { this.arrivalTerminal((String)value); return; }
-      if ("arrivalTerminals".equals(key) && value instanceof String) { this.arrivalTerminal((String)value); return; }
       if ("arrivalGate".equals(key) && value instanceof String) { this.arrivalGate((String)value); return; }
       if ("arrivalGates".equals(key) && value instanceof String) { this.arrivalGate((String)value); return; }
-      if ("mealService".equals(key) && value instanceof String) { this.mealService((String)value); return; }
-      if ("mealServices".equals(key) && value instanceof String) { this.mealService((String)value); return; }
-      if ("seller".equals(key) && value instanceof Participant) { this.seller((Participant)value); return; }
-      if ("sellers".equals(key) && value instanceof Participant) { this.seller((Participant)value); return; }
-      if ("flightDistance".equals(key) && value instanceof Distance) { this.flightDistance((Distance)value); return; }
-      if ("flightDistances".equals(key) && value instanceof Distance) { this.flightDistance((Distance)value); return; }
-      if ("flightDistance".equals(key) && value instanceof String) { this.flightDistance((String)value); return; }
-      if ("flightDistances".equals(key) && value instanceof String) { this.flightDistance((String)value); return; }
-      if ("estimatedFlightDuration".equals(key) && value instanceof Duration) { this.estimatedFlightDuration((Duration)value); return; }
-      if ("estimatedFlightDurations".equals(key) && value instanceof Duration) { this.estimatedFlightDuration((Duration)value); return; }
-      if ("estimatedFlightDuration".equals(key) && value instanceof String) { this.estimatedFlightDuration((String)value); return; }
-      if ("estimatedFlightDurations".equals(key) && value instanceof String) { this.estimatedFlightDuration((String)value); return; }
       if ("aircraft".equals(key) && value instanceof String) { this.aircraft((String)value); return; }
       if ("aircrafts".equals(key) && value instanceof String) { this.aircraft((String)value); return; }
       if ("aircraft".equals(key) && value instanceof Vehicle) { this.aircraft((Vehicle)value); return; }
       if ("aircrafts".equals(key) && value instanceof Vehicle) { this.aircraft((Vehicle)value); return; }
       if ("departureTerminal".equals(key) && value instanceof String) { this.departureTerminal((String)value); return; }
       if ("departureTerminals".equals(key) && value instanceof String) { this.departureTerminal((String)value); return; }
-      if ("arrivalAirport".equals(key) && value instanceof Airport) { this.arrivalAirport((Airport)value); return; }
-      if ("arrivalAirports".equals(key) && value instanceof Airport) { this.arrivalAirport((Airport)value); return; }
-      if ("webCheckinTime".equals(key) && value instanceof java.util.Date) { this.webCheckinTime((java.util.Date)value); return; }
-      if ("webCheckinTimes".equals(key) && value instanceof java.util.Date) { this.webCheckinTime((java.util.Date)value); return; }
+      if ("mealService".equals(key) && value instanceof String) { this.mealService((String)value); return; }
+      if ("mealServices".equals(key) && value instanceof String) { this.mealService((String)value); return; }
+      if ("estimatedFlightDuration".equals(key) && value instanceof Duration) { this.estimatedFlightDuration((Duration)value); return; }
+      if ("estimatedFlightDurations".equals(key) && value instanceof Duration) { this.estimatedFlightDuration((Duration)value); return; }
+      if ("estimatedFlightDuration".equals(key) && value instanceof String) { this.estimatedFlightDuration((String)value); return; }
+      if ("estimatedFlightDurations".equals(key) && value instanceof String) { this.estimatedFlightDuration((String)value); return; }
       if ("boardingPolicy".equals(key) && value instanceof BoardingPolicyType) { this.boardingPolicy((BoardingPolicyType)value); return; }
       if ("boardingPolicys".equals(key) && value instanceof BoardingPolicyType) { this.boardingPolicy((BoardingPolicyType)value); return; }
       if ("departureGate".equals(key) && value instanceof String) { this.departureGate((String)value); return; }
       if ("departureGates".equals(key) && value instanceof String) { this.departureGate((String)value); return; }
+      if ("flightDistance".equals(key) && value instanceof Distance) { this.flightDistance((Distance)value); return; }
+      if ("flightDistances".equals(key) && value instanceof Distance) { this.flightDistance((Distance)value); return; }
+      if ("flightDistance".equals(key) && value instanceof String) { this.flightDistance((String)value); return; }
+      if ("flightDistances".equals(key) && value instanceof String) { this.flightDistance((String)value); return; }
+      if ("flightNumber".equals(key) && value instanceof String) { this.flightNumber((String)value); return; }
+      if ("flightNumbers".equals(key) && value instanceof String) { this.flightNumber((String)value); return; }
+      if ("arrivalTerminal".equals(key) && value instanceof String) { this.arrivalTerminal((String)value); return; }
+      if ("arrivalTerminals".equals(key) && value instanceof String) { this.arrivalTerminal((String)value); return; }
+      if ("seller".equals(key) && value instanceof Participant) { this.seller((Participant)value); return; }
+      if ("sellers".equals(key) && value instanceof Participant) { this.seller((Participant)value); return; }
+      if ("departureAirport".equals(key) && value instanceof Airport) { this.departureAirport((Airport)value); return; }
+      if ("departureAirports".equals(key) && value instanceof Airport) { this.departureAirport((Airport)value); return; }
+      if ("arrivalAirport".equals(key) && value instanceof Airport) { this.arrivalAirport((Airport)value); return; }
+      if ("arrivalAirports".equals(key) && value instanceof Airport) { this.arrivalAirport((Airport)value); return; }
+      if ("webCheckinTime".equals(key) && value instanceof java.util.Date) { this.webCheckinTime((java.util.Date)value); return; }
+      if ("webCheckinTimes".equals(key) && value instanceof java.util.Date) { this.webCheckinTime((java.util.Date)value); return; }
       super.fromMap(key, value);
     }
   }

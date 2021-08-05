@@ -28,33 +28,16 @@ import java.util.*;
  */
 public class PeopleAudience extends Audience {
   /**
-   * The gender of the person or audience.
+   * Minimum recommended age in years for the audience or user.
    */
-  @JsonIgnore public String getSuggestedGender() {
-    return (String) getValue("suggestedGender");
+  @JsonIgnore public Integer getSuggestedMinAgeInteger() {
+    return (Integer) getValue("suggestedMinAge");
   }
   /**
-   * The gender of the person or audience.
+   * Minimum recommended age in years for the audience or user.
    */
-  @JsonIgnore public Collection<String> getSuggestedGenders() {
-    final Object current = myData.get("suggestedGender");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * Maximal age recommended for viewing content.
-   */
-  @JsonIgnore public Integer getSuggestedMaxAgeInteger() {
-    return (Integer) getValue("suggestedMaxAge");
-  }
-  /**
-   * Maximal age recommended for viewing content.
-   */
-  @JsonIgnore public Collection<Integer> getSuggestedMaxAgeIntegers() {
-    final Object current = myData.get("suggestedMaxAge");
+  @JsonIgnore public Collection<Integer> getSuggestedMinAgeIntegers() {
+    final Object current = myData.get("suggestedMinAge");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<Integer>) current;
@@ -62,16 +45,16 @@ public class PeopleAudience extends Audience {
     return Arrays.asList((Integer) current);
   }
   /**
-   * Maximal age recommended for viewing content.
+   * Minimum recommended age in years for the audience or user.
    */
-  @JsonIgnore public Long getSuggestedMaxAgeLong() {
-    return (Long) getValue("suggestedMaxAge");
+  @JsonIgnore public Long getSuggestedMinAgeLong() {
+    return (Long) getValue("suggestedMinAge");
   }
   /**
-   * Maximal age recommended for viewing content.
+   * Minimum recommended age in years for the audience or user.
    */
-  @JsonIgnore public Collection<Long> getSuggestedMaxAgeLongs() {
-    final Object current = myData.get("suggestedMaxAge");
+  @JsonIgnore public Collection<Long> getSuggestedMinAgeLongs() {
+    final Object current = myData.get("suggestedMinAge");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<Long>) current;
@@ -79,16 +62,16 @@ public class PeopleAudience extends Audience {
     return Arrays.asList((Long) current);
   }
   /**
-   * Maximal age recommended for viewing content.
+   * Minimum recommended age in years for the audience or user.
    */
-  @JsonIgnore public Float getSuggestedMaxAgeFloat() {
-    return (Float) getValue("suggestedMaxAge");
+  @JsonIgnore public Float getSuggestedMinAgeFloat() {
+    return (Float) getValue("suggestedMinAge");
   }
   /**
-   * Maximal age recommended for viewing content.
+   * Minimum recommended age in years for the audience or user.
    */
-  @JsonIgnore public Collection<Float> getSuggestedMaxAgeFloats() {
-    final Object current = myData.get("suggestedMaxAge");
+  @JsonIgnore public Collection<Float> getSuggestedMinAgeFloats() {
+    final Object current = myData.get("suggestedMinAge");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<Float>) current;
@@ -96,16 +79,16 @@ public class PeopleAudience extends Audience {
     return Arrays.asList((Float) current);
   }
   /**
-   * Maximal age recommended for viewing content.
+   * Minimum recommended age in years for the audience or user.
    */
-  @JsonIgnore public Double getSuggestedMaxAgeDouble() {
-    return (Double) getValue("suggestedMaxAge");
+  @JsonIgnore public Double getSuggestedMinAgeDouble() {
+    return (Double) getValue("suggestedMinAge");
   }
   /**
-   * Maximal age recommended for viewing content.
+   * Minimum recommended age in years for the audience or user.
    */
-  @JsonIgnore public Collection<Double> getSuggestedMaxAgeDoubles() {
-    final Object current = myData.get("suggestedMaxAge");
+  @JsonIgnore public Collection<Double> getSuggestedMinAgeDoubles() {
+    final Object current = myData.get("suggestedMinAge");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<Double>) current;
@@ -113,21 +96,38 @@ public class PeopleAudience extends Audience {
     return Arrays.asList((Double) current);
   }
   /**
-   * Maximal age recommended for viewing content.
+   * Minimum recommended age in years for the audience or user.
    */
-  @JsonIgnore public String getSuggestedMaxAgeString() {
-    return (String) getValue("suggestedMaxAge");
+  @JsonIgnore public String getSuggestedMinAgeString() {
+    return (String) getValue("suggestedMinAge");
   }
   /**
-   * Maximal age recommended for viewing content.
+   * Minimum recommended age in years for the audience or user.
    */
-  @JsonIgnore public Collection<String> getSuggestedMaxAgeStrings() {
-    final Object current = myData.get("suggestedMaxAge");
+  @JsonIgnore public Collection<String> getSuggestedMinAgeStrings() {
+    final Object current = myData.get("suggestedMinAge");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<String>) current;
     }
     return Arrays.asList((String) current);
+  }
+  /**
+   * A suggested range of body measurements for the intended audience or person, for example inseam between 32 and 34 inches or height between 170 and 190 cm. Typically found on a size chart for wearable products.
+   */
+  @JsonIgnore public QuantitativeValue getSuggestedMeasurement() {
+    return (QuantitativeValue) getValue("suggestedMeasurement");
+  }
+  /**
+   * A suggested range of body measurements for the intended audience or person, for example inseam between 32 and 34 inches or height between 170 and 190 cm. Typically found on a size chart for wearable products.
+   */
+  @JsonIgnore public Collection<QuantitativeValue> getSuggestedMeasurements() {
+    final Object current = myData.get("suggestedMeasurement");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<QuantitativeValue>) current;
+    }
+    return Arrays.asList((QuantitativeValue) current);
   }
   /**
    * Audiences defined by a person's minimum age.
@@ -140,23 +140,6 @@ public class PeopleAudience extends Audience {
    */
   @JsonIgnore public Collection<Integer> getRequiredMinAges() {
     final Object current = myData.get("requiredMinAge");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
-    }
-    return Arrays.asList((Integer) current);
-  }
-  /**
-   * Audiences defined by a person's maximum age.
-   */
-  @JsonIgnore public Integer getRequiredMaxAge() {
-    return (Integer) getValue("requiredMaxAge");
-  }
-  /**
-   * Audiences defined by a person's maximum age.
-   */
-  @JsonIgnore public Collection<Integer> getRequiredMaxAges() {
-    final Object current = myData.get("requiredMaxAge");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<Integer>) current;
@@ -181,6 +164,74 @@ public class PeopleAudience extends Audience {
     return Arrays.asList((String) current);
   }
   /**
+   * The suggested gender of the intended person or audience, for example &quot;male&quot;, &quot;female&quot;, or &quot;unisex&quot;.
+   */
+  @JsonIgnore public GenderType getSuggestedGenderGenderType() {
+    return (GenderType) getValue("suggestedGender");
+  }
+  /**
+   * The suggested gender of the intended person or audience, for example &quot;male&quot;, &quot;female&quot;, or &quot;unisex&quot;.
+   */
+  @JsonIgnore public Collection<GenderType> getSuggestedGenderGenderTypes() {
+    final Object current = myData.get("suggestedGender");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<GenderType>) current;
+    }
+    return Arrays.asList((GenderType) current);
+  }
+  /**
+   * The suggested gender of the intended person or audience, for example &quot;male&quot;, &quot;female&quot;, or &quot;unisex&quot;.
+   */
+  @JsonIgnore public String getSuggestedGenderString() {
+    return (String) getValue("suggestedGender");
+  }
+  /**
+   * The suggested gender of the intended person or audience, for example &quot;male&quot;, &quot;female&quot;, or &quot;unisex&quot;.
+   */
+  @JsonIgnore public Collection<String> getSuggestedGenderStrings() {
+    final Object current = myData.get("suggestedGender");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * The age or age range for the intended audience or person, for example 3-12 months for infants, 1-5 years for toddlers.
+   */
+  @JsonIgnore public QuantitativeValue getSuggestedAge() {
+    return (QuantitativeValue) getValue("suggestedAge");
+  }
+  /**
+   * The age or age range for the intended audience or person, for example 3-12 months for infants, 1-5 years for toddlers.
+   */
+  @JsonIgnore public Collection<QuantitativeValue> getSuggestedAges() {
+    final Object current = myData.get("suggestedAge");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<QuantitativeValue>) current;
+    }
+    return Arrays.asList((QuantitativeValue) current);
+  }
+  /**
+   * Audiences defined by a person's maximum age.
+   */
+  @JsonIgnore public Integer getRequiredMaxAge() {
+    return (Integer) getValue("requiredMaxAge");
+  }
+  /**
+   * Audiences defined by a person's maximum age.
+   */
+  @JsonIgnore public Collection<Integer> getRequiredMaxAges() {
+    final Object current = myData.get("requiredMaxAge");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<Integer>) current;
+    }
+    return Arrays.asList((Integer) current);
+  }
+  /**
    * Specifying the health condition(s) of a patient, medical study, or other target audience.
    */
   @JsonIgnore public MedicalCondition getHealthCondition() {
@@ -198,16 +249,16 @@ public class PeopleAudience extends Audience {
     return Arrays.asList((MedicalCondition) current);
   }
   /**
-   * Minimal age recommended for viewing content.
+   * Maximum recommended age in years for the audience or user.
    */
-  @JsonIgnore public Integer getSuggestedMinAgeInteger() {
-    return (Integer) getValue("suggestedMinAge");
+  @JsonIgnore public Integer getSuggestedMaxAgeInteger() {
+    return (Integer) getValue("suggestedMaxAge");
   }
   /**
-   * Minimal age recommended for viewing content.
+   * Maximum recommended age in years for the audience or user.
    */
-  @JsonIgnore public Collection<Integer> getSuggestedMinAgeIntegers() {
-    final Object current = myData.get("suggestedMinAge");
+  @JsonIgnore public Collection<Integer> getSuggestedMaxAgeIntegers() {
+    final Object current = myData.get("suggestedMaxAge");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<Integer>) current;
@@ -215,16 +266,16 @@ public class PeopleAudience extends Audience {
     return Arrays.asList((Integer) current);
   }
   /**
-   * Minimal age recommended for viewing content.
+   * Maximum recommended age in years for the audience or user.
    */
-  @JsonIgnore public Long getSuggestedMinAgeLong() {
-    return (Long) getValue("suggestedMinAge");
+  @JsonIgnore public Long getSuggestedMaxAgeLong() {
+    return (Long) getValue("suggestedMaxAge");
   }
   /**
-   * Minimal age recommended for viewing content.
+   * Maximum recommended age in years for the audience or user.
    */
-  @JsonIgnore public Collection<Long> getSuggestedMinAgeLongs() {
-    final Object current = myData.get("suggestedMinAge");
+  @JsonIgnore public Collection<Long> getSuggestedMaxAgeLongs() {
+    final Object current = myData.get("suggestedMaxAge");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<Long>) current;
@@ -232,16 +283,16 @@ public class PeopleAudience extends Audience {
     return Arrays.asList((Long) current);
   }
   /**
-   * Minimal age recommended for viewing content.
+   * Maximum recommended age in years for the audience or user.
    */
-  @JsonIgnore public Float getSuggestedMinAgeFloat() {
-    return (Float) getValue("suggestedMinAge");
+  @JsonIgnore public Float getSuggestedMaxAgeFloat() {
+    return (Float) getValue("suggestedMaxAge");
   }
   /**
-   * Minimal age recommended for viewing content.
+   * Maximum recommended age in years for the audience or user.
    */
-  @JsonIgnore public Collection<Float> getSuggestedMinAgeFloats() {
-    final Object current = myData.get("suggestedMinAge");
+  @JsonIgnore public Collection<Float> getSuggestedMaxAgeFloats() {
+    final Object current = myData.get("suggestedMaxAge");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<Float>) current;
@@ -249,16 +300,16 @@ public class PeopleAudience extends Audience {
     return Arrays.asList((Float) current);
   }
   /**
-   * Minimal age recommended for viewing content.
+   * Maximum recommended age in years for the audience or user.
    */
-  @JsonIgnore public Double getSuggestedMinAgeDouble() {
-    return (Double) getValue("suggestedMinAge");
+  @JsonIgnore public Double getSuggestedMaxAgeDouble() {
+    return (Double) getValue("suggestedMaxAge");
   }
   /**
-   * Minimal age recommended for viewing content.
+   * Maximum recommended age in years for the audience or user.
    */
-  @JsonIgnore public Collection<Double> getSuggestedMinAgeDoubles() {
-    final Object current = myData.get("suggestedMinAge");
+  @JsonIgnore public Collection<Double> getSuggestedMaxAgeDoubles() {
+    final Object current = myData.get("suggestedMaxAge");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<Double>) current;
@@ -266,16 +317,16 @@ public class PeopleAudience extends Audience {
     return Arrays.asList((Double) current);
   }
   /**
-   * Minimal age recommended for viewing content.
+   * Maximum recommended age in years for the audience or user.
    */
-  @JsonIgnore public String getSuggestedMinAgeString() {
-    return (String) getValue("suggestedMinAge");
+  @JsonIgnore public String getSuggestedMaxAgeString() {
+    return (String) getValue("suggestedMaxAge");
   }
   /**
-   * Minimal age recommended for viewing content.
+   * Maximum recommended age in years for the audience or user.
    */
-  @JsonIgnore public Collection<String> getSuggestedMinAgeStrings() {
-    final Object current = myData.get("suggestedMinAge");
+  @JsonIgnore public Collection<String> getSuggestedMaxAgeStrings() {
+    final Object current = myData.get("suggestedMaxAge");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<String>) current;
@@ -297,45 +348,52 @@ public class PeopleAudience extends Audience {
       return new PeopleAudience(myData);
     }
     /**
-     * The gender of the person or audience.
+     * Minimum recommended age in years for the audience or user.
      */
-    @NotNull public Builder suggestedGender(@NotNull String suggestedGender) {
-      putValue("suggestedGender", suggestedGender);
+    @NotNull public Builder suggestedMinAge(@NotNull Integer integer) {
+      putValue("suggestedMinAge", integer);
       return this;
     }
     /**
-     * Maximal age recommended for viewing content.
+     * Minimum recommended age in years for the audience or user.
      */
-    @NotNull public Builder suggestedMaxAge(@NotNull Integer integer) {
-      putValue("suggestedMaxAge", integer);
+    @NotNull public Builder suggestedMinAge(@NotNull Long suggestedMinAge) {
+      putValue("suggestedMinAge", suggestedMinAge);
       return this;
     }
     /**
-     * Maximal age recommended for viewing content.
+     * Minimum recommended age in years for the audience or user.
      */
-    @NotNull public Builder suggestedMaxAge(@NotNull Long suggestedMaxAge) {
-      putValue("suggestedMaxAge", suggestedMaxAge);
+    @NotNull public Builder suggestedMinAge(@NotNull Float suggestedMinAge) {
+      putValue("suggestedMinAge", suggestedMinAge);
       return this;
     }
     /**
-     * Maximal age recommended for viewing content.
+     * Minimum recommended age in years for the audience or user.
      */
-    @NotNull public Builder suggestedMaxAge(@NotNull Float suggestedMaxAge) {
-      putValue("suggestedMaxAge", suggestedMaxAge);
+    @NotNull public Builder suggestedMinAge(@NotNull Double suggestedMinAge) {
+      putValue("suggestedMinAge", suggestedMinAge);
       return this;
     }
     /**
-     * Maximal age recommended for viewing content.
+     * Minimum recommended age in years for the audience or user.
      */
-    @NotNull public Builder suggestedMaxAge(@NotNull Double suggestedMaxAge) {
-      putValue("suggestedMaxAge", suggestedMaxAge);
+    @NotNull public Builder suggestedMinAge(@NotNull String suggestedMinAge) {
+      putValue("suggestedMinAge", suggestedMinAge);
       return this;
     }
     /**
-     * Maximal age recommended for viewing content.
+     * A suggested range of body measurements for the intended audience or person, for example inseam between 32 and 34 inches or height between 170 and 190 cm. Typically found on a size chart for wearable products.
      */
-    @NotNull public Builder suggestedMaxAge(@NotNull String suggestedMaxAge) {
-      putValue("suggestedMaxAge", suggestedMaxAge);
+    @NotNull public Builder suggestedMeasurement(@NotNull QuantitativeValue quantitativeValue) {
+      putValue("suggestedMeasurement", quantitativeValue);
+      return this;
+    }
+    /**
+     * A suggested range of body measurements for the intended audience or person, for example inseam between 32 and 34 inches or height between 170 and 190 cm. Typically found on a size chart for wearable products.
+     */
+    @NotNull public Builder suggestedMeasurement(@NotNull QuantitativeValue.Builder quantitativeValue) {
+      putValue("suggestedMeasurement", quantitativeValue.build());
       return this;
     }
     /**
@@ -346,17 +404,45 @@ public class PeopleAudience extends Audience {
       return this;
     }
     /**
-     * Audiences defined by a person's maximum age.
-     */
-    @NotNull public Builder requiredMaxAge(@NotNull Integer integer) {
-      putValue("requiredMaxAge", integer);
-      return this;
-    }
-    /**
      * Audiences defined by a person's gender.
      */
     @NotNull public Builder requiredGender(@NotNull String requiredGender) {
       putValue("requiredGender", requiredGender);
+      return this;
+    }
+    /**
+     * The suggested gender of the intended person or audience, for example &quot;male&quot;, &quot;female&quot;, or &quot;unisex&quot;.
+     */
+    @NotNull public Builder suggestedGender(@NotNull GenderType genderType) {
+      putValue("suggestedGender", genderType);
+      return this;
+    }
+    /**
+     * The suggested gender of the intended person or audience, for example &quot;male&quot;, &quot;female&quot;, or &quot;unisex&quot;.
+     */
+    @NotNull public Builder suggestedGender(@NotNull String suggestedGender) {
+      putValue("suggestedGender", suggestedGender);
+      return this;
+    }
+    /**
+     * The age or age range for the intended audience or person, for example 3-12 months for infants, 1-5 years for toddlers.
+     */
+    @NotNull public Builder suggestedAge(@NotNull QuantitativeValue quantitativeValue) {
+      putValue("suggestedAge", quantitativeValue);
+      return this;
+    }
+    /**
+     * The age or age range for the intended audience or person, for example 3-12 months for infants, 1-5 years for toddlers.
+     */
+    @NotNull public Builder suggestedAge(@NotNull QuantitativeValue.Builder quantitativeValue) {
+      putValue("suggestedAge", quantitativeValue.build());
+      return this;
+    }
+    /**
+     * Audiences defined by a person's maximum age.
+     */
+    @NotNull public Builder requiredMaxAge(@NotNull Integer integer) {
+      putValue("requiredMaxAge", integer);
       return this;
     }
     /**
@@ -374,38 +460,38 @@ public class PeopleAudience extends Audience {
       return this;
     }
     /**
-     * Minimal age recommended for viewing content.
+     * Maximum recommended age in years for the audience or user.
      */
-    @NotNull public Builder suggestedMinAge(@NotNull Integer integer) {
-      putValue("suggestedMinAge", integer);
+    @NotNull public Builder suggestedMaxAge(@NotNull Integer integer) {
+      putValue("suggestedMaxAge", integer);
       return this;
     }
     /**
-     * Minimal age recommended for viewing content.
+     * Maximum recommended age in years for the audience or user.
      */
-    @NotNull public Builder suggestedMinAge(@NotNull Long suggestedMinAge) {
-      putValue("suggestedMinAge", suggestedMinAge);
+    @NotNull public Builder suggestedMaxAge(@NotNull Long suggestedMaxAge) {
+      putValue("suggestedMaxAge", suggestedMaxAge);
       return this;
     }
     /**
-     * Minimal age recommended for viewing content.
+     * Maximum recommended age in years for the audience or user.
      */
-    @NotNull public Builder suggestedMinAge(@NotNull Float suggestedMinAge) {
-      putValue("suggestedMinAge", suggestedMinAge);
+    @NotNull public Builder suggestedMaxAge(@NotNull Float suggestedMaxAge) {
+      putValue("suggestedMaxAge", suggestedMaxAge);
       return this;
     }
     /**
-     * Minimal age recommended for viewing content.
+     * Maximum recommended age in years for the audience or user.
      */
-    @NotNull public Builder suggestedMinAge(@NotNull Double suggestedMinAge) {
-      putValue("suggestedMinAge", suggestedMinAge);
+    @NotNull public Builder suggestedMaxAge(@NotNull Double suggestedMaxAge) {
+      putValue("suggestedMaxAge", suggestedMaxAge);
       return this;
     }
     /**
-     * Minimal age recommended for viewing content.
+     * Maximum recommended age in years for the audience or user.
      */
-    @NotNull public Builder suggestedMinAge(@NotNull String suggestedMinAge) {
-      putValue("suggestedMinAge", suggestedMinAge);
+    @NotNull public Builder suggestedMaxAge(@NotNull String suggestedMaxAge) {
+      putValue("suggestedMaxAge", suggestedMaxAge);
       return this;
     }
     /**
@@ -430,62 +516,6 @@ public class PeopleAudience extends Audience {
       return this;
     }
     /**
-     * URL of the item.
-     */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
-      return this;
-    }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     */
-    @NotNull public Builder additionalType(@NotNull String additionalType) {
-      putValue("additionalType", additionalType);
-      return this;
-    }
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     */
-    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
-      putValue("disambiguatingDescription", description);
-      return this;
-    }
-    /**
-     * A description of the item.
-     */
-    @NotNull public Builder description(@NotNull Description description) {
-      putValue("description", description);
-      return this;
-    }
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     */
-    @NotNull public Builder sameAs(@NotNull String sameAs) {
-      putValue("sameAs", sameAs);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
-      return this;
-    }
-    /**
-     * An alias for the item.
-     */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
-      return this;
-    }
-    /**
-     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
-     */
-    @NotNull public Builder image(@NotNull Image image) {
-      putValue("image", image);
-      return this;
-    }
-    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -500,24 +530,45 @@ public class PeopleAudience extends Audience {
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * URL of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
+    @NotNull public Builder additionalType(@NotNull String additionalType) {
+      putValue("additionalType", additionalType);
+      return this;
+    }
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     */
+    @NotNull public Builder sameAs(@NotNull String sameAs) {
+      putValue("sameAs", sameAs);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * The name of the item.
+     */
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -548,6 +599,27 @@ public class PeopleAudience extends Audience {
       putValue("subjectOf", event.build());
       return this;
     }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -556,26 +628,6 @@ public class PeopleAudience extends Audience {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("suggestedGender".equals(key) && value instanceof String) { this.suggestedGender((String)value); return; }
-      if ("suggestedGenders".equals(key) && value instanceof String) { this.suggestedGender((String)value); return; }
-      if ("suggestedMaxAge".equals(key) && value instanceof Integer) { this.suggestedMaxAge((Integer)value); return; }
-      if ("suggestedMaxAges".equals(key) && value instanceof Integer) { this.suggestedMaxAge((Integer)value); return; }
-      if ("suggestedMaxAge".equals(key) && value instanceof Long) { this.suggestedMaxAge((Long)value); return; }
-      if ("suggestedMaxAges".equals(key) && value instanceof Long) { this.suggestedMaxAge((Long)value); return; }
-      if ("suggestedMaxAge".equals(key) && value instanceof Float) { this.suggestedMaxAge((Float)value); return; }
-      if ("suggestedMaxAges".equals(key) && value instanceof Float) { this.suggestedMaxAge((Float)value); return; }
-      if ("suggestedMaxAge".equals(key) && value instanceof Double) { this.suggestedMaxAge((Double)value); return; }
-      if ("suggestedMaxAges".equals(key) && value instanceof Double) { this.suggestedMaxAge((Double)value); return; }
-      if ("suggestedMaxAge".equals(key) && value instanceof String) { this.suggestedMaxAge((String)value); return; }
-      if ("suggestedMaxAges".equals(key) && value instanceof String) { this.suggestedMaxAge((String)value); return; }
-      if ("requiredMinAge".equals(key) && value instanceof Integer) { this.requiredMinAge((Integer)value); return; }
-      if ("requiredMinAges".equals(key) && value instanceof Integer) { this.requiredMinAge((Integer)value); return; }
-      if ("requiredMaxAge".equals(key) && value instanceof Integer) { this.requiredMaxAge((Integer)value); return; }
-      if ("requiredMaxAges".equals(key) && value instanceof Integer) { this.requiredMaxAge((Integer)value); return; }
-      if ("requiredGender".equals(key) && value instanceof String) { this.requiredGender((String)value); return; }
-      if ("requiredGenders".equals(key) && value instanceof String) { this.requiredGender((String)value); return; }
-      if ("healthCondition".equals(key) && value instanceof MedicalCondition) { this.healthCondition((MedicalCondition)value); return; }
-      if ("healthConditions".equals(key) && value instanceof MedicalCondition) { this.healthCondition((MedicalCondition)value); return; }
       if ("suggestedMinAge".equals(key) && value instanceof Integer) { this.suggestedMinAge((Integer)value); return; }
       if ("suggestedMinAges".equals(key) && value instanceof Integer) { this.suggestedMinAge((Integer)value); return; }
       if ("suggestedMinAge".equals(key) && value instanceof Long) { this.suggestedMinAge((Long)value); return; }
@@ -586,6 +638,32 @@ public class PeopleAudience extends Audience {
       if ("suggestedMinAges".equals(key) && value instanceof Double) { this.suggestedMinAge((Double)value); return; }
       if ("suggestedMinAge".equals(key) && value instanceof String) { this.suggestedMinAge((String)value); return; }
       if ("suggestedMinAges".equals(key) && value instanceof String) { this.suggestedMinAge((String)value); return; }
+      if ("suggestedMeasurement".equals(key) && value instanceof QuantitativeValue) { this.suggestedMeasurement((QuantitativeValue)value); return; }
+      if ("suggestedMeasurements".equals(key) && value instanceof QuantitativeValue) { this.suggestedMeasurement((QuantitativeValue)value); return; }
+      if ("requiredMinAge".equals(key) && value instanceof Integer) { this.requiredMinAge((Integer)value); return; }
+      if ("requiredMinAges".equals(key) && value instanceof Integer) { this.requiredMinAge((Integer)value); return; }
+      if ("requiredGender".equals(key) && value instanceof String) { this.requiredGender((String)value); return; }
+      if ("requiredGenders".equals(key) && value instanceof String) { this.requiredGender((String)value); return; }
+      if ("suggestedGender".equals(key) && value instanceof GenderType) { this.suggestedGender((GenderType)value); return; }
+      if ("suggestedGenders".equals(key) && value instanceof GenderType) { this.suggestedGender((GenderType)value); return; }
+      if ("suggestedGender".equals(key) && value instanceof String) { this.suggestedGender((String)value); return; }
+      if ("suggestedGenders".equals(key) && value instanceof String) { this.suggestedGender((String)value); return; }
+      if ("suggestedAge".equals(key) && value instanceof QuantitativeValue) { this.suggestedAge((QuantitativeValue)value); return; }
+      if ("suggestedAges".equals(key) && value instanceof QuantitativeValue) { this.suggestedAge((QuantitativeValue)value); return; }
+      if ("requiredMaxAge".equals(key) && value instanceof Integer) { this.requiredMaxAge((Integer)value); return; }
+      if ("requiredMaxAges".equals(key) && value instanceof Integer) { this.requiredMaxAge((Integer)value); return; }
+      if ("healthCondition".equals(key) && value instanceof MedicalCondition) { this.healthCondition((MedicalCondition)value); return; }
+      if ("healthConditions".equals(key) && value instanceof MedicalCondition) { this.healthCondition((MedicalCondition)value); return; }
+      if ("suggestedMaxAge".equals(key) && value instanceof Integer) { this.suggestedMaxAge((Integer)value); return; }
+      if ("suggestedMaxAges".equals(key) && value instanceof Integer) { this.suggestedMaxAge((Integer)value); return; }
+      if ("suggestedMaxAge".equals(key) && value instanceof Long) { this.suggestedMaxAge((Long)value); return; }
+      if ("suggestedMaxAges".equals(key) && value instanceof Long) { this.suggestedMaxAge((Long)value); return; }
+      if ("suggestedMaxAge".equals(key) && value instanceof Float) { this.suggestedMaxAge((Float)value); return; }
+      if ("suggestedMaxAges".equals(key) && value instanceof Float) { this.suggestedMaxAge((Float)value); return; }
+      if ("suggestedMaxAge".equals(key) && value instanceof Double) { this.suggestedMaxAge((Double)value); return; }
+      if ("suggestedMaxAges".equals(key) && value instanceof Double) { this.suggestedMaxAge((Double)value); return; }
+      if ("suggestedMaxAge".equals(key) && value instanceof String) { this.suggestedMaxAge((String)value); return; }
+      if ("suggestedMaxAges".equals(key) && value instanceof String) { this.suggestedMaxAge((String)value); return; }
       super.fromMap(key, value);
     }
   }

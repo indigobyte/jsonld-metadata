@@ -24,34 +24,17 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * A word, name, acronym, phrase, etc. with a formal definition. Often used in the context of category or subject classification, glossaries or dictionaries, product or creative work types, etc. Use the name property for the term being defined, use termCode if the term has an alpha-numeric code allocated, use description to provide the definition of the term.Source: https://github.com/schemaorg/schemaorg/issues/894
+ * A word, name, acronym, phrase, etc. with a formal definition. Often used in the context of category or subject classification, glossaries or dictionaries, product or creative work types, etc. Use the name property for the term being defined, use termCode if the term has an alpha-numeric code allocated, use description to provide the definition of the term.
  */
 public class DefinedTerm extends Intangible implements HasDefinedTerm {
   /**
-   * A &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/DefinedTermSet&quot;&gt;DefinedTermSet&lt;/a&gt; that contains this term.
-   */
-  @JsonIgnore public InDefinedTermSet getInDefinedTermSet() {
-    return (InDefinedTermSet) getValue("inDefinedTermSet");
-  }
-  /**
-   * A &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/DefinedTermSet&quot;&gt;DefinedTermSet&lt;/a&gt; that contains this term.
-   */
-  @JsonIgnore public Collection<InDefinedTermSet> getInDefinedTermSets() {
-    final Object current = myData.get("inDefinedTermSet");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<InDefinedTermSet>) current;
-    }
-    return Arrays.asList((InDefinedTermSet) current);
-  }
-  /**
-   * A code that identifies this &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/DefinedTerm&quot;&gt;DefinedTerm&lt;/a&gt; within a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/DefinedTermSet&quot;&gt;DefinedTermSet&lt;/a&gt;
+   * A code that identifies this [[DefinedTerm]] within a [[DefinedTermSet]]
    */
   @JsonIgnore public TermCode getTermCode() {
     return (TermCode) getValue("termCode");
   }
   /**
-   * A code that identifies this &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/DefinedTerm&quot;&gt;DefinedTerm&lt;/a&gt; within a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/DefinedTermSet&quot;&gt;DefinedTermSet&lt;/a&gt;
+   * A code that identifies this [[DefinedTerm]] within a [[DefinedTermSet]]
    */
   @JsonIgnore public Collection<TermCode> getTermCodes() {
     final Object current = myData.get("termCode");
@@ -60,6 +43,23 @@ public class DefinedTerm extends Intangible implements HasDefinedTerm {
       return (Collection<TermCode>) current;
     }
     return Arrays.asList((TermCode) current);
+  }
+  /**
+   * A [[DefinedTermSet]] that contains this term.
+   */
+  @JsonIgnore public InDefinedTermSet getInDefinedTermSet() {
+    return (InDefinedTermSet) getValue("inDefinedTermSet");
+  }
+  /**
+   * A [[DefinedTermSet]] that contains this term.
+   */
+  @JsonIgnore public Collection<InDefinedTermSet> getInDefinedTermSets() {
+    final Object current = myData.get("inDefinedTermSet");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<InDefinedTermSet>) current;
+    }
+    return Arrays.asList((InDefinedTermSet) current);
   }
   protected DefinedTerm(java.util.Map<String,Object> data) {
     super(data);
@@ -76,73 +76,17 @@ public class DefinedTerm extends Intangible implements HasDefinedTerm {
       return new DefinedTerm(myData);
     }
     /**
-     * A &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/DefinedTermSet&quot;&gt;DefinedTermSet&lt;/a&gt; that contains this term.
-     */
-    @NotNull public Builder inDefinedTermSet(@NotNull InDefinedTermSet inDefinedTermSet) {
-      putValue("inDefinedTermSet", inDefinedTermSet);
-      return this;
-    }
-    /**
-     * A code that identifies this &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/DefinedTerm&quot;&gt;DefinedTerm&lt;/a&gt; within a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/DefinedTermSet&quot;&gt;DefinedTermSet&lt;/a&gt;
+     * A code that identifies this [[DefinedTerm]] within a [[DefinedTermSet]]
      */
     @NotNull public Builder termCode(@NotNull TermCode termCode) {
       putValue("termCode", termCode);
       return this;
     }
     /**
-     * URL of the item.
+     * A [[DefinedTermSet]] that contains this term.
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
-      return this;
-    }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     */
-    @NotNull public Builder additionalType(@NotNull String additionalType) {
-      putValue("additionalType", additionalType);
-      return this;
-    }
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     */
-    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
-      putValue("disambiguatingDescription", description);
-      return this;
-    }
-    /**
-     * A description of the item.
-     */
-    @NotNull public Builder description(@NotNull Description description) {
-      putValue("description", description);
-      return this;
-    }
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     */
-    @NotNull public Builder sameAs(@NotNull String sameAs) {
-      putValue("sameAs", sameAs);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
-      return this;
-    }
-    /**
-     * An alias for the item.
-     */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
-      return this;
-    }
-    /**
-     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
-     */
-    @NotNull public Builder image(@NotNull Image image) {
-      putValue("image", image);
+    @NotNull public Builder inDefinedTermSet(@NotNull InDefinedTermSet inDefinedTermSet) {
+      putValue("inDefinedTermSet", inDefinedTermSet);
       return this;
     }
     /**
@@ -160,24 +104,45 @@ public class DefinedTerm extends Intangible implements HasDefinedTerm {
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * URL of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
+    @NotNull public Builder additionalType(@NotNull String additionalType) {
+      putValue("additionalType", additionalType);
+      return this;
+    }
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     */
+    @NotNull public Builder sameAs(@NotNull String sameAs) {
+      putValue("sameAs", sameAs);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * The name of the item.
+     */
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -208,6 +173,27 @@ public class DefinedTerm extends Intangible implements HasDefinedTerm {
       putValue("subjectOf", event.build());
       return this;
     }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -216,10 +202,10 @@ public class DefinedTerm extends Intangible implements HasDefinedTerm {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("inDefinedTermSet".equals(key) && value instanceof InDefinedTermSet) { this.inDefinedTermSet((InDefinedTermSet)value); return; }
-      if ("inDefinedTermSets".equals(key) && value instanceof InDefinedTermSet) { this.inDefinedTermSet((InDefinedTermSet)value); return; }
       if ("termCode".equals(key) && value instanceof TermCode) { this.termCode((TermCode)value); return; }
       if ("termCodes".equals(key) && value instanceof TermCode) { this.termCode((TermCode)value); return; }
+      if ("inDefinedTermSet".equals(key) && value instanceof InDefinedTermSet) { this.inDefinedTermSet((InDefinedTermSet)value); return; }
+      if ("inDefinedTermSets".equals(key) && value instanceof InDefinedTermSet) { this.inDefinedTermSet((InDefinedTermSet)value); return; }
       super.fromMap(key, value);
     }
   }

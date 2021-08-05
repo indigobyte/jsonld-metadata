@@ -24,7 +24,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * Text representing an XPath (typically but not necessarily version 1.0).Source: https://github.com/schemaorg/schemaorg/issues/1672
+ * Text representing an XPath (typically but not necessarily version 1.0).
  */
 public class XPathType extends Text {
   protected XPathType(java.util.Map<String,Object> data) {

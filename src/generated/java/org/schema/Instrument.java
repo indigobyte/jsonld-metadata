@@ -26,5 +26,5 @@ import java.util.*;
 /**
  * 
  */
-public interface Instrument extends Supply {
+public interface Instrument {
 }

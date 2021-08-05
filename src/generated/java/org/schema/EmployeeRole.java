@@ -28,13 +28,13 @@ import java.util.*;
  */
 public class EmployeeRole extends OrganizationRole {
   /**
-   * The currency (coded using &lt;a href=&quot;http://en.wikipedia.org/wiki/ISO_4217&quot;&gt;ISO 4217&lt;/a&gt; ) used for the main salary information in this job posting or for this employee.
+   * The currency (coded using [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217) ) used for the main salary information in this job posting or for this employee.
    */
   @JsonIgnore public String getSalaryCurrency() {
     return (String) getValue("salaryCurrency");
   }
   /**
-   * The currency (coded using &lt;a href=&quot;http://en.wikipedia.org/wiki/ISO_4217&quot;&gt;ISO 4217&lt;/a&gt; ) used for the main salary information in this job posting or for this employee.
+   * The currency (coded using [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217) ) used for the main salary information in this job posting or for this employee.
    */
   @JsonIgnore public Collection<String> getSalaryCurrencys() {
     final Object current = myData.get("salaryCurrency");
@@ -47,87 +47,53 @@ public class EmployeeRole extends OrganizationRole {
   /**
    * The base salary of the job or of an employee in an EmployeeRole.
    */
-  @JsonIgnore public Integer getBaseSalaryInteger() {
-    return (Integer) getValue("baseSalary");
+  @JsonIgnore public MonetaryAmount getBaseSalaryMonetaryAmount() {
+    return (MonetaryAmount) getValue("baseSalary");
   }
   /**
    * The base salary of the job or of an employee in an EmployeeRole.
    */
-  @JsonIgnore public Collection<Integer> getBaseSalaryIntegers() {
+  @JsonIgnore public Collection<MonetaryAmount> getBaseSalaryMonetaryAmounts() {
     final Object current = myData.get("baseSalary");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+      return (Collection<MonetaryAmount>) current;
     }
-    return Arrays.asList((Integer) current);
+    return Arrays.asList((MonetaryAmount) current);
   }
   /**
    * The base salary of the job or of an employee in an EmployeeRole.
    */
-  @JsonIgnore public Long getBaseSalaryLong() {
-    return (Long) getValue("baseSalary");
+  @JsonIgnore public Number getBaseSalaryNumber() {
+    return (Number) getValue("baseSalary");
   }
   /**
    * The base salary of the job or of an employee in an EmployeeRole.
    */
-  @JsonIgnore public Collection<Long> getBaseSalaryLongs() {
+  @JsonIgnore public Collection<Number> getBaseSalaryNumbers() {
     final Object current = myData.get("baseSalary");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<Long>) current;
+      return (Collection<Number>) current;
     }
-    return Arrays.asList((Long) current);
+    return Arrays.asList((Number) current);
   }
   /**
    * The base salary of the job or of an employee in an EmployeeRole.
    */
-  @JsonIgnore public Float getBaseSalaryFloat() {
-    return (Float) getValue("baseSalary");
+  @JsonIgnore public PriceSpecification getBaseSalaryPriceSpecification() {
+    return (PriceSpecification) getValue("baseSalary");
   }
   /**
    * The base salary of the job or of an employee in an EmployeeRole.
    */
-  @JsonIgnore public Collection<Float> getBaseSalaryFloats() {
+  @JsonIgnore public Collection<PriceSpecification> getBaseSalaryPriceSpecifications() {
     final Object current = myData.get("baseSalary");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<Float>) current;
+      return (Collection<PriceSpecification>) current;
     }
-    return Arrays.asList((Float) current);
-  }
-  /**
-   * The base salary of the job or of an employee in an EmployeeRole.
-   */
-  @JsonIgnore public Double getBaseSalaryDouble() {
-    return (Double) getValue("baseSalary");
-  }
-  /**
-   * The base salary of the job or of an employee in an EmployeeRole.
-   */
-  @JsonIgnore public Collection<Double> getBaseSalaryDoubles() {
-    final Object current = myData.get("baseSalary");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
-    }
-    return Arrays.asList((Double) current);
-  }
-  /**
-   * The base salary of the job or of an employee in an EmployeeRole.
-   */
-  @JsonIgnore public String getBaseSalaryString() {
-    return (String) getValue("baseSalary");
-  }
-  /**
-   * The base salary of the job or of an employee in an EmployeeRole.
-   */
-  @JsonIgnore public Collection<String> getBaseSalaryStrings() {
-    final Object current = myData.get("baseSalary");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
+    return Arrays.asList((PriceSpecification) current);
   }
   protected EmployeeRole(java.util.Map<String,Object> data) {
     super(data);
@@ -144,7 +110,7 @@ public class EmployeeRole extends OrganizationRole {
       return new EmployeeRole(myData);
     }
     /**
-     * The currency (coded using &lt;a href=&quot;http://en.wikipedia.org/wiki/ISO_4217&quot;&gt;ISO 4217&lt;/a&gt; ) used for the main salary information in this job posting or for this employee.
+     * The currency (coded using [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217) ) used for the main salary information in this job posting or for this employee.
      */
     @NotNull public Builder salaryCurrency(@NotNull String salaryCurrency) {
       putValue("salaryCurrency", salaryCurrency);
@@ -153,36 +119,36 @@ public class EmployeeRole extends OrganizationRole {
     /**
      * The base salary of the job or of an employee in an EmployeeRole.
      */
-    @NotNull public Builder baseSalary(@NotNull Integer integer) {
-      putValue("baseSalary", integer);
+    @NotNull public Builder baseSalary(@NotNull MonetaryAmount monetaryAmount) {
+      putValue("baseSalary", monetaryAmount);
       return this;
     }
     /**
      * The base salary of the job or of an employee in an EmployeeRole.
      */
-    @NotNull public Builder baseSalary(@NotNull Long baseSalary) {
-      putValue("baseSalary", baseSalary);
+    @NotNull public Builder baseSalary(@NotNull MonetaryAmount.Builder monetaryAmount) {
+      putValue("baseSalary", monetaryAmount.build());
       return this;
     }
     /**
      * The base salary of the job or of an employee in an EmployeeRole.
      */
-    @NotNull public Builder baseSalary(@NotNull Float baseSalary) {
-      putValue("baseSalary", baseSalary);
+    @NotNull public Builder baseSalary(@NotNull Number number) {
+      putValue("baseSalary", number);
       return this;
     }
     /**
      * The base salary of the job or of an employee in an EmployeeRole.
      */
-    @NotNull public Builder baseSalary(@NotNull Double baseSalary) {
-      putValue("baseSalary", baseSalary);
+    @NotNull public Builder baseSalary(@NotNull PriceSpecification priceSpecification) {
+      putValue("baseSalary", priceSpecification);
       return this;
     }
     /**
      * The base salary of the job or of an employee in an EmployeeRole.
      */
-    @NotNull public Builder baseSalary(@NotNull String baseSalary) {
-      putValue("baseSalary", baseSalary);
+    @NotNull public Builder baseSalary(@NotNull PriceSpecification.Builder priceSpecification) {
+      putValue("baseSalary", priceSpecification.build());
       return this;
     }
     /**
@@ -221,17 +187,10 @@ public class EmployeeRole extends OrganizationRole {
       return this;
     }
     /**
-     * The start date and time of the item (in &lt;a href=&quot;http://en.wikipedia.org/wiki/ISO_8601&quot;&gt;ISO 8601 date format&lt;/a&gt;).
+     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      */
     @NotNull public Builder startDate(@NotNull java.util.Date date) {
       putValue("startDate", date);
-      return this;
-    }
-    /**
-     * The end date and time of the item (in &lt;a href=&quot;http://en.wikipedia.org/wiki/ISO_8601&quot;&gt;ISO 8601 date format&lt;/a&gt;).
-     */
-    @NotNull public Builder endDate(@NotNull java.util.Date date) {
-      putValue("endDate", date);
       return this;
     }
     /**
@@ -242,59 +201,10 @@ public class EmployeeRole extends OrganizationRole {
       return this;
     }
     /**
-     * URL of the item.
+     * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
-      return this;
-    }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     */
-    @NotNull public Builder additionalType(@NotNull String additionalType) {
-      putValue("additionalType", additionalType);
-      return this;
-    }
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     */
-    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
-      putValue("disambiguatingDescription", description);
-      return this;
-    }
-    /**
-     * A description of the item.
-     */
-    @NotNull public Builder description(@NotNull Description description) {
-      putValue("description", description);
-      return this;
-    }
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     */
-    @NotNull public Builder sameAs(@NotNull String sameAs) {
-      putValue("sameAs", sameAs);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
-      return this;
-    }
-    /**
-     * An alias for the item.
-     */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
-      return this;
-    }
-    /**
-     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
-     */
-    @NotNull public Builder image(@NotNull Image image) {
-      putValue("image", image);
+    @NotNull public Builder endDate(@NotNull java.util.Date date) {
+      putValue("endDate", date);
       return this;
     }
     /**
@@ -312,24 +222,45 @@ public class EmployeeRole extends OrganizationRole {
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * URL of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
+    @NotNull public Builder additionalType(@NotNull String additionalType) {
+      putValue("additionalType", additionalType);
+      return this;
+    }
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     */
+    @NotNull public Builder sameAs(@NotNull String sameAs) {
+      putValue("sameAs", sameAs);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * The name of the item.
+     */
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -360,6 +291,27 @@ public class EmployeeRole extends OrganizationRole {
       putValue("subjectOf", event.build());
       return this;
     }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -370,16 +322,12 @@ public class EmployeeRole extends OrganizationRole {
     @Override protected void fromMap(String key, Object value) {
       if ("salaryCurrency".equals(key) && value instanceof String) { this.salaryCurrency((String)value); return; }
       if ("salaryCurrencys".equals(key) && value instanceof String) { this.salaryCurrency((String)value); return; }
-      if ("baseSalary".equals(key) && value instanceof Integer) { this.baseSalary((Integer)value); return; }
-      if ("baseSalarys".equals(key) && value instanceof Integer) { this.baseSalary((Integer)value); return; }
-      if ("baseSalary".equals(key) && value instanceof Long) { this.baseSalary((Long)value); return; }
-      if ("baseSalarys".equals(key) && value instanceof Long) { this.baseSalary((Long)value); return; }
-      if ("baseSalary".equals(key) && value instanceof Float) { this.baseSalary((Float)value); return; }
-      if ("baseSalarys".equals(key) && value instanceof Float) { this.baseSalary((Float)value); return; }
-      if ("baseSalary".equals(key) && value instanceof Double) { this.baseSalary((Double)value); return; }
-      if ("baseSalarys".equals(key) && value instanceof Double) { this.baseSalary((Double)value); return; }
-      if ("baseSalary".equals(key) && value instanceof String) { this.baseSalary((String)value); return; }
-      if ("baseSalarys".equals(key) && value instanceof String) { this.baseSalary((String)value); return; }
+      if ("baseSalary".equals(key) && value instanceof MonetaryAmount) { this.baseSalary((MonetaryAmount)value); return; }
+      if ("baseSalarys".equals(key) && value instanceof MonetaryAmount) { this.baseSalary((MonetaryAmount)value); return; }
+      if ("baseSalary".equals(key) && value instanceof Number) { this.baseSalary((Number)value); return; }
+      if ("baseSalarys".equals(key) && value instanceof Number) { this.baseSalary((Number)value); return; }
+      if ("baseSalary".equals(key) && value instanceof PriceSpecification) { this.baseSalary((PriceSpecification)value); return; }
+      if ("baseSalarys".equals(key) && value instanceof PriceSpecification) { this.baseSalary((PriceSpecification)value); return; }
       super.fromMap(key, value);
     }
   }

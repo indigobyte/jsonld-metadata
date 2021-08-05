@@ -24,7 +24,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * A description of the item.Equivalent class: http://purl.org/dc/terms/description
+ * 
  */
 public interface Description {
 }

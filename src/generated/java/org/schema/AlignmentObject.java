@@ -24,7 +24,9 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * An intangible item that describes an alignment between a learning resource and a node in an educational framework.Source: http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_LRMIClass
+ * An intangible item that describes an alignment between a learning resource and a node in an educational framework.
+ * 
+ * Should not be used where the nature of the alignment can be described using a simple property, for example to express that a resource [[teaches]] or [[assesses]] a competency.
  */
 public class AlignmentObject extends Intangible {
   /**
@@ -38,40 +40,6 @@ public class AlignmentObject extends Intangible {
    */
   @JsonIgnore public Collection<String> getTargetDescriptions() {
     final Object current = myData.get("targetDescription");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * A category of alignment between the learning resource and the framework node. Recommended values include: 'assesses', 'teaches', 'requires', 'textComplexity', 'readingLevel', 'educationalSubject', and 'educationalLevel'.
-   */
-  @JsonIgnore public String getAlignmentType() {
-    return (String) getValue("alignmentType");
-  }
-  /**
-   * A category of alignment between the learning resource and the framework node. Recommended values include: 'assesses', 'teaches', 'requires', 'textComplexity', 'readingLevel', 'educationalSubject', and 'educationalLevel'.
-   */
-  @JsonIgnore public Collection<String> getAlignmentTypes() {
-    final Object current = myData.get("alignmentType");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * The URL of a node in an established educational framework.
-   */
-  @JsonIgnore public String getTargetUrl() {
-    return (String) getValue("targetUrl");
-  }
-  /**
-   * The URL of a node in an established educational framework.
-   */
-  @JsonIgnore public Collection<String> getTargetUrls() {
-    final Object current = myData.get("targetUrl");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<String>) current;
@@ -112,6 +80,40 @@ public class AlignmentObject extends Intangible {
     }
     return Arrays.asList((String) current);
   }
+  /**
+   * A category of alignment between the learning resource and the framework node. Recommended values include: 'requires', 'textComplexity', 'readingLevel', and 'educationalSubject'.
+   */
+  @JsonIgnore public String getAlignmentType() {
+    return (String) getValue("alignmentType");
+  }
+  /**
+   * A category of alignment between the learning resource and the framework node. Recommended values include: 'requires', 'textComplexity', 'readingLevel', and 'educationalSubject'.
+   */
+  @JsonIgnore public Collection<String> getAlignmentTypes() {
+    final Object current = myData.get("alignmentType");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * The URL of a node in an established educational framework.
+   */
+  @JsonIgnore public String getTargetUrl() {
+    return (String) getValue("targetUrl");
+  }
+  /**
+   * The URL of a node in an established educational framework.
+   */
+  @JsonIgnore public Collection<String> getTargetUrls() {
+    final Object current = myData.get("targetUrl");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof Collection) {
+      return (Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
   protected AlignmentObject(java.util.Map<String,Object> data) {
     super(data);
   }
@@ -134,20 +136,6 @@ public class AlignmentObject extends Intangible {
       return this;
     }
     /**
-     * A category of alignment between the learning resource and the framework node. Recommended values include: 'assesses', 'teaches', 'requires', 'textComplexity', 'readingLevel', 'educationalSubject', and 'educationalLevel'.
-     */
-    @NotNull public Builder alignmentType(@NotNull String alignmentType) {
-      putValue("alignmentType", alignmentType);
-      return this;
-    }
-    /**
-     * The URL of a node in an established educational framework.
-     */
-    @NotNull public Builder targetUrl(@NotNull String targetUrl) {
-      putValue("targetUrl", targetUrl);
-      return this;
-    }
-    /**
      * The framework to which the resource being described is aligned.
      */
     @NotNull public Builder educationalFramework(@NotNull String educationalFramework) {
@@ -162,59 +150,17 @@ public class AlignmentObject extends Intangible {
       return this;
     }
     /**
-     * URL of the item.
+     * A category of alignment between the learning resource and the framework node. Recommended values include: 'requires', 'textComplexity', 'readingLevel', and 'educationalSubject'.
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
+    @NotNull public Builder alignmentType(@NotNull String alignmentType) {
+      putValue("alignmentType", alignmentType);
       return this;
     }
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * The URL of a node in an established educational framework.
      */
-    @NotNull public Builder additionalType(@NotNull String additionalType) {
-      putValue("additionalType", additionalType);
-      return this;
-    }
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     */
-    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
-      putValue("disambiguatingDescription", description);
-      return this;
-    }
-    /**
-     * A description of the item.
-     */
-    @NotNull public Builder description(@NotNull Description description) {
-      putValue("description", description);
-      return this;
-    }
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     */
-    @NotNull public Builder sameAs(@NotNull String sameAs) {
-      putValue("sameAs", sameAs);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
-      return this;
-    }
-    /**
-     * An alias for the item.
-     */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
-      return this;
-    }
-    /**
-     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
-     */
-    @NotNull public Builder image(@NotNull Image image) {
-      putValue("image", image);
+    @NotNull public Builder targetUrl(@NotNull String targetUrl) {
+      putValue("targetUrl", targetUrl);
       return this;
     }
     /**
@@ -232,24 +178,45 @@ public class AlignmentObject extends Intangible {
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * URL of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
+    @NotNull public Builder additionalType(@NotNull String additionalType) {
+      putValue("additionalType", additionalType);
+      return this;
+    }
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     */
+    @NotNull public Builder sameAs(@NotNull String sameAs) {
+      putValue("sameAs", sameAs);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * The name of the item.
+     */
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -280,6 +247,27 @@ public class AlignmentObject extends Intangible {
       putValue("subjectOf", event.build());
       return this;
     }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -290,14 +278,14 @@ public class AlignmentObject extends Intangible {
     @Override protected void fromMap(String key, Object value) {
       if ("targetDescription".equals(key) && value instanceof String) { this.targetDescription((String)value); return; }
       if ("targetDescriptions".equals(key) && value instanceof String) { this.targetDescription((String)value); return; }
-      if ("alignmentType".equals(key) && value instanceof String) { this.alignmentType((String)value); return; }
-      if ("alignmentTypes".equals(key) && value instanceof String) { this.alignmentType((String)value); return; }
-      if ("targetUrl".equals(key) && value instanceof String) { this.targetUrl((String)value); return; }
-      if ("targetUrls".equals(key) && value instanceof String) { this.targetUrl((String)value); return; }
       if ("educationalFramework".equals(key) && value instanceof String) { this.educationalFramework((String)value); return; }
       if ("educationalFrameworks".equals(key) && value instanceof String) { this.educationalFramework((String)value); return; }
       if ("targetName".equals(key) && value instanceof String) { this.targetName((String)value); return; }
       if ("targetNames".equals(key) && value instanceof String) { this.targetName((String)value); return; }
+      if ("alignmentType".equals(key) && value instanceof String) { this.alignmentType((String)value); return; }
+      if ("alignmentTypes".equals(key) && value instanceof String) { this.alignmentType((String)value); return; }
+      if ("targetUrl".equals(key) && value instanceof String) { this.targetUrl((String)value); return; }
+      if ("targetUrls".equals(key) && value instanceof String) { this.targetUrl((String)value); return; }
       super.fromMap(key, value);
     }
   }

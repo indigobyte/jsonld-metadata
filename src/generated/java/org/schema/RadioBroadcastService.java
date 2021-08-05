@@ -24,7 +24,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * A delivery service through which radio content is provided via broadcast over the air or online.Source: https://github.com/schemaorg/schemaorg/issues/2109
+ * A delivery service through which radio content is provided via broadcast over the air or online.
  */
 public class RadioBroadcastService extends BroadcastService {
   protected RadioBroadcastService(java.util.Map<String,Object> data) {
@@ -40,6 +40,90 @@ public class RadioBroadcastService extends BroadcastService {
     }
     @NotNull public RadioBroadcastService build() {
       return new RadioBroadcastService(myData);
+    }
+    /**
+     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     */
+    @NotNull public Builder inLanguage(@NotNull Language language) {
+      putValue("inLanguage", language);
+      return this;
+    }
+    /**
+     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     */
+    @NotNull public Builder inLanguage(@NotNull Language.Builder language) {
+      putValue("inLanguage", language.build());
+      return this;
+    }
+    /**
+     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     */
+    @NotNull public Builder inLanguage(@NotNull String inLanguage) {
+      putValue("inLanguage", inLanguage);
+      return this;
+    }
+    /**
+     * A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
+     */
+    @NotNull public Builder callSign(@NotNull Identifier identifier) {
+      putValue("callSign", identifier);
+      return this;
+    }
+    /**
+     * A broadcast service to which the broadcast service may belong to such as regional variations of a national channel.
+     */
+    @NotNull public Builder parentService(@NotNull BroadcastService broadcastService) {
+      putValue("parentService", broadcastService);
+      return this;
+    }
+    /**
+     * A broadcast service to which the broadcast service may belong to such as regional variations of a national channel.
+     */
+    @NotNull public Builder parentService(@NotNull BroadcastService.Builder broadcastService) {
+      putValue("parentService", broadcastService.build());
+      return this;
+    }
+    /**
+     * The name displayed in the channel guide. For many US affiliates, it is the network name.
+     */
+    @NotNull public Builder broadcastDisplayName(@NotNull String broadcastDisplayName) {
+      putValue("broadcastDisplayName", broadcastDisplayName);
+      return this;
+    }
+    /**
+     * The media network(s) whose content is broadcast on this station.
+     */
+    @NotNull public Builder broadcastAffiliateOf(@NotNull Organization organization) {
+      putValue("broadcastAffiliateOf", organization);
+      return this;
+    }
+    /**
+     * The media network(s) whose content is broadcast on this station.
+     */
+    @NotNull public Builder broadcastAffiliateOf(@NotNull Organization.Builder organization) {
+      putValue("broadcastAffiliateOf", organization.build());
+      return this;
+    }
+    /**
+     * The organization owning or operating the broadcast service.
+     */
+    @NotNull public Builder broadcaster(@NotNull Organization organization) {
+      putValue("broadcaster", organization);
+      return this;
+    }
+    /**
+     * The organization owning or operating the broadcast service.
+     */
+    @NotNull public Builder broadcaster(@NotNull Organization.Builder organization) {
+      putValue("broadcaster", organization.build());
+      return this;
+    }
+    /**
+     * The timezone in [ISO 8601 format](http://en.wikipedia.org/wiki/ISO_8601) for which the service bases its broadcasts
+     */
+    @NotNull public Builder broadcastTimezone(@NotNull String broadcastTimezone) {
+      putValue("broadcastTimezone", broadcastTimezone);
+      return this;
     }
     /**
      * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. &quot;87 FM&quot;.
@@ -63,94 +147,10 @@ public class RadioBroadcastService extends BroadcastService {
       return this;
     }
     /**
-     * The language of the content or performance or used in an action. Please use one of the language codes from the &lt;a href=&quot;http://tools.ietf.org/html/bcp47&quot;&gt;IETF BCP 47 standard&lt;/a&gt;. See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/availableLanguage&quot;&gt;availableLanguage&lt;/a&gt;.
-     */
-    @NotNull public Builder inLanguage(@NotNull Language language) {
-      putValue("inLanguage", language);
-      return this;
-    }
-    /**
-     * The language of the content or performance or used in an action. Please use one of the language codes from the &lt;a href=&quot;http://tools.ietf.org/html/bcp47&quot;&gt;IETF BCP 47 standard&lt;/a&gt;. See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/availableLanguage&quot;&gt;availableLanguage&lt;/a&gt;.
-     */
-    @NotNull public Builder inLanguage(@NotNull Language.Builder language) {
-      putValue("inLanguage", language.build());
-      return this;
-    }
-    /**
-     * The language of the content or performance or used in an action. Please use one of the language codes from the &lt;a href=&quot;http://tools.ietf.org/html/bcp47&quot;&gt;IETF BCP 47 standard&lt;/a&gt;. See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/availableLanguage&quot;&gt;availableLanguage&lt;/a&gt;.
-     */
-    @NotNull public Builder inLanguage(@NotNull String inLanguage) {
-      putValue("inLanguage", inLanguage);
-      return this;
-    }
-    /**
      * The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).
      */
     @NotNull public Builder videoFormat(@NotNull String videoFormat) {
       putValue("videoFormat", videoFormat);
-      return this;
-    }
-    /**
-     * The media network(s) whose content is broadcast on this station.
-     */
-    @NotNull public Builder broadcastAffiliateOf(@NotNull Organization organization) {
-      putValue("broadcastAffiliateOf", organization);
-      return this;
-    }
-    /**
-     * The media network(s) whose content is broadcast on this station.
-     */
-    @NotNull public Builder broadcastAffiliateOf(@NotNull Organization.Builder organization) {
-      putValue("broadcastAffiliateOf", organization.build());
-      return this;
-    }
-    /**
-     * A &lt;a href=&quot;https://en.wikipedia.org/wiki/Call_sign&quot;&gt;callsign&lt;/a&gt;, as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
-     */
-    @NotNull public Builder callSign(@NotNull Identifier identifier) {
-      putValue("callSign", identifier);
-      return this;
-    }
-    /**
-     * The timezone in &lt;a href=&quot;http://en.wikipedia.org/wiki/ISO_8601&quot;&gt;ISO 8601 format&lt;/a&gt; for which the service bases its broadcasts
-     */
-    @NotNull public Builder broadcastTimezone(@NotNull String broadcastTimezone) {
-      putValue("broadcastTimezone", broadcastTimezone);
-      return this;
-    }
-    /**
-     * The organization owning or operating the broadcast service.
-     */
-    @NotNull public Builder broadcaster(@NotNull Organization organization) {
-      putValue("broadcaster", organization);
-      return this;
-    }
-    /**
-     * The organization owning or operating the broadcast service.
-     */
-    @NotNull public Builder broadcaster(@NotNull Organization.Builder organization) {
-      putValue("broadcaster", organization.build());
-      return this;
-    }
-    /**
-     * The name displayed in the channel guide. For many US affiliates, it is the network name.
-     */
-    @NotNull public Builder broadcastDisplayName(@NotNull String broadcastDisplayName) {
-      putValue("broadcastDisplayName", broadcastDisplayName);
-      return this;
-    }
-    /**
-     * A broadcast service to which the broadcast service may belong to such as regional variations of a national channel.
-     */
-    @NotNull public Builder parentService(@NotNull BroadcastService broadcastService) {
-      putValue("parentService", broadcastService);
-      return this;
-    }
-    /**
-     * A broadcast service to which the broadcast service may belong to such as regional variations of a national channel.
-     */
-    @NotNull public Builder parentService(@NotNull BroadcastService.Builder broadcastService) {
-      putValue("parentService", broadcastService.build());
       return this;
     }
     /**
@@ -165,153 +165,6 @@ public class RadioBroadcastService extends BroadcastService {
      */
     @NotNull public Builder hasBroadcastChannel(@NotNull BroadcastChannel.Builder broadcastChannel) {
       putValue("hasBroadcastChannel", broadcastChannel.build());
-      return this;
-    }
-    /**
-     * The tangible thing generated by the service, e.g. a passport, permit, etc.
-     */
-    @NotNull public Builder serviceOutput(@NotNull Thing thing) {
-      putValue("serviceOutput", thing);
-      return this;
-    }
-    /**
-     * The tangible thing generated by the service, e.g. a passport, permit, etc.
-     */
-    @NotNull public Builder serviceOutput(@NotNull Thing.Builder thing) {
-      putValue("serviceOutput", thing.build());
-      return this;
-    }
-    /**
-     * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
-     */
-    @NotNull public Builder serviceType(@NotNull GovernmentBenefitsType governmentBenefitsType) {
-      putValue("serviceType", governmentBenefitsType);
-      return this;
-    }
-    /**
-     * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
-     */
-    @NotNull public Builder serviceType(@NotNull String serviceType) {
-      putValue("serviceType", serviceType);
-      return this;
-    }
-    /**
-     * A pointer to another, functionally similar product (or multiple products).
-     */
-    @NotNull public Builder isSimilarTo(@NotNull Product product) {
-      putValue("isSimilarTo", product);
-      return this;
-    }
-    /**
-     * A pointer to another, functionally similar product (or multiple products).
-     */
-    @NotNull public Builder isSimilarTo(@NotNull Product.Builder product) {
-      putValue("isSimilarTo", product.build());
-      return this;
-    }
-    /**
-     * A pointer to another, functionally similar product (or multiple products).
-     */
-    @NotNull public Builder isSimilarTo(@NotNull Service service) {
-      putValue("isSimilarTo", service);
-      return this;
-    }
-    /**
-     * A pointer to another, functionally similar product (or multiple products).
-     */
-    @NotNull public Builder isSimilarTo(@NotNull Service.Builder service) {
-      putValue("isSimilarTo", service.build());
-      return this;
-    }
-    /**
-     * An award won by or for this item.
-     */
-    @NotNull public Builder award(@NotNull String award) {
-      putValue("award", award);
-      return this;
-    }
-    /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
-     */
-    @NotNull public Builder brand(@NotNull Brand brand) {
-      putValue("brand", brand);
-      return this;
-    }
-    /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
-     */
-    @NotNull public Builder brand(@NotNull Brand.Builder brand) {
-      putValue("brand", brand.build());
-      return this;
-    }
-    /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
-     */
-    @NotNull public Builder brand(@NotNull Organization organization) {
-      putValue("brand", organization);
-      return this;
-    }
-    /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
-     */
-    @NotNull public Builder brand(@NotNull Organization.Builder organization) {
-      putValue("brand", organization.build());
-      return this;
-    }
-    /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
-     */
-    @NotNull public Builder aggregateRating(@NotNull AggregateRating aggregateRating) {
-      putValue("aggregateRating", aggregateRating);
-      return this;
-    }
-    /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
-     */
-    @NotNull public Builder aggregateRating(@NotNull AggregateRating.Builder aggregateRating) {
-      putValue("aggregateRating", aggregateRating.build());
-      return this;
-    }
-    /**
-     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
-     */
-    @NotNull public Builder hasOfferCatalog(@NotNull OfferCatalog offerCatalog) {
-      putValue("hasOfferCatalog", offerCatalog);
-      return this;
-    }
-    /**
-     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
-     */
-    @NotNull public Builder hasOfferCatalog(@NotNull OfferCatalog.Builder offerCatalog) {
-      putValue("hasOfferCatalog", offerCatalog.build());
-      return this;
-    }
-    /**
-     * A pointer to another, somehow related product (or multiple products).
-     */
-    @NotNull public Builder isRelatedTo(@NotNull Product product) {
-      putValue("isRelatedTo", product);
-      return this;
-    }
-    /**
-     * A pointer to another, somehow related product (or multiple products).
-     */
-    @NotNull public Builder isRelatedTo(@NotNull Product.Builder product) {
-      putValue("isRelatedTo", product.build());
-      return this;
-    }
-    /**
-     * A pointer to another, somehow related product (or multiple products).
-     */
-    @NotNull public Builder isRelatedTo(@NotNull Service service) {
-      putValue("isRelatedTo", service);
-      return this;
-    }
-    /**
-     * A pointer to another, somehow related product (or multiple products).
-     */
-    @NotNull public Builder isRelatedTo(@NotNull Service.Builder service) {
-      putValue("isRelatedTo", service.build());
       return this;
     }
     /**
@@ -357,10 +210,185 @@ public class RadioBroadcastService extends BroadcastService {
       return this;
     }
     /**
+     * The tangible thing generated by the service, e.g. a passport, permit, etc.
+     */
+    @NotNull public Builder serviceOutput(@NotNull Thing thing) {
+      putValue("serviceOutput", thing);
+      return this;
+    }
+    /**
+     * The tangible thing generated by the service, e.g. a passport, permit, etc.
+     */
+    @NotNull public Builder serviceOutput(@NotNull Thing.Builder thing) {
+      putValue("serviceOutput", thing.build());
+      return this;
+    }
+    /**
+     * The overall rating, based on a collection of reviews or ratings, of the item.
+     */
+    @NotNull public Builder aggregateRating(@NotNull AggregateRating aggregateRating) {
+      putValue("aggregateRating", aggregateRating);
+      return this;
+    }
+    /**
+     * The overall rating, based on a collection of reviews or ratings, of the item.
+     */
+    @NotNull public Builder aggregateRating(@NotNull AggregateRating.Builder aggregateRating) {
+      putValue("aggregateRating", aggregateRating.build());
+      return this;
+    }
+    /**
+     * An associated logo.
+     */
+    @NotNull public Builder logo(@NotNull Image image) {
+      putValue("logo", image);
+      return this;
+    }
+    /**
+     * A pointer to another, functionally similar product (or multiple products).
+     */
+    @NotNull public Builder isSimilarTo(@NotNull Product product) {
+      putValue("isSimilarTo", product);
+      return this;
+    }
+    /**
+     * A pointer to another, functionally similar product (or multiple products).
+     */
+    @NotNull public Builder isSimilarTo(@NotNull Product.Builder product) {
+      putValue("isSimilarTo", product.build());
+      return this;
+    }
+    /**
+     * A pointer to another, functionally similar product (or multiple products).
+     */
+    @NotNull public Builder isSimilarTo(@NotNull Service service) {
+      putValue("isSimilarTo", service);
+      return this;
+    }
+    /**
+     * A pointer to another, functionally similar product (or multiple products).
+     */
+    @NotNull public Builder isSimilarTo(@NotNull Service.Builder service) {
+      putValue("isSimilarTo", service.build());
+      return this;
+    }
+    /**
+     * A pointer to another, somehow related product (or multiple products).
+     */
+    @NotNull public Builder isRelatedTo(@NotNull Product product) {
+      putValue("isRelatedTo", product);
+      return this;
+    }
+    /**
+     * A pointer to another, somehow related product (or multiple products).
+     */
+    @NotNull public Builder isRelatedTo(@NotNull Product.Builder product) {
+      putValue("isRelatedTo", product.build());
+      return this;
+    }
+    /**
+     * A pointer to another, somehow related product (or multiple products).
+     */
+    @NotNull public Builder isRelatedTo(@NotNull Service service) {
+      putValue("isRelatedTo", service);
+      return this;
+    }
+    /**
+     * A pointer to another, somehow related product (or multiple products).
+     */
+    @NotNull public Builder isRelatedTo(@NotNull Service.Builder service) {
+      putValue("isRelatedTo", service.build());
+      return this;
+    }
+    /**
+     * An intended audience, i.e. a group for whom something was created.
+     */
+    @NotNull public Builder audience(@NotNull Audience audience) {
+      putValue("audience", audience);
+      return this;
+    }
+    /**
+     * An intended audience, i.e. a group for whom something was created.
+     */
+    @NotNull public Builder audience(@NotNull Audience.Builder audience) {
+      putValue("audience", audience.build());
+      return this;
+    }
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     */
+    @NotNull public Builder brand(@NotNull Brand brand) {
+      putValue("brand", brand);
+      return this;
+    }
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     */
+    @NotNull public Builder brand(@NotNull Brand.Builder brand) {
+      putValue("brand", brand.build());
+      return this;
+    }
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     */
+    @NotNull public Builder brand(@NotNull Organization organization) {
+      putValue("brand", organization);
+      return this;
+    }
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     */
+    @NotNull public Builder brand(@NotNull Organization.Builder organization) {
+      putValue("brand", organization.build());
+      return this;
+    }
+    /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      */
     @NotNull public Builder category(@NotNull Category category) {
       putValue("category", category);
+      return this;
+    }
+    /**
+     * Human-readable terms of service documentation.
+     */
+    @NotNull public Builder termsOfService(@NotNull String termsOfService) {
+      putValue("termsOfService", termsOfService);
+      return this;
+    }
+    /**
+     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
+     */
+    @NotNull public Builder hasOfferCatalog(@NotNull OfferCatalog offerCatalog) {
+      putValue("hasOfferCatalog", offerCatalog);
+      return this;
+    }
+    /**
+     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
+     */
+    @NotNull public Builder hasOfferCatalog(@NotNull OfferCatalog.Builder offerCatalog) {
+      putValue("hasOfferCatalog", offerCatalog.build());
+      return this;
+    }
+    /**
+     * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
+     */
+    @NotNull public Builder serviceType(@NotNull GovernmentBenefitsType governmentBenefitsType) {
+      putValue("serviceType", governmentBenefitsType);
+      return this;
+    }
+    /**
+     * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
+     */
+    @NotNull public Builder serviceType(@NotNull String serviceType) {
+      putValue("serviceType", serviceType);
+      return this;
+    }
+    /**
+     * Indicates the mobility of a provided service (e.g. 'static', 'dynamic').
+     */
+    @NotNull public Builder providerMobility(@NotNull String providerMobility) {
+      putValue("providerMobility", providerMobility);
       return this;
     }
     /**
@@ -378,17 +406,10 @@ public class RadioBroadcastService extends BroadcastService {
       return this;
     }
     /**
-     * An intended audience, i.e. a group for whom something was created.
+     * An award won by or for this item.
      */
-    @NotNull public Builder audience(@NotNull Audience audience) {
-      putValue("audience", audience);
-      return this;
-    }
-    /**
-     * An intended audience, i.e. a group for whom something was created.
-     */
-    @NotNull public Builder audience(@NotNull Audience.Builder audience) {
-      putValue("audience", audience.build());
+    @NotNull public Builder award(@NotNull String award) {
+      putValue("award", award);
       return this;
     }
     /**
@@ -410,27 +431,6 @@ public class RadioBroadcastService extends BroadcastService {
      */
     @NotNull public Builder slogan(@NotNull String slogan) {
       putValue("slogan", slogan);
-      return this;
-    }
-    /**
-     * Indicates the mobility of a provided service (e.g. 'static', 'dynamic').
-     */
-    @NotNull public Builder providerMobility(@NotNull String providerMobility) {
-      putValue("providerMobility", providerMobility);
-      return this;
-    }
-    /**
-     * An associated logo.
-     */
-    @NotNull public Builder logo(@NotNull Image image) {
-      putValue("logo", image);
-      return this;
-    }
-    /**
-     * Human-readable terms of service documentation.
-     */
-    @NotNull public Builder termsOfService(@NotNull String termsOfService) {
-      putValue("termsOfService", termsOfService);
       return this;
     }
     /**
@@ -462,87 +462,35 @@ public class RadioBroadcastService extends BroadcastService {
       return this;
     }
     /**
-     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt; to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Demand&quot;&gt;Demand&lt;/a&gt;. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
      */
     @NotNull public Builder offers(@NotNull Demand demand) {
       putValue("offers", demand);
       return this;
     }
     /**
-     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt; to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Demand&quot;&gt;Demand&lt;/a&gt;. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
      */
     @NotNull public Builder offers(@NotNull Demand.Builder demand) {
       putValue("offers", demand.build());
       return this;
     }
     /**
-     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt; to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Demand&quot;&gt;Demand&lt;/a&gt;. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
      */
     @NotNull public Builder offers(@NotNull Offer offer) {
       putValue("offers", offer);
       return this;
     }
     /**
-     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt; to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Demand&quot;&gt;Demand&lt;/a&gt;. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
      */
     @NotNull public Builder offers(@NotNull Offer.Builder offer) {
       putValue("offers", offer.build());
-      return this;
-    }
-    /**
-     * URL of the item.
-     */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
-      return this;
-    }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     */
-    @NotNull public Builder additionalType(@NotNull String additionalType) {
-      putValue("additionalType", additionalType);
-      return this;
-    }
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     */
-    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
-      putValue("disambiguatingDescription", description);
-      return this;
-    }
-    /**
-     * A description of the item.
-     */
-    @NotNull public Builder description(@NotNull Description description) {
-      putValue("description", description);
-      return this;
-    }
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     */
-    @NotNull public Builder sameAs(@NotNull String sameAs) {
-      putValue("sameAs", sameAs);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
-      return this;
-    }
-    /**
-     * An alias for the item.
-     */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
-      return this;
-    }
-    /**
-     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
-     */
-    @NotNull public Builder image(@NotNull Image image) {
-      putValue("image", image);
       return this;
     }
     /**
@@ -560,24 +508,45 @@ public class RadioBroadcastService extends BroadcastService {
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * URL of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
+    @NotNull public Builder additionalType(@NotNull String additionalType) {
+      putValue("additionalType", additionalType);
+      return this;
+    }
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     */
+    @NotNull public Builder sameAs(@NotNull String sameAs) {
+      putValue("sameAs", sameAs);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * The name of the item.
+     */
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -606,6 +575,27 @@ public class RadioBroadcastService extends BroadcastService {
      */
     @NotNull public Builder subjectOf(@NotNull Event.Builder event) {
       putValue("subjectOf", event.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
       return this;
     }
     @NotNull public Builder id(@NotNull String id) {

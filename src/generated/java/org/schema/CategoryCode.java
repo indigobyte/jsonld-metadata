@@ -24,37 +24,20 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * A Category Code.Source: https://github.com/schemaorg/schemaorg/issues/894
+ * A Category Code.
  */
 public class CategoryCode extends DefinedTerm {
   /**
-   * A &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/CategoryCodeSet&quot;&gt;CategoryCodeSet&lt;/a&gt; that contains this category code.
+   * A short textual code that uniquely identifies the value.
    */
-  @JsonIgnore public CategoryCodeSet getInCodeSetCategoryCodeSet() {
-    return (CategoryCodeSet) getValue("inCodeSet");
+  @JsonIgnore public String getCodeValue() {
+    return (String) getValue("codeValue");
   }
   /**
-   * A &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/CategoryCodeSet&quot;&gt;CategoryCodeSet&lt;/a&gt; that contains this category code.
+   * A short textual code that uniquely identifies the value.
    */
-  @JsonIgnore public Collection<CategoryCodeSet> getInCodeSetCategoryCodeSets() {
-    final Object current = myData.get("inCodeSet");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<CategoryCodeSet>) current;
-    }
-    return Arrays.asList((CategoryCodeSet) current);
-  }
-  /**
-   * A &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/CategoryCodeSet&quot;&gt;CategoryCodeSet&lt;/a&gt; that contains this category code.
-   */
-  @JsonIgnore public String getInCodeSetString() {
-    return (String) getValue("inCodeSet");
-  }
-  /**
-   * A &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/CategoryCodeSet&quot;&gt;CategoryCodeSet&lt;/a&gt; that contains this category code.
-   */
-  @JsonIgnore public Collection<String> getInCodeSetStrings() {
-    final Object current = myData.get("inCodeSet");
+  @JsonIgnore public Collection<String> getCodeValues() {
+    final Object current = myData.get("codeValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
       return (Collection<String>) current;
@@ -62,21 +45,21 @@ public class CategoryCode extends DefinedTerm {
     return Arrays.asList((String) current);
   }
   /**
-   * A short textual code that uniquely identifies the value.
+   * A [[CategoryCodeSet]] that contains this category code.
    */
-  @JsonIgnore public TermCode getCodeValue() {
-    return (TermCode) getValue("codeValue");
+  @JsonIgnore public InDefinedTermSet getInCodeSet() {
+    return (InDefinedTermSet) getValue("inCodeSet");
   }
   /**
-   * A short textual code that uniquely identifies the value.
+   * A [[CategoryCodeSet]] that contains this category code.
    */
-  @JsonIgnore public Collection<TermCode> getCodeValues() {
-    final Object current = myData.get("codeValue");
+  @JsonIgnore public Collection<InDefinedTermSet> getInCodeSets() {
+    final Object current = myData.get("inCodeSet");
     if (current == null) return Collections.emptyList();
     if (current instanceof Collection) {
-      return (Collection<TermCode>) current;
+      return (Collection<InDefinedTermSet>) current;
     }
-    return Arrays.asList((TermCode) current);
+    return Arrays.asList((InDefinedTermSet) current);
   }
   protected CategoryCode(java.util.Map<String,Object> data) {
     super(data);
@@ -93,101 +76,31 @@ public class CategoryCode extends DefinedTerm {
       return new CategoryCode(myData);
     }
     /**
-     * A &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/CategoryCodeSet&quot;&gt;CategoryCodeSet&lt;/a&gt; that contains this category code.
-     */
-    @NotNull public Builder inCodeSet(@NotNull CategoryCodeSet categoryCodeSet) {
-      putValue("inCodeSet", categoryCodeSet);
-      return this;
-    }
-    /**
-     * A &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/CategoryCodeSet&quot;&gt;CategoryCodeSet&lt;/a&gt; that contains this category code.
-     */
-    @NotNull public Builder inCodeSet(@NotNull CategoryCodeSet.Builder categoryCodeSet) {
-      putValue("inCodeSet", categoryCodeSet.build());
-      return this;
-    }
-    /**
-     * A &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/CategoryCodeSet&quot;&gt;CategoryCodeSet&lt;/a&gt; that contains this category code.
-     */
-    @NotNull public Builder inCodeSet(@NotNull String inCodeSet) {
-      putValue("inCodeSet", inCodeSet);
-      return this;
-    }
-    /**
      * A short textual code that uniquely identifies the value.
      */
-    @NotNull public Builder codeValue(@NotNull TermCode termCode) {
-      putValue("codeValue", termCode);
+    @NotNull public Builder codeValue(@NotNull String codeValue) {
+      putValue("codeValue", codeValue);
       return this;
     }
     /**
-     * A &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/DefinedTermSet&quot;&gt;DefinedTermSet&lt;/a&gt; that contains this term.
+     * A [[CategoryCodeSet]] that contains this category code.
      */
-    @NotNull public Builder inDefinedTermSet(@NotNull InDefinedTermSet inDefinedTermSet) {
-      putValue("inDefinedTermSet", inDefinedTermSet);
+    @NotNull public Builder inCodeSet(@NotNull InDefinedTermSet inDefinedTermSet) {
+      putValue("inCodeSet", inDefinedTermSet);
       return this;
     }
     /**
-     * A code that identifies this &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/DefinedTerm&quot;&gt;DefinedTerm&lt;/a&gt; within a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/DefinedTermSet&quot;&gt;DefinedTermSet&lt;/a&gt;
+     * A code that identifies this [[DefinedTerm]] within a [[DefinedTermSet]]
      */
     @NotNull public Builder termCode(@NotNull TermCode termCode) {
       putValue("termCode", termCode);
       return this;
     }
     /**
-     * URL of the item.
+     * A [[DefinedTermSet]] that contains this term.
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
-      return this;
-    }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     */
-    @NotNull public Builder additionalType(@NotNull String additionalType) {
-      putValue("additionalType", additionalType);
-      return this;
-    }
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     */
-    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
-      putValue("disambiguatingDescription", description);
-      return this;
-    }
-    /**
-     * A description of the item.
-     */
-    @NotNull public Builder description(@NotNull Description description) {
-      putValue("description", description);
-      return this;
-    }
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     */
-    @NotNull public Builder sameAs(@NotNull String sameAs) {
-      putValue("sameAs", sameAs);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
-      return this;
-    }
-    /**
-     * An alias for the item.
-     */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
-      return this;
-    }
-    /**
-     * An image of the item. This can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/URL&quot;&gt;URL&lt;/a&gt; or a fully described &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ImageObject&quot;&gt;ImageObject&lt;/a&gt;.
-     */
-    @NotNull public Builder image(@NotNull Image image) {
-      putValue("image", image);
+    @NotNull public Builder inDefinedTermSet(@NotNull InDefinedTermSet inDefinedTermSet) {
+      putValue("inDefinedTermSet", inDefinedTermSet);
       return this;
     }
     /**
@@ -205,24 +118,45 @@ public class CategoryCode extends DefinedTerm {
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
+    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
+      putValue("disambiguatingDescription", description);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * URL of the item.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See &lt;a href=&quot;/docs/datamodel.html#mainEntityBackground&quot;&gt;background notes&lt;/a&gt; for details.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
+    @NotNull public Builder additionalType(@NotNull String additionalType) {
+      putValue("additionalType", additionalType);
+      return this;
+    }
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     */
+    @NotNull public Builder sameAs(@NotNull String sameAs) {
+      putValue("sameAs", sameAs);
+      return this;
+    }
+    /**
+     * An alias for the item.
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * The name of the item.
+     */
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
       return this;
     }
     /**
@@ -253,6 +187,27 @@ public class CategoryCode extends DefinedTerm {
       putValue("subjectOf", event.build());
       return this;
     }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
@@ -261,12 +216,10 @@ public class CategoryCode extends DefinedTerm {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("inCodeSet".equals(key) && value instanceof CategoryCodeSet) { this.inCodeSet((CategoryCodeSet)value); return; }
-      if ("inCodeSets".equals(key) && value instanceof CategoryCodeSet) { this.inCodeSet((CategoryCodeSet)value); return; }
-      if ("inCodeSet".equals(key) && value instanceof String) { this.inCodeSet((String)value); return; }
-      if ("inCodeSets".equals(key) && value instanceof String) { this.inCodeSet((String)value); return; }
-      if ("codeValue".equals(key) && value instanceof TermCode) { this.codeValue((TermCode)value); return; }
-      if ("codeValues".equals(key) && value instanceof TermCode) { this.codeValue((TermCode)value); return; }
+      if ("codeValue".equals(key) && value instanceof String) { this.codeValue((String)value); return; }
+      if ("codeValues".equals(key) && value instanceof String) { this.codeValue((String)value); return; }
+      if ("inCodeSet".equals(key) && value instanceof InDefinedTermSet) { this.inCodeSet((InDefinedTermSet)value); return; }
+      if ("inCodeSets".equals(key) && value instanceof InDefinedTermSet) { this.inCodeSet((InDefinedTermSet)value); return; }
       super.fromMap(key, value);
     }
   }

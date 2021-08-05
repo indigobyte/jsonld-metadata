@@ -24,7 +24,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * Text representing a CSS selector.Source: https://github.com/schemaorg/schemaorg/issues/1672
+ * Text representing a CSS selector.
  */
 public class CssSelectorType extends Text {
   protected CssSelectorType(java.util.Map<String,Object> data) {

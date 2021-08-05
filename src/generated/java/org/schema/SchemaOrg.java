@@ -30,6 +30,10 @@ public class SchemaOrg {
    */
   @NotNull public static CollegeOrUniversity.Builder collegeOrUniversity() { return new CollegeOrUniversity.Builder(new HashMap<String,Object>()); }
   /**
+   * A type of physical examination of a patient performed by a physician. 
+   */
+  @NotNull public static PhysicalExam.Builder physicalExam() { return new PhysicalExam.Builder(new HashMap<String,Object>()); }
+  /**
    * A delivery service through which radio content is provided via broadcast over the air or online.
    */
   @NotNull public static RadioBroadcastService.Builder radioBroadcastService() { return new RadioBroadcastService.Builder(new HashMap<String,Object>()); }
@@ -42,30 +46,27 @@ public class SchemaOrg {
    */
   @NotNull public static WorkBasedProgram.Builder workBasedProgram() { return new WorkBasedProgram.Builder(new HashMap<String,Object>()); }
   /**
+   * A creative work with a visual storytelling format intended to be viewed online, particularly on mobile devices.
+   */
+  @NotNull public static AmpStory.Builder ampStory() { return new AmpStory.Builder(new HashMap<String,Object>()); }
+  /**
    * A dentist.
    */
   @NotNull public static Dentist.Builder dentist() { return new Dentist.Builder(new HashMap<String,Object>()); }
-  /**
-   * The act of asserting that a future event/action is no longer going to happen.&lt;br/&gt;&lt;br/&gt;
-
-Related actions:&lt;br/&gt;&lt;br/&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ConfirmAction&quot;&gt;ConfirmAction&lt;/a&gt;: The antonym of CancelAction.&lt;/li&gt;
-&lt;/ul&gt;
-
-   */
-  @NotNull public static CancelAction.Builder cancelAction() { return new CancelAction.Builder(new HashMap<String,Object>()); }
   /**
    * A file composed primarily of text.
    */
   @NotNull public static TextDigitalDocument.Builder textDigitalDocument() { return new TextDigitalDocument.Builder(new HashMap<String,Object>()); }
   /**
+   * The act of asserting that a future event/action is no longer going to happen.\n\nRelated actions:\n\n* [[ConfirmAction]]: The antonym of CancelAction.
+   */
+  @NotNull public static CancelAction.Builder cancelAction() { return new CancelAction.Builder(new HashMap<String,Object>()); }
+  /**
    * A bus stop.
    */
   @NotNull public static BusStop.Builder busStop() { return new BusStop.Builder(new HashMap<String,Object>()); }
   /**
-   * A &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/NewsArticle&quot;&gt;NewsArticle&lt;/a&gt; providing historical context, definition and detail on a specific topic (aka &quot;explainer&quot; or &quot;backgrounder&quot;). For example, an in-depth article or frequently-asked-questions (&lt;a href=&quot;https://en.wikipedia.org/wiki/FAQ&quot;&gt;FAQ&lt;/a&gt;) document on topics such as Climate Change or the European Union. Other kinds of background material from a non-news setting are often described using &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Book&quot;&gt;Book&lt;/a&gt; or &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Article&quot;&gt;Article&lt;/a&gt;, in particular &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ScholarlyArticle&quot;&gt;ScholarlyArticle&lt;/a&gt;. See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/NewsArticle&quot;&gt;NewsArticle&lt;/a&gt; for related vocabulary from a learning/education perspective.
+   * A [[NewsArticle]] providing historical context, definition and detail on a specific topic (aka &quot;explainer&quot; or &quot;backgrounder&quot;). For example, an in-depth article or frequently-asked-questions ([FAQ](https://en.wikipedia.org/wiki/FAQ)) document on topics such as Climate Change or the European Union. Other kinds of background material from a non-news setting are often described using [[Book]] or [[Article]], in particular [[ScholarlyArticle]]. See also [[NewsArticle]] for related vocabulary from a learning/education perspective.
    */
   @NotNull public static BackgroundNewsArticle.Builder backgroundNewsArticle() { return new BackgroundNewsArticle.Builder(new HashMap<String,Object>()); }
   /**
@@ -85,16 +86,19 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
    */
   @NotNull public static ComputerStore.Builder computerStore() { return new ComputerStore.Builder(new HashMap<String,Object>()); }
   /**
+   * Indicates employment-related experience requirements, e.g. [[monthsOfExperience]].
+   */
+  @NotNull public static OccupationalExperienceRequirements.Builder occupationalExperienceRequirements() { return new OccupationalExperienceRequirements.Builder(new HashMap<String,Object>()); }
+  /**
    * Podiatry is the care of the human foot, especially the diagnosis and treatment of foot disorders.
    */
   @NotNull public static Podiatric.Builder podiatric() { return new Podiatric.Builder(new HashMap<String,Object>()); }
   /**
-   * A &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/CampingPitch&quot;&gt;CampingPitch&lt;/a&gt; is an individual place for overnight stay in the outdoors, typically being part of a larger camping site, or &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Campground&quot;&gt;Campground&lt;/a&gt;.&lt;br/&gt;&lt;br/&gt;
-
+   * A [[CampingPitch]] is an individual place for overnight stay in the outdoors, typically being part of a larger camping site, or [[Campground]].\n\n
 In British English a campsite, or campground, is an area, usually divided into a number of pitches, where people can camp overnight using tents or camper vans or caravans; this British English use of the word is synonymous with the American English expression campground. In American English the term campsite generally means an area where an individual, family, group, or military unit can pitch a tent or park a camper; a campground may contain many campsites.
-(Source: Wikipedia see &lt;a href=&quot;https://en.wikipedia.org/wiki/Campsite&quot;&gt;https://en.wikipedia.org/wiki/Campsite&lt;/a&gt;).&lt;br/&gt;&lt;br/&gt;
+(Source: Wikipedia see [https://en.wikipedia.org/wiki/Campsite](https://en.wikipedia.org/wiki/Campsite)).\n\n
+See also the dedicated [document on the use of schema.org for marking up hotels and other forms of accommodations](/docs/hotels.html).
 
-See also the dedicated &lt;a href=&quot;/docs/hotels.html&quot;&gt;document on the use of schema.org for marking up hotels and other forms of accommodations&lt;/a&gt;.
    */
   @NotNull public static CampingPitch.Builder campingPitch() { return new CampingPitch.Builder(new HashMap<String,Object>()); }
   /**
@@ -117,6 +121,7 @@ See also the dedicated &lt;a href=&quot;/docs/hotels.html&quot;&gt;document on t
    * A resort is a place used for relaxation or recreation, attracting visitors for holidays or vacations. Resorts are places, towns or sometimes commercial establishment operated by a single company (Source: Wikipedia, the free encyclopedia, see &lt;a href=&quot;http://en.wikipedia.org/wiki/Resort&quot;&gt;http://en.wikipedia.org/wiki/Resort&lt;/a&gt;).
 &lt;br /&gt;&lt;br /&gt;
 See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on the use of schema.org for marking up hotels and other forms of accommodations&lt;/a&gt;.
+    
    */
   @NotNull public static Resort.Builder resort() { return new Resort.Builder(new HashMap<String,Object>()); }
   /**
@@ -124,30 +129,30 @@ See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on t
    */
   @NotNull public static WearAction.Builder wearAction() { return new WearAction.Builder(new HashMap<String,Object>()); }
   /**
-   * Vital signs are measures of various physiological functions in order to assess the most basic body functions.
-   */
-  @NotNull public static VitalSign.Builder vitalSign() { return new VitalSign.Builder(new HashMap<String,Object>()); }
-  /**
    * A fact-checking review of claims made (or reported) in some creative work (referenced via itemReviewed).
    */
   @NotNull public static ClaimReview.Builder claimReview() { return new ClaimReview.Builder(new HashMap<String,Object>()); }
+  /**
+   * Vital signs are measures of various physiological functions in order to assess the most basic body functions.
+   */
+  @NotNull public static VitalSign.Builder vitalSign() { return new VitalSign.Builder(new HashMap<String,Object>()); }
   /**
    * Branch of medicine that pertains to the health services to improve and protect community health, especially epidemiology, sanitation, immunization, and preventive medicine.
    */
   @NotNull public static PublicHealth.Builder publicHealth() { return new PublicHealth.Builder(new HashMap<String,Object>()); }
   /**
-   * OfferShippingDetails represents information about shipping destinations.&lt;br/&gt;&lt;br/&gt;
+   * OfferShippingDetails represents information about shipping destinations.
 
-Multiple of these entities can be used to represent different shipping rates for different destinations:&lt;br/&gt;&lt;br/&gt;
+Multiple of these entities can be used to represent different shipping rates for different destinations:
 
-One entity for Alaska/Hawaii. A different one for continental US.A different one for all France.&lt;br/&gt;&lt;br/&gt;
+One entity for Alaska/Hawaii. A different one for continental US.A different one for all France.
 
-Multiple of these entities can be used to represent different shipping costs and delivery times.&lt;br/&gt;&lt;br/&gt;
+Multiple of these entities can be used to represent different shipping costs and delivery times.
 
-Two entities that are identical but differ in rate and time:&lt;br/&gt;&lt;br/&gt;
+Two entities that are identical but differ in rate and time:
 
 e.g. Cheaper and slower: $5 in 5-7days
-or Fast and expensive: $15 in 1-2 days
+or Fast and expensive: $15 in 1-2 days.
    */
   @NotNull public static OfferShippingDetails.Builder offerShippingDetails() { return new OfferShippingDetails.Builder(new HashMap<String,Object>()); }
   /**
@@ -163,7 +168,7 @@ or Fast and expensive: $15 in 1-2 days
    */
   @NotNull public static Demand.Builder demand() { return new Demand.Builder(new HashMap<String,Object>()); }
   /**
-   * A &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/NewsArticle&quot;&gt;NewsArticle&lt;/a&gt; expressing an open call by a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/NewsMediaOrganization&quot;&gt;NewsMediaOrganization&lt;/a&gt; asking the public for input, insights, clarifications, anecdotes, documentation, etc., on an issue, for reporting purposes.
+   * A [[NewsArticle]] expressing an open call by a [[NewsMediaOrganization]] asking the public for input, insights, clarifications, anecdotes, documentation, etc., on an issue, for reporting purposes.
    */
   @NotNull public static AskPublicNewsArticle.Builder askPublicNewsArticle() { return new AskPublicNewsArticle.Builder(new HashMap<String,Object>()); }
   /**
@@ -195,15 +200,13 @@ or Fast and expensive: $15 in 1-2 days
    */
   @NotNull public static Mosque.Builder mosque() { return new Mosque.Builder(new HashMap<String,Object>()); }
   /**
-   * A structured value providing information about the opening hours of a place or a certain service inside a place.&lt;br/&gt;&lt;br/&gt;
-
-The place is &lt;strong&gt;open&lt;/strong&gt; if the &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/opens&quot;&gt;opens&lt;/a&gt; property is specified, and &lt;strong&gt;closed&lt;/strong&gt; otherwise.&lt;br/&gt;&lt;br/&gt;
-
-If the value for the &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/closes&quot;&gt;closes&lt;/a&gt; property is less than the value for the &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/opens&quot;&gt;opens&lt;/a&gt; property then the hour range is assumed to span over the next day.
+   * A structured value providing information about the opening hours of a place or a certain service inside a place.\n\n
+The place is __open__ if the [[opens]] property is specified, and __closed__ otherwise.\n\nIf the value for the [[closes]] property is less than the value for the [[opens]] property then the hour range is assumed to span over the next day.
+      
    */
   @NotNull public static OpeningHoursSpecification.Builder openingHoursSpecification() { return new OpeningHoursSpecification.Builder(new HashMap<String,Object>()); }
   /**
-   * A &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/NewsArticle&quot;&gt;NewsArticle&lt;/a&gt; and &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/CriticReview&quot;&gt;CriticReview&lt;/a&gt; providing a professional critic's assessment of a service, product, performance, or artistic or literary work.
+   * A [[NewsArticle]] and [[CriticReview]] providing a professional critic's assessment of a service, product, performance, or artistic or literary work.
    */
   @NotNull public static ReviewNewsArticle.Builder reviewNewsArticle() { return new ReviewNewsArticle.Builder(new HashMap<String,Object>()); }
   /**
@@ -211,11 +214,11 @@ If the value for the &lt;a class=&quot;localLink&quot; href=&quot;http://schema.
    */
   @NotNull public static ActionAccessSpecification.Builder actionAccessSpecification() { return new ActionAccessSpecification.Builder(new HashMap<String,Object>()); }
   /**
-   * A Consortium is a membership &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Organization&quot;&gt;Organization&lt;/a&gt; whose members are typically Organizations.
+   * A Consortium is a membership [[Organization]] whose members are typically Organizations.
    */
   @NotNull public static Consortium.Builder consortium() { return new Consortium.Builder(new HashMap<String,Object>()); }
   /**
-   * An &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Article&quot;&gt;Article&lt;/a&gt; whose content is primarily &lt;a href=&quot;https://en.wikipedia.org/wiki/Satire&quot;&gt;[satirical]&lt;/a&gt; in nature, i.e. unlikely to be literally true. A satirical article is sometimes but not necessarily also a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/NewsArticle&quot;&gt;NewsArticle&lt;/a&gt;. &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ScholarlyArticle&quot;&gt;ScholarlyArticle&lt;/a&gt;s are also sometimes satirized.
+   * An [[Article]] whose content is primarily [[satirical]](https://en.wikipedia.org/wiki/Satire) in nature, i.e. unlikely to be literally true. A satirical article is sometimes but not necessarily also a [[NewsArticle]]. [[ScholarlyArticle]]s are also sometimes satirized.
    */
   @NotNull public static SatiricalArticle.Builder satiricalArticle() { return new SatiricalArticle.Builder(new HashMap<String,Object>()); }
   /**
@@ -259,9 +262,7 @@ If the value for the &lt;a class=&quot;localLink&quot; href=&quot;http://schema.
    */
   @NotNull public static DiagnosticProcedure.Builder diagnosticProcedure() { return new DiagnosticProcedure.Builder(new HashMap<String,Object>()); }
   /**
-   * A reservation for an event like a concert, sporting event, or lecture.&lt;br/&gt;&lt;br/&gt;
-
-Note: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Offer&quot;&gt;Offer&lt;/a&gt;.
+   * A reservation for an event like a concert, sporting event, or lecture.\n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, use [[Offer]].
    */
   @NotNull public static EventReservation.Builder eventReservation() { return new EventReservation.Builder(new HashMap<String,Object>()); }
   /**
@@ -285,13 +286,21 @@ Note: This type is for information about actual reservations, e.g. in confirmati
    */
   @NotNull public static DigitalDocumentPermission.Builder digitalDocumentPermission() { return new DigitalDocumentPermission.Builder(new HashMap<String,Object>()); }
   /**
-   * UserInteraction and its subtypes is an old way of talking about users interacting with pages. It is generally better to use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Action&quot;&gt;Action&lt;/a&gt;-based vocabulary, alongside types such as &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Comment&quot;&gt;Comment&lt;/a&gt;.
+   * UserInteraction and its subtypes is an old way of talking about users interacting with pages. It is generally better to use [[Action]]-based vocabulary, alongside types such as [[Comment]].
    */
   @NotNull public static UserDownloads.Builder userDownloads() { return new UserDownloads.Builder(new HashMap<String,Object>()); }
+  /**
+   * A specific and exact (byte-for-byte) version of a [[VideoObject]]. Two byte-for-byte identical files, for the purposes of this type, considered identical. If they have different embedded metadata the files will differ. Different external facts about the files, e.g. creator or dateCreated that aren't represented in their actual content, do not affect this notion of identity.
+   */
+  @NotNull public static VideoObjectSnapshot.Builder videoObjectSnapshot() { return new VideoObjectSnapshot.Builder(new HashMap<String,Object>()); }
   /**
    * One of the continents (for example, Europe or Africa).
    */
   @NotNull public static Continent.Builder continent() { return new Continent.Builder(new HashMap<String,Object>()); }
+  /**
+   * A statement about something, for example a fun or interesting fact. If known, the main entity this statement is about, can be indicated using mainEntity. For more formal claims (e.g. in Fact Checking), consider using [[Claim]] instead. Use the [[text]] property to capture the text of the statement.
+   */
+  @NotNull public static Statement.Builder statement() { return new Statement.Builder(new HashMap<String,Object>()); }
   /**
    * The legal availability status of a medical drug.
    */
@@ -302,19 +311,28 @@ Note: This type is for information about actual reservations, e.g. in confirmati
   @NotNull public static PublicationEvent.Builder publicationEvent() { return new PublicationEvent.Builder(new HashMap<String,Object>()); }
   /**
    * An enterprise (potentially individual but typically collaborative), planned to achieve a particular aim.
-Use properties from &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Organization&quot;&gt;Organization&lt;/a&gt;, &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/subOrganization&quot;&gt;subOrganization&lt;/a&gt;/&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/parentOrganization&quot;&gt;parentOrganization&lt;/a&gt; to indicate project sub-structures.
+Use properties from [[Organization]], [[subOrganization]]/[[parentOrganization]] to indicate project sub-structures. 
+   
    */
   @NotNull public static Project.Builder project() { return new Project.Builder(new HashMap<String,Object>()); }
+  /**
+   * EnergyConsumptionDetails represents information related to the energy efficiency of a product that consumes energy. The information that can be provided is based on international regulations such as for example [EU directive 2017/1369](https://eur-lex.europa.eu/eli/reg/2017/1369/oj) for energy labeling and the [Energy labeling rule](https://www.ftc.gov/enforcement/rules/rulemaking-regulatory-reform-proceedings/energy-water-use-labeling-consumer) under the Energy Policy and Conservation Act (EPCA) in the US.
+   */
+  @NotNull public static EnergyConsumptionDetails.Builder energyConsumptionDetails() { return new EnergyConsumptionDetails.Builder(new HashMap<String,Object>()); }
   /**
    * The footer section of the page.
    */
   @NotNull public static WPFooter.Builder wPFooter() { return new WPFooter.Builder(new HashMap<String,Object>()); }
   /**
+   * A terminal for boats, ships, and other water vessels.
+   */
+  @NotNull public static BoatTerminal.Builder boatTerminal() { return new BoatTerminal.Builder(new HashMap<String,Object>()); }
+  /**
    * One or more messages between organizations or people on a particular topic. Individual messages can be linked to the conversation with isPartOf or hasPart properties.
    */
   @NotNull public static Conversation.Builder conversation() { return new Conversation.Builder(new HashMap<String,Object>()); }
   /**
-   * This type covers computer programming languages such as Scheme and Lisp, as well as other language-like computer representations. Natural languages are best represented with the &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Language&quot;&gt;Language&lt;/a&gt; type.
+   * This type covers computer programming languages such as Scheme and Lisp, as well as other language-like computer representations. Natural languages are best represented with the [[Language]] type.
    */
   @NotNull public static ComputerLanguage.Builder computerLanguage() { return new ComputerLanguage.Builder(new HashMap<String,Object>()); }
   /**
@@ -334,7 +352,20 @@ Use properties from &lt;a class=&quot;localLink&quot; href=&quot;http://schema.o
    */
   @NotNull public static BlogPosting.Builder blogPosting() { return new BlogPosting.Builder(new HashMap<String,Object>()); }
   /**
-   * DefinedRegion is a DefinedRegion
+   * A DefinedRegion is a geographic area defined by potentially arbitrary (rather than political, administrative or natural geographical) criteria. Properties are provided for defining a region by reference to sets of postal codes.
+
+Examples: a delivery destination when shopping. Region where regional pricing is configured.
+
+Requirement 1:
+Country: US
+States: &quot;NY&quot;, &quot;CA&quot;
+
+Requirement 2:
+Country: US
+PostalCode Set: { [94000-94585], [97000, 97999], [13000, 13599]}
+{ [12345, 12345], [78945, 78945], }
+Region = state, canton, prefecture, autonomous community...
+
    */
   @NotNull public static DefinedRegion.Builder definedRegion() { return new DefinedRegion.Builder(new HashMap<String,Object>()); }
   /**
@@ -362,9 +393,7 @@ Use properties from &lt;a class=&quot;localLink&quot; href=&quot;http://schema.o
    */
   @NotNull public static MedicalRiskCalculator.Builder medicalRiskCalculator() { return new MedicalRiskCalculator.Builder(new HashMap<String,Object>()); }
   /**
-   * Represents additional information about a relationship or property. For example a Role can be used to say that a 'member' role linking some SportsTeam to a player occurred during a particular time period. Or that a Person's 'actor' role in a Movie was for some particular characterName. Such properties can be attached to a Role entity, which is then associated with the main entities using ordinary properties like 'member' or 'actor'.&lt;br/&gt;&lt;br/&gt;
-
-See also &lt;a href=&quot;http://blog.schema.org/2014/06/introducing-role.html&quot;&gt;blog post&lt;/a&gt;.
+   * Represents additional information about a relationship or property. For example a Role can be used to say that a 'member' role linking some SportsTeam to a player occurred during a particular time period. Or that a Person's 'actor' role in a Movie was for some particular characterName. Such properties can be attached to a Role entity, which is then associated with the main entities using ordinary properties like 'member' or 'actor'.\n\nSee also [blog post](http://blog.schema.org/2014/06/introducing-role.html).
    */
   @NotNull public static Role.Builder role() { return new Role.Builder(new HashMap<String,Object>()); }
   /**
@@ -380,18 +409,11 @@ See also &lt;a href=&quot;http://blog.schema.org/2014/06/introducing-role.html&q
    */
   @NotNull public static Midwifery.Builder midwifery() { return new Midwifery.Builder(new HashMap<String,Object>()); }
   /**
-   * The act of rejecting to/adopting an object.&lt;br/&gt;&lt;br/&gt;
-
-Related actions:&lt;br/&gt;&lt;br/&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/AcceptAction&quot;&gt;AcceptAction&lt;/a&gt;: The antonym of RejectAction.&lt;/li&gt;
-&lt;/ul&gt;
-
+   * The act of rejecting to/adopting an object.\n\nRelated actions:\n\n* [[AcceptAction]]: The antonym of RejectAction.
    */
   @NotNull public static RejectAction.Builder rejectAction() { return new RejectAction.Builder(new HashMap<String,Object>()); }
   /**
-   * An entity holding detailed information about the available bed types, e.g. the quantity of twin beds for a hotel room. For the single case of just one bed of a certain type, you can use bed directly with a text. See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/BedType&quot;&gt;BedType&lt;/a&gt; (under development).
+   * An entity holding detailed information about the available bed types, e.g. the quantity of twin beds for a hotel room. For the single case of just one bed of a certain type, you can use bed directly with a text. See also [[BedType]] (under development).
    */
   @NotNull public static BedDetails.Builder bedDetails() { return new BedDetails.Builder(new HashMap<String,Object>()); }
   /**
@@ -411,15 +433,13 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
    */
   @NotNull public static TheaterGroup.Builder theaterGroup() { return new TheaterGroup.Builder(new HashMap<String,Object>()); }
   /**
-   * A reservation for a taxi.&lt;br/&gt;&lt;br/&gt;
-
-Note: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Offer&quot;&gt;Offer&lt;/a&gt;.
-   */
-  @NotNull public static TaxiReservation.Builder taxiReservation() { return new TaxiReservation.Builder(new HashMap<String,Object>()); }
-  /**
    * A public swimming pool.
    */
   @NotNull public static PublicSwimmingPool.Builder publicSwimmingPool() { return new PublicSwimmingPool.Builder(new HashMap<String,Object>()); }
+  /**
+   * A reservation for a taxi.\n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, use [[Offer]].
+   */
+  @NotNull public static TaxiReservation.Builder taxiReservation() { return new TaxiReservation.Builder(new HashMap<String,Object>()); }
   /**
    * The act of returning to the origin that which was previously received (concrete objects) or taken (ownership).
    */
@@ -433,17 +453,21 @@ Note: This type is for information about actual reservations, e.g. in confirmati
    */
   @NotNull public static MensClothingStore.Builder mensClothingStore() { return new MensClothingStore.Builder(new HashMap<String,Object>()); }
   /**
+   * Size related properties of a product, typically a size code ([[name]]) and optionally a [[sizeSystem]], [[sizeGroup]], and product measurements ([[hasMeasurement]]). In addition, the intended audience can be defined through [[suggestedAge]], [[suggestedGender]], and suggested body measurements ([[suggestedMeasurement]]).
+   */
+  @NotNull public static SizeSpecification.Builder sizeSpecification() { return new SizeSpecification.Builder(new HashMap<String,Object>()); }
+  /**
    * Event type: Food event.
    */
   @NotNull public static FoodEvent.Builder foodEvent() { return new FoodEvent.Builder(new HashMap<String,Object>()); }
   /**
-   * A DatedMoneySpecification represents monetary values with optional start and end dates. For example, this could represent an employee's salary over a specific period of time. &lt;strong&gt;Note:&lt;/strong&gt; This type has been superseded by &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/MonetaryAmount&quot;&gt;MonetaryAmount&lt;/a&gt; use of that type is recommended
+   * A DatedMoneySpecification represents monetary values with optional start and end dates. For example, this could represent an employee's salary over a specific period of time. __Note:__ This type has been superseded by [[MonetaryAmount]] use of that type is recommended
    */
   @NotNull public static DatedMoneySpecification.Builder datedMoneySpecification() { return new DatedMoneySpecification.Builder(new HashMap<String,Object>()); }
   /**
    * A FundingScheme combines organizational, project and policy aspects of grant-based funding
     that sets guidelines, principles and mechanisms to support other kinds of projects and activities.
-    Funding is typically organized via &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Grant&quot;&gt;Grant&lt;/a&gt; funding. Examples of funding schemes: Swiss Priority Programmes (SPPs); EU Framework 7 (FP7); Horizon 2020; the NIH-R01 Grant Program; Wellcome institutional strategic support fund. For large scale public sector funding, the management and administration of grant awards is often handled by other, dedicated, organizations - &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/FundingAgency&quot;&gt;FundingAgency&lt;/a&gt;s such as ERC, REA, ...
+    Funding is typically organized via [[Grant]] funding. Examples of funding schemes: Swiss Priority Programmes (SPPs); EU Framework 7 (FP7); Horizon 2020; the NIH-R01 Grant Program; Wellcome institutional strategic support fund. For large scale public sector funding, the management and administration of grant awards is often handled by other, dedicated, organizations - [[FundingAgency]]s such as ERC, REA, ...
    */
   @NotNull public static FundingScheme.Builder fundingScheme() { return new FundingScheme.Builder(new HashMap<String,Object>()); }
   /**
@@ -470,6 +494,7 @@ Note: This type is for information about actual reservations, e.g. in confirmati
    * A room is a distinguishable space within a structure, usually separated from other spaces by interior walls. (Source: Wikipedia, the free encyclopedia, see &lt;a href=&quot;http://en.wikipedia.org/wiki/Room&quot;&gt;http://en.wikipedia.org/wiki/Room&lt;/a&gt;).
 &lt;br /&gt;&lt;br /&gt;
 See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on the use of schema.org for marking up hotels and other forms of accommodations&lt;/a&gt;.
+
    */
   @NotNull public static Room.Builder room() { return new Room.Builder(new HashMap<String,Object>()); }
   /**
@@ -501,9 +526,7 @@ See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on t
    */
   @NotNull public static MedicalStudy.Builder medicalStudy() { return new MedicalStudy.Builder(new HashMap<String,Object>()); }
   /**
-   * A reservation for train travel.&lt;br/&gt;&lt;br/&gt;
-
-Note: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Offer&quot;&gt;Offer&lt;/a&gt;.
+   * A reservation for train travel.\n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, use [[Offer]].
    */
   @NotNull public static TrainReservation.Builder trainReservation() { return new TrainReservation.Builder(new HashMap<String,Object>()); }
   /**
@@ -519,7 +542,7 @@ Note: This type is for information about actual reservations, e.g. in confirmati
    */
   @NotNull public static Drug.Builder drug() { return new Drug.Builder(new HashMap<String,Object>()); }
   /**
-   * A blog.
+   * A [blog](https://en.wikipedia.org/wiki/Blog), sometimes known as a &quot;weblog&quot;. Note that the individual posts ([[BlogPosting]]s) in a [[Blog]] are often colloqually referred to by the same term.
    */
   @NotNull public static Blog.Builder blog() { return new Blog.Builder(new HashMap<String,Object>()); }
   /**
@@ -531,9 +554,13 @@ Note: This type is for information about actual reservations, e.g. in confirmati
    */
   @NotNull public static CityHall.Builder cityHall() { return new CityHall.Builder(new HashMap<String,Object>()); }
   /**
-   * A point value or interval for product characteristics and other purposes.
+   *  A point value or interval for product characteristics and other purposes.
    */
   @NotNull public static QuantitativeValue.Builder quantitativeValue() { return new QuantitativeValue.Builder(new HashMap<String,Object>()); }
+  /**
+   * A trip on a commercial ferry line.
+   */
+  @NotNull public static BoatTrip.Builder boatTrip() { return new BoatTrip.Builder(new HashMap<String,Object>()); }
   /**
    * The act of conveying information to another person via a communication medium (instrument) such as speech, email, or telephone conversation.
    */
@@ -551,25 +578,21 @@ Note: This type is for information about actual reservations, e.g. in confirmati
    */
   @NotNull public static ResearchProject.Builder researchProject() { return new ResearchProject.Builder(new HashMap<String,Object>()); }
   /**
-   * The act of un-registering from a service.&lt;br/&gt;&lt;br/&gt;
-
-Related actions:&lt;br/&gt;&lt;br/&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/RegisterAction&quot;&gt;RegisterAction&lt;/a&gt;: antonym of UnRegisterAction.&lt;/li&gt;
-&lt;li&gt;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/LeaveAction&quot;&gt;LeaveAction&lt;/a&gt;: Unlike LeaveAction, UnRegisterAction implies that you are unregistering from a service you werer previously registered, rather than leaving a team/group of people.&lt;/li&gt;
-&lt;/ul&gt;
-
-   */
-  @NotNull public static UnRegisterAction.Builder unRegisterAction() { return new UnRegisterAction.Builder(new HashMap<String,Object>()); }
-  /**
    * An employment agency.
    */
   @NotNull public static EmploymentAgency.Builder employmentAgency() { return new EmploymentAgency.Builder(new HashMap<String,Object>()); }
   /**
+   * The act of un-registering from a service.\n\nRelated actions:\n\n* [[RegisterAction]]: antonym of UnRegisterAction.\n* [[LeaveAction]]: Unlike LeaveAction, UnRegisterAction implies that you are unregistering from a service you werer previously registered, rather than leaving a team/group of people.
+   */
+  @NotNull public static UnRegisterAction.Builder unRegisterAction() { return new UnRegisterAction.Builder(new HashMap<String,Object>()); }
+  /**
    * A statement of the money due for goods or services; a bill.
    */
   @NotNull public static Invoice.Builder invoice() { return new Invoice.Builder(new HashMap<String,Object>()); }
+  /**
+   * A set of organisms asserted to represent a natural cohesive biological unit.
+   */
+  @NotNull public static Taxon.Builder taxon() { return new Taxon.Builder(new HashMap<String,Object>()); }
   /**
    * A collection of music tracks.
    */
@@ -599,7 +622,7 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
    */
   @NotNull public static MedicalRiskFactor.Builder medicalRiskFactor() { return new MedicalRiskFactor.Builder(new HashMap<String,Object>()); }
   /**
-   * A ProductReturnPolicy provides information about product return policies associated with an &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Organization&quot;&gt;Organization&lt;/a&gt; or &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Product&quot;&gt;Product&lt;/a&gt;.
+   * A ProductReturnPolicy provides information about product return policies associated with an [[Organization]] or [[Product]].
    */
   @NotNull public static ProductReturnPolicy.Builder productReturnPolicy() { return new ProductReturnPolicy.Builder(new HashMap<String,Object>()); }
   /**
@@ -619,19 +642,19 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
    */
   @NotNull public static SuspendAction.Builder suspendAction() { return new SuspendAction.Builder(new HashMap<String,Object>()); }
   /**
-   * A means for accessing a service, e.g. a government office location, web site, or phone number.
-   */
-  @NotNull public static ServiceChannel.Builder serviceChannel() { return new ServiceChannel.Builder(new HashMap<String,Object>()); }
-  /**
    * A medical organization (physical or not), such as hospital, institution or clinic.
    */
   @NotNull public static MedicalOrganization.Builder medicalOrganization() { return new MedicalOrganization.Builder(new HashMap<String,Object>()); }
+  /**
+   * A means for accessing a service, e.g. a government office location, web site, or phone number.
+   */
+  @NotNull public static ServiceChannel.Builder serviceChannel() { return new ServiceChannel.Builder(new HashMap<String,Object>()); }
   /**
    * The act of taking money from a buyer in exchange for goods or services rendered. An agent sells an object, product, or service to a buyer for a price. Reciprocal of BuyAction.
    */
   @NotNull public static SellAction.Builder sellAction() { return new SellAction.Builder(new HashMap<String,Object>()); }
   /**
-   * UserInteraction and its subtypes is an old way of talking about users interacting with pages. It is generally better to use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Action&quot;&gt;Action&lt;/a&gt;-based vocabulary, alongside types such as &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Comment&quot;&gt;Comment&lt;/a&gt;.
+   * UserInteraction and its subtypes is an old way of talking about users interacting with pages. It is generally better to use [[Action]]-based vocabulary, alongside types such as [[Comment]].
    */
   @NotNull public static UserPlays.Builder userPlays() { return new UserPlays.Builder(new HashMap<String,Object>()); }
   /**
@@ -655,6 +678,10 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
    */
   @NotNull public static MaximumDoseSchedule.Builder maximumDoseSchedule() { return new MaximumDoseSchedule.Builder(new HashMap<String,Object>()); }
   /**
+   * This is the [[Action]] of navigating to a specific [[startOffset]] timestamp within a [[VideoObject]], typically represented with a URL template structure.
+   */
+  @NotNull public static SeekToAction.Builder seekToAction() { return new SeekToAction.Builder(new HashMap<String,Object>()); }
+  /**
    * Any condition of the human body that affects the normal functioning of a person, whether physically or mentally. Includes diseases, injuries, disabilities, disorders, syndromes, etc.
    */
   @NotNull public static MedicalCondition.Builder medicalCondition() { return new MedicalCondition.Builder(new HashMap<String,Object>()); }
@@ -666,6 +693,10 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
    * A hospital.
    */
   @NotNull public static Hospital.Builder hospital() { return new Hospital.Builder(new HashMap<String,Object>()); }
+  /**
+   * A Research Organization (e.g. scientific institute, research company).
+   */
+  @NotNull public static ResearchOrganization.Builder researchOrganization() { return new ResearchOrganization.Builder(new HashMap<String,Object>()); }
   /**
    * A single, identifiable product instance (e.g. a laptop with a particular serial number).
    */
@@ -687,16 +718,7 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
    */
   @NotNull public static BroadcastService.Builder broadcastService() { return new BroadcastService.Builder(new HashMap<String,Object>()); }
   /**
-   * The act of an agent communicating (service provider, social media, etc) their arrival by registering/confirming for a previously reserved service (e.g. flight check in) or at a place (e.g. hotel), possibly resulting in a result (boarding pass, etc).&lt;br/&gt;&lt;br/&gt;
-
-Related actions:&lt;br/&gt;&lt;br/&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/CheckOutAction&quot;&gt;CheckOutAction&lt;/a&gt;: The antonym of CheckInAction.&lt;/li&gt;
-&lt;li&gt;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ArriveAction&quot;&gt;ArriveAction&lt;/a&gt;: Unlike ArriveAction, CheckInAction implies that the agent is informing/confirming the start of a previously reserved service.&lt;/li&gt;
-&lt;li&gt;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ConfirmAction&quot;&gt;ConfirmAction&lt;/a&gt;: Unlike ConfirmAction, CheckInAction implies that the agent is informing/confirming the &lt;em&gt;start&lt;/em&gt; of a previously reserved service rather than its validity/existence.&lt;/li&gt;
-&lt;/ul&gt;
-
+   * The act of an agent communicating (service provider, social media, etc) their arrival by registering/confirming for a previously reserved service (e.g. flight check in) or at a place (e.g. hotel), possibly resulting in a result (boarding pass, etc).\n\nRelated actions:\n\n* [[CheckOutAction]]: The antonym of CheckInAction.\n* [[ArriveAction]]: Unlike ArriveAction, CheckInAction implies that the agent is informing/confirming the start of a previously reserved service.\n* [[ConfirmAction]]: Unlike ConfirmAction, CheckInAction implies that the agent is informing/confirming the *start* of a previously reserved service rather than its validity/existence.
    */
   @NotNull public static CheckInAction.Builder checkInAction() { return new CheckInAction.Builder(new HashMap<String,Object>()); }
   /**
@@ -733,8 +755,8 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
   @NotNull public static NoteDigitalDocument.Builder noteDigitalDocument() { return new NoteDigitalDocument.Builder(new HashMap<String,Object>()); }
   /**
    * A sequential publication of comic stories under a
-    unifying title, for example &quot;The Amazing Spider-Man&quot; or &quot;Groo the
-    Wanderer&quot;.
+    	unifying title, for example &quot;The Amazing Spider-Man&quot; or &quot;Groo the
+    	Wanderer&quot;.
    */
   @NotNull public static ComicSeries.Builder comicSeries() { return new ComicSeries.Builder(new HashMap<String,Object>()); }
   /**
@@ -742,15 +764,12 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
    */
   @NotNull public static AdministrativeArea.Builder administrativeArea() { return new AdministrativeArea.Builder(new HashMap<String,Object>()); }
   /**
-   * A property-value pair, e.g. representing a feature of a product or place. Use the 'name' property for the name of the property. If there is an additional human-readable version of the value, put that into the 'description' property.&lt;br/&gt;&lt;br/&gt;
-
-Always use specific schema.org properties when a) they exist and b) you can populate them. Using PropertyValue as a substitute will typically not trigger the same effect as using the original, specific property.
+   * A property-value pair, e.g. representing a feature of a product or place. Use the 'name' property for the name of the property. If there is an additional human-readable version of the value, put that into the 'description' property.\n\n Always use specific schema.org properties when a) they exist and b) you can populate them. Using PropertyValue as a substitute will typically not trigger the same effect as using the original, specific property.
+    
    */
   @NotNull public static PropertyValue.Builder propertyValue() { return new PropertyValue.Builder(new HashMap<String,Object>()); }
   /**
-   * A publication in any medium issued in successive parts bearing numerical or chronological designations and intended, such as a magazine, scholarly journal, or newspaper to continue indefinitely.&lt;br/&gt;&lt;br/&gt;
-
-See also &lt;a href=&quot;http://blog.schema.org/2014/09/schemaorg-support-for-bibliographic_2.html&quot;&gt;blog post&lt;/a&gt;.
+   * A publication in any medium issued in successive parts bearing numerical or chronological designations and intended, such as a magazine, scholarly journal, or newspaper to continue indefinitely.\n\nSee also [blog post](http://blog.schema.org/2014/09/schemaorg-support-for-bibliographic_2.html).
    */
   @NotNull public static Periodical.Builder periodical() { return new Periodical.Builder(new HashMap<String,Object>()); }
   /**
@@ -798,6 +817,10 @@ See also &lt;a href=&quot;http://blog.schema.org/2014/09/schemaorg-support-for-b
    */
   @NotNull public static GeneralContractor.Builder generalContractor() { return new GeneralContractor.Builder(new HashMap<String,Object>()); }
   /**
+   * The cost per unit of a medical drug. Note that this type is not meant to represent the price in an offer of a drug for sale; see the Offer type for that. This type will typically be used to tag wholesale or average retail cost of a drug, or maximum reimbursable cost. Costs of medical drugs vary widely depending on how and where they are paid for, so while this type captures some of the variables, costs should be used with caution by consumers of this schema's markup.
+   */
+  @NotNull public static DrugCost.Builder drugCost() { return new DrugCost.Builder(new HashMap<String,Object>()); }
+  /**
    * Anatomical features that can be observed by sight (without dissection), including the form and proportions of the human body as well as surface landmarks that correspond to deeper subcutaneous structures. Superficial anatomy plays an important role in sports medicine, phlebotomy, and other medical specialties as underlying anatomical structures can be identified through surface palpation. For example, during back surgery, superficial anatomy can be used to palpate and count vertebrae to find the site of incision. Or in phlebotomy, superficial anatomy can be used to locate an underlying vein; for example, the median cubital vein can be located by palpating the borders of the cubital fossa (such as the epicondyles of the humerus) and then looking for the superficial signs of the vein, such as size, prominence, ability to refill after depression, and feel of surrounding tissue support. As another example, in a subluxation (dislocation) of the glenohumeral joint, the bony structure becomes pronounced with the deltoid muscle failing to cover the glenohumeral joint allowing the edges of the scapula to be superficially visible. Here, the superficial anatomy is the visible edges of the scapula, implying the underlying dislocation of the joint (the related anatomical structure).
    */
   @NotNull public static SuperficialAnatomy.Builder superficialAnatomy() { return new SuperficialAnatomy.Builder(new HashMap<String,Object>()); }
@@ -814,7 +837,7 @@ See also &lt;a href=&quot;http://blog.schema.org/2014/09/schemaorg-support-for-b
    */
   @NotNull public static ParcelDelivery.Builder parcelDelivery() { return new ParcelDelivery.Builder(new HashMap<String,Object>()); }
   /**
-   * Natural languages such as Spanish, Tamil, Hindi, English, etc. Formal language code tags expressed in &lt;a href=&quot;https://en.wikipedia.org/wiki/IETF_language_tag&quot;&gt;BCP 47&lt;/a&gt; can be used via the &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/alternateName&quot;&gt;alternateName&lt;/a&gt; property. The Language type previously also covered programming languages such as Scheme and Lisp, which are now best represented using &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ComputerLanguage&quot;&gt;ComputerLanguage&lt;/a&gt;.
+   * Natural languages such as Spanish, Tamil, Hindi, English, etc. Formal language code tags expressed in [BCP 47](https://en.wikipedia.org/wiki/IETF_language_tag) can be used via the [[alternateName]] property. The Language type previously also covered programming languages such as Scheme and Lisp, which are now best represented using [[ComputerLanguage]].
    */
   @NotNull public static Language.Builder language() { return new Language.Builder(new HashMap<String,Object>()); }
   /**
@@ -822,7 +845,7 @@ See also &lt;a href=&quot;http://blog.schema.org/2014/09/schemaorg-support-for-b
    */
   @NotNull public static VisualArtsEvent.Builder visualArtsEvent() { return new VisualArtsEvent.Builder(new HashMap<String,Object>()); }
   /**
-   * A review created by an end-user (e.g. consumer, purchaser, attendee etc.), in contrast with &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/CriticReview&quot;&gt;CriticReview&lt;/a&gt;.
+   * A review created by an end-user (e.g. consumer, purchaser, attendee etc.), in contrast with [[CriticReview]].
    */
   @NotNull public static UserReview.Builder userReview() { return new UserReview.Builder(new HashMap<String,Object>()); }
   /**
@@ -834,15 +857,7 @@ See also &lt;a href=&quot;http://blog.schema.org/2014/09/schemaorg-support-for-b
    */
   @NotNull public static Library.Builder library() { return new Library.Builder(new HashMap<String,Object>()); }
   /**
-   * An agent tracks an object for updates.&lt;br/&gt;&lt;br/&gt;
-
-Related actions:&lt;br/&gt;&lt;br/&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/FollowAction&quot;&gt;FollowAction&lt;/a&gt;: Unlike FollowAction, TrackAction refers to the interest on the location of innanimates objects.&lt;/li&gt;
-&lt;li&gt;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/SubscribeAction&quot;&gt;SubscribeAction&lt;/a&gt;: Unlike SubscribeAction, TrackAction refers to  the interest on the location of innanimate objects.&lt;/li&gt;
-&lt;/ul&gt;
-
+   * An agent tracks an object for updates.\n\nRelated actions:\n\n* [[FollowAction]]: Unlike FollowAction, TrackAction refers to the interest on the location of innanimates objects.\n* [[SubscribeAction]]: Unlike SubscribeAction, TrackAction refers to  the interest on the location of innanimate objects.
    */
   @NotNull public static TrackAction.Builder trackAction() { return new TrackAction.Builder(new HashMap<String,Object>()); }
   /**
@@ -850,14 +865,7 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
    */
   @NotNull public static Nerve.Builder nerve() { return new Nerve.Builder(new HashMap<String,Object>()); }
   /**
-   * The act of an agent relocating to a place.&lt;br/&gt;&lt;br/&gt;
-
-Related actions:&lt;br/&gt;&lt;br/&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/TransferAction&quot;&gt;TransferAction&lt;/a&gt;: Unlike TransferAction, the subject of the move is a living Person or Organization rather than an inanimate object.&lt;/li&gt;
-&lt;/ul&gt;
-
+   * The act of an agent relocating to a place.\n\nRelated actions:\n\n* [[TransferAction]]: Unlike TransferAction, the subject of the move is a living Person or Organization rather than an inanimate object.
    */
   @NotNull public static MoveAction.Builder moveAction() { return new MoveAction.Builder(new HashMap<String,Object>()); }
   /**
@@ -881,9 +889,9 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
    */
   @NotNull public static QAPage.Builder qAPage() { return new QAPage.Builder(new HashMap<String,Object>()); }
   /**
-   * A &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/CompleteDataFeed&quot;&gt;CompleteDataFeed&lt;/a&gt; is a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/DataFeed&quot;&gt;DataFeed&lt;/a&gt; whose standard representation includes content for every item currently in the feed.&lt;br/&gt;&lt;br/&gt;
+   * A [[CompleteDataFeed]] is a [[DataFeed]] whose standard representation includes content for every item currently in the feed.
 
-This is the equivalent of Atom's element as defined in Feed Paging and Archiving &lt;a href=&quot;https://tools.ietf.org/html/rfc5005&quot;&gt;RFC 5005&lt;/a&gt;, For example (and as defined for Atom), when using data from a feed that represents a collection of items that varies over time (e.g. &quot;Top Twenty Records&quot;) there is no need to have newer entries mixed in alongside older, obsolete entries. By marking this feed as a CompleteDataFeed, old entries can be safely discarded when the feed is refreshed, since we can assume the feed has provided descriptions for all current items.
+This is the equivalent of Atom's element as defined in Feed Paging and Archiving [RFC 5005](https://tools.ietf.org/html/rfc5005), For example (and as defined for Atom), when using data from a feed that represents a collection of items that varies over time (e.g. &quot;Top Twenty Records&quot;) there is no need to have newer entries mixed in alongside older, obsolete entries. By marking this feed as a CompleteDataFeed, old entries can be safely discarded when the feed is refreshed, since we can assume the feed has provided descriptions for all current items.
    */
   @NotNull public static CompleteDataFeed.Builder completeDataFeed() { return new CompleteDataFeed.Builder(new HashMap<String,Object>()); }
   /**
@@ -903,9 +911,7 @@ This is the equivalent of Atom's element as defined in Feed Paging and Archiving
    */
   @NotNull public static Mountain.Builder mountain() { return new Mountain.Builder(new HashMap<String,Object>()); }
   /**
-   * A part of a successively published publication such as a periodical or multi-volume work, often numbered. It may represent a time span, such as a year.&lt;br/&gt;&lt;br/&gt;
-
-See also &lt;a href=&quot;http://blog.schema.org/2014/09/schemaorg-support-for-bibliographic_2.html&quot;&gt;blog post&lt;/a&gt;.
+   * A part of a successively published publication such as a periodical or multi-volume work, often numbered. It may represent a time span, such as a year.\n\nSee also [blog post](http://blog.schema.org/2014/09/schemaorg-support-for-bibliographic_2.html).
    */
   @NotNull public static PublicationVolume.Builder publicationVolume() { return new PublicationVolume.Builder(new HashMap<String,Object>()); }
   /**
@@ -925,21 +931,14 @@ See also &lt;a href=&quot;http://blog.schema.org/2014/09/schemaorg-support-for-b
    */
   @NotNull public static BarOrPub.Builder barOrPub() { return new BarOrPub.Builder(new HashMap<String,Object>()); }
   /**
-   * An &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/OfferForPurchase&quot;&gt;OfferForPurchase&lt;/a&gt; in Schema.org represents an &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Offer&quot;&gt;Offer&lt;/a&gt; to sell something, i.e. an &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Offer&quot;&gt;Offer&lt;/a&gt; whose
-  &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt; is &lt;a href=&quot;http://purl.org/goodrelations/v1#Sell.&quot;&gt;sell&lt;/a&gt;. See &lt;a href=&quot;https://en.wikipedia.org/wiki/GoodRelations&quot;&gt;Good Relations&lt;/a&gt; for
+   * An [[OfferForPurchase]] in Schema.org represents an [[Offer]] to sell something, i.e. an [[Offer]] whose
+  [[businessFunction]] is [sell](http://purl.org/goodrelations/v1#Sell.). See [Good Relations](https://en.wikipedia.org/wiki/GoodRelations) for
   background on the underlying concepts.
+  
    */
   @NotNull public static OfferForPurchase.Builder offerForPurchase() { return new OfferForPurchase.Builder(new HashMap<String,Object>()); }
   /**
-   * The act of transferring ownership of an object to a destination. Reciprocal of TakeAction.&lt;br/&gt;&lt;br/&gt;
-
-Related actions:&lt;br/&gt;&lt;br/&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/TakeAction&quot;&gt;TakeAction&lt;/a&gt;: Reciprocal of GiveAction.&lt;/li&gt;
-&lt;li&gt;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/SendAction&quot;&gt;SendAction&lt;/a&gt;: Unlike SendAction, GiveAction implies that ownership is being transferred (e.g. I may send my laptop to you, but that doesn't mean I'm giving it to you).&lt;/li&gt;
-&lt;/ul&gt;
-
+   * The act of transferring ownership of an object to a destination. Reciprocal of TakeAction.\n\nRelated actions:\n\n* [[TakeAction]]: Reciprocal of GiveAction.\n* [[SendAction]]: Unlike SendAction, GiveAction implies that ownership is being transferred (e.g. I may send my laptop to you, but that doesn't mean I'm giving it to you).
    */
   @NotNull public static GiveAction.Builder giveAction() { return new GiveAction.Builder(new HashMap<String,Object>()); }
   /**
@@ -951,14 +950,7 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
    */
   @NotNull public static PlasticSurgery.Builder plasticSurgery() { return new PlasticSurgery.Builder(new HashMap<String,Object>()); }
   /**
-   * Scheduling future actions, events, or tasks.&lt;br/&gt;&lt;br/&gt;
-
-Related actions:&lt;br/&gt;&lt;br/&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ReserveAction&quot;&gt;ReserveAction&lt;/a&gt;: Unlike ReserveAction, ScheduleAction allocates future actions (e.g. an event, a task, etc) towards a time slot / spatial allocation.&lt;/li&gt;
-&lt;/ul&gt;
-
+   * Scheduling future actions, events, or tasks.\n\nRelated actions:\n\n* [[ReserveAction]]: Unlike ReserveAction, ScheduleAction allocates future actions (e.g. an event, a task, etc) towards a time slot / spatial allocation.
    */
   @NotNull public static ScheduleAction.Builder scheduleAction() { return new ScheduleAction.Builder(new HashMap<String,Object>()); }
   /**
@@ -966,9 +958,7 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
    */
   @NotNull public static FoodService.Builder foodService() { return new FoodService.Builder(new HashMap<String,Object>()); }
   /**
-   * An article, such as a news article or piece of investigative report. Newspapers and magazines have articles of many different types and this is intended to cover them all.&lt;br/&gt;&lt;br/&gt;
-
-See also &lt;a href=&quot;http://blog.schema.org/2014/09/schemaorg-support-for-bibliographic_2.html&quot;&gt;blog post&lt;/a&gt;.
+   * An article, such as a news article or piece of investigative report. Newspapers and magazines have articles of many different types and this is intended to cover them all.\n\nSee also [blog post](http://blog.schema.org/2014/09/schemaorg-support-for-bibliographic_2.html).
    */
   @NotNull public static Article.Builder article() { return new Article.Builder(new HashMap<String,Object>()); }
   /**
@@ -984,11 +974,9 @@ See also &lt;a href=&quot;http://blog.schema.org/2014/09/schemaorg-support-for-b
    */
   @NotNull public static State.Builder state() { return new State.Builder(new HashMap<String,Object>()); }
   /**
-   * Original definition: &quot;provider of professional services.&quot;&lt;br/&gt;&lt;br/&gt;
-
-The general &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ProfessionalService&quot;&gt;ProfessionalService&lt;/a&gt; type for local businesses was deprecated due to confusion with &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Service&quot;&gt;Service&lt;/a&gt;. For reference, the types that it included were: &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Dentist&quot;&gt;Dentist&lt;/a&gt;,
-        &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/AccountingService&quot;&gt;AccountingService&lt;/a&gt;, &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Attorney&quot;&gt;Attorney&lt;/a&gt;, &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Notary&quot;&gt;Notary&lt;/a&gt;, as well as types for several kinds of &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/HomeAndConstructionBusiness&quot;&gt;HomeAndConstructionBusiness&lt;/a&gt;: &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Electrician&quot;&gt;Electrician&lt;/a&gt;, &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/GeneralContractor&quot;&gt;GeneralContractor&lt;/a&gt;,
-        &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/HousePainter&quot;&gt;HousePainter&lt;/a&gt;, &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Locksmith&quot;&gt;Locksmith&lt;/a&gt;, &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Plumber&quot;&gt;Plumber&lt;/a&gt;, &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/RoofingContractor&quot;&gt;RoofingContractor&lt;/a&gt;. &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/LegalService&quot;&gt;LegalService&lt;/a&gt; was introduced as a more inclusive supertype of &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Attorney&quot;&gt;Attorney&lt;/a&gt;.
+   * Original definition: &quot;provider of professional services.&quot;\n\nThe general [[ProfessionalService]] type for local businesses was deprecated due to confusion with [[Service]]. For reference, the types that it included were: [[Dentist]],
+        [[AccountingService]], [[Attorney]], [[Notary]], as well as types for several kinds of [[HomeAndConstructionBusiness]]: [[Electrician]], [[GeneralContractor]],
+        [[HousePainter]], [[Locksmith]], [[Plumber]], [[RoofingContractor]]. [[LegalService]] was introduced as a more inclusive supertype of [[Attorney]].
    */
   @NotNull public static ProfessionalService.Builder professionalService() { return new ProfessionalService.Builder(new HashMap<String,Object>()); }
   /**
@@ -1036,7 +1024,7 @@ The general &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Profe
    */
   @NotNull public static ActivateAction.Builder activateAction() { return new ActivateAction.Builder(new HashMap<String,Object>()); }
   /**
-   * A loan in which property or real estate is used as collateral. (A loan securitized against some real estate.)
+   * A loan in which property or real estate is used as collateral. (A loan securitized against some real estate).
    */
   @NotNull public static MortgageLoan.Builder mortgageLoan() { return new MortgageLoan.Builder(new HashMap<String,Object>()); }
   /**
@@ -1048,7 +1036,7 @@ The general &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Profe
    */
   @NotNull public static EventVenue.Builder eventVenue() { return new EventVenue.Builder(new HashMap<String,Object>()); }
   /**
-   * An instance of a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Course&quot;&gt;Course&lt;/a&gt; which is distinct from other instances because it is offered at a different time or location or through different media or modes of study or to a specific section of students.
+   * An instance of a [[Course]] which is distinct from other instances because it is offered at a different time or location or through different media or modes of study or to a specific section of students.
    */
   @NotNull public static CourseInstance.Builder courseInstance() { return new CourseInstance.Builder(new HashMap<String,Object>()); }
   /**
@@ -1056,9 +1044,10 @@ The general &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Profe
    */
   @NotNull public static Optometric.Builder optometric() { return new Optometric.Builder(new HashMap<String,Object>()); }
   /**
-   * A NewsArticle is an article whose content reports news, or provides background context and supporting materials for understanding the news.&lt;br/&gt;&lt;br/&gt;
+   * A NewsArticle is an article whose content reports news, or provides background context and supporting materials for understanding the news.
 
-A more detailed overview of &lt;a href=&quot;/docs/news.html&quot;&gt;schema.org News markup&lt;/a&gt; is also available.
+A more detailed overview of [schema.org News markup](/docs/news.html) is also available.
+
    */
   @NotNull public static NewsArticle.Builder newsArticle() { return new NewsArticle.Builder(new HashMap<String,Object>()); }
   /**
@@ -1073,6 +1062,12 @@ A more detailed overview of &lt;a href=&quot;/docs/news.html&quot;&gt;schema.org
    * A sports location, such as a playing field.
    */
   @NotNull public static SportsActivityLocation.Builder sportsActivityLocation() { return new SportsActivityLocation.Builder(new HashMap<String,Object>()); }
+  /**
+   * A reservation for boat travel.
+
+Note: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, use [[Offer]].
+   */
+  @NotNull public static BoatReservation.Builder boatReservation() { return new BoatReservation.Builder(new HashMap<String,Object>()); }
   /**
    * Text representing a CSS selector.
    */
@@ -1090,7 +1085,7 @@ A more detailed overview of &lt;a href=&quot;/docs/news.html&quot;&gt;schema.org
    */
   @NotNull public static Seat.Builder seat() { return new Seat.Builder(new HashMap<String,Object>()); }
   /**
-   * A created collection of Creative Works or other artefacts.
+   * A collection of items e.g. creative works or products.
    */
   @NotNull public static Collection.Builder collection() { return new Collection.Builder(new HashMap<String,Object>()); }
   /**
@@ -1114,7 +1109,7 @@ A more detailed overview of &lt;a href=&quot;/docs/news.html&quot;&gt;schema.org
    */
   @NotNull public static DepositAccount.Builder depositAccount() { return new DepositAccount.Builder(new HashMap<String,Object>()); }
   /**
-   * A monetary value or range. This type can be used to describe an amount of money such as $50 USD, or a range as in describing a bank account being suitable for a balance between &pound;1,000 and &pound;1,000,000 GBP, or the value of a salary, etc. It is recommended to use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/PriceSpecification&quot;&gt;PriceSpecification&lt;/a&gt; Types to describe the price of an Offer, Invoice, etc.
+   * A monetary value or range. This type can be used to describe an amount of money such as $50 USD, or a range as in describing a bank account being suitable for a balance between &pound;1,000 and &pound;1,000,000 GBP, or the value of a salary, etc. It is recommended to use [[PriceSpecification]] Types to describe the price of an Offer, Invoice, etc.
    */
   @NotNull public static MonetaryAmount.Builder monetaryAmount() { return new MonetaryAmount.Builder(new HashMap<String,Object>()); }
   /**
@@ -1130,9 +1125,10 @@ A more detailed overview of &lt;a href=&quot;/docs/news.html&quot;&gt;schema.org
    */
   @NotNull public static OwnershipInfo.Builder ownershipInfo() { return new OwnershipInfo.Builder(new HashMap<String,Object>()); }
   /**
-   * (editorial work in progress, this definition is incomplete and unreviewed)
-    A &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/MediaReview&quot;&gt;MediaReview&lt;/a&gt; is a more specialized form of Review dedicated to the evaluation of media content online, typically in the context of fact-checking and misinformation.
-    For more general reviews of media in the broader sense, use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/UserReview&quot;&gt;UserReview&lt;/a&gt;, &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/CriticReview&quot;&gt;CriticReview&lt;/a&gt; or other &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Review&quot;&gt;Review&lt;/a&gt; types.
+   * A [[MediaReview]] is a more specialized form of Review dedicated to the evaluation of media content online, typically in the context of fact-checking and misinformation.
+    For more general reviews of media in the broader sense, use [[UserReview]], [[CriticReview]] or other [[Review]] types. This definition is
+    a work in progress. While the [[MediaManipulationRatingEnumeration]] list reflects significant community review amongst fact-checkers and others working
+    to combat misinformation, the specific structures for representing media objects, their versions and publication context, is still evolving. Similarly, best practices for the relationship between [[MediaReview]] and [[ClaimReview]] markup has not yet been finalized.
    */
   @NotNull public static MediaReview.Builder mediaReview() { return new MediaReview.Builder(new HashMap<String,Object>()); }
   /**
@@ -1144,11 +1140,13 @@ A more detailed overview of &lt;a href=&quot;/docs/news.html&quot;&gt;schema.org
 For more specific types of accommodations not defined in schema.org, one can use additionalType with external vocabularies.
 &lt;br /&gt;&lt;br /&gt;
 See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on the use of schema.org for marking up hotels and other forms of accommodations&lt;/a&gt;.
+
    */
   @NotNull public static Accommodation.Builder accommodation() { return new Accommodation.Builder(new HashMap<String,Object>()); }
   /**
-   * A &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/RealEstateListing&quot;&gt;RealEstateListing&lt;/a&gt; is a listing that describes one or more real-estate &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Offer&quot;&gt;Offer&lt;/a&gt;s (whose &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt; is typically to lease out, or to sell).
-  The &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/RealEstateListing&quot;&gt;RealEstateListing&lt;/a&gt; type itself represents the overall listing, as manifested in some &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/WebPage&quot;&gt;WebPage&lt;/a&gt;.
+   * A [[RealEstateListing]] is a listing that describes one or more real-estate [[Offer]]s (whose [[businessFunction]] is typically to lease out, or to sell).
+  The [[RealEstateListing]] type itself represents the overall listing, as manifested in some [[WebPage]].
+  
    */
   @NotNull public static RealEstateListing.Builder realEstateListing() { return new RealEstateListing.Builder(new HashMap<String,Object>()); }
   /**
@@ -1164,7 +1162,7 @@ See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on t
    */
   @NotNull public static MedicalClinic.Builder medicalClinic() { return new MedicalClinic.Builder(new HashMap<String,Object>()); }
   /**
-   * A SpeakableSpecification indicates (typically via &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/xpath&quot;&gt;xpath&lt;/a&gt; or &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/cssSelector&quot;&gt;cssSelector&lt;/a&gt;) sections of a document that are highlighted as particularly &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/speakable&quot;&gt;speakable&lt;/a&gt;. Instances of this type are expected to be used primarily as values of the &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/speakable&quot;&gt;speakable&lt;/a&gt; property.
+   * A SpeakableSpecification indicates (typically via [[xpath]] or [[cssSelector]]) sections of a document that are highlighted as particularly [[speakable]]. Instances of this type are expected to be used primarily as values of the [[speakable]] property.
    */
   @NotNull public static SpeakableSpecification.Builder speakableSpecification() { return new SpeakableSpecification.Builder(new HashMap<String,Object>()); }
   /**
@@ -1208,10 +1206,6 @@ See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on t
    */
   @NotNull public static HardwareStore.Builder hardwareStore() { return new HardwareStore.Builder(new HashMap<String,Object>()); }
   /**
-   * A value indicating a special usage of a car, e.g. commercial rental, driving school, or as a taxi.
-   */
-  @NotNull public static CarUsageType.Builder carUsageType() { return new CarUsageType.Builder(new HashMap<String,Object>()); }
-  /**
    * A post to a social media platform, including blog posts, tweets, Facebook posts, etc.
    */
   @NotNull public static SocialMediaPosting.Builder socialMediaPosting() { return new SocialMediaPosting.Builder(new HashMap<String,Object>()); }
@@ -1224,23 +1218,17 @@ See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on t
    */
   @NotNull public static PresentationDigitalDocument.Builder presentationDigitalDocument() { return new PresentationDigitalDocument.Builder(new HashMap<String,Object>()); }
   /**
-   * The act of physically/electronically dispatching an object for transfer from an origin to a destination.Related actions:&lt;br/&gt;&lt;br/&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ReceiveAction&quot;&gt;ReceiveAction&lt;/a&gt;: The reciprocal of SendAction.&lt;/li&gt;
-&lt;li&gt;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/GiveAction&quot;&gt;GiveAction&lt;/a&gt;: Unlike GiveAction, SendAction does not imply the transfer of ownership (e.g. I can send you my laptop, but I'm not necessarily giving it to you).&lt;/li&gt;
-&lt;/ul&gt;
-
+   * The act of physically/electronically dispatching an object for transfer from an origin to a destination.Related actions:\n\n* [[ReceiveAction]]: The reciprocal of SendAction.\n* [[GiveAction]]: Unlike GiveAction, SendAction does not imply the transfer of ownership (e.g. I can send you my laptop, but I'm not necessarily giving it to you).
    */
   @NotNull public static SendAction.Builder sendAction() { return new SendAction.Builder(new HashMap<String,Object>()); }
-  /**
-   * A posting to a discussion forum.
-   */
-  @NotNull public static DiscussionForumPosting.Builder discussionForumPosting() { return new DiscussionForumPosting.Builder(new HashMap<String,Object>()); }
   /**
    * A publication event e.g. catch-up TV or radio podcast, during which a program is available on-demand.
    */
   @NotNull public static OnDemandEvent.Builder onDemandEvent() { return new OnDemandEvent.Builder(new HashMap<String,Object>()); }
+  /**
+   * A posting to a discussion forum.
+   */
+  @NotNull public static DiscussionForumPosting.Builder discussionForumPosting() { return new DiscussionForumPosting.Builder(new HashMap<String,Object>()); }
   /**
    * An account that allows an investor to deposit funds and place investment orders with a licensed broker or brokerage firm.
    */
@@ -1258,6 +1246,10 @@ See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on t
    */
   @NotNull public static Pharmacy.Builder pharmacy() { return new Pharmacy.Builder(new HashMap<String,Object>()); }
   /**
+   * Protein is here used in its widest possible definition, as classes of amino acid based molecules. Amyloid-beta Protein in human (UniProt P05067), eukaryota (e.g. an OrthoDB group) or even a single molecule that one can point to are all of type schema:Protein. A protein can thus be a subclass of another protein, e.g. schema:Protein as a UniProt record can have multiple isoforms inside it which would also be schema:Protein. They can be imagined, synthetic, hypothetical or naturally occurring.
+   */
+  @NotNull public static Protein.Builder protein() { return new Protein.Builder(new HashMap<String,Object>()); }
+  /**
    * A series of movies. Included movies can be indicated with the hasPart property.
    */
   @NotNull public static MovieSeries.Builder movieSeries() { return new MovieSeries.Builder(new HashMap<String,Object>()); }
@@ -1270,16 +1262,7 @@ See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on t
    */
   @NotNull public static CategoryCode.Builder categoryCode() { return new CategoryCode.Builder(new HashMap<String,Object>()); }
   /**
-   * The act of registering to be a user of a service, product or web page.&lt;br/&gt;&lt;br/&gt;
-
-Related actions:&lt;br/&gt;&lt;br/&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/JoinAction&quot;&gt;JoinAction&lt;/a&gt;: Unlike JoinAction, RegisterAction implies you are registering to be a user of a service, &lt;em&gt;not&lt;/em&gt; a group/team of people.&lt;/li&gt;
-&lt;li&gt;[FollowAction]]: Unlike FollowAction, RegisterAction doesn't imply that the agent is expecting to poll for updates from the object.&lt;/li&gt;
-&lt;li&gt;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/SubscribeAction&quot;&gt;SubscribeAction&lt;/a&gt;: Unlike SubscribeAction, RegisterAction doesn't imply that the agent is expecting updates from the object.&lt;/li&gt;
-&lt;/ul&gt;
-
+   * The act of registering to be a user of a service, product or web page.\n\nRelated actions:\n\n* [[JoinAction]]: Unlike JoinAction, RegisterAction implies you are registering to be a user of a service, *not* a group/team of people.\n* [FollowAction]]: Unlike FollowAction, RegisterAction doesn't imply that the agent is expecting to poll for updates from the object.\n* [[SubscribeAction]]: Unlike SubscribeAction, RegisterAction doesn't imply that the agent is expecting updates from the object.
    */
   @NotNull public static RegisterAction.Builder registerAction() { return new RegisterAction.Builder(new HashMap<String,Object>()); }
   /**
@@ -1300,11 +1283,12 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
   @NotNull public static WebPage.Builder webPage() { return new WebPage.Builder(new HashMap<String,Object>()); }
   /**
    * An EndorsementRating is a rating that expresses some level of endorsement, for example inclusion in a &quot;critic's pick&quot; blog, a
-&quot;Like&quot; or &quot;+1&quot; on a social network. It can be considered the &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/result&quot;&gt;result&lt;/a&gt; of an &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/EndorseAction&quot;&gt;EndorseAction&lt;/a&gt; in which the &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/object&quot;&gt;object&lt;/a&gt; of the action is rated positively by
-some &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/agent&quot;&gt;agent&lt;/a&gt;. As is common elsewhere in schema.org, it is sometimes more useful to describe the results of such an action without explicitly describing the &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Action&quot;&gt;Action&lt;/a&gt;.&lt;br/&gt;&lt;br/&gt;
+&quot;Like&quot; or &quot;+1&quot; on a social network. It can be considered the [[result]] of an [[EndorseAction]] in which the [[object]] of the action is rated positively by
+some [[agent]]. As is common elsewhere in schema.org, it is sometimes more useful to describe the results of such an action without explicitly describing the [[Action]].
 
-An &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/EndorsementRating&quot;&gt;EndorsementRating&lt;/a&gt; may be part of a numeric scale or organized system, but this is not required: having an explicit type for indicating a positive,
+An [[EndorsementRating]] may be part of a numeric scale or organized system, but this is not required: having an explicit type for indicating a positive,
 endorsement rating is particularly useful in the absence of numeric scales as it helps consumers understand that the rating is broadly positive.
+
    */
   @NotNull public static EndorsementRating.Builder endorsementRating() { return new EndorsementRating.Builder(new HashMap<String,Object>()); }
   /**
@@ -1328,7 +1312,7 @@ endorsement rating is particularly useful in the absence of numeric scales as it
    */
   @NotNull public static GeospatialGeometry.Builder geospatialGeometry() { return new GeospatialGeometry.Builder(new HashMap<String,Object>()); }
   /**
-   * UserInteraction and its subtypes is an old way of talking about users interacting with pages. It is generally better to use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Action&quot;&gt;Action&lt;/a&gt;-based vocabulary, alongside types such as &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Comment&quot;&gt;Comment&lt;/a&gt;.
+   * UserInteraction and its subtypes is an old way of talking about users interacting with pages. It is generally better to use [[Action]]-based vocabulary, alongside types such as [[Comment]].
    */
   @NotNull public static UserCheckins.Builder userCheckins() { return new UserCheckins.Builder(new HashMap<String,Object>()); }
   /**
@@ -1344,18 +1328,11 @@ endorsement rating is particularly useful in the absence of numeric scales as it
    */
   @NotNull public static MonetaryGrant.Builder monetaryGrant() { return new MonetaryGrant.Builder(new HashMap<String,Object>()); }
   /**
-   * A field of public health focusing on improving health characteristics of a defined population in relation with their geographical or environment areas
+   * A field of public health focusing on improving health characteristics of a defined population in relation with their geographical or environment areas.
    */
   @NotNull public static CommunityHealth.Builder communityHealth() { return new CommunityHealth.Builder(new HashMap<String,Object>()); }
   /**
-   * Reserving a concrete object.&lt;br/&gt;&lt;br/&gt;
-
-Related actions:&lt;br/&gt;&lt;br/&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ScheduleAction&quot;&gt;ScheduleAction&lt;/a&gt;&lt;/a&gt;: Unlike ScheduleAction, ReserveAction reserves concrete objects (e.g. a table, a hotel) towards a time slot / spatial allocation.&lt;/li&gt;
-&lt;/ul&gt;
-
+   * Reserving a concrete object.\n\nRelated actions:\n\n* [[ScheduleAction]]: Unlike ScheduleAction, ReserveAction reserves concrete objects (e.g. a table, a hotel) towards a time slot / spatial allocation.
    */
   @NotNull public static ReserveAction.Builder reserveAction() { return new ReserveAction.Builder(new HashMap<String,Object>()); }
   /**
@@ -1411,7 +1388,7 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
    */
   @NotNull public static InvestmentOrDeposit.Builder investmentOrDeposit() { return new InvestmentOrDeposit.Builder(new HashMap<String,Object>()); }
   /**
-   * For a given health insurance plan, the specification for costs and coverage of prescription drugs.
+   * For a given health insurance plan, the specification for costs and coverage of prescription drugs. 
    */
   @NotNull public static HealthPlanFormulary.Builder healthPlanFormulary() { return new HealthPlanFormulary.Builder(new HashMap<String,Object>()); }
   /**
@@ -1423,11 +1400,8 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
    */
   @NotNull public static Landform.Builder landform() { return new Landform.Builder(new HashMap<String,Object>()); }
   /**
-   * A CreativeWorkSeries in schema.org is a group of related items, typically but not necessarily of the same kind. CreativeWorkSeries are usually organized into some order, often chronological. Unlike &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ItemList&quot;&gt;ItemList&lt;/a&gt; which is a general purpose data structure for lists of things, the emphasis with CreativeWorkSeries is on published materials (written e.g. books and periodicals, or media such as tv, radio and games).&lt;br/&gt;&lt;br/&gt;
-
-Specific subtypes are available for describing &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/TVSeries&quot;&gt;TVSeries&lt;/a&gt;, &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/RadioSeries&quot;&gt;RadioSeries&lt;/a&gt;, &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/MovieSeries&quot;&gt;MovieSeries&lt;/a&gt;, &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/BookSeries&quot;&gt;BookSeries&lt;/a&gt;, &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Periodical&quot;&gt;Periodical&lt;/a&gt; and &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/VideoGameSeries&quot;&gt;VideoGameSeries&lt;/a&gt;. In each case, the &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/hasPart&quot;&gt;hasPart&lt;/a&gt; / &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/isPartOf&quot;&gt;isPartOf&lt;/a&gt; properties can be used to relate the CreativeWorkSeries to its parts. The general CreativeWorkSeries type serves largely just to organize these more specific and practical subtypes.&lt;br/&gt;&lt;br/&gt;
-
-It is common for properties applicable to an item from the series to be usefully applied to the containing group. Schema.org attempts to anticipate some of these cases, but publishers should be free to apply properties of the series parts to the series as a whole wherever they seem appropriate.
+   * A CreativeWorkSeries in schema.org is a group of related items, typically but not necessarily of the same kind. CreativeWorkSeries are usually organized into some order, often chronological. Unlike [[ItemList]] which is a general purpose data structure for lists of things, the emphasis with CreativeWorkSeries is on published materials (written e.g. books and periodicals, or media such as tv, radio and games).\n\nSpecific subtypes are available for describing [[TVSeries]], [[RadioSeries]], [[MovieSeries]], [[BookSeries]], [[Periodical]] and [[VideoGameSeries]]. In each case, the [[hasPart]] / [[isPartOf]] properties can be used to relate the CreativeWorkSeries to its parts. The general CreativeWorkSeries type serves largely just to organize these more specific and practical subtypes.\n\nIt is common for properties applicable to an item from the series to be usefully applied to the containing group. Schema.org attempts to anticipate some of these cases, but publishers should be free to apply properties of the series parts to the series as a whole wherever they seem appropriate.
+	  
    */
   @NotNull public static CreativeWorkSeries.Builder creativeWorkSeries() { return new CreativeWorkSeries.Builder(new HashMap<String,Object>()); }
   /**
@@ -1455,8 +1429,9 @@ It is common for properties applicable to an item from the series to be usefully
    */
   @NotNull public static Vein.Builder vein() { return new Vein.Builder(new HashMap<String,Object>()); }
   /**
-   * Instances of the class &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Observation&quot;&gt;Observation&lt;/a&gt; are used to specify observations about an entity (which may or may not be an instance of a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/StatisticalPopulation&quot;&gt;StatisticalPopulation&lt;/a&gt;), at a particular time. The principal properties of an &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Observation&quot;&gt;Observation&lt;/a&gt; are &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/observedNode&quot;&gt;observedNode&lt;/a&gt;, &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/measuredProperty&quot;&gt;measuredProperty&lt;/a&gt;, &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/measuredValue&quot;&gt;measuredValue&lt;/a&gt; (or &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/median&quot;&gt;median&lt;/a&gt;, etc.) and &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/observationDate&quot;&gt;observationDate&lt;/a&gt; (&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/measuredProperty&quot;&gt;measuredProperty&lt;/a&gt; properties can, but need not always, be W3C RDF Data Cube &quot;measure properties&quot;, as in the &lt;a href=&quot;https://www.w3.org/TR/vocab-data-cube/#dsd-example&quot;&gt;lifeExpectancy example&lt;/a&gt;).
-See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/StatisticalPopulation&quot;&gt;StatisticalPopulation&lt;/a&gt;, and the &lt;a href=&quot;/docs/data-and-datasets.html&quot;&gt;data and datasets&lt;/a&gt; overview for more details.
+   * Instances of the class [[Observation]] are used to specify observations about an entity (which may or may not be an instance of a [[StatisticalPopulation]]), at a particular time. The principal properties of an [[Observation]] are [[observedNode]], [[measuredProperty]], [[measuredValue]] (or [[median]], etc.) and [[observationDate]] ([[measuredProperty]] properties can, but need not always, be W3C RDF Data Cube &quot;measure properties&quot;, as in the [lifeExpectancy example](https://www.w3.org/TR/vocab-data-cube/#dsd-example)).
+See also [[StatisticalPopulation]], and the [data and datasets](/docs/data-and-datasets.html) overview for more details.
+  
    */
   @NotNull public static Observation.Builder observation() { return new Observation.Builder(new HashMap<String,Object>()); }
   /**
@@ -1476,7 +1451,7 @@ See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Statisti
    */
   @NotNull public static MedicalRiskScore.Builder medicalRiskScore() { return new MedicalRiskScore.Builder(new HashMap<String,Object>()); }
   /**
-   * An &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/EmployerReview&quot;&gt;EmployerReview&lt;/a&gt; is a review of an &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Organization&quot;&gt;Organization&lt;/a&gt; regarding its role as an employer, written by a current or former employee of that organization.
+   * An [[EmployerReview]] is a review of an [[Organization]] regarding its role as an employer, written by a current or former employee of that organization.
    */
   @NotNull public static EmployerReview.Builder employerReview() { return new EmployerReview.Builder(new HashMap<String,Object>()); }
   /**
@@ -1492,16 +1467,7 @@ See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Statisti
    */
   @NotNull public static AdultEntertainment.Builder adultEntertainment() { return new AdultEntertainment.Builder(new HashMap<String,Object>()); }
   /**
-   * The act of an agent communicating (service provider, social media, etc) their departure of a previously reserved service (e.g. flight check in) or place (e.g. hotel).&lt;br/&gt;&lt;br/&gt;
-
-Related actions:&lt;br/&gt;&lt;br/&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/CheckInAction&quot;&gt;CheckInAction&lt;/a&gt;: The antonym of CheckOutAction.&lt;/li&gt;
-&lt;li&gt;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/DepartAction&quot;&gt;DepartAction&lt;/a&gt;: Unlike DepartAction, CheckOutAction implies that the agent is informing/confirming the end of a previously reserved service.&lt;/li&gt;
-&lt;li&gt;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/CancelAction&quot;&gt;CancelAction&lt;/a&gt;: Unlike CancelAction, CheckOutAction implies that the agent is informing/confirming the end of a previously reserved service.&lt;/li&gt;
-&lt;/ul&gt;
-
+   * The act of an agent communicating (service provider, social media, etc) their departure of a previously reserved service (e.g. flight check in) or place (e.g. hotel).\n\nRelated actions:\n\n* [[CheckInAction]]: The antonym of CheckOutAction.\n* [[DepartAction]]: Unlike DepartAction, CheckOutAction implies that the agent is informing/confirming the end of a previously reserved service.\n* [[CancelAction]]: Unlike CancelAction, CheckOutAction implies that the agent is informing/confirming the end of a previously reserved service.
    */
   @NotNull public static CheckOutAction.Builder checkOutAction() { return new CheckOutAction.Builder(new HashMap<String,Object>()); }
   /**
@@ -1525,7 +1491,7 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
    */
   @NotNull public static NGO.Builder nGO() { return new NGO.Builder(new HashMap<String,Object>()); }
   /**
-   * A US-style health insurance plan, including PPOs, EPOs, and HMOs.
+   * A US-style health insurance plan, including PPOs, EPOs, and HMOs. 
    */
   @NotNull public static HealthInsurancePlan.Builder healthInsurancePlan() { return new HealthInsurancePlan.Builder(new HashMap<String,Object>()); }
   /**
@@ -1549,12 +1515,13 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
    */
   @NotNull public static Diet.Builder diet() { return new Diet.Builder(new HashMap<String,Object>()); }
   /**
-   * A grant, typically financial or otherwise quantifiable, of resources. Typically a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/funder&quot;&gt;funder&lt;/a&gt; sponsors some &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/MonetaryAmount&quot;&gt;MonetaryAmount&lt;/a&gt; to an &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Organization&quot;&gt;Organization&lt;/a&gt; or &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Person&quot;&gt;Person&lt;/a&gt;,
-    sometimes not necessarily via a dedicated or long-lived &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Project&quot;&gt;Project&lt;/a&gt;, resulting in one or more outputs, or &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/fundedItem&quot;&gt;fundedItem&lt;/a&gt;s. For financial sponsorship, indicate the &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/funder&quot;&gt;funder&lt;/a&gt; of a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/MonetaryGrant&quot;&gt;MonetaryGrant&lt;/a&gt;. For non-financial support, indicate &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/sponsor&quot;&gt;sponsor&lt;/a&gt; of &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Grant&quot;&gt;Grant&lt;/a&gt;s of resources (e.g. office space).&lt;br/&gt;&lt;br/&gt;
+   * A grant, typically financial or otherwise quantifiable, of resources. Typically a [[funder]] sponsors some [[MonetaryAmount]] to an [[Organization]] or [[Person]],
+    sometimes not necessarily via a dedicated or long-lived [[Project]], resulting in one or more outputs, or [[fundedItem]]s. For financial sponsorship, indicate the [[funder]] of a [[MonetaryGrant]]. For non-financial support, indicate [[sponsor]] of [[Grant]]s of resources (e.g. office space).
 
-Grants support  activities directed towards some agreed collective goals, often but not always organized as &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Project&quot;&gt;Project&lt;/a&gt;s. Long-lived projects are sometimes sponsored by a variety of grants over time, but it is also common for a project to be associated with a single grant.&lt;br/&gt;&lt;br/&gt;
+Grants support  activities directed towards some agreed collective goals, often but not always organized as [[Project]]s. Long-lived projects are sometimes sponsored by a variety of grants over time, but it is also common for a project to be associated with a single grant.
 
-The amount of a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Grant&quot;&gt;Grant&lt;/a&gt; is represented using &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/amount&quot;&gt;amount&lt;/a&gt; as a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/MonetaryAmount&quot;&gt;MonetaryAmount&lt;/a&gt;.
+The amount of a [[Grant]] is represented using [[amount]] as a [[MonetaryAmount]].
+    
    */
   @NotNull public static Grant.Builder grant() { return new Grant.Builder(new HashMap<String,Object>()); }
   /**
@@ -1562,7 +1529,7 @@ The amount of a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/G
    */
   @NotNull public static Beach.Builder beach() { return new Beach.Builder(new HashMap<String,Object>()); }
   /**
-   * UserInteraction and its subtypes is an old way of talking about users interacting with pages. It is generally better to use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Action&quot;&gt;Action&lt;/a&gt;-based vocabulary, alongside types such as &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Comment&quot;&gt;Comment&lt;/a&gt;.
+   * UserInteraction and its subtypes is an old way of talking about users interacting with pages. It is generally better to use [[Action]]-based vocabulary, alongside types such as [[Comment]].
    */
   @NotNull public static UserBlocks.Builder userBlocks() { return new UserBlocks.Builder(new HashMap<String,Object>()); }
   /**
@@ -1586,24 +1553,18 @@ The amount of a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/G
    */
   @NotNull public static EmergencyService.Builder emergencyService() { return new EmergencyService.Builder(new HashMap<String,Object>()); }
   /**
-   * The act of forming a personal connection with someone (object) mutually/bidirectionally/symmetrically.&lt;br/&gt;&lt;br/&gt;
-
-Related actions:&lt;br/&gt;&lt;br/&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/FollowAction&quot;&gt;FollowAction&lt;/a&gt;: Unlike FollowAction, BefriendAction implies that the connection is reciprocal.&lt;/li&gt;
-&lt;/ul&gt;
-
-   */
-  @NotNull public static BefriendAction.Builder befriendAction() { return new BefriendAction.Builder(new HashMap<String,Object>()); }
-  /**
    * A News/Media organization such as a newspaper or TV station.
    */
   @NotNull public static NewsMediaOrganization.Builder newsMediaOrganization() { return new NewsMediaOrganization.Builder(new HashMap<String,Object>()); }
   /**
+   * The act of forming a personal connection with someone (object) mutually/bidirectionally/symmetrically.\n\nRelated actions:\n\n* [[FollowAction]]: Unlike FollowAction, BefriendAction implies that the connection is reciprocal.
+   */
+  @NotNull public static BefriendAction.Builder befriendAction() { return new BefriendAction.Builder(new HashMap<String,Object>()); }
+  /**
    * A CDCPMDRecord is a data structure representing a record in a CDC tabular data format
-      used for hospital data reporting. See &lt;a href=&quot;/docs/cdc-covid.html&quot;&gt;documentation&lt;/a&gt; for details, and the linked CDC materials for authoritative
+      used for hospital data reporting. See [documentation](/docs/cdc-covid.html) for details, and the linked CDC materials for authoritative
       definitions used as the source here.
+      
    */
   @NotNull public static CDCPMDRecord.Builder cDCPMDRecord() { return new CDCPMDRecord.Builder(new HashMap<String,Object>()); }
   /**
@@ -1611,11 +1572,7 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
    */
   @NotNull public static AddAction.Builder addAction() { return new AddAction.Builder(new HashMap<String,Object>()); }
   /**
-   * A construction business.&lt;br/&gt;&lt;br/&gt;
-
-A HomeAndConstructionBusiness is a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/LocalBusiness&quot;&gt;LocalBusiness&lt;/a&gt; that provides services around homes and buildings.&lt;br/&gt;&lt;br/&gt;
-
-As a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/LocalBusiness&quot;&gt;LocalBusiness&lt;/a&gt; it can be described as a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/provider&quot;&gt;provider&lt;/a&gt; of one or more &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Service&quot;&gt;Service&lt;/a&gt;(s).
+   * A construction business.\n\nA HomeAndConstructionBusiness is a [[LocalBusiness]] that provides services around homes and buildings.\n\nAs a [[LocalBusiness]] it can be described as a [[provider]] of one or more [[Service]]\(s).
    */
   @NotNull public static HomeAndConstructionBusiness.Builder homeAndConstructionBusiness() { return new HomeAndConstructionBusiness.Builder(new HashMap<String,Object>()); }
   /**
@@ -1624,11 +1581,11 @@ As a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/LocalBusines
   @NotNull public static WarrantyPromise.Builder warrantyPromise() { return new WarrantyPromise.Builder(new HashMap<String,Object>()); }
   /**
    * Individual comic issues are serially published as
-    part of a larger series. For the sake of consistency, even one-shot issues
-    belong to a series comprised of a single issue. All comic issues can be
-    uniquely identified by: the combination of the name and volume number of the
-    series to which the issue belongs; the issue number; and the variant
-    description of the issue (if any).
+    	part of a larger series. For the sake of consistency, even one-shot issues
+    	belong to a series comprised of a single issue. All comic issues can be
+    	uniquely identified by: the combination of the name and volume number of the
+    	series to which the issue belongs; the issue number; and the variant
+    	description of the issue (if any).
    */
   @NotNull public static ComicIssue.Builder comicIssue() { return new ComicIssue.Builder(new HashMap<String,Object>()); }
   /**
@@ -1648,9 +1605,7 @@ As a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/LocalBusines
    */
   @NotNull public static HealthClub.Builder healthClub() { return new HealthClub.Builder(new HashMap<String,Object>()); }
   /**
-   * Professional service: Attorney. &lt;br/&gt;&lt;br/&gt;
-
-This type is deprecated - &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/LegalService&quot;&gt;LegalService&lt;/a&gt; is more inclusive and less ambiguous.
+   * Professional service: Attorney. \n\nThis type is deprecated - [[LegalService]] is more inclusive and less ambiguous.
    */
   @NotNull public static Attorney.Builder attorney() { return new Attorney.Builder(new HashMap<String,Object>()); }
   /**
@@ -1674,9 +1629,7 @@ This type is deprecated - &lt;a class=&quot;localLink&quot; href=&quot;http://sc
    */
   @NotNull public static MotorizedBicycle.Builder motorizedBicycle() { return new MotorizedBicycle.Builder(new HashMap<String,Object>()); }
   /**
-   * A reservation for air travel.&lt;br/&gt;&lt;br/&gt;
-
-Note: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Offer&quot;&gt;Offer&lt;/a&gt;.
+   * A reservation for air travel.\n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, use [[Offer]].
    */
   @NotNull public static FlightReservation.Builder flightReservation() { return new FlightReservation.Builder(new HashMap<String,Object>()); }
   /**
@@ -1688,9 +1641,7 @@ Note: This type is for information about actual reservations, e.g. in confirmati
    */
   @NotNull public static LinkRole.Builder linkRole() { return new LinkRole.Builder(new HashMap<String,Object>()); }
   /**
-   * A part of a successively published publication such as a periodical or publication volume, often numbered, usually containing a grouping of works such as articles.&lt;br/&gt;&lt;br/&gt;
-
-See also &lt;a href=&quot;http://blog.schema.org/2014/09/schemaorg-support-for-bibliographic_2.html&quot;&gt;blog post&lt;/a&gt;.
+   * A part of a successively published publication such as a periodical or publication volume, often numbered, usually containing a grouping of works such as articles.\n\nSee also [blog post](http://blog.schema.org/2014/09/schemaorg-support-for-bibliographic_2.html).
    */
   @NotNull public static PublicationIssue.Builder publicationIssue() { return new PublicationIssue.Builder(new HashMap<String,Object>()); }
   /**
@@ -1710,14 +1661,15 @@ See also &lt;a href=&quot;http://blog.schema.org/2014/09/schemaorg-support-for-b
    */
   @NotNull public static PawnShop.Builder pawnShop() { return new PawnShop.Builder(new HashMap<String,Object>()); }
   /**
-   * An event happening at a certain time and location, such as a concert, lecture, or festival. Ticketing information may be added via the &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/offers&quot;&gt;offers&lt;/a&gt; property. Repeated events may be structured as separate Event objects.
+   * An event happening at a certain time and location, such as a concert, lecture, or festival. Ticketing information may be added via the [[offers]] property. Repeated events may be structured as separate Event objects.
    */
   @NotNull public static Event.Builder event() { return new Event.Builder(new HashMap<String,Object>()); }
   /**
-   * A CovidTestingFacility is a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/MedicalClinic&quot;&gt;MedicalClinic&lt;/a&gt; where testing for the COVID-19 Coronavirus
-      disease is available. If the facility is being made available from an established &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Pharmacy&quot;&gt;Pharmacy&lt;/a&gt;, &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Hotel&quot;&gt;Hotel&lt;/a&gt;, or other
+   * A CovidTestingFacility is a [[MedicalClinic]] where testing for the COVID-19 Coronavirus
+      disease is available. If the facility is being made available from an established [[Pharmacy]], [[Hotel]], or other
       non-medical organization, multiple types can be listed. This makes it easier to re-use existing schema.org information
       about that place e.g. contact info, address, opening hours. Note that in an emergency, such information may not always be reliable.
+      
    */
   @NotNull public static CovidTestingFacility.Builder covidTestingFacility() { return new CovidTestingFacility.Builder(new HashMap<String,Object>()); }
   /**
@@ -1733,6 +1685,10 @@ See also &lt;a href=&quot;http://blog.schema.org/2014/09/schemaorg-support-for-b
    */
   @NotNull public static MusicEvent.Builder musicEvent() { return new MusicEvent.Builder(new HashMap<String,Object>()); }
   /**
+   * A discrete unit of inheritance which affects one or more biological traits (Source: [https://en.wikipedia.org/wiki/Gene](https://en.wikipedia.org/wiki/Gene)). Examples include FOXP2 (Forkhead box protein P2), SCARNA21 (small Cajal body-specific RNA 21), A- (agouti genotype).
+   */
+  @NotNull public static Gene.Builder gene() { return new Gene.Builder(new HashMap<String,Object>()); }
+  /**
    * A unique instance of a BroadcastService on a CableOrSatelliteService lineup.
    */
   @NotNull public static BroadcastChannel.Builder broadcastChannel() { return new BroadcastChannel.Builder(new HashMap<String,Object>()); }
@@ -1745,19 +1701,8 @@ See also &lt;a href=&quot;http://blog.schema.org/2014/09/schemaorg-support-for-b
    */
   @NotNull public static LoseAction.Builder loseAction() { return new LoseAction.Builder(new HashMap<String,Object>()); }
   /**
-   * A card payment method of a particular brand or name.  Used to mark up a particular payment method and/or the financial product/service that supplies the card account.&lt;br/&gt;&lt;br/&gt;
-
-Commonly used values:&lt;br/&gt;&lt;br/&gt;
-
-&lt;ul&gt;
-&lt;li&gt;http://purl.org/goodrelations/v1#AmericanExpress&lt;/li&gt;
-&lt;li&gt;http://purl.org/goodrelations/v1#DinersClub&lt;/li&gt;
-&lt;li&gt;http://purl.org/goodrelations/v1#Discover&lt;/li&gt;
-&lt;li&gt;http://purl.org/goodrelations/v1#JCB&lt;/li&gt;
-&lt;li&gt;http://purl.org/goodrelations/v1#MasterCard&lt;/li&gt;
-&lt;li&gt;http://purl.org/goodrelations/v1#VISA&lt;/li&gt;
-&lt;/ul&gt;
-
+   * A card payment method of a particular brand or name.  Used to mark up a particular payment method and/or the financial product/service that supplies the card account.\n\nCommonly used values:\n\n* http://purl.org/goodrelations/v1#AmericanExpress\n* http://purl.org/goodrelations/v1#DinersClub\n* http://purl.org/goodrelations/v1#Discover\n* http://purl.org/goodrelations/v1#JCB\n* http://purl.org/goodrelations/v1#MasterCard\n* http://purl.org/goodrelations/v1#VISA
+       
    */
   @NotNull public static CreditCard.Builder creditCard() { return new CreditCard.Builder(new HashMap<String,Object>()); }
   /**
@@ -1776,6 +1721,7 @@ Commonly used values:&lt;br/&gt;&lt;br/&gt;
    * A hotel is an establishment that provides lodging paid on a short-term basis (Source: Wikipedia, the free encyclopedia, see http://en.wikipedia.org/wiki/Hotel).
 &lt;br /&gt;&lt;br /&gt;
 See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on the use of schema.org for marking up hotels and other forms of accommodations&lt;/a&gt;.
+
    */
   @NotNull public static Hotel.Builder hotel() { return new Hotel.Builder(new HashMap<String,Object>()); }
   /**
@@ -1791,15 +1737,15 @@ See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on t
    */
   @NotNull public static DepartmentStore.Builder departmentStore() { return new DepartmentStore.Builder(new HashMap<String,Object>()); }
   /**
-   * A process of progressive physical care and rehabilitation aimed at improving a health condition.
-   */
-  @NotNull public static PhysicalTherapy.Builder physicalTherapy() { return new PhysicalTherapy.Builder(new HashMap<String,Object>()); }
-  /**
    * An ocean (for example, the Pacific).
    */
   @NotNull public static OceanBodyOfWater.Builder oceanBodyOfWater() { return new OceanBodyOfWater.Builder(new HashMap<String,Object>()); }
   /**
-   * A play is a form of literature, usually consisting of dialogue between characters, intended for theatrical performance rather than just reading. Note the peformance of a Play would be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/TheaterEvent&quot;&gt;TheaterEvent&lt;/a&gt; - the &lt;em&gt;Play&lt;/em&gt; being the &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/workPerformed&quot;&gt;workPerformed&lt;/a&gt;.
+   * A process of progressive physical care and rehabilitation aimed at improving a health condition.
+   */
+  @NotNull public static PhysicalTherapy.Builder physicalTherapy() { return new PhysicalTherapy.Builder(new HashMap<String,Object>()); }
+  /**
+   * A play is a form of literature, usually consisting of dialogue between characters, intended for theatrical performance rather than just reading. Note: A performance of a Play would be a [[TheaterEvent]] or [[BroadcastEvent]] - the *Play* being the [[workPerformed]].
    */
   @NotNull public static Play.Builder play() { return new Play.Builder(new HashMap<String,Object>()); }
   /**
@@ -1819,15 +1765,15 @@ See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on t
    */
   @NotNull public static Aquarium.Builder aquarium() { return new Aquarium.Builder(new HashMap<String,Object>()); }
   /**
-   * A pet store.
-   */
-  @NotNull public static PetStore.Builder petStore() { return new PetStore.Builder(new HashMap<String,Object>()); }
-  /**
    * The act of editing a recipient by removing one of its objects.
    */
   @NotNull public static DeleteAction.Builder deleteAction() { return new DeleteAction.Builder(new HashMap<String,Object>()); }
   /**
-   * A FloorPlan is an explicit representation of a collection of similar accommodations, allowing the provision of common information (room counts, sizes, layout diagrams) and offers for rental or sale. In typical use, some &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ApartmentComplex&quot;&gt;ApartmentComplex&lt;/a&gt; has an &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/accommodationFloorPlan&quot;&gt;accommodationFloorPlan&lt;/a&gt; which is a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/FloorPlan&quot;&gt;FloorPlan&lt;/a&gt;.  A FloorPlan is always in the context of a particular place, either a larger &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ApartmentComplex&quot;&gt;ApartmentComplex&lt;/a&gt; or a single &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Apartment&quot;&gt;Apartment&lt;/a&gt;. The visual/spatial aspects of a floor plan (i.e. room layout, &lt;a href=&quot;https://en.wikipedia.org/wiki/Floor_plan&quot;&gt;see wikipedia&lt;/a&gt;) can be indicated using &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/image&quot;&gt;image&lt;/a&gt;.
+   * A pet store.
+   */
+  @NotNull public static PetStore.Builder petStore() { return new PetStore.Builder(new HashMap<String,Object>()); }
+  /**
+   * A FloorPlan is an explicit representation of a collection of similar accommodations, allowing the provision of common information (room counts, sizes, layout diagrams) and offers for rental or sale. In typical use, some [[ApartmentComplex]] has an [[accommodationFloorPlan]] which is a [[FloorPlan]].  A FloorPlan is always in the context of a particular place, either a larger [[ApartmentComplex]] or a single [[Apartment]]. The visual/spatial aspects of a floor plan (i.e. room layout, [see wikipedia](https://en.wikipedia.org/wiki/Floor_plan)) can be indicated using [[image]]. 
    */
   @NotNull public static FloorPlan.Builder floorPlan() { return new FloorPlan.Builder(new HashMap<String,Object>()); }
   /**
@@ -1875,11 +1821,15 @@ See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on t
    */
   @NotNull public static GroceryStore.Builder groceryStore() { return new GroceryStore.Builder(new HashMap<String,Object>()); }
   /**
+   * Any biological, chemical, or biochemical thing. For example: a protein; a gene; a chemical; a synthetic chemical.
+   */
+  @NotNull public static BioChemEntity.Builder bioChemEntity() { return new BioChemEntity.Builder(new HashMap<String,Object>()); }
+  /**
    * A nail salon.
    */
   @NotNull public static NailSalon.Builder nailSalon() { return new NailSalon.Builder(new HashMap<String,Object>()); }
   /**
-   * Target audiences for medical web pages. Enumerated type.
+   * Target audiences for medical web pages.
    */
   @NotNull public static MedicalAudience.Builder medicalAudience() { return new MedicalAudience.Builder(new HashMap<String,Object>()); }
   /**
@@ -1891,14 +1841,7 @@ See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on t
    */
   @NotNull public static AchieveAction.Builder achieveAction() { return new AchieveAction.Builder(new HashMap<String,Object>()); }
   /**
-   * The act of registering to an organization/service without the guarantee to receive it.&lt;br/&gt;&lt;br/&gt;
-
-Related actions:&lt;br/&gt;&lt;br/&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/RegisterAction&quot;&gt;RegisterAction&lt;/a&gt;: Unlike RegisterAction, ApplyAction has no guarantees that the application will be accepted.&lt;/li&gt;
-&lt;/ul&gt;
-
+   * The act of registering to an organization/service without the guarantee to receive it.\n\nRelated actions:\n\n* [[RegisterAction]]: Unlike RegisterAction, ApplyAction has no guarantees that the application will be accepted.
    */
   @NotNull public static ApplyAction.Builder applyAction() { return new ApplyAction.Builder(new HashMap<String,Object>()); }
   /**
@@ -1922,7 +1865,7 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
    */
   @NotNull public static City.Builder city() { return new City.Builder(new HashMap<String,Object>()); }
   /**
-   * UserInteraction and its subtypes is an old way of talking about users interacting with pages. It is generally better to use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Action&quot;&gt;Action&lt;/a&gt;-based vocabulary, alongside types such as &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Comment&quot;&gt;Comment&lt;/a&gt;.
+   * UserInteraction and its subtypes is an old way of talking about users interacting with pages. It is generally better to use [[Action]]-based vocabulary, alongside types such as [[Comment]].
    */
   @NotNull public static UserPageVisits.Builder userPageVisits() { return new UserPageVisits.Builder(new HashMap<String,Object>()); }
   /**
@@ -1946,9 +1889,7 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
    */
   @NotNull public static MedicalEntity.Builder medicalEntity() { return new MedicalEntity.Builder(new HashMap<String,Object>()); }
   /**
-   * A reservation for lodging at a hotel, motel, inn, etc.&lt;br/&gt;&lt;br/&gt;
-
-Note: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations.
+   * A reservation for lodging at a hotel, motel, inn, etc.\n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations.
    */
   @NotNull public static LodgingReservation.Builder lodgingReservation() { return new LodgingReservation.Builder(new HashMap<String,Object>()); }
   /**
@@ -1980,23 +1921,23 @@ Note: This type is for information about actual reservations, e.g. in confirmati
    */
   @NotNull public static MusicVenue.Builder musicVenue() { return new MusicVenue.Builder(new HashMap<String,Object>()); }
   /**
-   * A MerchantReturnPolicy provides information about product return policies associated with an &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Organization&quot;&gt;Organization&lt;/a&gt; or &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Product&quot;&gt;Product&lt;/a&gt;.
+   * A MerchantReturnPolicy provides information about product return policies associated with an [[Organization]], [[Product]], or [[Offer]].
    */
   @NotNull public static MerchantReturnPolicy.Builder merchantReturnPolicy() { return new MerchantReturnPolicy.Builder(new HashMap<String,Object>()); }
-  /**
-   * The act of expressing a consistency of opinion with the object. An agent agrees to/about an object (a proposition, topic or theme) with participants.
-   */
-  @NotNull public static AgreeAction.Builder agreeAction() { return new AgreeAction.Builder(new HashMap<String,Object>()); }
   /**
    * A service to convert funds from one currency to another currency.
    */
   @NotNull public static CurrencyConversionService.Builder currencyConversionService() { return new CurrencyConversionService.Builder(new HashMap<String,Object>()); }
   /**
+   * The act of expressing a consistency of opinion with the object. An agent agrees to/about an object (a proposition, topic or theme) with participants.
+   */
+  @NotNull public static AgreeAction.Builder agreeAction() { return new AgreeAction.Builder(new HashMap<String,Object>()); }
+  /**
    * A Childcare center.
    */
   @NotNull public static ChildCare.Builder childCare() { return new ChildCare.Builder(new HashMap<String,Object>()); }
   /**
-   * A &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/CriticReview&quot;&gt;CriticReview&lt;/a&gt; is a more specialized form of Review written or published by a source that is recognized for its reviewing activities. These can include online columns, travel and food guides, TV and radio shows, blogs and other independent Web sites. &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/CriticReview&quot;&gt;CriticReview&lt;/a&gt;s are typically more in-depth and professionally written. For simpler, casually written user/visitor/viewer/customer reviews, it is more appropriate to use the &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/UserReview&quot;&gt;UserReview&lt;/a&gt; type. Review aggregator sites such as Metacritic already separate out the site's user reviews from selected critic reviews that originate from third-party sources.
+   * A [[CriticReview]] is a more specialized form of Review written or published by a source that is recognized for its reviewing activities. These can include online columns, travel and food guides, TV and radio shows, blogs and other independent Web sites. [[CriticReview]]s are typically more in-depth and professionally written. For simpler, casually written user/visitor/viewer/customer reviews, it is more appropriate to use the [[UserReview]] type. Review aggregator sites such as Metacritic already separate out the site's user reviews from selected critic reviews that originate from third-party sources.
    */
   @NotNull public static CriticReview.Builder criticReview() { return new CriticReview.Builder(new HashMap<String,Object>()); }
   /**
@@ -2004,7 +1945,7 @@ Note: This type is for information about actual reservations, e.g. in confirmati
    */
   @NotNull public static FMRadioChannel.Builder fMRadioChannel() { return new FMRadioChannel.Builder(new HashMap<String,Object>()); }
   /**
-   * Dietetic and nutrition as a medical speciality.
+   * Dietetic and nutrition as a medical specialty.
    */
   @NotNull public static DietNutrition.Builder dietNutrition() { return new DietNutrition.Builder(new HashMap<String,Object>()); }
   /**
@@ -2025,8 +1966,8 @@ Note: This type is for information about actual reservations, e.g. in confirmati
   @NotNull public static Zoo.Builder zoo() { return new Zoo.Builder(new HashMap<String,Object>()); }
   /**
    * The term &quot;story&quot; is any indivisible, re-printable
-    unit of a comic, including the interior stories, covers, and backmatter. Most
-    comics have at least two stories: a cover (ComicCoverArt) and an interior story.
+    	unit of a comic, including the interior stories, covers, and backmatter. Most
+    	comics have at least two stories: a cover (ComicCoverArt) and an interior story.
    */
   @NotNull public static ComicStory.Builder comicStory() { return new ComicStory.Builder(new HashMap<String,Object>()); }
   /**
@@ -2070,14 +2011,7 @@ Note: This type is for information about actual reservations, e.g. in confirmati
    */
   @NotNull public static MedicalTestPanel.Builder medicalTestPanel() { return new MedicalTestPanel.Builder(new HashMap<String,Object>()); }
   /**
-   * The act of searching for an object.&lt;br/&gt;&lt;br/&gt;
-
-Related actions:&lt;br/&gt;&lt;br/&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/FindAction&quot;&gt;FindAction&lt;/a&gt;: SearchAction generally leads to a FindAction, but not necessarily.&lt;/li&gt;
-&lt;/ul&gt;
-
+   * The act of searching for an object.\n\nRelated actions:\n\n* [[FindAction]]: SearchAction generally leads to a FindAction, but not necessarily.
    */
   @NotNull public static SearchAction.Builder searchAction() { return new SearchAction.Builder(new HashMap<String,Object>()); }
   /**
@@ -2097,7 +2031,7 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
    */
   @NotNull public static Embassy.Builder embassy() { return new Embassy.Builder(new HashMap<String,Object>()); }
   /**
-   * A schedule defines a repeating time period used to describe a regularly occurring &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Event&quot;&gt;Event&lt;/a&gt;. At a minimum a schedule will specify &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/repeatFrequency&quot;&gt;repeatFrequency&lt;/a&gt; which describes the interval between occurences of the event. Additional information can be provided to specify the schedule more precisely.
+   * A schedule defines a repeating time period used to describe a regularly occurring [[Event]]. At a minimum a schedule will specify [[repeatFrequency]] which describes the interval between occurences of the event. Additional information can be provided to specify the schedule more precisely.
       This includes identifying the day(s) of the week or month when the recurring event will take place, in addition to its start and end time. Schedules may also
       have start and end dates to indicate when they are active, e.g. to define a limited calendar of events.
    */
@@ -2111,6 +2045,10 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
    */
   @NotNull public static SportingGoodsStore.Builder sportingGoodsStore() { return new SportingGoodsStore.Builder(new HashMap<String,Object>()); }
   /**
+   * A HyperToc represents a hypertext table of contents for complex media objects, such as [[VideoObject]], [[AudioObject]]. Items in the table of contents are indicated using the [[tocEntry]] property, and typed [[HyperTocEntry]]. For cases where the same larger work is split into multiple files, [[associatedMedia]] can be used on individual [[HyperTocEntry]] items.
+   */
+  @NotNull public static HyperToc.Builder hyperToc() { return new HyperToc.Builder(new HashMap<String,Object>()); }
+  /**
    * The act of traveling from an fromLocation to a destination by a specified mode of transport, optionally with participants.
    */
   @NotNull public static TravelAction.Builder travelAction() { return new TravelAction.Builder(new HashMap<String,Object>()); }
@@ -2118,6 +2056,7 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
    * A hotel room is a single room in a hotel.
 &lt;br /&gt;&lt;br /&gt;
 See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on the use of schema.org for marking up hotels and other forms of accommodations&lt;/a&gt;.
+
    */
   @NotNull public static HotelRoom.Builder hotelRoom() { return new HotelRoom.Builder(new HashMap<String,Object>()); }
   /**
@@ -2125,15 +2064,15 @@ See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on t
    */
   @NotNull public static MedicalRiskEstimator.Builder medicalRiskEstimator() { return new MedicalRiskEstimator.Builder(new HashMap<String,Object>()); }
   /**
-   * The header section of the page.
-   */
-  @NotNull public static WPHeader.Builder wPHeader() { return new WPHeader.Builder(new HashMap<String,Object>()); }
-  /**
    * A set of characteristics belonging to businesses, e.g. who compose an item's target audience.
    */
   @NotNull public static BusinessAudience.Builder businessAudience() { return new BusinessAudience.Builder(new HashMap<String,Object>()); }
   /**
-   * A &lt;a href=&quot;https://en.wikipedia.org/wiki/Hackathon&quot;&gt;hackathon&lt;/a&gt; event.
+   * The header section of the page.
+   */
+  @NotNull public static WPHeader.Builder wPHeader() { return new WPHeader.Builder(new HashMap<String,Object>()); }
+  /**
+   * A [hackathon](https://en.wikipedia.org/wiki/Hackathon) event.
    */
   @NotNull public static Hackathon.Builder hackathon() { return new Hackathon.Builder(new HashMap<String,Object>()); }
   /**
@@ -2141,9 +2080,14 @@ See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on t
    */
   @NotNull public static JobPosting.Builder jobPosting() { return new JobPosting.Builder(new HashMap<String,Object>()); }
   /**
+   * A math solver which is capable of solving a subset of mathematical problems.
+   */
+  @NotNull public static MathSolver.Builder mathSolver() { return new MathSolver.Builder(new HashMap<String,Object>()); }
+  /**
    * A motel.
 &lt;br /&gt;&lt;br /&gt;
 See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on the use of schema.org for marking up hotels and other forms of accommodations&lt;/a&gt;.
+
    */
   @NotNull public static Motel.Builder motel() { return new Motel.Builder(new HashMap<String,Object>()); }
   /**
@@ -2155,17 +2099,29 @@ See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on t
    */
   @NotNull public static DeactivateAction.Builder deactivateAction() { return new DeactivateAction.Builder(new HashMap<String,Object>()); }
   /**
-   * UserInteraction and its subtypes is an old way of talking about users interacting with pages. It is generally better to use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Action&quot;&gt;Action&lt;/a&gt;-based vocabulary, alongside types such as &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Comment&quot;&gt;Comment&lt;/a&gt;.
+   * UserInteraction and its subtypes is an old way of talking about users interacting with pages. It is generally better to use [[Action]]-based vocabulary, alongside types such as [[Comment]].
    */
   @NotNull public static UserLikes.Builder userLikes() { return new UserLikes.Builder(new HashMap<String,Object>()); }
+  /**
+   * A chemical substance is 'a portion of matter of constant composition, composed of molecular entities of the same type or of different types' (source: [ChEBI:59999](https://www.ebi.ac.uk/chebi/searchId.do?chebiId=59999)).
+   */
+  @NotNull public static ChemicalSubstance.Builder chemicalSubstance() { return new ChemicalSubstance.Builder(new HashMap<String,Object>()); }
   /**
    * A set of characteristics describing parents, who can be interested in viewing some content.
    */
   @NotNull public static ParentAudience.Builder parentAudience() { return new ParentAudience.Builder(new HashMap<String,Object>()); }
   /**
-   * &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Recommendation&quot;&gt;Recommendation&lt;/a&gt; is a type of &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Review&quot;&gt;Review&lt;/a&gt; that suggests or proposes something as the best option or best course of action. Recommendations may be for products or services, or other concrete things, as in the case of a ranked list or product guide. A &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Guide&quot;&gt;Guide&lt;/a&gt; may list multiple recommendations for different categories. For example, in a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Guide&quot;&gt;Guide&lt;/a&gt; about which TVs to buy, the author may have several &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Recommendation&quot;&gt;Recommendation&lt;/a&gt;s.
+   * [[Recommendation]] is a type of [[Review]] that suggests or proposes something as the best option or best course of action. Recommendations may be for products or services, or other concrete things, as in the case of a ranked list or product guide. A [[Guide]] may list multiple recommendations for different categories. For example, in a [[Guide]] about which TVs to buy, the author may have several [[Recommendation]]s.
    */
   @NotNull public static Recommendation.Builder recommendation() { return new Recommendation.Builder(new HashMap<String,Object>()); }
+  /**
+   * The LearningResource type can be used to indicate [[CreativeWork]]s (whether physical or digital) that have a particular and explicit orientation towards learning, education, skill acquisition, and other educational purposes.
+
+[[LearningResource]] is expected to be used as an addition to a primary type such as [[Book]], [[VideoObject]], [[Product]] etc.
+
+[[EducationEvent]] serves a similar purpose for event-like things (e.g. a [[Trip]]). A [[LearningResource]] may be created as a result of an [[EducationEvent]], for example by recording one.
+   */
+  @NotNull public static LearningResource.Builder learningResource() { return new LearningResource.Builder(new HashMap<String,Object>()); }
   /**
    * A process of care using radiation aimed at improving a health condition.
    */
@@ -2191,7 +2147,7 @@ See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on t
    */
   @NotNull public static GolfCourse.Builder golfCourse() { return new GolfCourse.Builder(new HashMap<String,Object>()); }
   /**
-   * A quotation. Often but not necessarily from some written work, attributable to a real world author and - if associated with a fictional character - to any fictional Person. Use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/isBasedOn&quot;&gt;isBasedOn&lt;/a&gt; to link to source/origin. The &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/recordedIn&quot;&gt;recordedIn&lt;/a&gt; property can be used to reference a Quotation from an &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Event&quot;&gt;Event&lt;/a&gt;.
+   * A quotation. Often but not necessarily from some written work, attributable to a real world author and - if associated with a fictional character - to any fictional Person. Use [[isBasedOn]] to link to source/origin. The [[recordedIn]] property can be used to reference a Quotation from an [[Event]].
    */
   @NotNull public static Quotation.Builder quotation() { return new Quotation.Builder(new HashMap<String,Object>()); }
   /**
@@ -2211,7 +2167,7 @@ See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on t
    */
   @NotNull public static SportsClub.Builder sportsClub() { return new SportsClub.Builder(new HashMap<String,Object>()); }
   /**
-   * A US-style health insurance plan network.
+   * A US-style health insurance plan network. 
    */
   @NotNull public static HealthPlanNetwork.Builder healthPlanNetwork() { return new HealthPlanNetwork.Builder(new HashMap<String,Object>()); }
   /**
@@ -2235,27 +2191,27 @@ See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on t
    */
   @NotNull public static Occupation.Builder occupation() { return new Occupation.Builder(new HashMap<String,Object>()); }
   /**
-   * A &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Claim&quot;&gt;Claim&lt;/a&gt; in Schema.org represents a specific, factually-oriented claim that could be the &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/itemReviewed&quot;&gt;itemReviewed&lt;/a&gt; in a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ClaimReview&quot;&gt;ClaimReview&lt;/a&gt;. The content of a claim can be summarized with the &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/text&quot;&gt;text&lt;/a&gt; property. Variations on well known claims can have their common identity indicated via &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/sameAs&quot;&gt;sameAs&lt;/a&gt; links, and summarized with a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/name&quot;&gt;name&lt;/a&gt;. Ideally, a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Claim&quot;&gt;Claim&lt;/a&gt; description includes enough contextual information to minimize the risk of ambiguity or inclarity. In practice, many claims are better understood in the context in which they appear or the interpretations provided by claim reviews.&lt;br/&gt;&lt;br/&gt;
+   * A [[Claim]] in Schema.org represents a specific, factually-oriented claim that could be the [[itemReviewed]] in a [[ClaimReview]]. The content of a claim can be summarized with the [[text]] property. Variations on well known claims can have their common identity indicated via [[sameAs]] links, and summarized with a [[name]]. Ideally, a [[Claim]] description includes enough contextual information to minimize the risk of ambiguity or inclarity. In practice, many claims are better understood in the context in which they appear or the interpretations provided by claim reviews.
 
-Beyond &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ClaimReview&quot;&gt;ClaimReview&lt;/a&gt;, the Claim type can be associated with related creative works - for example a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ScholaryArticle&quot;&gt;ScholaryArticle&lt;/a&gt; or &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Question&quot;&gt;Question&lt;/a&gt; might be &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/about&quot;&gt;about&lt;/a&gt; some &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Claim&quot;&gt;Claim&lt;/a&gt;.&lt;br/&gt;&lt;br/&gt;
+  Beyond [[ClaimReview]], the Claim type can be associated with related creative works - for example a [[ScholarlyArticle]] or [[Question]] might be [[about]] some [[Claim]].
 
-At this time, Schema.org does not define any types of relationship between claims. This is a natural area for future exploration.
+  At this time, Schema.org does not define any types of relationship between claims. This is a natural area for future exploration.
+  
    */
   @NotNull public static Claim.Builder claim() { return new Claim.Builder(new HashMap<String,Object>()); }
-  /**
-   * A FundingAgency is an organization that implements one or more &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/FundingScheme&quot;&gt;FundingScheme&lt;/a&gt;s and manages
-    the granting process (via &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Grant&quot;&gt;Grant&lt;/a&gt;s, typically &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/MonetaryGrant&quot;&gt;MonetaryGrant&lt;/a&gt;s).
-    A funding agency is not always required for grant funding, e.g. philanthropic giving, corporate sponsorship etc.&lt;br/&gt;&lt;br/&gt;
-
-&lt;pre&gt;&lt;code&gt;Examples of funding agencies include ERC, REA, NIH, Bill and Melinda Gates Foundation...
-&lt;/code&gt;&lt;/pre&gt;
-
-   */
-  @NotNull public static FundingAgency.Builder fundingAgency() { return new FundingAgency.Builder(new HashMap<String,Object>()); }
   /**
    * The act of notifying someone of information pertinent to them, with no expectation of a response.
    */
   @NotNull public static InformAction.Builder informAction() { return new InformAction.Builder(new HashMap<String,Object>()); }
+  /**
+   * A FundingAgency is an organization that implements one or more [[FundingScheme]]s and manages
+    the granting process (via [[Grant]]s, typically [[MonetaryGrant]]s).
+    A funding agency is not always required for grant funding, e.g. philanthropic giving, corporate sponsorship etc.
+    
+Examples of funding agencies include ERC, REA, NIH, Bill and Melinda Gates Foundation...
+    
+   */
+  @NotNull public static FundingAgency.Builder fundingAgency() { return new FundingAgency.Builder(new HashMap<String,Object>()); }
   /**
    * Event type: Education event.
    */
@@ -2285,29 +2241,13 @@ At this time, Schema.org does not define any types of relationship between claim
    */
   @NotNull public static WorkersUnion.Builder workersUnion() { return new WorkersUnion.Builder(new HashMap<String,Object>()); }
   /**
-   * The act of responding to a question/message asked/sent by the object. Related to &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/AskAction&quot;&gt;AskAction&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;
-
-Related actions:&lt;br/&gt;&lt;br/&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/AskAction&quot;&gt;AskAction&lt;/a&gt;: Appears generally as an origin of a ReplyAction.&lt;/li&gt;
-&lt;/ul&gt;
-
-   */
-  @NotNull public static ReplyAction.Builder replyAction() { return new ReplyAction.Builder(new HashMap<String,Object>()); }
-  /**
-   * The act of forming a personal connection with someone/something (object) unidirectionally/asymmetrically to get updates pushed to.&lt;br/&gt;&lt;br/&gt;
-
-Related actions:&lt;br/&gt;&lt;br/&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/FollowAction&quot;&gt;FollowAction&lt;/a&gt;: Unlike FollowAction, SubscribeAction implies that the subscriber acts as a passive agent being constantly/actively pushed for updates.&lt;/li&gt;
-&lt;li&gt;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/RegisterAction&quot;&gt;RegisterAction&lt;/a&gt;: Unlike RegisterAction, SubscribeAction implies that the agent is interested in continuing receiving updates from the object.&lt;/li&gt;
-&lt;li&gt;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/JoinAction&quot;&gt;JoinAction&lt;/a&gt;: Unlike JoinAction, SubscribeAction implies that the agent is interested in continuing receiving updates from the object.&lt;/li&gt;
-&lt;/ul&gt;
-
+   * The act of forming a personal connection with someone/something (object) unidirectionally/asymmetrically to get updates pushed to.\n\nRelated actions:\n\n* [[FollowAction]]: Unlike FollowAction, SubscribeAction implies that the subscriber acts as a passive agent being constantly/actively pushed for updates.\n* [[RegisterAction]]: Unlike RegisterAction, SubscribeAction implies that the agent is interested in continuing receiving updates from the object.\n* [[JoinAction]]: Unlike JoinAction, SubscribeAction implies that the agent is interested in continuing receiving updates from the object.
    */
   @NotNull public static SubscribeAction.Builder subscribeAction() { return new SubscribeAction.Builder(new HashMap<String,Object>()); }
+  /**
+   * The act of responding to a question/message asked/sent by the object. Related to [[AskAction]]\n\nRelated actions:\n\n* [[AskAction]]: Appears generally as an origin of a ReplyAction.
+   */
+  @NotNull public static ReplyAction.Builder replyAction() { return new ReplyAction.Builder(new HashMap<String,Object>()); }
   /**
    * A doctor's office.
    */
@@ -2332,6 +2272,7 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
    * A suite in a hotel or other public accommodation, denotes a class of luxury accommodations, the key feature of which is multiple rooms (Source: Wikipedia, the free encyclopedia, see &lt;a href=&quot;http://en.wikipedia.org/wiki/Suite_(hotel)&quot;&gt;http://en.wikipedia.org/wiki/Suite_(hotel)&lt;/a&gt;).
 &lt;br /&gt;&lt;br /&gt;
 See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on the use of schema.org for marking up hotels and other forms of accommodations&lt;/a&gt;.
+
    */
   @NotNull public static Suite.Builder suite() { return new Suite.Builder(new HashMap<String,Object>()); }
   /**
@@ -2359,13 +2300,13 @@ See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on t
    */
   @NotNull public static OutletStore.Builder outletStore() { return new OutletStore.Builder(new HashMap<String,Object>()); }
   /**
-   * A treatment of people with physical, emotional, or social problems, using purposeful activity to help them overcome or learn to deal with their problems.
-   */
-  @NotNull public static OccupationalTherapy.Builder occupationalTherapy() { return new OccupationalTherapy.Builder(new HashMap<String,Object>()); }
-  /**
    * The act of consuming dynamic/moving visual content.
    */
   @NotNull public static WatchAction.Builder watchAction() { return new WatchAction.Builder(new HashMap<String,Object>()); }
+  /**
+   * A treatment of people with physical, emotional, or social problems, using purposeful activity to help them overcome or learn to deal with their problems.
+   */
+  @NotNull public static OccupationalTherapy.Builder occupationalTherapy() { return new OccupationalTherapy.Builder(new HashMap<String,Object>()); }
   /**
    * The act of intentionally disregarding the object. An agent ignores an object.
    */
@@ -2383,6 +2324,14 @@ See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on t
    */
   @NotNull public static Muscle.Builder muscle() { return new Muscle.Builder(new HashMap<String,Object>()); }
   /**
+   * A ShippingRateSettings represents re-usable pieces of shipping information. It is designed for publication on an URL that may be referenced via the [[shippingSettingsLink]] property of an [[OfferShippingDetails]]. Several occurrences can be published, distinguished and matched (i.e. identified/referenced) by their different values for [[shippingLabel]].
+   */
+  @NotNull public static ShippingRateSettings.Builder shippingRateSettings() { return new ShippingRateSettings.Builder(new HashMap<String,Object>()); }
+  /**
+   * Indicates a range of postalcodes, usually defined as the set of valid codes between [[postalCodeBegin]] and [[postalCodeEnd]], inclusively.
+   */
+  @NotNull public static PostalCodeRangeSpecification.Builder postalCodeRangeSpecification() { return new PostalCodeRangeSpecification.Builder(new HashMap<String,Object>()); }
+  /**
    * The price asked for a given offer by the respective organization or person.
    */
   @NotNull public static UnitPriceSpecification.Builder unitPriceSpecification() { return new UnitPriceSpecification.Builder(new HashMap<String,Object>()); }
@@ -2391,15 +2340,15 @@ See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on t
    */
   @NotNull public static MedicalProcedure.Builder medicalProcedure() { return new MedicalProcedure.Builder(new HashMap<String,Object>()); }
   /**
-   * An AnalysisNewsArticle is a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/NewsArticle&quot;&gt;NewsArticle&lt;/a&gt; that, while based on factual reporting, incorporates the expertise of the author/producer, offering interpretations and conclusions.
+   * An AnalysisNewsArticle is a [[NewsArticle]] that, while based on factual reporting, incorporates the expertise of the author/producer, offering interpretations and conclusions.
    */
   @NotNull public static AnalysisNewsArticle.Builder analysisNewsArticle() { return new AnalysisNewsArticle.Builder(new HashMap<String,Object>()); }
   /**
-   * A Series in schema.org is a group of related items, typically but not necessarily of the same kind. See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/CreativeWorkSeries&quot;&gt;CreativeWorkSeries&lt;/a&gt;, &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/EventSeries&quot;&gt;EventSeries&lt;/a&gt;.
+   * A Series in schema.org is a group of related items, typically but not necessarily of the same kind. See also [[CreativeWorkSeries]], [[EventSeries]].
    */
   @NotNull public static Series.Builder series() { return new Series.Builder(new HashMap<String,Object>()); }
   /**
-   * A &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/comment&quot;&gt;comment&lt;/a&gt; that corrects &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/CreativeWork&quot;&gt;CreativeWork&lt;/a&gt;.
+   * A [[comment]] that corrects [[CreativeWork]].
    */
   @NotNull public static CorrectionComment.Builder correctionComment() { return new CorrectionComment.Builder(new HashMap<String,Object>()); }
   /**
@@ -2410,6 +2359,7 @@ See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on t
    * A hostel - cheap accommodation, often in shared dormitories.
 &lt;br /&gt;&lt;br /&gt;
 See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on the use of schema.org for marking up hotels and other forms of accommodations&lt;/a&gt;.
+
    */
   @NotNull public static Hostel.Builder hostel() { return new Hostel.Builder(new HashMap<String,Object>()); }
   /**
@@ -2428,6 +2378,12 @@ See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on t
    * A bike store.
    */
   @NotNull public static BikeStore.Builder bikeStore() { return new BikeStore.Builder(new HashMap<String,Object>()); }
+  /**
+   * A ProductGroup represents a group of [[Product]]s that vary only in certain well-described ways, such as by [[size]], [[color]], [[material]] etc.
+
+While a ProductGroup itself is not directly offered for sale, the various varying products that it represents can be. The ProductGroup serves as a prototype or template, standing in for all of the products who have an [[isVariantOf]] relationship to it. As such, properties (including additional types) can be applied to the ProductGroup to represent characteristics shared by each of the (possibly very many) variants. Properties that reference a ProductGroup are not included in this mechanism; neither are the following specific properties [[variesBy]], [[hasVariant]], [[url]]. 
+   */
+  @NotNull public static ProductGroup.Builder productGroup() { return new ProductGroup.Builder(new HashMap<String,Object>()); }
   /**
    * A nightclub or discotheque.
    */
@@ -2481,17 +2437,22 @@ See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on t
    */
   @NotNull public static VideoObject.Builder videoObject() { return new VideoObject.Builder(new HashMap<String,Object>()); }
   /**
+   * A class of medical drugs, e.g., statins. Classes can represent general pharmacological class, common mechanisms of action, common physiological effects, etc.
+   */
+  @NotNull public static DrugClass.Builder drugClass() { return new DrugClass.Builder(new HashMap<String,Object>()); }
+  /**
    * A permit issued by an organization, e.g. a parking pass.
    */
   @NotNull public static Permit.Builder permit() { return new Permit.Builder(new HashMap<String,Object>()); }
   /**
-   * A comment on an item - for example, a comment on a blog post. The comment's content is expressed via the &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/text&quot;&gt;text&lt;/a&gt; property, and its topic via &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/about&quot;&gt;about&lt;/a&gt;, properties shared with all CreativeWorks.
+   * A comment on an item - for example, a comment on a blog post. The comment's content is expressed via the [[text]] property, and its topic via [[about]], properties shared with all CreativeWorks.
    */
   @NotNull public static Comment.Builder comment() { return new Comment.Builder(new HashMap<String,Object>()); }
   /**
    * A GeoCircle is a GeoShape representing a circular geographic area. As it is a GeoShape
           it provides the simple textual property 'circle', but also allows the combination of postalCode alongside geoRadius.
           The center of the circle can be indicated via the 'geoMidpoint' property, or more approximately using 'address', 'postalCode'.
+       
    */
   @NotNull public static GeoCircle.Builder geoCircle() { return new GeoCircle.Builder(new HashMap<String,Object>()); }
   /**
@@ -2503,14 +2464,7 @@ See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on t
    */
   @NotNull public static DeliveryEvent.Builder deliveryEvent() { return new DeliveryEvent.Builder(new HashMap<String,Object>()); }
   /**
-   * The act of finding an object.&lt;br/&gt;&lt;br/&gt;
-
-Related actions:&lt;br/&gt;&lt;br/&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/SearchAction&quot;&gt;SearchAction&lt;/a&gt;: FindAction is generally lead by a SearchAction, but not necessarily.&lt;/li&gt;
-&lt;/ul&gt;
-
+   * The act of finding an object.\n\nRelated actions:\n\n* [[SearchAction]]: FindAction is generally lead by a SearchAction, but not necessarily.
    */
   @NotNull public static FindAction.Builder findAction() { return new FindAction.Builder(new HashMap<String,Object>()); }
   /**
@@ -2521,6 +2475,7 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
    * Bed and breakfast.
 &lt;br /&gt;&lt;br /&gt;
 See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on the use of schema.org for marking up hotels and other forms of accommodations&lt;/a&gt;.
+
    */
   @NotNull public static BedAndBreakfast.Builder bedAndBreakfast() { return new BedAndBreakfast.Builder(new HashMap<String,Object>()); }
   /**
@@ -2564,11 +2519,13 @@ See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on t
    */
   @NotNull public static AggregateRating.Builder aggregateRating() { return new AggregateRating.Builder(new HashMap<String,Object>()); }
   /**
-   * WebContent is a type representing all &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/WebPage&quot;&gt;WebPage&lt;/a&gt;, &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/WebSite&quot;&gt;WebSite&lt;/a&gt; and &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/WebPageElement&quot;&gt;WebPageElement&lt;/a&gt; content. It is sometimes the case that detailed distinctions between Web pages, sites and their parts is not always important or obvious. The  &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/WebContent&quot;&gt;WebContent&lt;/a&gt; type makes it easier to describe Web-addressable content without requiring such distinctions to always be stated. (The intent is that the existing types &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/WebPage&quot;&gt;WebPage&lt;/a&gt;, &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/WebSite&quot;&gt;WebSite&lt;/a&gt; and &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/WebPageElement&quot;&gt;WebPageElement&lt;/a&gt; will eventually be declared as subtypes of &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/WebContent&quot;&gt;WebContent&lt;/a&gt;.)
+   * WebContent is a type representing all [[WebPage]], [[WebSite]] and [[WebPageElement]] content. It is sometimes the case that detailed distinctions between Web pages, sites and their parts is not always important or obvious. The  [[WebContent]] type makes it easier to describe Web-addressable content without requiring such distinctions to always be stated. (The intent is that the existing types [[WebPage]], [[WebSite]] and [[WebPageElement]] will eventually be declared as subtypes of [[WebContent]]).
    */
   @NotNull public static WebContent.Builder webContent() { return new WebContent.Builder(new HashMap<String,Object>()); }
   /**
    * An intangible item that describes an alignment between a learning resource and a node in an educational framework.
+
+Should not be used where the nature of the alignment can be described using a simple property, for example to express that a resource [[teaches]] or [[assesses]] a competency.
    */
   @NotNull public static AlignmentObject.Builder alignmentObject() { return new AlignmentObject.Builder(new HashMap<String,Object>()); }
   /**
@@ -2576,9 +2533,7 @@ See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on t
    */
   @NotNull public static PerformingArtsTheater.Builder performingArtsTheater() { return new PerformingArtsTheater.Builder(new HashMap<String,Object>()); }
   /**
-   * A reservation for a rental car.&lt;br/&gt;&lt;br/&gt;
-
-Note: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations.
+   * A reservation for a rental car.\n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations.
    */
   @NotNull public static RentalCarReservation.Builder rentalCarReservation() { return new RentalCarReservation.Builder(new HashMap<String,Object>()); }
   /**
@@ -2590,17 +2545,15 @@ Note: This type is for information about actual reservations, e.g. in confirmati
    */
   @NotNull public static ElementarySchool.Builder elementarySchool() { return new ElementarySchool.Builder(new HashMap<String,Object>()); }
   /**
-   * Web page type: Search results page.
-   */
-  @NotNull public static SearchResultsPage.Builder searchResultsPage() { return new SearchResultsPage.Builder(new HashMap<String,Object>()); }
-  /**
    * A winery.
    */
   @NotNull public static Winery.Builder winery() { return new Winery.Builder(new HashMap<String,Object>()); }
   /**
-   * When a single product is associated with multiple offers (for example, the same pair of shoes is offered by different merchants), then AggregateOffer can be used.&lt;br/&gt;&lt;br/&gt;
-
-Note: AggregateOffers are normally expected to associate multiple offers that all share the same defined &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt; value, or default to http://purl.org/goodrelations/v1#Sell if businessFunction is not explicitly defined.
+   * Web page type: Search results page.
+   */
+  @NotNull public static SearchResultsPage.Builder searchResultsPage() { return new SearchResultsPage.Builder(new HashMap<String,Object>()); }
+  /**
+   * When a single product is associated with multiple offers (for example, the same pair of shoes is offered by different merchants), then AggregateOffer can be used.\n\nNote: AggregateOffers are normally expected to associate multiple offers that all share the same defined [[businessFunction]] value, or default to http://purl.org/goodrelations/v1#Sell if businessFunction is not explicitly defined.
    */
   @NotNull public static AggregateOffer.Builder aggregateOffer() { return new AggregateOffer.Builder(new HashMap<String,Object>()); }
   /**
@@ -2608,9 +2561,7 @@ Note: AggregateOffers are normally expected to associate multiple offers that al
    */
   @NotNull public static ArchiveOrganization.Builder archiveOrganization() { return new ArchiveOrganization.Builder(new HashMap<String,Object>()); }
   /**
-   * An action performed by a direct agent and indirect participants upon a direct object. Optionally happens at a location with the help of an inanimate instrument. The execution of the action may produce a result. Specific action sub-type documentation specifies the exact expectation of each argument/role.&lt;br/&gt;&lt;br/&gt;
-
-See also &lt;a href=&quot;http://blog.schema.org/2014/04/announcing-schemaorg-actions.html&quot;&gt;blog post&lt;/a&gt; and &lt;a href=&quot;http://schema.org/docs/actions.html&quot;&gt;Actions overview document&lt;/a&gt;.
+   * An action performed by a direct agent and indirect participants upon a direct object. Optionally happens at a location with the help of an inanimate instrument. The execution of the action may produce a result. Specific action sub-type documentation specifies the exact expectation of each argument/role.\n\nSee also [blog post](http://blog.schema.org/2014/04/announcing-schemaorg-actions.html) and [Actions overview document](http://schema.org/docs/actions.html).
    */
   @NotNull public static Action.Builder action() { return new Action.Builder(new HashMap<String,Object>()); }
   /**
@@ -2638,9 +2589,7 @@ See also &lt;a href=&quot;http://blog.schema.org/2014/04/announcing-schemaorg-ac
    */
   @NotNull public static Mass.Builder mass() { return new Mass.Builder(new HashMap<String,Object>()); }
   /**
-   * A LegalService is a business that provides legally-oriented services, advice and representation, e.g. law firms.&lt;br/&gt;&lt;br/&gt;
-
-As a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/LocalBusiness&quot;&gt;LocalBusiness&lt;/a&gt; it can be described as a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/provider&quot;&gt;provider&lt;/a&gt; of one or more &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Service&quot;&gt;Service&lt;/a&gt;(s).
+   * A LegalService is a business that provides legally-oriented services, advice and representation, e.g. law firms.\n\nAs a [[LocalBusiness]] it can be described as a [[provider]] of one or more [[Service]]\(s).
    */
   @NotNull public static LegalService.Builder legalService() { return new LegalService.Builder(new HashMap<String,Object>()); }
   /**
@@ -2655,6 +2604,7 @@ As a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/LocalBusines
    * A meeting room, conference room, or conference hall is a room provided for singular events such as business conferences and meetings (Source: Wikipedia, the free encyclopedia, see &lt;a href=&quot;http://en.wikipedia.org/wiki/Conference_hall&quot;&gt;http://en.wikipedia.org/wiki/Conference_hall&lt;/a&gt;).
 &lt;br /&gt;&lt;br /&gt;
 See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on the use of schema.org for marking up hotels and other forms of accommodations&lt;/a&gt;.
+
    */
   @NotNull public static MeetingRoom.Builder meetingRoom() { return new MeetingRoom.Builder(new HashMap<String,Object>()); }
   /**
@@ -2674,9 +2624,10 @@ See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on t
    */
   @NotNull public static TaxiService.Builder taxiService() { return new TaxiService.Builder(new HashMap<String,Object>()); }
   /**
-   * A StatisticalPopulation is a set of instances of a certain given type that satisfy some set of constraints. The property &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/populationType&quot;&gt;populationType&lt;/a&gt; is used to specify the type. Any property that can be used on instances of that type can appear on the statistical population. For example, a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/StatisticalPopulation&quot;&gt;StatisticalPopulation&lt;/a&gt; representing all &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Person&quot;&gt;Person&lt;/a&gt;s with a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/homeLocation&quot;&gt;homeLocation&lt;/a&gt; of East Podunk California, would be described by applying the appropriate &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/homeLocation&quot;&gt;homeLocation&lt;/a&gt; and &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/populationType&quot;&gt;populationType&lt;/a&gt; properties to a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/StatisticalPopulation&quot;&gt;StatisticalPopulation&lt;/a&gt; item that stands for that set of people.
-The properties &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/numConstraints&quot;&gt;numConstraints&lt;/a&gt; and &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/constrainingProperties&quot;&gt;constrainingProperties&lt;/a&gt; are used to specify which of the populations properties are used to specify the population. Note that the sense of &quot;population&quot; used here is the general sense of a statistical
-population, and does not imply that the population consists of people. For example, a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/populationType&quot;&gt;populationType&lt;/a&gt; of &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Event&quot;&gt;Event&lt;/a&gt; or &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/NewsArticle&quot;&gt;NewsArticle&lt;/a&gt; could be used. See also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Observation&quot;&gt;Observation&lt;/a&gt;, and the &lt;a href=&quot;/docs/data-and-datasets.html&quot;&gt;data and datasets&lt;/a&gt; overview for more details.
+   * A StatisticalPopulation is a set of instances of a certain given type that satisfy some set of constraints. The property [[populationType]] is used to specify the type. Any property that can be used on instances of that type can appear on the statistical population. For example, a [[StatisticalPopulation]] representing all [[Person]]s with a [[homeLocation]] of East Podunk California, would be described by applying the appropriate [[homeLocation]] and [[populationType]] properties to a [[StatisticalPopulation]] item that stands for that set of people.
+The properties [[numConstraints]] and [[constrainingProperty]] are used to specify which of the populations properties are used to specify the population. Note that the sense of &quot;population&quot; used here is the general sense of a statistical
+population, and does not imply that the population consists of people. For example, a [[populationType]] of [[Event]] or [[NewsArticle]] could be used. See also [[Observation]], and the [data and datasets](/docs/data-and-datasets.html) overview for more details.
+  
    */
   @NotNull public static StatisticalPopulation.Builder statisticalPopulation() { return new StatisticalPopulation.Builder(new HashMap<String,Object>()); }
   /**
@@ -2688,6 +2639,10 @@ population, and does not imply that the population consists of people. For examp
    */
   @NotNull public static PerformanceRole.Builder performanceRole() { return new PerformanceRole.Builder(new HashMap<String,Object>()); }
   /**
+   * A DeliveryTimeSettings represents re-usable pieces of shipping information, relating to timing. It is designed for publication on an URL that may be referenced via the [[shippingSettingsLink]] property of a [[OfferShippingDetails]]. Several occurrences can be published, distinguished (and identified/referenced) by their different values for [[transitTimeLabel]].
+   */
+  @NotNull public static DeliveryTimeSettings.Builder deliveryTimeSettings() { return new DeliveryTimeSettings.Builder(new HashMap<String,Object>()); }
+  /**
    * A courthouse.
    */
   @NotNull public static Courthouse.Builder courthouse() { return new Courthouse.Builder(new HashMap<String,Object>()); }
@@ -2695,6 +2650,10 @@ population, and does not imply that the population consists of people. For examp
    * A service which provides access to media programming like TV or radio. Access may be via cable or satellite.
    */
   @NotNull public static CableOrSatelliteService.Builder cableOrSatelliteService() { return new CableOrSatelliteService.Builder(new HashMap<String,Object>()); }
+  /**
+   * Any constitutionally or isotopically distinct atom, molecule, ion, ion pair, radical, radical ion, complex, conformer etc., identifiable as a separately distinguishable entity.
+   */
+  @NotNull public static MolecularEntity.Builder molecularEntity() { return new MolecularEntity.Builder(new HashMap<String,Object>()); }
   /**
    * A brand is a name used by an organization or business person for labeling a product, product group, or similar.
    */
@@ -2704,25 +2663,30 @@ population, and does not imply that the population consists of people. For examp
    */
   @NotNull public static QuoteAction.Builder quoteAction() { return new QuoteAction.Builder(new HashMap<String,Object>()); }
   /**
-   * A MusicRelease is a specific release of a music album.
-   */
-  @NotNull public static MusicRelease.Builder musicRelease() { return new MusicRelease.Builder(new HashMap<String,Object>()); }
-  /**
    * A guideline recommendation that is regarded as efficacious and where quality of the data supporting the recommendation is sound.
    */
   @NotNull public static MedicalGuidelineRecommendation.Builder medicalGuidelineRecommendation() { return new MedicalGuidelineRecommendation.Builder(new HashMap<String,Object>()); }
+  /**
+   * A MusicRelease is a specific release of a music album.
+   */
+  @NotNull public static MusicRelease.Builder musicRelease() { return new MusicRelease.Builder(new HashMap<String,Object>()); }
   /**
    * A tennis complex.
    */
   @NotNull public static TennisComplex.Builder tennisComplex() { return new TennisComplex.Builder(new HashMap<String,Object>()); }
   /**
-   * An &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Article&quot;&gt;Article&lt;/a&gt; that an external entity has paid to place or to produce to its specifications. Includes &lt;a href=&quot;https://en.wikipedia.org/wiki/Advertorial&quot;&gt;advertorials&lt;/a&gt;, sponsored content, native advertising and other paid content.
+   * An [[Article]] that an external entity has paid to place or to produce to its specifications. Includes [advertorials](https://en.wikipedia.org/wiki/Advertorial), sponsored content, native advertising and other paid content.
    */
   @NotNull public static AdvertiserContentArticle.Builder advertiserContentArticle() { return new AdvertiserContentArticle.Builder(new HashMap<String,Object>()); }
   /**
-   * &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/HealthTopicContent&quot;&gt;HealthTopicContent&lt;/a&gt; is &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/WebContent&quot;&gt;WebContent&lt;/a&gt; that is about some aspect of a health topic, e.g. a condition, its symptoms or treatments. Such content may be comprised of several parts or sections and use different types of media. Multiple instances of &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/WebContent&quot;&gt;WebContent&lt;/a&gt; (and hence &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/HealthTopicContent&quot;&gt;HealthTopicContent&lt;/a&gt;) can be related using &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/hasPart&quot;&gt;hasPart&lt;/a&gt; / &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/isPartOf&quot;&gt;isPartOf&lt;/a&gt; where there is some kind of content hierarchy, and their content described with &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/about&quot;&gt;about&lt;/a&gt; and &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/mentions&quot;&gt;mentions&lt;/a&gt; e.g. building upon the existing &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/MedicalCondition&quot;&gt;MedicalCondition&lt;/a&gt; vocabulary.
+   * [[HealthTopicContent]] is [[WebContent]] that is about some aspect of a health topic, e.g. a condition, its symptoms or treatments. Such content may be comprised of several parts or sections and use different types of media. Multiple instances of [[WebContent]] (and hence [[HealthTopicContent]]) can be related using [[hasPart]] / [[isPartOf]] where there is some kind of content hierarchy, and their content described with [[about]] and [[mentions]] e.g. building upon the existing [[MedicalCondition]] vocabulary.
+  
    */
   @NotNull public static HealthTopicContent.Builder healthTopicContent() { return new HealthTopicContent.Builder(new HashMap<String,Object>()); }
+  /**
+   * The action that takes in a math expression and directs users to a page potentially capable of solving/simplifying that expression.
+   */
+  @NotNull public static SolveMathAction.Builder solveMathAction() { return new SolveMathAction.Builder(new HashMap<String,Object>()); }
   /**
    * The act of generating a comment about a subject.
    */
@@ -2760,9 +2724,8 @@ population, and does not imply that the population consists of people. For examp
    */
   @NotNull public static PhotographAction.Builder photographAction() { return new PhotographAction.Builder(new HashMap<String,Object>()); }
   /**
-   * A BreadcrumbList is an ItemList consisting of a chain of linked Web pages, typically described using at least their URL and their name, and typically ending with the current page.&lt;br/&gt;&lt;br/&gt;
-
-The &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/position&quot;&gt;position&lt;/a&gt; property is used to reconstruct the order of the items in a BreadcrumbList The convention is that a breadcrumb list has an &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/itemListOrder&quot;&gt;itemListOrder&lt;/a&gt; of &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ItemListOrderAscending&quot;&gt;ItemListOrderAscending&lt;/a&gt; (lower values listed first), and that the first items in this list correspond to the &quot;top&quot; or beginning of the breadcrumb trail, e.g. with a site or section homepage. The specific values of 'position' are not assigned meaning for a BreadcrumbList, but they should be integers, e.g. beginning with '1' for the first item in the list.
+   * A BreadcrumbList is an ItemList consisting of a chain of linked Web pages, typically described using at least their URL and their name, and typically ending with the current page.\n\nThe [[position]] property is used to reconstruct the order of the items in a BreadcrumbList The convention is that a breadcrumb list has an [[itemListOrder]] of [[ItemListOrderAscending]] (lower values listed first), and that the first items in this list correspond to the &quot;top&quot; or beginning of the breadcrumb trail, e.g. with a site or section homepage. The specific values of 'position' are not assigned meaning for a BreadcrumbList, but they should be integers, e.g. beginning with '1' for the first item in the list.
+      
    */
   @NotNull public static BreadcrumbList.Builder breadcrumbList() { return new BreadcrumbList.Builder(new HashMap<String,Object>()); }
   /**
@@ -2790,7 +2753,7 @@ The &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/position&quot
    */
   @NotNull public static GameServer.Builder gameServer() { return new GameServer.Builder(new HashMap<String,Object>()); }
   /**
-   * A tourist destination. In principle any &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Place&quot;&gt;Place&lt;/a&gt; can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/TouristDestination&quot;&gt;TouristDestination&lt;/a&gt; from a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/City&quot;&gt;City&lt;/a&gt;, &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Region&quot;&gt;Region&lt;/a&gt; or &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Country&quot;&gt;Country&lt;/a&gt; to an &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/AmusementPark&quot;&gt;AmusementPark&lt;/a&gt; or &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Hotel&quot;&gt;Hotel&lt;/a&gt;. This Type can be used on its own to describe a general &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/TouristDestination&quot;&gt;TouristDestination&lt;/a&gt;, or be used as an &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/additionalType&quot;&gt;additionalType&lt;/a&gt; to add tourist relevant properties to any other &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Place&quot;&gt;Place&lt;/a&gt;.  A &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/TouristDestination&quot;&gt;TouristDestination&lt;/a&gt; is defined as a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Place&quot;&gt;Place&lt;/a&gt; that contains, or is colocated with, one or more &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/TouristAttraction&quot;&gt;TouristAttraction&lt;/a&gt;s, often linked by a similar theme or interest to a particular &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/touristType&quot;&gt;touristType&lt;/a&gt;. The &lt;a href=&quot;http://www2.unwto.org/&quot;&gt;UNWTO&lt;/a&gt; defines Destination (main destination of a tourism trip) as the place visited that is central to the decision to take the trip.
+   * A tourist destination. In principle any [[Place]] can be a [[TouristDestination]] from a [[City]], Region or [[Country]] to an [[AmusementPark]] or [[Hotel]]. This Type can be used on its own to describe a general [[TouristDestination]], or be used as an [[additionalType]] to add tourist relevant properties to any other [[Place]].  A [[TouristDestination]] is defined as a [[Place]] that contains, or is colocated with, one or more [[TouristAttraction]]s, often linked by a similar theme or interest to a particular [[touristType]]. The [UNWTO](http://www2.unwto.org/) defines Destination (main destination of a tourism trip) as the place visited that is central to the decision to take the trip.
   (See examples below).
    */
   @NotNull public static TouristDestination.Builder touristDestination() { return new TouristDestination.Builder(new HashMap<String,Object>()); }
@@ -2827,23 +2790,23 @@ The &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/position&quot
    */
   @NotNull public static MotorcycleDealer.Builder motorcycleDealer() { return new MotorcycleDealer.Builder(new HashMap<String,Object>()); }
   /**
-   * An &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/OpinionNewsArticle&quot;&gt;OpinionNewsArticle&lt;/a&gt; is a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/NewsArticle&quot;&gt;NewsArticle&lt;/a&gt; that primarily expresses opinions rather than journalistic reporting of news and events. For example, a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/NewsArticle&quot;&gt;NewsArticle&lt;/a&gt; consisting of a column or &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Blog&quot;&gt;Blog&lt;/a&gt;/&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/BlogPosting&quot;&gt;BlogPosting&lt;/a&gt; entry in the Opinions section of a news publication.
+   * An [[OpinionNewsArticle]] is a [[NewsArticle]] that primarily expresses opinions rather than journalistic reporting of news and events. For example, a [[NewsArticle]] consisting of a column or [[Blog]]/[[BlogPosting]] entry in the Opinions section of a news publication. 
    */
   @NotNull public static OpinionNewsArticle.Builder opinionNewsArticle() { return new OpinionNewsArticle.Builder(new HashMap<String,Object>()); }
-  /**
-   * Short story or tale. A brief work of literature, usually written in narrative prose.
-   */
-  @NotNull public static ShortStory.Builder shortStory() { return new ShortStory.Builder(new HashMap<String,Object>()); }
   /**
    * Residence type: Single-family home.
    */
   @NotNull public static SingleFamilyResidence.Builder singleFamilyResidence() { return new SingleFamilyResidence.Builder(new HashMap<String,Object>()); }
   /**
+   * Short story or tale. A brief work of literature, usually written in narrative prose.
+   */
+  @NotNull public static ShortStory.Builder shortStory() { return new ShortStory.Builder(new HashMap<String,Object>()); }
+  /**
    * A trip on a commercial train line.
    */
   @NotNull public static TrainTrip.Builder trainTrip() { return new TrainTrip.Builder(new HashMap<String,Object>()); }
   /**
-   * A tourist attraction.  In principle any Thing can be a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/TouristAttraction&quot;&gt;TouristAttraction&lt;/a&gt;, from a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Mountain&quot;&gt;Mountain&lt;/a&gt; and &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/LandmarksOrHistoricalBuildings&quot;&gt;LandmarksOrHistoricalBuildings&lt;/a&gt; to a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/LocalBusiness&quot;&gt;LocalBusiness&lt;/a&gt;.  This Type can be used on its own to describe a general &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/TouristAttraction&quot;&gt;TouristAttraction&lt;/a&gt;, or be used as an &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/additionalType&quot;&gt;additionalType&lt;/a&gt; to add tourist attraction properties to any other type.  (See examples below)
+   * A tourist attraction.  In principle any Thing can be a [[TouristAttraction]], from a [[Mountain]] and [[LandmarksOrHistoricalBuildings]] to a [[LocalBusiness]].  This Type can be used on its own to describe a general [[TouristAttraction]], or be used as an [[additionalType]] to add tourist attraction properties to any other type.  (See examples below)
    */
   @NotNull public static TouristAttraction.Builder touristAttraction() { return new TouristAttraction.Builder(new HashMap<String,Object>()); }
   /**
@@ -2859,9 +2822,17 @@ The &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/position&quot
    */
   @NotNull public static PaymentChargeSpecification.Builder paymentChargeSpecification() { return new PaymentChargeSpecification.Builder(new HashMap<String,Object>()); }
   /**
+   * A specific and exact (byte-for-byte) version of an [[ImageObject]]. Two byte-for-byte identical files, for the purposes of this type, considered identical. If they have different embedded metadata (e.g. XMP, EXIF) the files will differ. Different external facts about the files, e.g. creator or dateCreated that aren't represented in their actual content, do not affect this notion of identity.
+   */
+  @NotNull public static ImageObjectSnapshot.Builder imageObjectSnapshot() { return new ImageObjectSnapshot.Builder(new HashMap<String,Object>()); }
+  /**
    * A moving company.
    */
   @NotNull public static MovingCompany.Builder movingCompany() { return new MovingCompany.Builder(new HashMap<String,Object>()); }
+  /**
+   * A specific and exact (byte-for-byte) version of an [[AudioObject]]. Two byte-for-byte identical files, for the purposes of this type, considered identical. If they have different embedded metadata the files will differ. Different external facts about the files, e.g. creator or dateCreated that aren't represented in their actual content, do not affect this notion of identity.
+   */
+  @NotNull public static AudioObjectSnapshot.Builder audioObjectSnapshot() { return new AudioObjectSnapshot.Builder(new HashMap<String,Object>()); }
   /**
    * A bus station.
    */
@@ -2871,7 +2842,7 @@ The &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/position&quot
    */
   @NotNull public static Bakery.Builder bakery() { return new Bakery.Builder(new HashMap<String,Object>()); }
   /**
-   * A blog post intended to provide a rolling textual coverage of an ongoing event through continuous updates.
+   * A [[LiveBlogPosting]] is a [[BlogPosting]] intended to provide a rolling textual coverage of an ongoing event through continuous updates.
    */
   @NotNull public static LiveBlogPosting.Builder liveBlogPosting() { return new LiveBlogPosting.Builder(new HashMap<String,Object>()); }
   /**
@@ -2879,78 +2850,66 @@ The &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/position&quot
    */
   @NotNull public static ItemList.Builder itemList() { return new ItemList.Builder(new HashMap<String,Object>()); }
   /**
-   * The act of notifying someone that a future event/action is going to happen as expected.&lt;br/&gt;&lt;br/&gt;
-
-Related actions:&lt;br/&gt;&lt;br/&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/CancelAction&quot;&gt;CancelAction&lt;/a&gt;: The antonym of ConfirmAction.&lt;/li&gt;
-&lt;/ul&gt;
-
+   * The act of notifying someone that a future event/action is going to happen as expected.\n\nRelated actions:\n\n* [[CancelAction]]: The antonym of ConfirmAction.
    */
   @NotNull public static ConfirmAction.Builder confirmAction() { return new ConfirmAction.Builder(new HashMap<String,Object>()); }
   /**
-   * An agent leaves an event / group with participants/friends at a location.&lt;br/&gt;&lt;br/&gt;
-
-Related actions:&lt;br/&gt;&lt;br/&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/JoinAction&quot;&gt;JoinAction&lt;/a&gt;: The antonym of LeaveAction.&lt;/li&gt;
-&lt;li&gt;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/UnRegisterAction&quot;&gt;UnRegisterAction&lt;/a&gt;: Unlike UnRegisterAction, LeaveAction implies leaving a group/team of people rather than a service.&lt;/li&gt;
-&lt;/ul&gt;
-
+   * An agent leaves an event / group with participants/friends at a location.\n\nRelated actions:\n\n* [[JoinAction]]: The antonym of LeaveAction.\n* [[UnRegisterAction]]: Unlike UnRegisterAction, LeaveAction implies leaving a group/team of people rather than a service.
    */
   @NotNull public static LeaveAction.Builder leaveAction() { return new LeaveAction.Builder(new HashMap<String,Object>()); }
   /**
-   * UserInteraction and its subtypes is an old way of talking about users interacting with pages. It is generally better to use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Action&quot;&gt;Action&lt;/a&gt;-based vocabulary, alongside types such as &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Comment&quot;&gt;Comment&lt;/a&gt;.
+   * UserInteraction and its subtypes is an old way of talking about users interacting with pages. It is generally better to use [[Action]]-based vocabulary, alongside types such as [[Comment]].
    */
   @NotNull public static UserComments.Builder userComments() { return new UserComments.Builder(new HashMap<String,Object>()); }
   /**
-   * The &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ReportageNewsArticle&quot;&gt;ReportageNewsArticle&lt;/a&gt; type is a subtype of &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/NewsArticle&quot;&gt;NewsArticle&lt;/a&gt; representing
- news articles which are the result of journalistic news reporting conventions.&lt;br/&gt;&lt;br/&gt;
+   * The [[ReportageNewsArticle]] type is a subtype of [[NewsArticle]] representing
+ news articles which are the result of journalistic news reporting conventions.
 
-In practice many news publishers produce a wide variety of article types, many of which might be considered a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/NewsArticle&quot;&gt;NewsArticle&lt;/a&gt; but not a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ReportageNewsArticle&quot;&gt;ReportageNewsArticle&lt;/a&gt;. For example, opinion pieces, reviews, analysis, sponsored or satirical articles, or articles that combine several of these elements.&lt;br/&gt;&lt;br/&gt;
+In practice many news publishers produce a wide variety of article types, many of which might be considered a [[NewsArticle]] but not a [[ReportageNewsArticle]]. For example, opinion pieces, reviews, analysis, sponsored or satirical articles, or articles that combine several of these elements.
 
-The &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ReportageNewsArticle&quot;&gt;ReportageNewsArticle&lt;/a&gt; type is based on a stricter ideal for &quot;news&quot; as a work of journalism, with articles based on factual information either observed or verified by the author, or reported and verified from knowledgeable sources.  This often includes perspectives from multiple viewpoints on a particular issue (distinguishing news reports from public relations or propaganda).  News reports in the &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ReportageNewsArticle&quot;&gt;ReportageNewsArticle&lt;/a&gt; sense de-emphasize the opinion of the author, with commentary and value judgements typically expressed elsewhere.&lt;br/&gt;&lt;br/&gt;
+The [[ReportageNewsArticle]] type is based on a stricter ideal for &quot;news&quot; as a work of journalism, with articles based on factual information either observed or verified by the author, or reported and verified from knowledgeable sources.  This often includes perspectives from multiple viewpoints on a particular issue (distinguishing news reports from public relations or propaganda).  News reports in the [[ReportageNewsArticle]] sense de-emphasize the opinion of the author, with commentary and value judgements typically expressed elsewhere.
 
-A &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ReportageNewsArticle&quot;&gt;ReportageNewsArticle&lt;/a&gt; which goes deeper into analysis can also be marked with an additional type of &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/AnalysisNewsArticle&quot;&gt;AnalysisNewsArticle&lt;/a&gt;.
+A [[ReportageNewsArticle]] which goes deeper into analysis can also be marked with an additional type of [[AnalysisNewsArticle]].
+
    */
   @NotNull public static ReportageNewsArticle.Builder reportageNewsArticle() { return new ReportageNewsArticle.Builder(new HashMap<String,Object>()); }
   /**
    * A SpecialAnnouncement combines a simple date-stamped textual information update
       with contextualized Web links and other structured data.  It represents an information update made by a
       locally-oriented organization, for example schools, pharmacies, healthcare providers,  community groups, police,
-      local government.&lt;br/&gt;&lt;br/&gt;
+      local government.
 
-For work in progress guidelines on Coronavirus-related markup see &lt;a href=&quot;https://docs.google.com/document/d/14ikaGCKxo50rRM7nvKSlbUpjyIk2WMQd3IkB1lItlrM/edit#&quot;&gt;this doc&lt;/a&gt;.&lt;br/&gt;&lt;br/&gt;
+For work in progress guidelines on Coronavirus-related markup see [this doc](https://docs.google.com/document/d/14ikaGCKxo50rRM7nvKSlbUpjyIk2WMQd3IkB1lItlrM/edit#).
 
-The motivating scenario for SpecialAnnouncement is the &lt;a href=&quot;https://en.wikipedia.org/wiki/2019%E2%80%9320_coronavirus_pandemic&quot;&gt;Coronavirus pandemic&lt;/a&gt;, and the initial vocabulary is oriented to this urgent situation. Schema.org
+The motivating scenario for SpecialAnnouncement is the [Coronavirus pandemic](https://en.wikipedia.org/wiki/2019%E2%80%9320_coronavirus_pandemic), and the initial vocabulary is oriented to this urgent situation. Schema.org
 expect to improve the markup iteratively as it is deployed and as feedback emerges from use. In addition to our
-usual &lt;a href=&quot;https://github.com/schemaorg/schemaorg/issues/2490&quot;&gt;Github entry&lt;/a&gt;, feedback comments can also be provided in &lt;a href=&quot;https://docs.google.com/document/d/1fpdFFxk8s87CWwACs53SGkYv3aafSxz_DTtOQxMrBJQ/edit#&quot;&gt;this document&lt;/a&gt;.&lt;br/&gt;&lt;br/&gt;
+usual [Github entry](https://github.com/schemaorg/schemaorg/issues/2490), feedback comments can also be provided in [this document](https://docs.google.com/document/d/1fpdFFxk8s87CWwACs53SGkYv3aafSxz_DTtOQxMrBJQ/edit#).
 
-While this schema is designed to communicate urgent crisis-related information, it is not the same as an emergency warning technology like &lt;a href=&quot;https://en.wikipedia.org/wiki/Common_Alerting_Protocol&quot;&gt;CAP&lt;/a&gt;, although there may be overlaps. The intent is to cover
-the kinds of everyday practical information being posted to existing websites during an emergency situation.&lt;br/&gt;&lt;br/&gt;
 
-Several kinds of information can be provided:&lt;br/&gt;&lt;br/&gt;
+While this schema is designed to communicate urgent crisis-related information, it is not the same as an emergency warning technology like [CAP](https://en.wikipedia.org/wiki/Common_Alerting_Protocol), although there may be overlaps. The intent is to cover
+the kinds of everyday practical information being posted to existing websites during an emergency situation.
+
+Several kinds of information can be provided:
 
 We encourage the provision of &quot;name&quot;, &quot;text&quot;, &quot;datePosted&quot;, &quot;expires&quot; (if appropriate), &quot;category&quot; and
 &quot;url&quot; as a simple baseline. It is important to provide a value for &quot;category&quot; where possible, most ideally as a well known
-URL from Wikipedia or Wikidata. In the case of the 2019-2020 Coronavirus pandemic, this should be &quot;https://en.wikipedia.org/w/index.php?title=2019-20_coronavirus_pandemic&quot; or &quot;https://www.wikidata.org/wiki/Q81068910&quot;.&lt;br/&gt;&lt;br/&gt;
+URL from Wikipedia or Wikidata. In the case of the 2019-2020 Coronavirus pandemic, this should be &quot;https://en.wikipedia.org/w/index.php?title=2019-20\_coronavirus\_pandemic&quot; or &quot;https://www.wikidata.org/wiki/Q81068910&quot;.
 
-For many of the possible properties, values can either be simple links or an inline description, depending on whether a summary is available. For a link, provide just the URL of the appropriate page as the property's value. For an inline description, use a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/WebContent&quot;&gt;WebContent&lt;/a&gt; type, and provide the url as a property of that, alongside at least a simple &quot;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/text&quot;&gt;text&lt;/a&gt;&quot; summary of the page. It is
-unlikely that a single SpecialAnnouncement will need all of the possible properties simultaneously.&lt;br/&gt;&lt;br/&gt;
+For many of the possible properties, values can either be simple links or an inline description, depending on whether a summary is available. For a link, provide just the URL of the appropriate page as the property's value. For an inline description, use a [[WebContent]] type, and provide the url as a property of that, alongside at least a simple &quot;[[text]]&quot; summary of the page. It is
+unlikely that a single SpecialAnnouncement will need all of the possible properties simultaneously.
 
-We expect that in many cases the page referenced might contain more specialized structured data, e.g. contact info, &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/openingHours&quot;&gt;openingHours&lt;/a&gt;, &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Event&quot;&gt;Event&lt;/a&gt;, &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/FAQPage&quot;&gt;FAQPage&lt;/a&gt; etc. By linking to those pages from a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/SpecialAnnouncement&quot;&gt;SpecialAnnouncement&lt;/a&gt; you can help make it clearer that the events are related to the situation (e.g. Coronavirus) indicated by the &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/category&quot;&gt;category&lt;/a&gt; property of the &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/SpecialAnnouncement&quot;&gt;SpecialAnnouncement&lt;/a&gt;.&lt;br/&gt;&lt;br/&gt;
+We expect that in many cases the page referenced might contain more specialized structured data, e.g. contact info, [[openingHours]], [[Event]], [[FAQPage]] etc. By linking to those pages from a [[SpecialAnnouncement]] you can help make it clearer that the events are related to the situation (e.g. Coronavirus) indicated by the [[category]] property of the [[SpecialAnnouncement]].
 
-Many &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/SpecialAnnouncement&quot;&gt;SpecialAnnouncement&lt;/a&gt;s will relate to particular regions and to identifiable local organizations. Use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/spatialCoverage&quot;&gt;spatialCoverage&lt;/a&gt; for the region, and &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/announcementLocation&quot;&gt;announcementLocation&lt;/a&gt; to indicate specific &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/LocalBusiness&quot;&gt;LocalBusiness&lt;/a&gt;es and &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/CivicStructures&quot;&gt;CivicStructures&lt;/a&gt;. If the announcement affects both a particular region and a specific location (for example, a library closure that serves an entire region), use both &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/spatialCoverage&quot;&gt;spatialCoverage&lt;/a&gt; and &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/announcementLocation&quot;&gt;announcementLocation&lt;/a&gt;.&lt;br/&gt;&lt;br/&gt;
+Many [[SpecialAnnouncement]]s will relate to particular regions and to identifiable local organizations. Use [[spatialCoverage]] for the region, and [[announcementLocation]] to indicate specific [[LocalBusiness]]es and [[CivicStructure]]s. If the announcement affects both a particular region and a specific location (for example, a library closure that serves an entire region), use both [[spatialCoverage]] and [[announcementLocation]].
 
-The &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/about&quot;&gt;about&lt;/a&gt; property can be used to indicate entities that are the focus of the announcement. We now recommend using &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/about&quot;&gt;about&lt;/a&gt; only
-for representing non-location entities (e.g. a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Course&quot;&gt;Course&lt;/a&gt; or a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/RadioStation&quot;&gt;RadioStation&lt;/a&gt;). For places, use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/announcementLocation&quot;&gt;announcementLocation&lt;/a&gt; and &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/spatialCoverage&quot;&gt;spatialCoverage&lt;/a&gt;. Consumers of this markup should be aware that the initial design encouraged the use of /about for locations too.&lt;br/&gt;&lt;br/&gt;
+The [[about]] property can be used to indicate entities that are the focus of the announcement. We now recommend using [[about]] only
+for representing non-location entities (e.g. a [[Course]] or a [[RadioStation]]). For places, use [[announcementLocation]] and [[spatialCoverage]]. Consumers of this markup should be aware that the initial design encouraged the use of /about for locations too.
 
-The basic content of &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/SpecialAnnouncement&quot;&gt;SpecialAnnouncement&lt;/a&gt; is similar to that of an &lt;a href=&quot;https://en.wikipedia.org/wiki/RSS&quot;&gt;RSS&lt;/a&gt; or &lt;a href=&quot;https://en.wikipedia.org/wiki/Atom_(Web_standard)&quot;&gt;Atom&lt;/a&gt; feed. For publishers without such feeds, basic feed-like information can be shared by posting
-&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/SpecialAnnouncement&quot;&gt;SpecialAnnouncement&lt;/a&gt; updates in a page, e.g. using JSON-LD. For sites with Atom/RSS functionality, you can point to a feed
-with the &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/webFeed&quot;&gt;webFeed&lt;/a&gt; property. This can be a simple URL, or an inline &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/DataFeed&quot;&gt;DataFeed&lt;/a&gt; object, with &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/encodingFormat&quot;&gt;encodingFormat&lt;/a&gt; providing
+The basic content of [[SpecialAnnouncement]] is similar to that of an [RSS](https://en.wikipedia.org/wiki/RSS) or [Atom](https://en.wikipedia.org/wiki/Atom_(Web_standard)) feed. For publishers without such feeds, basic feed-like information can be shared by posting
+[[SpecialAnnouncement]] updates in a page, e.g. using JSON-LD. For sites with Atom/RSS functionality, you can point to a feed
+with the [[webFeed]] property. This can be a simple URL, or an inline [[DataFeed]] object, with [[encodingFormat]] providing
 media type information e.g. &quot;application/rss+xml&quot; or &quot;application/atom+xml&quot;.
+
    */
   @NotNull public static SpecialAnnouncement.Builder specialAnnouncement() { return new SpecialAnnouncement.Builder(new HashMap<String,Object>()); }
   /**
@@ -3006,13 +2965,13 @@ media type information e.g. &quot;application/rss+xml&quot; or &quot;application
    */
   @NotNull public static MedicalCode.Builder medicalCode() { return new MedicalCode.Builder(new HashMap<String,Object>()); }
   /**
-   * UserInteraction and its subtypes is an old way of talking about users interacting with pages. It is generally better to use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Action&quot;&gt;Action&lt;/a&gt;-based vocabulary, alongside types such as &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Comment&quot;&gt;Comment&lt;/a&gt;.
-   */
-  @NotNull public static UserPlusOnes.Builder userPlusOnes() { return new UserPlusOnes.Builder(new HashMap<String,Object>()); }
-  /**
    * Event type: Comedy event.
    */
   @NotNull public static ComedyEvent.Builder comedyEvent() { return new ComedyEvent.Builder(new HashMap<String,Object>()); }
+  /**
+   * UserInteraction and its subtypes is an old way of talking about users interacting with pages. It is generally better to use [[Action]]-based vocabulary, alongside types such as [[Comment]].
+   */
+  @NotNull public static UserPlusOnes.Builder userPlusOnes() { return new UserPlusOnes.Builder(new HashMap<String,Object>()); }
   /**
    * Lists or enumerations&mdash;for example, a list of cuisines or music genres, etc.
    */
@@ -3082,19 +3041,11 @@ media type information e.g. &quot;application/rss+xml&quot; or &quot;application
    */
   @NotNull public static MenuItem.Builder menuItem() { return new MenuItem.Builder(new HashMap<String,Object>()); }
   /**
-   * The act of physically/electronically taking delivery of an object thathas been transferred from an origin to a destination. Reciprocal of SendAction.&lt;br/&gt;&lt;br/&gt;
-
-Related actions:&lt;br/&gt;&lt;br/&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/SendAction&quot;&gt;SendAction&lt;/a&gt;: The reciprocal of ReceiveAction.&lt;/li&gt;
-&lt;li&gt;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/TakeAction&quot;&gt;TakeAction&lt;/a&gt;: Unlike TakeAction, ReceiveAction does not imply that the ownership has been transfered (e.g. I can receive a package, but it does not mean the package is now mine).&lt;/li&gt;
-&lt;/ul&gt;
-
+   * The act of physically/electronically taking delivery of an object that has been transferred from an origin to a destination. Reciprocal of SendAction.\n\nRelated actions:\n\n* [[SendAction]]: The reciprocal of ReceiveAction.\n* [[TakeAction]]: Unlike TakeAction, ReceiveAction does not imply that the ownership has been transfered (e.g. I can receive a package, but it does not mean the package is now mine).
    */
   @NotNull public static ReceiveAction.Builder receiveAction() { return new ReceiveAction.Builder(new HashMap<String,Object>()); }
   /**
-   * A tourist trip. A created itinerary of visits to one or more places of interest (&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/TouristAttraction&quot;&gt;TouristAttraction&lt;/a&gt;/&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/TouristDestination&quot;&gt;TouristDestination&lt;/a&gt;) often linked by a similar theme, geographic area, or interest to a particular &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/touristType&quot;&gt;touristType&lt;/a&gt;. The &lt;a href=&quot;http://www2.unwto.org/&quot;&gt;UNWTO&lt;/a&gt; defines tourism trip as the Trip taken by visitors.
+   * A tourist trip. A created itinerary of visits to one or more places of interest ([[TouristAttraction]]/[[TouristDestination]]) often linked by a similar theme, geographic area, or interest to a particular [[touristType]]. The [UNWTO](http://www2.unwto.org/) defines tourism trip as the Trip taken by visitors.
   (See examples below).
    */
   @NotNull public static TouristTrip.Builder touristTrip() { return new TouristTrip.Builder(new HashMap<String,Object>()); }
@@ -3103,7 +3054,11 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
    */
   @NotNull public static SurgicalProcedure.Builder surgicalProcedure() { return new SurgicalProcedure.Builder(new HashMap<String,Object>()); }
   /**
-   * A financial product for the loaning of an amount of money under agreed terms and charges.
+   * A HyperToEntry is an item within a [[HyperToc]], which represents a hypertext table of contents for complex media objects, such as [[VideoObject]], [[AudioObject]]. The media object itself is indicated using [[associatedMedia]]. Each section of interest within that content can be described with a [[HyperTocEntry]], with associated [[startOffset]] and [[endOffset]]. When several entries are all from the same file, [[associatedMedia]] is used on the overarching [[HyperTocEntry]]; if the content has been split into multiple files, they can be referenced using [[associatedMedia]] on each [[HyperTocEntry]].
+   */
+  @NotNull public static HyperTocEntry.Builder hyperTocEntry() { return new HyperTocEntry.Builder(new HashMap<String,Object>()); }
+  /**
+   * A financial product for the loaning of an amount of money, or line of credit, under agreed terms and charges.
    */
   @NotNull public static LoanOrCredit.Builder loanOrCredit() { return new LoanOrCredit.Builder(new HashMap<String,Object>()); }
   /**
@@ -3115,9 +3070,10 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
    */
   @NotNull public static DaySpa.Builder daySpa() { return new DaySpa.Builder(new HashMap<String,Object>()); }
   /**
-   * An &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/OfferForLease&quot;&gt;OfferForLease&lt;/a&gt; in Schema.org represents an &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Offer&quot;&gt;Offer&lt;/a&gt; to lease out something, i.e. an &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Offer&quot;&gt;Offer&lt;/a&gt; whose
-  &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt; is &lt;a href=&quot;http://purl.org/goodrelations/v1#LeaseOut.&quot;&gt;lease out&lt;/a&gt;. See &lt;a href=&quot;https://en.wikipedia.org/wiki/GoodRelations&quot;&gt;Good Relations&lt;/a&gt; for
+   * An [[OfferForLease]] in Schema.org represents an [[Offer]] to lease out something, i.e. an [[Offer]] whose
+  [[businessFunction]] is [lease out](http://purl.org/goodrelations/v1#LeaseOut.). See [Good Relations](https://en.wikipedia.org/wiki/GoodRelations) for
   background on the underlying concepts.
+  
    */
   @NotNull public static OfferForLease.Builder offerForLease() { return new OfferForLease.Builder(new HashMap<String,Object>()); }
   /**
@@ -3125,15 +3081,7 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
    */
   @NotNull public static InfectiousDisease.Builder infectiousDisease() { return new InfectiousDisease.Builder(new HashMap<String,Object>()); }
   /**
-   * The act of gaining ownership of an object from an origin. Reciprocal of GiveAction.&lt;br/&gt;&lt;br/&gt;
-
-Related actions:&lt;br/&gt;&lt;br/&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/GiveAction&quot;&gt;GiveAction&lt;/a&gt;: The reciprocal of TakeAction.&lt;/li&gt;
-&lt;li&gt;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ReceiveAction&quot;&gt;ReceiveAction&lt;/a&gt;: Unlike ReceiveAction, TakeAction implies that ownership has been transfered.&lt;/li&gt;
-&lt;/ul&gt;
-
+   * The act of gaining ownership of an object from an origin. Reciprocal of GiveAction.\n\nRelated actions:\n\n* [[GiveAction]]: The reciprocal of TakeAction.\n* [[ReceiveAction]]: Unlike ReceiveAction, TakeAction implies that ownership has been transfered.
    */
   @NotNull public static TakeAction.Builder takeAction() { return new TakeAction.Builder(new HashMap<String,Object>()); }
   /**
@@ -3153,15 +3101,7 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
    */
   @NotNull public static Question.Builder question() { return new Question.Builder(new HashMap<String,Object>()); }
   /**
-   * The act of playing/exercising/training/performing for enjoyment, leisure, recreation, Competition or exercise.&lt;br/&gt;&lt;br/&gt;
-
-Related actions:&lt;br/&gt;&lt;br/&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ListenAction&quot;&gt;ListenAction&lt;/a&gt;: Unlike ListenAction (which is under ConsumeAction), PlayAction refers to performing for an audience or at an event, rather than consuming music.&lt;/li&gt;
-&lt;li&gt;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/WatchAction&quot;&gt;WatchAction&lt;/a&gt;: Unlike WatchAction (which is under ConsumeAction), PlayAction refers to showing/displaying for an audience or at an event, rather than consuming visual content.&lt;/li&gt;
-&lt;/ul&gt;
-
+   * The act of playing/exercising/training/performing for enjoyment, leisure, recreation, Competition or exercise.\n\nRelated actions:\n\n* [[ListenAction]]: Unlike ListenAction (which is under ConsumeAction), PlayAction refers to performing for an audience or at an event, rather than consuming music.\n* [[WatchAction]]: Unlike WatchAction (which is under ConsumeAction), PlayAction refers to showing/displaying for an audience or at an event, rather than consuming visual content.
    */
   @NotNull public static PlayAction.Builder playAction() { return new PlayAction.Builder(new HashMap<String,Object>()); }
   /**
@@ -3169,11 +3109,7 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
    */
   @NotNull public static Geriatric.Builder geriatric() { return new Geriatric.Builder(new HashMap<String,Object>()); }
   /**
-   * An offer to transfer some rights to an item or to provide a service &mdash; for example, an offer to sell tickets to an event, to rent the DVD of a movie, to stream a TV show over the internet, to repair a motorcycle, or to loan a book.&lt;br/&gt;&lt;br/&gt;
-
-Note: As the &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/businessFunction&quot;&gt;businessFunction&lt;/a&gt; property, which identifies the form of offer (e.g. sell, lease, repair, dispose), defaults to http://purl.org/goodrelations/v1#Sell; an Offer without a defined businessFunction value can be assumed to be an offer to sell.&lt;br/&gt;&lt;br/&gt;
-
-For &lt;a href=&quot;http://www.gs1.org/barcodes/technical/idkeys/gtin&quot;&gt;GTIN&lt;/a&gt;-related fields, see &lt;a href=&quot;http://www.gs1.org/barcodes/support/check_digit_calculator&quot;&gt;Check Digit calculator&lt;/a&gt; and &lt;a href=&quot;http://www.gs1us.org/resources/standards/gtin-validation-guide&quot;&gt;validation guide&lt;/a&gt; from &lt;a href=&quot;http://www.gs1.org/&quot;&gt;GS1&lt;/a&gt;.
+   * An offer to transfer some rights to an item or to provide a service &mdash; for example, an offer to sell tickets to an event, to rent the DVD of a movie, to stream a TV show over the internet, to repair a motorcycle, or to loan a book.\n\nNote: As the [[businessFunction]] property, which identifies the form of offer (e.g. sell, lease, repair, dispose), defaults to http://purl.org/goodrelations/v1#Sell; an Offer without a defined businessFunction value can be assumed to be an offer to sell.\n\nFor [GTIN](http://www.gs1.org/barcodes/technical/idkeys/gtin)-related fields, see [Check Digit calculator](http://www.gs1.org/barcodes/support/check_digit_calculator) and [validation guide](http://www.gs1us.org/resources/standards/gtin-validation-guide) from [GS1](http://www.gs1.org/).
    */
   @NotNull public static Offer.Builder offer() { return new Offer.Builder(new HashMap<String,Object>()); }
   /**
@@ -3185,19 +3121,20 @@ For &lt;a href=&quot;http://www.gs1.org/barcodes/technical/idkeys/gtin&quot;&gt;
    */
   @NotNull public static Answer.Builder answer() { return new Answer.Builder(new HashMap<String,Object>()); }
   /**
-   * A series of &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Event&quot;&gt;Event&lt;/a&gt;s. Included events can relate with the series using the &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/superEvent&quot;&gt;superEvent&lt;/a&gt; property.&lt;br/&gt;&lt;br/&gt;
+   * A series of [[Event]]s. Included events can relate with the series using the [[superEvent]] property.
 
 An EventSeries is a collection of events that share some unifying characteristic. For example, &quot;The Olympic Games&quot; is a series, which
-is repeated regularly. The &quot;2012 London Olympics&quot; can be presented both as an &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Event&quot;&gt;Event&lt;/a&gt; in the series &quot;Olympic Games&quot;, and as an
-&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/EventSeries&quot;&gt;EventSeries&lt;/a&gt; that included a number of sporting competitions as Events.&lt;br/&gt;&lt;br/&gt;
+is repeated regularly. The &quot;2012 London Olympics&quot; can be presented both as an [[Event]] in the series &quot;Olympic Games&quot;, and as an
+[[EventSeries]] that included a number of sporting competitions as Events.
 
-The nature of the association between the events in an &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/EventSeries&quot;&gt;EventSeries&lt;/a&gt; can vary, but typical examples could
-include a thematic event series (e.g. topical meetups or classes), or a series of regular events that share a location, attendee group and/or organizers.&lt;br/&gt;&lt;br/&gt;
+The nature of the association between the events in an [[EventSeries]] can vary, but typical examples could
+include a thematic event series (e.g. topical meetups or classes), or a series of regular events that share a location, attendee group and/or organizers.
 
 EventSeries has been defined as a kind of Event to make it easy for publishers to use it in an Event context without
 worrying about which kinds of series are really event-like enough to call an Event. In general an EventSeries
 may seem more Event-like when the period of time is compact and when aspects such as location are fixed, but
 it may also sometimes prove useful to describe a longer-term series as an Event.
+   
    */
   @NotNull public static EventSeries.Builder eventSeries() { return new EventSeries.Builder(new HashMap<String,Object>()); }
   /**
@@ -3208,6 +3145,10 @@ it may also sometimes prove useful to describe a longer-term series as an Event.
    * A preschool.
    */
   @NotNull public static Preschool.Builder preschool() { return new Preschool.Builder(new HashMap<String,Object>()); }
+  /**
+   * A seasonal override of a return policy, for example used for holidays.
+   */
+  @NotNull public static MerchantReturnPolicySeasonalOverride.Builder merchantReturnPolicySeasonalOverride() { return new MerchantReturnPolicySeasonalOverride.Builder(new HashMap<String,Object>()); }
   /**
    * The practice of treatment of disease, injury, or deformity by physical methods such as massage, heat treatment, and exercise rather than by drugs or surgery..
    */
@@ -3221,9 +3162,7 @@ it may also sometimes prove useful to describe a longer-term series as an Event.
    */
   @NotNull public static EmployeeRole.Builder employeeRole() { return new EmployeeRole.Builder(new HashMap<String,Object>()); }
   /**
-   * A reservation to dine at a food-related business.&lt;br/&gt;&lt;br/&gt;
-
-Note: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations.
+   * A reservation to dine at a food-related business.\n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations.
    */
   @NotNull public static FoodEstablishmentReservation.Builder foodEstablishmentReservation() { return new FoodEstablishmentReservation.Builder(new HashMap<String,Object>()); }
   /**
@@ -3243,18 +3182,7 @@ Note: This type is for information about actual reservations, e.g. in confirmati
    */
   @NotNull public static FoodEstablishment.Builder foodEstablishment() { return new FoodEstablishment.Builder(new HashMap<String,Object>()); }
   /**
-   * The act of forming a personal connection with someone/something (object) unidirectionally/asymmetrically to get updates polled from.&lt;br/&gt;&lt;br/&gt;
-
-Related actions:&lt;br/&gt;&lt;br/&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/BefriendAction&quot;&gt;BefriendAction&lt;/a&gt;: Unlike BefriendAction, FollowAction implies that the connection is &lt;em&gt;not&lt;/em&gt; necessarily reciprocal.&lt;/li&gt;
-&lt;li&gt;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/SubscribeAction&quot;&gt;SubscribeAction&lt;/a&gt;: Unlike SubscribeAction, FollowAction implies that the follower acts as an active agent constantly/actively polling for updates.&lt;/li&gt;
-&lt;li&gt;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/RegisterAction&quot;&gt;RegisterAction&lt;/a&gt;: Unlike RegisterAction, FollowAction implies that the agent is interested in continuing receiving updates from the object.&lt;/li&gt;
-&lt;li&gt;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/JoinAction&quot;&gt;JoinAction&lt;/a&gt;: Unlike JoinAction, FollowAction implies that the agent is interested in getting updates from the object.&lt;/li&gt;
-&lt;li&gt;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/TrackAction&quot;&gt;TrackAction&lt;/a&gt;: Unlike TrackAction, FollowAction refers to the polling of updates of all aspects of animate objects rather than the location of inanimate objects (e.g. you track a package, but you don't follow it).&lt;/li&gt;
-&lt;/ul&gt;
-
+   * The act of forming a personal connection with someone/something (object) unidirectionally/asymmetrically to get updates polled from.\n\nRelated actions:\n\n* [[BefriendAction]]: Unlike BefriendAction, FollowAction implies that the connection is *not* necessarily reciprocal.\n* [[SubscribeAction]]: Unlike SubscribeAction, FollowAction implies that the follower acts as an active agent constantly/actively polling for updates.\n* [[RegisterAction]]: Unlike RegisterAction, FollowAction implies that the agent is interested in continuing receiving updates from the object.\n* [[JoinAction]]: Unlike JoinAction, FollowAction implies that the agent is interested in getting updates from the object.\n* [[TrackAction]]: Unlike TrackAction, FollowAction refers to the polling of updates of all aspects of animate objects rather than the location of inanimate objects (e.g. you track a package, but you don't follow it).
    */
   @NotNull public static FollowAction.Builder followAction() { return new FollowAction.Builder(new HashMap<String,Object>()); }
   /**
@@ -3266,7 +3194,7 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
    */
   @NotNull public static MoneyTransfer.Builder moneyTransfer() { return new MoneyTransfer.Builder(new HashMap<String,Object>()); }
   /**
-   * A structured value representing a price or price range. Typically, only the subclasses of this type are used for markup. It is recommended to use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/MonetaryAmount&quot;&gt;MonetaryAmount&lt;/a&gt; to describe independent amounts of money such as a salary, credit card limits, etc.
+   * A structured value representing a price or price range. Typically, only the subclasses of this type are used for markup. It is recommended to use [[MonetaryAmount]] to describe independent amounts of money such as a salary, credit card limits, etc.
    */
   @NotNull public static PriceSpecification.Builder priceSpecification() { return new PriceSpecification.Builder(new HashMap<String,Object>()); }
   /**
@@ -3285,6 +3213,10 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
    * A music video file.
    */
   @NotNull public static MusicVideoObject.Builder musicVideoObject() { return new MusicVideoObject.Builder(new HashMap<String,Object>()); }
+  /**
+   * A set of products (either [[ProductGroup]]s or specific variants) that are listed together e.g. in an [[Offer]].
+   */
+  @NotNull public static ProductCollection.Builder productCollection() { return new ProductCollection.Builder(new HashMap<String,Object>()); }
   /**
    * An indication for a medical therapy that has been formally specified or approved by a regulatory body that regulates use of the therapy; for example, the US FDA approves indications for most drugs in the US.
    */
@@ -3310,9 +3242,7 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
    */
   @NotNull public static HinduTemple.Builder hinduTemple() { return new HinduTemple.Builder(new HashMap<String,Object>()); }
   /**
-   * A reservation for bus travel. &lt;br/&gt;&lt;br/&gt;
-
-Note: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Offer&quot;&gt;Offer&lt;/a&gt;.
+   * A reservation for bus travel. \n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, use [[Offer]].
    */
   @NotNull public static BusReservation.Builder busReservation() { return new BusReservation.Builder(new HashMap<String,Object>()); }
   /**
@@ -3336,7 +3266,7 @@ Note: This type is for information about actual reservations, e.g. in confirmati
    */
   @NotNull public static TipAction.Builder tipAction() { return new TipAction.Builder(new HashMap<String,Object>()); }
   /**
-   * UserInteraction and its subtypes is an old way of talking about users interacting with pages. It is generally better to use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Action&quot;&gt;Action&lt;/a&gt;-based vocabulary, alongside types such as &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Comment&quot;&gt;Comment&lt;/a&gt;.
+   * UserInteraction and its subtypes is an old way of talking about users interacting with pages. It is generally better to use [[Action]]-based vocabulary, alongside types such as [[Comment]].
    */
   @NotNull public static UserTweets.Builder userTweets() { return new UserTweets.Builder(new HashMap<String,Object>()); }
   /**
@@ -3356,7 +3286,7 @@ Note: This type is for information about actual reservations, e.g. in confirmati
    */
   @NotNull public static MusicStore.Builder musicStore() { return new MusicStore.Builder(new HashMap<String,Object>()); }
   /**
-   * A &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/FAQPage&quot;&gt;FAQPage&lt;/a&gt; is a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/WebPage&quot;&gt;WebPage&lt;/a&gt; presenting one or more &quot;&lt;a href=&quot;https://en.wikipedia.org/wiki/FAQ&quot;&gt;Frequently asked questions&lt;/a&gt;&quot; (see also &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/QAPage&quot;&gt;QAPage&lt;/a&gt;).
+   * A [[FAQPage]] is a [[WebPage]] presenting one or more &quot;[Frequently asked questions](https://en.wikipedia.org/wiki/FAQ)&quot; (see also [[QAPage]]).
    */
   @NotNull public static FAQPage.Builder fAQPage() { return new FAQPage.Builder(new HashMap<String,Object>()); }
   /**
@@ -3364,7 +3294,7 @@ Note: This type is for information about actual reservations, e.g. in confirmati
    */
   @NotNull public static LocationFeatureSpecification.Builder locationFeatureSpecification() { return new LocationFeatureSpecification.Builder(new HashMap<String,Object>()); }
   /**
-   * &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Guide&quot;&gt;Guide&lt;/a&gt; is a page or article that recommend specific products or services, or aspects of a thing for a user to consider. A &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Guide&quot;&gt;Guide&lt;/a&gt; may represent a Buying Guide and detail aspects of products or services for a user to consider. A &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Guide&quot;&gt;Guide&lt;/a&gt; may represent a Product Guide and recommend specific products or services. A &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Guide&quot;&gt;Guide&lt;/a&gt; may represent a Ranked List and recommend specific products or services with ranking.
+   * [[Guide]] is a page or article that recommend specific products or services, or aspects of a thing for a user to consider. A [[Guide]] may represent a Buying Guide and detail aspects of products or services for a user to consider. A [[Guide]] may represent a Product Guide and recommend specific products or services. A [[Guide]] may represent a Ranked List and recommend specific products or services with ranking.
    */
   @NotNull public static Guide.Builder guide() { return new Guide.Builder(new HashMap<String,Object>()); }
   /**
@@ -3376,11 +3306,11 @@ Note: This type is for information about actual reservations, e.g. in confirmati
    */
   @NotNull public static UseAction.Builder useAction() { return new UseAction.Builder(new HashMap<String,Object>()); }
   /**
-   * Quantity: Duration (use &lt;a href=&quot;http://en.wikipedia.org/wiki/ISO_8601&quot;&gt;ISO 8601 duration format&lt;/a&gt;).
+   * Quantity: Duration (use [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601)).
    */
   @NotNull public static Duration.Builder duration() { return new Duration.Builder(new HashMap<String,Object>()); }
   /**
-   * A recipe. For dietary restrictions covered by the recipe, a few common restrictions are enumerated via &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/suitableForDiet&quot;&gt;suitableForDiet&lt;/a&gt;. The &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/keywords&quot;&gt;keywords&lt;/a&gt; property can also be used to add more detail.
+   * A recipe. For dietary restrictions covered by the recipe, a few common restrictions are enumerated via [[suitableForDiet]]. The [[keywords]] property can also be used to add more detail.
    */
   @NotNull public static Recipe.Builder recipe() { return new Recipe.Builder(new HashMap<String,Object>()); }
   /**
@@ -3392,22 +3322,19 @@ Note: This type is for information about actual reservations, e.g. in confirmati
    */
   @NotNull public static HowToItem.Builder howToItem() { return new HowToItem.Builder(new HashMap<String,Object>()); }
   /**
-   * The act of providing an object under an agreement that it will be returned at a later date. Reciprocal of BorrowAction.&lt;br/&gt;&lt;br/&gt;
-
-Related actions:&lt;br/&gt;&lt;br/&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/BorrowAction&quot;&gt;BorrowAction&lt;/a&gt;: Reciprocal of LendAction.&lt;/li&gt;
-&lt;/ul&gt;
-
+   * The act of providing an object under an agreement that it will be returned at a later date. Reciprocal of BorrowAction.\n\nRelated actions:\n\n* [[BorrowAction]]: Reciprocal of LendAction.
    */
   @NotNull public static LendAction.Builder lendAction() { return new LendAction.Builder(new HashMap<String,Object>()); }
+  /**
+   * ShippingDeliveryTime provides various pieces of information about delivery times for shipping.
+   */
+  @NotNull public static ShippingDeliveryTime.Builder shippingDeliveryTime() { return new ShippingDeliveryTime.Builder(new HashMap<String,Object>()); }
   /**
    * A School District is an administrative area for the administration of schools.
    */
   @NotNull public static SchoolDistrict.Builder schoolDistrict() { return new SchoolDistrict.Builder(new HashMap<String,Object>()); }
   /**
-   * UserInteraction and its subtypes is an old way of talking about users interacting with pages. It is generally better to use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Action&quot;&gt;Action&lt;/a&gt;-based vocabulary, alongside types such as &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Comment&quot;&gt;Comment&lt;/a&gt;.
+   * UserInteraction and its subtypes is an old way of talking about users interacting with pages. It is generally better to use [[Action]]-based vocabulary, alongside types such as [[Comment]].
    */
   @NotNull public static UserInteraction.Builder userInteraction() { return new UserInteraction.Builder(new HashMap<String,Object>()); }
   /**
@@ -3419,25 +3346,29 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
    */
   @NotNull public static GeoShape.Builder geoShape() { return new GeoShape.Builder(new HashMap<String,Object>()); }
   /**
-   * A page devoted to a single item, such as a particular product or hotel.
-   */
-  @NotNull public static ItemPage.Builder itemPage() { return new ItemPage.Builder(new HashMap<String,Object>()); }
-  /**
    * A travel agency.
    */
   @NotNull public static TravelAgency.Builder travelAgency() { return new TravelAgency.Builder(new HashMap<String,Object>()); }
+  /**
+   * A page devoted to a single item, such as a particular product or hotel.
+   */
+  @NotNull public static ItemPage.Builder itemPage() { return new ItemPage.Builder(new HashMap<String,Object>()); }
   /**
    * An educational organization.
    */
   @NotNull public static EducationalOrganization.Builder educationalOrganization() { return new EducationalOrganization.Builder(new HashMap<String,Object>()); }
   /**
-   * A &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/LibrarySystem&quot;&gt;LibrarySystem&lt;/a&gt; is a collaborative system amongst several libraries.
+   * A [[LibrarySystem]] is a collaborative system amongst several libraries.
    */
   @NotNull public static LibrarySystem.Builder librarySystem() { return new LibrarySystem.Builder(new HashMap<String,Object>()); }
   /**
    * A subscription which allows a user to access media including audio, video, books, etc.
    */
   @NotNull public static MediaSubscription.Builder mediaSubscription() { return new MediaSubscription.Builder(new HashMap<String,Object>()); }
+  /**
+   * Quiz: A test of knowledge, skills and abilities.
+   */
+  @NotNull public static Quiz.Builder quiz() { return new Quiz.Builder(new HashMap<String,Object>()); }
   /**
    * The act of expressing a desire about the object. An agent wants an object.
    */
@@ -3451,20 +3382,15 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
    */
   @NotNull public static GovernmentService.Builder governmentService() { return new GovernmentService.Builder(new HashMap<String,Object>()); }
   /**
+   * Represents an item or group of closely related items treated as a unit for the sake of evaluation in a [[MediaReview]]. Authorship etc. apply to the items rather than to the curation/grouping or reviewing party.
+   */
+  @NotNull public static MediaReviewItem.Builder mediaReviewItem() { return new MediaReviewItem.Builder(new HashMap<String,Object>()); }
+  /**
    * Event type: Festival.
    */
   @NotNull public static Festival.Builder festival() { return new Festival.Builder(new HashMap<String,Object>()); }
   /**
-   * An agent joins an event/group with participants/friends at a location.&lt;br/&gt;&lt;br/&gt;
-
-Related actions:&lt;br/&gt;&lt;br/&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/RegisterAction&quot;&gt;RegisterAction&lt;/a&gt;: Unlike RegisterAction, JoinAction refers to joining a group/team of people.&lt;/li&gt;
-&lt;li&gt;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/SubscribeAction&quot;&gt;SubscribeAction&lt;/a&gt;: Unlike SubscribeAction, JoinAction does not imply that you'll be receiving updates.&lt;/li&gt;
-&lt;li&gt;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/FollowAction&quot;&gt;FollowAction&lt;/a&gt;: Unlike FollowAction, JoinAction does not imply that you'll be polling for updates.&lt;/li&gt;
-&lt;/ul&gt;
-
+   * An agent joins an event/group with participants/friends at a location.\n\nRelated actions:\n\n* [[RegisterAction]]: Unlike RegisterAction, JoinAction refers to joining a group/team of people.\n* [[SubscribeAction]]: Unlike SubscribeAction, JoinAction does not imply that you'll be receiving updates.\n* [[FollowAction]]: Unlike FollowAction, JoinAction does not imply that you'll be polling for updates.
    */
   @NotNull public static JoinAction.Builder joinAction() { return new JoinAction.Builder(new HashMap<String,Object>()); }
   /**
@@ -3476,9 +3402,8 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
    */
   @NotNull public static HVACBusiness.Builder hVACBusiness() { return new HVACBusiness.Builder(new HashMap<String,Object>()); }
   /**
-   * Accountancy business.&lt;br/&gt;&lt;br/&gt;
-
-As a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/LocalBusiness&quot;&gt;LocalBusiness&lt;/a&gt; it can be described as a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/provider&quot;&gt;provider&lt;/a&gt; of one or more &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Service&quot;&gt;Service&lt;/a&gt;(s).
+   * Accountancy business.\n\nAs a [[LocalBusiness]] it can be described as a [[provider]] of one or more [[Service]]\(s).
+      
    */
   @NotNull public static AccountingService.Builder accountingService() { return new AccountingService.Builder(new HashMap<String,Object>()); }
   /**
@@ -3502,25 +3427,11 @@ As a &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/LocalBusines
    */
   @NotNull public static DrugStrength.Builder drugStrength() { return new DrugStrength.Builder(new HashMap<String,Object>()); }
   /**
-   * The act of obtaining an object under an agreement to return it at a later date. Reciprocal of LendAction.&lt;br/&gt;&lt;br/&gt;
-
-Related actions:&lt;br/&gt;&lt;br/&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/LendAction&quot;&gt;LendAction&lt;/a&gt;: Reciprocal of BorrowAction.&lt;/li&gt;
-&lt;/ul&gt;
-
+   * The act of obtaining an object under an agreement to return it at a later date. Reciprocal of LendAction.\n\nRelated actions:\n\n* [[LendAction]]: Reciprocal of BorrowAction.
    */
   @NotNull public static BorrowAction.Builder borrowAction() { return new BorrowAction.Builder(new HashMap<String,Object>()); }
   /**
-   * The act of posing a question / favor to someone.&lt;br/&gt;&lt;br/&gt;
-
-Related actions:&lt;br/&gt;&lt;br/&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/ReplyAction&quot;&gt;ReplyAction&lt;/a&gt;: Appears generally as a response to AskAction.&lt;/li&gt;
-&lt;/ul&gt;
-
+   * The act of posing a question / favor to someone.\n\nRelated actions:\n\n* [[ReplyAction]]: Appears generally as a response to AskAction.
    */
   @NotNull public static AskAction.Builder askAction() { return new AskAction.Builder(new HashMap<String,Object>()); }
   /**
@@ -3532,13 +3443,13 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
    */
   @NotNull public static DefenceEstablishment.Builder defenceEstablishment() { return new DefenceEstablishment.Builder(new HashMap<String,Object>()); }
   /**
-   * Event type: Sales event.
-   */
-  @NotNull public static SaleEvent.Builder saleEvent() { return new SaleEvent.Builder(new HashMap<String,Object>()); }
-  /**
    * A specific branch of medical science that is concerned with the study, treatment, and prevention of mental illness, using both medical and psychological therapies.
    */
   @NotNull public static Psychiatric.Builder psychiatric() { return new Psychiatric.Builder(new HashMap<String,Object>()); }
+  /**
+   * Event type: Sales event.
+   */
+  @NotNull public static SaleEvent.Builder saleEvent() { return new SaleEvent.Builder(new HashMap<String,Object>()); }
   /**
    * A taxi stand.
    */
@@ -3556,8 +3467,8 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
    */
   @NotNull public static ListenAction.Builder listenAction() { return new ListenAction.Builder(new HashMap<String,Object>()); }
   /**
-   * A 3D model represents some kind of 3D content, which may have &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/encoding&quot;&gt;encoding&lt;/a&gt;s in one or more &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/MediaObject&quot;&gt;MediaObject&lt;/a&gt;s. Many 3D formats are available (e.g. see &lt;a href=&quot;https://en.wikipedia.org/wiki/Category:3D_graphics_file_formats&quot;&gt;Wikipedia&lt;/a&gt;); specific encoding formats can be represented using the &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/encodingFormat&quot;&gt;encodingFormat&lt;/a&gt; property applied to the relevant &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/MediaObject&quot;&gt;MediaObject&lt;/a&gt;. For the
-case of a single file published after Zip compression, the convention of appending '+zip' to the &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/encodingFormat&quot;&gt;encodingFormat&lt;/a&gt; can be used. Geospatial, AR/VR, artistic/animation, gaming, engineering and scientific content can all be represented using &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/3DModel&quot;&gt;3DModel&lt;/a&gt;.
+   * A 3D model represents some kind of 3D content, which may have [[encoding]]s in one or more [[MediaObject]]s. Many 3D formats are available (e.g. see [Wikipedia](https://en.wikipedia.org/wiki/Category:3D_graphics_file_formats)); specific encoding formats can be represented using the [[encodingFormat]] property applied to the relevant [[MediaObject]]. For the
+case of a single file published after Zip compression, the convention of appending '+zip' to the [[encodingFormat]] can be used. Geospatial, AR/VR, artistic/animation, gaming, engineering and scientific content can all be represented using [[3DModel]].
    */
   @NotNull public static 3DModel.Builder 3DModel() { return new 3DModel.Builder(new HashMap<String,Object>()); }
   /**
@@ -3573,11 +3484,11 @@ case of a single file published after Zip compression, the convention of appendi
    */
   @NotNull public static ToyStore.Builder toyStore() { return new ToyStore.Builder(new HashMap<String,Object>()); }
   /**
-   * A camping site, campsite, or &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Campground&quot;&gt;Campground&lt;/a&gt; is a place used for overnight stay in the outdoors, typically containing individual &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/CampingPitch&quot;&gt;CampingPitch&lt;/a&gt; locations. &lt;br/&gt;&lt;br/&gt;
+   * A camping site, campsite, or [[Campground]] is a place used for overnight stay in the outdoors, typically containing individual [[CampingPitch]] locations. \n\n
+In British English a campsite is an area, usually divided into a number of pitches, where people can camp overnight using tents or camper vans or caravans; this British English use of the word is synonymous with the American English expression campground. In American English the term campsite generally means an area where an individual, family, group, or military unit can pitch a tent or park a camper; a campground may contain many campsites (Source: Wikipedia see [https://en.wikipedia.org/wiki/Campsite](https://en.wikipedia.org/wiki/Campsite)).\n\n
 
-In British English a campsite is an area, usually divided into a number of pitches, where people can camp overnight using tents or camper vans or caravans; this British English use of the word is synonymous with the American English expression campground. In American English the term campsite generally means an area where an individual, family, group, or military unit can pitch a tent or park a camper; a campground may contain many campsites (Source: Wikipedia see &lt;a href=&quot;https://en.wikipedia.org/wiki/Campsite&quot;&gt;https://en.wikipedia.org/wiki/Campsite&lt;/a&gt;).&lt;br/&gt;&lt;br/&gt;
+See also the dedicated [document on the use of schema.org for marking up hotels and other forms of accommodations](/docs/hotels.html).
 
-See also the dedicated &lt;a href=&quot;/docs/hotels.html&quot;&gt;document on the use of schema.org for marking up hotels and other forms of accommodations&lt;/a&gt;.
    */
   @NotNull public static Campground.Builder campground() { return new Campground.Builder(new HashMap<String,Object>()); }
   /**
@@ -3589,9 +3500,7 @@ See also the dedicated &lt;a href=&quot;/docs/hotels.html&quot;&gt;document on t
    */
   @NotNull public static SpreadsheetDigitalDocument.Builder spreadsheetDigitalDocument() { return new SpreadsheetDigitalDocument.Builder(new HashMap<String,Object>()); }
   /**
-   * Describes a reservation for travel, dining or an event. Some reservations require tickets. &lt;br/&gt;&lt;br/&gt;
-
-Note: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, restaurant reservations, flights, or rental cars, use &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Offer&quot;&gt;Offer&lt;/a&gt;.
+   * Describes a reservation for travel, dining or an event. Some reservations require tickets. \n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, restaurant reservations, flights, or rental cars, use [[Offer]].
    */
   @NotNull public static Reservation.Builder reservation() { return new Reservation.Builder(new HashMap<String,Object>()); }
   /**
@@ -3611,35 +3520,31 @@ Note: This type is for information about actual reservations, e.g. in confirmati
    */
   @NotNull public static RadioChannel.Builder radioChannel() { return new RadioChannel.Builder(new HashMap<String,Object>()); }
   /**
+   * The act of committing to/adopting an object.\n\nRelated actions:\n\n* [[RejectAction]]: The antonym of AcceptAction.
+   */
+  @NotNull public static AcceptAction.Builder acceptAction() { return new AcceptAction.Builder(new HashMap<String,Object>()); }
+  /**
    * The act of planning the execution of an event/task/action/reservation/plan to a future date.
    */
   @NotNull public static PlanAction.Builder planAction() { return new PlanAction.Builder(new HashMap<String,Object>()); }
-  /**
-   * The act of committing to/adopting an object.&lt;br/&gt;&lt;br/&gt;
-
-Related actions:&lt;br/&gt;&lt;br/&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/RejectAction&quot;&gt;RejectAction&lt;/a&gt;: The antonym of AcceptAction.&lt;/li&gt;
-&lt;/ul&gt;
-
-   */
-  @NotNull public static AcceptAction.Builder acceptAction() { return new AcceptAction.Builder(new HashMap<String,Object>()); }
 
   public static ThingBuilder getBuilder(@NotNull String type) {
     if ("CollegeOrUniversity".equals(type)) { return new CollegeOrUniversity.Builder(new HashMap<String,Object>()); }
+    if ("PhysicalExam".equals(type)) { return new PhysicalExam.Builder(new HashMap<String,Object>()); }
     if ("RadioBroadcastService".equals(type)) { return new RadioBroadcastService.Builder(new HashMap<String,Object>()); }
     if ("WriteAction".equals(type)) { return new WriteAction.Builder(new HashMap<String,Object>()); }
     if ("WorkBasedProgram".equals(type)) { return new WorkBasedProgram.Builder(new HashMap<String,Object>()); }
+    if ("AmpStory".equals(type)) { return new AmpStory.Builder(new HashMap<String,Object>()); }
     if ("Dentist".equals(type)) { return new Dentist.Builder(new HashMap<String,Object>()); }
-    if ("CancelAction".equals(type)) { return new CancelAction.Builder(new HashMap<String,Object>()); }
     if ("TextDigitalDocument".equals(type)) { return new TextDigitalDocument.Builder(new HashMap<String,Object>()); }
+    if ("CancelAction".equals(type)) { return new CancelAction.Builder(new HashMap<String,Object>()); }
     if ("BusStop".equals(type)) { return new BusStop.Builder(new HashMap<String,Object>()); }
     if ("BackgroundNewsArticle".equals(type)) { return new BackgroundNewsArticle.Builder(new HashMap<String,Object>()); }
     if ("MenuSection".equals(type)) { return new MenuSection.Builder(new HashMap<String,Object>()); }
     if ("PhysicalActivity".equals(type)) { return new PhysicalActivity.Builder(new HashMap<String,Object>()); }
     if ("TransferAction".equals(type)) { return new TransferAction.Builder(new HashMap<String,Object>()); }
     if ("ComputerStore".equals(type)) { return new ComputerStore.Builder(new HashMap<String,Object>()); }
+    if ("OccupationalExperienceRequirements".equals(type)) { return new OccupationalExperienceRequirements.Builder(new HashMap<String,Object>()); }
     if ("Podiatric".equals(type)) { return new Podiatric.Builder(new HashMap<String,Object>()); }
     if ("CampingPitch".equals(type)) { return new CampingPitch.Builder(new HashMap<String,Object>()); }
     if ("Emergency".equals(type)) { return new Emergency.Builder(new HashMap<String,Object>()); }
@@ -3648,8 +3553,8 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
     if ("MediaGallery".equals(type)) { return new MediaGallery.Builder(new HashMap<String,Object>()); }
     if ("Resort".equals(type)) { return new Resort.Builder(new HashMap<String,Object>()); }
     if ("WearAction".equals(type)) { return new WearAction.Builder(new HashMap<String,Object>()); }
-    if ("VitalSign".equals(type)) { return new VitalSign.Builder(new HashMap<String,Object>()); }
     if ("ClaimReview".equals(type)) { return new ClaimReview.Builder(new HashMap<String,Object>()); }
+    if ("VitalSign".equals(type)) { return new VitalSign.Builder(new HashMap<String,Object>()); }
     if ("PublicHealth".equals(type)) { return new PublicHealth.Builder(new HashMap<String,Object>()); }
     if ("OfferShippingDetails".equals(type)) { return new OfferShippingDetails.Builder(new HashMap<String,Object>()); }
     if ("ComedyClub".equals(type)) { return new ComedyClub.Builder(new HashMap<String,Object>()); }
@@ -3685,11 +3590,15 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
     if ("CoverArt".equals(type)) { return new CoverArt.Builder(new HashMap<String,Object>()); }
     if ("DigitalDocumentPermission".equals(type)) { return new DigitalDocumentPermission.Builder(new HashMap<String,Object>()); }
     if ("UserDownloads".equals(type)) { return new UserDownloads.Builder(new HashMap<String,Object>()); }
+    if ("VideoObjectSnapshot".equals(type)) { return new VideoObjectSnapshot.Builder(new HashMap<String,Object>()); }
     if ("Continent".equals(type)) { return new Continent.Builder(new HashMap<String,Object>()); }
+    if ("Statement".equals(type)) { return new Statement.Builder(new HashMap<String,Object>()); }
     if ("DrugLegalStatus".equals(type)) { return new DrugLegalStatus.Builder(new HashMap<String,Object>()); }
     if ("PublicationEvent".equals(type)) { return new PublicationEvent.Builder(new HashMap<String,Object>()); }
     if ("Project".equals(type)) { return new Project.Builder(new HashMap<String,Object>()); }
+    if ("EnergyConsumptionDetails".equals(type)) { return new EnergyConsumptionDetails.Builder(new HashMap<String,Object>()); }
     if ("WPFooter".equals(type)) { return new WPFooter.Builder(new HashMap<String,Object>()); }
+    if ("BoatTerminal".equals(type)) { return new BoatTerminal.Builder(new HashMap<String,Object>()); }
     if ("Conversation".equals(type)) { return new Conversation.Builder(new HashMap<String,Object>()); }
     if ("ComputerLanguage".equals(type)) { return new ComputerLanguage.Builder(new HashMap<String,Object>()); }
     if ("Substance".equals(type)) { return new Substance.Builder(new HashMap<String,Object>()); }
@@ -3713,11 +3622,12 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
     if ("MedicalTrial".equals(type)) { return new MedicalTrial.Builder(new HashMap<String,Object>()); }
     if ("ExercisePlan".equals(type)) { return new ExercisePlan.Builder(new HashMap<String,Object>()); }
     if ("TheaterGroup".equals(type)) { return new TheaterGroup.Builder(new HashMap<String,Object>()); }
-    if ("TaxiReservation".equals(type)) { return new TaxiReservation.Builder(new HashMap<String,Object>()); }
     if ("PublicSwimmingPool".equals(type)) { return new PublicSwimmingPool.Builder(new HashMap<String,Object>()); }
+    if ("TaxiReservation".equals(type)) { return new TaxiReservation.Builder(new HashMap<String,Object>()); }
     if ("ReturnAction".equals(type)) { return new ReturnAction.Builder(new HashMap<String,Object>()); }
     if ("UpdateAction".equals(type)) { return new UpdateAction.Builder(new HashMap<String,Object>()); }
     if ("MensClothingStore".equals(type)) { return new MensClothingStore.Builder(new HashMap<String,Object>()); }
+    if ("SizeSpecification".equals(type)) { return new SizeSpecification.Builder(new HashMap<String,Object>()); }
     if ("FoodEvent".equals(type)) { return new FoodEvent.Builder(new HashMap<String,Object>()); }
     if ("DatedMoneySpecification".equals(type)) { return new DatedMoneySpecification.Builder(new HashMap<String,Object>()); }
     if ("FundingScheme".equals(type)) { return new FundingScheme.Builder(new HashMap<String,Object>()); }
@@ -3742,13 +3652,15 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
     if ("ExerciseGym".equals(type)) { return new ExerciseGym.Builder(new HashMap<String,Object>()); }
     if ("CityHall".equals(type)) { return new CityHall.Builder(new HashMap<String,Object>()); }
     if ("QuantitativeValue".equals(type)) { return new QuantitativeValue.Builder(new HashMap<String,Object>()); }
+    if ("BoatTrip".equals(type)) { return new BoatTrip.Builder(new HashMap<String,Object>()); }
     if ("CommunicateAction".equals(type)) { return new CommunicateAction.Builder(new HashMap<String,Object>()); }
     if ("Apartment".equals(type)) { return new Apartment.Builder(new HashMap<String,Object>()); }
     if ("InvestmentFund".equals(type)) { return new InvestmentFund.Builder(new HashMap<String,Object>()); }
     if ("ResearchProject".equals(type)) { return new ResearchProject.Builder(new HashMap<String,Object>()); }
-    if ("UnRegisterAction".equals(type)) { return new UnRegisterAction.Builder(new HashMap<String,Object>()); }
     if ("EmploymentAgency".equals(type)) { return new EmploymentAgency.Builder(new HashMap<String,Object>()); }
+    if ("UnRegisterAction".equals(type)) { return new UnRegisterAction.Builder(new HashMap<String,Object>()); }
     if ("Invoice".equals(type)) { return new Invoice.Builder(new HashMap<String,Object>()); }
+    if ("Taxon".equals(type)) { return new Taxon.Builder(new HashMap<String,Object>()); }
     if ("MusicAlbum".equals(type)) { return new MusicAlbum.Builder(new HashMap<String,Object>()); }
     if ("FurnitureStore".equals(type)) { return new FurnitureStore.Builder(new HashMap<String,Object>()); }
     if ("BuddhistTemple".equals(type)) { return new BuddhistTemple.Builder(new HashMap<String,Object>()); }
@@ -3761,8 +3673,8 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
     if ("RiverBodyOfWater".equals(type)) { return new RiverBodyOfWater.Builder(new HashMap<String,Object>()); }
     if ("Obstetric".equals(type)) { return new Obstetric.Builder(new HashMap<String,Object>()); }
     if ("SuspendAction".equals(type)) { return new SuspendAction.Builder(new HashMap<String,Object>()); }
-    if ("ServiceChannel".equals(type)) { return new ServiceChannel.Builder(new HashMap<String,Object>()); }
     if ("MedicalOrganization".equals(type)) { return new MedicalOrganization.Builder(new HashMap<String,Object>()); }
+    if ("ServiceChannel".equals(type)) { return new ServiceChannel.Builder(new HashMap<String,Object>()); }
     if ("SellAction".equals(type)) { return new SellAction.Builder(new HashMap<String,Object>()); }
     if ("UserPlays".equals(type)) { return new UserPlays.Builder(new HashMap<String,Object>()); }
     if ("WholesaleStore".equals(type)) { return new WholesaleStore.Builder(new HashMap<String,Object>()); }
@@ -3770,9 +3682,11 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
     if ("RecyclingCenter".equals(type)) { return new RecyclingCenter.Builder(new HashMap<String,Object>()); }
     if ("FastFoodRestaurant".equals(type)) { return new FastFoodRestaurant.Builder(new HashMap<String,Object>()); }
     if ("MaximumDoseSchedule".equals(type)) { return new MaximumDoseSchedule.Builder(new HashMap<String,Object>()); }
+    if ("SeekToAction".equals(type)) { return new SeekToAction.Builder(new HashMap<String,Object>()); }
     if ("MedicalCondition".equals(type)) { return new MedicalCondition.Builder(new HashMap<String,Object>()); }
     if ("SoftwareSourceCode".equals(type)) { return new SoftwareSourceCode.Builder(new HashMap<String,Object>()); }
     if ("Hospital".equals(type)) { return new Hospital.Builder(new HashMap<String,Object>()); }
+    if ("ResearchOrganization".equals(type)) { return new ResearchOrganization.Builder(new HashMap<String,Object>()); }
     if ("IndividualProduct".equals(type)) { return new IndividualProduct.Builder(new HashMap<String,Object>()); }
     if ("RadioSeason".equals(type)) { return new RadioSeason.Builder(new HashMap<String,Object>()); }
     if ("TelevisionStation".equals(type)) { return new TelevisionStation.Builder(new HashMap<String,Object>()); }
@@ -3802,6 +3716,7 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
     if ("GovernmentOffice".equals(type)) { return new GovernmentOffice.Builder(new HashMap<String,Object>()); }
     if ("LodgingBusiness".equals(type)) { return new LodgingBusiness.Builder(new HashMap<String,Object>()); }
     if ("GeneralContractor".equals(type)) { return new GeneralContractor.Builder(new HashMap<String,Object>()); }
+    if ("DrugCost".equals(type)) { return new DrugCost.Builder(new HashMap<String,Object>()); }
     if ("SuperficialAnatomy".equals(type)) { return new SuperficialAnatomy.Builder(new HashMap<String,Object>()); }
     if ("ArtGallery".equals(type)) { return new ArtGallery.Builder(new HashMap<String,Object>()); }
     if ("DownloadAction".equals(type)) { return new DownloadAction.Builder(new HashMap<String,Object>()); }
@@ -3860,6 +3775,7 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
     if ("MonetaryAmountDistribution".equals(type)) { return new MonetaryAmountDistribution.Builder(new HashMap<String,Object>()); }
     if ("Corporation".equals(type)) { return new Corporation.Builder(new HashMap<String,Object>()); }
     if ("SportsActivityLocation".equals(type)) { return new SportsActivityLocation.Builder(new HashMap<String,Object>()); }
+    if ("BoatReservation".equals(type)) { return new BoatReservation.Builder(new HashMap<String,Object>()); }
     if ("CssSelectorType".equals(type)) { return new CssSelectorType.Builder(new HashMap<String,Object>()); }
     if ("Airport".equals(type)) { return new Airport.Builder(new HashMap<String,Object>()); }
     if ("MedicalTherapy".equals(type)) { return new MedicalTherapy.Builder(new HashMap<String,Object>()); }
@@ -3892,17 +3808,17 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
     if ("Ticket".equals(type)) { return new Ticket.Builder(new HashMap<String,Object>()); }
     if ("DepartAction".equals(type)) { return new DepartAction.Builder(new HashMap<String,Object>()); }
     if ("HardwareStore".equals(type)) { return new HardwareStore.Builder(new HashMap<String,Object>()); }
-    if ("CarUsageType".equals(type)) { return new CarUsageType.Builder(new HashMap<String,Object>()); }
     if ("SocialMediaPosting".equals(type)) { return new SocialMediaPosting.Builder(new HashMap<String,Object>()); }
     if ("Thesis".equals(type)) { return new Thesis.Builder(new HashMap<String,Object>()); }
     if ("PresentationDigitalDocument".equals(type)) { return new PresentationDigitalDocument.Builder(new HashMap<String,Object>()); }
     if ("SendAction".equals(type)) { return new SendAction.Builder(new HashMap<String,Object>()); }
-    if ("DiscussionForumPosting".equals(type)) { return new DiscussionForumPosting.Builder(new HashMap<String,Object>()); }
     if ("OnDemandEvent".equals(type)) { return new OnDemandEvent.Builder(new HashMap<String,Object>()); }
+    if ("DiscussionForumPosting".equals(type)) { return new DiscussionForumPosting.Builder(new HashMap<String,Object>()); }
     if ("BrokerageAccount".equals(type)) { return new BrokerageAccount.Builder(new HashMap<String,Object>()); }
     if ("MedicalDevice".equals(type)) { return new MedicalDevice.Builder(new HashMap<String,Object>()); }
     if ("BloodTest".equals(type)) { return new BloodTest.Builder(new HashMap<String,Object>()); }
     if ("Pharmacy".equals(type)) { return new Pharmacy.Builder(new HashMap<String,Object>()); }
+    if ("Protein".equals(type)) { return new Protein.Builder(new HashMap<String,Object>()); }
     if ("MovieSeries".equals(type)) { return new MovieSeries.Builder(new HashMap<String,Object>()); }
     if ("DigitalDocument".equals(type)) { return new DigitalDocument.Builder(new HashMap<String,Object>()); }
     if ("CategoryCode".equals(type)) { return new CategoryCode.Builder(new HashMap<String,Object>()); }
@@ -3975,8 +3891,8 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
     if ("Vehicle".equals(type)) { return new Vehicle.Builder(new HashMap<String,Object>()); }
     if ("RepaymentSpecification".equals(type)) { return new RepaymentSpecification.Builder(new HashMap<String,Object>()); }
     if ("EmergencyService".equals(type)) { return new EmergencyService.Builder(new HashMap<String,Object>()); }
-    if ("BefriendAction".equals(type)) { return new BefriendAction.Builder(new HashMap<String,Object>()); }
     if ("NewsMediaOrganization".equals(type)) { return new NewsMediaOrganization.Builder(new HashMap<String,Object>()); }
+    if ("BefriendAction".equals(type)) { return new BefriendAction.Builder(new HashMap<String,Object>()); }
     if ("CDCPMDRecord".equals(type)) { return new CDCPMDRecord.Builder(new HashMap<String,Object>()); }
     if ("AddAction".equals(type)) { return new AddAction.Builder(new HashMap<String,Object>()); }
     if ("HomeAndConstructionBusiness".equals(type)) { return new HomeAndConstructionBusiness.Builder(new HashMap<String,Object>()); }
@@ -4005,6 +3921,7 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
     if ("BodyOfWater".equals(type)) { return new BodyOfWater.Builder(new HashMap<String,Object>()); }
     if ("ProductModel".equals(type)) { return new ProductModel.Builder(new HashMap<String,Object>()); }
     if ("MusicEvent".equals(type)) { return new MusicEvent.Builder(new HashMap<String,Object>()); }
+    if ("Gene".equals(type)) { return new Gene.Builder(new HashMap<String,Object>()); }
     if ("BroadcastChannel".equals(type)) { return new BroadcastChannel.Builder(new HashMap<String,Object>()); }
     if ("DataFeed".equals(type)) { return new DataFeed.Builder(new HashMap<String,Object>()); }
     if ("LoseAction".equals(type)) { return new LoseAction.Builder(new HashMap<String,Object>()); }
@@ -4016,15 +3933,15 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
     if ("Optician".equals(type)) { return new Optician.Builder(new HashMap<String,Object>()); }
     if ("ResumeAction".equals(type)) { return new ResumeAction.Builder(new HashMap<String,Object>()); }
     if ("DepartmentStore".equals(type)) { return new DepartmentStore.Builder(new HashMap<String,Object>()); }
-    if ("PhysicalTherapy".equals(type)) { return new PhysicalTherapy.Builder(new HashMap<String,Object>()); }
     if ("OceanBodyOfWater".equals(type)) { return new OceanBodyOfWater.Builder(new HashMap<String,Object>()); }
+    if ("PhysicalTherapy".equals(type)) { return new PhysicalTherapy.Builder(new HashMap<String,Object>()); }
     if ("Play".equals(type)) { return new Play.Builder(new HashMap<String,Object>()); }
     if ("CategoryCodeSet".equals(type)) { return new CategoryCodeSet.Builder(new HashMap<String,Object>()); }
     if ("BowlingAlley".equals(type)) { return new BowlingAlley.Builder(new HashMap<String,Object>()); }
     if ("BrainStructure".equals(type)) { return new BrainStructure.Builder(new HashMap<String,Object>()); }
     if ("Aquarium".equals(type)) { return new Aquarium.Builder(new HashMap<String,Object>()); }
-    if ("PetStore".equals(type)) { return new PetStore.Builder(new HashMap<String,Object>()); }
     if ("DeleteAction".equals(type)) { return new DeleteAction.Builder(new HashMap<String,Object>()); }
+    if ("PetStore".equals(type)) { return new PetStore.Builder(new HashMap<String,Object>()); }
     if ("FloorPlan".equals(type)) { return new FloorPlan.Builder(new HashMap<String,Object>()); }
     if ("Bone".equals(type)) { return new Bone.Builder(new HashMap<String,Object>()); }
     if ("Energy".equals(type)) { return new Energy.Builder(new HashMap<String,Object>()); }
@@ -4037,6 +3954,7 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
     if ("WebApplication".equals(type)) { return new WebApplication.Builder(new HashMap<String,Object>()); }
     if ("LiteraryEvent".equals(type)) { return new LiteraryEvent.Builder(new HashMap<String,Object>()); }
     if ("GroceryStore".equals(type)) { return new GroceryStore.Builder(new HashMap<String,Object>()); }
+    if ("BioChemEntity".equals(type)) { return new BioChemEntity.Builder(new HashMap<String,Object>()); }
     if ("NailSalon".equals(type)) { return new NailSalon.Builder(new HashMap<String,Object>()); }
     if ("MedicalAudience".equals(type)) { return new MedicalAudience.Builder(new HashMap<String,Object>()); }
     if ("FilmAction".equals(type)) { return new FilmAction.Builder(new HashMap<String,Object>()); }
@@ -4062,8 +3980,8 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
     if ("OfferCatalog".equals(type)) { return new OfferCatalog.Builder(new HashMap<String,Object>()); }
     if ("MusicVenue".equals(type)) { return new MusicVenue.Builder(new HashMap<String,Object>()); }
     if ("MerchantReturnPolicy".equals(type)) { return new MerchantReturnPolicy.Builder(new HashMap<String,Object>()); }
-    if ("AgreeAction".equals(type)) { return new AgreeAction.Builder(new HashMap<String,Object>()); }
     if ("CurrencyConversionService".equals(type)) { return new CurrencyConversionService.Builder(new HashMap<String,Object>()); }
+    if ("AgreeAction".equals(type)) { return new AgreeAction.Builder(new HashMap<String,Object>()); }
     if ("ChildCare".equals(type)) { return new ChildCare.Builder(new HashMap<String,Object>()); }
     if ("CriticReview".equals(type)) { return new CriticReview.Builder(new HashMap<String,Object>()); }
     if ("FMRadioChannel".equals(type)) { return new FMRadioChannel.Builder(new HashMap<String,Object>()); }
@@ -4091,19 +4009,23 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
     if ("Schedule".equals(type)) { return new Schedule.Builder(new HashMap<String,Object>()); }
     if ("BusOrCoach".equals(type)) { return new BusOrCoach.Builder(new HashMap<String,Object>()); }
     if ("SportingGoodsStore".equals(type)) { return new SportingGoodsStore.Builder(new HashMap<String,Object>()); }
+    if ("HyperToc".equals(type)) { return new HyperToc.Builder(new HashMap<String,Object>()); }
     if ("TravelAction".equals(type)) { return new TravelAction.Builder(new HashMap<String,Object>()); }
     if ("HotelRoom".equals(type)) { return new HotelRoom.Builder(new HashMap<String,Object>()); }
     if ("MedicalRiskEstimator".equals(type)) { return new MedicalRiskEstimator.Builder(new HashMap<String,Object>()); }
-    if ("WPHeader".equals(type)) { return new WPHeader.Builder(new HashMap<String,Object>()); }
     if ("BusinessAudience".equals(type)) { return new BusinessAudience.Builder(new HashMap<String,Object>()); }
+    if ("WPHeader".equals(type)) { return new WPHeader.Builder(new HashMap<String,Object>()); }
     if ("Hackathon".equals(type)) { return new Hackathon.Builder(new HashMap<String,Object>()); }
     if ("JobPosting".equals(type)) { return new JobPosting.Builder(new HashMap<String,Object>()); }
+    if ("MathSolver".equals(type)) { return new MathSolver.Builder(new HashMap<String,Object>()); }
     if ("Motel".equals(type)) { return new Motel.Builder(new HashMap<String,Object>()); }
     if ("SportsOrganization".equals(type)) { return new SportsOrganization.Builder(new HashMap<String,Object>()); }
     if ("DeactivateAction".equals(type)) { return new DeactivateAction.Builder(new HashMap<String,Object>()); }
     if ("UserLikes".equals(type)) { return new UserLikes.Builder(new HashMap<String,Object>()); }
+    if ("ChemicalSubstance".equals(type)) { return new ChemicalSubstance.Builder(new HashMap<String,Object>()); }
     if ("ParentAudience".equals(type)) { return new ParentAudience.Builder(new HashMap<String,Object>()); }
     if ("Recommendation".equals(type)) { return new Recommendation.Builder(new HashMap<String,Object>()); }
+    if ("LearningResource".equals(type)) { return new LearningResource.Builder(new HashMap<String,Object>()); }
     if ("RadiationTherapy".equals(type)) { return new RadiationTherapy.Builder(new HashMap<String,Object>()); }
     if ("PreOrderAction".equals(type)) { return new PreOrderAction.Builder(new HashMap<String,Object>()); }
     if ("HighSchool".equals(type)) { return new HighSchool.Builder(new HashMap<String,Object>()); }
@@ -4122,8 +4044,8 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
     if ("Course".equals(type)) { return new Course.Builder(new HashMap<String,Object>()); }
     if ("Occupation".equals(type)) { return new Occupation.Builder(new HashMap<String,Object>()); }
     if ("Claim".equals(type)) { return new Claim.Builder(new HashMap<String,Object>()); }
-    if ("FundingAgency".equals(type)) { return new FundingAgency.Builder(new HashMap<String,Object>()); }
     if ("InformAction".equals(type)) { return new InformAction.Builder(new HashMap<String,Object>()); }
+    if ("FundingAgency".equals(type)) { return new FundingAgency.Builder(new HashMap<String,Object>()); }
     if ("EducationEvent".equals(type)) { return new EducationEvent.Builder(new HashMap<String,Object>()); }
     if ("FireStation".equals(type)) { return new FireStation.Builder(new HashMap<String,Object>()); }
     if ("EngineSpecification".equals(type)) { return new EngineSpecification.Builder(new HashMap<String,Object>()); }
@@ -4131,8 +4053,8 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
     if ("Flight".equals(type)) { return new Flight.Builder(new HashMap<String,Object>()); }
     if ("Intangible".equals(type)) { return new Intangible.Builder(new HashMap<String,Object>()); }
     if ("WorkersUnion".equals(type)) { return new WorkersUnion.Builder(new HashMap<String,Object>()); }
-    if ("ReplyAction".equals(type)) { return new ReplyAction.Builder(new HashMap<String,Object>()); }
     if ("SubscribeAction".equals(type)) { return new SubscribeAction.Builder(new HashMap<String,Object>()); }
+    if ("ReplyAction".equals(type)) { return new ReplyAction.Builder(new HashMap<String,Object>()); }
     if ("Physician".equals(type)) { return new Physician.Builder(new HashMap<String,Object>()); }
     if ("APIReference".equals(type)) { return new APIReference.Builder(new HashMap<String,Object>()); }
     if ("Property".equals(type)) { return new Property.Builder(new HashMap<String,Object>()); }
@@ -4145,12 +4067,14 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
     if ("Drawing".equals(type)) { return new Drawing.Builder(new HashMap<String,Object>()); }
     if ("MedicalGuideline".equals(type)) { return new MedicalGuideline.Builder(new HashMap<String,Object>()); }
     if ("OutletStore".equals(type)) { return new OutletStore.Builder(new HashMap<String,Object>()); }
-    if ("OccupationalTherapy".equals(type)) { return new OccupationalTherapy.Builder(new HashMap<String,Object>()); }
     if ("WatchAction".equals(type)) { return new WatchAction.Builder(new HashMap<String,Object>()); }
+    if ("OccupationalTherapy".equals(type)) { return new OccupationalTherapy.Builder(new HashMap<String,Object>()); }
     if ("IgnoreAction".equals(type)) { return new IgnoreAction.Builder(new HashMap<String,Object>()); }
     if ("MedicalCause".equals(type)) { return new MedicalCause.Builder(new HashMap<String,Object>()); }
     if ("MedicalObservationalStudy".equals(type)) { return new MedicalObservationalStudy.Builder(new HashMap<String,Object>()); }
     if ("Muscle".equals(type)) { return new Muscle.Builder(new HashMap<String,Object>()); }
+    if ("ShippingRateSettings".equals(type)) { return new ShippingRateSettings.Builder(new HashMap<String,Object>()); }
+    if ("PostalCodeRangeSpecification".equals(type)) { return new PostalCodeRangeSpecification.Builder(new HashMap<String,Object>()); }
     if ("UnitPriceSpecification".equals(type)) { return new UnitPriceSpecification.Builder(new HashMap<String,Object>()); }
     if ("MedicalProcedure".equals(type)) { return new MedicalProcedure.Builder(new HashMap<String,Object>()); }
     if ("AnalysisNewsArticle".equals(type)) { return new AnalysisNewsArticle.Builder(new HashMap<String,Object>()); }
@@ -4162,6 +4086,7 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
     if ("WPAdBlock".equals(type)) { return new WPAdBlock.Builder(new HashMap<String,Object>()); }
     if ("ScholarlyArticle".equals(type)) { return new ScholarlyArticle.Builder(new HashMap<String,Object>()); }
     if ("BikeStore".equals(type)) { return new BikeStore.Builder(new HashMap<String,Object>()); }
+    if ("ProductGroup".equals(type)) { return new ProductGroup.Builder(new HashMap<String,Object>()); }
     if ("NightClub".equals(type)) { return new NightClub.Builder(new HashMap<String,Object>()); }
     if ("Pond".equals(type)) { return new Pond.Builder(new HashMap<String,Object>()); }
     if ("TVSeries".equals(type)) { return new TVSeries.Builder(new HashMap<String,Object>()); }
@@ -4175,6 +4100,7 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
     if ("VoteAction".equals(type)) { return new VoteAction.Builder(new HashMap<String,Object>()); }
     if ("RadioClip".equals(type)) { return new RadioClip.Builder(new HashMap<String,Object>()); }
     if ("VideoObject".equals(type)) { return new VideoObject.Builder(new HashMap<String,Object>()); }
+    if ("DrugClass".equals(type)) { return new DrugClass.Builder(new HashMap<String,Object>()); }
     if ("Permit".equals(type)) { return new Permit.Builder(new HashMap<String,Object>()); }
     if ("Comment".equals(type)) { return new Comment.Builder(new HashMap<String,Object>()); }
     if ("GeoCircle".equals(type)) { return new GeoCircle.Builder(new HashMap<String,Object>()); }
@@ -4199,8 +4125,8 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
     if ("RentalCarReservation".equals(type)) { return new RentalCarReservation.Builder(new HashMap<String,Object>()); }
     if ("MotorcycleRepair".equals(type)) { return new MotorcycleRepair.Builder(new HashMap<String,Object>()); }
     if ("ElementarySchool".equals(type)) { return new ElementarySchool.Builder(new HashMap<String,Object>()); }
-    if ("SearchResultsPage".equals(type)) { return new SearchResultsPage.Builder(new HashMap<String,Object>()); }
     if ("Winery".equals(type)) { return new Winery.Builder(new HashMap<String,Object>()); }
+    if ("SearchResultsPage".equals(type)) { return new SearchResultsPage.Builder(new HashMap<String,Object>()); }
     if ("AggregateOffer".equals(type)) { return new AggregateOffer.Builder(new HashMap<String,Object>()); }
     if ("ArchiveOrganization".equals(type)) { return new ArchiveOrganization.Builder(new HashMap<String,Object>()); }
     if ("Action".equals(type)) { return new Action.Builder(new HashMap<String,Object>()); }
@@ -4221,15 +4147,18 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
     if ("StatisticalPopulation".equals(type)) { return new StatisticalPopulation.Builder(new HashMap<String,Object>()); }
     if ("Service".equals(type)) { return new Service.Builder(new HashMap<String,Object>()); }
     if ("PerformanceRole".equals(type)) { return new PerformanceRole.Builder(new HashMap<String,Object>()); }
+    if ("DeliveryTimeSettings".equals(type)) { return new DeliveryTimeSettings.Builder(new HashMap<String,Object>()); }
     if ("Courthouse".equals(type)) { return new Courthouse.Builder(new HashMap<String,Object>()); }
     if ("CableOrSatelliteService".equals(type)) { return new CableOrSatelliteService.Builder(new HashMap<String,Object>()); }
+    if ("MolecularEntity".equals(type)) { return new MolecularEntity.Builder(new HashMap<String,Object>()); }
     if ("Brand".equals(type)) { return new Brand.Builder(new HashMap<String,Object>()); }
     if ("QuoteAction".equals(type)) { return new QuoteAction.Builder(new HashMap<String,Object>()); }
-    if ("MusicRelease".equals(type)) { return new MusicRelease.Builder(new HashMap<String,Object>()); }
     if ("MedicalGuidelineRecommendation".equals(type)) { return new MedicalGuidelineRecommendation.Builder(new HashMap<String,Object>()); }
+    if ("MusicRelease".equals(type)) { return new MusicRelease.Builder(new HashMap<String,Object>()); }
     if ("TennisComplex".equals(type)) { return new TennisComplex.Builder(new HashMap<String,Object>()); }
     if ("AdvertiserContentArticle".equals(type)) { return new AdvertiserContentArticle.Builder(new HashMap<String,Object>()); }
     if ("HealthTopicContent".equals(type)) { return new HealthTopicContent.Builder(new HashMap<String,Object>()); }
+    if ("SolveMathAction".equals(type)) { return new SolveMathAction.Builder(new HashMap<String,Object>()); }
     if ("CommentAction".equals(type)) { return new CommentAction.Builder(new HashMap<String,Object>()); }
     if ("WPSideBar".equals(type)) { return new WPSideBar.Builder(new HashMap<String,Object>()); }
     if ("ReportedDoseSchedule".equals(type)) { return new ReportedDoseSchedule.Builder(new HashMap<String,Object>()); }
@@ -4256,14 +4185,16 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
     if ("Person".equals(type)) { return new Person.Builder(new HashMap<String,Object>()); }
     if ("MotorcycleDealer".equals(type)) { return new MotorcycleDealer.Builder(new HashMap<String,Object>()); }
     if ("OpinionNewsArticle".equals(type)) { return new OpinionNewsArticle.Builder(new HashMap<String,Object>()); }
-    if ("ShortStory".equals(type)) { return new ShortStory.Builder(new HashMap<String,Object>()); }
     if ("SingleFamilyResidence".equals(type)) { return new SingleFamilyResidence.Builder(new HashMap<String,Object>()); }
+    if ("ShortStory".equals(type)) { return new ShortStory.Builder(new HashMap<String,Object>()); }
     if ("TrainTrip".equals(type)) { return new TrainTrip.Builder(new HashMap<String,Object>()); }
     if ("TouristAttraction".equals(type)) { return new TouristAttraction.Builder(new HashMap<String,Object>()); }
     if ("Audience".equals(type)) { return new Audience.Builder(new HashMap<String,Object>()); }
     if ("PodcastSeason".equals(type)) { return new PodcastSeason.Builder(new HashMap<String,Object>()); }
     if ("PaymentChargeSpecification".equals(type)) { return new PaymentChargeSpecification.Builder(new HashMap<String,Object>()); }
+    if ("ImageObjectSnapshot".equals(type)) { return new ImageObjectSnapshot.Builder(new HashMap<String,Object>()); }
     if ("MovingCompany".equals(type)) { return new MovingCompany.Builder(new HashMap<String,Object>()); }
+    if ("AudioObjectSnapshot".equals(type)) { return new AudioObjectSnapshot.Builder(new HashMap<String,Object>()); }
     if ("BusStation".equals(type)) { return new BusStation.Builder(new HashMap<String,Object>()); }
     if ("Bakery".equals(type)) { return new Bakery.Builder(new HashMap<String,Object>()); }
     if ("LiveBlogPosting".equals(type)) { return new LiveBlogPosting.Builder(new HashMap<String,Object>()); }
@@ -4286,8 +4217,8 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
     if ("Table".equals(type)) { return new Table.Builder(new HashMap<String,Object>()); }
     if ("Electrician".equals(type)) { return new Electrician.Builder(new HashMap<String,Object>()); }
     if ("MedicalCode".equals(type)) { return new MedicalCode.Builder(new HashMap<String,Object>()); }
-    if ("UserPlusOnes".equals(type)) { return new UserPlusOnes.Builder(new HashMap<String,Object>()); }
     if ("ComedyEvent".equals(type)) { return new ComedyEvent.Builder(new HashMap<String,Object>()); }
+    if ("UserPlusOnes".equals(type)) { return new UserPlusOnes.Builder(new HashMap<String,Object>()); }
     if ("Enumeration".equals(type)) { return new Enumeration.Builder(new HashMap<String,Object>()); }
     if ("EducationalOccupationalProgram".equals(type)) { return new EducationalOccupationalProgram.Builder(new HashMap<String,Object>()); }
     if ("RVPark".equals(type)) { return new RVPark.Builder(new HashMap<String,Object>()); }
@@ -4308,6 +4239,7 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
     if ("ReceiveAction".equals(type)) { return new ReceiveAction.Builder(new HashMap<String,Object>()); }
     if ("TouristTrip".equals(type)) { return new TouristTrip.Builder(new HashMap<String,Object>()); }
     if ("SurgicalProcedure".equals(type)) { return new SurgicalProcedure.Builder(new HashMap<String,Object>()); }
+    if ("HyperTocEntry".equals(type)) { return new HyperTocEntry.Builder(new HashMap<String,Object>()); }
     if ("LoanOrCredit".equals(type)) { return new LoanOrCredit.Builder(new HashMap<String,Object>()); }
     if ("DanceEvent".equals(type)) { return new DanceEvent.Builder(new HashMap<String,Object>()); }
     if ("DaySpa".equals(type)) { return new DaySpa.Builder(new HashMap<String,Object>()); }
@@ -4326,6 +4258,7 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
     if ("EventSeries".equals(type)) { return new EventSeries.Builder(new HashMap<String,Object>()); }
     if ("Clip".equals(type)) { return new Clip.Builder(new HashMap<String,Object>()); }
     if ("Preschool".equals(type)) { return new Preschool.Builder(new HashMap<String,Object>()); }
+    if ("MerchantReturnPolicySeasonalOverride".equals(type)) { return new MerchantReturnPolicySeasonalOverride.Builder(new HashMap<String,Object>()); }
     if ("Physiotherapy".equals(type)) { return new Physiotherapy.Builder(new HashMap<String,Object>()); }
     if ("AudioObject".equals(type)) { return new AudioObject.Builder(new HashMap<String,Object>()); }
     if ("EmployeeRole".equals(type)) { return new EmployeeRole.Builder(new HashMap<String,Object>()); }
@@ -4342,6 +4275,7 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
     if ("Notary".equals(type)) { return new Notary.Builder(new HashMap<String,Object>()); }
     if ("PostalAddress".equals(type)) { return new PostalAddress.Builder(new HashMap<String,Object>()); }
     if ("MusicVideoObject".equals(type)) { return new MusicVideoObject.Builder(new HashMap<String,Object>()); }
+    if ("ProductCollection".equals(type)) { return new ProductCollection.Builder(new HashMap<String,Object>()); }
     if ("ApprovedIndication".equals(type)) { return new ApprovedIndication.Builder(new HashMap<String,Object>()); }
     if ("DDxElement".equals(type)) { return new DDxElement.Builder(new HashMap<String,Object>()); }
     if ("Trip".equals(type)) { return new Trip.Builder(new HashMap<String,Object>()); }
@@ -4369,18 +4303,21 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
     if ("VideoGame".equals(type)) { return new VideoGame.Builder(new HashMap<String,Object>()); }
     if ("HowToItem".equals(type)) { return new HowToItem.Builder(new HashMap<String,Object>()); }
     if ("LendAction".equals(type)) { return new LendAction.Builder(new HashMap<String,Object>()); }
+    if ("ShippingDeliveryTime".equals(type)) { return new ShippingDeliveryTime.Builder(new HashMap<String,Object>()); }
     if ("SchoolDistrict".equals(type)) { return new SchoolDistrict.Builder(new HashMap<String,Object>()); }
     if ("UserInteraction".equals(type)) { return new UserInteraction.Builder(new HashMap<String,Object>()); }
     if ("BookSeries".equals(type)) { return new BookSeries.Builder(new HashMap<String,Object>()); }
     if ("GeoShape".equals(type)) { return new GeoShape.Builder(new HashMap<String,Object>()); }
-    if ("ItemPage".equals(type)) { return new ItemPage.Builder(new HashMap<String,Object>()); }
     if ("TravelAgency".equals(type)) { return new TravelAgency.Builder(new HashMap<String,Object>()); }
+    if ("ItemPage".equals(type)) { return new ItemPage.Builder(new HashMap<String,Object>()); }
     if ("EducationalOrganization".equals(type)) { return new EducationalOrganization.Builder(new HashMap<String,Object>()); }
     if ("LibrarySystem".equals(type)) { return new LibrarySystem.Builder(new HashMap<String,Object>()); }
     if ("MediaSubscription".equals(type)) { return new MediaSubscription.Builder(new HashMap<String,Object>()); }
+    if ("Quiz".equals(type)) { return new Quiz.Builder(new HashMap<String,Object>()); }
     if ("WantAction".equals(type)) { return new WantAction.Builder(new HashMap<String,Object>()); }
     if ("TradeAction".equals(type)) { return new TradeAction.Builder(new HashMap<String,Object>()); }
     if ("GovernmentService".equals(type)) { return new GovernmentService.Builder(new HashMap<String,Object>()); }
+    if ("MediaReviewItem".equals(type)) { return new MediaReviewItem.Builder(new HashMap<String,Object>()); }
     if ("Festival".equals(type)) { return new Festival.Builder(new HashMap<String,Object>()); }
     if ("JoinAction".equals(type)) { return new JoinAction.Builder(new HashMap<String,Object>()); }
     if ("PodcastSeries".equals(type)) { return new PodcastSeries.Builder(new HashMap<String,Object>()); }
@@ -4395,8 +4332,8 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
     if ("AskAction".equals(type)) { return new AskAction.Builder(new HashMap<String,Object>()); }
     if ("BusinessEvent".equals(type)) { return new BusinessEvent.Builder(new HashMap<String,Object>()); }
     if ("DefenceEstablishment".equals(type)) { return new DefenceEstablishment.Builder(new HashMap<String,Object>()); }
-    if ("SaleEvent".equals(type)) { return new SaleEvent.Builder(new HashMap<String,Object>()); }
     if ("Psychiatric".equals(type)) { return new Psychiatric.Builder(new HashMap<String,Object>()); }
+    if ("SaleEvent".equals(type)) { return new SaleEvent.Builder(new HashMap<String,Object>()); }
     if ("TaxiStand".equals(type)) { return new TaxiStand.Builder(new HashMap<String,Object>()); }
     if ("Report".equals(type)) { return new Report.Builder(new HashMap<String,Object>()); }
     if ("DietarySupplement".equals(type)) { return new DietarySupplement.Builder(new HashMap<String,Object>()); }
@@ -4413,8 +4350,8 @@ Related actions:&lt;br/&gt;&lt;br/&gt;
     if ("DrinkAction".equals(type)) { return new DrinkAction.Builder(new HashMap<String,Object>()); }
     if ("PathologyTest".equals(type)) { return new PathologyTest.Builder(new HashMap<String,Object>()); }
     if ("RadioChannel".equals(type)) { return new RadioChannel.Builder(new HashMap<String,Object>()); }
-    if ("PlanAction".equals(type)) { return new PlanAction.Builder(new HashMap<String,Object>()); }
     if ("AcceptAction".equals(type)) { return new AcceptAction.Builder(new HashMap<String,Object>()); }
+    if ("PlanAction".equals(type)) { return new PlanAction.Builder(new HashMap<String,Object>()); }
     return null;
   }
 

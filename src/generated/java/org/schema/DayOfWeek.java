@@ -21,9 +21,10 @@ package org.schema;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * The day of the week, e.g. used to specify to which day the opening hours of an OpeningHoursSpecification refer.&lt;br/&gt;&lt;br/&gt;
+ * The day of the week, e.g. used to specify to which day the opening hours of an OpeningHoursSpecification refer.
  * 
- * Originally, URLs from &lt;a href=&quot;http://purl.org/goodrelations/v1&quot;&gt;GoodRelations&lt;/a&gt; were used (for &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Monday&quot;&gt;Monday&lt;/a&gt;, &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Tuesday&quot;&gt;Tuesday&lt;/a&gt;, &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Wednesday&quot;&gt;Wednesday&lt;/a&gt;, &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Thursday&quot;&gt;Thursday&lt;/a&gt;, &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Friday&quot;&gt;Friday&lt;/a&gt;, &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Saturday&quot;&gt;Saturday&lt;/a&gt;, &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/Sunday&quot;&gt;Sunday&lt;/a&gt; plus a special entry for &lt;a class=&quot;localLink&quot; href=&quot;http://schema.org/PublicHolidays&quot;&gt;PublicHolidays&lt;/a&gt;); these have now been integrated directly into schema.org.
+ * Originally, URLs from [GoodRelations](http://purl.org/goodrelations/v1) were used (for [[Monday]], [[Tuesday]], [[Wednesday]], [[Thursday]], [[Friday]], [[Saturday]], [[Sunday]] plus a special entry for [[PublicHolidays]]); these have now been integrated directly into schema.org.
+ *       
  */
 public enum DayOfWeek {
   ;
