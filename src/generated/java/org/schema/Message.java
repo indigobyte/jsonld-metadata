@@ -36,11 +36,11 @@ public class Message extends CreativeWork {
   /**
    * The date/time at which the message was sent.
    */
-  @JsonIgnore public Collection<java.util.Date> getDateSents() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getDateSents() {
     final Object current = myData.get("dateSent");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -53,11 +53,11 @@ public class Message extends CreativeWork {
   /**
    * The date/time at which the message has been read by the recipient if a single recipient exists.
    */
-  @JsonIgnore public Collection<java.util.Date> getDateReads() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getDateReads() {
     final Object current = myData.get("dateRead");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -70,11 +70,11 @@ public class Message extends CreativeWork {
   /**
    * A sub property of recipient. The recipient copied on a message.
    */
-  @JsonIgnore public Collection<ContactPoint> getCcRecipientContactPoints() {
+  @JsonIgnore public java.util.Collection<ContactPoint> getCcRecipientContactPoints() {
     final Object current = myData.get("ccRecipient");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<ContactPoint>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<ContactPoint>) current;
     }
     return Arrays.asList((ContactPoint) current);
   }
@@ -87,11 +87,11 @@ public class Message extends CreativeWork {
   /**
    * A sub property of recipient. The recipient copied on a message.
    */
-  @JsonIgnore public Collection<Organization> getCcRecipientOrganizations() {
+  @JsonIgnore public java.util.Collection<Organization> getCcRecipientOrganizations() {
     final Object current = myData.get("ccRecipient");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
   }
@@ -104,11 +104,11 @@ public class Message extends CreativeWork {
   /**
    * A sub property of recipient. The recipient copied on a message.
    */
-  @JsonIgnore public Collection<Person> getCcRecipientPersons() {
+  @JsonIgnore public java.util.Collection<Person> getCcRecipientPersons() {
     final Object current = myData.get("ccRecipient");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -121,11 +121,11 @@ public class Message extends CreativeWork {
   /**
    * A sub property of recipient. The recipient who was directly sent the message.
    */
-  @JsonIgnore public Collection<Recipient> getToRecipients() {
+  @JsonIgnore public java.util.Collection<Recipient> getToRecipients() {
     final Object current = myData.get("toRecipient");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Recipient>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Recipient>) current;
     }
     return Arrays.asList((Recipient) current);
   }
@@ -138,11 +138,11 @@ public class Message extends CreativeWork {
   /**
    * A sub property of participant. The participant who is at the sending end of the action.
    */
-  @JsonIgnore public Collection<Audience> getSenderAudiences() {
+  @JsonIgnore public java.util.Collection<Audience> getSenderAudiences() {
     final Object current = myData.get("sender");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Audience>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Audience>) current;
     }
     return Arrays.asList((Audience) current);
   }
@@ -155,11 +155,11 @@ public class Message extends CreativeWork {
   /**
    * A sub property of participant. The participant who is at the sending end of the action.
    */
-  @JsonIgnore public Collection<Organization> getSenderOrganizations() {
+  @JsonIgnore public java.util.Collection<Organization> getSenderOrganizations() {
     final Object current = myData.get("sender");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
   }
@@ -172,11 +172,11 @@ public class Message extends CreativeWork {
   /**
    * A sub property of participant. The participant who is at the sending end of the action.
    */
-  @JsonIgnore public Collection<Person> getSenderPersons() {
+  @JsonIgnore public java.util.Collection<Person> getSenderPersons() {
     final Object current = myData.get("sender");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -189,11 +189,11 @@ public class Message extends CreativeWork {
   /**
    * The date/time the message was received if a single recipient exists.
    */
-  @JsonIgnore public Collection<java.util.Date> getDateReceiveds() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getDateReceiveds() {
     final Object current = myData.get("dateReceived");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -206,11 +206,11 @@ public class Message extends CreativeWork {
   /**
    * A CreativeWork attached to the message.
    */
-  @JsonIgnore public Collection<CreativeWork> getMessageAttachments() {
+  @JsonIgnore public java.util.Collection<CreativeWork> getMessageAttachments() {
     final Object current = myData.get("messageAttachment");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<CreativeWork>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<CreativeWork>) current;
     }
     return Arrays.asList((CreativeWork) current);
   }
@@ -223,11 +223,11 @@ public class Message extends CreativeWork {
   /**
    * A sub property of recipient. The recipient blind copied on a message.
    */
-  @JsonIgnore public Collection<ContactPoint> getBccRecipientContactPoints() {
+  @JsonIgnore public java.util.Collection<ContactPoint> getBccRecipientContactPoints() {
     final Object current = myData.get("bccRecipient");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<ContactPoint>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<ContactPoint>) current;
     }
     return Arrays.asList((ContactPoint) current);
   }
@@ -240,11 +240,11 @@ public class Message extends CreativeWork {
   /**
    * A sub property of recipient. The recipient blind copied on a message.
    */
-  @JsonIgnore public Collection<Organization> getBccRecipientOrganizations() {
+  @JsonIgnore public java.util.Collection<Organization> getBccRecipientOrganizations() {
     final Object current = myData.get("bccRecipient");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
   }
@@ -257,11 +257,11 @@ public class Message extends CreativeWork {
   /**
    * A sub property of recipient. The recipient blind copied on a message.
    */
-  @JsonIgnore public Collection<Person> getBccRecipientPersons() {
+  @JsonIgnore public java.util.Collection<Person> getBccRecipientPersons() {
     final Object current = myData.get("bccRecipient");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -1862,8 +1862,8 @@ public class Message extends CreativeWork {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

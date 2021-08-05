@@ -36,11 +36,11 @@ public class SuperficialAnatomy extends MedicalEntity {
   /**
    * Anatomical systems or structures that relate to the superficial anatomy.
    */
-  @JsonIgnore public Collection<AnatomicalStructure> getRelatedAnatomyAnatomicalStructures() {
+  @JsonIgnore public java.util.Collection<AnatomicalStructure> getRelatedAnatomyAnatomicalStructures() {
     final Object current = myData.get("relatedAnatomy");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<AnatomicalStructure>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<AnatomicalStructure>) current;
     }
     return Arrays.asList((AnatomicalStructure) current);
   }
@@ -53,11 +53,11 @@ public class SuperficialAnatomy extends MedicalEntity {
   /**
    * Anatomical systems or structures that relate to the superficial anatomy.
    */
-  @JsonIgnore public Collection<AnatomicalSystem> getRelatedAnatomyAnatomicalSystems() {
+  @JsonIgnore public java.util.Collection<AnatomicalSystem> getRelatedAnatomyAnatomicalSystems() {
     final Object current = myData.get("relatedAnatomy");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<AnatomicalSystem>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<AnatomicalSystem>) current;
     }
     return Arrays.asList((AnatomicalSystem) current);
   }
@@ -70,11 +70,11 @@ public class SuperficialAnatomy extends MedicalEntity {
   /**
    * The significance associated with the superficial anatomy; as an example, how characteristics of the superficial anatomy can suggest underlying medical conditions or courses of treatment.
    */
-  @JsonIgnore public Collection<String> getSignificances() {
+  @JsonIgnore public java.util.Collection<String> getSignificances() {
     final Object current = myData.get("significance");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -87,11 +87,11 @@ public class SuperficialAnatomy extends MedicalEntity {
   /**
    * A medical condition associated with this anatomy.
    */
-  @JsonIgnore public Collection<MedicalCondition> getRelatedConditions() {
+  @JsonIgnore public java.util.Collection<MedicalCondition> getRelatedConditions() {
     final Object current = myData.get("relatedCondition");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MedicalCondition>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MedicalCondition>) current;
     }
     return Arrays.asList((MedicalCondition) current);
   }
@@ -104,11 +104,11 @@ public class SuperficialAnatomy extends MedicalEntity {
   /**
    * If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.
    */
-  @JsonIgnore public Collection<String> getAssociatedPathophysiologys() {
+  @JsonIgnore public java.util.Collection<String> getAssociatedPathophysiologys() {
     final Object current = myData.get("associatedPathophysiology");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -121,11 +121,11 @@ public class SuperficialAnatomy extends MedicalEntity {
   /**
    * A medical therapy related to this anatomy.
    */
-  @JsonIgnore public Collection<MedicalTherapy> getRelatedTherapys() {
+  @JsonIgnore public java.util.Collection<MedicalTherapy> getRelatedTherapys() {
     final Object current = myData.get("relatedTherapy");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MedicalTherapy>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MedicalTherapy>) current;
     }
     return Arrays.asList((MedicalTherapy) current);
   }
@@ -263,24 +263,10 @@ public class SuperficialAnatomy extends MedicalEntity {
       return this;
     }
     /**
-     * If applicable, a medical specialty in which this entity is relevant.
-     */
-    @NotNull public Builder relevantSpecialty(@NotNull MedicalSpecialty.Builder medicalSpecialty) {
-      putValue("relevantSpecialty", medicalSpecialty.build());
-      return this;
-    }
-    /**
      * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      */
     @NotNull public Builder medicineSystem(@NotNull MedicineSystem medicineSystem) {
       putValue("medicineSystem", medicineSystem);
-      return this;
-    }
-    /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
-     */
-    @NotNull public Builder medicineSystem(@NotNull MedicineSystem.Builder medicineSystem) {
-      putValue("medicineSystem", medicineSystem.build());
       return this;
     }
     /**

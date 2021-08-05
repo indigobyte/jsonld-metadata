@@ -36,11 +36,11 @@ public class DoseSchedule extends MedicalIntangible {
   /**
    * The value of the dose, e.g. 500.
    */
-  @JsonIgnore public Collection<Integer> getDoseValueIntegers() {
+  @JsonIgnore public java.util.Collection<Integer> getDoseValueIntegers() {
     final Object current = myData.get("doseValue");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -53,11 +53,11 @@ public class DoseSchedule extends MedicalIntangible {
   /**
    * The value of the dose, e.g. 500.
    */
-  @JsonIgnore public Collection<Long> getDoseValueLongs() {
+  @JsonIgnore public java.util.Collection<Long> getDoseValueLongs() {
     final Object current = myData.get("doseValue");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Long>) current;
     }
     return Arrays.asList((Long) current);
   }
@@ -70,11 +70,11 @@ public class DoseSchedule extends MedicalIntangible {
   /**
    * The value of the dose, e.g. 500.
    */
-  @JsonIgnore public Collection<Float> getDoseValueFloats() {
+  @JsonIgnore public java.util.Collection<Float> getDoseValueFloats() {
     final Object current = myData.get("doseValue");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Float>) current;
     }
     return Arrays.asList((Float) current);
   }
@@ -87,11 +87,11 @@ public class DoseSchedule extends MedicalIntangible {
   /**
    * The value of the dose, e.g. 500.
    */
-  @JsonIgnore public Collection<Double> getDoseValueDoubles() {
+  @JsonIgnore public java.util.Collection<Double> getDoseValueDoubles() {
     final Object current = myData.get("doseValue");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Double>) current;
     }
     return Arrays.asList((Double) current);
   }
@@ -104,11 +104,11 @@ public class DoseSchedule extends MedicalIntangible {
   /**
    * The value of the dose, e.g. 500.
    */
-  @JsonIgnore public Collection<String> getDoseValueStrings() {
+  @JsonIgnore public java.util.Collection<String> getDoseValueStrings() {
     final Object current = myData.get("doseValue");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -121,11 +121,11 @@ public class DoseSchedule extends MedicalIntangible {
   /**
    * How often the dose is taken, e.g. 'daily'.
    */
-  @JsonIgnore public Collection<Frequency> getFrequencys() {
+  @JsonIgnore public java.util.Collection<Frequency> getFrequencys() {
     final Object current = myData.get("frequency");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Frequency>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Frequency>) current;
     }
     return Arrays.asList((Frequency) current);
   }
@@ -138,11 +138,11 @@ public class DoseSchedule extends MedicalIntangible {
   /**
    * The unit of the dose, e.g. 'mg'.
    */
-  @JsonIgnore public Collection<String> getDoseUnits() {
+  @JsonIgnore public java.util.Collection<String> getDoseUnits() {
     final Object current = myData.get("doseUnit");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -155,11 +155,11 @@ public class DoseSchedule extends MedicalIntangible {
   /**
    * Characteristics of the population for which this is intended, or which typically uses it, e.g. 'adults'.
    */
-  @JsonIgnore public Collection<String> getTargetPopulations() {
+  @JsonIgnore public java.util.Collection<String> getTargetPopulations() {
     final Object current = myData.get("targetPopulation");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -283,24 +283,10 @@ public class DoseSchedule extends MedicalIntangible {
       return this;
     }
     /**
-     * If applicable, a medical specialty in which this entity is relevant.
-     */
-    @NotNull public Builder relevantSpecialty(@NotNull MedicalSpecialty.Builder medicalSpecialty) {
-      putValue("relevantSpecialty", medicalSpecialty.build());
-      return this;
-    }
-    /**
      * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      */
     @NotNull public Builder medicineSystem(@NotNull MedicineSystem medicineSystem) {
       putValue("medicineSystem", medicineSystem);
-      return this;
-    }
-    /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
-     */
-    @NotNull public Builder medicineSystem(@NotNull MedicineSystem.Builder medicineSystem) {
-      putValue("medicineSystem", medicineSystem.build());
       return this;
     }
     /**

@@ -36,11 +36,11 @@ public class PodcastSeries extends CreativeWorkSeries {
   /**
    * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
    */
-  @JsonIgnore public Collection<Actor> getActors() {
+  @JsonIgnore public java.util.Collection<Actor> getActors() {
     final Object current = myData.get("actor");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Actor>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Actor>) current;
     }
     return Arrays.asList((Actor) current);
   }
@@ -53,11 +53,11 @@ public class PodcastSeries extends CreativeWorkSeries {
   /**
    * The URL for a feed, e.g. associated with a podcast series, blog, or series of date-stamped updates. This is usually RSS or Atom.
    */
-  @JsonIgnore public Collection<DataFeed> getWebFeedDataFeeds() {
+  @JsonIgnore public java.util.Collection<DataFeed> getWebFeedDataFeeds() {
     final Object current = myData.get("webFeed");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DataFeed>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<DataFeed>) current;
     }
     return Arrays.asList((DataFeed) current);
   }
@@ -70,11 +70,11 @@ public class PodcastSeries extends CreativeWorkSeries {
   /**
    * The URL for a feed, e.g. associated with a podcast series, blog, or series of date-stamped updates. This is usually RSS or Atom.
    */
-  @JsonIgnore public Collection<String> getWebFeedStrings() {
+  @JsonIgnore public java.util.Collection<String> getWebFeedStrings() {
     final Object current = myData.get("webFeed");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -1556,8 +1556,8 @@ public class PodcastSeries extends CreativeWorkSeries {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

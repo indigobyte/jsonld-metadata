@@ -36,11 +36,11 @@ public class AggregateOffer extends Offer {
   /**
    * The lowest price of all offers available.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
    */
-  @JsonIgnore public Collection<Number> getLowPriceNumbers() {
+  @JsonIgnore public java.util.Collection<Number> getLowPriceNumbers() {
     final Object current = myData.get("lowPrice");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Number>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Number>) current;
     }
     return Arrays.asList((Number) current);
   }
@@ -53,11 +53,11 @@ public class AggregateOffer extends Offer {
   /**
    * The lowest price of all offers available.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
    */
-  @JsonIgnore public Collection<String> getLowPriceStrings() {
+  @JsonIgnore public java.util.Collection<String> getLowPriceStrings() {
     final Object current = myData.get("lowPrice");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -70,11 +70,11 @@ public class AggregateOffer extends Offer {
   /**
    * The highest price of all offers available.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
    */
-  @JsonIgnore public Collection<Number> getHighPriceNumbers() {
+  @JsonIgnore public java.util.Collection<Number> getHighPriceNumbers() {
     final Object current = myData.get("highPrice");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Number>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Number>) current;
     }
     return Arrays.asList((Number) current);
   }
@@ -87,11 +87,11 @@ public class AggregateOffer extends Offer {
   /**
    * The highest price of all offers available.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
    */
-  @JsonIgnore public Collection<String> getHighPriceStrings() {
+  @JsonIgnore public java.util.Collection<String> getHighPriceStrings() {
     final Object current = myData.get("highPrice");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -104,11 +104,11 @@ public class AggregateOffer extends Offer {
   /**
    * The number of offers for the product.
    */
-  @JsonIgnore public Collection<Integer> getOfferCounts() {
+  @JsonIgnore public java.util.Collection<Integer> getOfferCounts() {
     final Object current = myData.get("offerCount");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -123,11 +123,11 @@ public class AggregateOffer extends Offer {
    * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
    *       
    */
-  @JsonIgnore public Collection<Demand> getOffersDemands() {
+  @JsonIgnore public java.util.Collection<Demand> getOffersDemands() {
     final Object current = myData.get("offers");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Demand>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Demand>) current;
     }
     return Arrays.asList((Demand) current);
   }
@@ -142,11 +142,11 @@ public class AggregateOffer extends Offer {
    * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
    *       
    */
-  @JsonIgnore public Collection<Offer> getOffersOffers() {
+  @JsonIgnore public java.util.Collection<Offer> getOffersOffers() {
     final Object current = myData.get("offers");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Offer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Offer>) current;
     }
     return Arrays.asList((Offer) current);
   }

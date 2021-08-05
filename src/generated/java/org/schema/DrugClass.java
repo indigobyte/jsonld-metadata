@@ -36,11 +36,11 @@ public class DrugClass extends MedicalEntity {
   /**
    * Specifying a drug or medicine used in a medication procedure.
    */
-  @JsonIgnore public Collection<Drug> getDrugs() {
+  @JsonIgnore public java.util.Collection<Drug> getDrugs() {
     final Object current = myData.get("drug");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Drug>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Drug>) current;
     }
     return Arrays.asList((Drug) current);
   }
@@ -122,24 +122,10 @@ public class DrugClass extends MedicalEntity {
       return this;
     }
     /**
-     * If applicable, a medical specialty in which this entity is relevant.
-     */
-    @NotNull public Builder relevantSpecialty(@NotNull MedicalSpecialty.Builder medicalSpecialty) {
-      putValue("relevantSpecialty", medicalSpecialty.build());
-      return this;
-    }
-    /**
      * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      */
     @NotNull public Builder medicineSystem(@NotNull MedicineSystem medicineSystem) {
       putValue("medicineSystem", medicineSystem);
-      return this;
-    }
-    /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
-     */
-    @NotNull public Builder medicineSystem(@NotNull MedicineSystem.Builder medicineSystem) {
-      putValue("medicineSystem", medicineSystem.build());
       return this;
     }
     /**

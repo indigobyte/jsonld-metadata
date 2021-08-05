@@ -36,11 +36,11 @@ public class GovernmentService extends Service {
   /**
    * Indicates a legal jurisdiction, e.g. of some legislation, or where some government service is based.
    */
-  @JsonIgnore public Collection<Jurisdiction> getJurisdictions() {
+  @JsonIgnore public java.util.Collection<Jurisdiction> getJurisdictions() {
     final Object current = myData.get("jurisdiction");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Jurisdiction>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Jurisdiction>) current;
     }
     return Arrays.asList((Jurisdiction) current);
   }
@@ -53,11 +53,11 @@ public class GovernmentService extends Service {
   /**
    * The operating organization, if different from the provider.  This enables the representation of services that are provided by an organization, but operated by another organization like a subcontractor.
    */
-  @JsonIgnore public Collection<Organization> getServiceOperators() {
+  @JsonIgnore public java.util.Collection<Organization> getServiceOperators() {
     final Object current = myData.get("serviceOperator");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
   }

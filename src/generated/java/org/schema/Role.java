@@ -36,11 +36,11 @@ public class Role extends Intangible {
   /**
    * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
    */
-  @JsonIgnore public Collection<java.util.Date> getStartDates() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getStartDates() {
     final Object current = myData.get("startDate");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -53,11 +53,11 @@ public class Role extends Intangible {
   /**
    * A role played, performed or filled by a person or organization. For example, the team of creators for a comic book might fill the roles named 'inker', 'penciller', and 'letterer'; or an athlete in a SportsTeam might play in the position named 'Quarterback'.
    */
-  @JsonIgnore public Collection<String> getRoleNames() {
+  @JsonIgnore public java.util.Collection<String> getRoleNames() {
     final Object current = myData.get("roleName");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -70,11 +70,11 @@ public class Role extends Intangible {
   /**
    * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
    */
-  @JsonIgnore public Collection<java.util.Date> getEndDates() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getEndDates() {
     final Object current = myData.get("endDate");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }

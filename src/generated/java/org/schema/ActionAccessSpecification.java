@@ -36,11 +36,11 @@ public class ActionAccessSpecification extends Intangible {
   /**
    * The end of the availability of the product or service included in the offer.
    */
-  @JsonIgnore public Collection<java.util.Date> getAvailabilityEndss() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getAvailabilityEndss() {
     final Object current = myData.get("availabilityEnds");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -55,11 +55,11 @@ public class ActionAccessSpecification extends Intangible {
    * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.\n\nSee also [[eligibleRegion]].
    *       
    */
-  @JsonIgnore public Collection<GeoShape> getIneligibleRegionGeoShapes() {
+  @JsonIgnore public java.util.Collection<GeoShape> getIneligibleRegionGeoShapes() {
     final Object current = myData.get("ineligibleRegion");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<GeoShape>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<GeoShape>) current;
     }
     return Arrays.asList((GeoShape) current);
   }
@@ -74,11 +74,11 @@ public class ActionAccessSpecification extends Intangible {
    * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.\n\nSee also [[eligibleRegion]].
    *       
    */
-  @JsonIgnore public Collection<Place> getIneligibleRegionPlaces() {
+  @JsonIgnore public java.util.Collection<Place> getIneligibleRegionPlaces() {
     final Object current = myData.get("ineligibleRegion");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Place>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Place>) current;
     }
     return Arrays.asList((Place) current);
   }
@@ -93,11 +93,11 @@ public class ActionAccessSpecification extends Intangible {
    * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.\n\nSee also [[eligibleRegion]].
    *       
    */
-  @JsonIgnore public Collection<String> getIneligibleRegionStrings() {
+  @JsonIgnore public java.util.Collection<String> getIneligibleRegionStrings() {
     final Object current = myData.get("ineligibleRegion");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -110,11 +110,11 @@ public class ActionAccessSpecification extends Intangible {
   /**
    * An Offer which must be accepted before the user can perform the Action. For example, the user may need to buy a movie before being able to watch it.
    */
-  @JsonIgnore public Collection<Offer> getExpectsAcceptanceOfs() {
+  @JsonIgnore public java.util.Collection<Offer> getExpectsAcceptanceOfs() {
     final Object current = myData.get("expectsAcceptanceOf");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Offer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Offer>) current;
     }
     return Arrays.asList((Offer) current);
   }
@@ -127,11 +127,11 @@ public class ActionAccessSpecification extends Intangible {
   /**
    * Indicates if use of the media require a subscription  (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had 'yes', 'no').
    */
-  @JsonIgnore public Collection<Boolean> getRequiresSubscriptionBooleans() {
+  @JsonIgnore public java.util.Collection<Boolean> getRequiresSubscriptionBooleans() {
     final Object current = myData.get("requiresSubscription");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Boolean>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Boolean>) current;
     }
     return Arrays.asList((Boolean) current);
   }
@@ -144,11 +144,11 @@ public class ActionAccessSpecification extends Intangible {
   /**
    * Indicates if use of the media require a subscription  (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had 'yes', 'no').
    */
-  @JsonIgnore public Collection<MediaSubscription> getRequiresSubscriptionMediaSubscriptions() {
+  @JsonIgnore public java.util.Collection<MediaSubscription> getRequiresSubscriptionMediaSubscriptions() {
     final Object current = myData.get("requiresSubscription");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MediaSubscription>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MediaSubscription>) current;
     }
     return Arrays.asList((MediaSubscription) current);
   }
@@ -163,11 +163,11 @@ public class ActionAccessSpecification extends Intangible {
    * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\n\nSee also [[ineligibleRegion]].
    *     
    */
-  @JsonIgnore public Collection<AreaServed> getEligibleRegions() {
+  @JsonIgnore public java.util.Collection<AreaServed> getEligibleRegions() {
     final Object current = myData.get("eligibleRegion");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<AreaServed>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<AreaServed>) current;
     }
     return Arrays.asList((AreaServed) current);
   }
@@ -180,11 +180,11 @@ public class ActionAccessSpecification extends Intangible {
   /**
    * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
    */
-  @JsonIgnore public Collection<Category> getCategorys() {
+  @JsonIgnore public java.util.Collection<Category> getCategorys() {
     final Object current = myData.get("category");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Category>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Category>) current;
     }
     return Arrays.asList((Category) current);
   }
@@ -197,11 +197,11 @@ public class ActionAccessSpecification extends Intangible {
   /**
    * The beginning of the availability of the product or service included in the offer.
    */
-  @JsonIgnore public Collection<java.util.Date> getAvailabilityStartss() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getAvailabilityStartss() {
     final Object current = myData.get("availabilityStarts");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }

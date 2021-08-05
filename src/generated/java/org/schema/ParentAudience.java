@@ -36,11 +36,11 @@ public class ParentAudience extends PeopleAudience {
   /**
    * Maximal age of the child.
    */
-  @JsonIgnore public Collection<Integer> getChildMaxAgeIntegers() {
+  @JsonIgnore public java.util.Collection<Integer> getChildMaxAgeIntegers() {
     final Object current = myData.get("childMaxAge");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -53,11 +53,11 @@ public class ParentAudience extends PeopleAudience {
   /**
    * Maximal age of the child.
    */
-  @JsonIgnore public Collection<Long> getChildMaxAgeLongs() {
+  @JsonIgnore public java.util.Collection<Long> getChildMaxAgeLongs() {
     final Object current = myData.get("childMaxAge");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Long>) current;
     }
     return Arrays.asList((Long) current);
   }
@@ -70,11 +70,11 @@ public class ParentAudience extends PeopleAudience {
   /**
    * Maximal age of the child.
    */
-  @JsonIgnore public Collection<Float> getChildMaxAgeFloats() {
+  @JsonIgnore public java.util.Collection<Float> getChildMaxAgeFloats() {
     final Object current = myData.get("childMaxAge");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Float>) current;
     }
     return Arrays.asList((Float) current);
   }
@@ -87,11 +87,11 @@ public class ParentAudience extends PeopleAudience {
   /**
    * Maximal age of the child.
    */
-  @JsonIgnore public Collection<Double> getChildMaxAgeDoubles() {
+  @JsonIgnore public java.util.Collection<Double> getChildMaxAgeDoubles() {
     final Object current = myData.get("childMaxAge");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Double>) current;
     }
     return Arrays.asList((Double) current);
   }
@@ -104,11 +104,11 @@ public class ParentAudience extends PeopleAudience {
   /**
    * Maximal age of the child.
    */
-  @JsonIgnore public Collection<String> getChildMaxAgeStrings() {
+  @JsonIgnore public java.util.Collection<String> getChildMaxAgeStrings() {
     final Object current = myData.get("childMaxAge");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -121,11 +121,11 @@ public class ParentAudience extends PeopleAudience {
   /**
    * Minimal age of the child.
    */
-  @JsonIgnore public Collection<Integer> getChildMinAgeIntegers() {
+  @JsonIgnore public java.util.Collection<Integer> getChildMinAgeIntegers() {
     final Object current = myData.get("childMinAge");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -138,11 +138,11 @@ public class ParentAudience extends PeopleAudience {
   /**
    * Minimal age of the child.
    */
-  @JsonIgnore public Collection<Long> getChildMinAgeLongs() {
+  @JsonIgnore public java.util.Collection<Long> getChildMinAgeLongs() {
     final Object current = myData.get("childMinAge");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Long>) current;
     }
     return Arrays.asList((Long) current);
   }
@@ -155,11 +155,11 @@ public class ParentAudience extends PeopleAudience {
   /**
    * Minimal age of the child.
    */
-  @JsonIgnore public Collection<Float> getChildMinAgeFloats() {
+  @JsonIgnore public java.util.Collection<Float> getChildMinAgeFloats() {
     final Object current = myData.get("childMinAge");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Float>) current;
     }
     return Arrays.asList((Float) current);
   }
@@ -172,11 +172,11 @@ public class ParentAudience extends PeopleAudience {
   /**
    * Minimal age of the child.
    */
-  @JsonIgnore public Collection<Double> getChildMinAgeDoubles() {
+  @JsonIgnore public java.util.Collection<Double> getChildMinAgeDoubles() {
     final Object current = myData.get("childMinAge");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Double>) current;
     }
     return Arrays.asList((Double) current);
   }
@@ -189,11 +189,11 @@ public class ParentAudience extends PeopleAudience {
   /**
    * Minimal age of the child.
    */
-  @JsonIgnore public Collection<String> getChildMinAgeStrings() {
+  @JsonIgnore public java.util.Collection<String> getChildMinAgeStrings() {
     final Object current = myData.get("childMinAge");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }

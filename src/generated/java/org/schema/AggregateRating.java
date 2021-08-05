@@ -36,11 +36,11 @@ public class AggregateRating extends Rating {
   /**
    * The item that is being reviewed/rated.
    */
-  @JsonIgnore public Collection<Thing> getItemRevieweds() {
+  @JsonIgnore public java.util.Collection<Thing> getItemRevieweds() {
     final Object current = myData.get("itemReviewed");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Thing>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Thing>) current;
     }
     return Arrays.asList((Thing) current);
   }
@@ -53,11 +53,11 @@ public class AggregateRating extends Rating {
   /**
    * The count of total number of reviews.
    */
-  @JsonIgnore public Collection<Integer> getReviewCounts() {
+  @JsonIgnore public java.util.Collection<Integer> getReviewCounts() {
     final Object current = myData.get("reviewCount");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -70,11 +70,11 @@ public class AggregateRating extends Rating {
   /**
    * The count of total number of ratings.
    */
-  @JsonIgnore public Collection<Integer> getRatingCounts() {
+  @JsonIgnore public java.util.Collection<Integer> getRatingCounts() {
     final Object current = myData.get("ratingCount");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }

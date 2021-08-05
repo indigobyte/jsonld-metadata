@@ -36,11 +36,11 @@ public class ContactPoint extends StructuredValue {
   /**
    * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. &quot;iPhone&quot;) or a general category of products or services (e.g. &quot;smartphones&quot;).
    */
-  @JsonIgnore public Collection<Product> getProductSupportedProducts() {
+  @JsonIgnore public java.util.Collection<Product> getProductSupportedProducts() {
     final Object current = myData.get("productSupported");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Product>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Product>) current;
     }
     return Arrays.asList((Product) current);
   }
@@ -53,11 +53,11 @@ public class ContactPoint extends StructuredValue {
   /**
    * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. &quot;iPhone&quot;) or a general category of products or services (e.g. &quot;smartphones&quot;).
    */
-  @JsonIgnore public Collection<String> getProductSupportedStrings() {
+  @JsonIgnore public java.util.Collection<String> getProductSupportedStrings() {
     final Object current = myData.get("productSupported");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -70,11 +70,11 @@ public class ContactPoint extends StructuredValue {
   /**
    * Email address.
    */
-  @JsonIgnore public Collection<String> getEmails() {
+  @JsonIgnore public java.util.Collection<String> getEmails() {
     final Object current = myData.get("email");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -87,11 +87,11 @@ public class ContactPoint extends StructuredValue {
   /**
    * The telephone number.
    */
-  @JsonIgnore public Collection<String> getTelephones() {
+  @JsonIgnore public java.util.Collection<String> getTelephones() {
     final Object current = myData.get("telephone");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -104,11 +104,11 @@ public class ContactPoint extends StructuredValue {
   /**
    * A person or organization can have different contact points, for different purposes. For example, a sales contact point, a PR contact point and so on. This property is used to specify the kind of contact point.
    */
-  @JsonIgnore public Collection<String> getContactTypes() {
+  @JsonIgnore public java.util.Collection<String> getContactTypes() {
     final Object current = myData.get("contactType");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -121,11 +121,11 @@ public class ContactPoint extends StructuredValue {
   /**
    * An option available on this contact point (e.g. a toll-free number or support for hearing-impaired callers).
    */
-  @JsonIgnore public Collection<ContactPointOption> getContactOptions() {
+  @JsonIgnore public java.util.Collection<ContactPointOption> getContactOptions() {
     final Object current = myData.get("contactOption");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<ContactPointOption>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<ContactPointOption>) current;
     }
     return Arrays.asList((ContactPointOption) current);
   }
@@ -138,11 +138,11 @@ public class ContactPoint extends StructuredValue {
   /**
    * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
    */
-  @JsonIgnore public Collection<Language> getAvailableLanguageLanguages() {
+  @JsonIgnore public java.util.Collection<Language> getAvailableLanguageLanguages() {
     final Object current = myData.get("availableLanguage");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Language>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Language>) current;
     }
     return Arrays.asList((Language) current);
   }
@@ -155,11 +155,11 @@ public class ContactPoint extends StructuredValue {
   /**
    * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
    */
-  @JsonIgnore public Collection<String> getAvailableLanguageStrings() {
+  @JsonIgnore public java.util.Collection<String> getAvailableLanguageStrings() {
     final Object current = myData.get("availableLanguage");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -172,11 +172,11 @@ public class ContactPoint extends StructuredValue {
   /**
    * The fax number.
    */
-  @JsonIgnore public Collection<String> getFaxNumbers() {
+  @JsonIgnore public java.util.Collection<String> getFaxNumbers() {
     final Object current = myData.get("faxNumber");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -189,11 +189,11 @@ public class ContactPoint extends StructuredValue {
   /**
    * The hours during which this service or contact is available.
    */
-  @JsonIgnore public Collection<OpeningHoursSpecification> getHoursAvailables() {
+  @JsonIgnore public java.util.Collection<OpeningHoursSpecification> getHoursAvailables() {
     final Object current = myData.get("hoursAvailable");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<OpeningHoursSpecification>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<OpeningHoursSpecification>) current;
     }
     return Arrays.asList((OpeningHoursSpecification) current);
   }

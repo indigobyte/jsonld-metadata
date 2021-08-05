@@ -36,11 +36,11 @@ public class MedicalObservationalStudy extends MedicalStudy {
   /**
    * Specifics about the observational study design (enumerated).
    */
-  @JsonIgnore public Collection<MedicalObservationalStudyDesign> getStudyDesigns() {
+  @JsonIgnore public java.util.Collection<MedicalObservationalStudyDesign> getStudyDesigns() {
     final Object current = myData.get("studyDesign");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MedicalObservationalStudyDesign>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MedicalObservationalStudyDesign>) current;
     }
     return Arrays.asList((MedicalObservationalStudyDesign) current);
   }
@@ -66,13 +66,6 @@ public class MedicalObservationalStudy extends MedicalStudy {
       return this;
     }
     /**
-     * Specifics about the observational study design (enumerated).
-     */
-    @NotNull public Builder studyDesign(@NotNull MedicalObservationalStudyDesign.Builder medicalObservationalStudyDesign) {
-      putValue("studyDesign", medicalObservationalStudyDesign.build());
-      return this;
-    }
-    /**
      * The status of the study (enumerated).
      */
     @NotNull public Builder status(@NotNull EventStatusType eventStatusType) {
@@ -82,22 +75,8 @@ public class MedicalObservationalStudy extends MedicalStudy {
     /**
      * The status of the study (enumerated).
      */
-    @NotNull public Builder status(@NotNull EventStatusType.Builder eventStatusType) {
-      putValue("status", eventStatusType.build());
-      return this;
-    }
-    /**
-     * The status of the study (enumerated).
-     */
     @NotNull public Builder status(@NotNull MedicalStudyStatus medicalStudyStatus) {
       putValue("status", medicalStudyStatus);
-      return this;
-    }
-    /**
-     * The status of the study (enumerated).
-     */
-    @NotNull public Builder status(@NotNull MedicalStudyStatus.Builder medicalStudyStatus) {
-      putValue("status", medicalStudyStatus.build());
       return this;
     }
     /**
@@ -206,24 +185,10 @@ public class MedicalObservationalStudy extends MedicalStudy {
       return this;
     }
     /**
-     * If applicable, a medical specialty in which this entity is relevant.
-     */
-    @NotNull public Builder relevantSpecialty(@NotNull MedicalSpecialty.Builder medicalSpecialty) {
-      putValue("relevantSpecialty", medicalSpecialty.build());
-      return this;
-    }
-    /**
      * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      */
     @NotNull public Builder medicineSystem(@NotNull MedicineSystem medicineSystem) {
       putValue("medicineSystem", medicineSystem);
-      return this;
-    }
-    /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
-     */
-    @NotNull public Builder medicineSystem(@NotNull MedicineSystem.Builder medicineSystem) {
-      putValue("medicineSystem", medicineSystem.build());
       return this;
     }
     /**

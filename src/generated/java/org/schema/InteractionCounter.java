@@ -36,11 +36,11 @@ public class InteractionCounter extends StructuredValue {
   /**
    * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
    */
-  @JsonIgnore public Collection<java.util.Date> getStartTimes() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getStartTimes() {
     final Object current = myData.get("startTime");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -53,11 +53,11 @@ public class InteractionCounter extends StructuredValue {
   /**
    * The WebSite or SoftwareApplication where the interactions took place.
    */
-  @JsonIgnore public Collection<SoftwareApplication> getInteractionServiceSoftwareApplications() {
+  @JsonIgnore public java.util.Collection<SoftwareApplication> getInteractionServiceSoftwareApplications() {
     final Object current = myData.get("interactionService");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<SoftwareApplication>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<SoftwareApplication>) current;
     }
     return Arrays.asList((SoftwareApplication) current);
   }
@@ -70,11 +70,11 @@ public class InteractionCounter extends StructuredValue {
   /**
    * The WebSite or SoftwareApplication where the interactions took place.
    */
-  @JsonIgnore public Collection<WebSite> getInteractionServiceWebSites() {
+  @JsonIgnore public java.util.Collection<WebSite> getInteractionServiceWebSites() {
     final Object current = myData.get("interactionService");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<WebSite>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<WebSite>) current;
     }
     return Arrays.asList((WebSite) current);
   }
@@ -87,11 +87,11 @@ public class InteractionCounter extends StructuredValue {
   /**
    * The Action representing the type of interaction. For up votes, +1s, etc. use [[LikeAction]]. For down votes use [[DislikeAction]]. Otherwise, use the most specific Action.
    */
-  @JsonIgnore public Collection<Action> getInteractionTypes() {
+  @JsonIgnore public java.util.Collection<Action> getInteractionTypes() {
     final Object current = myData.get("interactionType");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Action>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Action>) current;
     }
     return Arrays.asList((Action) current);
   }
@@ -104,11 +104,11 @@ public class InteractionCounter extends StructuredValue {
   /**
    * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication.
    */
-  @JsonIgnore public Collection<Integer> getUserInteractionCounts() {
+  @JsonIgnore public java.util.Collection<Integer> getUserInteractionCounts() {
     final Object current = myData.get("userInteractionCount");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -121,11 +121,11 @@ public class InteractionCounter extends StructuredValue {
   /**
    * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
    */
-  @JsonIgnore public Collection<java.util.Date> getEndTimes() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getEndTimes() {
     final Object current = myData.get("endTime");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }

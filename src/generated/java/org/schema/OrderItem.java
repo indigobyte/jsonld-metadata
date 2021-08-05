@@ -36,11 +36,11 @@ public class OrderItem extends Intangible {
   /**
    * The number of the item ordered. If the property is not set, assume the quantity is one.
    */
-  @JsonIgnore public Collection<Integer> getOrderQuantityIntegers() {
+  @JsonIgnore public java.util.Collection<Integer> getOrderQuantityIntegers() {
     final Object current = myData.get("orderQuantity");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -53,11 +53,11 @@ public class OrderItem extends Intangible {
   /**
    * The number of the item ordered. If the property is not set, assume the quantity is one.
    */
-  @JsonIgnore public Collection<Long> getOrderQuantityLongs() {
+  @JsonIgnore public java.util.Collection<Long> getOrderQuantityLongs() {
     final Object current = myData.get("orderQuantity");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Long>) current;
     }
     return Arrays.asList((Long) current);
   }
@@ -70,11 +70,11 @@ public class OrderItem extends Intangible {
   /**
    * The number of the item ordered. If the property is not set, assume the quantity is one.
    */
-  @JsonIgnore public Collection<Float> getOrderQuantityFloats() {
+  @JsonIgnore public java.util.Collection<Float> getOrderQuantityFloats() {
     final Object current = myData.get("orderQuantity");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Float>) current;
     }
     return Arrays.asList((Float) current);
   }
@@ -87,11 +87,11 @@ public class OrderItem extends Intangible {
   /**
    * The number of the item ordered. If the property is not set, assume the quantity is one.
    */
-  @JsonIgnore public Collection<Double> getOrderQuantityDoubles() {
+  @JsonIgnore public java.util.Collection<Double> getOrderQuantityDoubles() {
     final Object current = myData.get("orderQuantity");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Double>) current;
     }
     return Arrays.asList((Double) current);
   }
@@ -104,11 +104,11 @@ public class OrderItem extends Intangible {
   /**
    * The number of the item ordered. If the property is not set, assume the quantity is one.
    */
-  @JsonIgnore public Collection<String> getOrderQuantityStrings() {
+  @JsonIgnore public java.util.Collection<String> getOrderQuantityStrings() {
     final Object current = myData.get("orderQuantity");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -121,11 +121,11 @@ public class OrderItem extends Intangible {
   /**
    * The item ordered.
    */
-  @JsonIgnore public Collection<OrderItem> getOrderedItemOrderItems() {
+  @JsonIgnore public java.util.Collection<OrderItem> getOrderedItemOrderItems() {
     final Object current = myData.get("orderedItem");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<OrderItem>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<OrderItem>) current;
     }
     return Arrays.asList((OrderItem) current);
   }
@@ -138,11 +138,11 @@ public class OrderItem extends Intangible {
   /**
    * The item ordered.
    */
-  @JsonIgnore public Collection<Product> getOrderedItemProducts() {
+  @JsonIgnore public java.util.Collection<Product> getOrderedItemProducts() {
     final Object current = myData.get("orderedItem");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Product>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Product>) current;
     }
     return Arrays.asList((Product) current);
   }
@@ -155,11 +155,11 @@ public class OrderItem extends Intangible {
   /**
    * The item ordered.
    */
-  @JsonIgnore public Collection<Service> getOrderedItemServices() {
+  @JsonIgnore public java.util.Collection<Service> getOrderedItemServices() {
     final Object current = myData.get("orderedItem");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Service>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Service>) current;
     }
     return Arrays.asList((Service) current);
   }
@@ -172,11 +172,11 @@ public class OrderItem extends Intangible {
   /**
    * The current status of the order item.
    */
-  @JsonIgnore public Collection<OrderStatus> getOrderItemStatuss() {
+  @JsonIgnore public java.util.Collection<OrderStatus> getOrderItemStatuss() {
     final Object current = myData.get("orderItemStatus");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<OrderStatus>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<OrderStatus>) current;
     }
     return Arrays.asList((OrderStatus) current);
   }
@@ -189,11 +189,11 @@ public class OrderItem extends Intangible {
   /**
    * The delivery of the parcel related to this order or order item.
    */
-  @JsonIgnore public Collection<ParcelDelivery> getOrderDeliverys() {
+  @JsonIgnore public java.util.Collection<ParcelDelivery> getOrderDeliverys() {
     final Object current = myData.get("orderDelivery");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<ParcelDelivery>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<ParcelDelivery>) current;
     }
     return Arrays.asList((ParcelDelivery) current);
   }
@@ -206,11 +206,11 @@ public class OrderItem extends Intangible {
   /**
    * The identifier of the order item.
    */
-  @JsonIgnore public Collection<String> getOrderItemNumbers() {
+  @JsonIgnore public java.util.Collection<String> getOrderItemNumbers() {
     final Object current = myData.get("orderItemNumber");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -310,13 +310,6 @@ public class OrderItem extends Intangible {
      */
     @NotNull public Builder orderItemStatus(@NotNull OrderStatus orderStatus) {
       putValue("orderItemStatus", orderStatus);
-      return this;
-    }
-    /**
-     * The current status of the order item.
-     */
-    @NotNull public Builder orderItemStatus(@NotNull OrderStatus.Builder orderStatus) {
-      putValue("orderItemStatus", orderStatus.build());
       return this;
     }
     /**

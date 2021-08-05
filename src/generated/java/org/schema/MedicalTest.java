@@ -36,11 +36,11 @@ public class MedicalTest extends MedicalEntity {
   /**
    * Device used to perform the test.
    */
-  @JsonIgnore public Collection<MedicalDevice> getUsesDevices() {
+  @JsonIgnore public java.util.Collection<MedicalDevice> getUsesDevices() {
     final Object current = myData.get("usesDevice");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MedicalDevice>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MedicalDevice>) current;
     }
     return Arrays.asList((MedicalDevice) current);
   }
@@ -53,11 +53,11 @@ public class MedicalTest extends MedicalEntity {
   /**
    * Range of acceptable values for a typical patient, when applicable.
    */
-  @JsonIgnore public Collection<MedicalEnumeration> getNormalRangeMedicalEnumerations() {
+  @JsonIgnore public java.util.Collection<MedicalEnumeration> getNormalRangeMedicalEnumerations() {
     final Object current = myData.get("normalRange");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MedicalEnumeration>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MedicalEnumeration>) current;
     }
     return Arrays.asList((MedicalEnumeration) current);
   }
@@ -70,11 +70,11 @@ public class MedicalTest extends MedicalEntity {
   /**
    * Range of acceptable values for a typical patient, when applicable.
    */
-  @JsonIgnore public Collection<String> getNormalRangeStrings() {
+  @JsonIgnore public java.util.Collection<String> getNormalRangeStrings() {
     final Object current = myData.get("normalRange");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -87,11 +87,11 @@ public class MedicalTest extends MedicalEntity {
   /**
    * A condition the test is used to diagnose.
    */
-  @JsonIgnore public Collection<MedicalCondition> getUsedToDiagnoses() {
+  @JsonIgnore public java.util.Collection<MedicalCondition> getUsedToDiagnoses() {
     final Object current = myData.get("usedToDiagnose");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MedicalCondition>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MedicalCondition>) current;
     }
     return Arrays.asList((MedicalCondition) current);
   }
@@ -104,11 +104,11 @@ public class MedicalTest extends MedicalEntity {
   /**
    * A sign detected by the test.
    */
-  @JsonIgnore public Collection<MedicalSign> getSignDetecteds() {
+  @JsonIgnore public java.util.Collection<MedicalSign> getSignDetecteds() {
     final Object current = myData.get("signDetected");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MedicalSign>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MedicalSign>) current;
     }
     return Arrays.asList((MedicalSign) current);
   }
@@ -121,11 +121,11 @@ public class MedicalTest extends MedicalEntity {
   /**
    * Drugs that affect the test's results.
    */
-  @JsonIgnore public Collection<Drug> getAffectedBys() {
+  @JsonIgnore public java.util.Collection<Drug> getAffectedBys() {
     final Object current = myData.get("affectedBy");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Drug>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Drug>) current;
     }
     return Arrays.asList((Drug) current);
   }
@@ -263,24 +263,10 @@ public class MedicalTest extends MedicalEntity {
       return this;
     }
     /**
-     * If applicable, a medical specialty in which this entity is relevant.
-     */
-    @NotNull public Builder relevantSpecialty(@NotNull MedicalSpecialty.Builder medicalSpecialty) {
-      putValue("relevantSpecialty", medicalSpecialty.build());
-      return this;
-    }
-    /**
      * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      */
     @NotNull public Builder medicineSystem(@NotNull MedicineSystem medicineSystem) {
       putValue("medicineSystem", medicineSystem);
-      return this;
-    }
-    /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
-     */
-    @NotNull public Builder medicineSystem(@NotNull MedicineSystem.Builder medicineSystem) {
-      putValue("medicineSystem", medicineSystem.build());
       return this;
     }
     /**

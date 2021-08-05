@@ -36,11 +36,11 @@ public class BusTrip extends Trip {
   /**
    * The stop or station from which the bus arrives.
    */
-  @JsonIgnore public Collection<BusStation> getArrivalBusStopBusStations() {
+  @JsonIgnore public java.util.Collection<BusStation> getArrivalBusStopBusStations() {
     final Object current = myData.get("arrivalBusStop");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<BusStation>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<BusStation>) current;
     }
     return Arrays.asList((BusStation) current);
   }
@@ -53,11 +53,11 @@ public class BusTrip extends Trip {
   /**
    * The stop or station from which the bus arrives.
    */
-  @JsonIgnore public Collection<BusStop> getArrivalBusStopBusStops() {
+  @JsonIgnore public java.util.Collection<BusStop> getArrivalBusStopBusStops() {
     final Object current = myData.get("arrivalBusStop");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<BusStop>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<BusStop>) current;
     }
     return Arrays.asList((BusStop) current);
   }
@@ -70,11 +70,11 @@ public class BusTrip extends Trip {
   /**
    * The unique identifier for the bus.
    */
-  @JsonIgnore public Collection<String> getBusNumbers() {
+  @JsonIgnore public java.util.Collection<String> getBusNumbers() {
     final Object current = myData.get("busNumber");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -87,11 +87,11 @@ public class BusTrip extends Trip {
   /**
    * The stop or station from which the bus departs.
    */
-  @JsonIgnore public Collection<BusStation> getDepartureBusStopBusStations() {
+  @JsonIgnore public java.util.Collection<BusStation> getDepartureBusStopBusStations() {
     final Object current = myData.get("departureBusStop");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<BusStation>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<BusStation>) current;
     }
     return Arrays.asList((BusStation) current);
   }
@@ -104,11 +104,11 @@ public class BusTrip extends Trip {
   /**
    * The stop or station from which the bus departs.
    */
-  @JsonIgnore public Collection<BusStop> getDepartureBusStopBusStops() {
+  @JsonIgnore public java.util.Collection<BusStop> getDepartureBusStopBusStops() {
     final Object current = myData.get("departureBusStop");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<BusStop>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<BusStop>) current;
     }
     return Arrays.asList((BusStop) current);
   }
@@ -121,11 +121,11 @@ public class BusTrip extends Trip {
   /**
    * The name of the bus (e.g. Bolt Express).
    */
-  @JsonIgnore public Collection<String> getBusNames() {
+  @JsonIgnore public java.util.Collection<String> getBusNames() {
     final Object current = myData.get("busName");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }

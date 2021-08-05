@@ -36,11 +36,11 @@ public class LoanOrCredit extends FinancialProduct {
   /**
    * The amount of money.
    */
-  @JsonIgnore public Collection<MonetaryAmount> getAmountMonetaryAmounts() {
+  @JsonIgnore public java.util.Collection<MonetaryAmount> getAmountMonetaryAmounts() {
     final Object current = myData.get("amount");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MonetaryAmount>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MonetaryAmount>) current;
     }
     return Arrays.asList((MonetaryAmount) current);
   }
@@ -53,11 +53,11 @@ public class LoanOrCredit extends FinancialProduct {
   /**
    * The amount of money.
    */
-  @JsonIgnore public Collection<Number> getAmountNumbers() {
+  @JsonIgnore public java.util.Collection<Number> getAmountNumbers() {
     final Object current = myData.get("amount");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Number>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Number>) current;
     }
     return Arrays.asList((Number) current);
   }
@@ -70,11 +70,11 @@ public class LoanOrCredit extends FinancialProduct {
   /**
    * The duration of the loan or credit agreement.
    */
-  @JsonIgnore public Collection<Duration> getLoanTerms() {
+  @JsonIgnore public java.util.Collection<Duration> getLoanTerms() {
     final Object current = myData.get("loanTerm");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Duration>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Duration>) current;
     }
     return Arrays.asList((Duration) current);
   }
@@ -87,11 +87,11 @@ public class LoanOrCredit extends FinancialProduct {
   /**
    * The only way you get the money back in the event of default is the security. Recourse is where you still have the opportunity to go back to the borrower for the rest of the money.
    */
-  @JsonIgnore public Collection<Boolean> getRecourseLoans() {
+  @JsonIgnore public java.util.Collection<Boolean> getRecourseLoans() {
     final Object current = myData.get("recourseLoan");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Boolean>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Boolean>) current;
     }
     return Arrays.asList((Boolean) current);
   }
@@ -104,11 +104,11 @@ public class LoanOrCredit extends FinancialProduct {
   /**
    * The period of time after any due date that the borrower has to fulfil its obligations before a default (failure to pay) is deemed to have occurred.
    */
-  @JsonIgnore public Collection<Duration> getGracePeriods() {
+  @JsonIgnore public java.util.Collection<Duration> getGracePeriods() {
     final Object current = myData.get("gracePeriod");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Duration>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Duration>) current;
     }
     return Arrays.asList((Duration) current);
   }
@@ -121,11 +121,11 @@ public class LoanOrCredit extends FinancialProduct {
   /**
    * The type of a loan or credit.
    */
-  @JsonIgnore public Collection<String> getLoanTypes() {
+  @JsonIgnore public java.util.Collection<String> getLoanTypes() {
     final Object current = myData.get("loanType");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -138,11 +138,11 @@ public class LoanOrCredit extends FinancialProduct {
   /**
    * The currency in which the monetary amount is expressed.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;.
    */
-  @JsonIgnore public Collection<String> getCurrencys() {
+  @JsonIgnore public java.util.Collection<String> getCurrencys() {
     final Object current = myData.get("currency");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -155,11 +155,11 @@ public class LoanOrCredit extends FinancialProduct {
   /**
    * A form of paying back money previously borrowed from a lender. Repayment usually takes the form of periodic payments that normally include part principal plus interest in each payment.
    */
-  @JsonIgnore public Collection<RepaymentSpecification> getLoanRepaymentForms() {
+  @JsonIgnore public java.util.Collection<RepaymentSpecification> getLoanRepaymentForms() {
     final Object current = myData.get("loanRepaymentForm");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<RepaymentSpecification>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<RepaymentSpecification>) current;
     }
     return Arrays.asList((RepaymentSpecification) current);
   }
@@ -172,11 +172,11 @@ public class LoanOrCredit extends FinancialProduct {
   /**
    * Assets required to secure loan or credit repayments. It may take form of third party pledge, goods, financial instruments (cash, securities, etc.)
    */
-  @JsonIgnore public Collection<String> getRequiredCollateralStrings() {
+  @JsonIgnore public java.util.Collection<String> getRequiredCollateralStrings() {
     final Object current = myData.get("requiredCollateral");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -189,11 +189,11 @@ public class LoanOrCredit extends FinancialProduct {
   /**
    * Assets required to secure loan or credit repayments. It may take form of third party pledge, goods, financial instruments (cash, securities, etc.)
    */
-  @JsonIgnore public Collection<Thing> getRequiredCollateralThings() {
+  @JsonIgnore public java.util.Collection<Thing> getRequiredCollateralThings() {
     final Object current = myData.get("requiredCollateral");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Thing>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Thing>) current;
     }
     return Arrays.asList((Thing) current);
   }
@@ -206,11 +206,11 @@ public class LoanOrCredit extends FinancialProduct {
   /**
    * Whether the terms for payment of interest can be renegotiated during the life of the loan.
    */
-  @JsonIgnore public Collection<Boolean> getRenegotiableLoans() {
+  @JsonIgnore public java.util.Collection<Boolean> getRenegotiableLoans() {
     final Object current = myData.get("renegotiableLoan");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Boolean>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Boolean>) current;
     }
     return Arrays.asList((Boolean) current);
   }

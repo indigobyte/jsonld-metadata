@@ -217,13 +217,6 @@ public class SocialEvent extends Event {
       return this;
     }
     /**
-     * An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.
-     */
-    @NotNull public Builder eventStatus(@NotNull EventStatusType.Builder eventStatusType) {
-      putValue("eventStatus", eventStatusType.build());
-      return this;
-    }
-    /**
      * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
      */
     @NotNull public Builder duration(@NotNull Duration duration) {

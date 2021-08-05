@@ -36,11 +36,11 @@ public class EducationalOrganization extends CivicStructure {
   /**
    * Alumni of an organization.
    */
-  @JsonIgnore public Collection<Person> getAlumnis() {
+  @JsonIgnore public java.util.Collection<Person> getAlumnis() {
     final Object current = myData.get("alumni");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }

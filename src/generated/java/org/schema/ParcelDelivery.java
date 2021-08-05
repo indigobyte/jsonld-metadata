@@ -36,11 +36,11 @@ public class ParcelDelivery extends Intangible {
   /**
    * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
    */
-  @JsonIgnore public Collection<Organization> getProviderOrganizations() {
+  @JsonIgnore public java.util.Collection<Organization> getProviderOrganizations() {
     final Object current = myData.get("provider");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
   }
@@ -53,11 +53,11 @@ public class ParcelDelivery extends Intangible {
   /**
    * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
    */
-  @JsonIgnore public Collection<Person> getProviderPersons() {
+  @JsonIgnore public java.util.Collection<Person> getProviderPersons() {
     final Object current = myData.get("provider");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -70,11 +70,11 @@ public class ParcelDelivery extends Intangible {
   /**
    * The latest date the package may arrive.
    */
-  @JsonIgnore public Collection<java.util.Date> getExpectedArrivalUntils() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getExpectedArrivalUntils() {
     final Object current = myData.get("expectedArrivalUntil");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -87,11 +87,11 @@ public class ParcelDelivery extends Intangible {
   /**
    * Method used for delivery or shipping.
    */
-  @JsonIgnore public Collection<DeliveryMethod> getHasDeliveryMethods() {
+  @JsonIgnore public java.util.Collection<DeliveryMethod> getHasDeliveryMethods() {
     final Object current = myData.get("hasDeliveryMethod");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DeliveryMethod>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<DeliveryMethod>) current;
     }
     return Arrays.asList((DeliveryMethod) current);
   }
@@ -104,11 +104,11 @@ public class ParcelDelivery extends Intangible {
   /**
    * The overall order the items in this delivery were included in.
    */
-  @JsonIgnore public Collection<Order> getPartOfOrders() {
+  @JsonIgnore public java.util.Collection<Order> getPartOfOrders() {
     final Object current = myData.get("partOfOrder");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Order>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Order>) current;
     }
     return Arrays.asList((Order) current);
   }
@@ -121,11 +121,11 @@ public class ParcelDelivery extends Intangible {
   /**
    * The earliest date the package may arrive.
    */
-  @JsonIgnore public Collection<java.util.Date> getExpectedArrivalFroms() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getExpectedArrivalFroms() {
     final Object current = myData.get("expectedArrivalFrom");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -138,11 +138,11 @@ public class ParcelDelivery extends Intangible {
   /**
    * Shipper's address.
    */
-  @JsonIgnore public Collection<PostalAddress> getOriginAddresss() {
+  @JsonIgnore public java.util.Collection<PostalAddress> getOriginAddresss() {
     final Object current = myData.get("originAddress");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<PostalAddress>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<PostalAddress>) current;
     }
     return Arrays.asList((PostalAddress) current);
   }
@@ -155,11 +155,11 @@ public class ParcelDelivery extends Intangible {
   /**
    * Destination address.
    */
-  @JsonIgnore public Collection<PostalAddress> getDeliveryAddresss() {
+  @JsonIgnore public java.util.Collection<PostalAddress> getDeliveryAddresss() {
     final Object current = myData.get("deliveryAddress");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<PostalAddress>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<PostalAddress>) current;
     }
     return Arrays.asList((PostalAddress) current);
   }
@@ -172,11 +172,11 @@ public class ParcelDelivery extends Intangible {
   /**
    * Item(s) being shipped.
    */
-  @JsonIgnore public Collection<Product> getItemShippeds() {
+  @JsonIgnore public java.util.Collection<Product> getItemShippeds() {
     final Object current = myData.get("itemShipped");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Product>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Product>) current;
     }
     return Arrays.asList((Product) current);
   }
@@ -189,11 +189,11 @@ public class ParcelDelivery extends Intangible {
   /**
    * Tracking url for the parcel delivery.
    */
-  @JsonIgnore public Collection<String> getTrackingUrls() {
+  @JsonIgnore public java.util.Collection<String> getTrackingUrls() {
     final Object current = myData.get("trackingUrl");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -206,11 +206,11 @@ public class ParcelDelivery extends Intangible {
   /**
    * Shipper tracking number.
    */
-  @JsonIgnore public Collection<String> getTrackingNumbers() {
+  @JsonIgnore public java.util.Collection<String> getTrackingNumbers() {
     final Object current = myData.get("trackingNumber");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -223,11 +223,11 @@ public class ParcelDelivery extends Intangible {
   /**
    * New entry added as the package passes through each leg of its journey (from shipment to final delivery).
    */
-  @JsonIgnore public Collection<DeliveryEvent> getDeliveryStatuss() {
+  @JsonIgnore public java.util.Collection<DeliveryEvent> getDeliveryStatuss() {
     final Object current = myData.get("deliveryStatus");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DeliveryEvent>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<DeliveryEvent>) current;
     }
     return Arrays.asList((DeliveryEvent) current);
   }

@@ -36,11 +36,11 @@ public class CommunicateAction extends InteractAction {
   /**
    * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
    */
-  @JsonIgnore public Collection<Language> getInLanguageLanguages() {
+  @JsonIgnore public java.util.Collection<Language> getInLanguageLanguages() {
     final Object current = myData.get("inLanguage");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Language>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Language>) current;
     }
     return Arrays.asList((Language) current);
   }
@@ -53,11 +53,11 @@ public class CommunicateAction extends InteractAction {
   /**
    * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
    */
-  @JsonIgnore public Collection<String> getInLanguageStrings() {
+  @JsonIgnore public java.util.Collection<String> getInLanguageStrings() {
     final Object current = myData.get("inLanguage");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -122,13 +122,6 @@ public class CommunicateAction extends InteractAction {
      */
     @NotNull public Builder actionStatus(@NotNull ActionStatusType actionStatusType) {
       putValue("actionStatus", actionStatusType);
-      return this;
-    }
-    /**
-     * Indicates the current disposition of the Action.
-     */
-    @NotNull public Builder actionStatus(@NotNull ActionStatusType.Builder actionStatusType) {
-      putValue("actionStatus", actionStatusType.build());
       return this;
     }
     /**

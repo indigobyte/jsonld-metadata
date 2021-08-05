@@ -36,11 +36,11 @@ public class BroadcastFrequencySpecification extends Intangible {
   /**
    * The modulation (e.g. FM, AM, etc) used by a particular broadcast service.
    */
-  @JsonIgnore public Collection<QualitativeValue> getBroadcastSignalModulationQualitativeValues() {
+  @JsonIgnore public java.util.Collection<QualitativeValue> getBroadcastSignalModulationQualitativeValues() {
     final Object current = myData.get("broadcastSignalModulation");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QualitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QualitativeValue>) current;
     }
     return Arrays.asList((QualitativeValue) current);
   }
@@ -53,11 +53,11 @@ public class BroadcastFrequencySpecification extends Intangible {
   /**
    * The modulation (e.g. FM, AM, etc) used by a particular broadcast service.
    */
-  @JsonIgnore public Collection<String> getBroadcastSignalModulationStrings() {
+  @JsonIgnore public java.util.Collection<String> getBroadcastSignalModulationStrings() {
     final Object current = myData.get("broadcastSignalModulation");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -70,11 +70,11 @@ public class BroadcastFrequencySpecification extends Intangible {
   /**
    * The frequency in MHz for a particular broadcast.
    */
-  @JsonIgnore public Collection<Integer> getBroadcastFrequencyValueIntegers() {
+  @JsonIgnore public java.util.Collection<Integer> getBroadcastFrequencyValueIntegers() {
     final Object current = myData.get("broadcastFrequencyValue");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -87,11 +87,11 @@ public class BroadcastFrequencySpecification extends Intangible {
   /**
    * The frequency in MHz for a particular broadcast.
    */
-  @JsonIgnore public Collection<Long> getBroadcastFrequencyValueLongs() {
+  @JsonIgnore public java.util.Collection<Long> getBroadcastFrequencyValueLongs() {
     final Object current = myData.get("broadcastFrequencyValue");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Long>) current;
     }
     return Arrays.asList((Long) current);
   }
@@ -104,11 +104,11 @@ public class BroadcastFrequencySpecification extends Intangible {
   /**
    * The frequency in MHz for a particular broadcast.
    */
-  @JsonIgnore public Collection<Float> getBroadcastFrequencyValueFloats() {
+  @JsonIgnore public java.util.Collection<Float> getBroadcastFrequencyValueFloats() {
     final Object current = myData.get("broadcastFrequencyValue");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Float>) current;
     }
     return Arrays.asList((Float) current);
   }
@@ -121,11 +121,11 @@ public class BroadcastFrequencySpecification extends Intangible {
   /**
    * The frequency in MHz for a particular broadcast.
    */
-  @JsonIgnore public Collection<Double> getBroadcastFrequencyValueDoubles() {
+  @JsonIgnore public java.util.Collection<Double> getBroadcastFrequencyValueDoubles() {
     final Object current = myData.get("broadcastFrequencyValue");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Double>) current;
     }
     return Arrays.asList((Double) current);
   }
@@ -138,11 +138,11 @@ public class BroadcastFrequencySpecification extends Intangible {
   /**
    * The frequency in MHz for a particular broadcast.
    */
-  @JsonIgnore public Collection<String> getBroadcastFrequencyValueStrings() {
+  @JsonIgnore public java.util.Collection<String> getBroadcastFrequencyValueStrings() {
     final Object current = myData.get("broadcastFrequencyValue");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -155,11 +155,11 @@ public class BroadcastFrequencySpecification extends Intangible {
   /**
    * The subchannel used for the broadcast.
    */
-  @JsonIgnore public Collection<String> getBroadcastSubChannels() {
+  @JsonIgnore public java.util.Collection<String> getBroadcastSubChannels() {
     final Object current = myData.get("broadcastSubChannel");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }

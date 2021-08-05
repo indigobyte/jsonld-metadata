@@ -36,11 +36,11 @@ public class DataFeed extends Dataset {
   /**
    * An item within in a data feed. Data feeds may have many elements.
    */
-  @JsonIgnore public Collection<DataFeedItem> getDataFeedElementDataFeedItems() {
+  @JsonIgnore public java.util.Collection<DataFeedItem> getDataFeedElementDataFeedItems() {
     final Object current = myData.get("dataFeedElement");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DataFeedItem>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<DataFeedItem>) current;
     }
     return Arrays.asList((DataFeedItem) current);
   }
@@ -53,11 +53,11 @@ public class DataFeed extends Dataset {
   /**
    * An item within in a data feed. Data feeds may have many elements.
    */
-  @JsonIgnore public Collection<String> getDataFeedElementStrings() {
+  @JsonIgnore public java.util.Collection<String> getDataFeedElementStrings() {
     final Object current = myData.get("dataFeedElement");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -70,11 +70,11 @@ public class DataFeed extends Dataset {
   /**
    * An item within in a data feed. Data feeds may have many elements.
    */
-  @JsonIgnore public Collection<Thing> getDataFeedElementThings() {
+  @JsonIgnore public java.util.Collection<Thing> getDataFeedElementThings() {
     final Object current = myData.get("dataFeedElement");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Thing>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Thing>) current;
     }
     return Arrays.asList((Thing) current);
   }
@@ -1634,8 +1634,8 @@ public class DataFeed extends Dataset {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

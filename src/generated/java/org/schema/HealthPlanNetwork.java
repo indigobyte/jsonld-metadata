@@ -36,11 +36,11 @@ public class HealthPlanNetwork extends Intangible {
   /**
    * Name or unique ID of network. (Networks are often reused across different insurance plans).
    */
-  @JsonIgnore public Collection<String> getHealthPlanNetworkIds() {
+  @JsonIgnore public java.util.Collection<String> getHealthPlanNetworkIds() {
     final Object current = myData.get("healthPlanNetworkId");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -53,11 +53,11 @@ public class HealthPlanNetwork extends Intangible {
   /**
    * Whether The costs to the patient for services under this network or formulary.
    */
-  @JsonIgnore public Collection<Boolean> getHealthPlanCostSharings() {
+  @JsonIgnore public java.util.Collection<Boolean> getHealthPlanCostSharings() {
     final Object current = myData.get("healthPlanCostSharing");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Boolean>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Boolean>) current;
     }
     return Arrays.asList((Boolean) current);
   }
@@ -70,11 +70,11 @@ public class HealthPlanNetwork extends Intangible {
   /**
    * The tier(s) for this network.
    */
-  @JsonIgnore public Collection<String> getHealthPlanNetworkTiers() {
+  @JsonIgnore public java.util.Collection<String> getHealthPlanNetworkTiers() {
     final Object current = myData.get("healthPlanNetworkTier");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }

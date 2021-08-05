@@ -36,11 +36,11 @@ public class Legislation extends CreativeWork implements LegislationApplies {
   /**
    * An identifier for the legislation. This can be either a string-based identifier, like the CELEX at EU level or the NOR in France, or a web-based, URL/URI identifier, like an ELI (European Legislation Identifier) or an URN-Lex.
    */
-  @JsonIgnore public Collection<Identifier> getLegislationIdentifiers() {
+  @JsonIgnore public java.util.Collection<Identifier> getLegislationIdentifiers() {
     final Object current = myData.get("legislationIdentifier");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Identifier>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Identifier>) current;
     }
     return Arrays.asList((Identifier) current);
   }
@@ -53,11 +53,11 @@ public class Legislation extends CreativeWork implements LegislationApplies {
   /**
    * The date of adoption or signature of the legislation. This is the date at which the text is officially aknowledged to be a legislation, even though it might not even be published or in force.
    */
-  @JsonIgnore public Collection<java.util.Date> getLegislationDates() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getLegislationDates() {
     final Object current = myData.get("legislationDate");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -70,11 +70,11 @@ public class Legislation extends CreativeWork implements LegislationApplies {
   /**
    * The jurisdiction from which the legislation originates.
    */
-  @JsonIgnore public Collection<Jurisdiction> getLegislationJurisdictions() {
+  @JsonIgnore public java.util.Collection<Jurisdiction> getLegislationJurisdictions() {
     final Object current = myData.get("legislationJurisdiction");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Jurisdiction>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Jurisdiction>) current;
     }
     return Arrays.asList((Jurisdiction) current);
   }
@@ -87,11 +87,11 @@ public class Legislation extends CreativeWork implements LegislationApplies {
   /**
    * Indicates a legal jurisdiction, e.g. of some legislation, or where some government service is based.
    */
-  @JsonIgnore public Collection<Jurisdiction> getJurisdictions() {
+  @JsonIgnore public java.util.Collection<Jurisdiction> getJurisdictions() {
     final Object current = myData.get("jurisdiction");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Jurisdiction>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Jurisdiction>) current;
     }
     return Arrays.asList((Jurisdiction) current);
   }
@@ -104,11 +104,11 @@ public class Legislation extends CreativeWork implements LegislationApplies {
   /**
    * The type of the legislation. Examples of values are &quot;law&quot;, &quot;act&quot;, &quot;directive&quot;, &quot;decree&quot;, &quot;regulation&quot;, &quot;statutory instrument&quot;, &quot;loi organique&quot;, &quot;r&egrave;glement grand-ducal&quot;, etc., depending on the country.
    */
-  @JsonIgnore public Collection<Genre> getLegislationTypes() {
+  @JsonIgnore public java.util.Collection<Genre> getLegislationTypes() {
     final Object current = myData.get("legislationType");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Genre>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Genre>) current;
     }
     return Arrays.asList((Genre) current);
   }
@@ -121,11 +121,11 @@ public class Legislation extends CreativeWork implements LegislationApplies {
   /**
    * Whether the legislation is currently in force, not in force, or partially in force.
    */
-  @JsonIgnore public Collection<LegalForceStatus> getLegislationLegalForces() {
+  @JsonIgnore public java.util.Collection<LegalForceStatus> getLegislationLegalForces() {
     final Object current = myData.get("legislationLegalForce");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<LegalForceStatus>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<LegalForceStatus>) current;
     }
     return Arrays.asList((LegalForceStatus) current);
   }
@@ -138,11 +138,11 @@ public class Legislation extends CreativeWork implements LegislationApplies {
   /**
    * The point-in-time at which the provided description of the legislation is valid (e.g. : when looking at the law on the 2016-04-07 (= dateVersion), I get the consolidation of 2015-04-12 of the &quot;National Insurance Contributions Act 2015&quot;)
    */
-  @JsonIgnore public Collection<java.util.Date> getLegislationDateVersions() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getLegislationDateVersions() {
     final Object current = myData.get("legislationDateVersion");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -155,11 +155,11 @@ public class Legislation extends CreativeWork implements LegislationApplies {
   /**
    * Indicates that this legislation (or part of legislation) fulfills the objectives set by another legislation, by passing appropriate implementation measures. Typically, some legislations of European Union's member states or regions transpose European Directives. This indicates a legally binding link between the 2 legislations.
    */
-  @JsonIgnore public Collection<LegislationApplies> getLegislationTransposess() {
+  @JsonIgnore public java.util.Collection<LegislationApplies> getLegislationTransposess() {
     final Object current = myData.get("legislationTransposes");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<LegislationApplies>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<LegislationApplies>) current;
     }
     return Arrays.asList((LegislationApplies) current);
   }
@@ -172,11 +172,11 @@ public class Legislation extends CreativeWork implements LegislationApplies {
   /**
    * Indicates that this legislation (or part of a legislation) somehow transfers another legislation in a different legislative context. This is an informative link, and it has no legal value. For legally-binding links of transposition, use the &lt;a href=&quot;/legislationTransposes&quot;&gt;legislationTransposes&lt;/a&gt; property. For example an informative consolidated law of a European Union's member state &quot;applies&quot; the consolidated version of the European Directive implemented in it.
    */
-  @JsonIgnore public Collection<LegislationApplies> getLegislationAppliess() {
+  @JsonIgnore public java.util.Collection<LegislationApplies> getLegislationAppliess() {
     final Object current = myData.get("legislationApplies");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<LegislationApplies>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<LegislationApplies>) current;
     }
     return Arrays.asList((LegislationApplies) current);
   }
@@ -189,11 +189,11 @@ public class Legislation extends CreativeWork implements LegislationApplies {
   /**
    * The person or organization that originally passed or made the law : typically parliament (for primary legislation) or government (for secondary legislation). This indicates the &quot;legal author&quot; of the law, as opposed to its physical author.
    */
-  @JsonIgnore public Collection<Organization> getLegislationPassedByOrganizations() {
+  @JsonIgnore public java.util.Collection<Organization> getLegislationPassedByOrganizations() {
     final Object current = myData.get("legislationPassedBy");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
   }
@@ -206,11 +206,11 @@ public class Legislation extends CreativeWork implements LegislationApplies {
   /**
    * The person or organization that originally passed or made the law : typically parliament (for primary legislation) or government (for secondary legislation). This indicates the &quot;legal author&quot; of the law, as opposed to its physical author.
    */
-  @JsonIgnore public Collection<Person> getLegislationPassedByPersons() {
+  @JsonIgnore public java.util.Collection<Person> getLegislationPassedByPersons() {
     final Object current = myData.get("legislationPassedBy");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -223,11 +223,11 @@ public class Legislation extends CreativeWork implements LegislationApplies {
   /**
    * Another legislation that this legislation changes. This encompasses the notions of amendment, replacement, correction, repeal, or other types of change. This may be a direct change (textual or non-textual amendment) or a consequential or indirect change. The property is to be used to express the existence of a change relationship between two acts rather than the existence of a consolidated version of the text that shows the result of the change. For consolidation relationships, use the &lt;a href=&quot;/legislationConsolidates&quot;&gt;legislationConsolidates&lt;/a&gt; property.
    */
-  @JsonIgnore public Collection<Legislation> getLegislationChangess() {
+  @JsonIgnore public java.util.Collection<Legislation> getLegislationChangess() {
     final Object current = myData.get("legislationChanges");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Legislation>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Legislation>) current;
     }
     return Arrays.asList((Legislation) current);
   }
@@ -240,11 +240,11 @@ public class Legislation extends CreativeWork implements LegislationApplies {
   /**
    * Indicates another legislation taken into account in this consolidated legislation (which is usually the product of an editorial process that revises the legislation). This property should be used multiple times to refer to both the original version or the previous consolidated version, and to the legislations making the change.
    */
-  @JsonIgnore public Collection<Legislation> getLegislationConsolidatess() {
+  @JsonIgnore public java.util.Collection<Legislation> getLegislationConsolidatess() {
     final Object current = myData.get("legislationConsolidates");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Legislation>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Legislation>) current;
     }
     return Arrays.asList((Legislation) current);
   }
@@ -257,11 +257,11 @@ public class Legislation extends CreativeWork implements LegislationApplies {
   /**
    * An individual or organization that has some kind of responsibility for the legislation. Typically the ministry who is/was in charge of elaborating the legislation, or the adressee for potential questions about the legislation once it is published.
    */
-  @JsonIgnore public Collection<Organization> getLegislationResponsibleOrganizations() {
+  @JsonIgnore public java.util.Collection<Organization> getLegislationResponsibleOrganizations() {
     final Object current = myData.get("legislationResponsible");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
   }
@@ -274,11 +274,11 @@ public class Legislation extends CreativeWork implements LegislationApplies {
   /**
    * An individual or organization that has some kind of responsibility for the legislation. Typically the ministry who is/was in charge of elaborating the legislation, or the adressee for potential questions about the legislation once it is published.
    */
-  @JsonIgnore public Collection<Person> getLegislationResponsiblePersons() {
+  @JsonIgnore public java.util.Collection<Person> getLegislationResponsiblePersons() {
     final Object current = myData.get("legislationResponsible");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -336,13 +336,6 @@ public class Legislation extends CreativeWork implements LegislationApplies {
      */
     @NotNull public Builder legislationLegalForce(@NotNull LegalForceStatus legalForceStatus) {
       putValue("legislationLegalForce", legalForceStatus);
-      return this;
-    }
-    /**
-     * Whether the legislation is currently in force, not in force, or partially in force.
-     */
-    @NotNull public Builder legislationLegalForce(@NotNull LegalForceStatus.Builder legalForceStatus) {
-      putValue("legislationLegalForce", legalForceStatus.build());
       return this;
     }
     /**
@@ -1865,8 +1858,8 @@ public class Legislation extends CreativeWork implements LegislationApplies {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

@@ -36,11 +36,11 @@ public class OccupationalExperienceRequirements extends Intangible {
   /**
    * Indicates the minimal number of months of experience required for a position.
    */
-  @JsonIgnore public Collection<Integer> getMonthsOfExperienceIntegers() {
+  @JsonIgnore public java.util.Collection<Integer> getMonthsOfExperienceIntegers() {
     final Object current = myData.get("monthsOfExperience");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -53,11 +53,11 @@ public class OccupationalExperienceRequirements extends Intangible {
   /**
    * Indicates the minimal number of months of experience required for a position.
    */
-  @JsonIgnore public Collection<Long> getMonthsOfExperienceLongs() {
+  @JsonIgnore public java.util.Collection<Long> getMonthsOfExperienceLongs() {
     final Object current = myData.get("monthsOfExperience");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Long>) current;
     }
     return Arrays.asList((Long) current);
   }
@@ -70,11 +70,11 @@ public class OccupationalExperienceRequirements extends Intangible {
   /**
    * Indicates the minimal number of months of experience required for a position.
    */
-  @JsonIgnore public Collection<Float> getMonthsOfExperienceFloats() {
+  @JsonIgnore public java.util.Collection<Float> getMonthsOfExperienceFloats() {
     final Object current = myData.get("monthsOfExperience");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Float>) current;
     }
     return Arrays.asList((Float) current);
   }
@@ -87,11 +87,11 @@ public class OccupationalExperienceRequirements extends Intangible {
   /**
    * Indicates the minimal number of months of experience required for a position.
    */
-  @JsonIgnore public Collection<Double> getMonthsOfExperienceDoubles() {
+  @JsonIgnore public java.util.Collection<Double> getMonthsOfExperienceDoubles() {
     final Object current = myData.get("monthsOfExperience");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Double>) current;
     }
     return Arrays.asList((Double) current);
   }
@@ -104,11 +104,11 @@ public class OccupationalExperienceRequirements extends Intangible {
   /**
    * Indicates the minimal number of months of experience required for a position.
    */
-  @JsonIgnore public Collection<String> getMonthsOfExperienceStrings() {
+  @JsonIgnore public java.util.Collection<String> getMonthsOfExperienceStrings() {
     final Object current = myData.get("monthsOfExperience");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }

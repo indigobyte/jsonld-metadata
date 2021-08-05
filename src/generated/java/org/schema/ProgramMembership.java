@@ -36,11 +36,11 @@ public class ProgramMembership extends Intangible implements MemberOf {
   /**
    * The program providing the membership.
    */
-  @JsonIgnore public Collection<String> getProgramNames() {
+  @JsonIgnore public java.util.Collection<String> getProgramNames() {
     final Object current = myData.get("programName");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -53,11 +53,11 @@ public class ProgramMembership extends Intangible implements MemberOf {
   /**
    * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
    */
-  @JsonIgnore public Collection<Organization> getMemberOrganizations() {
+  @JsonIgnore public java.util.Collection<Organization> getMemberOrganizations() {
     final Object current = myData.get("member");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
   }
@@ -70,11 +70,11 @@ public class ProgramMembership extends Intangible implements MemberOf {
   /**
    * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
    */
-  @JsonIgnore public Collection<Person> getMemberPersons() {
+  @JsonIgnore public java.util.Collection<Person> getMemberPersons() {
     final Object current = myData.get("member");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -87,11 +87,11 @@ public class ProgramMembership extends Intangible implements MemberOf {
   /**
    * The organization (airline, travelers' club, etc.) the membership is made with.
    */
-  @JsonIgnore public Collection<Organization> getHostingOrganizations() {
+  @JsonIgnore public java.util.Collection<Organization> getHostingOrganizations() {
     final Object current = myData.get("hostingOrganization");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
   }
@@ -104,11 +104,11 @@ public class ProgramMembership extends Intangible implements MemberOf {
   /**
    * A unique identifier for the membership.
    */
-  @JsonIgnore public Collection<String> getMembershipNumbers() {
+  @JsonIgnore public java.util.Collection<String> getMembershipNumbers() {
     final Object current = myData.get("membershipNumber");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -121,11 +121,11 @@ public class ProgramMembership extends Intangible implements MemberOf {
   /**
    * The number of membership points earned by the member. If necessary, the unitText can be used to express the units the points are issued in. (e.g. stars, miles, etc.)
    */
-  @JsonIgnore public Collection<Integer> getMembershipPointsEarnedIntegers() {
+  @JsonIgnore public java.util.Collection<Integer> getMembershipPointsEarnedIntegers() {
     final Object current = myData.get("membershipPointsEarned");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -138,11 +138,11 @@ public class ProgramMembership extends Intangible implements MemberOf {
   /**
    * The number of membership points earned by the member. If necessary, the unitText can be used to express the units the points are issued in. (e.g. stars, miles, etc.)
    */
-  @JsonIgnore public Collection<Long> getMembershipPointsEarnedLongs() {
+  @JsonIgnore public java.util.Collection<Long> getMembershipPointsEarnedLongs() {
     final Object current = myData.get("membershipPointsEarned");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Long>) current;
     }
     return Arrays.asList((Long) current);
   }
@@ -155,11 +155,11 @@ public class ProgramMembership extends Intangible implements MemberOf {
   /**
    * The number of membership points earned by the member. If necessary, the unitText can be used to express the units the points are issued in. (e.g. stars, miles, etc.)
    */
-  @JsonIgnore public Collection<Float> getMembershipPointsEarnedFloats() {
+  @JsonIgnore public java.util.Collection<Float> getMembershipPointsEarnedFloats() {
     final Object current = myData.get("membershipPointsEarned");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Float>) current;
     }
     return Arrays.asList((Float) current);
   }
@@ -172,11 +172,11 @@ public class ProgramMembership extends Intangible implements MemberOf {
   /**
    * The number of membership points earned by the member. If necessary, the unitText can be used to express the units the points are issued in. (e.g. stars, miles, etc.)
    */
-  @JsonIgnore public Collection<Double> getMembershipPointsEarnedDoubles() {
+  @JsonIgnore public java.util.Collection<Double> getMembershipPointsEarnedDoubles() {
     final Object current = myData.get("membershipPointsEarned");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Double>) current;
     }
     return Arrays.asList((Double) current);
   }
@@ -189,11 +189,11 @@ public class ProgramMembership extends Intangible implements MemberOf {
   /**
    * The number of membership points earned by the member. If necessary, the unitText can be used to express the units the points are issued in. (e.g. stars, miles, etc.)
    */
-  @JsonIgnore public Collection<String> getMembershipPointsEarnedStrings() {
+  @JsonIgnore public java.util.Collection<String> getMembershipPointsEarnedStrings() {
     final Object current = myData.get("membershipPointsEarned");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }

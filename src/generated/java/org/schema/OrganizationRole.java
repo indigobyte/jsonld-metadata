@@ -36,11 +36,11 @@ public class OrganizationRole extends Role {
   /**
    * A number associated with a role in an organization, for example, the number on an athlete's jersey.
    */
-  @JsonIgnore public Collection<Integer> getNumberedPositionIntegers() {
+  @JsonIgnore public java.util.Collection<Integer> getNumberedPositionIntegers() {
     final Object current = myData.get("numberedPosition");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -53,11 +53,11 @@ public class OrganizationRole extends Role {
   /**
    * A number associated with a role in an organization, for example, the number on an athlete's jersey.
    */
-  @JsonIgnore public Collection<Long> getNumberedPositionLongs() {
+  @JsonIgnore public java.util.Collection<Long> getNumberedPositionLongs() {
     final Object current = myData.get("numberedPosition");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Long>) current;
     }
     return Arrays.asList((Long) current);
   }
@@ -70,11 +70,11 @@ public class OrganizationRole extends Role {
   /**
    * A number associated with a role in an organization, for example, the number on an athlete's jersey.
    */
-  @JsonIgnore public Collection<Float> getNumberedPositionFloats() {
+  @JsonIgnore public java.util.Collection<Float> getNumberedPositionFloats() {
     final Object current = myData.get("numberedPosition");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Float>) current;
     }
     return Arrays.asList((Float) current);
   }
@@ -87,11 +87,11 @@ public class OrganizationRole extends Role {
   /**
    * A number associated with a role in an organization, for example, the number on an athlete's jersey.
    */
-  @JsonIgnore public Collection<Double> getNumberedPositionDoubles() {
+  @JsonIgnore public java.util.Collection<Double> getNumberedPositionDoubles() {
     final Object current = myData.get("numberedPosition");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Double>) current;
     }
     return Arrays.asList((Double) current);
   }
@@ -104,11 +104,11 @@ public class OrganizationRole extends Role {
   /**
    * A number associated with a role in an organization, for example, the number on an athlete's jersey.
    */
-  @JsonIgnore public Collection<String> getNumberedPositionStrings() {
+  @JsonIgnore public java.util.Collection<String> getNumberedPositionStrings() {
     final Object current = myData.get("numberedPosition");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }

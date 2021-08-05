@@ -36,11 +36,11 @@ public class SoftwareApplication extends CreativeWork {
   /**
    * Supporting data for a SoftwareApplication.
    */
-  @JsonIgnore public Collection<DataFeed> getSupportingDatas() {
+  @JsonIgnore public java.util.Collection<DataFeed> getSupportingDatas() {
     final Object current = myData.get("supportingData");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DataFeed>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<DataFeed>) current;
     }
     return Arrays.asList((DataFeed) current);
   }
@@ -53,11 +53,11 @@ public class SoftwareApplication extends CreativeWork {
   /**
    * Additional content for a software application.
    */
-  @JsonIgnore public Collection<SoftwareApplication> getSoftwareAddOns() {
+  @JsonIgnore public java.util.Collection<SoftwareApplication> getSoftwareAddOns() {
     final Object current = myData.get("softwareAddOn");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<SoftwareApplication>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<SoftwareApplication>) current;
     }
     return Arrays.asList((SoftwareApplication) current);
   }
@@ -70,11 +70,11 @@ public class SoftwareApplication extends CreativeWork {
   /**
    * A link to a screenshot image of the app.
    */
-  @JsonIgnore public Collection<ImageObject> getScreenshotImageObjects() {
+  @JsonIgnore public java.util.Collection<ImageObject> getScreenshotImageObjects() {
     final Object current = myData.get("screenshot");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<ImageObject>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<ImageObject>) current;
     }
     return Arrays.asList((ImageObject) current);
   }
@@ -87,11 +87,11 @@ public class SoftwareApplication extends CreativeWork {
   /**
    * A link to a screenshot image of the app.
    */
-  @JsonIgnore public Collection<String> getScreenshotStrings() {
+  @JsonIgnore public java.util.Collection<String> getScreenshotStrings() {
     final Object current = myData.get("screenshot");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -104,11 +104,11 @@ public class SoftwareApplication extends CreativeWork {
   /**
    * Countries for which the application is supported. You can also provide the two-letter ISO 3166-1 alpha-2 country code.
    */
-  @JsonIgnore public Collection<String> getCountriesSupporteds() {
+  @JsonIgnore public java.util.Collection<String> getCountriesSupporteds() {
     final Object current = myData.get("countriesSupported");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -121,11 +121,11 @@ public class SoftwareApplication extends CreativeWork {
   /**
    * Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (Examples: DirectX, Java or .NET runtime).
    */
-  @JsonIgnore public Collection<String> getSoftwareRequirementss() {
+  @JsonIgnore public java.util.Collection<String> getSoftwareRequirementss() {
     final Object current = myData.get("softwareRequirements");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -138,11 +138,11 @@ public class SoftwareApplication extends CreativeWork {
   /**
    * Countries for which the application is not supported. You can also provide the two-letter ISO 3166-1 alpha-2 country code.
    */
-  @JsonIgnore public Collection<String> getCountriesNotSupporteds() {
+  @JsonIgnore public java.util.Collection<String> getCountriesNotSupporteds() {
     final Object current = myData.get("countriesNotSupported");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -155,11 +155,11 @@ public class SoftwareApplication extends CreativeWork {
   /**
    * The name of the application suite to which the application belongs (e.g. Excel belongs to Office).
    */
-  @JsonIgnore public Collection<String> getApplicationSuites() {
+  @JsonIgnore public java.util.Collection<String> getApplicationSuites() {
     final Object current = myData.get("applicationSuite");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -172,11 +172,11 @@ public class SoftwareApplication extends CreativeWork {
   /**
    * Subcategory of the application, e.g. 'Arcade Game'.
    */
-  @JsonIgnore public Collection<String> getApplicationSubCategorys() {
+  @JsonIgnore public java.util.Collection<String> getApplicationSubCategorys() {
     final Object current = myData.get("applicationSubCategory");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -189,11 +189,11 @@ public class SoftwareApplication extends CreativeWork {
   /**
    * Type of software application, e.g. 'Game, Multimedia'.
    */
-  @JsonIgnore public Collection<String> getApplicationCategorys() {
+  @JsonIgnore public java.util.Collection<String> getApplicationCategorys() {
     final Object current = myData.get("applicationCategory");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -206,11 +206,11 @@ public class SoftwareApplication extends CreativeWork {
   /**
    * Version of the software instance.
    */
-  @JsonIgnore public Collection<String> getSoftwareVersions() {
+  @JsonIgnore public java.util.Collection<String> getSoftwareVersions() {
     final Object current = myData.get("softwareVersion");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -223,11 +223,11 @@ public class SoftwareApplication extends CreativeWork {
   /**
    * Software application help.
    */
-  @JsonIgnore public Collection<CreativeWork> getSoftwareHelps() {
+  @JsonIgnore public java.util.Collection<CreativeWork> getSoftwareHelps() {
     final Object current = myData.get("softwareHelp");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<CreativeWork>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<CreativeWork>) current;
     }
     return Arrays.asList((CreativeWork) current);
   }
@@ -240,11 +240,11 @@ public class SoftwareApplication extends CreativeWork {
   /**
    * URL at which the app may be installed, if different from the URL of the item.
    */
-  @JsonIgnore public Collection<String> getInstallUrls() {
+  @JsonIgnore public java.util.Collection<String> getInstallUrls() {
     final Object current = myData.get("installUrl");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -257,11 +257,11 @@ public class SoftwareApplication extends CreativeWork {
   /**
    * Device required to run the application. Used in cases where a specific make/model is required to run the application.
    */
-  @JsonIgnore public Collection<String> getAvailableOnDevices() {
+  @JsonIgnore public java.util.Collection<String> getAvailableOnDevices() {
     final Object current = myData.get("availableOnDevice");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -274,11 +274,11 @@ public class SoftwareApplication extends CreativeWork {
   /**
    * If the file can be downloaded, URL to download the binary.
    */
-  @JsonIgnore public Collection<String> getDownloadUrls() {
+  @JsonIgnore public java.util.Collection<String> getDownloadUrls() {
     final Object current = myData.get("downloadUrl");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -291,11 +291,11 @@ public class SoftwareApplication extends CreativeWork {
   /**
    * Features or modules provided by this application (and possibly required by other applications).
    */
-  @JsonIgnore public Collection<String> getFeatureLists() {
+  @JsonIgnore public java.util.Collection<String> getFeatureLists() {
     final Object current = myData.get("featureList");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -308,11 +308,11 @@ public class SoftwareApplication extends CreativeWork {
   /**
    * Size of the application / package (e.g. 18MB). In the absence of a unit (MB, KB etc.), KB will be assumed.
    */
-  @JsonIgnore public Collection<String> getFileSizes() {
+  @JsonIgnore public java.util.Collection<String> getFileSizes() {
     final Object current = myData.get("fileSize");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -325,11 +325,11 @@ public class SoftwareApplication extends CreativeWork {
   /**
    * Operating systems supported (Windows 7, OSX 10.6, Android 1.6).
    */
-  @JsonIgnore public Collection<String> getOperatingSystems() {
+  @JsonIgnore public java.util.Collection<String> getOperatingSystems() {
     final Object current = myData.get("operatingSystem");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -342,11 +342,11 @@ public class SoftwareApplication extends CreativeWork {
   /**
    * Storage requirements (free space required).
    */
-  @JsonIgnore public Collection<String> getStorageRequirementss() {
+  @JsonIgnore public java.util.Collection<String> getStorageRequirementss() {
     final Object current = myData.get("storageRequirements");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -359,11 +359,11 @@ public class SoftwareApplication extends CreativeWork {
   /**
    * Permission(s) required to run the app (for example, a mobile app may require full internet access or may run only on wifi).
    */
-  @JsonIgnore public Collection<String> getPermissionss() {
+  @JsonIgnore public java.util.Collection<String> getPermissionss() {
     final Object current = myData.get("permissions");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -376,11 +376,11 @@ public class SoftwareApplication extends CreativeWork {
   /**
    * Description of what changed in this version.
    */
-  @JsonIgnore public Collection<String> getReleaseNotess() {
+  @JsonIgnore public java.util.Collection<String> getReleaseNotess() {
     final Object current = myData.get("releaseNotes");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -393,11 +393,11 @@ public class SoftwareApplication extends CreativeWork {
   /**
    * Minimum memory requirements.
    */
-  @JsonIgnore public Collection<String> getMemoryRequirementss() {
+  @JsonIgnore public java.util.Collection<String> getMemoryRequirementss() {
     final Object current = myData.get("memoryRequirements");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -410,11 +410,11 @@ public class SoftwareApplication extends CreativeWork {
   /**
    * Processor architecture required to run the application (e.g. IA64).
    */
-  @JsonIgnore public Collection<String> getProcessorRequirementss() {
+  @JsonIgnore public java.util.Collection<String> getProcessorRequirementss() {
     final Object current = myData.get("processorRequirements");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -2036,8 +2036,8 @@ public class SoftwareApplication extends CreativeWork {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

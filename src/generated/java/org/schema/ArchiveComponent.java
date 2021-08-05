@@ -36,11 +36,11 @@ public class ArchiveComponent extends CreativeWork {
   /**
    * Current location of the item.
    */
-  @JsonIgnore public Collection<Place> getItemLocationPlaces() {
+  @JsonIgnore public java.util.Collection<Place> getItemLocationPlaces() {
     final Object current = myData.get("itemLocation");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Place>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Place>) current;
     }
     return Arrays.asList((Place) current);
   }
@@ -53,11 +53,11 @@ public class ArchiveComponent extends CreativeWork {
   /**
    * Current location of the item.
    */
-  @JsonIgnore public Collection<PostalAddress> getItemLocationPostalAddresss() {
+  @JsonIgnore public java.util.Collection<PostalAddress> getItemLocationPostalAddresss() {
     final Object current = myData.get("itemLocation");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<PostalAddress>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<PostalAddress>) current;
     }
     return Arrays.asList((PostalAddress) current);
   }
@@ -70,11 +70,11 @@ public class ArchiveComponent extends CreativeWork {
   /**
    * Current location of the item.
    */
-  @JsonIgnore public Collection<String> getItemLocationStrings() {
+  @JsonIgnore public java.util.Collection<String> getItemLocationStrings() {
     final Object current = myData.get("itemLocation");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -87,11 +87,11 @@ public class ArchiveComponent extends CreativeWork {
   /**
    * [[ArchiveOrganization]] that holds, keeps or maintains the [[ArchiveComponent]].
    */
-  @JsonIgnore public Collection<ArchiveOrganization> getHoldingArchives() {
+  @JsonIgnore public java.util.Collection<ArchiveOrganization> getHoldingArchives() {
     final Object current = myData.get("holdingArchive");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<ArchiveOrganization>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<ArchiveOrganization>) current;
     }
     return Arrays.asList((ArchiveOrganization) current);
   }
@@ -1573,8 +1573,8 @@ public class ArchiveComponent extends CreativeWork {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

@@ -39,11 +39,11 @@ public class GeoCircle extends GeoShape {
   /**
    * Indicates the approximate radius of a GeoCircle (metres unless indicated otherwise via Distance notation).
    */
-  @JsonIgnore public Collection<Integer> getGeoRadiusIntegers() {
+  @JsonIgnore public java.util.Collection<Integer> getGeoRadiusIntegers() {
     final Object current = myData.get("geoRadius");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -56,11 +56,11 @@ public class GeoCircle extends GeoShape {
   /**
    * Indicates the approximate radius of a GeoCircle (metres unless indicated otherwise via Distance notation).
    */
-  @JsonIgnore public Collection<Long> getGeoRadiusLongs() {
+  @JsonIgnore public java.util.Collection<Long> getGeoRadiusLongs() {
     final Object current = myData.get("geoRadius");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Long>) current;
     }
     return Arrays.asList((Long) current);
   }
@@ -73,11 +73,11 @@ public class GeoCircle extends GeoShape {
   /**
    * Indicates the approximate radius of a GeoCircle (metres unless indicated otherwise via Distance notation).
    */
-  @JsonIgnore public Collection<Float> getGeoRadiusFloats() {
+  @JsonIgnore public java.util.Collection<Float> getGeoRadiusFloats() {
     final Object current = myData.get("geoRadius");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Float>) current;
     }
     return Arrays.asList((Float) current);
   }
@@ -90,11 +90,11 @@ public class GeoCircle extends GeoShape {
   /**
    * Indicates the approximate radius of a GeoCircle (metres unless indicated otherwise via Distance notation).
    */
-  @JsonIgnore public Collection<Double> getGeoRadiusDoubles() {
+  @JsonIgnore public java.util.Collection<Double> getGeoRadiusDoubles() {
     final Object current = myData.get("geoRadius");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Double>) current;
     }
     return Arrays.asList((Double) current);
   }
@@ -107,11 +107,11 @@ public class GeoCircle extends GeoShape {
   /**
    * Indicates the approximate radius of a GeoCircle (metres unless indicated otherwise via Distance notation).
    */
-  @JsonIgnore public Collection<String> getGeoRadiusStrings() {
+  @JsonIgnore public java.util.Collection<String> getGeoRadiusStrings() {
     final Object current = myData.get("geoRadius");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -124,11 +124,11 @@ public class GeoCircle extends GeoShape {
   /**
    * Indicates the GeoCoordinates at the centre of a GeoShape e.g. GeoCircle.
    */
-  @JsonIgnore public Collection<GeoCoordinates> getGeoMidpoints() {
+  @JsonIgnore public java.util.Collection<GeoCoordinates> getGeoMidpoints() {
     final Object current = myData.get("geoMidpoint");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<GeoCoordinates>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<GeoCoordinates>) current;
     }
     return Arrays.asList((GeoCoordinates) current);
   }

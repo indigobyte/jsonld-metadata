@@ -36,11 +36,11 @@ public class TechArticle extends Article {
   /**
    * Proficiency needed for this content; expected values: 'Beginner', 'Expert'.
    */
-  @JsonIgnore public Collection<String> getProficiencyLevels() {
+  @JsonIgnore public java.util.Collection<String> getProficiencyLevels() {
     final Object current = myData.get("proficiencyLevel");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -53,11 +53,11 @@ public class TechArticle extends Article {
   /**
    * Prerequisites needed to fulfill steps in article.
    */
-  @JsonIgnore public Collection<String> getDependenciess() {
+  @JsonIgnore public java.util.Collection<String> getDependenciess() {
     final Object current = myData.get("dependencies");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -1641,8 +1641,8 @@ public class TechArticle extends Article {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

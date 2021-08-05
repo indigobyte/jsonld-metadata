@@ -36,11 +36,11 @@ public class PriceSpecification extends StructuredValue {
   /**
    * The date when the item becomes valid.
    */
-  @JsonIgnore public Collection<java.util.Date> getValidFroms() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getValidFroms() {
     final Object current = myData.get("validFrom");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -55,11 +55,11 @@ public class PriceSpecification extends StructuredValue {
    * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.\n\nUsage guidelines:\n\n* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;) instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.\n* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a &quot;content=&quot; attribute for publishing simple machine-readable values alongside more human-friendly formatting.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
    *       
    */
-  @JsonIgnore public Collection<Number> getPriceNumbers() {
+  @JsonIgnore public java.util.Collection<Number> getPriceNumbers() {
     final Object current = myData.get("price");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Number>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Number>) current;
     }
     return Arrays.asList((Number) current);
   }
@@ -74,11 +74,11 @@ public class PriceSpecification extends StructuredValue {
    * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.\n\nUsage guidelines:\n\n* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;) instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.\n* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a &quot;content=&quot; attribute for publishing simple machine-readable values alongside more human-friendly formatting.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
    *       
    */
-  @JsonIgnore public Collection<String> getPriceStrings() {
+  @JsonIgnore public java.util.Collection<String> getPriceStrings() {
     final Object current = myData.get("price");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -91,11 +91,11 @@ public class PriceSpecification extends StructuredValue {
   /**
    * The lowest price if the price is a range.
    */
-  @JsonIgnore public Collection<Integer> getMinPriceIntegers() {
+  @JsonIgnore public java.util.Collection<Integer> getMinPriceIntegers() {
     final Object current = myData.get("minPrice");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -108,11 +108,11 @@ public class PriceSpecification extends StructuredValue {
   /**
    * The lowest price if the price is a range.
    */
-  @JsonIgnore public Collection<Long> getMinPriceLongs() {
+  @JsonIgnore public java.util.Collection<Long> getMinPriceLongs() {
     final Object current = myData.get("minPrice");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Long>) current;
     }
     return Arrays.asList((Long) current);
   }
@@ -125,11 +125,11 @@ public class PriceSpecification extends StructuredValue {
   /**
    * The lowest price if the price is a range.
    */
-  @JsonIgnore public Collection<Float> getMinPriceFloats() {
+  @JsonIgnore public java.util.Collection<Float> getMinPriceFloats() {
     final Object current = myData.get("minPrice");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Float>) current;
     }
     return Arrays.asList((Float) current);
   }
@@ -142,11 +142,11 @@ public class PriceSpecification extends StructuredValue {
   /**
    * The lowest price if the price is a range.
    */
-  @JsonIgnore public Collection<Double> getMinPriceDoubles() {
+  @JsonIgnore public java.util.Collection<Double> getMinPriceDoubles() {
     final Object current = myData.get("minPrice");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Double>) current;
     }
     return Arrays.asList((Double) current);
   }
@@ -159,11 +159,11 @@ public class PriceSpecification extends StructuredValue {
   /**
    * The lowest price if the price is a range.
    */
-  @JsonIgnore public Collection<String> getMinPriceStrings() {
+  @JsonIgnore public java.util.Collection<String> getMinPriceStrings() {
     final Object current = myData.get("minPrice");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -176,11 +176,11 @@ public class PriceSpecification extends StructuredValue {
   /**
    * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
    */
-  @JsonIgnore public Collection<QuantitativeValue> getEligibleQuantitys() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getEligibleQuantitys() {
     final Object current = myData.get("eligibleQuantity");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -193,11 +193,11 @@ public class PriceSpecification extends StructuredValue {
   /**
    * Specifies whether the applicable value-added tax (VAT) is included in the price specification or not.
    */
-  @JsonIgnore public Collection<Boolean> getValueAddedTaxIncludeds() {
+  @JsonIgnore public java.util.Collection<Boolean> getValueAddedTaxIncludeds() {
     final Object current = myData.get("valueAddedTaxIncluded");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Boolean>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Boolean>) current;
     }
     return Arrays.asList((Boolean) current);
   }
@@ -210,11 +210,11 @@ public class PriceSpecification extends StructuredValue {
   /**
    * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
    */
-  @JsonIgnore public Collection<java.util.Date> getValidThroughs() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getValidThroughs() {
     final Object current = myData.get("validThrough");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -227,11 +227,11 @@ public class PriceSpecification extends StructuredValue {
   /**
    * The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.
    */
-  @JsonIgnore public Collection<PriceSpecification> getEligibleTransactionVolumes() {
+  @JsonIgnore public java.util.Collection<PriceSpecification> getEligibleTransactionVolumes() {
     final Object current = myData.get("eligibleTransactionVolume");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<PriceSpecification>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<PriceSpecification>) current;
     }
     return Arrays.asList((PriceSpecification) current);
   }
@@ -244,11 +244,11 @@ public class PriceSpecification extends StructuredValue {
   /**
    * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;.
    */
-  @JsonIgnore public Collection<String> getPriceCurrencys() {
+  @JsonIgnore public java.util.Collection<String> getPriceCurrencys() {
     final Object current = myData.get("priceCurrency");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -261,11 +261,11 @@ public class PriceSpecification extends StructuredValue {
   /**
    * The highest price if the price is a range.
    */
-  @JsonIgnore public Collection<Integer> getMaxPriceIntegers() {
+  @JsonIgnore public java.util.Collection<Integer> getMaxPriceIntegers() {
     final Object current = myData.get("maxPrice");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -278,11 +278,11 @@ public class PriceSpecification extends StructuredValue {
   /**
    * The highest price if the price is a range.
    */
-  @JsonIgnore public Collection<Long> getMaxPriceLongs() {
+  @JsonIgnore public java.util.Collection<Long> getMaxPriceLongs() {
     final Object current = myData.get("maxPrice");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Long>) current;
     }
     return Arrays.asList((Long) current);
   }
@@ -295,11 +295,11 @@ public class PriceSpecification extends StructuredValue {
   /**
    * The highest price if the price is a range.
    */
-  @JsonIgnore public Collection<Float> getMaxPriceFloats() {
+  @JsonIgnore public java.util.Collection<Float> getMaxPriceFloats() {
     final Object current = myData.get("maxPrice");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Float>) current;
     }
     return Arrays.asList((Float) current);
   }
@@ -312,11 +312,11 @@ public class PriceSpecification extends StructuredValue {
   /**
    * The highest price if the price is a range.
    */
-  @JsonIgnore public Collection<Double> getMaxPriceDoubles() {
+  @JsonIgnore public java.util.Collection<Double> getMaxPriceDoubles() {
     final Object current = myData.get("maxPrice");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Double>) current;
     }
     return Arrays.asList((Double) current);
   }
@@ -329,11 +329,11 @@ public class PriceSpecification extends StructuredValue {
   /**
    * The highest price if the price is a range.
    */
-  @JsonIgnore public Collection<String> getMaxPriceStrings() {
+  @JsonIgnore public java.util.Collection<String> getMaxPriceStrings() {
     final Object current = myData.get("maxPrice");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }

@@ -36,11 +36,11 @@ public class ServiceChannel extends Intangible {
   /**
    * The service provided by this channel.
    */
-  @JsonIgnore public Collection<Service> getProvidesServices() {
+  @JsonIgnore public java.util.Collection<Service> getProvidesServices() {
     final Object current = myData.get("providesService");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Service>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Service>) current;
     }
     return Arrays.asList((Service) current);
   }
@@ -53,11 +53,11 @@ public class ServiceChannel extends Intangible {
   /**
    * Estimated processing time for the service using this channel.
    */
-  @JsonIgnore public Collection<Duration> getProcessingTimes() {
+  @JsonIgnore public java.util.Collection<Duration> getProcessingTimes() {
     final Object current = myData.get("processingTime");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Duration>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Duration>) current;
     }
     return Arrays.asList((Duration) current);
   }
@@ -70,11 +70,11 @@ public class ServiceChannel extends Intangible {
   /**
    * The website to access the service.
    */
-  @JsonIgnore public Collection<String> getServiceUrls() {
+  @JsonIgnore public java.util.Collection<String> getServiceUrls() {
     final Object current = myData.get("serviceUrl");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -87,11 +87,11 @@ public class ServiceChannel extends Intangible {
   /**
    * The number to access the service by text message.
    */
-  @JsonIgnore public Collection<ContactPoint> getServiceSmsNumbers() {
+  @JsonIgnore public java.util.Collection<ContactPoint> getServiceSmsNumbers() {
     final Object current = myData.get("serviceSmsNumber");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<ContactPoint>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<ContactPoint>) current;
     }
     return Arrays.asList((ContactPoint) current);
   }
@@ -104,11 +104,11 @@ public class ServiceChannel extends Intangible {
   /**
    * The address for accessing the service by mail.
    */
-  @JsonIgnore public Collection<PostalAddress> getServicePostalAddresss() {
+  @JsonIgnore public java.util.Collection<PostalAddress> getServicePostalAddresss() {
     final Object current = myData.get("servicePostalAddress");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<PostalAddress>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<PostalAddress>) current;
     }
     return Arrays.asList((PostalAddress) current);
   }
@@ -121,11 +121,11 @@ public class ServiceChannel extends Intangible {
   /**
    * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
    */
-  @JsonIgnore public Collection<Language> getAvailableLanguageLanguages() {
+  @JsonIgnore public java.util.Collection<Language> getAvailableLanguageLanguages() {
     final Object current = myData.get("availableLanguage");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Language>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Language>) current;
     }
     return Arrays.asList((Language) current);
   }
@@ -138,11 +138,11 @@ public class ServiceChannel extends Intangible {
   /**
    * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
    */
-  @JsonIgnore public Collection<String> getAvailableLanguageStrings() {
+  @JsonIgnore public java.util.Collection<String> getAvailableLanguageStrings() {
     final Object current = myData.get("availableLanguage");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -155,11 +155,11 @@ public class ServiceChannel extends Intangible {
   /**
    * The phone number to use to access the service.
    */
-  @JsonIgnore public Collection<ContactPoint> getServicePhones() {
+  @JsonIgnore public java.util.Collection<ContactPoint> getServicePhones() {
     final Object current = myData.get("servicePhone");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<ContactPoint>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<ContactPoint>) current;
     }
     return Arrays.asList((ContactPoint) current);
   }
@@ -172,11 +172,11 @@ public class ServiceChannel extends Intangible {
   /**
    * The location (e.g. civic structure, local business, etc.) where a person can go to access the service.
    */
-  @JsonIgnore public Collection<Place> getServiceLocations() {
+  @JsonIgnore public java.util.Collection<Place> getServiceLocations() {
     final Object current = myData.get("serviceLocation");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Place>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Place>) current;
     }
     return Arrays.asList((Place) current);
   }

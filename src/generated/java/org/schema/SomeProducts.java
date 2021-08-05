@@ -36,11 +36,11 @@ public class SomeProducts extends Product {
   /**
    * The current approximate inventory level for the item or items.
    */
-  @JsonIgnore public Collection<QuantitativeValue> getInventoryLevels() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getInventoryLevels() {
     final Object current = myData.get("inventoryLevel");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }

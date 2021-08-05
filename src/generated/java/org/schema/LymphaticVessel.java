@@ -36,11 +36,11 @@ public class LymphaticVessel extends Vessel {
   /**
    * The vasculature the lymphatic structure runs, or efferents, to.
    */
-  @JsonIgnore public Collection<Vessel> getRunsTos() {
+  @JsonIgnore public java.util.Collection<Vessel> getRunsTos() {
     final Object current = myData.get("runsTo");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Vessel>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Vessel>) current;
     }
     return Arrays.asList((Vessel) current);
   }
@@ -53,11 +53,11 @@ public class LymphaticVessel extends Vessel {
   /**
    * The vasculature the lymphatic structure originates, or afferents, from.
    */
-  @JsonIgnore public Collection<Vessel> getOriginatesFroms() {
+  @JsonIgnore public java.util.Collection<Vessel> getOriginatesFroms() {
     final Object current = myData.get("originatesFrom");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Vessel>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Vessel>) current;
     }
     return Arrays.asList((Vessel) current);
   }
@@ -70,11 +70,11 @@ public class LymphaticVessel extends Vessel {
   /**
    * The anatomical or organ system drained by this vessel; generally refers to a specific part of an organ.
    */
-  @JsonIgnore public Collection<AnatomicalStructure> getRegionDrainedAnatomicalStructures() {
+  @JsonIgnore public java.util.Collection<AnatomicalStructure> getRegionDrainedAnatomicalStructures() {
     final Object current = myData.get("regionDrained");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<AnatomicalStructure>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<AnatomicalStructure>) current;
     }
     return Arrays.asList((AnatomicalStructure) current);
   }
@@ -87,11 +87,11 @@ public class LymphaticVessel extends Vessel {
   /**
    * The anatomical or organ system drained by this vessel; generally refers to a specific part of an organ.
    */
-  @JsonIgnore public Collection<AnatomicalSystem> getRegionDrainedAnatomicalSystems() {
+  @JsonIgnore public java.util.Collection<AnatomicalSystem> getRegionDrainedAnatomicalSystems() {
     final Object current = myData.get("regionDrained");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<AnatomicalSystem>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<AnatomicalSystem>) current;
     }
     return Arrays.asList((AnatomicalSystem) current);
   }
@@ -313,24 +313,10 @@ public class LymphaticVessel extends Vessel {
       return this;
     }
     /**
-     * If applicable, a medical specialty in which this entity is relevant.
-     */
-    @NotNull public Builder relevantSpecialty(@NotNull MedicalSpecialty.Builder medicalSpecialty) {
-      putValue("relevantSpecialty", medicalSpecialty.build());
-      return this;
-    }
-    /**
      * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      */
     @NotNull public Builder medicineSystem(@NotNull MedicineSystem medicineSystem) {
       putValue("medicineSystem", medicineSystem);
-      return this;
-    }
-    /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
-     */
-    @NotNull public Builder medicineSystem(@NotNull MedicineSystem.Builder medicineSystem) {
-      putValue("medicineSystem", medicineSystem.build());
       return this;
     }
     /**

@@ -36,11 +36,11 @@ public class MusicRecording extends CreativeWork {
   /**
    * The playlist to which this recording belongs.
    */
-  @JsonIgnore public Collection<MusicPlaylist> getInPlaylists() {
+  @JsonIgnore public java.util.Collection<MusicPlaylist> getInPlaylists() {
     final Object current = myData.get("inPlaylist");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MusicPlaylist>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MusicPlaylist>) current;
     }
     return Arrays.asList((MusicPlaylist) current);
   }
@@ -53,11 +53,11 @@ public class MusicRecording extends CreativeWork {
   /**
    * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
    */
-  @JsonIgnore public Collection<Duration> getDurations() {
+  @JsonIgnore public java.util.Collection<Duration> getDurations() {
     final Object current = myData.get("duration");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Duration>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Duration>) current;
     }
     return Arrays.asList((Duration) current);
   }
@@ -70,11 +70,11 @@ public class MusicRecording extends CreativeWork {
   /**
    * The artist that performed this album or recording.
    */
-  @JsonIgnore public Collection<MusicGroup> getByArtistMusicGroups() {
+  @JsonIgnore public java.util.Collection<MusicGroup> getByArtistMusicGroups() {
     final Object current = myData.get("byArtist");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MusicGroup>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MusicGroup>) current;
     }
     return Arrays.asList((MusicGroup) current);
   }
@@ -87,11 +87,11 @@ public class MusicRecording extends CreativeWork {
   /**
    * The artist that performed this album or recording.
    */
-  @JsonIgnore public Collection<Person> getByArtistPersons() {
+  @JsonIgnore public java.util.Collection<Person> getByArtistPersons() {
     final Object current = myData.get("byArtist");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -104,11 +104,11 @@ public class MusicRecording extends CreativeWork {
   /**
    * The album to which this recording belongs.
    */
-  @JsonIgnore public Collection<MusicAlbum> getInAlbums() {
+  @JsonIgnore public java.util.Collection<MusicAlbum> getInAlbums() {
     final Object current = myData.get("inAlbum");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MusicAlbum>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MusicAlbum>) current;
     }
     return Arrays.asList((MusicAlbum) current);
   }
@@ -121,11 +121,11 @@ public class MusicRecording extends CreativeWork {
   /**
    * The International Standard Recording Code for the recording.
    */
-  @JsonIgnore public Collection<String> getIsrcCodes() {
+  @JsonIgnore public java.util.Collection<String> getIsrcCodes() {
     final Object current = myData.get("isrcCode");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -138,11 +138,11 @@ public class MusicRecording extends CreativeWork {
   /**
    * The composition this track is a recording of.
    */
-  @JsonIgnore public Collection<MusicComposition> getRecordingOfs() {
+  @JsonIgnore public java.util.Collection<MusicComposition> getRecordingOfs() {
     final Object current = myData.get("recordingOf");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MusicComposition>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MusicComposition>) current;
     }
     return Arrays.asList((MusicComposition) current);
   }
@@ -1659,8 +1659,8 @@ public class MusicRecording extends CreativeWork {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

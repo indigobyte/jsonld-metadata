@@ -36,11 +36,11 @@ public class RentAction extends TradeAction {
   /**
    * A sub property of participant. The real estate agent involved in the action.
    */
-  @JsonIgnore public Collection<RealEstateAgent> getRealEstateAgents() {
+  @JsonIgnore public java.util.Collection<RealEstateAgent> getRealEstateAgents() {
     final Object current = myData.get("realEstateAgent");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<RealEstateAgent>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<RealEstateAgent>) current;
     }
     return Arrays.asList((RealEstateAgent) current);
   }
@@ -53,11 +53,11 @@ public class RentAction extends TradeAction {
   /**
    * A sub property of participant. The owner of the real estate property.
    */
-  @JsonIgnore public Collection<Organization> getLandlordOrganizations() {
+  @JsonIgnore public java.util.Collection<Organization> getLandlordOrganizations() {
     final Object current = myData.get("landlord");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
   }
@@ -70,11 +70,11 @@ public class RentAction extends TradeAction {
   /**
    * A sub property of participant. The owner of the real estate property.
    */
-  @JsonIgnore public Collection<Person> getLandlordPersons() {
+  @JsonIgnore public java.util.Collection<Person> getLandlordPersons() {
     final Object current = myData.get("landlord");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -197,13 +197,6 @@ public class RentAction extends TradeAction {
      */
     @NotNull public Builder actionStatus(@NotNull ActionStatusType actionStatusType) {
       putValue("actionStatus", actionStatusType);
-      return this;
-    }
-    /**
-     * Indicates the current disposition of the Action.
-     */
-    @NotNull public Builder actionStatus(@NotNull ActionStatusType.Builder actionStatusType) {
-      putValue("actionStatus", actionStatusType.build());
       return this;
     }
     /**

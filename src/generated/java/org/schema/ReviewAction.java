@@ -36,11 +36,11 @@ public class ReviewAction extends AssessAction {
   /**
    * A sub property of result. The review that resulted in the performing of the action.
    */
-  @JsonIgnore public Collection<Result> getResultReviews() {
+  @JsonIgnore public java.util.Collection<Result> getResultReviews() {
     final Object current = myData.get("resultReview");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Result>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Result>) current;
     }
     return Arrays.asList((Result) current);
   }
@@ -91,13 +91,6 @@ public class ReviewAction extends AssessAction {
      */
     @NotNull public Builder actionStatus(@NotNull ActionStatusType actionStatusType) {
       putValue("actionStatus", actionStatusType);
-      return this;
-    }
-    /**
-     * Indicates the current disposition of the Action.
-     */
-    @NotNull public Builder actionStatus(@NotNull ActionStatusType.Builder actionStatusType) {
-      putValue("actionStatus", actionStatusType.build());
       return this;
     }
     /**

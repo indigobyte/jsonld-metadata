@@ -36,11 +36,11 @@ public class HowToDirection extends CreativeWork {
   /**
    * A media object representing the circumstances while performing this direction.
    */
-  @JsonIgnore public Collection<MediaObject> getDuringMediaMediaObjects() {
+  @JsonIgnore public java.util.Collection<MediaObject> getDuringMediaMediaObjects() {
     final Object current = myData.get("duringMedia");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MediaObject>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MediaObject>) current;
     }
     return Arrays.asList((MediaObject) current);
   }
@@ -53,11 +53,11 @@ public class HowToDirection extends CreativeWork {
   /**
    * A media object representing the circumstances while performing this direction.
    */
-  @JsonIgnore public Collection<String> getDuringMediaStrings() {
+  @JsonIgnore public java.util.Collection<String> getDuringMediaStrings() {
     final Object current = myData.get("duringMedia");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -70,11 +70,11 @@ public class HowToDirection extends CreativeWork {
   /**
    * A media object representing the circumstances before performing this direction.
    */
-  @JsonIgnore public Collection<MediaObject> getBeforeMediaMediaObjects() {
+  @JsonIgnore public java.util.Collection<MediaObject> getBeforeMediaMediaObjects() {
     final Object current = myData.get("beforeMedia");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MediaObject>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MediaObject>) current;
     }
     return Arrays.asList((MediaObject) current);
   }
@@ -87,11 +87,11 @@ public class HowToDirection extends CreativeWork {
   /**
    * A media object representing the circumstances before performing this direction.
    */
-  @JsonIgnore public Collection<String> getBeforeMediaStrings() {
+  @JsonIgnore public java.util.Collection<String> getBeforeMediaStrings() {
     final Object current = myData.get("beforeMedia");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -104,11 +104,11 @@ public class HowToDirection extends CreativeWork {
   /**
    * A sub-property of instrument. A supply consumed when performing instructions or a direction.
    */
-  @JsonIgnore public Collection<Supply> getSupplys() {
+  @JsonIgnore public java.util.Collection<Supply> getSupplys() {
     final Object current = myData.get("supply");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Supply>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Supply>) current;
     }
     return Arrays.asList((Supply) current);
   }
@@ -121,11 +121,11 @@ public class HowToDirection extends CreativeWork {
   /**
    * The length of time it takes to prepare the items to be used in instructions or a direction, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
    */
-  @JsonIgnore public Collection<Duration> getPrepTimes() {
+  @JsonIgnore public java.util.Collection<Duration> getPrepTimes() {
     final Object current = myData.get("prepTime");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Duration>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Duration>) current;
     }
     return Arrays.asList((Duration) current);
   }
@@ -138,11 +138,11 @@ public class HowToDirection extends CreativeWork {
   /**
    * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
    */
-  @JsonIgnore public Collection<Instrument> getTools() {
+  @JsonIgnore public java.util.Collection<Instrument> getTools() {
     final Object current = myData.get("tool");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Instrument>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Instrument>) current;
     }
     return Arrays.asList((Instrument) current);
   }
@@ -155,11 +155,11 @@ public class HowToDirection extends CreativeWork {
   /**
    * A media object representing the circumstances after performing this direction.
    */
-  @JsonIgnore public Collection<MediaObject> getAfterMediaMediaObjects() {
+  @JsonIgnore public java.util.Collection<MediaObject> getAfterMediaMediaObjects() {
     final Object current = myData.get("afterMedia");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MediaObject>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MediaObject>) current;
     }
     return Arrays.asList((MediaObject) current);
   }
@@ -172,11 +172,11 @@ public class HowToDirection extends CreativeWork {
   /**
    * A media object representing the circumstances after performing this direction.
    */
-  @JsonIgnore public Collection<String> getAfterMediaStrings() {
+  @JsonIgnore public java.util.Collection<String> getAfterMediaStrings() {
     final Object current = myData.get("afterMedia");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -189,11 +189,11 @@ public class HowToDirection extends CreativeWork {
   /**
    * The total time required to perform instructions or a direction (including time to prepare the supplies), in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
    */
-  @JsonIgnore public Collection<Duration> getTotalTimes() {
+  @JsonIgnore public java.util.Collection<Duration> getTotalTimes() {
     final Object current = myData.get("totalTime");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Duration>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Duration>) current;
     }
     return Arrays.asList((Duration) current);
   }
@@ -206,11 +206,11 @@ public class HowToDirection extends CreativeWork {
   /**
    * The length of time it takes to perform instructions or a direction (not including time to prepare the supplies), in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
    */
-  @JsonIgnore public Collection<PerformTime> getPerformTimes() {
+  @JsonIgnore public java.util.Collection<PerformTime> getPerformTimes() {
     final Object current = myData.get("performTime");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<PerformTime>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<PerformTime>) current;
     }
     return Arrays.asList((PerformTime) current);
   }
@@ -1741,8 +1741,8 @@ public class HowToDirection extends CreativeWork {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

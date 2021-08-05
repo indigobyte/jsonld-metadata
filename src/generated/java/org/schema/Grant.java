@@ -42,11 +42,11 @@ public class Grant extends Intangible {
   /**
    * Indicates an item funded or sponsored through a [[Grant]].
    */
-  @JsonIgnore public Collection<Thing> getFundedItems() {
+  @JsonIgnore public java.util.Collection<Thing> getFundedItems() {
     final Object current = myData.get("fundedItem");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Thing>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Thing>) current;
     }
     return Arrays.asList((Thing) current);
   }
@@ -59,11 +59,11 @@ public class Grant extends Intangible {
   /**
    * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
    */
-  @JsonIgnore public Collection<Sponsor> getSponsors() {
+  @JsonIgnore public java.util.Collection<Sponsor> getSponsors() {
     final Object current = myData.get("sponsor");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Sponsor>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Sponsor>) current;
     }
     return Arrays.asList((Sponsor) current);
   }

@@ -38,11 +38,11 @@ public class WorkBasedProgram extends EducationalOccupationalProgram {
    * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.\n
    * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
    */
-  @JsonIgnore public Collection<CategoryCode> getOccupationalCategoryCategoryCodes() {
+  @JsonIgnore public java.util.Collection<CategoryCode> getOccupationalCategoryCategoryCodes() {
     final Object current = myData.get("occupationalCategory");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<CategoryCode>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<CategoryCode>) current;
     }
     return Arrays.asList((CategoryCode) current);
   }
@@ -57,11 +57,11 @@ public class WorkBasedProgram extends EducationalOccupationalProgram {
    * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.\n
    * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
    */
-  @JsonIgnore public Collection<String> getOccupationalCategoryStrings() {
+  @JsonIgnore public java.util.Collection<String> getOccupationalCategoryStrings() {
     final Object current = myData.get("occupationalCategory");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -74,11 +74,11 @@ public class WorkBasedProgram extends EducationalOccupationalProgram {
   /**
    * The estimated salary earned while in the program.
    */
-  @JsonIgnore public Collection<MonetaryAmountDistribution> getTrainingSalarys() {
+  @JsonIgnore public java.util.Collection<MonetaryAmountDistribution> getTrainingSalarys() {
     final Object current = myData.get("trainingSalary");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MonetaryAmountDistribution>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MonetaryAmountDistribution>) current;
     }
     return Arrays.asList((MonetaryAmountDistribution) current);
   }

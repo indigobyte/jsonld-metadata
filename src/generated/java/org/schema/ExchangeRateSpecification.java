@@ -36,11 +36,11 @@ public class ExchangeRateSpecification extends StructuredValue {
   /**
    * The current price of a currency.
    */
-  @JsonIgnore public Collection<UnitPriceSpecification> getCurrentExchangeRates() {
+  @JsonIgnore public java.util.Collection<UnitPriceSpecification> getCurrentExchangeRates() {
     final Object current = myData.get("currentExchangeRate");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<UnitPriceSpecification>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<UnitPriceSpecification>) current;
     }
     return Arrays.asList((UnitPriceSpecification) current);
   }
@@ -53,11 +53,11 @@ public class ExchangeRateSpecification extends StructuredValue {
   /**
    * The difference between the price at which a broker or other intermediary buys and sells foreign currency.
    */
-  @JsonIgnore public Collection<Integer> getExchangeRateSpreadIntegers() {
+  @JsonIgnore public java.util.Collection<Integer> getExchangeRateSpreadIntegers() {
     final Object current = myData.get("exchangeRateSpread");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -70,11 +70,11 @@ public class ExchangeRateSpecification extends StructuredValue {
   /**
    * The difference between the price at which a broker or other intermediary buys and sells foreign currency.
    */
-  @JsonIgnore public Collection<Long> getExchangeRateSpreadLongs() {
+  @JsonIgnore public java.util.Collection<Long> getExchangeRateSpreadLongs() {
     final Object current = myData.get("exchangeRateSpread");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Long>) current;
     }
     return Arrays.asList((Long) current);
   }
@@ -87,11 +87,11 @@ public class ExchangeRateSpecification extends StructuredValue {
   /**
    * The difference between the price at which a broker or other intermediary buys and sells foreign currency.
    */
-  @JsonIgnore public Collection<Float> getExchangeRateSpreadFloats() {
+  @JsonIgnore public java.util.Collection<Float> getExchangeRateSpreadFloats() {
     final Object current = myData.get("exchangeRateSpread");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Float>) current;
     }
     return Arrays.asList((Float) current);
   }
@@ -104,11 +104,11 @@ public class ExchangeRateSpecification extends StructuredValue {
   /**
    * The difference between the price at which a broker or other intermediary buys and sells foreign currency.
    */
-  @JsonIgnore public Collection<Double> getExchangeRateSpreadDoubles() {
+  @JsonIgnore public java.util.Collection<Double> getExchangeRateSpreadDoubles() {
     final Object current = myData.get("exchangeRateSpread");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Double>) current;
     }
     return Arrays.asList((Double) current);
   }
@@ -121,11 +121,11 @@ public class ExchangeRateSpecification extends StructuredValue {
   /**
    * The difference between the price at which a broker or other intermediary buys and sells foreign currency.
    */
-  @JsonIgnore public Collection<String> getExchangeRateSpreadStrings() {
+  @JsonIgnore public java.util.Collection<String> getExchangeRateSpreadStrings() {
     final Object current = myData.get("exchangeRateSpread");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -138,11 +138,11 @@ public class ExchangeRateSpecification extends StructuredValue {
   /**
    * The currency in which the monetary amount is expressed.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;.
    */
-  @JsonIgnore public Collection<String> getCurrencys() {
+  @JsonIgnore public java.util.Collection<String> getCurrencys() {
     final Object current = myData.get("currency");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }

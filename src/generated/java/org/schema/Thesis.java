@@ -36,11 +36,11 @@ public class Thesis extends CreativeWork {
   /**
    * Qualification, candidature, degree, application that Thesis supports.
    */
-  @JsonIgnore public Collection<String> getInSupportOfs() {
+  @JsonIgnore public java.util.Collection<String> getInSupportOfs() {
     final Object current = myData.get("inSupportOf");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -1480,8 +1480,8 @@ public class Thesis extends CreativeWork {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

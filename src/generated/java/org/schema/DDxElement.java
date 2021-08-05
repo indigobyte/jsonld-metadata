@@ -36,11 +36,11 @@ public class DDxElement extends MedicalIntangible {
   /**
    * One of a set of signs and symptoms that can be used to distinguish this diagnosis from others in the differential diagnosis.
    */
-  @JsonIgnore public Collection<MedicalSignOrSymptom> getDistinguishingSigns() {
+  @JsonIgnore public java.util.Collection<MedicalSignOrSymptom> getDistinguishingSigns() {
     final Object current = myData.get("distinguishingSign");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MedicalSignOrSymptom>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MedicalSignOrSymptom>) current;
     }
     return Arrays.asList((MedicalSignOrSymptom) current);
   }
@@ -53,11 +53,11 @@ public class DDxElement extends MedicalIntangible {
   /**
    * One or more alternative conditions considered in the differential diagnosis process as output of a diagnosis process.
    */
-  @JsonIgnore public Collection<MedicalCondition> getDiagnosiss() {
+  @JsonIgnore public java.util.Collection<MedicalCondition> getDiagnosiss() {
     final Object current = myData.get("diagnosis");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MedicalCondition>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MedicalCondition>) current;
     }
     return Arrays.asList((MedicalCondition) current);
   }
@@ -153,24 +153,10 @@ public class DDxElement extends MedicalIntangible {
       return this;
     }
     /**
-     * If applicable, a medical specialty in which this entity is relevant.
-     */
-    @NotNull public Builder relevantSpecialty(@NotNull MedicalSpecialty.Builder medicalSpecialty) {
-      putValue("relevantSpecialty", medicalSpecialty.build());
-      return this;
-    }
-    /**
      * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      */
     @NotNull public Builder medicineSystem(@NotNull MedicineSystem medicineSystem) {
       putValue("medicineSystem", medicineSystem);
-      return this;
-    }
-    /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
-     */
-    @NotNull public Builder medicineSystem(@NotNull MedicineSystem.Builder medicineSystem) {
-      putValue("medicineSystem", medicineSystem.build());
       return this;
     }
     /**

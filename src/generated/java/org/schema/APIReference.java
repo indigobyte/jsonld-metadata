@@ -36,11 +36,11 @@ public class APIReference extends TechArticle {
   /**
    * Library file name e.g., mscorlib.dll, system.web.dll.
    */
-  @JsonIgnore public Collection<String> getExecutableLibraryNames() {
+  @JsonIgnore public java.util.Collection<String> getExecutableLibraryNames() {
     final Object current = myData.get("executableLibraryName");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -53,11 +53,11 @@ public class APIReference extends TechArticle {
   /**
    * Indicates whether API is managed or unmanaged.
    */
-  @JsonIgnore public Collection<String> getProgrammingModels() {
+  @JsonIgnore public java.util.Collection<String> getProgrammingModels() {
     final Object current = myData.get("programmingModel");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -70,11 +70,11 @@ public class APIReference extends TechArticle {
   /**
    * Associated product/technology version. e.g., .NET Framework 4.5.
    */
-  @JsonIgnore public Collection<String> getAssemblyVersions() {
+  @JsonIgnore public java.util.Collection<String> getAssemblyVersions() {
     final Object current = myData.get("assemblyVersion");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -87,11 +87,11 @@ public class APIReference extends TechArticle {
   /**
    * Type of app development: phone, Metro style, desktop, XBox, etc.
    */
-  @JsonIgnore public Collection<String> getTargetPlatforms() {
+  @JsonIgnore public java.util.Collection<String> getTargetPlatforms() {
     final Object current = myData.get("targetPlatform");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -1703,8 +1703,8 @@ public class APIReference extends TechArticle {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

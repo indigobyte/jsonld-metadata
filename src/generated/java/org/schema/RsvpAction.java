@@ -36,11 +36,11 @@ public class RsvpAction extends InformAction {
   /**
    * Comments, typically from users.
    */
-  @JsonIgnore public Collection<Comment> getComments() {
+  @JsonIgnore public java.util.Collection<Comment> getComments() {
     final Object current = myData.get("comment");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Comment>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Comment>) current;
     }
     return Arrays.asList((Comment) current);
   }
@@ -53,11 +53,11 @@ public class RsvpAction extends InformAction {
   /**
    * The response (yes, no, maybe) to the RSVP.
    */
-  @JsonIgnore public Collection<RsvpResponseType> getRsvpResponses() {
+  @JsonIgnore public java.util.Collection<RsvpResponseType> getRsvpResponses() {
     final Object current = myData.get("rsvpResponse");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<RsvpResponseType>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<RsvpResponseType>) current;
     }
     return Arrays.asList((RsvpResponseType) current);
   }
@@ -70,11 +70,11 @@ public class RsvpAction extends InformAction {
   /**
    * If responding yes, the number of guests who will attend in addition to the invitee.
    */
-  @JsonIgnore public Collection<Integer> getAdditionalNumberOfGuestsIntegers() {
+  @JsonIgnore public java.util.Collection<Integer> getAdditionalNumberOfGuestsIntegers() {
     final Object current = myData.get("additionalNumberOfGuests");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -87,11 +87,11 @@ public class RsvpAction extends InformAction {
   /**
    * If responding yes, the number of guests who will attend in addition to the invitee.
    */
-  @JsonIgnore public Collection<Long> getAdditionalNumberOfGuestsLongs() {
+  @JsonIgnore public java.util.Collection<Long> getAdditionalNumberOfGuestsLongs() {
     final Object current = myData.get("additionalNumberOfGuests");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Long>) current;
     }
     return Arrays.asList((Long) current);
   }
@@ -104,11 +104,11 @@ public class RsvpAction extends InformAction {
   /**
    * If responding yes, the number of guests who will attend in addition to the invitee.
    */
-  @JsonIgnore public Collection<Float> getAdditionalNumberOfGuestsFloats() {
+  @JsonIgnore public java.util.Collection<Float> getAdditionalNumberOfGuestsFloats() {
     final Object current = myData.get("additionalNumberOfGuests");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Float>) current;
     }
     return Arrays.asList((Float) current);
   }
@@ -121,11 +121,11 @@ public class RsvpAction extends InformAction {
   /**
    * If responding yes, the number of guests who will attend in addition to the invitee.
    */
-  @JsonIgnore public Collection<Double> getAdditionalNumberOfGuestsDoubles() {
+  @JsonIgnore public java.util.Collection<Double> getAdditionalNumberOfGuestsDoubles() {
     final Object current = myData.get("additionalNumberOfGuests");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Double>) current;
     }
     return Arrays.asList((Double) current);
   }
@@ -138,11 +138,11 @@ public class RsvpAction extends InformAction {
   /**
    * If responding yes, the number of guests who will attend in addition to the invitee.
    */
-  @JsonIgnore public Collection<String> getAdditionalNumberOfGuestsStrings() {
+  @JsonIgnore public java.util.Collection<String> getAdditionalNumberOfGuestsStrings() {
     final Object current = myData.get("additionalNumberOfGuests");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -277,13 +277,6 @@ public class RsvpAction extends InformAction {
      */
     @NotNull public Builder actionStatus(@NotNull ActionStatusType actionStatusType) {
       putValue("actionStatus", actionStatusType);
-      return this;
-    }
-    /**
-     * Indicates the current disposition of the Action.
-     */
-    @NotNull public Builder actionStatus(@NotNull ActionStatusType.Builder actionStatusType) {
-      putValue("actionStatus", actionStatusType.build());
       return this;
     }
     /**

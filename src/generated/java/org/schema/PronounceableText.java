@@ -36,11 +36,11 @@ public class PronounceableText extends Text {
   /**
    * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
    */
-  @JsonIgnore public Collection<Language> getInLanguageLanguages() {
+  @JsonIgnore public java.util.Collection<Language> getInLanguageLanguages() {
     final Object current = myData.get("inLanguage");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Language>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Language>) current;
     }
     return Arrays.asList((Language) current);
   }
@@ -53,11 +53,11 @@ public class PronounceableText extends Text {
   /**
    * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
    */
-  @JsonIgnore public Collection<String> getInLanguageStrings() {
+  @JsonIgnore public java.util.Collection<String> getInLanguageStrings() {
     final Object current = myData.get("inLanguage");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -70,11 +70,11 @@ public class PronounceableText extends Text {
   /**
    * Representation of a text [[textValue]] using the specified [[speechToTextMarkup]]. For example the city name of Houston in IPA: /ˈhjuːstən/.
    */
-  @JsonIgnore public Collection<String> getPhoneticTexts() {
+  @JsonIgnore public java.util.Collection<String> getPhoneticTexts() {
     final Object current = myData.get("phoneticText");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -87,11 +87,11 @@ public class PronounceableText extends Text {
   /**
    * Text value being annotated.
    */
-  @JsonIgnore public Collection<String> getTextValues() {
+  @JsonIgnore public java.util.Collection<String> getTextValues() {
     final Object current = myData.get("textValue");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -104,11 +104,11 @@ public class PronounceableText extends Text {
   /**
    * Form of markup used. eg. [SSML](https://www.w3.org/TR/speech-synthesis11) or [IPA](https://www.wikidata.org/wiki/Property:P898).
    */
-  @JsonIgnore public Collection<String> getSpeechToTextMarkups() {
+  @JsonIgnore public java.util.Collection<String> getSpeechToTextMarkups() {
     final Object current = myData.get("speechToTextMarkup");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }

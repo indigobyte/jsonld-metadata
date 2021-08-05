@@ -36,11 +36,11 @@ public class MedicalClinic extends MedicalOrganization {
   /**
    * A medical specialty of the provider.
    */
-  @JsonIgnore public Collection<MedicalSpecialty> getMedicalSpecialtys() {
+  @JsonIgnore public java.util.Collection<MedicalSpecialty> getMedicalSpecialtys() {
     final Object current = myData.get("medicalSpecialty");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MedicalSpecialty>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MedicalSpecialty>) current;
     }
     return Arrays.asList((MedicalSpecialty) current);
   }
@@ -53,11 +53,11 @@ public class MedicalClinic extends MedicalOrganization {
   /**
    * A medical service available from this provider.
    */
-  @JsonIgnore public Collection<MedicalProcedure> getAvailableServiceMedicalProcedures() {
+  @JsonIgnore public java.util.Collection<MedicalProcedure> getAvailableServiceMedicalProcedures() {
     final Object current = myData.get("availableService");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MedicalProcedure>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MedicalProcedure>) current;
     }
     return Arrays.asList((MedicalProcedure) current);
   }
@@ -70,11 +70,11 @@ public class MedicalClinic extends MedicalOrganization {
   /**
    * A medical service available from this provider.
    */
-  @JsonIgnore public Collection<MedicalTest> getAvailableServiceMedicalTests() {
+  @JsonIgnore public java.util.Collection<MedicalTest> getAvailableServiceMedicalTests() {
     final Object current = myData.get("availableService");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MedicalTest>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MedicalTest>) current;
     }
     return Arrays.asList((MedicalTest) current);
   }
@@ -87,11 +87,11 @@ public class MedicalClinic extends MedicalOrganization {
   /**
    * A medical service available from this provider.
    */
-  @JsonIgnore public Collection<MedicalTherapy> getAvailableServiceMedicalTherapys() {
+  @JsonIgnore public java.util.Collection<MedicalTherapy> getAvailableServiceMedicalTherapys() {
     final Object current = myData.get("availableService");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MedicalTherapy>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MedicalTherapy>) current;
     }
     return Arrays.asList((MedicalTherapy) current);
   }
@@ -114,13 +114,6 @@ public class MedicalClinic extends MedicalOrganization {
      */
     @NotNull public Builder medicalSpecialty(@NotNull MedicalSpecialty medicalSpecialty) {
       putValue("medicalSpecialty", medicalSpecialty);
-      return this;
-    }
-    /**
-     * A medical specialty of the provider.
-     */
-    @NotNull public Builder medicalSpecialty(@NotNull MedicalSpecialty.Builder medicalSpecialty) {
-      putValue("medicalSpecialty", medicalSpecialty.build());
       return this;
     }
     /**

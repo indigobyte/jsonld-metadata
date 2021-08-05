@@ -36,11 +36,11 @@ public class WebPage extends CreativeWork {
   /**
    * A link related to this web page, for example to other related web pages.
    */
-  @JsonIgnore public Collection<String> getRelatedLinks() {
+  @JsonIgnore public java.util.Collection<String> getRelatedLinks() {
     final Object current = myData.get("relatedLink");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -53,11 +53,11 @@ public class WebPage extends CreativeWork {
   /**
    * People or organizations that have reviewed the content on this web page for accuracy and/or completeness.
    */
-  @JsonIgnore public Collection<Organization> getReviewedByOrganizations() {
+  @JsonIgnore public java.util.Collection<Organization> getReviewedByOrganizations() {
     final Object current = myData.get("reviewedBy");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
   }
@@ -70,11 +70,11 @@ public class WebPage extends CreativeWork {
   /**
    * People or organizations that have reviewed the content on this web page for accuracy and/or completeness.
    */
-  @JsonIgnore public Collection<Person> getReviewedByPersons() {
+  @JsonIgnore public java.util.Collection<Person> getReviewedByPersons() {
     final Object current = myData.get("reviewedBy");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -113,11 +113,11 @@ public class WebPage extends CreativeWork {
    * we define a supporting type, [[SpeakableSpecification]]  which is defined to be a possible value of the *speakable* property.
    *          
    */
-  @JsonIgnore public Collection<SpeakableSpecification> getSpeakableSpeakableSpecifications() {
+  @JsonIgnore public java.util.Collection<SpeakableSpecification> getSpeakableSpeakableSpecifications() {
     final Object current = myData.get("speakable");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<SpeakableSpecification>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<SpeakableSpecification>) current;
     }
     return Arrays.asList((SpeakableSpecification) current);
   }
@@ -156,11 +156,11 @@ public class WebPage extends CreativeWork {
    * we define a supporting type, [[SpeakableSpecification]]  which is defined to be a possible value of the *speakable* property.
    *          
    */
-  @JsonIgnore public Collection<String> getSpeakableStrings() {
+  @JsonIgnore public java.util.Collection<String> getSpeakableStrings() {
     final Object current = myData.get("speakable");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -173,11 +173,11 @@ public class WebPage extends CreativeWork {
   /**
    * Indicates if this web page element is the main subject of the page.
    */
-  @JsonIgnore public Collection<WebPageElement> getMainContentOfPages() {
+  @JsonIgnore public java.util.Collection<WebPageElement> getMainContentOfPages() {
     final Object current = myData.get("mainContentOfPage");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<WebPageElement>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<WebPageElement>) current;
     }
     return Arrays.asList((WebPageElement) current);
   }
@@ -190,11 +190,11 @@ public class WebPage extends CreativeWork {
   /**
    * Indicates the main image on the page.
    */
-  @JsonIgnore public Collection<ImageObject> getPrimaryImageOfPages() {
+  @JsonIgnore public java.util.Collection<ImageObject> getPrimaryImageOfPages() {
     final Object current = myData.get("primaryImageOfPage");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<ImageObject>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<ImageObject>) current;
     }
     return Arrays.asList((ImageObject) current);
   }
@@ -207,11 +207,11 @@ public class WebPage extends CreativeWork {
   /**
    * One of the domain specialities to which this web page's content applies.
    */
-  @JsonIgnore public Collection<Specialty> getSpecialtys() {
+  @JsonIgnore public java.util.Collection<Specialty> getSpecialtys() {
     final Object current = myData.get("specialty");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Specialty>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Specialty>) current;
     }
     return Arrays.asList((Specialty) current);
   }
@@ -224,11 +224,11 @@ public class WebPage extends CreativeWork {
   /**
    * A set of links that can help a user understand and navigate a website hierarchy.
    */
-  @JsonIgnore public Collection<BreadcrumbList> getBreadcrumbBreadcrumbLists() {
+  @JsonIgnore public java.util.Collection<BreadcrumbList> getBreadcrumbBreadcrumbLists() {
     final Object current = myData.get("breadcrumb");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<BreadcrumbList>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<BreadcrumbList>) current;
     }
     return Arrays.asList((BreadcrumbList) current);
   }
@@ -241,11 +241,11 @@ public class WebPage extends CreativeWork {
   /**
    * A set of links that can help a user understand and navigate a website hierarchy.
    */
-  @JsonIgnore public Collection<String> getBreadcrumbStrings() {
+  @JsonIgnore public java.util.Collection<String> getBreadcrumbStrings() {
     final Object current = myData.get("breadcrumb");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -258,11 +258,11 @@ public class WebPage extends CreativeWork {
   /**
    * One of the more significant URLs on the page. Typically, these are the non-navigation links that are clicked on the most.
    */
-  @JsonIgnore public Collection<String> getSignificantLinks() {
+  @JsonIgnore public java.util.Collection<String> getSignificantLinks() {
     final Object current = myData.get("significantLink");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -275,11 +275,11 @@ public class WebPage extends CreativeWork {
   /**
    * Date on which the content on this web page was last reviewed for accuracy and/or completeness.
    */
-  @JsonIgnore public Collection<java.util.Date> getLastRevieweds() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getLastRevieweds() {
     final Object current = myData.get("lastReviewed");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -1877,8 +1877,8 @@ public class WebPage extends CreativeWork {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

@@ -36,11 +36,11 @@ public class Flight extends Trip {
   /**
    * Identifier of the flight's arrival gate.
    */
-  @JsonIgnore public Collection<String> getArrivalGates() {
+  @JsonIgnore public java.util.Collection<String> getArrivalGates() {
     final Object current = myData.get("arrivalGate");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -53,11 +53,11 @@ public class Flight extends Trip {
   /**
    * The kind of aircraft (e.g., &quot;Boeing 747&quot;).
    */
-  @JsonIgnore public Collection<String> getAircraftStrings() {
+  @JsonIgnore public java.util.Collection<String> getAircraftStrings() {
     final Object current = myData.get("aircraft");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -70,11 +70,11 @@ public class Flight extends Trip {
   /**
    * The kind of aircraft (e.g., &quot;Boeing 747&quot;).
    */
-  @JsonIgnore public Collection<Vehicle> getAircraftVehicles() {
+  @JsonIgnore public java.util.Collection<Vehicle> getAircraftVehicles() {
     final Object current = myData.get("aircraft");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Vehicle>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Vehicle>) current;
     }
     return Arrays.asList((Vehicle) current);
   }
@@ -87,11 +87,11 @@ public class Flight extends Trip {
   /**
    * Identifier of the flight's departure terminal.
    */
-  @JsonIgnore public Collection<String> getDepartureTerminals() {
+  @JsonIgnore public java.util.Collection<String> getDepartureTerminals() {
     final Object current = myData.get("departureTerminal");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -104,11 +104,11 @@ public class Flight extends Trip {
   /**
    * Description of the meals that will be provided or available for purchase.
    */
-  @JsonIgnore public Collection<String> getMealServices() {
+  @JsonIgnore public java.util.Collection<String> getMealServices() {
     final Object current = myData.get("mealService");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -121,11 +121,11 @@ public class Flight extends Trip {
   /**
    * The estimated time the flight will take.
    */
-  @JsonIgnore public Collection<Duration> getEstimatedFlightDurationDurations() {
+  @JsonIgnore public java.util.Collection<Duration> getEstimatedFlightDurationDurations() {
     final Object current = myData.get("estimatedFlightDuration");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Duration>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Duration>) current;
     }
     return Arrays.asList((Duration) current);
   }
@@ -138,11 +138,11 @@ public class Flight extends Trip {
   /**
    * The estimated time the flight will take.
    */
-  @JsonIgnore public Collection<String> getEstimatedFlightDurationStrings() {
+  @JsonIgnore public java.util.Collection<String> getEstimatedFlightDurationStrings() {
     final Object current = myData.get("estimatedFlightDuration");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -155,11 +155,11 @@ public class Flight extends Trip {
   /**
    * The type of boarding policy used by the airline (e.g. zone-based or group-based).
    */
-  @JsonIgnore public Collection<BoardingPolicyType> getBoardingPolicys() {
+  @JsonIgnore public java.util.Collection<BoardingPolicyType> getBoardingPolicys() {
     final Object current = myData.get("boardingPolicy");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<BoardingPolicyType>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<BoardingPolicyType>) current;
     }
     return Arrays.asList((BoardingPolicyType) current);
   }
@@ -172,11 +172,11 @@ public class Flight extends Trip {
   /**
    * Identifier of the flight's departure gate.
    */
-  @JsonIgnore public Collection<String> getDepartureGates() {
+  @JsonIgnore public java.util.Collection<String> getDepartureGates() {
     final Object current = myData.get("departureGate");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -189,11 +189,11 @@ public class Flight extends Trip {
   /**
    * The distance of the flight.
    */
-  @JsonIgnore public Collection<Distance> getFlightDistanceDistances() {
+  @JsonIgnore public java.util.Collection<Distance> getFlightDistanceDistances() {
     final Object current = myData.get("flightDistance");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Distance>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Distance>) current;
     }
     return Arrays.asList((Distance) current);
   }
@@ -206,11 +206,11 @@ public class Flight extends Trip {
   /**
    * The distance of the flight.
    */
-  @JsonIgnore public Collection<String> getFlightDistanceStrings() {
+  @JsonIgnore public java.util.Collection<String> getFlightDistanceStrings() {
     final Object current = myData.get("flightDistance");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -223,11 +223,11 @@ public class Flight extends Trip {
   /**
    * The unique identifier for a flight including the airline IATA code. For example, if describing United flight 110, where the IATA code for United is 'UA', the flightNumber is 'UA110'.
    */
-  @JsonIgnore public Collection<String> getFlightNumbers() {
+  @JsonIgnore public java.util.Collection<String> getFlightNumbers() {
     final Object current = myData.get("flightNumber");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -240,11 +240,11 @@ public class Flight extends Trip {
   /**
    * Identifier of the flight's arrival terminal.
    */
-  @JsonIgnore public Collection<String> getArrivalTerminals() {
+  @JsonIgnore public java.util.Collection<String> getArrivalTerminals() {
     final Object current = myData.get("arrivalTerminal");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -257,11 +257,11 @@ public class Flight extends Trip {
   /**
    * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
    */
-  @JsonIgnore public Collection<Participant> getSellers() {
+  @JsonIgnore public java.util.Collection<Participant> getSellers() {
     final Object current = myData.get("seller");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Participant>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Participant>) current;
     }
     return Arrays.asList((Participant) current);
   }
@@ -274,11 +274,11 @@ public class Flight extends Trip {
   /**
    * The airport where the flight originates.
    */
-  @JsonIgnore public Collection<Airport> getDepartureAirports() {
+  @JsonIgnore public java.util.Collection<Airport> getDepartureAirports() {
     final Object current = myData.get("departureAirport");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Airport>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Airport>) current;
     }
     return Arrays.asList((Airport) current);
   }
@@ -291,11 +291,11 @@ public class Flight extends Trip {
   /**
    * The airport where the flight terminates.
    */
-  @JsonIgnore public Collection<Airport> getArrivalAirports() {
+  @JsonIgnore public java.util.Collection<Airport> getArrivalAirports() {
     final Object current = myData.get("arrivalAirport");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Airport>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Airport>) current;
     }
     return Arrays.asList((Airport) current);
   }
@@ -308,11 +308,11 @@ public class Flight extends Trip {
   /**
    * The time when a passenger can check into the flight online.
    */
-  @JsonIgnore public Collection<java.util.Date> getWebCheckinTimes() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getWebCheckinTimes() {
     final Object current = myData.get("webCheckinTime");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }

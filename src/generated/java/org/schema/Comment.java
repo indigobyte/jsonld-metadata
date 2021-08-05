@@ -36,11 +36,11 @@ public class Comment extends CreativeWork {
   /**
    * The number of downvotes this question, answer or comment has received from the community.
    */
-  @JsonIgnore public Collection<Integer> getDownvoteCounts() {
+  @JsonIgnore public java.util.Collection<Integer> getDownvoteCounts() {
     final Object current = myData.get("downvoteCount");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -53,11 +53,11 @@ public class Comment extends CreativeWork {
   /**
    * The number of upvotes this question, answer or comment has received from the community.
    */
-  @JsonIgnore public Collection<Integer> getUpvoteCounts() {
+  @JsonIgnore public java.util.Collection<Integer> getUpvoteCounts() {
     final Object current = myData.get("upvoteCount");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -70,11 +70,11 @@ public class Comment extends CreativeWork {
   /**
    * The parent of a question, answer or item in general.
    */
-  @JsonIgnore public Collection<Comment> getParentItems() {
+  @JsonIgnore public java.util.Collection<Comment> getParentItems() {
     final Object current = myData.get("parentItem");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Comment>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Comment>) current;
     }
     return Arrays.asList((Comment) current);
   }
@@ -1535,8 +1535,8 @@ public class Comment extends CreativeWork {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

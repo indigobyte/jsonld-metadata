@@ -36,11 +36,11 @@ public class Clip extends CreativeWork {
   /**
    * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
    */
-  @JsonIgnore public Collection<Actor> getActors() {
+  @JsonIgnore public java.util.Collection<Actor> getActors() {
     final Object current = myData.get("actor");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Actor>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Actor>) current;
     }
     return Arrays.asList((Actor) current);
   }
@@ -53,11 +53,11 @@ public class Clip extends CreativeWork {
   /**
    * Position of the clip within an ordered group of clips.
    */
-  @JsonIgnore public Collection<Integer> getClipNumberIntegers() {
+  @JsonIgnore public java.util.Collection<Integer> getClipNumberIntegers() {
     final Object current = myData.get("clipNumber");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -70,11 +70,11 @@ public class Clip extends CreativeWork {
   /**
    * Position of the clip within an ordered group of clips.
    */
-  @JsonIgnore public Collection<String> getClipNumberStrings() {
+  @JsonIgnore public java.util.Collection<String> getClipNumberStrings() {
     final Object current = myData.get("clipNumber");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -87,11 +87,11 @@ public class Clip extends CreativeWork {
   /**
    * The start time of the clip expressed as the number of seconds from the beginning of the work.
    */
-  @JsonIgnore public Collection<HyperTocEntry> getStartOffsetHyperTocEntrys() {
+  @JsonIgnore public java.util.Collection<HyperTocEntry> getStartOffsetHyperTocEntrys() {
     final Object current = myData.get("startOffset");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<HyperTocEntry>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<HyperTocEntry>) current;
     }
     return Arrays.asList((HyperTocEntry) current);
   }
@@ -104,11 +104,11 @@ public class Clip extends CreativeWork {
   /**
    * The start time of the clip expressed as the number of seconds from the beginning of the work.
    */
-  @JsonIgnore public Collection<Number> getStartOffsetNumbers() {
+  @JsonIgnore public java.util.Collection<Number> getStartOffsetNumbers() {
     final Object current = myData.get("startOffset");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Number>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Number>) current;
     }
     return Arrays.asList((Number) current);
   }
@@ -121,11 +121,11 @@ public class Clip extends CreativeWork {
   /**
    * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
    */
-  @JsonIgnore public Collection<Person> getDirectors() {
+  @JsonIgnore public java.util.Collection<Person> getDirectors() {
     final Object current = myData.get("director");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -138,11 +138,11 @@ public class Clip extends CreativeWork {
   /**
    * The composer of the soundtrack.
    */
-  @JsonIgnore public Collection<MusicGroup> getMusicByMusicGroups() {
+  @JsonIgnore public java.util.Collection<MusicGroup> getMusicByMusicGroups() {
     final Object current = myData.get("musicBy");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MusicGroup>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MusicGroup>) current;
     }
     return Arrays.asList((MusicGroup) current);
   }
@@ -155,11 +155,11 @@ public class Clip extends CreativeWork {
   /**
    * The composer of the soundtrack.
    */
-  @JsonIgnore public Collection<Person> getMusicByPersons() {
+  @JsonIgnore public java.util.Collection<Person> getMusicByPersons() {
     final Object current = myData.get("musicBy");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -172,11 +172,11 @@ public class Clip extends CreativeWork {
   /**
    * The series to which this episode or season belongs.
    */
-  @JsonIgnore public Collection<IsPartOf> getPartOfSeriess() {
+  @JsonIgnore public java.util.Collection<IsPartOf> getPartOfSeriess() {
     final Object current = myData.get("partOfSeries");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<IsPartOf>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<IsPartOf>) current;
     }
     return Arrays.asList((IsPartOf) current);
   }
@@ -189,11 +189,11 @@ public class Clip extends CreativeWork {
   /**
    * The end time of the clip expressed as the number of seconds from the beginning of the work.
    */
-  @JsonIgnore public Collection<HyperTocEntry> getEndOffsetHyperTocEntrys() {
+  @JsonIgnore public java.util.Collection<HyperTocEntry> getEndOffsetHyperTocEntrys() {
     final Object current = myData.get("endOffset");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<HyperTocEntry>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<HyperTocEntry>) current;
     }
     return Arrays.asList((HyperTocEntry) current);
   }
@@ -206,11 +206,11 @@ public class Clip extends CreativeWork {
   /**
    * The end time of the clip expressed as the number of seconds from the beginning of the work.
    */
-  @JsonIgnore public Collection<Number> getEndOffsetNumbers() {
+  @JsonIgnore public java.util.Collection<Number> getEndOffsetNumbers() {
     final Object current = myData.get("endOffset");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Number>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Number>) current;
     }
     return Arrays.asList((Number) current);
   }
@@ -223,11 +223,11 @@ public class Clip extends CreativeWork {
   /**
    * The episode to which this clip belongs.
    */
-  @JsonIgnore public Collection<IsPartOf> getPartOfEpisodes() {
+  @JsonIgnore public java.util.Collection<IsPartOf> getPartOfEpisodes() {
     final Object current = myData.get("partOfEpisode");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<IsPartOf>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<IsPartOf>) current;
     }
     return Arrays.asList((IsPartOf) current);
   }
@@ -240,11 +240,11 @@ public class Clip extends CreativeWork {
   /**
    * The season to which this episode belongs.
    */
-  @JsonIgnore public Collection<IsPartOf> getPartOfSeasons() {
+  @JsonIgnore public java.util.Collection<IsPartOf> getPartOfSeasons() {
     final Object current = myData.get("partOfSeason");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<IsPartOf>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<IsPartOf>) current;
     }
     return Arrays.asList((IsPartOf) current);
   }
@@ -1803,8 +1803,8 @@ public class Clip extends CreativeWork {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

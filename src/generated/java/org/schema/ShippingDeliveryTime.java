@@ -36,11 +36,11 @@ public class ShippingDeliveryTime extends StructuredValue {
   /**
    * The typical delay the order has been sent for delivery and the goods reach the final customer. Typical properties: minValue, maxValue, unitCode (d for DAY).
    */
-  @JsonIgnore public Collection<QuantitativeValue> getTransitTimes() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getTransitTimes() {
     final Object current = myData.get("transitTime");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -53,11 +53,11 @@ public class ShippingDeliveryTime extends StructuredValue {
   /**
    * Order cutoff time allows merchants to describe the time after which they will no longer process orders received on that day. For orders processed after cutoff time, one day gets added to the delivery time estimate. This property is expected to be most typically used via the [[ShippingRateSettings]] publication pattern. The time is indicated using the ISO-8601 Time format, e.g. &quot;23:30:00-05:00&quot; would represent 6:30 pm Eastern Standard Time (EST) which is 5 hours behind Coordinated Universal Time (UTC).
    */
-  @JsonIgnore public Collection<java.util.Date> getCutoffTimes() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getCutoffTimes() {
     final Object current = myData.get("cutoffTime");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -70,11 +70,11 @@ public class ShippingDeliveryTime extends StructuredValue {
   /**
    * The typical delay between the receipt of the order and the goods either leaving the warehouse or being prepared for pickup, in case the delivery method is on site pickup. Typical properties: minValue, maxValue, unitCode (d for DAY).  This is by common convention assumed to mean business days (if a unitCode is used, coded as &quot;d&quot;), i.e. only counting days when the business normally operates.
    */
-  @JsonIgnore public Collection<QuantitativeValue> getHandlingTimes() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getHandlingTimes() {
     final Object current = myData.get("handlingTime");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -87,11 +87,11 @@ public class ShippingDeliveryTime extends StructuredValue {
   /**
    * Days of the week when the merchant typically operates, indicated via opening hours markup.
    */
-  @JsonIgnore public Collection<OpeningHoursSpecification> getBusinessDayss() {
+  @JsonIgnore public java.util.Collection<OpeningHoursSpecification> getBusinessDayss() {
     final Object current = myData.get("businessDays");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<OpeningHoursSpecification>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<OpeningHoursSpecification>) current;
     }
     return Arrays.asList((OpeningHoursSpecification) current);
   }

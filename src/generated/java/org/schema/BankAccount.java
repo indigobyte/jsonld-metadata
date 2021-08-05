@@ -36,11 +36,11 @@ public class BankAccount extends FinancialProduct {
   /**
    * The type of a bank account.
    */
-  @JsonIgnore public Collection<String> getBankAccountTypes() {
+  @JsonIgnore public java.util.Collection<String> getBankAccountTypes() {
     final Object current = myData.get("bankAccountType");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -53,11 +53,11 @@ public class BankAccount extends FinancialProduct {
   /**
    * An overdraft is an extension of credit from a lending institution when an account reaches zero. An overdraft allows the individual to continue withdrawing money even if the account has no funds in it. Basically the bank allows people to borrow a set amount of money.
    */
-  @JsonIgnore public Collection<MonetaryAmount> getAccountOverdraftLimits() {
+  @JsonIgnore public java.util.Collection<MonetaryAmount> getAccountOverdraftLimits() {
     final Object current = myData.get("accountOverdraftLimit");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MonetaryAmount>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MonetaryAmount>) current;
     }
     return Arrays.asList((MonetaryAmount) current);
   }
@@ -70,11 +70,11 @@ public class BankAccount extends FinancialProduct {
   /**
    * A minimum amount that has to be paid in every month.
    */
-  @JsonIgnore public Collection<MonetaryAmount> getAccountMinimumInflows() {
+  @JsonIgnore public java.util.Collection<MonetaryAmount> getAccountMinimumInflows() {
     final Object current = myData.get("accountMinimumInflow");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MonetaryAmount>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MonetaryAmount>) current;
     }
     return Arrays.asList((MonetaryAmount) current);
   }

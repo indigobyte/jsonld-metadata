@@ -36,11 +36,11 @@ public class EducationalOccupationalCredential extends CreativeWork {
   /**
    * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
    */
-  @JsonIgnore public Collection<DefinedTerm> getEducationalLevelDefinedTerms() {
+  @JsonIgnore public java.util.Collection<DefinedTerm> getEducationalLevelDefinedTerms() {
     final Object current = myData.get("educationalLevel");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DefinedTerm>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<DefinedTerm>) current;
     }
     return Arrays.asList((DefinedTerm) current);
   }
@@ -53,11 +53,11 @@ public class EducationalOccupationalCredential extends CreativeWork {
   /**
    * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
    */
-  @JsonIgnore public Collection<String> getEducationalLevelStrings() {
+  @JsonIgnore public java.util.Collection<String> getEducationalLevelStrings() {
     final Object current = myData.get("educationalLevel");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -70,11 +70,11 @@ public class EducationalOccupationalCredential extends CreativeWork {
   /**
    * The category or type of credential being described, for example &quot;degree&rdquo;, &ldquo;certificate&rdquo;, &ldquo;badge&rdquo;, or more specific term.
    */
-  @JsonIgnore public Collection<DefinedTerm> getCredentialCategoryDefinedTerms() {
+  @JsonIgnore public java.util.Collection<DefinedTerm> getCredentialCategoryDefinedTerms() {
     final Object current = myData.get("credentialCategory");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DefinedTerm>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<DefinedTerm>) current;
     }
     return Arrays.asList((DefinedTerm) current);
   }
@@ -87,11 +87,11 @@ public class EducationalOccupationalCredential extends CreativeWork {
   /**
    * The category or type of credential being described, for example &quot;degree&rdquo;, &ldquo;certificate&rdquo;, &ldquo;badge&rdquo;, or more specific term.
    */
-  @JsonIgnore public Collection<String> getCredentialCategoryStrings() {
+  @JsonIgnore public java.util.Collection<String> getCredentialCategoryStrings() {
     final Object current = myData.get("credentialCategory");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -104,11 +104,11 @@ public class EducationalOccupationalCredential extends CreativeWork {
   /**
    * The geographic area where a permit or similar thing is valid.
    */
-  @JsonIgnore public Collection<AdministrativeArea> getValidIns() {
+  @JsonIgnore public java.util.Collection<AdministrativeArea> getValidIns() {
     final Object current = myData.get("validIn");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<AdministrativeArea>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<AdministrativeArea>) current;
     }
     return Arrays.asList((AdministrativeArea) current);
   }
@@ -121,11 +121,11 @@ public class EducationalOccupationalCredential extends CreativeWork {
   /**
    * The duration of validity of a permit or similar thing.
    */
-  @JsonIgnore public Collection<Duration> getValidFors() {
+  @JsonIgnore public java.util.Collection<Duration> getValidFors() {
     final Object current = myData.get("validFor");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Duration>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Duration>) current;
     }
     return Arrays.asList((Duration) current);
   }
@@ -138,11 +138,11 @@ public class EducationalOccupationalCredential extends CreativeWork {
   /**
    * Knowledge, skill, ability or personal attribute that must be demonstrated by a person or other entity in order to do something such as earn an Educational Occupational Credential or understand a LearningResource.
    */
-  @JsonIgnore public Collection<DefinedTerm> getCompetencyRequiredDefinedTerms() {
+  @JsonIgnore public java.util.Collection<DefinedTerm> getCompetencyRequiredDefinedTerms() {
     final Object current = myData.get("competencyRequired");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DefinedTerm>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<DefinedTerm>) current;
     }
     return Arrays.asList((DefinedTerm) current);
   }
@@ -155,11 +155,11 @@ public class EducationalOccupationalCredential extends CreativeWork {
   /**
    * Knowledge, skill, ability or personal attribute that must be demonstrated by a person or other entity in order to do something such as earn an Educational Occupational Credential or understand a LearningResource.
    */
-  @JsonIgnore public Collection<String> getCompetencyRequiredStrings() {
+  @JsonIgnore public java.util.Collection<String> getCompetencyRequiredStrings() {
     final Object current = myData.get("competencyRequired");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -172,11 +172,11 @@ public class EducationalOccupationalCredential extends CreativeWork {
   /**
    * An organization that acknowledges the validity, value or utility of a credential. Note: recognition may include a process of quality assurance or accreditation.
    */
-  @JsonIgnore public Collection<Organization> getRecognizedBys() {
+  @JsonIgnore public java.util.Collection<Organization> getRecognizedBys() {
     final Object current = myData.get("recognizedBy");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
   }
@@ -1686,8 +1686,8 @@ public class EducationalOccupationalCredential extends CreativeWork {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

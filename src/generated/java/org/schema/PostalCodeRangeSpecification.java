@@ -36,11 +36,11 @@ public class PostalCodeRangeSpecification extends StructuredValue {
   /**
    * First postal code in a range (included).
    */
-  @JsonIgnore public Collection<String> getPostalCodeBegins() {
+  @JsonIgnore public java.util.Collection<String> getPostalCodeBegins() {
     final Object current = myData.get("postalCodeBegin");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -53,11 +53,11 @@ public class PostalCodeRangeSpecification extends StructuredValue {
   /**
    * Last postal code in the range (included). Needs to be after [[postalCodeBegin]].
    */
-  @JsonIgnore public Collection<String> getPostalCodeEnds() {
+  @JsonIgnore public java.util.Collection<String> getPostalCodeEnds() {
     final Object current = myData.get("postalCodeEnd");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }

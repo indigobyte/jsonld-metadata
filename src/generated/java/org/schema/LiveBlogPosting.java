@@ -36,11 +36,11 @@ public class LiveBlogPosting extends BlogPosting {
   /**
    * The time when the live blog will stop covering the Event. Note that coverage may continue after the Event concludes.
    */
-  @JsonIgnore public Collection<java.util.Date> getCoverageEndTimes() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getCoverageEndTimes() {
     final Object current = myData.get("coverageEndTime");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -53,11 +53,11 @@ public class LiveBlogPosting extends BlogPosting {
   /**
    * The time when the live blog will begin covering the Event. Note that coverage may begin before the Event's start time. The LiveBlogPosting may also be created before coverage begins.
    */
-  @JsonIgnore public Collection<java.util.Date> getCoverageStartTimes() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getCoverageStartTimes() {
     final Object current = myData.get("coverageStartTime");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -70,11 +70,11 @@ public class LiveBlogPosting extends BlogPosting {
   /**
    * An update to the LiveBlog.
    */
-  @JsonIgnore public Collection<BlogPosting> getLiveBlogUpdates() {
+  @JsonIgnore public java.util.Collection<BlogPosting> getLiveBlogUpdates() {
     final Object current = myData.get("liveBlogUpdate");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<BlogPosting>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<BlogPosting>) current;
     }
     return Arrays.asList((BlogPosting) current);
   }
@@ -1686,8 +1686,8 @@ public class LiveBlogPosting extends BlogPosting {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

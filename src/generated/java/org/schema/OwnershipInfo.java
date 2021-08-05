@@ -36,11 +36,11 @@ public class OwnershipInfo extends StructuredValue {
   /**
    * The organization or person from which the product was acquired.
    */
-  @JsonIgnore public Collection<Organization> getAcquiredFromOrganizations() {
+  @JsonIgnore public java.util.Collection<Organization> getAcquiredFromOrganizations() {
     final Object current = myData.get("acquiredFrom");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
   }
@@ -53,11 +53,11 @@ public class OwnershipInfo extends StructuredValue {
   /**
    * The organization or person from which the product was acquired.
    */
-  @JsonIgnore public Collection<Person> getAcquiredFromPersons() {
+  @JsonIgnore public java.util.Collection<Person> getAcquiredFromPersons() {
     final Object current = myData.get("acquiredFrom");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -70,11 +70,11 @@ public class OwnershipInfo extends StructuredValue {
   /**
    * The date and time of giving up ownership on the product.
    */
-  @JsonIgnore public Collection<java.util.Date> getOwnedThroughs() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getOwnedThroughs() {
     final Object current = myData.get("ownedThrough");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -87,11 +87,11 @@ public class OwnershipInfo extends StructuredValue {
   /**
    * The product that this structured value is referring to.
    */
-  @JsonIgnore public Collection<Product> getTypeOfGoodProducts() {
+  @JsonIgnore public java.util.Collection<Product> getTypeOfGoodProducts() {
     final Object current = myData.get("typeOfGood");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Product>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Product>) current;
     }
     return Arrays.asList((Product) current);
   }
@@ -104,11 +104,11 @@ public class OwnershipInfo extends StructuredValue {
   /**
    * The product that this structured value is referring to.
    */
-  @JsonIgnore public Collection<Service> getTypeOfGoodServices() {
+  @JsonIgnore public java.util.Collection<Service> getTypeOfGoodServices() {
     final Object current = myData.get("typeOfGood");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Service>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Service>) current;
     }
     return Arrays.asList((Service) current);
   }
@@ -121,11 +121,11 @@ public class OwnershipInfo extends StructuredValue {
   /**
    * The date and time of obtaining the product.
    */
-  @JsonIgnore public Collection<java.util.Date> getOwnedFroms() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getOwnedFroms() {
     final Object current = myData.get("ownedFrom");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }

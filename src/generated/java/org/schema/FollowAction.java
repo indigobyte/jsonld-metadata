@@ -36,11 +36,11 @@ public class FollowAction extends InteractAction {
   /**
    * A sub property of object. The person or organization being followed.
    */
-  @JsonIgnore public Collection<Object> getFollowees() {
+  @JsonIgnore public java.util.Collection<Object> getFollowees() {
     final Object current = myData.get("followee");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Object>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Object>) current;
     }
     return Arrays.asList((Object) current);
   }
@@ -91,13 +91,6 @@ public class FollowAction extends InteractAction {
      */
     @NotNull public Builder actionStatus(@NotNull ActionStatusType actionStatusType) {
       putValue("actionStatus", actionStatusType);
-      return this;
-    }
-    /**
-     * Indicates the current disposition of the Action.
-     */
-    @NotNull public Builder actionStatus(@NotNull ActionStatusType.Builder actionStatusType) {
-      putValue("actionStatus", actionStatusType.build());
       return this;
     }
     /**

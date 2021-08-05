@@ -36,11 +36,11 @@ public class Corporation extends Organization {
   /**
    * The exchange traded instrument associated with a Corporation object. The tickerSymbol is expressed as an exchange and an instrument name separated by a space character. For the exchange component of the tickerSymbol attribute, we recommend using the controlled vocabulary of Market Identifier Codes (MIC) specified in ISO15022.
    */
-  @JsonIgnore public Collection<String> getTickerSymbols() {
+  @JsonIgnore public java.util.Collection<String> getTickerSymbols() {
     final Object current = myData.get("tickerSymbol");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }

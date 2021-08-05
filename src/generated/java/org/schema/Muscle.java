@@ -36,11 +36,11 @@ public class Muscle extends AnatomicalStructure {
   /**
    * The underlying innervation associated with the muscle.
    */
-  @JsonIgnore public Collection<Nerve> getNerves() {
+  @JsonIgnore public java.util.Collection<Nerve> getNerves() {
     final Object current = myData.get("nerve");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Nerve>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Nerve>) current;
     }
     return Arrays.asList((Nerve) current);
   }
@@ -53,11 +53,11 @@ public class Muscle extends AnatomicalStructure {
   /**
    * The blood vessel that carries blood from the heart to the muscle.
    */
-  @JsonIgnore public Collection<Vessel> getBloodSupplys() {
+  @JsonIgnore public java.util.Collection<Vessel> getBloodSupplys() {
     final Object current = myData.get("bloodSupply");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Vessel>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Vessel>) current;
     }
     return Arrays.asList((Vessel) current);
   }
@@ -70,11 +70,11 @@ public class Muscle extends AnatomicalStructure {
   /**
    * The movement the muscle generates.
    */
-  @JsonIgnore public Collection<String> getMuscleActions() {
+  @JsonIgnore public java.util.Collection<String> getMuscleActions() {
     final Object current = myData.get("muscleAction");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -87,11 +87,11 @@ public class Muscle extends AnatomicalStructure {
   /**
    * The place of attachment of a muscle, or what the muscle moves.
    */
-  @JsonIgnore public Collection<AnatomicalStructure> getInsertions() {
+  @JsonIgnore public java.util.Collection<AnatomicalStructure> getInsertions() {
     final Object current = myData.get("insertion");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<AnatomicalStructure>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<AnatomicalStructure>) current;
     }
     return Arrays.asList((AnatomicalStructure) current);
   }
@@ -104,11 +104,11 @@ public class Muscle extends AnatomicalStructure {
   /**
    * The muscle whose action counteracts the specified muscle.
    */
-  @JsonIgnore public Collection<Muscle> getAntagonists() {
+  @JsonIgnore public java.util.Collection<Muscle> getAntagonists() {
     final Object current = myData.get("antagonist");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Muscle>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Muscle>) current;
     }
     return Arrays.asList((Muscle) current);
   }
@@ -337,24 +337,10 @@ public class Muscle extends AnatomicalStructure {
       return this;
     }
     /**
-     * If applicable, a medical specialty in which this entity is relevant.
-     */
-    @NotNull public Builder relevantSpecialty(@NotNull MedicalSpecialty.Builder medicalSpecialty) {
-      putValue("relevantSpecialty", medicalSpecialty.build());
-      return this;
-    }
-    /**
      * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      */
     @NotNull public Builder medicineSystem(@NotNull MedicineSystem medicineSystem) {
       putValue("medicineSystem", medicineSystem);
-      return this;
-    }
-    /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
-     */
-    @NotNull public Builder medicineSystem(@NotNull MedicineSystem.Builder medicineSystem) {
-      putValue("medicineSystem", medicineSystem.build());
       return this;
     }
     /**

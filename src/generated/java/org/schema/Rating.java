@@ -36,11 +36,11 @@ public class Rating extends Intangible {
   /**
    * A short explanation (e.g. one to two sentences) providing background context and other information that led to the conclusion expressed in the rating. This is particularly applicable to ratings associated with &quot;fact check&quot; markup using [[ClaimReview]].
    */
-  @JsonIgnore public Collection<String> getRatingExplanations() {
+  @JsonIgnore public java.util.Collection<String> getRatingExplanations() {
     final Object current = myData.get("ratingExplanation");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -53,11 +53,11 @@ public class Rating extends Intangible {
   /**
    * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
    */
-  @JsonIgnore public Collection<Organization> getAuthorOrganizations() {
+  @JsonIgnore public java.util.Collection<Organization> getAuthorOrganizations() {
     final Object current = myData.get("author");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
   }
@@ -70,11 +70,11 @@ public class Rating extends Intangible {
   /**
    * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
    */
-  @JsonIgnore public Collection<Person> getAuthorPersons() {
+  @JsonIgnore public java.util.Collection<Person> getAuthorPersons() {
     final Object current = myData.get("author");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -87,11 +87,11 @@ public class Rating extends Intangible {
   /**
    * The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.
    */
-  @JsonIgnore public Collection<Number> getWorstRatingNumbers() {
+  @JsonIgnore public java.util.Collection<Number> getWorstRatingNumbers() {
     final Object current = myData.get("worstRating");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Number>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Number>) current;
     }
     return Arrays.asList((Number) current);
   }
@@ -104,11 +104,11 @@ public class Rating extends Intangible {
   /**
    * The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.
    */
-  @JsonIgnore public Collection<String> getWorstRatingStrings() {
+  @JsonIgnore public java.util.Collection<String> getWorstRatingStrings() {
     final Object current = myData.get("worstRating");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -121,11 +121,11 @@ public class Rating extends Intangible {
   /**
    * This Review or Rating is relevant to this part or facet of the itemReviewed.
    */
-  @JsonIgnore public Collection<String> getReviewAspects() {
+  @JsonIgnore public java.util.Collection<String> getReviewAspects() {
     final Object current = myData.get("reviewAspect");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -138,11 +138,11 @@ public class Rating extends Intangible {
   /**
    * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
    */
-  @JsonIgnore public Collection<Integer> getBestRatingIntegers() {
+  @JsonIgnore public java.util.Collection<Integer> getBestRatingIntegers() {
     final Object current = myData.get("bestRating");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -155,11 +155,11 @@ public class Rating extends Intangible {
   /**
    * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
    */
-  @JsonIgnore public Collection<Long> getBestRatingLongs() {
+  @JsonIgnore public java.util.Collection<Long> getBestRatingLongs() {
     final Object current = myData.get("bestRating");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Long>) current;
     }
     return Arrays.asList((Long) current);
   }
@@ -172,11 +172,11 @@ public class Rating extends Intangible {
   /**
    * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
    */
-  @JsonIgnore public Collection<Float> getBestRatingFloats() {
+  @JsonIgnore public java.util.Collection<Float> getBestRatingFloats() {
     final Object current = myData.get("bestRating");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Float>) current;
     }
     return Arrays.asList((Float) current);
   }
@@ -189,11 +189,11 @@ public class Rating extends Intangible {
   /**
    * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
    */
-  @JsonIgnore public Collection<Double> getBestRatingDoubles() {
+  @JsonIgnore public java.util.Collection<Double> getBestRatingDoubles() {
     final Object current = myData.get("bestRating");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Double>) current;
     }
     return Arrays.asList((Double) current);
   }
@@ -206,11 +206,11 @@ public class Rating extends Intangible {
   /**
    * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
    */
-  @JsonIgnore public Collection<String> getBestRatingStrings() {
+  @JsonIgnore public java.util.Collection<String> getBestRatingStrings() {
     final Object current = myData.get("bestRating");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -223,11 +223,11 @@ public class Rating extends Intangible {
   /**
    * The rating for the content.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
    */
-  @JsonIgnore public Collection<Integer> getRatingValueIntegers() {
+  @JsonIgnore public java.util.Collection<Integer> getRatingValueIntegers() {
     final Object current = myData.get("ratingValue");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -240,11 +240,11 @@ public class Rating extends Intangible {
   /**
    * The rating for the content.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
    */
-  @JsonIgnore public Collection<Long> getRatingValueLongs() {
+  @JsonIgnore public java.util.Collection<Long> getRatingValueLongs() {
     final Object current = myData.get("ratingValue");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Long>) current;
     }
     return Arrays.asList((Long) current);
   }
@@ -257,11 +257,11 @@ public class Rating extends Intangible {
   /**
    * The rating for the content.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
    */
-  @JsonIgnore public Collection<Float> getRatingValueFloats() {
+  @JsonIgnore public java.util.Collection<Float> getRatingValueFloats() {
     final Object current = myData.get("ratingValue");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Float>) current;
     }
     return Arrays.asList((Float) current);
   }
@@ -274,11 +274,11 @@ public class Rating extends Intangible {
   /**
    * The rating for the content.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
    */
-  @JsonIgnore public Collection<Double> getRatingValueDoubles() {
+  @JsonIgnore public java.util.Collection<Double> getRatingValueDoubles() {
     final Object current = myData.get("ratingValue");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Double>) current;
     }
     return Arrays.asList((Double) current);
   }
@@ -291,11 +291,11 @@ public class Rating extends Intangible {
   /**
    * The rating for the content.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
    */
-  @JsonIgnore public Collection<String> getRatingValueStrings() {
+  @JsonIgnore public java.util.Collection<String> getRatingValueStrings() {
     final Object current = myData.get("ratingValue");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }

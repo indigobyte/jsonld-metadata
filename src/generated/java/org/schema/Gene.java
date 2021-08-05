@@ -36,11 +36,11 @@ public class Gene extends BioChemEntity {
   /**
    * Another gene which is a variation of this one.
    */
-  @JsonIgnore public Collection<Gene> getAlternativeOfs() {
+  @JsonIgnore public java.util.Collection<Gene> getAlternativeOfs() {
     final Object current = myData.get("alternativeOf");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Gene>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Gene>) current;
     }
     return Arrays.asList((Gene) current);
   }
@@ -53,11 +53,11 @@ public class Gene extends BioChemEntity {
   /**
    * Tissue, organ, biological sample, etc in which activity of this gene has been observed experimentally. For example brain, digestive system.
    */
-  @JsonIgnore public Collection<AnatomicalStructure> getExpressedInAnatomicalStructures() {
+  @JsonIgnore public java.util.Collection<AnatomicalStructure> getExpressedInAnatomicalStructures() {
     final Object current = myData.get("expressedIn");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<AnatomicalStructure>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<AnatomicalStructure>) current;
     }
     return Arrays.asList((AnatomicalStructure) current);
   }
@@ -70,11 +70,11 @@ public class Gene extends BioChemEntity {
   /**
    * Tissue, organ, biological sample, etc in which activity of this gene has been observed experimentally. For example brain, digestive system.
    */
-  @JsonIgnore public Collection<AnatomicalSystem> getExpressedInAnatomicalSystems() {
+  @JsonIgnore public java.util.Collection<AnatomicalSystem> getExpressedInAnatomicalSystems() {
     final Object current = myData.get("expressedIn");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<AnatomicalSystem>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<AnatomicalSystem>) current;
     }
     return Arrays.asList((AnatomicalSystem) current);
   }
@@ -87,11 +87,11 @@ public class Gene extends BioChemEntity {
   /**
    * Tissue, organ, biological sample, etc in which activity of this gene has been observed experimentally. For example brain, digestive system.
    */
-  @JsonIgnore public Collection<BioChemEntity> getExpressedInBioChemEntitys() {
+  @JsonIgnore public java.util.Collection<BioChemEntity> getExpressedInBioChemEntitys() {
     final Object current = myData.get("expressedIn");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<BioChemEntity>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<BioChemEntity>) current;
     }
     return Arrays.asList((BioChemEntity) current);
   }
@@ -104,11 +104,11 @@ public class Gene extends BioChemEntity {
   /**
    * Tissue, organ, biological sample, etc in which activity of this gene has been observed experimentally. For example brain, digestive system.
    */
-  @JsonIgnore public Collection<DefinedTerm> getExpressedInDefinedTerms() {
+  @JsonIgnore public java.util.Collection<DefinedTerm> getExpressedInDefinedTerms() {
     final Object current = myData.get("expressedIn");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DefinedTerm>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<DefinedTerm>) current;
     }
     return Arrays.asList((DefinedTerm) current);
   }
@@ -121,11 +121,11 @@ public class Gene extends BioChemEntity {
   /**
    * A symbolic representation of a BioChemEnity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein.
    */
-  @JsonIgnore public Collection<String> getHasBioPolymerSequences() {
+  @JsonIgnore public java.util.Collection<String> getHasBioPolymerSequences() {
     final Object current = myData.get("hasBioPolymerSequence");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -138,11 +138,11 @@ public class Gene extends BioChemEntity {
   /**
    * Another BioChemEntity encoded by this one. 
    */
-  @JsonIgnore public Collection<BioChemEntity> getEncodesBioChemEntitys() {
+  @JsonIgnore public java.util.Collection<BioChemEntity> getEncodesBioChemEntitys() {
     final Object current = myData.get("encodesBioChemEntity");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<BioChemEntity>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<BioChemEntity>) current;
     }
     return Arrays.asList((BioChemEntity) current);
   }

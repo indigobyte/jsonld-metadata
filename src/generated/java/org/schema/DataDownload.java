@@ -52,11 +52,11 @@ public class DataDownload extends MediaObject {
    * If there are several [[variableMeasured]] properties recorded for some given data object, use a [[PropertyValue]] for each [[variableMeasured]] and attach the corresponding [[measurementTechnique]].
    *       
    */
-  @JsonIgnore public Collection<String> getMeasurementTechniques() {
+  @JsonIgnore public java.util.Collection<String> getMeasurementTechniques() {
     final Object current = myData.get("measurementTechnique");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -1747,8 +1747,8 @@ public class DataDownload extends MediaObject {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

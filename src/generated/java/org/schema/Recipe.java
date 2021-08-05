@@ -36,11 +36,11 @@ public class Recipe extends HowTo {
   /**
    * Indicates a dietary restriction or guideline for which this recipe or menu item is suitable, e.g. diabetic, halal etc.
    */
-  @JsonIgnore public Collection<RestrictedDiet> getSuitableForDiets() {
+  @JsonIgnore public java.util.Collection<RestrictedDiet> getSuitableForDiets() {
     final Object current = myData.get("suitableForDiet");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<RestrictedDiet>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<RestrictedDiet>) current;
     }
     return Arrays.asList((RestrictedDiet) current);
   }
@@ -53,11 +53,11 @@ public class Recipe extends HowTo {
   /**
    * The category of the recipe&mdash;for example, appetizer, entree, etc.
    */
-  @JsonIgnore public Collection<String> getRecipeCategorys() {
+  @JsonIgnore public java.util.Collection<String> getRecipeCategorys() {
     final Object current = myData.get("recipeCategory");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -70,11 +70,11 @@ public class Recipe extends HowTo {
   /**
    * A single ingredient used in the recipe, e.g. sugar, flour or garlic.
    */
-  @JsonIgnore public Collection<String> getRecipeIngredients() {
+  @JsonIgnore public java.util.Collection<String> getRecipeIngredients() {
     final Object current = myData.get("recipeIngredient");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -87,11 +87,11 @@ public class Recipe extends HowTo {
   /**
    * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
    */
-  @JsonIgnore public Collection<Step> getRecipeInstructionss() {
+  @JsonIgnore public java.util.Collection<Step> getRecipeInstructionss() {
     final Object current = myData.get("recipeInstructions");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Step>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Step>) current;
     }
     return Arrays.asList((Step) current);
   }
@@ -104,11 +104,11 @@ public class Recipe extends HowTo {
   /**
    * The cuisine of the recipe (for example, French or Ethiopian).
    */
-  @JsonIgnore public Collection<String> getRecipeCuisines() {
+  @JsonIgnore public java.util.Collection<String> getRecipeCuisines() {
     final Object current = myData.get("recipeCuisine");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -121,11 +121,11 @@ public class Recipe extends HowTo {
   /**
    * Nutrition information about the recipe or menu item.
    */
-  @JsonIgnore public Collection<NutritionInformation> getNutritions() {
+  @JsonIgnore public java.util.Collection<NutritionInformation> getNutritions() {
     final Object current = myData.get("nutrition");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<NutritionInformation>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<NutritionInformation>) current;
     }
     return Arrays.asList((NutritionInformation) current);
   }
@@ -138,11 +138,11 @@ public class Recipe extends HowTo {
   /**
    * The method of cooking, such as Frying, Steaming, ...
    */
-  @JsonIgnore public Collection<String> getCookingMethods() {
+  @JsonIgnore public java.util.Collection<String> getCookingMethods() {
     final Object current = myData.get("cookingMethod");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -155,11 +155,11 @@ public class Recipe extends HowTo {
   /**
    * The quantity produced by the recipe (for example, number of people served, number of servings, etc).
    */
-  @JsonIgnore public Collection<QuantitativeValue> getRecipeYieldQuantitativeValues() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getRecipeYieldQuantitativeValues() {
     final Object current = myData.get("recipeYield");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -172,11 +172,11 @@ public class Recipe extends HowTo {
   /**
    * The quantity produced by the recipe (for example, number of people served, number of servings, etc).
    */
-  @JsonIgnore public Collection<String> getRecipeYieldStrings() {
+  @JsonIgnore public java.util.Collection<String> getRecipeYieldStrings() {
     final Object current = myData.get("recipeYield");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -189,11 +189,11 @@ public class Recipe extends HowTo {
   /**
    * The time it takes to actually cook the dish, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
    */
-  @JsonIgnore public Collection<Duration> getCookTimes() {
+  @JsonIgnore public java.util.Collection<Duration> getCookTimes() {
     final Object current = myData.get("cookTime");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Duration>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Duration>) current;
     }
     return Arrays.asList((Duration) current);
   }
@@ -1780,8 +1780,8 @@ public class Recipe extends HowTo {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

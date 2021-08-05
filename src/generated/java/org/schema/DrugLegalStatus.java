@@ -36,11 +36,11 @@ public class DrugLegalStatus extends MedicalIntangible {
   /**
    * The location in which the status applies.
    */
-  @JsonIgnore public Collection<AdministrativeArea> getApplicableLocations() {
+  @JsonIgnore public java.util.Collection<AdministrativeArea> getApplicableLocations() {
     final Object current = myData.get("applicableLocation");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<AdministrativeArea>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<AdministrativeArea>) current;
     }
     return Arrays.asList((AdministrativeArea) current);
   }
@@ -122,24 +122,10 @@ public class DrugLegalStatus extends MedicalIntangible {
       return this;
     }
     /**
-     * If applicable, a medical specialty in which this entity is relevant.
-     */
-    @NotNull public Builder relevantSpecialty(@NotNull MedicalSpecialty.Builder medicalSpecialty) {
-      putValue("relevantSpecialty", medicalSpecialty.build());
-      return this;
-    }
-    /**
      * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      */
     @NotNull public Builder medicineSystem(@NotNull MedicineSystem medicineSystem) {
       putValue("medicineSystem", medicineSystem);
-      return this;
-    }
-    /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
-     */
-    @NotNull public Builder medicineSystem(@NotNull MedicineSystem.Builder medicineSystem) {
-      putValue("medicineSystem", medicineSystem.build());
       return this;
     }
     /**

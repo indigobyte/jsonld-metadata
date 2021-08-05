@@ -36,11 +36,11 @@ public class ConsumeAction extends Action {
   /**
    * An Offer which must be accepted before the user can perform the Action. For example, the user may need to buy a movie before being able to watch it.
    */
-  @JsonIgnore public Collection<Offer> getExpectsAcceptanceOfs() {
+  @JsonIgnore public java.util.Collection<Offer> getExpectsAcceptanceOfs() {
     final Object current = myData.get("expectsAcceptanceOf");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Offer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Offer>) current;
     }
     return Arrays.asList((Offer) current);
   }
@@ -53,11 +53,11 @@ public class ConsumeAction extends Action {
   /**
    * A set of requirements that a must be fulfilled in order to perform an Action. If more than one value is specied, fulfilling one set of requirements will allow the Action to be performed.
    */
-  @JsonIgnore public Collection<ActionAccessSpecification> getActionAccessibilityRequirements() {
+  @JsonIgnore public java.util.Collection<ActionAccessSpecification> getActionAccessibilityRequirements() {
     final Object current = myData.get("actionAccessibilityRequirement");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<ActionAccessSpecification>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<ActionAccessSpecification>) current;
     }
     return Arrays.asList((ActionAccessSpecification) current);
   }
@@ -129,13 +129,6 @@ public class ConsumeAction extends Action {
      */
     @NotNull public Builder actionStatus(@NotNull ActionStatusType actionStatusType) {
       putValue("actionStatus", actionStatusType);
-      return this;
-    }
-    /**
-     * Indicates the current disposition of the Action.
-     */
-    @NotNull public Builder actionStatus(@NotNull ActionStatusType.Builder actionStatusType) {
-      putValue("actionStatus", actionStatusType.build());
       return this;
     }
     /**

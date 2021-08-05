@@ -36,11 +36,11 @@ public class EndorseAction extends ReactAction {
   /**
    * A sub property of participant. The person/organization being supported.
    */
-  @JsonIgnore public Collection<Organization> getEndorseeOrganizations() {
+  @JsonIgnore public java.util.Collection<Organization> getEndorseeOrganizations() {
     final Object current = myData.get("endorsee");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
   }
@@ -53,11 +53,11 @@ public class EndorseAction extends ReactAction {
   /**
    * A sub property of participant. The person/organization being supported.
    */
-  @JsonIgnore public Collection<Person> getEndorseePersons() {
+  @JsonIgnore public java.util.Collection<Person> getEndorseePersons() {
     final Object current = myData.get("endorsee");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -129,13 +129,6 @@ public class EndorseAction extends ReactAction {
      */
     @NotNull public Builder actionStatus(@NotNull ActionStatusType actionStatusType) {
       putValue("actionStatus", actionStatusType);
-      return this;
-    }
-    /**
-     * Indicates the current disposition of the Action.
-     */
-    @NotNull public Builder actionStatus(@NotNull ActionStatusType.Builder actionStatusType) {
-      putValue("actionStatus", actionStatusType.build());
       return this;
     }
     /**

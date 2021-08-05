@@ -40,11 +40,11 @@ public class LearningResource extends CreativeWork {
   /**
    * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
    */
-  @JsonIgnore public Collection<DefinedTerm> getEducationalLevelDefinedTerms() {
+  @JsonIgnore public java.util.Collection<DefinedTerm> getEducationalLevelDefinedTerms() {
     final Object current = myData.get("educationalLevel");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DefinedTerm>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<DefinedTerm>) current;
     }
     return Arrays.asList((DefinedTerm) current);
   }
@@ -57,11 +57,11 @@ public class LearningResource extends CreativeWork {
   /**
    * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
    */
-  @JsonIgnore public Collection<String> getEducationalLevelStrings() {
+  @JsonIgnore public java.util.Collection<String> getEducationalLevelStrings() {
     final Object current = myData.get("educationalLevel");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -74,11 +74,11 @@ public class LearningResource extends CreativeWork {
   /**
    * The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.
    */
-  @JsonIgnore public Collection<DefinedTerm> getLearningResourceTypeDefinedTerms() {
+  @JsonIgnore public java.util.Collection<DefinedTerm> getLearningResourceTypeDefinedTerms() {
     final Object current = myData.get("learningResourceType");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DefinedTerm>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<DefinedTerm>) current;
     }
     return Arrays.asList((DefinedTerm) current);
   }
@@ -91,11 +91,11 @@ public class LearningResource extends CreativeWork {
   /**
    * The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.
    */
-  @JsonIgnore public Collection<String> getLearningResourceTypeStrings() {
+  @JsonIgnore public java.util.Collection<String> getLearningResourceTypeStrings() {
     final Object current = myData.get("learningResourceType");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -112,11 +112,11 @@ public class LearningResource extends CreativeWork {
    * 
    * This property should not be used where the nature of the alignment can be described using a simple property, for example to express that a resource [[teaches]] or [[assesses]] a competency.
    */
-  @JsonIgnore public Collection<AlignmentObject> getEducationalAlignments() {
+  @JsonIgnore public java.util.Collection<AlignmentObject> getEducationalAlignments() {
     final Object current = myData.get("educationalAlignment");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<AlignmentObject>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<AlignmentObject>) current;
     }
     return Arrays.asList((AlignmentObject) current);
   }
@@ -129,11 +129,11 @@ public class LearningResource extends CreativeWork {
   /**
    * The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.
    */
-  @JsonIgnore public Collection<DefinedTerm> getTeachesDefinedTerms() {
+  @JsonIgnore public java.util.Collection<DefinedTerm> getTeachesDefinedTerms() {
     final Object current = myData.get("teaches");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DefinedTerm>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<DefinedTerm>) current;
     }
     return Arrays.asList((DefinedTerm) current);
   }
@@ -146,11 +146,11 @@ public class LearningResource extends CreativeWork {
   /**
    * The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.
    */
-  @JsonIgnore public Collection<String> getTeachesStrings() {
+  @JsonIgnore public java.util.Collection<String> getTeachesStrings() {
     final Object current = myData.get("teaches");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -163,11 +163,11 @@ public class LearningResource extends CreativeWork {
   /**
    * Knowledge, skill, ability or personal attribute that must be demonstrated by a person or other entity in order to do something such as earn an Educational Occupational Credential or understand a LearningResource.
    */
-  @JsonIgnore public Collection<DefinedTerm> getCompetencyRequiredDefinedTerms() {
+  @JsonIgnore public java.util.Collection<DefinedTerm> getCompetencyRequiredDefinedTerms() {
     final Object current = myData.get("competencyRequired");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DefinedTerm>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<DefinedTerm>) current;
     }
     return Arrays.asList((DefinedTerm) current);
   }
@@ -180,11 +180,11 @@ public class LearningResource extends CreativeWork {
   /**
    * Knowledge, skill, ability or personal attribute that must be demonstrated by a person or other entity in order to do something such as earn an Educational Occupational Credential or understand a LearningResource.
    */
-  @JsonIgnore public Collection<String> getCompetencyRequiredStrings() {
+  @JsonIgnore public java.util.Collection<String> getCompetencyRequiredStrings() {
     final Object current = myData.get("competencyRequired");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -197,11 +197,11 @@ public class LearningResource extends CreativeWork {
   /**
    * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
    */
-  @JsonIgnore public Collection<DefinedTerm> getAssessesDefinedTerms() {
+  @JsonIgnore public java.util.Collection<DefinedTerm> getAssessesDefinedTerms() {
     final Object current = myData.get("assesses");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DefinedTerm>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<DefinedTerm>) current;
     }
     return Arrays.asList((DefinedTerm) current);
   }
@@ -214,11 +214,11 @@ public class LearningResource extends CreativeWork {
   /**
    * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
    */
-  @JsonIgnore public Collection<String> getAssessesStrings() {
+  @JsonIgnore public java.util.Collection<String> getAssessesStrings() {
     final Object current = myData.get("assesses");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -231,11 +231,11 @@ public class LearningResource extends CreativeWork {
   /**
    * The purpose of a work in the context of education; for example, 'assignment', 'group work'.
    */
-  @JsonIgnore public Collection<DefinedTerm> getEducationalUseDefinedTerms() {
+  @JsonIgnore public java.util.Collection<DefinedTerm> getEducationalUseDefinedTerms() {
     final Object current = myData.get("educationalUse");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DefinedTerm>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<DefinedTerm>) current;
     }
     return Arrays.asList((DefinedTerm) current);
   }
@@ -248,11 +248,11 @@ public class LearningResource extends CreativeWork {
   /**
    * The purpose of a work in the context of education; for example, 'assignment', 'group work'.
    */
-  @JsonIgnore public Collection<String> getEducationalUseStrings() {
+  @JsonIgnore public java.util.Collection<String> getEducationalUseStrings() {
     final Object current = myData.get("educationalUse");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -1706,8 +1706,8 @@ public class LearningResource extends CreativeWork {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

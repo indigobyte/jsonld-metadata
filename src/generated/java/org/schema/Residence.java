@@ -36,11 +36,11 @@ public class Residence extends Place {
   /**
    * A floorplan of some [[Accommodation]].
    */
-  @JsonIgnore public Collection<FloorPlan> getAccommodationFloorPlans() {
+  @JsonIgnore public java.util.Collection<FloorPlan> getAccommodationFloorPlans() {
     final Object current = myData.get("accommodationFloorPlan");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<FloorPlan>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<FloorPlan>) current;
     }
     return Arrays.asList((FloorPlan) current);
   }

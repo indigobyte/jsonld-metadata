@@ -36,11 +36,11 @@ public class TouristAttraction extends Place {
   /**
    * Attraction suitable for type(s) of tourist. eg. Children, visitors from a particular country, etc. 
    */
-  @JsonIgnore public Collection<Audience> getTouristTypeAudiences() {
+  @JsonIgnore public java.util.Collection<Audience> getTouristTypeAudiences() {
     final Object current = myData.get("touristType");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Audience>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Audience>) current;
     }
     return Arrays.asList((Audience) current);
   }
@@ -53,11 +53,11 @@ public class TouristAttraction extends Place {
   /**
    * Attraction suitable for type(s) of tourist. eg. Children, visitors from a particular country, etc. 
    */
-  @JsonIgnore public Collection<String> getTouristTypeStrings() {
+  @JsonIgnore public java.util.Collection<String> getTouristTypeStrings() {
     final Object current = myData.get("touristType");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -70,11 +70,11 @@ public class TouristAttraction extends Place {
   /**
    * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
    */
-  @JsonIgnore public Collection<Language> getAvailableLanguageLanguages() {
+  @JsonIgnore public java.util.Collection<Language> getAvailableLanguageLanguages() {
     final Object current = myData.get("availableLanguage");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Language>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Language>) current;
     }
     return Arrays.asList((Language) current);
   }
@@ -87,11 +87,11 @@ public class TouristAttraction extends Place {
   /**
    * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
    */
-  @JsonIgnore public Collection<String> getAvailableLanguageStrings() {
+  @JsonIgnore public java.util.Collection<String> getAvailableLanguageStrings() {
     final Object current = myData.get("availableLanguage");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }

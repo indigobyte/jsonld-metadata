@@ -36,11 +36,11 @@ public class NewsMediaOrganization extends Organization {
   /**
    * Disclosure about verification and fact-checking processes for a [[NewsMediaOrganization]] or other fact-checking [[Organization]].
    */
-  @JsonIgnore public Collection<PublishingPrinciples> getVerificationFactCheckingPolicys() {
+  @JsonIgnore public java.util.Collection<PublishingPrinciples> getVerificationFactCheckingPolicys() {
     final Object current = myData.get("verificationFactCheckingPolicy");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<PublishingPrinciples>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<PublishingPrinciples>) current;
     }
     return Arrays.asList((PublishingPrinciples) current);
   }
@@ -53,11 +53,11 @@ public class NewsMediaOrganization extends Organization {
   /**
    * Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom&rsquo;s diversity policy on both staffing and sources, typically providing staffing data.
    */
-  @JsonIgnore public Collection<CreativeWork> getDiversityPolicyCreativeWorks() {
+  @JsonIgnore public java.util.Collection<CreativeWork> getDiversityPolicyCreativeWorks() {
     final Object current = myData.get("diversityPolicy");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<CreativeWork>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<CreativeWork>) current;
     }
     return Arrays.asList((CreativeWork) current);
   }
@@ -70,11 +70,11 @@ public class NewsMediaOrganization extends Organization {
   /**
    * Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom&rsquo;s diversity policy on both staffing and sources, typically providing staffing data.
    */
-  @JsonIgnore public Collection<String> getDiversityPolicyStrings() {
+  @JsonIgnore public java.util.Collection<String> getDiversityPolicyStrings() {
     final Object current = myData.get("diversityPolicy");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -87,11 +87,11 @@ public class NewsMediaOrganization extends Organization {
   /**
    * For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement about policy on use of unnamed sources and the decision process required.
    */
-  @JsonIgnore public Collection<PublishingPrinciples> getUnnamedSourcesPolicys() {
+  @JsonIgnore public java.util.Collection<PublishingPrinciples> getUnnamedSourcesPolicys() {
     final Object current = myData.get("unnamedSourcesPolicy");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<PublishingPrinciples>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<PublishingPrinciples>) current;
     }
     return Arrays.asList((PublishingPrinciples) current);
   }
@@ -104,11 +104,11 @@ public class NewsMediaOrganization extends Organization {
   /**
    * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement explaining when authors of articles are not named in bylines.
    */
-  @JsonIgnore public Collection<PublishingPrinciples> getNoBylinesPolicys() {
+  @JsonIgnore public java.util.Collection<PublishingPrinciples> getNoBylinesPolicys() {
     final Object current = myData.get("noBylinesPolicy");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<PublishingPrinciples>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<PublishingPrinciples>) current;
     }
     return Arrays.asList((PublishingPrinciples) current);
   }
@@ -121,11 +121,11 @@ public class NewsMediaOrganization extends Organization {
   /**
    * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
    */
-  @JsonIgnore public Collection<PublishingPrinciples> getOwnershipFundingInfos() {
+  @JsonIgnore public java.util.Collection<PublishingPrinciples> getOwnershipFundingInfos() {
     final Object current = myData.get("ownershipFundingInfo");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<PublishingPrinciples>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<PublishingPrinciples>) current;
     }
     return Arrays.asList((PublishingPrinciples) current);
   }
@@ -138,11 +138,11 @@ public class NewsMediaOrganization extends Organization {
   /**
    * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.
    */
-  @JsonIgnore public Collection<PublishingPrinciples> getDiversityStaffingReports() {
+  @JsonIgnore public java.util.Collection<PublishingPrinciples> getDiversityStaffingReports() {
     final Object current = myData.get("diversityStaffingReport");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<PublishingPrinciples>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<PublishingPrinciples>) current;
     }
     return Arrays.asList((PublishingPrinciples) current);
   }
@@ -155,11 +155,11 @@ public class NewsMediaOrganization extends Organization {
   /**
    * For an [[Organization]] (e.g. [[NewsMediaOrganization]]), a statement describing (in news media, the newsroom&rsquo;s) disclosure and correction policy for errors.
    */
-  @JsonIgnore public Collection<PublishingPrinciples> getCorrectionsPolicys() {
+  @JsonIgnore public java.util.Collection<PublishingPrinciples> getCorrectionsPolicys() {
     final Object current = myData.get("correctionsPolicy");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<PublishingPrinciples>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<PublishingPrinciples>) current;
     }
     return Arrays.asList((PublishingPrinciples) current);
   }
@@ -172,11 +172,11 @@ public class NewsMediaOrganization extends Organization {
   /**
    * For a [[NewsMediaOrganization]], a statement on coverage priorities, including any public agenda or stance on issues.
    */
-  @JsonIgnore public Collection<CreativeWork> getMissionCoveragePrioritiesPolicyCreativeWorks() {
+  @JsonIgnore public java.util.Collection<CreativeWork> getMissionCoveragePrioritiesPolicyCreativeWorks() {
     final Object current = myData.get("missionCoveragePrioritiesPolicy");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<CreativeWork>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<CreativeWork>) current;
     }
     return Arrays.asList((CreativeWork) current);
   }
@@ -189,11 +189,11 @@ public class NewsMediaOrganization extends Organization {
   /**
    * For a [[NewsMediaOrganization]], a statement on coverage priorities, including any public agenda or stance on issues.
    */
-  @JsonIgnore public Collection<String> getMissionCoveragePrioritiesPolicyStrings() {
+  @JsonIgnore public java.util.Collection<String> getMissionCoveragePrioritiesPolicyStrings() {
     final Object current = myData.get("missionCoveragePrioritiesPolicy");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -206,11 +206,11 @@ public class NewsMediaOrganization extends Organization {
   /**
    * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement about public engagement activities (for news media, the newsroom&rsquo;s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.
    */
-  @JsonIgnore public Collection<PublishingPrinciples> getActionableFeedbackPolicys() {
+  @JsonIgnore public java.util.Collection<PublishingPrinciples> getActionableFeedbackPolicys() {
     final Object current = myData.get("actionableFeedbackPolicy");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<PublishingPrinciples>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<PublishingPrinciples>) current;
     }
     return Arrays.asList((PublishingPrinciples) current);
   }
@@ -223,11 +223,11 @@ public class NewsMediaOrganization extends Organization {
   /**
    * For a [[NewsMediaOrganization]], a link to the masthead page or a page listing top editorial management.
    */
-  @JsonIgnore public Collection<CreativeWork> getMastheadCreativeWorks() {
+  @JsonIgnore public java.util.Collection<CreativeWork> getMastheadCreativeWorks() {
     final Object current = myData.get("masthead");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<CreativeWork>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<CreativeWork>) current;
     }
     return Arrays.asList((CreativeWork) current);
   }
@@ -240,11 +240,11 @@ public class NewsMediaOrganization extends Organization {
   /**
    * For a [[NewsMediaOrganization]], a link to the masthead page or a page listing top editorial management.
    */
-  @JsonIgnore public Collection<String> getMastheadStrings() {
+  @JsonIgnore public java.util.Collection<String> getMastheadStrings() {
     final Object current = myData.get("masthead");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -257,11 +257,11 @@ public class NewsMediaOrganization extends Organization {
   /**
    * Statement about ethics policy, e.g. of a [[NewsMediaOrganization]] regarding journalistic and publishing practices, or of a [[Restaurant]], a page describing food source policies. In the case of a [[NewsMediaOrganization]], an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.
    */
-  @JsonIgnore public Collection<CreativeWork> getEthicsPolicyCreativeWorks() {
+  @JsonIgnore public java.util.Collection<CreativeWork> getEthicsPolicyCreativeWorks() {
     final Object current = myData.get("ethicsPolicy");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<CreativeWork>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<CreativeWork>) current;
     }
     return Arrays.asList((CreativeWork) current);
   }
@@ -274,11 +274,11 @@ public class NewsMediaOrganization extends Organization {
   /**
    * Statement about ethics policy, e.g. of a [[NewsMediaOrganization]] regarding journalistic and publishing practices, or of a [[Restaurant]], a page describing food source policies. In the case of a [[NewsMediaOrganization]], an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.
    */
-  @JsonIgnore public Collection<String> getEthicsPolicyStrings() {
+  @JsonIgnore public java.util.Collection<String> getEthicsPolicyStrings() {
     final Object current = myData.get("ethicsPolicy");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }

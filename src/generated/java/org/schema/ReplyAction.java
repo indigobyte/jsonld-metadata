@@ -36,11 +36,11 @@ public class ReplyAction extends CommunicateAction {
   /**
    * A sub property of result. The Comment created or sent as a result of this action.
    */
-  @JsonIgnore public Collection<Result> getResultComments() {
+  @JsonIgnore public java.util.Collection<Result> getResultComments() {
     final Object current = myData.get("resultComment");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Result>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Result>) current;
     }
     return Arrays.asList((Result) current);
   }
@@ -112,13 +112,6 @@ public class ReplyAction extends CommunicateAction {
      */
     @NotNull public Builder actionStatus(@NotNull ActionStatusType actionStatusType) {
       putValue("actionStatus", actionStatusType);
-      return this;
-    }
-    /**
-     * Indicates the current disposition of the Action.
-     */
-    @NotNull public Builder actionStatus(@NotNull ActionStatusType.Builder actionStatusType) {
-      putValue("actionStatus", actionStatusType.build());
       return this;
     }
     /**

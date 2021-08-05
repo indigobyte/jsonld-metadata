@@ -36,11 +36,11 @@ public class IndividualProduct extends Product {
   /**
    * The serial number or any alphanumeric identifier of a particular product. When attached to an offer, it is a shortcut for the serial number of the product included in the offer.
    */
-  @JsonIgnore public Collection<SerialNumber> getSerialNumbers() {
+  @JsonIgnore public java.util.Collection<SerialNumber> getSerialNumbers() {
     final Object current = myData.get("serialNumber");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<SerialNumber>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<SerialNumber>) current;
     }
     return Arrays.asList((SerialNumber) current);
   }

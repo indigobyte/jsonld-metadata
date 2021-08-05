@@ -36,11 +36,11 @@ public class PerformAction extends PlayAction {
   /**
    * A sub property of location. The entertainment business where the action occurred.
    */
-  @JsonIgnore public Collection<Location> getEntertainmentBusinesss() {
+  @JsonIgnore public java.util.Collection<Location> getEntertainmentBusinesss() {
     final Object current = myData.get("entertainmentBusiness");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Location>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Location>) current;
     }
     return Arrays.asList((Location) current);
   }
@@ -119,13 +119,6 @@ public class PerformAction extends PlayAction {
      */
     @NotNull public Builder actionStatus(@NotNull ActionStatusType actionStatusType) {
       putValue("actionStatus", actionStatusType);
-      return this;
-    }
-    /**
-     * Indicates the current disposition of the Action.
-     */
-    @NotNull public Builder actionStatus(@NotNull ActionStatusType.Builder actionStatusType) {
-      putValue("actionStatus", actionStatusType.build());
       return this;
     }
     /**

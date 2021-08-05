@@ -36,11 +36,11 @@ public class MedicalGuideline extends MedicalEntity {
   /**
    * Date on which this guideline's recommendation was made.
    */
-  @JsonIgnore public Collection<java.util.Date> getGuidelineDates() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getGuidelineDates() {
     final Object current = myData.get("guidelineDate");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -53,11 +53,11 @@ public class MedicalGuideline extends MedicalEntity {
   /**
    * Source of the data used to formulate the guidance, e.g. RCT, consensus opinion, etc.
    */
-  @JsonIgnore public Collection<String> getEvidenceOrigins() {
+  @JsonIgnore public java.util.Collection<String> getEvidenceOrigins() {
     final Object current = myData.get("evidenceOrigin");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -70,11 +70,11 @@ public class MedicalGuideline extends MedicalEntity {
   /**
    * The medical conditions, treatments, etc. that are the subject of the guideline.
    */
-  @JsonIgnore public Collection<MedicalEntity> getGuidelineSubjects() {
+  @JsonIgnore public java.util.Collection<MedicalEntity> getGuidelineSubjects() {
     final Object current = myData.get("guidelineSubject");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MedicalEntity>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MedicalEntity>) current;
     }
     return Arrays.asList((MedicalEntity) current);
   }
@@ -87,11 +87,11 @@ public class MedicalGuideline extends MedicalEntity {
   /**
    * Strength of evidence of the data used to formulate the guideline (enumerated).
    */
-  @JsonIgnore public Collection<MedicalEvidenceLevel> getEvidenceLevels() {
+  @JsonIgnore public java.util.Collection<MedicalEvidenceLevel> getEvidenceLevels() {
     final Object current = myData.get("evidenceLevel");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MedicalEvidenceLevel>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MedicalEvidenceLevel>) current;
     }
     return Arrays.asList((MedicalEvidenceLevel) current);
   }
@@ -145,13 +145,6 @@ public class MedicalGuideline extends MedicalEntity {
       return this;
     }
     /**
-     * Strength of evidence of the data used to formulate the guideline (enumerated).
-     */
-    @NotNull public Builder evidenceLevel(@NotNull MedicalEvidenceLevel.Builder medicalEvidenceLevel) {
-      putValue("evidenceLevel", medicalEvidenceLevel.build());
-      return this;
-    }
-    /**
      * The drug or supplement's legal status, including any controlled substance schedules that apply.
      */
     @NotNull public Builder legalStatus(@NotNull DrugLegalStatus drugLegalStatus) {
@@ -201,24 +194,10 @@ public class MedicalGuideline extends MedicalEntity {
       return this;
     }
     /**
-     * If applicable, a medical specialty in which this entity is relevant.
-     */
-    @NotNull public Builder relevantSpecialty(@NotNull MedicalSpecialty.Builder medicalSpecialty) {
-      putValue("relevantSpecialty", medicalSpecialty.build());
-      return this;
-    }
-    /**
      * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      */
     @NotNull public Builder medicineSystem(@NotNull MedicineSystem medicineSystem) {
       putValue("medicineSystem", medicineSystem);
-      return this;
-    }
-    /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
-     */
-    @NotNull public Builder medicineSystem(@NotNull MedicineSystem.Builder medicineSystem) {
-      putValue("medicineSystem", medicineSystem.build());
       return this;
     }
     /**

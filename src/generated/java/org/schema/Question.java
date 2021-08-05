@@ -36,11 +36,11 @@ public class Question extends Comment {
   /**
    * The number of answers this question has received.
    */
-  @JsonIgnore public Collection<Integer> getAnswerCounts() {
+  @JsonIgnore public java.util.Collection<Integer> getAnswerCounts() {
     final Object current = myData.get("answerCount");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -53,11 +53,11 @@ public class Question extends Comment {
   /**
    * For questions that are part of learning resources (e.g. Quiz), eduQuestionType indicates the format of question being given. Example: &quot;Multiple choice&quot;, &quot;Open ended&quot;, &quot;Flashcard&quot;.
    */
-  @JsonIgnore public Collection<String> getEduQuestionTypes() {
+  @JsonIgnore public java.util.Collection<String> getEduQuestionTypes() {
     final Object current = myData.get("eduQuestionType");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -70,11 +70,11 @@ public class Question extends Comment {
   /**
    * An answer (possibly one of several, possibly incorrect) to a Question, e.g. on a Question/Answer site.
    */
-  @JsonIgnore public Collection<SuggestedAnswer> getSuggestedAnswers() {
+  @JsonIgnore public java.util.Collection<SuggestedAnswer> getSuggestedAnswers() {
     final Object current = myData.get("suggestedAnswer");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<SuggestedAnswer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<SuggestedAnswer>) current;
     }
     return Arrays.asList((SuggestedAnswer) current);
   }
@@ -87,11 +87,11 @@ public class Question extends Comment {
   /**
    * The answer(s) that has been accepted as best, typically on a Question/Answer site. Sites vary in their selection mechanisms, e.g. drawing on community opinion and/or the view of the Question author.
    */
-  @JsonIgnore public Collection<Answer> getAcceptedAnswerAnswers() {
+  @JsonIgnore public java.util.Collection<Answer> getAcceptedAnswerAnswers() {
     final Object current = myData.get("acceptedAnswer");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Answer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Answer>) current;
     }
     return Arrays.asList((Answer) current);
   }
@@ -104,11 +104,11 @@ public class Question extends Comment {
   /**
    * The answer(s) that has been accepted as best, typically on a Question/Answer site. Sites vary in their selection mechanisms, e.g. drawing on community opinion and/or the view of the Question author.
    */
-  @JsonIgnore public Collection<ItemList> getAcceptedAnswerItemLists() {
+  @JsonIgnore public java.util.Collection<ItemList> getAcceptedAnswerItemLists() {
     final Object current = myData.get("acceptedAnswer");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<ItemList>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<ItemList>) current;
     }
     return Arrays.asList((ItemList) current);
   }
@@ -1618,8 +1618,8 @@ public class Question extends Comment {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

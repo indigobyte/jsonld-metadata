@@ -36,11 +36,11 @@ public class ApartmentComplex extends Residence {
   /**
    * A page providing information on how to book a tour of some [[Place]], such as an [[Accommodation]] or [[ApartmentComplex]] in a real estate setting, as well as other kinds of tours as appropriate.
    */
-  @JsonIgnore public Collection<String> getTourBookingPages() {
+  @JsonIgnore public java.util.Collection<String> getTourBookingPages() {
     final Object current = myData.get("tourBookingPage");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -53,11 +53,11 @@ public class ApartmentComplex extends Residence {
   /**
    * Indicates the total (available plus unavailable) number of accommodation units in an [[ApartmentComplex]], or the number of accommodation units for a specific [[FloorPlan]] (within its specific [[ApartmentComplex]]). See also [[numberOfAvailableAccommodationUnits]].
    */
-  @JsonIgnore public Collection<QuantitativeValue> getNumberOfAccommodationUnitss() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getNumberOfAccommodationUnitss() {
     final Object current = myData.get("numberOfAccommodationUnits");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -70,11 +70,11 @@ public class ApartmentComplex extends Residence {
   /**
    * The total integer number of bedrooms in a some [[Accommodation]], [[ApartmentComplex]] or [[FloorPlan]].
    */
-  @JsonIgnore public Collection<Number> getNumberOfBedroomsNumbers() {
+  @JsonIgnore public java.util.Collection<Number> getNumberOfBedroomsNumbers() {
     final Object current = myData.get("numberOfBedrooms");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Number>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Number>) current;
     }
     return Arrays.asList((Number) current);
   }
@@ -87,11 +87,11 @@ public class ApartmentComplex extends Residence {
   /**
    * The total integer number of bedrooms in a some [[Accommodation]], [[ApartmentComplex]] or [[FloorPlan]].
    */
-  @JsonIgnore public Collection<QuantitativeValue> getNumberOfBedroomsQuantitativeValues() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getNumberOfBedroomsQuantitativeValues() {
     final Object current = myData.get("numberOfBedrooms");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -104,11 +104,11 @@ public class ApartmentComplex extends Residence {
   /**
    * Indicates the number of available accommodation units in an [[ApartmentComplex]], or the number of accommodation units for a specific [[FloorPlan]] (within its specific [[ApartmentComplex]]). See also [[numberOfAccommodationUnits]].
    */
-  @JsonIgnore public Collection<QuantitativeValue> getNumberOfAvailableAccommodationUnitss() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getNumberOfAvailableAccommodationUnitss() {
     final Object current = myData.get("numberOfAvailableAccommodationUnits");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -121,11 +121,11 @@ public class ApartmentComplex extends Residence {
   /**
    * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
    */
-  @JsonIgnore public Collection<Boolean> getPetsAllowedBooleans() {
+  @JsonIgnore public java.util.Collection<Boolean> getPetsAllowedBooleans() {
     final Object current = myData.get("petsAllowed");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Boolean>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Boolean>) current;
     }
     return Arrays.asList((Boolean) current);
   }
@@ -138,11 +138,11 @@ public class ApartmentComplex extends Residence {
   /**
    * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
    */
-  @JsonIgnore public Collection<String> getPetsAllowedStrings() {
+  @JsonIgnore public java.util.Collection<String> getPetsAllowedStrings() {
     final Object current = myData.get("petsAllowed");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }

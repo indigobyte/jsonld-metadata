@@ -36,11 +36,11 @@ public class Patient extends MedicalAudience {
   /**
    * Specifying a drug or medicine used in a medication procedure.
    */
-  @JsonIgnore public Collection<Drug> getDrugs() {
+  @JsonIgnore public java.util.Collection<Drug> getDrugs() {
     final Object current = myData.get("drug");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Drug>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Drug>) current;
     }
     return Arrays.asList((Drug) current);
   }
@@ -53,11 +53,11 @@ public class Patient extends MedicalAudience {
   /**
    * One or more alternative conditions considered in the differential diagnosis process as output of a diagnosis process.
    */
-  @JsonIgnore public Collection<MedicalCondition> getDiagnosiss() {
+  @JsonIgnore public java.util.Collection<MedicalCondition> getDiagnosiss() {
     final Object current = myData.get("diagnosis");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MedicalCondition>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MedicalCondition>) current;
     }
     return Arrays.asList((MedicalCondition) current);
   }
@@ -70,11 +70,11 @@ public class Patient extends MedicalAudience {
   /**
    * Specifying the health condition(s) of a patient, medical study, or other target audience.
    */
-  @JsonIgnore public Collection<MedicalCondition> getHealthConditions() {
+  @JsonIgnore public java.util.Collection<MedicalCondition> getHealthConditions() {
     final Object current = myData.get("healthCondition");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MedicalCondition>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MedicalCondition>) current;
     }
     return Arrays.asList((MedicalCondition) current);
   }

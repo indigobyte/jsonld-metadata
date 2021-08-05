@@ -36,11 +36,11 @@ public class ChemicalSubstance extends BioChemEntity {
   /**
    * A role played by the BioChemEntity within a chemical context.
    */
-  @JsonIgnore public Collection<DefinedTerm> getChemicalRoles() {
+  @JsonIgnore public java.util.Collection<DefinedTerm> getChemicalRoles() {
     final Object current = myData.get("chemicalRole");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DefinedTerm>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<DefinedTerm>) current;
     }
     return Arrays.asList((DefinedTerm) current);
   }
@@ -53,11 +53,11 @@ public class ChemicalSubstance extends BioChemEntity {
   /**
    * The chemical composition describes the identity and relative ratio of the chemical elements that make up the substance.
    */
-  @JsonIgnore public Collection<String> getChemicalCompositions() {
+  @JsonIgnore public java.util.Collection<String> getChemicalCompositions() {
     final Object current = myData.get("chemicalComposition");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -70,11 +70,11 @@ public class ChemicalSubstance extends BioChemEntity {
   /**
    * Intended use of the BioChemEntity by humans.
    */
-  @JsonIgnore public Collection<DefinedTerm> getPotentialUses() {
+  @JsonIgnore public java.util.Collection<DefinedTerm> getPotentialUses() {
     final Object current = myData.get("potentialUse");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DefinedTerm>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<DefinedTerm>) current;
     }
     return Arrays.asList((DefinedTerm) current);
   }

@@ -36,11 +36,11 @@ public class Action extends Thing {
   /**
    * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
    */
-  @JsonIgnore public Collection<java.util.Date> getStartTimes() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getStartTimes() {
     final Object current = myData.get("startTime");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -53,11 +53,11 @@ public class Action extends Thing {
   /**
    * Indicates a target EntryPoint for an Action.
    */
-  @JsonIgnore public Collection<EntryPoint> getTargets() {
+  @JsonIgnore public java.util.Collection<EntryPoint> getTargets() {
     final Object current = myData.get("target");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<EntryPoint>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<EntryPoint>) current;
     }
     return Arrays.asList((EntryPoint) current);
   }
@@ -70,11 +70,11 @@ public class Action extends Thing {
   /**
    * Indicates the current disposition of the Action.
    */
-  @JsonIgnore public Collection<ActionStatusType> getActionStatuss() {
+  @JsonIgnore public java.util.Collection<ActionStatusType> getActionStatuss() {
     final Object current = myData.get("actionStatus");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<ActionStatusType>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<ActionStatusType>) current;
     }
     return Arrays.asList((ActionStatusType) current);
   }
@@ -87,11 +87,11 @@ public class Action extends Thing {
   /**
    * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
    */
-  @JsonIgnore public Collection<Organization> getAgentOrganizations() {
+  @JsonIgnore public java.util.Collection<Organization> getAgentOrganizations() {
     final Object current = myData.get("agent");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
   }
@@ -104,11 +104,11 @@ public class Action extends Thing {
   /**
    * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
    */
-  @JsonIgnore public Collection<Person> getAgentPersons() {
+  @JsonIgnore public java.util.Collection<Person> getAgentPersons() {
     final Object current = myData.get("agent");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -121,11 +121,11 @@ public class Action extends Thing {
   /**
    * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
    */
-  @JsonIgnore public Collection<java.util.Date> getEndTimes() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getEndTimes() {
     final Object current = myData.get("endTime");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -138,11 +138,11 @@ public class Action extends Thing {
   /**
    * For failed actions, more information on the cause of the failure.
    */
-  @JsonIgnore public Collection<Thing> getErrors() {
+  @JsonIgnore public java.util.Collection<Thing> getErrors() {
     final Object current = myData.get("error");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Thing>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Thing>) current;
     }
     return Arrays.asList((Thing) current);
   }
@@ -186,13 +186,6 @@ public class Action extends Thing {
      */
     @NotNull public Builder actionStatus(@NotNull ActionStatusType actionStatusType) {
       putValue("actionStatus", actionStatusType);
-      return this;
-    }
-    /**
-     * Indicates the current disposition of the Action.
-     */
-    @NotNull public Builder actionStatus(@NotNull ActionStatusType.Builder actionStatusType) {
-      putValue("actionStatus", actionStatusType.build());
       return this;
     }
     /**

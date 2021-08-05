@@ -36,11 +36,11 @@ public class FoodEstablishmentReservation extends Reservation {
   /**
    * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
    */
-  @JsonIgnore public Collection<java.util.Date> getStartTimes() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getStartTimes() {
     final Object current = myData.get("startTime");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -53,11 +53,11 @@ public class FoodEstablishmentReservation extends Reservation {
   /**
    * Number of people the reservation should accommodate.
    */
-  @JsonIgnore public Collection<Integer> getPartySizeIntegers() {
+  @JsonIgnore public java.util.Collection<Integer> getPartySizeIntegers() {
     final Object current = myData.get("partySize");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -70,11 +70,11 @@ public class FoodEstablishmentReservation extends Reservation {
   /**
    * Number of people the reservation should accommodate.
    */
-  @JsonIgnore public Collection<QuantitativeValue> getPartySizeQuantitativeValues() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getPartySizeQuantitativeValues() {
     final Object current = myData.get("partySize");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -87,11 +87,11 @@ public class FoodEstablishmentReservation extends Reservation {
   /**
    * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
    */
-  @JsonIgnore public Collection<java.util.Date> getEndTimes() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getEndTimes() {
     final Object current = myData.get("endTime");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -177,13 +177,6 @@ public class FoodEstablishmentReservation extends Reservation {
      */
     @NotNull public Builder reservationStatus(@NotNull ReservationStatusType reservationStatusType) {
       putValue("reservationStatus", reservationStatusType);
-      return this;
-    }
-    /**
-     * The current status of the reservation.
-     */
-    @NotNull public Builder reservationStatus(@NotNull ReservationStatusType.Builder reservationStatusType) {
-      putValue("reservationStatus", reservationStatusType.build());
       return this;
     }
     /**

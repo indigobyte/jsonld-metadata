@@ -36,11 +36,11 @@ public class MedicalOrganization extends Organization {
   /**
    * Whether the provider is accepting new patients.
    */
-  @JsonIgnore public Collection<Boolean> getIsAcceptingNewPatientss() {
+  @JsonIgnore public java.util.Collection<Boolean> getIsAcceptingNewPatientss() {
     final Object current = myData.get("isAcceptingNewPatients");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Boolean>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Boolean>) current;
     }
     return Arrays.asList((Boolean) current);
   }
@@ -53,11 +53,11 @@ public class MedicalOrganization extends Organization {
   /**
    * Name or unique ID of network. (Networks are often reused across different insurance plans).
    */
-  @JsonIgnore public Collection<String> getHealthPlanNetworkIds() {
+  @JsonIgnore public java.util.Collection<String> getHealthPlanNetworkIds() {
     final Object current = myData.get("healthPlanNetworkId");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -70,11 +70,11 @@ public class MedicalOrganization extends Organization {
   /**
    * A medical specialty of the provider.
    */
-  @JsonIgnore public Collection<MedicalSpecialty> getMedicalSpecialtys() {
+  @JsonIgnore public java.util.Collection<MedicalSpecialty> getMedicalSpecialtys() {
     final Object current = myData.get("medicalSpecialty");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MedicalSpecialty>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MedicalSpecialty>) current;
     }
     return Arrays.asList((MedicalSpecialty) current);
   }
@@ -111,13 +111,6 @@ public class MedicalOrganization extends Organization {
      */
     @NotNull public Builder medicalSpecialty(@NotNull MedicalSpecialty medicalSpecialty) {
       putValue("medicalSpecialty", medicalSpecialty);
-      return this;
-    }
-    /**
-     * A medical specialty of the provider.
-     */
-    @NotNull public Builder medicalSpecialty(@NotNull MedicalSpecialty.Builder medicalSpecialty) {
-      putValue("medicalSpecialty", medicalSpecialty.build());
       return this;
     }
     /**

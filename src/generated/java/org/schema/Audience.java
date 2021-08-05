@@ -36,11 +36,11 @@ public class Audience extends Intangible {
   /**
    * The target group associated with a given audience (e.g. veterans, car owners, musicians, etc.).
    */
-  @JsonIgnore public Collection<String> getAudienceTypes() {
+  @JsonIgnore public java.util.Collection<String> getAudienceTypes() {
     final Object current = myData.get("audienceType");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -53,11 +53,11 @@ public class Audience extends Intangible {
   /**
    * The geographic area associated with the audience.
    */
-  @JsonIgnore public Collection<AdministrativeArea> getGeographicAreas() {
+  @JsonIgnore public java.util.Collection<AdministrativeArea> getGeographicAreas() {
     final Object current = myData.get("geographicArea");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<AdministrativeArea>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<AdministrativeArea>) current;
     }
     return Arrays.asList((AdministrativeArea) current);
   }

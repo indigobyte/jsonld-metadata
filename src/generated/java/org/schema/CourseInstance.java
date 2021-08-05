@@ -36,11 +36,11 @@ public class CourseInstance extends Event {
   /**
    * A person assigned to instruct or provide instructional assistance for the [[CourseInstance]].
    */
-  @JsonIgnore public Collection<Person> getInstructors() {
+  @JsonIgnore public java.util.Collection<Person> getInstructors() {
     final Object current = myData.get("instructor");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -53,11 +53,11 @@ public class CourseInstance extends Event {
   /**
    * The medium or means of delivery of the course instance or the mode of study, either as a text label (e.g. &quot;online&quot;, &quot;onsite&quot; or &quot;blended&quot;; &quot;synchronous&quot; or &quot;asynchronous&quot;; &quot;full-time&quot; or &quot;part-time&quot;) or as a URL reference to a term from a controlled vocabulary (e.g. https://ceds.ed.gov/element/001311#Asynchronous ).
    */
-  @JsonIgnore public Collection<String> getCourseModes() {
+  @JsonIgnore public java.util.Collection<String> getCourseModes() {
     final Object current = myData.get("courseMode");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -70,11 +70,11 @@ public class CourseInstance extends Event {
   /**
    * The amount of work expected of students taking the course, often provided as a figure per week or per month, and may be broken down by type. For example, &quot;2 hours of lectures, 1 hour of lab work and 3 hours of independent study per week&quot;.
    */
-  @JsonIgnore public Collection<String> getCourseWorkloads() {
+  @JsonIgnore public java.util.Collection<String> getCourseWorkloads() {
     final Object current = myData.get("courseWorkload");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -293,13 +293,6 @@ public class CourseInstance extends Event {
      */
     @NotNull public Builder eventStatus(@NotNull EventStatusType eventStatusType) {
       putValue("eventStatus", eventStatusType);
-      return this;
-    }
-    /**
-     * An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.
-     */
-    @NotNull public Builder eventStatus(@NotNull EventStatusType.Builder eventStatusType) {
-      putValue("eventStatus", eventStatusType.build());
       return this;
     }
     /**

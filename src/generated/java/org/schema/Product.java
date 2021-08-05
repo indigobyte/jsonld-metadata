@@ -36,11 +36,11 @@ public class Product extends Thing {
   /**
    * The width of the item.
    */
-  @JsonIgnore public Collection<Distance> getWidthDistances() {
+  @JsonIgnore public java.util.Collection<Distance> getWidthDistances() {
     final Object current = myData.get("width");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Distance>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Distance>) current;
     }
     return Arrays.asList((Distance) current);
   }
@@ -53,11 +53,11 @@ public class Product extends Thing {
   /**
    * The width of the item.
    */
-  @JsonIgnore public Collection<QuantitativeValue> getWidthQuantitativeValues() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getWidthQuantitativeValues() {
     final Object current = myData.get("width");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -70,11 +70,11 @@ public class Product extends Thing {
   /**
    * The manufacturer of the product.
    */
-  @JsonIgnore public Collection<Organization> getManufacturers() {
+  @JsonIgnore public java.util.Collection<Organization> getManufacturers() {
     final Object current = myData.get("manufacturer");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
   }
@@ -87,11 +87,11 @@ public class Product extends Thing {
   /**
    * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
    */
-  @JsonIgnore public Collection<DefinedTerm> getSizeDefinedTerms() {
+  @JsonIgnore public java.util.Collection<DefinedTerm> getSizeDefinedTerms() {
     final Object current = myData.get("size");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DefinedTerm>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<DefinedTerm>) current;
     }
     return Arrays.asList((DefinedTerm) current);
   }
@@ -104,11 +104,11 @@ public class Product extends Thing {
   /**
    * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
    */
-  @JsonIgnore public Collection<QuantitativeValue> getSizeQuantitativeValues() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getSizeQuantitativeValues() {
     final Object current = myData.get("size");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -121,11 +121,11 @@ public class Product extends Thing {
   /**
    * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
    */
-  @JsonIgnore public Collection<SizeSpecification> getSizeSizeSpecifications() {
+  @JsonIgnore public java.util.Collection<SizeSpecification> getSizeSizeSpecifications() {
     final Object current = myData.get("size");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<SizeSpecification>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<SizeSpecification>) current;
     }
     return Arrays.asList((SizeSpecification) current);
   }
@@ -138,11 +138,11 @@ public class Product extends Thing {
   /**
    * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
    */
-  @JsonIgnore public Collection<String> getSizeStrings() {
+  @JsonIgnore public java.util.Collection<String> getSizeStrings() {
     final Object current = myData.get("size");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -155,11 +155,11 @@ public class Product extends Thing {
   /**
    * The date the item e.g. vehicle was purchased by the current owner.
    */
-  @JsonIgnore public Collection<java.util.Date> getPurchaseDates() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getPurchaseDates() {
     final Object current = myData.get("purchaseDate");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -172,11 +172,11 @@ public class Product extends Thing {
   /**
    * Indicates the [[productGroupID]] for a [[ProductGroup]] that this product [[isVariantOf]]. 
    */
-  @JsonIgnore public Collection<String> getInProductGroupWithIDs() {
+  @JsonIgnore public java.util.Collection<String> getInProductGroupWithIDs() {
     final Object current = myData.get("inProductGroupWithID");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -189,11 +189,11 @@ public class Product extends Thing {
   /**
    * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
    */
-  @JsonIgnore public Collection<Gtin> getGtin13s() {
+  @JsonIgnore public java.util.Collection<Gtin> getGtin13s() {
     final Object current = myData.get("gtin13");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Gtin>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Gtin>) current;
     }
     return Arrays.asList((Gtin) current);
   }
@@ -206,11 +206,11 @@ public class Product extends Thing {
   /**
    * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
    */
-  @JsonIgnore public Collection<DefinedTerm> getPatternDefinedTerms() {
+  @JsonIgnore public java.util.Collection<DefinedTerm> getPatternDefinedTerms() {
     final Object current = myData.get("pattern");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DefinedTerm>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<DefinedTerm>) current;
     }
     return Arrays.asList((DefinedTerm) current);
   }
@@ -223,11 +223,11 @@ public class Product extends Thing {
   /**
    * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
    */
-  @JsonIgnore public Collection<String> getPatternStrings() {
+  @JsonIgnore public java.util.Collection<String> getPatternStrings() {
     final Object current = myData.get("pattern");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -240,11 +240,11 @@ public class Product extends Thing {
   /**
    * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
    */
-  @JsonIgnore public Collection<Identifier> getGtin14s() {
+  @JsonIgnore public java.util.Collection<Identifier> getGtin14s() {
     final Object current = myData.get("gtin14");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Identifier>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Identifier>) current;
     }
     return Arrays.asList((Identifier) current);
   }
@@ -257,11 +257,11 @@ public class Product extends Thing {
   /**
    * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
    */
-  @JsonIgnore public Collection<OfferItemCondition> getItemConditions() {
+  @JsonIgnore public java.util.Collection<OfferItemCondition> getItemConditions() {
     final Object current = myData.get("itemCondition");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<OfferItemCondition>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<OfferItemCondition>) current;
     }
     return Arrays.asList((OfferItemCondition) current);
   }
@@ -274,11 +274,11 @@ public class Product extends Thing {
   /**
    * The overall rating, based on a collection of reviews or ratings, of the item.
    */
-  @JsonIgnore public Collection<AggregateRating> getAggregateRatings() {
+  @JsonIgnore public java.util.Collection<AggregateRating> getAggregateRatings() {
     final Object current = myData.get("aggregateRating");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<AggregateRating>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<AggregateRating>) current;
     }
     return Arrays.asList((AggregateRating) current);
   }
@@ -291,11 +291,11 @@ public class Product extends Thing {
   /**
    * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
    */
-  @JsonIgnore public Collection<String> getMpns() {
+  @JsonIgnore public java.util.Collection<String> getMpns() {
     final Object current = myData.get("mpn");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -308,11 +308,11 @@ public class Product extends Thing {
   /**
    * The depth of the item.
    */
-  @JsonIgnore public Collection<Distance> getDepthDistances() {
+  @JsonIgnore public java.util.Collection<Distance> getDepthDistances() {
     final Object current = myData.get("depth");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Distance>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Distance>) current;
     }
     return Arrays.asList((Distance) current);
   }
@@ -325,11 +325,11 @@ public class Product extends Thing {
   /**
    * The depth of the item.
    */
-  @JsonIgnore public Collection<QuantitativeValue> getDepthQuantitativeValues() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getDepthQuantitativeValues() {
     final Object current = myData.get("depth");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -342,11 +342,11 @@ public class Product extends Thing {
   /**
    * An associated logo.
    */
-  @JsonIgnore public Collection<Image> getLogos() {
+  @JsonIgnore public java.util.Collection<Image> getLogos() {
     final Object current = myData.get("logo");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Image>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Image>) current;
     }
     return Arrays.asList((Image) current);
   }
@@ -359,11 +359,11 @@ public class Product extends Thing {
   /**
    * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
    */
-  @JsonIgnore public Collection<Identifier> getGtin12s() {
+  @JsonIgnore public java.util.Collection<Identifier> getGtin12s() {
     final Object current = myData.get("gtin12");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Identifier>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Identifier>) current;
     }
     return Arrays.asList((Identifier) current);
   }
@@ -376,11 +376,11 @@ public class Product extends Thing {
   /**
    * The height of the item.
    */
-  @JsonIgnore public Collection<Distance> getHeightDistances() {
+  @JsonIgnore public java.util.Collection<Distance> getHeightDistances() {
     final Object current = myData.get("height");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Distance>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Distance>) current;
     }
     return Arrays.asList((Distance) current);
   }
@@ -393,11 +393,11 @@ public class Product extends Thing {
   /**
    * The height of the item.
    */
-  @JsonIgnore public Collection<QuantitativeValue> getHeightQuantitativeValues() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getHeightQuantitativeValues() {
     final Object current = myData.get("height");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -410,11 +410,11 @@ public class Product extends Thing {
   /**
    * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
    */
-  @JsonIgnore public Collection<Identifier> getSkus() {
+  @JsonIgnore public java.util.Collection<Identifier> getSkus() {
     final Object current = myData.get("sku");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Identifier>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Identifier>) current;
     }
     return Arrays.asList((Identifier) current);
   }
@@ -427,11 +427,11 @@ public class Product extends Thing {
   /**
    * A pointer to another, functionally similar product (or multiple products).
    */
-  @JsonIgnore public Collection<Product> getIsSimilarToProducts() {
+  @JsonIgnore public java.util.Collection<Product> getIsSimilarToProducts() {
     final Object current = myData.get("isSimilarTo");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Product>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Product>) current;
     }
     return Arrays.asList((Product) current);
   }
@@ -444,11 +444,11 @@ public class Product extends Thing {
   /**
    * A pointer to another, functionally similar product (or multiple products).
    */
-  @JsonIgnore public Collection<Service> getIsSimilarToServices() {
+  @JsonIgnore public java.util.Collection<Service> getIsSimilarToServices() {
     final Object current = myData.get("isSimilarTo");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Service>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Service>) current;
     }
     return Arrays.asList((Service) current);
   }
@@ -461,11 +461,11 @@ public class Product extends Thing {
   /**
    * A pointer to another, somehow related product (or multiple products).
    */
-  @JsonIgnore public Collection<Product> getIsRelatedToProducts() {
+  @JsonIgnore public java.util.Collection<Product> getIsRelatedToProducts() {
     final Object current = myData.get("isRelatedTo");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Product>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Product>) current;
     }
     return Arrays.asList((Product) current);
   }
@@ -478,11 +478,11 @@ public class Product extends Thing {
   /**
    * A pointer to another, somehow related product (or multiple products).
    */
-  @JsonIgnore public Collection<Service> getIsRelatedToServices() {
+  @JsonIgnore public java.util.Collection<Service> getIsRelatedToServices() {
     final Object current = myData.get("isRelatedTo");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Service>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Service>) current;
     }
     return Arrays.asList((Service) current);
   }
@@ -495,11 +495,11 @@ public class Product extends Thing {
   /**
    * An intended audience, i.e. a group for whom something was created.
    */
-  @JsonIgnore public Collection<Audience> getAudiences() {
+  @JsonIgnore public java.util.Collection<Audience> getAudiences() {
     final Object current = myData.get("audience");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Audience>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Audience>) current;
     }
     return Arrays.asList((Audience) current);
   }
@@ -512,11 +512,11 @@ public class Product extends Thing {
   /**
    * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
    */
-  @JsonIgnore public Collection<Brand> getBrandBrands() {
+  @JsonIgnore public java.util.Collection<Brand> getBrandBrands() {
     final Object current = myData.get("brand");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Brand>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Brand>) current;
     }
     return Arrays.asList((Brand) current);
   }
@@ -529,11 +529,11 @@ public class Product extends Thing {
   /**
    * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
    */
-  @JsonIgnore public Collection<Organization> getBrandOrganizations() {
+  @JsonIgnore public java.util.Collection<Organization> getBrandOrganizations() {
     final Object current = myData.get("brand");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
   }
@@ -546,11 +546,11 @@ public class Product extends Thing {
   /**
    * Indicates the [NATO stock number](https://en.wikipedia.org/wiki/NATO_Stock_Number) (nsn) of a [[Product]]. 
    */
-  @JsonIgnore public Collection<String> getNsns() {
+  @JsonIgnore public java.util.Collection<String> getNsns() {
     final Object current = myData.get("nsn");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -563,11 +563,11 @@ public class Product extends Thing {
   /**
    * The product identifier, such as ISBN. For example: ``` meta itemprop=&quot;productID&quot; content=&quot;isbn:123-456-789&quot; ```.
    */
-  @JsonIgnore public Collection<Identifier> getProductIDs() {
+  @JsonIgnore public java.util.Collection<Identifier> getProductIDs() {
     final Object current = myData.get("productID");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Identifier>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Identifier>) current;
     }
     return Arrays.asList((Identifier) current);
   }
@@ -580,11 +580,11 @@ public class Product extends Thing {
   /**
    * Specifies a MerchantReturnPolicy that may be applicable.
    */
-  @JsonIgnore public Collection<MerchantReturnPolicy> getHasMerchantReturnPolicys() {
+  @JsonIgnore public java.util.Collection<MerchantReturnPolicy> getHasMerchantReturnPolicys() {
     final Object current = myData.get("hasMerchantReturnPolicy");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MerchantReturnPolicy>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MerchantReturnPolicy>) current;
     }
     return Arrays.asList((MerchantReturnPolicy) current);
   }
@@ -597,11 +597,11 @@ public class Product extends Thing {
   /**
    * The model of the product. Use with the URL of a ProductModel or a textual representation of the model identifier. The URL of the ProductModel can be from an external source. It is recommended to additionally provide strong product identifiers via the gtin8/gtin13/gtin14 and mpn properties.
    */
-  @JsonIgnore public Collection<ProductModel> getModelProductModels() {
+  @JsonIgnore public java.util.Collection<ProductModel> getModelProductModels() {
     final Object current = myData.get("model");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<ProductModel>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<ProductModel>) current;
     }
     return Arrays.asList((ProductModel) current);
   }
@@ -614,11 +614,11 @@ public class Product extends Thing {
   /**
    * The model of the product. Use with the URL of a ProductModel or a textual representation of the model identifier. The URL of the ProductModel can be from an external source. It is recommended to additionally provide strong product identifiers via the gtin8/gtin13/gtin14 and mpn properties.
    */
-  @JsonIgnore public Collection<String> getModelStrings() {
+  @JsonIgnore public java.util.Collection<String> getModelStrings() {
     final Object current = myData.get("model");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -631,11 +631,11 @@ public class Product extends Thing {
   /**
    * The place where the item (typically [[Product]]) was last processed and tested before importation.
    */
-  @JsonIgnore public Collection<String> getCountryOfLastProcessings() {
+  @JsonIgnore public java.util.Collection<String> getCountryOfLastProcessings() {
     final Object current = myData.get("countryOfLastProcessing");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -648,11 +648,11 @@ public class Product extends Thing {
   /**
    * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
    */
-  @JsonIgnore public Collection<Category> getCategorys() {
+  @JsonIgnore public java.util.Collection<Category> getCategorys() {
     final Object current = myData.get("category");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Category>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Category>) current;
     }
     return Arrays.asList((Category) current);
   }
@@ -665,11 +665,11 @@ public class Product extends Thing {
   /**
    * The place where the product was assembled.
    */
-  @JsonIgnore public Collection<String> getCountryOfAssemblys() {
+  @JsonIgnore public java.util.Collection<String> getCountryOfAssemblys() {
     final Object current = myData.get("countryOfAssembly");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -684,11 +684,11 @@ public class Product extends Thing {
    * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.\n\nNote: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
    * 
    */
-  @JsonIgnore public Collection<PropertyValue> getAdditionalPropertys() {
+  @JsonIgnore public java.util.Collection<PropertyValue> getAdditionalPropertys() {
     final Object current = myData.get("additionalProperty");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<PropertyValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<PropertyValue>) current;
     }
     return Arrays.asList((PropertyValue) current);
   }
@@ -701,11 +701,11 @@ public class Product extends Thing {
   /**
    * A pointer to another product (or multiple products) for which this product is an accessory or spare part.
    */
-  @JsonIgnore public Collection<Product> getIsAccessoryOrSparePartFors() {
+  @JsonIgnore public java.util.Collection<Product> getIsAccessoryOrSparePartFors() {
     final Object current = myData.get("isAccessoryOrSparePartFor");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Product>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Product>) current;
     }
     return Arrays.asList((Product) current);
   }
@@ -726,11 +726,11 @@ public class Product extends Thing {
    * 
    * In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.
    */
-  @JsonIgnore public Collection<Country> getCountryOfOrigins() {
+  @JsonIgnore public java.util.Collection<Country> getCountryOfOrigins() {
     final Object current = myData.get("countryOfOrigin");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Country>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Country>) current;
     }
     return Arrays.asList((Country) current);
   }
@@ -743,11 +743,11 @@ public class Product extends Thing {
   /**
    * The release date of a product or product model. This can be used to distinguish the exact variant of a product.
    */
-  @JsonIgnore public Collection<java.util.Date> getReleaseDates() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getReleaseDates() {
     final Object current = myData.get("releaseDate");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -760,11 +760,11 @@ public class Product extends Thing {
   /**
    * A review of the item.
    */
-  @JsonIgnore public Collection<Review> getReviews() {
+  @JsonIgnore public java.util.Collection<Review> getReviews() {
     final Object current = myData.get("review");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Review>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Review>) current;
     }
     return Arrays.asList((Review) current);
   }
@@ -777,11 +777,11 @@ public class Product extends Thing {
   /**
    * The date of production of the item, e.g. vehicle.
    */
-  @JsonIgnore public Collection<java.util.Date> getProductionDates() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getProductionDates() {
     final Object current = myData.get("productionDate");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -794,11 +794,11 @@ public class Product extends Thing {
   /**
    * An award won by or for this item.
    */
-  @JsonIgnore public Collection<String> getAwards() {
+  @JsonIgnore public java.util.Collection<String> getAwards() {
     final Object current = myData.get("award");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -811,11 +811,11 @@ public class Product extends Thing {
   /**
    * The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
    */
-  @JsonIgnore public Collection<Gtin> getGtin8s() {
+  @JsonIgnore public java.util.Collection<Gtin> getGtin8s() {
     final Object current = myData.get("gtin8");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Gtin>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Gtin>) current;
     }
     return Arrays.asList((Gtin) current);
   }
@@ -828,11 +828,11 @@ public class Product extends Thing {
   /**
    * The weight of the product or person.
    */
-  @JsonIgnore public Collection<QuantitativeValue> getWeights() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getWeights() {
     final Object current = myData.get("weight");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -845,11 +845,11 @@ public class Product extends Thing {
   /**
    * Defines the energy efficiency Category (also known as &quot;class&quot; or &quot;rating&quot;) for a product according to an international energy efficiency standard.
    */
-  @JsonIgnore public Collection<EnergyConsumptionDetails> getHasEnergyConsumptionDetailss() {
+  @JsonIgnore public java.util.Collection<EnergyConsumptionDetails> getHasEnergyConsumptionDetailss() {
     final Object current = myData.get("hasEnergyConsumptionDetails");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<EnergyConsumptionDetails>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<EnergyConsumptionDetails>) current;
     }
     return Arrays.asList((EnergyConsumptionDetails) current);
   }
@@ -862,11 +862,11 @@ public class Product extends Thing {
   /**
    * A product measurement, for example the inseam of pants, the wheel size of a bicycle, or the gauge of a screw. Usually an exact measurement, but can also be a range of measurements for adjustable products, for example belts and ski bindings.
    */
-  @JsonIgnore public Collection<QuantitativeValue> getHasMeasurements() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getHasMeasurements() {
     final Object current = myData.get("hasMeasurement");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -879,11 +879,11 @@ public class Product extends Thing {
   /**
    * A pointer to another product (or multiple products) for which this product is a consumable.
    */
-  @JsonIgnore public Collection<Product> getIsConsumableFors() {
+  @JsonIgnore public java.util.Collection<Product> getIsConsumableFors() {
     final Object current = myData.get("isConsumableFor");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Product>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Product>) current;
     }
     return Arrays.asList((Product) current);
   }
@@ -896,11 +896,11 @@ public class Product extends Thing {
   /**
    * The color of the product.
    */
-  @JsonIgnore public Collection<String> getColors() {
+  @JsonIgnore public java.util.Collection<String> getColors() {
     final Object current = myData.get("color");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -913,11 +913,11 @@ public class Product extends Thing {
   /**
    * A slogan or motto associated with the item.
    */
-  @JsonIgnore public Collection<String> getSlogans() {
+  @JsonIgnore public java.util.Collection<String> getSlogans() {
     final Object current = myData.get("slogan");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -930,11 +930,11 @@ public class Product extends Thing {
   /**
    * Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.
    */
-  @JsonIgnore public Collection<ProductGroup> getIsVariantOfProductGroups() {
+  @JsonIgnore public java.util.Collection<ProductGroup> getIsVariantOfProductGroups() {
     final Object current = myData.get("isVariantOf");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<ProductGroup>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<ProductGroup>) current;
     }
     return Arrays.asList((ProductGroup) current);
   }
@@ -947,11 +947,11 @@ public class Product extends Thing {
   /**
    * Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.
    */
-  @JsonIgnore public Collection<ProductModel> getIsVariantOfProductModels() {
+  @JsonIgnore public java.util.Collection<ProductModel> getIsVariantOfProductModels() {
     final Object current = myData.get("isVariantOf");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<ProductModel>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<ProductModel>) current;
     }
     return Arrays.asList((ProductModel) current);
   }
@@ -966,11 +966,11 @@ public class Product extends Thing {
    * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
    *       
    */
-  @JsonIgnore public Collection<Demand> getOffersDemands() {
+  @JsonIgnore public java.util.Collection<Demand> getOffersDemands() {
     final Object current = myData.get("offers");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Demand>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Demand>) current;
     }
     return Arrays.asList((Demand) current);
   }
@@ -985,11 +985,11 @@ public class Product extends Thing {
    * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
    *       
    */
-  @JsonIgnore public Collection<Offer> getOffersOffers() {
+  @JsonIgnore public java.util.Collection<Offer> getOffersOffers() {
     final Object current = myData.get("offers");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Offer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Offer>) current;
     }
     return Arrays.asList((Offer) current);
   }

@@ -49,11 +49,11 @@ public class DefinedRegion extends StructuredValue {
   /**
    * The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country) 
    */
-  @JsonIgnore public Collection<String> getAddressRegions() {
+  @JsonIgnore public java.util.Collection<String> getAddressRegions() {
     final Object current = myData.get("addressRegion");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -66,11 +66,11 @@ public class DefinedRegion extends StructuredValue {
   /**
    * A defined range of postal codes.
    */
-  @JsonIgnore public Collection<PostalCodeRangeSpecification> getPostalCodeRanges() {
+  @JsonIgnore public java.util.Collection<PostalCodeRangeSpecification> getPostalCodeRanges() {
     final Object current = myData.get("postalCodeRange");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<PostalCodeRangeSpecification>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<PostalCodeRangeSpecification>) current;
     }
     return Arrays.asList((PostalCodeRangeSpecification) current);
   }
@@ -83,11 +83,11 @@ public class DefinedRegion extends StructuredValue {
   /**
    * The postal code. For example, 94043.
    */
-  @JsonIgnore public Collection<String> getPostalCodes() {
+  @JsonIgnore public java.util.Collection<String> getPostalCodes() {
     final Object current = myData.get("postalCode");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -100,11 +100,11 @@ public class DefinedRegion extends StructuredValue {
   /**
    * A defined range of postal codes indicated by a common textual prefix. Used for non-numeric systems such as UK.
    */
-  @JsonIgnore public Collection<String> getPostalCodePrefixs() {
+  @JsonIgnore public java.util.Collection<String> getPostalCodePrefixs() {
     final Object current = myData.get("postalCodePrefix");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -117,11 +117,11 @@ public class DefinedRegion extends StructuredValue {
   /**
    * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
    */
-  @JsonIgnore public Collection<Country> getAddressCountryCountrys() {
+  @JsonIgnore public java.util.Collection<Country> getAddressCountryCountrys() {
     final Object current = myData.get("addressCountry");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Country>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Country>) current;
     }
     return Arrays.asList((Country) current);
   }
@@ -134,11 +134,11 @@ public class DefinedRegion extends StructuredValue {
   /**
    * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
    */
-  @JsonIgnore public Collection<String> getAddressCountryStrings() {
+  @JsonIgnore public java.util.Collection<String> getAddressCountryStrings() {
     final Object current = myData.get("addressCountry");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }

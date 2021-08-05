@@ -36,11 +36,11 @@ public class Ticket extends Intangible {
   /**
    * The person or organization the reservation or ticket is for.
    */
-  @JsonIgnore public Collection<Organization> getUnderNameOrganizations() {
+  @JsonIgnore public java.util.Collection<Organization> getUnderNameOrganizations() {
     final Object current = myData.get("underName");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
   }
@@ -53,11 +53,11 @@ public class Ticket extends Intangible {
   /**
    * The person or organization the reservation or ticket is for.
    */
-  @JsonIgnore public Collection<Person> getUnderNamePersons() {
+  @JsonIgnore public java.util.Collection<Person> getUnderNamePersons() {
     final Object current = myData.get("underName");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -70,11 +70,11 @@ public class Ticket extends Intangible {
   /**
    * Reference to an asset (e.g., Barcode, QR code image or PDF) usable for entrance.
    */
-  @JsonIgnore public Collection<String> getTicketTokens() {
+  @JsonIgnore public java.util.Collection<String> getTicketTokens() {
     final Object current = myData.get("ticketToken");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -87,11 +87,11 @@ public class Ticket extends Intangible {
   /**
    * The total price for the reservation or ticket, including applicable taxes, shipping, etc.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
    */
-  @JsonIgnore public Collection<Number> getTotalPriceNumbers() {
+  @JsonIgnore public java.util.Collection<Number> getTotalPriceNumbers() {
     final Object current = myData.get("totalPrice");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Number>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Number>) current;
     }
     return Arrays.asList((Number) current);
   }
@@ -104,11 +104,11 @@ public class Ticket extends Intangible {
   /**
    * The total price for the reservation or ticket, including applicable taxes, shipping, etc.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
    */
-  @JsonIgnore public Collection<PriceSpecification> getTotalPricePriceSpecifications() {
+  @JsonIgnore public java.util.Collection<PriceSpecification> getTotalPricePriceSpecifications() {
     final Object current = myData.get("totalPrice");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<PriceSpecification>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<PriceSpecification>) current;
     }
     return Arrays.asList((PriceSpecification) current);
   }
@@ -121,11 +121,11 @@ public class Ticket extends Intangible {
   /**
    * The total price for the reservation or ticket, including applicable taxes, shipping, etc.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
    */
-  @JsonIgnore public Collection<String> getTotalPriceStrings() {
+  @JsonIgnore public java.util.Collection<String> getTotalPriceStrings() {
     final Object current = myData.get("totalPrice");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -138,11 +138,11 @@ public class Ticket extends Intangible {
   /**
    * The date the ticket was issued.
    */
-  @JsonIgnore public Collection<java.util.Date> getDateIssueds() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getDateIssueds() {
     final Object current = myData.get("dateIssued");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -155,11 +155,11 @@ public class Ticket extends Intangible {
   /**
    * The seat associated with the ticket.
    */
-  @JsonIgnore public Collection<Seat> getTicketedSeats() {
+  @JsonIgnore public java.util.Collection<Seat> getTicketedSeats() {
     final Object current = myData.get("ticketedSeat");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Seat>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Seat>) current;
     }
     return Arrays.asList((Seat) current);
   }
@@ -172,11 +172,11 @@ public class Ticket extends Intangible {
   /**
    * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;.
    */
-  @JsonIgnore public Collection<String> getPriceCurrencys() {
+  @JsonIgnore public java.util.Collection<String> getPriceCurrencys() {
     final Object current = myData.get("priceCurrency");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -189,11 +189,11 @@ public class Ticket extends Intangible {
   /**
    * The organization issuing the ticket or permit.
    */
-  @JsonIgnore public Collection<Organization> getIssuedBys() {
+  @JsonIgnore public java.util.Collection<Organization> getIssuedBys() {
     final Object current = myData.get("issuedBy");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
   }
@@ -206,11 +206,11 @@ public class Ticket extends Intangible {
   /**
    * The unique identifier for the ticket.
    */
-  @JsonIgnore public Collection<String> getTicketNumbers() {
+  @JsonIgnore public java.util.Collection<String> getTicketNumbers() {
     final Object current = myData.get("ticketNumber");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }

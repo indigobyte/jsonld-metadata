@@ -149,22 +149,8 @@ public class VitalSign extends MedicalSign {
     /**
      * The status of the study (enumerated).
      */
-    @NotNull public Builder status(@NotNull EventStatusType.Builder eventStatusType) {
-      putValue("status", eventStatusType.build());
-      return this;
-    }
-    /**
-     * The status of the study (enumerated).
-     */
     @NotNull public Builder status(@NotNull MedicalStudyStatus medicalStudyStatus) {
       putValue("status", medicalStudyStatus);
-      return this;
-    }
-    /**
-     * The status of the study (enumerated).
-     */
-    @NotNull public Builder status(@NotNull MedicalStudyStatus.Builder medicalStudyStatus) {
-      putValue("status", medicalStudyStatus.build());
       return this;
     }
     /**
@@ -357,24 +343,10 @@ public class VitalSign extends MedicalSign {
       return this;
     }
     /**
-     * If applicable, a medical specialty in which this entity is relevant.
-     */
-    @NotNull public Builder relevantSpecialty(@NotNull MedicalSpecialty.Builder medicalSpecialty) {
-      putValue("relevantSpecialty", medicalSpecialty.build());
-      return this;
-    }
-    /**
      * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      */
     @NotNull public Builder medicineSystem(@NotNull MedicineSystem medicineSystem) {
       putValue("medicineSystem", medicineSystem);
-      return this;
-    }
-    /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
-     */
-    @NotNull public Builder medicineSystem(@NotNull MedicineSystem.Builder medicineSystem) {
-      putValue("medicineSystem", medicineSystem.build());
       return this;
     }
     /**

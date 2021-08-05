@@ -36,11 +36,11 @@ public class InfectiousDisease extends MedicalCondition {
   /**
    * The class of infectious agent (bacteria, prion, etc.) that causes the disease.
    */
-  @JsonIgnore public Collection<InfectiousAgentClass> getInfectiousAgentClasss() {
+  @JsonIgnore public java.util.Collection<InfectiousAgentClass> getInfectiousAgentClasss() {
     final Object current = myData.get("infectiousAgentClass");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<InfectiousAgentClass>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<InfectiousAgentClass>) current;
     }
     return Arrays.asList((InfectiousAgentClass) current);
   }
@@ -53,11 +53,11 @@ public class InfectiousDisease extends MedicalCondition {
   /**
    * The actual infectious agent, such as a specific bacterium.
    */
-  @JsonIgnore public Collection<String> getInfectiousAgents() {
+  @JsonIgnore public java.util.Collection<String> getInfectiousAgents() {
     final Object current = myData.get("infectiousAgent");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -70,11 +70,11 @@ public class InfectiousDisease extends MedicalCondition {
   /**
    * How the disease spreads, either as a route or vector, for example 'direct contact', 'Aedes aegypti', etc.
    */
-  @JsonIgnore public Collection<String> getTransmissionMethods() {
+  @JsonIgnore public java.util.Collection<String> getTransmissionMethods() {
     final Object current = myData.get("transmissionMethod");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -97,13 +97,6 @@ public class InfectiousDisease extends MedicalCondition {
      */
     @NotNull public Builder infectiousAgentClass(@NotNull InfectiousAgentClass infectiousAgentClass) {
       putValue("infectiousAgentClass", infectiousAgentClass);
-      return this;
-    }
-    /**
-     * The class of infectious agent (bacteria, prion, etc.) that causes the disease.
-     */
-    @NotNull public Builder infectiousAgentClass(@NotNull InfectiousAgentClass.Builder infectiousAgentClass) {
-      putValue("infectiousAgentClass", infectiousAgentClass.build());
       return this;
     }
     /**
@@ -186,22 +179,8 @@ public class InfectiousDisease extends MedicalCondition {
     /**
      * The status of the study (enumerated).
      */
-    @NotNull public Builder status(@NotNull EventStatusType.Builder eventStatusType) {
-      putValue("status", eventStatusType.build());
-      return this;
-    }
-    /**
-     * The status of the study (enumerated).
-     */
     @NotNull public Builder status(@NotNull MedicalStudyStatus medicalStudyStatus) {
       putValue("status", medicalStudyStatus);
-      return this;
-    }
-    /**
-     * The status of the study (enumerated).
-     */
-    @NotNull public Builder status(@NotNull MedicalStudyStatus.Builder medicalStudyStatus) {
-      putValue("status", medicalStudyStatus.build());
       return this;
     }
     /**
@@ -408,24 +387,10 @@ public class InfectiousDisease extends MedicalCondition {
       return this;
     }
     /**
-     * If applicable, a medical specialty in which this entity is relevant.
-     */
-    @NotNull public Builder relevantSpecialty(@NotNull MedicalSpecialty.Builder medicalSpecialty) {
-      putValue("relevantSpecialty", medicalSpecialty.build());
-      return this;
-    }
-    /**
      * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      */
     @NotNull public Builder medicineSystem(@NotNull MedicineSystem medicineSystem) {
       putValue("medicineSystem", medicineSystem);
-      return this;
-    }
-    /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
-     */
-    @NotNull public Builder medicineSystem(@NotNull MedicineSystem.Builder medicineSystem) {
-      putValue("medicineSystem", medicineSystem.build());
       return this;
     }
     /**

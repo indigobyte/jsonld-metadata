@@ -36,11 +36,11 @@ public class Diet extends LifestyleModification {
   /**
    * Specific physiologic risks associated to the diet plan.
    */
-  @JsonIgnore public Collection<String> getRiskss() {
+  @JsonIgnore public java.util.Collection<String> getRiskss() {
     final Object current = myData.get("risks");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -53,11 +53,11 @@ public class Diet extends LifestyleModification {
   /**
    * Specific physiologic benefits associated to the plan.
    */
-  @JsonIgnore public Collection<String> getPhysiologicalBenefitss() {
+  @JsonIgnore public java.util.Collection<String> getPhysiologicalBenefitss() {
     final Object current = myData.get("physiologicalBenefits");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -70,11 +70,11 @@ public class Diet extends LifestyleModification {
   /**
    * Medical expert advice related to the plan.
    */
-  @JsonIgnore public Collection<String> getExpertConsiderationss() {
+  @JsonIgnore public java.util.Collection<String> getExpertConsiderationss() {
     final Object current = myData.get("expertConsiderations");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -87,11 +87,11 @@ public class Diet extends LifestyleModification {
   /**
    * Nutritional information specific to the dietary plan. May include dietary recommendations on what foods to avoid, what foods to consume, and specific alterations/deviations from the USDA or other regulatory body's approved dietary guidelines.
    */
-  @JsonIgnore public Collection<String> getDietFeaturess() {
+  @JsonIgnore public java.util.Collection<String> getDietFeaturess() {
     final Object current = myData.get("dietFeatures");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -104,11 +104,11 @@ public class Diet extends LifestyleModification {
   /**
    * People or organizations that endorse the plan.
    */
-  @JsonIgnore public Collection<Organization> getEndorsersOrganizations() {
+  @JsonIgnore public java.util.Collection<Organization> getEndorsersOrganizations() {
     final Object current = myData.get("endorsers");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
   }
@@ -121,11 +121,11 @@ public class Diet extends LifestyleModification {
   /**
    * People or organizations that endorse the plan.
    */
-  @JsonIgnore public Collection<Person> getEndorsersPersons() {
+  @JsonIgnore public java.util.Collection<Person> getEndorsersPersons() {
     final Object current = myData.get("endorsers");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -249,24 +249,10 @@ public class Diet extends LifestyleModification {
       return this;
     }
     /**
-     * If applicable, a medical specialty in which this entity is relevant.
-     */
-    @NotNull public Builder relevantSpecialty(@NotNull MedicalSpecialty.Builder medicalSpecialty) {
-      putValue("relevantSpecialty", medicalSpecialty.build());
-      return this;
-    }
-    /**
      * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      */
     @NotNull public Builder medicineSystem(@NotNull MedicineSystem medicineSystem) {
       putValue("medicineSystem", medicineSystem);
-      return this;
-    }
-    /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
-     */
-    @NotNull public Builder medicineSystem(@NotNull MedicineSystem.Builder medicineSystem) {
-      putValue("medicineSystem", medicineSystem.build());
       return this;
     }
     /**

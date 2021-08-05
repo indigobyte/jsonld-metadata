@@ -36,11 +36,11 @@ public class Review extends CreativeWork {
   /**
    * Indicates, in the context of a [[Review]] (e.g. framed as 'pro' vs 'con' considerations), positive considerations - either as unstructured text, or a list.
    */
-  @JsonIgnore public Collection<ItemList> getPositiveNotesItemLists() {
+  @JsonIgnore public java.util.Collection<ItemList> getPositiveNotesItemLists() {
     final Object current = myData.get("positiveNotes");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<ItemList>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<ItemList>) current;
     }
     return Arrays.asList((ItemList) current);
   }
@@ -53,11 +53,11 @@ public class Review extends CreativeWork {
   /**
    * Indicates, in the context of a [[Review]] (e.g. framed as 'pro' vs 'con' considerations), positive considerations - either as unstructured text, or a list.
    */
-  @JsonIgnore public Collection<ListItem> getPositiveNotesListItems() {
+  @JsonIgnore public java.util.Collection<ListItem> getPositiveNotesListItems() {
     final Object current = myData.get("positiveNotes");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<ListItem>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<ListItem>) current;
     }
     return Arrays.asList((ListItem) current);
   }
@@ -70,11 +70,11 @@ public class Review extends CreativeWork {
   /**
    * Indicates, in the context of a [[Review]] (e.g. framed as 'pro' vs 'con' considerations), positive considerations - either as unstructured text, or a list.
    */
-  @JsonIgnore public Collection<String> getPositiveNotesStrings() {
+  @JsonIgnore public java.util.Collection<String> getPositiveNotesStrings() {
     final Object current = myData.get("positiveNotes");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -87,11 +87,11 @@ public class Review extends CreativeWork {
   /**
    * Indicates, in the context of a [[Review]] (e.g. framed as 'pro' vs 'con' considerations), positive considerations - either as unstructured text, or a list.
    */
-  @JsonIgnore public Collection<WebContent> getPositiveNotesWebContents() {
+  @JsonIgnore public java.util.Collection<WebContent> getPositiveNotesWebContents() {
     final Object current = myData.get("positiveNotes");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<WebContent>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<WebContent>) current;
     }
     return Arrays.asList((WebContent) current);
   }
@@ -104,11 +104,11 @@ public class Review extends CreativeWork {
   /**
    * The item that is being reviewed/rated.
    */
-  @JsonIgnore public Collection<Thing> getItemRevieweds() {
+  @JsonIgnore public java.util.Collection<Thing> getItemRevieweds() {
     final Object current = myData.get("itemReviewed");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Thing>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Thing>) current;
     }
     return Arrays.asList((Thing) current);
   }
@@ -121,11 +121,11 @@ public class Review extends CreativeWork {
   /**
    * An associated [[MediaReview]], related by specific common content, topic or claim. The expectation is that this property would be most typically used in cases where a single activity is conducting both claim reviews and media reviews, in which case [[relatedMediaReview]] would commonly be used on a [[ClaimReview]], while [[relatedClaimReview]] would be used on [[MediaReview]].
    */
-  @JsonIgnore public Collection<AssociatedReview> getAssociatedMediaReviews() {
+  @JsonIgnore public java.util.Collection<AssociatedReview> getAssociatedMediaReviews() {
     final Object current = myData.get("associatedMediaReview");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<AssociatedReview>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<AssociatedReview>) current;
     }
     return Arrays.asList((AssociatedReview) current);
   }
@@ -138,11 +138,11 @@ public class Review extends CreativeWork {
   /**
    * The actual body of the review.
    */
-  @JsonIgnore public Collection<String> getReviewBodys() {
+  @JsonIgnore public java.util.Collection<String> getReviewBodys() {
     final Object current = myData.get("reviewBody");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -155,11 +155,11 @@ public class Review extends CreativeWork {
   /**
    * This Review or Rating is relevant to this part or facet of the itemReviewed.
    */
-  @JsonIgnore public Collection<String> getReviewAspects() {
+  @JsonIgnore public java.util.Collection<String> getReviewAspects() {
     final Object current = myData.get("reviewAspect");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -172,11 +172,11 @@ public class Review extends CreativeWork {
   /**
    * The rating given in this review. Note that reviews can themselves be rated. The ```reviewRating``` applies to rating given by the review. The [[aggregateRating]] property applies to the review itself, as a creative work.
    */
-  @JsonIgnore public Collection<Rating> getReviewRatings() {
+  @JsonIgnore public java.util.Collection<Rating> getReviewRatings() {
     final Object current = myData.get("reviewRating");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Rating>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Rating>) current;
     }
     return Arrays.asList((Rating) current);
   }
@@ -189,11 +189,11 @@ public class Review extends CreativeWork {
   /**
    * An associated [[ClaimReview]], related by specific common content, topic or claim. The expectation is that this property would be most typically used in cases where a single activity is conducting both claim reviews and media reviews, in which case [[relatedMediaReview]] would commonly be used on a [[ClaimReview]], while [[relatedClaimReview]] would be used on [[MediaReview]].
    */
-  @JsonIgnore public Collection<Review> getAssociatedClaimReviews() {
+  @JsonIgnore public java.util.Collection<Review> getAssociatedClaimReviews() {
     final Object current = myData.get("associatedClaimReview");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Review>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Review>) current;
     }
     return Arrays.asList((Review) current);
   }
@@ -206,11 +206,11 @@ public class Review extends CreativeWork {
   /**
    * Indicates, in the context of a [[Review]] (e.g. framed as 'pro' vs 'con' considerations), negative considerations - either as unstructured text, or a list.
    */
-  @JsonIgnore public Collection<ItemList> getNegativeNotesItemLists() {
+  @JsonIgnore public java.util.Collection<ItemList> getNegativeNotesItemLists() {
     final Object current = myData.get("negativeNotes");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<ItemList>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<ItemList>) current;
     }
     return Arrays.asList((ItemList) current);
   }
@@ -223,11 +223,11 @@ public class Review extends CreativeWork {
   /**
    * Indicates, in the context of a [[Review]] (e.g. framed as 'pro' vs 'con' considerations), negative considerations - either as unstructured text, or a list.
    */
-  @JsonIgnore public Collection<ListItem> getNegativeNotesListItems() {
+  @JsonIgnore public java.util.Collection<ListItem> getNegativeNotesListItems() {
     final Object current = myData.get("negativeNotes");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<ListItem>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<ListItem>) current;
     }
     return Arrays.asList((ListItem) current);
   }
@@ -240,11 +240,11 @@ public class Review extends CreativeWork {
   /**
    * Indicates, in the context of a [[Review]] (e.g. framed as 'pro' vs 'con' considerations), negative considerations - either as unstructured text, or a list.
    */
-  @JsonIgnore public Collection<String> getNegativeNotesStrings() {
+  @JsonIgnore public java.util.Collection<String> getNegativeNotesStrings() {
     final Object current = myData.get("negativeNotes");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -257,11 +257,11 @@ public class Review extends CreativeWork {
   /**
    * Indicates, in the context of a [[Review]] (e.g. framed as 'pro' vs 'con' considerations), negative considerations - either as unstructured text, or a list.
    */
-  @JsonIgnore public Collection<WebContent> getNegativeNotesWebContents() {
+  @JsonIgnore public java.util.Collection<WebContent> getNegativeNotesWebContents() {
     final Object current = myData.get("negativeNotes");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<WebContent>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<WebContent>) current;
     }
     return Arrays.asList((WebContent) current);
   }
@@ -1855,8 +1855,8 @@ public class Review extends CreativeWork {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

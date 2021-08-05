@@ -36,11 +36,11 @@ public class BroadcastEvent extends PublicationEvent {
   /**
    * The event being broadcast such as a sporting event or awards ceremony.
    */
-  @JsonIgnore public Collection<Event> getBroadcastOfEvents() {
+  @JsonIgnore public java.util.Collection<Event> getBroadcastOfEvents() {
     final Object current = myData.get("broadcastOfEvent");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Event>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Event>) current;
     }
     return Arrays.asList((Event) current);
   }
@@ -53,11 +53,11 @@ public class BroadcastEvent extends PublicationEvent {
   /**
    * True if the broadcast is of a live event.
    */
-  @JsonIgnore public Collection<Boolean> getIsLiveBroadcasts() {
+  @JsonIgnore public java.util.Collection<Boolean> getIsLiveBroadcasts() {
     final Object current = myData.get("isLiveBroadcast");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Boolean>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Boolean>) current;
     }
     return Arrays.asList((Boolean) current);
   }
@@ -70,11 +70,11 @@ public class BroadcastEvent extends PublicationEvent {
   /**
    * Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
    */
-  @JsonIgnore public Collection<Language> getSubtitleLanguageLanguages() {
+  @JsonIgnore public java.util.Collection<Language> getSubtitleLanguageLanguages() {
     final Object current = myData.get("subtitleLanguage");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Language>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Language>) current;
     }
     return Arrays.asList((Language) current);
   }
@@ -87,11 +87,11 @@ public class BroadcastEvent extends PublicationEvent {
   /**
    * Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
    */
-  @JsonIgnore public Collection<String> getSubtitleLanguageStrings() {
+  @JsonIgnore public java.util.Collection<String> getSubtitleLanguageStrings() {
     final Object current = myData.get("subtitleLanguage");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -104,11 +104,11 @@ public class BroadcastEvent extends PublicationEvent {
   /**
    * The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).
    */
-  @JsonIgnore public Collection<String> getVideoFormats() {
+  @JsonIgnore public java.util.Collection<String> getVideoFormats() {
     final Object current = myData.get("videoFormat");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -390,13 +390,6 @@ public class BroadcastEvent extends PublicationEvent {
      */
     @NotNull public Builder eventStatus(@NotNull EventStatusType eventStatusType) {
       putValue("eventStatus", eventStatusType);
-      return this;
-    }
-    /**
-     * An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.
-     */
-    @NotNull public Builder eventStatus(@NotNull EventStatusType.Builder eventStatusType) {
-      putValue("eventStatus", eventStatusType.build());
       return this;
     }
     /**

@@ -36,11 +36,11 @@ public class DeliveryEvent extends Event {
   /**
    * Password, PIN, or access code needed for delivery (e.g. from a locker).
    */
-  @JsonIgnore public Collection<String> getAccessCodes() {
+  @JsonIgnore public java.util.Collection<String> getAccessCodes() {
     final Object current = myData.get("accessCode");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -53,11 +53,11 @@ public class DeliveryEvent extends Event {
   /**
    * Method used for delivery or shipping.
    */
-  @JsonIgnore public Collection<DeliveryMethod> getHasDeliveryMethods() {
+  @JsonIgnore public java.util.Collection<DeliveryMethod> getHasDeliveryMethods() {
     final Object current = myData.get("hasDeliveryMethod");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DeliveryMethod>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<DeliveryMethod>) current;
     }
     return Arrays.asList((DeliveryMethod) current);
   }
@@ -70,11 +70,11 @@ public class DeliveryEvent extends Event {
   /**
    * When the item is available for pickup from the store, locker, etc.
    */
-  @JsonIgnore public Collection<java.util.Date> getAvailableFroms() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getAvailableFroms() {
     final Object current = myData.get("availableFrom");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -87,11 +87,11 @@ public class DeliveryEvent extends Event {
   /**
    * After this date, the item will no longer be available for pickup.
    */
-  @JsonIgnore public Collection<java.util.Date> getAvailableThroughs() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getAvailableThroughs() {
     final Object current = myData.get("availableThrough");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -310,13 +310,6 @@ public class DeliveryEvent extends Event {
      */
     @NotNull public Builder eventStatus(@NotNull EventStatusType eventStatusType) {
       putValue("eventStatus", eventStatusType);
-      return this;
-    }
-    /**
-     * An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.
-     */
-    @NotNull public Builder eventStatus(@NotNull EventStatusType.Builder eventStatusType) {
-      putValue("eventStatus", eventStatusType.build());
       return this;
     }
     /**

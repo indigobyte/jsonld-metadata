@@ -36,11 +36,11 @@ public class SoftwareSourceCode extends CreativeWork {
   /**
    * The computer programming language.
    */
-  @JsonIgnore public Collection<ComputerLanguage> getProgrammingLanguageComputerLanguages() {
+  @JsonIgnore public java.util.Collection<ComputerLanguage> getProgrammingLanguageComputerLanguages() {
     final Object current = myData.get("programmingLanguage");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<ComputerLanguage>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<ComputerLanguage>) current;
     }
     return Arrays.asList((ComputerLanguage) current);
   }
@@ -53,11 +53,11 @@ public class SoftwareSourceCode extends CreativeWork {
   /**
    * The computer programming language.
    */
-  @JsonIgnore public Collection<String> getProgrammingLanguageStrings() {
+  @JsonIgnore public java.util.Collection<String> getProgrammingLanguageStrings() {
     final Object current = myData.get("programmingLanguage");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -70,11 +70,11 @@ public class SoftwareSourceCode extends CreativeWork {
   /**
    * Link to the repository where the un-compiled, human readable code and related code is located (SVN, github, CodePlex).
    */
-  @JsonIgnore public Collection<String> getCodeRepositorys() {
+  @JsonIgnore public java.util.Collection<String> getCodeRepositorys() {
     final Object current = myData.get("codeRepository");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -87,11 +87,11 @@ public class SoftwareSourceCode extends CreativeWork {
   /**
    * Runtime platform or script interpreter dependencies (Example - Java v1, Python2.3, .Net Framework 3.0).
    */
-  @JsonIgnore public Collection<String> getRuntimePlatforms() {
+  @JsonIgnore public java.util.Collection<String> getRuntimePlatforms() {
     final Object current = myData.get("runtimePlatform");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -104,11 +104,11 @@ public class SoftwareSourceCode extends CreativeWork {
   /**
    * Target Operating System / Product to which the code applies.  If applies to several versions, just the product name can be used.
    */
-  @JsonIgnore public Collection<SoftwareApplication> getTargetProducts() {
+  @JsonIgnore public java.util.Collection<SoftwareApplication> getTargetProducts() {
     final Object current = myData.get("targetProduct");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<SoftwareApplication>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<SoftwareApplication>) current;
     }
     return Arrays.asList((SoftwareApplication) current);
   }
@@ -121,11 +121,11 @@ public class SoftwareSourceCode extends CreativeWork {
   /**
    * What type of code sample: full (compile ready) solution, code snippet, inline code, scripts, template.
    */
-  @JsonIgnore public Collection<String> getCodeSampleTypes() {
+  @JsonIgnore public java.util.Collection<String> getCodeSampleTypes() {
     final Object current = myData.get("codeSampleType");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -1614,8 +1614,8 @@ public class SoftwareSourceCode extends CreativeWork {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

@@ -36,11 +36,11 @@ public class CategoryCodeSet extends DefinedTermSet {
   /**
    * A Category code contained in this code set.
    */
-  @JsonIgnore public Collection<HasDefinedTerm> getHasCategoryCodes() {
+  @JsonIgnore public java.util.Collection<HasDefinedTerm> getHasCategoryCodes() {
     final Object current = myData.get("hasCategoryCode");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<HasDefinedTerm>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<HasDefinedTerm>) current;
     }
     return Arrays.asList((HasDefinedTerm) current);
   }
@@ -1487,8 +1487,8 @@ public class CategoryCodeSet extends DefinedTermSet {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

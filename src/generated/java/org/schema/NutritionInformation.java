@@ -36,11 +36,11 @@ public class NutritionInformation extends StructuredValue {
   /**
    * The number of milligrams of cholesterol.
    */
-  @JsonIgnore public Collection<Mass> getCholesterolContents() {
+  @JsonIgnore public java.util.Collection<Mass> getCholesterolContents() {
     final Object current = myData.get("cholesterolContent");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Mass>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Mass>) current;
     }
     return Arrays.asList((Mass) current);
   }
@@ -53,11 +53,11 @@ public class NutritionInformation extends StructuredValue {
   /**
    * The number of grams of trans fat.
    */
-  @JsonIgnore public Collection<Mass> getTransFatContents() {
+  @JsonIgnore public java.util.Collection<Mass> getTransFatContents() {
     final Object current = myData.get("transFatContent");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Mass>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Mass>) current;
     }
     return Arrays.asList((Mass) current);
   }
@@ -70,11 +70,11 @@ public class NutritionInformation extends StructuredValue {
   /**
    * The number of grams of protein.
    */
-  @JsonIgnore public Collection<Mass> getProteinContents() {
+  @JsonIgnore public java.util.Collection<Mass> getProteinContents() {
     final Object current = myData.get("proteinContent");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Mass>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Mass>) current;
     }
     return Arrays.asList((Mass) current);
   }
@@ -87,11 +87,11 @@ public class NutritionInformation extends StructuredValue {
   /**
    * The number of grams of fiber.
    */
-  @JsonIgnore public Collection<Mass> getFiberContents() {
+  @JsonIgnore public java.util.Collection<Mass> getFiberContents() {
     final Object current = myData.get("fiberContent");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Mass>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Mass>) current;
     }
     return Arrays.asList((Mass) current);
   }
@@ -104,11 +104,11 @@ public class NutritionInformation extends StructuredValue {
   /**
    * The number of grams of saturated fat.
    */
-  @JsonIgnore public Collection<Mass> getSaturatedFatContents() {
+  @JsonIgnore public java.util.Collection<Mass> getSaturatedFatContents() {
     final Object current = myData.get("saturatedFatContent");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Mass>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Mass>) current;
     }
     return Arrays.asList((Mass) current);
   }
@@ -121,11 +121,11 @@ public class NutritionInformation extends StructuredValue {
   /**
    * The serving size, in terms of the number of volume or mass.
    */
-  @JsonIgnore public Collection<String> getServingSizes() {
+  @JsonIgnore public java.util.Collection<String> getServingSizes() {
     final Object current = myData.get("servingSize");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -138,11 +138,11 @@ public class NutritionInformation extends StructuredValue {
   /**
    * The number of grams of carbohydrates.
    */
-  @JsonIgnore public Collection<Mass> getCarbohydrateContents() {
+  @JsonIgnore public java.util.Collection<Mass> getCarbohydrateContents() {
     final Object current = myData.get("carbohydrateContent");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Mass>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Mass>) current;
     }
     return Arrays.asList((Mass) current);
   }
@@ -155,11 +155,11 @@ public class NutritionInformation extends StructuredValue {
   /**
    * The number of calories.
    */
-  @JsonIgnore public Collection<Energy> getCaloriess() {
+  @JsonIgnore public java.util.Collection<Energy> getCaloriess() {
     final Object current = myData.get("calories");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Energy>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Energy>) current;
     }
     return Arrays.asList((Energy) current);
   }
@@ -172,11 +172,11 @@ public class NutritionInformation extends StructuredValue {
   /**
    * The number of grams of fat.
    */
-  @JsonIgnore public Collection<Mass> getFatContents() {
+  @JsonIgnore public java.util.Collection<Mass> getFatContents() {
     final Object current = myData.get("fatContent");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Mass>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Mass>) current;
     }
     return Arrays.asList((Mass) current);
   }
@@ -189,11 +189,11 @@ public class NutritionInformation extends StructuredValue {
   /**
    * The number of grams of sugar.
    */
-  @JsonIgnore public Collection<Mass> getSugarContents() {
+  @JsonIgnore public java.util.Collection<Mass> getSugarContents() {
     final Object current = myData.get("sugarContent");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Mass>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Mass>) current;
     }
     return Arrays.asList((Mass) current);
   }
@@ -206,11 +206,11 @@ public class NutritionInformation extends StructuredValue {
   /**
    * The number of grams of unsaturated fat.
    */
-  @JsonIgnore public Collection<Mass> getUnsaturatedFatContents() {
+  @JsonIgnore public java.util.Collection<Mass> getUnsaturatedFatContents() {
     final Object current = myData.get("unsaturatedFatContent");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Mass>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Mass>) current;
     }
     return Arrays.asList((Mass) current);
   }
@@ -223,11 +223,11 @@ public class NutritionInformation extends StructuredValue {
   /**
    * The number of milligrams of sodium.
    */
-  @JsonIgnore public Collection<Mass> getSodiumContents() {
+  @JsonIgnore public java.util.Collection<Mass> getSodiumContents() {
     final Object current = myData.get("sodiumContent");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Mass>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Mass>) current;
     }
     return Arrays.asList((Mass) current);
   }

@@ -36,11 +36,11 @@ public class PlanAction extends OrganizeAction {
   /**
    * The time the object is scheduled to.
    */
-  @JsonIgnore public Collection<java.util.Date> getScheduledTimes() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getScheduledTimes() {
     final Object current = myData.get("scheduledTime");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -91,13 +91,6 @@ public class PlanAction extends OrganizeAction {
      */
     @NotNull public Builder actionStatus(@NotNull ActionStatusType actionStatusType) {
       putValue("actionStatus", actionStatusType);
-      return this;
-    }
-    /**
-     * Indicates the current disposition of the Action.
-     */
-    @NotNull public Builder actionStatus(@NotNull ActionStatusType.Builder actionStatusType) {
-      putValue("actionStatus", actionStatusType.build());
       return this;
     }
     /**

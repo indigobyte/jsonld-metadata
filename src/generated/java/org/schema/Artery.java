@@ -36,11 +36,11 @@ public class Artery extends Vessel {
   /**
    * The area to which the artery supplies blood.
    */
-  @JsonIgnore public Collection<AnatomicalStructure> getSupplyTos() {
+  @JsonIgnore public java.util.Collection<AnatomicalStructure> getSupplyTos() {
     final Object current = myData.get("supplyTo");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<AnatomicalStructure>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<AnatomicalStructure>) current;
     }
     return Arrays.asList((AnatomicalStructure) current);
   }
@@ -53,11 +53,11 @@ public class Artery extends Vessel {
   /**
    * The branches that comprise the arterial structure.
    */
-  @JsonIgnore public Collection<AnatomicalStructure> getArterialBranchs() {
+  @JsonIgnore public java.util.Collection<AnatomicalStructure> getArterialBranchs() {
     final Object current = myData.get("arterialBranch");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<AnatomicalStructure>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<AnatomicalStructure>) current;
     }
     return Arrays.asList((AnatomicalStructure) current);
   }
@@ -251,24 +251,10 @@ public class Artery extends Vessel {
       return this;
     }
     /**
-     * If applicable, a medical specialty in which this entity is relevant.
-     */
-    @NotNull public Builder relevantSpecialty(@NotNull MedicalSpecialty.Builder medicalSpecialty) {
-      putValue("relevantSpecialty", medicalSpecialty.build());
-      return this;
-    }
-    /**
      * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      */
     @NotNull public Builder medicineSystem(@NotNull MedicineSystem medicineSystem) {
       putValue("medicineSystem", medicineSystem);
-      return this;
-    }
-    /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
-     */
-    @NotNull public Builder medicineSystem(@NotNull MedicineSystem.Builder medicineSystem) {
-      putValue("medicineSystem", medicineSystem.build());
       return this;
     }
     /**

@@ -36,11 +36,11 @@ public class HyperTocEntry extends CreativeWork {
   /**
    * Text of an utterances (spoken words, lyrics etc.) that occurs at a certain section of a media object, represented as a [[HyperTocEntry]].
    */
-  @JsonIgnore public Collection<String> getUtterancess() {
+  @JsonIgnore public java.util.Collection<String> getUtterancess() {
     final Object current = myData.get("utterances");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -53,11 +53,11 @@ public class HyperTocEntry extends CreativeWork {
   /**
    * A [[HyperTocEntry]] can have a [[tocContinuation]] indicated, which is another [[HyperTocEntry]] that would be the default next item to play or render.
    */
-  @JsonIgnore public Collection<HyperTocEntry> getTocContinuations() {
+  @JsonIgnore public java.util.Collection<HyperTocEntry> getTocContinuations() {
     final Object current = myData.get("tocContinuation");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<HyperTocEntry>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<HyperTocEntry>) current;
     }
     return Arrays.asList((HyperTocEntry) current);
   }
@@ -70,11 +70,11 @@ public class HyperTocEntry extends CreativeWork {
   /**
    * A media object that encodes this CreativeWork. This property is a synonym for encoding.
    */
-  @JsonIgnore public Collection<MediaObject> getAssociatedMedias() {
+  @JsonIgnore public java.util.Collection<MediaObject> getAssociatedMedias() {
     final Object current = myData.get("associatedMedia");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MediaObject>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MediaObject>) current;
     }
     return Arrays.asList((MediaObject) current);
   }
@@ -1528,8 +1528,8 @@ public class HyperTocEntry extends CreativeWork {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

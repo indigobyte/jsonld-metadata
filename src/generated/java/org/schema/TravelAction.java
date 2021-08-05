@@ -36,11 +36,11 @@ public class TravelAction extends MoveAction {
   /**
    * The distance travelled, e.g. exercising or travelling.
    */
-  @JsonIgnore public Collection<Distance> getDistances() {
+  @JsonIgnore public java.util.Collection<Distance> getDistances() {
     final Object current = myData.get("distance");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Distance>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Distance>) current;
     }
     return Arrays.asList((Distance) current);
   }
@@ -112,13 +112,6 @@ public class TravelAction extends MoveAction {
      */
     @NotNull public Builder actionStatus(@NotNull ActionStatusType actionStatusType) {
       putValue("actionStatus", actionStatusType);
-      return this;
-    }
-    /**
-     * Indicates the current disposition of the Action.
-     */
-    @NotNull public Builder actionStatus(@NotNull ActionStatusType.Builder actionStatusType) {
-      putValue("actionStatus", actionStatusType.build());
       return this;
     }
     /**

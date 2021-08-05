@@ -41,11 +41,11 @@ public class ComicIssue extends PublicationIssue {
   /**
    * The individual who adds lettering, including speech balloons and sound effects, to artwork.
    */
-  @JsonIgnore public Collection<Person> getLetterers() {
+  @JsonIgnore public java.util.Collection<Person> getLetterers() {
     final Object current = myData.get("letterer");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -58,11 +58,11 @@ public class ComicIssue extends PublicationIssue {
   /**
    * The individual who traces over the pencil drawings in ink after pencils are complete.
    */
-  @JsonIgnore public Collection<Person> getInkers() {
+  @JsonIgnore public java.util.Collection<Person> getInkers() {
     final Object current = myData.get("inker");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -75,11 +75,11 @@ public class ComicIssue extends PublicationIssue {
   /**
    * The individual who adds color to inked drawings.
    */
-  @JsonIgnore public Collection<Person> getColorists() {
+  @JsonIgnore public java.util.Collection<Person> getColorists() {
     final Object current = myData.get("colorist");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -96,11 +96,11 @@ public class ComicIssue extends PublicationIssue {
    *     	in a medium other than pencils or digital line art--for example, if the
    *     	primary artwork is done in watercolors or digital paints.
    */
-  @JsonIgnore public Collection<Person> getArtists() {
+  @JsonIgnore public java.util.Collection<Person> getArtists() {
     final Object current = myData.get("artist");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -113,11 +113,11 @@ public class ComicIssue extends PublicationIssue {
   /**
    * The individual who draws the primary narrative artwork.
    */
-  @JsonIgnore public Collection<Person> getPencilers() {
+  @JsonIgnore public java.util.Collection<Person> getPencilers() {
     final Object current = myData.get("penciler");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -134,11 +134,11 @@ public class ComicIssue extends PublicationIssue {
    *     	for the issue, if the issue is a variant printing. For example, &quot;Bryan Hitch
    *     	Variant Cover&quot; or &quot;2nd Printing Variant&quot;.
    */
-  @JsonIgnore public Collection<String> getVariantCovers() {
+  @JsonIgnore public java.util.Collection<String> getVariantCovers() {
     final Object current = myData.get("variantCover");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -1703,8 +1703,8 @@ public class ComicIssue extends PublicationIssue {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

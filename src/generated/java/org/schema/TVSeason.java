@@ -44,11 +44,11 @@ public class TVSeason extends CreativeWorkSeason {
    * 
    * In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.
    */
-  @JsonIgnore public Collection<Country> getCountryOfOrigins() {
+  @JsonIgnore public java.util.Collection<Country> getCountryOfOrigins() {
     final Object current = myData.get("countryOfOrigin");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Country>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Country>) current;
     }
     return Arrays.asList((Country) current);
   }
@@ -1579,8 +1579,8 @@ public class TVSeason extends CreativeWorkSeason {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

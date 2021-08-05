@@ -36,11 +36,11 @@ public class ListItem extends Intangible {
   /**
    * A link to the ListItem that preceeds the current one.
    */
-  @JsonIgnore public Collection<ListItem> getPreviousItems() {
+  @JsonIgnore public java.util.Collection<ListItem> getPreviousItems() {
     final Object current = myData.get("previousItem");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<ListItem>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<ListItem>) current;
     }
     return Arrays.asList((ListItem) current);
   }
@@ -53,11 +53,11 @@ public class ListItem extends Intangible {
   /**
    * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')&rsquo;.
    */
-  @JsonIgnore public Collection<Thing> getItems() {
+  @JsonIgnore public java.util.Collection<Thing> getItems() {
     final Object current = myData.get("item");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Thing>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Thing>) current;
     }
     return Arrays.asList((Thing) current);
   }
@@ -70,11 +70,11 @@ public class ListItem extends Intangible {
   /**
    * A link to the ListItem that follows the current one.
    */
-  @JsonIgnore public Collection<ListItem> getNextItems() {
+  @JsonIgnore public java.util.Collection<ListItem> getNextItems() {
     final Object current = myData.get("nextItem");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<ListItem>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<ListItem>) current;
     }
     return Arrays.asList((ListItem) current);
   }

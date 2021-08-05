@@ -36,11 +36,11 @@ public class DefinedTerm extends Intangible implements HasDefinedTerm {
   /**
    * A code that identifies this [[DefinedTerm]] within a [[DefinedTermSet]]
    */
-  @JsonIgnore public Collection<TermCode> getTermCodes() {
+  @JsonIgnore public java.util.Collection<TermCode> getTermCodes() {
     final Object current = myData.get("termCode");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<TermCode>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<TermCode>) current;
     }
     return Arrays.asList((TermCode) current);
   }
@@ -53,11 +53,11 @@ public class DefinedTerm extends Intangible implements HasDefinedTerm {
   /**
    * A [[DefinedTermSet]] that contains this term.
    */
-  @JsonIgnore public Collection<InDefinedTermSet> getInDefinedTermSets() {
+  @JsonIgnore public java.util.Collection<InDefinedTermSet> getInDefinedTermSets() {
     final Object current = myData.get("inDefinedTermSet");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<InDefinedTermSet>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<InDefinedTermSet>) current;
     }
     return Arrays.asList((InDefinedTermSet) current);
   }

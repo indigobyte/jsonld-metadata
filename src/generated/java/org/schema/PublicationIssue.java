@@ -36,11 +36,11 @@ public class PublicationIssue extends CreativeWork {
   /**
    * The page on which the work ends; for example &quot;138&quot; or &quot;xvi&quot;.
    */
-  @JsonIgnore public Collection<Integer> getPageEndIntegers() {
+  @JsonIgnore public java.util.Collection<Integer> getPageEndIntegers() {
     final Object current = myData.get("pageEnd");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -53,11 +53,11 @@ public class PublicationIssue extends CreativeWork {
   /**
    * The page on which the work ends; for example &quot;138&quot; or &quot;xvi&quot;.
    */
-  @JsonIgnore public Collection<String> getPageEndStrings() {
+  @JsonIgnore public java.util.Collection<String> getPageEndStrings() {
     final Object current = myData.get("pageEnd");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -70,11 +70,11 @@ public class PublicationIssue extends CreativeWork {
   /**
    * The page on which the work starts; for example &quot;135&quot; or &quot;xiii&quot;.
    */
-  @JsonIgnore public Collection<Integer> getPageStartIntegers() {
+  @JsonIgnore public java.util.Collection<Integer> getPageStartIntegers() {
     final Object current = myData.get("pageStart");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -87,11 +87,11 @@ public class PublicationIssue extends CreativeWork {
   /**
    * The page on which the work starts; for example &quot;135&quot; or &quot;xiii&quot;.
    */
-  @JsonIgnore public Collection<String> getPageStartStrings() {
+  @JsonIgnore public java.util.Collection<String> getPageStartStrings() {
     final Object current = myData.get("pageStart");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -104,11 +104,11 @@ public class PublicationIssue extends CreativeWork {
   /**
    * Any description of pages that is not separated into pageStart and pageEnd; for example, &quot;1-6, 9, 55&quot; or &quot;10-12, 46-49&quot;.
    */
-  @JsonIgnore public Collection<String> getPaginations() {
+  @JsonIgnore public java.util.Collection<String> getPaginations() {
     final Object current = myData.get("pagination");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -121,11 +121,11 @@ public class PublicationIssue extends CreativeWork {
   /**
    * Identifies the issue of publication; for example, &quot;iii&quot; or &quot;2&quot;.
    */
-  @JsonIgnore public Collection<Integer> getIssueNumberIntegers() {
+  @JsonIgnore public java.util.Collection<Integer> getIssueNumberIntegers() {
     final Object current = myData.get("issueNumber");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -138,11 +138,11 @@ public class PublicationIssue extends CreativeWork {
   /**
    * Identifies the issue of publication; for example, &quot;iii&quot; or &quot;2&quot;.
    */
-  @JsonIgnore public Collection<String> getIssueNumberStrings() {
+  @JsonIgnore public java.util.Collection<String> getIssueNumberStrings() {
     final Object current = myData.get("issueNumber");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -1624,8 +1624,8 @@ public class PublicationIssue extends CreativeWork {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

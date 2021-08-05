@@ -36,11 +36,11 @@ public class PhysicalActivity extends LifestyleModification {
   /**
    * The anatomy of the underlying organ system or structures associated with this entity.
    */
-  @JsonIgnore public Collection<AnatomicalStructure> getAssociatedAnatomyAnatomicalStructures() {
+  @JsonIgnore public java.util.Collection<AnatomicalStructure> getAssociatedAnatomyAnatomicalStructures() {
     final Object current = myData.get("associatedAnatomy");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<AnatomicalStructure>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<AnatomicalStructure>) current;
     }
     return Arrays.asList((AnatomicalStructure) current);
   }
@@ -53,11 +53,11 @@ public class PhysicalActivity extends LifestyleModification {
   /**
    * The anatomy of the underlying organ system or structures associated with this entity.
    */
-  @JsonIgnore public Collection<AnatomicalSystem> getAssociatedAnatomyAnatomicalSystems() {
+  @JsonIgnore public java.util.Collection<AnatomicalSystem> getAssociatedAnatomyAnatomicalSystems() {
     final Object current = myData.get("associatedAnatomy");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<AnatomicalSystem>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<AnatomicalSystem>) current;
     }
     return Arrays.asList((AnatomicalSystem) current);
   }
@@ -70,11 +70,11 @@ public class PhysicalActivity extends LifestyleModification {
   /**
    * The anatomy of the underlying organ system or structures associated with this entity.
    */
-  @JsonIgnore public Collection<SuperficialAnatomy> getAssociatedAnatomySuperficialAnatomys() {
+  @JsonIgnore public java.util.Collection<SuperficialAnatomy> getAssociatedAnatomySuperficialAnatomys() {
     final Object current = myData.get("associatedAnatomy");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<SuperficialAnatomy>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<SuperficialAnatomy>) current;
     }
     return Arrays.asList((SuperficialAnatomy) current);
   }
@@ -87,11 +87,11 @@ public class PhysicalActivity extends LifestyleModification {
   /**
    * Changes in the normal mechanical, physical, and biochemical functions that are associated with this activity or condition.
    */
-  @JsonIgnore public Collection<String> getPathophysiologys() {
+  @JsonIgnore public java.util.Collection<String> getPathophysiologys() {
     final Object current = myData.get("pathophysiology");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -104,11 +104,11 @@ public class PhysicalActivity extends LifestyleModification {
   /**
    * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
    */
-  @JsonIgnore public Collection<Category> getCategorys() {
+  @JsonIgnore public java.util.Collection<Category> getCategorys() {
     final Object current = myData.get("category");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Category>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Category>) current;
     }
     return Arrays.asList((Category) current);
   }
@@ -121,11 +121,11 @@ public class PhysicalActivity extends LifestyleModification {
   /**
    * The characteristics of associated patients, such as age, gender, race etc.
    */
-  @JsonIgnore public Collection<String> getEpidemiologys() {
+  @JsonIgnore public java.util.Collection<String> getEpidemiologys() {
     final Object current = myData.get("epidemiology");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -256,24 +256,10 @@ public class PhysicalActivity extends LifestyleModification {
       return this;
     }
     /**
-     * If applicable, a medical specialty in which this entity is relevant.
-     */
-    @NotNull public Builder relevantSpecialty(@NotNull MedicalSpecialty.Builder medicalSpecialty) {
-      putValue("relevantSpecialty", medicalSpecialty.build());
-      return this;
-    }
-    /**
      * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      */
     @NotNull public Builder medicineSystem(@NotNull MedicineSystem medicineSystem) {
       putValue("medicineSystem", medicineSystem);
-      return this;
-    }
-    /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
-     */
-    @NotNull public Builder medicineSystem(@NotNull MedicineSystem.Builder medicineSystem) {
-      putValue("medicineSystem", medicineSystem.build());
       return this;
     }
     /**

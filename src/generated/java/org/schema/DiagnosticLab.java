@@ -36,11 +36,11 @@ public class DiagnosticLab extends MedicalOrganization {
   /**
    * A diagnostic test or procedure offered by this lab.
    */
-  @JsonIgnore public Collection<MedicalTest> getAvailableTests() {
+  @JsonIgnore public java.util.Collection<MedicalTest> getAvailableTests() {
     final Object current = myData.get("availableTest");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MedicalTest>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MedicalTest>) current;
     }
     return Arrays.asList((MedicalTest) current);
   }
@@ -91,13 +91,6 @@ public class DiagnosticLab extends MedicalOrganization {
      */
     @NotNull public Builder medicalSpecialty(@NotNull MedicalSpecialty medicalSpecialty) {
       putValue("medicalSpecialty", medicalSpecialty);
-      return this;
-    }
-    /**
-     * A medical specialty of the provider.
-     */
-    @NotNull public Builder medicalSpecialty(@NotNull MedicalSpecialty.Builder medicalSpecialty) {
-      putValue("medicalSpecialty", medicalSpecialty.build());
       return this;
     }
     /**

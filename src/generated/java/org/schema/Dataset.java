@@ -36,11 +36,11 @@ public class Dataset extends CreativeWork {
   /**
    * A data catalog which contains this dataset.
    */
-  @JsonIgnore public Collection<DataCatalog> getIncludedInDataCatalogs() {
+  @JsonIgnore public java.util.Collection<DataCatalog> getIncludedInDataCatalogs() {
     final Object current = myData.get("includedInDataCatalog");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DataCatalog>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<DataCatalog>) current;
     }
     return Arrays.asList((DataCatalog) current);
   }
@@ -53,11 +53,11 @@ public class Dataset extends CreativeWork {
   /**
    * The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
    */
-  @JsonIgnore public Collection<String> getIssns() {
+  @JsonIgnore public java.util.Collection<String> getIssns() {
     final Object current = myData.get("issn");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -70,11 +70,11 @@ public class Dataset extends CreativeWork {
   /**
    * A downloadable form of this dataset, at a specific location, in a specific format.
    */
-  @JsonIgnore public Collection<DataDownload> getDistributions() {
+  @JsonIgnore public java.util.Collection<DataDownload> getDistributions() {
     final Object current = myData.get("distribution");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DataDownload>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<DataDownload>) current;
     }
     return Arrays.asList((DataDownload) current);
   }
@@ -87,11 +87,11 @@ public class Dataset extends CreativeWork {
   /**
    * Originally named [[variablesMeasured]], The [[variableMeasured]] property can indicate (repeated as necessary) the  variables that are measured in some dataset, either described as text or as pairs of identifier and description using PropertyValue.
    */
-  @JsonIgnore public Collection<PropertyValue> getVariablesMeasuredPropertyValues() {
+  @JsonIgnore public java.util.Collection<PropertyValue> getVariablesMeasuredPropertyValues() {
     final Object current = myData.get("variablesMeasured");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<PropertyValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<PropertyValue>) current;
     }
     return Arrays.asList((PropertyValue) current);
   }
@@ -104,11 +104,11 @@ public class Dataset extends CreativeWork {
   /**
    * Originally named [[variablesMeasured]], The [[variableMeasured]] property can indicate (repeated as necessary) the  variables that are measured in some dataset, either described as text or as pairs of identifier and description using PropertyValue.
    */
-  @JsonIgnore public Collection<String> getVariablesMeasuredStrings() {
+  @JsonIgnore public java.util.Collection<String> getVariablesMeasuredStrings() {
     final Object current = myData.get("variablesMeasured");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -137,11 +137,11 @@ public class Dataset extends CreativeWork {
    * If there are several [[variableMeasured]] properties recorded for some given data object, use a [[PropertyValue]] for each [[variableMeasured]] and attach the corresponding [[measurementTechnique]].
    *       
    */
-  @JsonIgnore public Collection<String> getMeasurementTechniques() {
+  @JsonIgnore public java.util.Collection<String> getMeasurementTechniques() {
     final Object current = myData.get("measurementTechnique");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -154,11 +154,11 @@ public class Dataset extends CreativeWork {
   /**
    * The variableMeasured property can indicate (repeated as necessary) the  variables that are measured in some dataset, either described as text or as pairs of identifier and description using PropertyValue.
    */
-  @JsonIgnore public Collection<PropertyValue> getVariableMeasuredPropertyValues() {
+  @JsonIgnore public java.util.Collection<PropertyValue> getVariableMeasuredPropertyValues() {
     final Object current = myData.get("variableMeasured");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<PropertyValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<PropertyValue>) current;
     }
     return Arrays.asList((PropertyValue) current);
   }
@@ -171,11 +171,11 @@ public class Dataset extends CreativeWork {
   /**
    * The variableMeasured property can indicate (repeated as necessary) the  variables that are measured in some dataset, either described as text or as pairs of identifier and description using PropertyValue.
    */
-  @JsonIgnore public Collection<String> getVariableMeasuredStrings() {
+  @JsonIgnore public java.util.Collection<String> getVariableMeasuredStrings() {
     final Object current = myData.get("variableMeasured");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -1700,8 +1700,8 @@ public class Dataset extends CreativeWork {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

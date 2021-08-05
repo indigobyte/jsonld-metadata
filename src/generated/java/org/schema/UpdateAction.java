@@ -36,11 +36,11 @@ public class UpdateAction extends Action {
   /**
    * A sub property of object. The collection target of the action.
    */
-  @JsonIgnore public Collection<Object> getTargetCollections() {
+  @JsonIgnore public java.util.Collection<Object> getTargetCollections() {
     final Object current = myData.get("targetCollection");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Object>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Object>) current;
     }
     return Arrays.asList((Object) current);
   }
@@ -91,13 +91,6 @@ public class UpdateAction extends Action {
      */
     @NotNull public Builder actionStatus(@NotNull ActionStatusType actionStatusType) {
       putValue("actionStatus", actionStatusType);
-      return this;
-    }
-    /**
-     * Indicates the current disposition of the Action.
-     */
-    @NotNull public Builder actionStatus(@NotNull ActionStatusType.Builder actionStatusType) {
-      putValue("actionStatus", actionStatusType.build());
       return this;
     }
     /**

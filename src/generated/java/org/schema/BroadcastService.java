@@ -36,11 +36,11 @@ public class BroadcastService extends Service {
   /**
    * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
    */
-  @JsonIgnore public Collection<Language> getInLanguageLanguages() {
+  @JsonIgnore public java.util.Collection<Language> getInLanguageLanguages() {
     final Object current = myData.get("inLanguage");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Language>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Language>) current;
     }
     return Arrays.asList((Language) current);
   }
@@ -53,11 +53,11 @@ public class BroadcastService extends Service {
   /**
    * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
    */
-  @JsonIgnore public Collection<String> getInLanguageStrings() {
+  @JsonIgnore public java.util.Collection<String> getInLanguageStrings() {
     final Object current = myData.get("inLanguage");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -70,11 +70,11 @@ public class BroadcastService extends Service {
   /**
    * A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
    */
-  @JsonIgnore public Collection<Identifier> getCallSigns() {
+  @JsonIgnore public java.util.Collection<Identifier> getCallSigns() {
     final Object current = myData.get("callSign");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Identifier>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Identifier>) current;
     }
     return Arrays.asList((Identifier) current);
   }
@@ -87,11 +87,11 @@ public class BroadcastService extends Service {
   /**
    * A broadcast service to which the broadcast service may belong to such as regional variations of a national channel.
    */
-  @JsonIgnore public Collection<BroadcastService> getParentServices() {
+  @JsonIgnore public java.util.Collection<BroadcastService> getParentServices() {
     final Object current = myData.get("parentService");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<BroadcastService>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<BroadcastService>) current;
     }
     return Arrays.asList((BroadcastService) current);
   }
@@ -104,11 +104,11 @@ public class BroadcastService extends Service {
   /**
    * The name displayed in the channel guide. For many US affiliates, it is the network name.
    */
-  @JsonIgnore public Collection<String> getBroadcastDisplayNames() {
+  @JsonIgnore public java.util.Collection<String> getBroadcastDisplayNames() {
     final Object current = myData.get("broadcastDisplayName");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -121,11 +121,11 @@ public class BroadcastService extends Service {
   /**
    * The media network(s) whose content is broadcast on this station.
    */
-  @JsonIgnore public Collection<Organization> getBroadcastAffiliateOfs() {
+  @JsonIgnore public java.util.Collection<Organization> getBroadcastAffiliateOfs() {
     final Object current = myData.get("broadcastAffiliateOf");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
   }
@@ -138,11 +138,11 @@ public class BroadcastService extends Service {
   /**
    * The organization owning or operating the broadcast service.
    */
-  @JsonIgnore public Collection<Organization> getBroadcasters() {
+  @JsonIgnore public java.util.Collection<Organization> getBroadcasters() {
     final Object current = myData.get("broadcaster");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
   }
@@ -155,11 +155,11 @@ public class BroadcastService extends Service {
   /**
    * The timezone in [ISO 8601 format](http://en.wikipedia.org/wiki/ISO_8601) for which the service bases its broadcasts
    */
-  @JsonIgnore public Collection<String> getBroadcastTimezones() {
+  @JsonIgnore public java.util.Collection<String> getBroadcastTimezones() {
     final Object current = myData.get("broadcastTimezone");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -172,11 +172,11 @@ public class BroadcastService extends Service {
   /**
    * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. &quot;87 FM&quot;.
    */
-  @JsonIgnore public Collection<BroadcastFrequencySpecification> getBroadcastFrequencyBroadcastFrequencySpecifications() {
+  @JsonIgnore public java.util.Collection<BroadcastFrequencySpecification> getBroadcastFrequencyBroadcastFrequencySpecifications() {
     final Object current = myData.get("broadcastFrequency");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<BroadcastFrequencySpecification>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<BroadcastFrequencySpecification>) current;
     }
     return Arrays.asList((BroadcastFrequencySpecification) current);
   }
@@ -189,11 +189,11 @@ public class BroadcastService extends Service {
   /**
    * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. &quot;87 FM&quot;.
    */
-  @JsonIgnore public Collection<String> getBroadcastFrequencyStrings() {
+  @JsonIgnore public java.util.Collection<String> getBroadcastFrequencyStrings() {
     final Object current = myData.get("broadcastFrequency");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -206,11 +206,11 @@ public class BroadcastService extends Service {
   /**
    * The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).
    */
-  @JsonIgnore public Collection<String> getVideoFormats() {
+  @JsonIgnore public java.util.Collection<String> getVideoFormats() {
     final Object current = myData.get("videoFormat");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -223,11 +223,11 @@ public class BroadcastService extends Service {
   /**
    * A broadcast channel of a broadcast service.
    */
-  @JsonIgnore public Collection<BroadcastChannel> getHasBroadcastChannels() {
+  @JsonIgnore public java.util.Collection<BroadcastChannel> getHasBroadcastChannels() {
     final Object current = myData.get("hasBroadcastChannel");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<BroadcastChannel>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<BroadcastChannel>) current;
     }
     return Arrays.asList((BroadcastChannel) current);
   }

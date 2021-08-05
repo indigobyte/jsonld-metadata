@@ -36,11 +36,11 @@ public class ExerciseAction extends PlayAction {
   /**
    * A sub property of participant. The sports team that participated on this action.
    */
-  @JsonIgnore public Collection<Participant> getSportsTeams() {
+  @JsonIgnore public java.util.Collection<Participant> getSportsTeams() {
     final Object current = myData.get("sportsTeam");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Participant>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Participant>) current;
     }
     return Arrays.asList((Participant) current);
   }
@@ -53,11 +53,11 @@ public class ExerciseAction extends PlayAction {
   /**
    * A sub property of location. The sports event where this action occurred.
    */
-  @JsonIgnore public Collection<Location> getSportsEvents() {
+  @JsonIgnore public java.util.Collection<Location> getSportsEvents() {
     final Object current = myData.get("sportsEvent");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Location>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Location>) current;
     }
     return Arrays.asList((Location) current);
   }
@@ -70,11 +70,11 @@ public class ExerciseAction extends PlayAction {
   /**
    * A sub property of location. The course where this action was taken.
    */
-  @JsonIgnore public Collection<Location> getExerciseCourses() {
+  @JsonIgnore public java.util.Collection<Location> getExerciseCourses() {
     final Object current = myData.get("exerciseCourse");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Location>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Location>) current;
     }
     return Arrays.asList((Location) current);
   }
@@ -87,11 +87,11 @@ public class ExerciseAction extends PlayAction {
   /**
    * A sub property of location. The final location of the object or the agent after the action.
    */
-  @JsonIgnore public Collection<Location> getToLocations() {
+  @JsonIgnore public java.util.Collection<Location> getToLocations() {
     final Object current = myData.get("toLocation");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Location>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Location>) current;
     }
     return Arrays.asList((Location) current);
   }
@@ -104,11 +104,11 @@ public class ExerciseAction extends PlayAction {
   /**
    * The distance travelled, e.g. exercising or travelling.
    */
-  @JsonIgnore public Collection<Distance> getDistances() {
+  @JsonIgnore public java.util.Collection<Distance> getDistances() {
     final Object current = myData.get("distance");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Distance>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Distance>) current;
     }
     return Arrays.asList((Distance) current);
   }
@@ -121,11 +121,11 @@ public class ExerciseAction extends PlayAction {
   /**
    * Type(s) of exercise or activity, such as strength training, flexibility training, aerobics, cardiac rehabilitation, etc.
    */
-  @JsonIgnore public Collection<String> getExerciseTypes() {
+  @JsonIgnore public java.util.Collection<String> getExerciseTypes() {
     final Object current = myData.get("exerciseType");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -138,11 +138,11 @@ public class ExerciseAction extends PlayAction {
   /**
    * A sub property of instrument. The diet used in this action.
    */
-  @JsonIgnore public Collection<Diet> getDiets() {
+  @JsonIgnore public java.util.Collection<Diet> getDiets() {
     final Object current = myData.get("diet");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Diet>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Diet>) current;
     }
     return Arrays.asList((Diet) current);
   }
@@ -155,11 +155,11 @@ public class ExerciseAction extends PlayAction {
   /**
    * A sub property of location. The original location of the object or the agent before the action.
    */
-  @JsonIgnore public Collection<Location> getFromLocations() {
+  @JsonIgnore public java.util.Collection<Location> getFromLocations() {
     final Object current = myData.get("fromLocation");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Location>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Location>) current;
     }
     return Arrays.asList((Location) current);
   }
@@ -172,11 +172,11 @@ public class ExerciseAction extends PlayAction {
   /**
    * A sub property of participant. The opponent on this action.
    */
-  @JsonIgnore public Collection<Person> getOpponents() {
+  @JsonIgnore public java.util.Collection<Person> getOpponents() {
     final Object current = myData.get("opponent");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -189,11 +189,11 @@ public class ExerciseAction extends PlayAction {
   /**
    * A sub property of instrument. The diet used in this action.
    */
-  @JsonIgnore public Collection<Diet> getExerciseRelatedDiets() {
+  @JsonIgnore public java.util.Collection<Diet> getExerciseRelatedDiets() {
     final Object current = myData.get("exerciseRelatedDiet");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Diet>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Diet>) current;
     }
     return Arrays.asList((Diet) current);
   }
@@ -206,11 +206,11 @@ public class ExerciseAction extends PlayAction {
   /**
    * A sub property of instrument. The exercise plan used on this action.
    */
-  @JsonIgnore public Collection<Instrument> getExercisePlans() {
+  @JsonIgnore public java.util.Collection<Instrument> getExercisePlans() {
     final Object current = myData.get("exercisePlan");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Instrument>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Instrument>) current;
     }
     return Arrays.asList((Instrument) current);
   }
@@ -223,11 +223,11 @@ public class ExerciseAction extends PlayAction {
   /**
    * A sub property of location. The sports activity location where this action occurred.
    */
-  @JsonIgnore public Collection<SportsActivityLocation> getSportsActivityLocations() {
+  @JsonIgnore public java.util.Collection<SportsActivityLocation> getSportsActivityLocations() {
     final Object current = myData.get("sportsActivityLocation");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<SportsActivityLocation>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<SportsActivityLocation>) current;
     }
     return Arrays.asList((SportsActivityLocation) current);
   }
@@ -418,13 +418,6 @@ public class ExerciseAction extends PlayAction {
      */
     @NotNull public Builder actionStatus(@NotNull ActionStatusType actionStatusType) {
       putValue("actionStatus", actionStatusType);
-      return this;
-    }
-    /**
-     * Indicates the current disposition of the Action.
-     */
-    @NotNull public Builder actionStatus(@NotNull ActionStatusType.Builder actionStatusType) {
-      putValue("actionStatus", actionStatusType.build());
       return this;
     }
     /**

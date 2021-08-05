@@ -36,11 +36,11 @@ public class ProductModel extends Product {
   /**
    * A pointer from a previous, often discontinued variant of the product to its newer variant.
    */
-  @JsonIgnore public Collection<ProductModel> getPredecessorOfs() {
+  @JsonIgnore public java.util.Collection<ProductModel> getPredecessorOfs() {
     final Object current = myData.get("predecessorOf");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<ProductModel>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<ProductModel>) current;
     }
     return Arrays.asList((ProductModel) current);
   }
@@ -53,11 +53,11 @@ public class ProductModel extends Product {
   /**
    * A pointer from a newer variant of a product  to its previous, often discontinued predecessor.
    */
-  @JsonIgnore public Collection<ProductModel> getSuccessorOfs() {
+  @JsonIgnore public java.util.Collection<ProductModel> getSuccessorOfs() {
     final Object current = myData.get("successorOf");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<ProductModel>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<ProductModel>) current;
     }
     return Arrays.asList((ProductModel) current);
   }
@@ -70,11 +70,11 @@ public class ProductModel extends Product {
   /**
    * Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.
    */
-  @JsonIgnore public Collection<ProductGroup> getIsVariantOfProductGroups() {
+  @JsonIgnore public java.util.Collection<ProductGroup> getIsVariantOfProductGroups() {
     final Object current = myData.get("isVariantOf");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<ProductGroup>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<ProductGroup>) current;
     }
     return Arrays.asList((ProductGroup) current);
   }
@@ -87,11 +87,11 @@ public class ProductModel extends Product {
   /**
    * Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.
    */
-  @JsonIgnore public Collection<ProductModel> getIsVariantOfProductModels() {
+  @JsonIgnore public java.util.Collection<ProductModel> getIsVariantOfProductModels() {
     final Object current = myData.get("isVariantOf");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<ProductModel>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<ProductModel>) current;
     }
     return Arrays.asList((ProductModel) current);
   }

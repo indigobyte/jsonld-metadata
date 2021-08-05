@@ -36,11 +36,11 @@ public class InsertAction extends AddAction {
   /**
    * A sub property of location. The final location of the object or the agent after the action.
    */
-  @JsonIgnore public Collection<Location> getToLocations() {
+  @JsonIgnore public java.util.Collection<Location> getToLocations() {
     final Object current = myData.get("toLocation");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Location>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Location>) current;
     }
     return Arrays.asList((Location) current);
   }
@@ -98,13 +98,6 @@ public class InsertAction extends AddAction {
      */
     @NotNull public Builder actionStatus(@NotNull ActionStatusType actionStatusType) {
       putValue("actionStatus", actionStatusType);
-      return this;
-    }
-    /**
-     * Indicates the current disposition of the Action.
-     */
-    @NotNull public Builder actionStatus(@NotNull ActionStatusType.Builder actionStatusType) {
-      putValue("actionStatus", actionStatusType.build());
       return this;
     }
     /**

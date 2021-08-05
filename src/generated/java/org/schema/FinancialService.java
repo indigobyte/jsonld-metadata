@@ -36,11 +36,11 @@ public class FinancialService extends LocalBusiness {
   /**
    * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
    */
-  @JsonIgnore public Collection<String> getFeesAndCommissionsSpecifications() {
+  @JsonIgnore public java.util.Collection<String> getFeesAndCommissionsSpecifications() {
     final Object current = myData.get("feesAndCommissionsSpecification");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }

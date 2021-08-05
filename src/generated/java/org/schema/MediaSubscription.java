@@ -36,11 +36,11 @@ public class MediaSubscription extends Intangible {
   /**
    * The Organization responsible for authenticating the user's subscription. For example, many media apps require a cable/satellite provider to authenticate your subscription before playing media.
    */
-  @JsonIgnore public Collection<Organization> getAuthenticators() {
+  @JsonIgnore public java.util.Collection<Organization> getAuthenticators() {
     final Object current = myData.get("authenticator");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
   }
@@ -53,11 +53,11 @@ public class MediaSubscription extends Intangible {
   /**
    * An Offer which must be accepted before the user can perform the Action. For example, the user may need to buy a movie before being able to watch it.
    */
-  @JsonIgnore public Collection<Offer> getExpectsAcceptanceOfs() {
+  @JsonIgnore public java.util.Collection<Offer> getExpectsAcceptanceOfs() {
     final Object current = myData.get("expectsAcceptanceOf");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Offer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Offer>) current;
     }
     return Arrays.asList((Offer) current);
   }

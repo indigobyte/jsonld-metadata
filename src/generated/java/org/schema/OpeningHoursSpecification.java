@@ -38,11 +38,11 @@ public class OpeningHoursSpecification extends StructuredValue {
   /**
    * The date when the item becomes valid.
    */
-  @JsonIgnore public Collection<java.util.Date> getValidFroms() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getValidFroms() {
     final Object current = myData.get("validFrom");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -55,11 +55,11 @@ public class OpeningHoursSpecification extends StructuredValue {
   /**
    * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
    */
-  @JsonIgnore public Collection<java.util.Date> getValidThroughs() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getValidThroughs() {
     final Object current = myData.get("validThrough");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -72,11 +72,11 @@ public class OpeningHoursSpecification extends StructuredValue {
   /**
    * The opening hour of the place or service on the given day(s) of the week.
    */
-  @JsonIgnore public Collection<java.util.Date> getOpenss() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getOpenss() {
     final Object current = myData.get("opens");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -89,11 +89,11 @@ public class OpeningHoursSpecification extends StructuredValue {
   /**
    * The closing hour of the place or service on the given day(s) of the week.
    */
-  @JsonIgnore public Collection<java.util.Date> getClosess() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getClosess() {
     final Object current = myData.get("closes");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -106,11 +106,11 @@ public class OpeningHoursSpecification extends StructuredValue {
   /**
    * The day of the week for which these opening hours are valid.
    */
-  @JsonIgnore public Collection<DayOfWeek> getDayOfWeeks() {
+  @JsonIgnore public java.util.Collection<DayOfWeek> getDayOfWeeks() {
     final Object current = myData.get("dayOfWeek");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DayOfWeek>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<DayOfWeek>) current;
     }
     return Arrays.asList((DayOfWeek) current);
   }

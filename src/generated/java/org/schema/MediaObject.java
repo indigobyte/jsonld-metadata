@@ -36,11 +36,11 @@ public class MediaObject extends CreativeWork implements Caption {
   /**
    * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
    */
-  @JsonIgnore public Collection<java.util.Date> getStartTimes() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getStartTimes() {
     final Object current = myData.get("startTime");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -53,11 +53,11 @@ public class MediaObject extends CreativeWork implements Caption {
   /**
    * The width of the item.
    */
-  @JsonIgnore public Collection<Distance> getWidthDistances() {
+  @JsonIgnore public java.util.Collection<Distance> getWidthDistances() {
     final Object current = myData.get("width");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Distance>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Distance>) current;
     }
     return Arrays.asList((Distance) current);
   }
@@ -70,11 +70,11 @@ public class MediaObject extends CreativeWork implements Caption {
   /**
    * The width of the item.
    */
-  @JsonIgnore public Collection<QuantitativeValue> getWidthQuantitativeValues() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getWidthQuantitativeValues() {
     final Object current = myData.get("width");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -87,11 +87,11 @@ public class MediaObject extends CreativeWork implements Caption {
   /**
    * The production company or studio responsible for the item e.g. series, video game, episode etc.
    */
-  @JsonIgnore public Collection<Organization> getProductionCompanys() {
+  @JsonIgnore public java.util.Collection<Organization> getProductionCompanys() {
     final Object current = myData.get("productionCompany");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
   }
@@ -106,11 +106,11 @@ public class MediaObject extends CreativeWork implements Caption {
    * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.\n\nSee also [[eligibleRegion]].
    *       
    */
-  @JsonIgnore public Collection<GeoShape> getIneligibleRegionGeoShapes() {
+  @JsonIgnore public java.util.Collection<GeoShape> getIneligibleRegionGeoShapes() {
     final Object current = myData.get("ineligibleRegion");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<GeoShape>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<GeoShape>) current;
     }
     return Arrays.asList((GeoShape) current);
   }
@@ -125,11 +125,11 @@ public class MediaObject extends CreativeWork implements Caption {
    * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.\n\nSee also [[eligibleRegion]].
    *       
    */
-  @JsonIgnore public Collection<Place> getIneligibleRegionPlaces() {
+  @JsonIgnore public java.util.Collection<Place> getIneligibleRegionPlaces() {
     final Object current = myData.get("ineligibleRegion");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Place>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Place>) current;
     }
     return Arrays.asList((Place) current);
   }
@@ -144,11 +144,11 @@ public class MediaObject extends CreativeWork implements Caption {
    * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.\n\nSee also [[eligibleRegion]].
    *       
    */
-  @JsonIgnore public Collection<String> getIneligibleRegionStrings() {
+  @JsonIgnore public java.util.Collection<String> getIneligibleRegionStrings() {
     final Object current = myData.get("ineligibleRegion");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -161,11 +161,11 @@ public class MediaObject extends CreativeWork implements Caption {
   /**
    * A URL pointing to a player for a specific video. In general, this is the information in the ```src``` element of an ```embed``` tag and should not be the same as the content of the ```loc``` tag.
    */
-  @JsonIgnore public Collection<String> getEmbedUrls() {
+  @JsonIgnore public java.util.Collection<String> getEmbedUrls() {
     final Object current = myData.get("embedUrl");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -178,11 +178,11 @@ public class MediaObject extends CreativeWork implements Caption {
   /**
    * Actual bytes of the media object, for example the image file or video file.
    */
-  @JsonIgnore public Collection<String> getContentUrls() {
+  @JsonIgnore public java.util.Collection<String> getContentUrls() {
     final Object current = myData.get("contentUrl");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -195,11 +195,11 @@ public class MediaObject extends CreativeWork implements Caption {
   /**
    * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
    */
-  @JsonIgnore public Collection<Duration> getDurations() {
+  @JsonIgnore public java.util.Collection<Duration> getDurations() {
     final Object current = myData.get("duration");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Duration>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Duration>) current;
     }
     return Arrays.asList((Duration) current);
   }
@@ -212,11 +212,11 @@ public class MediaObject extends CreativeWork implements Caption {
   /**
    * The height of the item.
    */
-  @JsonIgnore public Collection<Distance> getHeightDistances() {
+  @JsonIgnore public java.util.Collection<Distance> getHeightDistances() {
     final Object current = myData.get("height");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Distance>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Distance>) current;
     }
     return Arrays.asList((Distance) current);
   }
@@ -229,11 +229,11 @@ public class MediaObject extends CreativeWork implements Caption {
   /**
    * The height of the item.
    */
-  @JsonIgnore public Collection<QuantitativeValue> getHeightQuantitativeValues() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getHeightQuantitativeValues() {
     final Object current = myData.get("height");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -246,11 +246,11 @@ public class MediaObject extends CreativeWork implements Caption {
   /**
    * Indicates if use of the media require a subscription  (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had 'yes', 'no').
    */
-  @JsonIgnore public Collection<Boolean> getRequiresSubscriptionBooleans() {
+  @JsonIgnore public java.util.Collection<Boolean> getRequiresSubscriptionBooleans() {
     final Object current = myData.get("requiresSubscription");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Boolean>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Boolean>) current;
     }
     return Arrays.asList((Boolean) current);
   }
@@ -263,11 +263,11 @@ public class MediaObject extends CreativeWork implements Caption {
   /**
    * Indicates if use of the media require a subscription  (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had 'yes', 'no').
    */
-  @JsonIgnore public Collection<MediaSubscription> getRequiresSubscriptionMediaSubscriptions() {
+  @JsonIgnore public java.util.Collection<MediaSubscription> getRequiresSubscriptionMediaSubscriptions() {
     final Object current = myData.get("requiresSubscription");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MediaSubscription>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MediaSubscription>) current;
     }
     return Arrays.asList((MediaSubscription) current);
   }
@@ -288,11 +288,11 @@ public class MediaObject extends CreativeWork implements Caption {
    * 
    * Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.
    */
-  @JsonIgnore public Collection<String> getEncodingFormats() {
+  @JsonIgnore public java.util.Collection<String> getEncodingFormats() {
     final Object current = myData.get("encodingFormat");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -305,11 +305,11 @@ public class MediaObject extends CreativeWork implements Caption {
   /**
    * Date when this media object was uploaded to this site.
    */
-  @JsonIgnore public Collection<java.util.Date> getUploadDates() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getUploadDates() {
     final Object current = myData.get("uploadDate");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -322,11 +322,11 @@ public class MediaObject extends CreativeWork implements Caption {
   /**
    * The [SHA-2](https://en.wikipedia.org/wiki/SHA-2) SHA256 hash of the content of the item. For example, a zero-length input has value 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
    */
-  @JsonIgnore public Collection<String> getSha256s() {
+  @JsonIgnore public java.util.Collection<String> getSha256s() {
     final Object current = myData.get("sha256");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -339,11 +339,11 @@ public class MediaObject extends CreativeWork implements Caption {
   /**
    * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
    */
-  @JsonIgnore public Collection<java.util.Date> getEndTimes() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getEndTimes() {
     final Object current = myData.get("endTime");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -356,11 +356,11 @@ public class MediaObject extends CreativeWork implements Caption {
   /**
    * Player type required&amp;#x2014;for example, Flash or Silverlight.
    */
-  @JsonIgnore public Collection<String> getPlayerTypes() {
+  @JsonIgnore public java.util.Collection<String> getPlayerTypes() {
     final Object current = myData.get("playerType");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -373,11 +373,11 @@ public class MediaObject extends CreativeWork implements Caption {
   /**
    * Used to indicate a specific claim contained, implied, translated or refined from the content of a [[MediaObject]] or other [[CreativeWork]]. The interpreting party can be indicated using [[claimInterpreter]].
    */
-  @JsonIgnore public Collection<Description> getInterpretedAsClaims() {
+  @JsonIgnore public java.util.Collection<Description> getInterpretedAsClaims() {
     final Object current = myData.get("interpretedAsClaim");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Description>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Description>) current;
     }
     return Arrays.asList((Description) current);
   }
@@ -390,11 +390,11 @@ public class MediaObject extends CreativeWork implements Caption {
   /**
    * A NewsArticle associated with the Media Object.
    */
-  @JsonIgnore public Collection<NewsArticle> getAssociatedArticles() {
+  @JsonIgnore public java.util.Collection<NewsArticle> getAssociatedArticles() {
     final Object current = myData.get("associatedArticle");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<NewsArticle>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<NewsArticle>) current;
     }
     return Arrays.asList((NewsArticle) current);
   }
@@ -407,11 +407,11 @@ public class MediaObject extends CreativeWork implements Caption {
   /**
    * File size in (mega/kilo) bytes.
    */
-  @JsonIgnore public Collection<String> getContentSizes() {
+  @JsonIgnore public java.util.Collection<String> getContentSizes() {
     final Object current = myData.get("contentSize");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -424,11 +424,11 @@ public class MediaObject extends CreativeWork implements Caption {
   /**
    * The regions where the media is allowed. If not specified, then it's assumed to be allowed everywhere. Specify the countries in [ISO 3166 format](http://en.wikipedia.org/wiki/ISO_3166).
    */
-  @JsonIgnore public Collection<Place> getRegionsAlloweds() {
+  @JsonIgnore public java.util.Collection<Place> getRegionsAlloweds() {
     final Object current = myData.get("regionsAllowed");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Place>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Place>) current;
     }
     return Arrays.asList((Place) current);
   }
@@ -441,11 +441,11 @@ public class MediaObject extends CreativeWork implements Caption {
   /**
    * The bitrate of the media object.
    */
-  @JsonIgnore public Collection<String> getBitrates() {
+  @JsonIgnore public java.util.Collection<String> getBitrates() {
     final Object current = myData.get("bitrate");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -458,11 +458,11 @@ public class MediaObject extends CreativeWork implements Caption {
   /**
    * The CreativeWork encoded by this media object.
    */
-  @JsonIgnore public Collection<CreativeWork> getEncodesCreativeWorks() {
+  @JsonIgnore public java.util.Collection<CreativeWork> getEncodesCreativeWorks() {
     final Object current = myData.get("encodesCreativeWork");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<CreativeWork>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<CreativeWork>) current;
     }
     return Arrays.asList((CreativeWork) current);
   }
@@ -2138,8 +2138,8 @@ public class MediaObject extends CreativeWork implements Caption {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

@@ -36,11 +36,11 @@ public class TherapeuticProcedure extends MedicalProcedure {
   /**
    * Specifying a drug or medicine used in a medication procedure.
    */
-  @JsonIgnore public Collection<Drug> getDrugs() {
+  @JsonIgnore public java.util.Collection<Drug> getDrugs() {
     final Object current = myData.get("drug");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Drug>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Drug>) current;
     }
     return Arrays.asList((Drug) current);
   }
@@ -53,11 +53,11 @@ public class TherapeuticProcedure extends MedicalProcedure {
   /**
    * A dosing schedule for the drug for a given population, either observed, recommended, or maximum dose based on the type used.
    */
-  @JsonIgnore public Collection<DoseSchedule> getDoseSchedules() {
+  @JsonIgnore public java.util.Collection<DoseSchedule> getDoseSchedules() {
     final Object current = myData.get("doseSchedule");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DoseSchedule>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<DoseSchedule>) current;
     }
     return Arrays.asList((DoseSchedule) current);
   }
@@ -70,11 +70,11 @@ public class TherapeuticProcedure extends MedicalProcedure {
   /**
    * A possible complication and/or side effect of this therapy. If it is known that an adverse outcome is serious (resulting in death, disability, or permanent damage; requiring hospitalization; or is otherwise life-threatening or requires immediate medical attention), tag it as a seriouseAdverseOutcome instead.
    */
-  @JsonIgnore public Collection<MedicalEntity> getAdverseOutcomes() {
+  @JsonIgnore public java.util.Collection<MedicalEntity> getAdverseOutcomes() {
     final Object current = myData.get("adverseOutcome");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MedicalEntity>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MedicalEntity>) current;
     }
     return Arrays.asList((MedicalEntity) current);
   }
@@ -144,22 +144,8 @@ public class TherapeuticProcedure extends MedicalProcedure {
     /**
      * The status of the study (enumerated).
      */
-    @NotNull public Builder status(@NotNull EventStatusType.Builder eventStatusType) {
-      putValue("status", eventStatusType.build());
-      return this;
-    }
-    /**
-     * The status of the study (enumerated).
-     */
     @NotNull public Builder status(@NotNull MedicalStudyStatus medicalStudyStatus) {
       putValue("status", medicalStudyStatus);
-      return this;
-    }
-    /**
-     * The status of the study (enumerated).
-     */
-    @NotNull public Builder status(@NotNull MedicalStudyStatus.Builder medicalStudyStatus) {
-      putValue("status", medicalStudyStatus.build());
       return this;
     }
     /**
@@ -195,13 +181,6 @@ public class TherapeuticProcedure extends MedicalProcedure {
      */
     @NotNull public Builder procedureType(@NotNull MedicalProcedureType medicalProcedureType) {
       putValue("procedureType", medicalProcedureType);
-      return this;
-    }
-    /**
-     * The type of procedure, for example Surgical, Noninvasive, or Percutaneous.
-     */
-    @NotNull public Builder procedureType(@NotNull MedicalProcedureType.Builder medicalProcedureType) {
-      putValue("procedureType", medicalProcedureType.build());
       return this;
     }
     /**
@@ -275,24 +254,10 @@ public class TherapeuticProcedure extends MedicalProcedure {
       return this;
     }
     /**
-     * If applicable, a medical specialty in which this entity is relevant.
-     */
-    @NotNull public Builder relevantSpecialty(@NotNull MedicalSpecialty.Builder medicalSpecialty) {
-      putValue("relevantSpecialty", medicalSpecialty.build());
-      return this;
-    }
-    /**
      * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      */
     @NotNull public Builder medicineSystem(@NotNull MedicineSystem medicineSystem) {
       putValue("medicineSystem", medicineSystem);
-      return this;
-    }
-    /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
-     */
-    @NotNull public Builder medicineSystem(@NotNull MedicineSystem.Builder medicineSystem) {
-      putValue("medicineSystem", medicineSystem.build());
       return this;
     }
     /**

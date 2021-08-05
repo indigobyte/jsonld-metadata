@@ -36,11 +36,11 @@ public class DrugCost extends MedicalEntity {
   /**
    * The location in which the status applies.
    */
-  @JsonIgnore public Collection<AdministrativeArea> getApplicableLocations() {
+  @JsonIgnore public java.util.Collection<AdministrativeArea> getApplicableLocations() {
     final Object current = myData.get("applicableLocation");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<AdministrativeArea>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<AdministrativeArea>) current;
     }
     return Arrays.asList((AdministrativeArea) current);
   }
@@ -53,11 +53,11 @@ public class DrugCost extends MedicalEntity {
   /**
    * Additional details to capture the origin of the cost data. For example, 'Medicare Part B'.
    */
-  @JsonIgnore public Collection<String> getCostOrigins() {
+  @JsonIgnore public java.util.Collection<String> getCostOrigins() {
     final Object current = myData.get("costOrigin");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -70,11 +70,11 @@ public class DrugCost extends MedicalEntity {
   /**
    * The cost per unit of the drug.
    */
-  @JsonIgnore public Collection<Number> getCostPerUnitNumbers() {
+  @JsonIgnore public java.util.Collection<Number> getCostPerUnitNumbers() {
     final Object current = myData.get("costPerUnit");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Number>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Number>) current;
     }
     return Arrays.asList((Number) current);
   }
@@ -87,11 +87,11 @@ public class DrugCost extends MedicalEntity {
   /**
    * The cost per unit of the drug.
    */
-  @JsonIgnore public Collection<QualitativeValue> getCostPerUnitQualitativeValues() {
+  @JsonIgnore public java.util.Collection<QualitativeValue> getCostPerUnitQualitativeValues() {
     final Object current = myData.get("costPerUnit");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QualitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QualitativeValue>) current;
     }
     return Arrays.asList((QualitativeValue) current);
   }
@@ -104,11 +104,11 @@ public class DrugCost extends MedicalEntity {
   /**
    * The cost per unit of the drug.
    */
-  @JsonIgnore public Collection<String> getCostPerUnitStrings() {
+  @JsonIgnore public java.util.Collection<String> getCostPerUnitStrings() {
     final Object current = myData.get("costPerUnit");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -121,11 +121,11 @@ public class DrugCost extends MedicalEntity {
   /**
    * The category of cost, such as wholesale, retail, reimbursement cap, etc.
    */
-  @JsonIgnore public Collection<DrugCostCategory> getCostCategorys() {
+  @JsonIgnore public java.util.Collection<DrugCostCategory> getCostCategorys() {
     final Object current = myData.get("costCategory");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DrugCostCategory>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<DrugCostCategory>) current;
     }
     return Arrays.asList((DrugCostCategory) current);
   }
@@ -138,11 +138,11 @@ public class DrugCost extends MedicalEntity {
   /**
    * The unit in which the drug is measured, e.g. '5 mg tablet'.
    */
-  @JsonIgnore public Collection<String> getDrugUnits() {
+  @JsonIgnore public java.util.Collection<String> getDrugUnits() {
     final Object current = myData.get("drugUnit");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -155,11 +155,11 @@ public class DrugCost extends MedicalEntity {
   /**
    * The currency (in 3-letter of the drug cost. See: http://en.wikipedia.org/wiki/ISO_4217. 
    */
-  @JsonIgnore public Collection<String> getCostCurrencys() {
+  @JsonIgnore public java.util.Collection<String> getCostCurrencys() {
     final Object current = myData.get("costCurrency");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -234,13 +234,6 @@ public class DrugCost extends MedicalEntity {
       return this;
     }
     /**
-     * The category of cost, such as wholesale, retail, reimbursement cap, etc.
-     */
-    @NotNull public Builder costCategory(@NotNull DrugCostCategory.Builder drugCostCategory) {
-      putValue("costCategory", drugCostCategory.build());
-      return this;
-    }
-    /**
      * The unit in which the drug is measured, e.g. '5 mg tablet'.
      */
     @NotNull public Builder drugUnit(@NotNull String drugUnit) {
@@ -304,24 +297,10 @@ public class DrugCost extends MedicalEntity {
       return this;
     }
     /**
-     * If applicable, a medical specialty in which this entity is relevant.
-     */
-    @NotNull public Builder relevantSpecialty(@NotNull MedicalSpecialty.Builder medicalSpecialty) {
-      putValue("relevantSpecialty", medicalSpecialty.build());
-      return this;
-    }
-    /**
      * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      */
     @NotNull public Builder medicineSystem(@NotNull MedicineSystem medicineSystem) {
       putValue("medicineSystem", medicineSystem);
-      return this;
-    }
-    /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
-     */
-    @NotNull public Builder medicineSystem(@NotNull MedicineSystem.Builder medicineSystem) {
-      putValue("medicineSystem", medicineSystem.build());
       return this;
     }
     /**

@@ -36,11 +36,11 @@ public class MusicGroup extends PerformingGroup {
   /**
    * Genre of the creative work, broadcast channel or group.
    */
-  @JsonIgnore public Collection<Genre> getGenres() {
+  @JsonIgnore public java.util.Collection<Genre> getGenres() {
     final Object current = myData.get("genre");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Genre>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Genre>) current;
     }
     return Arrays.asList((Genre) current);
   }
@@ -53,11 +53,11 @@ public class MusicGroup extends PerformingGroup {
   /**
    * A music album.
    */
-  @JsonIgnore public Collection<MusicAlbum> getAlbums() {
+  @JsonIgnore public java.util.Collection<MusicAlbum> getAlbums() {
     final Object current = myData.get("album");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MusicAlbum>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MusicAlbum>) current;
     }
     return Arrays.asList((MusicAlbum) current);
   }
@@ -70,11 +70,11 @@ public class MusicGroup extends PerformingGroup {
   /**
    * A music recording (track)&amp;#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
    */
-  @JsonIgnore public Collection<ItemList> getTrackItemLists() {
+  @JsonIgnore public java.util.Collection<ItemList> getTrackItemLists() {
     final Object current = myData.get("track");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<ItemList>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<ItemList>) current;
     }
     return Arrays.asList((ItemList) current);
   }
@@ -87,11 +87,11 @@ public class MusicGroup extends PerformingGroup {
   /**
    * A music recording (track)&amp;#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
    */
-  @JsonIgnore public Collection<MusicRecording> getTrackMusicRecordings() {
+  @JsonIgnore public java.util.Collection<MusicRecording> getTrackMusicRecordings() {
     final Object current = myData.get("track");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MusicRecording>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MusicRecording>) current;
     }
     return Arrays.asList((MusicRecording) current);
   }

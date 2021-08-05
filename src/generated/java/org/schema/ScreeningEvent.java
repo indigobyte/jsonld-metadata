@@ -36,11 +36,11 @@ public class ScreeningEvent extends Event {
   /**
    * The movie presented during this event.
    */
-  @JsonIgnore public Collection<Movie> getWorkPresenteds() {
+  @JsonIgnore public java.util.Collection<Movie> getWorkPresenteds() {
     final Object current = myData.get("workPresented");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Movie>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Movie>) current;
     }
     return Arrays.asList((Movie) current);
   }
@@ -53,11 +53,11 @@ public class ScreeningEvent extends Event {
   /**
    * Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
    */
-  @JsonIgnore public Collection<Language> getSubtitleLanguageLanguages() {
+  @JsonIgnore public java.util.Collection<Language> getSubtitleLanguageLanguages() {
     final Object current = myData.get("subtitleLanguage");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Language>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Language>) current;
     }
     return Arrays.asList((Language) current);
   }
@@ -70,11 +70,11 @@ public class ScreeningEvent extends Event {
   /**
    * Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
    */
-  @JsonIgnore public Collection<String> getSubtitleLanguageStrings() {
+  @JsonIgnore public java.util.Collection<String> getSubtitleLanguageStrings() {
     final Object current = myData.get("subtitleLanguage");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -87,11 +87,11 @@ public class ScreeningEvent extends Event {
   /**
    * The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).
    */
-  @JsonIgnore public Collection<String> getVideoFormats() {
+  @JsonIgnore public java.util.Collection<String> getVideoFormats() {
     final Object current = myData.get("videoFormat");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -324,13 +324,6 @@ public class ScreeningEvent extends Event {
      */
     @NotNull public Builder eventStatus(@NotNull EventStatusType eventStatusType) {
       putValue("eventStatus", eventStatusType);
-      return this;
-    }
-    /**
-     * An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.
-     */
-    @NotNull public Builder eventStatus(@NotNull EventStatusType.Builder eventStatusType) {
-      putValue("eventStatus", eventStatusType.build());
       return this;
     }
     /**

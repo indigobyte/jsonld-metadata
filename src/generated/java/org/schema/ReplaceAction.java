@@ -36,11 +36,11 @@ public class ReplaceAction extends UpdateAction {
   /**
    * A sub property of object. The object that replaces.
    */
-  @JsonIgnore public Collection<Thing> getReplacers() {
+  @JsonIgnore public java.util.Collection<Thing> getReplacers() {
     final Object current = myData.get("replacer");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Thing>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Thing>) current;
     }
     return Arrays.asList((Thing) current);
   }
@@ -53,11 +53,11 @@ public class ReplaceAction extends UpdateAction {
   /**
    * A sub property of object. The object that is being replaced.
    */
-  @JsonIgnore public Collection<Object> getReplacees() {
+  @JsonIgnore public java.util.Collection<Object> getReplacees() {
     final Object current = myData.get("replacee");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Object>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Object>) current;
     }
     return Arrays.asList((Object) current);
   }
@@ -129,13 +129,6 @@ public class ReplaceAction extends UpdateAction {
      */
     @NotNull public Builder actionStatus(@NotNull ActionStatusType actionStatusType) {
       putValue("actionStatus", actionStatusType);
-      return this;
-    }
-    /**
-     * Indicates the current disposition of the Action.
-     */
-    @NotNull public Builder actionStatus(@NotNull ActionStatusType.Builder actionStatusType) {
-      putValue("actionStatus", actionStatusType.build());
       return this;
     }
     /**

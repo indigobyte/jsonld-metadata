@@ -36,11 +36,11 @@ public class MusicPlaylist extends CreativeWork {
   /**
    * A music recording (track)&amp;#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
    */
-  @JsonIgnore public Collection<ItemList> getTrackItemLists() {
+  @JsonIgnore public java.util.Collection<ItemList> getTrackItemLists() {
     final Object current = myData.get("track");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<ItemList>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<ItemList>) current;
     }
     return Arrays.asList((ItemList) current);
   }
@@ -53,11 +53,11 @@ public class MusicPlaylist extends CreativeWork {
   /**
    * A music recording (track)&amp;#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
    */
-  @JsonIgnore public Collection<MusicRecording> getTrackMusicRecordings() {
+  @JsonIgnore public java.util.Collection<MusicRecording> getTrackMusicRecordings() {
     final Object current = myData.get("track");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MusicRecording>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MusicRecording>) current;
     }
     return Arrays.asList((MusicRecording) current);
   }
@@ -70,11 +70,11 @@ public class MusicPlaylist extends CreativeWork {
   /**
    * The number of tracks in this album or playlist.
    */
-  @JsonIgnore public Collection<Integer> getNumTrackss() {
+  @JsonIgnore public java.util.Collection<Integer> getNumTrackss() {
     final Object current = myData.get("numTracks");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -1542,8 +1542,8 @@ public class MusicPlaylist extends CreativeWork {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

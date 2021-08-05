@@ -36,11 +36,11 @@ public class DigitalDocument extends CreativeWork {
   /**
    * A permission related to the access to this document (e.g. permission to read or write an electronic document). For a public document, specify a grantee with an Audience with audienceType equal to &quot;public&quot;.
    */
-  @JsonIgnore public Collection<DigitalDocumentPermission> getHasDigitalDocumentPermissions() {
+  @JsonIgnore public java.util.Collection<DigitalDocumentPermission> getHasDigitalDocumentPermissions() {
     final Object current = myData.get("hasDigitalDocumentPermission");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DigitalDocumentPermission>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<DigitalDocumentPermission>) current;
     }
     return Arrays.asList((DigitalDocumentPermission) current);
   }
@@ -1487,8 +1487,8 @@ public class DigitalDocument extends CreativeWork {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

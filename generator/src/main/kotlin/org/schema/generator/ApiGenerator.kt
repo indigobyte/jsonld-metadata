@@ -1,5 +1,5 @@
 package org.schema.generator
-
+import org.schema.generator.helper.sanitizeIdentifier
 import org.apache.commons.text.StringEscapeUtils
 
 /**
@@ -26,7 +26,7 @@ class ApiGenerator(private val sink: GeneratorSink, private val banner: String? 
                     continue
                 if (type.isEnum || type.name == "http://schema.org/Enumeration" || (type.parentType?.let { sink.types[it] }?.isEnum == true)) continue
 
-                val typeName = type.name!!.capitalize()
+                val typeName = sanitizeIdentifier(type.name!!.capitalize())
 
                 type.comment?.let {
                     appendLine("  /**")
@@ -42,7 +42,7 @@ class ApiGenerator(private val sink: GeneratorSink, private val banner: String? 
                     continue
                 if (type.isEnum || type.name == "http://schema.org/Enumeration" || (type.parentType?.let { sink.types[it] }?.isEnum == true)) continue
 
-                val typeName = type.name!!.capitalize()
+                val typeName = sanitizeIdentifier(type.name!!.capitalize())
 
                 appendLine("    if (\"$typeName\".equals(type)) { return new $typeName.Builder(new HashMap<String,Object>()); }")
             }

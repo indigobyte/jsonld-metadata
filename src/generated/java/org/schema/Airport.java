@@ -36,11 +36,11 @@ public class Airport extends CivicStructure {
   /**
    * ICAO identifier for an airport.
    */
-  @JsonIgnore public Collection<String> getIcaoCodes() {
+  @JsonIgnore public java.util.Collection<String> getIcaoCodes() {
     final Object current = myData.get("icaoCode");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -53,11 +53,11 @@ public class Airport extends CivicStructure {
   /**
    * IATA identifier for an airline or airport.
    */
-  @JsonIgnore public Collection<String> getIataCodes() {
+  @JsonIgnore public java.util.Collection<String> getIataCodes() {
     final Object current = myData.get("iataCode");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }

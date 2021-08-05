@@ -36,11 +36,11 @@ public class MedicalEntity extends Thing {
   /**
    * The drug or supplement's legal status, including any controlled substance schedules that apply.
    */
-  @JsonIgnore public Collection<DrugLegalStatus> getLegalStatusDrugLegalStatuss() {
+  @JsonIgnore public java.util.Collection<DrugLegalStatus> getLegalStatusDrugLegalStatuss() {
     final Object current = myData.get("legalStatus");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DrugLegalStatus>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<DrugLegalStatus>) current;
     }
     return Arrays.asList((DrugLegalStatus) current);
   }
@@ -53,11 +53,11 @@ public class MedicalEntity extends Thing {
   /**
    * The drug or supplement's legal status, including any controlled substance schedules that apply.
    */
-  @JsonIgnore public Collection<MedicalEnumeration> getLegalStatusMedicalEnumerations() {
+  @JsonIgnore public java.util.Collection<MedicalEnumeration> getLegalStatusMedicalEnumerations() {
     final Object current = myData.get("legalStatus");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MedicalEnumeration>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MedicalEnumeration>) current;
     }
     return Arrays.asList((MedicalEnumeration) current);
   }
@@ -70,11 +70,11 @@ public class MedicalEntity extends Thing {
   /**
    * The drug or supplement's legal status, including any controlled substance schedules that apply.
    */
-  @JsonIgnore public Collection<String> getLegalStatusStrings() {
+  @JsonIgnore public java.util.Collection<String> getLegalStatusStrings() {
     final Object current = myData.get("legalStatus");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -87,11 +87,11 @@ public class MedicalEntity extends Thing {
   /**
    * A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.
    */
-  @JsonIgnore public Collection<MedicalCode> getCodes() {
+  @JsonIgnore public java.util.Collection<MedicalCode> getCodes() {
     final Object current = myData.get("code");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MedicalCode>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MedicalCode>) current;
     }
     return Arrays.asList((MedicalCode) current);
   }
@@ -104,11 +104,11 @@ public class MedicalEntity extends Thing {
   /**
    * If applicable, a medical specialty in which this entity is relevant.
    */
-  @JsonIgnore public Collection<MedicalSpecialty> getRelevantSpecialtys() {
+  @JsonIgnore public java.util.Collection<MedicalSpecialty> getRelevantSpecialtys() {
     final Object current = myData.get("relevantSpecialty");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MedicalSpecialty>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MedicalSpecialty>) current;
     }
     return Arrays.asList((MedicalSpecialty) current);
   }
@@ -121,11 +121,11 @@ public class MedicalEntity extends Thing {
   /**
    * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
    */
-  @JsonIgnore public Collection<MedicineSystem> getMedicineSystems() {
+  @JsonIgnore public java.util.Collection<MedicineSystem> getMedicineSystems() {
     final Object current = myData.get("medicineSystem");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MedicineSystem>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MedicineSystem>) current;
     }
     return Arrays.asList((MedicineSystem) current);
   }
@@ -138,11 +138,11 @@ public class MedicalEntity extends Thing {
   /**
    * A medical study or trial related to this entity.
    */
-  @JsonIgnore public Collection<MedicalStudy> getStudys() {
+  @JsonIgnore public java.util.Collection<MedicalStudy> getStudys() {
     final Object current = myData.get("study");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MedicalStudy>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MedicalStudy>) current;
     }
     return Arrays.asList((MedicalStudy) current);
   }
@@ -155,11 +155,11 @@ public class MedicalEntity extends Thing {
   /**
    * A medical guideline related to this entity.
    */
-  @JsonIgnore public Collection<MedicalGuideline> getGuidelines() {
+  @JsonIgnore public java.util.Collection<MedicalGuideline> getGuidelines() {
     final Object current = myData.get("guideline");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MedicalGuideline>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MedicalGuideline>) current;
     }
     return Arrays.asList((MedicalGuideline) current);
   }
@@ -172,11 +172,11 @@ public class MedicalEntity extends Thing {
   /**
    * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
    */
-  @JsonIgnore public Collection<Organization> getRecognizingAuthoritys() {
+  @JsonIgnore public java.util.Collection<Organization> getRecognizingAuthoritys() {
     final Object current = myData.get("recognizingAuthority");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
   }
@@ -244,24 +244,10 @@ public class MedicalEntity extends Thing {
       return this;
     }
     /**
-     * If applicable, a medical specialty in which this entity is relevant.
-     */
-    @NotNull public Builder relevantSpecialty(@NotNull MedicalSpecialty.Builder medicalSpecialty) {
-      putValue("relevantSpecialty", medicalSpecialty.build());
-      return this;
-    }
-    /**
      * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      */
     @NotNull public Builder medicineSystem(@NotNull MedicineSystem medicineSystem) {
       putValue("medicineSystem", medicineSystem);
-      return this;
-    }
-    /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
-     */
-    @NotNull public Builder medicineSystem(@NotNull MedicineSystem.Builder medicineSystem) {
-      putValue("medicineSystem", medicineSystem.build());
       return this;
     }
     /**

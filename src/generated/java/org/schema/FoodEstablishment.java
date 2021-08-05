@@ -36,11 +36,11 @@ public class FoodEstablishment extends LocalBusiness {
   /**
    * Indicates whether a FoodEstablishment accepts reservations. Values can be Boolean, an URL at which reservations can be made or (for backwards compatibility) the strings ```Yes``` or ```No```.
    */
-  @JsonIgnore public Collection<Boolean> getAcceptsReservationsBooleans() {
+  @JsonIgnore public java.util.Collection<Boolean> getAcceptsReservationsBooleans() {
     final Object current = myData.get("acceptsReservations");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Boolean>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Boolean>) current;
     }
     return Arrays.asList((Boolean) current);
   }
@@ -53,11 +53,11 @@ public class FoodEstablishment extends LocalBusiness {
   /**
    * Indicates whether a FoodEstablishment accepts reservations. Values can be Boolean, an URL at which reservations can be made or (for backwards compatibility) the strings ```Yes``` or ```No```.
    */
-  @JsonIgnore public Collection<String> getAcceptsReservationsStrings() {
+  @JsonIgnore public java.util.Collection<String> getAcceptsReservationsStrings() {
     final Object current = myData.get("acceptsReservations");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -70,11 +70,11 @@ public class FoodEstablishment extends LocalBusiness {
   /**
    * An official rating for a lodging business or food establishment, e.g. from national associations or standards bodies. Use the author property to indicate the rating organization, e.g. as an Organization with name such as (e.g. HOTREC, DEHOGA, WHR, or Hotelstars).
    */
-  @JsonIgnore public Collection<Rating> getStarRatings() {
+  @JsonIgnore public java.util.Collection<Rating> getStarRatings() {
     final Object current = myData.get("starRating");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Rating>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Rating>) current;
     }
     return Arrays.asList((Rating) current);
   }
@@ -87,11 +87,11 @@ public class FoodEstablishment extends LocalBusiness {
   /**
    * Either the actual menu as a structured representation, as text, or a URL of the menu.
    */
-  @JsonIgnore public Collection<Menu> getHasMenuMenus() {
+  @JsonIgnore public java.util.Collection<Menu> getHasMenuMenus() {
     final Object current = myData.get("hasMenu");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Menu>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Menu>) current;
     }
     return Arrays.asList((Menu) current);
   }
@@ -104,11 +104,11 @@ public class FoodEstablishment extends LocalBusiness {
   /**
    * Either the actual menu as a structured representation, as text, or a URL of the menu.
    */
-  @JsonIgnore public Collection<String> getHasMenuStrings() {
+  @JsonIgnore public java.util.Collection<String> getHasMenuStrings() {
     final Object current = myData.get("hasMenu");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -121,11 +121,11 @@ public class FoodEstablishment extends LocalBusiness {
   /**
    * The cuisine of the restaurant.
    */
-  @JsonIgnore public Collection<String> getServesCuisines() {
+  @JsonIgnore public java.util.Collection<String> getServesCuisines() {
     final Object current = myData.get("servesCuisine");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }

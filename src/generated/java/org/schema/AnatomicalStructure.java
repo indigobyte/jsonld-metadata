@@ -36,11 +36,11 @@ public class AnatomicalStructure extends MedicalEntity {
   /**
    * Component (sub-)structure(s) that comprise this anatomical structure.
    */
-  @JsonIgnore public Collection<AnatomicalStructure> getSubStructures() {
+  @JsonIgnore public java.util.Collection<AnatomicalStructure> getSubStructures() {
     final Object current = myData.get("subStructure");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<AnatomicalStructure>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<AnatomicalStructure>) current;
     }
     return Arrays.asList((AnatomicalStructure) current);
   }
@@ -53,11 +53,11 @@ public class AnatomicalStructure extends MedicalEntity {
   /**
    * A medical condition associated with this anatomy.
    */
-  @JsonIgnore public Collection<MedicalCondition> getRelatedConditions() {
+  @JsonIgnore public java.util.Collection<MedicalCondition> getRelatedConditions() {
     final Object current = myData.get("relatedCondition");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MedicalCondition>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MedicalCondition>) current;
     }
     return Arrays.asList((MedicalCondition) current);
   }
@@ -70,11 +70,11 @@ public class AnatomicalStructure extends MedicalEntity {
   /**
    * Other anatomical structures to which this structure is connected.
    */
-  @JsonIgnore public Collection<AnatomicalStructure> getConnectedTos() {
+  @JsonIgnore public java.util.Collection<AnatomicalStructure> getConnectedTos() {
     final Object current = myData.get("connectedTo");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<AnatomicalStructure>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<AnatomicalStructure>) current;
     }
     return Arrays.asList((AnatomicalStructure) current);
   }
@@ -87,11 +87,11 @@ public class AnatomicalStructure extends MedicalEntity {
   /**
    * The anatomical or organ system that this structure is part of.
    */
-  @JsonIgnore public Collection<AnatomicalSystem> getPartOfSystems() {
+  @JsonIgnore public java.util.Collection<AnatomicalSystem> getPartOfSystems() {
     final Object current = myData.get("partOfSystem");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<AnatomicalSystem>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<AnatomicalSystem>) current;
     }
     return Arrays.asList((AnatomicalSystem) current);
   }
@@ -104,11 +104,11 @@ public class AnatomicalStructure extends MedicalEntity {
   /**
    * An image containing a diagram that illustrates the structure and/or its component substructures and/or connections with other structures.
    */
-  @JsonIgnore public Collection<ImageObject> getDiagrams() {
+  @JsonIgnore public java.util.Collection<ImageObject> getDiagrams() {
     final Object current = myData.get("diagram");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<ImageObject>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<ImageObject>) current;
     }
     return Arrays.asList((ImageObject) current);
   }
@@ -121,11 +121,11 @@ public class AnatomicalStructure extends MedicalEntity {
   /**
    * If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.
    */
-  @JsonIgnore public Collection<String> getAssociatedPathophysiologys() {
+  @JsonIgnore public java.util.Collection<String> getAssociatedPathophysiologys() {
     final Object current = myData.get("associatedPathophysiology");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -138,11 +138,11 @@ public class AnatomicalStructure extends MedicalEntity {
   /**
    * A medical therapy related to this anatomy.
    */
-  @JsonIgnore public Collection<MedicalTherapy> getRelatedTherapys() {
+  @JsonIgnore public java.util.Collection<MedicalTherapy> getRelatedTherapys() {
     final Object current = myData.get("relatedTherapy");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MedicalTherapy>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MedicalTherapy>) current;
     }
     return Arrays.asList((MedicalTherapy) current);
   }
@@ -155,11 +155,11 @@ public class AnatomicalStructure extends MedicalEntity {
   /**
    * Location in the body of the anatomical structure.
    */
-  @JsonIgnore public Collection<String> getBodyLocations() {
+  @JsonIgnore public java.util.Collection<String> getBodyLocations() {
     final Object current = myData.get("bodyLocation");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -325,24 +325,10 @@ public class AnatomicalStructure extends MedicalEntity {
       return this;
     }
     /**
-     * If applicable, a medical specialty in which this entity is relevant.
-     */
-    @NotNull public Builder relevantSpecialty(@NotNull MedicalSpecialty.Builder medicalSpecialty) {
-      putValue("relevantSpecialty", medicalSpecialty.build());
-      return this;
-    }
-    /**
      * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      */
     @NotNull public Builder medicineSystem(@NotNull MedicineSystem medicineSystem) {
       putValue("medicineSystem", medicineSystem);
-      return this;
-    }
-    /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
-     */
-    @NotNull public Builder medicineSystem(@NotNull MedicineSystem.Builder medicineSystem) {
-      putValue("medicineSystem", medicineSystem.build());
       return this;
     }
     /**

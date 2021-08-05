@@ -36,11 +36,11 @@ public class DeliveryTimeSettings extends StructuredValue {
   /**
    * This can be marked 'true' to indicate that some published [[DeliveryTimeSettings]] or [[ShippingRateSettings]] are intended to apply to all [[OfferShippingDetails]] published by the same merchant, when referenced by a [[shippingSettingsLink]] in those settings. It is not meaningful to use a 'true' value for this property alongside a transitTimeLabel (for [[DeliveryTimeSettings]]) or shippingLabel (for [[ShippingRateSettings]]), since this property is for use with unlabelled settings.
    */
-  @JsonIgnore public Collection<Boolean> getIsUnlabelledFallbacks() {
+  @JsonIgnore public java.util.Collection<Boolean> getIsUnlabelledFallbacks() {
     final Object current = myData.get("isUnlabelledFallback");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Boolean>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Boolean>) current;
     }
     return Arrays.asList((Boolean) current);
   }
@@ -53,11 +53,11 @@ public class DeliveryTimeSettings extends StructuredValue {
   /**
    * The total delay between the receipt of the order and the goods reaching the final customer.
    */
-  @JsonIgnore public Collection<ShippingDeliveryTime> getDeliveryTimes() {
+  @JsonIgnore public java.util.Collection<ShippingDeliveryTime> getDeliveryTimes() {
     final Object current = myData.get("deliveryTime");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<ShippingDeliveryTime>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<ShippingDeliveryTime>) current;
     }
     return Arrays.asList((ShippingDeliveryTime) current);
   }
@@ -70,11 +70,11 @@ public class DeliveryTimeSettings extends StructuredValue {
   /**
    * Label to match an [[OfferShippingDetails]] with a [[DeliveryTimeSettings]] (within the context of a [[shippingSettingsLink]] cross-reference).
    */
-  @JsonIgnore public Collection<String> getTransitTimeLabels() {
+  @JsonIgnore public java.util.Collection<String> getTransitTimeLabels() {
     final Object current = myData.get("transitTimeLabel");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -87,11 +87,11 @@ public class DeliveryTimeSettings extends StructuredValue {
   /**
    * indicates (possibly multiple) shipping destinations. These can be defined in several ways e.g. postalCode ranges.
    */
-  @JsonIgnore public Collection<DefinedRegion> getShippingDestinations() {
+  @JsonIgnore public java.util.Collection<DefinedRegion> getShippingDestinations() {
     final Object current = myData.get("shippingDestination");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DefinedRegion>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<DefinedRegion>) current;
     }
     return Arrays.asList((DefinedRegion) current);
   }

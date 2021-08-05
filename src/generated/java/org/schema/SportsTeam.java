@@ -36,11 +36,11 @@ public class SportsTeam extends SportsOrganization {
   /**
    * A person that acts in a coaching role for a sports team.
    */
-  @JsonIgnore public Collection<Person> getCoachs() {
+  @JsonIgnore public java.util.Collection<Person> getCoachs() {
     final Object current = myData.get("coach");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -53,11 +53,11 @@ public class SportsTeam extends SportsOrganization {
   /**
    * A person that acts as performing member of a sports team; a player as opposed to a coach.
    */
-  @JsonIgnore public Collection<Person> getAthletes() {
+  @JsonIgnore public java.util.Collection<Person> getAthletes() {
     final Object current = myData.get("athlete");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -70,11 +70,11 @@ public class SportsTeam extends SportsOrganization {
   /**
    * Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While http://schema.org/Male and http://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of &quot;Mixed&quot;.
    */
-  @JsonIgnore public Collection<GenderType> getGenderGenderTypes() {
+  @JsonIgnore public java.util.Collection<GenderType> getGenderGenderTypes() {
     final Object current = myData.get("gender");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<GenderType>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<GenderType>) current;
     }
     return Arrays.asList((GenderType) current);
   }
@@ -87,11 +87,11 @@ public class SportsTeam extends SportsOrganization {
   /**
    * Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While http://schema.org/Male and http://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of &quot;Mixed&quot;.
    */
-  @JsonIgnore public Collection<String> getGenderStrings() {
+  @JsonIgnore public java.util.Collection<String> getGenderStrings() {
     final Object current = myData.get("gender");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }

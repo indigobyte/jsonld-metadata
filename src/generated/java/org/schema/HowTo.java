@@ -36,11 +36,11 @@ public class HowTo extends CreativeWork {
   /**
    * The estimated cost of the supply or supplies consumed when performing instructions.
    */
-  @JsonIgnore public Collection<MonetaryAmount> getEstimatedCostMonetaryAmounts() {
+  @JsonIgnore public java.util.Collection<MonetaryAmount> getEstimatedCostMonetaryAmounts() {
     final Object current = myData.get("estimatedCost");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MonetaryAmount>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MonetaryAmount>) current;
     }
     return Arrays.asList((MonetaryAmount) current);
   }
@@ -53,11 +53,11 @@ public class HowTo extends CreativeWork {
   /**
    * The estimated cost of the supply or supplies consumed when performing instructions.
    */
-  @JsonIgnore public Collection<String> getEstimatedCostStrings() {
+  @JsonIgnore public java.util.Collection<String> getEstimatedCostStrings() {
     final Object current = myData.get("estimatedCost");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -70,11 +70,11 @@ public class HowTo extends CreativeWork {
   /**
    * A sub-property of instrument. A supply consumed when performing instructions or a direction.
    */
-  @JsonIgnore public Collection<Supply> getSupplys() {
+  @JsonIgnore public java.util.Collection<Supply> getSupplys() {
     final Object current = myData.get("supply");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Supply>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Supply>) current;
     }
     return Arrays.asList((Supply) current);
   }
@@ -87,11 +87,11 @@ public class HowTo extends CreativeWork {
   /**
    * The length of time it takes to prepare the items to be used in instructions or a direction, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
    */
-  @JsonIgnore public Collection<Duration> getPrepTimes() {
+  @JsonIgnore public java.util.Collection<Duration> getPrepTimes() {
     final Object current = myData.get("prepTime");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Duration>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Duration>) current;
     }
     return Arrays.asList((Duration) current);
   }
@@ -104,11 +104,11 @@ public class HowTo extends CreativeWork {
   /**
    * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection.
    */
-  @JsonIgnore public Collection<Step> getSteps() {
+  @JsonIgnore public java.util.Collection<Step> getSteps() {
     final Object current = myData.get("step");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Step>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Step>) current;
     }
     return Arrays.asList((Step) current);
   }
@@ -121,11 +121,11 @@ public class HowTo extends CreativeWork {
   /**
    * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
    */
-  @JsonIgnore public Collection<Instrument> getTools() {
+  @JsonIgnore public java.util.Collection<Instrument> getTools() {
     final Object current = myData.get("tool");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Instrument>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Instrument>) current;
     }
     return Arrays.asList((Instrument) current);
   }
@@ -138,11 +138,11 @@ public class HowTo extends CreativeWork {
   /**
    * The quantity that results by performing instructions. For example, a paper airplane, 10 personalized candles.
    */
-  @JsonIgnore public Collection<Yield> getYields() {
+  @JsonIgnore public java.util.Collection<Yield> getYields() {
     final Object current = myData.get("yield");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Yield>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Yield>) current;
     }
     return Arrays.asList((Yield) current);
   }
@@ -155,11 +155,11 @@ public class HowTo extends CreativeWork {
   /**
    * The total time required to perform instructions or a direction (including time to prepare the supplies), in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
    */
-  @JsonIgnore public Collection<Duration> getTotalTimes() {
+  @JsonIgnore public java.util.Collection<Duration> getTotalTimes() {
     final Object current = myData.get("totalTime");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Duration>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Duration>) current;
     }
     return Arrays.asList((Duration) current);
   }
@@ -172,11 +172,11 @@ public class HowTo extends CreativeWork {
   /**
    * The length of time it takes to perform instructions or a direction (not including time to prepare the supplies), in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
    */
-  @JsonIgnore public Collection<PerformTime> getPerformTimes() {
+  @JsonIgnore public java.util.Collection<PerformTime> getPerformTimes() {
     final Object current = myData.get("performTime");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<PerformTime>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<PerformTime>) current;
     }
     return Arrays.asList((PerformTime) current);
   }
@@ -1679,8 +1679,8 @@ public class HowTo extends CreativeWork {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

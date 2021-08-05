@@ -36,11 +36,11 @@ public class ReceiveAction extends TransferAction {
   /**
    * A sub property of participant. The participant who is at the sending end of the action.
    */
-  @JsonIgnore public Collection<Audience> getSenderAudiences() {
+  @JsonIgnore public java.util.Collection<Audience> getSenderAudiences() {
     final Object current = myData.get("sender");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Audience>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Audience>) current;
     }
     return Arrays.asList((Audience) current);
   }
@@ -53,11 +53,11 @@ public class ReceiveAction extends TransferAction {
   /**
    * A sub property of participant. The participant who is at the sending end of the action.
    */
-  @JsonIgnore public Collection<Organization> getSenderOrganizations() {
+  @JsonIgnore public java.util.Collection<Organization> getSenderOrganizations() {
     final Object current = myData.get("sender");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
   }
@@ -70,11 +70,11 @@ public class ReceiveAction extends TransferAction {
   /**
    * A sub property of participant. The participant who is at the sending end of the action.
    */
-  @JsonIgnore public Collection<Person> getSenderPersons() {
+  @JsonIgnore public java.util.Collection<Person> getSenderPersons() {
     final Object current = myData.get("sender");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -87,11 +87,11 @@ public class ReceiveAction extends TransferAction {
   /**
    * A sub property of instrument. The method of delivery.
    */
-  @JsonIgnore public Collection<Instrument> getDeliveryMethods() {
+  @JsonIgnore public java.util.Collection<Instrument> getDeliveryMethods() {
     final Object current = myData.get("deliveryMethod");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Instrument>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Instrument>) current;
     }
     return Arrays.asList((Instrument) current);
   }
@@ -198,13 +198,6 @@ public class ReceiveAction extends TransferAction {
      */
     @NotNull public Builder actionStatus(@NotNull ActionStatusType actionStatusType) {
       putValue("actionStatus", actionStatusType);
-      return this;
-    }
-    /**
-     * Indicates the current disposition of the Action.
-     */
-    @NotNull public Builder actionStatus(@NotNull ActionStatusType.Builder actionStatusType) {
-      putValue("actionStatus", actionStatusType.build());
       return this;
     }
     /**

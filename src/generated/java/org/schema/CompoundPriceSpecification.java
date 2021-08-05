@@ -36,11 +36,11 @@ public class CompoundPriceSpecification extends PriceSpecification {
   /**
    * Defines the type of a price specified for an offered product, for example a list price, a (temporary) sale price or a manufacturer suggested retail price. If multiple prices are specified for an offer the [[priceType]] property can be used to identify the type of each such specified price. The value of priceType can be specified as a value from enumeration PriceTypeEnumeration or as a free form text string for price types that are not already predefined in PriceTypeEnumeration.
    */
-  @JsonIgnore public Collection<PriceTypeEnumeration> getPriceTypePriceTypeEnumerations() {
+  @JsonIgnore public java.util.Collection<PriceTypeEnumeration> getPriceTypePriceTypeEnumerations() {
     final Object current = myData.get("priceType");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<PriceTypeEnumeration>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<PriceTypeEnumeration>) current;
     }
     return Arrays.asList((PriceTypeEnumeration) current);
   }
@@ -53,11 +53,11 @@ public class CompoundPriceSpecification extends PriceSpecification {
   /**
    * Defines the type of a price specified for an offered product, for example a list price, a (temporary) sale price or a manufacturer suggested retail price. If multiple prices are specified for an offer the [[priceType]] property can be used to identify the type of each such specified price. The value of priceType can be specified as a value from enumeration PriceTypeEnumeration or as a free form text string for price types that are not already predefined in PriceTypeEnumeration.
    */
-  @JsonIgnore public Collection<String> getPriceTypeStrings() {
+  @JsonIgnore public java.util.Collection<String> getPriceTypeStrings() {
     final Object current = myData.get("priceType");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -70,11 +70,11 @@ public class CompoundPriceSpecification extends PriceSpecification {
   /**
    * This property links to all [[UnitPriceSpecification]] nodes that apply in parallel for the [[CompoundPriceSpecification]] node.
    */
-  @JsonIgnore public Collection<UnitPriceSpecification> getPriceComponents() {
+  @JsonIgnore public java.util.Collection<UnitPriceSpecification> getPriceComponents() {
     final Object current = myData.get("priceComponent");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<UnitPriceSpecification>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<UnitPriceSpecification>) current;
     }
     return Arrays.asList((UnitPriceSpecification) current);
   }

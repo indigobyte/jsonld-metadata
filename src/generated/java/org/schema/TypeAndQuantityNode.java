@@ -36,11 +36,11 @@ public class TypeAndQuantityNode extends StructuredValue {
   /**
    * The quantity of the goods included in the offer.
    */
-  @JsonIgnore public Collection<Integer> getAmountOfThisGoodIntegers() {
+  @JsonIgnore public java.util.Collection<Integer> getAmountOfThisGoodIntegers() {
     final Object current = myData.get("amountOfThisGood");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -53,11 +53,11 @@ public class TypeAndQuantityNode extends StructuredValue {
   /**
    * The quantity of the goods included in the offer.
    */
-  @JsonIgnore public Collection<Long> getAmountOfThisGoodLongs() {
+  @JsonIgnore public java.util.Collection<Long> getAmountOfThisGoodLongs() {
     final Object current = myData.get("amountOfThisGood");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Long>) current;
     }
     return Arrays.asList((Long) current);
   }
@@ -70,11 +70,11 @@ public class TypeAndQuantityNode extends StructuredValue {
   /**
    * The quantity of the goods included in the offer.
    */
-  @JsonIgnore public Collection<Float> getAmountOfThisGoodFloats() {
+  @JsonIgnore public java.util.Collection<Float> getAmountOfThisGoodFloats() {
     final Object current = myData.get("amountOfThisGood");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Float>) current;
     }
     return Arrays.asList((Float) current);
   }
@@ -87,11 +87,11 @@ public class TypeAndQuantityNode extends StructuredValue {
   /**
    * The quantity of the goods included in the offer.
    */
-  @JsonIgnore public Collection<Double> getAmountOfThisGoodDoubles() {
+  @JsonIgnore public java.util.Collection<Double> getAmountOfThisGoodDoubles() {
     final Object current = myData.get("amountOfThisGood");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Double>) current;
     }
     return Arrays.asList((Double) current);
   }
@@ -104,11 +104,11 @@ public class TypeAndQuantityNode extends StructuredValue {
   /**
    * The quantity of the goods included in the offer.
    */
-  @JsonIgnore public Collection<String> getAmountOfThisGoodStrings() {
+  @JsonIgnore public java.util.Collection<String> getAmountOfThisGoodStrings() {
     final Object current = myData.get("amountOfThisGood");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -121,11 +121,11 @@ public class TypeAndQuantityNode extends StructuredValue {
   /**
    * The product that this structured value is referring to.
    */
-  @JsonIgnore public Collection<Product> getTypeOfGoodProducts() {
+  @JsonIgnore public java.util.Collection<Product> getTypeOfGoodProducts() {
     final Object current = myData.get("typeOfGood");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Product>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Product>) current;
     }
     return Arrays.asList((Product) current);
   }
@@ -138,11 +138,11 @@ public class TypeAndQuantityNode extends StructuredValue {
   /**
    * The product that this structured value is referring to.
    */
-  @JsonIgnore public Collection<Service> getTypeOfGoodServices() {
+  @JsonIgnore public java.util.Collection<Service> getTypeOfGoodServices() {
     final Object current = myData.get("typeOfGood");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Service>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Service>) current;
     }
     return Arrays.asList((Service) current);
   }
@@ -157,11 +157,11 @@ public class TypeAndQuantityNode extends StructuredValue {
    * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
    * &lt;a href='unitCode'&gt;unitCode&lt;/a&gt;.
    */
-  @JsonIgnore public Collection<String> getUnitTexts() {
+  @JsonIgnore public java.util.Collection<String> getUnitTexts() {
     final Object current = myData.get("unitText");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -174,11 +174,11 @@ public class TypeAndQuantityNode extends StructuredValue {
   /**
    * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
    */
-  @JsonIgnore public Collection<String> getUnitCodes() {
+  @JsonIgnore public java.util.Collection<String> getUnitCodes() {
     final Object current = myData.get("unitCode");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -191,11 +191,11 @@ public class TypeAndQuantityNode extends StructuredValue {
   /**
    * The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
    */
-  @JsonIgnore public Collection<BusinessFunction> getBusinessFunctions() {
+  @JsonIgnore public java.util.Collection<BusinessFunction> getBusinessFunctions() {
     final Object current = myData.get("businessFunction");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<BusinessFunction>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<BusinessFunction>) current;
     }
     return Arrays.asList((BusinessFunction) current);
   }

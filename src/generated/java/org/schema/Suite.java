@@ -41,11 +41,11 @@ public class Suite extends Accommodation {
    * The type of bed or beds included in the accommodation. For the single case of just one bed of a certain type, you use bed directly with a text.
    *       If you want to indicate the quantity of a certain kind of bed, use an instance of BedDetails. For more detailed information, use the amenityFeature property.
    */
-  @JsonIgnore public Collection<BedDetails> getBedBedDetailss() {
+  @JsonIgnore public java.util.Collection<BedDetails> getBedBedDetailss() {
     final Object current = myData.get("bed");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<BedDetails>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<BedDetails>) current;
     }
     return Arrays.asList((BedDetails) current);
   }
@@ -60,11 +60,11 @@ public class Suite extends Accommodation {
    * The type of bed or beds included in the accommodation. For the single case of just one bed of a certain type, you use bed directly with a text.
    *       If you want to indicate the quantity of a certain kind of bed, use an instance of BedDetails. For more detailed information, use the amenityFeature property.
    */
-  @JsonIgnore public Collection<BedType> getBedBedTypes() {
+  @JsonIgnore public java.util.Collection<BedType> getBedBedTypes() {
     final Object current = myData.get("bed");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<BedType>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<BedType>) current;
     }
     return Arrays.asList((BedType) current);
   }
@@ -79,11 +79,11 @@ public class Suite extends Accommodation {
    * The type of bed or beds included in the accommodation. For the single case of just one bed of a certain type, you use bed directly with a text.
    *       If you want to indicate the quantity of a certain kind of bed, use an instance of BedDetails. For more detailed information, use the amenityFeature property.
    */
-  @JsonIgnore public Collection<String> getBedStrings() {
+  @JsonIgnore public java.util.Collection<String> getBedStrings() {
     final Object current = myData.get("bed");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -98,11 +98,11 @@ public class Suite extends Accommodation {
    * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
    * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
    */
-  @JsonIgnore public Collection<Integer> getNumberOfRoomsIntegers() {
+  @JsonIgnore public java.util.Collection<Integer> getNumberOfRoomsIntegers() {
     final Object current = myData.get("numberOfRooms");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -117,11 +117,11 @@ public class Suite extends Accommodation {
    * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
    * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
    */
-  @JsonIgnore public Collection<Long> getNumberOfRoomsLongs() {
+  @JsonIgnore public java.util.Collection<Long> getNumberOfRoomsLongs() {
     final Object current = myData.get("numberOfRooms");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Long>) current;
     }
     return Arrays.asList((Long) current);
   }
@@ -136,11 +136,11 @@ public class Suite extends Accommodation {
    * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
    * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
    */
-  @JsonIgnore public Collection<Float> getNumberOfRoomsFloats() {
+  @JsonIgnore public java.util.Collection<Float> getNumberOfRoomsFloats() {
     final Object current = myData.get("numberOfRooms");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Float>) current;
     }
     return Arrays.asList((Float) current);
   }
@@ -155,11 +155,11 @@ public class Suite extends Accommodation {
    * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
    * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
    */
-  @JsonIgnore public Collection<Double> getNumberOfRoomsDoubles() {
+  @JsonIgnore public java.util.Collection<Double> getNumberOfRoomsDoubles() {
     final Object current = myData.get("numberOfRooms");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Double>) current;
     }
     return Arrays.asList((Double) current);
   }
@@ -174,11 +174,11 @@ public class Suite extends Accommodation {
    * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
    * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
    */
-  @JsonIgnore public Collection<String> getNumberOfRoomsStrings() {
+  @JsonIgnore public java.util.Collection<String> getNumberOfRoomsStrings() {
     final Object current = myData.get("numberOfRooms");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -193,11 +193,11 @@ public class Suite extends Accommodation {
    * The allowed total occupancy for the accommodation in persons (including infants etc). For individual accommodations, this is not necessarily the legal maximum but defines the permitted usage as per the contractual agreement (e.g. a double room used by a single person).
    * Typical unit code(s): C62 for person
    */
-  @JsonIgnore public Collection<QuantitativeValue> getOccupancys() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getOccupancys() {
     final Object current = myData.get("occupancy");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }

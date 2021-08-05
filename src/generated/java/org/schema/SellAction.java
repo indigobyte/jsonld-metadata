@@ -36,11 +36,11 @@ public class SellAction extends TradeAction {
   /**
    * A sub property of participant. The participant/person/organization that bought the object.
    */
-  @JsonIgnore public Collection<Organization> getBuyerOrganizations() {
+  @JsonIgnore public java.util.Collection<Organization> getBuyerOrganizations() {
     final Object current = myData.get("buyer");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
   }
@@ -53,11 +53,11 @@ public class SellAction extends TradeAction {
   /**
    * A sub property of participant. The participant/person/organization that bought the object.
    */
-  @JsonIgnore public Collection<Person> getBuyerPersons() {
+  @JsonIgnore public java.util.Collection<Person> getBuyerPersons() {
     final Object current = myData.get("buyer");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -166,13 +166,6 @@ public class SellAction extends TradeAction {
      */
     @NotNull public Builder actionStatus(@NotNull ActionStatusType actionStatusType) {
       putValue("actionStatus", actionStatusType);
-      return this;
-    }
-    /**
-     * Indicates the current disposition of the Action.
-     */
-    @NotNull public Builder actionStatus(@NotNull ActionStatusType.Builder actionStatusType) {
-      putValue("actionStatus", actionStatusType.build());
       return this;
     }
     /**

@@ -37,11 +37,11 @@ public class HealthTopicContent extends WebContent {
   /**
    * Indicates the aspect or aspects specifically addressed in some [[HealthTopicContent]]. For example, that the content is an overview, or that it talks about treatment, self-care, treatments or their side-effects.
    */
-  @JsonIgnore public Collection<HealthAspectEnumeration> getHasHealthAspects() {
+  @JsonIgnore public java.util.Collection<HealthAspectEnumeration> getHasHealthAspects() {
     final Object current = myData.get("hasHealthAspect");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<HealthAspectEnumeration>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<HealthAspectEnumeration>) current;
     }
     return Arrays.asList((HealthAspectEnumeration) current);
   }
@@ -1481,8 +1481,8 @@ public class HealthTopicContent extends WebContent {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

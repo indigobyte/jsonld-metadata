@@ -36,11 +36,11 @@ public class ArchiveOrganization extends LocalBusiness {
   /**
    * Collection, [fonds](https://en.wikipedia.org/wiki/Fonds), or item held, kept or maintained by an [[ArchiveOrganization]].
    */
-  @JsonIgnore public Collection<ArchiveComponent> getArchiveHelds() {
+  @JsonIgnore public java.util.Collection<ArchiveComponent> getArchiveHelds() {
     final Object current = myData.get("archiveHeld");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<ArchiveComponent>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<ArchiveComponent>) current;
     }
     return Arrays.asList((ArchiveComponent) current);
   }

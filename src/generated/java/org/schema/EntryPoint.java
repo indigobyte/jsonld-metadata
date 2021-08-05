@@ -36,11 +36,11 @@ public class EntryPoint extends Intangible {
   /**
    * An HTTP method that specifies the appropriate HTTP method for a request to an HTTP EntryPoint. Values are capitalized strings as used in HTTP.
    */
-  @JsonIgnore public Collection<String> getHttpMethods() {
+  @JsonIgnore public java.util.Collection<String> getHttpMethods() {
     final Object current = myData.get("httpMethod");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -53,11 +53,11 @@ public class EntryPoint extends Intangible {
   /**
    * An url template (RFC6570) that will be used to construct the target of the execution of the action.
    */
-  @JsonIgnore public Collection<String> getUrlTemplates() {
+  @JsonIgnore public java.util.Collection<String> getUrlTemplates() {
     final Object current = myData.get("urlTemplate");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -70,11 +70,11 @@ public class EntryPoint extends Intangible {
   /**
    * The high level platform(s) where the Action can be performed for the given URL. To specify a specific application or operating system instance, use actionApplication.
    */
-  @JsonIgnore public Collection<String> getActionPlatforms() {
+  @JsonIgnore public java.util.Collection<String> getActionPlatforms() {
     final Object current = myData.get("actionPlatform");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -87,11 +87,11 @@ public class EntryPoint extends Intangible {
   /**
    * The supported encoding type(s) for an EntryPoint request.
    */
-  @JsonIgnore public Collection<String> getEncodingTypes() {
+  @JsonIgnore public java.util.Collection<String> getEncodingTypes() {
     final Object current = myData.get("encodingType");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -104,11 +104,11 @@ public class EntryPoint extends Intangible {
   /**
    * An application that can complete the request.
    */
-  @JsonIgnore public Collection<SoftwareApplication> getActionApplications() {
+  @JsonIgnore public java.util.Collection<SoftwareApplication> getActionApplications() {
     final Object current = myData.get("actionApplication");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<SoftwareApplication>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<SoftwareApplication>) current;
     }
     return Arrays.asList((SoftwareApplication) current);
   }
@@ -121,11 +121,11 @@ public class EntryPoint extends Intangible {
   /**
    * The supported content type(s) for an EntryPoint response.
    */
-  @JsonIgnore public Collection<String> getContentTypes() {
+  @JsonIgnore public java.util.Collection<String> getContentTypes() {
     final Object current = myData.get("contentType");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }

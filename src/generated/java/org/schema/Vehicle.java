@@ -36,11 +36,11 @@ public class Vehicle extends Product {
   /**
    * The number of passengers that can be seated in the vehicle, both in terms of the physical space available, and in terms of limitations set by law.\n\nTypical unit code(s): C62 for persons.
    */
-  @JsonIgnore public Collection<Number> getVehicleSeatingCapacityNumbers() {
+  @JsonIgnore public java.util.Collection<Number> getVehicleSeatingCapacityNumbers() {
     final Object current = myData.get("vehicleSeatingCapacity");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Number>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Number>) current;
     }
     return Arrays.asList((Number) current);
   }
@@ -53,11 +53,11 @@ public class Vehicle extends Product {
   /**
    * The number of passengers that can be seated in the vehicle, both in terms of the physical space available, and in terms of limitations set by law.\n\nTypical unit code(s): C62 for persons.
    */
-  @JsonIgnore public Collection<QuantitativeValue> getVehicleSeatingCapacityQuantitativeValues() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getVehicleSeatingCapacityQuantitativeValues() {
     final Object current = myData.get("vehicleSeatingCapacity");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -70,11 +70,11 @@ public class Vehicle extends Product {
   /**
    * The drive wheel configuration, i.e. which roadwheels will receive torque from the vehicle's engine via the drivetrain.
    */
-  @JsonIgnore public Collection<DriveWheelConfigurationValue> getDriveWheelConfigurationDriveWheelConfigurationValues() {
+  @JsonIgnore public java.util.Collection<DriveWheelConfigurationValue> getDriveWheelConfigurationDriveWheelConfigurationValues() {
     final Object current = myData.get("driveWheelConfiguration");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DriveWheelConfigurationValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<DriveWheelConfigurationValue>) current;
     }
     return Arrays.asList((DriveWheelConfigurationValue) current);
   }
@@ -87,11 +87,11 @@ public class Vehicle extends Product {
   /**
    * The drive wheel configuration, i.e. which roadwheels will receive torque from the vehicle's engine via the drivetrain.
    */
-  @JsonIgnore public Collection<String> getDriveWheelConfigurationStrings() {
+  @JsonIgnore public java.util.Collection<String> getDriveWheelConfigurationStrings() {
     final Object current = myData.get("driveWheelConfiguration");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -104,11 +104,11 @@ public class Vehicle extends Product {
   /**
    * The date the item e.g. vehicle was purchased by the current owner.
    */
-  @JsonIgnore public Collection<java.util.Date> getPurchaseDates() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getPurchaseDates() {
     final Object current = myData.get("purchaseDate");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -121,11 +121,11 @@ public class Vehicle extends Product {
   /**
    * A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
    */
-  @JsonIgnore public Collection<Identifier> getCallSigns() {
+  @JsonIgnore public java.util.Collection<Identifier> getCallSigns() {
     final Object current = myData.get("callSign");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Identifier>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Identifier>) current;
     }
     return Arrays.asList((Identifier) current);
   }
@@ -138,11 +138,11 @@ public class Vehicle extends Product {
   /**
    * The amount of fuel consumed for traveling a particular distance or temporal duration with the given vehicle (e.g. liters per 100 km).\n\n* Note 1: There are unfortunately no standard unit codes for liters per 100 km.  Use [[unitText]] to indicate the unit of measurement, e.g. L/100 km.\n* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.\n* Note 3: Often, the absolute value is useful only when related to driving speed (&quot;at 80 km/h&quot;) or usage pattern (&quot;city traffic&quot;). You can use [[valueReference]] to link the value for the fuel consumption to another value.
    */
-  @JsonIgnore public Collection<QuantitativeValue> getFuelConsumptions() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getFuelConsumptions() {
     final Object current = myData.get("fuelConsumption");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -155,11 +155,11 @@ public class Vehicle extends Product {
   /**
    * A short text indicating the configuration of the vehicle, e.g. '5dr hatchback ST 2.5 MT 225 hp' or 'limited edition'.
    */
-  @JsonIgnore public Collection<String> getVehicleConfigurations() {
+  @JsonIgnore public java.util.Collection<String> getVehicleConfigurations() {
     final Object current = myData.get("vehicleConfiguration");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -172,11 +172,11 @@ public class Vehicle extends Product {
   /**
    * The permitted vertical load (TWR) of a trailer attached to the vehicle. Also referred to as Tongue Load Rating (TLR) or Vertical Load Rating (VLR)\n\nTypical unit code(s): KGM for kilogram, LBR for pound\n\n* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.\n* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].\n* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
    */
-  @JsonIgnore public Collection<QuantitativeValue> getTongueWeights() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getTongueWeights() {
     final Object current = myData.get("tongueWeight");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -189,11 +189,11 @@ public class Vehicle extends Product {
   /**
    * The number of doors.\n\nTypical unit code(s): C62
    */
-  @JsonIgnore public Collection<Integer> getNumberOfDoorsIntegers() {
+  @JsonIgnore public java.util.Collection<Integer> getNumberOfDoorsIntegers() {
     final Object current = myData.get("numberOfDoors");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -206,11 +206,11 @@ public class Vehicle extends Product {
   /**
    * The number of doors.\n\nTypical unit code(s): C62
    */
-  @JsonIgnore public Collection<Long> getNumberOfDoorsLongs() {
+  @JsonIgnore public java.util.Collection<Long> getNumberOfDoorsLongs() {
     final Object current = myData.get("numberOfDoors");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Long>) current;
     }
     return Arrays.asList((Long) current);
   }
@@ -223,11 +223,11 @@ public class Vehicle extends Product {
   /**
    * The number of doors.\n\nTypical unit code(s): C62
    */
-  @JsonIgnore public Collection<Float> getNumberOfDoorsFloats() {
+  @JsonIgnore public java.util.Collection<Float> getNumberOfDoorsFloats() {
     final Object current = myData.get("numberOfDoors");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Float>) current;
     }
     return Arrays.asList((Float) current);
   }
@@ -240,11 +240,11 @@ public class Vehicle extends Product {
   /**
    * The number of doors.\n\nTypical unit code(s): C62
    */
-  @JsonIgnore public Collection<Double> getNumberOfDoorsDoubles() {
+  @JsonIgnore public java.util.Collection<Double> getNumberOfDoorsDoubles() {
     final Object current = myData.get("numberOfDoors");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Double>) current;
     }
     return Arrays.asList((Double) current);
   }
@@ -257,11 +257,11 @@ public class Vehicle extends Product {
   /**
    * The number of doors.\n\nTypical unit code(s): C62
    */
-  @JsonIgnore public Collection<String> getNumberOfDoorsStrings() {
+  @JsonIgnore public java.util.Collection<String> getNumberOfDoorsStrings() {
     final Object current = myData.get("numberOfDoors");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -274,11 +274,11 @@ public class Vehicle extends Product {
   /**
    * The total number of forward gears available for the transmission system of the vehicle.\n\nTypical unit code(s): C62
    */
-  @JsonIgnore public Collection<Number> getNumberOfForwardGearsNumbers() {
+  @JsonIgnore public java.util.Collection<Number> getNumberOfForwardGearsNumbers() {
     final Object current = myData.get("numberOfForwardGears");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Number>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Number>) current;
     }
     return Arrays.asList((Number) current);
   }
@@ -291,11 +291,11 @@ public class Vehicle extends Product {
   /**
    * The total number of forward gears available for the transmission system of the vehicle.\n\nTypical unit code(s): C62
    */
-  @JsonIgnore public Collection<QuantitativeValue> getNumberOfForwardGearsQuantitativeValues() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getNumberOfForwardGearsQuantitativeValues() {
     final Object current = myData.get("numberOfForwardGears");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -308,11 +308,11 @@ public class Vehicle extends Product {
   /**
    * The number of owners of the vehicle, including the current one.\n\nTypical unit code(s): C62
    */
-  @JsonIgnore public Collection<Number> getNumberOfPreviousOwnersNumbers() {
+  @JsonIgnore public java.util.Collection<Number> getNumberOfPreviousOwnersNumbers() {
     final Object current = myData.get("numberOfPreviousOwners");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Number>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Number>) current;
     }
     return Arrays.asList((Number) current);
   }
@@ -325,11 +325,11 @@ public class Vehicle extends Product {
   /**
    * The number of owners of the vehicle, including the current one.\n\nTypical unit code(s): C62
    */
-  @JsonIgnore public Collection<QuantitativeValue> getNumberOfPreviousOwnersQuantitativeValues() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getNumberOfPreviousOwnersQuantitativeValues() {
     final Object current = myData.get("numberOfPreviousOwners");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -342,11 +342,11 @@ public class Vehicle extends Product {
   /**
    * The speed range of the vehicle. If the vehicle is powered by an engine, the upper limit of the speed range (indicated by [[maxValue]] should be the maximum speed achievable under regular conditions.\n\nTypical unit code(s): KMH for km/h, HM for mile per hour (0.447 04 m/s), KNT for knot\n\n*Note 1: Use [[minValue]] and [[maxValue]] to indicate the range. Typically, the minimal value is zero.\n* Note 2: There are many different ways of measuring the speed range. You can link to information about how the given value has been determined using the [[valueReference]] property.
    */
-  @JsonIgnore public Collection<QuantitativeValue> getSpeeds() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getSpeeds() {
     final Object current = myData.get("speed");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -359,11 +359,11 @@ public class Vehicle extends Product {
   /**
    * The number of persons that can be seated (e.g. in a vehicle), both in terms of the physical space available, and in terms of limitations set by law.\n\nTypical unit code(s): C62 for persons 
    */
-  @JsonIgnore public Collection<Number> getSeatingCapacityNumbers() {
+  @JsonIgnore public java.util.Collection<Number> getSeatingCapacityNumbers() {
     final Object current = myData.get("seatingCapacity");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Number>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Number>) current;
     }
     return Arrays.asList((Number) current);
   }
@@ -376,11 +376,11 @@ public class Vehicle extends Product {
   /**
    * The number of persons that can be seated (e.g. in a vehicle), both in terms of the physical space available, and in terms of limitations set by law.\n\nTypical unit code(s): C62 for persons 
    */
-  @JsonIgnore public Collection<QuantitativeValue> getSeatingCapacityQuantitativeValues() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getSeatingCapacityQuantitativeValues() {
     final Object current = myData.get("seatingCapacity");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -393,11 +393,11 @@ public class Vehicle extends Product {
   /**
    * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
    */
-  @JsonIgnore public Collection<QualitativeValue> getFuelTypeQualitativeValues() {
+  @JsonIgnore public java.util.Collection<QualitativeValue> getFuelTypeQualitativeValues() {
     final Object current = myData.get("fuelType");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QualitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QualitativeValue>) current;
     }
     return Arrays.asList((QualitativeValue) current);
   }
@@ -410,11 +410,11 @@ public class Vehicle extends Product {
   /**
    * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
    */
-  @JsonIgnore public Collection<String> getFuelTypeStrings() {
+  @JsonIgnore public java.util.Collection<String> getFuelTypeStrings() {
     final Object current = myData.get("fuelType");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -427,11 +427,11 @@ public class Vehicle extends Product {
   /**
    * Information about the engine or engines of the vehicle.
    */
-  @JsonIgnore public Collection<EngineSpecification> getVehicleEngines() {
+  @JsonIgnore public java.util.Collection<EngineSpecification> getVehicleEngines() {
     final Object current = myData.get("vehicleEngine");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<EngineSpecification>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<EngineSpecification>) current;
     }
     return Arrays.asList((EngineSpecification) current);
   }
@@ -444,11 +444,11 @@ public class Vehicle extends Product {
   /**
    * The type or material of the interior of the vehicle (e.g. synthetic fabric, leather, wood, etc.). While most interior types are characterized by the material used, an interior type can also be based on vehicle usage or target audience.
    */
-  @JsonIgnore public Collection<String> getVehicleInteriorTypes() {
+  @JsonIgnore public java.util.Collection<String> getVehicleInteriorTypes() {
     final Object current = myData.get("vehicleInteriorType");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -461,11 +461,11 @@ public class Vehicle extends Product {
   /**
    * The position of the steering wheel or similar device (mostly for cars).
    */
-  @JsonIgnore public Collection<SteeringPositionValue> getSteeringPositions() {
+  @JsonIgnore public java.util.Collection<SteeringPositionValue> getSteeringPositions() {
     final Object current = myData.get("steeringPosition");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<SteeringPositionValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<SteeringPositionValue>) current;
     }
     return Arrays.asList((SteeringPositionValue) current);
   }
@@ -478,11 +478,11 @@ public class Vehicle extends Product {
   /**
    * The color or color combination of the interior of the vehicle.
    */
-  @JsonIgnore public Collection<String> getVehicleInteriorColors() {
+  @JsonIgnore public java.util.Collection<String> getVehicleInteriorColors() {
     final Object current = myData.get("vehicleInteriorColor");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -495,11 +495,11 @@ public class Vehicle extends Product {
   /**
    * The total distance travelled by the particular vehicle since its initial production, as read from its odometer.\n\nTypical unit code(s): KMT for kilometers, SMI for statute miles
    */
-  @JsonIgnore public Collection<QuantitativeValue> getMileageFromOdometers() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getMileageFromOdometers() {
     final Object current = myData.get("mileageFromOdometer");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -512,11 +512,11 @@ public class Vehicle extends Product {
   /**
    * The capacity of the fuel tank or in the case of electric cars, the battery. If there are multiple components for storage, this should indicate the total of all storage of the same type.\n\nTypical unit code(s): LTR for liters, GLL of US gallons, GLI for UK / imperial gallons, AMH for ampere-hours (for electrical vehicles).
    */
-  @JsonIgnore public Collection<QuantitativeValue> getFuelCapacitys() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getFuelCapacitys() {
     final Object current = myData.get("fuelCapacity");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -529,11 +529,11 @@ public class Vehicle extends Product {
   /**
    * The number of axles.\n\nTypical unit code(s): C62
    */
-  @JsonIgnore public Collection<Integer> getNumberOfAxlesIntegers() {
+  @JsonIgnore public java.util.Collection<Integer> getNumberOfAxlesIntegers() {
     final Object current = myData.get("numberOfAxles");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -546,11 +546,11 @@ public class Vehicle extends Product {
   /**
    * The number of axles.\n\nTypical unit code(s): C62
    */
-  @JsonIgnore public Collection<Long> getNumberOfAxlesLongs() {
+  @JsonIgnore public java.util.Collection<Long> getNumberOfAxlesLongs() {
     final Object current = myData.get("numberOfAxles");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Long>) current;
     }
     return Arrays.asList((Long) current);
   }
@@ -563,11 +563,11 @@ public class Vehicle extends Product {
   /**
    * The number of axles.\n\nTypical unit code(s): C62
    */
-  @JsonIgnore public Collection<Float> getNumberOfAxlesFloats() {
+  @JsonIgnore public java.util.Collection<Float> getNumberOfAxlesFloats() {
     final Object current = myData.get("numberOfAxles");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Float>) current;
     }
     return Arrays.asList((Float) current);
   }
@@ -580,11 +580,11 @@ public class Vehicle extends Product {
   /**
    * The number of axles.\n\nTypical unit code(s): C62
    */
-  @JsonIgnore public Collection<Double> getNumberOfAxlesDoubles() {
+  @JsonIgnore public java.util.Collection<Double> getNumberOfAxlesDoubles() {
     final Object current = myData.get("numberOfAxles");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Double>) current;
     }
     return Arrays.asList((Double) current);
   }
@@ -597,11 +597,11 @@ public class Vehicle extends Product {
   /**
    * The number of axles.\n\nTypical unit code(s): C62
    */
-  @JsonIgnore public Collection<String> getNumberOfAxlesStrings() {
+  @JsonIgnore public java.util.Collection<String> getNumberOfAxlesStrings() {
     final Object current = myData.get("numberOfAxles");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -614,11 +614,11 @@ public class Vehicle extends Product {
   /**
    * Indicates the design and body style of the vehicle (e.g. station wagon, hatchback, etc.).
    */
-  @JsonIgnore public Collection<QualitativeValue> getBodyTypeQualitativeValues() {
+  @JsonIgnore public java.util.Collection<QualitativeValue> getBodyTypeQualitativeValues() {
     final Object current = myData.get("bodyType");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QualitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QualitativeValue>) current;
     }
     return Arrays.asList((QualitativeValue) current);
   }
@@ -631,11 +631,11 @@ public class Vehicle extends Product {
   /**
    * Indicates the design and body style of the vehicle (e.g. station wagon, hatchback, etc.).
    */
-  @JsonIgnore public Collection<String> getBodyTypeStrings() {
+  @JsonIgnore public java.util.Collection<String> getBodyTypeStrings() {
     final Object current = myData.get("bodyType");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -648,11 +648,11 @@ public class Vehicle extends Product {
   /**
    * The permitted total weight of the loaded vehicle, including passengers and cargo and the weight of the empty vehicle.\n\nTypical unit code(s): KGM for kilogram, LBR for pound\n\n* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.\n* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].\n* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
    */
-  @JsonIgnore public Collection<QuantitativeValue> getWeightTotals() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getWeightTotals() {
     final Object current = myData.get("weightTotal");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -665,11 +665,11 @@ public class Vehicle extends Product {
   /**
    * The CO2 emissions in g/km. When used in combination with a QuantitativeValue, put &quot;g/km&quot; into the unitText property of that value, since there is no UN/CEFACT Common Code for &quot;g/km&quot;.
    */
-  @JsonIgnore public Collection<Integer> getEmissionsCO2Integers() {
+  @JsonIgnore public java.util.Collection<Integer> getEmissionsCO2Integers() {
     final Object current = myData.get("emissionsCO2");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -682,11 +682,11 @@ public class Vehicle extends Product {
   /**
    * The CO2 emissions in g/km. When used in combination with a QuantitativeValue, put &quot;g/km&quot; into the unitText property of that value, since there is no UN/CEFACT Common Code for &quot;g/km&quot;.
    */
-  @JsonIgnore public Collection<Long> getEmissionsCO2Longs() {
+  @JsonIgnore public java.util.Collection<Long> getEmissionsCO2Longs() {
     final Object current = myData.get("emissionsCO2");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Long>) current;
     }
     return Arrays.asList((Long) current);
   }
@@ -699,11 +699,11 @@ public class Vehicle extends Product {
   /**
    * The CO2 emissions in g/km. When used in combination with a QuantitativeValue, put &quot;g/km&quot; into the unitText property of that value, since there is no UN/CEFACT Common Code for &quot;g/km&quot;.
    */
-  @JsonIgnore public Collection<Float> getEmissionsCO2Floats() {
+  @JsonIgnore public java.util.Collection<Float> getEmissionsCO2Floats() {
     final Object current = myData.get("emissionsCO2");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Float>) current;
     }
     return Arrays.asList((Float) current);
   }
@@ -716,11 +716,11 @@ public class Vehicle extends Product {
   /**
    * The CO2 emissions in g/km. When used in combination with a QuantitativeValue, put &quot;g/km&quot; into the unitText property of that value, since there is no UN/CEFACT Common Code for &quot;g/km&quot;.
    */
-  @JsonIgnore public Collection<Double> getEmissionsCO2Doubles() {
+  @JsonIgnore public java.util.Collection<Double> getEmissionsCO2Doubles() {
     final Object current = myData.get("emissionsCO2");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Double>) current;
     }
     return Arrays.asList((Double) current);
   }
@@ -733,11 +733,11 @@ public class Vehicle extends Product {
   /**
    * The CO2 emissions in g/km. When used in combination with a QuantitativeValue, put &quot;g/km&quot; into the unitText property of that value, since there is no UN/CEFACT Common Code for &quot;g/km&quot;.
    */
-  @JsonIgnore public Collection<String> getEmissionsCO2Strings() {
+  @JsonIgnore public java.util.Collection<String> getEmissionsCO2Strings() {
     final Object current = myData.get("emissionsCO2");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -750,11 +750,11 @@ public class Vehicle extends Product {
   /**
    * The permitted weight of passengers and cargo, EXCLUDING the weight of the empty vehicle.\n\nTypical unit code(s): KGM for kilogram, LBR for pound\n\n* Note 1: Many databases specify the permitted TOTAL weight instead, which is the sum of [[weight]] and [[payload]]\n* Note 2: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.\n* Note 3: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].\n* Note 4: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
    */
-  @JsonIgnore public Collection<QuantitativeValue> getPayloads() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getPayloads() {
     final Object current = myData.get("payload");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -767,11 +767,11 @@ public class Vehicle extends Product {
   /**
    * The date of the first registration of the vehicle with the respective public authorities.
    */
-  @JsonIgnore public Collection<java.util.Date> getDateVehicleFirstRegistereds() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getDateVehicleFirstRegistereds() {
     final Object current = myData.get("dateVehicleFirstRegistered");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -784,11 +784,11 @@ public class Vehicle extends Product {
   /**
    * Indicates whether the vehicle has been used for special purposes, like commercial rental, driving school, or as a taxi. The legislation in many countries requires this information to be revealed when offering a car for sale.
    */
-  @JsonIgnore public Collection<CarUsageType> getVehicleSpecialUsageCarUsageTypes() {
+  @JsonIgnore public java.util.Collection<CarUsageType> getVehicleSpecialUsageCarUsageTypes() {
     final Object current = myData.get("vehicleSpecialUsage");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<CarUsageType>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<CarUsageType>) current;
     }
     return Arrays.asList((CarUsageType) current);
   }
@@ -801,11 +801,11 @@ public class Vehicle extends Product {
   /**
    * Indicates whether the vehicle has been used for special purposes, like commercial rental, driving school, or as a taxi. The legislation in many countries requires this information to be revealed when offering a car for sale.
    */
-  @JsonIgnore public Collection<String> getVehicleSpecialUsageStrings() {
+  @JsonIgnore public java.util.Collection<String> getVehicleSpecialUsageStrings() {
     final Object current = myData.get("vehicleSpecialUsage");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -818,11 +818,11 @@ public class Vehicle extends Product {
   /**
    * Indicates that the vehicle meets the respective emission standard.
    */
-  @JsonIgnore public Collection<QualitativeValue> getMeetsEmissionStandardQualitativeValues() {
+  @JsonIgnore public java.util.Collection<QualitativeValue> getMeetsEmissionStandardQualitativeValues() {
     final Object current = myData.get("meetsEmissionStandard");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QualitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QualitativeValue>) current;
     }
     return Arrays.asList((QualitativeValue) current);
   }
@@ -835,11 +835,11 @@ public class Vehicle extends Product {
   /**
    * Indicates that the vehicle meets the respective emission standard.
    */
-  @JsonIgnore public Collection<String> getMeetsEmissionStandardStrings() {
+  @JsonIgnore public java.util.Collection<String> getMeetsEmissionStandardStrings() {
     final Object current = myData.get("meetsEmissionStandard");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -852,11 +852,11 @@ public class Vehicle extends Product {
   /**
    * The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) (&quot;gearbox&quot; for cars).
    */
-  @JsonIgnore public Collection<QualitativeValue> getVehicleTransmissionQualitativeValues() {
+  @JsonIgnore public java.util.Collection<QualitativeValue> getVehicleTransmissionQualitativeValues() {
     final Object current = myData.get("vehicleTransmission");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QualitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QualitativeValue>) current;
     }
     return Arrays.asList((QualitativeValue) current);
   }
@@ -869,11 +869,11 @@ public class Vehicle extends Product {
   /**
    * The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) (&quot;gearbox&quot; for cars).
    */
-  @JsonIgnore public Collection<String> getVehicleTransmissionStrings() {
+  @JsonIgnore public java.util.Collection<String> getVehicleTransmissionStrings() {
     final Object current = myData.get("vehicleTransmission");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -886,11 +886,11 @@ public class Vehicle extends Product {
   /**
    * The available volume for cargo or luggage. For automobiles, this is usually the trunk volume.\n\nTypical unit code(s): LTR for liters, FTQ for cubic foot/feet\n\nNote: You can use [[minValue]] and [[maxValue]] to indicate ranges.
    */
-  @JsonIgnore public Collection<QuantitativeValue> getCargoVolumes() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getCargoVolumes() {
     final Object current = myData.get("cargoVolume");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -903,11 +903,11 @@ public class Vehicle extends Product {
   /**
    * The distance traveled per unit of fuel used; most commonly miles per gallon (mpg) or kilometers per liter (km/L).\n\n* Note 1: There are unfortunately no standard unit codes for miles per gallon or kilometers per liter. Use [[unitText]] to indicate the unit of measurement, e.g. mpg or km/L.\n* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.\n* Note 3: Often, the absolute value is useful only when related to driving speed (&quot;at 80 km/h&quot;) or usage pattern (&quot;city traffic&quot;). You can use [[valueReference]] to link the value for the fuel economy to another value.
    */
-  @JsonIgnore public Collection<QuantitativeValue> getFuelEfficiencys() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getFuelEfficiencys() {
     final Object current = myData.get("fuelEfficiency");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -920,11 +920,11 @@ public class Vehicle extends Product {
   /**
    * The Vehicle Identification Number (VIN) is a unique serial number used by the automotive industry to identify individual motor vehicles.
    */
-  @JsonIgnore public Collection<SerialNumber> getVehicleIdentificationNumbers() {
+  @JsonIgnore public java.util.Collection<SerialNumber> getVehicleIdentificationNumbers() {
     final Object current = myData.get("vehicleIdentificationNumber");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<SerialNumber>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<SerialNumber>) current;
     }
     return Arrays.asList((SerialNumber) current);
   }
@@ -937,11 +937,11 @@ public class Vehicle extends Product {
   /**
    * The distance between the centers of the front and rear wheels.\n\nTypical unit code(s): CMT for centimeters, MTR for meters, INH for inches, FOT for foot/feet
    */
-  @JsonIgnore public Collection<QuantitativeValue> getWheelbases() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getWheelbases() {
     final Object current = myData.get("wheelbase");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -954,11 +954,11 @@ public class Vehicle extends Product {
   /**
    * The date of production of the item, e.g. vehicle.
    */
-  @JsonIgnore public Collection<java.util.Date> getProductionDates() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getProductionDates() {
     final Object current = myData.get("productionDate");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -971,11 +971,11 @@ public class Vehicle extends Product {
   /**
    * The permitted weight of a trailer attached to the vehicle.\n\nTypical unit code(s): KGM for kilogram, LBR for pound\n* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.\n* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].\n* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
    */
-  @JsonIgnore public Collection<QuantitativeValue> getTrailerWeights() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getTrailerWeights() {
     final Object current = myData.get("trailerWeight");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -988,11 +988,11 @@ public class Vehicle extends Product {
   /**
    * The number or type of airbags in the vehicle.
    */
-  @JsonIgnore public Collection<Number> getNumberOfAirbagsNumbers() {
+  @JsonIgnore public java.util.Collection<Number> getNumberOfAirbagsNumbers() {
     final Object current = myData.get("numberOfAirbags");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Number>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Number>) current;
     }
     return Arrays.asList((Number) current);
   }
@@ -1005,11 +1005,11 @@ public class Vehicle extends Product {
   /**
    * The number or type of airbags in the vehicle.
    */
-  @JsonIgnore public Collection<String> getNumberOfAirbagsStrings() {
+  @JsonIgnore public java.util.Collection<String> getNumberOfAirbagsStrings() {
     final Object current = myData.get("numberOfAirbags");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -1022,11 +1022,11 @@ public class Vehicle extends Product {
   /**
    * The time needed to accelerate the vehicle from a given start velocity to a given target velocity.\n\nTypical unit code(s): SEC for seconds\n\n* Note: There are unfortunately no standard unit codes for seconds/0..100 km/h or seconds/0..60 mph. Simply use &quot;SEC&quot; for seconds and indicate the velocities in the [[name]] of the [[QuantitativeValue]], or use [[valueReference]] with a [[QuantitativeValue]] of 0..60 mph or 0..100 km/h to specify the reference speeds.
    */
-  @JsonIgnore public Collection<QuantitativeValue> getAccelerationTimes() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getAccelerationTimes() {
     final Object current = myData.get("accelerationTime");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -1039,11 +1039,11 @@ public class Vehicle extends Product {
   /**
    * A textual description of known damages, both repaired and unrepaired.
    */
-  @JsonIgnore public Collection<String> getKnownVehicleDamagess() {
+  @JsonIgnore public java.util.Collection<String> getKnownVehicleDamagess() {
     final Object current = myData.get("knownVehicleDamages");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -1056,11 +1056,11 @@ public class Vehicle extends Product {
   /**
    * The release date of a vehicle model (often used to differentiate versions of the same make and model).
    */
-  @JsonIgnore public Collection<java.util.Date> getModelDates() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getModelDates() {
     final Object current = myData.get("modelDate");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -1073,11 +1073,11 @@ public class Vehicle extends Product {
   /**
    * This is a StupidProperty! - for testing only
    */
-  @JsonIgnore public Collection<QuantitativeValue> getStupidPropertys() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getStupidPropertys() {
     final Object current = myData.get("stupidProperty");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -1090,11 +1090,11 @@ public class Vehicle extends Product {
   /**
    * The release date of a vehicle model (often used to differentiate versions of the same make and model).
    */
-  @JsonIgnore public Collection<java.util.Date> getVehicleModelDates() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getVehicleModelDates() {
     final Object current = myData.get("vehicleModelDate");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }

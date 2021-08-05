@@ -36,11 +36,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
    */
-  @JsonIgnore public Collection<String> getKnowsAboutStrings() {
+  @JsonIgnore public java.util.Collection<String> getKnowsAboutStrings() {
     final Object current = myData.get("knowsAbout");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -53,11 +53,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
    */
-  @JsonIgnore public Collection<Thing> getKnowsAboutThings() {
+  @JsonIgnore public java.util.Collection<Thing> getKnowsAboutThings() {
     final Object current = myData.get("knowsAbout");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Thing>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Thing>) current;
     }
     return Arrays.asList((Thing) current);
   }
@@ -70,11 +70,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * A pointer to products or services sought by the organization or person (demand).
    */
-  @JsonIgnore public Collection<Demand> getSeekss() {
+  @JsonIgnore public java.util.Collection<Demand> getSeekss() {
     final Object current = myData.get("seeks");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Demand>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Demand>) current;
     }
     return Arrays.asList((Demand) current);
   }
@@ -87,11 +87,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * A sibling of the person.
    */
-  @JsonIgnore public Collection<Person> getSiblings() {
+  @JsonIgnore public java.util.Collection<Person> getSiblings() {
     final Object current = myData.get("sibling");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -104,11 +104,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
    */
-  @JsonIgnore public Collection<Identifier> getCallSigns() {
+  @JsonIgnore public java.util.Collection<Identifier> getCallSigns() {
     final Object current = myData.get("callSign");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Identifier>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Identifier>) current;
     }
     return Arrays.asList((Identifier) current);
   }
@@ -121,11 +121,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * A contact location for a person's residence.
    */
-  @JsonIgnore public Collection<ContactPoint> getHomeLocationContactPoints() {
+  @JsonIgnore public java.util.Collection<ContactPoint> getHomeLocationContactPoints() {
     final Object current = myData.get("homeLocation");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<ContactPoint>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<ContactPoint>) current;
     }
     return Arrays.asList((ContactPoint) current);
   }
@@ -138,11 +138,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * A contact location for a person's residence.
    */
-  @JsonIgnore public Collection<Place> getHomeLocationPlaces() {
+  @JsonIgnore public java.util.Collection<Place> getHomeLocationPlaces() {
     final Object current = myData.get("homeLocation");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Place>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Place>) current;
     }
     return Arrays.asList((Place) current);
   }
@@ -155,11 +155,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * The Dun &amp; Bradstreet DUNS number for identifying an organization or business person.
    */
-  @JsonIgnore public Collection<String> getDunss() {
+  @JsonIgnore public java.util.Collection<String> getDunss() {
     final Object current = myData.get("duns");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -172,11 +172,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * A contact point for a person or organization.
    */
-  @JsonIgnore public Collection<ContactPoint> getContactPoints() {
+  @JsonIgnore public java.util.Collection<ContactPoint> getContactPoints() {
     final Object current = myData.get("contactPoint");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<ContactPoint>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<ContactPoint>) current;
     }
     return Arrays.asList((ContactPoint) current);
   }
@@ -189,11 +189,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * Organizations that the person works for.
    */
-  @JsonIgnore public Collection<Organization> getWorksFors() {
+  @JsonIgnore public java.util.Collection<Organization> getWorksFors() {
     final Object current = myData.get("worksFor");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
   }
@@ -206,11 +206,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * A contact location for a person's place of work.
    */
-  @JsonIgnore public Collection<Location> getWorkLocations() {
+  @JsonIgnore public java.util.Collection<Location> getWorkLocations() {
     final Object current = myData.get("workLocation");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Location>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Location>) current;
     }
     return Arrays.asList((Location) current);
   }
@@ -223,11 +223,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * The Person's occupation. For past professions, use Role for expressing dates.
    */
-  @JsonIgnore public Collection<Occupation> getHasOccupations() {
+  @JsonIgnore public java.util.Collection<Occupation> getHasOccupations() {
     final Object current = myData.get("hasOccupation");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Occupation>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Occupation>) current;
     }
     return Arrays.asList((Occupation) current);
   }
@@ -240,11 +240,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * Given name. In the U.S., the first name of a Person.
    */
-  @JsonIgnore public Collection<String> getGivenNames() {
+  @JsonIgnore public java.util.Collection<String> getGivenNames() {
     final Object current = myData.get("givenName");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -257,11 +257,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * Email address.
    */
-  @JsonIgnore public Collection<String> getEmails() {
+  @JsonIgnore public java.util.Collection<String> getEmails() {
     final Object current = myData.get("email");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -274,11 +274,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * The telephone number.
    */
-  @JsonIgnore public Collection<String> getTelephones() {
+  @JsonIgnore public java.util.Collection<String> getTelephones() {
     final Object current = myData.get("telephone");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -291,11 +291,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
    */
-  @JsonIgnore public Collection<String> getIsicV4s() {
+  @JsonIgnore public java.util.Collection<String> getIsicV4s() {
     final Object current = myData.get("isicV4");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -308,11 +308,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * A credential awarded to the Person or Organization.
    */
-  @JsonIgnore public Collection<EducationalOccupationalCredential> getHasCredentials() {
+  @JsonIgnore public java.util.Collection<EducationalOccupationalCredential> getHasCredentials() {
     final Object current = myData.get("hasCredential");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<EducationalOccupationalCredential>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<EducationalOccupationalCredential>) current;
     }
     return Arrays.asList((EducationalOccupationalCredential) current);
   }
@@ -325,11 +325,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * The height of the item.
    */
-  @JsonIgnore public Collection<Distance> getHeightDistances() {
+  @JsonIgnore public java.util.Collection<Distance> getHeightDistances() {
     final Object current = myData.get("height");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Distance>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Distance>) current;
     }
     return Arrays.asList((Distance) current);
   }
@@ -342,11 +342,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * The height of the item.
    */
-  @JsonIgnore public Collection<QuantitativeValue> getHeightQuantitativeValues() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getHeightQuantitativeValues() {
     final Object current = myData.get("height");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -359,11 +359,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * Family name. In the U.S., the last name of a Person.
    */
-  @JsonIgnore public Collection<String> getFamilyNames() {
+  @JsonIgnore public java.util.Collection<String> getFamilyNames() {
     final Object current = myData.get("familyName");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -376,11 +376,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * Event that this person is a performer or participant in.
    */
-  @JsonIgnore public Collection<Event> getPerformerIns() {
+  @JsonIgnore public java.util.Collection<Event> getPerformerIns() {
     final Object current = myData.get("performerIn");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Event>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Event>) current;
     }
     return Arrays.asList((Event) current);
   }
@@ -393,11 +393,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
    */
-  @JsonIgnore public Collection<Identifier> getTaxIDs() {
+  @JsonIgnore public java.util.Collection<Identifier> getTaxIDs() {
     final Object current = myData.get("taxID");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Identifier>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Identifier>) current;
     }
     return Arrays.asList((Identifier) current);
   }
@@ -410,11 +410,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).
    */
-  @JsonIgnore public Collection<Language> getKnowsLanguageLanguages() {
+  @JsonIgnore public java.util.Collection<Language> getKnowsLanguageLanguages() {
     final Object current = myData.get("knowsLanguage");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Language>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Language>) current;
     }
     return Arrays.asList((Language) current);
   }
@@ -427,11 +427,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).
    */
-  @JsonIgnore public Collection<String> getKnowsLanguageStrings() {
+  @JsonIgnore public java.util.Collection<String> getKnowsLanguageStrings() {
     final Object current = myData.get("knowsLanguage");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -444,11 +444,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * An Organization (or ProgramMembership) to which this Person or Organization belongs.
    */
-  @JsonIgnore public Collection<MemberOf> getMemberOfs() {
+  @JsonIgnore public java.util.Collection<MemberOf> getMemberOfs() {
     final Object current = myData.get("memberOf");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MemberOf>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MemberOf>) current;
     }
     return Arrays.asList((MemberOf) current);
   }
@@ -461,11 +461,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * An organization that this person is affiliated with. For example, a school/university, a club, or a team.
    */
-  @JsonIgnore public Collection<Organization> getAffiliations() {
+  @JsonIgnore public java.util.Collection<Organization> getAffiliations() {
     final Object current = myData.get("affiliation");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
   }
@@ -478,11 +478,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
    */
-  @JsonIgnore public Collection<Brand> getBrandBrands() {
+  @JsonIgnore public java.util.Collection<Brand> getBrandBrands() {
     final Object current = myData.get("brand");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Brand>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Brand>) current;
     }
     return Arrays.asList((Brand) current);
   }
@@ -495,11 +495,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
    */
-  @JsonIgnore public Collection<Organization> getBrandOrganizations() {
+  @JsonIgnore public java.util.Collection<Organization> getBrandOrganizations() {
     final Object current = myData.get("brand");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
   }
@@ -512,11 +512,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * The Value-added Tax ID of the organization or person.
    */
-  @JsonIgnore public Collection<String> getVatIDs() {
+  @JsonIgnore public java.util.Collection<String> getVatIDs() {
     final Object current = myData.get("vatID");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -529,11 +529,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * Physical address of the item.
    */
-  @JsonIgnore public Collection<PostalAddress> getAddressPostalAddresss() {
+  @JsonIgnore public java.util.Collection<PostalAddress> getAddressPostalAddresss() {
     final Object current = myData.get("address");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<PostalAddress>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<PostalAddress>) current;
     }
     return Arrays.asList((PostalAddress) current);
   }
@@ -546,11 +546,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * Physical address of the item.
    */
-  @JsonIgnore public Collection<String> getAddressStrings() {
+  @JsonIgnore public java.util.Collection<String> getAddressStrings() {
     final Object current = myData.get("address");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -563,11 +563,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * Nationality of the person.
    */
-  @JsonIgnore public Collection<Country> getNationalitys() {
+  @JsonIgnore public java.util.Collection<Country> getNationalitys() {
     final Object current = myData.get("nationality");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Country>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Country>) current;
     }
     return Arrays.asList((Country) current);
   }
@@ -580,11 +580,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * Date of birth.
    */
-  @JsonIgnore public Collection<java.util.Date> getBirthDates() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getBirthDates() {
     final Object current = myData.get("birthDate");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -597,11 +597,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * The job title of the person (for example, Financial Manager).
    */
-  @JsonIgnore public Collection<DefinedTerm> getJobTitleDefinedTerms() {
+  @JsonIgnore public java.util.Collection<DefinedTerm> getJobTitleDefinedTerms() {
     final Object current = myData.get("jobTitle");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DefinedTerm>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<DefinedTerm>) current;
     }
     return Arrays.asList((DefinedTerm) current);
   }
@@ -614,11 +614,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * The job title of the person (for example, Financial Manager).
    */
-  @JsonIgnore public Collection<String> getJobTitleStrings() {
+  @JsonIgnore public java.util.Collection<String> getJobTitleStrings() {
     final Object current = myData.get("jobTitle");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -631,11 +631,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * Products owned by the organization or person.
    */
-  @JsonIgnore public Collection<OwnershipInfo> getOwnsOwnershipInfos() {
+  @JsonIgnore public java.util.Collection<OwnershipInfo> getOwnsOwnershipInfos() {
     final Object current = myData.get("owns");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<OwnershipInfo>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<OwnershipInfo>) current;
     }
     return Arrays.asList((OwnershipInfo) current);
   }
@@ -648,11 +648,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * Products owned by the organization or person.
    */
-  @JsonIgnore public Collection<Product> getOwnsProducts() {
+  @JsonIgnore public java.util.Collection<Product> getOwnsProducts() {
     final Object current = myData.get("owns");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Product>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Product>) current;
     }
     return Arrays.asList((Product) current);
   }
@@ -665,11 +665,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * The North American Industry Classification System (NAICS) code for a particular organization or business person.
    */
-  @JsonIgnore public Collection<String> getNaicss() {
+  @JsonIgnore public java.util.Collection<String> getNaicss() {
     final Object current = myData.get("naics");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -682,11 +682,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * The most generic uni-directional social relation.
    */
-  @JsonIgnore public Collection<Person> getFollowss() {
+  @JsonIgnore public java.util.Collection<Person> getFollowss() {
     final Object current = myData.get("follows");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -699,11 +699,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While http://schema.org/Male and http://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of &quot;Mixed&quot;.
    */
-  @JsonIgnore public Collection<GenderType> getGenderGenderTypes() {
+  @JsonIgnore public java.util.Collection<GenderType> getGenderGenderTypes() {
     final Object current = myData.get("gender");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<GenderType>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<GenderType>) current;
     }
     return Arrays.asList((GenderType) current);
   }
@@ -716,11 +716,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While http://schema.org/Male and http://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of &quot;Mixed&quot;.
    */
-  @JsonIgnore public Collection<String> getGenderStrings() {
+  @JsonIgnore public java.util.Collection<String> getGenderStrings() {
     final Object current = myData.get("gender");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -733,11 +733,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * Indicates an OfferCatalog listing for this Organization, Person, or Service.
    */
-  @JsonIgnore public Collection<OfferCatalog> getHasOfferCatalogs() {
+  @JsonIgnore public java.util.Collection<OfferCatalog> getHasOfferCatalogs() {
     final Object current = myData.get("hasOfferCatalog");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<OfferCatalog>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<OfferCatalog>) current;
     }
     return Arrays.asList((OfferCatalog) current);
   }
@@ -750,11 +750,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * The most generic familial relation.
    */
-  @JsonIgnore public Collection<Person> getRelatedTos() {
+  @JsonIgnore public java.util.Collection<Person> getRelatedTos() {
     final Object current = myData.get("relatedTo");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -767,11 +767,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * An honorific suffix following a Person's name such as M.D. /PhD/MSCSW.
    */
-  @JsonIgnore public Collection<String> getHonorificSuffixs() {
+  @JsonIgnore public java.util.Collection<String> getHonorificSuffixs() {
     final Object current = myData.get("honorificSuffix");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -784,11 +784,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * The place where the person was born.
    */
-  @JsonIgnore public Collection<Place> getBirthPlaces() {
+  @JsonIgnore public java.util.Collection<Place> getBirthPlaces() {
     final Object current = myData.get("birthPlace");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Place>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Place>) current;
     }
     return Arrays.asList((Place) current);
   }
@@ -801,11 +801,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
    */
-  @JsonIgnore public Collection<Identifier> getGlobalLocationNumbers() {
+  @JsonIgnore public java.util.Collection<Identifier> getGlobalLocationNumbers() {
     final Object current = myData.get("globalLocationNumber");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Identifier>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Identifier>) current;
     }
     return Arrays.asList((Identifier) current);
   }
@@ -818,11 +818,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * A person or organization that supports (sponsors) something through some kind of financial contribution.
    */
-  @JsonIgnore public Collection<Sponsor> getFunders() {
+  @JsonIgnore public java.util.Collection<Sponsor> getFunders() {
     final Object current = myData.get("funder");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Sponsor>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Sponsor>) current;
     }
     return Arrays.asList((Sponsor) current);
   }
@@ -835,11 +835,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
    */
-  @JsonIgnore public Collection<Sponsor> getSponsors() {
+  @JsonIgnore public java.util.Collection<Sponsor> getSponsors() {
     final Object current = myData.get("sponsor");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Sponsor>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Sponsor>) current;
     }
     return Arrays.asList((Sponsor) current);
   }
@@ -852,11 +852,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
    */
-  @JsonIgnore public Collection<InteractionCounter> getInteractionStatistics() {
+  @JsonIgnore public java.util.Collection<InteractionCounter> getInteractionStatistics() {
     final Object current = myData.get("interactionStatistic");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<InteractionCounter>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<InteractionCounter>) current;
     }
     return Arrays.asList((InteractionCounter) current);
   }
@@ -869,11 +869,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * The fax number.
    */
-  @JsonIgnore public Collection<String> getFaxNumbers() {
+  @JsonIgnore public java.util.Collection<String> getFaxNumbers() {
     final Object current = myData.get("faxNumber");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -886,11 +886,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * An award won by or for this item.
    */
-  @JsonIgnore public Collection<String> getAwards() {
+  @JsonIgnore public java.util.Collection<String> getAwards() {
     final Object current = myData.get("award");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -903,11 +903,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * A parent of this person.
    */
-  @JsonIgnore public Collection<Person> getParents() {
+  @JsonIgnore public java.util.Collection<Person> getParents() {
     final Object current = myData.get("parent");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -920,11 +920,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * An additional name for a Person, can be used for a middle name.
    */
-  @JsonIgnore public Collection<String> getAdditionalNames() {
+  @JsonIgnore public java.util.Collection<String> getAdditionalNames() {
     final Object current = myData.get("additionalName");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -937,11 +937,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * The weight of the product or person.
    */
-  @JsonIgnore public Collection<QuantitativeValue> getWeights() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getWeights() {
     final Object current = myData.get("weight");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -954,11 +954,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * A colleague of the person.
    */
-  @JsonIgnore public Collection<Person> getColleaguePersons() {
+  @JsonIgnore public java.util.Collection<Person> getColleaguePersons() {
     final Object current = myData.get("colleague");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -971,11 +971,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * A colleague of the person.
    */
-  @JsonIgnore public Collection<String> getColleagueStrings() {
+  @JsonIgnore public java.util.Collection<String> getColleagueStrings() {
     final Object current = myData.get("colleague");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -988,11 +988,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * A child of the person.
    */
-  @JsonIgnore public Collection<Person> getChildrens() {
+  @JsonIgnore public java.util.Collection<Person> getChildrens() {
     final Object current = myData.get("children");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -1005,11 +1005,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * The most generic bi-directional social/work relation.
    */
-  @JsonIgnore public Collection<Person> getKnowss() {
+  @JsonIgnore public java.util.Collection<Person> getKnowss() {
     final Object current = myData.get("knows");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -1022,11 +1022,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * Points-of-Sales operated by the organization or person.
    */
-  @JsonIgnore public Collection<Place> getHasPOSs() {
+  @JsonIgnore public java.util.Collection<Place> getHasPOSs() {
     final Object current = myData.get("hasPOS");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Place>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Place>) current;
     }
     return Arrays.asList((Place) current);
   }
@@ -1039,11 +1039,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * The place where the person died.
    */
-  @JsonIgnore public Collection<Place> getDeathPlaces() {
+  @JsonIgnore public java.util.Collection<Place> getDeathPlaces() {
     final Object current = myData.get("deathPlace");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Place>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Place>) current;
     }
     return Arrays.asList((Place) current);
   }
@@ -1056,11 +1056,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * The total financial value of the person as calculated by subtracting assets from liabilities.
    */
-  @JsonIgnore public Collection<MonetaryAmount> getNetWorthMonetaryAmounts() {
+  @JsonIgnore public java.util.Collection<MonetaryAmount> getNetWorthMonetaryAmounts() {
     final Object current = myData.get("netWorth");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MonetaryAmount>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MonetaryAmount>) current;
     }
     return Arrays.asList((MonetaryAmount) current);
   }
@@ -1073,11 +1073,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * The total financial value of the person as calculated by subtracting assets from liabilities.
    */
-  @JsonIgnore public Collection<PriceSpecification> getNetWorthPriceSpecifications() {
+  @JsonIgnore public java.util.Collection<PriceSpecification> getNetWorthPriceSpecifications() {
     final Object current = myData.get("netWorth");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<PriceSpecification>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<PriceSpecification>) current;
     }
     return Arrays.asList((PriceSpecification) current);
   }
@@ -1090,11 +1090,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * An honorific prefix preceding a Person's name such as Dr/Mrs/Mr.
    */
-  @JsonIgnore public Collection<String> getHonorificPrefixs() {
+  @JsonIgnore public java.util.Collection<String> getHonorificPrefixs() {
     final Object current = myData.get("honorificPrefix");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -1107,11 +1107,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * The person's spouse.
    */
-  @JsonIgnore public Collection<Person> getSpouses() {
+  @JsonIgnore public java.util.Collection<Person> getSpouses() {
     final Object current = myData.get("spouse");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -1124,11 +1124,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * Date of death.
    */
-  @JsonIgnore public Collection<java.util.Date> getDeathDates() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getDeathDates() {
     final Object current = myData.get("deathDate");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -1141,11 +1141,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * A pointer to products or services offered by the organization or person.
    */
-  @JsonIgnore public Collection<Offer> getMakesOffers() {
+  @JsonIgnore public java.util.Collection<Offer> getMakesOffers() {
     final Object current = myData.get("makesOffer");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Offer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Offer>) current;
     }
     return Arrays.asList((Offer) current);
   }
@@ -1158,11 +1158,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * An organization that the person is an alumni of.
    */
-  @JsonIgnore public Collection<EducationalOrganization> getAlumniOfEducationalOrganizations() {
+  @JsonIgnore public java.util.Collection<EducationalOrganization> getAlumniOfEducationalOrganizations() {
     final Object current = myData.get("alumniOf");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<EducationalOrganization>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<EducationalOrganization>) current;
     }
     return Arrays.asList((EducationalOrganization) current);
   }
@@ -1175,11 +1175,11 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * An organization that the person is an alumni of.
    */
-  @JsonIgnore public Collection<Organization> getAlumniOfOrganizations() {
+  @JsonIgnore public java.util.Collection<Organization> getAlumniOfOrganizations() {
     final Object current = myData.get("alumniOf");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
   }

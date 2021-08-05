@@ -36,11 +36,11 @@ public class Protein extends BioChemEntity {
   /**
    * A symbolic representation of a BioChemEnity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein.
    */
-  @JsonIgnore public Collection<String> getHasBioPolymerSequences() {
+  @JsonIgnore public java.util.Collection<String> getHasBioPolymerSequences() {
     final Object current = myData.get("hasBioPolymerSequence");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }

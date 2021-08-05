@@ -36,11 +36,11 @@ public class MerchantReturnPolicySeasonalOverride extends Intangible {
   /**
    * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
    */
-  @JsonIgnore public Collection<java.util.Date> getStartDates() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getStartDates() {
     final Object current = myData.get("startDate");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -53,11 +53,11 @@ public class MerchantReturnPolicySeasonalOverride extends Intangible {
   /**
    * Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the [[returnPolicyCategory]] property is specified as [[MerchantReturnFiniteReturnWindow]].
    */
-  @JsonIgnore public Collection<Integer> getMerchantReturnDaysIntegers() {
+  @JsonIgnore public java.util.Collection<Integer> getMerchantReturnDaysIntegers() {
     final Object current = myData.get("merchantReturnDays");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -70,11 +70,11 @@ public class MerchantReturnPolicySeasonalOverride extends Intangible {
   /**
    * Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the [[returnPolicyCategory]] property is specified as [[MerchantReturnFiniteReturnWindow]].
    */
-  @JsonIgnore public Collection<java.util.Date> getMerchantReturnDaysDates() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getMerchantReturnDaysDates() {
     final Object current = myData.get("merchantReturnDays");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -87,11 +87,11 @@ public class MerchantReturnPolicySeasonalOverride extends Intangible {
   /**
    * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
    */
-  @JsonIgnore public Collection<java.util.Date> getEndDates() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getEndDates() {
     final Object current = myData.get("endDate");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -104,11 +104,11 @@ public class MerchantReturnPolicySeasonalOverride extends Intangible {
   /**
    * Specifies an applicable return policy (from an enumeration).
    */
-  @JsonIgnore public Collection<MerchantReturnEnumeration> getReturnPolicyCategorys() {
+  @JsonIgnore public java.util.Collection<MerchantReturnEnumeration> getReturnPolicyCategorys() {
     final Object current = myData.get("returnPolicyCategory");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MerchantReturnEnumeration>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MerchantReturnEnumeration>) current;
     }
     return Arrays.asList((MerchantReturnEnumeration) current);
   }

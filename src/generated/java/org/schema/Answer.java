@@ -36,11 +36,11 @@ public class Answer extends Comment implements SuggestedAnswer {
   /**
    * A step-by-step or full explanation about Answer. Can outline how this Answer was achieved or contain more broad clarification or statement about it. 
    */
-  @JsonIgnore public Collection<Comment> getAnswerExplanationComments() {
+  @JsonIgnore public java.util.Collection<Comment> getAnswerExplanationComments() {
     final Object current = myData.get("answerExplanation");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Comment>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Comment>) current;
     }
     return Arrays.asList((Comment) current);
   }
@@ -53,11 +53,11 @@ public class Answer extends Comment implements SuggestedAnswer {
   /**
    * A step-by-step or full explanation about Answer. Can outline how this Answer was achieved or contain more broad clarification or statement about it. 
    */
-  @JsonIgnore public Collection<WebContent> getAnswerExplanationWebContents() {
+  @JsonIgnore public java.util.Collection<WebContent> getAnswerExplanationWebContents() {
     final Object current = myData.get("answerExplanation");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<WebContent>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<WebContent>) current;
     }
     return Arrays.asList((WebContent) current);
   }
@@ -1546,8 +1546,8 @@ public class Answer extends Comment implements SuggestedAnswer {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

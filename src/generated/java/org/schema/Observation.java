@@ -38,11 +38,11 @@ public class Observation extends Intangible {
   /**
    * The observedNode of an [[Observation]], often a [[StatisticalPopulation]].
    */
-  @JsonIgnore public Collection<StatisticalPopulation> getObservedNodes() {
+  @JsonIgnore public java.util.Collection<StatisticalPopulation> getObservedNodes() {
     final Object current = myData.get("observedNode");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<StatisticalPopulation>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<StatisticalPopulation>) current;
     }
     return Arrays.asList((StatisticalPopulation) current);
   }
@@ -55,11 +55,11 @@ public class Observation extends Intangible {
   /**
    * The measuredProperty of an [[Observation]], either a schema.org property, a property from other RDF-compatible systems e.g. W3C RDF Data Cube, or schema.org extensions such as [GS1's](https://www.gs1.org/voc/?show=properties).
    */
-  @JsonIgnore public Collection<Property> getMeasuredPropertys() {
+  @JsonIgnore public java.util.Collection<Property> getMeasuredPropertys() {
     final Object current = myData.get("measuredProperty");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Property>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Property>) current;
     }
     return Arrays.asList((Property) current);
   }
@@ -72,11 +72,11 @@ public class Observation extends Intangible {
   /**
    * The observationDate of an [[Observation]].
    */
-  @JsonIgnore public Collection<java.util.Date> getObservationDates() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getObservationDates() {
     final Object current = myData.get("observationDate");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -89,11 +89,11 @@ public class Observation extends Intangible {
   /**
    * A marginOfError for an [[Observation]].
    */
-  @JsonIgnore public Collection<QuantitativeValue> getMarginOfErrors() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getMarginOfErrors() {
     final Object current = myData.get("marginOfError");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -106,11 +106,11 @@ public class Observation extends Intangible {
   /**
    * The measuredValue of an [[Observation]].
    */
-  @JsonIgnore public Collection<DataType> getMeasuredValues() {
+  @JsonIgnore public java.util.Collection<DataType> getMeasuredValues() {
     final Object current = myData.get("measuredValue");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DataType>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<DataType>) current;
     }
     return Arrays.asList((DataType) current);
   }

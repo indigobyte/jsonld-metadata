@@ -36,11 +36,11 @@ public class MolecularEntity extends BioChemEntity {
   /**
    * A specification in form of a line notation for describing the structure of chemical species using short ASCII strings.  Double bond stereochemistry \ indicators may need to be escaped in the string in formats where the backslash is an escape character.
    */
-  @JsonIgnore public Collection<String> getSmiless() {
+  @JsonIgnore public java.util.Collection<String> getSmiless() {
     final Object current = myData.get("smiles");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -53,11 +53,11 @@ public class MolecularEntity extends BioChemEntity {
   /**
    * Systematic method of naming chemical compounds as recommended by the International Union of Pure and Applied Chemistry (IUPAC).
    */
-  @JsonIgnore public Collection<String> getIupacNames() {
+  @JsonIgnore public java.util.Collection<String> getIupacNames() {
     final Object current = myData.get("iupacName");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -70,11 +70,11 @@ public class MolecularEntity extends BioChemEntity {
   /**
    * The monoisotopic mass is the sum of the masses of the atoms in a molecule using the unbound, ground-state, rest mass of the principal (most abundant) isotope for each element instead of the isotopic average mass. Please include the units the form '&amp;lt;Number&amp;gt; &amp;lt;unit&amp;gt;', for example '770.230488 g/mol' or as '&amp;lt;QuantitativeValue&amp;gt;.
    */
-  @JsonIgnore public Collection<QuantitativeValue> getMonoisotopicMolecularWeightQuantitativeValues() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getMonoisotopicMolecularWeightQuantitativeValues() {
     final Object current = myData.get("monoisotopicMolecularWeight");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -87,11 +87,11 @@ public class MolecularEntity extends BioChemEntity {
   /**
    * The monoisotopic mass is the sum of the masses of the atoms in a molecule using the unbound, ground-state, rest mass of the principal (most abundant) isotope for each element instead of the isotopic average mass. Please include the units the form '&amp;lt;Number&amp;gt; &amp;lt;unit&amp;gt;', for example '770.230488 g/mol' or as '&amp;lt;QuantitativeValue&amp;gt;.
    */
-  @JsonIgnore public Collection<String> getMonoisotopicMolecularWeightStrings() {
+  @JsonIgnore public java.util.Collection<String> getMonoisotopicMolecularWeightStrings() {
     final Object current = myData.get("monoisotopicMolecularWeight");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -104,11 +104,11 @@ public class MolecularEntity extends BioChemEntity {
   /**
    * A role played by the BioChemEntity within a chemical context.
    */
-  @JsonIgnore public Collection<DefinedTerm> getChemicalRoles() {
+  @JsonIgnore public java.util.Collection<DefinedTerm> getChemicalRoles() {
     final Object current = myData.get("chemicalRole");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DefinedTerm>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<DefinedTerm>) current;
     }
     return Arrays.asList((DefinedTerm) current);
   }
@@ -121,11 +121,11 @@ public class MolecularEntity extends BioChemEntity {
   /**
    * InChIKey is a hashed version of the full InChI (using the SHA-256 algorithm).
    */
-  @JsonIgnore public Collection<String> getInChIKeys() {
+  @JsonIgnore public java.util.Collection<String> getInChIKeys() {
     final Object current = myData.get("inChIKey");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -138,11 +138,11 @@ public class MolecularEntity extends BioChemEntity {
   /**
    * This is the molecular weight of the entity being described, not of the parent. Units should be included in the form '&amp;lt;Number&amp;gt; &amp;lt;unit&amp;gt;', for example '12 amu' or as '&amp;lt;QuantitativeValue&amp;gt;.
    */
-  @JsonIgnore public Collection<QuantitativeValue> getMolecularWeightQuantitativeValues() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getMolecularWeightQuantitativeValues() {
     final Object current = myData.get("molecularWeight");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -155,11 +155,11 @@ public class MolecularEntity extends BioChemEntity {
   /**
    * This is the molecular weight of the entity being described, not of the parent. Units should be included in the form '&amp;lt;Number&amp;gt; &amp;lt;unit&amp;gt;', for example '12 amu' or as '&amp;lt;QuantitativeValue&amp;gt;.
    */
-  @JsonIgnore public Collection<String> getMolecularWeightStrings() {
+  @JsonIgnore public java.util.Collection<String> getMolecularWeightStrings() {
     final Object current = myData.get("molecularWeight");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -172,11 +172,11 @@ public class MolecularEntity extends BioChemEntity {
   /**
    * The empirical formula is the simplest whole number ratio of all the atoms in a molecule.
    */
-  @JsonIgnore public Collection<String> getMolecularFormulas() {
+  @JsonIgnore public java.util.Collection<String> getMolecularFormulas() {
     final Object current = myData.get("molecularFormula");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -189,11 +189,11 @@ public class MolecularEntity extends BioChemEntity {
   /**
    * Intended use of the BioChemEntity by humans.
    */
-  @JsonIgnore public Collection<DefinedTerm> getPotentialUses() {
+  @JsonIgnore public java.util.Collection<DefinedTerm> getPotentialUses() {
     final Object current = myData.get("potentialUse");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DefinedTerm>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<DefinedTerm>) current;
     }
     return Arrays.asList((DefinedTerm) current);
   }
@@ -206,11 +206,11 @@ public class MolecularEntity extends BioChemEntity {
   /**
    * Non-proprietary identifier for molecular entity that can be used in printed and electronic data sources thus enabling easier linking of diverse data compilations.
    */
-  @JsonIgnore public Collection<HasRepresentation> getInChIs() {
+  @JsonIgnore public java.util.Collection<HasRepresentation> getInChIs() {
     final Object current = myData.get("inChI");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<HasRepresentation>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<HasRepresentation>) current;
     }
     return Arrays.asList((HasRepresentation) current);
   }

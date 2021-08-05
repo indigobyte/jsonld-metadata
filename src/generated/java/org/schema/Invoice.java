@@ -36,11 +36,11 @@ public class Invoice extends Intangible {
   /**
    * An identifier for the method of payment used (e.g. the last 4 digits of the credit card).
    */
-  @JsonIgnore public Collection<String> getPaymentMethodIds() {
+  @JsonIgnore public java.util.Collection<String> getPaymentMethodIds() {
     final Object current = myData.get("paymentMethodId");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -53,11 +53,11 @@ public class Invoice extends Intangible {
   /**
    * The total amount due.
    */
-  @JsonIgnore public Collection<MonetaryAmount> getTotalPaymentDueMonetaryAmounts() {
+  @JsonIgnore public java.util.Collection<MonetaryAmount> getTotalPaymentDueMonetaryAmounts() {
     final Object current = myData.get("totalPaymentDue");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MonetaryAmount>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MonetaryAmount>) current;
     }
     return Arrays.asList((MonetaryAmount) current);
   }
@@ -70,11 +70,11 @@ public class Invoice extends Intangible {
   /**
    * The total amount due.
    */
-  @JsonIgnore public Collection<PriceSpecification> getTotalPaymentDuePriceSpecifications() {
+  @JsonIgnore public java.util.Collection<PriceSpecification> getTotalPaymentDuePriceSpecifications() {
     final Object current = myData.get("totalPaymentDue");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<PriceSpecification>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<PriceSpecification>) current;
     }
     return Arrays.asList((PriceSpecification) current);
   }
@@ -87,11 +87,11 @@ public class Invoice extends Intangible {
   /**
    * Party placing the order or paying the invoice.
    */
-  @JsonIgnore public Collection<Organization> getCustomerOrganizations() {
+  @JsonIgnore public java.util.Collection<Organization> getCustomerOrganizations() {
     final Object current = myData.get("customer");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
   }
@@ -104,11 +104,11 @@ public class Invoice extends Intangible {
   /**
    * Party placing the order or paying the invoice.
    */
-  @JsonIgnore public Collection<Person> getCustomerPersons() {
+  @JsonIgnore public java.util.Collection<Person> getCustomerPersons() {
     final Object current = myData.get("customer");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -121,11 +121,11 @@ public class Invoice extends Intangible {
   /**
    * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
    */
-  @JsonIgnore public Collection<Organization> getProviderOrganizations() {
+  @JsonIgnore public java.util.Collection<Organization> getProviderOrganizations() {
     final Object current = myData.get("provider");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
   }
@@ -138,11 +138,11 @@ public class Invoice extends Intangible {
   /**
    * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
    */
-  @JsonIgnore public Collection<Person> getProviderPersons() {
+  @JsonIgnore public java.util.Collection<Person> getProviderPersons() {
     final Object current = myData.get("provider");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -155,11 +155,11 @@ public class Invoice extends Intangible {
   /**
    * The date the invoice is scheduled to be paid.
    */
-  @JsonIgnore public Collection<java.util.Date> getScheduledPaymentDates() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getScheduledPaymentDates() {
     final Object current = myData.get("scheduledPaymentDate");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -172,11 +172,11 @@ public class Invoice extends Intangible {
   /**
    * The status of payment; whether the invoice has been paid or not.
    */
-  @JsonIgnore public Collection<PaymentStatusType> getPaymentStatusPaymentStatusTypes() {
+  @JsonIgnore public java.util.Collection<PaymentStatusType> getPaymentStatusPaymentStatusTypes() {
     final Object current = myData.get("paymentStatus");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<PaymentStatusType>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<PaymentStatusType>) current;
     }
     return Arrays.asList((PaymentStatusType) current);
   }
@@ -189,11 +189,11 @@ public class Invoice extends Intangible {
   /**
    * The status of payment; whether the invoice has been paid or not.
    */
-  @JsonIgnore public Collection<String> getPaymentStatusStrings() {
+  @JsonIgnore public java.util.Collection<String> getPaymentStatusStrings() {
     final Object current = myData.get("paymentStatus");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -206,11 +206,11 @@ public class Invoice extends Intangible {
   /**
    * The date that payment is due.
    */
-  @JsonIgnore public Collection<java.util.Date> getPaymentDueDates() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getPaymentDueDates() {
     final Object current = myData.get("paymentDueDate");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -223,11 +223,11 @@ public class Invoice extends Intangible {
   /**
    * The minimum payment required at this time.
    */
-  @JsonIgnore public Collection<MonetaryAmount> getMinimumPaymentDueMonetaryAmounts() {
+  @JsonIgnore public java.util.Collection<MonetaryAmount> getMinimumPaymentDueMonetaryAmounts() {
     final Object current = myData.get("minimumPaymentDue");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MonetaryAmount>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MonetaryAmount>) current;
     }
     return Arrays.asList((MonetaryAmount) current);
   }
@@ -240,11 +240,11 @@ public class Invoice extends Intangible {
   /**
    * The minimum payment required at this time.
    */
-  @JsonIgnore public Collection<PriceSpecification> getMinimumPaymentDuePriceSpecifications() {
+  @JsonIgnore public java.util.Collection<PriceSpecification> getMinimumPaymentDuePriceSpecifications() {
     final Object current = myData.get("minimumPaymentDue");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<PriceSpecification>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<PriceSpecification>) current;
     }
     return Arrays.asList((PriceSpecification) current);
   }
@@ -257,11 +257,11 @@ public class Invoice extends Intangible {
   /**
    * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
    */
-  @JsonIgnore public Collection<Category> getCategorys() {
+  @JsonIgnore public java.util.Collection<Category> getCategorys() {
     final Object current = myData.get("category");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Category>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Category>) current;
     }
     return Arrays.asList((Category) current);
   }
@@ -274,11 +274,11 @@ public class Invoice extends Intangible {
   /**
    * The identifier for the account the payment will be applied to.
    */
-  @JsonIgnore public Collection<String> getAccountIds() {
+  @JsonIgnore public java.util.Collection<String> getAccountIds() {
     final Object current = myData.get("accountId");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -291,11 +291,11 @@ public class Invoice extends Intangible {
   /**
    * The Order(s) related to this Invoice. One or more Orders may be combined into a single Invoice.
    */
-  @JsonIgnore public Collection<Order> getReferencesOrders() {
+  @JsonIgnore public java.util.Collection<Order> getReferencesOrders() {
     final Object current = myData.get("referencesOrder");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Order>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Order>) current;
     }
     return Arrays.asList((Order) current);
   }
@@ -308,11 +308,11 @@ public class Invoice extends Intangible {
   /**
    * The time interval used to compute the invoice.
    */
-  @JsonIgnore public Collection<Duration> getBillingPeriods() {
+  @JsonIgnore public java.util.Collection<Duration> getBillingPeriods() {
     final Object current = myData.get("billingPeriod");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Duration>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Duration>) current;
     }
     return Arrays.asList((Duration) current);
   }
@@ -325,11 +325,11 @@ public class Invoice extends Intangible {
   /**
    * A number that confirms the given order or payment has been received.
    */
-  @JsonIgnore public Collection<String> getConfirmationNumbers() {
+  @JsonIgnore public java.util.Collection<String> getConfirmationNumbers() {
     final Object current = myData.get("confirmationNumber");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -342,11 +342,11 @@ public class Invoice extends Intangible {
   /**
    * The name of the credit card or other method of payment for the order.
    */
-  @JsonIgnore public Collection<PaymentMethod> getPaymentMethods() {
+  @JsonIgnore public java.util.Collection<PaymentMethod> getPaymentMethods() {
     final Object current = myData.get("paymentMethod");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<PaymentMethod>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<PaymentMethod>) current;
     }
     return Arrays.asList((PaymentMethod) current);
   }
@@ -359,11 +359,11 @@ public class Invoice extends Intangible {
   /**
    * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
    */
-  @JsonIgnore public Collection<Organization> getBrokerOrganizations() {
+  @JsonIgnore public java.util.Collection<Organization> getBrokerOrganizations() {
     final Object current = myData.get("broker");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
   }
@@ -376,11 +376,11 @@ public class Invoice extends Intangible {
   /**
    * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
    */
-  @JsonIgnore public Collection<Person> getBrokerPersons() {
+  @JsonIgnore public java.util.Collection<Person> getBrokerPersons() {
     final Object current = myData.get("broker");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -501,13 +501,6 @@ public class Invoice extends Intangible {
      */
     @NotNull public Builder paymentStatus(@NotNull PaymentStatusType paymentStatusType) {
       putValue("paymentStatus", paymentStatusType);
-      return this;
-    }
-    /**
-     * The status of payment; whether the invoice has been paid or not.
-     */
-    @NotNull public Builder paymentStatus(@NotNull PaymentStatusType.Builder paymentStatusType) {
-      putValue("paymentStatus", paymentStatusType.build());
       return this;
     }
     /**

@@ -36,11 +36,11 @@ public class GameServer extends Intangible {
   /**
    * Status of a game server.
    */
-  @JsonIgnore public Collection<GameServerStatus> getServerStatuss() {
+  @JsonIgnore public java.util.Collection<GameServerStatus> getServerStatuss() {
     final Object current = myData.get("serverStatus");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<GameServerStatus>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<GameServerStatus>) current;
     }
     return Arrays.asList((GameServerStatus) current);
   }
@@ -53,11 +53,11 @@ public class GameServer extends Intangible {
   /**
    * Number of players on the server.
    */
-  @JsonIgnore public Collection<Integer> getPlayersOnlines() {
+  @JsonIgnore public java.util.Collection<Integer> getPlayersOnlines() {
     final Object current = myData.get("playersOnline");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -70,11 +70,11 @@ public class GameServer extends Intangible {
   /**
    * Video game which is played on this server.
    */
-  @JsonIgnore public Collection<VideoGame> getGames() {
+  @JsonIgnore public java.util.Collection<VideoGame> getGames() {
     final Object current = myData.get("game");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<VideoGame>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<VideoGame>) current;
     }
     return Arrays.asList((VideoGame) current);
   }
@@ -97,13 +97,6 @@ public class GameServer extends Intangible {
      */
     @NotNull public Builder serverStatus(@NotNull GameServerStatus gameServerStatus) {
       putValue("serverStatus", gameServerStatus);
-      return this;
-    }
-    /**
-     * Status of a game server.
-     */
-    @NotNull public Builder serverStatus(@NotNull GameServerStatus.Builder gameServerStatus) {
-      putValue("serverStatus", gameServerStatus.build());
       return this;
     }
     /**

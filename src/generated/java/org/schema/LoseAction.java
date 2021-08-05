@@ -36,11 +36,11 @@ public class LoseAction extends AchieveAction {
   /**
    * A sub property of participant. The winner of the action.
    */
-  @JsonIgnore public Collection<Participant> getWinners() {
+  @JsonIgnore public java.util.Collection<Participant> getWinners() {
     final Object current = myData.get("winner");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Participant>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Participant>) current;
     }
     return Arrays.asList((Participant) current);
   }
@@ -91,13 +91,6 @@ public class LoseAction extends AchieveAction {
      */
     @NotNull public Builder actionStatus(@NotNull ActionStatusType actionStatusType) {
       putValue("actionStatus", actionStatusType);
-      return this;
-    }
-    /**
-     * Indicates the current disposition of the Action.
-     */
-    @NotNull public Builder actionStatus(@NotNull ActionStatusType.Builder actionStatusType) {
-      putValue("actionStatus", actionStatusType.build());
       return this;
     }
     /**

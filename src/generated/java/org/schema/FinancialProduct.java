@@ -36,11 +36,11 @@ public class FinancialProduct extends Service {
   /**
    * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
    */
-  @JsonIgnore public Collection<Integer> getInterestRateIntegers() {
+  @JsonIgnore public java.util.Collection<Integer> getInterestRateIntegers() {
     final Object current = myData.get("interestRate");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -53,11 +53,11 @@ public class FinancialProduct extends Service {
   /**
    * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
    */
-  @JsonIgnore public Collection<Long> getInterestRateLongs() {
+  @JsonIgnore public java.util.Collection<Long> getInterestRateLongs() {
     final Object current = myData.get("interestRate");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Long>) current;
     }
     return Arrays.asList((Long) current);
   }
@@ -70,11 +70,11 @@ public class FinancialProduct extends Service {
   /**
    * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
    */
-  @JsonIgnore public Collection<Float> getInterestRateFloats() {
+  @JsonIgnore public java.util.Collection<Float> getInterestRateFloats() {
     final Object current = myData.get("interestRate");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Float>) current;
     }
     return Arrays.asList((Float) current);
   }
@@ -87,11 +87,11 @@ public class FinancialProduct extends Service {
   /**
    * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
    */
-  @JsonIgnore public Collection<Double> getInterestRateDoubles() {
+  @JsonIgnore public java.util.Collection<Double> getInterestRateDoubles() {
     final Object current = myData.get("interestRate");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Double>) current;
     }
     return Arrays.asList((Double) current);
   }
@@ -104,11 +104,11 @@ public class FinancialProduct extends Service {
   /**
    * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
    */
-  @JsonIgnore public Collection<String> getInterestRateStrings() {
+  @JsonIgnore public java.util.Collection<String> getInterestRateStrings() {
     final Object current = myData.get("interestRate");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -121,11 +121,11 @@ public class FinancialProduct extends Service {
   /**
    * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
    */
-  @JsonIgnore public Collection<String> getFeesAndCommissionsSpecifications() {
+  @JsonIgnore public java.util.Collection<String> getFeesAndCommissionsSpecifications() {
     final Object current = myData.get("feesAndCommissionsSpecification");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -138,11 +138,11 @@ public class FinancialProduct extends Service {
   /**
    * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
    */
-  @JsonIgnore public Collection<Integer> getAnnualPercentageRateIntegers() {
+  @JsonIgnore public java.util.Collection<Integer> getAnnualPercentageRateIntegers() {
     final Object current = myData.get("annualPercentageRate");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -155,11 +155,11 @@ public class FinancialProduct extends Service {
   /**
    * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
    */
-  @JsonIgnore public Collection<Long> getAnnualPercentageRateLongs() {
+  @JsonIgnore public java.util.Collection<Long> getAnnualPercentageRateLongs() {
     final Object current = myData.get("annualPercentageRate");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Long>) current;
     }
     return Arrays.asList((Long) current);
   }
@@ -172,11 +172,11 @@ public class FinancialProduct extends Service {
   /**
    * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
    */
-  @JsonIgnore public Collection<Float> getAnnualPercentageRateFloats() {
+  @JsonIgnore public java.util.Collection<Float> getAnnualPercentageRateFloats() {
     final Object current = myData.get("annualPercentageRate");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Float>) current;
     }
     return Arrays.asList((Float) current);
   }
@@ -189,11 +189,11 @@ public class FinancialProduct extends Service {
   /**
    * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
    */
-  @JsonIgnore public Collection<Double> getAnnualPercentageRateDoubles() {
+  @JsonIgnore public java.util.Collection<Double> getAnnualPercentageRateDoubles() {
     final Object current = myData.get("annualPercentageRate");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Double>) current;
     }
     return Arrays.asList((Double) current);
   }
@@ -206,11 +206,11 @@ public class FinancialProduct extends Service {
   /**
    * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
    */
-  @JsonIgnore public Collection<String> getAnnualPercentageRateStrings() {
+  @JsonIgnore public java.util.Collection<String> getAnnualPercentageRateStrings() {
     final Object current = myData.get("annualPercentageRate");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }

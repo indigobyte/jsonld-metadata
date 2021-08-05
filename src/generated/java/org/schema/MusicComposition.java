@@ -36,11 +36,11 @@ public class MusicComposition extends CreativeWork {
   /**
    * The person who wrote the words.
    */
-  @JsonIgnore public Collection<Person> getLyricists() {
+  @JsonIgnore public java.util.Collection<Person> getLyricists() {
     final Object current = myData.get("lyricist");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -53,11 +53,11 @@ public class MusicComposition extends CreativeWork {
   /**
    * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
    */
-  @JsonIgnore public Collection<Organization> getComposerOrganizations() {
+  @JsonIgnore public java.util.Collection<Organization> getComposerOrganizations() {
     final Object current = myData.get("composer");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
   }
@@ -70,11 +70,11 @@ public class MusicComposition extends CreativeWork {
   /**
    * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
    */
-  @JsonIgnore public Collection<Person> getComposerPersons() {
+  @JsonIgnore public java.util.Collection<Person> getComposerPersons() {
     final Object current = myData.get("composer");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -87,11 +87,11 @@ public class MusicComposition extends CreativeWork {
   /**
    * An arrangement derived from the composition.
    */
-  @JsonIgnore public Collection<MusicComposition> getMusicArrangements() {
+  @JsonIgnore public java.util.Collection<MusicComposition> getMusicArrangements() {
     final Object current = myData.get("musicArrangement");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MusicComposition>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MusicComposition>) current;
     }
     return Arrays.asList((MusicComposition) current);
   }
@@ -104,11 +104,11 @@ public class MusicComposition extends CreativeWork {
   /**
    * Smaller compositions included in this work (e.g. a movement in a symphony).
    */
-  @JsonIgnore public Collection<MusicComposition> getIncludedCompositions() {
+  @JsonIgnore public java.util.Collection<MusicComposition> getIncludedCompositions() {
     final Object current = myData.get("includedComposition");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MusicComposition>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MusicComposition>) current;
     }
     return Arrays.asList((MusicComposition) current);
   }
@@ -121,11 +121,11 @@ public class MusicComposition extends CreativeWork {
   /**
    * The type of composition (e.g. overture, sonata, symphony, etc.).
    */
-  @JsonIgnore public Collection<String> getMusicCompositionForms() {
+  @JsonIgnore public java.util.Collection<String> getMusicCompositionForms() {
     final Object current = myData.get("musicCompositionForm");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -138,11 +138,11 @@ public class MusicComposition extends CreativeWork {
   /**
    * The words in the song.
    */
-  @JsonIgnore public Collection<CreativeWork> getLyricss() {
+  @JsonIgnore public java.util.Collection<CreativeWork> getLyricss() {
     final Object current = myData.get("lyrics");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<CreativeWork>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<CreativeWork>) current;
     }
     return Arrays.asList((CreativeWork) current);
   }
@@ -155,11 +155,11 @@ public class MusicComposition extends CreativeWork {
   /**
    * The key, mode, or scale this composition uses.
    */
-  @JsonIgnore public Collection<String> getMusicalKeys() {
+  @JsonIgnore public java.util.Collection<String> getMusicalKeys() {
     final Object current = myData.get("musicalKey");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -172,11 +172,11 @@ public class MusicComposition extends CreativeWork {
   /**
    * The date and place the work was first performed.
    */
-  @JsonIgnore public Collection<Event> getFirstPerformances() {
+  @JsonIgnore public java.util.Collection<Event> getFirstPerformances() {
     final Object current = myData.get("firstPerformance");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Event>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Event>) current;
     }
     return Arrays.asList((Event) current);
   }
@@ -189,11 +189,11 @@ public class MusicComposition extends CreativeWork {
   /**
    * The International Standard Musical Work Code for the composition.
    */
-  @JsonIgnore public Collection<String> getIswcCodes() {
+  @JsonIgnore public java.util.Collection<String> getIswcCodes() {
     final Object current = myData.get("iswcCode");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -206,11 +206,11 @@ public class MusicComposition extends CreativeWork {
   /**
    * An audio recording of the work.
    */
-  @JsonIgnore public Collection<MusicRecording> getRecordedAss() {
+  @JsonIgnore public java.util.Collection<MusicRecording> getRecordedAss() {
     final Object current = myData.get("recordedAs");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MusicRecording>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MusicRecording>) current;
     }
     return Arrays.asList((MusicRecording) current);
   }
@@ -1776,8 +1776,8 @@ public class MusicComposition extends CreativeWork {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

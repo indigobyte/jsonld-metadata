@@ -36,11 +36,11 @@ public class AudioObject extends MediaObject {
   /**
    * If this MediaObject is an AudioObject or VideoObject, the transcript of that object.
    */
-  @JsonIgnore public Collection<String> getTranscripts() {
+  @JsonIgnore public java.util.Collection<String> getTranscripts() {
     final Object current = myData.get("transcript");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -53,11 +53,11 @@ public class AudioObject extends MediaObject {
   /**
    * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
    */
-  @JsonIgnore public Collection<Caption> getCaptions() {
+  @JsonIgnore public java.util.Collection<Caption> getCaptions() {
     final Object current = myData.get("caption");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Caption>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Caption>) current;
     }
     return Arrays.asList((Caption) current);
   }
@@ -70,11 +70,11 @@ public class AudioObject extends MediaObject {
   /**
    * Represents textual captioning from a [[MediaObject]], e.g. text of a 'meme'.
    */
-  @JsonIgnore public Collection<String> getEmbeddedTextCaptions() {
+  @JsonIgnore public java.util.Collection<String> getEmbeddedTextCaptions() {
     final Object current = myData.get("embeddedTextCaption");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -1771,8 +1771,8 @@ public class AudioObject extends MediaObject {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

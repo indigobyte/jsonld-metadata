@@ -36,11 +36,11 @@ public class Permit extends Intangible {
   /**
    * The date when the item becomes valid.
    */
-  @JsonIgnore public Collection<java.util.Date> getValidFroms() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getValidFroms() {
     final Object current = myData.get("validFrom");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -53,11 +53,11 @@ public class Permit extends Intangible {
   /**
    * The geographic area where a permit or similar thing is valid.
    */
-  @JsonIgnore public Collection<AdministrativeArea> getValidIns() {
+  @JsonIgnore public java.util.Collection<AdministrativeArea> getValidIns() {
     final Object current = myData.get("validIn");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<AdministrativeArea>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<AdministrativeArea>) current;
     }
     return Arrays.asList((AdministrativeArea) current);
   }
@@ -70,11 +70,11 @@ public class Permit extends Intangible {
   /**
    * The date when the item is no longer valid.
    */
-  @JsonIgnore public Collection<java.util.Date> getValidUntils() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getValidUntils() {
     final Object current = myData.get("validUntil");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -87,11 +87,11 @@ public class Permit extends Intangible {
   /**
    * The target audience for this permit.
    */
-  @JsonIgnore public Collection<Audience> getPermitAudiences() {
+  @JsonIgnore public java.util.Collection<Audience> getPermitAudiences() {
     final Object current = myData.get("permitAudience");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Audience>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Audience>) current;
     }
     return Arrays.asList((Audience) current);
   }
@@ -104,11 +104,11 @@ public class Permit extends Intangible {
   /**
    * The duration of validity of a permit or similar thing.
    */
-  @JsonIgnore public Collection<Duration> getValidFors() {
+  @JsonIgnore public java.util.Collection<Duration> getValidFors() {
     final Object current = myData.get("validFor");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Duration>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Duration>) current;
     }
     return Arrays.asList((Duration) current);
   }
@@ -121,11 +121,11 @@ public class Permit extends Intangible {
   /**
    * The organization issuing the ticket or permit.
    */
-  @JsonIgnore public Collection<Organization> getIssuedBys() {
+  @JsonIgnore public java.util.Collection<Organization> getIssuedBys() {
     final Object current = myData.get("issuedBy");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
   }
@@ -138,11 +138,11 @@ public class Permit extends Intangible {
   /**
    * The service through with the permit was granted.
    */
-  @JsonIgnore public Collection<Service> getIssuedThroughs() {
+  @JsonIgnore public java.util.Collection<Service> getIssuedThroughs() {
     final Object current = myData.get("issuedThrough");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Service>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Service>) current;
     }
     return Arrays.asList((Service) current);
   }

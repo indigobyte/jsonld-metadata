@@ -37,11 +37,11 @@ public class TouristTrip extends Trip {
   /**
    * Attraction suitable for type(s) of tourist. eg. Children, visitors from a particular country, etc. 
    */
-  @JsonIgnore public Collection<Audience> getTouristTypeAudiences() {
+  @JsonIgnore public java.util.Collection<Audience> getTouristTypeAudiences() {
     final Object current = myData.get("touristType");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Audience>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Audience>) current;
     }
     return Arrays.asList((Audience) current);
   }
@@ -54,11 +54,11 @@ public class TouristTrip extends Trip {
   /**
    * Attraction suitable for type(s) of tourist. eg. Children, visitors from a particular country, etc. 
    */
-  @JsonIgnore public Collection<String> getTouristTypeStrings() {
+  @JsonIgnore public java.util.Collection<String> getTouristTypeStrings() {
     final Object current = myData.get("touristType");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }

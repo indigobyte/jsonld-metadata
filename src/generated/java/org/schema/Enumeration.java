@@ -36,11 +36,11 @@ public class Enumeration extends Intangible {
   /**
    * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
    */
-  @JsonIgnore public Collection<Enumeration> getSupersededByEnumerations() {
+  @JsonIgnore public java.util.Collection<Enumeration> getSupersededByEnumerations() {
     final Object current = myData.get("supersededBy");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Enumeration>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Enumeration>) current;
     }
     return Arrays.asList((Enumeration) current);
   }
@@ -53,11 +53,11 @@ public class Enumeration extends Intangible {
   /**
    * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
    */
-  @JsonIgnore public Collection<Property> getSupersededByPropertys() {
+  @JsonIgnore public java.util.Collection<Property> getSupersededByPropertys() {
     final Object current = myData.get("supersededBy");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Property>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Property>) current;
     }
     return Arrays.asList((Property) current);
   }

@@ -36,11 +36,11 @@ public class HowToSupply extends HowToItem implements Supply {
   /**
    * The estimated cost of the supply or supplies consumed when performing instructions.
    */
-  @JsonIgnore public Collection<MonetaryAmount> getEstimatedCostMonetaryAmounts() {
+  @JsonIgnore public java.util.Collection<MonetaryAmount> getEstimatedCostMonetaryAmounts() {
     final Object current = myData.get("estimatedCost");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MonetaryAmount>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MonetaryAmount>) current;
     }
     return Arrays.asList((MonetaryAmount) current);
   }
@@ -53,11 +53,11 @@ public class HowToSupply extends HowToItem implements Supply {
   /**
    * The estimated cost of the supply or supplies consumed when performing instructions.
    */
-  @JsonIgnore public Collection<String> getEstimatedCostStrings() {
+  @JsonIgnore public java.util.Collection<String> getEstimatedCostStrings() {
     final Object current = myData.get("estimatedCost");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }

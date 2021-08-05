@@ -36,11 +36,11 @@ public class Taxon extends Thing {
   /**
    * The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary &ndash; (typically the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs).
    */
-  @JsonIgnore public Collection<PropertyValue> getTaxonRankPropertyValues() {
+  @JsonIgnore public java.util.Collection<PropertyValue> getTaxonRankPropertyValues() {
     final Object current = myData.get("taxonRank");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<PropertyValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<PropertyValue>) current;
     }
     return Arrays.asList((PropertyValue) current);
   }
@@ -53,11 +53,11 @@ public class Taxon extends Thing {
   /**
    * The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary &ndash; (typically the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs).
    */
-  @JsonIgnore public Collection<String> getTaxonRankStrings() {
+  @JsonIgnore public java.util.Collection<String> getTaxonRankStrings() {
     final Object current = myData.get("taxonRank");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -70,11 +70,11 @@ public class Taxon extends Thing {
   /**
    * A Defined Term contained in this term set.
    */
-  @JsonIgnore public Collection<HasDefinedTerm> getHasDefinedTerms() {
+  @JsonIgnore public java.util.Collection<HasDefinedTerm> getHasDefinedTerms() {
     final Object current = myData.get("hasDefinedTerm");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<HasDefinedTerm>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<HasDefinedTerm>) current;
     }
     return Arrays.asList((HasDefinedTerm) current);
   }
@@ -87,11 +87,11 @@ public class Taxon extends Thing {
   /**
    * Closest parent taxon of the taxon in question.
    */
-  @JsonIgnore public Collection<String> getParentTaxonStrings() {
+  @JsonIgnore public java.util.Collection<String> getParentTaxonStrings() {
     final Object current = myData.get("parentTaxon");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -104,11 +104,11 @@ public class Taxon extends Thing {
   /**
    * Closest parent taxon of the taxon in question.
    */
-  @JsonIgnore public Collection<Taxon> getParentTaxonTaxons() {
+  @JsonIgnore public java.util.Collection<Taxon> getParentTaxonTaxons() {
     final Object current = myData.get("parentTaxon");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Taxon>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Taxon>) current;
     }
     return Arrays.asList((Taxon) current);
   }
@@ -121,11 +121,11 @@ public class Taxon extends Thing {
   /**
    * Closest child taxa of the taxon in question.
    */
-  @JsonIgnore public Collection<String> getChildTaxonStrings() {
+  @JsonIgnore public java.util.Collection<String> getChildTaxonStrings() {
     final Object current = myData.get("childTaxon");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -138,11 +138,11 @@ public class Taxon extends Thing {
   /**
    * Closest child taxa of the taxon in question.
    */
-  @JsonIgnore public Collection<Taxon> getChildTaxonTaxons() {
+  @JsonIgnore public java.util.Collection<Taxon> getChildTaxonTaxons() {
     final Object current = myData.get("childTaxon");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Taxon>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Taxon>) current;
     }
     return Arrays.asList((Taxon) current);
   }

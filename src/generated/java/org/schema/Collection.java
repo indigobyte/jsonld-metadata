@@ -36,11 +36,11 @@ public class Collection extends CreativeWork {
   /**
    * The number of items in the [[Collection]].
    */
-  @JsonIgnore public Collection<Integer> getCollectionSizes() {
+  @JsonIgnore public java.util.Collection<Integer> getCollectionSizes() {
     final Object current = myData.get("collectionSize");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -1480,8 +1480,8 @@ public class Collection extends CreativeWork {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

@@ -36,11 +36,11 @@ public class EnergyConsumptionDetails extends Intangible {
   /**
    * Defines the energy efficiency Category (which could be either a rating out of range of values or a yes/no certification) for a product according to an international energy efficiency standard.
    */
-  @JsonIgnore public Collection<EnergyEfficiencyEnumeration> getHasEnergyEfficiencyCategorys() {
+  @JsonIgnore public java.util.Collection<EnergyEfficiencyEnumeration> getHasEnergyEfficiencyCategorys() {
     final Object current = myData.get("hasEnergyEfficiencyCategory");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<EnergyEfficiencyEnumeration>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<EnergyEfficiencyEnumeration>) current;
     }
     return Arrays.asList((EnergyEfficiencyEnumeration) current);
   }
@@ -53,11 +53,11 @@ public class EnergyConsumptionDetails extends Intangible {
   /**
    * Specifies the least energy efficient class on the regulated EU energy consumption scale for the product category a product belongs to. For example, energy consumption for televisions placed on the market after January 1, 2020 is scaled from D to A+++.
    */
-  @JsonIgnore public Collection<EUEnergyEfficiencyEnumeration> getEnergyEfficiencyScaleMins() {
+  @JsonIgnore public java.util.Collection<EUEnergyEfficiencyEnumeration> getEnergyEfficiencyScaleMins() {
     final Object current = myData.get("energyEfficiencyScaleMin");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<EUEnergyEfficiencyEnumeration>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<EUEnergyEfficiencyEnumeration>) current;
     }
     return Arrays.asList((EUEnergyEfficiencyEnumeration) current);
   }
@@ -70,11 +70,11 @@ public class EnergyConsumptionDetails extends Intangible {
   /**
    * Specifies the most energy efficient class on the regulated EU energy consumption scale for the product category a product belongs to. For example, energy consumption for televisions placed on the market after January 1, 2020 is scaled from D to A+++.
    */
-  @JsonIgnore public Collection<EUEnergyEfficiencyEnumeration> getEnergyEfficiencyScaleMaxs() {
+  @JsonIgnore public java.util.Collection<EUEnergyEfficiencyEnumeration> getEnergyEfficiencyScaleMaxs() {
     final Object current = myData.get("energyEfficiencyScaleMax");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<EUEnergyEfficiencyEnumeration>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<EUEnergyEfficiencyEnumeration>) current;
     }
     return Arrays.asList((EUEnergyEfficiencyEnumeration) current);
   }
@@ -107,24 +107,10 @@ public class EnergyConsumptionDetails extends Intangible {
       return this;
     }
     /**
-     * Specifies the least energy efficient class on the regulated EU energy consumption scale for the product category a product belongs to. For example, energy consumption for televisions placed on the market after January 1, 2020 is scaled from D to A+++.
-     */
-    @NotNull public Builder energyEfficiencyScaleMin(@NotNull EUEnergyEfficiencyEnumeration.Builder eUEnergyEfficiencyEnumeration) {
-      putValue("energyEfficiencyScaleMin", eUEnergyEfficiencyEnumeration.build());
-      return this;
-    }
-    /**
      * Specifies the most energy efficient class on the regulated EU energy consumption scale for the product category a product belongs to. For example, energy consumption for televisions placed on the market after January 1, 2020 is scaled from D to A+++.
      */
     @NotNull public Builder energyEfficiencyScaleMax(@NotNull EUEnergyEfficiencyEnumeration eUEnergyEfficiencyEnumeration) {
       putValue("energyEfficiencyScaleMax", eUEnergyEfficiencyEnumeration);
-      return this;
-    }
-    /**
-     * Specifies the most energy efficient class on the regulated EU energy consumption scale for the product category a product belongs to. For example, energy consumption for televisions placed on the market after January 1, 2020 is scaled from D to A+++.
-     */
-    @NotNull public Builder energyEfficiencyScaleMax(@NotNull EUEnergyEfficiencyEnumeration.Builder eUEnergyEfficiencyEnumeration) {
-      putValue("energyEfficiencyScaleMax", eUEnergyEfficiencyEnumeration.build());
       return this;
     }
     /**

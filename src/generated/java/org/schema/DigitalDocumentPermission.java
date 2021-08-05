@@ -36,11 +36,11 @@ public class DigitalDocumentPermission extends Intangible {
   /**
    * The person, organization, contact point, or audience that has been granted this permission.
    */
-  @JsonIgnore public Collection<Audience> getGranteeAudiences() {
+  @JsonIgnore public java.util.Collection<Audience> getGranteeAudiences() {
     final Object current = myData.get("grantee");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Audience>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Audience>) current;
     }
     return Arrays.asList((Audience) current);
   }
@@ -53,11 +53,11 @@ public class DigitalDocumentPermission extends Intangible {
   /**
    * The person, organization, contact point, or audience that has been granted this permission.
    */
-  @JsonIgnore public Collection<ContactPoint> getGranteeContactPoints() {
+  @JsonIgnore public java.util.Collection<ContactPoint> getGranteeContactPoints() {
     final Object current = myData.get("grantee");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<ContactPoint>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<ContactPoint>) current;
     }
     return Arrays.asList((ContactPoint) current);
   }
@@ -70,11 +70,11 @@ public class DigitalDocumentPermission extends Intangible {
   /**
    * The person, organization, contact point, or audience that has been granted this permission.
    */
-  @JsonIgnore public Collection<Organization> getGranteeOrganizations() {
+  @JsonIgnore public java.util.Collection<Organization> getGranteeOrganizations() {
     final Object current = myData.get("grantee");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
   }
@@ -87,11 +87,11 @@ public class DigitalDocumentPermission extends Intangible {
   /**
    * The person, organization, contact point, or audience that has been granted this permission.
    */
-  @JsonIgnore public Collection<Person> getGranteePersons() {
+  @JsonIgnore public java.util.Collection<Person> getGranteePersons() {
     final Object current = myData.get("grantee");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -104,11 +104,11 @@ public class DigitalDocumentPermission extends Intangible {
   /**
    * The type of permission granted the person, organization, or audience.
    */
-  @JsonIgnore public Collection<DigitalDocumentPermissionType> getPermissionTypes() {
+  @JsonIgnore public java.util.Collection<DigitalDocumentPermissionType> getPermissionTypes() {
     final Object current = myData.get("permissionType");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DigitalDocumentPermissionType>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<DigitalDocumentPermissionType>) current;
     }
     return Arrays.asList((DigitalDocumentPermissionType) current);
   }

@@ -36,11 +36,11 @@ public class MedicalTestPanel extends MedicalTest {
   /**
    * A component test of the panel.
    */
-  @JsonIgnore public Collection<MedicalTest> getSubTests() {
+  @JsonIgnore public java.util.Collection<MedicalTest> getSubTests() {
     final Object current = myData.get("subTest");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MedicalTest>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MedicalTest>) current;
     }
     return Arrays.asList((MedicalTest) current);
   }
@@ -192,24 +192,10 @@ public class MedicalTestPanel extends MedicalTest {
       return this;
     }
     /**
-     * If applicable, a medical specialty in which this entity is relevant.
-     */
-    @NotNull public Builder relevantSpecialty(@NotNull MedicalSpecialty.Builder medicalSpecialty) {
-      putValue("relevantSpecialty", medicalSpecialty.build());
-      return this;
-    }
-    /**
      * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      */
     @NotNull public Builder medicineSystem(@NotNull MedicineSystem medicineSystem) {
       putValue("medicineSystem", medicineSystem);
-      return this;
-    }
-    /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
-     */
-    @NotNull public Builder medicineSystem(@NotNull MedicineSystem.Builder medicineSystem) {
-      putValue("medicineSystem", medicineSystem.build());
       return this;
     }
     /**

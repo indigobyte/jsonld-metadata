@@ -36,11 +36,11 @@ public class MedicalDevice extends MedicalEntity {
   /**
    * A possible serious complication and/or serious side effect of this therapy. Serious adverse outcomes include those that are life-threatening; result in death, disability, or permanent damage; require hospitalization or prolong existing hospitalization; cause congenital anomalies or birth defects; or jeopardize the patient and may require medical or surgical intervention to prevent one of the outcomes in this definition.
    */
-  @JsonIgnore public Collection<MedicalEntity> getSeriousAdverseOutcomes() {
+  @JsonIgnore public java.util.Collection<MedicalEntity> getSeriousAdverseOutcomes() {
     final Object current = myData.get("seriousAdverseOutcome");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MedicalEntity>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MedicalEntity>) current;
     }
     return Arrays.asList((MedicalEntity) current);
   }
@@ -53,11 +53,11 @@ public class MedicalDevice extends MedicalEntity {
   /**
    * A contraindication for this therapy.
    */
-  @JsonIgnore public Collection<MedicalContraindication> getContraindicationMedicalContraindications() {
+  @JsonIgnore public java.util.Collection<MedicalContraindication> getContraindicationMedicalContraindications() {
     final Object current = myData.get("contraindication");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MedicalContraindication>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MedicalContraindication>) current;
     }
     return Arrays.asList((MedicalContraindication) current);
   }
@@ -70,11 +70,11 @@ public class MedicalDevice extends MedicalEntity {
   /**
    * A contraindication for this therapy.
    */
-  @JsonIgnore public Collection<String> getContraindicationStrings() {
+  @JsonIgnore public java.util.Collection<String> getContraindicationStrings() {
     final Object current = myData.get("contraindication");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -87,11 +87,11 @@ public class MedicalDevice extends MedicalEntity {
   /**
    * A description of the workup, testing, and other preparations required before implanting this device.
    */
-  @JsonIgnore public Collection<String> getPreOps() {
+  @JsonIgnore public java.util.Collection<String> getPreOps() {
     final Object current = myData.get("preOp");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -104,11 +104,11 @@ public class MedicalDevice extends MedicalEntity {
   /**
    * A description of the procedure involved in setting up, using, and/or installing the device.
    */
-  @JsonIgnore public Collection<String> getProcedures() {
+  @JsonIgnore public java.util.Collection<String> getProcedures() {
     final Object current = myData.get("procedure");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -121,11 +121,11 @@ public class MedicalDevice extends MedicalEntity {
   /**
    * A description of the postoperative procedures, care, and/or followups for this device.
    */
-  @JsonIgnore public Collection<String> getPostOps() {
+  @JsonIgnore public java.util.Collection<String> getPostOps() {
     final Object current = myData.get("postOp");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -138,11 +138,11 @@ public class MedicalDevice extends MedicalEntity {
   /**
    * A possible complication and/or side effect of this therapy. If it is known that an adverse outcome is serious (resulting in death, disability, or permanent damage; requiring hospitalization; or is otherwise life-threatening or requires immediate medical attention), tag it as a seriouseAdverseOutcome instead.
    */
-  @JsonIgnore public Collection<MedicalEntity> getAdverseOutcomes() {
+  @JsonIgnore public java.util.Collection<MedicalEntity> getAdverseOutcomes() {
     final Object current = myData.get("adverseOutcome");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MedicalEntity>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MedicalEntity>) current;
     }
     return Arrays.asList((MedicalEntity) current);
   }
@@ -280,24 +280,10 @@ public class MedicalDevice extends MedicalEntity {
       return this;
     }
     /**
-     * If applicable, a medical specialty in which this entity is relevant.
-     */
-    @NotNull public Builder relevantSpecialty(@NotNull MedicalSpecialty.Builder medicalSpecialty) {
-      putValue("relevantSpecialty", medicalSpecialty.build());
-      return this;
-    }
-    /**
      * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      */
     @NotNull public Builder medicineSystem(@NotNull MedicineSystem medicineSystem) {
       putValue("medicineSystem", medicineSystem);
-      return this;
-    }
-    /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
-     */
-    @NotNull public Builder medicineSystem(@NotNull MedicineSystem.Builder medicineSystem) {
-      putValue("medicineSystem", medicineSystem.build());
       return this;
     }
     /**

@@ -36,11 +36,11 @@ public class HealthInsurancePlan extends Intangible {
   /**
    * Formularies covered by this plan.
    */
-  @JsonIgnore public Collection<HealthPlanFormulary> getIncludesHealthPlanFormularys() {
+  @JsonIgnore public java.util.Collection<HealthPlanFormulary> getIncludesHealthPlanFormularys() {
     final Object current = myData.get("includesHealthPlanFormulary");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<HealthPlanFormulary>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<HealthPlanFormulary>) current;
     }
     return Arrays.asList((HealthPlanFormulary) current);
   }
@@ -53,11 +53,11 @@ public class HealthInsurancePlan extends Intangible {
   /**
    * A contact point for a person or organization.
    */
-  @JsonIgnore public Collection<ContactPoint> getContactPoints() {
+  @JsonIgnore public java.util.Collection<ContactPoint> getContactPoints() {
     final Object current = myData.get("contactPoint");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<ContactPoint>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<ContactPoint>) current;
     }
     return Arrays.asList((ContactPoint) current);
   }
@@ -70,11 +70,11 @@ public class HealthInsurancePlan extends Intangible {
   /**
    * The 14-character, HIOS-generated Plan ID number. (Plan IDs must be unique, even across different markets.)
    */
-  @JsonIgnore public Collection<String> getHealthPlanIds() {
+  @JsonIgnore public java.util.Collection<String> getHealthPlanIds() {
     final Object current = myData.get("healthPlanId");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -87,11 +87,11 @@ public class HealthInsurancePlan extends Intangible {
   /**
    * The tier(s) of drugs offered by this formulary or insurance plan.
    */
-  @JsonIgnore public Collection<String> getHealthPlanDrugTiers() {
+  @JsonIgnore public java.util.Collection<String> getHealthPlanDrugTiers() {
     final Object current = myData.get("healthPlanDrugTier");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -104,11 +104,11 @@ public class HealthInsurancePlan extends Intangible {
   /**
    * The URL that goes directly to the plan brochure for the specific standard plan or plan variation.
    */
-  @JsonIgnore public Collection<String> getHealthPlanMarketingUrls() {
+  @JsonIgnore public java.util.Collection<String> getHealthPlanMarketingUrls() {
     final Object current = myData.get("healthPlanMarketingUrl");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -121,11 +121,11 @@ public class HealthInsurancePlan extends Intangible {
   /**
    * TODO.
    */
-  @JsonIgnore public Collection<String> getHealthPlanDrugOptions() {
+  @JsonIgnore public java.util.Collection<String> getHealthPlanDrugOptions() {
     final Object current = myData.get("healthPlanDrugOption");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -138,11 +138,11 @@ public class HealthInsurancePlan extends Intangible {
   /**
    * Networks covered by this plan.
    */
-  @JsonIgnore public Collection<HealthPlanNetwork> getIncludesHealthPlanNetworks() {
+  @JsonIgnore public java.util.Collection<HealthPlanNetwork> getIncludesHealthPlanNetworks() {
     final Object current = myData.get("includesHealthPlanNetwork");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<HealthPlanNetwork>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<HealthPlanNetwork>) current;
     }
     return Arrays.asList((HealthPlanNetwork) current);
   }
@@ -155,11 +155,11 @@ public class HealthInsurancePlan extends Intangible {
   /**
    * The URL that goes directly to the summary of benefits and coverage for the specific standard plan or plan variation.
    */
-  @JsonIgnore public Collection<String> getBenefitsSummaryUrls() {
+  @JsonIgnore public java.util.Collection<String> getBenefitsSummaryUrls() {
     final Object current = myData.get("benefitsSummaryUrl");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -172,11 +172,11 @@ public class HealthInsurancePlan extends Intangible {
   /**
    * The standard for interpreting thePlan ID. The preferred is &quot;HIOS&quot;. See the Centers for Medicare &amp; Medicaid Services for more details.
    */
-  @JsonIgnore public Collection<String> getUsesHealthPlanIdStandards() {
+  @JsonIgnore public java.util.Collection<String> getUsesHealthPlanIdStandards() {
     final Object current = myData.get("usesHealthPlanIdStandard");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }

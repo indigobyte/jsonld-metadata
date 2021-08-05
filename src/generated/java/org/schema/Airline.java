@@ -36,11 +36,11 @@ public class Airline extends Organization {
   /**
    * IATA identifier for an airline or airport.
    */
-  @JsonIgnore public Collection<String> getIataCodes() {
+  @JsonIgnore public java.util.Collection<String> getIataCodes() {
     final Object current = myData.get("iataCode");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -53,11 +53,11 @@ public class Airline extends Organization {
   /**
    * The type of boarding policy used by the airline (e.g. zone-based or group-based).
    */
-  @JsonIgnore public Collection<BoardingPolicyType> getBoardingPolicys() {
+  @JsonIgnore public java.util.Collection<BoardingPolicyType> getBoardingPolicys() {
     final Object current = myData.get("boardingPolicy");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<BoardingPolicyType>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<BoardingPolicyType>) current;
     }
     return Arrays.asList((BoardingPolicyType) current);
   }

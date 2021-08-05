@@ -36,11 +36,11 @@ public class MedicalConditionStage extends MedicalIntangible {
   /**
    * The substage, e.g. 'a' for Stage IIIa.
    */
-  @JsonIgnore public Collection<String> getSubStageSuffixs() {
+  @JsonIgnore public java.util.Collection<String> getSubStageSuffixs() {
     final Object current = myData.get("subStageSuffix");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -53,11 +53,11 @@ public class MedicalConditionStage extends MedicalIntangible {
   /**
    * The stage represented as a number, e.g. 3.
    */
-  @JsonIgnore public Collection<Integer> getStageAsNumberIntegers() {
+  @JsonIgnore public java.util.Collection<Integer> getStageAsNumberIntegers() {
     final Object current = myData.get("stageAsNumber");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -70,11 +70,11 @@ public class MedicalConditionStage extends MedicalIntangible {
   /**
    * The stage represented as a number, e.g. 3.
    */
-  @JsonIgnore public Collection<Long> getStageAsNumberLongs() {
+  @JsonIgnore public java.util.Collection<Long> getStageAsNumberLongs() {
     final Object current = myData.get("stageAsNumber");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Long>) current;
     }
     return Arrays.asList((Long) current);
   }
@@ -87,11 +87,11 @@ public class MedicalConditionStage extends MedicalIntangible {
   /**
    * The stage represented as a number, e.g. 3.
    */
-  @JsonIgnore public Collection<Float> getStageAsNumberFloats() {
+  @JsonIgnore public java.util.Collection<Float> getStageAsNumberFloats() {
     final Object current = myData.get("stageAsNumber");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Float>) current;
     }
     return Arrays.asList((Float) current);
   }
@@ -104,11 +104,11 @@ public class MedicalConditionStage extends MedicalIntangible {
   /**
    * The stage represented as a number, e.g. 3.
    */
-  @JsonIgnore public Collection<Double> getStageAsNumberDoubles() {
+  @JsonIgnore public java.util.Collection<Double> getStageAsNumberDoubles() {
     final Object current = myData.get("stageAsNumber");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Double>) current;
     }
     return Arrays.asList((Double) current);
   }
@@ -121,11 +121,11 @@ public class MedicalConditionStage extends MedicalIntangible {
   /**
    * The stage represented as a number, e.g. 3.
    */
-  @JsonIgnore public Collection<String> getStageAsNumberStrings() {
+  @JsonIgnore public java.util.Collection<String> getStageAsNumberStrings() {
     final Object current = myData.get("stageAsNumber");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -235,24 +235,10 @@ public class MedicalConditionStage extends MedicalIntangible {
       return this;
     }
     /**
-     * If applicable, a medical specialty in which this entity is relevant.
-     */
-    @NotNull public Builder relevantSpecialty(@NotNull MedicalSpecialty.Builder medicalSpecialty) {
-      putValue("relevantSpecialty", medicalSpecialty.build());
-      return this;
-    }
-    /**
      * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      */
     @NotNull public Builder medicineSystem(@NotNull MedicineSystem medicineSystem) {
       putValue("medicineSystem", medicineSystem);
-      return this;
-    }
-    /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
-     */
-    @NotNull public Builder medicineSystem(@NotNull MedicineSystem.Builder medicineSystem) {
-      putValue("medicineSystem", medicineSystem.build());
       return this;
     }
     /**

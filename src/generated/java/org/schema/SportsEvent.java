@@ -36,11 +36,11 @@ public class SportsEvent extends Event {
   /**
    * The home team in a sports event.
    */
-  @JsonIgnore public Collection<Person> getHomeTeamPersons() {
+  @JsonIgnore public java.util.Collection<Person> getHomeTeamPersons() {
     final Object current = myData.get("homeTeam");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -53,11 +53,11 @@ public class SportsEvent extends Event {
   /**
    * The home team in a sports event.
    */
-  @JsonIgnore public Collection<SportsTeam> getHomeTeamSportsTeams() {
+  @JsonIgnore public java.util.Collection<SportsTeam> getHomeTeamSportsTeams() {
     final Object current = myData.get("homeTeam");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<SportsTeam>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<SportsTeam>) current;
     }
     return Arrays.asList((SportsTeam) current);
   }
@@ -70,11 +70,11 @@ public class SportsEvent extends Event {
   /**
    * The away team in a sports event.
    */
-  @JsonIgnore public Collection<Competitor> getAwayTeams() {
+  @JsonIgnore public java.util.Collection<Competitor> getAwayTeams() {
     final Object current = myData.get("awayTeam");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Competitor>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Competitor>) current;
     }
     return Arrays.asList((Competitor) current);
   }
@@ -87,11 +87,11 @@ public class SportsEvent extends Event {
   /**
    * A type of sport (e.g. Baseball).
    */
-  @JsonIgnore public Collection<String> getSports() {
+  @JsonIgnore public java.util.Collection<String> getSports() {
     final Object current = myData.get("sport");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -324,13 +324,6 @@ public class SportsEvent extends Event {
      */
     @NotNull public Builder eventStatus(@NotNull EventStatusType eventStatusType) {
       putValue("eventStatus", eventStatusType);
-      return this;
-    }
-    /**
-     * An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.
-     */
-    @NotNull public Builder eventStatus(@NotNull EventStatusType.Builder eventStatusType) {
-      putValue("eventStatus", eventStatusType.build());
       return this;
     }
     /**

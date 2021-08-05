@@ -36,11 +36,11 @@ public class SearchAction extends Action {
   /**
    * A sub property of instrument. The query used on this action.
    */
-  @JsonIgnore public Collection<String> getQuerys() {
+  @JsonIgnore public java.util.Collection<String> getQuerys() {
     final Object current = myData.get("query");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -91,13 +91,6 @@ public class SearchAction extends Action {
      */
     @NotNull public Builder actionStatus(@NotNull ActionStatusType actionStatusType) {
       putValue("actionStatus", actionStatusType);
-      return this;
-    }
-    /**
-     * Indicates the current disposition of the Action.
-     */
-    @NotNull public Builder actionStatus(@NotNull ActionStatusType.Builder actionStatusType) {
-      putValue("actionStatus", actionStatusType.build());
       return this;
     }
     /**

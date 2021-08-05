@@ -36,11 +36,11 @@ public class VisualArtwork extends CreativeWork {
   /**
    * The width of the item.
    */
-  @JsonIgnore public Collection<Distance> getWidthDistances() {
+  @JsonIgnore public java.util.Collection<Distance> getWidthDistances() {
     final Object current = myData.get("width");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Distance>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Distance>) current;
     }
     return Arrays.asList((Distance) current);
   }
@@ -53,11 +53,11 @@ public class VisualArtwork extends CreativeWork {
   /**
    * The width of the item.
    */
-  @JsonIgnore public Collection<QuantitativeValue> getWidthQuantitativeValues() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getWidthQuantitativeValues() {
     final Object current = myData.get("width");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -70,11 +70,11 @@ public class VisualArtwork extends CreativeWork {
   /**
    * The supporting materials for the artwork, e.g. Canvas, Paper, Wood, Board, etc.
    */
-  @JsonIgnore public Collection<String> getArtworkSurfaces() {
+  @JsonIgnore public java.util.Collection<String> getArtworkSurfaces() {
     final Object current = myData.get("artworkSurface");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -87,11 +87,11 @@ public class VisualArtwork extends CreativeWork {
   /**
    * The individual who adds lettering, including speech balloons and sound effects, to artwork.
    */
-  @JsonIgnore public Collection<Person> getLetterers() {
+  @JsonIgnore public java.util.Collection<Person> getLetterers() {
     final Object current = myData.get("letterer");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -104,11 +104,11 @@ public class VisualArtwork extends CreativeWork {
   /**
    * The individual who traces over the pencil drawings in ink after pencils are complete.
    */
-  @JsonIgnore public Collection<Person> getInkers() {
+  @JsonIgnore public java.util.Collection<Person> getInkers() {
     final Object current = myData.get("inker");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -121,11 +121,11 @@ public class VisualArtwork extends CreativeWork {
   /**
    * The individual who adds color to inked drawings.
    */
-  @JsonIgnore public Collection<Person> getColorists() {
+  @JsonIgnore public java.util.Collection<Person> getColorists() {
     final Object current = myData.get("colorist");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -142,11 +142,11 @@ public class VisualArtwork extends CreativeWork {
    *     	in a medium other than pencils or digital line art--for example, if the
    *     	primary artwork is done in watercolors or digital paints.
    */
-  @JsonIgnore public Collection<Person> getArtists() {
+  @JsonIgnore public java.util.Collection<Person> getArtists() {
     final Object current = myData.get("artist");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -159,11 +159,11 @@ public class VisualArtwork extends CreativeWork {
   /**
    * The depth of the item.
    */
-  @JsonIgnore public Collection<Distance> getDepthDistances() {
+  @JsonIgnore public java.util.Collection<Distance> getDepthDistances() {
     final Object current = myData.get("depth");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Distance>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Distance>) current;
     }
     return Arrays.asList((Distance) current);
   }
@@ -176,11 +176,11 @@ public class VisualArtwork extends CreativeWork {
   /**
    * The depth of the item.
    */
-  @JsonIgnore public Collection<QuantitativeValue> getDepthQuantitativeValues() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getDepthQuantitativeValues() {
     final Object current = myData.get("depth");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -193,11 +193,11 @@ public class VisualArtwork extends CreativeWork {
   /**
    * The height of the item.
    */
-  @JsonIgnore public Collection<Distance> getHeightDistances() {
+  @JsonIgnore public java.util.Collection<Distance> getHeightDistances() {
     final Object current = myData.get("height");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Distance>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Distance>) current;
     }
     return Arrays.asList((Distance) current);
   }
@@ -210,11 +210,11 @@ public class VisualArtwork extends CreativeWork {
   /**
    * The height of the item.
    */
-  @JsonIgnore public Collection<QuantitativeValue> getHeightQuantitativeValues() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getHeightQuantitativeValues() {
     final Object current = myData.get("height");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -227,11 +227,11 @@ public class VisualArtwork extends CreativeWork {
   /**
    * The individual who draws the primary narrative artwork.
    */
-  @JsonIgnore public Collection<Person> getPencilers() {
+  @JsonIgnore public java.util.Collection<Person> getPencilers() {
     final Object current = myData.get("penciler");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -244,11 +244,11 @@ public class VisualArtwork extends CreativeWork {
   /**
    * The material used. (e.g. Oil, Watercolour, Acrylic, Linoprint, Marble, Cyanotype, Digital, Lithograph, DryPoint, Intaglio, Pastel, Woodcut, Pencil, Mixed Media, etc.)
    */
-  @JsonIgnore public Collection<String> getArtMediums() {
+  @JsonIgnore public java.util.Collection<String> getArtMediums() {
     final Object current = myData.get("artMedium");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -261,11 +261,11 @@ public class VisualArtwork extends CreativeWork {
   /**
    * The number of copies when multiple copies of a piece of artwork are produced - e.g. for a limited edition of 20 prints, 'artEdition' refers to the total number of copies (in this example &quot;20&quot;).
    */
-  @JsonIgnore public Collection<Integer> getArtEditionIntegers() {
+  @JsonIgnore public java.util.Collection<Integer> getArtEditionIntegers() {
     final Object current = myData.get("artEdition");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -278,11 +278,11 @@ public class VisualArtwork extends CreativeWork {
   /**
    * The number of copies when multiple copies of a piece of artwork are produced - e.g. for a limited edition of 20 prints, 'artEdition' refers to the total number of copies (in this example &quot;20&quot;).
    */
-  @JsonIgnore public Collection<String> getArtEditionStrings() {
+  @JsonIgnore public java.util.Collection<String> getArtEditionStrings() {
     final Object current = myData.get("artEdition");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -295,11 +295,11 @@ public class VisualArtwork extends CreativeWork {
   /**
    * e.g. Painting, Drawing, Sculpture, Print, Photograph, Assemblage, Collage, etc.
    */
-  @JsonIgnore public Collection<String> getArtforms() {
+  @JsonIgnore public java.util.Collection<String> getArtforms() {
     final Object current = myData.get("artform");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -1925,8 +1925,8 @@ public class VisualArtwork extends CreativeWork {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

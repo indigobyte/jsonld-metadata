@@ -36,11 +36,11 @@ public class ExercisePlan extends CreativeWork {
   /**
    * How often one should break from the activity.
    */
-  @JsonIgnore public Collection<QuantitativeValue> getRestPeriodsQuantitativeValues() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getRestPeriodsQuantitativeValues() {
     final Object current = myData.get("restPeriods");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -53,11 +53,11 @@ public class ExercisePlan extends CreativeWork {
   /**
    * How often one should break from the activity.
    */
-  @JsonIgnore public Collection<String> getRestPeriodsStrings() {
+  @JsonIgnore public java.util.Collection<String> getRestPeriodsStrings() {
     final Object current = myData.get("restPeriods");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -70,11 +70,11 @@ public class ExercisePlan extends CreativeWork {
   /**
    * How often one should engage in the activity.
    */
-  @JsonIgnore public Collection<QuantitativeValue> getActivityFrequencyQuantitativeValues() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getActivityFrequencyQuantitativeValues() {
     final Object current = myData.get("activityFrequency");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -87,11 +87,11 @@ public class ExercisePlan extends CreativeWork {
   /**
    * How often one should engage in the activity.
    */
-  @JsonIgnore public Collection<String> getActivityFrequencyStrings() {
+  @JsonIgnore public java.util.Collection<String> getActivityFrequencyStrings() {
     final Object current = myData.get("activityFrequency");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -104,11 +104,11 @@ public class ExercisePlan extends CreativeWork {
   /**
    * Length of time to engage in the activity.
    */
-  @JsonIgnore public Collection<Duration> getActivityDurationDurations() {
+  @JsonIgnore public java.util.Collection<Duration> getActivityDurationDurations() {
     final Object current = myData.get("activityDuration");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Duration>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Duration>) current;
     }
     return Arrays.asList((Duration) current);
   }
@@ -121,11 +121,11 @@ public class ExercisePlan extends CreativeWork {
   /**
    * Length of time to engage in the activity.
    */
-  @JsonIgnore public Collection<QuantitativeValue> getActivityDurationQuantitativeValues() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getActivityDurationQuantitativeValues() {
     final Object current = myData.get("activityDuration");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -138,11 +138,11 @@ public class ExercisePlan extends CreativeWork {
   /**
    * Quantitative measure of the physiologic output of the exercise; also referred to as energy expenditure.
    */
-  @JsonIgnore public Collection<Energy> getWorkloadEnergys() {
+  @JsonIgnore public java.util.Collection<Energy> getWorkloadEnergys() {
     final Object current = myData.get("workload");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Energy>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Energy>) current;
     }
     return Arrays.asList((Energy) current);
   }
@@ -155,11 +155,11 @@ public class ExercisePlan extends CreativeWork {
   /**
    * Quantitative measure of the physiologic output of the exercise; also referred to as energy expenditure.
    */
-  @JsonIgnore public Collection<QuantitativeValue> getWorkloadQuantitativeValues() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getWorkloadQuantitativeValues() {
     final Object current = myData.get("workload");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -172,11 +172,11 @@ public class ExercisePlan extends CreativeWork {
   /**
    * Any additional component of the exercise prescription that may need to be articulated to the patient. This may include the order of exercises, the number of repetitions of movement, quantitative distance, progressions over time, etc.
    */
-  @JsonIgnore public Collection<String> getAdditionalVariables() {
+  @JsonIgnore public java.util.Collection<String> getAdditionalVariables() {
     final Object current = myData.get("additionalVariable");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -189,11 +189,11 @@ public class ExercisePlan extends CreativeWork {
   /**
    * Number of times one should repeat the activity.
    */
-  @JsonIgnore public Collection<Integer> getRepetitionsIntegers() {
+  @JsonIgnore public java.util.Collection<Integer> getRepetitionsIntegers() {
     final Object current = myData.get("repetitions");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -206,11 +206,11 @@ public class ExercisePlan extends CreativeWork {
   /**
    * Number of times one should repeat the activity.
    */
-  @JsonIgnore public Collection<Long> getRepetitionsLongs() {
+  @JsonIgnore public java.util.Collection<Long> getRepetitionsLongs() {
     final Object current = myData.get("repetitions");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Long>) current;
     }
     return Arrays.asList((Long) current);
   }
@@ -223,11 +223,11 @@ public class ExercisePlan extends CreativeWork {
   /**
    * Number of times one should repeat the activity.
    */
-  @JsonIgnore public Collection<Float> getRepetitionsFloats() {
+  @JsonIgnore public java.util.Collection<Float> getRepetitionsFloats() {
     final Object current = myData.get("repetitions");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Float>) current;
     }
     return Arrays.asList((Float) current);
   }
@@ -240,11 +240,11 @@ public class ExercisePlan extends CreativeWork {
   /**
    * Number of times one should repeat the activity.
    */
-  @JsonIgnore public Collection<Double> getRepetitionsDoubles() {
+  @JsonIgnore public java.util.Collection<Double> getRepetitionsDoubles() {
     final Object current = myData.get("repetitions");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Double>) current;
     }
     return Arrays.asList((Double) current);
   }
@@ -257,11 +257,11 @@ public class ExercisePlan extends CreativeWork {
   /**
    * Number of times one should repeat the activity.
    */
-  @JsonIgnore public Collection<String> getRepetitionsStrings() {
+  @JsonIgnore public java.util.Collection<String> getRepetitionsStrings() {
     final Object current = myData.get("repetitions");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -274,11 +274,11 @@ public class ExercisePlan extends CreativeWork {
   /**
    * Type(s) of exercise or activity, such as strength training, flexibility training, aerobics, cardiac rehabilitation, etc.
    */
-  @JsonIgnore public Collection<String> getExerciseTypes() {
+  @JsonIgnore public java.util.Collection<String> getExerciseTypes() {
     final Object current = myData.get("exerciseType");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -291,11 +291,11 @@ public class ExercisePlan extends CreativeWork {
   /**
    * Quantitative measure gauging the degree of force involved in the exercise, for example, heartbeats per minute. May include the velocity of the movement.
    */
-  @JsonIgnore public Collection<QuantitativeValue> getIntensityQuantitativeValues() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getIntensityQuantitativeValues() {
     final Object current = myData.get("intensity");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -308,11 +308,11 @@ public class ExercisePlan extends CreativeWork {
   /**
    * Quantitative measure gauging the degree of force involved in the exercise, for example, heartbeats per minute. May include the velocity of the movement.
    */
-  @JsonIgnore public Collection<String> getIntensityStrings() {
+  @JsonIgnore public java.util.Collection<String> getIntensityStrings() {
     final Object current = myData.get("intensity");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -1906,8 +1906,8 @@ public class ExercisePlan extends CreativeWork {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

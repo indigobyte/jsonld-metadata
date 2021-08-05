@@ -36,11 +36,11 @@ public class PeopleAudience extends Audience {
   /**
    * Minimum recommended age in years for the audience or user.
    */
-  @JsonIgnore public Collection<Integer> getSuggestedMinAgeIntegers() {
+  @JsonIgnore public java.util.Collection<Integer> getSuggestedMinAgeIntegers() {
     final Object current = myData.get("suggestedMinAge");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -53,11 +53,11 @@ public class PeopleAudience extends Audience {
   /**
    * Minimum recommended age in years for the audience or user.
    */
-  @JsonIgnore public Collection<Long> getSuggestedMinAgeLongs() {
+  @JsonIgnore public java.util.Collection<Long> getSuggestedMinAgeLongs() {
     final Object current = myData.get("suggestedMinAge");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Long>) current;
     }
     return Arrays.asList((Long) current);
   }
@@ -70,11 +70,11 @@ public class PeopleAudience extends Audience {
   /**
    * Minimum recommended age in years for the audience or user.
    */
-  @JsonIgnore public Collection<Float> getSuggestedMinAgeFloats() {
+  @JsonIgnore public java.util.Collection<Float> getSuggestedMinAgeFloats() {
     final Object current = myData.get("suggestedMinAge");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Float>) current;
     }
     return Arrays.asList((Float) current);
   }
@@ -87,11 +87,11 @@ public class PeopleAudience extends Audience {
   /**
    * Minimum recommended age in years for the audience or user.
    */
-  @JsonIgnore public Collection<Double> getSuggestedMinAgeDoubles() {
+  @JsonIgnore public java.util.Collection<Double> getSuggestedMinAgeDoubles() {
     final Object current = myData.get("suggestedMinAge");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Double>) current;
     }
     return Arrays.asList((Double) current);
   }
@@ -104,11 +104,11 @@ public class PeopleAudience extends Audience {
   /**
    * Minimum recommended age in years for the audience or user.
    */
-  @JsonIgnore public Collection<String> getSuggestedMinAgeStrings() {
+  @JsonIgnore public java.util.Collection<String> getSuggestedMinAgeStrings() {
     final Object current = myData.get("suggestedMinAge");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -121,11 +121,11 @@ public class PeopleAudience extends Audience {
   /**
    * A suggested range of body measurements for the intended audience or person, for example inseam between 32 and 34 inches or height between 170 and 190 cm. Typically found on a size chart for wearable products.
    */
-  @JsonIgnore public Collection<QuantitativeValue> getSuggestedMeasurements() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getSuggestedMeasurements() {
     final Object current = myData.get("suggestedMeasurement");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -138,11 +138,11 @@ public class PeopleAudience extends Audience {
   /**
    * Audiences defined by a person's minimum age.
    */
-  @JsonIgnore public Collection<Integer> getRequiredMinAges() {
+  @JsonIgnore public java.util.Collection<Integer> getRequiredMinAges() {
     final Object current = myData.get("requiredMinAge");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -155,11 +155,11 @@ public class PeopleAudience extends Audience {
   /**
    * Audiences defined by a person's gender.
    */
-  @JsonIgnore public Collection<String> getRequiredGenders() {
+  @JsonIgnore public java.util.Collection<String> getRequiredGenders() {
     final Object current = myData.get("requiredGender");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -172,11 +172,11 @@ public class PeopleAudience extends Audience {
   /**
    * The suggested gender of the intended person or audience, for example &quot;male&quot;, &quot;female&quot;, or &quot;unisex&quot;.
    */
-  @JsonIgnore public Collection<GenderType> getSuggestedGenderGenderTypes() {
+  @JsonIgnore public java.util.Collection<GenderType> getSuggestedGenderGenderTypes() {
     final Object current = myData.get("suggestedGender");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<GenderType>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<GenderType>) current;
     }
     return Arrays.asList((GenderType) current);
   }
@@ -189,11 +189,11 @@ public class PeopleAudience extends Audience {
   /**
    * The suggested gender of the intended person or audience, for example &quot;male&quot;, &quot;female&quot;, or &quot;unisex&quot;.
    */
-  @JsonIgnore public Collection<String> getSuggestedGenderStrings() {
+  @JsonIgnore public java.util.Collection<String> getSuggestedGenderStrings() {
     final Object current = myData.get("suggestedGender");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -206,11 +206,11 @@ public class PeopleAudience extends Audience {
   /**
    * The age or age range for the intended audience or person, for example 3-12 months for infants, 1-5 years for toddlers.
    */
-  @JsonIgnore public Collection<QuantitativeValue> getSuggestedAges() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getSuggestedAges() {
     final Object current = myData.get("suggestedAge");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -223,11 +223,11 @@ public class PeopleAudience extends Audience {
   /**
    * Audiences defined by a person's maximum age.
    */
-  @JsonIgnore public Collection<Integer> getRequiredMaxAges() {
+  @JsonIgnore public java.util.Collection<Integer> getRequiredMaxAges() {
     final Object current = myData.get("requiredMaxAge");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -240,11 +240,11 @@ public class PeopleAudience extends Audience {
   /**
    * Specifying the health condition(s) of a patient, medical study, or other target audience.
    */
-  @JsonIgnore public Collection<MedicalCondition> getHealthConditions() {
+  @JsonIgnore public java.util.Collection<MedicalCondition> getHealthConditions() {
     final Object current = myData.get("healthCondition");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MedicalCondition>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MedicalCondition>) current;
     }
     return Arrays.asList((MedicalCondition) current);
   }
@@ -257,11 +257,11 @@ public class PeopleAudience extends Audience {
   /**
    * Maximum recommended age in years for the audience or user.
    */
-  @JsonIgnore public Collection<Integer> getSuggestedMaxAgeIntegers() {
+  @JsonIgnore public java.util.Collection<Integer> getSuggestedMaxAgeIntegers() {
     final Object current = myData.get("suggestedMaxAge");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -274,11 +274,11 @@ public class PeopleAudience extends Audience {
   /**
    * Maximum recommended age in years for the audience or user.
    */
-  @JsonIgnore public Collection<Long> getSuggestedMaxAgeLongs() {
+  @JsonIgnore public java.util.Collection<Long> getSuggestedMaxAgeLongs() {
     final Object current = myData.get("suggestedMaxAge");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Long>) current;
     }
     return Arrays.asList((Long) current);
   }
@@ -291,11 +291,11 @@ public class PeopleAudience extends Audience {
   /**
    * Maximum recommended age in years for the audience or user.
    */
-  @JsonIgnore public Collection<Float> getSuggestedMaxAgeFloats() {
+  @JsonIgnore public java.util.Collection<Float> getSuggestedMaxAgeFloats() {
     final Object current = myData.get("suggestedMaxAge");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Float>) current;
     }
     return Arrays.asList((Float) current);
   }
@@ -308,11 +308,11 @@ public class PeopleAudience extends Audience {
   /**
    * Maximum recommended age in years for the audience or user.
    */
-  @JsonIgnore public Collection<Double> getSuggestedMaxAgeDoubles() {
+  @JsonIgnore public java.util.Collection<Double> getSuggestedMaxAgeDoubles() {
     final Object current = myData.get("suggestedMaxAge");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Double>) current;
     }
     return Arrays.asList((Double) current);
   }
@@ -325,11 +325,11 @@ public class PeopleAudience extends Audience {
   /**
    * Maximum recommended age in years for the audience or user.
    */
-  @JsonIgnore public Collection<String> getSuggestedMaxAgeStrings() {
+  @JsonIgnore public java.util.Collection<String> getSuggestedMaxAgeStrings() {
     final Object current = myData.get("suggestedMaxAge");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }

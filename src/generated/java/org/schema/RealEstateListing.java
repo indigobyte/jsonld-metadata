@@ -38,11 +38,11 @@ public class RealEstateListing extends WebPage {
   /**
    * Publication date of an online listing.
    */
-  @JsonIgnore public Collection<java.util.Date> getDatePosteds() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getDatePosteds() {
     final Object current = myData.get("datePosted");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -55,11 +55,11 @@ public class RealEstateListing extends WebPage {
   /**
    * Length of the lease for some [[Accommodation]], either particular to some [[Offer]] or in some cases intrinsic to the property.
    */
-  @JsonIgnore public Collection<Duration> getLeaseLengthDurations() {
+  @JsonIgnore public java.util.Collection<Duration> getLeaseLengthDurations() {
     final Object current = myData.get("leaseLength");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Duration>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Duration>) current;
     }
     return Arrays.asList((Duration) current);
   }
@@ -72,11 +72,11 @@ public class RealEstateListing extends WebPage {
   /**
    * Length of the lease for some [[Accommodation]], either particular to some [[Offer]] or in some cases intrinsic to the property.
    */
-  @JsonIgnore public Collection<QuantitativeValue> getLeaseLengthQuantitativeValues() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getLeaseLengthQuantitativeValues() {
     final Object current = myData.get("leaseLength");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -1702,8 +1702,8 @@ public class RealEstateListing extends WebPage {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

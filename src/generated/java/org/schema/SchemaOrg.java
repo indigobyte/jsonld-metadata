@@ -3470,7 +3470,7 @@ it may also sometimes prove useful to describe a longer-term series as an Event.
    * A 3D model represents some kind of 3D content, which may have [[encoding]]s in one or more [[MediaObject]]s. Many 3D formats are available (e.g. see [Wikipedia](https://en.wikipedia.org/wiki/Category:3D_graphics_file_formats)); specific encoding formats can be represented using the [[encodingFormat]] property applied to the relevant [[MediaObject]]. For the
 case of a single file published after Zip compression, the convention of appending '+zip' to the [[encodingFormat]] can be used. Geospatial, AR/VR, artistic/animation, gaming, engineering and scientific content can all be represented using [[3DModel]].
    */
-  @NotNull public static 3DModel.Builder 3DModel() { return new 3DModel.Builder(new HashMap<String,Object>()); }
+  @NotNull public static _3DModel.Builder _3DModel() { return new _3DModel.Builder(new HashMap<String,Object>()); }
   /**
    * A bookstore.
    */
@@ -4338,7 +4338,7 @@ See also the dedicated [document on the use of schema.org for marking up hotels 
     if ("Report".equals(type)) { return new Report.Builder(new HashMap<String,Object>()); }
     if ("DietarySupplement".equals(type)) { return new DietarySupplement.Builder(new HashMap<String,Object>()); }
     if ("ListenAction".equals(type)) { return new ListenAction.Builder(new HashMap<String,Object>()); }
-    if ("3DModel".equals(type)) { return new 3DModel.Builder(new HashMap<String,Object>()); }
+    if ("_3DModel".equals(type)) { return new _3DModel.Builder(new HashMap<String,Object>()); }
     if ("BookStore".equals(type)) { return new BookStore.Builder(new HashMap<String,Object>()); }
     if ("DiagnosticLab".equals(type)) { return new DiagnosticLab.Builder(new HashMap<String,Object>()); }
     if ("ToyStore".equals(type)) { return new ToyStore.Builder(new HashMap<String,Object>()); }

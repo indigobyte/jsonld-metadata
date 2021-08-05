@@ -17,7 +17,6 @@
 package org.schema.generator
 
 import org.semarglproject.rdf.RdfXmlParser
-import org.semarglproject.rdf.rdfa.RdfaParser
 import org.semarglproject.source.StreamProcessor
 import java.io.File
 import java.io.FileInputStream
@@ -54,10 +53,14 @@ fun main() {
         //RdfaParser.connect(sink)
     )
 
-    File("resources").listFiles { f -> f.extension == "rdf" }?.forEach {
-        println("Processing ${it.name}")
-        processor.process(FileInputStream(it), "http://schema.org/")
-    }
+    do {
+        File("resources").listFiles { f -> f.extension == "rdf" }?.forEach {
+            println("Processing ${it.name}")
+            processor.process(FileInputStream(it), "http://schema.org/")
+        }
+        // TODO: check number of undefined classes. If it doesn't go down anymore, nothing can be done.
+    } while (sink.hasUndefinedClasses)
+
     sink.postProcess()
 
     sources("../src/generated/java") {

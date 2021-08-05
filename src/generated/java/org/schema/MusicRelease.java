@@ -36,11 +36,11 @@ public class MusicRelease extends MusicPlaylist {
   /**
    * The group the release is credited to if different than the byArtist. For example, Red and Blue is credited to &quot;Stefani Germanotta Band&quot;, but by Lady Gaga.
    */
-  @JsonIgnore public Collection<Organization> getCreditedToOrganizations() {
+  @JsonIgnore public java.util.Collection<Organization> getCreditedToOrganizations() {
     final Object current = myData.get("creditedTo");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
   }
@@ -53,11 +53,11 @@ public class MusicRelease extends MusicPlaylist {
   /**
    * The group the release is credited to if different than the byArtist. For example, Red and Blue is credited to &quot;Stefani Germanotta Band&quot;, but by Lady Gaga.
    */
-  @JsonIgnore public Collection<Person> getCreditedToPersons() {
+  @JsonIgnore public java.util.Collection<Person> getCreditedToPersons() {
     final Object current = myData.get("creditedTo");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -70,11 +70,11 @@ public class MusicRelease extends MusicPlaylist {
   /**
    * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
    */
-  @JsonIgnore public Collection<Duration> getDurations() {
+  @JsonIgnore public java.util.Collection<Duration> getDurations() {
     final Object current = myData.get("duration");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Duration>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Duration>) current;
     }
     return Arrays.asList((Duration) current);
   }
@@ -87,11 +87,11 @@ public class MusicRelease extends MusicPlaylist {
   /**
    * Format of this release (the type of recording media used, ie. compact disc, digital media, LP, etc.).
    */
-  @JsonIgnore public Collection<MusicReleaseFormatType> getMusicReleaseFormats() {
+  @JsonIgnore public java.util.Collection<MusicReleaseFormatType> getMusicReleaseFormats() {
     final Object current = myData.get("musicReleaseFormat");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MusicReleaseFormatType>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MusicReleaseFormatType>) current;
     }
     return Arrays.asList((MusicReleaseFormatType) current);
   }
@@ -104,11 +104,11 @@ public class MusicRelease extends MusicPlaylist {
   /**
    * The catalog number for the release.
    */
-  @JsonIgnore public Collection<String> getCatalogNumbers() {
+  @JsonIgnore public java.util.Collection<String> getCatalogNumbers() {
     final Object current = myData.get("catalogNumber");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -121,11 +121,11 @@ public class MusicRelease extends MusicPlaylist {
   /**
    * The label that issued the release.
    */
-  @JsonIgnore public Collection<Organization> getRecordLabels() {
+  @JsonIgnore public java.util.Collection<Organization> getRecordLabels() {
     final Object current = myData.get("recordLabel");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
   }
@@ -138,11 +138,11 @@ public class MusicRelease extends MusicPlaylist {
   /**
    * The album this is a release of.
    */
-  @JsonIgnore public Collection<MusicAlbum> getReleaseOfs() {
+  @JsonIgnore public java.util.Collection<MusicAlbum> getReleaseOfs() {
     final Object current = myData.get("releaseOf");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MusicAlbum>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MusicAlbum>) current;
     }
     return Arrays.asList((MusicAlbum) current);
   }
@@ -1687,8 +1687,8 @@ public class MusicRelease extends MusicPlaylist {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

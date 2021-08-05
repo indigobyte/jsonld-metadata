@@ -38,11 +38,11 @@ public class ProductGroup extends Product {
   /**
    * Indicates the property or properties by which the variants in a [[ProductGroup]] vary, e.g. their size, color etc. Schema.org properties can be referenced by their short name e.g. &quot;color&quot;; terms defined elsewhere can be referenced with their URIs.
    */
-  @JsonIgnore public Collection<DefinedTerm> getVariesByDefinedTerms() {
+  @JsonIgnore public java.util.Collection<DefinedTerm> getVariesByDefinedTerms() {
     final Object current = myData.get("variesBy");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DefinedTerm>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<DefinedTerm>) current;
     }
     return Arrays.asList((DefinedTerm) current);
   }
@@ -55,11 +55,11 @@ public class ProductGroup extends Product {
   /**
    * Indicates the property or properties by which the variants in a [[ProductGroup]] vary, e.g. their size, color etc. Schema.org properties can be referenced by their short name e.g. &quot;color&quot;; terms defined elsewhere can be referenced with their URIs.
    */
-  @JsonIgnore public Collection<String> getVariesByStrings() {
+  @JsonIgnore public java.util.Collection<String> getVariesByStrings() {
     final Object current = myData.get("variesBy");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -72,11 +72,11 @@ public class ProductGroup extends Product {
   /**
    * Indicates a textual identifier for a ProductGroup.
    */
-  @JsonIgnore public Collection<String> getProductGroupIDs() {
+  @JsonIgnore public java.util.Collection<String> getProductGroupIDs() {
     final Object current = myData.get("productGroupID");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -89,11 +89,11 @@ public class ProductGroup extends Product {
   /**
    * Indicates a [[Product]] that is a member of this [[ProductGroup]] (or [[ProductModel]]).
    */
-  @JsonIgnore public Collection<Product> getHasVariants() {
+  @JsonIgnore public java.util.Collection<Product> getHasVariants() {
     final Object current = myData.get("hasVariant");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Product>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Product>) current;
     }
     return Arrays.asList((Product) current);
   }

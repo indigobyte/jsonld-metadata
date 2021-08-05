@@ -36,11 +36,11 @@ public class MedicalRiskEstimator extends MedicalEntity {
   /**
    * The condition, complication, or symptom whose risk is being estimated.
    */
-  @JsonIgnore public Collection<MedicalEntity> getEstimatesRiskOfs() {
+  @JsonIgnore public java.util.Collection<MedicalEntity> getEstimatesRiskOfs() {
     final Object current = myData.get("estimatesRiskOf");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MedicalEntity>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MedicalEntity>) current;
     }
     return Arrays.asList((MedicalEntity) current);
   }
@@ -53,11 +53,11 @@ public class MedicalRiskEstimator extends MedicalEntity {
   /**
    * A modifiable or non-modifiable risk factor included in the calculation, e.g. age, coexisting condition.
    */
-  @JsonIgnore public Collection<MedicalRiskFactor> getIncludedRiskFactors() {
+  @JsonIgnore public java.util.Collection<MedicalRiskFactor> getIncludedRiskFactors() {
     final Object current = myData.get("includedRiskFactor");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MedicalRiskFactor>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MedicalRiskFactor>) current;
     }
     return Arrays.asList((MedicalRiskFactor) current);
   }
@@ -153,24 +153,10 @@ public class MedicalRiskEstimator extends MedicalEntity {
       return this;
     }
     /**
-     * If applicable, a medical specialty in which this entity is relevant.
-     */
-    @NotNull public Builder relevantSpecialty(@NotNull MedicalSpecialty.Builder medicalSpecialty) {
-      putValue("relevantSpecialty", medicalSpecialty.build());
-      return this;
-    }
-    /**
      * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      */
     @NotNull public Builder medicineSystem(@NotNull MedicineSystem medicineSystem) {
       putValue("medicineSystem", medicineSystem);
-      return this;
-    }
-    /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
-     */
-    @NotNull public Builder medicineSystem(@NotNull MedicineSystem.Builder medicineSystem) {
-      putValue("medicineSystem", medicineSystem.build());
       return this;
     }
     /**

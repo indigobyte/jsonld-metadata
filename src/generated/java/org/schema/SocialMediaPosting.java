@@ -36,11 +36,11 @@ public class SocialMediaPosting extends Article {
   /**
    * A CreativeWork such as an image, video, or audio clip shared as part of this posting.
    */
-  @JsonIgnore public Collection<CreativeWork> getSharedContents() {
+  @JsonIgnore public java.util.Collection<CreativeWork> getSharedContents() {
     final Object current = myData.get("sharedContent");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<CreativeWork>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<CreativeWork>) current;
     }
     return Arrays.asList((CreativeWork) current);
   }
@@ -1624,8 +1624,8 @@ public class SocialMediaPosting extends Article {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

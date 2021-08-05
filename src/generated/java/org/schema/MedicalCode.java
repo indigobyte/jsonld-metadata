@@ -36,11 +36,11 @@ public class MedicalCode extends CategoryCode {
   /**
    * The coding system, e.g. 'ICD-10'.
    */
-  @JsonIgnore public Collection<String> getCodingSystems() {
+  @JsonIgnore public java.util.Collection<String> getCodingSystems() {
     final Object current = myData.get("codingSystem");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -53,11 +53,11 @@ public class MedicalCode extends CategoryCode {
   /**
    * A short textual code that uniquely identifies the value.
    */
-  @JsonIgnore public Collection<String> getCodeValues() {
+  @JsonIgnore public java.util.Collection<String> getCodeValues() {
     final Object current = myData.get("codeValue");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }

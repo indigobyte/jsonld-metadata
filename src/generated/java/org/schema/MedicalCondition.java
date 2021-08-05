@@ -36,11 +36,11 @@ public class MedicalCondition extends MedicalEntity {
   /**
    * Specifying a drug or medicine used in a medication procedure.
    */
-  @JsonIgnore public Collection<Drug> getDrugs() {
+  @JsonIgnore public java.util.Collection<Drug> getDrugs() {
     final Object current = myData.get("drug");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Drug>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Drug>) current;
     }
     return Arrays.asList((Drug) current);
   }
@@ -53,11 +53,11 @@ public class MedicalCondition extends MedicalEntity {
   /**
    * The anatomy of the underlying organ system or structures associated with this entity.
    */
-  @JsonIgnore public Collection<AnatomicalStructure> getAssociatedAnatomyAnatomicalStructures() {
+  @JsonIgnore public java.util.Collection<AnatomicalStructure> getAssociatedAnatomyAnatomicalStructures() {
     final Object current = myData.get("associatedAnatomy");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<AnatomicalStructure>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<AnatomicalStructure>) current;
     }
     return Arrays.asList((AnatomicalStructure) current);
   }
@@ -70,11 +70,11 @@ public class MedicalCondition extends MedicalEntity {
   /**
    * The anatomy of the underlying organ system or structures associated with this entity.
    */
-  @JsonIgnore public Collection<AnatomicalSystem> getAssociatedAnatomyAnatomicalSystems() {
+  @JsonIgnore public java.util.Collection<AnatomicalSystem> getAssociatedAnatomyAnatomicalSystems() {
     final Object current = myData.get("associatedAnatomy");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<AnatomicalSystem>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<AnatomicalSystem>) current;
     }
     return Arrays.asList((AnatomicalSystem) current);
   }
@@ -87,11 +87,11 @@ public class MedicalCondition extends MedicalEntity {
   /**
    * The anatomy of the underlying organ system or structures associated with this entity.
    */
-  @JsonIgnore public Collection<SuperficialAnatomy> getAssociatedAnatomySuperficialAnatomys() {
+  @JsonIgnore public java.util.Collection<SuperficialAnatomy> getAssociatedAnatomySuperficialAnatomys() {
     final Object current = myData.get("associatedAnatomy");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<SuperficialAnatomy>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<SuperficialAnatomy>) current;
     }
     return Arrays.asList((SuperficialAnatomy) current);
   }
@@ -104,11 +104,11 @@ public class MedicalCondition extends MedicalEntity {
   /**
    * The status of the study (enumerated).
    */
-  @JsonIgnore public Collection<EventStatusType> getStatusEventStatusTypes() {
+  @JsonIgnore public java.util.Collection<EventStatusType> getStatusEventStatusTypes() {
     final Object current = myData.get("status");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<EventStatusType>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<EventStatusType>) current;
     }
     return Arrays.asList((EventStatusType) current);
   }
@@ -121,11 +121,11 @@ public class MedicalCondition extends MedicalEntity {
   /**
    * The status of the study (enumerated).
    */
-  @JsonIgnore public Collection<MedicalStudyStatus> getStatusMedicalStudyStatuss() {
+  @JsonIgnore public java.util.Collection<MedicalStudyStatus> getStatusMedicalStudyStatuss() {
     final Object current = myData.get("status");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MedicalStudyStatus>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MedicalStudyStatus>) current;
     }
     return Arrays.asList((MedicalStudyStatus) current);
   }
@@ -138,11 +138,11 @@ public class MedicalCondition extends MedicalEntity {
   /**
    * The status of the study (enumerated).
    */
-  @JsonIgnore public Collection<String> getStatusStrings() {
+  @JsonIgnore public java.util.Collection<String> getStatusStrings() {
     final Object current = myData.get("status");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -155,11 +155,11 @@ public class MedicalCondition extends MedicalEntity {
   /**
    * A medical test typically performed given this condition.
    */
-  @JsonIgnore public Collection<MedicalTest> getTypicalTests() {
+  @JsonIgnore public java.util.Collection<MedicalTest> getTypicalTests() {
     final Object current = myData.get("typicalTest");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MedicalTest>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MedicalTest>) current;
     }
     return Arrays.asList((MedicalTest) current);
   }
@@ -172,11 +172,11 @@ public class MedicalCondition extends MedicalEntity {
   /**
    * The stage of the condition, if applicable.
    */
-  @JsonIgnore public Collection<MedicalConditionStage> getStages() {
+  @JsonIgnore public java.util.Collection<MedicalConditionStage> getStages() {
     final Object current = myData.get("stage");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MedicalConditionStage>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MedicalConditionStage>) current;
     }
     return Arrays.asList((MedicalConditionStage) current);
   }
@@ -189,11 +189,11 @@ public class MedicalCondition extends MedicalEntity {
   /**
    * A modifiable or non-modifiable factor that increases the risk of a patient contracting this condition, e.g. age,  coexisting condition.
    */
-  @JsonIgnore public Collection<MedicalRiskFactor> getRiskFactors() {
+  @JsonIgnore public java.util.Collection<MedicalRiskFactor> getRiskFactors() {
     final Object current = myData.get("riskFactor");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MedicalRiskFactor>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MedicalRiskFactor>) current;
     }
     return Arrays.asList((MedicalRiskFactor) current);
   }
@@ -206,11 +206,11 @@ public class MedicalCondition extends MedicalEntity {
   /**
    * One of a set of differential diagnoses for the condition. Specifically, a closely-related or competing diagnosis typically considered later in the cognitive process whereby this medical condition is distinguished from others most likely responsible for a similar collection of signs and symptoms to reach the most parsimonious diagnosis or diagnoses in a patient.
    */
-  @JsonIgnore public Collection<DDxElement> getDifferentialDiagnosiss() {
+  @JsonIgnore public java.util.Collection<DDxElement> getDifferentialDiagnosiss() {
     final Object current = myData.get("differentialDiagnosis");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DDxElement>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<DDxElement>) current;
     }
     return Arrays.asList((DDxElement) current);
   }
@@ -223,11 +223,11 @@ public class MedicalCondition extends MedicalEntity {
   /**
    * The likely outcome in either the short term or long term of the medical condition.
    */
-  @JsonIgnore public Collection<String> getExpectedPrognosiss() {
+  @JsonIgnore public java.util.Collection<String> getExpectedPrognosiss() {
     final Object current = myData.get("expectedPrognosis");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -240,11 +240,11 @@ public class MedicalCondition extends MedicalEntity {
   /**
    * A possible treatment to address this condition, sign or symptom.
    */
-  @JsonIgnore public Collection<MedicalTherapy> getPossibleTreatments() {
+  @JsonIgnore public java.util.Collection<MedicalTherapy> getPossibleTreatments() {
     final Object current = myData.get("possibleTreatment");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MedicalTherapy>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MedicalTherapy>) current;
     }
     return Arrays.asList((MedicalTherapy) current);
   }
@@ -257,11 +257,11 @@ public class MedicalCondition extends MedicalEntity {
   /**
    * Changes in the normal mechanical, physical, and biochemical functions that are associated with this activity or condition.
    */
-  @JsonIgnore public Collection<String> getPathophysiologys() {
+  @JsonIgnore public java.util.Collection<String> getPathophysiologys() {
     final Object current = myData.get("pathophysiology");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -274,11 +274,11 @@ public class MedicalCondition extends MedicalEntity {
   /**
    * The characteristics of associated patients, such as age, gender, race etc.
    */
-  @JsonIgnore public Collection<String> getEpidemiologys() {
+  @JsonIgnore public java.util.Collection<String> getEpidemiologys() {
     final Object current = myData.get("epidemiology");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -291,11 +291,11 @@ public class MedicalCondition extends MedicalEntity {
   /**
    * A preventative therapy used to prevent reoccurrence of the medical condition after an initial episode of the condition.
    */
-  @JsonIgnore public Collection<MedicalTherapy> getSecondaryPreventions() {
+  @JsonIgnore public java.util.Collection<MedicalTherapy> getSecondaryPreventions() {
     final Object current = myData.get("secondaryPrevention");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MedicalTherapy>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MedicalTherapy>) current;
     }
     return Arrays.asList((MedicalTherapy) current);
   }
@@ -308,11 +308,11 @@ public class MedicalCondition extends MedicalEntity {
   /**
    * A possible unexpected and unfavorable evolution of a medical condition. Complications may include worsening of the signs or symptoms of the disease, extension of the condition to other organ systems, etc.
    */
-  @JsonIgnore public Collection<String> getPossibleComplications() {
+  @JsonIgnore public java.util.Collection<String> getPossibleComplications() {
     final Object current = myData.get("possibleComplication");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -325,11 +325,11 @@ public class MedicalCondition extends MedicalEntity {
   /**
    * A sign or symptom of this condition. Signs are objective or physically observable manifestations of the medical condition while symptoms are the subjective experience of the medical condition.
    */
-  @JsonIgnore public Collection<MedicalSignOrSymptom> getSignOrSymptoms() {
+  @JsonIgnore public java.util.Collection<MedicalSignOrSymptom> getSignOrSymptoms() {
     final Object current = myData.get("signOrSymptom");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MedicalSignOrSymptom>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MedicalSignOrSymptom>) current;
     }
     return Arrays.asList((MedicalSignOrSymptom) current);
   }
@@ -342,11 +342,11 @@ public class MedicalCondition extends MedicalEntity {
   /**
    * The expected progression of the condition if it is not treated and allowed to progress naturally.
    */
-  @JsonIgnore public Collection<String> getNaturalProgressions() {
+  @JsonIgnore public java.util.Collection<String> getNaturalProgressions() {
     final Object current = myData.get("naturalProgression");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -359,11 +359,11 @@ public class MedicalCondition extends MedicalEntity {
   /**
    * A preventative therapy used to prevent an initial occurrence of the medical condition, such as vaccination.
    */
-  @JsonIgnore public Collection<MedicalTherapy> getPrimaryPreventions() {
+  @JsonIgnore public java.util.Collection<MedicalTherapy> getPrimaryPreventions() {
     final Object current = myData.get("primaryPrevention");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MedicalTherapy>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MedicalTherapy>) current;
     }
     return Arrays.asList((MedicalTherapy) current);
   }
@@ -447,22 +447,8 @@ public class MedicalCondition extends MedicalEntity {
     /**
      * The status of the study (enumerated).
      */
-    @NotNull public Builder status(@NotNull EventStatusType.Builder eventStatusType) {
-      putValue("status", eventStatusType.build());
-      return this;
-    }
-    /**
-     * The status of the study (enumerated).
-     */
     @NotNull public Builder status(@NotNull MedicalStudyStatus medicalStudyStatus) {
       putValue("status", medicalStudyStatus);
-      return this;
-    }
-    /**
-     * The status of the study (enumerated).
-     */
-    @NotNull public Builder status(@NotNull MedicalStudyStatus.Builder medicalStudyStatus) {
-      putValue("status", medicalStudyStatus.build());
       return this;
     }
     /**
@@ -669,24 +655,10 @@ public class MedicalCondition extends MedicalEntity {
       return this;
     }
     /**
-     * If applicable, a medical specialty in which this entity is relevant.
-     */
-    @NotNull public Builder relevantSpecialty(@NotNull MedicalSpecialty.Builder medicalSpecialty) {
-      putValue("relevantSpecialty", medicalSpecialty.build());
-      return this;
-    }
-    /**
      * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      */
     @NotNull public Builder medicineSystem(@NotNull MedicineSystem medicineSystem) {
       putValue("medicineSystem", medicineSystem);
-      return this;
-    }
-    /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
-     */
-    @NotNull public Builder medicineSystem(@NotNull MedicineSystem.Builder medicineSystem) {
-      putValue("medicineSystem", medicineSystem.build());
       return this;
     }
     /**

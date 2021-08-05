@@ -36,11 +36,11 @@ public class Book extends CreativeWork {
   /**
    * The number of pages in the book.
    */
-  @JsonIgnore public Collection<Integer> getNumberOfPagess() {
+  @JsonIgnore public java.util.Collection<Integer> getNumberOfPagess() {
     final Object current = myData.get("numberOfPages");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -53,11 +53,11 @@ public class Book extends CreativeWork {
   /**
    * The ISBN of the book.
    */
-  @JsonIgnore public Collection<String> getIsbns() {
+  @JsonIgnore public java.util.Collection<String> getIsbns() {
     final Object current = myData.get("isbn");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -70,11 +70,11 @@ public class Book extends CreativeWork {
   /**
    * The illustrator of the book.
    */
-  @JsonIgnore public Collection<Person> getIllustrators() {
+  @JsonIgnore public java.util.Collection<Person> getIllustrators() {
     final Object current = myData.get("illustrator");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -87,11 +87,11 @@ public class Book extends CreativeWork {
   /**
    * The edition of the book.
    */
-  @JsonIgnore public Collection<String> getBookEditions() {
+  @JsonIgnore public java.util.Collection<String> getBookEditions() {
     final Object current = myData.get("bookEdition");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -104,11 +104,11 @@ public class Book extends CreativeWork {
   /**
    * The format of the book.
    */
-  @JsonIgnore public Collection<BookFormatType> getBookFormats() {
+  @JsonIgnore public java.util.Collection<BookFormatType> getBookFormats() {
     final Object current = myData.get("bookFormat");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<BookFormatType>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<BookFormatType>) current;
     }
     return Arrays.asList((BookFormatType) current);
   }
@@ -121,11 +121,11 @@ public class Book extends CreativeWork {
   /**
    * Indicates whether the book is an abridged edition.
    */
-  @JsonIgnore public Collection<Boolean> getAbridgeds() {
+  @JsonIgnore public java.util.Collection<Boolean> getAbridgeds() {
     final Object current = myData.get("abridged");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Boolean>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Boolean>) current;
     }
     return Arrays.asList((Boolean) current);
   }
@@ -1607,8 +1607,8 @@ public class Book extends CreativeWork {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

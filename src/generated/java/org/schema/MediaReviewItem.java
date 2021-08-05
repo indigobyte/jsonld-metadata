@@ -36,11 +36,11 @@ public class MediaReviewItem extends CreativeWork {
   /**
    * In the context of a [[MediaReview]], indicates specific media item(s) that are grouped using a [[MediaReviewItem]].
    */
-  @JsonIgnore public Collection<MediaObject> getMediaItemAppearances() {
+  @JsonIgnore public java.util.Collection<MediaObject> getMediaItemAppearances() {
     final Object current = myData.get("mediaItemAppearance");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MediaObject>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MediaObject>) current;
     }
     return Arrays.asList((MediaObject) current);
   }
@@ -1487,8 +1487,8 @@ public class MediaReviewItem extends CreativeWork {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

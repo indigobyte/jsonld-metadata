@@ -41,11 +41,11 @@ public class Claim extends CreativeWork {
   /**
    * Indicates the first known occurence of a [[Claim]] in some [[CreativeWork]].
    */
-  @JsonIgnore public Collection<CreativeWork> getFirstAppearances() {
+  @JsonIgnore public java.util.Collection<CreativeWork> getFirstAppearances() {
     final Object current = myData.get("firstAppearance");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<CreativeWork>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<CreativeWork>) current;
     }
     return Arrays.asList((CreativeWork) current);
   }
@@ -58,11 +58,11 @@ public class Claim extends CreativeWork {
   /**
    * Indicates an occurence of a [[Claim]] in some [[CreativeWork]].
    */
-  @JsonIgnore public Collection<CreativeWork> getAppearances() {
+  @JsonIgnore public java.util.Collection<CreativeWork> getAppearances() {
     final Object current = myData.get("appearance");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<CreativeWork>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<CreativeWork>) current;
     }
     return Arrays.asList((CreativeWork) current);
   }
@@ -77,11 +77,11 @@ public class Claim extends CreativeWork {
    * For a [[Claim]] interpreted from [[MediaObject]] content
    *     sed to indicate a claim contained, implied or refined from the content of a [[MediaObject]].
    */
-  @JsonIgnore public Collection<Organization> getClaimInterpreterOrganizations() {
+  @JsonIgnore public java.util.Collection<Organization> getClaimInterpreterOrganizations() {
     final Object current = myData.get("claimInterpreter");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
   }
@@ -96,11 +96,11 @@ public class Claim extends CreativeWork {
    * For a [[Claim]] interpreted from [[MediaObject]] content
    *     sed to indicate a claim contained, implied or refined from the content of a [[MediaObject]].
    */
-  @JsonIgnore public Collection<Person> getClaimInterpreterPersons() {
+  @JsonIgnore public java.util.Collection<Person> getClaimInterpreterPersons() {
     final Object current = myData.get("claimInterpreter");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -1593,8 +1593,8 @@ public class Claim extends CreativeWork {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

@@ -36,11 +36,11 @@ public class LodgingReservation extends Reservation {
   /**
    * The latest someone may check out of a lodging establishment.
    */
-  @JsonIgnore public Collection<java.util.Date> getCheckoutTimes() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getCheckoutTimes() {
     final Object current = myData.get("checkoutTime");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -53,11 +53,11 @@ public class LodgingReservation extends Reservation {
   /**
    * A full description of the lodging unit.
    */
-  @JsonIgnore public Collection<String> getLodgingUnitDescriptions() {
+  @JsonIgnore public java.util.Collection<String> getLodgingUnitDescriptions() {
     final Object current = myData.get("lodgingUnitDescription");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -70,11 +70,11 @@ public class LodgingReservation extends Reservation {
   /**
    * The earliest someone may check into a lodging establishment.
    */
-  @JsonIgnore public Collection<java.util.Date> getCheckinTimes() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getCheckinTimes() {
     final Object current = myData.get("checkinTime");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -87,11 +87,11 @@ public class LodgingReservation extends Reservation {
   /**
    * The number of adults staying in the unit.
    */
-  @JsonIgnore public Collection<Integer> getNumAdultsIntegers() {
+  @JsonIgnore public java.util.Collection<Integer> getNumAdultsIntegers() {
     final Object current = myData.get("numAdults");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -104,11 +104,11 @@ public class LodgingReservation extends Reservation {
   /**
    * The number of adults staying in the unit.
    */
-  @JsonIgnore public Collection<QuantitativeValue> getNumAdultsQuantitativeValues() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getNumAdultsQuantitativeValues() {
     final Object current = myData.get("numAdults");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -121,11 +121,11 @@ public class LodgingReservation extends Reservation {
   /**
    * The number of children staying in the unit.
    */
-  @JsonIgnore public Collection<Integer> getNumChildrenIntegers() {
+  @JsonIgnore public java.util.Collection<Integer> getNumChildrenIntegers() {
     final Object current = myData.get("numChildren");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -138,11 +138,11 @@ public class LodgingReservation extends Reservation {
   /**
    * The number of children staying in the unit.
    */
-  @JsonIgnore public Collection<QuantitativeValue> getNumChildrenQuantitativeValues() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getNumChildrenQuantitativeValues() {
     final Object current = myData.get("numChildren");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -155,11 +155,11 @@ public class LodgingReservation extends Reservation {
   /**
    * Textual description of the unit type (including suite vs. room, size of bed, etc.).
    */
-  @JsonIgnore public Collection<QualitativeValue> getLodgingUnitTypeQualitativeValues() {
+  @JsonIgnore public java.util.Collection<QualitativeValue> getLodgingUnitTypeQualitativeValues() {
     final Object current = myData.get("lodgingUnitType");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QualitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QualitativeValue>) current;
     }
     return Arrays.asList((QualitativeValue) current);
   }
@@ -172,11 +172,11 @@ public class LodgingReservation extends Reservation {
   /**
    * Textual description of the unit type (including suite vs. room, size of bed, etc.).
    */
-  @JsonIgnore public Collection<String> getLodgingUnitTypeStrings() {
+  @JsonIgnore public java.util.Collection<String> getLodgingUnitTypeStrings() {
     final Object current = myData.get("lodgingUnitType");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -311,13 +311,6 @@ public class LodgingReservation extends Reservation {
      */
     @NotNull public Builder reservationStatus(@NotNull ReservationStatusType reservationStatusType) {
       putValue("reservationStatus", reservationStatusType);
-      return this;
-    }
-    /**
-     * The current status of the reservation.
-     */
-    @NotNull public Builder reservationStatus(@NotNull ReservationStatusType.Builder reservationStatusType) {
-      putValue("reservationStatus", reservationStatusType.build());
       return this;
     }
     /**

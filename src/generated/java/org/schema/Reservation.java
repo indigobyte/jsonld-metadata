@@ -36,11 +36,11 @@ public class Reservation extends Intangible {
   /**
    * The person or organization the reservation or ticket is for.
    */
-  @JsonIgnore public Collection<Organization> getUnderNameOrganizations() {
+  @JsonIgnore public java.util.Collection<Organization> getUnderNameOrganizations() {
     final Object current = myData.get("underName");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
   }
@@ -53,11 +53,11 @@ public class Reservation extends Intangible {
   /**
    * The person or organization the reservation or ticket is for.
    */
-  @JsonIgnore public Collection<Person> getUnderNamePersons() {
+  @JsonIgnore public java.util.Collection<Person> getUnderNamePersons() {
     final Object current = myData.get("underName");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -70,11 +70,11 @@ public class Reservation extends Intangible {
   /**
    * The current status of the reservation.
    */
-  @JsonIgnore public Collection<ReservationStatusType> getReservationStatuss() {
+  @JsonIgnore public java.util.Collection<ReservationStatusType> getReservationStatuss() {
     final Object current = myData.get("reservationStatus");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<ReservationStatusType>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<ReservationStatusType>) current;
     }
     return Arrays.asList((ReservationStatusType) current);
   }
@@ -87,11 +87,11 @@ public class Reservation extends Intangible {
   /**
    * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
    */
-  @JsonIgnore public Collection<Organization> getProviderOrganizations() {
+  @JsonIgnore public java.util.Collection<Organization> getProviderOrganizations() {
     final Object current = myData.get("provider");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
   }
@@ -104,11 +104,11 @@ public class Reservation extends Intangible {
   /**
    * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
    */
-  @JsonIgnore public Collection<Person> getProviderPersons() {
+  @JsonIgnore public java.util.Collection<Person> getProviderPersons() {
     final Object current = myData.get("provider");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -121,11 +121,11 @@ public class Reservation extends Intangible {
   /**
    * A ticket associated with the reservation.
    */
-  @JsonIgnore public Collection<Ticket> getReservedTickets() {
+  @JsonIgnore public java.util.Collection<Ticket> getReservedTickets() {
     final Object current = myData.get("reservedTicket");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Ticket>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Ticket>) current;
     }
     return Arrays.asList((Ticket) current);
   }
@@ -138,11 +138,11 @@ public class Reservation extends Intangible {
   /**
    * The date and time the reservation was booked.
    */
-  @JsonIgnore public Collection<java.util.Date> getBookingTimes() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getBookingTimes() {
     final Object current = myData.get("bookingTime");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -155,11 +155,11 @@ public class Reservation extends Intangible {
   /**
    * The thing -- flight, event, restaurant,etc. being reserved.
    */
-  @JsonIgnore public Collection<Thing> getReservationFors() {
+  @JsonIgnore public java.util.Collection<Thing> getReservationFors() {
     final Object current = myData.get("reservationFor");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Thing>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Thing>) current;
     }
     return Arrays.asList((Thing) current);
   }
@@ -172,11 +172,11 @@ public class Reservation extends Intangible {
   /**
    * The total price for the reservation or ticket, including applicable taxes, shipping, etc.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
    */
-  @JsonIgnore public Collection<Number> getTotalPriceNumbers() {
+  @JsonIgnore public java.util.Collection<Number> getTotalPriceNumbers() {
     final Object current = myData.get("totalPrice");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Number>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Number>) current;
     }
     return Arrays.asList((Number) current);
   }
@@ -189,11 +189,11 @@ public class Reservation extends Intangible {
   /**
    * The total price for the reservation or ticket, including applicable taxes, shipping, etc.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
    */
-  @JsonIgnore public Collection<PriceSpecification> getTotalPricePriceSpecifications() {
+  @JsonIgnore public java.util.Collection<PriceSpecification> getTotalPricePriceSpecifications() {
     final Object current = myData.get("totalPrice");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<PriceSpecification>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<PriceSpecification>) current;
     }
     return Arrays.asList((PriceSpecification) current);
   }
@@ -206,11 +206,11 @@ public class Reservation extends Intangible {
   /**
    * The total price for the reservation or ticket, including applicable taxes, shipping, etc.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
    */
-  @JsonIgnore public Collection<String> getTotalPriceStrings() {
+  @JsonIgnore public java.util.Collection<String> getTotalPriceStrings() {
     final Object current = myData.get("totalPrice");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -223,11 +223,11 @@ public class Reservation extends Intangible {
   /**
    * The date and time the reservation was modified.
    */
-  @JsonIgnore public Collection<java.util.Date> getModifiedTimes() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getModifiedTimes() {
     final Object current = myData.get("modifiedTime");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -240,11 +240,11 @@ public class Reservation extends Intangible {
   /**
    * A unique identifier for the reservation.
    */
-  @JsonIgnore public Collection<String> getReservationIds() {
+  @JsonIgnore public java.util.Collection<String> getReservationIds() {
     final Object current = myData.get("reservationId");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -257,11 +257,11 @@ public class Reservation extends Intangible {
   /**
    * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;.
    */
-  @JsonIgnore public Collection<String> getPriceCurrencys() {
+  @JsonIgnore public java.util.Collection<String> getPriceCurrencys() {
     final Object current = myData.get("priceCurrency");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -274,11 +274,11 @@ public class Reservation extends Intangible {
   /**
    * Any membership in a frequent flyer, hotel loyalty program, etc. being applied to the reservation.
    */
-  @JsonIgnore public Collection<ProgramMembership> getProgramMembershipUseds() {
+  @JsonIgnore public java.util.Collection<ProgramMembership> getProgramMembershipUseds() {
     final Object current = myData.get("programMembershipUsed");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<ProgramMembership>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<ProgramMembership>) current;
     }
     return Arrays.asList((ProgramMembership) current);
   }
@@ -291,11 +291,11 @@ public class Reservation extends Intangible {
   /**
    * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
    */
-  @JsonIgnore public Collection<Organization> getBrokerOrganizations() {
+  @JsonIgnore public java.util.Collection<Organization> getBrokerOrganizations() {
     final Object current = myData.get("broker");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
   }
@@ -308,11 +308,11 @@ public class Reservation extends Intangible {
   /**
    * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
    */
-  @JsonIgnore public Collection<Person> getBrokerPersons() {
+  @JsonIgnore public java.util.Collection<Person> getBrokerPersons() {
     final Object current = myData.get("broker");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -363,13 +363,6 @@ public class Reservation extends Intangible {
      */
     @NotNull public Builder reservationStatus(@NotNull ReservationStatusType reservationStatusType) {
       putValue("reservationStatus", reservationStatusType);
-      return this;
-    }
-    /**
-     * The current status of the reservation.
-     */
-    @NotNull public Builder reservationStatus(@NotNull ReservationStatusType.Builder reservationStatusType) {
-      putValue("reservationStatus", reservationStatusType.build());
       return this;
     }
     /**

@@ -36,11 +36,11 @@ public class Joint extends AnatomicalStructure {
   /**
    * The degree of mobility the joint allows.
    */
-  @JsonIgnore public Collection<MedicalEntity> getFunctionalClassMedicalEntitys() {
+  @JsonIgnore public java.util.Collection<MedicalEntity> getFunctionalClassMedicalEntitys() {
     final Object current = myData.get("functionalClass");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MedicalEntity>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MedicalEntity>) current;
     }
     return Arrays.asList((MedicalEntity) current);
   }
@@ -53,11 +53,11 @@ public class Joint extends AnatomicalStructure {
   /**
    * The degree of mobility the joint allows.
    */
-  @JsonIgnore public Collection<String> getFunctionalClassStrings() {
+  @JsonIgnore public java.util.Collection<String> getFunctionalClassStrings() {
     final Object current = myData.get("functionalClass");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -70,11 +70,11 @@ public class Joint extends AnatomicalStructure {
   /**
    * The biomechanical properties of the bone.
    */
-  @JsonIgnore public Collection<String> getBiomechnicalClasss() {
+  @JsonIgnore public java.util.Collection<String> getBiomechnicalClasss() {
     final Object current = myData.get("biomechnicalClass");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -87,11 +87,11 @@ public class Joint extends AnatomicalStructure {
   /**
    * The name given to how bone physically connects to each other.
    */
-  @JsonIgnore public Collection<String> getStructuralClasss() {
+  @JsonIgnore public java.util.Collection<String> getStructuralClasss() {
     final Object current = myData.get("structuralClass");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -292,24 +292,10 @@ public class Joint extends AnatomicalStructure {
       return this;
     }
     /**
-     * If applicable, a medical specialty in which this entity is relevant.
-     */
-    @NotNull public Builder relevantSpecialty(@NotNull MedicalSpecialty.Builder medicalSpecialty) {
-      putValue("relevantSpecialty", medicalSpecialty.build());
-      return this;
-    }
-    /**
      * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      */
     @NotNull public Builder medicineSystem(@NotNull MedicineSystem medicineSystem) {
       putValue("medicineSystem", medicineSystem);
-      return this;
-    }
-    /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
-     */
-    @NotNull public Builder medicineSystem(@NotNull MedicineSystem.Builder medicineSystem) {
-      putValue("medicineSystem", medicineSystem.build());
       return this;
     }
     /**

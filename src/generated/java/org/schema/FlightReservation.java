@@ -36,11 +36,11 @@ public class FlightReservation extends Reservation {
   /**
    * The type of security screening the passenger is subject to.
    */
-  @JsonIgnore public Collection<String> getSecurityScreenings() {
+  @JsonIgnore public java.util.Collection<String> getSecurityScreenings() {
     final Object current = myData.get("securityScreening");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -53,11 +53,11 @@ public class FlightReservation extends Reservation {
   /**
    * The passenger's sequence number as assigned by the airline.
    */
-  @JsonIgnore public Collection<String> getPassengerSequenceNumbers() {
+  @JsonIgnore public java.util.Collection<String> getPassengerSequenceNumbers() {
     final Object current = myData.get("passengerSequenceNumber");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -70,11 +70,11 @@ public class FlightReservation extends Reservation {
   /**
    * The priority status assigned to a passenger for security or boarding (e.g. FastTrack or Priority).
    */
-  @JsonIgnore public Collection<QualitativeValue> getPassengerPriorityStatusQualitativeValues() {
+  @JsonIgnore public java.util.Collection<QualitativeValue> getPassengerPriorityStatusQualitativeValues() {
     final Object current = myData.get("passengerPriorityStatus");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QualitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QualitativeValue>) current;
     }
     return Arrays.asList((QualitativeValue) current);
   }
@@ -87,11 +87,11 @@ public class FlightReservation extends Reservation {
   /**
    * The priority status assigned to a passenger for security or boarding (e.g. FastTrack or Priority).
    */
-  @JsonIgnore public Collection<String> getPassengerPriorityStatusStrings() {
+  @JsonIgnore public java.util.Collection<String> getPassengerPriorityStatusStrings() {
     final Object current = myData.get("passengerPriorityStatus");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -104,11 +104,11 @@ public class FlightReservation extends Reservation {
   /**
    * The airline-specific indicator of boarding order / preference.
    */
-  @JsonIgnore public Collection<String> getBoardingGroups() {
+  @JsonIgnore public java.util.Collection<String> getBoardingGroups() {
     final Object current = myData.get("boardingGroup");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -201,13 +201,6 @@ public class FlightReservation extends Reservation {
      */
     @NotNull public Builder reservationStatus(@NotNull ReservationStatusType reservationStatusType) {
       putValue("reservationStatus", reservationStatusType);
-      return this;
-    }
-    /**
-     * The current status of the reservation.
-     */
-    @NotNull public Builder reservationStatus(@NotNull ReservationStatusType.Builder reservationStatusType) {
-      putValue("reservationStatus", reservationStatusType.build());
       return this;
     }
     /**

@@ -39,11 +39,11 @@ public class NewsArticle extends Article {
   /**
    * If this NewsArticle appears in print, this field indicates the print section in which the article appeared.
    */
-  @JsonIgnore public Collection<String> getPrintSections() {
+  @JsonIgnore public java.util.Collection<String> getPrintSections() {
     final Object current = myData.get("printSection");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -56,11 +56,11 @@ public class NewsArticle extends Article {
   /**
    * The edition of the print product in which the NewsArticle appears.
    */
-  @JsonIgnore public Collection<String> getPrintEditions() {
+  @JsonIgnore public java.util.Collection<String> getPrintEditions() {
     final Object current = myData.get("printEdition");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -73,11 +73,11 @@ public class NewsArticle extends Article {
   /**
    * The number of the column in which the NewsArticle appears in the print edition.
    */
-  @JsonIgnore public Collection<String> getPrintColumns() {
+  @JsonIgnore public java.util.Collection<String> getPrintColumns() {
     final Object current = myData.get("printColumn");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -100,11 +100,11 @@ public class NewsArticle extends Article {
    * Dateline summaries are oriented more towards human readers than towards automated processing, and can vary substantially. Some examples: &quot;BEIRUT, Lebanon, June 2.&quot;, &quot;Paris, France&quot;, &quot;December 19, 2017 11:43AM Reporting from Washington&quot;, &quot;Beijing/Moscow&quot;, &quot;QUEZON CITY, Philippines&quot;.
    *       
    */
-  @JsonIgnore public Collection<String> getDatelines() {
+  @JsonIgnore public java.util.Collection<String> getDatelines() {
     final Object current = myData.get("dateline");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -117,11 +117,11 @@ public class NewsArticle extends Article {
   /**
    * If this NewsArticle appears in print, this field indicates the name of the page on which the article is found. Please note that this field is intended for the exact page name (e.g. A5, B18).
    */
-  @JsonIgnore public Collection<String> getPrintPages() {
+  @JsonIgnore public java.util.Collection<String> getPrintPages() {
     final Object current = myData.get("printPage");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -1731,8 +1731,8 @@ public class NewsArticle extends Article {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

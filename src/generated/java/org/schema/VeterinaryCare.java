@@ -63,13 +63,6 @@ public class VeterinaryCare extends MedicalOrganization {
       return this;
     }
     /**
-     * A medical specialty of the provider.
-     */
-    @NotNull public Builder medicalSpecialty(@NotNull MedicalSpecialty.Builder medicalSpecialty) {
-      putValue("medicalSpecialty", medicalSpecialty.build());
-      return this;
-    }
-    /**
      * The number of employees in an organization e.g. business.
      */
     @NotNull public Builder numberOfEmployees(@NotNull QuantitativeValue quantitativeValue) {

@@ -36,11 +36,11 @@ public class EducationalAudience extends Audience {
   /**
    * An educationalRole of an EducationalAudience.
    */
-  @JsonIgnore public Collection<String> getEducationalRoles() {
+  @JsonIgnore public java.util.Collection<String> getEducationalRoles() {
     final Object current = myData.get("educationalRole");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }

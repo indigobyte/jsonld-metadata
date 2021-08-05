@@ -36,11 +36,11 @@ public class Brand extends Intangible {
   /**
    * The overall rating, based on a collection of reviews or ratings, of the item.
    */
-  @JsonIgnore public Collection<AggregateRating> getAggregateRatings() {
+  @JsonIgnore public java.util.Collection<AggregateRating> getAggregateRatings() {
     final Object current = myData.get("aggregateRating");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<AggregateRating>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<AggregateRating>) current;
     }
     return Arrays.asList((AggregateRating) current);
   }
@@ -53,11 +53,11 @@ public class Brand extends Intangible {
   /**
    * An associated logo.
    */
-  @JsonIgnore public Collection<Image> getLogos() {
+  @JsonIgnore public java.util.Collection<Image> getLogos() {
     final Object current = myData.get("logo");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Image>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Image>) current;
     }
     return Arrays.asList((Image) current);
   }
@@ -70,11 +70,11 @@ public class Brand extends Intangible {
   /**
    * A review of the item.
    */
-  @JsonIgnore public Collection<Review> getReviews() {
+  @JsonIgnore public java.util.Collection<Review> getReviews() {
     final Object current = myData.get("review");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Review>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Review>) current;
     }
     return Arrays.asList((Review) current);
   }
@@ -87,11 +87,11 @@ public class Brand extends Intangible {
   /**
    * A slogan or motto associated with the item.
    */
-  @JsonIgnore public Collection<String> getSlogans() {
+  @JsonIgnore public java.util.Collection<String> getSlogans() {
     final Object current = myData.get("slogan");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }

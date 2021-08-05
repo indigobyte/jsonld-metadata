@@ -38,8 +38,8 @@ public class Thing implements Category {
   public java.util.Map<String,Object> getData() { return myData; }
   protected Object getValue(String key) {
     final Object current = myData.get(key);
-    if (current instanceof Collection) {
-      return ((Collection) current).iterator().next();
+    if (current instanceof java.util.Collection) {
+      return ((java.util.Collection) current).iterator().next();
     }
     return current;
   }
@@ -52,11 +52,11 @@ public class Thing implements Category {
   /**
    * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
    */
-  @JsonIgnore public Collection<Action> getPotentialActions() {
+  @JsonIgnore public java.util.Collection<Action> getPotentialActions() {
     final Object current = myData.get("potentialAction");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Action>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Action>) current;
     }
     return Arrays.asList((Action) current);
   }
@@ -69,11 +69,11 @@ public class Thing implements Category {
   /**
    * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
    */
-  @JsonIgnore public Collection<Description> getDisambiguatingDescriptions() {
+  @JsonIgnore public java.util.Collection<Description> getDisambiguatingDescriptions() {
     final Object current = myData.get("disambiguatingDescription");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Description>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Description>) current;
     }
     return Arrays.asList((Description) current);
   }
@@ -86,11 +86,11 @@ public class Thing implements Category {
   /**
    * URL of the item.
    */
-  @JsonIgnore public Collection<String> getUrls() {
+  @JsonIgnore public java.util.Collection<String> getUrls() {
     final Object current = myData.get("url");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -103,11 +103,11 @@ public class Thing implements Category {
   /**
    * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
    */
-  @JsonIgnore public Collection<String> getAdditionalTypes() {
+  @JsonIgnore public java.util.Collection<String> getAdditionalTypes() {
     final Object current = myData.get("additionalType");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -120,11 +120,11 @@ public class Thing implements Category {
   /**
    * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
    */
-  @JsonIgnore public Collection<String> getSameAss() {
+  @JsonIgnore public java.util.Collection<String> getSameAss() {
     final Object current = myData.get("sameAs");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -137,11 +137,11 @@ public class Thing implements Category {
   /**
    * An alias for the item.
    */
-  @JsonIgnore public Collection<String> getAlternateNames() {
+  @JsonIgnore public java.util.Collection<String> getAlternateNames() {
     final Object current = myData.get("alternateName");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -154,11 +154,11 @@ public class Thing implements Category {
   /**
    * The name of the item.
    */
-  @JsonIgnore public Collection<String> getNames() {
+  @JsonIgnore public java.util.Collection<String> getNames() {
     final Object current = myData.get("name");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -171,11 +171,11 @@ public class Thing implements Category {
   /**
    * A CreativeWork or Event about this Thing.
    */
-  @JsonIgnore public Collection<CreativeWork> getSubjectOfCreativeWorks() {
+  @JsonIgnore public java.util.Collection<CreativeWork> getSubjectOfCreativeWorks() {
     final Object current = myData.get("subjectOf");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<CreativeWork>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<CreativeWork>) current;
     }
     return Arrays.asList((CreativeWork) current);
   }
@@ -188,11 +188,11 @@ public class Thing implements Category {
   /**
    * A CreativeWork or Event about this Thing.
    */
-  @JsonIgnore public Collection<Event> getSubjectOfEvents() {
+  @JsonIgnore public java.util.Collection<Event> getSubjectOfEvents() {
     final Object current = myData.get("subjectOf");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Event>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Event>) current;
     }
     return Arrays.asList((Event) current);
   }
@@ -205,11 +205,11 @@ public class Thing implements Category {
   /**
    * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
    */
-  @JsonIgnore public Collection<CreativeWork> getMainEntityOfPageCreativeWorks() {
+  @JsonIgnore public java.util.Collection<CreativeWork> getMainEntityOfPageCreativeWorks() {
     final Object current = myData.get("mainEntityOfPage");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<CreativeWork>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<CreativeWork>) current;
     }
     return Arrays.asList((CreativeWork) current);
   }
@@ -222,11 +222,11 @@ public class Thing implements Category {
   /**
    * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
    */
-  @JsonIgnore public Collection<String> getMainEntityOfPageStrings() {
+  @JsonIgnore public java.util.Collection<String> getMainEntityOfPageStrings() {
     final Object current = myData.get("mainEntityOfPage");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -256,9 +256,9 @@ public class Thing implements Category {
     public void putValue(String key, Object value) {
       if (myData.containsKey(key)) {
         final Object current = myData.get(key);
-        final Collection list;
-        if (current instanceof Collection) {
-          list = (Collection) current;
+        final java.util.Collection list;
+        if (current instanceof java.util.Collection) {
+          list = (java.util.Collection) current;
         } else {
           list = new ArrayList<Object>();
           list.add(current);

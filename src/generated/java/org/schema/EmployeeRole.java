@@ -36,11 +36,11 @@ public class EmployeeRole extends OrganizationRole {
   /**
    * The currency (coded using [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217) ) used for the main salary information in this job posting or for this employee.
    */
-  @JsonIgnore public Collection<String> getSalaryCurrencys() {
+  @JsonIgnore public java.util.Collection<String> getSalaryCurrencys() {
     final Object current = myData.get("salaryCurrency");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -53,11 +53,11 @@ public class EmployeeRole extends OrganizationRole {
   /**
    * The base salary of the job or of an employee in an EmployeeRole.
    */
-  @JsonIgnore public Collection<MonetaryAmount> getBaseSalaryMonetaryAmounts() {
+  @JsonIgnore public java.util.Collection<MonetaryAmount> getBaseSalaryMonetaryAmounts() {
     final Object current = myData.get("baseSalary");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MonetaryAmount>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MonetaryAmount>) current;
     }
     return Arrays.asList((MonetaryAmount) current);
   }
@@ -70,11 +70,11 @@ public class EmployeeRole extends OrganizationRole {
   /**
    * The base salary of the job or of an employee in an EmployeeRole.
    */
-  @JsonIgnore public Collection<Number> getBaseSalaryNumbers() {
+  @JsonIgnore public java.util.Collection<Number> getBaseSalaryNumbers() {
     final Object current = myData.get("baseSalary");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Number>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Number>) current;
     }
     return Arrays.asList((Number) current);
   }
@@ -87,11 +87,11 @@ public class EmployeeRole extends OrganizationRole {
   /**
    * The base salary of the job or of an employee in an EmployeeRole.
    */
-  @JsonIgnore public Collection<PriceSpecification> getBaseSalaryPriceSpecifications() {
+  @JsonIgnore public java.util.Collection<PriceSpecification> getBaseSalaryPriceSpecifications() {
     final Object current = myData.get("baseSalary");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<PriceSpecification>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<PriceSpecification>) current;
     }
     return Arrays.asList((PriceSpecification) current);
   }

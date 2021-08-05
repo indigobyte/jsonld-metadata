@@ -36,11 +36,11 @@ public class BusinessAudience extends Audience {
   /**
    * The number of employees in an organization e.g. business.
    */
-  @JsonIgnore public Collection<QuantitativeValue> getNumberOfEmployeess() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getNumberOfEmployeess() {
     final Object current = myData.get("numberOfEmployees");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -53,11 +53,11 @@ public class BusinessAudience extends Audience {
   /**
    * The size of the business in annual revenue.
    */
-  @JsonIgnore public Collection<QuantitativeValue> getYearlyRevenues() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getYearlyRevenues() {
     final Object current = myData.get("yearlyRevenue");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -70,11 +70,11 @@ public class BusinessAudience extends Audience {
   /**
    * The age of the business.
    */
-  @JsonIgnore public Collection<QuantitativeValue> getYearsInOperations() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getYearsInOperations() {
     final Object current = myData.get("yearsInOperation");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }

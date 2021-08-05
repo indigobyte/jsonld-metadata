@@ -36,11 +36,11 @@ public class SizeSpecification extends QualitativeValue {
   /**
    * A suggested range of body measurements for the intended audience or person, for example inseam between 32 and 34 inches or height between 170 and 190 cm. Typically found on a size chart for wearable products.
    */
-  @JsonIgnore public Collection<QuantitativeValue> getSuggestedMeasurements() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getSuggestedMeasurements() {
     final Object current = myData.get("suggestedMeasurement");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -53,11 +53,11 @@ public class SizeSpecification extends QualitativeValue {
   /**
    * The size group (also known as &quot;size type&quot;) for a product's size. Size groups are common in the fashion industry to define size segments and suggested audiences for wearable products. Multiple values can be combined, for example &quot;men's big and tall&quot;, &quot;petite maternity&quot; or &quot;regular&quot;
    */
-  @JsonIgnore public Collection<SizeGroupEnumeration> getSizeGroupSizeGroupEnumerations() {
+  @JsonIgnore public java.util.Collection<SizeGroupEnumeration> getSizeGroupSizeGroupEnumerations() {
     final Object current = myData.get("sizeGroup");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<SizeGroupEnumeration>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<SizeGroupEnumeration>) current;
     }
     return Arrays.asList((SizeGroupEnumeration) current);
   }
@@ -70,11 +70,11 @@ public class SizeSpecification extends QualitativeValue {
   /**
    * The size group (also known as &quot;size type&quot;) for a product's size. Size groups are common in the fashion industry to define size segments and suggested audiences for wearable products. Multiple values can be combined, for example &quot;men's big and tall&quot;, &quot;petite maternity&quot; or &quot;regular&quot;
    */
-  @JsonIgnore public Collection<String> getSizeGroupStrings() {
+  @JsonIgnore public java.util.Collection<String> getSizeGroupStrings() {
     final Object current = myData.get("sizeGroup");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -87,11 +87,11 @@ public class SizeSpecification extends QualitativeValue {
   /**
    * The size system used to identify a product's size. Typically either a standard (for example, &quot;GS1&quot; or &quot;ISO-EN13402&quot;), country code (for example &quot;US&quot; or &quot;JP&quot;), or a measuring system (for example &quot;Metric&quot; or &quot;Imperial&quot;).
    */
-  @JsonIgnore public Collection<SizeSystemEnumeration> getSizeSystemSizeSystemEnumerations() {
+  @JsonIgnore public java.util.Collection<SizeSystemEnumeration> getSizeSystemSizeSystemEnumerations() {
     final Object current = myData.get("sizeSystem");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<SizeSystemEnumeration>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<SizeSystemEnumeration>) current;
     }
     return Arrays.asList((SizeSystemEnumeration) current);
   }
@@ -104,11 +104,11 @@ public class SizeSpecification extends QualitativeValue {
   /**
    * The size system used to identify a product's size. Typically either a standard (for example, &quot;GS1&quot; or &quot;ISO-EN13402&quot;), country code (for example &quot;US&quot; or &quot;JP&quot;), or a measuring system (for example &quot;Metric&quot; or &quot;Imperial&quot;).
    */
-  @JsonIgnore public Collection<String> getSizeSystemStrings() {
+  @JsonIgnore public java.util.Collection<String> getSizeSystemStrings() {
     final Object current = myData.get("sizeSystem");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -121,11 +121,11 @@ public class SizeSpecification extends QualitativeValue {
   /**
    * The suggested gender of the intended person or audience, for example &quot;male&quot;, &quot;female&quot;, or &quot;unisex&quot;.
    */
-  @JsonIgnore public Collection<GenderType> getSuggestedGenderGenderTypes() {
+  @JsonIgnore public java.util.Collection<GenderType> getSuggestedGenderGenderTypes() {
     final Object current = myData.get("suggestedGender");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<GenderType>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<GenderType>) current;
     }
     return Arrays.asList((GenderType) current);
   }
@@ -138,11 +138,11 @@ public class SizeSpecification extends QualitativeValue {
   /**
    * The suggested gender of the intended person or audience, for example &quot;male&quot;, &quot;female&quot;, or &quot;unisex&quot;.
    */
-  @JsonIgnore public Collection<String> getSuggestedGenderStrings() {
+  @JsonIgnore public java.util.Collection<String> getSuggestedGenderStrings() {
     final Object current = myData.get("suggestedGender");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -155,11 +155,11 @@ public class SizeSpecification extends QualitativeValue {
   /**
    * The age or age range for the intended audience or person, for example 3-12 months for infants, 1-5 years for toddlers.
    */
-  @JsonIgnore public Collection<QuantitativeValue> getSuggestedAges() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getSuggestedAges() {
     final Object current = myData.get("suggestedAge");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -172,11 +172,11 @@ public class SizeSpecification extends QualitativeValue {
   /**
    * A product measurement, for example the inseam of pants, the wheel size of a bicycle, or the gauge of a screw. Usually an exact measurement, but can also be a range of measurements for adjustable products, for example belts and ski bindings.
    */
-  @JsonIgnore public Collection<QuantitativeValue> getHasMeasurements() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getHasMeasurements() {
     final Object current = myData.get("hasMeasurement");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }

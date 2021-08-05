@@ -36,11 +36,11 @@ public class HealthPlanCostSharingSpecification extends Intangible {
   /**
    * Whether The rate of coinsurance expressed as a number between 0.0 and 1.0.
    */
-  @JsonIgnore public Collection<Integer> getHealthPlanCoinsuranceRateIntegers() {
+  @JsonIgnore public java.util.Collection<Integer> getHealthPlanCoinsuranceRateIntegers() {
     final Object current = myData.get("healthPlanCoinsuranceRate");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -53,11 +53,11 @@ public class HealthPlanCostSharingSpecification extends Intangible {
   /**
    * Whether The rate of coinsurance expressed as a number between 0.0 and 1.0.
    */
-  @JsonIgnore public Collection<Long> getHealthPlanCoinsuranceRateLongs() {
+  @JsonIgnore public java.util.Collection<Long> getHealthPlanCoinsuranceRateLongs() {
     final Object current = myData.get("healthPlanCoinsuranceRate");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Long>) current;
     }
     return Arrays.asList((Long) current);
   }
@@ -70,11 +70,11 @@ public class HealthPlanCostSharingSpecification extends Intangible {
   /**
    * Whether The rate of coinsurance expressed as a number between 0.0 and 1.0.
    */
-  @JsonIgnore public Collection<Float> getHealthPlanCoinsuranceRateFloats() {
+  @JsonIgnore public java.util.Collection<Float> getHealthPlanCoinsuranceRateFloats() {
     final Object current = myData.get("healthPlanCoinsuranceRate");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Float>) current;
     }
     return Arrays.asList((Float) current);
   }
@@ -87,11 +87,11 @@ public class HealthPlanCostSharingSpecification extends Intangible {
   /**
    * Whether The rate of coinsurance expressed as a number between 0.0 and 1.0.
    */
-  @JsonIgnore public Collection<Double> getHealthPlanCoinsuranceRateDoubles() {
+  @JsonIgnore public java.util.Collection<Double> getHealthPlanCoinsuranceRateDoubles() {
     final Object current = myData.get("healthPlanCoinsuranceRate");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Double>) current;
     }
     return Arrays.asList((Double) current);
   }
@@ -104,11 +104,11 @@ public class HealthPlanCostSharingSpecification extends Intangible {
   /**
    * Whether The rate of coinsurance expressed as a number between 0.0 and 1.0.
    */
-  @JsonIgnore public Collection<String> getHealthPlanCoinsuranceRateStrings() {
+  @JsonIgnore public java.util.Collection<String> getHealthPlanCoinsuranceRateStrings() {
     final Object current = myData.get("healthPlanCoinsuranceRate");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -121,11 +121,11 @@ public class HealthPlanCostSharingSpecification extends Intangible {
   /**
    * Whether the copay is before or after deductible, etc. TODO: Is this a closed set?
    */
-  @JsonIgnore public Collection<String> getHealthPlanCopayOptions() {
+  @JsonIgnore public java.util.Collection<String> getHealthPlanCopayOptions() {
     final Object current = myData.get("healthPlanCopayOption");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -138,11 +138,11 @@ public class HealthPlanCostSharingSpecification extends Intangible {
   /**
    * Whether the coinsurance applies before or after deductible, etc. TODO: Is this a closed set?
    */
-  @JsonIgnore public Collection<String> getHealthPlanCoinsuranceOptions() {
+  @JsonIgnore public java.util.Collection<String> getHealthPlanCoinsuranceOptions() {
     final Object current = myData.get("healthPlanCoinsuranceOption");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -155,11 +155,11 @@ public class HealthPlanCostSharingSpecification extends Intangible {
   /**
    * Whether The copay amount.
    */
-  @JsonIgnore public Collection<PriceSpecification> getHealthPlanCopays() {
+  @JsonIgnore public java.util.Collection<PriceSpecification> getHealthPlanCopays() {
     final Object current = myData.get("healthPlanCopay");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<PriceSpecification>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<PriceSpecification>) current;
     }
     return Arrays.asList((PriceSpecification) current);
   }
@@ -172,11 +172,11 @@ public class HealthPlanCostSharingSpecification extends Intangible {
   /**
    * The category or type of pharmacy associated with this cost sharing.
    */
-  @JsonIgnore public Collection<String> getHealthPlanPharmacyCategorys() {
+  @JsonIgnore public java.util.Collection<String> getHealthPlanPharmacyCategorys() {
     final Object current = myData.get("healthPlanPharmacyCategory");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }

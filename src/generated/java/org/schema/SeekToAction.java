@@ -36,11 +36,11 @@ public class SeekToAction extends Action {
   /**
    * The start time of the clip expressed as the number of seconds from the beginning of the work.
    */
-  @JsonIgnore public Collection<HyperTocEntry> getStartOffsetHyperTocEntrys() {
+  @JsonIgnore public java.util.Collection<HyperTocEntry> getStartOffsetHyperTocEntrys() {
     final Object current = myData.get("startOffset");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<HyperTocEntry>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<HyperTocEntry>) current;
     }
     return Arrays.asList((HyperTocEntry) current);
   }
@@ -53,11 +53,11 @@ public class SeekToAction extends Action {
   /**
    * The start time of the clip expressed as the number of seconds from the beginning of the work.
    */
-  @JsonIgnore public Collection<Number> getStartOffsetNumbers() {
+  @JsonIgnore public java.util.Collection<Number> getStartOffsetNumbers() {
     final Object current = myData.get("startOffset");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Number>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Number>) current;
     }
     return Arrays.asList((Number) current);
   }
@@ -122,13 +122,6 @@ public class SeekToAction extends Action {
      */
     @NotNull public Builder actionStatus(@NotNull ActionStatusType actionStatusType) {
       putValue("actionStatus", actionStatusType);
-      return this;
-    }
-    /**
-     * Indicates the current disposition of the Action.
-     */
-    @NotNull public Builder actionStatus(@NotNull ActionStatusType.Builder actionStatusType) {
-      putValue("actionStatus", actionStatusType.build());
       return this;
     }
     /**

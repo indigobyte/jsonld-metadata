@@ -36,11 +36,11 @@ public class DataFeedItem extends Intangible {
   /**
    * The date on which the CreativeWork was created or the item was added to a DataFeed.
    */
-  @JsonIgnore public Collection<DateCreated> getDateCreateds() {
+  @JsonIgnore public java.util.Collection<DateCreated> getDateCreateds() {
     final Object current = myData.get("dateCreated");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DateCreated>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<DateCreated>) current;
     }
     return Arrays.asList((DateCreated) current);
   }
@@ -53,11 +53,11 @@ public class DataFeedItem extends Intangible {
   /**
    * The datetime the item was removed from the DataFeed.
    */
-  @JsonIgnore public Collection<java.util.Date> getDateDeleteds() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getDateDeleteds() {
     final Object current = myData.get("dateDeleted");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -70,11 +70,11 @@ public class DataFeedItem extends Intangible {
   /**
    * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
    */
-  @JsonIgnore public Collection<java.util.Date> getDateModifieds() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getDateModifieds() {
     final Object current = myData.get("dateModified");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -87,11 +87,11 @@ public class DataFeedItem extends Intangible {
   /**
    * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')&rsquo;.
    */
-  @JsonIgnore public Collection<Thing> getItems() {
+  @JsonIgnore public java.util.Collection<Thing> getItems() {
     final Object current = myData.get("item");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Thing>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Thing>) current;
     }
     return Arrays.asList((Thing) current);
   }

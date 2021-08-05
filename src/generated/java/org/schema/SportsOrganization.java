@@ -36,11 +36,11 @@ public class SportsOrganization extends Organization {
   /**
    * A type of sport (e.g. Baseball).
    */
-  @JsonIgnore public Collection<String> getSports() {
+  @JsonIgnore public java.util.Collection<String> getSports() {
     final Object current = myData.get("sport");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }

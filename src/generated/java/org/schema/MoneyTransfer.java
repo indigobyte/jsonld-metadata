@@ -36,11 +36,11 @@ public class MoneyTransfer extends TransferAction {
   /**
    * The amount of money.
    */
-  @JsonIgnore public Collection<MonetaryAmount> getAmountMonetaryAmounts() {
+  @JsonIgnore public java.util.Collection<MonetaryAmount> getAmountMonetaryAmounts() {
     final Object current = myData.get("amount");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MonetaryAmount>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MonetaryAmount>) current;
     }
     return Arrays.asList((MonetaryAmount) current);
   }
@@ -53,11 +53,11 @@ public class MoneyTransfer extends TransferAction {
   /**
    * The amount of money.
    */
-  @JsonIgnore public Collection<Number> getAmountNumbers() {
+  @JsonIgnore public java.util.Collection<Number> getAmountNumbers() {
     final Object current = myData.get("amount");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Number>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Number>) current;
     }
     return Arrays.asList((Number) current);
   }
@@ -70,11 +70,11 @@ public class MoneyTransfer extends TransferAction {
   /**
    * A bank or bank&rsquo;s branch, financial institution or international financial institution operating the beneficiary&rsquo;s bank account or releasing funds for the beneficiary.
    */
-  @JsonIgnore public Collection<BankOrCreditUnion> getBeneficiaryBankBankOrCreditUnions() {
+  @JsonIgnore public java.util.Collection<BankOrCreditUnion> getBeneficiaryBankBankOrCreditUnions() {
     final Object current = myData.get("beneficiaryBank");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<BankOrCreditUnion>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<BankOrCreditUnion>) current;
     }
     return Arrays.asList((BankOrCreditUnion) current);
   }
@@ -87,11 +87,11 @@ public class MoneyTransfer extends TransferAction {
   /**
    * A bank or bank&rsquo;s branch, financial institution or international financial institution operating the beneficiary&rsquo;s bank account or releasing funds for the beneficiary.
    */
-  @JsonIgnore public Collection<String> getBeneficiaryBankStrings() {
+  @JsonIgnore public java.util.Collection<String> getBeneficiaryBankStrings() {
     final Object current = myData.get("beneficiaryBank");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -191,13 +191,6 @@ public class MoneyTransfer extends TransferAction {
      */
     @NotNull public Builder actionStatus(@NotNull ActionStatusType actionStatusType) {
       putValue("actionStatus", actionStatusType);
-      return this;
-    }
-    /**
-     * Indicates the current disposition of the Action.
-     */
-    @NotNull public Builder actionStatus(@NotNull ActionStatusType.Builder actionStatusType) {
-      putValue("actionStatus", actionStatusType.build());
       return this;
     }
     /**

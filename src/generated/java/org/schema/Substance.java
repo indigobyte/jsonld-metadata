@@ -36,11 +36,11 @@ public class Substance extends MedicalEntity {
   /**
    * An active ingredient, typically chemical compounds and/or biologic substances.
    */
-  @JsonIgnore public Collection<String> getActiveIngredients() {
+  @JsonIgnore public java.util.Collection<String> getActiveIngredients() {
     final Object current = myData.get("activeIngredient");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -53,11 +53,11 @@ public class Substance extends MedicalEntity {
   /**
    * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
    */
-  @JsonIgnore public Collection<MaximumDoseSchedule> getMaximumIntakes() {
+  @JsonIgnore public java.util.Collection<MaximumDoseSchedule> getMaximumIntakes() {
     final Object current = myData.get("maximumIntake");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MaximumDoseSchedule>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MaximumDoseSchedule>) current;
     }
     return Arrays.asList((MaximumDoseSchedule) current);
   }
@@ -146,24 +146,10 @@ public class Substance extends MedicalEntity {
       return this;
     }
     /**
-     * If applicable, a medical specialty in which this entity is relevant.
-     */
-    @NotNull public Builder relevantSpecialty(@NotNull MedicalSpecialty.Builder medicalSpecialty) {
-      putValue("relevantSpecialty", medicalSpecialty.build());
-      return this;
-    }
-    /**
      * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      */
     @NotNull public Builder medicineSystem(@NotNull MedicineSystem medicineSystem) {
       putValue("medicineSystem", medicineSystem);
-      return this;
-    }
-    /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
-     */
-    @NotNull public Builder medicineSystem(@NotNull MedicineSystem.Builder medicineSystem) {
-      putValue("medicineSystem", medicineSystem.build());
       return this;
     }
     /**

@@ -36,11 +36,11 @@ public class HealthPlanFormulary extends Intangible {
   /**
    * The tier(s) of drugs offered by this formulary or insurance plan.
    */
-  @JsonIgnore public Collection<String> getHealthPlanDrugTiers() {
+  @JsonIgnore public java.util.Collection<String> getHealthPlanDrugTiers() {
     final Object current = myData.get("healthPlanDrugTier");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -53,11 +53,11 @@ public class HealthPlanFormulary extends Intangible {
   /**
    * Whether The costs to the patient for services under this network or formulary.
    */
-  @JsonIgnore public Collection<Boolean> getHealthPlanCostSharings() {
+  @JsonIgnore public java.util.Collection<Boolean> getHealthPlanCostSharings() {
     final Object current = myData.get("healthPlanCostSharing");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Boolean>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Boolean>) current;
     }
     return Arrays.asList((Boolean) current);
   }
@@ -70,11 +70,11 @@ public class HealthPlanFormulary extends Intangible {
   /**
    * Whether prescriptions can be delivered by mail.
    */
-  @JsonIgnore public Collection<Boolean> getOffersPrescriptionByMails() {
+  @JsonIgnore public java.util.Collection<Boolean> getOffersPrescriptionByMails() {
     final Object current = myData.get("offersPrescriptionByMail");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Boolean>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Boolean>) current;
     }
     return Arrays.asList((Boolean) current);
   }

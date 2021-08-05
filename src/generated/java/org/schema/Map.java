@@ -36,11 +36,11 @@ public class Map extends CreativeWork {
   /**
    * Indicates the kind of Map, from the MapCategoryType Enumeration.
    */
-  @JsonIgnore public Collection<MapCategoryType> getMapTypes() {
+  @JsonIgnore public java.util.Collection<MapCategoryType> getMapTypes() {
     final Object current = myData.get("mapType");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MapCategoryType>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MapCategoryType>) current;
     }
     return Arrays.asList((MapCategoryType) current);
   }
@@ -1480,8 +1480,8 @@ public class Map extends CreativeWork {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

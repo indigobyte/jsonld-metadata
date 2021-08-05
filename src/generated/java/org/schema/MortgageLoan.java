@@ -36,11 +36,11 @@ public class MortgageLoan extends LoanOrCredit {
   /**
    * Whether borrower is a resident of the jurisdiction where the property is located.
    */
-  @JsonIgnore public Collection<Boolean> getDomiciledMortgages() {
+  @JsonIgnore public java.util.Collection<Boolean> getDomiciledMortgages() {
     final Object current = myData.get("domiciledMortgage");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Boolean>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Boolean>) current;
     }
     return Arrays.asList((Boolean) current);
   }
@@ -53,11 +53,11 @@ public class MortgageLoan extends LoanOrCredit {
   /**
    * Amount of mortgage mandate that can be converted into a proper mortgage at a later stage.
    */
-  @JsonIgnore public Collection<MonetaryAmount> getLoanMortgageMandateAmounts() {
+  @JsonIgnore public java.util.Collection<MonetaryAmount> getLoanMortgageMandateAmounts() {
     final Object current = myData.get("loanMortgageMandateAmount");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MonetaryAmount>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MonetaryAmount>) current;
     }
     return Arrays.asList((MonetaryAmount) current);
   }

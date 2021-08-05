@@ -36,11 +36,11 @@ public class LocationFeatureSpecification extends PropertyValue {
   /**
    * The date when the item becomes valid.
    */
-  @JsonIgnore public Collection<java.util.Date> getValidFroms() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getValidFroms() {
     final Object current = myData.get("validFrom");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -53,11 +53,11 @@ public class LocationFeatureSpecification extends PropertyValue {
   /**
    * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
    */
-  @JsonIgnore public Collection<java.util.Date> getValidThroughs() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getValidThroughs() {
     final Object current = myData.get("validThrough");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -70,11 +70,11 @@ public class LocationFeatureSpecification extends PropertyValue {
   /**
    * The hours during which this service or contact is available.
    */
-  @JsonIgnore public Collection<OpeningHoursSpecification> getHoursAvailables() {
+  @JsonIgnore public java.util.Collection<OpeningHoursSpecification> getHoursAvailables() {
     final Object current = myData.get("hoursAvailable");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<OpeningHoursSpecification>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<OpeningHoursSpecification>) current;
     }
     return Arrays.asList((OpeningHoursSpecification) current);
   }

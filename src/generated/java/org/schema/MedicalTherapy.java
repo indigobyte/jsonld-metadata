@@ -36,11 +36,11 @@ public class MedicalTherapy extends TherapeuticProcedure {
   /**
    * A possible serious complication and/or serious side effect of this therapy. Serious adverse outcomes include those that are life-threatening; result in death, disability, or permanent damage; require hospitalization or prolong existing hospitalization; cause congenital anomalies or birth defects; or jeopardize the patient and may require medical or surgical intervention to prevent one of the outcomes in this definition.
    */
-  @JsonIgnore public Collection<MedicalEntity> getSeriousAdverseOutcomes() {
+  @JsonIgnore public java.util.Collection<MedicalEntity> getSeriousAdverseOutcomes() {
     final Object current = myData.get("seriousAdverseOutcome");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MedicalEntity>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MedicalEntity>) current;
     }
     return Arrays.asList((MedicalEntity) current);
   }
@@ -53,11 +53,11 @@ public class MedicalTherapy extends TherapeuticProcedure {
   /**
    * A contraindication for this therapy.
    */
-  @JsonIgnore public Collection<MedicalContraindication> getContraindicationMedicalContraindications() {
+  @JsonIgnore public java.util.Collection<MedicalContraindication> getContraindicationMedicalContraindications() {
     final Object current = myData.get("contraindication");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MedicalContraindication>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MedicalContraindication>) current;
     }
     return Arrays.asList((MedicalContraindication) current);
   }
@@ -70,11 +70,11 @@ public class MedicalTherapy extends TherapeuticProcedure {
   /**
    * A contraindication for this therapy.
    */
-  @JsonIgnore public Collection<String> getContraindicationStrings() {
+  @JsonIgnore public java.util.Collection<String> getContraindicationStrings() {
     final Object current = myData.get("contraindication");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -87,11 +87,11 @@ public class MedicalTherapy extends TherapeuticProcedure {
   /**
    * A therapy that duplicates or overlaps this one.
    */
-  @JsonIgnore public Collection<MedicalTherapy> getDuplicateTherapys() {
+  @JsonIgnore public java.util.Collection<MedicalTherapy> getDuplicateTherapys() {
     final Object current = myData.get("duplicateTherapy");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MedicalTherapy>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MedicalTherapy>) current;
     }
     return Arrays.asList((MedicalTherapy) current);
   }
@@ -210,22 +210,8 @@ public class MedicalTherapy extends TherapeuticProcedure {
     /**
      * The status of the study (enumerated).
      */
-    @NotNull public Builder status(@NotNull EventStatusType.Builder eventStatusType) {
-      putValue("status", eventStatusType.build());
-      return this;
-    }
-    /**
-     * The status of the study (enumerated).
-     */
     @NotNull public Builder status(@NotNull MedicalStudyStatus medicalStudyStatus) {
       putValue("status", medicalStudyStatus);
-      return this;
-    }
-    /**
-     * The status of the study (enumerated).
-     */
-    @NotNull public Builder status(@NotNull MedicalStudyStatus.Builder medicalStudyStatus) {
-      putValue("status", medicalStudyStatus.build());
       return this;
     }
     /**
@@ -261,13 +247,6 @@ public class MedicalTherapy extends TherapeuticProcedure {
      */
     @NotNull public Builder procedureType(@NotNull MedicalProcedureType medicalProcedureType) {
       putValue("procedureType", medicalProcedureType);
-      return this;
-    }
-    /**
-     * The type of procedure, for example Surgical, Noninvasive, or Percutaneous.
-     */
-    @NotNull public Builder procedureType(@NotNull MedicalProcedureType.Builder medicalProcedureType) {
-      putValue("procedureType", medicalProcedureType.build());
       return this;
     }
     /**
@@ -341,24 +320,10 @@ public class MedicalTherapy extends TherapeuticProcedure {
       return this;
     }
     /**
-     * If applicable, a medical specialty in which this entity is relevant.
-     */
-    @NotNull public Builder relevantSpecialty(@NotNull MedicalSpecialty.Builder medicalSpecialty) {
-      putValue("relevantSpecialty", medicalSpecialty.build());
-      return this;
-    }
-    /**
      * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      */
     @NotNull public Builder medicineSystem(@NotNull MedicineSystem medicineSystem) {
       putValue("medicineSystem", medicineSystem);
-      return this;
-    }
-    /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
-     */
-    @NotNull public Builder medicineSystem(@NotNull MedicineSystem.Builder medicineSystem) {
-      putValue("medicineSystem", medicineSystem.build());
       return this;
     }
     /**

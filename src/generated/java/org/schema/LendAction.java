@@ -36,11 +36,11 @@ public class LendAction extends TransferAction {
   /**
    * A sub property of participant. The person that borrows the object being lent.
    */
-  @JsonIgnore public Collection<Participant> getBorrowers() {
+  @JsonIgnore public java.util.Collection<Participant> getBorrowers() {
     final Object current = myData.get("borrower");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Participant>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Participant>) current;
     }
     return Arrays.asList((Participant) current);
   }
@@ -105,13 +105,6 @@ public class LendAction extends TransferAction {
      */
     @NotNull public Builder actionStatus(@NotNull ActionStatusType actionStatusType) {
       putValue("actionStatus", actionStatusType);
-      return this;
-    }
-    /**
-     * Indicates the current disposition of the Action.
-     */
-    @NotNull public Builder actionStatus(@NotNull ActionStatusType.Builder actionStatusType) {
-      putValue("actionStatus", actionStatusType.build());
       return this;
     }
     /**

@@ -38,11 +38,11 @@ public class House extends Accommodation {
    * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
    * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
    */
-  @JsonIgnore public Collection<Integer> getNumberOfRoomsIntegers() {
+  @JsonIgnore public java.util.Collection<Integer> getNumberOfRoomsIntegers() {
     final Object current = myData.get("numberOfRooms");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -57,11 +57,11 @@ public class House extends Accommodation {
    * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
    * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
    */
-  @JsonIgnore public Collection<Long> getNumberOfRoomsLongs() {
+  @JsonIgnore public java.util.Collection<Long> getNumberOfRoomsLongs() {
     final Object current = myData.get("numberOfRooms");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Long>) current;
     }
     return Arrays.asList((Long) current);
   }
@@ -76,11 +76,11 @@ public class House extends Accommodation {
    * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
    * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
    */
-  @JsonIgnore public Collection<Float> getNumberOfRoomsFloats() {
+  @JsonIgnore public java.util.Collection<Float> getNumberOfRoomsFloats() {
     final Object current = myData.get("numberOfRooms");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Float>) current;
     }
     return Arrays.asList((Float) current);
   }
@@ -95,11 +95,11 @@ public class House extends Accommodation {
    * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
    * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
    */
-  @JsonIgnore public Collection<Double> getNumberOfRoomsDoubles() {
+  @JsonIgnore public java.util.Collection<Double> getNumberOfRoomsDoubles() {
     final Object current = myData.get("numberOfRooms");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Double>) current;
     }
     return Arrays.asList((Double) current);
   }
@@ -114,11 +114,11 @@ public class House extends Accommodation {
    * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
    * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
    */
-  @JsonIgnore public Collection<String> getNumberOfRoomsStrings() {
+  @JsonIgnore public java.util.Collection<String> getNumberOfRoomsStrings() {
     final Object current = myData.get("numberOfRooms");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }

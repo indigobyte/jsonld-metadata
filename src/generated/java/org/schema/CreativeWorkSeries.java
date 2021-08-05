@@ -37,11 +37,11 @@ public class CreativeWorkSeries extends CreativeWork {
   /**
    * The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
    */
-  @JsonIgnore public Collection<String> getIssns() {
+  @JsonIgnore public java.util.Collection<String> getIssns() {
     final Object current = myData.get("issn");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -54,11 +54,11 @@ public class CreativeWorkSeries extends CreativeWork {
   /**
    * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
    */
-  @JsonIgnore public Collection<java.util.Date> getStartDates() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getStartDates() {
     final Object current = myData.get("startDate");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -71,11 +71,11 @@ public class CreativeWorkSeries extends CreativeWork {
   /**
    * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
    */
-  @JsonIgnore public Collection<java.util.Date> getEndDates() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getEndDates() {
     final Object current = myData.get("endDate");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -1529,8 +1529,8 @@ public class CreativeWorkSeries extends CreativeWork {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

@@ -36,11 +36,11 @@ public class MovieTheater extends EntertainmentBusiness {
   /**
    * The number of screens in the movie theater.
    */
-  @JsonIgnore public Collection<Integer> getScreenCountIntegers() {
+  @JsonIgnore public java.util.Collection<Integer> getScreenCountIntegers() {
     final Object current = myData.get("screenCount");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -53,11 +53,11 @@ public class MovieTheater extends EntertainmentBusiness {
   /**
    * The number of screens in the movie theater.
    */
-  @JsonIgnore public Collection<Long> getScreenCountLongs() {
+  @JsonIgnore public java.util.Collection<Long> getScreenCountLongs() {
     final Object current = myData.get("screenCount");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Long>) current;
     }
     return Arrays.asList((Long) current);
   }
@@ -70,11 +70,11 @@ public class MovieTheater extends EntertainmentBusiness {
   /**
    * The number of screens in the movie theater.
    */
-  @JsonIgnore public Collection<Float> getScreenCountFloats() {
+  @JsonIgnore public java.util.Collection<Float> getScreenCountFloats() {
     final Object current = myData.get("screenCount");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Float>) current;
     }
     return Arrays.asList((Float) current);
   }
@@ -87,11 +87,11 @@ public class MovieTheater extends EntertainmentBusiness {
   /**
    * The number of screens in the movie theater.
    */
-  @JsonIgnore public Collection<Double> getScreenCountDoubles() {
+  @JsonIgnore public java.util.Collection<Double> getScreenCountDoubles() {
     final Object current = myData.get("screenCount");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Double>) current;
     }
     return Arrays.asList((Double) current);
   }
@@ -104,11 +104,11 @@ public class MovieTheater extends EntertainmentBusiness {
   /**
    * The number of screens in the movie theater.
    */
-  @JsonIgnore public Collection<String> getScreenCountStrings() {
+  @JsonIgnore public java.util.Collection<String> getScreenCountStrings() {
     final Object current = myData.get("screenCount");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }

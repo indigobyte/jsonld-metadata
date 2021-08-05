@@ -36,11 +36,11 @@ public class ShippingRateSettings extends StructuredValue {
   /**
    * Label to match an [[OfferShippingDetails]] with a [[ShippingRateSettings]] (within the context of a [[shippingSettingsLink]] cross-reference).
    */
-  @JsonIgnore public Collection<String> getShippingLabels() {
+  @JsonIgnore public java.util.Collection<String> getShippingLabels() {
     final Object current = myData.get("shippingLabel");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -53,11 +53,11 @@ public class ShippingRateSettings extends StructuredValue {
   /**
    * This can be marked 'true' to indicate that some published [[DeliveryTimeSettings]] or [[ShippingRateSettings]] are intended to apply to all [[OfferShippingDetails]] published by the same merchant, when referenced by a [[shippingSettingsLink]] in those settings. It is not meaningful to use a 'true' value for this property alongside a transitTimeLabel (for [[DeliveryTimeSettings]]) or shippingLabel (for [[ShippingRateSettings]]), since this property is for use with unlabelled settings.
    */
-  @JsonIgnore public Collection<Boolean> getIsUnlabelledFallbacks() {
+  @JsonIgnore public java.util.Collection<Boolean> getIsUnlabelledFallbacks() {
     final Object current = myData.get("isUnlabelledFallback");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Boolean>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Boolean>) current;
     }
     return Arrays.asList((Boolean) current);
   }
@@ -70,11 +70,11 @@ public class ShippingRateSettings extends StructuredValue {
   /**
    * The shipping rate is the cost of shipping to the specified destination. Typically, the maxValue and currency values (of the [[MonetaryAmount]]) are most appropriate.
    */
-  @JsonIgnore public Collection<MonetaryAmount> getShippingRates() {
+  @JsonIgnore public java.util.Collection<MonetaryAmount> getShippingRates() {
     final Object current = myData.get("shippingRate");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MonetaryAmount>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MonetaryAmount>) current;
     }
     return Arrays.asList((MonetaryAmount) current);
   }
@@ -87,11 +87,11 @@ public class ShippingRateSettings extends StructuredValue {
   /**
    * A monetary value above which (or equal to) the shipping rate becomes free. Intended to be used via an [[OfferShippingDetails]] with [[shippingSettingsLink]] matching this [[ShippingRateSettings]].
    */
-  @JsonIgnore public Collection<DeliveryChargeSpecification> getFreeShippingThresholdDeliveryChargeSpecifications() {
+  @JsonIgnore public java.util.Collection<DeliveryChargeSpecification> getFreeShippingThresholdDeliveryChargeSpecifications() {
     final Object current = myData.get("freeShippingThreshold");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DeliveryChargeSpecification>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<DeliveryChargeSpecification>) current;
     }
     return Arrays.asList((DeliveryChargeSpecification) current);
   }
@@ -104,11 +104,11 @@ public class ShippingRateSettings extends StructuredValue {
   /**
    * A monetary value above which (or equal to) the shipping rate becomes free. Intended to be used via an [[OfferShippingDetails]] with [[shippingSettingsLink]] matching this [[ShippingRateSettings]].
    */
-  @JsonIgnore public Collection<MonetaryAmount> getFreeShippingThresholdMonetaryAmounts() {
+  @JsonIgnore public java.util.Collection<MonetaryAmount> getFreeShippingThresholdMonetaryAmounts() {
     final Object current = myData.get("freeShippingThreshold");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MonetaryAmount>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MonetaryAmount>) current;
     }
     return Arrays.asList((MonetaryAmount) current);
   }
@@ -121,11 +121,11 @@ public class ShippingRateSettings extends StructuredValue {
   /**
    * indicates (possibly multiple) shipping destinations. These can be defined in several ways e.g. postalCode ranges.
    */
-  @JsonIgnore public Collection<DefinedRegion> getShippingDestinations() {
+  @JsonIgnore public java.util.Collection<DefinedRegion> getShippingDestinations() {
     final Object current = myData.get("shippingDestination");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DefinedRegion>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<DefinedRegion>) current;
     }
     return Arrays.asList((DefinedRegion) current);
   }
@@ -138,11 +138,11 @@ public class ShippingRateSettings extends StructuredValue {
   /**
    * Indicates when shipping to a particular [[shippingDestination]] is not available.
    */
-  @JsonIgnore public Collection<Boolean> getDoesNotShips() {
+  @JsonIgnore public java.util.Collection<Boolean> getDoesNotShips() {
     final Object current = myData.get("doesNotShip");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Boolean>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Boolean>) current;
     }
     return Arrays.asList((Boolean) current);
   }

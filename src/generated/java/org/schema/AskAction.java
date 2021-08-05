@@ -36,11 +36,11 @@ public class AskAction extends CommunicateAction {
   /**
    * A sub property of object. A question.
    */
-  @JsonIgnore public Collection<Question> getQuestions() {
+  @JsonIgnore public java.util.Collection<Question> getQuestions() {
     final Object current = myData.get("question");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Question>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Question>) current;
     }
     return Arrays.asList((Question) current);
   }
@@ -119,13 +119,6 @@ public class AskAction extends CommunicateAction {
      */
     @NotNull public Builder actionStatus(@NotNull ActionStatusType actionStatusType) {
       putValue("actionStatus", actionStatusType);
-      return this;
-    }
-    /**
-     * Indicates the current disposition of the Action.
-     */
-    @NotNull public Builder actionStatus(@NotNull ActionStatusType.Builder actionStatusType) {
-      putValue("actionStatus", actionStatusType.build());
       return this;
     }
     /**

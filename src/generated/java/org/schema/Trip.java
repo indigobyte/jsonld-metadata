@@ -36,11 +36,11 @@ public class Trip extends Intangible {
   /**
    * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
    */
-  @JsonIgnore public Collection<Organization> getProviderOrganizations() {
+  @JsonIgnore public java.util.Collection<Organization> getProviderOrganizations() {
     final Object current = myData.get("provider");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
   }
@@ -53,11 +53,11 @@ public class Trip extends Intangible {
   /**
    * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
    */
-  @JsonIgnore public Collection<Person> getProviderPersons() {
+  @JsonIgnore public java.util.Collection<Person> getProviderPersons() {
     final Object current = myData.get("provider");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -70,11 +70,11 @@ public class Trip extends Intangible {
   /**
    * The expected arrival time.
    */
-  @JsonIgnore public Collection<java.util.Date> getArrivalTimes() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getArrivalTimes() {
     final Object current = myData.get("arrivalTime");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -87,11 +87,11 @@ public class Trip extends Intangible {
   /**
    * The expected departure time.
    */
-  @JsonIgnore public Collection<java.util.Date> getDepartureTimes() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getDepartureTimes() {
     final Object current = myData.get("departureTime");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -104,11 +104,11 @@ public class Trip extends Intangible {
   /**
    * Destination(s) ( [[Place]] ) that make up a trip. For a trip where destination order is important use [[ItemList]] to specify that order (see examples).
    */
-  @JsonIgnore public Collection<ItemList> getItineraryItemLists() {
+  @JsonIgnore public java.util.Collection<ItemList> getItineraryItemLists() {
     final Object current = myData.get("itinerary");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<ItemList>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<ItemList>) current;
     }
     return Arrays.asList((ItemList) current);
   }
@@ -121,11 +121,11 @@ public class Trip extends Intangible {
   /**
    * Destination(s) ( [[Place]] ) that make up a trip. For a trip where destination order is important use [[ItemList]] to specify that order (see examples).
    */
-  @JsonIgnore public Collection<Place> getItineraryPlaces() {
+  @JsonIgnore public java.util.Collection<Place> getItineraryPlaces() {
     final Object current = myData.get("itinerary");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Place>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Place>) current;
     }
     return Arrays.asList((Place) current);
   }
@@ -140,11 +140,11 @@ public class Trip extends Intangible {
    * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
    *       
    */
-  @JsonIgnore public Collection<Demand> getOffersDemands() {
+  @JsonIgnore public java.util.Collection<Demand> getOffersDemands() {
     final Object current = myData.get("offers");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Demand>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Demand>) current;
     }
     return Arrays.asList((Demand) current);
   }
@@ -159,11 +159,11 @@ public class Trip extends Intangible {
    * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
    *       
    */
-  @JsonIgnore public Collection<Offer> getOffersOffers() {
+  @JsonIgnore public java.util.Collection<Offer> getOffersOffers() {
     final Object current = myData.get("offers");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Offer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Offer>) current;
     }
     return Arrays.asList((Offer) current);
   }
@@ -176,11 +176,11 @@ public class Trip extends Intangible {
   /**
    * Identifies that this [[Trip]] is a subTrip of another Trip.  For example Day 1, Day 2, etc. of a multi-day trip.
    */
-  @JsonIgnore public Collection<Trip> getPartOfTrips() {
+  @JsonIgnore public java.util.Collection<Trip> getPartOfTrips() {
     final Object current = myData.get("partOfTrip");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Trip>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Trip>) current;
     }
     return Arrays.asList((Trip) current);
   }
@@ -193,11 +193,11 @@ public class Trip extends Intangible {
   /**
    * Identifies a [[Trip]] that is a subTrip of this Trip.  For example Day 1, Day 2, etc. of a multi-day trip.
    */
-  @JsonIgnore public Collection<Trip> getSubTrips() {
+  @JsonIgnore public java.util.Collection<Trip> getSubTrips() {
     final Object current = myData.get("subTrip");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Trip>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Trip>) current;
     }
     return Arrays.asList((Trip) current);
   }

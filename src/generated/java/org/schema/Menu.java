@@ -36,11 +36,11 @@ public class Menu extends CreativeWork {
   /**
    * A subgrouping of the menu (by dishes, course, serving time period, etc.).
    */
-  @JsonIgnore public Collection<MenuSection> getHasMenuSections() {
+  @JsonIgnore public java.util.Collection<MenuSection> getHasMenuSections() {
     final Object current = myData.get("hasMenuSection");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MenuSection>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MenuSection>) current;
     }
     return Arrays.asList((MenuSection) current);
   }
@@ -53,11 +53,11 @@ public class Menu extends CreativeWork {
   /**
    * A food or drink item contained in a menu or menu section.
    */
-  @JsonIgnore public Collection<MenuItem> getHasMenuItems() {
+  @JsonIgnore public java.util.Collection<MenuItem> getHasMenuItems() {
     final Object current = myData.get("hasMenuItem");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MenuItem>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MenuItem>) current;
     }
     return Arrays.asList((MenuItem) current);
   }
@@ -1518,8 +1518,8 @@ public class Menu extends CreativeWork {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

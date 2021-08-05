@@ -36,11 +36,11 @@ public class MedicalScholarlyArticle extends ScholarlyArticle {
   /**
    * The type of the medical article, taken from the US NLM MeSH publication type catalog. See also [MeSH documentation](http://www.nlm.nih.gov/mesh/pubtypes.html).
    */
-  @JsonIgnore public Collection<String> getPublicationTypes() {
+  @JsonIgnore public java.util.Collection<String> getPublicationTypes() {
     final Object current = myData.get("publicationType");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -1617,8 +1617,8 @@ public class MedicalScholarlyArticle extends ScholarlyArticle {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

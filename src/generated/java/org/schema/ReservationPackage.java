@@ -36,11 +36,11 @@ public class ReservationPackage extends Reservation {
   /**
    * The individual reservations included in the package. Typically a repeated property.
    */
-  @JsonIgnore public Collection<Reservation> getSubReservations() {
+  @JsonIgnore public java.util.Collection<Reservation> getSubReservations() {
     final Object current = myData.get("subReservation");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Reservation>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Reservation>) current;
     }
     return Arrays.asList((Reservation) current);
   }
@@ -105,13 +105,6 @@ public class ReservationPackage extends Reservation {
      */
     @NotNull public Builder reservationStatus(@NotNull ReservationStatusType reservationStatusType) {
       putValue("reservationStatus", reservationStatusType);
-      return this;
-    }
-    /**
-     * The current status of the reservation.
-     */
-    @NotNull public Builder reservationStatus(@NotNull ReservationStatusType.Builder reservationStatusType) {
-      putValue("reservationStatus", reservationStatusType.build());
       return this;
     }
     /**

@@ -36,11 +36,11 @@ public class ItemList extends Intangible implements SuggestedAnswer {
   /**
    * Type of ordering (e.g. Ascending, Descending, Unordered).
    */
-  @JsonIgnore public Collection<ItemListOrderType> getItemListOrderItemListOrderTypes() {
+  @JsonIgnore public java.util.Collection<ItemListOrderType> getItemListOrderItemListOrderTypes() {
     final Object current = myData.get("itemListOrder");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<ItemListOrderType>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<ItemListOrderType>) current;
     }
     return Arrays.asList((ItemListOrderType) current);
   }
@@ -53,11 +53,11 @@ public class ItemList extends Intangible implements SuggestedAnswer {
   /**
    * Type of ordering (e.g. Ascending, Descending, Unordered).
    */
-  @JsonIgnore public Collection<String> getItemListOrderStrings() {
+  @JsonIgnore public java.util.Collection<String> getItemListOrderStrings() {
     final Object current = myData.get("itemListOrder");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -70,11 +70,11 @@ public class ItemList extends Intangible implements SuggestedAnswer {
   /**
    * For itemListElement values, you can use simple strings (e.g. &quot;Peter&quot;, &quot;Paul&quot;, &quot;Mary&quot;), existing entities, or use ListItem.\n\nText values are best if the elements in the list are plain strings. Existing entities are best for a simple, unordered list of existing things in your data. ListItem is used with ordered lists when you want to provide additional context about the element in that list or when the same item might be in different places in different lists.\n\nNote: The order of elements in your mark-up is not sufficient for indicating the order or elements.  Use ListItem with a 'position' property in such cases.
    */
-  @JsonIgnore public Collection<ListItem> getItemListElementListItems() {
+  @JsonIgnore public java.util.Collection<ListItem> getItemListElementListItems() {
     final Object current = myData.get("itemListElement");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<ListItem>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<ListItem>) current;
     }
     return Arrays.asList((ListItem) current);
   }
@@ -87,11 +87,11 @@ public class ItemList extends Intangible implements SuggestedAnswer {
   /**
    * For itemListElement values, you can use simple strings (e.g. &quot;Peter&quot;, &quot;Paul&quot;, &quot;Mary&quot;), existing entities, or use ListItem.\n\nText values are best if the elements in the list are plain strings. Existing entities are best for a simple, unordered list of existing things in your data. ListItem is used with ordered lists when you want to provide additional context about the element in that list or when the same item might be in different places in different lists.\n\nNote: The order of elements in your mark-up is not sufficient for indicating the order or elements.  Use ListItem with a 'position' property in such cases.
    */
-  @JsonIgnore public Collection<String> getItemListElementStrings() {
+  @JsonIgnore public java.util.Collection<String> getItemListElementStrings() {
     final Object current = myData.get("itemListElement");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -104,11 +104,11 @@ public class ItemList extends Intangible implements SuggestedAnswer {
   /**
    * For itemListElement values, you can use simple strings (e.g. &quot;Peter&quot;, &quot;Paul&quot;, &quot;Mary&quot;), existing entities, or use ListItem.\n\nText values are best if the elements in the list are plain strings. Existing entities are best for a simple, unordered list of existing things in your data. ListItem is used with ordered lists when you want to provide additional context about the element in that list or when the same item might be in different places in different lists.\n\nNote: The order of elements in your mark-up is not sufficient for indicating the order or elements.  Use ListItem with a 'position' property in such cases.
    */
-  @JsonIgnore public Collection<Thing> getItemListElementThings() {
+  @JsonIgnore public java.util.Collection<Thing> getItemListElementThings() {
     final Object current = myData.get("itemListElement");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Thing>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Thing>) current;
     }
     return Arrays.asList((Thing) current);
   }
@@ -121,11 +121,11 @@ public class ItemList extends Intangible implements SuggestedAnswer {
   /**
    * The number of items in an ItemList. Note that some descriptions might not fully describe all items in a list (e.g., multi-page pagination); in such cases, the numberOfItems would be for the entire list.
    */
-  @JsonIgnore public Collection<Integer> getNumberOfItemss() {
+  @JsonIgnore public java.util.Collection<Integer> getNumberOfItemss() {
     final Object current = myData.get("numberOfItems");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }

@@ -36,11 +36,11 @@ public class StupidType extends Thing {
   /**
    * This is a StupidProperty! - for testing only
    */
-  @JsonIgnore public Collection<QuantitativeValue> getStupidPropertys() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getStupidPropertys() {
     final Object current = myData.get("stupidProperty");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }

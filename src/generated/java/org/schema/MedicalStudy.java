@@ -36,11 +36,11 @@ public class MedicalStudy extends MedicalEntity {
   /**
    * The status of the study (enumerated).
    */
-  @JsonIgnore public Collection<EventStatusType> getStatusEventStatusTypes() {
+  @JsonIgnore public java.util.Collection<EventStatusType> getStatusEventStatusTypes() {
     final Object current = myData.get("status");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<EventStatusType>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<EventStatusType>) current;
     }
     return Arrays.asList((EventStatusType) current);
   }
@@ -53,11 +53,11 @@ public class MedicalStudy extends MedicalEntity {
   /**
    * The status of the study (enumerated).
    */
-  @JsonIgnore public Collection<MedicalStudyStatus> getStatusMedicalStudyStatuss() {
+  @JsonIgnore public java.util.Collection<MedicalStudyStatus> getStatusMedicalStudyStatuss() {
     final Object current = myData.get("status");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MedicalStudyStatus>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MedicalStudyStatus>) current;
     }
     return Arrays.asList((MedicalStudyStatus) current);
   }
@@ -70,11 +70,11 @@ public class MedicalStudy extends MedicalEntity {
   /**
    * The status of the study (enumerated).
    */
-  @JsonIgnore public Collection<String> getStatusStrings() {
+  @JsonIgnore public java.util.Collection<String> getStatusStrings() {
     final Object current = myData.get("status");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -87,11 +87,11 @@ public class MedicalStudy extends MedicalEntity {
   /**
    * The location in which the study is taking/took place.
    */
-  @JsonIgnore public Collection<AdministrativeArea> getStudyLocations() {
+  @JsonIgnore public java.util.Collection<AdministrativeArea> getStudyLocations() {
     final Object current = myData.get("studyLocation");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<AdministrativeArea>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<AdministrativeArea>) current;
     }
     return Arrays.asList((AdministrativeArea) current);
   }
@@ -104,11 +104,11 @@ public class MedicalStudy extends MedicalEntity {
   /**
    * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
    */
-  @JsonIgnore public Collection<Sponsor> getSponsors() {
+  @JsonIgnore public java.util.Collection<Sponsor> getSponsors() {
     final Object current = myData.get("sponsor");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Sponsor>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Sponsor>) current;
     }
     return Arrays.asList((Sponsor) current);
   }
@@ -121,11 +121,11 @@ public class MedicalStudy extends MedicalEntity {
   /**
    * Specifying the health condition(s) of a patient, medical study, or other target audience.
    */
-  @JsonIgnore public Collection<MedicalCondition> getHealthConditions() {
+  @JsonIgnore public java.util.Collection<MedicalCondition> getHealthConditions() {
     final Object current = myData.get("healthCondition");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MedicalCondition>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MedicalCondition>) current;
     }
     return Arrays.asList((MedicalCondition) current);
   }
@@ -138,11 +138,11 @@ public class MedicalStudy extends MedicalEntity {
   /**
    * A subject of the study, i.e. one of the medical conditions, therapies, devices, drugs, etc. investigated by the study.
    */
-  @JsonIgnore public Collection<MedicalEntity> getStudySubjects() {
+  @JsonIgnore public java.util.Collection<MedicalEntity> getStudySubjects() {
     final Object current = myData.get("studySubject");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MedicalEntity>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MedicalEntity>) current;
     }
     return Arrays.asList((MedicalEntity) current);
   }
@@ -170,22 +170,8 @@ public class MedicalStudy extends MedicalEntity {
     /**
      * The status of the study (enumerated).
      */
-    @NotNull public Builder status(@NotNull EventStatusType.Builder eventStatusType) {
-      putValue("status", eventStatusType.build());
-      return this;
-    }
-    /**
-     * The status of the study (enumerated).
-     */
     @NotNull public Builder status(@NotNull MedicalStudyStatus medicalStudyStatus) {
       putValue("status", medicalStudyStatus);
-      return this;
-    }
-    /**
-     * The status of the study (enumerated).
-     */
-    @NotNull public Builder status(@NotNull MedicalStudyStatus.Builder medicalStudyStatus) {
-      putValue("status", medicalStudyStatus.build());
       return this;
     }
     /**
@@ -294,24 +280,10 @@ public class MedicalStudy extends MedicalEntity {
       return this;
     }
     /**
-     * If applicable, a medical specialty in which this entity is relevant.
-     */
-    @NotNull public Builder relevantSpecialty(@NotNull MedicalSpecialty.Builder medicalSpecialty) {
-      putValue("relevantSpecialty", medicalSpecialty.build());
-      return this;
-    }
-    /**
      * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      */
     @NotNull public Builder medicineSystem(@NotNull MedicineSystem medicineSystem) {
       putValue("medicineSystem", medicineSystem);
-      return this;
-    }
-    /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
-     */
-    @NotNull public Builder medicineSystem(@NotNull MedicineSystem.Builder medicineSystem) {
-      putValue("medicineSystem", medicineSystem.build());
       return this;
     }
     /**

@@ -36,11 +36,11 @@ public class PostalAddress extends ContactPoint {
   /**
    * The locality in which the street address is, and which is in the region. For example, Mountain View.
    */
-  @JsonIgnore public Collection<String> getAddressLocalitys() {
+  @JsonIgnore public java.util.Collection<String> getAddressLocalitys() {
     final Object current = myData.get("addressLocality");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -53,11 +53,11 @@ public class PostalAddress extends ContactPoint {
   /**
    * The street address. For example, 1600 Amphitheatre Pkwy.
    */
-  @JsonIgnore public Collection<String> getStreetAddresss() {
+  @JsonIgnore public java.util.Collection<String> getStreetAddresss() {
     final Object current = myData.get("streetAddress");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -70,11 +70,11 @@ public class PostalAddress extends ContactPoint {
   /**
    * The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country) 
    */
-  @JsonIgnore public Collection<String> getAddressRegions() {
+  @JsonIgnore public java.util.Collection<String> getAddressRegions() {
     final Object current = myData.get("addressRegion");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -87,11 +87,11 @@ public class PostalAddress extends ContactPoint {
   /**
    * The post office box number for PO box addresses.
    */
-  @JsonIgnore public Collection<String> getPostOfficeBoxNumbers() {
+  @JsonIgnore public java.util.Collection<String> getPostOfficeBoxNumbers() {
     final Object current = myData.get("postOfficeBoxNumber");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -104,11 +104,11 @@ public class PostalAddress extends ContactPoint {
   /**
    * The postal code. For example, 94043.
    */
-  @JsonIgnore public Collection<String> getPostalCodes() {
+  @JsonIgnore public java.util.Collection<String> getPostalCodes() {
     final Object current = myData.get("postalCode");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -121,11 +121,11 @@ public class PostalAddress extends ContactPoint {
   /**
    * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
    */
-  @JsonIgnore public Collection<Country> getAddressCountryCountrys() {
+  @JsonIgnore public java.util.Collection<Country> getAddressCountryCountrys() {
     final Object current = myData.get("addressCountry");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Country>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Country>) current;
     }
     return Arrays.asList((Country) current);
   }
@@ -138,11 +138,11 @@ public class PostalAddress extends ContactPoint {
   /**
    * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
    */
-  @JsonIgnore public Collection<String> getAddressCountryStrings() {
+  @JsonIgnore public java.util.Collection<String> getAddressCountryStrings() {
     final Object current = myData.get("addressCountry");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }

@@ -36,11 +36,11 @@ public class MonetaryAmount extends StructuredValue {
   /**
    * The date when the item becomes valid.
    */
-  @JsonIgnore public Collection<java.util.Date> getValidFroms() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getValidFroms() {
     final Object current = myData.get("validFrom");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -53,11 +53,11 @@ public class MonetaryAmount extends StructuredValue {
   /**
    * The value of the quantitative value or property value node.\n\n* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.\n* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
    */
-  @JsonIgnore public Collection<Boolean> getValueBooleans() {
+  @JsonIgnore public java.util.Collection<Boolean> getValueBooleans() {
     final Object current = myData.get("value");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Boolean>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Boolean>) current;
     }
     return Arrays.asList((Boolean) current);
   }
@@ -70,11 +70,11 @@ public class MonetaryAmount extends StructuredValue {
   /**
    * The value of the quantitative value or property value node.\n\n* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.\n* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
    */
-  @JsonIgnore public Collection<Number> getValueNumbers() {
+  @JsonIgnore public java.util.Collection<Number> getValueNumbers() {
     final Object current = myData.get("value");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Number>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Number>) current;
     }
     return Arrays.asList((Number) current);
   }
@@ -87,11 +87,11 @@ public class MonetaryAmount extends StructuredValue {
   /**
    * The value of the quantitative value or property value node.\n\n* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.\n* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
    */
-  @JsonIgnore public Collection<String> getValueStrings() {
+  @JsonIgnore public java.util.Collection<String> getValueStrings() {
     final Object current = myData.get("value");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -104,11 +104,11 @@ public class MonetaryAmount extends StructuredValue {
   /**
    * The value of the quantitative value or property value node.\n\n* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.\n* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
    */
-  @JsonIgnore public Collection<StructuredValue> getValueStructuredValues() {
+  @JsonIgnore public java.util.Collection<StructuredValue> getValueStructuredValues() {
     final Object current = myData.get("value");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<StructuredValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<StructuredValue>) current;
     }
     return Arrays.asList((StructuredValue) current);
   }
@@ -121,11 +121,11 @@ public class MonetaryAmount extends StructuredValue {
   /**
    * The upper value of some characteristic or property.
    */
-  @JsonIgnore public Collection<Integer> getMaxValueIntegers() {
+  @JsonIgnore public java.util.Collection<Integer> getMaxValueIntegers() {
     final Object current = myData.get("maxValue");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -138,11 +138,11 @@ public class MonetaryAmount extends StructuredValue {
   /**
    * The upper value of some characteristic or property.
    */
-  @JsonIgnore public Collection<Long> getMaxValueLongs() {
+  @JsonIgnore public java.util.Collection<Long> getMaxValueLongs() {
     final Object current = myData.get("maxValue");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Long>) current;
     }
     return Arrays.asList((Long) current);
   }
@@ -155,11 +155,11 @@ public class MonetaryAmount extends StructuredValue {
   /**
    * The upper value of some characteristic or property.
    */
-  @JsonIgnore public Collection<Float> getMaxValueFloats() {
+  @JsonIgnore public java.util.Collection<Float> getMaxValueFloats() {
     final Object current = myData.get("maxValue");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Float>) current;
     }
     return Arrays.asList((Float) current);
   }
@@ -172,11 +172,11 @@ public class MonetaryAmount extends StructuredValue {
   /**
    * The upper value of some characteristic or property.
    */
-  @JsonIgnore public Collection<Double> getMaxValueDoubles() {
+  @JsonIgnore public java.util.Collection<Double> getMaxValueDoubles() {
     final Object current = myData.get("maxValue");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Double>) current;
     }
     return Arrays.asList((Double) current);
   }
@@ -189,11 +189,11 @@ public class MonetaryAmount extends StructuredValue {
   /**
    * The upper value of some characteristic or property.
    */
-  @JsonIgnore public Collection<String> getMaxValueStrings() {
+  @JsonIgnore public java.util.Collection<String> getMaxValueStrings() {
     final Object current = myData.get("maxValue");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -206,11 +206,11 @@ public class MonetaryAmount extends StructuredValue {
   /**
    * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
    */
-  @JsonIgnore public Collection<java.util.Date> getValidThroughs() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getValidThroughs() {
     final Object current = myData.get("validThrough");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -223,11 +223,11 @@ public class MonetaryAmount extends StructuredValue {
   /**
    * The currency in which the monetary amount is expressed.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;.
    */
-  @JsonIgnore public Collection<String> getCurrencys() {
+  @JsonIgnore public java.util.Collection<String> getCurrencys() {
     final Object current = myData.get("currency");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -240,11 +240,11 @@ public class MonetaryAmount extends StructuredValue {
   /**
    * The lower value of some characteristic or property.
    */
-  @JsonIgnore public Collection<Integer> getMinValueIntegers() {
+  @JsonIgnore public java.util.Collection<Integer> getMinValueIntegers() {
     final Object current = myData.get("minValue");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -257,11 +257,11 @@ public class MonetaryAmount extends StructuredValue {
   /**
    * The lower value of some characteristic or property.
    */
-  @JsonIgnore public Collection<Long> getMinValueLongs() {
+  @JsonIgnore public java.util.Collection<Long> getMinValueLongs() {
     final Object current = myData.get("minValue");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Long>) current;
     }
     return Arrays.asList((Long) current);
   }
@@ -274,11 +274,11 @@ public class MonetaryAmount extends StructuredValue {
   /**
    * The lower value of some characteristic or property.
    */
-  @JsonIgnore public Collection<Float> getMinValueFloats() {
+  @JsonIgnore public java.util.Collection<Float> getMinValueFloats() {
     final Object current = myData.get("minValue");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Float>) current;
     }
     return Arrays.asList((Float) current);
   }
@@ -291,11 +291,11 @@ public class MonetaryAmount extends StructuredValue {
   /**
    * The lower value of some characteristic or property.
    */
-  @JsonIgnore public Collection<Double> getMinValueDoubles() {
+  @JsonIgnore public java.util.Collection<Double> getMinValueDoubles() {
     final Object current = myData.get("minValue");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Double>) current;
     }
     return Arrays.asList((Double) current);
   }
@@ -308,11 +308,11 @@ public class MonetaryAmount extends StructuredValue {
   /**
    * The lower value of some characteristic or property.
    */
-  @JsonIgnore public Collection<String> getMinValueStrings() {
+  @JsonIgnore public java.util.Collection<String> getMinValueStrings() {
     final Object current = myData.get("minValue");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }

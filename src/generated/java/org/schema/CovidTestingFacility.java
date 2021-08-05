@@ -53,13 +53,6 @@ public class CovidTestingFacility extends MedicalClinic {
       return this;
     }
     /**
-     * A medical specialty of the provider.
-     */
-    @NotNull public Builder medicalSpecialty(@NotNull MedicalSpecialty.Builder medicalSpecialty) {
-      putValue("medicalSpecialty", medicalSpecialty.build());
-      return this;
-    }
-    /**
      * A medical service available from this provider.
      */
     @NotNull public Builder availableService(@NotNull MedicalProcedure medicalProcedure) {

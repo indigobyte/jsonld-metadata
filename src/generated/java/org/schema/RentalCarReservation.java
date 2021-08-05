@@ -36,11 +36,11 @@ public class RentalCarReservation extends Reservation {
   /**
    * When a rental car can be dropped off.
    */
-  @JsonIgnore public Collection<java.util.Date> getDropoffTimes() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getDropoffTimes() {
     final Object current = myData.get("dropoffTime");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -53,11 +53,11 @@ public class RentalCarReservation extends Reservation {
   /**
    * Where a taxi will pick up a passenger or a rental car can be picked up.
    */
-  @JsonIgnore public Collection<Place> getPickupLocations() {
+  @JsonIgnore public java.util.Collection<Place> getPickupLocations() {
     final Object current = myData.get("pickupLocation");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Place>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Place>) current;
     }
     return Arrays.asList((Place) current);
   }
@@ -70,11 +70,11 @@ public class RentalCarReservation extends Reservation {
   /**
    * Where a rental car can be dropped off.
    */
-  @JsonIgnore public Collection<Place> getDropoffLocations() {
+  @JsonIgnore public java.util.Collection<Place> getDropoffLocations() {
     final Object current = myData.get("dropoffLocation");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Place>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Place>) current;
     }
     return Arrays.asList((Place) current);
   }
@@ -87,11 +87,11 @@ public class RentalCarReservation extends Reservation {
   /**
    * When a taxi will pickup a passenger or a rental car can be picked up.
    */
-  @JsonIgnore public Collection<java.util.Date> getPickupTimes() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getPickupTimes() {
     final Object current = myData.get("pickupTime");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -184,13 +184,6 @@ public class RentalCarReservation extends Reservation {
      */
     @NotNull public Builder reservationStatus(@NotNull ReservationStatusType reservationStatusType) {
       putValue("reservationStatus", reservationStatusType);
-      return this;
-    }
-    /**
-     * The current status of the reservation.
-     */
-    @NotNull public Builder reservationStatus(@NotNull ReservationStatusType.Builder reservationStatusType) {
-      putValue("reservationStatus", reservationStatusType.build());
       return this;
     }
     /**

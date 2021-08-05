@@ -38,11 +38,11 @@ public class AlignmentObject extends Intangible {
   /**
    * The description of a node in an established educational framework.
    */
-  @JsonIgnore public Collection<String> getTargetDescriptions() {
+  @JsonIgnore public java.util.Collection<String> getTargetDescriptions() {
     final Object current = myData.get("targetDescription");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -55,11 +55,11 @@ public class AlignmentObject extends Intangible {
   /**
    * The framework to which the resource being described is aligned.
    */
-  @JsonIgnore public Collection<String> getEducationalFrameworks() {
+  @JsonIgnore public java.util.Collection<String> getEducationalFrameworks() {
     final Object current = myData.get("educationalFramework");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -72,11 +72,11 @@ public class AlignmentObject extends Intangible {
   /**
    * The name of a node in an established educational framework.
    */
-  @JsonIgnore public Collection<String> getTargetNames() {
+  @JsonIgnore public java.util.Collection<String> getTargetNames() {
     final Object current = myData.get("targetName");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -89,11 +89,11 @@ public class AlignmentObject extends Intangible {
   /**
    * A category of alignment between the learning resource and the framework node. Recommended values include: 'requires', 'textComplexity', 'readingLevel', and 'educationalSubject'.
    */
-  @JsonIgnore public Collection<String> getAlignmentTypes() {
+  @JsonIgnore public java.util.Collection<String> getAlignmentTypes() {
     final Object current = myData.get("alignmentType");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -106,11 +106,11 @@ public class AlignmentObject extends Intangible {
   /**
    * The URL of a node in an established educational framework.
    */
-  @JsonIgnore public Collection<String> getTargetUrls() {
+  @JsonIgnore public java.util.Collection<String> getTargetUrls() {
     final Object current = myData.get("targetUrl");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }

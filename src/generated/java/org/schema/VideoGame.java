@@ -36,11 +36,11 @@ public class VideoGame extends SoftwareApplication {
   /**
    * Indicates whether this game is multi-player, co-op or single-player.  The game can be marked as multi-player, co-op and single-player at the same time.
    */
-  @JsonIgnore public Collection<GamePlayMode> getPlayModes() {
+  @JsonIgnore public java.util.Collection<GamePlayMode> getPlayModes() {
     final Object current = myData.get("playMode");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<GamePlayMode>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<GamePlayMode>) current;
     }
     return Arrays.asList((GamePlayMode) current);
   }
@@ -53,11 +53,11 @@ public class VideoGame extends SoftwareApplication {
   /**
    * The electronic systems used to play &lt;a href=&quot;http://en.wikipedia.org/wiki/Category:Video_game_platforms&quot;&gt;video games&lt;/a&gt;.
    */
-  @JsonIgnore public Collection<String> getGamePlatformStrings() {
+  @JsonIgnore public java.util.Collection<String> getGamePlatformStrings() {
     final Object current = myData.get("gamePlatform");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -70,11 +70,11 @@ public class VideoGame extends SoftwareApplication {
   /**
    * The electronic systems used to play &lt;a href=&quot;http://en.wikipedia.org/wiki/Category:Video_game_platforms&quot;&gt;video games&lt;/a&gt;.
    */
-  @JsonIgnore public Collection<Thing> getGamePlatformThings() {
+  @JsonIgnore public java.util.Collection<Thing> getGamePlatformThings() {
     final Object current = myData.get("gamePlatform");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Thing>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Thing>) current;
     }
     return Arrays.asList((Thing) current);
   }
@@ -87,11 +87,11 @@ public class VideoGame extends SoftwareApplication {
   /**
    * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
    */
-  @JsonIgnore public Collection<Actor> getActors() {
+  @JsonIgnore public java.util.Collection<Actor> getActors() {
     final Object current = myData.get("actor");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Actor>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Actor>) current;
     }
     return Arrays.asList((Actor) current);
   }
@@ -104,11 +104,11 @@ public class VideoGame extends SoftwareApplication {
   /**
    * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
    */
-  @JsonIgnore public Collection<Person> getDirectors() {
+  @JsonIgnore public java.util.Collection<Person> getDirectors() {
     final Object current = myData.get("director");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -121,11 +121,11 @@ public class VideoGame extends SoftwareApplication {
   /**
    * The trailer of a movie or tv/radio series, season, episode, etc.
    */
-  @JsonIgnore public Collection<VideoObject> getTrailers() {
+  @JsonIgnore public java.util.Collection<VideoObject> getTrailers() {
     final Object current = myData.get("trailer");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<VideoObject>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<VideoObject>) current;
     }
     return Arrays.asList((VideoObject) current);
   }
@@ -138,11 +138,11 @@ public class VideoGame extends SoftwareApplication {
   /**
    * The composer of the soundtrack.
    */
-  @JsonIgnore public Collection<MusicGroup> getMusicByMusicGroups() {
+  @JsonIgnore public java.util.Collection<MusicGroup> getMusicByMusicGroups() {
     final Object current = myData.get("musicBy");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MusicGroup>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MusicGroup>) current;
     }
     return Arrays.asList((MusicGroup) current);
   }
@@ -155,11 +155,11 @@ public class VideoGame extends SoftwareApplication {
   /**
    * The composer of the soundtrack.
    */
-  @JsonIgnore public Collection<Person> getMusicByPersons() {
+  @JsonIgnore public java.util.Collection<Person> getMusicByPersons() {
     final Object current = myData.get("musicBy");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -172,11 +172,11 @@ public class VideoGame extends SoftwareApplication {
   /**
    * Cheat codes to the game.
    */
-  @JsonIgnore public Collection<CreativeWork> getCheatCodes() {
+  @JsonIgnore public java.util.Collection<CreativeWork> getCheatCodes() {
     final Object current = myData.get("cheatCode");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<CreativeWork>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<CreativeWork>) current;
     }
     return Arrays.asList((CreativeWork) current);
   }
@@ -189,11 +189,11 @@ public class VideoGame extends SoftwareApplication {
   /**
    * Links to tips, tactics, etc.
    */
-  @JsonIgnore public Collection<CreativeWork> getGameTips() {
+  @JsonIgnore public java.util.Collection<CreativeWork> getGameTips() {
     final Object current = myData.get("gameTip");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<CreativeWork>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<CreativeWork>) current;
     }
     return Arrays.asList((CreativeWork) current);
   }
@@ -206,11 +206,11 @@ public class VideoGame extends SoftwareApplication {
   /**
    * The server on which  it is possible to play the game.
    */
-  @JsonIgnore public Collection<GameServer> getGameServers() {
+  @JsonIgnore public java.util.Collection<GameServer> getGameServers() {
     final Object current = myData.get("gameServer");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<GameServer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<GameServer>) current;
     }
     return Arrays.asList((GameServer) current);
   }
@@ -1965,8 +1965,8 @@ public class VideoGame extends SoftwareApplication {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

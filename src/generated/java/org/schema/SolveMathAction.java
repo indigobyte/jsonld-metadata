@@ -36,11 +36,11 @@ public class SolveMathAction extends Action {
   /**
    * For questions that are part of learning resources (e.g. Quiz), eduQuestionType indicates the format of question being given. Example: &quot;Multiple choice&quot;, &quot;Open ended&quot;, &quot;Flashcard&quot;.
    */
-  @JsonIgnore public Collection<String> getEduQuestionTypes() {
+  @JsonIgnore public java.util.Collection<String> getEduQuestionTypes() {
     final Object current = myData.get("eduQuestionType");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -91,13 +91,6 @@ public class SolveMathAction extends Action {
      */
     @NotNull public Builder actionStatus(@NotNull ActionStatusType actionStatusType) {
       putValue("actionStatus", actionStatusType);
-      return this;
-    }
-    /**
-     * Indicates the current disposition of the Action.
-     */
-    @NotNull public Builder actionStatus(@NotNull ActionStatusType.Builder actionStatusType) {
-      putValue("actionStatus", actionStatusType.build());
       return this;
     }
     /**

@@ -36,11 +36,11 @@ public class HowToItem extends ListItem {
   /**
    * The required quantity of the item(s).
    */
-  @JsonIgnore public Collection<Integer> getRequiredQuantityIntegers() {
+  @JsonIgnore public java.util.Collection<Integer> getRequiredQuantityIntegers() {
     final Object current = myData.get("requiredQuantity");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -53,11 +53,11 @@ public class HowToItem extends ListItem {
   /**
    * The required quantity of the item(s).
    */
-  @JsonIgnore public Collection<Long> getRequiredQuantityLongs() {
+  @JsonIgnore public java.util.Collection<Long> getRequiredQuantityLongs() {
     final Object current = myData.get("requiredQuantity");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Long>) current;
     }
     return Arrays.asList((Long) current);
   }
@@ -70,11 +70,11 @@ public class HowToItem extends ListItem {
   /**
    * The required quantity of the item(s).
    */
-  @JsonIgnore public Collection<Float> getRequiredQuantityFloats() {
+  @JsonIgnore public java.util.Collection<Float> getRequiredQuantityFloats() {
     final Object current = myData.get("requiredQuantity");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Float>) current;
     }
     return Arrays.asList((Float) current);
   }
@@ -87,11 +87,11 @@ public class HowToItem extends ListItem {
   /**
    * The required quantity of the item(s).
    */
-  @JsonIgnore public Collection<Double> getRequiredQuantityDoubles() {
+  @JsonIgnore public java.util.Collection<Double> getRequiredQuantityDoubles() {
     final Object current = myData.get("requiredQuantity");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Double>) current;
     }
     return Arrays.asList((Double) current);
   }
@@ -104,11 +104,11 @@ public class HowToItem extends ListItem {
   /**
    * The required quantity of the item(s).
    */
-  @JsonIgnore public Collection<String> getRequiredQuantityStrings() {
+  @JsonIgnore public java.util.Collection<String> getRequiredQuantityStrings() {
     final Object current = myData.get("requiredQuantity");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }

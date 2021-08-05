@@ -46,11 +46,11 @@ public class TVEpisode extends Episode {
    * Since schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.
    * 
    */
-  @JsonIgnore public Collection<Identifier> getTitleEIDRs() {
+  @JsonIgnore public java.util.Collection<Identifier> getTitleEIDRs() {
     final Object current = myData.get("titleEIDR");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Identifier>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Identifier>) current;
     }
     return Arrays.asList((Identifier) current);
   }
@@ -71,11 +71,11 @@ public class TVEpisode extends Episode {
    * 
    * In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.
    */
-  @JsonIgnore public Collection<Country> getCountryOfOrigins() {
+  @JsonIgnore public java.util.Collection<Country> getCountryOfOrigins() {
     final Object current = myData.get("countryOfOrigin");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Country>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Country>) current;
     }
     return Arrays.asList((Country) current);
   }
@@ -88,11 +88,11 @@ public class TVEpisode extends Episode {
   /**
    * Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
    */
-  @JsonIgnore public Collection<Language> getSubtitleLanguageLanguages() {
+  @JsonIgnore public java.util.Collection<Language> getSubtitleLanguageLanguages() {
     final Object current = myData.get("subtitleLanguage");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Language>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Language>) current;
     }
     return Arrays.asList((Language) current);
   }
@@ -105,11 +105,11 @@ public class TVEpisode extends Episode {
   /**
    * Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
    */
-  @JsonIgnore public Collection<String> getSubtitleLanguageStrings() {
+  @JsonIgnore public java.util.Collection<String> getSubtitleLanguageStrings() {
     final Object current = myData.get("subtitleLanguage");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -1687,8 +1687,8 @@ public class TVEpisode extends Episode {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

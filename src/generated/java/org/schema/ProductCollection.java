@@ -36,11 +36,11 @@ public class ProductCollection extends Product {
   /**
    * This links to a node or nodes indicating the exact quantity of the products included in  an [[Offer]] or [[ProductCollection]].
    */
-  @JsonIgnore public Collection<TypeAndQuantityNode> getIncludesObjects() {
+  @JsonIgnore public java.util.Collection<TypeAndQuantityNode> getIncludesObjects() {
     final Object current = myData.get("includesObject");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<TypeAndQuantityNode>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<TypeAndQuantityNode>) current;
     }
     return Arrays.asList((TypeAndQuantityNode) current);
   }

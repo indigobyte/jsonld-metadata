@@ -36,11 +36,11 @@ public class CookAction extends CreateAction {
   /**
    * A sub property of location. The specific food establishment where the action occurred.
    */
-  @JsonIgnore public Collection<FoodEstablishment> getFoodEstablishmentFoodEstablishments() {
+  @JsonIgnore public java.util.Collection<FoodEstablishment> getFoodEstablishmentFoodEstablishments() {
     final Object current = myData.get("foodEstablishment");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<FoodEstablishment>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<FoodEstablishment>) current;
     }
     return Arrays.asList((FoodEstablishment) current);
   }
@@ -53,11 +53,11 @@ public class CookAction extends CreateAction {
   /**
    * A sub property of location. The specific food establishment where the action occurred.
    */
-  @JsonIgnore public Collection<Place> getFoodEstablishmentPlaces() {
+  @JsonIgnore public java.util.Collection<Place> getFoodEstablishmentPlaces() {
     final Object current = myData.get("foodEstablishment");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Place>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Place>) current;
     }
     return Arrays.asList((Place) current);
   }
@@ -70,11 +70,11 @@ public class CookAction extends CreateAction {
   /**
    * A sub property of location. The specific food event where the action occurred.
    */
-  @JsonIgnore public Collection<FoodEvent> getFoodEvents() {
+  @JsonIgnore public java.util.Collection<FoodEvent> getFoodEvents() {
     final Object current = myData.get("foodEvent");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<FoodEvent>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<FoodEvent>) current;
     }
     return Arrays.asList((FoodEvent) current);
   }
@@ -87,11 +87,11 @@ public class CookAction extends CreateAction {
   /**
    * A sub property of instrument. The recipe/instructions used to perform the action.
    */
-  @JsonIgnore public Collection<Instrument> getRecipes() {
+  @JsonIgnore public java.util.Collection<Instrument> getRecipes() {
     final Object current = myData.get("recipe");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Instrument>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Instrument>) current;
     }
     return Arrays.asList((Instrument) current);
   }
@@ -184,13 +184,6 @@ public class CookAction extends CreateAction {
      */
     @NotNull public Builder actionStatus(@NotNull ActionStatusType actionStatusType) {
       putValue("actionStatus", actionStatusType);
-      return this;
-    }
-    /**
-     * Indicates the current disposition of the Action.
-     */
-    @NotNull public Builder actionStatus(@NotNull ActionStatusType.Builder actionStatusType) {
-      putValue("actionStatus", actionStatusType.build());
       return this;
     }
     /**

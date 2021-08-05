@@ -77,13 +77,6 @@ public class EventReservation extends Reservation {
       return this;
     }
     /**
-     * The current status of the reservation.
-     */
-    @NotNull public Builder reservationStatus(@NotNull ReservationStatusType.Builder reservationStatusType) {
-      putValue("reservationStatus", reservationStatusType.build());
-      return this;
-    }
-    /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
      */
     @NotNull public Builder provider(@NotNull Organization organization) {

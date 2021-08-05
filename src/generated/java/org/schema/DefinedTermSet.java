@@ -36,11 +36,11 @@ public class DefinedTermSet extends CreativeWork implements InDefinedTermSet {
   /**
    * A Defined Term contained in this term set.
    */
-  @JsonIgnore public Collection<HasDefinedTerm> getHasDefinedTerms() {
+  @JsonIgnore public java.util.Collection<HasDefinedTerm> getHasDefinedTerms() {
     final Object current = myData.get("hasDefinedTerm");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<HasDefinedTerm>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<HasDefinedTerm>) current;
     }
     return Arrays.asList((HasDefinedTerm) current);
   }
@@ -1480,8 +1480,8 @@ public class DefinedTermSet extends CreativeWork implements InDefinedTermSet {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

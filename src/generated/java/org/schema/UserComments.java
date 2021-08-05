@@ -36,11 +36,11 @@ public class UserComments extends UserInteraction {
   /**
    * The URL at which a reply may be posted to the specified UserComment.
    */
-  @JsonIgnore public Collection<String> getReplyToUrls() {
+  @JsonIgnore public java.util.Collection<String> getReplyToUrls() {
     final Object current = myData.get("replyToUrl");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -53,11 +53,11 @@ public class UserComments extends UserInteraction {
   /**
    * Specifies the CreativeWork associated with the UserComment.
    */
-  @JsonIgnore public Collection<CreativeWork> getDiscussess() {
+  @JsonIgnore public java.util.Collection<CreativeWork> getDiscussess() {
     final Object current = myData.get("discusses");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<CreativeWork>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<CreativeWork>) current;
     }
     return Arrays.asList((CreativeWork) current);
   }
@@ -70,11 +70,11 @@ public class UserComments extends UserInteraction {
   /**
    * The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.
    */
-  @JsonIgnore public Collection<Creator> getCreators() {
+  @JsonIgnore public java.util.Collection<Creator> getCreators() {
     final Object current = myData.get("creator");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Creator>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Creator>) current;
     }
     return Arrays.asList((Creator) current);
   }
@@ -87,11 +87,11 @@ public class UserComments extends UserInteraction {
   /**
    * The text of the UserComment.
    */
-  @JsonIgnore public Collection<String> getCommentTexts() {
+  @JsonIgnore public java.util.Collection<String> getCommentTexts() {
     final Object current = myData.get("commentText");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -104,11 +104,11 @@ public class UserComments extends UserInteraction {
   /**
    * The time at which the UserComment was made.
    */
-  @JsonIgnore public Collection<java.util.Date> getCommentTimes() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getCommentTimes() {
     final Object current = myData.get("commentTime");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -341,13 +341,6 @@ public class UserComments extends UserInteraction {
      */
     @NotNull public Builder eventStatus(@NotNull EventStatusType eventStatusType) {
       putValue("eventStatus", eventStatusType);
-      return this;
-    }
-    /**
-     * An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.
-     */
-    @NotNull public Builder eventStatus(@NotNull EventStatusType.Builder eventStatusType) {
-      putValue("eventStatus", eventStatusType.build());
       return this;
     }
     /**

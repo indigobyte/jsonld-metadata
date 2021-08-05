@@ -36,11 +36,11 @@ public class EducationEvent extends Event {
   /**
    * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
    */
-  @JsonIgnore public Collection<DefinedTerm> getEducationalLevelDefinedTerms() {
+  @JsonIgnore public java.util.Collection<DefinedTerm> getEducationalLevelDefinedTerms() {
     final Object current = myData.get("educationalLevel");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DefinedTerm>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<DefinedTerm>) current;
     }
     return Arrays.asList((DefinedTerm) current);
   }
@@ -53,11 +53,11 @@ public class EducationEvent extends Event {
   /**
    * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
    */
-  @JsonIgnore public Collection<String> getEducationalLevelStrings() {
+  @JsonIgnore public java.util.Collection<String> getEducationalLevelStrings() {
     final Object current = myData.get("educationalLevel");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -70,11 +70,11 @@ public class EducationEvent extends Event {
   /**
    * The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.
    */
-  @JsonIgnore public Collection<DefinedTerm> getTeachesDefinedTerms() {
+  @JsonIgnore public java.util.Collection<DefinedTerm> getTeachesDefinedTerms() {
     final Object current = myData.get("teaches");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DefinedTerm>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<DefinedTerm>) current;
     }
     return Arrays.asList((DefinedTerm) current);
   }
@@ -87,11 +87,11 @@ public class EducationEvent extends Event {
   /**
    * The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.
    */
-  @JsonIgnore public Collection<String> getTeachesStrings() {
+  @JsonIgnore public java.util.Collection<String> getTeachesStrings() {
     final Object current = myData.get("teaches");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -104,11 +104,11 @@ public class EducationEvent extends Event {
   /**
    * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
    */
-  @JsonIgnore public Collection<DefinedTerm> getAssessesDefinedTerms() {
+  @JsonIgnore public java.util.Collection<DefinedTerm> getAssessesDefinedTerms() {
     final Object current = myData.get("assesses");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DefinedTerm>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<DefinedTerm>) current;
     }
     return Arrays.asList((DefinedTerm) current);
   }
@@ -121,11 +121,11 @@ public class EducationEvent extends Event {
   /**
    * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
    */
-  @JsonIgnore public Collection<String> getAssessesStrings() {
+  @JsonIgnore public java.util.Collection<String> getAssessesStrings() {
     final Object current = myData.get("assesses");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -379,13 +379,6 @@ public class EducationEvent extends Event {
      */
     @NotNull public Builder eventStatus(@NotNull EventStatusType eventStatusType) {
       putValue("eventStatus", eventStatusType);
-      return this;
-    }
-    /**
-     * An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.
-     */
-    @NotNull public Builder eventStatus(@NotNull EventStatusType.Builder eventStatusType) {
-      putValue("eventStatus", eventStatusType.build());
       return this;
     }
     /**

@@ -36,11 +36,11 @@ public class MonetaryGrant extends Grant {
   /**
    * The amount of money.
    */
-  @JsonIgnore public Collection<MonetaryAmount> getAmountMonetaryAmounts() {
+  @JsonIgnore public java.util.Collection<MonetaryAmount> getAmountMonetaryAmounts() {
     final Object current = myData.get("amount");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MonetaryAmount>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MonetaryAmount>) current;
     }
     return Arrays.asList((MonetaryAmount) current);
   }
@@ -53,11 +53,11 @@ public class MonetaryGrant extends Grant {
   /**
    * The amount of money.
    */
-  @JsonIgnore public Collection<Number> getAmountNumbers() {
+  @JsonIgnore public java.util.Collection<Number> getAmountNumbers() {
     final Object current = myData.get("amount");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Number>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Number>) current;
     }
     return Arrays.asList((Number) current);
   }
@@ -70,11 +70,11 @@ public class MonetaryGrant extends Grant {
   /**
    * A person or organization that supports (sponsors) something through some kind of financial contribution.
    */
-  @JsonIgnore public Collection<Sponsor> getFunders() {
+  @JsonIgnore public java.util.Collection<Sponsor> getFunders() {
     final Object current = myData.get("funder");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Sponsor>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Sponsor>) current;
     }
     return Arrays.asList((Sponsor) current);
   }

@@ -36,11 +36,11 @@ public class BioChemEntity extends Thing {
   /**
    * A similar BioChemEntity, e.g., obtained by fingerprint similarity algorithms.
    */
-  @JsonIgnore public Collection<BioChemEntity> getBioChemSimilaritys() {
+  @JsonIgnore public java.util.Collection<BioChemEntity> getBioChemSimilaritys() {
     final Object current = myData.get("bioChemSimilarity");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<BioChemEntity>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<BioChemEntity>) current;
     }
     return Arrays.asList((BioChemEntity) current);
   }
@@ -53,11 +53,11 @@ public class BioChemEntity extends Thing {
   /**
    * Molecular function performed by this BioChemEntity; please use PropertyValue if you want to include any evidence.
    */
-  @JsonIgnore public Collection<DefinedTerm> getHasMolecularFunctionDefinedTerms() {
+  @JsonIgnore public java.util.Collection<DefinedTerm> getHasMolecularFunctionDefinedTerms() {
     final Object current = myData.get("hasMolecularFunction");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DefinedTerm>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<DefinedTerm>) current;
     }
     return Arrays.asList((DefinedTerm) current);
   }
@@ -70,11 +70,11 @@ public class BioChemEntity extends Thing {
   /**
    * Molecular function performed by this BioChemEntity; please use PropertyValue if you want to include any evidence.
    */
-  @JsonIgnore public Collection<PropertyValue> getHasMolecularFunctionPropertyValues() {
+  @JsonIgnore public java.util.Collection<PropertyValue> getHasMolecularFunctionPropertyValues() {
     final Object current = myData.get("hasMolecularFunction");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<PropertyValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<PropertyValue>) current;
     }
     return Arrays.asList((PropertyValue) current);
   }
@@ -87,11 +87,11 @@ public class BioChemEntity extends Thing {
   /**
    * Molecular function performed by this BioChemEntity; please use PropertyValue if you want to include any evidence.
    */
-  @JsonIgnore public Collection<String> getHasMolecularFunctionStrings() {
+  @JsonIgnore public java.util.Collection<String> getHasMolecularFunctionStrings() {
     final Object current = myData.get("hasMolecularFunction");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -104,11 +104,11 @@ public class BioChemEntity extends Thing {
   /**
    * A role played by the BioChemEntity within a biological context.
    */
-  @JsonIgnore public Collection<DefinedTerm> getBiologicalRoles() {
+  @JsonIgnore public java.util.Collection<DefinedTerm> getBiologicalRoles() {
     final Object current = myData.get("biologicalRole");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DefinedTerm>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<DefinedTerm>) current;
     }
     return Arrays.asList((DefinedTerm) current);
   }
@@ -121,11 +121,11 @@ public class BioChemEntity extends Thing {
   /**
    * A BioChemEntity that is known to interact with this item.
    */
-  @JsonIgnore public Collection<BioChemEntity> getBioChemInteractions() {
+  @JsonIgnore public java.util.Collection<BioChemEntity> getBioChemInteractions() {
     final Object current = myData.get("bioChemInteraction");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<BioChemEntity>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<BioChemEntity>) current;
     }
     return Arrays.asList((BioChemEntity) current);
   }
@@ -138,11 +138,11 @@ public class BioChemEntity extends Thing {
   /**
    * Biological process this BioChemEntity is involved in; please use PropertyValue if you want to include any evidence.
    */
-  @JsonIgnore public Collection<DefinedTerm> getIsInvolvedInBiologicalProcessDefinedTerms() {
+  @JsonIgnore public java.util.Collection<DefinedTerm> getIsInvolvedInBiologicalProcessDefinedTerms() {
     final Object current = myData.get("isInvolvedInBiologicalProcess");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DefinedTerm>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<DefinedTerm>) current;
     }
     return Arrays.asList((DefinedTerm) current);
   }
@@ -155,11 +155,11 @@ public class BioChemEntity extends Thing {
   /**
    * Biological process this BioChemEntity is involved in; please use PropertyValue if you want to include any evidence.
    */
-  @JsonIgnore public Collection<PropertyValue> getIsInvolvedInBiologicalProcessPropertyValues() {
+  @JsonIgnore public java.util.Collection<PropertyValue> getIsInvolvedInBiologicalProcessPropertyValues() {
     final Object current = myData.get("isInvolvedInBiologicalProcess");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<PropertyValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<PropertyValue>) current;
     }
     return Arrays.asList((PropertyValue) current);
   }
@@ -172,11 +172,11 @@ public class BioChemEntity extends Thing {
   /**
    * Biological process this BioChemEntity is involved in; please use PropertyValue if you want to include any evidence.
    */
-  @JsonIgnore public Collection<String> getIsInvolvedInBiologicalProcessStrings() {
+  @JsonIgnore public java.util.Collection<String> getIsInvolvedInBiologicalProcessStrings() {
     final Object current = myData.get("isInvolvedInBiologicalProcess");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -189,11 +189,11 @@ public class BioChemEntity extends Thing {
   /**
    * Subcellular location where this BioChemEntity is located; please use PropertyValue if you want to include any evidence.
    */
-  @JsonIgnore public Collection<DefinedTerm> getIsLocatedInSubcellularLocationDefinedTerms() {
+  @JsonIgnore public java.util.Collection<DefinedTerm> getIsLocatedInSubcellularLocationDefinedTerms() {
     final Object current = myData.get("isLocatedInSubcellularLocation");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DefinedTerm>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<DefinedTerm>) current;
     }
     return Arrays.asList((DefinedTerm) current);
   }
@@ -206,11 +206,11 @@ public class BioChemEntity extends Thing {
   /**
    * Subcellular location where this BioChemEntity is located; please use PropertyValue if you want to include any evidence.
    */
-  @JsonIgnore public Collection<PropertyValue> getIsLocatedInSubcellularLocationPropertyValues() {
+  @JsonIgnore public java.util.Collection<PropertyValue> getIsLocatedInSubcellularLocationPropertyValues() {
     final Object current = myData.get("isLocatedInSubcellularLocation");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<PropertyValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<PropertyValue>) current;
     }
     return Arrays.asList((PropertyValue) current);
   }
@@ -223,11 +223,11 @@ public class BioChemEntity extends Thing {
   /**
    * Subcellular location where this BioChemEntity is located; please use PropertyValue if you want to include any evidence.
    */
-  @JsonIgnore public Collection<String> getIsLocatedInSubcellularLocationStrings() {
+  @JsonIgnore public java.util.Collection<String> getIsLocatedInSubcellularLocationStrings() {
     final Object current = myData.get("isLocatedInSubcellularLocation");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -240,11 +240,11 @@ public class BioChemEntity extends Thing {
   /**
    * The taxonomic grouping of the organism that expresses, encodes, or in someway related to the BioChemEntity.
    */
-  @JsonIgnore public Collection<DefinedTerm> getTaxonomicRangeDefinedTerms() {
+  @JsonIgnore public java.util.Collection<DefinedTerm> getTaxonomicRangeDefinedTerms() {
     final Object current = myData.get("taxonomicRange");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DefinedTerm>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<DefinedTerm>) current;
     }
     return Arrays.asList((DefinedTerm) current);
   }
@@ -257,11 +257,11 @@ public class BioChemEntity extends Thing {
   /**
    * The taxonomic grouping of the organism that expresses, encodes, or in someway related to the BioChemEntity.
    */
-  @JsonIgnore public Collection<String> getTaxonomicRangeStrings() {
+  @JsonIgnore public java.util.Collection<String> getTaxonomicRangeStrings() {
     final Object current = myData.get("taxonomicRange");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -274,11 +274,11 @@ public class BioChemEntity extends Thing {
   /**
    * The taxonomic grouping of the organism that expresses, encodes, or in someway related to the BioChemEntity.
    */
-  @JsonIgnore public Collection<Taxon> getTaxonomicRangeTaxons() {
+  @JsonIgnore public java.util.Collection<Taxon> getTaxonomicRangeTaxons() {
     final Object current = myData.get("taxonomicRange");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Taxon>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Taxon>) current;
     }
     return Arrays.asList((Taxon) current);
   }
@@ -291,11 +291,11 @@ public class BioChemEntity extends Thing {
   /**
    * Disease associated to this BioChemEntity. Such disease can be a MedicalCondition or a URL. If you want to add an evidence supporting the association, please use PropertyValue.
    */
-  @JsonIgnore public Collection<MedicalCondition> getAssociatedDiseaseMedicalConditions() {
+  @JsonIgnore public java.util.Collection<MedicalCondition> getAssociatedDiseaseMedicalConditions() {
     final Object current = myData.get("associatedDisease");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MedicalCondition>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MedicalCondition>) current;
     }
     return Arrays.asList((MedicalCondition) current);
   }
@@ -308,11 +308,11 @@ public class BioChemEntity extends Thing {
   /**
    * Disease associated to this BioChemEntity. Such disease can be a MedicalCondition or a URL. If you want to add an evidence supporting the association, please use PropertyValue.
    */
-  @JsonIgnore public Collection<PropertyValue> getAssociatedDiseasePropertyValues() {
+  @JsonIgnore public java.util.Collection<PropertyValue> getAssociatedDiseasePropertyValues() {
     final Object current = myData.get("associatedDisease");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<PropertyValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<PropertyValue>) current;
     }
     return Arrays.asList((PropertyValue) current);
   }
@@ -325,11 +325,11 @@ public class BioChemEntity extends Thing {
   /**
    * Disease associated to this BioChemEntity. Such disease can be a MedicalCondition or a URL. If you want to add an evidence supporting the association, please use PropertyValue.
    */
-  @JsonIgnore public Collection<String> getAssociatedDiseaseStrings() {
+  @JsonIgnore public java.util.Collection<String> getAssociatedDiseaseStrings() {
     final Object current = myData.get("associatedDisease");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -342,11 +342,11 @@ public class BioChemEntity extends Thing {
   /**
    * Another BioChemEntity encoding by this one.
    */
-  @JsonIgnore public Collection<Gene> getIsEncodedByBioChemEntitys() {
+  @JsonIgnore public java.util.Collection<Gene> getIsEncodedByBioChemEntitys() {
     final Object current = myData.get("isEncodedByBioChemEntity");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Gene>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Gene>) current;
     }
     return Arrays.asList((Gene) current);
   }
@@ -359,11 +359,11 @@ public class BioChemEntity extends Thing {
   /**
    * Indicates a BioChemEntity that is (in some sense) a part of this BioChemEntity. 
    */
-  @JsonIgnore public Collection<BioChemEntity> getIsPartOfBioChemEntitys() {
+  @JsonIgnore public java.util.Collection<BioChemEntity> getIsPartOfBioChemEntitys() {
     final Object current = myData.get("isPartOfBioChemEntity");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<BioChemEntity>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<BioChemEntity>) current;
     }
     return Arrays.asList((BioChemEntity) current);
   }
@@ -376,11 +376,11 @@ public class BioChemEntity extends Thing {
   /**
    * Indicates a BioChemEntity that (in some sense) has this BioChemEntity as a part. 
    */
-  @JsonIgnore public Collection<BioChemEntity> getHasBioChemEntityParts() {
+  @JsonIgnore public java.util.Collection<BioChemEntity> getHasBioChemEntityParts() {
     final Object current = myData.get("hasBioChemEntityPart");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<BioChemEntity>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<BioChemEntity>) current;
     }
     return Arrays.asList((BioChemEntity) current);
   }

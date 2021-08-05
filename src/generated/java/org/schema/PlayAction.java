@@ -36,11 +36,11 @@ public class PlayAction extends Action {
   /**
    * Upcoming or past event associated with this place, organization, or action.
    */
-  @JsonIgnore public Collection<Event> getEvents() {
+  @JsonIgnore public java.util.Collection<Event> getEvents() {
     final Object current = myData.get("event");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Event>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Event>) current;
     }
     return Arrays.asList((Event) current);
   }
@@ -53,11 +53,11 @@ public class PlayAction extends Action {
   /**
    * An intended audience, i.e. a group for whom something was created.
    */
-  @JsonIgnore public Collection<Audience> getAudiences() {
+  @JsonIgnore public java.util.Collection<Audience> getAudiences() {
     final Object current = myData.get("audience");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Audience>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Audience>) current;
     }
     return Arrays.asList((Audience) current);
   }
@@ -129,13 +129,6 @@ public class PlayAction extends Action {
      */
     @NotNull public Builder actionStatus(@NotNull ActionStatusType actionStatusType) {
       putValue("actionStatus", actionStatusType);
-      return this;
-    }
-    /**
-     * Indicates the current disposition of the Action.
-     */
-    @NotNull public Builder actionStatus(@NotNull ActionStatusType.Builder actionStatusType) {
-      putValue("actionStatus", actionStatusType.build());
       return this;
     }
     /**

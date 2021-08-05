@@ -36,11 +36,11 @@ public class WebAPI extends Service {
   /**
    * Further documentation describing the Web API in more detail.
    */
-  @JsonIgnore public Collection<CreativeWork> getDocumentationCreativeWorks() {
+  @JsonIgnore public java.util.Collection<CreativeWork> getDocumentationCreativeWorks() {
     final Object current = myData.get("documentation");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<CreativeWork>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<CreativeWork>) current;
     }
     return Arrays.asList((CreativeWork) current);
   }
@@ -53,11 +53,11 @@ public class WebAPI extends Service {
   /**
    * Further documentation describing the Web API in more detail.
    */
-  @JsonIgnore public Collection<String> getDocumentationStrings() {
+  @JsonIgnore public java.util.Collection<String> getDocumentationStrings() {
     final Object current = myData.get("documentation");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }

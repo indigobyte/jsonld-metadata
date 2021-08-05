@@ -36,11 +36,11 @@ public class BoatTrip extends Trip {
   /**
    * The terminal or port from which the boat arrives.
    */
-  @JsonIgnore public Collection<BoatTerminal> getArrivalBoatTerminals() {
+  @JsonIgnore public java.util.Collection<BoatTerminal> getArrivalBoatTerminals() {
     final Object current = myData.get("arrivalBoatTerminal");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<BoatTerminal>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<BoatTerminal>) current;
     }
     return Arrays.asList((BoatTerminal) current);
   }
@@ -53,11 +53,11 @@ public class BoatTrip extends Trip {
   /**
    * The terminal or port from which the boat departs.
    */
-  @JsonIgnore public Collection<BoatTerminal> getDepartureBoatTerminals() {
+  @JsonIgnore public java.util.Collection<BoatTerminal> getDepartureBoatTerminals() {
     final Object current = myData.get("departureBoatTerminal");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<BoatTerminal>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<BoatTerminal>) current;
     }
     return Arrays.asList((BoatTerminal) current);
   }

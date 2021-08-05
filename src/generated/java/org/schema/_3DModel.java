@@ -37,11 +37,11 @@ public class _3DModel extends MediaObject {
   /**
    * Whether the 3DModel allows resizing. For example, room layout applications often do not allow 3DModel elements to be resized to reflect reality.
    */
-  @JsonIgnore public Collection<Boolean> getIsResizables() {
+  @JsonIgnore public java.util.Collection<Boolean> getIsResizables() {
     final Object current = myData.get("isResizable");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Boolean>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Boolean>) current;
     }
     return Arrays.asList((Boolean) current);
   }
@@ -1724,8 +1724,8 @@ public class _3DModel extends MediaObject {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

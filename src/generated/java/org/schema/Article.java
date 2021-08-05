@@ -36,11 +36,11 @@ public class Article extends CreativeWork {
   /**
    * Articles may belong to one or more 'sections' in a magazine or newspaper, such as Sports, Lifestyle, etc.
    */
-  @JsonIgnore public Collection<String> getArticleSections() {
+  @JsonIgnore public java.util.Collection<String> getArticleSections() {
     final Object current = myData.get("articleSection");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -53,11 +53,11 @@ public class Article extends CreativeWork {
   /**
    * The actual body of the article.
    */
-  @JsonIgnore public Collection<String> getArticleBodys() {
+  @JsonIgnore public java.util.Collection<String> getArticleBodys() {
     final Object current = myData.get("articleBody");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -70,11 +70,11 @@ public class Article extends CreativeWork {
   /**
    * The page on which the work ends; for example &quot;138&quot; or &quot;xvi&quot;.
    */
-  @JsonIgnore public Collection<Integer> getPageEndIntegers() {
+  @JsonIgnore public java.util.Collection<Integer> getPageEndIntegers() {
     final Object current = myData.get("pageEnd");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -87,11 +87,11 @@ public class Article extends CreativeWork {
   /**
    * The page on which the work ends; for example &quot;138&quot; or &quot;xvi&quot;.
    */
-  @JsonIgnore public Collection<String> getPageEndStrings() {
+  @JsonIgnore public java.util.Collection<String> getPageEndStrings() {
     final Object current = myData.get("pageEnd");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -104,11 +104,11 @@ public class Article extends CreativeWork {
   /**
    * The number of words in the text of the Article.
    */
-  @JsonIgnore public Collection<Integer> getWordCounts() {
+  @JsonIgnore public java.util.Collection<Integer> getWordCounts() {
     final Object current = myData.get("wordCount");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -147,11 +147,11 @@ public class Article extends CreativeWork {
    * we define a supporting type, [[SpeakableSpecification]]  which is defined to be a possible value of the *speakable* property.
    *          
    */
-  @JsonIgnore public Collection<SpeakableSpecification> getSpeakableSpeakableSpecifications() {
+  @JsonIgnore public java.util.Collection<SpeakableSpecification> getSpeakableSpeakableSpecifications() {
     final Object current = myData.get("speakable");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<SpeakableSpecification>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<SpeakableSpecification>) current;
     }
     return Arrays.asList((SpeakableSpecification) current);
   }
@@ -190,11 +190,11 @@ public class Article extends CreativeWork {
    * we define a supporting type, [[SpeakableSpecification]]  which is defined to be a possible value of the *speakable* property.
    *          
    */
-  @JsonIgnore public Collection<String> getSpeakableStrings() {
+  @JsonIgnore public java.util.Collection<String> getSpeakableStrings() {
     final Object current = myData.get("speakable");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -207,11 +207,11 @@ public class Article extends CreativeWork {
   /**
    * The page on which the work starts; for example &quot;135&quot; or &quot;xiii&quot;.
    */
-  @JsonIgnore public Collection<Integer> getPageStartIntegers() {
+  @JsonIgnore public java.util.Collection<Integer> getPageStartIntegers() {
     final Object current = myData.get("pageStart");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -224,11 +224,11 @@ public class Article extends CreativeWork {
   /**
    * The page on which the work starts; for example &quot;135&quot; or &quot;xiii&quot;.
    */
-  @JsonIgnore public Collection<String> getPageStartStrings() {
+  @JsonIgnore public java.util.Collection<String> getPageStartStrings() {
     final Object current = myData.get("pageStart");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -241,11 +241,11 @@ public class Article extends CreativeWork {
   /**
    * Any description of pages that is not separated into pageStart and pageEnd; for example, &quot;1-6, 9, 55&quot; or &quot;10-12, 46-49&quot;.
    */
-  @JsonIgnore public Collection<String> getPaginations() {
+  @JsonIgnore public java.util.Collection<String> getPaginations() {
     final Object current = myData.get("pagination");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -258,11 +258,11 @@ public class Article extends CreativeWork {
   /**
    * For an [[Article]], typically a [[NewsArticle]], the backstory property provides a textual summary giving a brief explanation of why and how an article was created. In a journalistic setting this could include information about reporting process, methods, interviews, data sources, etc.
    */
-  @JsonIgnore public Collection<CreativeWork> getBackstoryCreativeWorks() {
+  @JsonIgnore public java.util.Collection<CreativeWork> getBackstoryCreativeWorks() {
     final Object current = myData.get("backstory");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<CreativeWork>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<CreativeWork>) current;
     }
     return Arrays.asList((CreativeWork) current);
   }
@@ -275,11 +275,11 @@ public class Article extends CreativeWork {
   /**
    * For an [[Article]], typically a [[NewsArticle]], the backstory property provides a textual summary giving a brief explanation of why and how an article was created. In a journalistic setting this could include information about reporting process, methods, interviews, data sources, etc.
    */
-  @JsonIgnore public Collection<String> getBackstoryStrings() {
+  @JsonIgnore public java.util.Collection<String> getBackstoryStrings() {
     final Object current = myData.get("backstory");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -1849,8 +1849,8 @@ public class Article extends CreativeWork {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

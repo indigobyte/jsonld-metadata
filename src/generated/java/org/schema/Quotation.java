@@ -36,11 +36,11 @@ public class Quotation extends CreativeWork {
   /**
    * The (e.g. fictional) character, Person or Organization to whom the quotation is attributed within the containing CreativeWork.
    */
-  @JsonIgnore public Collection<Organization> getSpokenByCharacterOrganizations() {
+  @JsonIgnore public java.util.Collection<Organization> getSpokenByCharacterOrganizations() {
     final Object current = myData.get("spokenByCharacter");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
   }
@@ -53,11 +53,11 @@ public class Quotation extends CreativeWork {
   /**
    * The (e.g. fictional) character, Person or Organization to whom the quotation is attributed within the containing CreativeWork.
    */
-  @JsonIgnore public Collection<Person> getSpokenByCharacterPersons() {
+  @JsonIgnore public java.util.Collection<Person> getSpokenByCharacterPersons() {
     final Object current = myData.get("spokenByCharacter");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -1518,8 +1518,8 @@ public class Quotation extends CreativeWork {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

@@ -71,11 +71,11 @@ public class SpecialAnnouncement extends CreativeWork {
   /**
    * Indicates a page with news updates and guidelines. This could often be (but is not required to be) the main page containing [[SpecialAnnouncement]] markup on a site.
    */
-  @JsonIgnore public Collection<String> getNewsUpdatesAndGuidelinesStrings() {
+  @JsonIgnore public java.util.Collection<String> getNewsUpdatesAndGuidelinesStrings() {
     final Object current = myData.get("newsUpdatesAndGuidelines");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -88,11 +88,11 @@ public class SpecialAnnouncement extends CreativeWork {
   /**
    * Indicates a page with news updates and guidelines. This could often be (but is not required to be) the main page containing [[SpecialAnnouncement]] markup on a site.
    */
-  @JsonIgnore public Collection<WebContent> getNewsUpdatesAndGuidelinesWebContents() {
+  @JsonIgnore public java.util.Collection<WebContent> getNewsUpdatesAndGuidelinesWebContents() {
     final Object current = myData.get("newsUpdatesAndGuidelines");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<WebContent>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<WebContent>) current;
     }
     return Arrays.asList((WebContent) current);
   }
@@ -105,11 +105,11 @@ public class SpecialAnnouncement extends CreativeWork {
   /**
    * Information about getting tested (for a [[MedicalCondition]]), e.g. in the context of a pandemic.
    */
-  @JsonIgnore public Collection<String> getGettingTestedInfoStrings() {
+  @JsonIgnore public java.util.Collection<String> getGettingTestedInfoStrings() {
     final Object current = myData.get("gettingTestedInfo");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -122,11 +122,11 @@ public class SpecialAnnouncement extends CreativeWork {
   /**
    * Information about getting tested (for a [[MedicalCondition]]), e.g. in the context of a pandemic.
    */
-  @JsonIgnore public Collection<WebContent> getGettingTestedInfoWebContents() {
+  @JsonIgnore public java.util.Collection<WebContent> getGettingTestedInfoWebContents() {
     final Object current = myData.get("gettingTestedInfo");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<WebContent>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<WebContent>) current;
     }
     return Arrays.asList((WebContent) current);
   }
@@ -139,11 +139,11 @@ public class SpecialAnnouncement extends CreativeWork {
   /**
    * Information about school closures.
    */
-  @JsonIgnore public Collection<String> getSchoolClosuresInfoStrings() {
+  @JsonIgnore public java.util.Collection<String> getSchoolClosuresInfoStrings() {
     final Object current = myData.get("schoolClosuresInfo");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -156,11 +156,11 @@ public class SpecialAnnouncement extends CreativeWork {
   /**
    * Information about school closures.
    */
-  @JsonIgnore public Collection<WebContent> getSchoolClosuresInfoWebContents() {
+  @JsonIgnore public java.util.Collection<WebContent> getSchoolClosuresInfoWebContents() {
     final Object current = myData.get("schoolClosuresInfo");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<WebContent>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<WebContent>) current;
     }
     return Arrays.asList((WebContent) current);
   }
@@ -173,11 +173,11 @@ public class SpecialAnnouncement extends CreativeWork {
   /**
    * Publication date of an online listing.
    */
-  @JsonIgnore public Collection<java.util.Date> getDatePosteds() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getDatePosteds() {
     final Object current = myData.get("datePosted");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -190,11 +190,11 @@ public class SpecialAnnouncement extends CreativeWork {
   /**
    * governmentBenefitsInfo provides information about government benefits associated with a SpecialAnnouncement.
    */
-  @JsonIgnore public Collection<GovernmentService> getGovernmentBenefitsInfos() {
+  @JsonIgnore public java.util.Collection<GovernmentService> getGovernmentBenefitsInfos() {
     final Object current = myData.get("governmentBenefitsInfo");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<GovernmentService>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<GovernmentService>) current;
     }
     return Arrays.asList((GovernmentService) current);
   }
@@ -207,11 +207,11 @@ public class SpecialAnnouncement extends CreativeWork {
   /**
    * Information about disease prevention.
    */
-  @JsonIgnore public Collection<String> getDiseasePreventionInfoStrings() {
+  @JsonIgnore public java.util.Collection<String> getDiseasePreventionInfoStrings() {
     final Object current = myData.get("diseasePreventionInfo");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -224,11 +224,11 @@ public class SpecialAnnouncement extends CreativeWork {
   /**
    * Information about disease prevention.
    */
-  @JsonIgnore public Collection<WebContent> getDiseasePreventionInfoWebContents() {
+  @JsonIgnore public java.util.Collection<WebContent> getDiseasePreventionInfoWebContents() {
     final Object current = myData.get("diseasePreventionInfo");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<WebContent>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<WebContent>) current;
     }
     return Arrays.asList((WebContent) current);
   }
@@ -241,11 +241,11 @@ public class SpecialAnnouncement extends CreativeWork {
   /**
    * The URL for a feed, e.g. associated with a podcast series, blog, or series of date-stamped updates. This is usually RSS or Atom.
    */
-  @JsonIgnore public Collection<DataFeed> getWebFeedDataFeeds() {
+  @JsonIgnore public java.util.Collection<DataFeed> getWebFeedDataFeeds() {
     final Object current = myData.get("webFeed");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DataFeed>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<DataFeed>) current;
     }
     return Arrays.asList((DataFeed) current);
   }
@@ -258,11 +258,11 @@ public class SpecialAnnouncement extends CreativeWork {
   /**
    * The URL for a feed, e.g. associated with a podcast series, blog, or series of date-stamped updates. This is usually RSS or Atom.
    */
-  @JsonIgnore public Collection<String> getWebFeedStrings() {
+  @JsonIgnore public java.util.Collection<String> getWebFeedStrings() {
     final Object current = myData.get("webFeed");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -275,11 +275,11 @@ public class SpecialAnnouncement extends CreativeWork {
   /**
    * Guidelines about quarantine rules, e.g. in the context of a pandemic.
    */
-  @JsonIgnore public Collection<String> getQuarantineGuidelinesStrings() {
+  @JsonIgnore public java.util.Collection<String> getQuarantineGuidelinesStrings() {
     final Object current = myData.get("quarantineGuidelines");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -292,11 +292,11 @@ public class SpecialAnnouncement extends CreativeWork {
   /**
    * Guidelines about quarantine rules, e.g. in the context of a pandemic.
    */
-  @JsonIgnore public Collection<WebContent> getQuarantineGuidelinesWebContents() {
+  @JsonIgnore public java.util.Collection<WebContent> getQuarantineGuidelinesWebContents() {
     final Object current = myData.get("quarantineGuidelines");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<WebContent>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<WebContent>) current;
     }
     return Arrays.asList((WebContent) current);
   }
@@ -309,11 +309,11 @@ public class SpecialAnnouncement extends CreativeWork {
   /**
    * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
    */
-  @JsonIgnore public Collection<Category> getCategorys() {
+  @JsonIgnore public java.util.Collection<Category> getCategorys() {
     final Object current = myData.get("category");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Category>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Category>) current;
     }
     return Arrays.asList((Category) current);
   }
@@ -326,11 +326,11 @@ public class SpecialAnnouncement extends CreativeWork {
   /**
    * Information about travel bans, e.g. in the context of a pandemic.
    */
-  @JsonIgnore public Collection<String> getTravelBansStrings() {
+  @JsonIgnore public java.util.Collection<String> getTravelBansStrings() {
     final Object current = myData.get("travelBans");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -343,11 +343,11 @@ public class SpecialAnnouncement extends CreativeWork {
   /**
    * Information about travel bans, e.g. in the context of a pandemic.
    */
-  @JsonIgnore public Collection<WebContent> getTravelBansWebContents() {
+  @JsonIgnore public java.util.Collection<WebContent> getTravelBansWebContents() {
     final Object current = myData.get("travelBans");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<WebContent>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<WebContent>) current;
     }
     return Arrays.asList((WebContent) current);
   }
@@ -360,11 +360,11 @@ public class SpecialAnnouncement extends CreativeWork {
   /**
    * Indicates a specific [[CivicStructure]] or [[LocalBusiness]] associated with the SpecialAnnouncement. For example, a specific testing facility or business with special opening hours. For a larger geographic region like a quarantine of an entire region, use [[spatialCoverage]].
    */
-  @JsonIgnore public Collection<CivicStructure> getAnnouncementLocationCivicStructures() {
+  @JsonIgnore public java.util.Collection<CivicStructure> getAnnouncementLocationCivicStructures() {
     final Object current = myData.get("announcementLocation");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<CivicStructure>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<CivicStructure>) current;
     }
     return Arrays.asList((CivicStructure) current);
   }
@@ -377,11 +377,11 @@ public class SpecialAnnouncement extends CreativeWork {
   /**
    * Indicates a specific [[CivicStructure]] or [[LocalBusiness]] associated with the SpecialAnnouncement. For example, a specific testing facility or business with special opening hours. For a larger geographic region like a quarantine of an entire region, use [[spatialCoverage]].
    */
-  @JsonIgnore public Collection<LocalBusiness> getAnnouncementLocationLocalBusinesss() {
+  @JsonIgnore public java.util.Collection<LocalBusiness> getAnnouncementLocationLocalBusinesss() {
     final Object current = myData.get("announcementLocation");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<LocalBusiness>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<LocalBusiness>) current;
     }
     return Arrays.asList((LocalBusiness) current);
   }
@@ -394,11 +394,11 @@ public class SpecialAnnouncement extends CreativeWork {
   /**
    * Information about public transport closures.
    */
-  @JsonIgnore public Collection<String> getPublicTransportClosuresInfoStrings() {
+  @JsonIgnore public java.util.Collection<String> getPublicTransportClosuresInfoStrings() {
     final Object current = myData.get("publicTransportClosuresInfo");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -411,11 +411,11 @@ public class SpecialAnnouncement extends CreativeWork {
   /**
    * Information about public transport closures.
    */
-  @JsonIgnore public Collection<WebContent> getPublicTransportClosuresInfoWebContents() {
+  @JsonIgnore public java.util.Collection<WebContent> getPublicTransportClosuresInfoWebContents() {
     final Object current = myData.get("publicTransportClosuresInfo");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<WebContent>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<WebContent>) current;
     }
     return Arrays.asList((WebContent) current);
   }
@@ -432,11 +432,11 @@ public class SpecialAnnouncement extends CreativeWork {
    *   described directly as a [[Dataset]], or the specific [[Observation]]s in the dataset. When a [[WebContent]] URL is
    *   provided, the page indicated might also contain more such markup.
    */
-  @JsonIgnore public Collection<Dataset> getDiseaseSpreadStatisticsDatasets() {
+  @JsonIgnore public java.util.Collection<Dataset> getDiseaseSpreadStatisticsDatasets() {
     final Object current = myData.get("diseaseSpreadStatistics");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Dataset>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Dataset>) current;
     }
     return Arrays.asList((Dataset) current);
   }
@@ -453,11 +453,11 @@ public class SpecialAnnouncement extends CreativeWork {
    *   described directly as a [[Dataset]], or the specific [[Observation]]s in the dataset. When a [[WebContent]] URL is
    *   provided, the page indicated might also contain more such markup.
    */
-  @JsonIgnore public Collection<Observation> getDiseaseSpreadStatisticsObservations() {
+  @JsonIgnore public java.util.Collection<Observation> getDiseaseSpreadStatisticsObservations() {
     final Object current = myData.get("diseaseSpreadStatistics");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Observation>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Observation>) current;
     }
     return Arrays.asList((Observation) current);
   }
@@ -474,11 +474,11 @@ public class SpecialAnnouncement extends CreativeWork {
    *   described directly as a [[Dataset]], or the specific [[Observation]]s in the dataset. When a [[WebContent]] URL is
    *   provided, the page indicated might also contain more such markup.
    */
-  @JsonIgnore public Collection<String> getDiseaseSpreadStatisticsStrings() {
+  @JsonIgnore public java.util.Collection<String> getDiseaseSpreadStatisticsStrings() {
     final Object current = myData.get("diseaseSpreadStatistics");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -495,11 +495,11 @@ public class SpecialAnnouncement extends CreativeWork {
    *   described directly as a [[Dataset]], or the specific [[Observation]]s in the dataset. When a [[WebContent]] URL is
    *   provided, the page indicated might also contain more such markup.
    */
-  @JsonIgnore public Collection<WebContent> getDiseaseSpreadStatisticsWebContents() {
+  @JsonIgnore public java.util.Collection<WebContent> getDiseaseSpreadStatisticsWebContents() {
     final Object current = myData.get("diseaseSpreadStatistics");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<WebContent>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<WebContent>) current;
     }
     return Arrays.asList((WebContent) current);
   }
@@ -2219,8 +2219,8 @@ public class SpecialAnnouncement extends CreativeWork {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

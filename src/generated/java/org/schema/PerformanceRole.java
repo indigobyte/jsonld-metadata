@@ -36,11 +36,11 @@ public class PerformanceRole extends Role {
   /**
    * The name of a character played in some acting or performing role, i.e. in a PerformanceRole.
    */
-  @JsonIgnore public Collection<String> getCharacterNames() {
+  @JsonIgnore public java.util.Collection<String> getCharacterNames() {
     final Object current = myData.get("characterName");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }

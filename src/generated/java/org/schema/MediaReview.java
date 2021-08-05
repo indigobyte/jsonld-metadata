@@ -39,11 +39,11 @@ public class MediaReview extends Review {
   /**
    * Indicates a MediaManipulationRatingEnumeration classification of a media object (in the context of how it was published or shared).
    */
-  @JsonIgnore public Collection<MediaManipulationRatingEnumeration> getMediaAuthenticityCategorys() {
+  @JsonIgnore public java.util.Collection<MediaManipulationRatingEnumeration> getMediaAuthenticityCategorys() {
     final Object current = myData.get("mediaAuthenticityCategory");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MediaManipulationRatingEnumeration>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MediaManipulationRatingEnumeration>) current;
     }
     return Arrays.asList((MediaManipulationRatingEnumeration) current);
   }
@@ -56,11 +56,11 @@ public class MediaReview extends Review {
   /**
    * Link to the page containing an original version of the content, or directly to an online copy of the original [[MediaObject]] content, e.g. video file.
    */
-  @JsonIgnore public Collection<MediaObject> getOriginalMediaLinkMediaObjects() {
+  @JsonIgnore public java.util.Collection<MediaObject> getOriginalMediaLinkMediaObjects() {
     final Object current = myData.get("originalMediaLink");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MediaObject>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MediaObject>) current;
     }
     return Arrays.asList((MediaObject) current);
   }
@@ -73,11 +73,11 @@ public class MediaReview extends Review {
   /**
    * Link to the page containing an original version of the content, or directly to an online copy of the original [[MediaObject]] content, e.g. video file.
    */
-  @JsonIgnore public Collection<String> getOriginalMediaLinkStrings() {
+  @JsonIgnore public java.util.Collection<String> getOriginalMediaLinkStrings() {
     final Object current = myData.get("originalMediaLink");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -90,11 +90,11 @@ public class MediaReview extends Review {
   /**
    * Link to the page containing an original version of the content, or directly to an online copy of the original [[MediaObject]] content, e.g. video file.
    */
-  @JsonIgnore public Collection<WebPage> getOriginalMediaLinkWebPages() {
+  @JsonIgnore public java.util.Collection<WebPage> getOriginalMediaLinkWebPages() {
     final Object current = myData.get("originalMediaLink");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<WebPage>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<WebPage>) current;
     }
     return Arrays.asList((WebPage) current);
   }
@@ -107,11 +107,11 @@ public class MediaReview extends Review {
   /**
    * Describes, in a [[MediaReview]] when dealing with [[DecontextualizedContent]], background information that can contribute to better interpretation of the [[MediaObject]].
    */
-  @JsonIgnore public Collection<Description> getOriginalMediaContextDescriptions() {
+  @JsonIgnore public java.util.Collection<Description> getOriginalMediaContextDescriptions() {
     final Object current = myData.get("originalMediaContextDescription");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Description>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Description>) current;
     }
     return Arrays.asList((Description) current);
   }
@@ -1754,8 +1754,8 @@ public class MediaReview extends Review {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

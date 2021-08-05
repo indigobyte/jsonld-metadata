@@ -36,11 +36,11 @@ public class PaymentChargeSpecification extends PriceSpecification {
   /**
    * The delivery method(s) to which the delivery charge or payment charge specification applies.
    */
-  @JsonIgnore public Collection<DeliveryMethod> getAppliesToDeliveryMethods() {
+  @JsonIgnore public java.util.Collection<DeliveryMethod> getAppliesToDeliveryMethods() {
     final Object current = myData.get("appliesToDeliveryMethod");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DeliveryMethod>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<DeliveryMethod>) current;
     }
     return Arrays.asList((DeliveryMethod) current);
   }
@@ -53,11 +53,11 @@ public class PaymentChargeSpecification extends PriceSpecification {
   /**
    * The payment method(s) to which the payment charge specification applies.
    */
-  @JsonIgnore public Collection<PaymentMethod> getAppliesToPaymentMethods() {
+  @JsonIgnore public java.util.Collection<PaymentMethod> getAppliesToPaymentMethods() {
     final Object current = myData.get("appliesToPaymentMethod");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<PaymentMethod>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<PaymentMethod>) current;
     }
     return Arrays.asList((PaymentMethod) current);
   }

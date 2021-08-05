@@ -36,11 +36,11 @@ public class Demand extends Intangible {
   /**
    * The typical delay between the receipt of the order and the goods either leaving the warehouse or being prepared for pickup, in case the delivery method is on site pickup.
    */
-  @JsonIgnore public Collection<QuantitativeValue> getDeliveryLeadTimes() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getDeliveryLeadTimes() {
     final Object current = myData.get("deliveryLeadTime");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -53,11 +53,11 @@ public class Demand extends Intangible {
   /**
    * The end of the availability of the product or service included in the offer.
    */
-  @JsonIgnore public Collection<java.util.Date> getAvailabilityEndss() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getAvailabilityEndss() {
     final Object current = myData.get("availabilityEnds");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -70,11 +70,11 @@ public class Demand extends Intangible {
   /**
    * The date when the item becomes valid.
    */
-  @JsonIgnore public Collection<java.util.Date> getValidFroms() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getValidFroms() {
     final Object current = myData.get("validFrom");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -87,11 +87,11 @@ public class Demand extends Intangible {
   /**
    * The current approximate inventory level for the item or items.
    */
-  @JsonIgnore public Collection<QuantitativeValue> getInventoryLevels() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getInventoryLevels() {
     final Object current = myData.get("inventoryLevel");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -104,11 +104,11 @@ public class Demand extends Intangible {
   /**
    * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
    */
-  @JsonIgnore public Collection<Gtin> getGtin13s() {
+  @JsonIgnore public java.util.Collection<Gtin> getGtin13s() {
     final Object current = myData.get("gtin13");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Gtin>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Gtin>) current;
     }
     return Arrays.asList((Gtin) current);
   }
@@ -123,11 +123,11 @@ public class Demand extends Intangible {
    * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.\n\nSee also [[eligibleRegion]].
    *       
    */
-  @JsonIgnore public Collection<GeoShape> getIneligibleRegionGeoShapes() {
+  @JsonIgnore public java.util.Collection<GeoShape> getIneligibleRegionGeoShapes() {
     final Object current = myData.get("ineligibleRegion");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<GeoShape>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<GeoShape>) current;
     }
     return Arrays.asList((GeoShape) current);
   }
@@ -142,11 +142,11 @@ public class Demand extends Intangible {
    * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.\n\nSee also [[eligibleRegion]].
    *       
    */
-  @JsonIgnore public Collection<Place> getIneligibleRegionPlaces() {
+  @JsonIgnore public java.util.Collection<Place> getIneligibleRegionPlaces() {
     final Object current = myData.get("ineligibleRegion");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Place>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Place>) current;
     }
     return Arrays.asList((Place) current);
   }
@@ -161,11 +161,11 @@ public class Demand extends Intangible {
    * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.\n\nSee also [[eligibleRegion]].
    *       
    */
-  @JsonIgnore public Collection<String> getIneligibleRegionStrings() {
+  @JsonIgnore public java.util.Collection<String> getIneligibleRegionStrings() {
     final Object current = myData.get("ineligibleRegion");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -178,11 +178,11 @@ public class Demand extends Intangible {
   /**
    * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
    */
-  @JsonIgnore public Collection<Identifier> getGtin14s() {
+  @JsonIgnore public java.util.Collection<Identifier> getGtin14s() {
     final Object current = myData.get("gtin14");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Identifier>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Identifier>) current;
     }
     return Arrays.asList((Identifier) current);
   }
@@ -195,11 +195,11 @@ public class Demand extends Intangible {
   /**
    * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
    */
-  @JsonIgnore public Collection<OfferItemCondition> getItemConditions() {
+  @JsonIgnore public java.util.Collection<OfferItemCondition> getItemConditions() {
     final Object current = myData.get("itemCondition");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<OfferItemCondition>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<OfferItemCondition>) current;
     }
     return Arrays.asList((OfferItemCondition) current);
   }
@@ -212,11 +212,11 @@ public class Demand extends Intangible {
   /**
    * One or more detailed price specifications, indicating the unit price and delivery or payment charges.
    */
-  @JsonIgnore public Collection<PriceSpecification> getPriceSpecifications() {
+  @JsonIgnore public java.util.Collection<PriceSpecification> getPriceSpecifications() {
     final Object current = myData.get("priceSpecification");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<PriceSpecification>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<PriceSpecification>) current;
     }
     return Arrays.asList((PriceSpecification) current);
   }
@@ -229,11 +229,11 @@ public class Demand extends Intangible {
   /**
    * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
    */
-  @JsonIgnore public Collection<String> getMpns() {
+  @JsonIgnore public java.util.Collection<String> getMpns() {
     final Object current = myData.get("mpn");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -246,11 +246,11 @@ public class Demand extends Intangible {
   /**
    * The type(s) of customers for which the given offer is valid.
    */
-  @JsonIgnore public Collection<BusinessEntityType> getEligibleCustomerTypes() {
+  @JsonIgnore public java.util.Collection<BusinessEntityType> getEligibleCustomerTypes() {
     final Object current = myData.get("eligibleCustomerType");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<BusinessEntityType>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<BusinessEntityType>) current;
     }
     return Arrays.asList((BusinessEntityType) current);
   }
@@ -263,11 +263,11 @@ public class Demand extends Intangible {
   /**
    * The payment method(s) accepted by seller for this offer.
    */
-  @JsonIgnore public Collection<LoanOrCredit> getAcceptedPaymentMethodLoanOrCredits() {
+  @JsonIgnore public java.util.Collection<LoanOrCredit> getAcceptedPaymentMethodLoanOrCredits() {
     final Object current = myData.get("acceptedPaymentMethod");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<LoanOrCredit>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<LoanOrCredit>) current;
     }
     return Arrays.asList((LoanOrCredit) current);
   }
@@ -280,11 +280,11 @@ public class Demand extends Intangible {
   /**
    * The payment method(s) accepted by seller for this offer.
    */
-  @JsonIgnore public Collection<PaymentMethod> getAcceptedPaymentMethodPaymentMethods() {
+  @JsonIgnore public java.util.Collection<PaymentMethod> getAcceptedPaymentMethodPaymentMethods() {
     final Object current = myData.get("acceptedPaymentMethod");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<PaymentMethod>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<PaymentMethod>) current;
     }
     return Arrays.asList((PaymentMethod) current);
   }
@@ -297,11 +297,11 @@ public class Demand extends Intangible {
   /**
    * This links to a node or nodes indicating the exact quantity of the products included in  an [[Offer]] or [[ProductCollection]].
    */
-  @JsonIgnore public Collection<TypeAndQuantityNode> getIncludesObjects() {
+  @JsonIgnore public java.util.Collection<TypeAndQuantityNode> getIncludesObjects() {
     final Object current = myData.get("includesObject");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<TypeAndQuantityNode>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<TypeAndQuantityNode>) current;
     }
     return Arrays.asList((TypeAndQuantityNode) current);
   }
@@ -314,11 +314,11 @@ public class Demand extends Intangible {
   /**
    * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
    */
-  @JsonIgnore public Collection<Identifier> getGtin12s() {
+  @JsonIgnore public java.util.Collection<Identifier> getGtin12s() {
     final Object current = myData.get("gtin12");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Identifier>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Identifier>) current;
     }
     return Arrays.asList((Identifier) current);
   }
@@ -331,11 +331,11 @@ public class Demand extends Intangible {
   /**
    * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
    */
-  @JsonIgnore public Collection<Identifier> getSkus() {
+  @JsonIgnore public java.util.Collection<Identifier> getSkus() {
     final Object current = myData.get("sku");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Identifier>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Identifier>) current;
     }
     return Arrays.asList((Identifier) current);
   }
@@ -348,11 +348,11 @@ public class Demand extends Intangible {
   /**
    * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
    */
-  @JsonIgnore public Collection<QuantitativeValue> getEligibleQuantitys() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getEligibleQuantitys() {
     final Object current = myData.get("eligibleQuantity");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -365,11 +365,11 @@ public class Demand extends Intangible {
   /**
    * The warranty promise(s) included in the offer.
    */
-  @JsonIgnore public Collection<WarrantyPromise> getWarrantys() {
+  @JsonIgnore public java.util.Collection<WarrantyPromise> getWarrantys() {
     final Object current = myData.get("warranty");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<WarrantyPromise>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<WarrantyPromise>) current;
     }
     return Arrays.asList((WarrantyPromise) current);
   }
@@ -382,11 +382,11 @@ public class Demand extends Intangible {
   /**
    * The place(s) from which the offer can be obtained (e.g. store locations).
    */
-  @JsonIgnore public Collection<AreaServed> getAvailableAtOrFroms() {
+  @JsonIgnore public java.util.Collection<AreaServed> getAvailableAtOrFroms() {
     final Object current = myData.get("availableAtOrFrom");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<AreaServed>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<AreaServed>) current;
     }
     return Arrays.asList((AreaServed) current);
   }
@@ -399,11 +399,11 @@ public class Demand extends Intangible {
   /**
    * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
    */
-  @JsonIgnore public Collection<java.util.Date> getValidThroughs() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getValidThroughs() {
     final Object current = myData.get("validThrough");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -416,11 +416,11 @@ public class Demand extends Intangible {
   /**
    * The delivery method(s) available for this offer.
    */
-  @JsonIgnore public Collection<DeliveryMethod> getAvailableDeliveryMethods() {
+  @JsonIgnore public java.util.Collection<DeliveryMethod> getAvailableDeliveryMethods() {
     final Object current = myData.get("availableDeliveryMethod");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DeliveryMethod>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<DeliveryMethod>) current;
     }
     return Arrays.asList((DeliveryMethod) current);
   }
@@ -435,11 +435,11 @@ public class Demand extends Intangible {
    * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\n\nSee also [[ineligibleRegion]].
    *     
    */
-  @JsonIgnore public Collection<AreaServed> getEligibleRegions() {
+  @JsonIgnore public java.util.Collection<AreaServed> getEligibleRegions() {
     final Object current = myData.get("eligibleRegion");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<AreaServed>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<AreaServed>) current;
     }
     return Arrays.asList((AreaServed) current);
   }
@@ -452,11 +452,11 @@ public class Demand extends Intangible {
   /**
    * The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.
    */
-  @JsonIgnore public Collection<PriceSpecification> getEligibleTransactionVolumes() {
+  @JsonIgnore public java.util.Collection<PriceSpecification> getEligibleTransactionVolumes() {
     final Object current = myData.get("eligibleTransactionVolume");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<PriceSpecification>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<PriceSpecification>) current;
     }
     return Arrays.asList((PriceSpecification) current);
   }
@@ -469,11 +469,11 @@ public class Demand extends Intangible {
   /**
    * The serial number or any alphanumeric identifier of a particular product. When attached to an offer, it is a shortcut for the serial number of the product included in the offer.
    */
-  @JsonIgnore public Collection<SerialNumber> getSerialNumbers() {
+  @JsonIgnore public java.util.Collection<SerialNumber> getSerialNumbers() {
     final Object current = myData.get("serialNumber");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<SerialNumber>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<SerialNumber>) current;
     }
     return Arrays.asList((SerialNumber) current);
   }
@@ -486,11 +486,11 @@ public class Demand extends Intangible {
   /**
    * The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
    */
-  @JsonIgnore public Collection<BusinessFunction> getBusinessFunctions() {
+  @JsonIgnore public java.util.Collection<BusinessFunction> getBusinessFunctions() {
     final Object current = myData.get("businessFunction");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<BusinessFunction>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<BusinessFunction>) current;
     }
     return Arrays.asList((BusinessFunction) current);
   }
@@ -503,11 +503,11 @@ public class Demand extends Intangible {
   /**
    * The availability of this item&amp;#x2014;for example In stock, Out of stock, Pre-order, etc.
    */
-  @JsonIgnore public Collection<ItemAvailability> getAvailabilitys() {
+  @JsonIgnore public java.util.Collection<ItemAvailability> getAvailabilitys() {
     final Object current = myData.get("availability");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<ItemAvailability>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<ItemAvailability>) current;
     }
     return Arrays.asList((ItemAvailability) current);
   }
@@ -520,11 +520,11 @@ public class Demand extends Intangible {
   /**
    * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
    */
-  @JsonIgnore public Collection<Participant> getSellers() {
+  @JsonIgnore public java.util.Collection<Participant> getSellers() {
     final Object current = myData.get("seller");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Participant>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Participant>) current;
     }
     return Arrays.asList((Participant) current);
   }
@@ -537,11 +537,11 @@ public class Demand extends Intangible {
   /**
    * The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
    */
-  @JsonIgnore public Collection<Gtin> getGtin8s() {
+  @JsonIgnore public java.util.Collection<Gtin> getGtin8s() {
     final Object current = myData.get("gtin8");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Gtin>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Gtin>) current;
     }
     return Arrays.asList((Gtin) current);
   }
@@ -554,11 +554,11 @@ public class Demand extends Intangible {
   /**
    * The duration for which the given offer is valid.
    */
-  @JsonIgnore public Collection<QuantitativeValue> getEligibleDurations() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getEligibleDurations() {
     final Object current = myData.get("eligibleDuration");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -571,11 +571,11 @@ public class Demand extends Intangible {
   /**
    * The beginning of the availability of the product or service included in the offer.
    */
-  @JsonIgnore public Collection<java.util.Date> getAvailabilityStartss() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getAvailabilityStartss() {
     final Object current = myData.get("availabilityStarts");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -588,11 +588,11 @@ public class Demand extends Intangible {
   /**
    * The amount of time that is required between accepting the offer and the actual usage of the resource or service.
    */
-  @JsonIgnore public Collection<QuantitativeValue> getAdvanceBookingRequirements() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getAdvanceBookingRequirements() {
     final Object current = myData.get("advanceBookingRequirement");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -605,11 +605,11 @@ public class Demand extends Intangible {
   /**
    * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
    */
-  @JsonIgnore public Collection<AggregateOffer> getItemOfferedAggregateOffers() {
+  @JsonIgnore public java.util.Collection<AggregateOffer> getItemOfferedAggregateOffers() {
     final Object current = myData.get("itemOffered");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<AggregateOffer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<AggregateOffer>) current;
     }
     return Arrays.asList((AggregateOffer) current);
   }
@@ -622,11 +622,11 @@ public class Demand extends Intangible {
   /**
    * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
    */
-  @JsonIgnore public Collection<CreativeWork> getItemOfferedCreativeWorks() {
+  @JsonIgnore public java.util.Collection<CreativeWork> getItemOfferedCreativeWorks() {
     final Object current = myData.get("itemOffered");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<CreativeWork>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<CreativeWork>) current;
     }
     return Arrays.asList((CreativeWork) current);
   }
@@ -639,11 +639,11 @@ public class Demand extends Intangible {
   /**
    * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
    */
-  @JsonIgnore public Collection<Event> getItemOfferedEvents() {
+  @JsonIgnore public java.util.Collection<Event> getItemOfferedEvents() {
     final Object current = myData.get("itemOffered");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Event>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Event>) current;
     }
     return Arrays.asList((Event) current);
   }
@@ -656,11 +656,11 @@ public class Demand extends Intangible {
   /**
    * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
    */
-  @JsonIgnore public Collection<MenuItem> getItemOfferedMenuItems() {
+  @JsonIgnore public java.util.Collection<MenuItem> getItemOfferedMenuItems() {
     final Object current = myData.get("itemOffered");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MenuItem>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MenuItem>) current;
     }
     return Arrays.asList((MenuItem) current);
   }
@@ -673,11 +673,11 @@ public class Demand extends Intangible {
   /**
    * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
    */
-  @JsonIgnore public Collection<Product> getItemOfferedProducts() {
+  @JsonIgnore public java.util.Collection<Product> getItemOfferedProducts() {
     final Object current = myData.get("itemOffered");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Product>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Product>) current;
     }
     return Arrays.asList((Product) current);
   }
@@ -690,11 +690,11 @@ public class Demand extends Intangible {
   /**
    * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
    */
-  @JsonIgnore public Collection<Service> getItemOfferedServices() {
+  @JsonIgnore public java.util.Collection<Service> getItemOfferedServices() {
     final Object current = myData.get("itemOffered");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Service>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Service>) current;
     }
     return Arrays.asList((Service) current);
   }
@@ -707,11 +707,11 @@ public class Demand extends Intangible {
   /**
    * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
    */
-  @JsonIgnore public Collection<Trip> getItemOfferedTrips() {
+  @JsonIgnore public java.util.Collection<Trip> getItemOfferedTrips() {
     final Object current = myData.get("itemOffered");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Trip>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Trip>) current;
     }
     return Arrays.asList((Trip) current);
   }

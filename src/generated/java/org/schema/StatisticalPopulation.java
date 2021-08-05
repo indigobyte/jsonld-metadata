@@ -41,11 +41,11 @@ public class StatisticalPopulation extends Intangible {
    * Indicates a property used as a constraint to define a [[StatisticalPopulation]] with respect to the set of entities
    *   corresponding to an indicated type (via [[populationType]]).
    */
-  @JsonIgnore public Collection<Integer> getConstrainingPropertys() {
+  @JsonIgnore public java.util.Collection<Integer> getConstrainingPropertys() {
     final Object current = myData.get("constrainingProperty");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -58,11 +58,11 @@ public class StatisticalPopulation extends Intangible {
   /**
    * Indicates the number of constraints (not counting [[populationType]]) defined for a particular [[StatisticalPopulation]]. This helps applications understand if they have access to a sufficiently complete description of a [[StatisticalPopulation]].
    */
-  @JsonIgnore public Collection<Integer> getNumConstraintss() {
+  @JsonIgnore public java.util.Collection<Integer> getNumConstraintss() {
     final Object current = myData.get("numConstraints");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }

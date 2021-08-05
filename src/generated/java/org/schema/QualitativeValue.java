@@ -36,11 +36,11 @@ public class QualitativeValue extends Enumeration {
   /**
    * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
    */
-  @JsonIgnore public Collection<DefinedTerm> getValueReferenceDefinedTerms() {
+  @JsonIgnore public java.util.Collection<DefinedTerm> getValueReferenceDefinedTerms() {
     final Object current = myData.get("valueReference");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DefinedTerm>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<DefinedTerm>) current;
     }
     return Arrays.asList((DefinedTerm) current);
   }
@@ -53,11 +53,11 @@ public class QualitativeValue extends Enumeration {
   /**
    * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
    */
-  @JsonIgnore public Collection<Enumeration> getValueReferenceEnumerations() {
+  @JsonIgnore public java.util.Collection<Enumeration> getValueReferenceEnumerations() {
     final Object current = myData.get("valueReference");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Enumeration>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Enumeration>) current;
     }
     return Arrays.asList((Enumeration) current);
   }
@@ -70,11 +70,11 @@ public class QualitativeValue extends Enumeration {
   /**
    * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
    */
-  @JsonIgnore public Collection<MeasurementTypeEnumeration> getValueReferenceMeasurementTypeEnumerations() {
+  @JsonIgnore public java.util.Collection<MeasurementTypeEnumeration> getValueReferenceMeasurementTypeEnumerations() {
     final Object current = myData.get("valueReference");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MeasurementTypeEnumeration>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MeasurementTypeEnumeration>) current;
     }
     return Arrays.asList((MeasurementTypeEnumeration) current);
   }
@@ -87,11 +87,11 @@ public class QualitativeValue extends Enumeration {
   /**
    * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
    */
-  @JsonIgnore public Collection<PropertyValue> getValueReferencePropertyValues() {
+  @JsonIgnore public java.util.Collection<PropertyValue> getValueReferencePropertyValues() {
     final Object current = myData.get("valueReference");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<PropertyValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<PropertyValue>) current;
     }
     return Arrays.asList((PropertyValue) current);
   }
@@ -104,11 +104,11 @@ public class QualitativeValue extends Enumeration {
   /**
    * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
    */
-  @JsonIgnore public Collection<QualitativeValue> getValueReferenceQualitativeValues() {
+  @JsonIgnore public java.util.Collection<QualitativeValue> getValueReferenceQualitativeValues() {
     final Object current = myData.get("valueReference");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QualitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QualitativeValue>) current;
     }
     return Arrays.asList((QualitativeValue) current);
   }
@@ -121,11 +121,11 @@ public class QualitativeValue extends Enumeration {
   /**
    * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
    */
-  @JsonIgnore public Collection<QuantitativeValue> getValueReferenceQuantitativeValues() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getValueReferenceQuantitativeValues() {
     final Object current = myData.get("valueReference");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -138,11 +138,11 @@ public class QualitativeValue extends Enumeration {
   /**
    * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
    */
-  @JsonIgnore public Collection<String> getValueReferenceStrings() {
+  @JsonIgnore public java.util.Collection<String> getValueReferenceStrings() {
     final Object current = myData.get("valueReference");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -155,11 +155,11 @@ public class QualitativeValue extends Enumeration {
   /**
    * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
    */
-  @JsonIgnore public Collection<StructuredValue> getValueReferenceStructuredValues() {
+  @JsonIgnore public java.util.Collection<StructuredValue> getValueReferenceStructuredValues() {
     final Object current = myData.get("valueReference");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<StructuredValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<StructuredValue>) current;
     }
     return Arrays.asList((StructuredValue) current);
   }
@@ -172,11 +172,11 @@ public class QualitativeValue extends Enumeration {
   /**
    * This ordering relation for qualitative values indicates that the subject is greater than the object.
    */
-  @JsonIgnore public Collection<QualitativeValue> getGreaters() {
+  @JsonIgnore public java.util.Collection<QualitativeValue> getGreaters() {
     final Object current = myData.get("greater");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QualitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QualitativeValue>) current;
     }
     return Arrays.asList((QualitativeValue) current);
   }
@@ -189,11 +189,11 @@ public class QualitativeValue extends Enumeration {
   /**
    * This ordering relation for qualitative values indicates that the subject is lesser than or equal to the object.
    */
-  @JsonIgnore public Collection<QualitativeValue> getLesserOrEquals() {
+  @JsonIgnore public java.util.Collection<QualitativeValue> getLesserOrEquals() {
     final Object current = myData.get("lesserOrEqual");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QualitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QualitativeValue>) current;
     }
     return Arrays.asList((QualitativeValue) current);
   }
@@ -206,11 +206,11 @@ public class QualitativeValue extends Enumeration {
   /**
    * This ordering relation for qualitative values indicates that the subject is lesser than the object.
    */
-  @JsonIgnore public Collection<QualitativeValue> getLessers() {
+  @JsonIgnore public java.util.Collection<QualitativeValue> getLessers() {
     final Object current = myData.get("lesser");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QualitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QualitativeValue>) current;
     }
     return Arrays.asList((QualitativeValue) current);
   }
@@ -225,11 +225,11 @@ public class QualitativeValue extends Enumeration {
    * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.\n\nNote: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
    * 
    */
-  @JsonIgnore public Collection<PropertyValue> getAdditionalPropertys() {
+  @JsonIgnore public java.util.Collection<PropertyValue> getAdditionalPropertys() {
     final Object current = myData.get("additionalProperty");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<PropertyValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<PropertyValue>) current;
     }
     return Arrays.asList((PropertyValue) current);
   }
@@ -242,11 +242,11 @@ public class QualitativeValue extends Enumeration {
   /**
    * This ordering relation for qualitative values indicates that the subject is greater than or equal to the object.
    */
-  @JsonIgnore public Collection<QualitativeValue> getGreaterOrEquals() {
+  @JsonIgnore public java.util.Collection<QualitativeValue> getGreaterOrEquals() {
     final Object current = myData.get("greaterOrEqual");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QualitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QualitativeValue>) current;
     }
     return Arrays.asList((QualitativeValue) current);
   }
@@ -259,11 +259,11 @@ public class QualitativeValue extends Enumeration {
   /**
    * This ordering relation for qualitative values indicates that the subject is not equal to the object.
    */
-  @JsonIgnore public Collection<QualitativeValue> getNonEquals() {
+  @JsonIgnore public java.util.Collection<QualitativeValue> getNonEquals() {
     final Object current = myData.get("nonEqual");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QualitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QualitativeValue>) current;
     }
     return Arrays.asList((QualitativeValue) current);
   }
@@ -276,11 +276,11 @@ public class QualitativeValue extends Enumeration {
   /**
    * This ordering relation for qualitative values indicates that the subject is equal to the object.
    */
-  @JsonIgnore public Collection<QualitativeValue> getEquals() {
+  @JsonIgnore public java.util.Collection<QualitativeValue> getEquals() {
     final Object current = myData.get("equal");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QualitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QualitativeValue>) current;
     }
     return Arrays.asList((QualitativeValue) current);
   }

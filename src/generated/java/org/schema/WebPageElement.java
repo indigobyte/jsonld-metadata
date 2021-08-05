@@ -36,11 +36,11 @@ public class WebPageElement extends CreativeWork {
   /**
    * A CSS selector, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual &quot;Web page element&quot;.
    */
-  @JsonIgnore public Collection<CssSelectorType> getCssSelectors() {
+  @JsonIgnore public java.util.Collection<CssSelectorType> getCssSelectors() {
     final Object current = myData.get("cssSelector");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<CssSelectorType>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<CssSelectorType>) current;
     }
     return Arrays.asList((CssSelectorType) current);
   }
@@ -53,11 +53,11 @@ public class WebPageElement extends CreativeWork {
   /**
    * An XPath, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual &quot;Web page element&quot;.
    */
-  @JsonIgnore public Collection<XPathType> getXpaths() {
+  @JsonIgnore public java.util.Collection<XPathType> getXpaths() {
     final Object current = myData.get("xpath");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<XPathType>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<XPathType>) current;
     }
     return Arrays.asList((XPathType) current);
   }
@@ -1518,8 +1518,8 @@ public class WebPageElement extends CreativeWork {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

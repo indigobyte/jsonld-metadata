@@ -36,11 +36,11 @@ public class WarrantyPromise extends StructuredValue {
   /**
    * The scope of the warranty promise.
    */
-  @JsonIgnore public Collection<WarrantyScope> getWarrantyScopes() {
+  @JsonIgnore public java.util.Collection<WarrantyScope> getWarrantyScopes() {
     final Object current = myData.get("warrantyScope");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<WarrantyScope>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<WarrantyScope>) current;
     }
     return Arrays.asList((WarrantyScope) current);
   }
@@ -53,11 +53,11 @@ public class WarrantyPromise extends StructuredValue {
   /**
    * The duration of the warranty promise. Common unitCode values are ANN for year, MON for months, or DAY for days.
    */
-  @JsonIgnore public Collection<QuantitativeValue> getDurationOfWarrantys() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getDurationOfWarrantys() {
     final Object current = myData.get("durationOfWarranty");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }

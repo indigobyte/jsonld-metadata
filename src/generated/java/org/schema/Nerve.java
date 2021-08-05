@@ -36,11 +36,11 @@ public class Nerve extends AnatomicalStructure {
   /**
    * The neurological pathway extension that inputs and sends information to the brain or spinal cord.
    */
-  @JsonIgnore public Collection<AnatomicalStructure> getSensoryUnitAnatomicalStructures() {
+  @JsonIgnore public java.util.Collection<AnatomicalStructure> getSensoryUnitAnatomicalStructures() {
     final Object current = myData.get("sensoryUnit");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<AnatomicalStructure>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<AnatomicalStructure>) current;
     }
     return Arrays.asList((AnatomicalStructure) current);
   }
@@ -53,11 +53,11 @@ public class Nerve extends AnatomicalStructure {
   /**
    * The neurological pathway extension that inputs and sends information to the brain or spinal cord.
    */
-  @JsonIgnore public Collection<SuperficialAnatomy> getSensoryUnitSuperficialAnatomys() {
+  @JsonIgnore public java.util.Collection<SuperficialAnatomy> getSensoryUnitSuperficialAnatomys() {
     final Object current = myData.get("sensoryUnit");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<SuperficialAnatomy>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<SuperficialAnatomy>) current;
     }
     return Arrays.asList((SuperficialAnatomy) current);
   }
@@ -70,11 +70,11 @@ public class Nerve extends AnatomicalStructure {
   /**
    * The neurological pathway extension that involves muscle control.
    */
-  @JsonIgnore public Collection<Muscle> getNerveMotors() {
+  @JsonIgnore public java.util.Collection<Muscle> getNerveMotors() {
     final Object current = myData.get("nerveMotor");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Muscle>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Muscle>) current;
     }
     return Arrays.asList((Muscle) current);
   }
@@ -87,11 +87,11 @@ public class Nerve extends AnatomicalStructure {
   /**
    * The neurological pathway that originates the neurons.
    */
-  @JsonIgnore public Collection<BrainStructure> getSourcedFroms() {
+  @JsonIgnore public java.util.Collection<BrainStructure> getSourcedFroms() {
     final Object current = myData.get("sourcedFrom");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<BrainStructure>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<BrainStructure>) current;
     }
     return Arrays.asList((BrainStructure) current);
   }
@@ -313,24 +313,10 @@ public class Nerve extends AnatomicalStructure {
       return this;
     }
     /**
-     * If applicable, a medical specialty in which this entity is relevant.
-     */
-    @NotNull public Builder relevantSpecialty(@NotNull MedicalSpecialty.Builder medicalSpecialty) {
-      putValue("relevantSpecialty", medicalSpecialty.build());
-      return this;
-    }
-    /**
      * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      */
     @NotNull public Builder medicineSystem(@NotNull MedicineSystem medicineSystem) {
       putValue("medicineSystem", medicineSystem);
-      return this;
-    }
-    /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
-     */
-    @NotNull public Builder medicineSystem(@NotNull MedicineSystem.Builder medicineSystem) {
-      putValue("medicineSystem", medicineSystem.build());
       return this;
     }
     /**

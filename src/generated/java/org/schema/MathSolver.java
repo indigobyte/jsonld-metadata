@@ -36,11 +36,11 @@ public class MathSolver extends CreativeWork {
   /**
    * A mathematical expression (e.g. 'x^2-3x=0') that may be solved for a specific variable, simplified, or transformed. This can take many formats, e.g. LaTeX, Ascii-Math, or math as you would write with a keyboard.
    */
-  @JsonIgnore public Collection<SolveMathAction> getMathExpressionSolveMathActions() {
+  @JsonIgnore public java.util.Collection<SolveMathAction> getMathExpressionSolveMathActions() {
     final Object current = myData.get("mathExpression");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<SolveMathAction>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<SolveMathAction>) current;
     }
     return Arrays.asList((SolveMathAction) current);
   }
@@ -53,11 +53,11 @@ public class MathSolver extends CreativeWork {
   /**
    * A mathematical expression (e.g. 'x^2-3x=0') that may be solved for a specific variable, simplified, or transformed. This can take many formats, e.g. LaTeX, Ascii-Math, or math as you would write with a keyboard.
    */
-  @JsonIgnore public Collection<String> getMathExpressionStrings() {
+  @JsonIgnore public java.util.Collection<String> getMathExpressionStrings() {
     final Object current = myData.get("mathExpression");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -1511,8 +1511,8 @@ public class MathSolver extends CreativeWork {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

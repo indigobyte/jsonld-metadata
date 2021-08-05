@@ -36,11 +36,11 @@ public class LegislationObject extends Legislation {
   /**
    * The legal value of this legislation file. The same legislation can be written in multiple files with different legal values. Typically a digitally signed PDF have a &quot;stronger&quot; legal value than the HTML file of the same act.
    */
-  @JsonIgnore public Collection<LegalValueLevel> getLegislationLegalValues() {
+  @JsonIgnore public java.util.Collection<LegalValueLevel> getLegislationLegalValues() {
     final Object current = myData.get("legislationLegalValue");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<LegalValueLevel>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<LegalValueLevel>) current;
     }
     return Arrays.asList((LegalValueLevel) current);
   }
@@ -105,13 +105,6 @@ public class LegislationObject extends Legislation {
      */
     @NotNull public Builder legislationLegalForce(@NotNull LegalForceStatus legalForceStatus) {
       putValue("legislationLegalForce", legalForceStatus);
-      return this;
-    }
-    /**
-     * Whether the legislation is currently in force, not in force, or partially in force.
-     */
-    @NotNull public Builder legislationLegalForce(@NotNull LegalForceStatus.Builder legalForceStatus) {
-      putValue("legislationLegalForce", legalForceStatus.build());
       return this;
     }
     /**
@@ -1634,8 +1627,8 @@ public class LegislationObject extends Legislation {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

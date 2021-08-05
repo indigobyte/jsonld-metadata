@@ -36,11 +36,11 @@ public class MenuItem extends Intangible {
   /**
    * Indicates a dietary restriction or guideline for which this recipe or menu item is suitable, e.g. diabetic, halal etc.
    */
-  @JsonIgnore public Collection<RestrictedDiet> getSuitableForDiets() {
+  @JsonIgnore public java.util.Collection<RestrictedDiet> getSuitableForDiets() {
     final Object current = myData.get("suitableForDiet");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<RestrictedDiet>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<RestrictedDiet>) current;
     }
     return Arrays.asList((RestrictedDiet) current);
   }
@@ -53,11 +53,11 @@ public class MenuItem extends Intangible {
   /**
    * Additional menu item(s) such as a side dish of salad or side order of fries that can be added to this menu item. Additionally it can be a menu section containing allowed add-on menu items for this menu item.
    */
-  @JsonIgnore public Collection<MenuItem> getMenuAddOnMenuItems() {
+  @JsonIgnore public java.util.Collection<MenuItem> getMenuAddOnMenuItems() {
     final Object current = myData.get("menuAddOn");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MenuItem>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MenuItem>) current;
     }
     return Arrays.asList((MenuItem) current);
   }
@@ -70,11 +70,11 @@ public class MenuItem extends Intangible {
   /**
    * Additional menu item(s) such as a side dish of salad or side order of fries that can be added to this menu item. Additionally it can be a menu section containing allowed add-on menu items for this menu item.
    */
-  @JsonIgnore public Collection<MenuSection> getMenuAddOnMenuSections() {
+  @JsonIgnore public java.util.Collection<MenuSection> getMenuAddOnMenuSections() {
     final Object current = myData.get("menuAddOn");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MenuSection>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MenuSection>) current;
     }
     return Arrays.asList((MenuSection) current);
   }
@@ -87,11 +87,11 @@ public class MenuItem extends Intangible {
   /**
    * Nutrition information about the recipe or menu item.
    */
-  @JsonIgnore public Collection<NutritionInformation> getNutritions() {
+  @JsonIgnore public java.util.Collection<NutritionInformation> getNutritions() {
     final Object current = myData.get("nutrition");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<NutritionInformation>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<NutritionInformation>) current;
     }
     return Arrays.asList((NutritionInformation) current);
   }
@@ -106,11 +106,11 @@ public class MenuItem extends Intangible {
    * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
    *       
    */
-  @JsonIgnore public Collection<Demand> getOffersDemands() {
+  @JsonIgnore public java.util.Collection<Demand> getOffersDemands() {
     final Object current = myData.get("offers");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Demand>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Demand>) current;
     }
     return Arrays.asList((Demand) current);
   }
@@ -125,11 +125,11 @@ public class MenuItem extends Intangible {
    * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
    *       
    */
-  @JsonIgnore public Collection<Offer> getOffersOffers() {
+  @JsonIgnore public java.util.Collection<Offer> getOffersOffers() {
     final Object current = myData.get("offers");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Offer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Offer>) current;
     }
     return Arrays.asList((Offer) current);
   }

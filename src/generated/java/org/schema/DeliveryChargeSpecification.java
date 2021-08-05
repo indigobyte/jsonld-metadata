@@ -38,11 +38,11 @@ public class DeliveryChargeSpecification extends PriceSpecification {
    * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.\n\nSee also [[eligibleRegion]].
    *       
    */
-  @JsonIgnore public Collection<GeoShape> getIneligibleRegionGeoShapes() {
+  @JsonIgnore public java.util.Collection<GeoShape> getIneligibleRegionGeoShapes() {
     final Object current = myData.get("ineligibleRegion");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<GeoShape>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<GeoShape>) current;
     }
     return Arrays.asList((GeoShape) current);
   }
@@ -57,11 +57,11 @@ public class DeliveryChargeSpecification extends PriceSpecification {
    * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.\n\nSee also [[eligibleRegion]].
    *       
    */
-  @JsonIgnore public Collection<Place> getIneligibleRegionPlaces() {
+  @JsonIgnore public java.util.Collection<Place> getIneligibleRegionPlaces() {
     final Object current = myData.get("ineligibleRegion");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Place>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Place>) current;
     }
     return Arrays.asList((Place) current);
   }
@@ -76,11 +76,11 @@ public class DeliveryChargeSpecification extends PriceSpecification {
    * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.\n\nSee also [[eligibleRegion]].
    *       
    */
-  @JsonIgnore public Collection<String> getIneligibleRegionStrings() {
+  @JsonIgnore public java.util.Collection<String> getIneligibleRegionStrings() {
     final Object current = myData.get("ineligibleRegion");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -95,11 +95,11 @@ public class DeliveryChargeSpecification extends PriceSpecification {
    * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\n\nSee also [[ineligibleRegion]].
    *     
    */
-  @JsonIgnore public Collection<AreaServed> getEligibleRegions() {
+  @JsonIgnore public java.util.Collection<AreaServed> getEligibleRegions() {
     final Object current = myData.get("eligibleRegion");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<AreaServed>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<AreaServed>) current;
     }
     return Arrays.asList((AreaServed) current);
   }
@@ -112,11 +112,11 @@ public class DeliveryChargeSpecification extends PriceSpecification {
   /**
    * The delivery method(s) to which the delivery charge or payment charge specification applies.
    */
-  @JsonIgnore public Collection<DeliveryMethod> getAppliesToDeliveryMethods() {
+  @JsonIgnore public java.util.Collection<DeliveryMethod> getAppliesToDeliveryMethods() {
     final Object current = myData.get("appliesToDeliveryMethod");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DeliveryMethod>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<DeliveryMethod>) current;
     }
     return Arrays.asList((DeliveryMethod) current);
   }

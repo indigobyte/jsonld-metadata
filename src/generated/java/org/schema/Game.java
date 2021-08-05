@@ -36,11 +36,11 @@ public class Game extends CreativeWork {
   /**
    * A piece of data that represents a particular aspect of a fictional character (skill, power, character points, advantage, disadvantage).
    */
-  @JsonIgnore public Collection<Thing> getCharacterAttributes() {
+  @JsonIgnore public java.util.Collection<Thing> getCharacterAttributes() {
     final Object current = myData.get("characterAttribute");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Thing>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Thing>) current;
     }
     return Arrays.asList((Thing) current);
   }
@@ -53,11 +53,11 @@ public class Game extends CreativeWork {
   /**
    * Real or fictional location of the game (or part of game).
    */
-  @JsonIgnore public Collection<Place> getGameLocationPlaces() {
+  @JsonIgnore public java.util.Collection<Place> getGameLocationPlaces() {
     final Object current = myData.get("gameLocation");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Place>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Place>) current;
     }
     return Arrays.asList((Place) current);
   }
@@ -70,11 +70,11 @@ public class Game extends CreativeWork {
   /**
    * Real or fictional location of the game (or part of game).
    */
-  @JsonIgnore public Collection<PostalAddress> getGameLocationPostalAddresss() {
+  @JsonIgnore public java.util.Collection<PostalAddress> getGameLocationPostalAddresss() {
     final Object current = myData.get("gameLocation");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<PostalAddress>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<PostalAddress>) current;
     }
     return Arrays.asList((PostalAddress) current);
   }
@@ -87,11 +87,11 @@ public class Game extends CreativeWork {
   /**
    * Real or fictional location of the game (or part of game).
    */
-  @JsonIgnore public Collection<String> getGameLocationStrings() {
+  @JsonIgnore public java.util.Collection<String> getGameLocationStrings() {
     final Object current = myData.get("gameLocation");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -104,11 +104,11 @@ public class Game extends CreativeWork {
   /**
    * Indicate how many people can play this game (minimum, maximum, or range).
    */
-  @JsonIgnore public Collection<QuantitativeValue> getNumberOfPlayerss() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getNumberOfPlayerss() {
     final Object current = myData.get("numberOfPlayers");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
@@ -121,11 +121,11 @@ public class Game extends CreativeWork {
   /**
    * An item is an object within the game world that can be collected by a player or, occasionally, a non-player character.
    */
-  @JsonIgnore public Collection<Thing> getGameItems() {
+  @JsonIgnore public java.util.Collection<Thing> getGameItems() {
     final Object current = myData.get("gameItem");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Thing>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Thing>) current;
     }
     return Arrays.asList((Thing) current);
   }
@@ -138,11 +138,11 @@ public class Game extends CreativeWork {
   /**
    * The task that a player-controlled character, or group of characters may complete in order to gain a reward.
    */
-  @JsonIgnore public Collection<Thing> getQuests() {
+  @JsonIgnore public java.util.Collection<Thing> getQuests() {
     final Object current = myData.get("quest");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Thing>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Thing>) current;
     }
     return Arrays.asList((Thing) current);
   }
@@ -1666,8 +1666,8 @@ public class Game extends CreativeWork {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

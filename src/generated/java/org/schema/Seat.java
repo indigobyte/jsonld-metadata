@@ -36,11 +36,11 @@ public class Seat extends Intangible {
   /**
    * The section location of the reserved seat (e.g. Orchestra).
    */
-  @JsonIgnore public Collection<String> getSeatSections() {
+  @JsonIgnore public java.util.Collection<String> getSeatSections() {
     final Object current = myData.get("seatSection");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -53,11 +53,11 @@ public class Seat extends Intangible {
   /**
    * The row location of the reserved seat (e.g., B).
    */
-  @JsonIgnore public Collection<String> getSeatRows() {
+  @JsonIgnore public java.util.Collection<String> getSeatRows() {
     final Object current = myData.get("seatRow");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -70,11 +70,11 @@ public class Seat extends Intangible {
   /**
    * The type/class of the seat.
    */
-  @JsonIgnore public Collection<QualitativeValue> getSeatingTypeQualitativeValues() {
+  @JsonIgnore public java.util.Collection<QualitativeValue> getSeatingTypeQualitativeValues() {
     final Object current = myData.get("seatingType");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QualitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QualitativeValue>) current;
     }
     return Arrays.asList((QualitativeValue) current);
   }
@@ -87,11 +87,11 @@ public class Seat extends Intangible {
   /**
    * The type/class of the seat.
    */
-  @JsonIgnore public Collection<String> getSeatingTypeStrings() {
+  @JsonIgnore public java.util.Collection<String> getSeatingTypeStrings() {
     final Object current = myData.get("seatingType");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -104,11 +104,11 @@ public class Seat extends Intangible {
   /**
    * The location of the reserved seat (e.g., 27).
    */
-  @JsonIgnore public Collection<String> getSeatNumbers() {
+  @JsonIgnore public java.util.Collection<String> getSeatNumbers() {
     final Object current = myData.get("seatNumber");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }

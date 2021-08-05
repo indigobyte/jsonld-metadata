@@ -36,11 +36,11 @@ public class LodgingBusiness extends LocalBusiness {
   /**
    * An official rating for a lodging business or food establishment, e.g. from national associations or standards bodies. Use the author property to indicate the rating organization, e.g. as an Organization with name such as (e.g. HOTREC, DEHOGA, WHR, or Hotelstars).
    */
-  @JsonIgnore public Collection<Rating> getStarRatings() {
+  @JsonIgnore public java.util.Collection<Rating> getStarRatings() {
     final Object current = myData.get("starRating");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Rating>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Rating>) current;
     }
     return Arrays.asList((Rating) current);
   }
@@ -53,11 +53,11 @@ public class LodgingBusiness extends LocalBusiness {
   /**
    * The latest someone may check out of a lodging establishment.
    */
-  @JsonIgnore public Collection<java.util.Date> getCheckoutTimes() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getCheckoutTimes() {
     final Object current = myData.get("checkoutTime");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -72,11 +72,11 @@ public class LodgingBusiness extends LocalBusiness {
    * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
    * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
    */
-  @JsonIgnore public Collection<Integer> getNumberOfRoomsIntegers() {
+  @JsonIgnore public java.util.Collection<Integer> getNumberOfRoomsIntegers() {
     final Object current = myData.get("numberOfRooms");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -91,11 +91,11 @@ public class LodgingBusiness extends LocalBusiness {
    * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
    * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
    */
-  @JsonIgnore public Collection<Long> getNumberOfRoomsLongs() {
+  @JsonIgnore public java.util.Collection<Long> getNumberOfRoomsLongs() {
     final Object current = myData.get("numberOfRooms");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Long>) current;
     }
     return Arrays.asList((Long) current);
   }
@@ -110,11 +110,11 @@ public class LodgingBusiness extends LocalBusiness {
    * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
    * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
    */
-  @JsonIgnore public Collection<Float> getNumberOfRoomsFloats() {
+  @JsonIgnore public java.util.Collection<Float> getNumberOfRoomsFloats() {
     final Object current = myData.get("numberOfRooms");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Float>) current;
     }
     return Arrays.asList((Float) current);
   }
@@ -129,11 +129,11 @@ public class LodgingBusiness extends LocalBusiness {
    * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
    * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
    */
-  @JsonIgnore public Collection<Double> getNumberOfRoomsDoubles() {
+  @JsonIgnore public java.util.Collection<Double> getNumberOfRoomsDoubles() {
     final Object current = myData.get("numberOfRooms");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Double>) current;
     }
     return Arrays.asList((Double) current);
   }
@@ -148,11 +148,11 @@ public class LodgingBusiness extends LocalBusiness {
    * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
    * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
    */
-  @JsonIgnore public Collection<String> getNumberOfRoomsStrings() {
+  @JsonIgnore public java.util.Collection<String> getNumberOfRoomsStrings() {
     final Object current = myData.get("numberOfRooms");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -165,11 +165,11 @@ public class LodgingBusiness extends LocalBusiness {
   /**
    * The earliest someone may check into a lodging establishment.
    */
-  @JsonIgnore public Collection<java.util.Date> getCheckinTimes() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getCheckinTimes() {
     final Object current = myData.get("checkinTime");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -182,11 +182,11 @@ public class LodgingBusiness extends LocalBusiness {
   /**
    * An intended audience, i.e. a group for whom something was created.
    */
-  @JsonIgnore public Collection<Audience> getAudiences() {
+  @JsonIgnore public java.util.Collection<Audience> getAudiences() {
     final Object current = myData.get("audience");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Audience>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Audience>) current;
     }
     return Arrays.asList((Audience) current);
   }
@@ -199,11 +199,11 @@ public class LodgingBusiness extends LocalBusiness {
   /**
    * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
    */
-  @JsonIgnore public Collection<Language> getAvailableLanguageLanguages() {
+  @JsonIgnore public java.util.Collection<Language> getAvailableLanguageLanguages() {
     final Object current = myData.get("availableLanguage");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Language>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Language>) current;
     }
     return Arrays.asList((Language) current);
   }
@@ -216,11 +216,11 @@ public class LodgingBusiness extends LocalBusiness {
   /**
    * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
    */
-  @JsonIgnore public Collection<String> getAvailableLanguageStrings() {
+  @JsonIgnore public java.util.Collection<String> getAvailableLanguageStrings() {
     final Object current = myData.get("availableLanguage");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -233,11 +233,11 @@ public class LodgingBusiness extends LocalBusiness {
   /**
    * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
    */
-  @JsonIgnore public Collection<LocationFeatureSpecification> getAmenityFeatures() {
+  @JsonIgnore public java.util.Collection<LocationFeatureSpecification> getAmenityFeatures() {
     final Object current = myData.get("amenityFeature");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<LocationFeatureSpecification>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<LocationFeatureSpecification>) current;
     }
     return Arrays.asList((LocationFeatureSpecification) current);
   }
@@ -250,11 +250,11 @@ public class LodgingBusiness extends LocalBusiness {
   /**
    * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
    */
-  @JsonIgnore public Collection<Boolean> getPetsAllowedBooleans() {
+  @JsonIgnore public java.util.Collection<Boolean> getPetsAllowedBooleans() {
     final Object current = myData.get("petsAllowed");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Boolean>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Boolean>) current;
     }
     return Arrays.asList((Boolean) current);
   }
@@ -267,11 +267,11 @@ public class LodgingBusiness extends LocalBusiness {
   /**
    * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
    */
-  @JsonIgnore public Collection<String> getPetsAllowedStrings() {
+  @JsonIgnore public java.util.Collection<String> getPetsAllowedStrings() {
     final Object current = myData.get("petsAllowed");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }

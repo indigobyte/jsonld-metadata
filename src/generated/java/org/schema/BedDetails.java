@@ -36,11 +36,11 @@ public class BedDetails extends Intangible {
   /**
    * The type of bed to which the BedDetail refers, i.e. the type of bed available in the quantity indicated by quantity.
    */
-  @JsonIgnore public Collection<BedType> getTypeOfBedBedTypes() {
+  @JsonIgnore public java.util.Collection<BedType> getTypeOfBedBedTypes() {
     final Object current = myData.get("typeOfBed");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<BedType>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<BedType>) current;
     }
     return Arrays.asList((BedType) current);
   }
@@ -53,11 +53,11 @@ public class BedDetails extends Intangible {
   /**
    * The type of bed to which the BedDetail refers, i.e. the type of bed available in the quantity indicated by quantity.
    */
-  @JsonIgnore public Collection<String> getTypeOfBedStrings() {
+  @JsonIgnore public java.util.Collection<String> getTypeOfBedStrings() {
     final Object current = myData.get("typeOfBed");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -70,11 +70,11 @@ public class BedDetails extends Intangible {
   /**
    * The quantity of the given bed type available in the HotelRoom, Suite, House, or Apartment.
    */
-  @JsonIgnore public Collection<Integer> getNumberOfBedsIntegers() {
+  @JsonIgnore public java.util.Collection<Integer> getNumberOfBedsIntegers() {
     final Object current = myData.get("numberOfBeds");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -87,11 +87,11 @@ public class BedDetails extends Intangible {
   /**
    * The quantity of the given bed type available in the HotelRoom, Suite, House, or Apartment.
    */
-  @JsonIgnore public Collection<Long> getNumberOfBedsLongs() {
+  @JsonIgnore public java.util.Collection<Long> getNumberOfBedsLongs() {
     final Object current = myData.get("numberOfBeds");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Long>) current;
     }
     return Arrays.asList((Long) current);
   }
@@ -104,11 +104,11 @@ public class BedDetails extends Intangible {
   /**
    * The quantity of the given bed type available in the HotelRoom, Suite, House, or Apartment.
    */
-  @JsonIgnore public Collection<Float> getNumberOfBedsFloats() {
+  @JsonIgnore public java.util.Collection<Float> getNumberOfBedsFloats() {
     final Object current = myData.get("numberOfBeds");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Float>) current;
     }
     return Arrays.asList((Float) current);
   }
@@ -121,11 +121,11 @@ public class BedDetails extends Intangible {
   /**
    * The quantity of the given bed type available in the HotelRoom, Suite, House, or Apartment.
    */
-  @JsonIgnore public Collection<Double> getNumberOfBedsDoubles() {
+  @JsonIgnore public java.util.Collection<Double> getNumberOfBedsDoubles() {
     final Object current = myData.get("numberOfBeds");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Double>) current;
     }
     return Arrays.asList((Double) current);
   }
@@ -138,11 +138,11 @@ public class BedDetails extends Intangible {
   /**
    * The quantity of the given bed type available in the HotelRoom, Suite, House, or Apartment.
    */
-  @JsonIgnore public Collection<String> getNumberOfBedsStrings() {
+  @JsonIgnore public java.util.Collection<String> getNumberOfBedsStrings() {
     final Object current = myData.get("numberOfBeds");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }

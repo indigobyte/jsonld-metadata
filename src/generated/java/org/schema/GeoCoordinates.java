@@ -36,11 +36,11 @@ public class GeoCoordinates extends StructuredValue {
   /**
    * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
    */
-  @JsonIgnore public Collection<Integer> getLongitudeIntegers() {
+  @JsonIgnore public java.util.Collection<Integer> getLongitudeIntegers() {
     final Object current = myData.get("longitude");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -53,11 +53,11 @@ public class GeoCoordinates extends StructuredValue {
   /**
    * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
    */
-  @JsonIgnore public Collection<Long> getLongitudeLongs() {
+  @JsonIgnore public java.util.Collection<Long> getLongitudeLongs() {
     final Object current = myData.get("longitude");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Long>) current;
     }
     return Arrays.asList((Long) current);
   }
@@ -70,11 +70,11 @@ public class GeoCoordinates extends StructuredValue {
   /**
    * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
    */
-  @JsonIgnore public Collection<Float> getLongitudeFloats() {
+  @JsonIgnore public java.util.Collection<Float> getLongitudeFloats() {
     final Object current = myData.get("longitude");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Float>) current;
     }
     return Arrays.asList((Float) current);
   }
@@ -87,11 +87,11 @@ public class GeoCoordinates extends StructuredValue {
   /**
    * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
    */
-  @JsonIgnore public Collection<Double> getLongitudeDoubles() {
+  @JsonIgnore public java.util.Collection<Double> getLongitudeDoubles() {
     final Object current = myData.get("longitude");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Double>) current;
     }
     return Arrays.asList((Double) current);
   }
@@ -104,11 +104,11 @@ public class GeoCoordinates extends StructuredValue {
   /**
    * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
    */
-  @JsonIgnore public Collection<String> getLongitudeStrings() {
+  @JsonIgnore public java.util.Collection<String> getLongitudeStrings() {
     final Object current = myData.get("longitude");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -121,11 +121,11 @@ public class GeoCoordinates extends StructuredValue {
   /**
    * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
    */
-  @JsonIgnore public Collection<Integer> getElevationIntegers() {
+  @JsonIgnore public java.util.Collection<Integer> getElevationIntegers() {
     final Object current = myData.get("elevation");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -138,11 +138,11 @@ public class GeoCoordinates extends StructuredValue {
   /**
    * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
    */
-  @JsonIgnore public Collection<Long> getElevationLongs() {
+  @JsonIgnore public java.util.Collection<Long> getElevationLongs() {
     final Object current = myData.get("elevation");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Long>) current;
     }
     return Arrays.asList((Long) current);
   }
@@ -155,11 +155,11 @@ public class GeoCoordinates extends StructuredValue {
   /**
    * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
    */
-  @JsonIgnore public Collection<Float> getElevationFloats() {
+  @JsonIgnore public java.util.Collection<Float> getElevationFloats() {
     final Object current = myData.get("elevation");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Float>) current;
     }
     return Arrays.asList((Float) current);
   }
@@ -172,11 +172,11 @@ public class GeoCoordinates extends StructuredValue {
   /**
    * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
    */
-  @JsonIgnore public Collection<Double> getElevationDoubles() {
+  @JsonIgnore public java.util.Collection<Double> getElevationDoubles() {
     final Object current = myData.get("elevation");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Double>) current;
     }
     return Arrays.asList((Double) current);
   }
@@ -189,11 +189,11 @@ public class GeoCoordinates extends StructuredValue {
   /**
    * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
    */
-  @JsonIgnore public Collection<String> getElevationStrings() {
+  @JsonIgnore public java.util.Collection<String> getElevationStrings() {
     final Object current = myData.get("elevation");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -206,11 +206,11 @@ public class GeoCoordinates extends StructuredValue {
   /**
    * Physical address of the item.
    */
-  @JsonIgnore public Collection<PostalAddress> getAddressPostalAddresss() {
+  @JsonIgnore public java.util.Collection<PostalAddress> getAddressPostalAddresss() {
     final Object current = myData.get("address");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<PostalAddress>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<PostalAddress>) current;
     }
     return Arrays.asList((PostalAddress) current);
   }
@@ -223,11 +223,11 @@ public class GeoCoordinates extends StructuredValue {
   /**
    * Physical address of the item.
    */
-  @JsonIgnore public Collection<String> getAddressStrings() {
+  @JsonIgnore public java.util.Collection<String> getAddressStrings() {
     final Object current = myData.get("address");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -240,11 +240,11 @@ public class GeoCoordinates extends StructuredValue {
   /**
    * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
    */
-  @JsonIgnore public Collection<Number> getLatitudeNumbers() {
+  @JsonIgnore public java.util.Collection<Number> getLatitudeNumbers() {
     final Object current = myData.get("latitude");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Number>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Number>) current;
     }
     return Arrays.asList((Number) current);
   }
@@ -257,11 +257,11 @@ public class GeoCoordinates extends StructuredValue {
   /**
    * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
    */
-  @JsonIgnore public Collection<String> getLatitudeStrings() {
+  @JsonIgnore public java.util.Collection<String> getLatitudeStrings() {
     final Object current = myData.get("latitude");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -274,11 +274,11 @@ public class GeoCoordinates extends StructuredValue {
   /**
    * The postal code. For example, 94043.
    */
-  @JsonIgnore public Collection<String> getPostalCodes() {
+  @JsonIgnore public java.util.Collection<String> getPostalCodes() {
     final Object current = myData.get("postalCode");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -291,11 +291,11 @@ public class GeoCoordinates extends StructuredValue {
   /**
    * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
    */
-  @JsonIgnore public Collection<Country> getAddressCountryCountrys() {
+  @JsonIgnore public java.util.Collection<Country> getAddressCountryCountrys() {
     final Object current = myData.get("addressCountry");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Country>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Country>) current;
     }
     return Arrays.asList((Country) current);
   }
@@ -308,11 +308,11 @@ public class GeoCoordinates extends StructuredValue {
   /**
    * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
    */
-  @JsonIgnore public Collection<String> getAddressCountryStrings() {
+  @JsonIgnore public java.util.Collection<String> getAddressCountryStrings() {
     final Object current = myData.get("addressCountry");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }

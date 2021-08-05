@@ -36,11 +36,11 @@ public class Course extends LearningResource {
   /**
    * The number of credits or units awarded by a Course or required to complete an EducationalOccupationalProgram.
    */
-  @JsonIgnore public Collection<Integer> getNumberOfCreditsIntegers() {
+  @JsonIgnore public java.util.Collection<Integer> getNumberOfCreditsIntegers() {
     final Object current = myData.get("numberOfCredits");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -53,11 +53,11 @@ public class Course extends LearningResource {
   /**
    * The number of credits or units awarded by a Course or required to complete an EducationalOccupationalProgram.
    */
-  @JsonIgnore public Collection<StructuredValue> getNumberOfCreditsStructuredValues() {
+  @JsonIgnore public java.util.Collection<StructuredValue> getNumberOfCreditsStructuredValues() {
     final Object current = myData.get("numberOfCredits");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<StructuredValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<StructuredValue>) current;
     }
     return Arrays.asList((StructuredValue) current);
   }
@@ -70,11 +70,11 @@ public class Course extends LearningResource {
   /**
    * A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.
    */
-  @JsonIgnore public Collection<EducationalOccupationalCredential> getEducationalCredentialAwardedEducationalOccupationalCredentials() {
+  @JsonIgnore public java.util.Collection<EducationalOccupationalCredential> getEducationalCredentialAwardedEducationalOccupationalCredentials() {
     final Object current = myData.get("educationalCredentialAwarded");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<EducationalOccupationalCredential>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<EducationalOccupationalCredential>) current;
     }
     return Arrays.asList((EducationalOccupationalCredential) current);
   }
@@ -87,11 +87,11 @@ public class Course extends LearningResource {
   /**
    * A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.
    */
-  @JsonIgnore public Collection<String> getEducationalCredentialAwardedStrings() {
+  @JsonIgnore public java.util.Collection<String> getEducationalCredentialAwardedStrings() {
     final Object current = myData.get("educationalCredentialAwarded");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -104,11 +104,11 @@ public class Course extends LearningResource {
   /**
    * Requirements for taking the Course. May be completion of another [[Course]] or a textual description like &quot;permission of instructor&quot;. Requirements may be a pre-requisite competency, referenced using [[AlignmentObject]].
    */
-  @JsonIgnore public Collection<AlignmentObject> getCoursePrerequisitesAlignmentObjects() {
+  @JsonIgnore public java.util.Collection<AlignmentObject> getCoursePrerequisitesAlignmentObjects() {
     final Object current = myData.get("coursePrerequisites");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<AlignmentObject>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<AlignmentObject>) current;
     }
     return Arrays.asList((AlignmentObject) current);
   }
@@ -121,11 +121,11 @@ public class Course extends LearningResource {
   /**
    * Requirements for taking the Course. May be completion of another [[Course]] or a textual description like &quot;permission of instructor&quot;. Requirements may be a pre-requisite competency, referenced using [[AlignmentObject]].
    */
-  @JsonIgnore public Collection<Course> getCoursePrerequisitesCourses() {
+  @JsonIgnore public java.util.Collection<Course> getCoursePrerequisitesCourses() {
     final Object current = myData.get("coursePrerequisites");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Course>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Course>) current;
     }
     return Arrays.asList((Course) current);
   }
@@ -138,11 +138,11 @@ public class Course extends LearningResource {
   /**
    * Requirements for taking the Course. May be completion of another [[Course]] or a textual description like &quot;permission of instructor&quot;. Requirements may be a pre-requisite competency, referenced using [[AlignmentObject]].
    */
-  @JsonIgnore public Collection<String> getCoursePrerequisitesStrings() {
+  @JsonIgnore public java.util.Collection<String> getCoursePrerequisitesStrings() {
     final Object current = myData.get("coursePrerequisites");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -155,11 +155,11 @@ public class Course extends LearningResource {
   /**
    * An offering of the course at a specific time and place or through specific media or mode of study or to a specific section of students.
    */
-  @JsonIgnore public Collection<CourseInstance> getHasCourseInstances() {
+  @JsonIgnore public java.util.Collection<CourseInstance> getHasCourseInstances() {
     final Object current = myData.get("hasCourseInstance");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<CourseInstance>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<CourseInstance>) current;
     }
     return Arrays.asList((CourseInstance) current);
   }
@@ -172,11 +172,11 @@ public class Course extends LearningResource {
   /**
    * The identifier for the [[Course]] used by the course [[provider]] (e.g. CS101 or 6.001).
    */
-  @JsonIgnore public Collection<String> getCourseCodes() {
+  @JsonIgnore public java.util.Collection<String> getCourseCodes() {
     final Object current = myData.get("courseCode");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -189,11 +189,11 @@ public class Course extends LearningResource {
   /**
    * A description of the qualification, award, certificate, diploma or other occupational credential awarded as a consequence of successful completion of this course or program.
    */
-  @JsonIgnore public Collection<EducationalOccupationalCredential> getOccupationalCredentialAwardedEducationalOccupationalCredentials() {
+  @JsonIgnore public java.util.Collection<EducationalOccupationalCredential> getOccupationalCredentialAwardedEducationalOccupationalCredentials() {
     final Object current = myData.get("occupationalCredentialAwarded");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<EducationalOccupationalCredential>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<EducationalOccupationalCredential>) current;
     }
     return Arrays.asList((EducationalOccupationalCredential) current);
   }
@@ -206,11 +206,11 @@ public class Course extends LearningResource {
   /**
    * A description of the qualification, award, certificate, diploma or other occupational credential awarded as a consequence of successful completion of this course or program.
    */
-  @JsonIgnore public Collection<String> getOccupationalCredentialAwardedStrings() {
+  @JsonIgnore public java.util.Collection<String> getOccupationalCredentialAwardedStrings() {
     final Object current = myData.get("occupationalCredentialAwarded");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -1783,8 +1783,8 @@ public class Course extends LearningResource {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

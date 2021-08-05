@@ -36,11 +36,11 @@ public class ImagingTest extends MedicalTest {
   /**
    * Imaging technique used.
    */
-  @JsonIgnore public Collection<MedicalImagingTechnique> getImagingTechniques() {
+  @JsonIgnore public java.util.Collection<MedicalImagingTechnique> getImagingTechniques() {
     final Object current = myData.get("imagingTechnique");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MedicalImagingTechnique>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MedicalImagingTechnique>) current;
     }
     return Arrays.asList((MedicalImagingTechnique) current);
   }
@@ -63,13 +63,6 @@ public class ImagingTest extends MedicalTest {
      */
     @NotNull public Builder imagingTechnique(@NotNull MedicalImagingTechnique medicalImagingTechnique) {
       putValue("imagingTechnique", medicalImagingTechnique);
-      return this;
-    }
-    /**
-     * Imaging technique used.
-     */
-    @NotNull public Builder imagingTechnique(@NotNull MedicalImagingTechnique.Builder medicalImagingTechnique) {
-      putValue("imagingTechnique", medicalImagingTechnique.build());
       return this;
     }
     /**
@@ -192,24 +185,10 @@ public class ImagingTest extends MedicalTest {
       return this;
     }
     /**
-     * If applicable, a medical specialty in which this entity is relevant.
-     */
-    @NotNull public Builder relevantSpecialty(@NotNull MedicalSpecialty.Builder medicalSpecialty) {
-      putValue("relevantSpecialty", medicalSpecialty.build());
-      return this;
-    }
-    /**
      * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      */
     @NotNull public Builder medicineSystem(@NotNull MedicineSystem medicineSystem) {
       putValue("medicineSystem", medicineSystem);
-      return this;
-    }
-    /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
-     */
-    @NotNull public Builder medicineSystem(@NotNull MedicineSystem.Builder medicineSystem) {
-      putValue("medicineSystem", medicineSystem.build());
       return this;
     }
     /**

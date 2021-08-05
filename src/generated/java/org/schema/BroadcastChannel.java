@@ -36,11 +36,11 @@ public class BroadcastChannel extends Intangible {
   /**
    * Genre of the creative work, broadcast channel or group.
    */
-  @JsonIgnore public Collection<Genre> getGenres() {
+  @JsonIgnore public java.util.Collection<Genre> getGenres() {
     final Object current = myData.get("genre");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Genre>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Genre>) current;
     }
     return Arrays.asList((Genre) current);
   }
@@ -53,11 +53,11 @@ public class BroadcastChannel extends Intangible {
   /**
    * The unique address by which the BroadcastService can be identified in a provider lineup. In US, this is typically a number.
    */
-  @JsonIgnore public Collection<String> getBroadcastChannelIds() {
+  @JsonIgnore public java.util.Collection<String> getBroadcastChannelIds() {
     final Object current = myData.get("broadcastChannelId");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -70,11 +70,11 @@ public class BroadcastChannel extends Intangible {
   /**
    * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. &quot;87 FM&quot;.
    */
-  @JsonIgnore public Collection<BroadcastFrequencySpecification> getBroadcastFrequencyBroadcastFrequencySpecifications() {
+  @JsonIgnore public java.util.Collection<BroadcastFrequencySpecification> getBroadcastFrequencyBroadcastFrequencySpecifications() {
     final Object current = myData.get("broadcastFrequency");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<BroadcastFrequencySpecification>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<BroadcastFrequencySpecification>) current;
     }
     return Arrays.asList((BroadcastFrequencySpecification) current);
   }
@@ -87,11 +87,11 @@ public class BroadcastChannel extends Intangible {
   /**
    * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. &quot;87 FM&quot;.
    */
-  @JsonIgnore public Collection<String> getBroadcastFrequencyStrings() {
+  @JsonIgnore public java.util.Collection<String> getBroadcastFrequencyStrings() {
     final Object current = myData.get("broadcastFrequency");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -104,11 +104,11 @@ public class BroadcastChannel extends Intangible {
   /**
    * The type of service required to have access to the channel (e.g. Standard or Premium).
    */
-  @JsonIgnore public Collection<String> getBroadcastServiceTiers() {
+  @JsonIgnore public java.util.Collection<String> getBroadcastServiceTiers() {
     final Object current = myData.get("broadcastServiceTier");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -121,11 +121,11 @@ public class BroadcastChannel extends Intangible {
   /**
    * The CableOrSatelliteService offering the channel.
    */
-  @JsonIgnore public Collection<CableOrSatelliteService> getInBroadcastLineups() {
+  @JsonIgnore public java.util.Collection<CableOrSatelliteService> getInBroadcastLineups() {
     final Object current = myData.get("inBroadcastLineup");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<CableOrSatelliteService>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<CableOrSatelliteService>) current;
     }
     return Arrays.asList((CableOrSatelliteService) current);
   }
@@ -138,11 +138,11 @@ public class BroadcastChannel extends Intangible {
   /**
    * The BroadcastService offered on this channel.
    */
-  @JsonIgnore public Collection<BroadcastService> getProvidesBroadcastServices() {
+  @JsonIgnore public java.util.Collection<BroadcastService> getProvidesBroadcastServices() {
     final Object current = myData.get("providesBroadcastService");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<BroadcastService>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<BroadcastService>) current;
     }
     return Arrays.asList((BroadcastService) current);
   }

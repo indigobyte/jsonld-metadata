@@ -36,11 +36,11 @@ public class CategoryCode extends DefinedTerm {
   /**
    * A short textual code that uniquely identifies the value.
    */
-  @JsonIgnore public Collection<String> getCodeValues() {
+  @JsonIgnore public java.util.Collection<String> getCodeValues() {
     final Object current = myData.get("codeValue");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -53,11 +53,11 @@ public class CategoryCode extends DefinedTerm {
   /**
    * A [[CategoryCodeSet]] that contains this category code.
    */
-  @JsonIgnore public Collection<InDefinedTermSet> getInCodeSets() {
+  @JsonIgnore public java.util.Collection<InDefinedTermSet> getInCodeSets() {
     final Object current = myData.get("inCodeSet");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<InDefinedTermSet>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<InDefinedTermSet>) current;
     }
     return Arrays.asList((InDefinedTermSet) current);
   }

@@ -36,11 +36,11 @@ public class VideoObject extends MediaObject {
   /**
    * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
    */
-  @JsonIgnore public Collection<Actor> getActors() {
+  @JsonIgnore public java.util.Collection<Actor> getActors() {
     final Object current = myData.get("actor");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Actor>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Actor>) current;
     }
     return Arrays.asList((Actor) current);
   }
@@ -53,11 +53,11 @@ public class VideoObject extends MediaObject {
   /**
    * The quality of the video.
    */
-  @JsonIgnore public Collection<String> getVideoQualitys() {
+  @JsonIgnore public java.util.Collection<String> getVideoQualitys() {
     final Object current = myData.get("videoQuality");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -70,11 +70,11 @@ public class VideoObject extends MediaObject {
   /**
    * If this MediaObject is an AudioObject or VideoObject, the transcript of that object.
    */
-  @JsonIgnore public Collection<String> getTranscripts() {
+  @JsonIgnore public java.util.Collection<String> getTranscripts() {
     final Object current = myData.get("transcript");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -87,11 +87,11 @@ public class VideoObject extends MediaObject {
   /**
    * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
    */
-  @JsonIgnore public Collection<Caption> getCaptions() {
+  @JsonIgnore public java.util.Collection<Caption> getCaptions() {
     final Object current = myData.get("caption");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Caption>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Caption>) current;
     }
     return Arrays.asList((Caption) current);
   }
@@ -104,11 +104,11 @@ public class VideoObject extends MediaObject {
   /**
    * Represents textual captioning from a [[MediaObject]], e.g. text of a 'meme'.
    */
-  @JsonIgnore public Collection<String> getEmbeddedTextCaptions() {
+  @JsonIgnore public java.util.Collection<String> getEmbeddedTextCaptions() {
     final Object current = myData.get("embeddedTextCaption");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -121,11 +121,11 @@ public class VideoObject extends MediaObject {
   /**
    * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
    */
-  @JsonIgnore public Collection<Person> getDirectors() {
+  @JsonIgnore public java.util.Collection<Person> getDirectors() {
     final Object current = myData.get("director");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -138,11 +138,11 @@ public class VideoObject extends MediaObject {
   /**
    * The frame size of the video.
    */
-  @JsonIgnore public Collection<String> getVideoFrameSizes() {
+  @JsonIgnore public java.util.Collection<String> getVideoFrameSizes() {
     final Object current = myData.get("videoFrameSize");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -155,11 +155,11 @@ public class VideoObject extends MediaObject {
   /**
    * The composer of the soundtrack.
    */
-  @JsonIgnore public Collection<MusicGroup> getMusicByMusicGroups() {
+  @JsonIgnore public java.util.Collection<MusicGroup> getMusicByMusicGroups() {
     final Object current = myData.get("musicBy");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MusicGroup>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MusicGroup>) current;
     }
     return Arrays.asList((MusicGroup) current);
   }
@@ -172,11 +172,11 @@ public class VideoObject extends MediaObject {
   /**
    * The composer of the soundtrack.
    */
-  @JsonIgnore public Collection<Person> getMusicByPersons() {
+  @JsonIgnore public java.util.Collection<Person> getMusicByPersons() {
     final Object current = myData.get("musicBy");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -189,11 +189,11 @@ public class VideoObject extends MediaObject {
   /**
    * Thumbnail image for an image or video.
    */
-  @JsonIgnore public Collection<ImageObject> getThumbnails() {
+  @JsonIgnore public java.util.Collection<ImageObject> getThumbnails() {
     final Object current = myData.get("thumbnail");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<ImageObject>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<ImageObject>) current;
     }
     return Arrays.asList((ImageObject) current);
   }
@@ -1967,8 +1967,8 @@ public class VideoObject extends MediaObject {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

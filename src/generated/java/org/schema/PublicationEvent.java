@@ -36,11 +36,11 @@ public class PublicationEvent extends Event {
   /**
    * A broadcast service associated with the publication event.
    */
-  @JsonIgnore public Collection<BroadcastService> getPublishedOns() {
+  @JsonIgnore public java.util.Collection<BroadcastService> getPublishedOns() {
     final Object current = myData.get("publishedOn");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<BroadcastService>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<BroadcastService>) current;
     }
     return Arrays.asList((BroadcastService) current);
   }
@@ -53,11 +53,11 @@ public class PublicationEvent extends Event {
   /**
    * An agent associated with the publication event.
    */
-  @JsonIgnore public Collection<Organization> getPublishedByOrganizations() {
+  @JsonIgnore public java.util.Collection<Organization> getPublishedByOrganizations() {
     final Object current = myData.get("publishedBy");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
   }
@@ -70,11 +70,11 @@ public class PublicationEvent extends Event {
   /**
    * An agent associated with the publication event.
    */
-  @JsonIgnore public Collection<Person> getPublishedByPersons() {
+  @JsonIgnore public java.util.Collection<Person> getPublishedByPersons() {
     final Object current = myData.get("publishedBy");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -307,13 +307,6 @@ public class PublicationEvent extends Event {
      */
     @NotNull public Builder eventStatus(@NotNull EventStatusType eventStatusType) {
       putValue("eventStatus", eventStatusType);
-      return this;
-    }
-    /**
-     * An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.
-     */
-    @NotNull public Builder eventStatus(@NotNull EventStatusType.Builder eventStatusType) {
-      putValue("eventStatus", eventStatusType.build());
       return this;
     }
     /**

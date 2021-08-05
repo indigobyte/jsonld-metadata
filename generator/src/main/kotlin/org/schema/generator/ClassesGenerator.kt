@@ -1,5 +1,8 @@
 package org.schema.generator
 
+import org.schema.generator.helper.sanitizeIdentifier
+
+
 /**
  * @author Victor Kropp
  */
@@ -12,14 +15,13 @@ class ClassesGenerator(private val sink: GeneratorSink, private val banner: Stri
         for ((key, type) in sink.types) {
             if (type.name.isNullOrEmpty() || (type.isField && !type.isInterface) || sink.shouldSkip(type.name!!)) continue
             if (type.parentType == null && type.name != "Thing" && !type.isInterface) continue
-            if (type.name == "http://schema.org/Enumeration" || (type.parentType?.let{ sink.types[it] }?.isEnum == true)) continue
+            //if (type.name == "http://schema.org/Enumeration" || (type.parentType?.let{ sink.types[it] }?.isEnum == true)) continue
 
-            var typeName = type.name!!.capitalize()
-            if (typeName.get(0) !in 'A'..'Z') {
-                typeName = "_$typeName"
-            }
+            val typeName = sanitizeIdentifier(type.name!!.capitalize())
 
-            if (type.isEnum) {
+            if (type.isEnum ||
+                type.parentType?.let { sink.types[it] }?.isEnum == true
+            ) {
                 p.enumeration(typeName) {
                     copyright = banner
                     comment = type.comment ?: ""
@@ -36,14 +38,24 @@ class ClassesGenerator(private val sink: GeneratorSink, private val banner: Stri
             p.klass(typeName, type.classOrInterface) {
                 copyright = banner
                 if (type.isInterface) {
-                    extends = type.interfaces.filter { i -> sink.types.values.any { it.name == i && !it.isField && it.name != "HasPart" } }
+                    extends =
+                        type.interfaces.filter { i -> sink.types.values.any { it.name == i && !it.isField && it.name != "HasPart" } }
                 } else {
                     extends = type.parentType?.let { sink.types[it]?.name }?.let { listOf(it) }
-                    implements = type.interfaces.filter { i -> sink.types.values.any { it.name == i && !it.isField && it.name != "HasPart" } }
+                    implements =
+                        type.interfaces.filter { i -> sink.types.values.any { it.name == i && !it.isField && it.name != "HasPart" } }
                 }
-                imports = listOf("com.fasterxml.jackson.databind.annotation.*", "com.fasterxml.jackson.annotation.*", "org.jetbrains.annotations.NotNull", "java.util.*")
-                annotations = if (typeName == "Thing") { listOf("@JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)") } else null
-                comment = (type.comment ?: "") + (type.source?.let { "Source: $it" } ?: "") + (type.equivalent?.let { "Equivalent class: $it" } ?: "")
+                imports = listOf(
+                    "com.fasterxml.jackson.databind.annotation.*",
+                    "com.fasterxml.jackson.annotation.*",
+                    "org.jetbrains.annotations.NotNull",
+                    "java.util.*"
+                )
+                annotations = if (typeName == "Thing") {
+                    listOf("@JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)")
+                } else null
+                comment = (type.comment ?: "") + (type.source?.let { "Source: $it" }
+                    ?: "") + (type.equivalent?.let { "Equivalent class: $it" } ?: "")
 
                 if (typeName == "Thing") {
                     method("getJsonLdType", "String") {
@@ -65,14 +77,15 @@ class ClassesGenerator(private val sink: GeneratorSink, private val banner: Stri
                         parameters("key" to "String")
 
                         line("final Object current = myData.get(key);")
-                        line("if (current instanceof Collection) {")
-                        line("  return ((Collection) current).iterator().next();")
+                        line("if (current instanceof java.util.Collection) {")
+                        line("  return ((java.util.Collection) current).iterator().next();")
                         line("}")
                         line("return current;")
                     }
                 }
 
-                val ownFields = type.subTypes.mapNotNull { sink.types[it] }.filter { it.name != null && !it.isSuperseded && it.dataTypes.any() && it.dataTypes[0] != "http://schema.org/Class" && it.dataTypes[0] != "http://schema.org/HasPart"}
+                val ownFields = type.subTypes.mapNotNull { sink.types[it] }
+                    .filter { it.name != null && !it.isSuperseded && it.dataTypes.any() && it.dataTypes[0] != "http://schema.org/Class" && it.dataTypes[0] != "http://schema.org/HasPart" }
                 ownFields.forEach {
                     val fieldTypes = sink.getEitherTypes(it)
                     val name = it.name!!.capitalize()
@@ -87,14 +100,14 @@ class ClassesGenerator(private val sink: GeneratorSink, private val banner: Stri
                             line("return ($fieldType) getValue(\"$key1\");")
                         }
                         if (name != "Id") {
-                            method(methodName + "s", "Collection<$fieldType>") {
+                            method(methodName + "s", "java.util.Collection<$fieldType>") {
                                 comment = it.comment
                                 annotations = listOf("@JsonIgnore")
 
                                 line("final Object current = myData.get(\"$key1\");")
                                 line("if (current == null) return Collections.emptyList();")
-                                line("if (current instanceof Collection) {")
-                                line("  return (Collection<$fieldType>) current;")
+                                line("if (current instanceof java.util.Collection) {")
+                                line("  return (java.util.Collection<$fieldType>) current;")
                                 line("}")
                                 line("return Arrays.asList(($fieldType) current);")
                             }
@@ -106,8 +119,8 @@ class ClassesGenerator(private val sink: GeneratorSink, private val banner: Stri
 
                 if (!type.isInterface) {
                     konstructor("protected",
-                            parameters = listOf(Parameter("data", "java.util.Map<String,Object>")),
-                            superParameters = type.parentType?.let { listOf("data") }
+                        parameters = listOf(Parameter("data", "java.util.Map<String,Object>")),
+                        superParameters = type.parentType?.let { listOf("data") }
                     )
 
                     if (typeName == "Thing") {
@@ -116,7 +129,11 @@ class ClassesGenerator(private val sink: GeneratorSink, private val banner: Stri
 
                     klass("Builder") {
                         comment = "Builder for {@link $typeName}"
-                        extends = type.parentType?.let { sink.types[it]?.name?.plus(".Builder") }?.let { listOf(it) }
+                        extends = type.parentType?.let {
+                            sink.types[it]?.name
+                                ?.let { sanitizeIdentifier(it) }
+                                ?.plus(".Builder")
+                        }?.let { listOf(it) }
                         if (type.parentType == null) {
                             implements = listOf("ThingBuilder<$typeName>")
 
@@ -126,9 +143,9 @@ class ClassesGenerator(private val sink: GeneratorSink, private val banner: Stri
                                 parameters("key" to "String", "value" to "Object")
                                 line("if (myData.containsKey(key)) {")
                                 line("  final Object current = myData.get(key);")
-                                line("  final Collection list;")
-                                line("  if (current instanceof Collection) {")
-                                line("    list = (Collection) current;")
+                                line("  final java.util.Collection list;")
+                                line("  if (current instanceof java.util.Collection) {")
+                                line("    list = (java.util.Collection) current;")
                                 line("  } else {")
                                 line("    list = new ArrayList<Object>();")
                                 line("    list.add(current);")
@@ -141,7 +158,10 @@ class ClassesGenerator(private val sink: GeneratorSink, private val banner: Stri
                             }
                         }
 
-                        konstructor("public", listOf(Parameter("data", "HashMap<String,Object>", NOT_NULL)), type.parentType?.let { listOf("data") })
+                        konstructor(
+                            "public",
+                            listOf(Parameter("data", "HashMap<String,Object>", NOT_NULL)),
+                            type.parentType?.let { listOf("data") })
 
                         method("build", typeName) {
                             annotations = NOT_NULL
@@ -152,29 +172,64 @@ class ClassesGenerator(private val sink: GeneratorSink, private val banner: Stri
                             val name = field.name!!.capitalize()
                             val eitherTypes = sink.getEitherTypes(field)
                             eitherTypes.forEachIndexed { i, fieldType ->
-
-                                method(name.decapitalize(), "Builder") {
+                                method(sanitizeIdentifier(name.decapitalize()), "Builder") {
                                     comment = field.comment
-                                    parameters = listOf(Parameter(getVariableName(fieldType, name), fieldType, NOT_NULL))
+                                    parameters =
+                                        listOf(Parameter(getVariableName(fieldType, name), fieldType, NOT_NULL))
                                     annotations = NOT_NULL
 
                                     if (name != "Id") {
-                                        line("putValue(\"${name.decapitalize()}\", ${getVariableName(fieldType, name)});")
+                                        line(
+                                            "putValue(\"${name.decapitalize()}\", ${
+                                                getVariableName(
+                                                    fieldType,
+                                                    name
+                                                )
+                                            });"
+                                        )
                                     } else {
-                                        line("myData.put(\"${name.decapitalize()}\", ${getVariableName(fieldType, name)});")
+                                        line(
+                                            "myData.put(\"${name.decapitalize()}\", ${
+                                                getVariableName(
+                                                    fieldType,
+                                                    name
+                                                )
+                                            });"
+                                        )
                                     }
                                     line("return this;")
                                 }
 
                                 // add overload accepting ThingBuilder<T>
-                                val isEnum = findType(fieldType)?.isEnum != true && (i >= field.dataTypes.size || sink.types[field.dataTypes[i]]?.isEnum != true)
-                                if (!sink.shouldSkip(fieldType) && findType(fieldType)?.isInterface != true && isEnum && fieldType != "String" && fieldType != "Integer" && fieldType != "java.util.Date") {
+                                val isEnum = findType(fieldType)?.isEnum != true &&
+                                        (i >= field.dataTypes.size ||
+                                                sink.types[field.dataTypes[i]]?.isEnum != true
+                                                )
+                                if (!sink.shouldSkip(fieldType) &&
+                                    findType(fieldType)?.isInterface != true &&
+                                    isEnum &&
+                                    fieldType != "String" &&
+                                    fieldType != "Integer" &&
+                                    fieldType != "java.util.Date"
+                                ) {
                                     method(name.decapitalize(), "Builder") {
                                         comment = field.comment
-                                        parameters = listOf(Parameter(getVariableName(fieldType, name), "$fieldType.Builder", NOT_NULL))
+                                        parameters = listOf(
+                                            Parameter(
+                                                getVariableName(fieldType, name),
+                                                "${sanitizeIdentifier(fieldType)}.Builder", NOT_NULL
+                                            )
+                                        )
                                         annotations = NOT_NULL
 
-                                        line("putValue(\"${name.decapitalize()}\", ${getVariableName(fieldType, name)}.build());")
+                                        line(
+                                            "putValue(\"${name.decapitalize()}\", ${
+                                                getVariableName(
+                                                    fieldType,
+                                                    name
+                                                )
+                                            }.build());"
+                                        )
                                         line("return this;")
                                     }
                                 }
@@ -221,10 +276,20 @@ class ClassesGenerator(private val sink: GeneratorSink, private val banner: Stri
                                 val varName = it.name!!.decapitalize()
                                 val fieldTypes = sink.getEitherTypes(it)
 
-                                fieldTypes.flatMap { listOf(
-                                    "if (\"$varName\".equals(key) && value instanceof $it) { this.$varName(($it)value); return; }",
-                                    "if (\"${varName}s\".equals(key) && value instanceof $it) { this.$varName(($it)value); return; }"
-                                )}
+                                fieldTypes.flatMap {
+                                    listOf(
+                                        "if (\"$varName\".equals(key) && value instanceof $it) { this.${
+                                            sanitizeIdentifier(
+                                                varName
+                                            )
+                                        }(($it)value); return; }",
+                                        "if (\"${varName}s\".equals(key) && value instanceof $it) { this.${
+                                            sanitizeIdentifier(
+                                                varName
+                                            )
+                                        }(($it)value); return; }"
+                                    )
+                                }
                             })
 
                             if (type.parentType == null) {
@@ -242,25 +307,31 @@ class ClassesGenerator(private val sink: GeneratorSink, private val banner: Stri
         }
     }
 
-    private fun getMethodName(fieldType: String, fieldTypes: Collection<String>, name: String) = when {
-        fieldTypes.size == 1 -> "get$name"
-        fieldType == "java.util.Date" -> "get${name}Date"
-        else -> "get$name$fieldType"
-    }
+    private fun getMethodName(fieldType: String, fieldTypes: Collection<String>, name: String) = sanitizeIdentifier(
+        when {
+            fieldTypes.size == 1 -> "get$name"
+            fieldType == "java.util.Date" -> "get${name}Date"
+            else -> "get$name$fieldType"
+        }
+    )
 
 
-    private fun findType(fieldType: String): GeneratorSink.Type? = sink.types.values.firstOrNull { it.name == fieldType }
+    private fun findType(fieldType: String): GeneratorSink.Type? =
+        sink.types.values.firstOrNull { it.name == fieldType }
 
     private fun subTypes(typeName: String) = sink.types.filter { it.value.parentType == typeName }
 
     private fun getVariableName(typeName: String, entityName: String? = null): String {
         val indexOfDot = typeName.lastIndexOf('.')
         if (indexOfDot > 0) {
-            return typeName.substring(indexOfDot+1).decapitalize()
+            return sanitizeIdentifier(typeName.substring(indexOfDot + 1).decapitalize())
         }
-        if (entityName != null && arrayOf("Boolean", "String", "Class", "Long", "Int", "Double", "Float").contains(typeName)) {
-            return entityName.decapitalize()
+        if (entityName != null && arrayOf("Boolean", "String", "Class", "Long", "Int", "Double", "Float").contains(
+                typeName
+            )
+        ) {
+            return sanitizeIdentifier(entityName.decapitalize())
         }
-        return typeName.decapitalize()
+        return sanitizeIdentifier(typeName.decapitalize())
     }
 }

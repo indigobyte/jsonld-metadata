@@ -36,11 +36,11 @@ public class OrderAction extends TradeAction {
   /**
    * A sub property of instrument. The method of delivery.
    */
-  @JsonIgnore public Collection<Instrument> getDeliveryMethods() {
+  @JsonIgnore public java.util.Collection<Instrument> getDeliveryMethods() {
     final Object current = myData.get("deliveryMethod");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Instrument>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Instrument>) current;
     }
     return Arrays.asList((Instrument) current);
   }
@@ -128,13 +128,6 @@ public class OrderAction extends TradeAction {
      */
     @NotNull public Builder actionStatus(@NotNull ActionStatusType actionStatusType) {
       putValue("actionStatus", actionStatusType);
-      return this;
-    }
-    /**
-     * Indicates the current disposition of the Action.
-     */
-    @NotNull public Builder actionStatus(@NotNull ActionStatusType.Builder actionStatusType) {
-      putValue("actionStatus", actionStatusType.build());
       return this;
     }
     /**

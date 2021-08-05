@@ -91,13 +91,6 @@ public class CheckInAction extends CommunicateAction {
       return this;
     }
     /**
-     * Indicates the current disposition of the Action.
-     */
-    @NotNull public Builder actionStatus(@NotNull ActionStatusType.Builder actionStatusType) {
-      putValue("actionStatus", actionStatusType.build());
-      return this;
-    }
-    /**
      * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
      */
     @NotNull public Builder agent(@NotNull Organization organization) {

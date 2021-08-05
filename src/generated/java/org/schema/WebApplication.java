@@ -36,11 +36,11 @@ public class WebApplication extends SoftwareApplication {
   /**
    * Specifies browser requirements in human-readable text. For example, 'requires HTML5 support'.
    */
-  @JsonIgnore public Collection<String> getBrowserRequirementss() {
+  @JsonIgnore public java.util.Collection<String> getBrowserRequirementss() {
     final Object current = myData.get("browserRequirements");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -1669,8 +1669,8 @@ public class WebApplication extends SoftwareApplication {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

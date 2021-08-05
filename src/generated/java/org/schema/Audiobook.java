@@ -36,11 +36,11 @@ public class Audiobook extends AudioObject {
   /**
    * A person who reads (performs) the audiobook.
    */
-  @JsonIgnore public Collection<Actor> getReadBys() {
+  @JsonIgnore public java.util.Collection<Actor> getReadBys() {
     final Object current = myData.get("readBy");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Actor>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Actor>) current;
     }
     return Arrays.asList((Actor) current);
   }
@@ -53,11 +53,11 @@ public class Audiobook extends AudioObject {
   /**
    * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
    */
-  @JsonIgnore public Collection<Duration> getDurations() {
+  @JsonIgnore public java.util.Collection<Duration> getDurations() {
     final Object current = myData.get("duration");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Duration>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Duration>) current;
     }
     return Arrays.asList((Duration) current);
   }
@@ -1761,8 +1761,8 @@ public class Audiobook extends AudioObject {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

@@ -36,11 +36,11 @@ public class Episode extends CreativeWork {
   /**
    * The production company or studio responsible for the item e.g. series, video game, episode etc.
    */
-  @JsonIgnore public Collection<Organization> getProductionCompanys() {
+  @JsonIgnore public java.util.Collection<Organization> getProductionCompanys() {
     final Object current = myData.get("productionCompany");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
   }
@@ -53,11 +53,11 @@ public class Episode extends CreativeWork {
   /**
    * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
    */
-  @JsonIgnore public Collection<Actor> getActors() {
+  @JsonIgnore public java.util.Collection<Actor> getActors() {
     final Object current = myData.get("actor");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Actor>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Actor>) current;
     }
     return Arrays.asList((Actor) current);
   }
@@ -70,11 +70,11 @@ public class Episode extends CreativeWork {
   /**
    * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
    */
-  @JsonIgnore public Collection<Duration> getDurations() {
+  @JsonIgnore public java.util.Collection<Duration> getDurations() {
     final Object current = myData.get("duration");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Duration>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Duration>) current;
     }
     return Arrays.asList((Duration) current);
   }
@@ -87,11 +87,11 @@ public class Episode extends CreativeWork {
   /**
    * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
    */
-  @JsonIgnore public Collection<Person> getDirectors() {
+  @JsonIgnore public java.util.Collection<Person> getDirectors() {
     final Object current = myData.get("director");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -104,11 +104,11 @@ public class Episode extends CreativeWork {
   /**
    * The trailer of a movie or tv/radio series, season, episode, etc.
    */
-  @JsonIgnore public Collection<VideoObject> getTrailers() {
+  @JsonIgnore public java.util.Collection<VideoObject> getTrailers() {
     final Object current = myData.get("trailer");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<VideoObject>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<VideoObject>) current;
     }
     return Arrays.asList((VideoObject) current);
   }
@@ -121,11 +121,11 @@ public class Episode extends CreativeWork {
   /**
    * Position of the episode within an ordered group of episodes.
    */
-  @JsonIgnore public Collection<Integer> getEpisodeNumberIntegers() {
+  @JsonIgnore public java.util.Collection<Integer> getEpisodeNumberIntegers() {
     final Object current = myData.get("episodeNumber");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -138,11 +138,11 @@ public class Episode extends CreativeWork {
   /**
    * Position of the episode within an ordered group of episodes.
    */
-  @JsonIgnore public Collection<String> getEpisodeNumberStrings() {
+  @JsonIgnore public java.util.Collection<String> getEpisodeNumberStrings() {
     final Object current = myData.get("episodeNumber");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -155,11 +155,11 @@ public class Episode extends CreativeWork {
   /**
    * The composer of the soundtrack.
    */
-  @JsonIgnore public Collection<MusicGroup> getMusicByMusicGroups() {
+  @JsonIgnore public java.util.Collection<MusicGroup> getMusicByMusicGroups() {
     final Object current = myData.get("musicBy");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MusicGroup>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MusicGroup>) current;
     }
     return Arrays.asList((MusicGroup) current);
   }
@@ -172,11 +172,11 @@ public class Episode extends CreativeWork {
   /**
    * The composer of the soundtrack.
    */
-  @JsonIgnore public Collection<Person> getMusicByPersons() {
+  @JsonIgnore public java.util.Collection<Person> getMusicByPersons() {
     final Object current = myData.get("musicBy");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -189,11 +189,11 @@ public class Episode extends CreativeWork {
   /**
    * The series to which this episode or season belongs.
    */
-  @JsonIgnore public Collection<IsPartOf> getPartOfSeriess() {
+  @JsonIgnore public java.util.Collection<IsPartOf> getPartOfSeriess() {
     final Object current = myData.get("partOfSeries");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<IsPartOf>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<IsPartOf>) current;
     }
     return Arrays.asList((IsPartOf) current);
   }
@@ -206,11 +206,11 @@ public class Episode extends CreativeWork {
   /**
    * The season to which this episode belongs.
    */
-  @JsonIgnore public Collection<IsPartOf> getPartOfSeasons() {
+  @JsonIgnore public java.util.Collection<IsPartOf> getPartOfSeasons() {
     final Object current = myData.get("partOfSeason");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<IsPartOf>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<IsPartOf>) current;
     }
     return Arrays.asList((IsPartOf) current);
   }
@@ -1755,8 +1755,8 @@ public class Episode extends CreativeWork {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

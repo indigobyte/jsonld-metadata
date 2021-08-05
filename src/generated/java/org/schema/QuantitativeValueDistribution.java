@@ -36,11 +36,11 @@ public class QuantitativeValueDistribution extends StructuredValue {
   /**
    * The median value.
    */
-  @JsonIgnore public Collection<Integer> getMedianIntegers() {
+  @JsonIgnore public java.util.Collection<Integer> getMedianIntegers() {
     final Object current = myData.get("median");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -53,11 +53,11 @@ public class QuantitativeValueDistribution extends StructuredValue {
   /**
    * The median value.
    */
-  @JsonIgnore public Collection<Long> getMedianLongs() {
+  @JsonIgnore public java.util.Collection<Long> getMedianLongs() {
     final Object current = myData.get("median");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Long>) current;
     }
     return Arrays.asList((Long) current);
   }
@@ -70,11 +70,11 @@ public class QuantitativeValueDistribution extends StructuredValue {
   /**
    * The median value.
    */
-  @JsonIgnore public Collection<Float> getMedianFloats() {
+  @JsonIgnore public java.util.Collection<Float> getMedianFloats() {
     final Object current = myData.get("median");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Float>) current;
     }
     return Arrays.asList((Float) current);
   }
@@ -87,11 +87,11 @@ public class QuantitativeValueDistribution extends StructuredValue {
   /**
    * The median value.
    */
-  @JsonIgnore public Collection<Double> getMedianDoubles() {
+  @JsonIgnore public java.util.Collection<Double> getMedianDoubles() {
     final Object current = myData.get("median");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Double>) current;
     }
     return Arrays.asList((Double) current);
   }
@@ -104,11 +104,11 @@ public class QuantitativeValueDistribution extends StructuredValue {
   /**
    * The median value.
    */
-  @JsonIgnore public Collection<String> getMedianStrings() {
+  @JsonIgnore public java.util.Collection<String> getMedianStrings() {
     final Object current = myData.get("median");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -121,11 +121,11 @@ public class QuantitativeValueDistribution extends StructuredValue {
   /**
    * The 10th percentile value.
    */
-  @JsonIgnore public Collection<Integer> getPercentile10Integers() {
+  @JsonIgnore public java.util.Collection<Integer> getPercentile10Integers() {
     final Object current = myData.get("percentile10");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -138,11 +138,11 @@ public class QuantitativeValueDistribution extends StructuredValue {
   /**
    * The 10th percentile value.
    */
-  @JsonIgnore public Collection<Long> getPercentile10Longs() {
+  @JsonIgnore public java.util.Collection<Long> getPercentile10Longs() {
     final Object current = myData.get("percentile10");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Long>) current;
     }
     return Arrays.asList((Long) current);
   }
@@ -155,11 +155,11 @@ public class QuantitativeValueDistribution extends StructuredValue {
   /**
    * The 10th percentile value.
    */
-  @JsonIgnore public Collection<Float> getPercentile10Floats() {
+  @JsonIgnore public java.util.Collection<Float> getPercentile10Floats() {
     final Object current = myData.get("percentile10");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Float>) current;
     }
     return Arrays.asList((Float) current);
   }
@@ -172,11 +172,11 @@ public class QuantitativeValueDistribution extends StructuredValue {
   /**
    * The 10th percentile value.
    */
-  @JsonIgnore public Collection<Double> getPercentile10Doubles() {
+  @JsonIgnore public java.util.Collection<Double> getPercentile10Doubles() {
     final Object current = myData.get("percentile10");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Double>) current;
     }
     return Arrays.asList((Double) current);
   }
@@ -189,11 +189,11 @@ public class QuantitativeValueDistribution extends StructuredValue {
   /**
    * The 10th percentile value.
    */
-  @JsonIgnore public Collection<String> getPercentile10Strings() {
+  @JsonIgnore public java.util.Collection<String> getPercentile10Strings() {
     final Object current = myData.get("percentile10");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -206,11 +206,11 @@ public class QuantitativeValueDistribution extends StructuredValue {
   /**
    * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
    */
-  @JsonIgnore public Collection<Duration> getDurations() {
+  @JsonIgnore public java.util.Collection<Duration> getDurations() {
     final Object current = myData.get("duration");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Duration>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Duration>) current;
     }
     return Arrays.asList((Duration) current);
   }
@@ -223,11 +223,11 @@ public class QuantitativeValueDistribution extends StructuredValue {
   /**
    * The 25th percentile value.
    */
-  @JsonIgnore public Collection<Integer> getPercentile25Integers() {
+  @JsonIgnore public java.util.Collection<Integer> getPercentile25Integers() {
     final Object current = myData.get("percentile25");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -240,11 +240,11 @@ public class QuantitativeValueDistribution extends StructuredValue {
   /**
    * The 25th percentile value.
    */
-  @JsonIgnore public Collection<Long> getPercentile25Longs() {
+  @JsonIgnore public java.util.Collection<Long> getPercentile25Longs() {
     final Object current = myData.get("percentile25");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Long>) current;
     }
     return Arrays.asList((Long) current);
   }
@@ -257,11 +257,11 @@ public class QuantitativeValueDistribution extends StructuredValue {
   /**
    * The 25th percentile value.
    */
-  @JsonIgnore public Collection<Float> getPercentile25Floats() {
+  @JsonIgnore public java.util.Collection<Float> getPercentile25Floats() {
     final Object current = myData.get("percentile25");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Float>) current;
     }
     return Arrays.asList((Float) current);
   }
@@ -274,11 +274,11 @@ public class QuantitativeValueDistribution extends StructuredValue {
   /**
    * The 25th percentile value.
    */
-  @JsonIgnore public Collection<Double> getPercentile25Doubles() {
+  @JsonIgnore public java.util.Collection<Double> getPercentile25Doubles() {
     final Object current = myData.get("percentile25");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Double>) current;
     }
     return Arrays.asList((Double) current);
   }
@@ -291,11 +291,11 @@ public class QuantitativeValueDistribution extends StructuredValue {
   /**
    * The 25th percentile value.
    */
-  @JsonIgnore public Collection<String> getPercentile25Strings() {
+  @JsonIgnore public java.util.Collection<String> getPercentile25Strings() {
     final Object current = myData.get("percentile25");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -308,11 +308,11 @@ public class QuantitativeValueDistribution extends StructuredValue {
   /**
    * The 75th percentile value.
    */
-  @JsonIgnore public Collection<Integer> getPercentile75Integers() {
+  @JsonIgnore public java.util.Collection<Integer> getPercentile75Integers() {
     final Object current = myData.get("percentile75");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -325,11 +325,11 @@ public class QuantitativeValueDistribution extends StructuredValue {
   /**
    * The 75th percentile value.
    */
-  @JsonIgnore public Collection<Long> getPercentile75Longs() {
+  @JsonIgnore public java.util.Collection<Long> getPercentile75Longs() {
     final Object current = myData.get("percentile75");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Long>) current;
     }
     return Arrays.asList((Long) current);
   }
@@ -342,11 +342,11 @@ public class QuantitativeValueDistribution extends StructuredValue {
   /**
    * The 75th percentile value.
    */
-  @JsonIgnore public Collection<Float> getPercentile75Floats() {
+  @JsonIgnore public java.util.Collection<Float> getPercentile75Floats() {
     final Object current = myData.get("percentile75");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Float>) current;
     }
     return Arrays.asList((Float) current);
   }
@@ -359,11 +359,11 @@ public class QuantitativeValueDistribution extends StructuredValue {
   /**
    * The 75th percentile value.
    */
-  @JsonIgnore public Collection<Double> getPercentile75Doubles() {
+  @JsonIgnore public java.util.Collection<Double> getPercentile75Doubles() {
     final Object current = myData.get("percentile75");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Double>) current;
     }
     return Arrays.asList((Double) current);
   }
@@ -376,11 +376,11 @@ public class QuantitativeValueDistribution extends StructuredValue {
   /**
    * The 75th percentile value.
    */
-  @JsonIgnore public Collection<String> getPercentile75Strings() {
+  @JsonIgnore public java.util.Collection<String> getPercentile75Strings() {
     final Object current = myData.get("percentile75");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -393,11 +393,11 @@ public class QuantitativeValueDistribution extends StructuredValue {
   /**
    * The 90th percentile value.
    */
-  @JsonIgnore public Collection<Integer> getPercentile90Integers() {
+  @JsonIgnore public java.util.Collection<Integer> getPercentile90Integers() {
     final Object current = myData.get("percentile90");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -410,11 +410,11 @@ public class QuantitativeValueDistribution extends StructuredValue {
   /**
    * The 90th percentile value.
    */
-  @JsonIgnore public Collection<Long> getPercentile90Longs() {
+  @JsonIgnore public java.util.Collection<Long> getPercentile90Longs() {
     final Object current = myData.get("percentile90");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Long>) current;
     }
     return Arrays.asList((Long) current);
   }
@@ -427,11 +427,11 @@ public class QuantitativeValueDistribution extends StructuredValue {
   /**
    * The 90th percentile value.
    */
-  @JsonIgnore public Collection<Float> getPercentile90Floats() {
+  @JsonIgnore public java.util.Collection<Float> getPercentile90Floats() {
     final Object current = myData.get("percentile90");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Float>) current;
     }
     return Arrays.asList((Float) current);
   }
@@ -444,11 +444,11 @@ public class QuantitativeValueDistribution extends StructuredValue {
   /**
    * The 90th percentile value.
    */
-  @JsonIgnore public Collection<Double> getPercentile90Doubles() {
+  @JsonIgnore public java.util.Collection<Double> getPercentile90Doubles() {
     final Object current = myData.get("percentile90");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Double>) current;
     }
     return Arrays.asList((Double) current);
   }
@@ -461,11 +461,11 @@ public class QuantitativeValueDistribution extends StructuredValue {
   /**
    * The 90th percentile value.
    */
-  @JsonIgnore public Collection<String> getPercentile90Strings() {
+  @JsonIgnore public java.util.Collection<String> getPercentile90Strings() {
     final Object current = myData.get("percentile90");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }

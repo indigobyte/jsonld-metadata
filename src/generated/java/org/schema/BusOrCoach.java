@@ -36,11 +36,11 @@ public class BusOrCoach extends Vehicle {
   /**
    * The ACRISS Car Classification Code is a code used by many car rental companies, for classifying vehicles. ACRISS stands for Association of Car Rental Industry Systems and Standards.
    */
-  @JsonIgnore public Collection<String> getAcrissCodes() {
+  @JsonIgnore public java.util.Collection<String> getAcrissCodes() {
     final Object current = myData.get("acrissCode");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -53,11 +53,11 @@ public class BusOrCoach extends Vehicle {
   /**
    * The permitted total weight of cargo and installations (e.g. a roof rack) on top of the vehicle.\n\nTypical unit code(s): KGM for kilogram, LBR for pound\n\n* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.\n* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]]\n* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
    */
-  @JsonIgnore public Collection<QuantitativeValue> getRoofLoads() {
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getRoofLoads() {
     final Object current = myData.get("roofLoad");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }

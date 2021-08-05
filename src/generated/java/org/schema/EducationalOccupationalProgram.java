@@ -36,11 +36,11 @@ public class EducationalOccupationalProgram extends Intangible {
   /**
    * The number of credits or units awarded by a Course or required to complete an EducationalOccupationalProgram.
    */
-  @JsonIgnore public Collection<Integer> getNumberOfCreditsIntegers() {
+  @JsonIgnore public java.util.Collection<Integer> getNumberOfCreditsIntegers() {
     final Object current = myData.get("numberOfCredits");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -53,11 +53,11 @@ public class EducationalOccupationalProgram extends Intangible {
   /**
    * The number of credits or units awarded by a Course or required to complete an EducationalOccupationalProgram.
    */
-  @JsonIgnore public Collection<StructuredValue> getNumberOfCreditsStructuredValues() {
+  @JsonIgnore public java.util.Collection<StructuredValue> getNumberOfCreditsStructuredValues() {
     final Object current = myData.get("numberOfCredits");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<StructuredValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<StructuredValue>) current;
     }
     return Arrays.asList((StructuredValue) current);
   }
@@ -70,11 +70,11 @@ public class EducationalOccupationalProgram extends Intangible {
   /**
    * The time of day the program normally runs. For example, &quot;evenings&quot;.
    */
-  @JsonIgnore public Collection<String> getTimeOfDays() {
+  @JsonIgnore public java.util.Collection<String> getTimeOfDays() {
     final Object current = myData.get("timeOfDay");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -87,11 +87,11 @@ public class EducationalOccupationalProgram extends Intangible {
   /**
    * The number of credits or units a full-time student would be expected to take in 1 term however 'term' is defined by the institution.
    */
-  @JsonIgnore public Collection<Integer> getTypicalCreditsPerTermIntegers() {
+  @JsonIgnore public java.util.Collection<Integer> getTypicalCreditsPerTermIntegers() {
     final Object current = myData.get("typicalCreditsPerTerm");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -104,11 +104,11 @@ public class EducationalOccupationalProgram extends Intangible {
   /**
    * The number of credits or units a full-time student would be expected to take in 1 term however 'term' is defined by the institution.
    */
-  @JsonIgnore public Collection<StructuredValue> getTypicalCreditsPerTermStructuredValues() {
+  @JsonIgnore public java.util.Collection<StructuredValue> getTypicalCreditsPerTermStructuredValues() {
     final Object current = myData.get("typicalCreditsPerTerm");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<StructuredValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<StructuredValue>) current;
     }
     return Arrays.asList((StructuredValue) current);
   }
@@ -121,11 +121,11 @@ public class EducationalOccupationalProgram extends Intangible {
   /**
    * The expected length of time to complete the program if attending full-time.
    */
-  @JsonIgnore public Collection<Duration> getTimeToCompletes() {
+  @JsonIgnore public java.util.Collection<Duration> getTimeToCompletes() {
     final Object current = myData.get("timeToComplete");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Duration>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Duration>) current;
     }
     return Arrays.asList((Duration) current);
   }
@@ -138,11 +138,11 @@ public class EducationalOccupationalProgram extends Intangible {
   /**
    * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
    */
-  @JsonIgnore public Collection<Organization> getProviderOrganizations() {
+  @JsonIgnore public java.util.Collection<Organization> getProviderOrganizations() {
     final Object current = myData.get("provider");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
   }
@@ -155,11 +155,11 @@ public class EducationalOccupationalProgram extends Intangible {
   /**
    * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
    */
-  @JsonIgnore public Collection<Person> getProviderPersons() {
+  @JsonIgnore public java.util.Collection<Person> getProviderPersons() {
     final Object current = myData.get("provider");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -172,11 +172,11 @@ public class EducationalOccupationalProgram extends Intangible {
   /**
    * A financial aid type or program which students may use to pay for tuition or fees associated with the program.
    */
-  @JsonIgnore public Collection<DefinedTerm> getFinancialAidEligibleDefinedTerms() {
+  @JsonIgnore public java.util.Collection<DefinedTerm> getFinancialAidEligibleDefinedTerms() {
     final Object current = myData.get("financialAidEligible");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DefinedTerm>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<DefinedTerm>) current;
     }
     return Arrays.asList((DefinedTerm) current);
   }
@@ -189,11 +189,11 @@ public class EducationalOccupationalProgram extends Intangible {
   /**
    * A financial aid type or program which students may use to pay for tuition or fees associated with the program.
    */
-  @JsonIgnore public Collection<String> getFinancialAidEligibleStrings() {
+  @JsonIgnore public java.util.Collection<String> getFinancialAidEligibleStrings() {
     final Object current = myData.get("financialAidEligible");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -208,11 +208,11 @@ public class EducationalOccupationalProgram extends Intangible {
    * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.\n
    * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
    */
-  @JsonIgnore public Collection<CategoryCode> getOccupationalCategoryCategoryCodes() {
+  @JsonIgnore public java.util.Collection<CategoryCode> getOccupationalCategoryCategoryCodes() {
     final Object current = myData.get("occupationalCategory");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<CategoryCode>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<CategoryCode>) current;
     }
     return Arrays.asList((CategoryCode) current);
   }
@@ -227,11 +227,11 @@ public class EducationalOccupationalProgram extends Intangible {
    * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.\n
    * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
    */
-  @JsonIgnore public Collection<String> getOccupationalCategoryStrings() {
+  @JsonIgnore public java.util.Collection<String> getOccupationalCategoryStrings() {
     final Object current = myData.get("occupationalCategory");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -244,11 +244,11 @@ public class EducationalOccupationalProgram extends Intangible {
   /**
    * A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.
    */
-  @JsonIgnore public Collection<EducationalOccupationalCredential> getEducationalCredentialAwardedEducationalOccupationalCredentials() {
+  @JsonIgnore public java.util.Collection<EducationalOccupationalCredential> getEducationalCredentialAwardedEducationalOccupationalCredentials() {
     final Object current = myData.get("educationalCredentialAwarded");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<EducationalOccupationalCredential>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<EducationalOccupationalCredential>) current;
     }
     return Arrays.asList((EducationalOccupationalCredential) current);
   }
@@ -261,11 +261,11 @@ public class EducationalOccupationalProgram extends Intangible {
   /**
    * A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.
    */
-  @JsonIgnore public Collection<String> getEducationalCredentialAwardedStrings() {
+  @JsonIgnore public java.util.Collection<String> getEducationalCredentialAwardedStrings() {
     final Object current = myData.get("educationalCredentialAwarded");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -278,11 +278,11 @@ public class EducationalOccupationalProgram extends Intangible {
   /**
    * Prerequisites for enrolling in the program.
    */
-  @JsonIgnore public Collection<AlignmentObject> getProgramPrerequisitesAlignmentObjects() {
+  @JsonIgnore public java.util.Collection<AlignmentObject> getProgramPrerequisitesAlignmentObjects() {
     final Object current = myData.get("programPrerequisites");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<AlignmentObject>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<AlignmentObject>) current;
     }
     return Arrays.asList((AlignmentObject) current);
   }
@@ -295,11 +295,11 @@ public class EducationalOccupationalProgram extends Intangible {
   /**
    * Prerequisites for enrolling in the program.
    */
-  @JsonIgnore public Collection<Course> getProgramPrerequisitesCourses() {
+  @JsonIgnore public java.util.Collection<Course> getProgramPrerequisitesCourses() {
     final Object current = myData.get("programPrerequisites");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Course>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Course>) current;
     }
     return Arrays.asList((Course) current);
   }
@@ -312,11 +312,11 @@ public class EducationalOccupationalProgram extends Intangible {
   /**
    * Prerequisites for enrolling in the program.
    */
-  @JsonIgnore public Collection<EducationalOccupationalCredential> getProgramPrerequisitesEducationalOccupationalCredentials() {
+  @JsonIgnore public java.util.Collection<EducationalOccupationalCredential> getProgramPrerequisitesEducationalOccupationalCredentials() {
     final Object current = myData.get("programPrerequisites");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<EducationalOccupationalCredential>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<EducationalOccupationalCredential>) current;
     }
     return Arrays.asList((EducationalOccupationalCredential) current);
   }
@@ -329,11 +329,11 @@ public class EducationalOccupationalProgram extends Intangible {
   /**
    * Prerequisites for enrolling in the program.
    */
-  @JsonIgnore public Collection<String> getProgramPrerequisitesStrings() {
+  @JsonIgnore public java.util.Collection<String> getProgramPrerequisitesStrings() {
     final Object current = myData.get("programPrerequisites");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -346,11 +346,11 @@ public class EducationalOccupationalProgram extends Intangible {
   /**
    * The type of educational or occupational program. For example, classroom, internship, alternance, etc..
    */
-  @JsonIgnore public Collection<DefinedTerm> getProgramTypeDefinedTerms() {
+  @JsonIgnore public java.util.Collection<DefinedTerm> getProgramTypeDefinedTerms() {
     final Object current = myData.get("programType");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DefinedTerm>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<DefinedTerm>) current;
     }
     return Arrays.asList((DefinedTerm) current);
   }
@@ -363,11 +363,11 @@ public class EducationalOccupationalProgram extends Intangible {
   /**
    * The type of educational or occupational program. For example, classroom, internship, alternance, etc..
    */
-  @JsonIgnore public Collection<String> getProgramTypeStrings() {
+  @JsonIgnore public java.util.Collection<String> getProgramTypeStrings() {
     final Object current = myData.get("programType");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -380,11 +380,11 @@ public class EducationalOccupationalProgram extends Intangible {
   /**
    * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
    */
-  @JsonIgnore public Collection<java.util.Date> getStartDates() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getStartDates() {
     final Object current = myData.get("startDate");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -397,11 +397,11 @@ public class EducationalOccupationalProgram extends Intangible {
   /**
    * The expected salary upon completing the training.
    */
-  @JsonIgnore public Collection<MonetaryAmountDistribution> getSalaryUponCompletions() {
+  @JsonIgnore public java.util.Collection<MonetaryAmountDistribution> getSalaryUponCompletions() {
     final Object current = myData.get("salaryUponCompletion");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MonetaryAmountDistribution>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MonetaryAmountDistribution>) current;
     }
     return Arrays.asList((MonetaryAmountDistribution) current);
   }
@@ -414,11 +414,11 @@ public class EducationalOccupationalProgram extends Intangible {
   /**
    * Similar to courseMode, The medium or means of delivery of the program as a whole. The value may either be a text label (e.g. &quot;online&quot;, &quot;onsite&quot; or &quot;blended&quot;; &quot;synchronous&quot; or &quot;asynchronous&quot;; &quot;full-time&quot; or &quot;part-time&quot;) or a URL reference to a term from a controlled vocabulary (e.g. https://ceds.ed.gov/element/001311#Asynchronous ).
    */
-  @JsonIgnore public Collection<String> getEducationalProgramModes() {
+  @JsonIgnore public java.util.Collection<String> getEducationalProgramModes() {
     final Object current = myData.get("educationalProgramMode");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -431,11 +431,11 @@ public class EducationalOccupationalProgram extends Intangible {
   /**
    * The date at which the program begins collecting applications for the next enrollment cycle.
    */
-  @JsonIgnore public Collection<java.util.Date> getApplicationStartDates() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getApplicationStartDates() {
     final Object current = myData.get("applicationStartDate");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -448,11 +448,11 @@ public class EducationalOccupationalProgram extends Intangible {
   /**
    * The estimated salary earned while in the program.
    */
-  @JsonIgnore public Collection<MonetaryAmountDistribution> getTrainingSalarys() {
+  @JsonIgnore public java.util.Collection<MonetaryAmountDistribution> getTrainingSalarys() {
     final Object current = myData.get("trainingSalary");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MonetaryAmountDistribution>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MonetaryAmountDistribution>) current;
     }
     return Arrays.asList((MonetaryAmountDistribution) current);
   }
@@ -465,11 +465,11 @@ public class EducationalOccupationalProgram extends Intangible {
   /**
    * The date at which the program stops collecting applications for the next enrollment cycle.
    */
-  @JsonIgnore public Collection<java.util.Date> getApplicationDeadlines() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getApplicationDeadlines() {
     final Object current = myData.get("applicationDeadline");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -482,11 +482,11 @@ public class EducationalOccupationalProgram extends Intangible {
   /**
    * The maximum number of students who may be enrolled in the program.
    */
-  @JsonIgnore public Collection<Integer> getMaximumEnrollments() {
+  @JsonIgnore public java.util.Collection<Integer> getMaximumEnrollments() {
     final Object current = myData.get("maximumEnrollment");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -499,11 +499,11 @@ public class EducationalOccupationalProgram extends Intangible {
   /**
    * The number of times terms of study are offered per year. Semesters and quarters are common units for term. For example, if the student can only take 2 semesters for the program in one year, then termsPerYear should be 2.
    */
-  @JsonIgnore public Collection<Integer> getTermsPerYearIntegers() {
+  @JsonIgnore public java.util.Collection<Integer> getTermsPerYearIntegers() {
     final Object current = myData.get("termsPerYear");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
@@ -516,11 +516,11 @@ public class EducationalOccupationalProgram extends Intangible {
   /**
    * The number of times terms of study are offered per year. Semesters and quarters are common units for term. For example, if the student can only take 2 semesters for the program in one year, then termsPerYear should be 2.
    */
-  @JsonIgnore public Collection<Long> getTermsPerYearLongs() {
+  @JsonIgnore public java.util.Collection<Long> getTermsPerYearLongs() {
     final Object current = myData.get("termsPerYear");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Long>) current;
     }
     return Arrays.asList((Long) current);
   }
@@ -533,11 +533,11 @@ public class EducationalOccupationalProgram extends Intangible {
   /**
    * The number of times terms of study are offered per year. Semesters and quarters are common units for term. For example, if the student can only take 2 semesters for the program in one year, then termsPerYear should be 2.
    */
-  @JsonIgnore public Collection<Float> getTermsPerYearFloats() {
+  @JsonIgnore public java.util.Collection<Float> getTermsPerYearFloats() {
     final Object current = myData.get("termsPerYear");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Float>) current;
     }
     return Arrays.asList((Float) current);
   }
@@ -550,11 +550,11 @@ public class EducationalOccupationalProgram extends Intangible {
   /**
    * The number of times terms of study are offered per year. Semesters and quarters are common units for term. For example, if the student can only take 2 semesters for the program in one year, then termsPerYear should be 2.
    */
-  @JsonIgnore public Collection<Double> getTermsPerYearDoubles() {
+  @JsonIgnore public java.util.Collection<Double> getTermsPerYearDoubles() {
     final Object current = myData.get("termsPerYear");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Double>) current;
     }
     return Arrays.asList((Double) current);
   }
@@ -567,11 +567,11 @@ public class EducationalOccupationalProgram extends Intangible {
   /**
    * The number of times terms of study are offered per year. Semesters and quarters are common units for term. For example, if the student can only take 2 semesters for the program in one year, then termsPerYear should be 2.
    */
-  @JsonIgnore public Collection<String> getTermsPerYearStrings() {
+  @JsonIgnore public java.util.Collection<String> getTermsPerYearStrings() {
     final Object current = myData.get("termsPerYear");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -584,11 +584,11 @@ public class EducationalOccupationalProgram extends Intangible {
   /**
    * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
    */
-  @JsonIgnore public Collection<java.util.Date> getEndDates() {
+  @JsonIgnore public java.util.Collection<java.util.Date> getEndDates() {
     final Object current = myData.get("endDate");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<java.util.Date>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
@@ -601,11 +601,11 @@ public class EducationalOccupationalProgram extends Intangible {
   /**
    * A description of the qualification, award, certificate, diploma or other occupational credential awarded as a consequence of successful completion of this course or program.
    */
-  @JsonIgnore public Collection<EducationalOccupationalCredential> getOccupationalCredentialAwardedEducationalOccupationalCredentials() {
+  @JsonIgnore public java.util.Collection<EducationalOccupationalCredential> getOccupationalCredentialAwardedEducationalOccupationalCredentials() {
     final Object current = myData.get("occupationalCredentialAwarded");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<EducationalOccupationalCredential>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<EducationalOccupationalCredential>) current;
     }
     return Arrays.asList((EducationalOccupationalCredential) current);
   }
@@ -618,11 +618,11 @@ public class EducationalOccupationalProgram extends Intangible {
   /**
    * A description of the qualification, award, certificate, diploma or other occupational credential awarded as a consequence of successful completion of this course or program.
    */
-  @JsonIgnore public Collection<String> getOccupationalCredentialAwardedStrings() {
+  @JsonIgnore public java.util.Collection<String> getOccupationalCredentialAwardedStrings() {
     final Object current = myData.get("occupationalCredentialAwarded");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -635,11 +635,11 @@ public class EducationalOccupationalProgram extends Intangible {
   /**
    * A course or class that is one of the learning opportunities that constitute an educational / occupational program. No information is implied about whether the course is mandatory or optional; no guarantee is implied about whether the course will be available to everyone on the program.
    */
-  @JsonIgnore public Collection<Course> getHasCourses() {
+  @JsonIgnore public java.util.Collection<Course> getHasCourses() {
     final Object current = myData.get("hasCourse");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Course>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Course>) current;
     }
     return Arrays.asList((Course) current);
   }
@@ -652,11 +652,11 @@ public class EducationalOccupationalProgram extends Intangible {
   /**
    * The day of the week for which these opening hours are valid.
    */
-  @JsonIgnore public Collection<DayOfWeek> getDayOfWeeks() {
+  @JsonIgnore public java.util.Collection<DayOfWeek> getDayOfWeeks() {
     final Object current = myData.get("dayOfWeek");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DayOfWeek>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<DayOfWeek>) current;
     }
     return Arrays.asList((DayOfWeek) current);
   }
@@ -669,11 +669,11 @@ public class EducationalOccupationalProgram extends Intangible {
   /**
    * The amount of time in a term as defined by the institution. A term is a length of time where students take one or more classes. Semesters and quarters are common units for term.
    */
-  @JsonIgnore public Collection<Duration> getTermDurations() {
+  @JsonIgnore public java.util.Collection<Duration> getTermDurations() {
     final Object current = myData.get("termDuration");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Duration>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Duration>) current;
     }
     return Arrays.asList((Duration) current);
   }
@@ -688,11 +688,11 @@ public class EducationalOccupationalProgram extends Intangible {
    * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
    *       
    */
-  @JsonIgnore public Collection<Demand> getOffersDemands() {
+  @JsonIgnore public java.util.Collection<Demand> getOffersDemands() {
     final Object current = myData.get("offers");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Demand>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Demand>) current;
     }
     return Arrays.asList((Demand) current);
   }
@@ -707,11 +707,11 @@ public class EducationalOccupationalProgram extends Intangible {
    * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
    *       
    */
-  @JsonIgnore public Collection<Offer> getOffersOffers() {
+  @JsonIgnore public java.util.Collection<Offer> getOffersOffers() {
     final Object current = myData.get("offers");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Offer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Offer>) current;
     }
     return Arrays.asList((Offer) current);
   }

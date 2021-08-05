@@ -36,11 +36,11 @@ public class MedicalWebPage extends WebPage {
   /**
    * Medical audience for page.
    */
-  @JsonIgnore public Collection<MedicalAudience> getMedicalAudienceMedicalAudiences() {
+  @JsonIgnore public java.util.Collection<MedicalAudience> getMedicalAudienceMedicalAudiences() {
     final Object current = myData.get("medicalAudience");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MedicalAudience>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MedicalAudience>) current;
     }
     return Arrays.asList((MedicalAudience) current);
   }
@@ -53,11 +53,11 @@ public class MedicalWebPage extends WebPage {
   /**
    * Medical audience for page.
    */
-  @JsonIgnore public Collection<MedicalAudienceType> getMedicalAudienceMedicalAudienceTypes() {
+  @JsonIgnore public java.util.Collection<MedicalAudienceType> getMedicalAudienceMedicalAudienceTypes() {
     final Object current = myData.get("medicalAudience");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MedicalAudienceType>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MedicalAudienceType>) current;
     }
     return Arrays.asList((MedicalAudienceType) current);
   }
@@ -85,22 +85,8 @@ public class MedicalWebPage extends WebPage {
     /**
      * Medical audience for page.
      */
-    @NotNull public Builder medicalAudience(@NotNull MedicalAudience.Builder medicalAudience) {
-      putValue("medicalAudience", medicalAudience.build());
-      return this;
-    }
-    /**
-     * Medical audience for page.
-     */
     @NotNull public Builder medicalAudience(@NotNull MedicalAudienceType medicalAudienceType) {
       putValue("medicalAudience", medicalAudienceType);
-      return this;
-    }
-    /**
-     * Medical audience for page.
-     */
-    @NotNull public Builder medicalAudience(@NotNull MedicalAudienceType.Builder medicalAudienceType) {
-      putValue("medicalAudience", medicalAudienceType.build());
       return this;
     }
     /**
@@ -1683,8 +1669,8 @@ public class MedicalWebPage extends WebPage {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

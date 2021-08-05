@@ -36,11 +36,11 @@ public class MusicAlbum extends MusicPlaylist {
   /**
    * The artist that performed this album or recording.
    */
-  @JsonIgnore public Collection<MusicGroup> getByArtistMusicGroups() {
+  @JsonIgnore public java.util.Collection<MusicGroup> getByArtistMusicGroups() {
     final Object current = myData.get("byArtist");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MusicGroup>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MusicGroup>) current;
     }
     return Arrays.asList((MusicGroup) current);
   }
@@ -53,11 +53,11 @@ public class MusicAlbum extends MusicPlaylist {
   /**
    * The artist that performed this album or recording.
    */
-  @JsonIgnore public Collection<Person> getByArtistPersons() {
+  @JsonIgnore public java.util.Collection<Person> getByArtistPersons() {
     final Object current = myData.get("byArtist");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
@@ -70,11 +70,11 @@ public class MusicAlbum extends MusicPlaylist {
   /**
    * The kind of release which this album is: single, EP or album.
    */
-  @JsonIgnore public Collection<MusicAlbumReleaseType> getAlbumReleaseTypes() {
+  @JsonIgnore public java.util.Collection<MusicAlbumReleaseType> getAlbumReleaseTypes() {
     final Object current = myData.get("albumReleaseType");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MusicAlbumReleaseType>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MusicAlbumReleaseType>) current;
     }
     return Arrays.asList((MusicAlbumReleaseType) current);
   }
@@ -87,11 +87,11 @@ public class MusicAlbum extends MusicPlaylist {
   /**
    * Classification of the album by it's type of content: soundtrack, live album, studio album, etc.
    */
-  @JsonIgnore public Collection<MusicAlbumProductionType> getAlbumProductionTypes() {
+  @JsonIgnore public java.util.Collection<MusicAlbumProductionType> getAlbumProductionTypes() {
     final Object current = myData.get("albumProductionType");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MusicAlbumProductionType>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MusicAlbumProductionType>) current;
     }
     return Arrays.asList((MusicAlbumProductionType) current);
   }
@@ -104,11 +104,11 @@ public class MusicAlbum extends MusicPlaylist {
   /**
    * A release of this album.
    */
-  @JsonIgnore public Collection<MusicRelease> getAlbumReleases() {
+  @JsonIgnore public java.util.Collection<MusicRelease> getAlbumReleases() {
     final Object current = myData.get("albumRelease");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<MusicRelease>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<MusicRelease>) current;
     }
     return Arrays.asList((MusicRelease) current);
   }
@@ -1632,8 +1632,8 @@ public class MusicAlbum extends MusicPlaylist {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**

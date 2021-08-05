@@ -36,11 +36,11 @@ public class ImageObject extends MediaObject {
   /**
    * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
    */
-  @JsonIgnore public Collection<Caption> getCaptions() {
+  @JsonIgnore public java.util.Collection<Caption> getCaptions() {
     final Object current = myData.get("caption");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Caption>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Caption>) current;
     }
     return Arrays.asList((Caption) current);
   }
@@ -53,11 +53,11 @@ public class ImageObject extends MediaObject {
   /**
    * Represents textual captioning from a [[MediaObject]], e.g. text of a 'meme'.
    */
-  @JsonIgnore public Collection<String> getEmbeddedTextCaptions() {
+  @JsonIgnore public java.util.Collection<String> getEmbeddedTextCaptions() {
     final Object current = myData.get("embeddedTextCaption");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -70,11 +70,11 @@ public class ImageObject extends MediaObject {
   /**
    * Indicates whether this image is representative of the content of the page.
    */
-  @JsonIgnore public Collection<Boolean> getRepresentativeOfPages() {
+  @JsonIgnore public java.util.Collection<Boolean> getRepresentativeOfPages() {
     final Object current = myData.get("representativeOfPage");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Boolean>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Boolean>) current;
     }
     return Arrays.asList((Boolean) current);
   }
@@ -87,11 +87,11 @@ public class ImageObject extends MediaObject {
   /**
    * Thumbnail image for an image or video.
    */
-  @JsonIgnore public Collection<ImageObject> getThumbnails() {
+  @JsonIgnore public java.util.Collection<ImageObject> getThumbnails() {
     final Object current = myData.get("thumbnail");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<ImageObject>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<ImageObject>) current;
     }
     return Arrays.asList((ImageObject) current);
   }
@@ -104,11 +104,11 @@ public class ImageObject extends MediaObject {
   /**
    * exif data for this object.
    */
-  @JsonIgnore public Collection<PropertyValue> getExifDataPropertyValues() {
+  @JsonIgnore public java.util.Collection<PropertyValue> getExifDataPropertyValues() {
     final Object current = myData.get("exifData");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<PropertyValue>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<PropertyValue>) current;
     }
     return Arrays.asList((PropertyValue) current);
   }
@@ -121,11 +121,11 @@ public class ImageObject extends MediaObject {
   /**
    * exif data for this object.
    */
-  @JsonIgnore public Collection<String> getExifDataStrings() {
+  @JsonIgnore public java.util.Collection<String> getExifDataStrings() {
     final Object current = myData.get("exifData");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
@@ -1857,8 +1857,8 @@ public class ImageObject extends MediaObject {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      */
-    @NotNull public Builder abstract(@NotNull String abstract) {
-      putValue("abstract", abstract);
+    @NotNull public Builder _abstract(@NotNull String _abstract) {
+      putValue("abstract", _abstract);
       return this;
     }
     /**
