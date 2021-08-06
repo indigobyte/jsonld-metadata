@@ -37,7 +37,7 @@ public class DoseSchedule extends MedicalIntangible {
    * The value of the dose, e.g. 500.
    */
   @JsonIgnore public java.util.Collection<Integer> getDoseValueIntegers() {
-    final Object current = myData.get("doseValue");
+    final java.lang.Object current = myData.get("doseValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -54,7 +54,7 @@ public class DoseSchedule extends MedicalIntangible {
    * The value of the dose, e.g. 500.
    */
   @JsonIgnore public java.util.Collection<Long> getDoseValueLongs() {
-    final Object current = myData.get("doseValue");
+    final java.lang.Object current = myData.get("doseValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Long>) current;
@@ -71,7 +71,7 @@ public class DoseSchedule extends MedicalIntangible {
    * The value of the dose, e.g. 500.
    */
   @JsonIgnore public java.util.Collection<Float> getDoseValueFloats() {
-    final Object current = myData.get("doseValue");
+    final java.lang.Object current = myData.get("doseValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Float>) current;
@@ -88,7 +88,7 @@ public class DoseSchedule extends MedicalIntangible {
    * The value of the dose, e.g. 500.
    */
   @JsonIgnore public java.util.Collection<Double> getDoseValueDoubles() {
-    final Object current = myData.get("doseValue");
+    final java.lang.Object current = myData.get("doseValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Double>) current;
@@ -105,7 +105,7 @@ public class DoseSchedule extends MedicalIntangible {
    * The value of the dose, e.g. 500.
    */
   @JsonIgnore public java.util.Collection<String> getDoseValueStrings() {
-    final Object current = myData.get("doseValue");
+    final java.lang.Object current = myData.get("doseValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -122,7 +122,7 @@ public class DoseSchedule extends MedicalIntangible {
    * How often the dose is taken, e.g. 'daily'.
    */
   @JsonIgnore public java.util.Collection<Frequency> getFrequencys() {
-    final Object current = myData.get("frequency");
+    final java.lang.Object current = myData.get("frequency");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Frequency>) current;
@@ -139,7 +139,7 @@ public class DoseSchedule extends MedicalIntangible {
    * The unit of the dose, e.g. 'mg'.
    */
   @JsonIgnore public java.util.Collection<String> getDoseUnits() {
-    final Object current = myData.get("doseUnit");
+    final java.lang.Object current = myData.get("doseUnit");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -156,14 +156,14 @@ public class DoseSchedule extends MedicalIntangible {
    * Characteristics of the population for which this is intended, or which typically uses it, e.g. 'adults'.
    */
   @JsonIgnore public java.util.Collection<String> getTargetPopulations() {
-    final Object current = myData.get("targetPopulation");
+    final java.lang.Object current = myData.get("targetPopulation");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
-  protected DoseSchedule(java.util.Map<String,Object> data) {
+  protected DoseSchedule(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -171,7 +171,7 @@ public class DoseSchedule extends MedicalIntangible {
    * Builder for {@link DoseSchedule}
    */
   public static class Builder extends MedicalIntangible.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public DoseSchedule build() {
@@ -332,6 +332,21 @@ public class DoseSchedule extends MedicalIntangible {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -350,6 +365,13 @@ public class DoseSchedule extends MedicalIntangible {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -443,7 +465,7 @@ public class DoseSchedule extends MedicalIntangible {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("doseValue".equals(key) && value instanceof Integer) { this.doseValue((Integer)value); return; }
       if ("doseValues".equals(key) && value instanceof Integer) { this.doseValue((Integer)value); return; }
       if ("doseValue".equals(key) && value instanceof Long) { this.doseValue((Long)value); return; }

@@ -37,7 +37,7 @@ public class Flight extends Trip {
    * Identifier of the flight's arrival gate.
    */
   @JsonIgnore public java.util.Collection<String> getArrivalGates() {
-    final Object current = myData.get("arrivalGate");
+    final java.lang.Object current = myData.get("arrivalGate");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -54,7 +54,7 @@ public class Flight extends Trip {
    * The kind of aircraft (e.g., &quot;Boeing 747&quot;).
    */
   @JsonIgnore public java.util.Collection<String> getAircraftStrings() {
-    final Object current = myData.get("aircraft");
+    final java.lang.Object current = myData.get("aircraft");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -71,7 +71,7 @@ public class Flight extends Trip {
    * The kind of aircraft (e.g., &quot;Boeing 747&quot;).
    */
   @JsonIgnore public java.util.Collection<Vehicle> getAircraftVehicles() {
-    final Object current = myData.get("aircraft");
+    final java.lang.Object current = myData.get("aircraft");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Vehicle>) current;
@@ -88,7 +88,7 @@ public class Flight extends Trip {
    * Identifier of the flight's departure terminal.
    */
   @JsonIgnore public java.util.Collection<String> getDepartureTerminals() {
-    final Object current = myData.get("departureTerminal");
+    final java.lang.Object current = myData.get("departureTerminal");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -105,7 +105,7 @@ public class Flight extends Trip {
    * Description of the meals that will be provided or available for purchase.
    */
   @JsonIgnore public java.util.Collection<String> getMealServices() {
-    final Object current = myData.get("mealService");
+    final java.lang.Object current = myData.get("mealService");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -122,7 +122,7 @@ public class Flight extends Trip {
    * The estimated time the flight will take.
    */
   @JsonIgnore public java.util.Collection<Duration> getEstimatedFlightDurationDurations() {
-    final Object current = myData.get("estimatedFlightDuration");
+    final java.lang.Object current = myData.get("estimatedFlightDuration");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Duration>) current;
@@ -139,7 +139,7 @@ public class Flight extends Trip {
    * The estimated time the flight will take.
    */
   @JsonIgnore public java.util.Collection<String> getEstimatedFlightDurationStrings() {
-    final Object current = myData.get("estimatedFlightDuration");
+    final java.lang.Object current = myData.get("estimatedFlightDuration");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -156,7 +156,7 @@ public class Flight extends Trip {
    * The type of boarding policy used by the airline (e.g. zone-based or group-based).
    */
   @JsonIgnore public java.util.Collection<BoardingPolicyType> getBoardingPolicys() {
-    final Object current = myData.get("boardingPolicy");
+    final java.lang.Object current = myData.get("boardingPolicy");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<BoardingPolicyType>) current;
@@ -173,7 +173,7 @@ public class Flight extends Trip {
    * Identifier of the flight's departure gate.
    */
   @JsonIgnore public java.util.Collection<String> getDepartureGates() {
-    final Object current = myData.get("departureGate");
+    final java.lang.Object current = myData.get("departureGate");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -190,7 +190,7 @@ public class Flight extends Trip {
    * The distance of the flight.
    */
   @JsonIgnore public java.util.Collection<Distance> getFlightDistanceDistances() {
-    final Object current = myData.get("flightDistance");
+    final java.lang.Object current = myData.get("flightDistance");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Distance>) current;
@@ -207,7 +207,7 @@ public class Flight extends Trip {
    * The distance of the flight.
    */
   @JsonIgnore public java.util.Collection<String> getFlightDistanceStrings() {
-    final Object current = myData.get("flightDistance");
+    final java.lang.Object current = myData.get("flightDistance");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -224,7 +224,7 @@ public class Flight extends Trip {
    * The unique identifier for a flight including the airline IATA code. For example, if describing United flight 110, where the IATA code for United is 'UA', the flightNumber is 'UA110'.
    */
   @JsonIgnore public java.util.Collection<Identifier> getFlightNumbers() {
-    final Object current = myData.get("flightNumber");
+    final java.lang.Object current = myData.get("flightNumber");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Identifier>) current;
@@ -241,7 +241,7 @@ public class Flight extends Trip {
    * Identifier of the flight's arrival terminal.
    */
   @JsonIgnore public java.util.Collection<String> getArrivalTerminals() {
-    final Object current = myData.get("arrivalTerminal");
+    final java.lang.Object current = myData.get("arrivalTerminal");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -258,7 +258,7 @@ public class Flight extends Trip {
    * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
    */
   @JsonIgnore public java.util.Collection<Participant> getSellers() {
-    final Object current = myData.get("seller");
+    final java.lang.Object current = myData.get("seller");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Participant>) current;
@@ -275,7 +275,7 @@ public class Flight extends Trip {
    * The airport where the flight originates.
    */
   @JsonIgnore public java.util.Collection<Airport> getDepartureAirports() {
-    final Object current = myData.get("departureAirport");
+    final java.lang.Object current = myData.get("departureAirport");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Airport>) current;
@@ -292,7 +292,7 @@ public class Flight extends Trip {
    * The airport where the flight terminates.
    */
   @JsonIgnore public java.util.Collection<Airport> getArrivalAirports() {
-    final Object current = myData.get("arrivalAirport");
+    final java.lang.Object current = myData.get("arrivalAirport");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Airport>) current;
@@ -309,14 +309,14 @@ public class Flight extends Trip {
    * The time when a passenger can check into the flight online.
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getWebCheckinTimes() {
-    final Object current = myData.get("webCheckinTime");
+    final java.lang.Object current = myData.get("webCheckinTime");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
-  protected Flight(java.util.Map<String,Object> data) {
+  protected Flight(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -324,7 +324,7 @@ public class Flight extends Trip {
    * Builder for {@link Flight}
    */
   public static class Builder extends Trip.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public Flight build() {
@@ -608,6 +608,21 @@ public class Flight extends Trip {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -626,6 +641,13 @@ public class Flight extends Trip {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -719,7 +741,7 @@ public class Flight extends Trip {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("arrivalGate".equals(key) && value instanceof String) { this.arrivalGate((String)value); return; }
       if ("arrivalGates".equals(key) && value instanceof String) { this.arrivalGate((String)value); return; }
       if ("aircraft".equals(key) && value instanceof String) { this.aircraft((String)value); return; }

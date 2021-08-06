@@ -39,17 +39,17 @@ class ThingDeserializer extends JsonDeserializer<Thing> {
 
     @Override
     public Thing deserialize(JsonParser p, DeserializationContext ctx) throws IOException {
-        return fromMap(p.<HashMap<String, Object>>readValueAs(new TypeReference<HashMap<String, Object>>() {
+        return fromMap(p.<HashMap<String, java.lang.Object>>readValueAs(new TypeReference<HashMap<String, java.lang.Object>>() {
         }));
     }
 
     @Nullable
-    static Thing fromMap(Map<String, Object> result, String context) {
+    static Thing fromMap(Map<String, java.lang.Object> result, String context) {
         if (!context.matches("https?://schema.org.*")) {
             return null;
         }
 
-        final Object type = result.get("@type");
+        final java.lang.Object type = result.get("@type");
         if (type == null || !(type instanceof String)) {
             return null;
         }
@@ -59,7 +59,7 @@ class ThingDeserializer extends JsonDeserializer<Thing> {
             return null;
         }
 
-        for (Map.Entry<String, Object> entry : result.entrySet()) {
+        for (Map.Entry<String, java.lang.Object> entry : result.entrySet()) {
             if (entry.getValue() instanceof String) {
                 try {
                     final Date date = dateFormat.parse((String) entry.getValue());
@@ -75,8 +75,8 @@ class ThingDeserializer extends JsonDeserializer<Thing> {
     }
 
     @Nullable
-    static Thing fromMap(Map<String, Object> result) {
-        final Object context = result.get("@context");
+    static Thing fromMap(Map<String, java.lang.Object> result) {
+        final java.lang.Object context = result.get("@context");
         if (context == null) return null;
         
         return fromMap(result, (String)context);

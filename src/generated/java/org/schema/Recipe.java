@@ -37,7 +37,7 @@ public class Recipe extends HowTo {
    * Indicates a dietary restriction or guideline for which this recipe or menu item is suitable, e.g. diabetic, halal etc.
    */
   @JsonIgnore public java.util.Collection<RestrictedDiet> getSuitableForDiets() {
-    final Object current = myData.get("suitableForDiet");
+    final java.lang.Object current = myData.get("suitableForDiet");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<RestrictedDiet>) current;
@@ -54,7 +54,7 @@ public class Recipe extends HowTo {
    * The category of the recipe&mdash;for example, appetizer, entree, etc.
    */
   @JsonIgnore public java.util.Collection<String> getRecipeCategorys() {
-    final Object current = myData.get("recipeCategory");
+    final java.lang.Object current = myData.get("recipeCategory");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -71,7 +71,7 @@ public class Recipe extends HowTo {
    * A single ingredient used in the recipe, e.g. sugar, flour or garlic.
    */
   @JsonIgnore public java.util.Collection<Supply> getRecipeIngredients() {
-    final Object current = myData.get("recipeIngredient");
+    final java.lang.Object current = myData.get("recipeIngredient");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Supply>) current;
@@ -88,7 +88,7 @@ public class Recipe extends HowTo {
    * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
    */
   @JsonIgnore public java.util.Collection<Step> getRecipeInstructionss() {
-    final Object current = myData.get("recipeInstructions");
+    final java.lang.Object current = myData.get("recipeInstructions");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Step>) current;
@@ -105,7 +105,7 @@ public class Recipe extends HowTo {
    * The cuisine of the recipe (for example, French or Ethiopian).
    */
   @JsonIgnore public java.util.Collection<String> getRecipeCuisines() {
-    final Object current = myData.get("recipeCuisine");
+    final java.lang.Object current = myData.get("recipeCuisine");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -122,7 +122,7 @@ public class Recipe extends HowTo {
    * Nutrition information about the recipe or menu item.
    */
   @JsonIgnore public java.util.Collection<NutritionInformation> getNutritions() {
-    final Object current = myData.get("nutrition");
+    final java.lang.Object current = myData.get("nutrition");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<NutritionInformation>) current;
@@ -139,7 +139,7 @@ public class Recipe extends HowTo {
    * The method of cooking, such as Frying, Steaming, ...
    */
   @JsonIgnore public java.util.Collection<String> getCookingMethods() {
-    final Object current = myData.get("cookingMethod");
+    final java.lang.Object current = myData.get("cookingMethod");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -156,7 +156,7 @@ public class Recipe extends HowTo {
    * The quantity produced by the recipe (for example, number of people served, number of servings, etc).
    */
   @JsonIgnore public java.util.Collection<Yield> getRecipeYields() {
-    final Object current = myData.get("recipeYield");
+    final java.lang.Object current = myData.get("recipeYield");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Yield>) current;
@@ -173,14 +173,14 @@ public class Recipe extends HowTo {
    * The time it takes to actually cook the dish, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
    */
   @JsonIgnore public java.util.Collection<PerformTime> getCookTimes() {
-    final Object current = myData.get("cookTime");
+    final java.lang.Object current = myData.get("cookTime");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<PerformTime>) current;
     }
     return Arrays.asList((PerformTime) current);
   }
-  protected Recipe(java.util.Map<String,Object> data) {
+  protected Recipe(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -188,7 +188,7 @@ public class Recipe extends HowTo {
    * Builder for {@link Recipe}
    */
   public static class Builder extends HowTo.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public Recipe build() {
@@ -358,6 +358,16 @@ public class Recipe extends HowTo {
       return this;
     }
     /**
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+     * 
+     */
+    @NotNull public Builder publishingPrinciples(@NotNull PublishingPrinciples publishingPrinciples) {
+      putValue("publishingPrinciples", publishingPrinciples);
+      return this;
+    }
+    /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
      */
     @NotNull public Builder inLanguage(@NotNull Language language) {
@@ -383,6 +393,13 @@ public class Recipe extends HowTo {
      */
     @NotNull public Builder thumbnailUrl(@NotNull String thumbnailUrl) {
       putValue("thumbnailUrl", thumbnailUrl);
+      return this;
+    }
+    /**
+     * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
+     */
+    @NotNull public Builder hasPart(@NotNull HasPart hasPart) {
+      putValue("hasPart", hasPart);
       return this;
     }
     /**
@@ -453,6 +470,13 @@ public class Recipe extends HowTo {
      */
     @NotNull public Builder size(@NotNull String size) {
       putValue("size", size);
+      return this;
+    }
+    /**
+     * A material that something is made from, e.g. leather, wool, cotton, paper.
+     */
+    @NotNull public Builder material(@NotNull Material material) {
+      putValue("material", material);
       return this;
     }
     /**
@@ -544,6 +568,15 @@ public class Recipe extends HowTo {
      */
     @NotNull public Builder commentCount(@NotNull Integer integer) {
       putValue("commentCount", integer);
+      return this;
+    }
+    /**
+     * The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of
+     *       contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates
+     *       areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
+     */
+    @NotNull public Builder spatialCoverage(@NotNull SpatialCoverage spatialCoverage) {
+      putValue("spatialCoverage", spatialCoverage);
       return this;
     }
     /**
@@ -764,6 +797,13 @@ public class Recipe extends HowTo {
      */
     @NotNull public Builder sdLicense(@NotNull String sdLicense) {
       putValue("sdLicense", sdLicense);
+      return this;
+    }
+    /**
+     * The position of an item in a series or sequence of items.
+     */
+    @NotNull public Builder position(@NotNull Position position) {
+      putValue("position", position);
       return this;
     }
     /**
@@ -1207,10 +1247,24 @@ public class Recipe extends HowTo {
       return this;
     }
     /**
+     * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
+     */
+    @NotNull public Builder isPartOf(@NotNull IsPartOf isPartOf) {
+      putValue("isPartOf", isPartOf);
+      return this;
+    }
+    /**
      * Indicates that the resource is compatible with the referenced accessibility API ([WebSchemas wiki lists possible values](http://www.w3.org/wiki/WebSchemas/Accessibility)).
      */
     @NotNull public Builder accessibilityAPI(@NotNull String accessibilityAPI) {
       putValue("accessibilityAPI", accessibilityAPI);
+      return this;
+    }
+    /**
+     * Example/instance/realization/derivation of the concept of this creative work. eg. The paperback edition, first edition, or eBook.
+     */
+    @NotNull public Builder workExample(@NotNull WorkExample workExample) {
+      putValue("workExample", workExample);
       return this;
     }
     /**
@@ -1807,10 +1861,45 @@ public class Recipe extends HowTo {
       return this;
     }
     /**
+     * The subject matter of the content.
+     */
+    @NotNull public Builder about(@NotNull Thing thing) {
+      putValue("about", thing);
+      return this;
+    }
+    /**
+     * The subject matter of the content.
+     */
+    @NotNull public Builder about(@NotNull Thing.Builder thing) {
+      putValue("about", thing.build());
+      return this;
+    }
+    /**
      * Indicates the primary entity described in some page or other CreativeWork.
      */
     @NotNull public Builder mainEntity(@NotNull About about) {
       putValue("mainEntity", about);
+      return this;
+    }
+    /**
+     * Indicates the primary entity described in some page or other CreativeWork.
+     */
+    @NotNull public Builder mainEntity(@NotNull About.Builder about) {
+      putValue("mainEntity", about.build());
+      return this;
+    }
+    /**
+     * Indicates the primary entity described in some page or other CreativeWork.
+     */
+    @NotNull public Builder mainEntity(@NotNull Thing thing) {
+      putValue("mainEntity", thing);
+      return this;
+    }
+    /**
+     * Indicates the primary entity described in some page or other CreativeWork.
+     */
+    @NotNull public Builder mainEntity(@NotNull Thing.Builder thing) {
+      putValue("mainEntity", thing.build());
       return this;
     }
     /**
@@ -1849,6 +1938,21 @@ public class Recipe extends HowTo {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -1867,6 +1971,13 @@ public class Recipe extends HowTo {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -1960,7 +2071,7 @@ public class Recipe extends HowTo {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("suitableForDiet".equals(key) && value instanceof RestrictedDiet) { this.suitableForDiet((RestrictedDiet)value); return; }
       if ("suitableForDiets".equals(key) && value instanceof RestrictedDiet) { this.suitableForDiet((RestrictedDiet)value); return; }
       if ("recipeCategory".equals(key) && value instanceof String) { this.recipeCategory((String)value); return; }

@@ -26,7 +26,7 @@ import java.util.*;
 /**
  * The most generic kind of creative work, including books, movies, photographs, software programs, etc.
  */
-public class CreativeWork extends Thing implements UsageInfo, Step {
+public class CreativeWork extends Thing implements org.schema.IsPartOf, WorkFeatured, PublishingPrinciples, UsageInfo, WorkExample, Step {
   /**
    * The textual content of this CreativeWork.
    */
@@ -37,7 +37,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * The textual content of this CreativeWork.
    */
   @JsonIgnore public java.util.Collection<String> getTexts() {
-    final Object current = myData.get("text");
+    final java.lang.Object current = myData.get("text");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -56,12 +56,35 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * (e.g. [[locationCreated]], [[spatialCoverage]], [[contentLocation]]) are not known to be appropriate.
    */
   @JsonIgnore public java.util.Collection<Place> getSpatials() {
-    final Object current = myData.get("spatial");
+    final java.lang.Object current = myData.get("spatial");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Place>) current;
     }
     return Arrays.asList((Place) current);
+  }
+  /**
+   * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+   * 
+   * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+   * 
+   */
+  @JsonIgnore public PublishingPrinciples getPublishingPrinciples() {
+    return (PublishingPrinciples) getValue("publishingPrinciples");
+  }
+  /**
+   * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+   * 
+   * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+   * 
+   */
+  @JsonIgnore public java.util.Collection<PublishingPrinciples> getPublishingPrincipless() {
+    final java.lang.Object current = myData.get("publishingPrinciples");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<PublishingPrinciples>) current;
+    }
+    return Arrays.asList((PublishingPrinciples) current);
   }
   /**
    * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
@@ -73,7 +96,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
    */
   @JsonIgnore public java.util.Collection<Language> getInLanguageLanguages() {
-    final Object current = myData.get("inLanguage");
+    final java.lang.Object current = myData.get("inLanguage");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Language>) current;
@@ -90,7 +113,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
    */
   @JsonIgnore public java.util.Collection<String> getInLanguageStrings() {
-    final Object current = myData.get("inLanguage");
+    final java.lang.Object current = myData.get("inLanguage");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -107,12 +130,29 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * A thumbnail image relevant to the Thing.
    */
   @JsonIgnore public java.util.Collection<String> getThumbnailUrls() {
-    final Object current = myData.get("thumbnailUrl");
+    final java.lang.Object current = myData.get("thumbnailUrl");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
+  }
+  /**
+   * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
+   */
+  @JsonIgnore public HasPart getHasPart() {
+    return (HasPart) getValue("hasPart");
+  }
+  /**
+   * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
+   */
+  @JsonIgnore public java.util.Collection<HasPart> getHasParts() {
+    final java.lang.Object current = myData.get("hasPart");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<HasPart>) current;
+    }
+    return Arrays.asList((HasPart) current);
   }
   /**
    * Official rating of a piece of content&amp;#x2014;for example,'MPAA PG-13'.
@@ -124,7 +164,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * Official rating of a piece of content&amp;#x2014;for example,'MPAA PG-13'.
    */
   @JsonIgnore public java.util.Collection<Rating> getContentRatingRatings() {
-    final Object current = myData.get("contentRating");
+    final java.lang.Object current = myData.get("contentRating");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Rating>) current;
@@ -141,7 +181,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * Official rating of a piece of content&amp;#x2014;for example,'MPAA PG-13'.
    */
   @JsonIgnore public java.util.Collection<String> getContentRatingStrings() {
-    final Object current = myData.get("contentRating");
+    final java.lang.Object current = myData.get("contentRating");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -158,7 +198,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
    */
   @JsonIgnore public java.util.Collection<DefinedTerm> getSizeDefinedTerms() {
-    final Object current = myData.get("size");
+    final java.lang.Object current = myData.get("size");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<DefinedTerm>) current;
@@ -175,7 +215,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
    */
   @JsonIgnore public java.util.Collection<QuantitativeValue> getSizeQuantitativeValues() {
-    final Object current = myData.get("size");
+    final java.lang.Object current = myData.get("size");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<QuantitativeValue>) current;
@@ -192,7 +232,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
    */
   @JsonIgnore public java.util.Collection<SizeSpecification> getSizeSizeSpecifications() {
-    final Object current = myData.get("size");
+    final java.lang.Object current = myData.get("size");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<SizeSpecification>) current;
@@ -209,12 +249,29 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
    */
   @JsonIgnore public java.util.Collection<String> getSizeStrings() {
-    final Object current = myData.get("size");
+    final java.lang.Object current = myData.get("size");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
+  }
+  /**
+   * A material that something is made from, e.g. leather, wool, cotton, paper.
+   */
+  @JsonIgnore public Material getMaterial() {
+    return (Material) getValue("material");
+  }
+  /**
+   * A material that something is made from, e.g. leather, wool, cotton, paper.
+   */
+  @JsonIgnore public java.util.Collection<Material> getMaterials() {
+    final java.lang.Object current = myData.get("material");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Material>) current;
+    }
+    return Arrays.asList((Material) current);
   }
   /**
    * Conditions that affect the availability of, or method(s) of access to, an item. Typically used for real world items such as an [[ArchiveComponent]] held by an [[ArchiveOrganization]]. This property is not suitable for use as a general Web access control mechanism. It is expressed only in natural language.\n\nFor example &quot;Available by appointment from the Reading Room&quot; or &quot;Accessible only from logged-in accounts &quot;. 
@@ -226,7 +283,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * Conditions that affect the availability of, or method(s) of access to, an item. Typically used for real world items such as an [[ArchiveComponent]] held by an [[ArchiveOrganization]]. This property is not suitable for use as a general Web access control mechanism. It is expressed only in natural language.\n\nFor example &quot;Available by appointment from the Reading Room&quot; or &quot;Accessible only from logged-in accounts &quot;. 
    */
   @JsonIgnore public java.util.Collection<String> getConditionsOfAccesss() {
-    final Object current = myData.get("conditionsOfAccess");
+    final java.lang.Object current = myData.get("conditionsOfAccess");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -243,7 +300,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
    */
   @JsonIgnore public java.util.Collection<Organization> getProviderOrganizations() {
-    final Object current = myData.get("provider");
+    final java.lang.Object current = myData.get("provider");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Organization>) current;
@@ -260,7 +317,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
    */
   @JsonIgnore public java.util.Collection<Person> getProviderPersons() {
-    final Object current = myData.get("provider");
+    final java.lang.Object current = myData.get("provider");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Person>) current;
@@ -277,7 +334,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * The date on which the CreativeWork was created or the item was added to a DataFeed.
    */
   @JsonIgnore public java.util.Collection<DateCreated> getDateCreateds() {
-    final Object current = myData.get("dateCreated");
+    final java.lang.Object current = myData.get("dateCreated");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<DateCreated>) current;
@@ -294,7 +351,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
    */
   @JsonIgnore public java.util.Collection<DefinedTerm> getPatternDefinedTerms() {
-    final Object current = myData.get("pattern");
+    final java.lang.Object current = myData.get("pattern");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<DefinedTerm>) current;
@@ -311,7 +368,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
    */
   @JsonIgnore public java.util.Collection<String> getPatternStrings() {
-    final Object current = myData.get("pattern");
+    final java.lang.Object current = myData.get("pattern");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -328,7 +385,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * Indicates a correction to a [[CreativeWork]], either via a [[CorrectionComment]], textually or in another document.
    */
   @JsonIgnore public java.util.Collection<CorrectionComment> getCorrectionCorrectionComments() {
-    final Object current = myData.get("correction");
+    final java.lang.Object current = myData.get("correction");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<CorrectionComment>) current;
@@ -345,7 +402,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * Indicates a correction to a [[CreativeWork]], either via a [[CorrectionComment]], textually or in another document.
    */
   @JsonIgnore public java.util.Collection<String> getCorrectionStrings() {
-    final Object current = myData.get("correction");
+    final java.lang.Object current = myData.get("correction");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -362,12 +419,33 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * The number of comments this CreativeWork (e.g. Article, Question or Answer) has received. This is most applicable to works published in Web sites with commenting system; additional comments may exist elsewhere.
    */
   @JsonIgnore public java.util.Collection<Integer> getCommentCounts() {
-    final Object current = myData.get("commentCount");
+    final java.lang.Object current = myData.get("commentCount");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
+  }
+  /**
+   * The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of
+   *       contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates
+   *       areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
+   */
+  @JsonIgnore public SpatialCoverage getSpatialCoverage() {
+    return (SpatialCoverage) getValue("spatialCoverage");
+  }
+  /**
+   * The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of
+   *       contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates
+   *       areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
+   */
+  @JsonIgnore public java.util.Collection<SpatialCoverage> getSpatialCoverages() {
+    final java.lang.Object current = myData.get("spatialCoverage");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<SpatialCoverage>) current;
+    }
+    return Arrays.asList((SpatialCoverage) current);
   }
   /**
    * Indicates a page or other link involved in archival of a [[CreativeWork]]. In the case of [[MediaReview]], the items in a [[MediaReviewItem]] may often become inaccessible, but be archived by archival, journalistic, activist, or law enforcement organizations. In such cases, the referenced page may not directly publish the content.
@@ -379,7 +457,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * Indicates a page or other link involved in archival of a [[CreativeWork]]. In the case of [[MediaReview]], the items in a [[MediaReviewItem]] may often become inaccessible, but be archived by archival, journalistic, activist, or law enforcement organizations. In such cases, the referenced page may not directly publish the content.
    */
   @JsonIgnore public java.util.Collection<String> getArchivedAtStrings() {
-    final Object current = myData.get("archivedAt");
+    final java.lang.Object current = myData.get("archivedAt");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -396,7 +474,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * Indicates a page or other link involved in archival of a [[CreativeWork]]. In the case of [[MediaReview]], the items in a [[MediaReviewItem]] may often become inaccessible, but be archived by archival, journalistic, activist, or law enforcement organizations. In such cases, the referenced page may not directly publish the content.
    */
   @JsonIgnore public java.util.Collection<WebPage> getArchivedAtWebPages() {
-    final Object current = myData.get("archivedAt");
+    final java.lang.Object current = myData.get("archivedAt");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<WebPage>) current;
@@ -413,7 +491,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.
    */
   @JsonIgnore public java.util.Collection<Thing> getMentionss() {
-    final Object current = myData.get("mentions");
+    final java.lang.Object current = myData.get("mentions");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Thing>) current;
@@ -430,7 +508,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
    */
   @JsonIgnore public java.util.Collection<DefinedTerm> getEducationalLevelDefinedTerms() {
-    final Object current = myData.get("educationalLevel");
+    final java.lang.Object current = myData.get("educationalLevel");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<DefinedTerm>) current;
@@ -447,7 +525,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
    */
   @JsonIgnore public java.util.Collection<String> getEducationalLevelStrings() {
-    final Object current = myData.get("educationalLevel");
+    final java.lang.Object current = myData.get("educationalLevel");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -466,7 +544,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * (e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]], [[datePublished]]) are not known to be appropriate.
    */
   @JsonIgnore public java.util.Collection<String> getTemporalStrings() {
-    final Object current = myData.get("temporal");
+    final java.lang.Object current = myData.get("temporal");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -485,7 +563,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * (e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]], [[datePublished]]) are not known to be appropriate.
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getTemporalDates() {
-    final Object current = myData.get("temporal");
+    final java.lang.Object current = myData.get("temporal");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<java.util.Date>) current;
@@ -504,7 +582,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * [[sdPublisher]] property helps make such practices more explicit.
    */
   @JsonIgnore public java.util.Collection<Organization> getSdPublisherOrganizations() {
-    final Object current = myData.get("sdPublisher");
+    final java.lang.Object current = myData.get("sdPublisher");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Organization>) current;
@@ -523,7 +601,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * [[sdPublisher]] property helps make such practices more explicit.
    */
   @JsonIgnore public java.util.Collection<Person> getSdPublisherPersons() {
-    final Object current = myData.get("sdPublisher");
+    final java.lang.Object current = myData.get("sdPublisher");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Person>) current;
@@ -540,7 +618,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.
    */
   @JsonIgnore public java.util.Collection<DefinedTerm> getLearningResourceTypeDefinedTerms() {
-    final Object current = myData.get("learningResourceType");
+    final java.lang.Object current = myData.get("learningResourceType");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<DefinedTerm>) current;
@@ -557,7 +635,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.
    */
   @JsonIgnore public java.util.Collection<String> getLearningResourceTypeStrings() {
-    final Object current = myData.get("learningResourceType");
+    final java.lang.Object current = myData.get("learningResourceType");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -574,7 +652,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * The specific time described by a creative work, for works (e.g. articles, video objects etc.) that emphasise a particular moment within an Event.
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getContentReferenceTimes() {
-    final Object current = myData.get("contentReferenceTime");
+    final java.lang.Object current = myData.get("contentReferenceTime");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<java.util.Date>) current;
@@ -591,7 +669,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * The overall rating, based on a collection of reviews or ratings, of the item.
    */
   @JsonIgnore public java.util.Collection<AggregateRating> getAggregateRatings() {
-    final Object current = myData.get("aggregateRating");
+    final java.lang.Object current = myData.get("aggregateRating");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<AggregateRating>) current;
@@ -608,7 +686,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * Genre of the creative work, broadcast channel or group.
    */
   @JsonIgnore public java.util.Collection<Genre> getGenres() {
-    final Object current = myData.get("genre");
+    final java.lang.Object current = myData.get("genre");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Genre>) current;
@@ -625,7 +703,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * A link to the page containing the comments of the CreativeWork.
    */
   @JsonIgnore public java.util.Collection<String> getDiscussionUrls() {
-    final Object current = myData.get("discussionUrl");
+    final java.lang.Object current = myData.get("discussionUrl");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -646,7 +724,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * This property should not be used where the nature of the alignment can be described using a simple property, for example to express that a resource [[teaches]] or [[assesses]] a competency.
    */
   @JsonIgnore public java.util.Collection<AlignmentObject> getEducationalAlignments() {
-    final Object current = myData.get("educationalAlignment");
+    final java.lang.Object current = myData.get("educationalAlignment");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<AlignmentObject>) current;
@@ -663,7 +741,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getDateModifieds() {
-    final Object current = myData.get("dateModified");
+    final java.lang.Object current = myData.get("dateModified");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<java.util.Date>) current;
@@ -680,7 +758,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * Comments, typically from users.
    */
   @JsonIgnore public java.util.Collection<Comment> getComments() {
-    final Object current = myData.get("comment");
+    final java.lang.Object current = myData.get("comment");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Comment>) current;
@@ -697,7 +775,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * A license document that applies to this structured data, typically indicated by URL.
    */
   @JsonIgnore public java.util.Collection<CreativeWork> getSdLicenseCreativeWorks() {
-    final Object current = myData.get("sdLicense");
+    final java.lang.Object current = myData.get("sdLicense");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<CreativeWork>) current;
@@ -714,12 +792,29 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * A license document that applies to this structured data, typically indicated by URL.
    */
   @JsonIgnore public java.util.Collection<String> getSdLicenseStrings() {
-    final Object current = myData.get("sdLicense");
+    final java.lang.Object current = myData.get("sdLicense");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
+  }
+  /**
+   * The position of an item in a series or sequence of items.
+   */
+  @JsonIgnore public Position getPosition() {
+    return (Position) getValue("position");
+  }
+  /**
+   * The position of an item in a series or sequence of items.
+   */
+  @JsonIgnore public java.util.Collection<Position> getPositions() {
+    final java.lang.Object current = myData.get("position");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Position>) current;
+    }
+    return Arrays.asList((Position) current);
   }
   /**
    * A media object that encodes this CreativeWork. This property is a synonym for encoding.
@@ -731,7 +826,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * A media object that encodes this CreativeWork. This property is a synonym for encoding.
    */
   @JsonIgnore public java.util.Collection<MediaObject> getAssociatedMedias() {
-    final Object current = myData.get("associatedMedia");
+    final java.lang.Object current = myData.get("associatedMedia");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MediaObject>) current;
@@ -748,7 +843,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * Headline of the article.
    */
   @JsonIgnore public java.util.Collection<String> getHeadlines() {
-    final Object current = myData.get("headline");
+    final java.lang.Object current = myData.get("headline");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -765,7 +860,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * An embedded audio object.
    */
   @JsonIgnore public java.util.Collection<AudioObject> getAudioAudioObjects() {
-    final Object current = myData.get("audio");
+    final java.lang.Object current = myData.get("audio");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<AudioObject>) current;
@@ -782,7 +877,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * An embedded audio object.
    */
   @JsonIgnore public java.util.Collection<Clip> getAudioClips() {
-    final Object current = myData.get("audio");
+    final java.lang.Object current = myData.get("audio");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Clip>) current;
@@ -799,7 +894,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * An embedded audio object.
    */
   @JsonIgnore public java.util.Collection<MusicRecording> getAudioMusicRecordings() {
-    final Object current = myData.get("audio");
+    final java.lang.Object current = myData.get("audio");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MusicRecording>) current;
@@ -816,7 +911,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.
    */
   @JsonIgnore public java.util.Collection<DefinedTerm> getCreativeWorkStatusDefinedTerms() {
-    final Object current = myData.get("creativeWorkStatus");
+    final java.lang.Object current = myData.get("creativeWorkStatus");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<DefinedTerm>) current;
@@ -833,7 +928,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.
    */
   @JsonIgnore public java.util.Collection<String> getCreativeWorkStatusStrings() {
-    final Object current = myData.get("creativeWorkStatus");
+    final java.lang.Object current = myData.get("creativeWorkStatus");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -850,7 +945,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * Text of a notice appropriate for describing the copyright aspects of this Creative Work, ideally indicating the owner of the copyright for the Work.
    */
   @JsonIgnore public java.util.Collection<String> getCopyrightNotices() {
-    final Object current = myData.get("copyrightNotice");
+    final java.lang.Object current = myData.get("copyrightNotice");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -867,7 +962,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.
    */
   @JsonIgnore public java.util.Collection<Creator> getCreators() {
-    final Object current = myData.get("creator");
+    final java.lang.Object current = myData.get("creator");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Creator>) current;
@@ -888,7 +983,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * This property can be used alongside the license property which indicates license(s) applicable to some piece of content. The usageInfo property can provide information about other licensing options, e.g. acquiring commercial usage rights for an image that is also available under non-commercial creative commons licenses.
    */
   @JsonIgnore public java.util.Collection<UsageInfo> getUsageInfos() {
-    final Object current = myData.get("usageInfo");
+    final java.lang.Object current = myData.get("usageInfo");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<UsageInfo>) current;
@@ -905,7 +1000,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
    */
   @JsonIgnore public java.util.Collection<UsageInfo> getAcquireLicensePages() {
-    final Object current = myData.get("acquireLicensePage");
+    final java.lang.Object current = myData.get("acquireLicensePage");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<UsageInfo>) current;
@@ -922,7 +1017,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * A flag to signal that the item, event, or place is accessible for free.
    */
   @JsonIgnore public java.util.Collection<Boolean> getIsAccessibleForFrees() {
-    final Object current = myData.get("isAccessibleForFree");
+    final java.lang.Object current = myData.get("isAccessibleForFree");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Boolean>) current;
@@ -949,7 +1044,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * 
    */
   @JsonIgnore public java.util.Collection<Identifier> getEditEIDRs() {
-    final Object current = myData.get("editEIDR");
+    final java.lang.Object current = myData.get("editEIDR");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Identifier>) current;
@@ -966,7 +1061,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * The version of the CreativeWork embodied by a specified resource.
    */
   @JsonIgnore public java.util.Collection<Number> getVersionNumbers() {
-    final Object current = myData.get("version");
+    final java.lang.Object current = myData.get("version");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Number>) current;
@@ -983,7 +1078,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * The version of the CreativeWork embodied by a specified resource.
    */
   @JsonIgnore public java.util.Collection<String> getVersionStrings() {
-    final Object current = myData.get("version");
+    final java.lang.Object current = myData.get("version");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -1002,7 +1097,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    *       
    */
   @JsonIgnore public java.util.Collection<ItemList> getAccessModeSufficients() {
-    final Object current = myData.get("accessModeSufficient");
+    final java.lang.Object current = myData.get("accessModeSufficient");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<ItemList>) current;
@@ -1019,7 +1114,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * A resource from which this work is derived or from which it is a modification or adaption.
    */
   @JsonIgnore public java.util.Collection<CreativeWork> getIsBasedOnCreativeWorks() {
-    final Object current = myData.get("isBasedOn");
+    final java.lang.Object current = myData.get("isBasedOn");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<CreativeWork>) current;
@@ -1036,7 +1131,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * A resource from which this work is derived or from which it is a modification or adaption.
    */
   @JsonIgnore public java.util.Collection<Product> getIsBasedOnProducts() {
-    final Object current = myData.get("isBasedOn");
+    final java.lang.Object current = myData.get("isBasedOn");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Product>) current;
@@ -1053,7 +1148,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * A resource from which this work is derived or from which it is a modification or adaption.
    */
   @JsonIgnore public java.util.Collection<String> getIsBasedOnStrings() {
-    final Object current = myData.get("isBasedOn");
+    final java.lang.Object current = myData.get("isBasedOn");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -1070,7 +1165,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * An embedded video object.
    */
   @JsonIgnore public java.util.Collection<Clip> getVideoClips() {
-    final Object current = myData.get("video");
+    final java.lang.Object current = myData.get("video");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Clip>) current;
@@ -1087,7 +1182,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * An embedded video object.
    */
   @JsonIgnore public java.util.Collection<VideoObject> getVideoVideoObjects() {
-    final Object current = myData.get("video");
+    final java.lang.Object current = myData.get("video");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<VideoObject>) current;
@@ -1104,7 +1199,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * Date the content expires and is no longer useful or available. For example a [[VideoObject]] or [[NewsArticle]] whose availability or relevance is time-limited, or a [[ClaimReview]] fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date.
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getExpiress() {
-    final Object current = myData.get("expires");
+    final java.lang.Object current = myData.get("expires");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<java.util.Date>) current;
@@ -1121,7 +1216,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work.
    */
   @JsonIgnore public java.util.Collection<String> getCreditTexts() {
-    final Object current = myData.get("creditText");
+    final java.lang.Object current = myData.get("creditText");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -1138,7 +1233,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * A secondary contributor to the CreativeWork or Event.
    */
   @JsonIgnore public java.util.Collection<Organization> getContributorOrganizations() {
-    final Object current = myData.get("contributor");
+    final java.lang.Object current = myData.get("contributor");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Organization>) current;
@@ -1155,7 +1250,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * A secondary contributor to the CreativeWork or Event.
    */
   @JsonIgnore public java.util.Collection<Person> getContributorPersons() {
-    final Object current = myData.get("contributor");
+    final java.lang.Object current = myData.get("contributor");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Person>) current;
@@ -1172,7 +1267,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * An intended audience, i.e. a group for whom something was created.
    */
   @JsonIgnore public java.util.Collection<Audience> getAudiences() {
-    final Object current = myData.get("audience");
+    final java.lang.Object current = myData.get("audience");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Audience>) current;
@@ -1189,7 +1284,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * Date of first broadcast/publication.
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getDatePublisheds() {
-    final Object current = myData.get("datePublished");
+    final java.lang.Object current = myData.get("datePublished");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<java.util.Date>) current;
@@ -1206,7 +1301,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * The party holding the legal copyright to the CreativeWork.
    */
   @JsonIgnore public java.util.Collection<Organization> getCopyrightHolderOrganizations() {
-    final Object current = myData.get("copyrightHolder");
+    final java.lang.Object current = myData.get("copyrightHolder");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Organization>) current;
@@ -1223,7 +1318,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * The party holding the legal copyright to the CreativeWork.
    */
   @JsonIgnore public java.util.Collection<Person> getCopyrightHolderPersons() {
-    final Object current = myData.get("copyrightHolder");
+    final java.lang.Object current = myData.get("copyrightHolder");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Person>) current;
@@ -1240,7 +1335,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
    */
   @JsonIgnore public java.util.Collection<Organization> getAuthorOrganizations() {
-    final Object current = myData.get("author");
+    final java.lang.Object current = myData.get("author");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Organization>) current;
@@ -1257,7 +1352,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
    */
   @JsonIgnore public java.util.Collection<Person> getAuthorPersons() {
-    final Object current = myData.get("author");
+    final java.lang.Object current = myData.get("author");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Person>) current;
@@ -1274,7 +1369,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * A publication event associated with the item.
    */
   @JsonIgnore public java.util.Collection<PublicationEvent> getPublications() {
-    final Object current = myData.get("publication");
+    final java.lang.Object current = myData.get("publication");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<PublicationEvent>) current;
@@ -1291,7 +1386,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * A license document that applies to this content, typically indicated by URL.
    */
   @JsonIgnore public java.util.Collection<CreativeWork> getLicenseCreativeWorks() {
-    final Object current = myData.get("license");
+    final java.lang.Object current = myData.get("license");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<CreativeWork>) current;
@@ -1308,7 +1403,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * A license document that applies to this content, typically indicated by URL.
    */
   @JsonIgnore public java.util.Collection<String> getLicenseStrings() {
-    final Object current = myData.get("license");
+    final java.lang.Object current = myData.get("license");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -1333,7 +1428,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.
    */
   @JsonIgnore public java.util.Collection<String> getEncodingFormats() {
-    final Object current = myData.get("encodingFormat");
+    final java.lang.Object current = myData.get("encodingFormat");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -1350,7 +1445,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * Fictional person connected with a creative work.
    */
   @JsonIgnore public java.util.Collection<Person> getCharacters() {
-    final Object current = myData.get("character");
+    final java.lang.Object current = myData.get("character");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Person>) current;
@@ -1367,7 +1462,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * The quantity of the materials being described or an expression of the physical space they occupy.
    */
   @JsonIgnore public java.util.Collection<QuantitativeValue> getMaterialExtentQuantitativeValues() {
-    final Object current = myData.get("materialExtent");
+    final java.lang.Object current = myData.get("materialExtent");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<QuantitativeValue>) current;
@@ -1384,7 +1479,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * The quantity of the materials being described or an expression of the physical space they occupy.
    */
   @JsonIgnore public java.util.Collection<String> getMaterialExtentStrings() {
-    final Object current = myData.get("materialExtent");
+    final java.lang.Object current = myData.get("materialExtent");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -1401,7 +1496,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * Content features of the resource, such as accessible media, alternatives and supported enhancements for accessibility ([WebSchemas wiki lists possible values](http://www.w3.org/wiki/WebSchemas/Accessibility)).
    */
   @JsonIgnore public java.util.Collection<String> getAccessibilityFeatures() {
-    final Object current = myData.get("accessibilityFeature");
+    final java.lang.Object current = myData.get("accessibilityFeature");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -1418,12 +1513,29 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * A characteristic of the described resource that is physiologically dangerous to some users. Related to WCAG 2.0 guideline 2.3 ([WebSchemas wiki lists possible values](http://www.w3.org/wiki/WebSchemas/Accessibility)).
    */
   @JsonIgnore public java.util.Collection<String> getAccessibilityHazards() {
-    final Object current = myData.get("accessibilityHazard");
+    final java.lang.Object current = myData.get("accessibilityHazard");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
+  }
+  /**
+   * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
+   */
+  @JsonIgnore public IsPartOf getIsPartOf() {
+    return (IsPartOf) getValue("isPartOf");
+  }
+  /**
+   * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
+   */
+  @JsonIgnore public java.util.Collection<IsPartOf> getIsPartOfs() {
+    final java.lang.Object current = myData.get("isPartOf");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<IsPartOf>) current;
+    }
+    return Arrays.asList((IsPartOf) current);
   }
   /**
    * Indicates that the resource is compatible with the referenced accessibility API ([WebSchemas wiki lists possible values](http://www.w3.org/wiki/WebSchemas/Accessibility)).
@@ -1435,12 +1547,29 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * Indicates that the resource is compatible with the referenced accessibility API ([WebSchemas wiki lists possible values](http://www.w3.org/wiki/WebSchemas/Accessibility)).
    */
   @JsonIgnore public java.util.Collection<String> getAccessibilityAPIs() {
-    final Object current = myData.get("accessibilityAPI");
+    final java.lang.Object current = myData.get("accessibilityAPI");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
+  }
+  /**
+   * Example/instance/realization/derivation of the concept of this creative work. eg. The paperback edition, first edition, or eBook.
+   */
+  @JsonIgnore public WorkExample getWorkExample() {
+    return (WorkExample) getValue("workExample");
+  }
+  /**
+   * Example/instance/realization/derivation of the concept of this creative work. eg. The paperback edition, first edition, or eBook.
+   */
+  @JsonIgnore public java.util.Collection<WorkExample> getWorkExamples() {
+    final java.lang.Object current = myData.get("workExample");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<WorkExample>) current;
+    }
+    return Arrays.asList((WorkExample) current);
   }
   /**
    * The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.
@@ -1452,7 +1581,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.
    */
   @JsonIgnore public java.util.Collection<DefinedTerm> getTeachesDefinedTerms() {
-    final Object current = myData.get("teaches");
+    final java.lang.Object current = myData.get("teaches");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<DefinedTerm>) current;
@@ -1469,7 +1598,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.
    */
   @JsonIgnore public java.util.Collection<String> getTeachesStrings() {
-    final Object current = myData.get("teaches");
+    final java.lang.Object current = myData.get("teaches");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -1486,7 +1615,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * The publisher of the creative work.
    */
   @JsonIgnore public java.util.Collection<Organization> getPublisherOrganizations() {
-    final Object current = myData.get("publisher");
+    final java.lang.Object current = myData.get("publisher");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Organization>) current;
@@ -1503,7 +1632,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * The publisher of the creative work.
    */
   @JsonIgnore public java.util.Collection<Person> getPublisherPersons() {
-    final Object current = myData.get("publisher");
+    final java.lang.Object current = myData.get("publisher");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Person>) current;
@@ -1528,7 +1657,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * Open-ended date ranges can be written with &quot;..&quot; in place of the end date. For example, &quot;2015-11/..&quot; indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
    */
   @JsonIgnore public java.util.Collection<String> getTemporalCoverageStrings() {
-    final Object current = myData.get("temporalCoverage");
+    final java.lang.Object current = myData.get("temporalCoverage");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -1553,7 +1682,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * Open-ended date ranges can be written with &quot;..&quot; in place of the end date. For example, &quot;2015-11/..&quot; indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getTemporalCoverageDates() {
-    final Object current = myData.get("temporalCoverage");
+    final java.lang.Object current = myData.get("temporalCoverage");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<java.util.Date>) current;
@@ -1578,7 +1707,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.
    */
   @JsonIgnore public java.util.Collection<Country> getCountryOfOrigins() {
-    final Object current = myData.get("countryOfOrigin");
+    final java.lang.Object current = myData.get("countryOfOrigin");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Country>) current;
@@ -1595,7 +1724,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.
    */
   @JsonIgnore public java.util.Collection<CreativeWork> getCitationCreativeWorks() {
-    final Object current = myData.get("citation");
+    final java.lang.Object current = myData.get("citation");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<CreativeWork>) current;
@@ -1612,7 +1741,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.
    */
   @JsonIgnore public java.util.Collection<String> getCitationStrings() {
-    final Object current = myData.get("citation");
+    final java.lang.Object current = myData.get("citation");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -1629,7 +1758,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * The person or organization who produced the work (e.g. music album, movie, tv/radio series etc.).
    */
   @JsonIgnore public java.util.Collection<Organization> getProducerOrganizations() {
-    final Object current = myData.get("producer");
+    final java.lang.Object current = myData.get("producer");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Organization>) current;
@@ -1646,7 +1775,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * The person or organization who produced the work (e.g. music album, movie, tv/radio series etc.).
    */
   @JsonIgnore public java.util.Collection<Person> getProducerPersons() {
-    final Object current = myData.get("producer");
+    final java.lang.Object current = myData.get("producer");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Person>) current;
@@ -1665,7 +1794,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    *       
    */
   @JsonIgnore public java.util.Collection<Organization> getMaintainerOrganizations() {
-    final Object current = myData.get("maintainer");
+    final java.lang.Object current = myData.get("maintainer");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Organization>) current;
@@ -1684,7 +1813,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    *       
    */
   @JsonIgnore public java.util.Collection<Person> getMaintainerPersons() {
-    final Object current = myData.get("maintainer");
+    final java.lang.Object current = myData.get("maintainer");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Person>) current;
@@ -1701,7 +1830,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
    */
   @JsonIgnore public java.util.Collection<Organization> getTranslatorOrganizations() {
-    final Object current = myData.get("translator");
+    final java.lang.Object current = myData.get("translator");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Organization>) current;
@@ -1718,7 +1847,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
    */
   @JsonIgnore public java.util.Collection<Person> getTranslatorPersons() {
-    final Object current = myData.get("translator");
+    final java.lang.Object current = myData.get("translator");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Person>) current;
@@ -1735,7 +1864,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as &quot;short descriptions are present but long descriptions will be needed for non-visual users&quot; or &quot;short descriptions are present and no long descriptions are needed.&quot;
    */
   @JsonIgnore public java.util.Collection<String> getAccessibilitySummarys() {
-    final Object current = myData.get("accessibilitySummary");
+    final java.lang.Object current = myData.get("accessibilitySummary");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -1752,7 +1881,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
    */
   @JsonIgnore public java.util.Collection<Sponsor> getSponsors() {
-    final Object current = myData.get("sponsor");
+    final java.lang.Object current = myData.get("sponsor");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Sponsor>) current;
@@ -1769,7 +1898,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * A person or organization that supports (sponsors) something through some kind of financial contribution.
    */
   @JsonIgnore public java.util.Collection<Sponsor> getFunders() {
-    final Object current = myData.get("funder");
+    final java.lang.Object current = myData.get("funder");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Sponsor>) current;
@@ -1786,7 +1915,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * A review of the item.
    */
   @JsonIgnore public java.util.Collection<Review> getReviews() {
-    final Object current = myData.get("review");
+    final java.lang.Object current = myData.get("review");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Review>) current;
@@ -1803,7 +1932,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
    */
   @JsonIgnore public java.util.Collection<InteractionCounter> getInteractionStatistics() {
-    final Object current = myData.get("interactionStatistic");
+    final java.lang.Object current = myData.get("interactionStatistic");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<InteractionCounter>) current;
@@ -1820,7 +1949,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * The typical expected age range, e.g. '7-9', '11-'.
    */
   @JsonIgnore public java.util.Collection<String> getTypicalAgeRanges() {
-    final Object current = myData.get("typicalAgeRange");
+    final java.lang.Object current = myData.get("typicalAgeRange");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -1837,7 +1966,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * A media object that encodes this CreativeWork. This property is a synonym for associatedMedia.
    */
   @JsonIgnore public java.util.Collection<MediaObject> getEncodings() {
-    final Object current = myData.get("encoding");
+    final java.lang.Object current = myData.get("encoding");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MediaObject>) current;
@@ -1854,7 +1983,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * An award won by or for this item.
    */
   @JsonIgnore public java.util.Collection<String> getAwards() {
-    final Object current = myData.get("award");
+    final java.lang.Object current = myData.get("award");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -1871,7 +2000,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas.
    */
   @JsonIgnore public java.util.Collection<DefinedTerm> getKeywordsDefinedTerms() {
-    final Object current = myData.get("keywords");
+    final java.lang.Object current = myData.get("keywords");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<DefinedTerm>) current;
@@ -1888,7 +2017,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas.
    */
   @JsonIgnore public java.util.Collection<String> getKeywordsStrings() {
-    final Object current = myData.get("keywords");
+    final java.lang.Object current = myData.get("keywords");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -1905,7 +2034,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * The place and time the release was issued, expressed as a PublicationEvent.
    */
   @JsonIgnore public java.util.Collection<PublicationEvent> getReleasedEvents() {
-    final Object current = myData.get("releasedEvent");
+    final java.lang.Object current = myData.get("releasedEvent");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<PublicationEvent>) current;
@@ -1922,7 +2051,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * Indicates whether this content is family friendly.
    */
   @JsonIgnore public java.util.Collection<Boolean> getIsFamilyFriendlys() {
-    final Object current = myData.get("isFamilyFriendly");
+    final java.lang.Object current = myData.get("isFamilyFriendly");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Boolean>) current;
@@ -1939,7 +2068,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * A secondary title of the CreativeWork.
    */
   @JsonIgnore public java.util.Collection<String> getAlternativeHeadlines() {
-    final Object current = myData.get("alternativeHeadline");
+    final java.lang.Object current = myData.get("alternativeHeadline");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -1958,7 +2087,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    *     indicate the use of a specific schema.org release, e.g. ```10.0``` as a simple string, or more explicitly via URL, ```http://schema.org/docs/releases.html#v10.0```. There may be situations in which other schemas might usefully be referenced this way, e.g. ```http://dublincore.org/specifications/dublin-core/dces/1999-07-02/``` but this has not been carefully explored in the community.
    */
   @JsonIgnore public java.util.Collection<String> getSchemaVersions() {
-    final Object current = myData.get("schemaVersion");
+    final java.lang.Object current = myData.get("schemaVersion");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -1975,7 +2104,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
    */
   @JsonIgnore public java.util.Collection<DefinedTerm> getAssessesDefinedTerms() {
-    final Object current = myData.get("assesses");
+    final java.lang.Object current = myData.get("assesses");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<DefinedTerm>) current;
@@ -1992,7 +2121,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
    */
   @JsonIgnore public java.util.Collection<String> getAssessesStrings() {
-    final Object current = myData.get("assesses");
+    final java.lang.Object current = myData.get("assesses");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -2009,7 +2138,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * The publishing division which published the comic.
    */
   @JsonIgnore public java.util.Collection<Organization> getPublisherImprints() {
-    final Object current = myData.get("publisherImprint");
+    final java.lang.Object current = myData.get("publisherImprint");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Organization>) current;
@@ -2028,7 +2157,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    *       
    */
   @JsonIgnore public java.util.Collection<String> getAccessModes() {
-    final Object current = myData.get("accessMode");
+    final java.lang.Object current = myData.get("accessMode");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -2045,7 +2174,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * Indicates the date on which the current structured data was generated / published. Typically used alongside [[sdPublisher]]
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getSdDatePublisheds() {
-    final Object current = myData.get("sdDatePublished");
+    final java.lang.Object current = myData.get("sdDatePublished");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<java.util.Date>) current;
@@ -2062,7 +2191,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * Used to indicate a specific claim contained, implied, translated or refined from the content of a [[MediaObject]] or other [[CreativeWork]]. The interpreting party can be indicated using [[claimInterpreter]].
    */
   @JsonIgnore public java.util.Collection<Description> getInterpretedAsClaims() {
-    final Object current = myData.get("interpretedAsClaim");
+    final java.lang.Object current = myData.get("interpretedAsClaim");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Description>) current;
@@ -2079,7 +2208,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience, e.g. 'PT30M', 'PT1H25M'.
    */
   @JsonIgnore public java.util.Collection<Duration> getTimeRequireds() {
-    final Object current = myData.get("timeRequired");
+    final java.lang.Object current = myData.get("timeRequired");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Duration>) current;
@@ -2096,7 +2225,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * The location where the CreativeWork was created, which may not be the same as the location depicted in the CreativeWork.
    */
   @JsonIgnore public java.util.Collection<Place> getLocationCreateds() {
-    final Object current = myData.get("locationCreated");
+    final java.lang.Object current = myData.get("locationCreated");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Place>) current;
@@ -2113,7 +2242,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * Specifies the Person who edited the CreativeWork.
    */
   @JsonIgnore public java.util.Collection<Person> getEditors() {
-    final Object current = myData.get("editor");
+    final java.lang.Object current = myData.get("editor");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Person>) current;
@@ -2130,7 +2259,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * The purpose of a work in the context of education; for example, 'assignment', 'group work'.
    */
   @JsonIgnore public java.util.Collection<DefinedTerm> getEducationalUseDefinedTerms() {
-    final Object current = myData.get("educationalUse");
+    final java.lang.Object current = myData.get("educationalUse");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<DefinedTerm>) current;
@@ -2147,7 +2276,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * The purpose of a work in the context of education; for example, 'assignment', 'group work'.
    */
   @JsonIgnore public java.util.Collection<String> getEducationalUseStrings() {
-    final Object current = myData.get("educationalUse");
+    final java.lang.Object current = myData.get("educationalUse");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -2164,7 +2293,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * The year during which the claimed copyright for the CreativeWork was first asserted.
    */
   @JsonIgnore public java.util.Collection<Integer> getCopyrightYearIntegers() {
-    final Object current = myData.get("copyrightYear");
+    final java.lang.Object current = myData.get("copyrightYear");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -2181,7 +2310,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * The year during which the claimed copyright for the CreativeWork was first asserted.
    */
   @JsonIgnore public java.util.Collection<Long> getCopyrightYearLongs() {
-    final Object current = myData.get("copyrightYear");
+    final java.lang.Object current = myData.get("copyrightYear");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Long>) current;
@@ -2198,7 +2327,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * The year during which the claimed copyright for the CreativeWork was first asserted.
    */
   @JsonIgnore public java.util.Collection<Float> getCopyrightYearFloats() {
-    final Object current = myData.get("copyrightYear");
+    final java.lang.Object current = myData.get("copyrightYear");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Float>) current;
@@ -2215,7 +2344,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * The year during which the claimed copyright for the CreativeWork was first asserted.
    */
   @JsonIgnore public java.util.Collection<Double> getCopyrightYearDoubles() {
-    final Object current = myData.get("copyrightYear");
+    final java.lang.Object current = myData.get("copyrightYear");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Double>) current;
@@ -2232,7 +2361,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * The year during which the claimed copyright for the CreativeWork was first asserted.
    */
   @JsonIgnore public java.util.Collection<String> getCopyrightYearStrings() {
-    final Object current = myData.get("copyrightYear");
+    final java.lang.Object current = myData.get("copyrightYear");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -2249,7 +2378,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * The Organization on whose behalf the creator was working.
    */
   @JsonIgnore public java.util.Collection<Organization> getSourceOrganizations() {
-    final Object current = myData.get("sourceOrganization");
+    final java.lang.Object current = myData.get("sourceOrganization");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Organization>) current;
@@ -2266,7 +2395,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * Specifies the Person that is legally accountable for the CreativeWork.
    */
   @JsonIgnore public java.util.Collection<Person> getAccountablePersons() {
-    final Object current = myData.get("accountablePerson");
+    final java.lang.Object current = myData.get("accountablePerson");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Person>) current;
@@ -2283,7 +2412,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * The predominant mode of learning supported by the learning resource. Acceptable values are 'active', 'expositive', or 'mixed'.
    */
   @JsonIgnore public java.util.Collection<String> getInteractivityTypes() {
-    final Object current = myData.get("interactivityType");
+    final java.lang.Object current = myData.get("interactivityType");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -2300,7 +2429,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * An abstract is a short description that summarizes a [[CreativeWork]].
    */
   @JsonIgnore public java.util.Collection<String> getAbstracts() {
-    final Object current = myData.get("abstract");
+    final java.lang.Object current = myData.get("abstract");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -2317,7 +2446,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * Identifies input methods that are sufficient to fully control the described resource ([WebSchemas wiki lists possible values](http://www.w3.org/wiki/WebSchemas/Accessibility)).
    */
   @JsonIgnore public java.util.Collection<String> getAccessibilityControls() {
-    final Object current = myData.get("accessibilityControl");
+    final java.lang.Object current = myData.get("accessibilityControl");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -2334,7 +2463,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * The work that this work has been translated from. e.g. 物种起源 is a translationOf &ldquo;On the Origin of Species&rdquo;
    */
   @JsonIgnore public java.util.Collection<CreativeWork> getTranslationOfWorks() {
-    final Object current = myData.get("translationOfWork");
+    final java.lang.Object current = myData.get("translationOfWork");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<CreativeWork>) current;
@@ -2351,7 +2480,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * A work that is a translation of the content of this work. e.g. 西遊記 has an English workTranslation &ldquo;Journey to the West&rdquo;,a German workTranslation &ldquo;Monkeys Pilgerfahrt&rdquo; and a Vietnamese  translation T&acirc;y du k&yacute; b&igrave;nh khảo.
    */
   @JsonIgnore public java.util.Collection<CreativeWork> getWorkTranslations() {
-    final Object current = myData.get("workTranslation");
+    final java.lang.Object current = myData.get("workTranslation");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<CreativeWork>) current;
@@ -2370,7 +2499,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    *       
    */
   @JsonIgnore public java.util.Collection<Demand> getOffersDemands() {
-    final Object current = myData.get("offers");
+    final java.lang.Object current = myData.get("offers");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Demand>) current;
@@ -2389,7 +2518,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    *       
    */
   @JsonIgnore public java.util.Collection<Offer> getOffersOffers() {
-    final Object current = myData.get("offers");
+    final java.lang.Object current = myData.get("offers");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Offer>) current;
@@ -2397,21 +2526,55 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
     return Arrays.asList((Offer) current);
   }
   /**
+   * The subject matter of the content.
+   */
+  @JsonIgnore public Thing getAbout() {
+    return (Thing) getValue("about");
+  }
+  /**
+   * The subject matter of the content.
+   */
+  @JsonIgnore public java.util.Collection<Thing> getAbouts() {
+    final java.lang.Object current = myData.get("about");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Thing>) current;
+    }
+    return Arrays.asList((Thing) current);
+  }
+  /**
    * Indicates the primary entity described in some page or other CreativeWork.
    */
-  @JsonIgnore public About getMainEntity() {
+  @JsonIgnore public About getMainEntityAbout() {
     return (About) getValue("mainEntity");
   }
   /**
    * Indicates the primary entity described in some page or other CreativeWork.
    */
-  @JsonIgnore public java.util.Collection<About> getMainEntitys() {
-    final Object current = myData.get("mainEntity");
+  @JsonIgnore public java.util.Collection<About> getMainEntityAbouts() {
+    final java.lang.Object current = myData.get("mainEntity");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<About>) current;
     }
     return Arrays.asList((About) current);
+  }
+  /**
+   * Indicates the primary entity described in some page or other CreativeWork.
+   */
+  @JsonIgnore public Thing getMainEntityThing() {
+    return (Thing) getValue("mainEntity");
+  }
+  /**
+   * Indicates the primary entity described in some page or other CreativeWork.
+   */
+  @JsonIgnore public java.util.Collection<Thing> getMainEntityThings() {
+    final java.lang.Object current = myData.get("mainEntity");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Thing>) current;
+    }
+    return Arrays.asList((Thing) current);
   }
   /**
    * The Event where the CreativeWork was recorded. The CreativeWork may capture all or part of the event.
@@ -2423,7 +2586,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * The Event where the CreativeWork was recorded. The CreativeWork may capture all or part of the event.
    */
   @JsonIgnore public java.util.Collection<Event> getRecordedAts() {
-    final Object current = myData.get("recordedAt");
+    final java.lang.Object current = myData.get("recordedAt");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Event>) current;
@@ -2440,7 +2603,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * A creative work that this work is an example/instance/realization/derivation of.
    */
   @JsonIgnore public java.util.Collection<CreativeWork> getExampleOfWorks() {
-    final Object current = myData.get("exampleOfWork");
+    final java.lang.Object current = myData.get("exampleOfWork");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<CreativeWork>) current;
@@ -2457,14 +2620,14 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * The location depicted or described in the content. For example, the location in a photograph or painting.
    */
   @JsonIgnore public java.util.Collection<ContentLocation> getContentLocations() {
-    final Object current = myData.get("contentLocation");
+    final java.lang.Object current = myData.get("contentLocation");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<ContentLocation>) current;
     }
     return Arrays.asList((ContentLocation) current);
   }
-  protected CreativeWork(java.util.Map<String,Object> data) {
+  protected CreativeWork(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -2472,7 +2635,7 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * Builder for {@link CreativeWork}
    */
   public static class Builder extends Thing.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public CreativeWork build() {
@@ -2502,6 +2665,16 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
       return this;
     }
     /**
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+     * 
+     */
+    @NotNull public Builder publishingPrinciples(@NotNull PublishingPrinciples publishingPrinciples) {
+      putValue("publishingPrinciples", publishingPrinciples);
+      return this;
+    }
+    /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
      */
     @NotNull public Builder inLanguage(@NotNull Language language) {
@@ -2527,6 +2700,13 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
      */
     @NotNull public Builder thumbnailUrl(@NotNull String thumbnailUrl) {
       putValue("thumbnailUrl", thumbnailUrl);
+      return this;
+    }
+    /**
+     * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
+     */
+    @NotNull public Builder hasPart(@NotNull HasPart hasPart) {
+      putValue("hasPart", hasPart);
       return this;
     }
     /**
@@ -2597,6 +2777,13 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
      */
     @NotNull public Builder size(@NotNull String size) {
       putValue("size", size);
+      return this;
+    }
+    /**
+     * A material that something is made from, e.g. leather, wool, cotton, paper.
+     */
+    @NotNull public Builder material(@NotNull Material material) {
+      putValue("material", material);
       return this;
     }
     /**
@@ -2688,6 +2875,15 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
      */
     @NotNull public Builder commentCount(@NotNull Integer integer) {
       putValue("commentCount", integer);
+      return this;
+    }
+    /**
+     * The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of
+     *       contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates
+     *       areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
+     */
+    @NotNull public Builder spatialCoverage(@NotNull SpatialCoverage spatialCoverage) {
+      putValue("spatialCoverage", spatialCoverage);
       return this;
     }
     /**
@@ -2908,6 +3104,13 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
      */
     @NotNull public Builder sdLicense(@NotNull String sdLicense) {
       putValue("sdLicense", sdLicense);
+      return this;
+    }
+    /**
+     * The position of an item in a series or sequence of items.
+     */
+    @NotNull public Builder position(@NotNull Position position) {
+      putValue("position", position);
       return this;
     }
     /**
@@ -3351,10 +3554,24 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
       return this;
     }
     /**
+     * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
+     */
+    @NotNull public Builder isPartOf(@NotNull IsPartOf isPartOf) {
+      putValue("isPartOf", isPartOf);
+      return this;
+    }
+    /**
      * Indicates that the resource is compatible with the referenced accessibility API ([WebSchemas wiki lists possible values](http://www.w3.org/wiki/WebSchemas/Accessibility)).
      */
     @NotNull public Builder accessibilityAPI(@NotNull String accessibilityAPI) {
       putValue("accessibilityAPI", accessibilityAPI);
+      return this;
+    }
+    /**
+     * Example/instance/realization/derivation of the concept of this creative work. eg. The paperback edition, first edition, or eBook.
+     */
+    @NotNull public Builder workExample(@NotNull WorkExample workExample) {
+      putValue("workExample", workExample);
       return this;
     }
     /**
@@ -3951,10 +4168,45 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
       return this;
     }
     /**
+     * The subject matter of the content.
+     */
+    @NotNull public Builder about(@NotNull Thing thing) {
+      putValue("about", thing);
+      return this;
+    }
+    /**
+     * The subject matter of the content.
+     */
+    @NotNull public Builder about(@NotNull Thing.Builder thing) {
+      putValue("about", thing.build());
+      return this;
+    }
+    /**
      * Indicates the primary entity described in some page or other CreativeWork.
      */
     @NotNull public Builder mainEntity(@NotNull About about) {
       putValue("mainEntity", about);
+      return this;
+    }
+    /**
+     * Indicates the primary entity described in some page or other CreativeWork.
+     */
+    @NotNull public Builder mainEntity(@NotNull About.Builder about) {
+      putValue("mainEntity", about.build());
+      return this;
+    }
+    /**
+     * Indicates the primary entity described in some page or other CreativeWork.
+     */
+    @NotNull public Builder mainEntity(@NotNull Thing thing) {
+      putValue("mainEntity", thing);
+      return this;
+    }
+    /**
+     * Indicates the primary entity described in some page or other CreativeWork.
+     */
+    @NotNull public Builder mainEntity(@NotNull Thing.Builder thing) {
+      putValue("mainEntity", thing.build());
       return this;
     }
     /**
@@ -3993,6 +4245,21 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -4011,6 +4278,13 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -4104,17 +4378,21 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("text".equals(key) && value instanceof String) { this.text((String)value); return; }
       if ("texts".equals(key) && value instanceof String) { this.text((String)value); return; }
       if ("spatial".equals(key) && value instanceof Place) { this.spatial((Place)value); return; }
       if ("spatials".equals(key) && value instanceof Place) { this.spatial((Place)value); return; }
+      if ("publishingPrinciples".equals(key) && value instanceof PublishingPrinciples) { this.publishingPrinciples((PublishingPrinciples)value); return; }
+      if ("publishingPrincipless".equals(key) && value instanceof PublishingPrinciples) { this.publishingPrinciples((PublishingPrinciples)value); return; }
       if ("inLanguage".equals(key) && value instanceof Language) { this.inLanguage((Language)value); return; }
       if ("inLanguages".equals(key) && value instanceof Language) { this.inLanguage((Language)value); return; }
       if ("inLanguage".equals(key) && value instanceof String) { this.inLanguage((String)value); return; }
       if ("inLanguages".equals(key) && value instanceof String) { this.inLanguage((String)value); return; }
       if ("thumbnailUrl".equals(key) && value instanceof String) { this.thumbnailUrl((String)value); return; }
       if ("thumbnailUrls".equals(key) && value instanceof String) { this.thumbnailUrl((String)value); return; }
+      if ("hasPart".equals(key) && value instanceof HasPart) { this.hasPart((HasPart)value); return; }
+      if ("hasParts".equals(key) && value instanceof HasPart) { this.hasPart((HasPart)value); return; }
       if ("contentRating".equals(key) && value instanceof Rating) { this.contentRating((Rating)value); return; }
       if ("contentRatings".equals(key) && value instanceof Rating) { this.contentRating((Rating)value); return; }
       if ("contentRating".equals(key) && value instanceof String) { this.contentRating((String)value); return; }
@@ -4127,6 +4405,8 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
       if ("sizes".equals(key) && value instanceof SizeSpecification) { this.size((SizeSpecification)value); return; }
       if ("size".equals(key) && value instanceof String) { this.size((String)value); return; }
       if ("sizes".equals(key) && value instanceof String) { this.size((String)value); return; }
+      if ("material".equals(key) && value instanceof Material) { this.material((Material)value); return; }
+      if ("materials".equals(key) && value instanceof Material) { this.material((Material)value); return; }
       if ("conditionsOfAccess".equals(key) && value instanceof String) { this.conditionsOfAccess((String)value); return; }
       if ("conditionsOfAccesss".equals(key) && value instanceof String) { this.conditionsOfAccess((String)value); return; }
       if ("provider".equals(key) && value instanceof Organization) { this.provider((Organization)value); return; }
@@ -4145,6 +4425,8 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
       if ("corrections".equals(key) && value instanceof String) { this.correction((String)value); return; }
       if ("commentCount".equals(key) && value instanceof Integer) { this.commentCount((Integer)value); return; }
       if ("commentCounts".equals(key) && value instanceof Integer) { this.commentCount((Integer)value); return; }
+      if ("spatialCoverage".equals(key) && value instanceof SpatialCoverage) { this.spatialCoverage((SpatialCoverage)value); return; }
+      if ("spatialCoverages".equals(key) && value instanceof SpatialCoverage) { this.spatialCoverage((SpatialCoverage)value); return; }
       if ("archivedAt".equals(key) && value instanceof String) { this.archivedAt((String)value); return; }
       if ("archivedAts".equals(key) && value instanceof String) { this.archivedAt((String)value); return; }
       if ("archivedAt".equals(key) && value instanceof WebPage) { this.archivedAt((WebPage)value); return; }
@@ -4185,6 +4467,8 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
       if ("sdLicenses".equals(key) && value instanceof CreativeWork) { this.sdLicense((CreativeWork)value); return; }
       if ("sdLicense".equals(key) && value instanceof String) { this.sdLicense((String)value); return; }
       if ("sdLicenses".equals(key) && value instanceof String) { this.sdLicense((String)value); return; }
+      if ("position".equals(key) && value instanceof Position) { this.position((Position)value); return; }
+      if ("positions".equals(key) && value instanceof Position) { this.position((Position)value); return; }
       if ("associatedMedia".equals(key) && value instanceof MediaObject) { this.associatedMedia((MediaObject)value); return; }
       if ("associatedMedias".equals(key) && value instanceof MediaObject) { this.associatedMedia((MediaObject)value); return; }
       if ("headline".equals(key) && value instanceof String) { this.headline((String)value); return; }
@@ -4265,8 +4549,12 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
       if ("accessibilityFeatures".equals(key) && value instanceof String) { this.accessibilityFeature((String)value); return; }
       if ("accessibilityHazard".equals(key) && value instanceof String) { this.accessibilityHazard((String)value); return; }
       if ("accessibilityHazards".equals(key) && value instanceof String) { this.accessibilityHazard((String)value); return; }
+      if ("isPartOf".equals(key) && value instanceof IsPartOf) { this.isPartOf((IsPartOf)value); return; }
+      if ("isPartOfs".equals(key) && value instanceof IsPartOf) { this.isPartOf((IsPartOf)value); return; }
       if ("accessibilityAPI".equals(key) && value instanceof String) { this.accessibilityAPI((String)value); return; }
       if ("accessibilityAPIs".equals(key) && value instanceof String) { this.accessibilityAPI((String)value); return; }
+      if ("workExample".equals(key) && value instanceof WorkExample) { this.workExample((WorkExample)value); return; }
+      if ("workExamples".equals(key) && value instanceof WorkExample) { this.workExample((WorkExample)value); return; }
       if ("teaches".equals(key) && value instanceof DefinedTerm) { this.teaches((DefinedTerm)value); return; }
       if ("teachess".equals(key) && value instanceof DefinedTerm) { this.teaches((DefinedTerm)value); return; }
       if ("teaches".equals(key) && value instanceof String) { this.teaches((String)value); return; }
@@ -4375,8 +4663,12 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
       if ("offerss".equals(key) && value instanceof Demand) { this.offers((Demand)value); return; }
       if ("offers".equals(key) && value instanceof Offer) { this.offers((Offer)value); return; }
       if ("offerss".equals(key) && value instanceof Offer) { this.offers((Offer)value); return; }
+      if ("about".equals(key) && value instanceof Thing) { this.about((Thing)value); return; }
+      if ("abouts".equals(key) && value instanceof Thing) { this.about((Thing)value); return; }
       if ("mainEntity".equals(key) && value instanceof About) { this.mainEntity((About)value); return; }
       if ("mainEntitys".equals(key) && value instanceof About) { this.mainEntity((About)value); return; }
+      if ("mainEntity".equals(key) && value instanceof Thing) { this.mainEntity((Thing)value); return; }
+      if ("mainEntitys".equals(key) && value instanceof Thing) { this.mainEntity((Thing)value); return; }
       if ("recordedAt".equals(key) && value instanceof Event) { this.recordedAt((Event)value); return; }
       if ("recordedAts".equals(key) && value instanceof Event) { this.recordedAt((Event)value); return; }
       if ("exampleOfWork".equals(key) && value instanceof CreativeWork) { this.exampleOfWork((CreativeWork)value); return; }

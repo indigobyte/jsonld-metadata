@@ -24,7 +24,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * 
+ * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
  */
 public interface Image {
 }

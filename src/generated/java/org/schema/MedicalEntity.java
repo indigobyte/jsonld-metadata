@@ -37,7 +37,7 @@ public class MedicalEntity extends Thing {
    * The drug or supplement's legal status, including any controlled substance schedules that apply.
    */
   @JsonIgnore public java.util.Collection<DrugLegalStatus> getLegalStatusDrugLegalStatuss() {
-    final Object current = myData.get("legalStatus");
+    final java.lang.Object current = myData.get("legalStatus");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<DrugLegalStatus>) current;
@@ -54,7 +54,7 @@ public class MedicalEntity extends Thing {
    * The drug or supplement's legal status, including any controlled substance schedules that apply.
    */
   @JsonIgnore public java.util.Collection<MedicalEnumeration> getLegalStatusMedicalEnumerations() {
-    final Object current = myData.get("legalStatus");
+    final java.lang.Object current = myData.get("legalStatus");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MedicalEnumeration>) current;
@@ -71,7 +71,7 @@ public class MedicalEntity extends Thing {
    * The drug or supplement's legal status, including any controlled substance schedules that apply.
    */
   @JsonIgnore public java.util.Collection<String> getLegalStatusStrings() {
-    final Object current = myData.get("legalStatus");
+    final java.lang.Object current = myData.get("legalStatus");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -88,7 +88,7 @@ public class MedicalEntity extends Thing {
    * A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.
    */
   @JsonIgnore public java.util.Collection<MedicalCode> getCodes() {
-    final Object current = myData.get("code");
+    final java.lang.Object current = myData.get("code");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MedicalCode>) current;
@@ -105,7 +105,7 @@ public class MedicalEntity extends Thing {
    * If applicable, a medical specialty in which this entity is relevant.
    */
   @JsonIgnore public java.util.Collection<MedicalSpecialty> getRelevantSpecialtys() {
-    final Object current = myData.get("relevantSpecialty");
+    final java.lang.Object current = myData.get("relevantSpecialty");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MedicalSpecialty>) current;
@@ -122,7 +122,7 @@ public class MedicalEntity extends Thing {
    * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
    */
   @JsonIgnore public java.util.Collection<MedicineSystem> getMedicineSystems() {
-    final Object current = myData.get("medicineSystem");
+    final java.lang.Object current = myData.get("medicineSystem");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MedicineSystem>) current;
@@ -139,7 +139,7 @@ public class MedicalEntity extends Thing {
    * A medical study or trial related to this entity.
    */
   @JsonIgnore public java.util.Collection<MedicalStudy> getStudys() {
-    final Object current = myData.get("study");
+    final java.lang.Object current = myData.get("study");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MedicalStudy>) current;
@@ -156,7 +156,7 @@ public class MedicalEntity extends Thing {
    * A medical guideline related to this entity.
    */
   @JsonIgnore public java.util.Collection<MedicalGuideline> getGuidelines() {
-    final Object current = myData.get("guideline");
+    final java.lang.Object current = myData.get("guideline");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MedicalGuideline>) current;
@@ -173,14 +173,14 @@ public class MedicalEntity extends Thing {
    * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
    */
   @JsonIgnore public java.util.Collection<Organization> getRecognizingAuthoritys() {
-    final Object current = myData.get("recognizingAuthority");
+    final java.lang.Object current = myData.get("recognizingAuthority");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
   }
-  protected MedicalEntity(java.util.Map<String,Object> data) {
+  protected MedicalEntity(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -188,7 +188,7 @@ public class MedicalEntity extends Thing {
    * Builder for {@link MedicalEntity}
    */
   public static class Builder extends Thing.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public MedicalEntity build() {
@@ -293,6 +293,21 @@ public class MedicalEntity extends Thing {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -311,6 +326,13 @@ public class MedicalEntity extends Thing {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -404,7 +426,7 @@ public class MedicalEntity extends Thing {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("legalStatus".equals(key) && value instanceof DrugLegalStatus) { this.legalStatus((DrugLegalStatus)value); return; }
       if ("legalStatuss".equals(key) && value instanceof DrugLegalStatus) { this.legalStatus((DrugLegalStatus)value); return; }
       if ("legalStatus".equals(key) && value instanceof MedicalEnumeration) { this.legalStatus((MedicalEnumeration)value); return; }

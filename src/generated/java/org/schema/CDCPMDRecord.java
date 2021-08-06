@@ -40,7 +40,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numicubeds - ICU BEDS: Total number of staffed inpatient intensive care unit (ICU) beds.
    */
   @JsonIgnore public java.util.Collection<Integer> getCvdNumICUBedsIntegers() {
-    final Object current = myData.get("cvdNumICUBeds");
+    final java.lang.Object current = myData.get("cvdNumICUBeds");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -57,7 +57,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numicubeds - ICU BEDS: Total number of staffed inpatient intensive care unit (ICU) beds.
    */
   @JsonIgnore public java.util.Collection<Long> getCvdNumICUBedsLongs() {
-    final Object current = myData.get("cvdNumICUBeds");
+    final java.lang.Object current = myData.get("cvdNumICUBeds");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Long>) current;
@@ -74,7 +74,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numicubeds - ICU BEDS: Total number of staffed inpatient intensive care unit (ICU) beds.
    */
   @JsonIgnore public java.util.Collection<Float> getCvdNumICUBedsFloats() {
-    final Object current = myData.get("cvdNumICUBeds");
+    final java.lang.Object current = myData.get("cvdNumICUBeds");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Float>) current;
@@ -91,7 +91,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numicubeds - ICU BEDS: Total number of staffed inpatient intensive care unit (ICU) beds.
    */
   @JsonIgnore public java.util.Collection<Double> getCvdNumICUBedsDoubles() {
-    final Object current = myData.get("cvdNumICUBeds");
+    final java.lang.Object current = myData.get("cvdNumICUBeds");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Double>) current;
@@ -108,7 +108,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numicubeds - ICU BEDS: Total number of staffed inpatient intensive care unit (ICU) beds.
    */
   @JsonIgnore public java.util.Collection<String> getCvdNumICUBedsStrings() {
-    final Object current = myData.get("cvdNumICUBeds");
+    final java.lang.Object current = myData.get("cvdNumICUBeds");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -125,7 +125,7 @@ public class CDCPMDRecord extends StructuredValue {
    * collectiondate - Date for which patient counts are reported.
    */
   @JsonIgnore public java.util.Collection<String> getCvdCollectionDateStrings() {
-    final Object current = myData.get("cvdCollectionDate");
+    final java.lang.Object current = myData.get("cvdCollectionDate");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -142,7 +142,7 @@ public class CDCPMDRecord extends StructuredValue {
    * collectiondate - Date for which patient counts are reported.
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getCvdCollectionDateDates() {
-    final Object current = myData.get("cvdCollectionDate");
+    final java.lang.Object current = myData.get("cvdCollectionDate");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<java.util.Date>) current;
@@ -159,7 +159,7 @@ public class CDCPMDRecord extends StructuredValue {
    * Publication date of an online listing.
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getDatePosteds() {
-    final Object current = myData.get("datePosted");
+    final java.lang.Object current = myData.get("datePosted");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<java.util.Date>) current;
@@ -176,7 +176,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numbeds - HOSPITAL INPATIENT BEDS: Inpatient beds, including all staffed, licensed, and overflow (surge) beds used for inpatients.
    */
   @JsonIgnore public java.util.Collection<Integer> getCvdNumBedsIntegers() {
-    final Object current = myData.get("cvdNumBeds");
+    final java.lang.Object current = myData.get("cvdNumBeds");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -193,7 +193,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numbeds - HOSPITAL INPATIENT BEDS: Inpatient beds, including all staffed, licensed, and overflow (surge) beds used for inpatients.
    */
   @JsonIgnore public java.util.Collection<Long> getCvdNumBedsLongs() {
-    final Object current = myData.get("cvdNumBeds");
+    final java.lang.Object current = myData.get("cvdNumBeds");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Long>) current;
@@ -210,7 +210,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numbeds - HOSPITAL INPATIENT BEDS: Inpatient beds, including all staffed, licensed, and overflow (surge) beds used for inpatients.
    */
   @JsonIgnore public java.util.Collection<Float> getCvdNumBedsFloats() {
-    final Object current = myData.get("cvdNumBeds");
+    final java.lang.Object current = myData.get("cvdNumBeds");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Float>) current;
@@ -227,7 +227,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numbeds - HOSPITAL INPATIENT BEDS: Inpatient beds, including all staffed, licensed, and overflow (surge) beds used for inpatients.
    */
   @JsonIgnore public java.util.Collection<Double> getCvdNumBedsDoubles() {
-    final Object current = myData.get("cvdNumBeds");
+    final java.lang.Object current = myData.get("cvdNumBeds");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Double>) current;
@@ -244,7 +244,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numbeds - HOSPITAL INPATIENT BEDS: Inpatient beds, including all staffed, licensed, and overflow (surge) beds used for inpatients.
    */
   @JsonIgnore public java.util.Collection<String> getCvdNumBedsStrings() {
-    final Object current = myData.get("cvdNumBeds");
+    final java.lang.Object current = myData.get("cvdNumBeds");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -261,7 +261,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numc19mechventpats - HOSPITALIZED and VENTILATED: Patients hospitalized in an NHSN inpatient care location who have suspected or confirmed COVID-19 and are on a mechanical ventilator.
    */
   @JsonIgnore public java.util.Collection<Integer> getCvdNumC19MechVentPatsIntegers() {
-    final Object current = myData.get("cvdNumC19MechVentPats");
+    final java.lang.Object current = myData.get("cvdNumC19MechVentPats");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -278,7 +278,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numc19mechventpats - HOSPITALIZED and VENTILATED: Patients hospitalized in an NHSN inpatient care location who have suspected or confirmed COVID-19 and are on a mechanical ventilator.
    */
   @JsonIgnore public java.util.Collection<Long> getCvdNumC19MechVentPatsLongs() {
-    final Object current = myData.get("cvdNumC19MechVentPats");
+    final java.lang.Object current = myData.get("cvdNumC19MechVentPats");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Long>) current;
@@ -295,7 +295,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numc19mechventpats - HOSPITALIZED and VENTILATED: Patients hospitalized in an NHSN inpatient care location who have suspected or confirmed COVID-19 and are on a mechanical ventilator.
    */
   @JsonIgnore public java.util.Collection<Float> getCvdNumC19MechVentPatsFloats() {
-    final Object current = myData.get("cvdNumC19MechVentPats");
+    final java.lang.Object current = myData.get("cvdNumC19MechVentPats");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Float>) current;
@@ -312,7 +312,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numc19mechventpats - HOSPITALIZED and VENTILATED: Patients hospitalized in an NHSN inpatient care location who have suspected or confirmed COVID-19 and are on a mechanical ventilator.
    */
   @JsonIgnore public java.util.Collection<Double> getCvdNumC19MechVentPatsDoubles() {
-    final Object current = myData.get("cvdNumC19MechVentPats");
+    final java.lang.Object current = myData.get("cvdNumC19MechVentPats");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Double>) current;
@@ -329,7 +329,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numc19mechventpats - HOSPITALIZED and VENTILATED: Patients hospitalized in an NHSN inpatient care location who have suspected or confirmed COVID-19 and are on a mechanical ventilator.
    */
   @JsonIgnore public java.util.Collection<String> getCvdNumC19MechVentPatsStrings() {
-    final Object current = myData.get("cvdNumC19MechVentPats");
+    final java.lang.Object current = myData.get("cvdNumC19MechVentPats");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -346,7 +346,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numvent - MECHANICAL VENTILATORS: Total number of ventilators available.
    */
   @JsonIgnore public java.util.Collection<Integer> getCvdNumVentIntegers() {
-    final Object current = myData.get("cvdNumVent");
+    final java.lang.Object current = myData.get("cvdNumVent");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -363,7 +363,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numvent - MECHANICAL VENTILATORS: Total number of ventilators available.
    */
   @JsonIgnore public java.util.Collection<Long> getCvdNumVentLongs() {
-    final Object current = myData.get("cvdNumVent");
+    final java.lang.Object current = myData.get("cvdNumVent");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Long>) current;
@@ -380,7 +380,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numvent - MECHANICAL VENTILATORS: Total number of ventilators available.
    */
   @JsonIgnore public java.util.Collection<Float> getCvdNumVentFloats() {
-    final Object current = myData.get("cvdNumVent");
+    final java.lang.Object current = myData.get("cvdNumVent");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Float>) current;
@@ -397,7 +397,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numvent - MECHANICAL VENTILATORS: Total number of ventilators available.
    */
   @JsonIgnore public java.util.Collection<Double> getCvdNumVentDoubles() {
-    final Object current = myData.get("cvdNumVent");
+    final java.lang.Object current = myData.get("cvdNumVent");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Double>) current;
@@ -414,7 +414,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numvent - MECHANICAL VENTILATORS: Total number of ventilators available.
    */
   @JsonIgnore public java.util.Collection<String> getCvdNumVentStrings() {
-    final Object current = myData.get("cvdNumVent");
+    final java.lang.Object current = myData.get("cvdNumVent");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -431,7 +431,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numc19overflowpats - ED/OVERFLOW: Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed.
    */
   @JsonIgnore public java.util.Collection<Integer> getCvdNumC19OverflowPatsIntegers() {
-    final Object current = myData.get("cvdNumC19OverflowPats");
+    final java.lang.Object current = myData.get("cvdNumC19OverflowPats");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -448,7 +448,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numc19overflowpats - ED/OVERFLOW: Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed.
    */
   @JsonIgnore public java.util.Collection<Long> getCvdNumC19OverflowPatsLongs() {
-    final Object current = myData.get("cvdNumC19OverflowPats");
+    final java.lang.Object current = myData.get("cvdNumC19OverflowPats");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Long>) current;
@@ -465,7 +465,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numc19overflowpats - ED/OVERFLOW: Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed.
    */
   @JsonIgnore public java.util.Collection<Float> getCvdNumC19OverflowPatsFloats() {
-    final Object current = myData.get("cvdNumC19OverflowPats");
+    final java.lang.Object current = myData.get("cvdNumC19OverflowPats");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Float>) current;
@@ -482,7 +482,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numc19overflowpats - ED/OVERFLOW: Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed.
    */
   @JsonIgnore public java.util.Collection<Double> getCvdNumC19OverflowPatsDoubles() {
-    final Object current = myData.get("cvdNumC19OverflowPats");
+    final java.lang.Object current = myData.get("cvdNumC19OverflowPats");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Double>) current;
@@ -499,7 +499,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numc19overflowpats - ED/OVERFLOW: Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed.
    */
   @JsonIgnore public java.util.Collection<String> getCvdNumC19OverflowPatsStrings() {
-    final Object current = myData.get("cvdNumC19OverflowPats");
+    final java.lang.Object current = myData.get("cvdNumC19OverflowPats");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -516,7 +516,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numc19died - DEATHS: Patients with suspected or confirmed COVID-19 who died in the hospital, ED, or any overflow location.
    */
   @JsonIgnore public java.util.Collection<Integer> getCvdNumC19DiedIntegers() {
-    final Object current = myData.get("cvdNumC19Died");
+    final java.lang.Object current = myData.get("cvdNumC19Died");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -533,7 +533,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numc19died - DEATHS: Patients with suspected or confirmed COVID-19 who died in the hospital, ED, or any overflow location.
    */
   @JsonIgnore public java.util.Collection<Long> getCvdNumC19DiedLongs() {
-    final Object current = myData.get("cvdNumC19Died");
+    final java.lang.Object current = myData.get("cvdNumC19Died");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Long>) current;
@@ -550,7 +550,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numc19died - DEATHS: Patients with suspected or confirmed COVID-19 who died in the hospital, ED, or any overflow location.
    */
   @JsonIgnore public java.util.Collection<Float> getCvdNumC19DiedFloats() {
-    final Object current = myData.get("cvdNumC19Died");
+    final java.lang.Object current = myData.get("cvdNumC19Died");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Float>) current;
@@ -567,7 +567,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numc19died - DEATHS: Patients with suspected or confirmed COVID-19 who died in the hospital, ED, or any overflow location.
    */
   @JsonIgnore public java.util.Collection<Double> getCvdNumC19DiedDoubles() {
-    final Object current = myData.get("cvdNumC19Died");
+    final java.lang.Object current = myData.get("cvdNumC19Died");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Double>) current;
@@ -584,7 +584,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numc19died - DEATHS: Patients with suspected or confirmed COVID-19 who died in the hospital, ED, or any overflow location.
    */
   @JsonIgnore public java.util.Collection<String> getCvdNumC19DiedStrings() {
-    final Object current = myData.get("cvdNumC19Died");
+    final java.lang.Object current = myData.get("cvdNumC19Died");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -601,7 +601,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numc19hopats - HOSPITAL ONSET: Patients hospitalized in an NHSN inpatient care location with onset of suspected or confirmed COVID-19 14 or more days after hospitalization.
    */
   @JsonIgnore public java.util.Collection<Integer> getCvdNumC19HOPatsIntegers() {
-    final Object current = myData.get("cvdNumC19HOPats");
+    final java.lang.Object current = myData.get("cvdNumC19HOPats");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -618,7 +618,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numc19hopats - HOSPITAL ONSET: Patients hospitalized in an NHSN inpatient care location with onset of suspected or confirmed COVID-19 14 or more days after hospitalization.
    */
   @JsonIgnore public java.util.Collection<Long> getCvdNumC19HOPatsLongs() {
-    final Object current = myData.get("cvdNumC19HOPats");
+    final java.lang.Object current = myData.get("cvdNumC19HOPats");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Long>) current;
@@ -635,7 +635,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numc19hopats - HOSPITAL ONSET: Patients hospitalized in an NHSN inpatient care location with onset of suspected or confirmed COVID-19 14 or more days after hospitalization.
    */
   @JsonIgnore public java.util.Collection<Float> getCvdNumC19HOPatsFloats() {
-    final Object current = myData.get("cvdNumC19HOPats");
+    final java.lang.Object current = myData.get("cvdNumC19HOPats");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Float>) current;
@@ -652,7 +652,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numc19hopats - HOSPITAL ONSET: Patients hospitalized in an NHSN inpatient care location with onset of suspected or confirmed COVID-19 14 or more days after hospitalization.
    */
   @JsonIgnore public java.util.Collection<Double> getCvdNumC19HOPatsDoubles() {
-    final Object current = myData.get("cvdNumC19HOPats");
+    final java.lang.Object current = myData.get("cvdNumC19HOPats");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Double>) current;
@@ -669,7 +669,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numc19hopats - HOSPITAL ONSET: Patients hospitalized in an NHSN inpatient care location with onset of suspected or confirmed COVID-19 14 or more days after hospitalization.
    */
   @JsonIgnore public java.util.Collection<String> getCvdNumC19HOPatsStrings() {
-    final Object current = myData.get("cvdNumC19HOPats");
+    final java.lang.Object current = myData.get("cvdNumC19HOPats");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -686,7 +686,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numventuse - MECHANICAL VENTILATORS IN USE: Total number of ventilators in use.
    */
   @JsonIgnore public java.util.Collection<Integer> getCvdNumVentUseIntegers() {
-    final Object current = myData.get("cvdNumVentUse");
+    final java.lang.Object current = myData.get("cvdNumVentUse");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -703,7 +703,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numventuse - MECHANICAL VENTILATORS IN USE: Total number of ventilators in use.
    */
   @JsonIgnore public java.util.Collection<Long> getCvdNumVentUseLongs() {
-    final Object current = myData.get("cvdNumVentUse");
+    final java.lang.Object current = myData.get("cvdNumVentUse");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Long>) current;
@@ -720,7 +720,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numventuse - MECHANICAL VENTILATORS IN USE: Total number of ventilators in use.
    */
   @JsonIgnore public java.util.Collection<Float> getCvdNumVentUseFloats() {
-    final Object current = myData.get("cvdNumVentUse");
+    final java.lang.Object current = myData.get("cvdNumVentUse");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Float>) current;
@@ -737,7 +737,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numventuse - MECHANICAL VENTILATORS IN USE: Total number of ventilators in use.
    */
   @JsonIgnore public java.util.Collection<Double> getCvdNumVentUseDoubles() {
-    final Object current = myData.get("cvdNumVentUse");
+    final java.lang.Object current = myData.get("cvdNumVentUse");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Double>) current;
@@ -754,7 +754,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numventuse - MECHANICAL VENTILATORS IN USE: Total number of ventilators in use.
    */
   @JsonIgnore public java.util.Collection<String> getCvdNumVentUseStrings() {
-    final Object current = myData.get("cvdNumVentUse");
+    final java.lang.Object current = myData.get("cvdNumVentUse");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -771,7 +771,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numc19ofmechventpats - ED/OVERFLOW and VENTILATED: Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed and on a mechanical ventilator.
    */
   @JsonIgnore public java.util.Collection<Integer> getCvdNumC19OFMechVentPatsIntegers() {
-    final Object current = myData.get("cvdNumC19OFMechVentPats");
+    final java.lang.Object current = myData.get("cvdNumC19OFMechVentPats");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -788,7 +788,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numc19ofmechventpats - ED/OVERFLOW and VENTILATED: Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed and on a mechanical ventilator.
    */
   @JsonIgnore public java.util.Collection<Long> getCvdNumC19OFMechVentPatsLongs() {
-    final Object current = myData.get("cvdNumC19OFMechVentPats");
+    final java.lang.Object current = myData.get("cvdNumC19OFMechVentPats");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Long>) current;
@@ -805,7 +805,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numc19ofmechventpats - ED/OVERFLOW and VENTILATED: Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed and on a mechanical ventilator.
    */
   @JsonIgnore public java.util.Collection<Float> getCvdNumC19OFMechVentPatsFloats() {
-    final Object current = myData.get("cvdNumC19OFMechVentPats");
+    final java.lang.Object current = myData.get("cvdNumC19OFMechVentPats");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Float>) current;
@@ -822,7 +822,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numc19ofmechventpats - ED/OVERFLOW and VENTILATED: Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed and on a mechanical ventilator.
    */
   @JsonIgnore public java.util.Collection<Double> getCvdNumC19OFMechVentPatsDoubles() {
-    final Object current = myData.get("cvdNumC19OFMechVentPats");
+    final java.lang.Object current = myData.get("cvdNumC19OFMechVentPats");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Double>) current;
@@ -839,7 +839,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numc19ofmechventpats - ED/OVERFLOW and VENTILATED: Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed and on a mechanical ventilator.
    */
   @JsonIgnore public java.util.Collection<String> getCvdNumC19OFMechVentPatsStrings() {
-    final Object current = myData.get("cvdNumC19OFMechVentPats");
+    final java.lang.Object current = myData.get("cvdNumC19OFMechVentPats");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -856,7 +856,7 @@ public class CDCPMDRecord extends StructuredValue {
    * Name of the County of the NHSN facility that this data record applies to. Use [[cvdFacilityId]] to identify the facility. To provide other details, [[healthcareReportingData]] can be used on a [[Hospital]] entry.
    */
   @JsonIgnore public java.util.Collection<String> getCvdFacilityCountys() {
-    final Object current = myData.get("cvdFacilityCounty");
+    final java.lang.Object current = myData.get("cvdFacilityCounty");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -873,7 +873,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numbedsocc - HOSPITAL INPATIENT BED OCCUPANCY: Total number of staffed inpatient beds that are occupied.
    */
   @JsonIgnore public java.util.Collection<Integer> getCvdNumBedsOccIntegers() {
-    final Object current = myData.get("cvdNumBedsOcc");
+    final java.lang.Object current = myData.get("cvdNumBedsOcc");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -890,7 +890,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numbedsocc - HOSPITAL INPATIENT BED OCCUPANCY: Total number of staffed inpatient beds that are occupied.
    */
   @JsonIgnore public java.util.Collection<Long> getCvdNumBedsOccLongs() {
-    final Object current = myData.get("cvdNumBedsOcc");
+    final java.lang.Object current = myData.get("cvdNumBedsOcc");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Long>) current;
@@ -907,7 +907,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numbedsocc - HOSPITAL INPATIENT BED OCCUPANCY: Total number of staffed inpatient beds that are occupied.
    */
   @JsonIgnore public java.util.Collection<Float> getCvdNumBedsOccFloats() {
-    final Object current = myData.get("cvdNumBedsOcc");
+    final java.lang.Object current = myData.get("cvdNumBedsOcc");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Float>) current;
@@ -924,7 +924,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numbedsocc - HOSPITAL INPATIENT BED OCCUPANCY: Total number of staffed inpatient beds that are occupied.
    */
   @JsonIgnore public java.util.Collection<Double> getCvdNumBedsOccDoubles() {
-    final Object current = myData.get("cvdNumBedsOcc");
+    final java.lang.Object current = myData.get("cvdNumBedsOcc");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Double>) current;
@@ -941,7 +941,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numbedsocc - HOSPITAL INPATIENT BED OCCUPANCY: Total number of staffed inpatient beds that are occupied.
    */
   @JsonIgnore public java.util.Collection<String> getCvdNumBedsOccStrings() {
-    final Object current = myData.get("cvdNumBedsOcc");
+    final java.lang.Object current = myData.get("cvdNumBedsOcc");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -958,7 +958,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numtotbeds - ALL HOSPITAL BEDS: Total number of all Inpatient and outpatient beds, including all staffed,ICU, licensed, and overflow (surge) beds used for inpatients or outpatients.
    */
   @JsonIgnore public java.util.Collection<Integer> getCvdNumTotBedsIntegers() {
-    final Object current = myData.get("cvdNumTotBeds");
+    final java.lang.Object current = myData.get("cvdNumTotBeds");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -975,7 +975,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numtotbeds - ALL HOSPITAL BEDS: Total number of all Inpatient and outpatient beds, including all staffed,ICU, licensed, and overflow (surge) beds used for inpatients or outpatients.
    */
   @JsonIgnore public java.util.Collection<Long> getCvdNumTotBedsLongs() {
-    final Object current = myData.get("cvdNumTotBeds");
+    final java.lang.Object current = myData.get("cvdNumTotBeds");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Long>) current;
@@ -992,7 +992,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numtotbeds - ALL HOSPITAL BEDS: Total number of all Inpatient and outpatient beds, including all staffed,ICU, licensed, and overflow (surge) beds used for inpatients or outpatients.
    */
   @JsonIgnore public java.util.Collection<Float> getCvdNumTotBedsFloats() {
-    final Object current = myData.get("cvdNumTotBeds");
+    final java.lang.Object current = myData.get("cvdNumTotBeds");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Float>) current;
@@ -1009,7 +1009,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numtotbeds - ALL HOSPITAL BEDS: Total number of all Inpatient and outpatient beds, including all staffed,ICU, licensed, and overflow (surge) beds used for inpatients or outpatients.
    */
   @JsonIgnore public java.util.Collection<Double> getCvdNumTotBedsDoubles() {
-    final Object current = myData.get("cvdNumTotBeds");
+    final java.lang.Object current = myData.get("cvdNumTotBeds");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Double>) current;
@@ -1026,7 +1026,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numtotbeds - ALL HOSPITAL BEDS: Total number of all Inpatient and outpatient beds, including all staffed,ICU, licensed, and overflow (surge) beds used for inpatients or outpatients.
    */
   @JsonIgnore public java.util.Collection<String> getCvdNumTotBedsStrings() {
-    final Object current = myData.get("cvdNumTotBeds");
+    final java.lang.Object current = myData.get("cvdNumTotBeds");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -1043,7 +1043,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numc19hosppats - HOSPITALIZED: Patients currently hospitalized in an inpatient care location who have suspected or confirmed COVID-19.
    */
   @JsonIgnore public java.util.Collection<Integer> getCvdNumC19HospPatsIntegers() {
-    final Object current = myData.get("cvdNumC19HospPats");
+    final java.lang.Object current = myData.get("cvdNumC19HospPats");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -1060,7 +1060,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numc19hosppats - HOSPITALIZED: Patients currently hospitalized in an inpatient care location who have suspected or confirmed COVID-19.
    */
   @JsonIgnore public java.util.Collection<Long> getCvdNumC19HospPatsLongs() {
-    final Object current = myData.get("cvdNumC19HospPats");
+    final java.lang.Object current = myData.get("cvdNumC19HospPats");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Long>) current;
@@ -1077,7 +1077,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numc19hosppats - HOSPITALIZED: Patients currently hospitalized in an inpatient care location who have suspected or confirmed COVID-19.
    */
   @JsonIgnore public java.util.Collection<Float> getCvdNumC19HospPatsFloats() {
-    final Object current = myData.get("cvdNumC19HospPats");
+    final java.lang.Object current = myData.get("cvdNumC19HospPats");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Float>) current;
@@ -1094,7 +1094,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numc19hosppats - HOSPITALIZED: Patients currently hospitalized in an inpatient care location who have suspected or confirmed COVID-19.
    */
   @JsonIgnore public java.util.Collection<Double> getCvdNumC19HospPatsDoubles() {
-    final Object current = myData.get("cvdNumC19HospPats");
+    final java.lang.Object current = myData.get("cvdNumC19HospPats");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Double>) current;
@@ -1111,7 +1111,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numc19hosppats - HOSPITALIZED: Patients currently hospitalized in an inpatient care location who have suspected or confirmed COVID-19.
    */
   @JsonIgnore public java.util.Collection<String> getCvdNumC19HospPatsStrings() {
-    final Object current = myData.get("cvdNumC19HospPats");
+    final java.lang.Object current = myData.get("cvdNumC19HospPats");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -1128,7 +1128,7 @@ public class CDCPMDRecord extends StructuredValue {
    * Identifier of the NHSN facility that this data record applies to. Use [[cvdFacilityCounty]] to indicate the county. To provide other details, [[healthcareReportingData]] can be used on a [[Hospital]] entry.
    */
   @JsonIgnore public java.util.Collection<String> getCvdFacilityIds() {
-    final Object current = myData.get("cvdFacilityId");
+    final java.lang.Object current = myData.get("cvdFacilityId");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -1145,7 +1145,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numicubedsocc - ICU BED OCCUPANCY: Total number of staffed inpatient ICU beds that are occupied.
    */
   @JsonIgnore public java.util.Collection<Integer> getCvdNumICUBedsOccIntegers() {
-    final Object current = myData.get("cvdNumICUBedsOcc");
+    final java.lang.Object current = myData.get("cvdNumICUBedsOcc");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -1162,7 +1162,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numicubedsocc - ICU BED OCCUPANCY: Total number of staffed inpatient ICU beds that are occupied.
    */
   @JsonIgnore public java.util.Collection<Long> getCvdNumICUBedsOccLongs() {
-    final Object current = myData.get("cvdNumICUBedsOcc");
+    final java.lang.Object current = myData.get("cvdNumICUBedsOcc");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Long>) current;
@@ -1179,7 +1179,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numicubedsocc - ICU BED OCCUPANCY: Total number of staffed inpatient ICU beds that are occupied.
    */
   @JsonIgnore public java.util.Collection<Float> getCvdNumICUBedsOccFloats() {
-    final Object current = myData.get("cvdNumICUBedsOcc");
+    final java.lang.Object current = myData.get("cvdNumICUBedsOcc");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Float>) current;
@@ -1196,7 +1196,7 @@ public class CDCPMDRecord extends StructuredValue {
    * numicubedsocc - ICU BED OCCUPANCY: Total number of staffed inpatient ICU beds that are occupied.
    */
   @JsonIgnore public java.util.Collection<Double> getCvdNumICUBedsOccDoubles() {
-    final Object current = myData.get("cvdNumICUBedsOcc");
+    final java.lang.Object current = myData.get("cvdNumICUBedsOcc");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Double>) current;
@@ -1213,14 +1213,14 @@ public class CDCPMDRecord extends StructuredValue {
    * numicubedsocc - ICU BED OCCUPANCY: Total number of staffed inpatient ICU beds that are occupied.
    */
   @JsonIgnore public java.util.Collection<String> getCvdNumICUBedsOccStrings() {
-    final Object current = myData.get("cvdNumICUBedsOcc");
+    final java.lang.Object current = myData.get("cvdNumICUBedsOcc");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
-  protected CDCPMDRecord(java.util.Map<String,Object> data) {
+  protected CDCPMDRecord(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -1228,7 +1228,7 @@ public class CDCPMDRecord extends StructuredValue {
    * Builder for {@link CDCPMDRecord}
    */
   public static class Builder extends StructuredValue.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public CDCPMDRecord build() {
@@ -1725,6 +1725,21 @@ public class CDCPMDRecord extends StructuredValue {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -1743,6 +1758,13 @@ public class CDCPMDRecord extends StructuredValue {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -1836,7 +1858,7 @@ public class CDCPMDRecord extends StructuredValue {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("cvdNumICUBeds".equals(key) && value instanceof Integer) { this.cvdNumICUBeds((Integer)value); return; }
       if ("cvdNumICUBedss".equals(key) && value instanceof Integer) { this.cvdNumICUBeds((Integer)value); return; }
       if ("cvdNumICUBeds".equals(key) && value instanceof Long) { this.cvdNumICUBeds((Long)value); return; }

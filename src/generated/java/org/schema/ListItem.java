@@ -28,6 +28,23 @@ import java.util.*;
  */
 public class ListItem extends Intangible {
   /**
+   * The position of an item in a series or sequence of items.
+   */
+  @JsonIgnore public Position getPosition() {
+    return (Position) getValue("position");
+  }
+  /**
+   * The position of an item in a series or sequence of items.
+   */
+  @JsonIgnore public java.util.Collection<Position> getPositions() {
+    final java.lang.Object current = myData.get("position");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Position>) current;
+    }
+    return Arrays.asList((Position) current);
+  }
+  /**
    * A link to the ListItem that preceeds the current one.
    */
   @JsonIgnore public ListItem getPreviousItem() {
@@ -37,7 +54,7 @@ public class ListItem extends Intangible {
    * A link to the ListItem that preceeds the current one.
    */
   @JsonIgnore public java.util.Collection<ListItem> getPreviousItems() {
-    final Object current = myData.get("previousItem");
+    final java.lang.Object current = myData.get("previousItem");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<ListItem>) current;
@@ -54,7 +71,7 @@ public class ListItem extends Intangible {
    * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')&rsquo;.
    */
   @JsonIgnore public java.util.Collection<Thing> getItems() {
-    final Object current = myData.get("item");
+    final java.lang.Object current = myData.get("item");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Thing>) current;
@@ -71,14 +88,14 @@ public class ListItem extends Intangible {
    * A link to the ListItem that follows the current one.
    */
   @JsonIgnore public java.util.Collection<ListItem> getNextItems() {
-    final Object current = myData.get("nextItem");
+    final java.lang.Object current = myData.get("nextItem");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<ListItem>) current;
     }
     return Arrays.asList((ListItem) current);
   }
-  protected ListItem(java.util.Map<String,Object> data) {
+  protected ListItem(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -86,11 +103,18 @@ public class ListItem extends Intangible {
    * Builder for {@link ListItem}
    */
   public static class Builder extends Intangible.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public ListItem build() {
       return new ListItem(myData);
+    }
+    /**
+     * The position of an item in a series or sequence of items.
+     */
+    @NotNull public Builder position(@NotNull Position position) {
+      putValue("position", position);
+      return this;
     }
     /**
      * A link to the ListItem that preceeds the current one.
@@ -135,6 +159,21 @@ public class ListItem extends Intangible {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -153,6 +192,13 @@ public class ListItem extends Intangible {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -246,7 +292,9 @@ public class ListItem extends Intangible {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
+      if ("position".equals(key) && value instanceof Position) { this.position((Position)value); return; }
+      if ("positions".equals(key) && value instanceof Position) { this.position((Position)value); return; }
       if ("previousItem".equals(key) && value instanceof ListItem) { this.previousItem((ListItem)value); return; }
       if ("previousItems".equals(key) && value instanceof ListItem) { this.previousItem((ListItem)value); return; }
       if ("item".equals(key) && value instanceof Thing) { this.item((Thing)value); return; }

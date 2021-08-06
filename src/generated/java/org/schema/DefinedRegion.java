@@ -50,7 +50,7 @@ public class DefinedRegion extends StructuredValue {
    * The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country) 
    */
   @JsonIgnore public java.util.Collection<String> getAddressRegions() {
-    final Object current = myData.get("addressRegion");
+    final java.lang.Object current = myData.get("addressRegion");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -67,7 +67,7 @@ public class DefinedRegion extends StructuredValue {
    * A defined range of postal codes.
    */
   @JsonIgnore public java.util.Collection<PostalCodeRangeSpecification> getPostalCodeRanges() {
-    final Object current = myData.get("postalCodeRange");
+    final java.lang.Object current = myData.get("postalCodeRange");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<PostalCodeRangeSpecification>) current;
@@ -84,7 +84,7 @@ public class DefinedRegion extends StructuredValue {
    * The postal code. For example, 94043.
    */
   @JsonIgnore public java.util.Collection<String> getPostalCodes() {
-    final Object current = myData.get("postalCode");
+    final java.lang.Object current = myData.get("postalCode");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -101,7 +101,7 @@ public class DefinedRegion extends StructuredValue {
    * A defined range of postal codes indicated by a common textual prefix. Used for non-numeric systems such as UK.
    */
   @JsonIgnore public java.util.Collection<String> getPostalCodePrefixs() {
-    final Object current = myData.get("postalCodePrefix");
+    final java.lang.Object current = myData.get("postalCodePrefix");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -118,7 +118,7 @@ public class DefinedRegion extends StructuredValue {
    * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
    */
   @JsonIgnore public java.util.Collection<Country> getAddressCountryCountrys() {
-    final Object current = myData.get("addressCountry");
+    final java.lang.Object current = myData.get("addressCountry");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Country>) current;
@@ -135,14 +135,14 @@ public class DefinedRegion extends StructuredValue {
    * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
    */
   @JsonIgnore public java.util.Collection<String> getAddressCountryStrings() {
-    final Object current = myData.get("addressCountry");
+    final java.lang.Object current = myData.get("addressCountry");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
-  protected DefinedRegion(java.util.Map<String,Object> data) {
+  protected DefinedRegion(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -150,7 +150,7 @@ public class DefinedRegion extends StructuredValue {
    * Builder for {@link DefinedRegion}
    */
   public static class Builder extends StructuredValue.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public DefinedRegion build() {
@@ -213,6 +213,21 @@ public class DefinedRegion extends StructuredValue {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -231,6 +246,13 @@ public class DefinedRegion extends StructuredValue {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -324,7 +346,7 @@ public class DefinedRegion extends StructuredValue {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("addressRegion".equals(key) && value instanceof String) { this.addressRegion((String)value); return; }
       if ("addressRegions".equals(key) && value instanceof String) { this.addressRegion((String)value); return; }
       if ("postalCodeRange".equals(key) && value instanceof PostalCodeRangeSpecification) { this.postalCodeRange((PostalCodeRangeSpecification)value); return; }

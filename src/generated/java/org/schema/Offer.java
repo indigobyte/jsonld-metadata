@@ -37,7 +37,7 @@ public class Offer extends Intangible {
    * The typical delay between the receipt of the order and the goods either leaving the warehouse or being prepared for pickup, in case the delivery method is on site pickup.
    */
   @JsonIgnore public java.util.Collection<QuantitativeValue> getDeliveryLeadTimes() {
-    final Object current = myData.get("deliveryLeadTime");
+    final java.lang.Object current = myData.get("deliveryLeadTime");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<QuantitativeValue>) current;
@@ -54,7 +54,7 @@ public class Offer extends Intangible {
    * The end of the availability of the product or service included in the offer.
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getAvailabilityEndss() {
-    final Object current = myData.get("availabilityEnds");
+    final java.lang.Object current = myData.get("availabilityEnds");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<java.util.Date>) current;
@@ -71,7 +71,7 @@ public class Offer extends Intangible {
    * The date when the item becomes valid.
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getValidFroms() {
-    final Object current = myData.get("validFrom");
+    final java.lang.Object current = myData.get("validFrom");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<java.util.Date>) current;
@@ -88,12 +88,31 @@ public class Offer extends Intangible {
    * The current approximate inventory level for the item or items.
    */
   @JsonIgnore public java.util.Collection<QuantitativeValue> getInventoryLevels() {
-    final Object current = myData.get("inventoryLevel");
+    final java.lang.Object current = myData.get("inventoryLevel");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
+  }
+  /**
+   * A Global Trade Item Number ([GTIN](https://www.gs1.org/standards/id-keys/gtin)). GTINs identify trade items, including products and services, using numeric identification codes. The [[gtin]] property generalizes the earlier [[gtin8]], [[gtin12]], [[gtin13]], and [[gtin14]] properties. The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) express GTINs as URLs. A correct [[gtin]] value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a &quot;GS1 Digital Link&quot; URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1's GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged.
+   *    
+   */
+  @JsonIgnore public Gtin getGtin() {
+    return (Gtin) getValue("gtin");
+  }
+  /**
+   * A Global Trade Item Number ([GTIN](https://www.gs1.org/standards/id-keys/gtin)). GTINs identify trade items, including products and services, using numeric identification codes. The [[gtin]] property generalizes the earlier [[gtin8]], [[gtin12]], [[gtin13]], and [[gtin14]] properties. The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) express GTINs as URLs. A correct [[gtin]] value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a &quot;GS1 Digital Link&quot; URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1's GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged.
+   *    
+   */
+  @JsonIgnore public java.util.Collection<Gtin> getGtins() {
+    final java.lang.Object current = myData.get("gtin");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Gtin>) current;
+    }
+    return Arrays.asList((Gtin) current);
   }
   /**
    * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
@@ -105,7 +124,7 @@ public class Offer extends Intangible {
    * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
    */
   @JsonIgnore public java.util.Collection<Gtin> getGtin13s() {
-    final Object current = myData.get("gtin13");
+    final java.lang.Object current = myData.get("gtin13");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Gtin>) current;
@@ -124,7 +143,7 @@ public class Offer extends Intangible {
    *       
    */
   @JsonIgnore public java.util.Collection<GeoShape> getIneligibleRegionGeoShapes() {
-    final Object current = myData.get("ineligibleRegion");
+    final java.lang.Object current = myData.get("ineligibleRegion");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<GeoShape>) current;
@@ -143,7 +162,7 @@ public class Offer extends Intangible {
    *       
    */
   @JsonIgnore public java.util.Collection<Place> getIneligibleRegionPlaces() {
-    final Object current = myData.get("ineligibleRegion");
+    final java.lang.Object current = myData.get("ineligibleRegion");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Place>) current;
@@ -162,7 +181,7 @@ public class Offer extends Intangible {
    *       
    */
   @JsonIgnore public java.util.Collection<String> getIneligibleRegionStrings() {
-    final Object current = myData.get("ineligibleRegion");
+    final java.lang.Object current = myData.get("ineligibleRegion");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -179,7 +198,7 @@ public class Offer extends Intangible {
    * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
    */
   @JsonIgnore public java.util.Collection<Identifier> getGtin14s() {
-    final Object current = myData.get("gtin14");
+    final java.lang.Object current = myData.get("gtin14");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Identifier>) current;
@@ -196,7 +215,7 @@ public class Offer extends Intangible {
    * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
    */
   @JsonIgnore public java.util.Collection<OfferItemCondition> getItemConditions() {
-    final Object current = myData.get("itemCondition");
+    final java.lang.Object current = myData.get("itemCondition");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<OfferItemCondition>) current;
@@ -215,7 +234,7 @@ public class Offer extends Intangible {
    *       
    */
   @JsonIgnore public java.util.Collection<Number> getPriceNumbers() {
-    final Object current = myData.get("price");
+    final java.lang.Object current = myData.get("price");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Number>) current;
@@ -234,7 +253,7 @@ public class Offer extends Intangible {
    *       
    */
   @JsonIgnore public java.util.Collection<String> getPriceStrings() {
-    final Object current = myData.get("price");
+    final java.lang.Object current = myData.get("price");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -251,7 +270,7 @@ public class Offer extends Intangible {
    * One or more detailed price specifications, indicating the unit price and delivery or payment charges.
    */
   @JsonIgnore public java.util.Collection<PriceSpecification> getPriceSpecifications() {
-    final Object current = myData.get("priceSpecification");
+    final java.lang.Object current = myData.get("priceSpecification");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<PriceSpecification>) current;
@@ -268,7 +287,7 @@ public class Offer extends Intangible {
    * The overall rating, based on a collection of reviews or ratings, of the item.
    */
   @JsonIgnore public java.util.Collection<AggregateRating> getAggregateRatings() {
-    final Object current = myData.get("aggregateRating");
+    final java.lang.Object current = myData.get("aggregateRating");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<AggregateRating>) current;
@@ -285,7 +304,7 @@ public class Offer extends Intangible {
    * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
    */
   @JsonIgnore public java.util.Collection<String> getMpns() {
-    final Object current = myData.get("mpn");
+    final java.lang.Object current = myData.get("mpn");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -302,7 +321,7 @@ public class Offer extends Intangible {
    * The type(s) of customers for which the given offer is valid.
    */
   @JsonIgnore public java.util.Collection<BusinessEntityType> getEligibleCustomerTypes() {
-    final Object current = myData.get("eligibleCustomerType");
+    final java.lang.Object current = myData.get("eligibleCustomerType");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<BusinessEntityType>) current;
@@ -319,7 +338,7 @@ public class Offer extends Intangible {
    * The payment method(s) accepted by seller for this offer.
    */
   @JsonIgnore public java.util.Collection<LoanOrCredit> getAcceptedPaymentMethodLoanOrCredits() {
-    final Object current = myData.get("acceptedPaymentMethod");
+    final java.lang.Object current = myData.get("acceptedPaymentMethod");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<LoanOrCredit>) current;
@@ -336,7 +355,7 @@ public class Offer extends Intangible {
    * The payment method(s) accepted by seller for this offer.
    */
   @JsonIgnore public java.util.Collection<PaymentMethod> getAcceptedPaymentMethodPaymentMethods() {
-    final Object current = myData.get("acceptedPaymentMethod");
+    final java.lang.Object current = myData.get("acceptedPaymentMethod");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<PaymentMethod>) current;
@@ -353,7 +372,7 @@ public class Offer extends Intangible {
    * This links to a node or nodes indicating the exact quantity of the products included in  an [[Offer]] or [[ProductCollection]].
    */
   @JsonIgnore public java.util.Collection<TypeAndQuantityNode> getIncludesObjects() {
-    final Object current = myData.get("includesObject");
+    final java.lang.Object current = myData.get("includesObject");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<TypeAndQuantityNode>) current;
@@ -370,7 +389,7 @@ public class Offer extends Intangible {
    * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
    */
   @JsonIgnore public java.util.Collection<Identifier> getGtin12s() {
-    final Object current = myData.get("gtin12");
+    final java.lang.Object current = myData.get("gtin12");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Identifier>) current;
@@ -387,7 +406,7 @@ public class Offer extends Intangible {
    * Indicates information about the shipping policies and options associated with an [[Offer]].
    */
   @JsonIgnore public java.util.Collection<OfferShippingDetails> getShippingDetailss() {
-    final Object current = myData.get("shippingDetails");
+    final java.lang.Object current = myData.get("shippingDetails");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<OfferShippingDetails>) current;
@@ -404,7 +423,7 @@ public class Offer extends Intangible {
    * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
    */
   @JsonIgnore public java.util.Collection<Identifier> getSkus() {
-    final Object current = myData.get("sku");
+    final java.lang.Object current = myData.get("sku");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Identifier>) current;
@@ -421,7 +440,7 @@ public class Offer extends Intangible {
    * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
    */
   @JsonIgnore public java.util.Collection<QuantitativeValue> getEligibleQuantitys() {
-    final Object current = myData.get("eligibleQuantity");
+    final java.lang.Object current = myData.get("eligibleQuantity");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<QuantitativeValue>) current;
@@ -438,7 +457,7 @@ public class Offer extends Intangible {
    * The warranty promise(s) included in the offer.
    */
   @JsonIgnore public java.util.Collection<WarrantyPromise> getWarrantys() {
-    final Object current = myData.get("warranty");
+    final java.lang.Object current = myData.get("warranty");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<WarrantyPromise>) current;
@@ -455,7 +474,24 @@ public class Offer extends Intangible {
    * The place(s) from which the offer can be obtained (e.g. store locations).
    */
   @JsonIgnore public java.util.Collection<AreaServed> getAvailableAtOrFroms() {
-    final Object current = myData.get("availableAtOrFrom");
+    final java.lang.Object current = myData.get("availableAtOrFrom");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<AreaServed>) current;
+    }
+    return Arrays.asList((AreaServed) current);
+  }
+  /**
+   * The geographic area where a service or offered item is provided.
+   */
+  @JsonIgnore public AreaServed getAreaServed() {
+    return (AreaServed) getValue("areaServed");
+  }
+  /**
+   * The geographic area where a service or offered item is provided.
+   */
+  @JsonIgnore public java.util.Collection<AreaServed> getAreaServeds() {
+    final java.lang.Object current = myData.get("areaServed");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<AreaServed>) current;
@@ -472,7 +508,7 @@ public class Offer extends Intangible {
    * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getValidThroughs() {
-    final Object current = myData.get("validThrough");
+    final java.lang.Object current = myData.get("validThrough");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<java.util.Date>) current;
@@ -489,7 +525,7 @@ public class Offer extends Intangible {
    * Specifies a MerchantReturnPolicy that may be applicable.
    */
   @JsonIgnore public java.util.Collection<MerchantReturnPolicy> getHasMerchantReturnPolicys() {
-    final Object current = myData.get("hasMerchantReturnPolicy");
+    final java.lang.Object current = myData.get("hasMerchantReturnPolicy");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MerchantReturnPolicy>) current;
@@ -506,7 +542,7 @@ public class Offer extends Intangible {
    * The delivery method(s) available for this offer.
    */
   @JsonIgnore public java.util.Collection<DeliveryMethod> getAvailableDeliveryMethods() {
-    final Object current = myData.get("availableDeliveryMethod");
+    final java.lang.Object current = myData.get("availableDeliveryMethod");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<DeliveryMethod>) current;
@@ -525,7 +561,7 @@ public class Offer extends Intangible {
    *     
    */
   @JsonIgnore public java.util.Collection<AreaServed> getEligibleRegions() {
-    final Object current = myData.get("eligibleRegion");
+    final java.lang.Object current = myData.get("eligibleRegion");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<AreaServed>) current;
@@ -542,7 +578,7 @@ public class Offer extends Intangible {
    * The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.
    */
   @JsonIgnore public java.util.Collection<PriceSpecification> getEligibleTransactionVolumes() {
-    final Object current = myData.get("eligibleTransactionVolume");
+    final java.lang.Object current = myData.get("eligibleTransactionVolume");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<PriceSpecification>) current;
@@ -559,7 +595,7 @@ public class Offer extends Intangible {
    * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
    */
   @JsonIgnore public java.util.Collection<Category> getCategorys() {
-    final Object current = myData.get("category");
+    final java.lang.Object current = myData.get("category");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Category>) current;
@@ -576,7 +612,7 @@ public class Offer extends Intangible {
    * Length of the lease for some [[Accommodation]], either particular to some [[Offer]] or in some cases intrinsic to the property.
    */
   @JsonIgnore public java.util.Collection<Duration> getLeaseLengthDurations() {
-    final Object current = myData.get("leaseLength");
+    final java.lang.Object current = myData.get("leaseLength");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Duration>) current;
@@ -593,7 +629,7 @@ public class Offer extends Intangible {
    * Length of the lease for some [[Accommodation]], either particular to some [[Offer]] or in some cases intrinsic to the property.
    */
   @JsonIgnore public java.util.Collection<QuantitativeValue> getLeaseLengthQuantitativeValues() {
-    final Object current = myData.get("leaseLength");
+    final java.lang.Object current = myData.get("leaseLength");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<QuantitativeValue>) current;
@@ -610,7 +646,7 @@ public class Offer extends Intangible {
    * The serial number or any alphanumeric identifier of a particular product. When attached to an offer, it is a shortcut for the serial number of the product included in the offer.
    */
   @JsonIgnore public java.util.Collection<SerialNumber> getSerialNumbers() {
-    final Object current = myData.get("serialNumber");
+    final java.lang.Object current = myData.get("serialNumber");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<SerialNumber>) current;
@@ -627,7 +663,7 @@ public class Offer extends Intangible {
    * The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
    */
   @JsonIgnore public java.util.Collection<BusinessFunction> getBusinessFunctions() {
-    final Object current = myData.get("businessFunction");
+    final java.lang.Object current = myData.get("businessFunction");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<BusinessFunction>) current;
@@ -644,7 +680,7 @@ public class Offer extends Intangible {
    * A review of the item.
    */
   @JsonIgnore public java.util.Collection<Review> getReviews() {
-    final Object current = myData.get("review");
+    final java.lang.Object current = myData.get("review");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Review>) current;
@@ -661,7 +697,7 @@ public class Offer extends Intangible {
    * The availability of this item&amp;#x2014;for example In stock, Out of stock, Pre-order, etc.
    */
   @JsonIgnore public java.util.Collection<ItemAvailability> getAvailabilitys() {
-    final Object current = myData.get("availability");
+    final java.lang.Object current = myData.get("availability");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<ItemAvailability>) current;
@@ -678,7 +714,7 @@ public class Offer extends Intangible {
    * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
    */
   @JsonIgnore public java.util.Collection<Participant> getSellers() {
-    final Object current = myData.get("seller");
+    final java.lang.Object current = myData.get("seller");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Participant>) current;
@@ -695,7 +731,7 @@ public class Offer extends Intangible {
    * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;.
    */
   @JsonIgnore public java.util.Collection<String> getPriceCurrencys() {
-    final Object current = myData.get("priceCurrency");
+    final java.lang.Object current = myData.get("priceCurrency");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -712,7 +748,7 @@ public class Offer extends Intangible {
    * The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
    */
   @JsonIgnore public java.util.Collection<Gtin> getGtin8s() {
-    final Object current = myData.get("gtin8");
+    final java.lang.Object current = myData.get("gtin8");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Gtin>) current;
@@ -729,7 +765,7 @@ public class Offer extends Intangible {
    * The date after which the price is no longer available.
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getPriceValidUntils() {
-    final Object current = myData.get("priceValidUntil");
+    final java.lang.Object current = myData.get("priceValidUntil");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<java.util.Date>) current;
@@ -746,7 +782,7 @@ public class Offer extends Intangible {
    * The duration for which the given offer is valid.
    */
   @JsonIgnore public java.util.Collection<QuantitativeValue> getEligibleDurations() {
-    final Object current = myData.get("eligibleDuration");
+    final java.lang.Object current = myData.get("eligibleDuration");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<QuantitativeValue>) current;
@@ -763,7 +799,7 @@ public class Offer extends Intangible {
    * The beginning of the availability of the product or service included in the offer.
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getAvailabilityStartss() {
-    final Object current = myData.get("availabilityStarts");
+    final java.lang.Object current = myData.get("availabilityStarts");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<java.util.Date>) current;
@@ -780,7 +816,7 @@ public class Offer extends Intangible {
    * A product measurement, for example the inseam of pants, the wheel size of a bicycle, or the gauge of a screw. Usually an exact measurement, but can also be a range of measurements for adjustable products, for example belts and ski bindings.
    */
   @JsonIgnore public java.util.Collection<QuantitativeValue> getHasMeasurements() {
-    final Object current = myData.get("hasMeasurement");
+    final java.lang.Object current = myData.get("hasMeasurement");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<QuantitativeValue>) current;
@@ -797,7 +833,7 @@ public class Offer extends Intangible {
    * The amount of time that is required between accepting the offer and the actual usage of the resource or service.
    */
   @JsonIgnore public java.util.Collection<QuantitativeValue> getAdvanceBookingRequirements() {
-    final Object current = myData.get("advanceBookingRequirement");
+    final java.lang.Object current = myData.get("advanceBookingRequirement");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<QuantitativeValue>) current;
@@ -814,7 +850,7 @@ public class Offer extends Intangible {
    * An additional offer that can only be obtained in combination with the first base offer (e.g. supplements and extensions that are available for a surcharge).
    */
   @JsonIgnore public java.util.Collection<Offer> getAddOns() {
-    final Object current = myData.get("addOn");
+    final java.lang.Object current = myData.get("addOn");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Offer>) current;
@@ -831,7 +867,7 @@ public class Offer extends Intangible {
    * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
    */
   @JsonIgnore public java.util.Collection<AggregateOffer> getItemOfferedAggregateOffers() {
-    final Object current = myData.get("itemOffered");
+    final java.lang.Object current = myData.get("itemOffered");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<AggregateOffer>) current;
@@ -848,7 +884,7 @@ public class Offer extends Intangible {
    * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
    */
   @JsonIgnore public java.util.Collection<CreativeWork> getItemOfferedCreativeWorks() {
-    final Object current = myData.get("itemOffered");
+    final java.lang.Object current = myData.get("itemOffered");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<CreativeWork>) current;
@@ -865,7 +901,7 @@ public class Offer extends Intangible {
    * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
    */
   @JsonIgnore public java.util.Collection<Event> getItemOfferedEvents() {
-    final Object current = myData.get("itemOffered");
+    final java.lang.Object current = myData.get("itemOffered");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Event>) current;
@@ -882,7 +918,7 @@ public class Offer extends Intangible {
    * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
    */
   @JsonIgnore public java.util.Collection<MenuItem> getItemOfferedMenuItems() {
-    final Object current = myData.get("itemOffered");
+    final java.lang.Object current = myData.get("itemOffered");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MenuItem>) current;
@@ -899,7 +935,7 @@ public class Offer extends Intangible {
    * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
    */
   @JsonIgnore public java.util.Collection<Product> getItemOfferedProducts() {
-    final Object current = myData.get("itemOffered");
+    final java.lang.Object current = myData.get("itemOffered");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Product>) current;
@@ -916,7 +952,7 @@ public class Offer extends Intangible {
    * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
    */
   @JsonIgnore public java.util.Collection<Service> getItemOfferedServices() {
-    final Object current = myData.get("itemOffered");
+    final java.lang.Object current = myData.get("itemOffered");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Service>) current;
@@ -933,7 +969,7 @@ public class Offer extends Intangible {
    * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
    */
   @JsonIgnore public java.util.Collection<Trip> getItemOfferedTrips() {
-    final Object current = myData.get("itemOffered");
+    final java.lang.Object current = myData.get("itemOffered");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Trip>) current;
@@ -950,7 +986,7 @@ public class Offer extends Intangible {
    * A pointer to the organization or person making the offer.
    */
   @JsonIgnore public java.util.Collection<Organization> getOfferedByOrganizations() {
-    final Object current = myData.get("offeredBy");
+    final java.lang.Object current = myData.get("offeredBy");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Organization>) current;
@@ -967,14 +1003,14 @@ public class Offer extends Intangible {
    * A pointer to the organization or person making the offer.
    */
   @JsonIgnore public java.util.Collection<Person> getOfferedByPersons() {
-    final Object current = myData.get("offeredBy");
+    final java.lang.Object current = myData.get("offeredBy");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
-  protected Offer(java.util.Map<String,Object> data) {
+  protected Offer(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -982,7 +1018,7 @@ public class Offer extends Intangible {
    * Builder for {@link Offer}
    */
   public static class Builder extends Intangible.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public Offer build() {
@@ -1028,6 +1064,14 @@ public class Offer extends Intangible {
      */
     @NotNull public Builder inventoryLevel(@NotNull QuantitativeValue.Builder quantitativeValue) {
       putValue("inventoryLevel", quantitativeValue.build());
+      return this;
+    }
+    /**
+     * A Global Trade Item Number ([GTIN](https://www.gs1.org/standards/id-keys/gtin)). GTINs identify trade items, including products and services, using numeric identification codes. The [[gtin]] property generalizes the earlier [[gtin8]], [[gtin12]], [[gtin13]], and [[gtin14]] properties. The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) express GTINs as URLs. A correct [[gtin]] value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a &quot;GS1 Digital Link&quot; URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1's GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged.
+     *    
+     */
+    @NotNull public Builder gtin(@NotNull Gtin gtin) {
+      putValue("gtin", gtin);
       return this;
     }
     /**
@@ -1238,6 +1282,13 @@ public class Offer extends Intangible {
      */
     @NotNull public Builder availableAtOrFrom(@NotNull AreaServed areaServed) {
       putValue("availableAtOrFrom", areaServed);
+      return this;
+    }
+    /**
+     * The geographic area where a service or offered item is provided.
+     */
+    @NotNull public Builder areaServed(@NotNull AreaServed areaServed) {
+      putValue("areaServed", areaServed);
       return this;
     }
     /**
@@ -1571,6 +1622,21 @@ public class Offer extends Intangible {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -1589,6 +1655,13 @@ public class Offer extends Intangible {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -1682,7 +1755,7 @@ public class Offer extends Intangible {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("deliveryLeadTime".equals(key) && value instanceof QuantitativeValue) { this.deliveryLeadTime((QuantitativeValue)value); return; }
       if ("deliveryLeadTimes".equals(key) && value instanceof QuantitativeValue) { this.deliveryLeadTime((QuantitativeValue)value); return; }
       if ("availabilityEnds".equals(key) && value instanceof java.util.Date) { this.availabilityEnds((java.util.Date)value); return; }
@@ -1691,6 +1764,8 @@ public class Offer extends Intangible {
       if ("validFroms".equals(key) && value instanceof java.util.Date) { this.validFrom((java.util.Date)value); return; }
       if ("inventoryLevel".equals(key) && value instanceof QuantitativeValue) { this.inventoryLevel((QuantitativeValue)value); return; }
       if ("inventoryLevels".equals(key) && value instanceof QuantitativeValue) { this.inventoryLevel((QuantitativeValue)value); return; }
+      if ("gtin".equals(key) && value instanceof Gtin) { this.gtin((Gtin)value); return; }
+      if ("gtins".equals(key) && value instanceof Gtin) { this.gtin((Gtin)value); return; }
       if ("gtin13".equals(key) && value instanceof Gtin) { this.gtin13((Gtin)value); return; }
       if ("gtin13s".equals(key) && value instanceof Gtin) { this.gtin13((Gtin)value); return; }
       if ("ineligibleRegion".equals(key) && value instanceof GeoShape) { this.ineligibleRegion((GeoShape)value); return; }
@@ -1733,6 +1808,8 @@ public class Offer extends Intangible {
       if ("warrantys".equals(key) && value instanceof WarrantyPromise) { this.warranty((WarrantyPromise)value); return; }
       if ("availableAtOrFrom".equals(key) && value instanceof AreaServed) { this.availableAtOrFrom((AreaServed)value); return; }
       if ("availableAtOrFroms".equals(key) && value instanceof AreaServed) { this.availableAtOrFrom((AreaServed)value); return; }
+      if ("areaServed".equals(key) && value instanceof AreaServed) { this.areaServed((AreaServed)value); return; }
+      if ("areaServeds".equals(key) && value instanceof AreaServed) { this.areaServed((AreaServed)value); return; }
       if ("validThrough".equals(key) && value instanceof java.util.Date) { this.validThrough((java.util.Date)value); return; }
       if ("validThroughs".equals(key) && value instanceof java.util.Date) { this.validThrough((java.util.Date)value); return; }
       if ("hasMerchantReturnPolicy".equals(key) && value instanceof MerchantReturnPolicy) { this.hasMerchantReturnPolicy((MerchantReturnPolicy)value); return; }

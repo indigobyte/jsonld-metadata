@@ -24,7 +24,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * 
+ * A common representation such as a protein sequence or chemical structure for this entity. For images use schema.org/image.Source: http://www.bioschemas.org
  */
 public interface HasRepresentation {
 }

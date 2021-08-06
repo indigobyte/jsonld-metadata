@@ -24,7 +24,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * 
+ * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
  */
 public interface HasPart {
 }

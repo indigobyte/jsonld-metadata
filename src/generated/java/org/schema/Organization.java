@@ -26,7 +26,30 @@ import java.util.*;
 /**
  * An organization such as a school, NGO, corporation, club, etc.
  */
-public class Organization extends Thing implements Creator, Sponsor, MemberOf {
+public class Organization extends Thing implements org.schema.Participant, Creator, Sponsor, Recipient, MemberOf {
+  /**
+   * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+   * 
+   * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+   * 
+   */
+  @JsonIgnore public PublishingPrinciples getPublishingPrinciples() {
+    return (PublishingPrinciples) getValue("publishingPrinciples");
+  }
+  /**
+   * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+   * 
+   * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+   * 
+   */
+  @JsonIgnore public java.util.Collection<PublishingPrinciples> getPublishingPrincipless() {
+    final java.lang.Object current = myData.get("publishingPrinciples");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<PublishingPrinciples>) current;
+    }
+    return Arrays.asList((PublishingPrinciples) current);
+  }
   /**
    * The number of employees in an organization e.g. business.
    */
@@ -37,7 +60,7 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * The number of employees in an organization e.g. business.
    */
   @JsonIgnore public java.util.Collection<QuantitativeValue> getNumberOfEmployeess() {
-    final Object current = myData.get("numberOfEmployees");
+    final java.lang.Object current = myData.get("numberOfEmployees");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<QuantitativeValue>) current;
@@ -54,7 +77,7 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
    */
   @JsonIgnore public java.util.Collection<String> getKnowsAboutStrings() {
-    final Object current = myData.get("knowsAbout");
+    final java.lang.Object current = myData.get("knowsAbout");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -71,7 +94,7 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
    */
   @JsonIgnore public java.util.Collection<Thing> getKnowsAboutThings() {
-    final Object current = myData.get("knowsAbout");
+    final java.lang.Object current = myData.get("knowsAbout");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Thing>) current;
@@ -88,7 +111,7 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * Upcoming or past event associated with this place, organization, or action.
    */
   @JsonIgnore public java.util.Collection<Event> getEvents() {
-    final Object current = myData.get("event");
+    final java.lang.Object current = myData.get("event");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Event>) current;
@@ -105,7 +128,7 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom&rsquo;s diversity policy on both staffing and sources, typically providing staffing data.
    */
   @JsonIgnore public java.util.Collection<CreativeWork> getDiversityPolicyCreativeWorks() {
-    final Object current = myData.get("diversityPolicy");
+    final java.lang.Object current = myData.get("diversityPolicy");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<CreativeWork>) current;
@@ -122,7 +145,7 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom&rsquo;s diversity policy on both staffing and sources, typically providing staffing data.
    */
   @JsonIgnore public java.util.Collection<String> getDiversityPolicyStrings() {
-    final Object current = myData.get("diversityPolicy");
+    final java.lang.Object current = myData.get("diversityPolicy");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -139,12 +162,29 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * A pointer to products or services sought by the organization or person (demand).
    */
   @JsonIgnore public java.util.Collection<Demand> getSeekss() {
-    final Object current = myData.get("seeks");
+    final java.lang.Object current = myData.get("seeks");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Demand>) current;
     }
     return Arrays.asList((Demand) current);
+  }
+  /**
+   * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+   */
+  @JsonIgnore public Location getLocation() {
+    return (Location) getValue("location");
+  }
+  /**
+   * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+   */
+  @JsonIgnore public java.util.Collection<Location> getLocations() {
+    final java.lang.Object current = myData.get("location");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Location>) current;
+    }
+    return Arrays.asList((Location) current);
   }
   /**
    * For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement about policy on use of unnamed sources and the decision process required.
@@ -156,7 +196,7 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement about policy on use of unnamed sources and the decision process required.
    */
   @JsonIgnore public java.util.Collection<PublishingPrinciples> getUnnamedSourcesPolicys() {
-    final Object current = myData.get("unnamedSourcesPolicy");
+    final java.lang.Object current = myData.get("unnamedSourcesPolicy");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<PublishingPrinciples>) current;
@@ -173,7 +213,7 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * The Dun &amp; Bradstreet DUNS number for identifying an organization or business person.
    */
   @JsonIgnore public java.util.Collection<Identifier> getDunss() {
-    final Object current = myData.get("duns");
+    final java.lang.Object current = myData.get("duns");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Identifier>) current;
@@ -190,7 +230,7 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * A contact point for a person or organization.
    */
   @JsonIgnore public java.util.Collection<ContactPoint> getContactPoints() {
-    final Object current = myData.get("contactPoint");
+    final java.lang.Object current = myData.get("contactPoint");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<ContactPoint>) current;
@@ -207,7 +247,7 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * The official name of the organization, e.g. the registered company name.
    */
   @JsonIgnore public java.util.Collection<String> getLegalNames() {
-    final Object current = myData.get("legalName");
+    final java.lang.Object current = myData.get("legalName");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -224,7 +264,7 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * nonprofit Status indicates the legal status of a non-profit organization in its primary place of business.
    */
   @JsonIgnore public java.util.Collection<NonprofitType> getNonprofitStatuss() {
-    final Object current = myData.get("nonprofitStatus");
+    final java.lang.Object current = myData.get("nonprofitStatus");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<NonprofitType>) current;
@@ -241,7 +281,7 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * The overall rating, based on a collection of reviews or ratings, of the item.
    */
   @JsonIgnore public java.util.Collection<AggregateRating> getAggregateRatings() {
-    final Object current = myData.get("aggregateRating");
+    final java.lang.Object current = myData.get("aggregateRating");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<AggregateRating>) current;
@@ -258,7 +298,7 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
    */
   @JsonIgnore public java.util.Collection<Identifier> getLeiCodes() {
-    final Object current = myData.get("leiCode");
+    final java.lang.Object current = myData.get("leiCode");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Identifier>) current;
@@ -275,7 +315,7 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * The date that this organization was founded.
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getFoundingDates() {
-    final Object current = myData.get("foundingDate");
+    final java.lang.Object current = myData.get("foundingDate");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<java.util.Date>) current;
@@ -292,7 +332,7 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
    */
   @JsonIgnore public java.util.Collection<PublishingPrinciples> getOwnershipFundingInfos() {
-    final Object current = myData.get("ownershipFundingInfo");
+    final java.lang.Object current = myData.get("ownershipFundingInfo");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<PublishingPrinciples>) current;
@@ -309,7 +349,7 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
    */
   @JsonIgnore public java.util.Collection<Organization> getMemberOrganizations() {
-    final Object current = myData.get("member");
+    final java.lang.Object current = myData.get("member");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Organization>) current;
@@ -326,7 +366,7 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
    */
   @JsonIgnore public java.util.Collection<Person> getMemberPersons() {
-    final Object current = myData.get("member");
+    final java.lang.Object current = myData.get("member");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Person>) current;
@@ -343,7 +383,7 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * Email address.
    */
   @JsonIgnore public java.util.Collection<String> getEmails() {
-    final Object current = myData.get("email");
+    final java.lang.Object current = myData.get("email");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -360,7 +400,7 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * The telephone number.
    */
   @JsonIgnore public java.util.Collection<String> getTelephones() {
-    final Object current = myData.get("telephone");
+    final java.lang.Object current = myData.get("telephone");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -377,7 +417,7 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * An associated logo.
    */
   @JsonIgnore public java.util.Collection<Image> getLogos() {
-    final Object current = myData.get("logo");
+    final java.lang.Object current = myData.get("logo");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Image>) current;
@@ -394,7 +434,7 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
    */
   @JsonIgnore public java.util.Collection<String> getIsicV4s() {
-    final Object current = myData.get("isicV4");
+    final java.lang.Object current = myData.get("isicV4");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -411,7 +451,7 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.
    */
   @JsonIgnore public java.util.Collection<PublishingPrinciples> getDiversityStaffingReports() {
-    final Object current = myData.get("diversityStaffingReport");
+    final java.lang.Object current = myData.get("diversityStaffingReport");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<PublishingPrinciples>) current;
@@ -428,7 +468,7 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * A credential awarded to the Person or Organization.
    */
   @JsonIgnore public java.util.Collection<EducationalOccupationalCredential> getHasCredentials() {
-    final Object current = myData.get("hasCredential");
+    final java.lang.Object current = myData.get("hasCredential");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<EducationalOccupationalCredential>) current;
@@ -445,7 +485,7 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * The date that this organization was dissolved.
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getDissolutionDates() {
-    final Object current = myData.get("dissolutionDate");
+    final java.lang.Object current = myData.get("dissolutionDate");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<java.util.Date>) current;
@@ -462,7 +502,7 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
    */
   @JsonIgnore public java.util.Collection<Identifier> getTaxIDs() {
-    final Object current = myData.get("taxID");
+    final java.lang.Object current = myData.get("taxID");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Identifier>) current;
@@ -479,7 +519,7 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * The place where the Organization was founded.
    */
   @JsonIgnore public java.util.Collection<Place> getFoundingLocations() {
-    final Object current = myData.get("foundingLocation");
+    final java.lang.Object current = myData.get("foundingLocation");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Place>) current;
@@ -496,7 +536,7 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).
    */
   @JsonIgnore public java.util.Collection<Language> getKnowsLanguageLanguages() {
-    final Object current = myData.get("knowsLanguage");
+    final java.lang.Object current = myData.get("knowsLanguage");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Language>) current;
@@ -513,7 +553,7 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).
    */
   @JsonIgnore public java.util.Collection<String> getKnowsLanguageStrings() {
-    final Object current = myData.get("knowsLanguage");
+    final java.lang.Object current = myData.get("knowsLanguage");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -530,7 +570,7 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * An Organization (or ProgramMembership) to which this Person or Organization belongs.
    */
   @JsonIgnore public java.util.Collection<MemberOf> getMemberOfs() {
-    final Object current = myData.get("memberOf");
+    final java.lang.Object current = myData.get("memberOf");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MemberOf>) current;
@@ -547,7 +587,7 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
    */
   @JsonIgnore public java.util.Collection<Brand> getBrandBrands() {
-    final Object current = myData.get("brand");
+    final java.lang.Object current = myData.get("brand");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Brand>) current;
@@ -564,7 +604,7 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
    */
   @JsonIgnore public java.util.Collection<Organization> getBrandOrganizations() {
-    final Object current = myData.get("brand");
+    final java.lang.Object current = myData.get("brand");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Organization>) current;
@@ -581,12 +621,29 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * The Value-added Tax ID of the organization or person.
    */
   @JsonIgnore public java.util.Collection<String> getVatIDs() {
-    final Object current = myData.get("vatID");
+    final java.lang.Object current = myData.get("vatID");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
+  }
+  /**
+   * The geographic area where a service or offered item is provided.
+   */
+  @JsonIgnore public AreaServed getAreaServed() {
+    return (AreaServed) getValue("areaServed");
+  }
+  /**
+   * The geographic area where a service or offered item is provided.
+   */
+  @JsonIgnore public java.util.Collection<AreaServed> getAreaServeds() {
+    final java.lang.Object current = myData.get("areaServed");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<AreaServed>) current;
+    }
+    return Arrays.asList((AreaServed) current);
   }
   /**
    * Physical address of the item.
@@ -598,7 +655,7 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * Physical address of the item.
    */
   @JsonIgnore public java.util.Collection<PostalAddress> getAddressPostalAddresss() {
-    final Object current = myData.get("address");
+    final java.lang.Object current = myData.get("address");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<PostalAddress>) current;
@@ -615,7 +672,7 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * Physical address of the item.
    */
   @JsonIgnore public java.util.Collection<String> getAddressStrings() {
-    final Object current = myData.get("address");
+    final java.lang.Object current = myData.get("address");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -632,7 +689,7 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * Specifies a MerchantReturnPolicy that may be applicable.
    */
   @JsonIgnore public java.util.Collection<MerchantReturnPolicy> getHasMerchantReturnPolicys() {
-    final Object current = myData.get("hasMerchantReturnPolicy");
+    final java.lang.Object current = myData.get("hasMerchantReturnPolicy");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MerchantReturnPolicy>) current;
@@ -649,7 +706,7 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * The larger organization that this organization is a [[subOrganization]] of, if any.
    */
   @JsonIgnore public java.util.Collection<Organization> getParentOrganizations() {
-    final Object current = myData.get("parentOrganization");
+    final java.lang.Object current = myData.get("parentOrganization");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Organization>) current;
@@ -666,7 +723,7 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * Products owned by the organization or person.
    */
   @JsonIgnore public java.util.Collection<OwnershipInfo> getOwnsOwnershipInfos() {
-    final Object current = myData.get("owns");
+    final java.lang.Object current = myData.get("owns");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<OwnershipInfo>) current;
@@ -683,7 +740,7 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * Products owned by the organization or person.
    */
   @JsonIgnore public java.util.Collection<Product> getOwnsProducts() {
-    final Object current = myData.get("owns");
+    final java.lang.Object current = myData.get("owns");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Product>) current;
@@ -700,7 +757,7 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * The North American Industry Classification System (NAICS) code for a particular organization or business person.
    */
   @JsonIgnore public java.util.Collection<String> getNaicss() {
-    final Object current = myData.get("naics");
+    final java.lang.Object current = myData.get("naics");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -717,7 +774,7 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * For an [[Organization]] (e.g. [[NewsMediaOrganization]]), a statement describing (in news media, the newsroom&rsquo;s) disclosure and correction policy for errors.
    */
   @JsonIgnore public java.util.Collection<PublishingPrinciples> getCorrectionsPolicys() {
-    final Object current = myData.get("correctionsPolicy");
+    final java.lang.Object current = myData.get("correctionsPolicy");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<PublishingPrinciples>) current;
@@ -734,7 +791,7 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement about public engagement activities (for news media, the newsroom&rsquo;s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.
    */
   @JsonIgnore public java.util.Collection<PublishingPrinciples> getActionableFeedbackPolicys() {
-    final Object current = myData.get("actionableFeedbackPolicy");
+    final java.lang.Object current = myData.get("actionableFeedbackPolicy");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<PublishingPrinciples>) current;
@@ -751,7 +808,7 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * Indicates an OfferCatalog listing for this Organization, Person, or Service.
    */
   @JsonIgnore public java.util.Collection<OfferCatalog> getHasOfferCatalogs() {
-    final Object current = myData.get("hasOfferCatalog");
+    final java.lang.Object current = myData.get("hasOfferCatalog");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<OfferCatalog>) current;
@@ -768,7 +825,7 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
    */
   @JsonIgnore public java.util.Collection<Identifier> getGlobalLocationNumbers() {
-    final Object current = myData.get("globalLocationNumber");
+    final java.lang.Object current = myData.get("globalLocationNumber");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Identifier>) current;
@@ -785,7 +842,7 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
    */
   @JsonIgnore public java.util.Collection<Sponsor> getSponsors() {
-    final Object current = myData.get("sponsor");
+    final java.lang.Object current = myData.get("sponsor");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Sponsor>) current;
@@ -802,7 +859,7 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * A person or organization that supports (sponsors) something through some kind of financial contribution.
    */
   @JsonIgnore public java.util.Collection<Sponsor> getFunders() {
-    final Object current = myData.get("funder");
+    final java.lang.Object current = myData.get("funder");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Sponsor>) current;
@@ -819,7 +876,7 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * A review of the item.
    */
   @JsonIgnore public java.util.Collection<Review> getReviews() {
-    final Object current = myData.get("review");
+    final java.lang.Object current = myData.get("review");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Review>) current;
@@ -836,7 +893,7 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
    */
   @JsonIgnore public java.util.Collection<InteractionCounter> getInteractionStatistics() {
-    final Object current = myData.get("interactionStatistic");
+    final java.lang.Object current = myData.get("interactionStatistic");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<InteractionCounter>) current;
@@ -853,7 +910,7 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * The fax number.
    */
   @JsonIgnore public java.util.Collection<String> getFaxNumbers() {
-    final Object current = myData.get("faxNumber");
+    final java.lang.Object current = myData.get("faxNumber");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -870,7 +927,7 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * Someone working for this organization.
    */
   @JsonIgnore public java.util.Collection<Person> getEmployees() {
-    final Object current = myData.get("employee");
+    final java.lang.Object current = myData.get("employee");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Person>) current;
@@ -887,7 +944,7 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * An award won by or for this item.
    */
   @JsonIgnore public java.util.Collection<String> getAwards() {
-    final Object current = myData.get("award");
+    final java.lang.Object current = myData.get("award");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -904,7 +961,7 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * Statement about ethics policy, e.g. of a [[NewsMediaOrganization]] regarding journalistic and publishing practices, or of a [[Restaurant]], a page describing food source policies. In the case of a [[NewsMediaOrganization]], an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.
    */
   @JsonIgnore public java.util.Collection<CreativeWork> getEthicsPolicyCreativeWorks() {
-    final Object current = myData.get("ethicsPolicy");
+    final java.lang.Object current = myData.get("ethicsPolicy");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<CreativeWork>) current;
@@ -921,7 +978,7 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * Statement about ethics policy, e.g. of a [[NewsMediaOrganization]] regarding journalistic and publishing practices, or of a [[Restaurant]], a page describing food source policies. In the case of a [[NewsMediaOrganization]], an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.
    */
   @JsonIgnore public java.util.Collection<String> getEthicsPolicyStrings() {
-    final Object current = myData.get("ethicsPolicy");
+    final java.lang.Object current = myData.get("ethicsPolicy");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -938,7 +995,7 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * A person who founded this organization.
    */
   @JsonIgnore public java.util.Collection<Person> getFounders() {
-    final Object current = myData.get("founder");
+    final java.lang.Object current = myData.get("founder");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Person>) current;
@@ -955,7 +1012,7 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * A relationship between an organization and a department of that organization, also described as an organization (allowing different urls, logos, opening hours). For example: a store with a pharmacy, or a bakery with a cafe.
    */
   @JsonIgnore public java.util.Collection<Organization> getDepartments() {
-    final Object current = myData.get("department");
+    final java.lang.Object current = myData.get("department");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Organization>) current;
@@ -972,7 +1029,7 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * Points-of-Sales operated by the organization or person.
    */
   @JsonIgnore public java.util.Collection<Place> getHasPOSs() {
-    final Object current = myData.get("hasPOS");
+    final java.lang.Object current = myData.get("hasPOS");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Place>) current;
@@ -989,7 +1046,7 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * A slogan or motto associated with the item.
    */
   @JsonIgnore public java.util.Collection<String> getSlogans() {
-    final Object current = myData.get("slogan");
+    final java.lang.Object current = myData.get("slogan");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -1006,7 +1063,7 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * A pointer to products or services offered by the organization or person.
    */
   @JsonIgnore public java.util.Collection<Offer> getMakesOffers() {
-    final Object current = myData.get("makesOffer");
+    final java.lang.Object current = myData.get("makesOffer");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Offer>) current;
@@ -1023,7 +1080,7 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * Alumni of an organization.
    */
   @JsonIgnore public java.util.Collection<Person> getAlumnis() {
-    final Object current = myData.get("alumni");
+    final java.lang.Object current = myData.get("alumni");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Person>) current;
@@ -1040,14 +1097,14 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * A relationship between two organizations where the first includes the second, e.g., as a subsidiary. See also: the more specific 'department' property.
    */
   @JsonIgnore public java.util.Collection<Organization> getSubOrganizations() {
-    final Object current = myData.get("subOrganization");
+    final java.lang.Object current = myData.get("subOrganization");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
   }
-  protected Organization(java.util.Map<String,Object> data) {
+  protected Organization(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -1055,11 +1112,21 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
    * Builder for {@link Organization}
    */
   public static class Builder extends Thing.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public Organization build() {
       return new Organization(myData);
+    }
+    /**
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+     * 
+     */
+    @NotNull public Builder publishingPrinciples(@NotNull PublishingPrinciples publishingPrinciples) {
+      putValue("publishingPrinciples", publishingPrinciples);
+      return this;
     }
     /**
      * The number of employees in an organization e.g. business.
@@ -1143,6 +1210,13 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
      */
     @NotNull public Builder seeks(@NotNull Demand.Builder demand) {
       putValue("seeks", demand.build());
+      return this;
+    }
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     */
+    @NotNull public Builder location(@NotNull Location location) {
+      putValue("location", location);
       return this;
     }
     /**
@@ -1388,6 +1462,13 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
      */
     @NotNull public Builder vatID(@NotNull String vatID) {
       putValue("vatID", vatID);
+      return this;
+    }
+    /**
+     * The geographic area where a service or offered item is provided.
+     */
+    @NotNull public Builder areaServed(@NotNull AreaServed areaServed) {
+      putValue("areaServed", areaServed);
       return this;
     }
     /**
@@ -1692,6 +1773,21 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -1710,6 +1806,13 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -1803,7 +1906,9 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
+      if ("publishingPrinciples".equals(key) && value instanceof PublishingPrinciples) { this.publishingPrinciples((PublishingPrinciples)value); return; }
+      if ("publishingPrincipless".equals(key) && value instanceof PublishingPrinciples) { this.publishingPrinciples((PublishingPrinciples)value); return; }
       if ("numberOfEmployees".equals(key) && value instanceof QuantitativeValue) { this.numberOfEmployees((QuantitativeValue)value); return; }
       if ("numberOfEmployeess".equals(key) && value instanceof QuantitativeValue) { this.numberOfEmployees((QuantitativeValue)value); return; }
       if ("knowsAbout".equals(key) && value instanceof String) { this.knowsAbout((String)value); return; }
@@ -1818,6 +1923,8 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
       if ("diversityPolicys".equals(key) && value instanceof String) { this.diversityPolicy((String)value); return; }
       if ("seeks".equals(key) && value instanceof Demand) { this.seeks((Demand)value); return; }
       if ("seekss".equals(key) && value instanceof Demand) { this.seeks((Demand)value); return; }
+      if ("location".equals(key) && value instanceof Location) { this.location((Location)value); return; }
+      if ("locations".equals(key) && value instanceof Location) { this.location((Location)value); return; }
       if ("unnamedSourcesPolicy".equals(key) && value instanceof PublishingPrinciples) { this.unnamedSourcesPolicy((PublishingPrinciples)value); return; }
       if ("unnamedSourcesPolicys".equals(key) && value instanceof PublishingPrinciples) { this.unnamedSourcesPolicy((PublishingPrinciples)value); return; }
       if ("duns".equals(key) && value instanceof Identifier) { this.duns((Identifier)value); return; }
@@ -1870,6 +1977,8 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
       if ("brands".equals(key) && value instanceof Organization) { this.brand((Organization)value); return; }
       if ("vatID".equals(key) && value instanceof String) { this.vatID((String)value); return; }
       if ("vatIDs".equals(key) && value instanceof String) { this.vatID((String)value); return; }
+      if ("areaServed".equals(key) && value instanceof AreaServed) { this.areaServed((AreaServed)value); return; }
+      if ("areaServeds".equals(key) && value instanceof AreaServed) { this.areaServed((AreaServed)value); return; }
       if ("address".equals(key) && value instanceof PostalAddress) { this.address((PostalAddress)value); return; }
       if ("addresss".equals(key) && value instanceof PostalAddress) { this.address((PostalAddress)value); return; }
       if ("address".equals(key) && value instanceof String) { this.address((String)value); return; }

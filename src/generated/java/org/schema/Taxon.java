@@ -37,7 +37,7 @@ public class Taxon extends Thing {
    * The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary &ndash; (typically the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs).
    */
   @JsonIgnore public java.util.Collection<PropertyValue> getTaxonRankPropertyValues() {
-    final Object current = myData.get("taxonRank");
+    final java.lang.Object current = myData.get("taxonRank");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<PropertyValue>) current;
@@ -54,7 +54,7 @@ public class Taxon extends Thing {
    * The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary &ndash; (typically the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs).
    */
   @JsonIgnore public java.util.Collection<String> getTaxonRankStrings() {
-    final Object current = myData.get("taxonRank");
+    final java.lang.Object current = myData.get("taxonRank");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -71,7 +71,7 @@ public class Taxon extends Thing {
    * A Defined Term contained in this term set.
    */
   @JsonIgnore public java.util.Collection<HasDefinedTerm> getHasDefinedTerms() {
-    final Object current = myData.get("hasDefinedTerm");
+    final java.lang.Object current = myData.get("hasDefinedTerm");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<HasDefinedTerm>) current;
@@ -88,7 +88,7 @@ public class Taxon extends Thing {
    * Closest parent taxon of the taxon in question.
    */
   @JsonIgnore public java.util.Collection<String> getParentTaxonStrings() {
-    final Object current = myData.get("parentTaxon");
+    final java.lang.Object current = myData.get("parentTaxon");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -105,7 +105,7 @@ public class Taxon extends Thing {
    * Closest parent taxon of the taxon in question.
    */
   @JsonIgnore public java.util.Collection<Taxon> getParentTaxonTaxons() {
-    final Object current = myData.get("parentTaxon");
+    final java.lang.Object current = myData.get("parentTaxon");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Taxon>) current;
@@ -122,7 +122,7 @@ public class Taxon extends Thing {
    * Closest child taxa of the taxon in question.
    */
   @JsonIgnore public java.util.Collection<String> getChildTaxonStrings() {
-    final Object current = myData.get("childTaxon");
+    final java.lang.Object current = myData.get("childTaxon");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -139,14 +139,14 @@ public class Taxon extends Thing {
    * Closest child taxa of the taxon in question.
    */
   @JsonIgnore public java.util.Collection<Taxon> getChildTaxonTaxons() {
-    final Object current = myData.get("childTaxon");
+    final java.lang.Object current = myData.get("childTaxon");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Taxon>) current;
     }
     return Arrays.asList((Taxon) current);
   }
-  protected Taxon(java.util.Map<String,Object> data) {
+  protected Taxon(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -154,7 +154,7 @@ public class Taxon extends Thing {
    * Builder for {@link Taxon}
    */
   public static class Builder extends Thing.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public Taxon build() {
@@ -231,6 +231,21 @@ public class Taxon extends Thing {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -249,6 +264,13 @@ public class Taxon extends Thing {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -342,7 +364,7 @@ public class Taxon extends Thing {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("taxonRank".equals(key) && value instanceof PropertyValue) { this.taxonRank((PropertyValue)value); return; }
       if ("taxonRanks".equals(key) && value instanceof PropertyValue) { this.taxonRank((PropertyValue)value); return; }
       if ("taxonRank".equals(key) && value instanceof String) { this.taxonRank((String)value); return; }

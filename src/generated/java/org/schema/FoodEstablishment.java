@@ -37,7 +37,7 @@ public class FoodEstablishment extends LocalBusiness {
    * Indicates whether a FoodEstablishment accepts reservations. Values can be Boolean, an URL at which reservations can be made or (for backwards compatibility) the strings ```Yes``` or ```No```.
    */
   @JsonIgnore public java.util.Collection<Boolean> getAcceptsReservationsBooleans() {
-    final Object current = myData.get("acceptsReservations");
+    final java.lang.Object current = myData.get("acceptsReservations");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Boolean>) current;
@@ -54,7 +54,7 @@ public class FoodEstablishment extends LocalBusiness {
    * Indicates whether a FoodEstablishment accepts reservations. Values can be Boolean, an URL at which reservations can be made or (for backwards compatibility) the strings ```Yes``` or ```No```.
    */
   @JsonIgnore public java.util.Collection<String> getAcceptsReservationsStrings() {
-    final Object current = myData.get("acceptsReservations");
+    final java.lang.Object current = myData.get("acceptsReservations");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -71,7 +71,7 @@ public class FoodEstablishment extends LocalBusiness {
    * An official rating for a lodging business or food establishment, e.g. from national associations or standards bodies. Use the author property to indicate the rating organization, e.g. as an Organization with name such as (e.g. HOTREC, DEHOGA, WHR, or Hotelstars).
    */
   @JsonIgnore public java.util.Collection<Rating> getStarRatings() {
-    final Object current = myData.get("starRating");
+    final java.lang.Object current = myData.get("starRating");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Rating>) current;
@@ -88,7 +88,7 @@ public class FoodEstablishment extends LocalBusiness {
    * Either the actual menu as a structured representation, as text, or a URL of the menu.
    */
   @JsonIgnore public java.util.Collection<Menu> getHasMenuMenus() {
-    final Object current = myData.get("hasMenu");
+    final java.lang.Object current = myData.get("hasMenu");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Menu>) current;
@@ -105,7 +105,7 @@ public class FoodEstablishment extends LocalBusiness {
    * Either the actual menu as a structured representation, as text, or a URL of the menu.
    */
   @JsonIgnore public java.util.Collection<String> getHasMenuStrings() {
-    final Object current = myData.get("hasMenu");
+    final java.lang.Object current = myData.get("hasMenu");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -122,14 +122,14 @@ public class FoodEstablishment extends LocalBusiness {
    * The cuisine of the restaurant.
    */
   @JsonIgnore public java.util.Collection<String> getServesCuisines() {
-    final Object current = myData.get("servesCuisine");
+    final java.lang.Object current = myData.get("servesCuisine");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
-  protected FoodEstablishment(java.util.Map<String,Object> data) {
+  protected FoodEstablishment(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -137,7 +137,7 @@ public class FoodEstablishment extends LocalBusiness {
    * Builder for {@link FoodEstablishment}
    */
   public static class Builder extends LocalBusiness.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public FoodEstablishment build() {
@@ -856,6 +856,21 @@ public class FoodEstablishment extends LocalBusiness {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -874,6 +889,13 @@ public class FoodEstablishment extends LocalBusiness {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -967,7 +989,7 @@ public class FoodEstablishment extends LocalBusiness {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("acceptsReservations".equals(key) && value instanceof Boolean) { this.acceptsReservations((Boolean)value); return; }
       if ("acceptsReservationss".equals(key) && value instanceof Boolean) { this.acceptsReservations((Boolean)value); return; }
       if ("acceptsReservations".equals(key) && value instanceof String) { this.acceptsReservations((String)value); return; }

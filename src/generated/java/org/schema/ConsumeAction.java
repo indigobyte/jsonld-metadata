@@ -37,7 +37,7 @@ public class ConsumeAction extends Action {
    * An Offer which must be accepted before the user can perform the Action. For example, the user may need to buy a movie before being able to watch it.
    */
   @JsonIgnore public java.util.Collection<Offer> getExpectsAcceptanceOfs() {
-    final Object current = myData.get("expectsAcceptanceOf");
+    final java.lang.Object current = myData.get("expectsAcceptanceOf");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Offer>) current;
@@ -54,14 +54,14 @@ public class ConsumeAction extends Action {
    * A set of requirements that a must be fulfilled in order to perform an Action. If more than one value is specied, fulfilling one set of requirements will allow the Action to be performed.
    */
   @JsonIgnore public java.util.Collection<ActionAccessSpecification> getActionAccessibilityRequirements() {
-    final Object current = myData.get("actionAccessibilityRequirement");
+    final java.lang.Object current = myData.get("actionAccessibilityRequirement");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<ActionAccessSpecification>) current;
     }
     return Arrays.asList((ActionAccessSpecification) current);
   }
-  protected ConsumeAction(java.util.Map<String,Object> data) {
+  protected ConsumeAction(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -69,7 +69,7 @@ public class ConsumeAction extends Action {
    * Builder for {@link ConsumeAction}
    */
   public static class Builder extends Action.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public ConsumeAction build() {
@@ -111,6 +111,20 @@ public class ConsumeAction extends Action {
       return this;
     }
     /**
+     * The object that helped the agent perform the action. e.g. John wrote a book with *a pen*.
+     */
+    @NotNull public Builder instrument(@NotNull Instrument instrument) {
+      putValue("instrument", instrument);
+      return this;
+    }
+    /**
+     * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
+     */
+    @NotNull public Builder participant(@NotNull Participant participant) {
+      putValue("participant", participant);
+      return this;
+    }
+    /**
      * Indicates a target EntryPoint for an Action.
      */
     @NotNull public Builder target(@NotNull EntryPoint entryPoint) {
@@ -122,6 +136,20 @@ public class ConsumeAction extends Action {
      */
     @NotNull public Builder target(@NotNull EntryPoint.Builder entryPoint) {
       putValue("target", entryPoint.build());
+      return this;
+    }
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     */
+    @NotNull public Builder location(@NotNull Location location) {
+      putValue("location", location);
+      return this;
+    }
+    /**
+     * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
+     */
+    @NotNull public Builder object(@NotNull Object object) {
+      putValue("object", object);
       return this;
     }
     /**
@@ -181,6 +209,28 @@ public class ConsumeAction extends Action {
       return this;
     }
     /**
+     * The result produced in the action. e.g. John wrote *a book*.
+     */
+    @NotNull public Builder result(@NotNull Result result) {
+      putValue("result", result);
+      return this;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -199,6 +249,13 @@ public class ConsumeAction extends Action {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -292,7 +349,7 @@ public class ConsumeAction extends Action {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("expectsAcceptanceOf".equals(key) && value instanceof Offer) { this.expectsAcceptanceOf((Offer)value); return; }
       if ("expectsAcceptanceOfs".equals(key) && value instanceof Offer) { this.expectsAcceptanceOf((Offer)value); return; }
       if ("actionAccessibilityRequirement".equals(key) && value instanceof ActionAccessSpecification) { this.actionAccessibilityRequirement((ActionAccessSpecification)value); return; }

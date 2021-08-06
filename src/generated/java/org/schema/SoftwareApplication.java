@@ -37,7 +37,7 @@ public class SoftwareApplication extends CreativeWork {
    * Supporting data for a SoftwareApplication.
    */
   @JsonIgnore public java.util.Collection<DataFeed> getSupportingDatas() {
-    final Object current = myData.get("supportingData");
+    final java.lang.Object current = myData.get("supportingData");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<DataFeed>) current;
@@ -54,7 +54,7 @@ public class SoftwareApplication extends CreativeWork {
    * Additional content for a software application.
    */
   @JsonIgnore public java.util.Collection<SoftwareApplication> getSoftwareAddOns() {
-    final Object current = myData.get("softwareAddOn");
+    final java.lang.Object current = myData.get("softwareAddOn");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<SoftwareApplication>) current;
@@ -71,7 +71,7 @@ public class SoftwareApplication extends CreativeWork {
    * A link to a screenshot image of the app.
    */
   @JsonIgnore public java.util.Collection<ImageObject> getScreenshotImageObjects() {
-    final Object current = myData.get("screenshot");
+    final java.lang.Object current = myData.get("screenshot");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<ImageObject>) current;
@@ -88,7 +88,7 @@ public class SoftwareApplication extends CreativeWork {
    * A link to a screenshot image of the app.
    */
   @JsonIgnore public java.util.Collection<String> getScreenshotStrings() {
-    final Object current = myData.get("screenshot");
+    final java.lang.Object current = myData.get("screenshot");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -105,7 +105,7 @@ public class SoftwareApplication extends CreativeWork {
    * Countries for which the application is supported. You can also provide the two-letter ISO 3166-1 alpha-2 country code.
    */
   @JsonIgnore public java.util.Collection<String> getCountriesSupporteds() {
-    final Object current = myData.get("countriesSupported");
+    final java.lang.Object current = myData.get("countriesSupported");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -122,7 +122,7 @@ public class SoftwareApplication extends CreativeWork {
    * Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (Examples: DirectX, Java or .NET runtime).
    */
   @JsonIgnore public java.util.Collection<String> getSoftwareRequirementss() {
-    final Object current = myData.get("softwareRequirements");
+    final java.lang.Object current = myData.get("softwareRequirements");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -139,7 +139,7 @@ public class SoftwareApplication extends CreativeWork {
    * Countries for which the application is not supported. You can also provide the two-letter ISO 3166-1 alpha-2 country code.
    */
   @JsonIgnore public java.util.Collection<String> getCountriesNotSupporteds() {
-    final Object current = myData.get("countriesNotSupported");
+    final java.lang.Object current = myData.get("countriesNotSupported");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -156,7 +156,7 @@ public class SoftwareApplication extends CreativeWork {
    * The name of the application suite to which the application belongs (e.g. Excel belongs to Office).
    */
   @JsonIgnore public java.util.Collection<String> getApplicationSuites() {
-    final Object current = myData.get("applicationSuite");
+    final java.lang.Object current = myData.get("applicationSuite");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -173,7 +173,7 @@ public class SoftwareApplication extends CreativeWork {
    * Subcategory of the application, e.g. 'Arcade Game'.
    */
   @JsonIgnore public java.util.Collection<String> getApplicationSubCategorys() {
-    final Object current = myData.get("applicationSubCategory");
+    final java.lang.Object current = myData.get("applicationSubCategory");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -190,7 +190,7 @@ public class SoftwareApplication extends CreativeWork {
    * Type of software application, e.g. 'Game, Multimedia'.
    */
   @JsonIgnore public java.util.Collection<String> getApplicationCategorys() {
-    final Object current = myData.get("applicationCategory");
+    final java.lang.Object current = myData.get("applicationCategory");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -207,7 +207,7 @@ public class SoftwareApplication extends CreativeWork {
    * Version of the software instance.
    */
   @JsonIgnore public java.util.Collection<String> getSoftwareVersions() {
-    final Object current = myData.get("softwareVersion");
+    final java.lang.Object current = myData.get("softwareVersion");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -224,7 +224,7 @@ public class SoftwareApplication extends CreativeWork {
    * Software application help.
    */
   @JsonIgnore public java.util.Collection<CreativeWork> getSoftwareHelps() {
-    final Object current = myData.get("softwareHelp");
+    final java.lang.Object current = myData.get("softwareHelp");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<CreativeWork>) current;
@@ -241,7 +241,7 @@ public class SoftwareApplication extends CreativeWork {
    * URL at which the app may be installed, if different from the URL of the item.
    */
   @JsonIgnore public java.util.Collection<String> getInstallUrls() {
-    final Object current = myData.get("installUrl");
+    final java.lang.Object current = myData.get("installUrl");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -258,7 +258,7 @@ public class SoftwareApplication extends CreativeWork {
    * Device required to run the application. Used in cases where a specific make/model is required to run the application.
    */
   @JsonIgnore public java.util.Collection<String> getAvailableOnDevices() {
-    final Object current = myData.get("availableOnDevice");
+    final java.lang.Object current = myData.get("availableOnDevice");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -275,7 +275,7 @@ public class SoftwareApplication extends CreativeWork {
    * If the file can be downloaded, URL to download the binary.
    */
   @JsonIgnore public java.util.Collection<String> getDownloadUrls() {
-    final Object current = myData.get("downloadUrl");
+    final java.lang.Object current = myData.get("downloadUrl");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -292,7 +292,7 @@ public class SoftwareApplication extends CreativeWork {
    * Features or modules provided by this application (and possibly required by other applications).
    */
   @JsonIgnore public java.util.Collection<String> getFeatureLists() {
-    final Object current = myData.get("featureList");
+    final java.lang.Object current = myData.get("featureList");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -309,7 +309,7 @@ public class SoftwareApplication extends CreativeWork {
    * Size of the application / package (e.g. 18MB). In the absence of a unit (MB, KB etc.), KB will be assumed.
    */
   @JsonIgnore public java.util.Collection<String> getFileSizes() {
-    final Object current = myData.get("fileSize");
+    final java.lang.Object current = myData.get("fileSize");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -326,7 +326,7 @@ public class SoftwareApplication extends CreativeWork {
    * Operating systems supported (Windows 7, OSX 10.6, Android 1.6).
    */
   @JsonIgnore public java.util.Collection<String> getOperatingSystems() {
-    final Object current = myData.get("operatingSystem");
+    final java.lang.Object current = myData.get("operatingSystem");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -343,7 +343,7 @@ public class SoftwareApplication extends CreativeWork {
    * Storage requirements (free space required).
    */
   @JsonIgnore public java.util.Collection<String> getStorageRequirementss() {
-    final Object current = myData.get("storageRequirements");
+    final java.lang.Object current = myData.get("storageRequirements");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -360,7 +360,7 @@ public class SoftwareApplication extends CreativeWork {
    * Permission(s) required to run the app (for example, a mobile app may require full internet access or may run only on wifi).
    */
   @JsonIgnore public java.util.Collection<String> getPermissionss() {
-    final Object current = myData.get("permissions");
+    final java.lang.Object current = myData.get("permissions");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -377,7 +377,7 @@ public class SoftwareApplication extends CreativeWork {
    * Description of what changed in this version.
    */
   @JsonIgnore public java.util.Collection<String> getReleaseNotess() {
-    final Object current = myData.get("releaseNotes");
+    final java.lang.Object current = myData.get("releaseNotes");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -394,7 +394,7 @@ public class SoftwareApplication extends CreativeWork {
    * Minimum memory requirements.
    */
   @JsonIgnore public java.util.Collection<String> getMemoryRequirementss() {
-    final Object current = myData.get("memoryRequirements");
+    final java.lang.Object current = myData.get("memoryRequirements");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -411,14 +411,14 @@ public class SoftwareApplication extends CreativeWork {
    * Processor architecture required to run the application (e.g. IA64).
    */
   @JsonIgnore public java.util.Collection<String> getProcessorRequirementss() {
-    final Object current = myData.get("processorRequirements");
+    final java.lang.Object current = myData.get("processorRequirements");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
-  protected SoftwareApplication(java.util.Map<String,Object> data) {
+  protected SoftwareApplication(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -426,7 +426,7 @@ public class SoftwareApplication extends CreativeWork {
    * Builder for {@link SoftwareApplication}
    */
   public static class Builder extends CreativeWork.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public SoftwareApplication build() {
@@ -645,6 +645,16 @@ public class SoftwareApplication extends CreativeWork {
       return this;
     }
     /**
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+     * 
+     */
+    @NotNull public Builder publishingPrinciples(@NotNull PublishingPrinciples publishingPrinciples) {
+      putValue("publishingPrinciples", publishingPrinciples);
+      return this;
+    }
+    /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
      */
     @NotNull public Builder inLanguage(@NotNull Language language) {
@@ -670,6 +680,13 @@ public class SoftwareApplication extends CreativeWork {
      */
     @NotNull public Builder thumbnailUrl(@NotNull String thumbnailUrl) {
       putValue("thumbnailUrl", thumbnailUrl);
+      return this;
+    }
+    /**
+     * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
+     */
+    @NotNull public Builder hasPart(@NotNull HasPart hasPart) {
+      putValue("hasPart", hasPart);
       return this;
     }
     /**
@@ -740,6 +757,13 @@ public class SoftwareApplication extends CreativeWork {
      */
     @NotNull public Builder size(@NotNull String size) {
       putValue("size", size);
+      return this;
+    }
+    /**
+     * A material that something is made from, e.g. leather, wool, cotton, paper.
+     */
+    @NotNull public Builder material(@NotNull Material material) {
+      putValue("material", material);
       return this;
     }
     /**
@@ -831,6 +855,15 @@ public class SoftwareApplication extends CreativeWork {
      */
     @NotNull public Builder commentCount(@NotNull Integer integer) {
       putValue("commentCount", integer);
+      return this;
+    }
+    /**
+     * The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of
+     *       contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates
+     *       areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
+     */
+    @NotNull public Builder spatialCoverage(@NotNull SpatialCoverage spatialCoverage) {
+      putValue("spatialCoverage", spatialCoverage);
       return this;
     }
     /**
@@ -1051,6 +1084,13 @@ public class SoftwareApplication extends CreativeWork {
      */
     @NotNull public Builder sdLicense(@NotNull String sdLicense) {
       putValue("sdLicense", sdLicense);
+      return this;
+    }
+    /**
+     * The position of an item in a series or sequence of items.
+     */
+    @NotNull public Builder position(@NotNull Position position) {
+      putValue("position", position);
       return this;
     }
     /**
@@ -1494,10 +1534,24 @@ public class SoftwareApplication extends CreativeWork {
       return this;
     }
     /**
+     * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
+     */
+    @NotNull public Builder isPartOf(@NotNull IsPartOf isPartOf) {
+      putValue("isPartOf", isPartOf);
+      return this;
+    }
+    /**
      * Indicates that the resource is compatible with the referenced accessibility API ([WebSchemas wiki lists possible values](http://www.w3.org/wiki/WebSchemas/Accessibility)).
      */
     @NotNull public Builder accessibilityAPI(@NotNull String accessibilityAPI) {
       putValue("accessibilityAPI", accessibilityAPI);
+      return this;
+    }
+    /**
+     * Example/instance/realization/derivation of the concept of this creative work. eg. The paperback edition, first edition, or eBook.
+     */
+    @NotNull public Builder workExample(@NotNull WorkExample workExample) {
+      putValue("workExample", workExample);
       return this;
     }
     /**
@@ -2094,10 +2148,45 @@ public class SoftwareApplication extends CreativeWork {
       return this;
     }
     /**
+     * The subject matter of the content.
+     */
+    @NotNull public Builder about(@NotNull Thing thing) {
+      putValue("about", thing);
+      return this;
+    }
+    /**
+     * The subject matter of the content.
+     */
+    @NotNull public Builder about(@NotNull Thing.Builder thing) {
+      putValue("about", thing.build());
+      return this;
+    }
+    /**
      * Indicates the primary entity described in some page or other CreativeWork.
      */
     @NotNull public Builder mainEntity(@NotNull About about) {
       putValue("mainEntity", about);
+      return this;
+    }
+    /**
+     * Indicates the primary entity described in some page or other CreativeWork.
+     */
+    @NotNull public Builder mainEntity(@NotNull About.Builder about) {
+      putValue("mainEntity", about.build());
+      return this;
+    }
+    /**
+     * Indicates the primary entity described in some page or other CreativeWork.
+     */
+    @NotNull public Builder mainEntity(@NotNull Thing thing) {
+      putValue("mainEntity", thing);
+      return this;
+    }
+    /**
+     * Indicates the primary entity described in some page or other CreativeWork.
+     */
+    @NotNull public Builder mainEntity(@NotNull Thing.Builder thing) {
+      putValue("mainEntity", thing.build());
       return this;
     }
     /**
@@ -2136,6 +2225,21 @@ public class SoftwareApplication extends CreativeWork {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -2154,6 +2258,13 @@ public class SoftwareApplication extends CreativeWork {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -2247,7 +2358,7 @@ public class SoftwareApplication extends CreativeWork {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("supportingData".equals(key) && value instanceof DataFeed) { this.supportingData((DataFeed)value); return; }
       if ("supportingDatas".equals(key) && value instanceof DataFeed) { this.supportingData((DataFeed)value); return; }
       if ("softwareAddOn".equals(key) && value instanceof SoftwareApplication) { this.softwareAddOn((SoftwareApplication)value); return; }

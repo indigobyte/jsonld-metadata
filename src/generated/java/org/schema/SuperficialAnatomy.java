@@ -37,7 +37,7 @@ public class SuperficialAnatomy extends MedicalEntity {
    * Anatomical systems or structures that relate to the superficial anatomy.
    */
   @JsonIgnore public java.util.Collection<AnatomicalStructure> getRelatedAnatomyAnatomicalStructures() {
-    final Object current = myData.get("relatedAnatomy");
+    final java.lang.Object current = myData.get("relatedAnatomy");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<AnatomicalStructure>) current;
@@ -54,7 +54,7 @@ public class SuperficialAnatomy extends MedicalEntity {
    * Anatomical systems or structures that relate to the superficial anatomy.
    */
   @JsonIgnore public java.util.Collection<AnatomicalSystem> getRelatedAnatomyAnatomicalSystems() {
-    final Object current = myData.get("relatedAnatomy");
+    final java.lang.Object current = myData.get("relatedAnatomy");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<AnatomicalSystem>) current;
@@ -71,7 +71,7 @@ public class SuperficialAnatomy extends MedicalEntity {
    * The significance associated with the superficial anatomy; as an example, how characteristics of the superficial anatomy can suggest underlying medical conditions or courses of treatment.
    */
   @JsonIgnore public java.util.Collection<String> getSignificances() {
-    final Object current = myData.get("significance");
+    final java.lang.Object current = myData.get("significance");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -88,7 +88,7 @@ public class SuperficialAnatomy extends MedicalEntity {
    * A medical condition associated with this anatomy.
    */
   @JsonIgnore public java.util.Collection<MedicalCondition> getRelatedConditions() {
-    final Object current = myData.get("relatedCondition");
+    final java.lang.Object current = myData.get("relatedCondition");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MedicalCondition>) current;
@@ -105,7 +105,7 @@ public class SuperficialAnatomy extends MedicalEntity {
    * If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.
    */
   @JsonIgnore public java.util.Collection<String> getAssociatedPathophysiologys() {
-    final Object current = myData.get("associatedPathophysiology");
+    final java.lang.Object current = myData.get("associatedPathophysiology");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -122,14 +122,14 @@ public class SuperficialAnatomy extends MedicalEntity {
    * A medical therapy related to this anatomy.
    */
   @JsonIgnore public java.util.Collection<MedicalTherapy> getRelatedTherapys() {
-    final Object current = myData.get("relatedTherapy");
+    final java.lang.Object current = myData.get("relatedTherapy");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MedicalTherapy>) current;
     }
     return Arrays.asList((MedicalTherapy) current);
   }
-  protected SuperficialAnatomy(java.util.Map<String,Object> data) {
+  protected SuperficialAnatomy(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -137,7 +137,7 @@ public class SuperficialAnatomy extends MedicalEntity {
    * Builder for {@link SuperficialAnatomy}
    */
   public static class Builder extends MedicalEntity.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public SuperficialAnatomy build() {
@@ -312,6 +312,21 @@ public class SuperficialAnatomy extends MedicalEntity {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -330,6 +345,13 @@ public class SuperficialAnatomy extends MedicalEntity {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -423,7 +445,7 @@ public class SuperficialAnatomy extends MedicalEntity {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("relatedAnatomy".equals(key) && value instanceof AnatomicalStructure) { this.relatedAnatomy((AnatomicalStructure)value); return; }
       if ("relatedAnatomys".equals(key) && value instanceof AnatomicalStructure) { this.relatedAnatomy((AnatomicalStructure)value); return; }
       if ("relatedAnatomy".equals(key) && value instanceof AnatomicalSystem) { this.relatedAnatomy((AnatomicalSystem)value); return; }

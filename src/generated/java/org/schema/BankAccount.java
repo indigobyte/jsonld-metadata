@@ -37,7 +37,7 @@ public class BankAccount extends FinancialProduct {
    * The type of a bank account.
    */
   @JsonIgnore public java.util.Collection<String> getBankAccountTypes() {
-    final Object current = myData.get("bankAccountType");
+    final java.lang.Object current = myData.get("bankAccountType");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -54,7 +54,7 @@ public class BankAccount extends FinancialProduct {
    * An overdraft is an extension of credit from a lending institution when an account reaches zero. An overdraft allows the individual to continue withdrawing money even if the account has no funds in it. Basically the bank allows people to borrow a set amount of money.
    */
   @JsonIgnore public java.util.Collection<MonetaryAmount> getAccountOverdraftLimits() {
-    final Object current = myData.get("accountOverdraftLimit");
+    final java.lang.Object current = myData.get("accountOverdraftLimit");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MonetaryAmount>) current;
@@ -71,14 +71,14 @@ public class BankAccount extends FinancialProduct {
    * A minimum amount that has to be paid in every month.
    */
   @JsonIgnore public java.util.Collection<MonetaryAmount> getAccountMinimumInflows() {
-    final Object current = myData.get("accountMinimumInflow");
+    final java.lang.Object current = myData.get("accountMinimumInflow");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MonetaryAmount>) current;
     }
     return Arrays.asList((MonetaryAmount) current);
   }
-  protected BankAccount(java.util.Map<String,Object> data) {
+  protected BankAccount(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -86,7 +86,7 @@ public class BankAccount extends FinancialProduct {
    * Builder for {@link BankAccount}
    */
   public static class Builder extends FinancialProduct.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public BankAccount build() {
@@ -380,6 +380,13 @@ public class BankAccount extends FinancialProduct {
       return this;
     }
     /**
+     * The geographic area where a service or offered item is provided.
+     */
+    @NotNull public Builder areaServed(@NotNull AreaServed areaServed) {
+      putValue("areaServed", areaServed);
+      return this;
+    }
+    /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      */
     @NotNull public Builder category(@NotNull Category category) {
@@ -531,6 +538,21 @@ public class BankAccount extends FinancialProduct {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -549,6 +571,13 @@ public class BankAccount extends FinancialProduct {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -642,7 +671,7 @@ public class BankAccount extends FinancialProduct {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("bankAccountType".equals(key) && value instanceof String) { this.bankAccountType((String)value); return; }
       if ("bankAccountTypes".equals(key) && value instanceof String) { this.bankAccountType((String)value); return; }
       if ("accountOverdraftLimit".equals(key) && value instanceof MonetaryAmount) { this.accountOverdraftLimit((MonetaryAmount)value); return; }

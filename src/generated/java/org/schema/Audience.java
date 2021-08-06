@@ -26,7 +26,7 @@ import java.util.*;
 /**
  * Intended audience for an item, i.e. the group for whom the item was created.
  */
-public class Audience extends Intangible {
+public class Audience extends Intangible implements org.schema.Recipient {
   /**
    * The target group associated with a given audience (e.g. veterans, car owners, musicians, etc.).
    */
@@ -37,7 +37,7 @@ public class Audience extends Intangible {
    * The target group associated with a given audience (e.g. veterans, car owners, musicians, etc.).
    */
   @JsonIgnore public java.util.Collection<String> getAudienceTypes() {
-    final Object current = myData.get("audienceType");
+    final java.lang.Object current = myData.get("audienceType");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -54,14 +54,14 @@ public class Audience extends Intangible {
    * The geographic area associated with the audience.
    */
   @JsonIgnore public java.util.Collection<AdministrativeArea> getGeographicAreas() {
-    final Object current = myData.get("geographicArea");
+    final java.lang.Object current = myData.get("geographicArea");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<AdministrativeArea>) current;
     }
     return Arrays.asList((AdministrativeArea) current);
   }
-  protected Audience(java.util.Map<String,Object> data) {
+  protected Audience(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -69,7 +69,7 @@ public class Audience extends Intangible {
    * Builder for {@link Audience}
    */
   public static class Builder extends Intangible.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public Audience build() {
@@ -97,6 +97,21 @@ public class Audience extends Intangible {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -115,6 +130,13 @@ public class Audience extends Intangible {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -208,7 +230,7 @@ public class Audience extends Intangible {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("audienceType".equals(key) && value instanceof String) { this.audienceType((String)value); return; }
       if ("audienceTypes".equals(key) && value instanceof String) { this.audienceType((String)value); return; }
       if ("geographicArea".equals(key) && value instanceof AdministrativeArea) { this.geographicArea((AdministrativeArea)value); return; }

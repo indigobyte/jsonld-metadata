@@ -39,7 +39,7 @@ public class AlignmentObject extends Intangible {
    * The description of a node in an established educational framework.
    */
   @JsonIgnore public java.util.Collection<String> getTargetDescriptions() {
-    final Object current = myData.get("targetDescription");
+    final java.lang.Object current = myData.get("targetDescription");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -56,7 +56,7 @@ public class AlignmentObject extends Intangible {
    * The framework to which the resource being described is aligned.
    */
   @JsonIgnore public java.util.Collection<String> getEducationalFrameworks() {
-    final Object current = myData.get("educationalFramework");
+    final java.lang.Object current = myData.get("educationalFramework");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -73,7 +73,7 @@ public class AlignmentObject extends Intangible {
    * The name of a node in an established educational framework.
    */
   @JsonIgnore public java.util.Collection<String> getTargetNames() {
-    final Object current = myData.get("targetName");
+    final java.lang.Object current = myData.get("targetName");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -90,7 +90,7 @@ public class AlignmentObject extends Intangible {
    * A category of alignment between the learning resource and the framework node. Recommended values include: 'requires', 'textComplexity', 'readingLevel', and 'educationalSubject'.
    */
   @JsonIgnore public java.util.Collection<String> getAlignmentTypes() {
-    final Object current = myData.get("alignmentType");
+    final java.lang.Object current = myData.get("alignmentType");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -107,14 +107,14 @@ public class AlignmentObject extends Intangible {
    * The URL of a node in an established educational framework.
    */
   @JsonIgnore public java.util.Collection<String> getTargetUrls() {
-    final Object current = myData.get("targetUrl");
+    final java.lang.Object current = myData.get("targetUrl");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
-  protected AlignmentObject(java.util.Map<String,Object> data) {
+  protected AlignmentObject(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -122,7 +122,7 @@ public class AlignmentObject extends Intangible {
    * Builder for {@link AlignmentObject}
    */
   public static class Builder extends Intangible.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public AlignmentObject build() {
@@ -164,6 +164,21 @@ public class AlignmentObject extends Intangible {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -182,6 +197,13 @@ public class AlignmentObject extends Intangible {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -275,7 +297,7 @@ public class AlignmentObject extends Intangible {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("targetDescription".equals(key) && value instanceof String) { this.targetDescription((String)value); return; }
       if ("targetDescriptions".equals(key) && value instanceof String) { this.targetDescription((String)value); return; }
       if ("educationalFramework".equals(key) && value instanceof String) { this.educationalFramework((String)value); return; }

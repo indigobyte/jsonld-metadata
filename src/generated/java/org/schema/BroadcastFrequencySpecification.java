@@ -37,7 +37,7 @@ public class BroadcastFrequencySpecification extends Intangible {
    * The modulation (e.g. FM, AM, etc) used by a particular broadcast service.
    */
   @JsonIgnore public java.util.Collection<QualitativeValue> getBroadcastSignalModulationQualitativeValues() {
-    final Object current = myData.get("broadcastSignalModulation");
+    final java.lang.Object current = myData.get("broadcastSignalModulation");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<QualitativeValue>) current;
@@ -54,7 +54,7 @@ public class BroadcastFrequencySpecification extends Intangible {
    * The modulation (e.g. FM, AM, etc) used by a particular broadcast service.
    */
   @JsonIgnore public java.util.Collection<String> getBroadcastSignalModulationStrings() {
-    final Object current = myData.get("broadcastSignalModulation");
+    final java.lang.Object current = myData.get("broadcastSignalModulation");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -71,7 +71,7 @@ public class BroadcastFrequencySpecification extends Intangible {
    * The frequency in MHz for a particular broadcast.
    */
   @JsonIgnore public java.util.Collection<Integer> getBroadcastFrequencyValueIntegers() {
-    final Object current = myData.get("broadcastFrequencyValue");
+    final java.lang.Object current = myData.get("broadcastFrequencyValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -88,7 +88,7 @@ public class BroadcastFrequencySpecification extends Intangible {
    * The frequency in MHz for a particular broadcast.
    */
   @JsonIgnore public java.util.Collection<Long> getBroadcastFrequencyValueLongs() {
-    final Object current = myData.get("broadcastFrequencyValue");
+    final java.lang.Object current = myData.get("broadcastFrequencyValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Long>) current;
@@ -105,7 +105,7 @@ public class BroadcastFrequencySpecification extends Intangible {
    * The frequency in MHz for a particular broadcast.
    */
   @JsonIgnore public java.util.Collection<Float> getBroadcastFrequencyValueFloats() {
-    final Object current = myData.get("broadcastFrequencyValue");
+    final java.lang.Object current = myData.get("broadcastFrequencyValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Float>) current;
@@ -122,7 +122,7 @@ public class BroadcastFrequencySpecification extends Intangible {
    * The frequency in MHz for a particular broadcast.
    */
   @JsonIgnore public java.util.Collection<Double> getBroadcastFrequencyValueDoubles() {
-    final Object current = myData.get("broadcastFrequencyValue");
+    final java.lang.Object current = myData.get("broadcastFrequencyValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Double>) current;
@@ -139,7 +139,7 @@ public class BroadcastFrequencySpecification extends Intangible {
    * The frequency in MHz for a particular broadcast.
    */
   @JsonIgnore public java.util.Collection<String> getBroadcastFrequencyValueStrings() {
-    final Object current = myData.get("broadcastFrequencyValue");
+    final java.lang.Object current = myData.get("broadcastFrequencyValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -156,14 +156,14 @@ public class BroadcastFrequencySpecification extends Intangible {
    * The subchannel used for the broadcast.
    */
   @JsonIgnore public java.util.Collection<String> getBroadcastSubChannels() {
-    final Object current = myData.get("broadcastSubChannel");
+    final java.lang.Object current = myData.get("broadcastSubChannel");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
-  protected BroadcastFrequencySpecification(java.util.Map<String,Object> data) {
+  protected BroadcastFrequencySpecification(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -171,7 +171,7 @@ public class BroadcastFrequencySpecification extends Intangible {
    * Builder for {@link BroadcastFrequencySpecification}
    */
   public static class Builder extends Intangible.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public BroadcastFrequencySpecification build() {
@@ -241,6 +241,21 @@ public class BroadcastFrequencySpecification extends Intangible {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -259,6 +274,13 @@ public class BroadcastFrequencySpecification extends Intangible {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -352,7 +374,7 @@ public class BroadcastFrequencySpecification extends Intangible {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("broadcastSignalModulation".equals(key) && value instanceof QualitativeValue) { this.broadcastSignalModulation((QualitativeValue)value); return; }
       if ("broadcastSignalModulations".equals(key) && value instanceof QualitativeValue) { this.broadcastSignalModulation((QualitativeValue)value); return; }
       if ("broadcastSignalModulation".equals(key) && value instanceof String) { this.broadcastSignalModulation((String)value); return; }

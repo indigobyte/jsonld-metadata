@@ -39,7 +39,7 @@ public class House extends Accommodation {
    * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
    */
   @JsonIgnore public java.util.Collection<Integer> getNumberOfRoomsIntegers() {
-    final Object current = myData.get("numberOfRooms");
+    final java.lang.Object current = myData.get("numberOfRooms");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -58,7 +58,7 @@ public class House extends Accommodation {
    * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
    */
   @JsonIgnore public java.util.Collection<Long> getNumberOfRoomsLongs() {
-    final Object current = myData.get("numberOfRooms");
+    final java.lang.Object current = myData.get("numberOfRooms");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Long>) current;
@@ -77,7 +77,7 @@ public class House extends Accommodation {
    * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
    */
   @JsonIgnore public java.util.Collection<Float> getNumberOfRoomsFloats() {
-    final Object current = myData.get("numberOfRooms");
+    final java.lang.Object current = myData.get("numberOfRooms");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Float>) current;
@@ -96,7 +96,7 @@ public class House extends Accommodation {
    * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
    */
   @JsonIgnore public java.util.Collection<Double> getNumberOfRoomsDoubles() {
-    final Object current = myData.get("numberOfRooms");
+    final java.lang.Object current = myData.get("numberOfRooms");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Double>) current;
@@ -115,14 +115,14 @@ public class House extends Accommodation {
    * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
    */
   @JsonIgnore public java.util.Collection<String> getNumberOfRoomsStrings() {
-    final Object current = myData.get("numberOfRooms");
+    final java.lang.Object current = myData.get("numberOfRooms");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
-  protected House(java.util.Map<String,Object> data) {
+  protected House(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -130,7 +130,7 @@ public class House extends Accommodation {
    * Builder for {@link House}
    */
   public static class Builder extends Accommodation.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public House build() {
@@ -1025,6 +1025,21 @@ public class House extends Accommodation {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -1043,6 +1058,13 @@ public class House extends Accommodation {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -1136,7 +1158,7 @@ public class House extends Accommodation {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("numberOfRooms".equals(key) && value instanceof Integer) { this.numberOfRooms((Integer)value); return; }
       if ("numberOfRoomss".equals(key) && value instanceof Integer) { this.numberOfRooms((Integer)value); return; }
       if ("numberOfRooms".equals(key) && value instanceof Long) { this.numberOfRooms((Long)value); return; }

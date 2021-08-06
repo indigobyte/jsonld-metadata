@@ -37,7 +37,7 @@ public class MerchantReturnPolicySeasonalOverride extends Intangible {
    * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getStartDates() {
-    final Object current = myData.get("startDate");
+    final java.lang.Object current = myData.get("startDate");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<java.util.Date>) current;
@@ -54,7 +54,7 @@ public class MerchantReturnPolicySeasonalOverride extends Intangible {
    * Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the [[returnPolicyCategory]] property is specified as [[MerchantReturnFiniteReturnWindow]].
    */
   @JsonIgnore public java.util.Collection<Integer> getMerchantReturnDaysIntegers() {
-    final Object current = myData.get("merchantReturnDays");
+    final java.lang.Object current = myData.get("merchantReturnDays");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -71,7 +71,7 @@ public class MerchantReturnPolicySeasonalOverride extends Intangible {
    * Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the [[returnPolicyCategory]] property is specified as [[MerchantReturnFiniteReturnWindow]].
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getMerchantReturnDaysDates() {
-    final Object current = myData.get("merchantReturnDays");
+    final java.lang.Object current = myData.get("merchantReturnDays");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<java.util.Date>) current;
@@ -88,7 +88,7 @@ public class MerchantReturnPolicySeasonalOverride extends Intangible {
    * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getEndDates() {
-    final Object current = myData.get("endDate");
+    final java.lang.Object current = myData.get("endDate");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<java.util.Date>) current;
@@ -105,14 +105,14 @@ public class MerchantReturnPolicySeasonalOverride extends Intangible {
    * Specifies an applicable return policy (from an enumeration).
    */
   @JsonIgnore public java.util.Collection<MerchantReturnEnumeration> getReturnPolicyCategorys() {
-    final Object current = myData.get("returnPolicyCategory");
+    final java.lang.Object current = myData.get("returnPolicyCategory");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MerchantReturnEnumeration>) current;
     }
     return Arrays.asList((MerchantReturnEnumeration) current);
   }
-  protected MerchantReturnPolicySeasonalOverride(java.util.Map<String,Object> data) {
+  protected MerchantReturnPolicySeasonalOverride(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -120,7 +120,7 @@ public class MerchantReturnPolicySeasonalOverride extends Intangible {
    * Builder for {@link MerchantReturnPolicySeasonalOverride}
    */
   public static class Builder extends Intangible.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public MerchantReturnPolicySeasonalOverride build() {
@@ -162,6 +162,21 @@ public class MerchantReturnPolicySeasonalOverride extends Intangible {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -180,6 +195,13 @@ public class MerchantReturnPolicySeasonalOverride extends Intangible {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -273,7 +295,7 @@ public class MerchantReturnPolicySeasonalOverride extends Intangible {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("startDate".equals(key) && value instanceof java.util.Date) { this.startDate((java.util.Date)value); return; }
       if ("startDates".equals(key) && value instanceof java.util.Date) { this.startDate((java.util.Date)value); return; }
       if ("merchantReturnDays".equals(key) && value instanceof Integer) { this.merchantReturnDays((Integer)value); return; }

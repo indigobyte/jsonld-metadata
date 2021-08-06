@@ -37,7 +37,7 @@ public class FlightReservation extends Reservation {
    * The type of security screening the passenger is subject to.
    */
   @JsonIgnore public java.util.Collection<String> getSecurityScreenings() {
-    final Object current = myData.get("securityScreening");
+    final java.lang.Object current = myData.get("securityScreening");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -54,7 +54,7 @@ public class FlightReservation extends Reservation {
    * The passenger's sequence number as assigned by the airline.
    */
   @JsonIgnore public java.util.Collection<String> getPassengerSequenceNumbers() {
-    final Object current = myData.get("passengerSequenceNumber");
+    final java.lang.Object current = myData.get("passengerSequenceNumber");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -71,7 +71,7 @@ public class FlightReservation extends Reservation {
    * The priority status assigned to a passenger for security or boarding (e.g. FastTrack or Priority).
    */
   @JsonIgnore public java.util.Collection<QualitativeValue> getPassengerPriorityStatusQualitativeValues() {
-    final Object current = myData.get("passengerPriorityStatus");
+    final java.lang.Object current = myData.get("passengerPriorityStatus");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<QualitativeValue>) current;
@@ -88,7 +88,7 @@ public class FlightReservation extends Reservation {
    * The priority status assigned to a passenger for security or boarding (e.g. FastTrack or Priority).
    */
   @JsonIgnore public java.util.Collection<String> getPassengerPriorityStatusStrings() {
-    final Object current = myData.get("passengerPriorityStatus");
+    final java.lang.Object current = myData.get("passengerPriorityStatus");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -105,14 +105,14 @@ public class FlightReservation extends Reservation {
    * The airline-specific indicator of boarding order / preference.
    */
   @JsonIgnore public java.util.Collection<String> getBoardingGroups() {
-    final Object current = myData.get("boardingGroup");
+    final java.lang.Object current = myData.get("boardingGroup");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
-  protected FlightReservation(java.util.Map<String,Object> data) {
+  protected FlightReservation(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -120,7 +120,7 @@ public class FlightReservation extends Reservation {
    * Builder for {@link FlightReservation}
    */
   public static class Builder extends Reservation.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public FlightReservation build() {
@@ -358,6 +358,21 @@ public class FlightReservation extends Reservation {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -376,6 +391,13 @@ public class FlightReservation extends Reservation {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -469,7 +491,7 @@ public class FlightReservation extends Reservation {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("securityScreening".equals(key) && value instanceof String) { this.securityScreening((String)value); return; }
       if ("securityScreenings".equals(key) && value instanceof String) { this.securityScreening((String)value); return; }
       if ("passengerSequenceNumber".equals(key) && value instanceof String) { this.passengerSequenceNumber((String)value); return; }

@@ -26,8 +26,8 @@ import java.util.*;
 /**
  * An online or virtual location for attending events. For example, one may attend an online seminar or educational event. While a virtual location may be used as the location of an event, virtual locations should not be confused with physical locations in the real world.
  */
-public class VirtualLocation extends Intangible {
-  protected VirtualLocation(java.util.Map<String,Object> data) {
+public class VirtualLocation extends Intangible implements org.schema.Location {
+  protected VirtualLocation(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -35,11 +35,26 @@ public class VirtualLocation extends Intangible {
    * Builder for {@link VirtualLocation}
    */
   public static class Builder extends Intangible.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public VirtualLocation build() {
       return new VirtualLocation(myData);
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
     }
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -60,6 +75,13 @@ public class VirtualLocation extends Intangible {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -153,7 +175,7 @@ public class VirtualLocation extends Intangible {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       super.fromMap(key, value);
     }
   }

@@ -37,7 +37,7 @@ public class Drug extends Substance {
    * The manufacturer of the product.
    */
   @JsonIgnore public java.util.Collection<Organization> getManufacturers() {
-    final Object current = myData.get("manufacturer");
+    final java.lang.Object current = myData.get("manufacturer");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Organization>) current;
@@ -54,7 +54,7 @@ public class Drug extends Substance {
    * An active ingredient, typically chemical compounds and/or biologic substances.
    */
   @JsonIgnore public java.util.Collection<String> getActiveIngredients() {
-    final Object current = myData.get("activeIngredient");
+    final java.lang.Object current = myData.get("activeIngredient");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -71,7 +71,7 @@ public class Drug extends Substance {
    * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
    */
   @JsonIgnore public java.util.Collection<MaximumDoseSchedule> getMaximumIntakes() {
-    final Object current = myData.get("maximumIntake");
+    final java.lang.Object current = myData.get("maximumIntake");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MaximumDoseSchedule>) current;
@@ -88,7 +88,7 @@ public class Drug extends Substance {
    * The insurance plans that cover this drug.
    */
   @JsonIgnore public java.util.Collection<HealthInsurancePlan> getIncludedInHealthInsurancePlans() {
-    final Object current = myData.get("includedInHealthInsurancePlan");
+    final java.lang.Object current = myData.get("includedInHealthInsurancePlan");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<HealthInsurancePlan>) current;
@@ -105,7 +105,7 @@ public class Drug extends Substance {
    * Any other drug related to this one, for example commonly-prescribed alternatives.
    */
   @JsonIgnore public java.util.Collection<Drug> getRelatedDrugs() {
-    final Object current = myData.get("relatedDrug");
+    final java.lang.Object current = myData.get("relatedDrug");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Drug>) current;
@@ -122,7 +122,7 @@ public class Drug extends Substance {
    * Any precaution, guidance, contraindication, etc. related to consumption of specific foods while taking this drug.
    */
   @JsonIgnore public java.util.Collection<String> getFoodWarnings() {
-    final Object current = myData.get("foodWarning");
+    final java.lang.Object current = myData.get("foodWarning");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -139,7 +139,7 @@ public class Drug extends Substance {
    * The drug or supplement's legal status, including any controlled substance schedules that apply.
    */
   @JsonIgnore public java.util.Collection<DrugLegalStatus> getLegalStatusDrugLegalStatuss() {
-    final Object current = myData.get("legalStatus");
+    final java.lang.Object current = myData.get("legalStatus");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<DrugLegalStatus>) current;
@@ -156,7 +156,7 @@ public class Drug extends Substance {
    * The drug or supplement's legal status, including any controlled substance schedules that apply.
    */
   @JsonIgnore public java.util.Collection<MedicalEnumeration> getLegalStatusMedicalEnumerations() {
-    final Object current = myData.get("legalStatus");
+    final java.lang.Object current = myData.get("legalStatus");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MedicalEnumeration>) current;
@@ -173,7 +173,7 @@ public class Drug extends Substance {
    * The drug or supplement's legal status, including any controlled substance schedules that apply.
    */
   @JsonIgnore public java.util.Collection<String> getLegalStatusStrings() {
-    final Object current = myData.get("legalStatus");
+    final java.lang.Object current = myData.get("legalStatus");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -190,7 +190,7 @@ public class Drug extends Substance {
    * Any information related to overdose on a drug, including signs or symptoms, treatments, contact information for emergency response.
    */
   @JsonIgnore public java.util.Collection<String> getOverdosages() {
-    final Object current = myData.get("overdosage");
+    final java.lang.Object current = myData.get("overdosage");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -207,7 +207,7 @@ public class Drug extends Substance {
    * The class of drug this belongs to (e.g., statins).
    */
   @JsonIgnore public java.util.Collection<DrugClass> getDrugClasss() {
-    final Object current = myData.get("drugClass");
+    final java.lang.Object current = myData.get("drugClass");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<DrugClass>) current;
@@ -224,7 +224,7 @@ public class Drug extends Substance {
    * An available dosage strength for the drug.
    */
   @JsonIgnore public java.util.Collection<DrugStrength> getAvailableStrengths() {
-    final Object current = myData.get("availableStrength");
+    final java.lang.Object current = myData.get("availableStrength");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<DrugStrength>) current;
@@ -241,7 +241,7 @@ public class Drug extends Substance {
    * A route by which this drug may be administered, e.g. 'oral'.
    */
   @JsonIgnore public java.util.Collection<String> getAdministrationRoutes() {
-    final Object current = myData.get("administrationRoute");
+    final java.lang.Object current = myData.get("administrationRoute");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -258,7 +258,7 @@ public class Drug extends Substance {
    * Link to prescribing information for the drug.
    */
   @JsonIgnore public java.util.Collection<String> getPrescribingInfos() {
-    final Object current = myData.get("prescribingInfo");
+    final java.lang.Object current = myData.get("prescribingInfo");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -275,7 +275,7 @@ public class Drug extends Substance {
    * Any precaution, guidance, contraindication, etc. related to this drug's use by breastfeeding mothers.
    */
   @JsonIgnore public java.util.Collection<String> getBreastfeedingWarnings() {
-    final Object current = myData.get("breastfeedingWarning");
+    final java.lang.Object current = myData.get("breastfeedingWarning");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -292,7 +292,7 @@ public class Drug extends Substance {
    * True if this item's name is a proprietary/brand name (vs. generic name).
    */
   @JsonIgnore public java.util.Collection<Boolean> getIsProprietarys() {
-    final Object current = myData.get("isProprietary");
+    final java.lang.Object current = myData.get("isProprietary");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Boolean>) current;
@@ -309,7 +309,7 @@ public class Drug extends Substance {
    * Another drug that is known to interact with this drug in a way that impacts the effect of this drug or causes a risk to the patient. Note: disease interactions are typically captured as contraindications.
    */
   @JsonIgnore public java.util.Collection<Drug> getInteractingDrugs() {
-    final Object current = myData.get("interactingDrug");
+    final java.lang.Object current = myData.get("interactingDrug");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Drug>) current;
@@ -326,7 +326,7 @@ public class Drug extends Substance {
    * The generic name of this drug or supplement.
    */
   @JsonIgnore public java.util.Collection<String> getNonProprietaryNames() {
-    final Object current = myData.get("nonProprietaryName");
+    final java.lang.Object current = myData.get("nonProprietaryName");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -343,7 +343,7 @@ public class Drug extends Substance {
    * True if the drug is available in a generic form (regardless of name).
    */
   @JsonIgnore public java.util.Collection<Boolean> getIsAvailableGenericallys() {
-    final Object current = myData.get("isAvailableGenerically");
+    final java.lang.Object current = myData.get("isAvailableGenerically");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Boolean>) current;
@@ -360,7 +360,7 @@ public class Drug extends Substance {
    * Pregnancy category of this drug.
    */
   @JsonIgnore public java.util.Collection<DrugPregnancyCategory> getPregnancyCategorys() {
-    final Object current = myData.get("pregnancyCategory");
+    final java.lang.Object current = myData.get("pregnancyCategory");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<DrugPregnancyCategory>) current;
@@ -377,7 +377,7 @@ public class Drug extends Substance {
    * Any precaution, guidance, contraindication, etc. related to this drug's use during pregnancy.
    */
   @JsonIgnore public java.util.Collection<String> getPregnancyWarnings() {
-    final Object current = myData.get("pregnancyWarning");
+    final java.lang.Object current = myData.get("pregnancyWarning");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -394,7 +394,7 @@ public class Drug extends Substance {
    * The specific biochemical interaction through which this drug or supplement produces its pharmacological effect.
    */
   @JsonIgnore public java.util.Collection<String> getMechanismOfActions() {
-    final Object current = myData.get("mechanismOfAction");
+    final java.lang.Object current = myData.get("mechanismOfAction");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -411,7 +411,7 @@ public class Drug extends Substance {
    * A dosing schedule for the drug for a given population, either observed, recommended, or maximum dose based on the type used.
    */
   @JsonIgnore public java.util.Collection<DoseSchedule> getDoseSchedules() {
-    final Object current = myData.get("doseSchedule");
+    final java.lang.Object current = myData.get("doseSchedule");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<DoseSchedule>) current;
@@ -428,7 +428,7 @@ public class Drug extends Substance {
    * Any precaution, guidance, contraindication, etc. related to consumption of alcohol while taking this drug.
    */
   @JsonIgnore public java.util.Collection<String> getAlcoholWarnings() {
-    final Object current = myData.get("alcoholWarning");
+    final java.lang.Object current = myData.get("alcoholWarning");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -445,7 +445,7 @@ public class Drug extends Substance {
    * Link to the drug's label details.
    */
   @JsonIgnore public java.util.Collection<String> getLabelDetailss() {
-    final Object current = myData.get("labelDetails");
+    final java.lang.Object current = myData.get("labelDetails");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -462,7 +462,7 @@ public class Drug extends Substance {
    * Indicates the status of drug prescription eg. local catalogs classifications or whether the drug is available by prescription or over-the-counter, etc.
    */
   @JsonIgnore public java.util.Collection<DrugPrescriptionStatus> getPrescriptionStatusDrugPrescriptionStatuss() {
-    final Object current = myData.get("prescriptionStatus");
+    final java.lang.Object current = myData.get("prescriptionStatus");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<DrugPrescriptionStatus>) current;
@@ -479,7 +479,7 @@ public class Drug extends Substance {
    * Indicates the status of drug prescription eg. local catalogs classifications or whether the drug is available by prescription or over-the-counter, etc.
    */
   @JsonIgnore public java.util.Collection<String> getPrescriptionStatusStrings() {
-    final Object current = myData.get("prescriptionStatus");
+    final java.lang.Object current = myData.get("prescriptionStatus");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -496,7 +496,7 @@ public class Drug extends Substance {
    * A dosage form in which this drug/supplement is available, e.g. 'tablet', 'suspension', 'injection'.
    */
   @JsonIgnore public java.util.Collection<String> getDosageForms() {
-    final Object current = myData.get("dosageForm");
+    final java.lang.Object current = myData.get("dosageForm");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -513,7 +513,7 @@ public class Drug extends Substance {
    * The unit in which the drug is measured, e.g. '5 mg tablet'.
    */
   @JsonIgnore public java.util.Collection<String> getDrugUnits() {
-    final Object current = myData.get("drugUnit");
+    final java.lang.Object current = myData.get("drugUnit");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -530,7 +530,7 @@ public class Drug extends Substance {
    * The RxCUI drug identifier from RXNORM.
    */
   @JsonIgnore public java.util.Collection<String> getRxcuis() {
-    final Object current = myData.get("rxcui");
+    final java.lang.Object current = myData.get("rxcui");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -547,7 +547,7 @@ public class Drug extends Substance {
    * Proprietary name given to the diet plan, typically by its originator or creator.
    */
   @JsonIgnore public java.util.Collection<String> getProprietaryNames() {
-    final Object current = myData.get("proprietaryName");
+    final java.lang.Object current = myData.get("proprietaryName");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -564,7 +564,7 @@ public class Drug extends Substance {
    * Description of the absorption and elimination of drugs, including their concentration (pharmacokinetics, pK) and biological effects (pharmacodynamics, pD).
    */
   @JsonIgnore public java.util.Collection<String> getClinicalPharmacologys() {
-    final Object current = myData.get("clinicalPharmacology");
+    final java.lang.Object current = myData.get("clinicalPharmacology");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -581,14 +581,14 @@ public class Drug extends Substance {
    * Any FDA or other warnings about the drug (text or URL).
    */
   @JsonIgnore public java.util.Collection<String> getWarnings() {
-    final Object current = myData.get("warning");
+    final java.lang.Object current = myData.get("warning");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
-  protected Drug(java.util.Map<String,Object> data) {
+  protected Drug(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -596,7 +596,7 @@ public class Drug extends Substance {
    * Builder for {@link Drug}
    */
   public static class Builder extends Substance.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public Drug build() {
@@ -967,6 +967,21 @@ public class Drug extends Substance {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -985,6 +1000,13 @@ public class Drug extends Substance {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -1078,7 +1100,7 @@ public class Drug extends Substance {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("manufacturer".equals(key) && value instanceof Organization) { this.manufacturer((Organization)value); return; }
       if ("manufacturers".equals(key) && value instanceof Organization) { this.manufacturer((Organization)value); return; }
       if ("activeIngredient".equals(key) && value instanceof String) { this.activeIngredient((String)value); return; }

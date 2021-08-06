@@ -26,7 +26,7 @@ import java.util.*;
 /**
  *  A point value or interval for product characteristics and other purposes.
  */
-public class QuantitativeValue extends StructuredValue implements Yield {
+public class QuantitativeValue extends StructuredValue implements org.schema.Yield {
   /**
    * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
    */
@@ -37,7 +37,7 @@ public class QuantitativeValue extends StructuredValue implements Yield {
    * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
    */
   @JsonIgnore public java.util.Collection<DefinedTerm> getValueReferenceDefinedTerms() {
-    final Object current = myData.get("valueReference");
+    final java.lang.Object current = myData.get("valueReference");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<DefinedTerm>) current;
@@ -54,7 +54,7 @@ public class QuantitativeValue extends StructuredValue implements Yield {
    * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
    */
   @JsonIgnore public java.util.Collection<Enumeration> getValueReferenceEnumerations() {
-    final Object current = myData.get("valueReference");
+    final java.lang.Object current = myData.get("valueReference");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Enumeration>) current;
@@ -71,7 +71,7 @@ public class QuantitativeValue extends StructuredValue implements Yield {
    * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
    */
   @JsonIgnore public java.util.Collection<MeasurementTypeEnumeration> getValueReferenceMeasurementTypeEnumerations() {
-    final Object current = myData.get("valueReference");
+    final java.lang.Object current = myData.get("valueReference");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MeasurementTypeEnumeration>) current;
@@ -88,7 +88,7 @@ public class QuantitativeValue extends StructuredValue implements Yield {
    * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
    */
   @JsonIgnore public java.util.Collection<PropertyValue> getValueReferencePropertyValues() {
-    final Object current = myData.get("valueReference");
+    final java.lang.Object current = myData.get("valueReference");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<PropertyValue>) current;
@@ -105,7 +105,7 @@ public class QuantitativeValue extends StructuredValue implements Yield {
    * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
    */
   @JsonIgnore public java.util.Collection<QualitativeValue> getValueReferenceQualitativeValues() {
-    final Object current = myData.get("valueReference");
+    final java.lang.Object current = myData.get("valueReference");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<QualitativeValue>) current;
@@ -122,7 +122,7 @@ public class QuantitativeValue extends StructuredValue implements Yield {
    * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
    */
   @JsonIgnore public java.util.Collection<QuantitativeValue> getValueReferenceQuantitativeValues() {
-    final Object current = myData.get("valueReference");
+    final java.lang.Object current = myData.get("valueReference");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<QuantitativeValue>) current;
@@ -139,7 +139,7 @@ public class QuantitativeValue extends StructuredValue implements Yield {
    * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
    */
   @JsonIgnore public java.util.Collection<String> getValueReferenceStrings() {
-    final Object current = myData.get("valueReference");
+    final java.lang.Object current = myData.get("valueReference");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -156,7 +156,7 @@ public class QuantitativeValue extends StructuredValue implements Yield {
    * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
    */
   @JsonIgnore public java.util.Collection<StructuredValue> getValueReferenceStructuredValues() {
-    final Object current = myData.get("valueReference");
+    final java.lang.Object current = myData.get("valueReference");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<StructuredValue>) current;
@@ -173,7 +173,7 @@ public class QuantitativeValue extends StructuredValue implements Yield {
    * The value of the quantitative value or property value node.\n\n* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.\n* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
    */
   @JsonIgnore public java.util.Collection<Boolean> getValueBooleans() {
-    final Object current = myData.get("value");
+    final java.lang.Object current = myData.get("value");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Boolean>) current;
@@ -190,7 +190,7 @@ public class QuantitativeValue extends StructuredValue implements Yield {
    * The value of the quantitative value or property value node.\n\n* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.\n* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
    */
   @JsonIgnore public java.util.Collection<Number> getValueNumbers() {
-    final Object current = myData.get("value");
+    final java.lang.Object current = myData.get("value");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Number>) current;
@@ -207,7 +207,7 @@ public class QuantitativeValue extends StructuredValue implements Yield {
    * The value of the quantitative value or property value node.\n\n* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.\n* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
    */
   @JsonIgnore public java.util.Collection<String> getValueStrings() {
-    final Object current = myData.get("value");
+    final java.lang.Object current = myData.get("value");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -224,7 +224,7 @@ public class QuantitativeValue extends StructuredValue implements Yield {
    * The value of the quantitative value or property value node.\n\n* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.\n* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
    */
   @JsonIgnore public java.util.Collection<StructuredValue> getValueStructuredValues() {
-    final Object current = myData.get("value");
+    final java.lang.Object current = myData.get("value");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<StructuredValue>) current;
@@ -241,7 +241,7 @@ public class QuantitativeValue extends StructuredValue implements Yield {
    * The upper value of some characteristic or property.
    */
   @JsonIgnore public java.util.Collection<Integer> getMaxValueIntegers() {
-    final Object current = myData.get("maxValue");
+    final java.lang.Object current = myData.get("maxValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -258,7 +258,7 @@ public class QuantitativeValue extends StructuredValue implements Yield {
    * The upper value of some characteristic or property.
    */
   @JsonIgnore public java.util.Collection<Long> getMaxValueLongs() {
-    final Object current = myData.get("maxValue");
+    final java.lang.Object current = myData.get("maxValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Long>) current;
@@ -275,7 +275,7 @@ public class QuantitativeValue extends StructuredValue implements Yield {
    * The upper value of some characteristic or property.
    */
   @JsonIgnore public java.util.Collection<Float> getMaxValueFloats() {
-    final Object current = myData.get("maxValue");
+    final java.lang.Object current = myData.get("maxValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Float>) current;
@@ -292,7 +292,7 @@ public class QuantitativeValue extends StructuredValue implements Yield {
    * The upper value of some characteristic or property.
    */
   @JsonIgnore public java.util.Collection<Double> getMaxValueDoubles() {
-    final Object current = myData.get("maxValue");
+    final java.lang.Object current = myData.get("maxValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Double>) current;
@@ -309,7 +309,7 @@ public class QuantitativeValue extends StructuredValue implements Yield {
    * The upper value of some characteristic or property.
    */
   @JsonIgnore public java.util.Collection<String> getMaxValueStrings() {
-    final Object current = myData.get("maxValue");
+    final java.lang.Object current = myData.get("maxValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -328,7 +328,7 @@ public class QuantitativeValue extends StructuredValue implements Yield {
    * &lt;a href='unitCode'&gt;unitCode&lt;/a&gt;.
    */
   @JsonIgnore public java.util.Collection<String> getUnitTexts() {
-    final Object current = myData.get("unitText");
+    final java.lang.Object current = myData.get("unitText");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -347,7 +347,7 @@ public class QuantitativeValue extends StructuredValue implements Yield {
    * 
    */
   @JsonIgnore public java.util.Collection<PropertyValue> getAdditionalPropertys() {
-    final Object current = myData.get("additionalProperty");
+    final java.lang.Object current = myData.get("additionalProperty");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<PropertyValue>) current;
@@ -364,7 +364,7 @@ public class QuantitativeValue extends StructuredValue implements Yield {
    * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
    */
   @JsonIgnore public java.util.Collection<String> getUnitCodes() {
-    final Object current = myData.get("unitCode");
+    final java.lang.Object current = myData.get("unitCode");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -381,7 +381,7 @@ public class QuantitativeValue extends StructuredValue implements Yield {
    * The lower value of some characteristic or property.
    */
   @JsonIgnore public java.util.Collection<Integer> getMinValueIntegers() {
-    final Object current = myData.get("minValue");
+    final java.lang.Object current = myData.get("minValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -398,7 +398,7 @@ public class QuantitativeValue extends StructuredValue implements Yield {
    * The lower value of some characteristic or property.
    */
   @JsonIgnore public java.util.Collection<Long> getMinValueLongs() {
-    final Object current = myData.get("minValue");
+    final java.lang.Object current = myData.get("minValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Long>) current;
@@ -415,7 +415,7 @@ public class QuantitativeValue extends StructuredValue implements Yield {
    * The lower value of some characteristic or property.
    */
   @JsonIgnore public java.util.Collection<Float> getMinValueFloats() {
-    final Object current = myData.get("minValue");
+    final java.lang.Object current = myData.get("minValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Float>) current;
@@ -432,7 +432,7 @@ public class QuantitativeValue extends StructuredValue implements Yield {
    * The lower value of some characteristic or property.
    */
   @JsonIgnore public java.util.Collection<Double> getMinValueDoubles() {
-    final Object current = myData.get("minValue");
+    final java.lang.Object current = myData.get("minValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Double>) current;
@@ -449,14 +449,14 @@ public class QuantitativeValue extends StructuredValue implements Yield {
    * The lower value of some characteristic or property.
    */
   @JsonIgnore public java.util.Collection<String> getMinValueStrings() {
-    final Object current = myData.get("minValue");
+    final java.lang.Object current = myData.get("minValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
-  protected QuantitativeValue(java.util.Map<String,Object> data) {
+  protected QuantitativeValue(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -464,7 +464,7 @@ public class QuantitativeValue extends StructuredValue implements Yield {
    * Builder for {@link QuantitativeValue}
    */
   public static class Builder extends StructuredValue.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public QuantitativeValue build() {
@@ -698,6 +698,21 @@ public class QuantitativeValue extends StructuredValue implements Yield {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -716,6 +731,13 @@ public class QuantitativeValue extends StructuredValue implements Yield {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -809,7 +831,7 @@ public class QuantitativeValue extends StructuredValue implements Yield {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("valueReference".equals(key) && value instanceof DefinedTerm) { this.valueReference((DefinedTerm)value); return; }
       if ("valueReferences".equals(key) && value instanceof DefinedTerm) { this.valueReference((DefinedTerm)value); return; }
       if ("valueReference".equals(key) && value instanceof Enumeration) { this.valueReference((Enumeration)value); return; }

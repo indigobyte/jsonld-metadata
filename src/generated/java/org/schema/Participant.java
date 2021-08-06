@@ -24,7 +24,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * 
+ * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
  */
-public interface Participant {
+public interface Participant extends Recipient {
 }

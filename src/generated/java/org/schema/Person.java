@@ -26,7 +26,30 @@ import java.util.*;
 /**
  * A person (alive, dead, undead, or fictional).Equivalent class: http://xmlns.com/foaf/0.1/Person
  */
-public class Person extends Thing implements Creator, Sponsor, Actor {
+public class Person extends Thing implements org.schema.Participant, Competitor, Creator, Sponsor, Actor, Recipient {
+  /**
+   * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+   * 
+   * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+   * 
+   */
+  @JsonIgnore public PublishingPrinciples getPublishingPrinciples() {
+    return (PublishingPrinciples) getValue("publishingPrinciples");
+  }
+  /**
+   * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+   * 
+   * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+   * 
+   */
+  @JsonIgnore public java.util.Collection<PublishingPrinciples> getPublishingPrincipless() {
+    final java.lang.Object current = myData.get("publishingPrinciples");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<PublishingPrinciples>) current;
+    }
+    return Arrays.asList((PublishingPrinciples) current);
+  }
   /**
    * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
    */
@@ -37,7 +60,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
    */
   @JsonIgnore public java.util.Collection<String> getKnowsAboutStrings() {
-    final Object current = myData.get("knowsAbout");
+    final java.lang.Object current = myData.get("knowsAbout");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -54,7 +77,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
    */
   @JsonIgnore public java.util.Collection<Thing> getKnowsAboutThings() {
-    final Object current = myData.get("knowsAbout");
+    final java.lang.Object current = myData.get("knowsAbout");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Thing>) current;
@@ -71,7 +94,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * A pointer to products or services sought by the organization or person (demand).
    */
   @JsonIgnore public java.util.Collection<Demand> getSeekss() {
-    final Object current = myData.get("seeks");
+    final java.lang.Object current = myData.get("seeks");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Demand>) current;
@@ -88,7 +111,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * A sibling of the person.
    */
   @JsonIgnore public java.util.Collection<Person> getSiblings() {
-    final Object current = myData.get("sibling");
+    final java.lang.Object current = myData.get("sibling");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Person>) current;
@@ -105,7 +128,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
    */
   @JsonIgnore public java.util.Collection<Identifier> getCallSigns() {
-    final Object current = myData.get("callSign");
+    final java.lang.Object current = myData.get("callSign");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Identifier>) current;
@@ -122,7 +145,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * A contact location for a person's residence.
    */
   @JsonIgnore public java.util.Collection<Location> getHomeLocations() {
-    final Object current = myData.get("homeLocation");
+    final java.lang.Object current = myData.get("homeLocation");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Location>) current;
@@ -139,7 +162,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * The Dun &amp; Bradstreet DUNS number for identifying an organization or business person.
    */
   @JsonIgnore public java.util.Collection<Identifier> getDunss() {
-    final Object current = myData.get("duns");
+    final java.lang.Object current = myData.get("duns");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Identifier>) current;
@@ -156,7 +179,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * A contact point for a person or organization.
    */
   @JsonIgnore public java.util.Collection<ContactPoint> getContactPoints() {
-    final Object current = myData.get("contactPoint");
+    final java.lang.Object current = myData.get("contactPoint");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<ContactPoint>) current;
@@ -173,7 +196,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * Organizations that the person works for.
    */
   @JsonIgnore public java.util.Collection<Organization> getWorksFors() {
-    final Object current = myData.get("worksFor");
+    final java.lang.Object current = myData.get("worksFor");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Organization>) current;
@@ -190,7 +213,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * A contact location for a person's place of work.
    */
   @JsonIgnore public java.util.Collection<Location> getWorkLocations() {
-    final Object current = myData.get("workLocation");
+    final java.lang.Object current = myData.get("workLocation");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Location>) current;
@@ -207,7 +230,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * The Person's occupation. For past professions, use Role for expressing dates.
    */
   @JsonIgnore public java.util.Collection<Occupation> getHasOccupations() {
-    final Object current = myData.get("hasOccupation");
+    final java.lang.Object current = myData.get("hasOccupation");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Occupation>) current;
@@ -224,7 +247,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * Given name. In the U.S., the first name of a Person.
    */
   @JsonIgnore public java.util.Collection<String> getGivenNames() {
-    final Object current = myData.get("givenName");
+    final java.lang.Object current = myData.get("givenName");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -241,7 +264,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * Email address.
    */
   @JsonIgnore public java.util.Collection<String> getEmails() {
-    final Object current = myData.get("email");
+    final java.lang.Object current = myData.get("email");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -258,7 +281,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * The telephone number.
    */
   @JsonIgnore public java.util.Collection<String> getTelephones() {
-    final Object current = myData.get("telephone");
+    final java.lang.Object current = myData.get("telephone");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -275,7 +298,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
    */
   @JsonIgnore public java.util.Collection<String> getIsicV4s() {
-    final Object current = myData.get("isicV4");
+    final java.lang.Object current = myData.get("isicV4");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -292,7 +315,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * A credential awarded to the Person or Organization.
    */
   @JsonIgnore public java.util.Collection<EducationalOccupationalCredential> getHasCredentials() {
-    final Object current = myData.get("hasCredential");
+    final java.lang.Object current = myData.get("hasCredential");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<EducationalOccupationalCredential>) current;
@@ -309,7 +332,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * The height of the item.
    */
   @JsonIgnore public java.util.Collection<Distance> getHeightDistances() {
-    final Object current = myData.get("height");
+    final java.lang.Object current = myData.get("height");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Distance>) current;
@@ -326,7 +349,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * The height of the item.
    */
   @JsonIgnore public java.util.Collection<QuantitativeValue> getHeightQuantitativeValues() {
-    final Object current = myData.get("height");
+    final java.lang.Object current = myData.get("height");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<QuantitativeValue>) current;
@@ -343,7 +366,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * Family name. In the U.S., the last name of a Person.
    */
   @JsonIgnore public java.util.Collection<String> getFamilyNames() {
-    final Object current = myData.get("familyName");
+    final java.lang.Object current = myData.get("familyName");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -360,7 +383,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * Event that this person is a performer or participant in.
    */
   @JsonIgnore public java.util.Collection<Event> getPerformerIns() {
-    final Object current = myData.get("performerIn");
+    final java.lang.Object current = myData.get("performerIn");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Event>) current;
@@ -377,7 +400,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
    */
   @JsonIgnore public java.util.Collection<Identifier> getTaxIDs() {
-    final Object current = myData.get("taxID");
+    final java.lang.Object current = myData.get("taxID");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Identifier>) current;
@@ -394,7 +417,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).
    */
   @JsonIgnore public java.util.Collection<Language> getKnowsLanguageLanguages() {
-    final Object current = myData.get("knowsLanguage");
+    final java.lang.Object current = myData.get("knowsLanguage");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Language>) current;
@@ -411,7 +434,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).
    */
   @JsonIgnore public java.util.Collection<String> getKnowsLanguageStrings() {
-    final Object current = myData.get("knowsLanguage");
+    final java.lang.Object current = myData.get("knowsLanguage");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -428,7 +451,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * An Organization (or ProgramMembership) to which this Person or Organization belongs.
    */
   @JsonIgnore public java.util.Collection<MemberOf> getMemberOfs() {
-    final Object current = myData.get("memberOf");
+    final java.lang.Object current = myData.get("memberOf");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MemberOf>) current;
@@ -445,7 +468,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * An organization that this person is affiliated with. For example, a school/university, a club, or a team.
    */
   @JsonIgnore public java.util.Collection<MemberOf> getAffiliations() {
-    final Object current = myData.get("affiliation");
+    final java.lang.Object current = myData.get("affiliation");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MemberOf>) current;
@@ -462,7 +485,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
    */
   @JsonIgnore public java.util.Collection<Brand> getBrandBrands() {
-    final Object current = myData.get("brand");
+    final java.lang.Object current = myData.get("brand");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Brand>) current;
@@ -479,7 +502,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
    */
   @JsonIgnore public java.util.Collection<Organization> getBrandOrganizations() {
-    final Object current = myData.get("brand");
+    final java.lang.Object current = myData.get("brand");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Organization>) current;
@@ -496,7 +519,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * The Value-added Tax ID of the organization or person.
    */
   @JsonIgnore public java.util.Collection<String> getVatIDs() {
-    final Object current = myData.get("vatID");
+    final java.lang.Object current = myData.get("vatID");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -513,7 +536,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * Physical address of the item.
    */
   @JsonIgnore public java.util.Collection<PostalAddress> getAddressPostalAddresss() {
-    final Object current = myData.get("address");
+    final java.lang.Object current = myData.get("address");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<PostalAddress>) current;
@@ -530,7 +553,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * Physical address of the item.
    */
   @JsonIgnore public java.util.Collection<String> getAddressStrings() {
-    final Object current = myData.get("address");
+    final java.lang.Object current = myData.get("address");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -547,7 +570,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * Nationality of the person.
    */
   @JsonIgnore public java.util.Collection<Country> getNationalitys() {
-    final Object current = myData.get("nationality");
+    final java.lang.Object current = myData.get("nationality");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Country>) current;
@@ -564,7 +587,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * Date of birth.
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getBirthDates() {
-    final Object current = myData.get("birthDate");
+    final java.lang.Object current = myData.get("birthDate");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<java.util.Date>) current;
@@ -581,7 +604,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * The job title of the person (for example, Financial Manager).
    */
   @JsonIgnore public java.util.Collection<DefinedTerm> getJobTitleDefinedTerms() {
-    final Object current = myData.get("jobTitle");
+    final java.lang.Object current = myData.get("jobTitle");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<DefinedTerm>) current;
@@ -598,7 +621,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * The job title of the person (for example, Financial Manager).
    */
   @JsonIgnore public java.util.Collection<String> getJobTitleStrings() {
-    final Object current = myData.get("jobTitle");
+    final java.lang.Object current = myData.get("jobTitle");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -615,7 +638,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * Products owned by the organization or person.
    */
   @JsonIgnore public java.util.Collection<OwnershipInfo> getOwnsOwnershipInfos() {
-    final Object current = myData.get("owns");
+    final java.lang.Object current = myData.get("owns");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<OwnershipInfo>) current;
@@ -632,7 +655,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * Products owned by the organization or person.
    */
   @JsonIgnore public java.util.Collection<Product> getOwnsProducts() {
-    final Object current = myData.get("owns");
+    final java.lang.Object current = myData.get("owns");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Product>) current;
@@ -649,7 +672,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * The North American Industry Classification System (NAICS) code for a particular organization or business person.
    */
   @JsonIgnore public java.util.Collection<String> getNaicss() {
-    final Object current = myData.get("naics");
+    final java.lang.Object current = myData.get("naics");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -666,7 +689,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * The most generic uni-directional social relation.
    */
   @JsonIgnore public java.util.Collection<Person> getFollowss() {
-    final Object current = myData.get("follows");
+    final java.lang.Object current = myData.get("follows");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Person>) current;
@@ -683,7 +706,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While http://schema.org/Male and http://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of &quot;Mixed&quot;.
    */
   @JsonIgnore public java.util.Collection<GenderType> getGenderGenderTypes() {
-    final Object current = myData.get("gender");
+    final java.lang.Object current = myData.get("gender");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<GenderType>) current;
@@ -700,7 +723,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While http://schema.org/Male and http://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of &quot;Mixed&quot;.
    */
   @JsonIgnore public java.util.Collection<String> getGenderStrings() {
-    final Object current = myData.get("gender");
+    final java.lang.Object current = myData.get("gender");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -717,7 +740,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * Indicates an OfferCatalog listing for this Organization, Person, or Service.
    */
   @JsonIgnore public java.util.Collection<OfferCatalog> getHasOfferCatalogs() {
-    final Object current = myData.get("hasOfferCatalog");
+    final java.lang.Object current = myData.get("hasOfferCatalog");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<OfferCatalog>) current;
@@ -734,7 +757,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * The most generic familial relation.
    */
   @JsonIgnore public java.util.Collection<Person> getRelatedTos() {
-    final Object current = myData.get("relatedTo");
+    final java.lang.Object current = myData.get("relatedTo");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Person>) current;
@@ -751,7 +774,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * An honorific suffix following a Person's name such as M.D. /PhD/MSCSW.
    */
   @JsonIgnore public java.util.Collection<String> getHonorificSuffixs() {
-    final Object current = myData.get("honorificSuffix");
+    final java.lang.Object current = myData.get("honorificSuffix");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -768,7 +791,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * The place where the person was born.
    */
   @JsonIgnore public java.util.Collection<Place> getBirthPlaces() {
-    final Object current = myData.get("birthPlace");
+    final java.lang.Object current = myData.get("birthPlace");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Place>) current;
@@ -785,7 +808,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
    */
   @JsonIgnore public java.util.Collection<Identifier> getGlobalLocationNumbers() {
-    final Object current = myData.get("globalLocationNumber");
+    final java.lang.Object current = myData.get("globalLocationNumber");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Identifier>) current;
@@ -802,7 +825,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * A person or organization that supports (sponsors) something through some kind of financial contribution.
    */
   @JsonIgnore public java.util.Collection<Sponsor> getFunders() {
-    final Object current = myData.get("funder");
+    final java.lang.Object current = myData.get("funder");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Sponsor>) current;
@@ -819,7 +842,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
    */
   @JsonIgnore public java.util.Collection<Sponsor> getSponsors() {
-    final Object current = myData.get("sponsor");
+    final java.lang.Object current = myData.get("sponsor");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Sponsor>) current;
@@ -836,7 +859,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
    */
   @JsonIgnore public java.util.Collection<InteractionCounter> getInteractionStatistics() {
-    final Object current = myData.get("interactionStatistic");
+    final java.lang.Object current = myData.get("interactionStatistic");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<InteractionCounter>) current;
@@ -853,7 +876,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * The fax number.
    */
   @JsonIgnore public java.util.Collection<String> getFaxNumbers() {
-    final Object current = myData.get("faxNumber");
+    final java.lang.Object current = myData.get("faxNumber");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -870,7 +893,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * An award won by or for this item.
    */
   @JsonIgnore public java.util.Collection<String> getAwards() {
-    final Object current = myData.get("award");
+    final java.lang.Object current = myData.get("award");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -887,7 +910,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * A parent of this person.
    */
   @JsonIgnore public java.util.Collection<Person> getParents() {
-    final Object current = myData.get("parent");
+    final java.lang.Object current = myData.get("parent");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Person>) current;
@@ -904,7 +927,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * An additional name for a Person, can be used for a middle name.
    */
   @JsonIgnore public java.util.Collection<String> getAdditionalNames() {
-    final Object current = myData.get("additionalName");
+    final java.lang.Object current = myData.get("additionalName");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -921,7 +944,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * The weight of the product or person.
    */
   @JsonIgnore public java.util.Collection<QuantitativeValue> getWeights() {
-    final Object current = myData.get("weight");
+    final java.lang.Object current = myData.get("weight");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<QuantitativeValue>) current;
@@ -938,7 +961,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * A colleague of the person.
    */
   @JsonIgnore public java.util.Collection<Person> getColleaguePersons() {
-    final Object current = myData.get("colleague");
+    final java.lang.Object current = myData.get("colleague");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Person>) current;
@@ -955,7 +978,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * A colleague of the person.
    */
   @JsonIgnore public java.util.Collection<String> getColleagueStrings() {
-    final Object current = myData.get("colleague");
+    final java.lang.Object current = myData.get("colleague");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -972,7 +995,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * A child of the person.
    */
   @JsonIgnore public java.util.Collection<Person> getChildrens() {
-    final Object current = myData.get("children");
+    final java.lang.Object current = myData.get("children");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Person>) current;
@@ -989,7 +1012,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * The most generic bi-directional social/work relation.
    */
   @JsonIgnore public java.util.Collection<Person> getKnowss() {
-    final Object current = myData.get("knows");
+    final java.lang.Object current = myData.get("knows");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Person>) current;
@@ -1006,7 +1029,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * Points-of-Sales operated by the organization or person.
    */
   @JsonIgnore public java.util.Collection<Place> getHasPOSs() {
-    final Object current = myData.get("hasPOS");
+    final java.lang.Object current = myData.get("hasPOS");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Place>) current;
@@ -1023,7 +1046,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * The place where the person died.
    */
   @JsonIgnore public java.util.Collection<Place> getDeathPlaces() {
-    final Object current = myData.get("deathPlace");
+    final java.lang.Object current = myData.get("deathPlace");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Place>) current;
@@ -1040,7 +1063,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * The total financial value of the person as calculated by subtracting assets from liabilities.
    */
   @JsonIgnore public java.util.Collection<MonetaryAmount> getNetWorthMonetaryAmounts() {
-    final Object current = myData.get("netWorth");
+    final java.lang.Object current = myData.get("netWorth");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MonetaryAmount>) current;
@@ -1057,7 +1080,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * The total financial value of the person as calculated by subtracting assets from liabilities.
    */
   @JsonIgnore public java.util.Collection<PriceSpecification> getNetWorthPriceSpecifications() {
-    final Object current = myData.get("netWorth");
+    final java.lang.Object current = myData.get("netWorth");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<PriceSpecification>) current;
@@ -1074,7 +1097,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * An honorific prefix preceding a Person's name such as Dr/Mrs/Mr.
    */
   @JsonIgnore public java.util.Collection<String> getHonorificPrefixs() {
-    final Object current = myData.get("honorificPrefix");
+    final java.lang.Object current = myData.get("honorificPrefix");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -1091,7 +1114,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * The person's spouse.
    */
   @JsonIgnore public java.util.Collection<Person> getSpouses() {
-    final Object current = myData.get("spouse");
+    final java.lang.Object current = myData.get("spouse");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Person>) current;
@@ -1108,7 +1131,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * Date of death.
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getDeathDates() {
-    final Object current = myData.get("deathDate");
+    final java.lang.Object current = myData.get("deathDate");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<java.util.Date>) current;
@@ -1125,7 +1148,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * A pointer to products or services offered by the organization or person.
    */
   @JsonIgnore public java.util.Collection<Offer> getMakesOffers() {
-    final Object current = myData.get("makesOffer");
+    final java.lang.Object current = myData.get("makesOffer");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Offer>) current;
@@ -1142,7 +1165,7 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * An organization that the person is an alumni of.
    */
   @JsonIgnore public java.util.Collection<EducationalOrganization> getAlumniOfEducationalOrganizations() {
-    final Object current = myData.get("alumniOf");
+    final java.lang.Object current = myData.get("alumniOf");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<EducationalOrganization>) current;
@@ -1159,14 +1182,14 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * An organization that the person is an alumni of.
    */
   @JsonIgnore public java.util.Collection<Organization> getAlumniOfOrganizations() {
-    final Object current = myData.get("alumniOf");
+    final java.lang.Object current = myData.get("alumniOf");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
   }
-  protected Person(java.util.Map<String,Object> data) {
+  protected Person(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -1174,11 +1197,21 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
    * Builder for {@link Person}
    */
   public static class Builder extends Thing.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public Person build() {
       return new Person(myData);
+    }
+    /**
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+     * 
+     */
+    @NotNull public Builder publishingPrinciples(@NotNull PublishingPrinciples publishingPrinciples) {
+      putValue("publishingPrinciples", publishingPrinciples);
+      return this;
     }
     /**
      * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
@@ -1902,6 +1935,21 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -1920,6 +1968,13 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -2013,7 +2068,9 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
+      if ("publishingPrinciples".equals(key) && value instanceof PublishingPrinciples) { this.publishingPrinciples((PublishingPrinciples)value); return; }
+      if ("publishingPrincipless".equals(key) && value instanceof PublishingPrinciples) { this.publishingPrinciples((PublishingPrinciples)value); return; }
       if ("knowsAbout".equals(key) && value instanceof String) { this.knowsAbout((String)value); return; }
       if ("knowsAbouts".equals(key) && value instanceof String) { this.knowsAbout((String)value); return; }
       if ("knowsAbout".equals(key) && value instanceof Thing) { this.knowsAbout((Thing)value); return; }

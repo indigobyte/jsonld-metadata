@@ -37,7 +37,7 @@ public class VisualArtwork extends CreativeWork {
    * The width of the item.
    */
   @JsonIgnore public java.util.Collection<Distance> getWidthDistances() {
-    final Object current = myData.get("width");
+    final java.lang.Object current = myData.get("width");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Distance>) current;
@@ -54,7 +54,7 @@ public class VisualArtwork extends CreativeWork {
    * The width of the item.
    */
   @JsonIgnore public java.util.Collection<QuantitativeValue> getWidthQuantitativeValues() {
-    final Object current = myData.get("width");
+    final java.lang.Object current = myData.get("width");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<QuantitativeValue>) current;
@@ -71,7 +71,7 @@ public class VisualArtwork extends CreativeWork {
    * The supporting materials for the artwork, e.g. Canvas, Paper, Wood, Board, etc.
    */
   @JsonIgnore public java.util.Collection<String> getArtworkSurfaces() {
-    final Object current = myData.get("artworkSurface");
+    final java.lang.Object current = myData.get("artworkSurface");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -88,7 +88,7 @@ public class VisualArtwork extends CreativeWork {
    * The individual who adds lettering, including speech balloons and sound effects, to artwork.
    */
   @JsonIgnore public java.util.Collection<Person> getLetterers() {
-    final Object current = myData.get("letterer");
+    final java.lang.Object current = myData.get("letterer");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Person>) current;
@@ -105,7 +105,7 @@ public class VisualArtwork extends CreativeWork {
    * The individual who traces over the pencil drawings in ink after pencils are complete.
    */
   @JsonIgnore public java.util.Collection<Person> getInkers() {
-    final Object current = myData.get("inker");
+    final java.lang.Object current = myData.get("inker");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Person>) current;
@@ -122,7 +122,7 @@ public class VisualArtwork extends CreativeWork {
    * The individual who adds color to inked drawings.
    */
   @JsonIgnore public java.util.Collection<Person> getColorists() {
-    final Object current = myData.get("colorist");
+    final java.lang.Object current = myData.get("colorist");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Person>) current;
@@ -143,7 +143,7 @@ public class VisualArtwork extends CreativeWork {
    *     	primary artwork is done in watercolors or digital paints.
    */
   @JsonIgnore public java.util.Collection<Person> getArtists() {
-    final Object current = myData.get("artist");
+    final java.lang.Object current = myData.get("artist");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Person>) current;
@@ -160,7 +160,7 @@ public class VisualArtwork extends CreativeWork {
    * The depth of the item.
    */
   @JsonIgnore public java.util.Collection<Distance> getDepthDistances() {
-    final Object current = myData.get("depth");
+    final java.lang.Object current = myData.get("depth");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Distance>) current;
@@ -177,7 +177,7 @@ public class VisualArtwork extends CreativeWork {
    * The depth of the item.
    */
   @JsonIgnore public java.util.Collection<QuantitativeValue> getDepthQuantitativeValues() {
-    final Object current = myData.get("depth");
+    final java.lang.Object current = myData.get("depth");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<QuantitativeValue>) current;
@@ -194,7 +194,7 @@ public class VisualArtwork extends CreativeWork {
    * The height of the item.
    */
   @JsonIgnore public java.util.Collection<Distance> getHeightDistances() {
-    final Object current = myData.get("height");
+    final java.lang.Object current = myData.get("height");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Distance>) current;
@@ -211,7 +211,7 @@ public class VisualArtwork extends CreativeWork {
    * The height of the item.
    */
   @JsonIgnore public java.util.Collection<QuantitativeValue> getHeightQuantitativeValues() {
-    final Object current = myData.get("height");
+    final java.lang.Object current = myData.get("height");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<QuantitativeValue>) current;
@@ -228,7 +228,7 @@ public class VisualArtwork extends CreativeWork {
    * The individual who draws the primary narrative artwork.
    */
   @JsonIgnore public java.util.Collection<Person> getPencilers() {
-    final Object current = myData.get("penciler");
+    final java.lang.Object current = myData.get("penciler");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Person>) current;
@@ -245,7 +245,7 @@ public class VisualArtwork extends CreativeWork {
    * The material used. (e.g. Oil, Watercolour, Acrylic, Linoprint, Marble, Cyanotype, Digital, Lithograph, DryPoint, Intaglio, Pastel, Woodcut, Pencil, Mixed Media, etc.)
    */
   @JsonIgnore public java.util.Collection<Material> getArtMediums() {
-    final Object current = myData.get("artMedium");
+    final java.lang.Object current = myData.get("artMedium");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Material>) current;
@@ -262,7 +262,7 @@ public class VisualArtwork extends CreativeWork {
    * The number of copies when multiple copies of a piece of artwork are produced - e.g. for a limited edition of 20 prints, 'artEdition' refers to the total number of copies (in this example &quot;20&quot;).
    */
   @JsonIgnore public java.util.Collection<Integer> getArtEditionIntegers() {
-    final Object current = myData.get("artEdition");
+    final java.lang.Object current = myData.get("artEdition");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -279,7 +279,7 @@ public class VisualArtwork extends CreativeWork {
    * The number of copies when multiple copies of a piece of artwork are produced - e.g. for a limited edition of 20 prints, 'artEdition' refers to the total number of copies (in this example &quot;20&quot;).
    */
   @JsonIgnore public java.util.Collection<String> getArtEditionStrings() {
-    final Object current = myData.get("artEdition");
+    final java.lang.Object current = myData.get("artEdition");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -296,14 +296,14 @@ public class VisualArtwork extends CreativeWork {
    * e.g. Painting, Drawing, Sculpture, Print, Photograph, Assemblage, Collage, etc.
    */
   @JsonIgnore public java.util.Collection<String> getArtforms() {
-    final Object current = myData.get("artform");
+    final java.lang.Object current = myData.get("artform");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
-  protected VisualArtwork(java.util.Map<String,Object> data) {
+  protected VisualArtwork(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -311,7 +311,7 @@ public class VisualArtwork extends CreativeWork {
    * Builder for {@link VisualArtwork}
    */
   public static class Builder extends CreativeWork.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public VisualArtwork build() {
@@ -534,6 +534,16 @@ public class VisualArtwork extends CreativeWork {
       return this;
     }
     /**
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+     * 
+     */
+    @NotNull public Builder publishingPrinciples(@NotNull PublishingPrinciples publishingPrinciples) {
+      putValue("publishingPrinciples", publishingPrinciples);
+      return this;
+    }
+    /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
      */
     @NotNull public Builder inLanguage(@NotNull Language language) {
@@ -559,6 +569,13 @@ public class VisualArtwork extends CreativeWork {
      */
     @NotNull public Builder thumbnailUrl(@NotNull String thumbnailUrl) {
       putValue("thumbnailUrl", thumbnailUrl);
+      return this;
+    }
+    /**
+     * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
+     */
+    @NotNull public Builder hasPart(@NotNull HasPart hasPart) {
+      putValue("hasPart", hasPart);
       return this;
     }
     /**
@@ -629,6 +646,13 @@ public class VisualArtwork extends CreativeWork {
      */
     @NotNull public Builder size(@NotNull String size) {
       putValue("size", size);
+      return this;
+    }
+    /**
+     * A material that something is made from, e.g. leather, wool, cotton, paper.
+     */
+    @NotNull public Builder material(@NotNull Material material) {
+      putValue("material", material);
       return this;
     }
     /**
@@ -720,6 +744,15 @@ public class VisualArtwork extends CreativeWork {
      */
     @NotNull public Builder commentCount(@NotNull Integer integer) {
       putValue("commentCount", integer);
+      return this;
+    }
+    /**
+     * The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of
+     *       contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates
+     *       areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
+     */
+    @NotNull public Builder spatialCoverage(@NotNull SpatialCoverage spatialCoverage) {
+      putValue("spatialCoverage", spatialCoverage);
       return this;
     }
     /**
@@ -940,6 +973,13 @@ public class VisualArtwork extends CreativeWork {
      */
     @NotNull public Builder sdLicense(@NotNull String sdLicense) {
       putValue("sdLicense", sdLicense);
+      return this;
+    }
+    /**
+     * The position of an item in a series or sequence of items.
+     */
+    @NotNull public Builder position(@NotNull Position position) {
+      putValue("position", position);
       return this;
     }
     /**
@@ -1383,10 +1423,24 @@ public class VisualArtwork extends CreativeWork {
       return this;
     }
     /**
+     * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
+     */
+    @NotNull public Builder isPartOf(@NotNull IsPartOf isPartOf) {
+      putValue("isPartOf", isPartOf);
+      return this;
+    }
+    /**
      * Indicates that the resource is compatible with the referenced accessibility API ([WebSchemas wiki lists possible values](http://www.w3.org/wiki/WebSchemas/Accessibility)).
      */
     @NotNull public Builder accessibilityAPI(@NotNull String accessibilityAPI) {
       putValue("accessibilityAPI", accessibilityAPI);
+      return this;
+    }
+    /**
+     * Example/instance/realization/derivation of the concept of this creative work. eg. The paperback edition, first edition, or eBook.
+     */
+    @NotNull public Builder workExample(@NotNull WorkExample workExample) {
+      putValue("workExample", workExample);
       return this;
     }
     /**
@@ -1983,10 +2037,45 @@ public class VisualArtwork extends CreativeWork {
       return this;
     }
     /**
+     * The subject matter of the content.
+     */
+    @NotNull public Builder about(@NotNull Thing thing) {
+      putValue("about", thing);
+      return this;
+    }
+    /**
+     * The subject matter of the content.
+     */
+    @NotNull public Builder about(@NotNull Thing.Builder thing) {
+      putValue("about", thing.build());
+      return this;
+    }
+    /**
      * Indicates the primary entity described in some page or other CreativeWork.
      */
     @NotNull public Builder mainEntity(@NotNull About about) {
       putValue("mainEntity", about);
+      return this;
+    }
+    /**
+     * Indicates the primary entity described in some page or other CreativeWork.
+     */
+    @NotNull public Builder mainEntity(@NotNull About.Builder about) {
+      putValue("mainEntity", about.build());
+      return this;
+    }
+    /**
+     * Indicates the primary entity described in some page or other CreativeWork.
+     */
+    @NotNull public Builder mainEntity(@NotNull Thing thing) {
+      putValue("mainEntity", thing);
+      return this;
+    }
+    /**
+     * Indicates the primary entity described in some page or other CreativeWork.
+     */
+    @NotNull public Builder mainEntity(@NotNull Thing.Builder thing) {
+      putValue("mainEntity", thing.build());
       return this;
     }
     /**
@@ -2025,6 +2114,21 @@ public class VisualArtwork extends CreativeWork {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -2043,6 +2147,13 @@ public class VisualArtwork extends CreativeWork {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -2136,7 +2247,7 @@ public class VisualArtwork extends CreativeWork {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("width".equals(key) && value instanceof Distance) { this.width((Distance)value); return; }
       if ("widths".equals(key) && value instanceof Distance) { this.width((Distance)value); return; }
       if ("width".equals(key) && value instanceof QuantitativeValue) { this.width((QuantitativeValue)value); return; }

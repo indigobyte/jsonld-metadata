@@ -26,7 +26,7 @@ import java.util.*;
 /**
  * Used to describe membership in a loyalty programs (e.g. &quot;StarAliance&quot;), traveler clubs (e.g. &quot;AAA&quot;), purchase clubs (&quot;Safeway Club&quot;), etc.
  */
-public class ProgramMembership extends Intangible implements MemberOf {
+public class ProgramMembership extends Intangible implements org.schema.MemberOf {
   /**
    * The program providing the membership.
    */
@@ -37,7 +37,7 @@ public class ProgramMembership extends Intangible implements MemberOf {
    * The program providing the membership.
    */
   @JsonIgnore public java.util.Collection<String> getProgramNames() {
-    final Object current = myData.get("programName");
+    final java.lang.Object current = myData.get("programName");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -54,7 +54,7 @@ public class ProgramMembership extends Intangible implements MemberOf {
    * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
    */
   @JsonIgnore public java.util.Collection<Organization> getMemberOrganizations() {
-    final Object current = myData.get("member");
+    final java.lang.Object current = myData.get("member");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Organization>) current;
@@ -71,7 +71,7 @@ public class ProgramMembership extends Intangible implements MemberOf {
    * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
    */
   @JsonIgnore public java.util.Collection<Person> getMemberPersons() {
-    final Object current = myData.get("member");
+    final java.lang.Object current = myData.get("member");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Person>) current;
@@ -88,7 +88,7 @@ public class ProgramMembership extends Intangible implements MemberOf {
    * The organization (airline, travelers' club, etc.) the membership is made with.
    */
   @JsonIgnore public java.util.Collection<Organization> getHostingOrganizations() {
-    final Object current = myData.get("hostingOrganization");
+    final java.lang.Object current = myData.get("hostingOrganization");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Organization>) current;
@@ -105,7 +105,7 @@ public class ProgramMembership extends Intangible implements MemberOf {
    * A unique identifier for the membership.
    */
   @JsonIgnore public java.util.Collection<String> getMembershipNumbers() {
-    final Object current = myData.get("membershipNumber");
+    final java.lang.Object current = myData.get("membershipNumber");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -122,7 +122,7 @@ public class ProgramMembership extends Intangible implements MemberOf {
    * The number of membership points earned by the member. If necessary, the unitText can be used to express the units the points are issued in. (e.g. stars, miles, etc.)
    */
   @JsonIgnore public java.util.Collection<Integer> getMembershipPointsEarnedIntegers() {
-    final Object current = myData.get("membershipPointsEarned");
+    final java.lang.Object current = myData.get("membershipPointsEarned");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -139,7 +139,7 @@ public class ProgramMembership extends Intangible implements MemberOf {
    * The number of membership points earned by the member. If necessary, the unitText can be used to express the units the points are issued in. (e.g. stars, miles, etc.)
    */
   @JsonIgnore public java.util.Collection<Long> getMembershipPointsEarnedLongs() {
-    final Object current = myData.get("membershipPointsEarned");
+    final java.lang.Object current = myData.get("membershipPointsEarned");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Long>) current;
@@ -156,7 +156,7 @@ public class ProgramMembership extends Intangible implements MemberOf {
    * The number of membership points earned by the member. If necessary, the unitText can be used to express the units the points are issued in. (e.g. stars, miles, etc.)
    */
   @JsonIgnore public java.util.Collection<Float> getMembershipPointsEarnedFloats() {
-    final Object current = myData.get("membershipPointsEarned");
+    final java.lang.Object current = myData.get("membershipPointsEarned");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Float>) current;
@@ -173,7 +173,7 @@ public class ProgramMembership extends Intangible implements MemberOf {
    * The number of membership points earned by the member. If necessary, the unitText can be used to express the units the points are issued in. (e.g. stars, miles, etc.)
    */
   @JsonIgnore public java.util.Collection<Double> getMembershipPointsEarnedDoubles() {
-    final Object current = myData.get("membershipPointsEarned");
+    final java.lang.Object current = myData.get("membershipPointsEarned");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Double>) current;
@@ -190,14 +190,14 @@ public class ProgramMembership extends Intangible implements MemberOf {
    * The number of membership points earned by the member. If necessary, the unitText can be used to express the units the points are issued in. (e.g. stars, miles, etc.)
    */
   @JsonIgnore public java.util.Collection<String> getMembershipPointsEarnedStrings() {
-    final Object current = myData.get("membershipPointsEarned");
+    final java.lang.Object current = myData.get("membershipPointsEarned");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
-  protected ProgramMembership(java.util.Map<String,Object> data) {
+  protected ProgramMembership(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -205,7 +205,7 @@ public class ProgramMembership extends Intangible implements MemberOf {
    * Builder for {@link ProgramMembership}
    */
   public static class Builder extends Intangible.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public ProgramMembership build() {
@@ -303,6 +303,21 @@ public class ProgramMembership extends Intangible implements MemberOf {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -321,6 +336,13 @@ public class ProgramMembership extends Intangible implements MemberOf {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -414,7 +436,7 @@ public class ProgramMembership extends Intangible implements MemberOf {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("programName".equals(key) && value instanceof String) { this.programName((String)value); return; }
       if ("programNames".equals(key) && value instanceof String) { this.programName((String)value); return; }
       if ("member".equals(key) && value instanceof Organization) { this.member((Organization)value); return; }

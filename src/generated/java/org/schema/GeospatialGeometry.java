@@ -37,7 +37,7 @@ public class GeospatialGeometry extends Intangible {
    * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
    */
   @JsonIgnore public java.util.Collection<GeospatialGeometry> getGeoWithinGeospatialGeometrys() {
-    final Object current = myData.get("geoWithin");
+    final java.lang.Object current = myData.get("geoWithin");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<GeospatialGeometry>) current;
@@ -54,7 +54,7 @@ public class GeospatialGeometry extends Intangible {
    * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
    */
   @JsonIgnore public java.util.Collection<Place> getGeoWithinPlaces() {
-    final Object current = myData.get("geoWithin");
+    final java.lang.Object current = myData.get("geoWithin");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Place>) current;
@@ -71,7 +71,7 @@ public class GeospatialGeometry extends Intangible {
    * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries.&quot; (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM))
    */
   @JsonIgnore public java.util.Collection<GeospatialGeometry> getGeoDisjointGeospatialGeometrys() {
-    final Object current = myData.get("geoDisjoint");
+    final java.lang.Object current = myData.get("geoDisjoint");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<GeospatialGeometry>) current;
@@ -88,7 +88,7 @@ public class GeospatialGeometry extends Intangible {
    * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries.&quot; (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM))
    */
   @JsonIgnore public java.util.Collection<Place> getGeoDisjointPlaces() {
-    final Object current = myData.get("geoDisjoint");
+    final java.lang.Object current = myData.get("geoDisjoint");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Place>) current;
@@ -105,7 +105,7 @@ public class GeospatialGeometry extends Intangible {
    * Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points.&quot; (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM) )
    */
   @JsonIgnore public java.util.Collection<GeospatialGeometry> getGeoTouchesGeospatialGeometrys() {
-    final Object current = myData.get("geoTouches");
+    final java.lang.Object current = myData.get("geoTouches");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<GeospatialGeometry>) current;
@@ -122,7 +122,7 @@ public class GeospatialGeometry extends Intangible {
    * Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points.&quot; (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM) )
    */
   @JsonIgnore public java.util.Collection<Place> getGeoTouchesPlaces() {
-    final Object current = myData.get("geoTouches");
+    final java.lang.Object current = myData.get("geoTouches");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Place>) current;
@@ -139,7 +139,7 @@ public class GeospatialGeometry extends Intangible {
    * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
    */
   @JsonIgnore public java.util.Collection<GeospatialGeometry> getGeoIntersectsGeospatialGeometrys() {
-    final Object current = myData.get("geoIntersects");
+    final java.lang.Object current = myData.get("geoIntersects");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<GeospatialGeometry>) current;
@@ -156,7 +156,7 @@ public class GeospatialGeometry extends Intangible {
    * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
    */
   @JsonIgnore public java.util.Collection<Place> getGeoIntersectsPlaces() {
-    final Object current = myData.get("geoIntersects");
+    final java.lang.Object current = myData.get("geoIntersects");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Place>) current;
@@ -173,7 +173,7 @@ public class GeospatialGeometry extends Intangible {
    * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: &quot;a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them&quot;. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
    */
   @JsonIgnore public java.util.Collection<GeospatialGeometry> getGeoCrossesGeospatialGeometrys() {
-    final Object current = myData.get("geoCrosses");
+    final java.lang.Object current = myData.get("geoCrosses");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<GeospatialGeometry>) current;
@@ -190,7 +190,7 @@ public class GeospatialGeometry extends Intangible {
    * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: &quot;a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them&quot;. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
    */
   @JsonIgnore public java.util.Collection<Place> getGeoCrossesPlaces() {
-    final Object current = myData.get("geoCrosses");
+    final java.lang.Object current = myData.get("geoCrosses");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Place>) current;
@@ -207,7 +207,7 @@ public class GeospatialGeometry extends Intangible {
    * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
    */
   @JsonIgnore public java.util.Collection<GeospatialGeometry> getGeoCoveredByGeospatialGeometrys() {
-    final Object current = myData.get("geoCoveredBy");
+    final java.lang.Object current = myData.get("geoCoveredBy");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<GeospatialGeometry>) current;
@@ -224,7 +224,7 @@ public class GeospatialGeometry extends Intangible {
    * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
    */
   @JsonIgnore public java.util.Collection<Place> getGeoCoveredByPlaces() {
-    final Object current = myData.get("geoCoveredBy");
+    final java.lang.Object current = myData.get("geoCoveredBy");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Place>) current;
@@ -241,7 +241,7 @@ public class GeospatialGeometry extends Intangible {
    * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). &quot;Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other&quot; (a symmetric relationship)
    */
   @JsonIgnore public java.util.Collection<GeospatialGeometry> getGeoEqualsGeospatialGeometrys() {
-    final Object current = myData.get("geoEquals");
+    final java.lang.Object current = myData.get("geoEquals");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<GeospatialGeometry>) current;
@@ -258,7 +258,7 @@ public class GeospatialGeometry extends Intangible {
    * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). &quot;Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other&quot; (a symmetric relationship)
    */
   @JsonIgnore public java.util.Collection<Place> getGeoEqualsPlaces() {
-    final Object current = myData.get("geoEquals");
+    final java.lang.Object current = myData.get("geoEquals");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Place>) current;
@@ -275,7 +275,7 @@ public class GeospatialGeometry extends Intangible {
    * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
    */
   @JsonIgnore public java.util.Collection<GeospatialGeometry> getGeoOverlapsGeospatialGeometrys() {
-    final Object current = myData.get("geoOverlaps");
+    final java.lang.Object current = myData.get("geoOverlaps");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<GeospatialGeometry>) current;
@@ -292,7 +292,7 @@ public class GeospatialGeometry extends Intangible {
    * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
    */
   @JsonIgnore public java.util.Collection<Place> getGeoOverlapsPlaces() {
-    final Object current = myData.get("geoOverlaps");
+    final java.lang.Object current = myData.get("geoOverlaps");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Place>) current;
@@ -309,7 +309,7 @@ public class GeospatialGeometry extends Intangible {
    * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. &quot;Every point of b is a point of (the interior or boundary of) a&quot;. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
    */
   @JsonIgnore public java.util.Collection<GeospatialGeometry> getGeoCoversGeospatialGeometrys() {
-    final Object current = myData.get("geoCovers");
+    final java.lang.Object current = myData.get("geoCovers");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<GeospatialGeometry>) current;
@@ -326,7 +326,7 @@ public class GeospatialGeometry extends Intangible {
    * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. &quot;Every point of b is a point of (the interior or boundary of) a&quot;. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
    */
   @JsonIgnore public java.util.Collection<Place> getGeoCoversPlaces() {
-    final Object current = myData.get("geoCovers");
+    final java.lang.Object current = myData.get("geoCovers");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Place>) current;
@@ -343,7 +343,7 @@ public class GeospatialGeometry extends Intangible {
    * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. &quot;a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a&quot;. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
    */
   @JsonIgnore public java.util.Collection<GeospatialGeometry> getGeoContainsGeospatialGeometrys() {
-    final Object current = myData.get("geoContains");
+    final java.lang.Object current = myData.get("geoContains");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<GeospatialGeometry>) current;
@@ -360,14 +360,14 @@ public class GeospatialGeometry extends Intangible {
    * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. &quot;a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a&quot;. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
    */
   @JsonIgnore public java.util.Collection<Place> getGeoContainsPlaces() {
-    final Object current = myData.get("geoContains");
+    final java.lang.Object current = myData.get("geoContains");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Place>) current;
     }
     return Arrays.asList((Place) current);
   }
-  protected GeospatialGeometry(java.util.Map<String,Object> data) {
+  protected GeospatialGeometry(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -375,7 +375,7 @@ public class GeospatialGeometry extends Intangible {
    * Builder for {@link GeospatialGeometry}
    */
   public static class Builder extends Intangible.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public GeospatialGeometry build() {
@@ -662,6 +662,21 @@ public class GeospatialGeometry extends Intangible {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -680,6 +695,13 @@ public class GeospatialGeometry extends Intangible {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -773,7 +795,7 @@ public class GeospatialGeometry extends Intangible {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("geoWithin".equals(key) && value instanceof GeospatialGeometry) { this.geoWithin((GeospatialGeometry)value); return; }
       if ("geoWithins".equals(key) && value instanceof GeospatialGeometry) { this.geoWithin((GeospatialGeometry)value); return; }
       if ("geoWithin".equals(key) && value instanceof Place) { this.geoWithin((Place)value); return; }

@@ -57,8 +57,17 @@ class KotlinClassesGenerator(private val sink: GeneratorSink, private val banner
                     val nameWithSuffix = "$varName$suffix"
 
                     val isEnum =
-                        findType(fieldType)?.isEnum != true && (i >= it.dataTypes.size || sink.types[it.dataTypes[i]]?.isEnum != true)
-                    if (!sink.shouldSkip(fieldType) && findType(fieldType)?.isInterface != true && isEnum && fieldType != "String" && fieldType != "Integer" && fieldType != "java.util.Date") {
+                        findType(fieldType)?.isEnum != true && (
+                                i >= it.dataTypes.size ||
+                                        sink.types[it.dataTypes.elementAt(i)]?.isEnum != true
+                                )
+                    if (!sink.shouldSkip(fieldType) &&
+                        findType(fieldType)?.isInterface != true &&
+                        isEnum &&
+                        fieldType != "String" &&
+                        fieldType != "Integer" &&
+                        fieldType != "java.util.Date"
+                    ) {
                         appendLine("  fun $nameWithSuffix(builder: Mutable$fieldType.() -> Unit) { map[\"$varName\"] = Mutable$fieldType().apply(builder).build() }")
                     }
                 }
@@ -68,5 +77,6 @@ class KotlinClassesGenerator(private val sink: GeneratorSink, private val banner
         }
     }
 
-    private fun findType(fieldType: String): GeneratorSink.Type? = sink.types.values.firstOrNull { it.name == fieldType }
+    private fun findType(fieldType: String): GeneratorSink.Type? =
+        sink.types.values.firstOrNull { it.name == fieldType }
 }

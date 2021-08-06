@@ -37,7 +37,7 @@ public class BusinessAudience extends Audience {
    * The number of employees in an organization e.g. business.
    */
   @JsonIgnore public java.util.Collection<QuantitativeValue> getNumberOfEmployeess() {
-    final Object current = myData.get("numberOfEmployees");
+    final java.lang.Object current = myData.get("numberOfEmployees");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<QuantitativeValue>) current;
@@ -54,7 +54,7 @@ public class BusinessAudience extends Audience {
    * The size of the business in annual revenue.
    */
   @JsonIgnore public java.util.Collection<QuantitativeValue> getYearlyRevenues() {
-    final Object current = myData.get("yearlyRevenue");
+    final java.lang.Object current = myData.get("yearlyRevenue");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<QuantitativeValue>) current;
@@ -71,14 +71,14 @@ public class BusinessAudience extends Audience {
    * The age of the business.
    */
   @JsonIgnore public java.util.Collection<QuantitativeValue> getYearsInOperations() {
-    final Object current = myData.get("yearsInOperation");
+    final java.lang.Object current = myData.get("yearsInOperation");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
-  protected BusinessAudience(java.util.Map<String,Object> data) {
+  protected BusinessAudience(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -86,7 +86,7 @@ public class BusinessAudience extends Audience {
    * Builder for {@link BusinessAudience}
    */
   public static class Builder extends Audience.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public BusinessAudience build() {
@@ -156,6 +156,21 @@ public class BusinessAudience extends Audience {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -174,6 +189,13 @@ public class BusinessAudience extends Audience {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -267,7 +289,7 @@ public class BusinessAudience extends Audience {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("numberOfEmployees".equals(key) && value instanceof QuantitativeValue) { this.numberOfEmployees((QuantitativeValue)value); return; }
       if ("numberOfEmployeess".equals(key) && value instanceof QuantitativeValue) { this.numberOfEmployees((QuantitativeValue)value); return; }
       if ("yearlyRevenue".equals(key) && value instanceof QuantitativeValue) { this.yearlyRevenue((QuantitativeValue)value); return; }

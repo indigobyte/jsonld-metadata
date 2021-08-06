@@ -37,7 +37,7 @@ public class MedicalDevice extends MedicalEntity {
    * A possible serious complication and/or serious side effect of this therapy. Serious adverse outcomes include those that are life-threatening; result in death, disability, or permanent damage; require hospitalization or prolong existing hospitalization; cause congenital anomalies or birth defects; or jeopardize the patient and may require medical or surgical intervention to prevent one of the outcomes in this definition.
    */
   @JsonIgnore public java.util.Collection<MedicalEntity> getSeriousAdverseOutcomes() {
-    final Object current = myData.get("seriousAdverseOutcome");
+    final java.lang.Object current = myData.get("seriousAdverseOutcome");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MedicalEntity>) current;
@@ -54,7 +54,7 @@ public class MedicalDevice extends MedicalEntity {
    * A contraindication for this therapy.
    */
   @JsonIgnore public java.util.Collection<MedicalContraindication> getContraindicationMedicalContraindications() {
-    final Object current = myData.get("contraindication");
+    final java.lang.Object current = myData.get("contraindication");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MedicalContraindication>) current;
@@ -71,7 +71,7 @@ public class MedicalDevice extends MedicalEntity {
    * A contraindication for this therapy.
    */
   @JsonIgnore public java.util.Collection<String> getContraindicationStrings() {
-    final Object current = myData.get("contraindication");
+    final java.lang.Object current = myData.get("contraindication");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -88,7 +88,7 @@ public class MedicalDevice extends MedicalEntity {
    * A description of the workup, testing, and other preparations required before implanting this device.
    */
   @JsonIgnore public java.util.Collection<String> getPreOps() {
-    final Object current = myData.get("preOp");
+    final java.lang.Object current = myData.get("preOp");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -105,7 +105,7 @@ public class MedicalDevice extends MedicalEntity {
    * A description of the procedure involved in setting up, using, and/or installing the device.
    */
   @JsonIgnore public java.util.Collection<String> getProcedures() {
-    final Object current = myData.get("procedure");
+    final java.lang.Object current = myData.get("procedure");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -122,7 +122,7 @@ public class MedicalDevice extends MedicalEntity {
    * A description of the postoperative procedures, care, and/or followups for this device.
    */
   @JsonIgnore public java.util.Collection<String> getPostOps() {
-    final Object current = myData.get("postOp");
+    final java.lang.Object current = myData.get("postOp");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -139,14 +139,14 @@ public class MedicalDevice extends MedicalEntity {
    * A possible complication and/or side effect of this therapy. If it is known that an adverse outcome is serious (resulting in death, disability, or permanent damage; requiring hospitalization; or is otherwise life-threatening or requires immediate medical attention), tag it as a seriouseAdverseOutcome instead.
    */
   @JsonIgnore public java.util.Collection<MedicalEntity> getAdverseOutcomes() {
-    final Object current = myData.get("adverseOutcome");
+    final java.lang.Object current = myData.get("adverseOutcome");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MedicalEntity>) current;
     }
     return Arrays.asList((MedicalEntity) current);
   }
-  protected MedicalDevice(java.util.Map<String,Object> data) {
+  protected MedicalDevice(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -154,7 +154,7 @@ public class MedicalDevice extends MedicalEntity {
    * Builder for {@link MedicalDevice}
    */
   public static class Builder extends MedicalEntity.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public MedicalDevice build() {
@@ -329,6 +329,21 @@ public class MedicalDevice extends MedicalEntity {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -347,6 +362,13 @@ public class MedicalDevice extends MedicalEntity {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -440,7 +462,7 @@ public class MedicalDevice extends MedicalEntity {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("seriousAdverseOutcome".equals(key) && value instanceof MedicalEntity) { this.seriousAdverseOutcome((MedicalEntity)value); return; }
       if ("seriousAdverseOutcomes".equals(key) && value instanceof MedicalEntity) { this.seriousAdverseOutcome((MedicalEntity)value); return; }
       if ("contraindication".equals(key) && value instanceof MedicalContraindication) { this.contraindication((MedicalContraindication)value); return; }

@@ -24,7 +24,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * 
+ * Example/instance/realization/derivation of the concept of this creative work. eg. The paperback edition, first edition, or eBook.
  */
 public interface WorkExample {
 }

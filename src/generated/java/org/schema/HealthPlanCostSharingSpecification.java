@@ -37,7 +37,7 @@ public class HealthPlanCostSharingSpecification extends Intangible {
    * Whether The rate of coinsurance expressed as a number between 0.0 and 1.0.
    */
   @JsonIgnore public java.util.Collection<Integer> getHealthPlanCoinsuranceRateIntegers() {
-    final Object current = myData.get("healthPlanCoinsuranceRate");
+    final java.lang.Object current = myData.get("healthPlanCoinsuranceRate");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -54,7 +54,7 @@ public class HealthPlanCostSharingSpecification extends Intangible {
    * Whether The rate of coinsurance expressed as a number between 0.0 and 1.0.
    */
   @JsonIgnore public java.util.Collection<Long> getHealthPlanCoinsuranceRateLongs() {
-    final Object current = myData.get("healthPlanCoinsuranceRate");
+    final java.lang.Object current = myData.get("healthPlanCoinsuranceRate");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Long>) current;
@@ -71,7 +71,7 @@ public class HealthPlanCostSharingSpecification extends Intangible {
    * Whether The rate of coinsurance expressed as a number between 0.0 and 1.0.
    */
   @JsonIgnore public java.util.Collection<Float> getHealthPlanCoinsuranceRateFloats() {
-    final Object current = myData.get("healthPlanCoinsuranceRate");
+    final java.lang.Object current = myData.get("healthPlanCoinsuranceRate");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Float>) current;
@@ -88,7 +88,7 @@ public class HealthPlanCostSharingSpecification extends Intangible {
    * Whether The rate of coinsurance expressed as a number between 0.0 and 1.0.
    */
   @JsonIgnore public java.util.Collection<Double> getHealthPlanCoinsuranceRateDoubles() {
-    final Object current = myData.get("healthPlanCoinsuranceRate");
+    final java.lang.Object current = myData.get("healthPlanCoinsuranceRate");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Double>) current;
@@ -105,7 +105,7 @@ public class HealthPlanCostSharingSpecification extends Intangible {
    * Whether The rate of coinsurance expressed as a number between 0.0 and 1.0.
    */
   @JsonIgnore public java.util.Collection<String> getHealthPlanCoinsuranceRateStrings() {
-    final Object current = myData.get("healthPlanCoinsuranceRate");
+    final java.lang.Object current = myData.get("healthPlanCoinsuranceRate");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -122,7 +122,7 @@ public class HealthPlanCostSharingSpecification extends Intangible {
    * Whether the copay is before or after deductible, etc. TODO: Is this a closed set?
    */
   @JsonIgnore public java.util.Collection<String> getHealthPlanCopayOptions() {
-    final Object current = myData.get("healthPlanCopayOption");
+    final java.lang.Object current = myData.get("healthPlanCopayOption");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -139,7 +139,7 @@ public class HealthPlanCostSharingSpecification extends Intangible {
    * Whether the coinsurance applies before or after deductible, etc. TODO: Is this a closed set?
    */
   @JsonIgnore public java.util.Collection<String> getHealthPlanCoinsuranceOptions() {
-    final Object current = myData.get("healthPlanCoinsuranceOption");
+    final java.lang.Object current = myData.get("healthPlanCoinsuranceOption");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -156,7 +156,7 @@ public class HealthPlanCostSharingSpecification extends Intangible {
    * Whether The copay amount.
    */
   @JsonIgnore public java.util.Collection<PriceSpecification> getHealthPlanCopays() {
-    final Object current = myData.get("healthPlanCopay");
+    final java.lang.Object current = myData.get("healthPlanCopay");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<PriceSpecification>) current;
@@ -173,14 +173,14 @@ public class HealthPlanCostSharingSpecification extends Intangible {
    * The category or type of pharmacy associated with this cost sharing.
    */
   @JsonIgnore public java.util.Collection<String> getHealthPlanPharmacyCategorys() {
-    final Object current = myData.get("healthPlanPharmacyCategory");
+    final java.lang.Object current = myData.get("healthPlanPharmacyCategory");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
-  protected HealthPlanCostSharingSpecification(java.util.Map<String,Object> data) {
+  protected HealthPlanCostSharingSpecification(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -188,7 +188,7 @@ public class HealthPlanCostSharingSpecification extends Intangible {
    * Builder for {@link HealthPlanCostSharingSpecification}
    */
   public static class Builder extends Intangible.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public HealthPlanCostSharingSpecification build() {
@@ -265,6 +265,21 @@ public class HealthPlanCostSharingSpecification extends Intangible {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -283,6 +298,13 @@ public class HealthPlanCostSharingSpecification extends Intangible {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -376,7 +398,7 @@ public class HealthPlanCostSharingSpecification extends Intangible {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("healthPlanCoinsuranceRate".equals(key) && value instanceof Integer) { this.healthPlanCoinsuranceRate((Integer)value); return; }
       if ("healthPlanCoinsuranceRates".equals(key) && value instanceof Integer) { this.healthPlanCoinsuranceRate((Integer)value); return; }
       if ("healthPlanCoinsuranceRate".equals(key) && value instanceof Long) { this.healthPlanCoinsuranceRate((Long)value); return; }

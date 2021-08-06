@@ -37,7 +37,7 @@ public class MonetaryAmount extends StructuredValue {
    * The date when the item becomes valid.
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getValidFroms() {
-    final Object current = myData.get("validFrom");
+    final java.lang.Object current = myData.get("validFrom");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<java.util.Date>) current;
@@ -54,7 +54,7 @@ public class MonetaryAmount extends StructuredValue {
    * The value of the quantitative value or property value node.\n\n* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.\n* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
    */
   @JsonIgnore public java.util.Collection<Boolean> getValueBooleans() {
-    final Object current = myData.get("value");
+    final java.lang.Object current = myData.get("value");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Boolean>) current;
@@ -71,7 +71,7 @@ public class MonetaryAmount extends StructuredValue {
    * The value of the quantitative value or property value node.\n\n* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.\n* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
    */
   @JsonIgnore public java.util.Collection<Number> getValueNumbers() {
-    final Object current = myData.get("value");
+    final java.lang.Object current = myData.get("value");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Number>) current;
@@ -88,7 +88,7 @@ public class MonetaryAmount extends StructuredValue {
    * The value of the quantitative value or property value node.\n\n* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.\n* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
    */
   @JsonIgnore public java.util.Collection<String> getValueStrings() {
-    final Object current = myData.get("value");
+    final java.lang.Object current = myData.get("value");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -105,7 +105,7 @@ public class MonetaryAmount extends StructuredValue {
    * The value of the quantitative value or property value node.\n\n* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.\n* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
    */
   @JsonIgnore public java.util.Collection<StructuredValue> getValueStructuredValues() {
-    final Object current = myData.get("value");
+    final java.lang.Object current = myData.get("value");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<StructuredValue>) current;
@@ -122,7 +122,7 @@ public class MonetaryAmount extends StructuredValue {
    * The upper value of some characteristic or property.
    */
   @JsonIgnore public java.util.Collection<Integer> getMaxValueIntegers() {
-    final Object current = myData.get("maxValue");
+    final java.lang.Object current = myData.get("maxValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -139,7 +139,7 @@ public class MonetaryAmount extends StructuredValue {
    * The upper value of some characteristic or property.
    */
   @JsonIgnore public java.util.Collection<Long> getMaxValueLongs() {
-    final Object current = myData.get("maxValue");
+    final java.lang.Object current = myData.get("maxValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Long>) current;
@@ -156,7 +156,7 @@ public class MonetaryAmount extends StructuredValue {
    * The upper value of some characteristic or property.
    */
   @JsonIgnore public java.util.Collection<Float> getMaxValueFloats() {
-    final Object current = myData.get("maxValue");
+    final java.lang.Object current = myData.get("maxValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Float>) current;
@@ -173,7 +173,7 @@ public class MonetaryAmount extends StructuredValue {
    * The upper value of some characteristic or property.
    */
   @JsonIgnore public java.util.Collection<Double> getMaxValueDoubles() {
-    final Object current = myData.get("maxValue");
+    final java.lang.Object current = myData.get("maxValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Double>) current;
@@ -190,7 +190,7 @@ public class MonetaryAmount extends StructuredValue {
    * The upper value of some characteristic or property.
    */
   @JsonIgnore public java.util.Collection<String> getMaxValueStrings() {
-    final Object current = myData.get("maxValue");
+    final java.lang.Object current = myData.get("maxValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -207,7 +207,7 @@ public class MonetaryAmount extends StructuredValue {
    * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getValidThroughs() {
-    final Object current = myData.get("validThrough");
+    final java.lang.Object current = myData.get("validThrough");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<java.util.Date>) current;
@@ -224,7 +224,7 @@ public class MonetaryAmount extends StructuredValue {
    * The currency in which the monetary amount is expressed.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;.
    */
   @JsonIgnore public java.util.Collection<String> getCurrencys() {
-    final Object current = myData.get("currency");
+    final java.lang.Object current = myData.get("currency");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -241,7 +241,7 @@ public class MonetaryAmount extends StructuredValue {
    * The lower value of some characteristic or property.
    */
   @JsonIgnore public java.util.Collection<Integer> getMinValueIntegers() {
-    final Object current = myData.get("minValue");
+    final java.lang.Object current = myData.get("minValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -258,7 +258,7 @@ public class MonetaryAmount extends StructuredValue {
    * The lower value of some characteristic or property.
    */
   @JsonIgnore public java.util.Collection<Long> getMinValueLongs() {
-    final Object current = myData.get("minValue");
+    final java.lang.Object current = myData.get("minValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Long>) current;
@@ -275,7 +275,7 @@ public class MonetaryAmount extends StructuredValue {
    * The lower value of some characteristic or property.
    */
   @JsonIgnore public java.util.Collection<Float> getMinValueFloats() {
-    final Object current = myData.get("minValue");
+    final java.lang.Object current = myData.get("minValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Float>) current;
@@ -292,7 +292,7 @@ public class MonetaryAmount extends StructuredValue {
    * The lower value of some characteristic or property.
    */
   @JsonIgnore public java.util.Collection<Double> getMinValueDoubles() {
-    final Object current = myData.get("minValue");
+    final java.lang.Object current = myData.get("minValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Double>) current;
@@ -309,14 +309,14 @@ public class MonetaryAmount extends StructuredValue {
    * The lower value of some characteristic or property.
    */
   @JsonIgnore public java.util.Collection<String> getMinValueStrings() {
-    final Object current = myData.get("minValue");
+    final java.lang.Object current = myData.get("minValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
-  protected MonetaryAmount(java.util.Map<String,Object> data) {
+  protected MonetaryAmount(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -324,7 +324,7 @@ public class MonetaryAmount extends StructuredValue {
    * Builder for {@link MonetaryAmount}
    */
   public static class Builder extends StructuredValue.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public MonetaryAmount build() {
@@ -457,6 +457,21 @@ public class MonetaryAmount extends StructuredValue {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -475,6 +490,13 @@ public class MonetaryAmount extends StructuredValue {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -568,7 +590,7 @@ public class MonetaryAmount extends StructuredValue {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("validFrom".equals(key) && value instanceof java.util.Date) { this.validFrom((java.util.Date)value); return; }
       if ("validFroms".equals(key) && value instanceof java.util.Date) { this.validFrom((java.util.Date)value); return; }
       if ("value".equals(key) && value instanceof Boolean) { this.value((Boolean)value); return; }

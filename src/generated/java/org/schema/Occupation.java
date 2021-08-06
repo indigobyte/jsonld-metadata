@@ -37,7 +37,7 @@ public class Occupation extends Intangible {
    * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is desired or required to fulfill this role or to work in this occupation.
    */
   @JsonIgnore public java.util.Collection<DefinedTerm> getSkillsDefinedTerms() {
-    final Object current = myData.get("skills");
+    final java.lang.Object current = myData.get("skills");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<DefinedTerm>) current;
@@ -54,7 +54,7 @@ public class Occupation extends Intangible {
    * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is desired or required to fulfill this role or to work in this occupation.
    */
   @JsonIgnore public java.util.Collection<String> getSkillsStrings() {
-    final Object current = myData.get("skills");
+    final java.lang.Object current = myData.get("skills");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -71,7 +71,7 @@ public class Occupation extends Intangible {
    * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
    */
   @JsonIgnore public java.util.Collection<MonetaryAmount> getEstimatedSalaryMonetaryAmounts() {
-    final Object current = myData.get("estimatedSalary");
+    final java.lang.Object current = myData.get("estimatedSalary");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MonetaryAmount>) current;
@@ -88,7 +88,7 @@ public class Occupation extends Intangible {
    * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
    */
   @JsonIgnore public java.util.Collection<MonetaryAmountDistribution> getEstimatedSalaryMonetaryAmountDistributions() {
-    final Object current = myData.get("estimatedSalary");
+    final java.lang.Object current = myData.get("estimatedSalary");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MonetaryAmountDistribution>) current;
@@ -105,7 +105,7 @@ public class Occupation extends Intangible {
    * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
    */
   @JsonIgnore public java.util.Collection<Number> getEstimatedSalaryNumbers() {
-    final Object current = myData.get("estimatedSalary");
+    final java.lang.Object current = myData.get("estimatedSalary");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Number>) current;
@@ -124,7 +124,7 @@ public class Occupation extends Intangible {
    * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
    */
   @JsonIgnore public java.util.Collection<CategoryCode> getOccupationalCategoryCategoryCodes() {
-    final Object current = myData.get("occupationalCategory");
+    final java.lang.Object current = myData.get("occupationalCategory");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<CategoryCode>) current;
@@ -143,7 +143,7 @@ public class Occupation extends Intangible {
    * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
    */
   @JsonIgnore public java.util.Collection<String> getOccupationalCategoryStrings() {
-    final Object current = myData.get("occupationalCategory");
+    final java.lang.Object current = myData.get("occupationalCategory");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -160,7 +160,7 @@ public class Occupation extends Intangible {
    * Description of skills and experience needed for the position or Occupation.
    */
   @JsonIgnore public java.util.Collection<OccupationalExperienceRequirements> getExperienceRequirementsOccupationalExperienceRequirementss() {
-    final Object current = myData.get("experienceRequirements");
+    final java.lang.Object current = myData.get("experienceRequirements");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<OccupationalExperienceRequirements>) current;
@@ -177,7 +177,7 @@ public class Occupation extends Intangible {
    * Description of skills and experience needed for the position or Occupation.
    */
   @JsonIgnore public java.util.Collection<String> getExperienceRequirementsStrings() {
-    final Object current = myData.get("experienceRequirements");
+    final java.lang.Object current = myData.get("experienceRequirements");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -194,7 +194,7 @@ public class Occupation extends Intangible {
    * Educational background needed for the position or Occupation.
    */
   @JsonIgnore public java.util.Collection<EducationalOccupationalCredential> getEducationRequirementsEducationalOccupationalCredentials() {
-    final Object current = myData.get("educationRequirements");
+    final java.lang.Object current = myData.get("educationRequirements");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<EducationalOccupationalCredential>) current;
@@ -211,7 +211,7 @@ public class Occupation extends Intangible {
    * Educational background needed for the position or Occupation.
    */
   @JsonIgnore public java.util.Collection<String> getEducationRequirementsStrings() {
-    final Object current = myData.get("educationRequirements");
+    final java.lang.Object current = myData.get("educationRequirements");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -228,7 +228,7 @@ public class Occupation extends Intangible {
    * Responsibilities associated with this role or Occupation.
    */
   @JsonIgnore public java.util.Collection<String> getResponsibilitiess() {
-    final Object current = myData.get("responsibilities");
+    final java.lang.Object current = myData.get("responsibilities");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -245,7 +245,7 @@ public class Occupation extends Intangible {
    * Specific qualifications required for this role or Occupation.
    */
   @JsonIgnore public java.util.Collection<EducationalOccupationalCredential> getQualificationsEducationalOccupationalCredentials() {
-    final Object current = myData.get("qualifications");
+    final java.lang.Object current = myData.get("qualifications");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<EducationalOccupationalCredential>) current;
@@ -262,7 +262,7 @@ public class Occupation extends Intangible {
    * Specific qualifications required for this role or Occupation.
    */
   @JsonIgnore public java.util.Collection<String> getQualificationsStrings() {
-    final Object current = myData.get("qualifications");
+    final java.lang.Object current = myData.get("qualifications");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -279,14 +279,14 @@ public class Occupation extends Intangible {
    *  The region/country for which this occupational description is appropriate. Note that educational requirements and qualifications can vary between jurisdictions.
    */
   @JsonIgnore public java.util.Collection<AdministrativeArea> getOccupationLocations() {
-    final Object current = myData.get("occupationLocation");
+    final java.lang.Object current = myData.get("occupationLocation");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<AdministrativeArea>) current;
     }
     return Arrays.asList((AdministrativeArea) current);
   }
-  protected Occupation(java.util.Map<String,Object> data) {
+  protected Occupation(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -294,7 +294,7 @@ public class Occupation extends Intangible {
    * Builder for {@link Occupation}
    */
   public static class Builder extends Intangible.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public Occupation build() {
@@ -465,6 +465,21 @@ public class Occupation extends Intangible {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -483,6 +498,13 @@ public class Occupation extends Intangible {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -576,7 +598,7 @@ public class Occupation extends Intangible {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("skills".equals(key) && value instanceof DefinedTerm) { this.skills((DefinedTerm)value); return; }
       if ("skillss".equals(key) && value instanceof DefinedTerm) { this.skills((DefinedTerm)value); return; }
       if ("skills".equals(key) && value instanceof String) { this.skills((String)value); return; }

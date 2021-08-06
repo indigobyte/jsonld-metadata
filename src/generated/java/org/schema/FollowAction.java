@@ -37,14 +37,14 @@ public class FollowAction extends InteractAction {
    * A sub property of object. The person or organization being followed.
    */
   @JsonIgnore public java.util.Collection<Object> getFollowees() {
-    final Object current = myData.get("followee");
+    final java.lang.Object current = myData.get("followee");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Object>) current;
     }
     return Arrays.asList((Object) current);
   }
-  protected FollowAction(java.util.Map<String,Object> data) {
+  protected FollowAction(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -52,7 +52,7 @@ public class FollowAction extends InteractAction {
    * Builder for {@link FollowAction}
    */
   public static class Builder extends InteractAction.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public FollowAction build() {
@@ -73,6 +73,20 @@ public class FollowAction extends InteractAction {
       return this;
     }
     /**
+     * The object that helped the agent perform the action. e.g. John wrote a book with *a pen*.
+     */
+    @NotNull public Builder instrument(@NotNull Instrument instrument) {
+      putValue("instrument", instrument);
+      return this;
+    }
+    /**
+     * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
+     */
+    @NotNull public Builder participant(@NotNull Participant participant) {
+      putValue("participant", participant);
+      return this;
+    }
+    /**
      * Indicates a target EntryPoint for an Action.
      */
     @NotNull public Builder target(@NotNull EntryPoint entryPoint) {
@@ -84,6 +98,20 @@ public class FollowAction extends InteractAction {
      */
     @NotNull public Builder target(@NotNull EntryPoint.Builder entryPoint) {
       putValue("target", entryPoint.build());
+      return this;
+    }
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     */
+    @NotNull public Builder location(@NotNull Location location) {
+      putValue("location", location);
+      return this;
+    }
+    /**
+     * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
+     */
+    @NotNull public Builder object(@NotNull Object object) {
+      putValue("object", object);
       return this;
     }
     /**
@@ -143,6 +171,28 @@ public class FollowAction extends InteractAction {
       return this;
     }
     /**
+     * The result produced in the action. e.g. John wrote *a book*.
+     */
+    @NotNull public Builder result(@NotNull Result result) {
+      putValue("result", result);
+      return this;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -161,6 +211,13 @@ public class FollowAction extends InteractAction {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -254,7 +311,7 @@ public class FollowAction extends InteractAction {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("followee".equals(key) && value instanceof Object) { this.followee((Object)value); return; }
       if ("followees".equals(key) && value instanceof Object) { this.followee((Object)value); return; }
       super.fromMap(key, value);

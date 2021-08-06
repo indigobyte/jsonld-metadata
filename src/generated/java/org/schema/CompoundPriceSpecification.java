@@ -37,7 +37,7 @@ public class CompoundPriceSpecification extends PriceSpecification {
    * Defines the type of a price specified for an offered product, for example a list price, a (temporary) sale price or a manufacturer suggested retail price. If multiple prices are specified for an offer the [[priceType]] property can be used to identify the type of each such specified price. The value of priceType can be specified as a value from enumeration PriceTypeEnumeration or as a free form text string for price types that are not already predefined in PriceTypeEnumeration.
    */
   @JsonIgnore public java.util.Collection<PriceTypeEnumeration> getPriceTypePriceTypeEnumerations() {
-    final Object current = myData.get("priceType");
+    final java.lang.Object current = myData.get("priceType");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<PriceTypeEnumeration>) current;
@@ -54,7 +54,7 @@ public class CompoundPriceSpecification extends PriceSpecification {
    * Defines the type of a price specified for an offered product, for example a list price, a (temporary) sale price or a manufacturer suggested retail price. If multiple prices are specified for an offer the [[priceType]] property can be used to identify the type of each such specified price. The value of priceType can be specified as a value from enumeration PriceTypeEnumeration or as a free form text string for price types that are not already predefined in PriceTypeEnumeration.
    */
   @JsonIgnore public java.util.Collection<String> getPriceTypeStrings() {
-    final Object current = myData.get("priceType");
+    final java.lang.Object current = myData.get("priceType");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -71,14 +71,14 @@ public class CompoundPriceSpecification extends PriceSpecification {
    * This property links to all [[UnitPriceSpecification]] nodes that apply in parallel for the [[CompoundPriceSpecification]] node.
    */
   @JsonIgnore public java.util.Collection<UnitPriceSpecification> getPriceComponents() {
-    final Object current = myData.get("priceComponent");
+    final java.lang.Object current = myData.get("priceComponent");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<UnitPriceSpecification>) current;
     }
     return Arrays.asList((UnitPriceSpecification) current);
   }
-  protected CompoundPriceSpecification(java.util.Map<String,Object> data) {
+  protected CompoundPriceSpecification(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -86,7 +86,7 @@ public class CompoundPriceSpecification extends PriceSpecification {
    * Builder for {@link CompoundPriceSpecification}
    */
   public static class Builder extends PriceSpecification.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public CompoundPriceSpecification build() {
@@ -263,6 +263,21 @@ public class CompoundPriceSpecification extends PriceSpecification {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -281,6 +296,13 @@ public class CompoundPriceSpecification extends PriceSpecification {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -374,7 +396,7 @@ public class CompoundPriceSpecification extends PriceSpecification {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("priceType".equals(key) && value instanceof PriceTypeEnumeration) { this.priceType((PriceTypeEnumeration)value); return; }
       if ("priceTypes".equals(key) && value instanceof PriceTypeEnumeration) { this.priceType((PriceTypeEnumeration)value); return; }
       if ("priceType".equals(key) && value instanceof String) { this.priceType((String)value); return; }

@@ -37,7 +37,7 @@ public class MedicalStudy extends MedicalEntity {
    * The status of the study (enumerated).
    */
   @JsonIgnore public java.util.Collection<EventStatusType> getStatusEventStatusTypes() {
-    final Object current = myData.get("status");
+    final java.lang.Object current = myData.get("status");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<EventStatusType>) current;
@@ -54,7 +54,7 @@ public class MedicalStudy extends MedicalEntity {
    * The status of the study (enumerated).
    */
   @JsonIgnore public java.util.Collection<MedicalStudyStatus> getStatusMedicalStudyStatuss() {
-    final Object current = myData.get("status");
+    final java.lang.Object current = myData.get("status");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MedicalStudyStatus>) current;
@@ -71,7 +71,7 @@ public class MedicalStudy extends MedicalEntity {
    * The status of the study (enumerated).
    */
   @JsonIgnore public java.util.Collection<String> getStatusStrings() {
-    final Object current = myData.get("status");
+    final java.lang.Object current = myData.get("status");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -88,7 +88,7 @@ public class MedicalStudy extends MedicalEntity {
    * The location in which the study is taking/took place.
    */
   @JsonIgnore public java.util.Collection<AdministrativeArea> getStudyLocations() {
-    final Object current = myData.get("studyLocation");
+    final java.lang.Object current = myData.get("studyLocation");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<AdministrativeArea>) current;
@@ -105,7 +105,7 @@ public class MedicalStudy extends MedicalEntity {
    * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
    */
   @JsonIgnore public java.util.Collection<Sponsor> getSponsors() {
-    final Object current = myData.get("sponsor");
+    final java.lang.Object current = myData.get("sponsor");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Sponsor>) current;
@@ -122,7 +122,7 @@ public class MedicalStudy extends MedicalEntity {
    * Specifying the health condition(s) of a patient, medical study, or other target audience.
    */
   @JsonIgnore public java.util.Collection<MedicalCondition> getHealthConditions() {
-    final Object current = myData.get("healthCondition");
+    final java.lang.Object current = myData.get("healthCondition");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MedicalCondition>) current;
@@ -139,14 +139,14 @@ public class MedicalStudy extends MedicalEntity {
    * A subject of the study, i.e. one of the medical conditions, therapies, devices, drugs, etc. investigated by the study.
    */
   @JsonIgnore public java.util.Collection<MedicalEntity> getStudySubjects() {
-    final Object current = myData.get("studySubject");
+    final java.lang.Object current = myData.get("studySubject");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MedicalEntity>) current;
     }
     return Arrays.asList((MedicalEntity) current);
   }
-  protected MedicalStudy(java.util.Map<String,Object> data) {
+  protected MedicalStudy(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -154,7 +154,7 @@ public class MedicalStudy extends MedicalEntity {
    * Builder for {@link MedicalStudy}
    */
   public static class Builder extends MedicalEntity.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public MedicalStudy build() {
@@ -329,6 +329,21 @@ public class MedicalStudy extends MedicalEntity {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -347,6 +362,13 @@ public class MedicalStudy extends MedicalEntity {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -440,7 +462,7 @@ public class MedicalStudy extends MedicalEntity {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("status".equals(key) && value instanceof EventStatusType) { this.status((EventStatusType)value); return; }
       if ("statuss".equals(key) && value instanceof EventStatusType) { this.status((EventStatusType)value); return; }
       if ("status".equals(key) && value instanceof MedicalStudyStatus) { this.status((MedicalStudyStatus)value); return; }

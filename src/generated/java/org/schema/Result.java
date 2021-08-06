@@ -24,7 +24,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * 
+ * The result produced in the action. e.g. John wrote *a book*.
  */
 public interface Result {
 }

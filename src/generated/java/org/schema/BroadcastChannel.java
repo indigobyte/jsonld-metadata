@@ -37,7 +37,7 @@ public class BroadcastChannel extends Intangible {
    * Genre of the creative work, broadcast channel or group.
    */
   @JsonIgnore public java.util.Collection<Genre> getGenres() {
-    final Object current = myData.get("genre");
+    final java.lang.Object current = myData.get("genre");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Genre>) current;
@@ -54,7 +54,7 @@ public class BroadcastChannel extends Intangible {
    * The unique address by which the BroadcastService can be identified in a provider lineup. In US, this is typically a number.
    */
   @JsonIgnore public java.util.Collection<String> getBroadcastChannelIds() {
-    final Object current = myData.get("broadcastChannelId");
+    final java.lang.Object current = myData.get("broadcastChannelId");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -71,7 +71,7 @@ public class BroadcastChannel extends Intangible {
    * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. &quot;87 FM&quot;.
    */
   @JsonIgnore public java.util.Collection<BroadcastFrequencySpecification> getBroadcastFrequencyBroadcastFrequencySpecifications() {
-    final Object current = myData.get("broadcastFrequency");
+    final java.lang.Object current = myData.get("broadcastFrequency");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<BroadcastFrequencySpecification>) current;
@@ -88,7 +88,7 @@ public class BroadcastChannel extends Intangible {
    * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. &quot;87 FM&quot;.
    */
   @JsonIgnore public java.util.Collection<String> getBroadcastFrequencyStrings() {
-    final Object current = myData.get("broadcastFrequency");
+    final java.lang.Object current = myData.get("broadcastFrequency");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -105,7 +105,7 @@ public class BroadcastChannel extends Intangible {
    * The type of service required to have access to the channel (e.g. Standard or Premium).
    */
   @JsonIgnore public java.util.Collection<String> getBroadcastServiceTiers() {
-    final Object current = myData.get("broadcastServiceTier");
+    final java.lang.Object current = myData.get("broadcastServiceTier");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -122,7 +122,7 @@ public class BroadcastChannel extends Intangible {
    * The CableOrSatelliteService offering the channel.
    */
   @JsonIgnore public java.util.Collection<CableOrSatelliteService> getInBroadcastLineups() {
-    final Object current = myData.get("inBroadcastLineup");
+    final java.lang.Object current = myData.get("inBroadcastLineup");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<CableOrSatelliteService>) current;
@@ -139,14 +139,14 @@ public class BroadcastChannel extends Intangible {
    * The BroadcastService offered on this channel.
    */
   @JsonIgnore public java.util.Collection<BroadcastService> getProvidesBroadcastServices() {
-    final Object current = myData.get("providesBroadcastService");
+    final java.lang.Object current = myData.get("providesBroadcastService");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<BroadcastService>) current;
     }
     return Arrays.asList((BroadcastService) current);
   }
-  protected BroadcastChannel(java.util.Map<String,Object> data) {
+  protected BroadcastChannel(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -154,7 +154,7 @@ public class BroadcastChannel extends Intangible {
    * Builder for {@link BroadcastChannel}
    */
   public static class Builder extends Intangible.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public BroadcastChannel build() {
@@ -231,6 +231,21 @@ public class BroadcastChannel extends Intangible {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -249,6 +264,13 @@ public class BroadcastChannel extends Intangible {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -342,7 +364,7 @@ public class BroadcastChannel extends Intangible {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("genre".equals(key) && value instanceof Genre) { this.genre((Genre)value); return; }
       if ("genres".equals(key) && value instanceof Genre) { this.genre((Genre)value); return; }
       if ("broadcastChannelId".equals(key) && value instanceof String) { this.broadcastChannelId((String)value); return; }

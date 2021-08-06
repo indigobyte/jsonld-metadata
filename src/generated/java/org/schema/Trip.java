@@ -37,7 +37,7 @@ public class Trip extends Intangible {
    * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
    */
   @JsonIgnore public java.util.Collection<Organization> getProviderOrganizations() {
-    final Object current = myData.get("provider");
+    final java.lang.Object current = myData.get("provider");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Organization>) current;
@@ -54,7 +54,7 @@ public class Trip extends Intangible {
    * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
    */
   @JsonIgnore public java.util.Collection<Person> getProviderPersons() {
-    final Object current = myData.get("provider");
+    final java.lang.Object current = myData.get("provider");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Person>) current;
@@ -71,7 +71,7 @@ public class Trip extends Intangible {
    * The expected arrival time.
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getArrivalTimes() {
-    final Object current = myData.get("arrivalTime");
+    final java.lang.Object current = myData.get("arrivalTime");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<java.util.Date>) current;
@@ -88,7 +88,7 @@ public class Trip extends Intangible {
    * The expected departure time.
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getDepartureTimes() {
-    final Object current = myData.get("departureTime");
+    final java.lang.Object current = myData.get("departureTime");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<java.util.Date>) current;
@@ -105,7 +105,7 @@ public class Trip extends Intangible {
    * Destination(s) ( [[Place]] ) that make up a trip. For a trip where destination order is important use [[ItemList]] to specify that order (see examples).
    */
   @JsonIgnore public java.util.Collection<ItemList> getItineraryItemLists() {
-    final Object current = myData.get("itinerary");
+    final java.lang.Object current = myData.get("itinerary");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<ItemList>) current;
@@ -122,7 +122,7 @@ public class Trip extends Intangible {
    * Destination(s) ( [[Place]] ) that make up a trip. For a trip where destination order is important use [[ItemList]] to specify that order (see examples).
    */
   @JsonIgnore public java.util.Collection<Place> getItineraryPlaces() {
-    final Object current = myData.get("itinerary");
+    final java.lang.Object current = myData.get("itinerary");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Place>) current;
@@ -141,7 +141,7 @@ public class Trip extends Intangible {
    *       
    */
   @JsonIgnore public java.util.Collection<Demand> getOffersDemands() {
-    final Object current = myData.get("offers");
+    final java.lang.Object current = myData.get("offers");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Demand>) current;
@@ -160,7 +160,7 @@ public class Trip extends Intangible {
    *       
    */
   @JsonIgnore public java.util.Collection<Offer> getOffersOffers() {
-    final Object current = myData.get("offers");
+    final java.lang.Object current = myData.get("offers");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Offer>) current;
@@ -177,7 +177,7 @@ public class Trip extends Intangible {
    * Identifies that this [[Trip]] is a subTrip of another Trip.  For example Day 1, Day 2, etc. of a multi-day trip.
    */
   @JsonIgnore public java.util.Collection<Trip> getPartOfTrips() {
-    final Object current = myData.get("partOfTrip");
+    final java.lang.Object current = myData.get("partOfTrip");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Trip>) current;
@@ -194,14 +194,14 @@ public class Trip extends Intangible {
    * Identifies a [[Trip]] that is a subTrip of this Trip.  For example Day 1, Day 2, etc. of a multi-day trip.
    */
   @JsonIgnore public java.util.Collection<Trip> getSubTrips() {
-    final Object current = myData.get("subTrip");
+    final java.lang.Object current = myData.get("subTrip");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Trip>) current;
     }
     return Arrays.asList((Trip) current);
   }
-  protected Trip(java.util.Map<String,Object> data) {
+  protected Trip(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -209,7 +209,7 @@ public class Trip extends Intangible {
    * Builder for {@link Trip}
    */
   public static class Builder extends Intangible.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public Trip build() {
@@ -346,6 +346,21 @@ public class Trip extends Intangible {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -364,6 +379,13 @@ public class Trip extends Intangible {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -457,7 +479,7 @@ public class Trip extends Intangible {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("provider".equals(key) && value instanceof Organization) { this.provider((Organization)value); return; }
       if ("providers".equals(key) && value instanceof Organization) { this.provider((Organization)value); return; }
       if ("provider".equals(key) && value instanceof Person) { this.provider((Person)value); return; }

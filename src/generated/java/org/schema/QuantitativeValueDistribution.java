@@ -37,7 +37,7 @@ public class QuantitativeValueDistribution extends StructuredValue {
    * The median value.
    */
   @JsonIgnore public java.util.Collection<Integer> getMedianIntegers() {
-    final Object current = myData.get("median");
+    final java.lang.Object current = myData.get("median");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -54,7 +54,7 @@ public class QuantitativeValueDistribution extends StructuredValue {
    * The median value.
    */
   @JsonIgnore public java.util.Collection<Long> getMedianLongs() {
-    final Object current = myData.get("median");
+    final java.lang.Object current = myData.get("median");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Long>) current;
@@ -71,7 +71,7 @@ public class QuantitativeValueDistribution extends StructuredValue {
    * The median value.
    */
   @JsonIgnore public java.util.Collection<Float> getMedianFloats() {
-    final Object current = myData.get("median");
+    final java.lang.Object current = myData.get("median");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Float>) current;
@@ -88,7 +88,7 @@ public class QuantitativeValueDistribution extends StructuredValue {
    * The median value.
    */
   @JsonIgnore public java.util.Collection<Double> getMedianDoubles() {
-    final Object current = myData.get("median");
+    final java.lang.Object current = myData.get("median");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Double>) current;
@@ -105,7 +105,7 @@ public class QuantitativeValueDistribution extends StructuredValue {
    * The median value.
    */
   @JsonIgnore public java.util.Collection<String> getMedianStrings() {
-    final Object current = myData.get("median");
+    final java.lang.Object current = myData.get("median");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -122,7 +122,7 @@ public class QuantitativeValueDistribution extends StructuredValue {
    * The 10th percentile value.
    */
   @JsonIgnore public java.util.Collection<Integer> getPercentile10Integers() {
-    final Object current = myData.get("percentile10");
+    final java.lang.Object current = myData.get("percentile10");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -139,7 +139,7 @@ public class QuantitativeValueDistribution extends StructuredValue {
    * The 10th percentile value.
    */
   @JsonIgnore public java.util.Collection<Long> getPercentile10Longs() {
-    final Object current = myData.get("percentile10");
+    final java.lang.Object current = myData.get("percentile10");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Long>) current;
@@ -156,7 +156,7 @@ public class QuantitativeValueDistribution extends StructuredValue {
    * The 10th percentile value.
    */
   @JsonIgnore public java.util.Collection<Float> getPercentile10Floats() {
-    final Object current = myData.get("percentile10");
+    final java.lang.Object current = myData.get("percentile10");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Float>) current;
@@ -173,7 +173,7 @@ public class QuantitativeValueDistribution extends StructuredValue {
    * The 10th percentile value.
    */
   @JsonIgnore public java.util.Collection<Double> getPercentile10Doubles() {
-    final Object current = myData.get("percentile10");
+    final java.lang.Object current = myData.get("percentile10");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Double>) current;
@@ -190,7 +190,7 @@ public class QuantitativeValueDistribution extends StructuredValue {
    * The 10th percentile value.
    */
   @JsonIgnore public java.util.Collection<String> getPercentile10Strings() {
-    final Object current = myData.get("percentile10");
+    final java.lang.Object current = myData.get("percentile10");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -207,7 +207,7 @@ public class QuantitativeValueDistribution extends StructuredValue {
    * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
    */
   @JsonIgnore public java.util.Collection<Duration> getDurations() {
-    final Object current = myData.get("duration");
+    final java.lang.Object current = myData.get("duration");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Duration>) current;
@@ -224,7 +224,7 @@ public class QuantitativeValueDistribution extends StructuredValue {
    * The 25th percentile value.
    */
   @JsonIgnore public java.util.Collection<Integer> getPercentile25Integers() {
-    final Object current = myData.get("percentile25");
+    final java.lang.Object current = myData.get("percentile25");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -241,7 +241,7 @@ public class QuantitativeValueDistribution extends StructuredValue {
    * The 25th percentile value.
    */
   @JsonIgnore public java.util.Collection<Long> getPercentile25Longs() {
-    final Object current = myData.get("percentile25");
+    final java.lang.Object current = myData.get("percentile25");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Long>) current;
@@ -258,7 +258,7 @@ public class QuantitativeValueDistribution extends StructuredValue {
    * The 25th percentile value.
    */
   @JsonIgnore public java.util.Collection<Float> getPercentile25Floats() {
-    final Object current = myData.get("percentile25");
+    final java.lang.Object current = myData.get("percentile25");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Float>) current;
@@ -275,7 +275,7 @@ public class QuantitativeValueDistribution extends StructuredValue {
    * The 25th percentile value.
    */
   @JsonIgnore public java.util.Collection<Double> getPercentile25Doubles() {
-    final Object current = myData.get("percentile25");
+    final java.lang.Object current = myData.get("percentile25");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Double>) current;
@@ -292,7 +292,7 @@ public class QuantitativeValueDistribution extends StructuredValue {
    * The 25th percentile value.
    */
   @JsonIgnore public java.util.Collection<String> getPercentile25Strings() {
-    final Object current = myData.get("percentile25");
+    final java.lang.Object current = myData.get("percentile25");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -309,7 +309,7 @@ public class QuantitativeValueDistribution extends StructuredValue {
    * The 75th percentile value.
    */
   @JsonIgnore public java.util.Collection<Integer> getPercentile75Integers() {
-    final Object current = myData.get("percentile75");
+    final java.lang.Object current = myData.get("percentile75");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -326,7 +326,7 @@ public class QuantitativeValueDistribution extends StructuredValue {
    * The 75th percentile value.
    */
   @JsonIgnore public java.util.Collection<Long> getPercentile75Longs() {
-    final Object current = myData.get("percentile75");
+    final java.lang.Object current = myData.get("percentile75");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Long>) current;
@@ -343,7 +343,7 @@ public class QuantitativeValueDistribution extends StructuredValue {
    * The 75th percentile value.
    */
   @JsonIgnore public java.util.Collection<Float> getPercentile75Floats() {
-    final Object current = myData.get("percentile75");
+    final java.lang.Object current = myData.get("percentile75");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Float>) current;
@@ -360,7 +360,7 @@ public class QuantitativeValueDistribution extends StructuredValue {
    * The 75th percentile value.
    */
   @JsonIgnore public java.util.Collection<Double> getPercentile75Doubles() {
-    final Object current = myData.get("percentile75");
+    final java.lang.Object current = myData.get("percentile75");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Double>) current;
@@ -377,7 +377,7 @@ public class QuantitativeValueDistribution extends StructuredValue {
    * The 75th percentile value.
    */
   @JsonIgnore public java.util.Collection<String> getPercentile75Strings() {
-    final Object current = myData.get("percentile75");
+    final java.lang.Object current = myData.get("percentile75");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -394,7 +394,7 @@ public class QuantitativeValueDistribution extends StructuredValue {
    * The 90th percentile value.
    */
   @JsonIgnore public java.util.Collection<Integer> getPercentile90Integers() {
-    final Object current = myData.get("percentile90");
+    final java.lang.Object current = myData.get("percentile90");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -411,7 +411,7 @@ public class QuantitativeValueDistribution extends StructuredValue {
    * The 90th percentile value.
    */
   @JsonIgnore public java.util.Collection<Long> getPercentile90Longs() {
-    final Object current = myData.get("percentile90");
+    final java.lang.Object current = myData.get("percentile90");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Long>) current;
@@ -428,7 +428,7 @@ public class QuantitativeValueDistribution extends StructuredValue {
    * The 90th percentile value.
    */
   @JsonIgnore public java.util.Collection<Float> getPercentile90Floats() {
-    final Object current = myData.get("percentile90");
+    final java.lang.Object current = myData.get("percentile90");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Float>) current;
@@ -445,7 +445,7 @@ public class QuantitativeValueDistribution extends StructuredValue {
    * The 90th percentile value.
    */
   @JsonIgnore public java.util.Collection<Double> getPercentile90Doubles() {
-    final Object current = myData.get("percentile90");
+    final java.lang.Object current = myData.get("percentile90");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Double>) current;
@@ -462,14 +462,14 @@ public class QuantitativeValueDistribution extends StructuredValue {
    * The 90th percentile value.
    */
   @JsonIgnore public java.util.Collection<String> getPercentile90Strings() {
-    final Object current = myData.get("percentile90");
+    final java.lang.Object current = myData.get("percentile90");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
-  protected QuantitativeValueDistribution(java.util.Map<String,Object> data) {
+  protected QuantitativeValueDistribution(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -477,7 +477,7 @@ public class QuantitativeValueDistribution extends StructuredValue {
    * Builder for {@link QuantitativeValueDistribution}
    */
   public static class Builder extends StructuredValue.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public QuantitativeValueDistribution build() {
@@ -666,6 +666,21 @@ public class QuantitativeValueDistribution extends StructuredValue {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -684,6 +699,13 @@ public class QuantitativeValueDistribution extends StructuredValue {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -777,7 +799,7 @@ public class QuantitativeValueDistribution extends StructuredValue {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("median".equals(key) && value instanceof Integer) { this.median((Integer)value); return; }
       if ("medians".equals(key) && value instanceof Integer) { this.median((Integer)value); return; }
       if ("median".equals(key) && value instanceof Long) { this.median((Long)value); return; }

@@ -134,7 +134,7 @@ class Klass(val sourceDirectory: File, val namespace: String?, val name: String,
             appendLine("  }")
 
             // equals
-            appendLine("  @Override public boolean equals(Object o) {")
+            appendLine("  @Override public boolean equals(java.lang.Object o) {")
             appendLine("    if (this == o) return true;")
             appendLine("    if (o == null || getClass() != o.getClass()) return false;")
             val other = name.decapitalize()
@@ -174,10 +174,13 @@ class Klass(val sourceDirectory: File, val namespace: String?, val name: String,
             }
             append("public $classOrInterface $name")
 
-            extends?.let { if (it.isNotEmpty()) append(" extends ${it.joinToString(", ")}") }
+            extends?.let {
+                if (it.isNotEmpty())
+                    append(" extends ${it.toSet().joinToString(", ")}")
+            }
             if (implements?.any() == true) {
                 append(" implements ")
-                append(implements!!.joinToString(", "))
+                append(implements!!.toSet().joinToString(", ", "org.schema."))
             }
             appendLine(" {")
         }.toString())

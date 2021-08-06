@@ -56,7 +56,7 @@ class GeneratorSink : TripleSink {
         "True",
         "False",
         "Class",
-        "Object",
+        "Object", // Apparently, we need this?
         // This type is weird
         //"Duration",
         // These types use DataType, so they have to be banned as well
@@ -79,7 +79,7 @@ class GeneratorSink : TripleSink {
             this.Type(
                 name = "id",
                 isField = true,
-                dataTypes = mutableListOf("http://schema.org/Text")
+                dataTypes = mutableSetOf("http://schema.org/Text")
             )
         )
     }
@@ -92,10 +92,10 @@ class GeneratorSink : TripleSink {
         var comment: String? = null,
         var source: String? = null,
         var equivalent: String? = null,
-        val subTypes: MutableList<String> = mutableListOf(),
-        val interfaces: MutableList<String> = mutableListOf(),
+        val subTypes: MutableSet<String> = mutableSetOf(),
+        val interfaces: MutableSet<String> = mutableSetOf(),
         var isField: Boolean = false,
-        val dataTypes: MutableList<String> = mutableListOf()
+        val dataTypes: MutableSet<String> = mutableSetOf()
     ) {
 
         val classOrInterface
@@ -103,7 +103,9 @@ class GeneratorSink : TripleSink {
 
         val isEnum: Boolean
             get() {
-                if (parentType == "http://schema.org/Enumeration" && name != "QualitativeValue") {
+                if (parentType == "http://schema.org/Enumeration" &&
+                    name != "QualitativeValue"
+                ) {
                     return true
                 }
                 val parentTypeItem = types[parentType]
@@ -111,8 +113,11 @@ class GeneratorSink : TripleSink {
                     return true
                 return false
             }
-    }
 
+        override fun toString(): String {
+            return "Type(name=$name, comment=$comment)"
+        }
+    }
 
     override fun setProperty(key: String, value: Any): Boolean {
         return true
@@ -135,11 +140,19 @@ class GeneratorSink : TripleSink {
             if (type.isField && type.isInterface) {
                 type.isField = false
                 type.dataTypes.forEach {
-                    types[it]!!.interfaces.add(type.name!!.capitalize())
+                    if (!type.interfaces.contains(types[it]!!.name)) { // Avoid cyclic interface inheritance
+                        types[it]!!.interfaces.add(
+                            type.name!!.capitalize()
+                        )
+                    }
                 }
             }
             if (type.name == "Thing") {
                 type.subTypes.add(ID_TYPE)
+            }
+            if (type.name == "About") { // Because it is defined as inverseOf subjectOf
+                type.isField = false
+                type.parentType = "http://schema.org/Thing"
             }
         }
     }
@@ -161,7 +174,9 @@ class GeneratorSink : TripleSink {
         when (pred) {
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
             "http://www.w3.org/2000/01/rdf-schema#subClassOf" -> {
-                if (obj != "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property") {
+                if (true
+                    // || obj != "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+                ) {
                     types.doWith(subj) {
                         val currentTypeName = subj.substringAfter(uri)
                         val parentTypeName = obj.substringAfter(uri)
@@ -199,7 +214,8 @@ class GeneratorSink : TripleSink {
                     //System.exit(1)
                 }
                 types.doWith(obj) {
-                    if (!subTypes.contains(subj)) subTypes.add(subj)
+                    if (!subTypes.contains(subj))
+                        subTypes.add(subj)
                 }
 
                 types.doWith(subj) {
@@ -209,11 +225,21 @@ class GeneratorSink : TripleSink {
                     isField = true
                 }
             }
-            "http://schema.org/rangeIncludes" -> types.doWith(subj) { dataTypes.add(obj) }
+            "http://schema.org/rangeIncludes" -> types.doWith(subj) {
+                dataTypes.add(obj)
+            }
             "http://purl.org/dc/terms/source" -> types.doWith(subj) { source = obj }
             "http://www.w3.org/2002/07/owl#equivalentClass" -> types.doWith(subj) { equivalent = obj }
             "http://www.w3.org/2002/07/owl#equivalentProperty" -> types.doWith(subj) { equivalent = obj }
             "http://schema.org/inverseOf" -> { /* ignore */
+//                val currentTypeName = subj.substringAfter(uri).capitalize()
+//                if (currentTypeName != "HasPart" &&
+//                    currentTypeName != "IsPartOf" &&
+//                    !shouldSkipSet.contains(currentTypeName)
+//                ) {
+//                    println("Skipping $currentTypeName")
+//                    shouldSkipSet.add(currentTypeName)
+//                }
             }
             "http://schema.org/supersededBy" -> types.doWith(subj) { isSuperseded = true }
             "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" -> {
@@ -223,11 +249,15 @@ class GeneratorSink : TripleSink {
                 }
 
                 getInterfaceName(obj)?.let {
-                    val interfaceType = Type()
-                    interfaceType.name = it
-                    interfaceType.isInterface = true
-                    types.put(obj, interfaceType)
-
+                    if (obj !in types) {
+                        types.put(
+                            obj,
+                            Type(
+                                name = it,
+                                isInterface = true
+                            )
+                        )
+                    }
                     if (!types.containsKey(subj)) {
                         types.put(subj, Type())
                     }
@@ -309,7 +339,7 @@ class GeneratorSink : TripleSink {
         if (field.isInterface && field.name != null)
             return listOf(field.name!!.capitalize())
 
-        if (field.dataTypes[0] == "http://schema.org/Number") {
+        if (field.dataTypes.firstOrNull() == "http://schema.org/Number") {
             return NUMBER_UNDERLYING_TYPES
         }
 
@@ -344,7 +374,12 @@ class GeneratorSink : TripleSink {
         val fieldTypes = type.subTypes
             .mapNotNull { types[it] }
             //.filterNotNull()
-            .filter { it.name != null && !it.isSuperseded && it.dataTypes.any() && it.dataTypes[0] != "http://schema.org/Class" }
+            .filter {
+                it.name != null &&
+                        !it.isSuperseded &&
+                        it.dataTypes.any() &&
+                        it.dataTypes.firstOrNull() != "http://schema.org/Class"
+            }
             .toMutableList()
 
         getAllFields(types[type.parentType]).filterNot { i -> fieldTypes.any { it.name == i.name } }

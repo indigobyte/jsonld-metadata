@@ -37,7 +37,7 @@ public class NewsMediaOrganization extends Organization {
    * Disclosure about verification and fact-checking processes for a [[NewsMediaOrganization]] or other fact-checking [[Organization]].
    */
   @JsonIgnore public java.util.Collection<PublishingPrinciples> getVerificationFactCheckingPolicys() {
-    final Object current = myData.get("verificationFactCheckingPolicy");
+    final java.lang.Object current = myData.get("verificationFactCheckingPolicy");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<PublishingPrinciples>) current;
@@ -54,7 +54,7 @@ public class NewsMediaOrganization extends Organization {
    * Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom&rsquo;s diversity policy on both staffing and sources, typically providing staffing data.
    */
   @JsonIgnore public java.util.Collection<CreativeWork> getDiversityPolicyCreativeWorks() {
-    final Object current = myData.get("diversityPolicy");
+    final java.lang.Object current = myData.get("diversityPolicy");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<CreativeWork>) current;
@@ -71,7 +71,7 @@ public class NewsMediaOrganization extends Organization {
    * Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom&rsquo;s diversity policy on both staffing and sources, typically providing staffing data.
    */
   @JsonIgnore public java.util.Collection<String> getDiversityPolicyStrings() {
-    final Object current = myData.get("diversityPolicy");
+    final java.lang.Object current = myData.get("diversityPolicy");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -88,7 +88,7 @@ public class NewsMediaOrganization extends Organization {
    * For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement about policy on use of unnamed sources and the decision process required.
    */
   @JsonIgnore public java.util.Collection<PublishingPrinciples> getUnnamedSourcesPolicys() {
-    final Object current = myData.get("unnamedSourcesPolicy");
+    final java.lang.Object current = myData.get("unnamedSourcesPolicy");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<PublishingPrinciples>) current;
@@ -105,7 +105,7 @@ public class NewsMediaOrganization extends Organization {
    * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement explaining when authors of articles are not named in bylines.
    */
   @JsonIgnore public java.util.Collection<PublishingPrinciples> getNoBylinesPolicys() {
-    final Object current = myData.get("noBylinesPolicy");
+    final java.lang.Object current = myData.get("noBylinesPolicy");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<PublishingPrinciples>) current;
@@ -122,7 +122,7 @@ public class NewsMediaOrganization extends Organization {
    * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
    */
   @JsonIgnore public java.util.Collection<PublishingPrinciples> getOwnershipFundingInfos() {
-    final Object current = myData.get("ownershipFundingInfo");
+    final java.lang.Object current = myData.get("ownershipFundingInfo");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<PublishingPrinciples>) current;
@@ -139,7 +139,7 @@ public class NewsMediaOrganization extends Organization {
    * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.
    */
   @JsonIgnore public java.util.Collection<PublishingPrinciples> getDiversityStaffingReports() {
-    final Object current = myData.get("diversityStaffingReport");
+    final java.lang.Object current = myData.get("diversityStaffingReport");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<PublishingPrinciples>) current;
@@ -156,7 +156,7 @@ public class NewsMediaOrganization extends Organization {
    * For an [[Organization]] (e.g. [[NewsMediaOrganization]]), a statement describing (in news media, the newsroom&rsquo;s) disclosure and correction policy for errors.
    */
   @JsonIgnore public java.util.Collection<PublishingPrinciples> getCorrectionsPolicys() {
-    final Object current = myData.get("correctionsPolicy");
+    final java.lang.Object current = myData.get("correctionsPolicy");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<PublishingPrinciples>) current;
@@ -173,7 +173,7 @@ public class NewsMediaOrganization extends Organization {
    * For a [[NewsMediaOrganization]], a statement on coverage priorities, including any public agenda or stance on issues.
    */
   @JsonIgnore public java.util.Collection<PublishingPrinciples> getMissionCoveragePrioritiesPolicys() {
-    final Object current = myData.get("missionCoveragePrioritiesPolicy");
+    final java.lang.Object current = myData.get("missionCoveragePrioritiesPolicy");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<PublishingPrinciples>) current;
@@ -190,7 +190,7 @@ public class NewsMediaOrganization extends Organization {
    * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement about public engagement activities (for news media, the newsroom&rsquo;s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.
    */
   @JsonIgnore public java.util.Collection<PublishingPrinciples> getActionableFeedbackPolicys() {
-    final Object current = myData.get("actionableFeedbackPolicy");
+    final java.lang.Object current = myData.get("actionableFeedbackPolicy");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<PublishingPrinciples>) current;
@@ -207,7 +207,7 @@ public class NewsMediaOrganization extends Organization {
    * For a [[NewsMediaOrganization]], a link to the masthead page or a page listing top editorial management.
    */
   @JsonIgnore public java.util.Collection<PublishingPrinciples> getMastheads() {
-    final Object current = myData.get("masthead");
+    final java.lang.Object current = myData.get("masthead");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<PublishingPrinciples>) current;
@@ -224,7 +224,7 @@ public class NewsMediaOrganization extends Organization {
    * Statement about ethics policy, e.g. of a [[NewsMediaOrganization]] regarding journalistic and publishing practices, or of a [[Restaurant]], a page describing food source policies. In the case of a [[NewsMediaOrganization]], an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.
    */
   @JsonIgnore public java.util.Collection<CreativeWork> getEthicsPolicyCreativeWorks() {
-    final Object current = myData.get("ethicsPolicy");
+    final java.lang.Object current = myData.get("ethicsPolicy");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<CreativeWork>) current;
@@ -241,14 +241,14 @@ public class NewsMediaOrganization extends Organization {
    * Statement about ethics policy, e.g. of a [[NewsMediaOrganization]] regarding journalistic and publishing practices, or of a [[Restaurant]], a page describing food source policies. In the case of a [[NewsMediaOrganization]], an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.
    */
   @JsonIgnore public java.util.Collection<String> getEthicsPolicyStrings() {
-    final Object current = myData.get("ethicsPolicy");
+    final java.lang.Object current = myData.get("ethicsPolicy");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
-  protected NewsMediaOrganization(java.util.Map<String,Object> data) {
+  protected NewsMediaOrganization(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -256,7 +256,7 @@ public class NewsMediaOrganization extends Organization {
    * Builder for {@link NewsMediaOrganization}
    */
   public static class Builder extends Organization.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public NewsMediaOrganization build() {
@@ -368,6 +368,16 @@ public class NewsMediaOrganization extends Organization {
       return this;
     }
     /**
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+     * 
+     */
+    @NotNull public Builder publishingPrinciples(@NotNull PublishingPrinciples publishingPrinciples) {
+      putValue("publishingPrinciples", publishingPrinciples);
+      return this;
+    }
+    /**
      * The number of employees in an organization e.g. business.
      */
     @NotNull public Builder numberOfEmployees(@NotNull QuantitativeValue quantitativeValue) {
@@ -428,6 +438,13 @@ public class NewsMediaOrganization extends Organization {
      */
     @NotNull public Builder seeks(@NotNull Demand.Builder demand) {
       putValue("seeks", demand.build());
+      return this;
+    }
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     */
+    @NotNull public Builder location(@NotNull Location location) {
+      putValue("location", location);
       return this;
     }
     /**
@@ -652,6 +669,13 @@ public class NewsMediaOrganization extends Organization {
      */
     @NotNull public Builder vatID(@NotNull String vatID) {
       putValue("vatID", vatID);
+      return this;
+    }
+    /**
+     * The geographic area where a service or offered item is provided.
+     */
+    @NotNull public Builder areaServed(@NotNull AreaServed areaServed) {
+      putValue("areaServed", areaServed);
       return this;
     }
     /**
@@ -921,6 +945,21 @@ public class NewsMediaOrganization extends Organization {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -939,6 +978,13 @@ public class NewsMediaOrganization extends Organization {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -1032,7 +1078,7 @@ public class NewsMediaOrganization extends Organization {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("verificationFactCheckingPolicy".equals(key) && value instanceof PublishingPrinciples) { this.verificationFactCheckingPolicy((PublishingPrinciples)value); return; }
       if ("verificationFactCheckingPolicys".equals(key) && value instanceof PublishingPrinciples) { this.verificationFactCheckingPolicy((PublishingPrinciples)value); return; }
       if ("diversityPolicy".equals(key) && value instanceof CreativeWork) { this.diversityPolicy((CreativeWork)value); return; }

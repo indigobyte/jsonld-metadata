@@ -37,7 +37,7 @@ public class InteractionCounter extends StructuredValue {
    * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getStartTimes() {
-    final Object current = myData.get("startTime");
+    final java.lang.Object current = myData.get("startTime");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<java.util.Date>) current;
@@ -54,7 +54,7 @@ public class InteractionCounter extends StructuredValue {
    * The WebSite or SoftwareApplication where the interactions took place.
    */
   @JsonIgnore public java.util.Collection<SoftwareApplication> getInteractionServiceSoftwareApplications() {
-    final Object current = myData.get("interactionService");
+    final java.lang.Object current = myData.get("interactionService");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<SoftwareApplication>) current;
@@ -71,12 +71,29 @@ public class InteractionCounter extends StructuredValue {
    * The WebSite or SoftwareApplication where the interactions took place.
    */
   @JsonIgnore public java.util.Collection<WebSite> getInteractionServiceWebSites() {
-    final Object current = myData.get("interactionService");
+    final java.lang.Object current = myData.get("interactionService");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<WebSite>) current;
     }
     return Arrays.asList((WebSite) current);
+  }
+  /**
+   * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+   */
+  @JsonIgnore public Location getLocation() {
+    return (Location) getValue("location");
+  }
+  /**
+   * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+   */
+  @JsonIgnore public java.util.Collection<Location> getLocations() {
+    final java.lang.Object current = myData.get("location");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Location>) current;
+    }
+    return Arrays.asList((Location) current);
   }
   /**
    * The Action representing the type of interaction. For up votes, +1s, etc. use [[LikeAction]]. For down votes use [[DislikeAction]]. Otherwise, use the most specific Action.
@@ -88,7 +105,7 @@ public class InteractionCounter extends StructuredValue {
    * The Action representing the type of interaction. For up votes, +1s, etc. use [[LikeAction]]. For down votes use [[DislikeAction]]. Otherwise, use the most specific Action.
    */
   @JsonIgnore public java.util.Collection<Action> getInteractionTypes() {
-    final Object current = myData.get("interactionType");
+    final java.lang.Object current = myData.get("interactionType");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Action>) current;
@@ -105,7 +122,7 @@ public class InteractionCounter extends StructuredValue {
    * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication.
    */
   @JsonIgnore public java.util.Collection<Integer> getUserInteractionCounts() {
-    final Object current = myData.get("userInteractionCount");
+    final java.lang.Object current = myData.get("userInteractionCount");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -122,14 +139,14 @@ public class InteractionCounter extends StructuredValue {
    * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getEndTimes() {
-    final Object current = myData.get("endTime");
+    final java.lang.Object current = myData.get("endTime");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
-  protected InteractionCounter(java.util.Map<String,Object> data) {
+  protected InteractionCounter(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -137,7 +154,7 @@ public class InteractionCounter extends StructuredValue {
    * Builder for {@link InteractionCounter}
    */
   public static class Builder extends StructuredValue.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public InteractionCounter build() {
@@ -179,6 +196,13 @@ public class InteractionCounter extends StructuredValue {
       return this;
     }
     /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     */
+    @NotNull public Builder location(@NotNull Location location) {
+      putValue("location", location);
+      return this;
+    }
+    /**
      * The Action representing the type of interaction. For up votes, +1s, etc. use [[LikeAction]]. For down votes use [[DislikeAction]]. Otherwise, use the most specific Action.
      */
     @NotNull public Builder interactionType(@NotNull Action action) {
@@ -207,6 +231,21 @@ public class InteractionCounter extends StructuredValue {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -225,6 +264,13 @@ public class InteractionCounter extends StructuredValue {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -318,13 +364,15 @@ public class InteractionCounter extends StructuredValue {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("startTime".equals(key) && value instanceof java.util.Date) { this.startTime((java.util.Date)value); return; }
       if ("startTimes".equals(key) && value instanceof java.util.Date) { this.startTime((java.util.Date)value); return; }
       if ("interactionService".equals(key) && value instanceof SoftwareApplication) { this.interactionService((SoftwareApplication)value); return; }
       if ("interactionServices".equals(key) && value instanceof SoftwareApplication) { this.interactionService((SoftwareApplication)value); return; }
       if ("interactionService".equals(key) && value instanceof WebSite) { this.interactionService((WebSite)value); return; }
       if ("interactionServices".equals(key) && value instanceof WebSite) { this.interactionService((WebSite)value); return; }
+      if ("location".equals(key) && value instanceof Location) { this.location((Location)value); return; }
+      if ("locations".equals(key) && value instanceof Location) { this.location((Location)value); return; }
       if ("interactionType".equals(key) && value instanceof Action) { this.interactionType((Action)value); return; }
       if ("interactionTypes".equals(key) && value instanceof Action) { this.interactionType((Action)value); return; }
       if ("userInteractionCount".equals(key) && value instanceof Integer) { this.userInteractionCount((Integer)value); return; }

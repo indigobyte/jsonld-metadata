@@ -37,7 +37,7 @@ public class AggregateOffer extends Offer {
    * The lowest price of all offers available.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
    */
   @JsonIgnore public java.util.Collection<Number> getLowPriceNumbers() {
-    final Object current = myData.get("lowPrice");
+    final java.lang.Object current = myData.get("lowPrice");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Number>) current;
@@ -54,7 +54,7 @@ public class AggregateOffer extends Offer {
    * The lowest price of all offers available.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
    */
   @JsonIgnore public java.util.Collection<String> getLowPriceStrings() {
-    final Object current = myData.get("lowPrice");
+    final java.lang.Object current = myData.get("lowPrice");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -71,7 +71,7 @@ public class AggregateOffer extends Offer {
    * The highest price of all offers available.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
    */
   @JsonIgnore public java.util.Collection<Number> getHighPriceNumbers() {
-    final Object current = myData.get("highPrice");
+    final java.lang.Object current = myData.get("highPrice");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Number>) current;
@@ -88,7 +88,7 @@ public class AggregateOffer extends Offer {
    * The highest price of all offers available.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
    */
   @JsonIgnore public java.util.Collection<String> getHighPriceStrings() {
-    final Object current = myData.get("highPrice");
+    final java.lang.Object current = myData.get("highPrice");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -105,7 +105,7 @@ public class AggregateOffer extends Offer {
    * The number of offers for the product.
    */
   @JsonIgnore public java.util.Collection<Integer> getOfferCounts() {
-    final Object current = myData.get("offerCount");
+    final java.lang.Object current = myData.get("offerCount");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -124,7 +124,7 @@ public class AggregateOffer extends Offer {
    *       
    */
   @JsonIgnore public java.util.Collection<Demand> getOffersDemands() {
-    final Object current = myData.get("offers");
+    final java.lang.Object current = myData.get("offers");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Demand>) current;
@@ -143,14 +143,14 @@ public class AggregateOffer extends Offer {
    *       
    */
   @JsonIgnore public java.util.Collection<Offer> getOffersOffers() {
-    final Object current = myData.get("offers");
+    final java.lang.Object current = myData.get("offers");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Offer>) current;
     }
     return Arrays.asList((Offer) current);
   }
-  protected AggregateOffer(java.util.Map<String,Object> data) {
+  protected AggregateOffer(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -158,7 +158,7 @@ public class AggregateOffer extends Offer {
    * Builder for {@link AggregateOffer}
    */
   public static class Builder extends Offer.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public AggregateOffer build() {
@@ -271,6 +271,14 @@ public class AggregateOffer extends Offer {
      */
     @NotNull public Builder inventoryLevel(@NotNull QuantitativeValue.Builder quantitativeValue) {
       putValue("inventoryLevel", quantitativeValue.build());
+      return this;
+    }
+    /**
+     * A Global Trade Item Number ([GTIN](https://www.gs1.org/standards/id-keys/gtin)). GTINs identify trade items, including products and services, using numeric identification codes. The [[gtin]] property generalizes the earlier [[gtin8]], [[gtin12]], [[gtin13]], and [[gtin14]] properties. The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) express GTINs as URLs. A correct [[gtin]] value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a &quot;GS1 Digital Link&quot; URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1's GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged.
+     *    
+     */
+    @NotNull public Builder gtin(@NotNull Gtin gtin) {
+      putValue("gtin", gtin);
       return this;
     }
     /**
@@ -481,6 +489,13 @@ public class AggregateOffer extends Offer {
      */
     @NotNull public Builder availableAtOrFrom(@NotNull AreaServed areaServed) {
       putValue("availableAtOrFrom", areaServed);
+      return this;
+    }
+    /**
+     * The geographic area where a service or offered item is provided.
+     */
+    @NotNull public Builder areaServed(@NotNull AreaServed areaServed) {
+      putValue("areaServed", areaServed);
       return this;
     }
     /**
@@ -814,6 +829,21 @@ public class AggregateOffer extends Offer {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -832,6 +862,13 @@ public class AggregateOffer extends Offer {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -925,7 +962,7 @@ public class AggregateOffer extends Offer {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("lowPrice".equals(key) && value instanceof Number) { this.lowPrice((Number)value); return; }
       if ("lowPrices".equals(key) && value instanceof Number) { this.lowPrice((Number)value); return; }
       if ("lowPrice".equals(key) && value instanceof String) { this.lowPrice((String)value); return; }

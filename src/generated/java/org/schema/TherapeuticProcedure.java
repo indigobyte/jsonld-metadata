@@ -37,7 +37,7 @@ public class TherapeuticProcedure extends MedicalProcedure {
    * Specifying a drug or medicine used in a medication procedure.
    */
   @JsonIgnore public java.util.Collection<Drug> getDrugs() {
-    final Object current = myData.get("drug");
+    final java.lang.Object current = myData.get("drug");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Drug>) current;
@@ -54,7 +54,7 @@ public class TherapeuticProcedure extends MedicalProcedure {
    * A dosing schedule for the drug for a given population, either observed, recommended, or maximum dose based on the type used.
    */
   @JsonIgnore public java.util.Collection<DoseSchedule> getDoseSchedules() {
-    final Object current = myData.get("doseSchedule");
+    final java.lang.Object current = myData.get("doseSchedule");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<DoseSchedule>) current;
@@ -71,14 +71,14 @@ public class TherapeuticProcedure extends MedicalProcedure {
    * A possible complication and/or side effect of this therapy. If it is known that an adverse outcome is serious (resulting in death, disability, or permanent damage; requiring hospitalization; or is otherwise life-threatening or requires immediate medical attention), tag it as a seriouseAdverseOutcome instead.
    */
   @JsonIgnore public java.util.Collection<MedicalEntity> getAdverseOutcomes() {
-    final Object current = myData.get("adverseOutcome");
+    final java.lang.Object current = myData.get("adverseOutcome");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MedicalEntity>) current;
     }
     return Arrays.asList((MedicalEntity) current);
   }
-  protected TherapeuticProcedure(java.util.Map<String,Object> data) {
+  protected TherapeuticProcedure(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -86,7 +86,7 @@ public class TherapeuticProcedure extends MedicalProcedure {
    * Builder for {@link TherapeuticProcedure}
    */
   public static class Builder extends MedicalProcedure.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public TherapeuticProcedure build() {
@@ -303,6 +303,21 @@ public class TherapeuticProcedure extends MedicalProcedure {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -321,6 +336,13 @@ public class TherapeuticProcedure extends MedicalProcedure {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -414,7 +436,7 @@ public class TherapeuticProcedure extends MedicalProcedure {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("drug".equals(key) && value instanceof Drug) { this.drug((Drug)value); return; }
       if ("drugs".equals(key) && value instanceof Drug) { this.drug((Drug)value); return; }
       if ("doseSchedule".equals(key) && value instanceof DoseSchedule) { this.doseSchedule((DoseSchedule)value); return; }

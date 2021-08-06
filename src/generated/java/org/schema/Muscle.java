@@ -37,7 +37,7 @@ public class Muscle extends AnatomicalStructure {
    * The underlying innervation associated with the muscle.
    */
   @JsonIgnore public java.util.Collection<Nerve> getNerves() {
-    final Object current = myData.get("nerve");
+    final java.lang.Object current = myData.get("nerve");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Nerve>) current;
@@ -54,7 +54,7 @@ public class Muscle extends AnatomicalStructure {
    * The blood vessel that carries blood from the heart to the muscle.
    */
   @JsonIgnore public java.util.Collection<Vessel> getBloodSupplys() {
-    final Object current = myData.get("bloodSupply");
+    final java.lang.Object current = myData.get("bloodSupply");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Vessel>) current;
@@ -71,7 +71,7 @@ public class Muscle extends AnatomicalStructure {
    * The movement the muscle generates.
    */
   @JsonIgnore public java.util.Collection<String> getMuscleActions() {
-    final Object current = myData.get("muscleAction");
+    final java.lang.Object current = myData.get("muscleAction");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -88,7 +88,7 @@ public class Muscle extends AnatomicalStructure {
    * The place of attachment of a muscle, or what the muscle moves.
    */
   @JsonIgnore public java.util.Collection<AnatomicalStructure> getInsertions() {
-    final Object current = myData.get("insertion");
+    final java.lang.Object current = myData.get("insertion");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<AnatomicalStructure>) current;
@@ -105,14 +105,14 @@ public class Muscle extends AnatomicalStructure {
    * The muscle whose action counteracts the specified muscle.
    */
   @JsonIgnore public java.util.Collection<Muscle> getAntagonists() {
-    final Object current = myData.get("antagonist");
+    final java.lang.Object current = myData.get("antagonist");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Muscle>) current;
     }
     return Arrays.asList((Muscle) current);
   }
-  protected Muscle(java.util.Map<String,Object> data) {
+  protected Muscle(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -120,7 +120,7 @@ public class Muscle extends AnatomicalStructure {
    * Builder for {@link Muscle}
    */
   public static class Builder extends AnatomicalStructure.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public Muscle build() {
@@ -386,6 +386,21 @@ public class Muscle extends AnatomicalStructure {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -404,6 +419,13 @@ public class Muscle extends AnatomicalStructure {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -497,7 +519,7 @@ public class Muscle extends AnatomicalStructure {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("nerve".equals(key) && value instanceof Nerve) { this.nerve((Nerve)value); return; }
       if ("nerves".equals(key) && value instanceof Nerve) { this.nerve((Nerve)value); return; }
       if ("bloodSupply".equals(key) && value instanceof Vessel) { this.bloodSupply((Vessel)value); return; }

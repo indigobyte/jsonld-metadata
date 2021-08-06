@@ -37,7 +37,7 @@ public class NutritionInformation extends StructuredValue {
    * The number of milligrams of cholesterol.
    */
   @JsonIgnore public java.util.Collection<Mass> getCholesterolContents() {
-    final Object current = myData.get("cholesterolContent");
+    final java.lang.Object current = myData.get("cholesterolContent");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Mass>) current;
@@ -54,7 +54,7 @@ public class NutritionInformation extends StructuredValue {
    * The number of grams of trans fat.
    */
   @JsonIgnore public java.util.Collection<Mass> getTransFatContents() {
-    final Object current = myData.get("transFatContent");
+    final java.lang.Object current = myData.get("transFatContent");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Mass>) current;
@@ -71,7 +71,7 @@ public class NutritionInformation extends StructuredValue {
    * The number of grams of protein.
    */
   @JsonIgnore public java.util.Collection<Mass> getProteinContents() {
-    final Object current = myData.get("proteinContent");
+    final java.lang.Object current = myData.get("proteinContent");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Mass>) current;
@@ -88,7 +88,7 @@ public class NutritionInformation extends StructuredValue {
    * The number of grams of fiber.
    */
   @JsonIgnore public java.util.Collection<Mass> getFiberContents() {
-    final Object current = myData.get("fiberContent");
+    final java.lang.Object current = myData.get("fiberContent");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Mass>) current;
@@ -105,7 +105,7 @@ public class NutritionInformation extends StructuredValue {
    * The number of grams of saturated fat.
    */
   @JsonIgnore public java.util.Collection<Mass> getSaturatedFatContents() {
-    final Object current = myData.get("saturatedFatContent");
+    final java.lang.Object current = myData.get("saturatedFatContent");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Mass>) current;
@@ -122,7 +122,7 @@ public class NutritionInformation extends StructuredValue {
    * The serving size, in terms of the number of volume or mass.
    */
   @JsonIgnore public java.util.Collection<String> getServingSizes() {
-    final Object current = myData.get("servingSize");
+    final java.lang.Object current = myData.get("servingSize");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -139,7 +139,7 @@ public class NutritionInformation extends StructuredValue {
    * The number of grams of carbohydrates.
    */
   @JsonIgnore public java.util.Collection<Mass> getCarbohydrateContents() {
-    final Object current = myData.get("carbohydrateContent");
+    final java.lang.Object current = myData.get("carbohydrateContent");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Mass>) current;
@@ -156,7 +156,7 @@ public class NutritionInformation extends StructuredValue {
    * The number of calories.
    */
   @JsonIgnore public java.util.Collection<Energy> getCaloriess() {
-    final Object current = myData.get("calories");
+    final java.lang.Object current = myData.get("calories");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Energy>) current;
@@ -173,7 +173,7 @@ public class NutritionInformation extends StructuredValue {
    * The number of grams of fat.
    */
   @JsonIgnore public java.util.Collection<Mass> getFatContents() {
-    final Object current = myData.get("fatContent");
+    final java.lang.Object current = myData.get("fatContent");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Mass>) current;
@@ -190,7 +190,7 @@ public class NutritionInformation extends StructuredValue {
    * The number of grams of sugar.
    */
   @JsonIgnore public java.util.Collection<Mass> getSugarContents() {
-    final Object current = myData.get("sugarContent");
+    final java.lang.Object current = myData.get("sugarContent");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Mass>) current;
@@ -207,7 +207,7 @@ public class NutritionInformation extends StructuredValue {
    * The number of grams of unsaturated fat.
    */
   @JsonIgnore public java.util.Collection<Mass> getUnsaturatedFatContents() {
-    final Object current = myData.get("unsaturatedFatContent");
+    final java.lang.Object current = myData.get("unsaturatedFatContent");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Mass>) current;
@@ -224,14 +224,14 @@ public class NutritionInformation extends StructuredValue {
    * The number of milligrams of sodium.
    */
   @JsonIgnore public java.util.Collection<Mass> getSodiumContents() {
-    final Object current = myData.get("sodiumContent");
+    final java.lang.Object current = myData.get("sodiumContent");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Mass>) current;
     }
     return Arrays.asList((Mass) current);
   }
-  protected NutritionInformation(java.util.Map<String,Object> data) {
+  protected NutritionInformation(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -239,7 +239,7 @@ public class NutritionInformation extends StructuredValue {
    * Builder for {@link NutritionInformation}
    */
   public static class Builder extends StructuredValue.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public NutritionInformation build() {
@@ -407,6 +407,21 @@ public class NutritionInformation extends StructuredValue {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -425,6 +440,13 @@ public class NutritionInformation extends StructuredValue {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -518,7 +540,7 @@ public class NutritionInformation extends StructuredValue {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("cholesterolContent".equals(key) && value instanceof Mass) { this.cholesterolContent((Mass)value); return; }
       if ("cholesterolContents".equals(key) && value instanceof Mass) { this.cholesterolContent((Mass)value); return; }
       if ("transFatContent".equals(key) && value instanceof Mass) { this.transFatContent((Mass)value); return; }

@@ -37,7 +37,7 @@ public class ExerciseAction extends PlayAction {
    * A sub property of participant. The sports team that participated on this action.
    */
   @JsonIgnore public java.util.Collection<Participant> getSportsTeams() {
-    final Object current = myData.get("sportsTeam");
+    final java.lang.Object current = myData.get("sportsTeam");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Participant>) current;
@@ -54,7 +54,7 @@ public class ExerciseAction extends PlayAction {
    * A sub property of location. The sports event where this action occurred.
    */
   @JsonIgnore public java.util.Collection<Location> getSportsEvents() {
-    final Object current = myData.get("sportsEvent");
+    final java.lang.Object current = myData.get("sportsEvent");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Location>) current;
@@ -71,7 +71,7 @@ public class ExerciseAction extends PlayAction {
    * A sub property of location. The course where this action was taken.
    */
   @JsonIgnore public java.util.Collection<Location> getExerciseCourses() {
-    final Object current = myData.get("exerciseCourse");
+    final java.lang.Object current = myData.get("exerciseCourse");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Location>) current;
@@ -88,7 +88,7 @@ public class ExerciseAction extends PlayAction {
    * A sub property of location. The final location of the object or the agent after the action.
    */
   @JsonIgnore public java.util.Collection<Location> getToLocations() {
-    final Object current = myData.get("toLocation");
+    final java.lang.Object current = myData.get("toLocation");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Location>) current;
@@ -105,7 +105,7 @@ public class ExerciseAction extends PlayAction {
    * The distance travelled, e.g. exercising or travelling.
    */
   @JsonIgnore public java.util.Collection<Distance> getDistances() {
-    final Object current = myData.get("distance");
+    final java.lang.Object current = myData.get("distance");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Distance>) current;
@@ -122,7 +122,7 @@ public class ExerciseAction extends PlayAction {
    * Type(s) of exercise or activity, such as strength training, flexibility training, aerobics, cardiac rehabilitation, etc.
    */
   @JsonIgnore public java.util.Collection<String> getExerciseTypes() {
-    final Object current = myData.get("exerciseType");
+    final java.lang.Object current = myData.get("exerciseType");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -139,7 +139,7 @@ public class ExerciseAction extends PlayAction {
    * A sub property of instrument. The diet used in this action.
    */
   @JsonIgnore public java.util.Collection<Instrument> getDiets() {
-    final Object current = myData.get("diet");
+    final java.lang.Object current = myData.get("diet");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Instrument>) current;
@@ -156,7 +156,7 @@ public class ExerciseAction extends PlayAction {
    * A sub property of location. The original location of the object or the agent before the action.
    */
   @JsonIgnore public java.util.Collection<Location> getFromLocations() {
-    final Object current = myData.get("fromLocation");
+    final java.lang.Object current = myData.get("fromLocation");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Location>) current;
@@ -173,7 +173,7 @@ public class ExerciseAction extends PlayAction {
    * A sub property of participant. The opponent on this action.
    */
   @JsonIgnore public java.util.Collection<Participant> getOpponents() {
-    final Object current = myData.get("opponent");
+    final java.lang.Object current = myData.get("opponent");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Participant>) current;
@@ -190,7 +190,7 @@ public class ExerciseAction extends PlayAction {
    * A sub property of instrument. The diet used in this action.
    */
   @JsonIgnore public java.util.Collection<Instrument> getExerciseRelatedDiets() {
-    final Object current = myData.get("exerciseRelatedDiet");
+    final java.lang.Object current = myData.get("exerciseRelatedDiet");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Instrument>) current;
@@ -207,7 +207,7 @@ public class ExerciseAction extends PlayAction {
    * A sub property of instrument. The exercise plan used on this action.
    */
   @JsonIgnore public java.util.Collection<Instrument> getExercisePlans() {
-    final Object current = myData.get("exercisePlan");
+    final java.lang.Object current = myData.get("exercisePlan");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Instrument>) current;
@@ -224,14 +224,14 @@ public class ExerciseAction extends PlayAction {
    * A sub property of location. The sports activity location where this action occurred.
    */
   @JsonIgnore public java.util.Collection<Location> getSportsActivityLocations() {
-    final Object current = myData.get("sportsActivityLocation");
+    final java.lang.Object current = myData.get("sportsActivityLocation");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Location>) current;
     }
     return Arrays.asList((Location) current);
   }
-  protected ExerciseAction(java.util.Map<String,Object> data) {
+  protected ExerciseAction(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -239,7 +239,7 @@ public class ExerciseAction extends PlayAction {
    * Builder for {@link ExerciseAction}
    */
   public static class Builder extends PlayAction.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public ExerciseAction build() {
@@ -372,6 +372,20 @@ public class ExerciseAction extends PlayAction {
       return this;
     }
     /**
+     * The object that helped the agent perform the action. e.g. John wrote a book with *a pen*.
+     */
+    @NotNull public Builder instrument(@NotNull Instrument instrument) {
+      putValue("instrument", instrument);
+      return this;
+    }
+    /**
+     * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
+     */
+    @NotNull public Builder participant(@NotNull Participant participant) {
+      putValue("participant", participant);
+      return this;
+    }
+    /**
      * Indicates a target EntryPoint for an Action.
      */
     @NotNull public Builder target(@NotNull EntryPoint entryPoint) {
@@ -383,6 +397,20 @@ public class ExerciseAction extends PlayAction {
      */
     @NotNull public Builder target(@NotNull EntryPoint.Builder entryPoint) {
       putValue("target", entryPoint.build());
+      return this;
+    }
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     */
+    @NotNull public Builder location(@NotNull Location location) {
+      putValue("location", location);
+      return this;
+    }
+    /**
+     * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
+     */
+    @NotNull public Builder object(@NotNull Object object) {
+      putValue("object", object);
       return this;
     }
     /**
@@ -442,6 +470,28 @@ public class ExerciseAction extends PlayAction {
       return this;
     }
     /**
+     * The result produced in the action. e.g. John wrote *a book*.
+     */
+    @NotNull public Builder result(@NotNull Result result) {
+      putValue("result", result);
+      return this;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -460,6 +510,13 @@ public class ExerciseAction extends PlayAction {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -553,7 +610,7 @@ public class ExerciseAction extends PlayAction {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("sportsTeam".equals(key) && value instanceof Participant) { this.sportsTeam((Participant)value); return; }
       if ("sportsTeams".equals(key) && value instanceof Participant) { this.sportsTeam((Participant)value); return; }
       if ("sportsEvent".equals(key) && value instanceof Location) { this.sportsEvent((Location)value); return; }

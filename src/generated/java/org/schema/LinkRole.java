@@ -37,7 +37,7 @@ public class LinkRole extends Role {
    * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
    */
   @JsonIgnore public java.util.Collection<Language> getInLanguageLanguages() {
-    final Object current = myData.get("inLanguage");
+    final java.lang.Object current = myData.get("inLanguage");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Language>) current;
@@ -54,7 +54,7 @@ public class LinkRole extends Role {
    * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
    */
   @JsonIgnore public java.util.Collection<String> getInLanguageStrings() {
-    final Object current = myData.get("inLanguage");
+    final java.lang.Object current = myData.get("inLanguage");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -71,14 +71,14 @@ public class LinkRole extends Role {
    * Indicates the relationship type of a Web link. 
    */
   @JsonIgnore public java.util.Collection<String> getLinkRelationships() {
-    final Object current = myData.get("linkRelationship");
+    final java.lang.Object current = myData.get("linkRelationship");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
-  protected LinkRole(java.util.Map<String,Object> data) {
+  protected LinkRole(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -86,7 +86,7 @@ public class LinkRole extends Role {
    * Builder for {@link LinkRole}
    */
   public static class Builder extends Role.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public LinkRole build() {
@@ -142,6 +142,21 @@ public class LinkRole extends Role {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -160,6 +175,13 @@ public class LinkRole extends Role {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -253,7 +275,7 @@ public class LinkRole extends Role {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("inLanguage".equals(key) && value instanceof Language) { this.inLanguage((Language)value); return; }
       if ("inLanguages".equals(key) && value instanceof Language) { this.inLanguage((Language)value); return; }
       if ("inLanguage".equals(key) && value instanceof String) { this.inLanguage((String)value); return; }

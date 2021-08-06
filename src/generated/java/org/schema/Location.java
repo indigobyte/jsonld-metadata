@@ -24,7 +24,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * 
+ * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
  */
 public interface Location {
 }

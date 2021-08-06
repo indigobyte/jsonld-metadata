@@ -37,12 +37,46 @@ public class Action extends Thing {
    * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getStartTimes() {
-    final Object current = myData.get("startTime");
+    final java.lang.Object current = myData.get("startTime");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
+  }
+  /**
+   * The object that helped the agent perform the action. e.g. John wrote a book with *a pen*.
+   */
+  @JsonIgnore public Instrument getInstrument() {
+    return (Instrument) getValue("instrument");
+  }
+  /**
+   * The object that helped the agent perform the action. e.g. John wrote a book with *a pen*.
+   */
+  @JsonIgnore public java.util.Collection<Instrument> getInstruments() {
+    final java.lang.Object current = myData.get("instrument");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Instrument>) current;
+    }
+    return Arrays.asList((Instrument) current);
+  }
+  /**
+   * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
+   */
+  @JsonIgnore public Participant getParticipant() {
+    return (Participant) getValue("participant");
+  }
+  /**
+   * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
+   */
+  @JsonIgnore public java.util.Collection<Participant> getParticipants() {
+    final java.lang.Object current = myData.get("participant");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Participant>) current;
+    }
+    return Arrays.asList((Participant) current);
   }
   /**
    * Indicates a target EntryPoint for an Action.
@@ -54,12 +88,46 @@ public class Action extends Thing {
    * Indicates a target EntryPoint for an Action.
    */
   @JsonIgnore public java.util.Collection<EntryPoint> getTargets() {
-    final Object current = myData.get("target");
+    final java.lang.Object current = myData.get("target");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<EntryPoint>) current;
     }
     return Arrays.asList((EntryPoint) current);
+  }
+  /**
+   * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+   */
+  @JsonIgnore public Location getLocation() {
+    return (Location) getValue("location");
+  }
+  /**
+   * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+   */
+  @JsonIgnore public java.util.Collection<Location> getLocations() {
+    final java.lang.Object current = myData.get("location");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Location>) current;
+    }
+    return Arrays.asList((Location) current);
+  }
+  /**
+   * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
+   */
+  @JsonIgnore public Object getObject() {
+    return (Object) getValue("object");
+  }
+  /**
+   * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
+   */
+  @JsonIgnore public java.util.Collection<Object> getObjects() {
+    final java.lang.Object current = myData.get("object");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Object>) current;
+    }
+    return Arrays.asList((Object) current);
   }
   /**
    * Indicates the current disposition of the Action.
@@ -71,7 +139,7 @@ public class Action extends Thing {
    * Indicates the current disposition of the Action.
    */
   @JsonIgnore public java.util.Collection<ActionStatusType> getActionStatuss() {
-    final Object current = myData.get("actionStatus");
+    final java.lang.Object current = myData.get("actionStatus");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<ActionStatusType>) current;
@@ -88,7 +156,7 @@ public class Action extends Thing {
    * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
    */
   @JsonIgnore public java.util.Collection<Organization> getAgentOrganizations() {
-    final Object current = myData.get("agent");
+    final java.lang.Object current = myData.get("agent");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Organization>) current;
@@ -105,7 +173,7 @@ public class Action extends Thing {
    * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
    */
   @JsonIgnore public java.util.Collection<Person> getAgentPersons() {
-    final Object current = myData.get("agent");
+    final java.lang.Object current = myData.get("agent");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Person>) current;
@@ -122,7 +190,7 @@ public class Action extends Thing {
    * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getEndTimes() {
-    final Object current = myData.get("endTime");
+    final java.lang.Object current = myData.get("endTime");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<java.util.Date>) current;
@@ -139,14 +207,31 @@ public class Action extends Thing {
    * For failed actions, more information on the cause of the failure.
    */
   @JsonIgnore public java.util.Collection<Thing> getErrors() {
-    final Object current = myData.get("error");
+    final java.lang.Object current = myData.get("error");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Thing>) current;
     }
     return Arrays.asList((Thing) current);
   }
-  protected Action(java.util.Map<String,Object> data) {
+  /**
+   * The result produced in the action. e.g. John wrote *a book*.
+   */
+  @JsonIgnore public Result getResult() {
+    return (Result) getValue("result");
+  }
+  /**
+   * The result produced in the action. e.g. John wrote *a book*.
+   */
+  @JsonIgnore public java.util.Collection<Result> getResults() {
+    final java.lang.Object current = myData.get("result");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Result>) current;
+    }
+    return Arrays.asList((Result) current);
+  }
+  protected Action(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -154,7 +239,7 @@ public class Action extends Thing {
    * Builder for {@link Action}
    */
   public static class Builder extends Thing.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public Action build() {
@@ -165,6 +250,20 @@ public class Action extends Thing {
      */
     @NotNull public Builder startTime(@NotNull java.util.Date date) {
       putValue("startTime", date);
+      return this;
+    }
+    /**
+     * The object that helped the agent perform the action. e.g. John wrote a book with *a pen*.
+     */
+    @NotNull public Builder instrument(@NotNull Instrument instrument) {
+      putValue("instrument", instrument);
+      return this;
+    }
+    /**
+     * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
+     */
+    @NotNull public Builder participant(@NotNull Participant participant) {
+      putValue("participant", participant);
       return this;
     }
     /**
@@ -179,6 +278,20 @@ public class Action extends Thing {
      */
     @NotNull public Builder target(@NotNull EntryPoint.Builder entryPoint) {
       putValue("target", entryPoint.build());
+      return this;
+    }
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     */
+    @NotNull public Builder location(@NotNull Location location) {
+      putValue("location", location);
+      return this;
+    }
+    /**
+     * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
+     */
+    @NotNull public Builder object(@NotNull Object object) {
+      putValue("object", object);
       return this;
     }
     /**
@@ -238,6 +351,28 @@ public class Action extends Thing {
       return this;
     }
     /**
+     * The result produced in the action. e.g. John wrote *a book*.
+     */
+    @NotNull public Builder result(@NotNull Result result) {
+      putValue("result", result);
+      return this;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -256,6 +391,13 @@ public class Action extends Thing {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -349,11 +491,19 @@ public class Action extends Thing {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("startTime".equals(key) && value instanceof java.util.Date) { this.startTime((java.util.Date)value); return; }
       if ("startTimes".equals(key) && value instanceof java.util.Date) { this.startTime((java.util.Date)value); return; }
+      if ("instrument".equals(key) && value instanceof Instrument) { this.instrument((Instrument)value); return; }
+      if ("instruments".equals(key) && value instanceof Instrument) { this.instrument((Instrument)value); return; }
+      if ("participant".equals(key) && value instanceof Participant) { this.participant((Participant)value); return; }
+      if ("participants".equals(key) && value instanceof Participant) { this.participant((Participant)value); return; }
       if ("target".equals(key) && value instanceof EntryPoint) { this.target((EntryPoint)value); return; }
       if ("targets".equals(key) && value instanceof EntryPoint) { this.target((EntryPoint)value); return; }
+      if ("location".equals(key) && value instanceof Location) { this.location((Location)value); return; }
+      if ("locations".equals(key) && value instanceof Location) { this.location((Location)value); return; }
+      if ("object".equals(key) && value instanceof Object) { this.object((Object)value); return; }
+      if ("objects".equals(key) && value instanceof Object) { this.object((Object)value); return; }
       if ("actionStatus".equals(key) && value instanceof ActionStatusType) { this.actionStatus((ActionStatusType)value); return; }
       if ("actionStatuss".equals(key) && value instanceof ActionStatusType) { this.actionStatus((ActionStatusType)value); return; }
       if ("agent".equals(key) && value instanceof Organization) { this.agent((Organization)value); return; }
@@ -364,6 +514,8 @@ public class Action extends Thing {
       if ("endTimes".equals(key) && value instanceof java.util.Date) { this.endTime((java.util.Date)value); return; }
       if ("error".equals(key) && value instanceof Thing) { this.error((Thing)value); return; }
       if ("errors".equals(key) && value instanceof Thing) { this.error((Thing)value); return; }
+      if ("result".equals(key) && value instanceof Result) { this.result((Result)value); return; }
+      if ("results".equals(key) && value instanceof Result) { this.result((Result)value); return; }
       super.fromMap(key, value);
     }
   }

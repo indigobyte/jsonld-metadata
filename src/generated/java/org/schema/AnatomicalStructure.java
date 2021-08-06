@@ -37,7 +37,7 @@ public class AnatomicalStructure extends MedicalEntity {
    * Component (sub-)structure(s) that comprise this anatomical structure.
    */
   @JsonIgnore public java.util.Collection<AnatomicalStructure> getSubStructures() {
-    final Object current = myData.get("subStructure");
+    final java.lang.Object current = myData.get("subStructure");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<AnatomicalStructure>) current;
@@ -54,7 +54,7 @@ public class AnatomicalStructure extends MedicalEntity {
    * A medical condition associated with this anatomy.
    */
   @JsonIgnore public java.util.Collection<MedicalCondition> getRelatedConditions() {
-    final Object current = myData.get("relatedCondition");
+    final java.lang.Object current = myData.get("relatedCondition");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MedicalCondition>) current;
@@ -71,7 +71,7 @@ public class AnatomicalStructure extends MedicalEntity {
    * Other anatomical structures to which this structure is connected.
    */
   @JsonIgnore public java.util.Collection<AnatomicalStructure> getConnectedTos() {
-    final Object current = myData.get("connectedTo");
+    final java.lang.Object current = myData.get("connectedTo");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<AnatomicalStructure>) current;
@@ -88,7 +88,7 @@ public class AnatomicalStructure extends MedicalEntity {
    * The anatomical or organ system that this structure is part of.
    */
   @JsonIgnore public java.util.Collection<AnatomicalSystem> getPartOfSystems() {
-    final Object current = myData.get("partOfSystem");
+    final java.lang.Object current = myData.get("partOfSystem");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<AnatomicalSystem>) current;
@@ -105,7 +105,7 @@ public class AnatomicalStructure extends MedicalEntity {
    * An image containing a diagram that illustrates the structure and/or its component substructures and/or connections with other structures.
    */
   @JsonIgnore public java.util.Collection<ImageObject> getDiagrams() {
-    final Object current = myData.get("diagram");
+    final java.lang.Object current = myData.get("diagram");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<ImageObject>) current;
@@ -122,7 +122,7 @@ public class AnatomicalStructure extends MedicalEntity {
    * If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.
    */
   @JsonIgnore public java.util.Collection<String> getAssociatedPathophysiologys() {
-    final Object current = myData.get("associatedPathophysiology");
+    final java.lang.Object current = myData.get("associatedPathophysiology");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -139,7 +139,7 @@ public class AnatomicalStructure extends MedicalEntity {
    * A medical therapy related to this anatomy.
    */
   @JsonIgnore public java.util.Collection<MedicalTherapy> getRelatedTherapys() {
-    final Object current = myData.get("relatedTherapy");
+    final java.lang.Object current = myData.get("relatedTherapy");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MedicalTherapy>) current;
@@ -156,14 +156,14 @@ public class AnatomicalStructure extends MedicalEntity {
    * Location in the body of the anatomical structure.
    */
   @JsonIgnore public java.util.Collection<String> getBodyLocations() {
-    final Object current = myData.get("bodyLocation");
+    final java.lang.Object current = myData.get("bodyLocation");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
-  protected AnatomicalStructure(java.util.Map<String,Object> data) {
+  protected AnatomicalStructure(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -171,7 +171,7 @@ public class AnatomicalStructure extends MedicalEntity {
    * Builder for {@link AnatomicalStructure}
    */
   public static class Builder extends MedicalEntity.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public AnatomicalStructure build() {
@@ -374,6 +374,21 @@ public class AnatomicalStructure extends MedicalEntity {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -392,6 +407,13 @@ public class AnatomicalStructure extends MedicalEntity {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -485,7 +507,7 @@ public class AnatomicalStructure extends MedicalEntity {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("subStructure".equals(key) && value instanceof AnatomicalStructure) { this.subStructure((AnatomicalStructure)value); return; }
       if ("subStructures".equals(key) && value instanceof AnatomicalStructure) { this.subStructure((AnatomicalStructure)value); return; }
       if ("relatedCondition".equals(key) && value instanceof MedicalCondition) { this.relatedCondition((MedicalCondition)value); return; }

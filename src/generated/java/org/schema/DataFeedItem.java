@@ -37,7 +37,7 @@ public class DataFeedItem extends Intangible {
    * The date on which the CreativeWork was created or the item was added to a DataFeed.
    */
   @JsonIgnore public java.util.Collection<DateCreated> getDateCreateds() {
-    final Object current = myData.get("dateCreated");
+    final java.lang.Object current = myData.get("dateCreated");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<DateCreated>) current;
@@ -54,7 +54,7 @@ public class DataFeedItem extends Intangible {
    * The datetime the item was removed from the DataFeed.
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getDateDeleteds() {
-    final Object current = myData.get("dateDeleted");
+    final java.lang.Object current = myData.get("dateDeleted");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<java.util.Date>) current;
@@ -71,7 +71,7 @@ public class DataFeedItem extends Intangible {
    * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getDateModifieds() {
-    final Object current = myData.get("dateModified");
+    final java.lang.Object current = myData.get("dateModified");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<java.util.Date>) current;
@@ -88,14 +88,14 @@ public class DataFeedItem extends Intangible {
    * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')&rsquo;.
    */
   @JsonIgnore public java.util.Collection<Thing> getItems() {
-    final Object current = myData.get("item");
+    final java.lang.Object current = myData.get("item");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Thing>) current;
     }
     return Arrays.asList((Thing) current);
   }
-  protected DataFeedItem(java.util.Map<String,Object> data) {
+  protected DataFeedItem(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -103,7 +103,7 @@ public class DataFeedItem extends Intangible {
    * Builder for {@link DataFeedItem}
    */
   public static class Builder extends Intangible.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public DataFeedItem build() {
@@ -145,6 +145,21 @@ public class DataFeedItem extends Intangible {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -163,6 +178,13 @@ public class DataFeedItem extends Intangible {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -256,7 +278,7 @@ public class DataFeedItem extends Intangible {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("dateCreated".equals(key) && value instanceof DateCreated) { this.dateCreated((DateCreated)value); return; }
       if ("dateCreateds".equals(key) && value instanceof DateCreated) { this.dateCreated((DateCreated)value); return; }
       if ("dateDeleted".equals(key) && value instanceof java.util.Date) { this.dateDeleted((java.util.Date)value); return; }

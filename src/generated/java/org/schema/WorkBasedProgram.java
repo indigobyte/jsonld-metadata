@@ -39,7 +39,7 @@ public class WorkBasedProgram extends EducationalOccupationalProgram {
    * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
    */
   @JsonIgnore public java.util.Collection<CategoryCode> getOccupationalCategoryCategoryCodes() {
-    final Object current = myData.get("occupationalCategory");
+    final java.lang.Object current = myData.get("occupationalCategory");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<CategoryCode>) current;
@@ -58,7 +58,7 @@ public class WorkBasedProgram extends EducationalOccupationalProgram {
    * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
    */
   @JsonIgnore public java.util.Collection<String> getOccupationalCategoryStrings() {
-    final Object current = myData.get("occupationalCategory");
+    final java.lang.Object current = myData.get("occupationalCategory");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -75,14 +75,14 @@ public class WorkBasedProgram extends EducationalOccupationalProgram {
    * The estimated salary earned while in the program.
    */
   @JsonIgnore public java.util.Collection<MonetaryAmountDistribution> getTrainingSalarys() {
-    final Object current = myData.get("trainingSalary");
+    final java.lang.Object current = myData.get("trainingSalary");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MonetaryAmountDistribution>) current;
     }
     return Arrays.asList((MonetaryAmountDistribution) current);
   }
-  protected WorkBasedProgram(java.util.Map<String,Object> data) {
+  protected WorkBasedProgram(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -90,7 +90,7 @@ public class WorkBasedProgram extends EducationalOccupationalProgram {
    * Builder for {@link WorkBasedProgram}
    */
   public static class Builder extends EducationalOccupationalProgram.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public WorkBasedProgram build() {
@@ -503,6 +503,21 @@ public class WorkBasedProgram extends EducationalOccupationalProgram {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -521,6 +536,13 @@ public class WorkBasedProgram extends EducationalOccupationalProgram {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -614,7 +636,7 @@ public class WorkBasedProgram extends EducationalOccupationalProgram {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("occupationalCategory".equals(key) && value instanceof CategoryCode) { this.occupationalCategory((CategoryCode)value); return; }
       if ("occupationalCategorys".equals(key) && value instanceof CategoryCode) { this.occupationalCategory((CategoryCode)value); return; }
       if ("occupationalCategory".equals(key) && value instanceof String) { this.occupationalCategory((String)value); return; }

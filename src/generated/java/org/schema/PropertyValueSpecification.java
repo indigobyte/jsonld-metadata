@@ -37,7 +37,7 @@ public class PropertyValueSpecification extends Intangible {
    * Specifies the minimum allowed range for number of characters in a literal value.
    */
   @JsonIgnore public java.util.Collection<Integer> getValueMinLengthIntegers() {
-    final Object current = myData.get("valueMinLength");
+    final java.lang.Object current = myData.get("valueMinLength");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -54,7 +54,7 @@ public class PropertyValueSpecification extends Intangible {
    * Specifies the minimum allowed range for number of characters in a literal value.
    */
   @JsonIgnore public java.util.Collection<Long> getValueMinLengthLongs() {
-    final Object current = myData.get("valueMinLength");
+    final java.lang.Object current = myData.get("valueMinLength");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Long>) current;
@@ -71,7 +71,7 @@ public class PropertyValueSpecification extends Intangible {
    * Specifies the minimum allowed range for number of characters in a literal value.
    */
   @JsonIgnore public java.util.Collection<Float> getValueMinLengthFloats() {
-    final Object current = myData.get("valueMinLength");
+    final java.lang.Object current = myData.get("valueMinLength");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Float>) current;
@@ -88,7 +88,7 @@ public class PropertyValueSpecification extends Intangible {
    * Specifies the minimum allowed range for number of characters in a literal value.
    */
   @JsonIgnore public java.util.Collection<Double> getValueMinLengthDoubles() {
-    final Object current = myData.get("valueMinLength");
+    final java.lang.Object current = myData.get("valueMinLength");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Double>) current;
@@ -105,7 +105,7 @@ public class PropertyValueSpecification extends Intangible {
    * Specifies the minimum allowed range for number of characters in a literal value.
    */
   @JsonIgnore public java.util.Collection<String> getValueMinLengthStrings() {
-    final Object current = myData.get("valueMinLength");
+    final java.lang.Object current = myData.get("valueMinLength");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -122,7 +122,7 @@ public class PropertyValueSpecification extends Intangible {
    * Indicates the name of the PropertyValueSpecification to be used in URL templates and form encoding in a manner analogous to HTML's input@name.
    */
   @JsonIgnore public java.util.Collection<String> getValueNames() {
-    final Object current = myData.get("valueName");
+    final java.lang.Object current = myData.get("valueName");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -139,7 +139,7 @@ public class PropertyValueSpecification extends Intangible {
    * Whether or not a property is mutable.  Default is false. Specifying this for a property that also has a value makes it act similar to a &quot;hidden&quot; input in an HTML form.
    */
   @JsonIgnore public java.util.Collection<Boolean> getReadonlyValues() {
-    final Object current = myData.get("readonlyValue");
+    final java.lang.Object current = myData.get("readonlyValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Boolean>) current;
@@ -156,7 +156,7 @@ public class PropertyValueSpecification extends Intangible {
    * Whether multiple values are allowed for the property.  Default is false.
    */
   @JsonIgnore public java.util.Collection<Boolean> getMultipleValuess() {
-    final Object current = myData.get("multipleValues");
+    final java.lang.Object current = myData.get("multipleValues");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Boolean>) current;
@@ -173,7 +173,7 @@ public class PropertyValueSpecification extends Intangible {
    * The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.
    */
   @JsonIgnore public java.util.Collection<String> getDefaultValueStrings() {
-    final Object current = myData.get("defaultValue");
+    final java.lang.Object current = myData.get("defaultValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -190,7 +190,7 @@ public class PropertyValueSpecification extends Intangible {
    * The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.
    */
   @JsonIgnore public java.util.Collection<Thing> getDefaultValueThings() {
-    final Object current = myData.get("defaultValue");
+    final java.lang.Object current = myData.get("defaultValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Thing>) current;
@@ -207,7 +207,7 @@ public class PropertyValueSpecification extends Intangible {
    * The upper value of some characteristic or property.
    */
   @JsonIgnore public java.util.Collection<Integer> getMaxValueIntegers() {
-    final Object current = myData.get("maxValue");
+    final java.lang.Object current = myData.get("maxValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -224,7 +224,7 @@ public class PropertyValueSpecification extends Intangible {
    * The upper value of some characteristic or property.
    */
   @JsonIgnore public java.util.Collection<Long> getMaxValueLongs() {
-    final Object current = myData.get("maxValue");
+    final java.lang.Object current = myData.get("maxValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Long>) current;
@@ -241,7 +241,7 @@ public class PropertyValueSpecification extends Intangible {
    * The upper value of some characteristic or property.
    */
   @JsonIgnore public java.util.Collection<Float> getMaxValueFloats() {
-    final Object current = myData.get("maxValue");
+    final java.lang.Object current = myData.get("maxValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Float>) current;
@@ -258,7 +258,7 @@ public class PropertyValueSpecification extends Intangible {
    * The upper value of some characteristic or property.
    */
   @JsonIgnore public java.util.Collection<Double> getMaxValueDoubles() {
-    final Object current = myData.get("maxValue");
+    final java.lang.Object current = myData.get("maxValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Double>) current;
@@ -275,7 +275,7 @@ public class PropertyValueSpecification extends Intangible {
    * The upper value of some characteristic or property.
    */
   @JsonIgnore public java.util.Collection<String> getMaxValueStrings() {
-    final Object current = myData.get("maxValue");
+    final java.lang.Object current = myData.get("maxValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -292,7 +292,7 @@ public class PropertyValueSpecification extends Intangible {
    * The stepValue attribute indicates the granularity that is expected (and required) of the value in a PropertyValueSpecification.
    */
   @JsonIgnore public java.util.Collection<Integer> getStepValueIntegers() {
-    final Object current = myData.get("stepValue");
+    final java.lang.Object current = myData.get("stepValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -309,7 +309,7 @@ public class PropertyValueSpecification extends Intangible {
    * The stepValue attribute indicates the granularity that is expected (and required) of the value in a PropertyValueSpecification.
    */
   @JsonIgnore public java.util.Collection<Long> getStepValueLongs() {
-    final Object current = myData.get("stepValue");
+    final java.lang.Object current = myData.get("stepValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Long>) current;
@@ -326,7 +326,7 @@ public class PropertyValueSpecification extends Intangible {
    * The stepValue attribute indicates the granularity that is expected (and required) of the value in a PropertyValueSpecification.
    */
   @JsonIgnore public java.util.Collection<Float> getStepValueFloats() {
-    final Object current = myData.get("stepValue");
+    final java.lang.Object current = myData.get("stepValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Float>) current;
@@ -343,7 +343,7 @@ public class PropertyValueSpecification extends Intangible {
    * The stepValue attribute indicates the granularity that is expected (and required) of the value in a PropertyValueSpecification.
    */
   @JsonIgnore public java.util.Collection<Double> getStepValueDoubles() {
-    final Object current = myData.get("stepValue");
+    final java.lang.Object current = myData.get("stepValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Double>) current;
@@ -360,7 +360,7 @@ public class PropertyValueSpecification extends Intangible {
    * The stepValue attribute indicates the granularity that is expected (and required) of the value in a PropertyValueSpecification.
    */
   @JsonIgnore public java.util.Collection<String> getStepValueStrings() {
-    final Object current = myData.get("stepValue");
+    final java.lang.Object current = myData.get("stepValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -377,7 +377,7 @@ public class PropertyValueSpecification extends Intangible {
    * Whether the property must be filled in to complete the action.  Default is false.
    */
   @JsonIgnore public java.util.Collection<Boolean> getValueRequireds() {
-    final Object current = myData.get("valueRequired");
+    final java.lang.Object current = myData.get("valueRequired");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Boolean>) current;
@@ -394,7 +394,7 @@ public class PropertyValueSpecification extends Intangible {
    * Specifies a regular expression for testing literal values according to the HTML spec.
    */
   @JsonIgnore public java.util.Collection<String> getValuePatterns() {
-    final Object current = myData.get("valuePattern");
+    final java.lang.Object current = myData.get("valuePattern");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -411,7 +411,7 @@ public class PropertyValueSpecification extends Intangible {
    * The lower value of some characteristic or property.
    */
   @JsonIgnore public java.util.Collection<Integer> getMinValueIntegers() {
-    final Object current = myData.get("minValue");
+    final java.lang.Object current = myData.get("minValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -428,7 +428,7 @@ public class PropertyValueSpecification extends Intangible {
    * The lower value of some characteristic or property.
    */
   @JsonIgnore public java.util.Collection<Long> getMinValueLongs() {
-    final Object current = myData.get("minValue");
+    final java.lang.Object current = myData.get("minValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Long>) current;
@@ -445,7 +445,7 @@ public class PropertyValueSpecification extends Intangible {
    * The lower value of some characteristic or property.
    */
   @JsonIgnore public java.util.Collection<Float> getMinValueFloats() {
-    final Object current = myData.get("minValue");
+    final java.lang.Object current = myData.get("minValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Float>) current;
@@ -462,7 +462,7 @@ public class PropertyValueSpecification extends Intangible {
    * The lower value of some characteristic or property.
    */
   @JsonIgnore public java.util.Collection<Double> getMinValueDoubles() {
-    final Object current = myData.get("minValue");
+    final java.lang.Object current = myData.get("minValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Double>) current;
@@ -479,7 +479,7 @@ public class PropertyValueSpecification extends Intangible {
    * The lower value of some characteristic or property.
    */
   @JsonIgnore public java.util.Collection<String> getMinValueStrings() {
-    final Object current = myData.get("minValue");
+    final java.lang.Object current = myData.get("minValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -496,7 +496,7 @@ public class PropertyValueSpecification extends Intangible {
    * Specifies the allowed range for number of characters in a literal value.
    */
   @JsonIgnore public java.util.Collection<Integer> getValueMaxLengthIntegers() {
-    final Object current = myData.get("valueMaxLength");
+    final java.lang.Object current = myData.get("valueMaxLength");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -513,7 +513,7 @@ public class PropertyValueSpecification extends Intangible {
    * Specifies the allowed range for number of characters in a literal value.
    */
   @JsonIgnore public java.util.Collection<Long> getValueMaxLengthLongs() {
-    final Object current = myData.get("valueMaxLength");
+    final java.lang.Object current = myData.get("valueMaxLength");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Long>) current;
@@ -530,7 +530,7 @@ public class PropertyValueSpecification extends Intangible {
    * Specifies the allowed range for number of characters in a literal value.
    */
   @JsonIgnore public java.util.Collection<Float> getValueMaxLengthFloats() {
-    final Object current = myData.get("valueMaxLength");
+    final java.lang.Object current = myData.get("valueMaxLength");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Float>) current;
@@ -547,7 +547,7 @@ public class PropertyValueSpecification extends Intangible {
    * Specifies the allowed range for number of characters in a literal value.
    */
   @JsonIgnore public java.util.Collection<Double> getValueMaxLengthDoubles() {
-    final Object current = myData.get("valueMaxLength");
+    final java.lang.Object current = myData.get("valueMaxLength");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Double>) current;
@@ -564,14 +564,14 @@ public class PropertyValueSpecification extends Intangible {
    * Specifies the allowed range for number of characters in a literal value.
    */
   @JsonIgnore public java.util.Collection<String> getValueMaxLengthStrings() {
-    final Object current = myData.get("valueMaxLength");
+    final java.lang.Object current = myData.get("valueMaxLength");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
-  protected PropertyValueSpecification(java.util.Map<String,Object> data) {
+  protected PropertyValueSpecification(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -579,7 +579,7 @@ public class PropertyValueSpecification extends Intangible {
    * Builder for {@link PropertyValueSpecification}
    */
   public static class Builder extends Intangible.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public PropertyValueSpecification build() {
@@ -817,6 +817,21 @@ public class PropertyValueSpecification extends Intangible {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -835,6 +850,13 @@ public class PropertyValueSpecification extends Intangible {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -928,7 +950,7 @@ public class PropertyValueSpecification extends Intangible {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("valueMinLength".equals(key) && value instanceof Integer) { this.valueMinLength((Integer)value); return; }
       if ("valueMinLengths".equals(key) && value instanceof Integer) { this.valueMinLength((Integer)value); return; }
       if ("valueMinLength".equals(key) && value instanceof Long) { this.valueMinLength((Long)value); return; }

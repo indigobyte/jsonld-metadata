@@ -27,7 +27,7 @@ import java.util.*;
  * A publication event e.g. catch-up TV or radio podcast, during which a program is available on-demand.
  */
 public class OnDemandEvent extends PublicationEvent {
-  protected OnDemandEvent(java.util.Map<String,Object> data) {
+  protected OnDemandEvent(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -35,7 +35,7 @@ public class OnDemandEvent extends PublicationEvent {
    * Builder for {@link OnDemandEvent}
    */
   public static class Builder extends PublicationEvent.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public OnDemandEvent build() {
@@ -133,10 +133,25 @@ public class OnDemandEvent extends PublicationEvent {
       return this;
     }
     /**
+     * A work featured in some event, e.g. exhibited in an ExhibitionEvent.
+     *        Specific subproperties are available for workPerformed (e.g. a play), or a workPresented (a Movie at a ScreeningEvent).
+     */
+    @NotNull public Builder workFeatured(@NotNull WorkFeatured workFeatured) {
+      putValue("workFeatured", workFeatured);
+      return this;
+    }
+    /**
      * A work performed in some event, for example a play performed in a TheaterEvent.
      */
     @NotNull public Builder workPerformed(@NotNull WorkFeatured workFeatured) {
       putValue("workPerformed", workFeatured);
+      return this;
+    }
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     */
+    @NotNull public Builder location(@NotNull Location location) {
+      putValue("location", location);
       return this;
     }
     /**
@@ -518,6 +533,20 @@ public class OnDemandEvent extends PublicationEvent {
       return this;
     }
     /**
+     * The subject matter of the content.
+     */
+    @NotNull public Builder about(@NotNull Thing thing) {
+      putValue("about", thing);
+      return this;
+    }
+    /**
+     * The subject matter of the content.
+     */
+    @NotNull public Builder about(@NotNull Thing.Builder thing) {
+      putValue("about", thing.build());
+      return this;
+    }
+    /**
      * An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent.
      */
     @NotNull public Builder superEvent(@NotNull Event event) {
@@ -546,6 +575,21 @@ public class OnDemandEvent extends PublicationEvent {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -564,6 +608,13 @@ public class OnDemandEvent extends PublicationEvent {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -657,7 +708,7 @@ public class OnDemandEvent extends PublicationEvent {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       super.fromMap(key, value);
     }
   }

@@ -37,7 +37,7 @@ public class MedicalTherapy extends TherapeuticProcedure {
    * A possible serious complication and/or serious side effect of this therapy. Serious adverse outcomes include those that are life-threatening; result in death, disability, or permanent damage; require hospitalization or prolong existing hospitalization; cause congenital anomalies or birth defects; or jeopardize the patient and may require medical or surgical intervention to prevent one of the outcomes in this definition.
    */
   @JsonIgnore public java.util.Collection<MedicalEntity> getSeriousAdverseOutcomes() {
-    final Object current = myData.get("seriousAdverseOutcome");
+    final java.lang.Object current = myData.get("seriousAdverseOutcome");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MedicalEntity>) current;
@@ -54,7 +54,7 @@ public class MedicalTherapy extends TherapeuticProcedure {
    * A contraindication for this therapy.
    */
   @JsonIgnore public java.util.Collection<MedicalContraindication> getContraindicationMedicalContraindications() {
-    final Object current = myData.get("contraindication");
+    final java.lang.Object current = myData.get("contraindication");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MedicalContraindication>) current;
@@ -71,7 +71,7 @@ public class MedicalTherapy extends TherapeuticProcedure {
    * A contraindication for this therapy.
    */
   @JsonIgnore public java.util.Collection<String> getContraindicationStrings() {
-    final Object current = myData.get("contraindication");
+    final java.lang.Object current = myData.get("contraindication");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -88,14 +88,14 @@ public class MedicalTherapy extends TherapeuticProcedure {
    * A therapy that duplicates or overlaps this one.
    */
   @JsonIgnore public java.util.Collection<MedicalTherapy> getDuplicateTherapys() {
-    final Object current = myData.get("duplicateTherapy");
+    final java.lang.Object current = myData.get("duplicateTherapy");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MedicalTherapy>) current;
     }
     return Arrays.asList((MedicalTherapy) current);
   }
-  protected MedicalTherapy(java.util.Map<String,Object> data) {
+  protected MedicalTherapy(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -103,7 +103,7 @@ public class MedicalTherapy extends TherapeuticProcedure {
    * Builder for {@link MedicalTherapy}
    */
   public static class Builder extends TherapeuticProcedure.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public MedicalTherapy build() {
@@ -369,6 +369,21 @@ public class MedicalTherapy extends TherapeuticProcedure {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -387,6 +402,13 @@ public class MedicalTherapy extends TherapeuticProcedure {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -480,7 +502,7 @@ public class MedicalTherapy extends TherapeuticProcedure {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("seriousAdverseOutcome".equals(key) && value instanceof MedicalEntity) { this.seriousAdverseOutcome((MedicalEntity)value); return; }
       if ("seriousAdverseOutcomes".equals(key) && value instanceof MedicalEntity) { this.seriousAdverseOutcome((MedicalEntity)value); return; }
       if ("contraindication".equals(key) && value instanceof MedicalContraindication) { this.contraindication((MedicalContraindication)value); return; }

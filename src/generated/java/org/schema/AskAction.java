@@ -37,14 +37,14 @@ public class AskAction extends CommunicateAction {
    * A sub property of object. A question.
    */
   @JsonIgnore public java.util.Collection<Object> getQuestions() {
-    final Object current = myData.get("question");
+    final java.lang.Object current = myData.get("question");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Object>) current;
     }
     return Arrays.asList((Object) current);
   }
-  protected AskAction(java.util.Map<String,Object> data) {
+  protected AskAction(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -52,7 +52,7 @@ public class AskAction extends CommunicateAction {
    * Builder for {@link AskAction}
    */
   public static class Builder extends CommunicateAction.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public AskAction build() {
@@ -87,10 +87,45 @@ public class AskAction extends CommunicateAction {
       return this;
     }
     /**
+     * A sub property of participant. The participant who is at the receiving end of the action.
+     */
+    @NotNull public Builder recipient(@NotNull Recipient recipient) {
+      putValue("recipient", recipient);
+      return this;
+    }
+    /**
+     * The subject matter of the content.
+     */
+    @NotNull public Builder about(@NotNull Thing thing) {
+      putValue("about", thing);
+      return this;
+    }
+    /**
+     * The subject matter of the content.
+     */
+    @NotNull public Builder about(@NotNull Thing.Builder thing) {
+      putValue("about", thing.build());
+      return this;
+    }
+    /**
      * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      */
     @NotNull public Builder startTime(@NotNull java.util.Date date) {
       putValue("startTime", date);
+      return this;
+    }
+    /**
+     * The object that helped the agent perform the action. e.g. John wrote a book with *a pen*.
+     */
+    @NotNull public Builder instrument(@NotNull Instrument instrument) {
+      putValue("instrument", instrument);
+      return this;
+    }
+    /**
+     * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
+     */
+    @NotNull public Builder participant(@NotNull Participant participant) {
+      putValue("participant", participant);
       return this;
     }
     /**
@@ -105,6 +140,20 @@ public class AskAction extends CommunicateAction {
      */
     @NotNull public Builder target(@NotNull EntryPoint.Builder entryPoint) {
       putValue("target", entryPoint.build());
+      return this;
+    }
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     */
+    @NotNull public Builder location(@NotNull Location location) {
+      putValue("location", location);
+      return this;
+    }
+    /**
+     * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
+     */
+    @NotNull public Builder object(@NotNull Object object) {
+      putValue("object", object);
       return this;
     }
     /**
@@ -164,6 +213,28 @@ public class AskAction extends CommunicateAction {
       return this;
     }
     /**
+     * The result produced in the action. e.g. John wrote *a book*.
+     */
+    @NotNull public Builder result(@NotNull Result result) {
+      putValue("result", result);
+      return this;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -182,6 +253,13 @@ public class AskAction extends CommunicateAction {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -275,7 +353,7 @@ public class AskAction extends CommunicateAction {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("question".equals(key) && value instanceof Object) { this.question((Object)value); return; }
       if ("questions".equals(key) && value instanceof Object) { this.question((Object)value); return; }
       super.fromMap(key, value);

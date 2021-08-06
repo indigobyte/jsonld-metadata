@@ -37,7 +37,7 @@ public class BroadcastService extends Service {
    * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
    */
   @JsonIgnore public java.util.Collection<Language> getInLanguageLanguages() {
-    final Object current = myData.get("inLanguage");
+    final java.lang.Object current = myData.get("inLanguage");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Language>) current;
@@ -54,7 +54,7 @@ public class BroadcastService extends Service {
    * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
    */
   @JsonIgnore public java.util.Collection<String> getInLanguageStrings() {
-    final Object current = myData.get("inLanguage");
+    final java.lang.Object current = myData.get("inLanguage");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -71,7 +71,7 @@ public class BroadcastService extends Service {
    * A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
    */
   @JsonIgnore public java.util.Collection<Identifier> getCallSigns() {
-    final Object current = myData.get("callSign");
+    final java.lang.Object current = myData.get("callSign");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Identifier>) current;
@@ -88,7 +88,7 @@ public class BroadcastService extends Service {
    * A broadcast service to which the broadcast service may belong to such as regional variations of a national channel.
    */
   @JsonIgnore public java.util.Collection<BroadcastService> getParentServices() {
-    final Object current = myData.get("parentService");
+    final java.lang.Object current = myData.get("parentService");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<BroadcastService>) current;
@@ -105,7 +105,7 @@ public class BroadcastService extends Service {
    * The name displayed in the channel guide. For many US affiliates, it is the network name.
    */
   @JsonIgnore public java.util.Collection<String> getBroadcastDisplayNames() {
-    final Object current = myData.get("broadcastDisplayName");
+    final java.lang.Object current = myData.get("broadcastDisplayName");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -122,7 +122,7 @@ public class BroadcastService extends Service {
    * The media network(s) whose content is broadcast on this station.
    */
   @JsonIgnore public java.util.Collection<Organization> getBroadcastAffiliateOfs() {
-    final Object current = myData.get("broadcastAffiliateOf");
+    final java.lang.Object current = myData.get("broadcastAffiliateOf");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Organization>) current;
@@ -139,7 +139,7 @@ public class BroadcastService extends Service {
    * The organization owning or operating the broadcast service.
    */
   @JsonIgnore public java.util.Collection<Organization> getBroadcasters() {
-    final Object current = myData.get("broadcaster");
+    final java.lang.Object current = myData.get("broadcaster");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Organization>) current;
@@ -156,7 +156,7 @@ public class BroadcastService extends Service {
    * The timezone in [ISO 8601 format](http://en.wikipedia.org/wiki/ISO_8601) for which the service bases its broadcasts
    */
   @JsonIgnore public java.util.Collection<String> getBroadcastTimezones() {
-    final Object current = myData.get("broadcastTimezone");
+    final java.lang.Object current = myData.get("broadcastTimezone");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -173,7 +173,7 @@ public class BroadcastService extends Service {
    * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. &quot;87 FM&quot;.
    */
   @JsonIgnore public java.util.Collection<BroadcastFrequencySpecification> getBroadcastFrequencyBroadcastFrequencySpecifications() {
-    final Object current = myData.get("broadcastFrequency");
+    final java.lang.Object current = myData.get("broadcastFrequency");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<BroadcastFrequencySpecification>) current;
@@ -190,7 +190,7 @@ public class BroadcastService extends Service {
    * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. &quot;87 FM&quot;.
    */
   @JsonIgnore public java.util.Collection<String> getBroadcastFrequencyStrings() {
-    final Object current = myData.get("broadcastFrequency");
+    final java.lang.Object current = myData.get("broadcastFrequency");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -207,7 +207,7 @@ public class BroadcastService extends Service {
    * The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).
    */
   @JsonIgnore public java.util.Collection<String> getVideoFormats() {
-    final Object current = myData.get("videoFormat");
+    final java.lang.Object current = myData.get("videoFormat");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -224,14 +224,14 @@ public class BroadcastService extends Service {
    * A broadcast channel of a broadcast service.
    */
   @JsonIgnore public java.util.Collection<BroadcastChannel> getHasBroadcastChannels() {
-    final Object current = myData.get("hasBroadcastChannel");
+    final java.lang.Object current = myData.get("hasBroadcastChannel");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<BroadcastChannel>) current;
     }
     return Arrays.asList((BroadcastChannel) current);
   }
-  protected BroadcastService(java.util.Map<String,Object> data) {
+  protected BroadcastService(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -239,7 +239,7 @@ public class BroadcastService extends Service {
    * Builder for {@link BroadcastService}
    */
   public static class Builder extends Service.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public BroadcastService build() {
@@ -547,6 +547,13 @@ public class BroadcastService extends Service {
       return this;
     }
     /**
+     * The geographic area where a service or offered item is provided.
+     */
+    @NotNull public Builder areaServed(@NotNull AreaServed areaServed) {
+      putValue("areaServed", areaServed);
+      return this;
+    }
+    /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      */
     @NotNull public Builder category(@NotNull Category category) {
@@ -698,6 +705,21 @@ public class BroadcastService extends Service {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -716,6 +738,13 @@ public class BroadcastService extends Service {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -809,7 +838,7 @@ public class BroadcastService extends Service {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("inLanguage".equals(key) && value instanceof Language) { this.inLanguage((Language)value); return; }
       if ("inLanguages".equals(key) && value instanceof Language) { this.inLanguage((Language)value); return; }
       if ("inLanguage".equals(key) && value instanceof String) { this.inLanguage((String)value); return; }

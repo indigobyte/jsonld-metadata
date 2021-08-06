@@ -3889,6 +3889,18 @@ public class SmokeTest {
     final Thing thing = SchemaOrg.readJson(SchemaOrg.writeJson(governmentPermit));
     assertEquals(governmentPermit, thing);
   }
+  @Test public void testAbout() throws IOException {
+    final About about = SchemaOrg.about()
+      .url("Test String")
+      .additionalType("Test String")
+      .sameAs("Test String")
+      .alternateName("Test String")
+      .name("Test String")
+      .id("Test String")
+      .build();
+    final Thing thing = SchemaOrg.readJson(SchemaOrg.writeJson(about));
+    assertEquals(about, thing);
+  }
   @Test public void testRecyclingCenter() throws IOException {
     final RecyclingCenter recyclingCenter = SchemaOrg.recyclingCenter()
       .currenciesAccepted("Test String")

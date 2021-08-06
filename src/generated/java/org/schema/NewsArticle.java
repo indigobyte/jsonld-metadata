@@ -40,7 +40,7 @@ public class NewsArticle extends Article {
    * If this NewsArticle appears in print, this field indicates the print section in which the article appeared.
    */
   @JsonIgnore public java.util.Collection<String> getPrintSections() {
-    final Object current = myData.get("printSection");
+    final java.lang.Object current = myData.get("printSection");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -57,7 +57,7 @@ public class NewsArticle extends Article {
    * The edition of the print product in which the NewsArticle appears.
    */
   @JsonIgnore public java.util.Collection<String> getPrintEditions() {
-    final Object current = myData.get("printEdition");
+    final java.lang.Object current = myData.get("printEdition");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -74,7 +74,7 @@ public class NewsArticle extends Article {
    * The number of the column in which the NewsArticle appears in the print edition.
    */
   @JsonIgnore public java.util.Collection<String> getPrintColumns() {
-    final Object current = myData.get("printColumn");
+    final java.lang.Object current = myData.get("printColumn");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -101,7 +101,7 @@ public class NewsArticle extends Article {
    *       
    */
   @JsonIgnore public java.util.Collection<String> getDatelines() {
-    final Object current = myData.get("dateline");
+    final java.lang.Object current = myData.get("dateline");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -118,14 +118,14 @@ public class NewsArticle extends Article {
    * If this NewsArticle appears in print, this field indicates the name of the page on which the article is found. Please note that this field is intended for the exact page name (e.g. A5, B18).
    */
   @JsonIgnore public java.util.Collection<String> getPrintPages() {
-    final Object current = myData.get("printPage");
+    final java.lang.Object current = myData.get("printPage");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
-  protected NewsArticle(java.util.Map<String,Object> data) {
+  protected NewsArticle(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -133,7 +133,7 @@ public class NewsArticle extends Article {
    * Builder for {@link NewsArticle}
    */
   public static class Builder extends Article.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public NewsArticle build() {
@@ -340,6 +340,16 @@ public class NewsArticle extends Article {
       return this;
     }
     /**
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+     * 
+     */
+    @NotNull public Builder publishingPrinciples(@NotNull PublishingPrinciples publishingPrinciples) {
+      putValue("publishingPrinciples", publishingPrinciples);
+      return this;
+    }
+    /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
      */
     @NotNull public Builder inLanguage(@NotNull Language language) {
@@ -365,6 +375,13 @@ public class NewsArticle extends Article {
      */
     @NotNull public Builder thumbnailUrl(@NotNull String thumbnailUrl) {
       putValue("thumbnailUrl", thumbnailUrl);
+      return this;
+    }
+    /**
+     * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
+     */
+    @NotNull public Builder hasPart(@NotNull HasPart hasPart) {
+      putValue("hasPart", hasPart);
       return this;
     }
     /**
@@ -435,6 +452,13 @@ public class NewsArticle extends Article {
      */
     @NotNull public Builder size(@NotNull String size) {
       putValue("size", size);
+      return this;
+    }
+    /**
+     * A material that something is made from, e.g. leather, wool, cotton, paper.
+     */
+    @NotNull public Builder material(@NotNull Material material) {
+      putValue("material", material);
       return this;
     }
     /**
@@ -526,6 +550,15 @@ public class NewsArticle extends Article {
      */
     @NotNull public Builder commentCount(@NotNull Integer integer) {
       putValue("commentCount", integer);
+      return this;
+    }
+    /**
+     * The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of
+     *       contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates
+     *       areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
+     */
+    @NotNull public Builder spatialCoverage(@NotNull SpatialCoverage spatialCoverage) {
+      putValue("spatialCoverage", spatialCoverage);
       return this;
     }
     /**
@@ -746,6 +779,13 @@ public class NewsArticle extends Article {
      */
     @NotNull public Builder sdLicense(@NotNull String sdLicense) {
       putValue("sdLicense", sdLicense);
+      return this;
+    }
+    /**
+     * The position of an item in a series or sequence of items.
+     */
+    @NotNull public Builder position(@NotNull Position position) {
+      putValue("position", position);
       return this;
     }
     /**
@@ -1189,10 +1229,24 @@ public class NewsArticle extends Article {
       return this;
     }
     /**
+     * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
+     */
+    @NotNull public Builder isPartOf(@NotNull IsPartOf isPartOf) {
+      putValue("isPartOf", isPartOf);
+      return this;
+    }
+    /**
      * Indicates that the resource is compatible with the referenced accessibility API ([WebSchemas wiki lists possible values](http://www.w3.org/wiki/WebSchemas/Accessibility)).
      */
     @NotNull public Builder accessibilityAPI(@NotNull String accessibilityAPI) {
       putValue("accessibilityAPI", accessibilityAPI);
+      return this;
+    }
+    /**
+     * Example/instance/realization/derivation of the concept of this creative work. eg. The paperback edition, first edition, or eBook.
+     */
+    @NotNull public Builder workExample(@NotNull WorkExample workExample) {
+      putValue("workExample", workExample);
       return this;
     }
     /**
@@ -1789,10 +1843,45 @@ public class NewsArticle extends Article {
       return this;
     }
     /**
+     * The subject matter of the content.
+     */
+    @NotNull public Builder about(@NotNull Thing thing) {
+      putValue("about", thing);
+      return this;
+    }
+    /**
+     * The subject matter of the content.
+     */
+    @NotNull public Builder about(@NotNull Thing.Builder thing) {
+      putValue("about", thing.build());
+      return this;
+    }
+    /**
      * Indicates the primary entity described in some page or other CreativeWork.
      */
     @NotNull public Builder mainEntity(@NotNull About about) {
       putValue("mainEntity", about);
+      return this;
+    }
+    /**
+     * Indicates the primary entity described in some page or other CreativeWork.
+     */
+    @NotNull public Builder mainEntity(@NotNull About.Builder about) {
+      putValue("mainEntity", about.build());
+      return this;
+    }
+    /**
+     * Indicates the primary entity described in some page or other CreativeWork.
+     */
+    @NotNull public Builder mainEntity(@NotNull Thing thing) {
+      putValue("mainEntity", thing);
+      return this;
+    }
+    /**
+     * Indicates the primary entity described in some page or other CreativeWork.
+     */
+    @NotNull public Builder mainEntity(@NotNull Thing.Builder thing) {
+      putValue("mainEntity", thing.build());
       return this;
     }
     /**
@@ -1831,6 +1920,21 @@ public class NewsArticle extends Article {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -1849,6 +1953,13 @@ public class NewsArticle extends Article {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -1942,7 +2053,7 @@ public class NewsArticle extends Article {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("printSection".equals(key) && value instanceof String) { this.printSection((String)value); return; }
       if ("printSections".equals(key) && value instanceof String) { this.printSection((String)value); return; }
       if ("printEdition".equals(key) && value instanceof String) { this.printEdition((String)value); return; }

@@ -37,7 +37,7 @@ public class Event extends Thing {
    * An organizer of an Event.
    */
   @JsonIgnore public java.util.Collection<Organization> getOrganizerOrganizations() {
-    final Object current = myData.get("organizer");
+    final java.lang.Object current = myData.get("organizer");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Organization>) current;
@@ -54,7 +54,7 @@ public class Event extends Thing {
    * An organizer of an Event.
    */
   @JsonIgnore public java.util.Collection<Person> getOrganizerPersons() {
-    final Object current = myData.get("organizer");
+    final java.lang.Object current = myData.get("organizer");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Person>) current;
@@ -71,7 +71,7 @@ public class Event extends Thing {
    * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
    */
   @JsonIgnore public java.util.Collection<Language> getInLanguageLanguages() {
-    final Object current = myData.get("inLanguage");
+    final java.lang.Object current = myData.get("inLanguage");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Language>) current;
@@ -88,12 +88,31 @@ public class Event extends Thing {
    * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
    */
   @JsonIgnore public java.util.Collection<String> getInLanguageStrings() {
-    final Object current = myData.get("inLanguage");
+    final java.lang.Object current = myData.get("inLanguage");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
+  }
+  /**
+   * A work featured in some event, e.g. exhibited in an ExhibitionEvent.
+   *        Specific subproperties are available for workPerformed (e.g. a play), or a workPresented (a Movie at a ScreeningEvent).
+   */
+  @JsonIgnore public WorkFeatured getWorkFeatured() {
+    return (WorkFeatured) getValue("workFeatured");
+  }
+  /**
+   * A work featured in some event, e.g. exhibited in an ExhibitionEvent.
+   *        Specific subproperties are available for workPerformed (e.g. a play), or a workPresented (a Movie at a ScreeningEvent).
+   */
+  @JsonIgnore public java.util.Collection<WorkFeatured> getWorkFeatureds() {
+    final java.lang.Object current = myData.get("workFeatured");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<WorkFeatured>) current;
+    }
+    return Arrays.asList((WorkFeatured) current);
   }
   /**
    * A work performed in some event, for example a play performed in a TheaterEvent.
@@ -105,12 +124,29 @@ public class Event extends Thing {
    * A work performed in some event, for example a play performed in a TheaterEvent.
    */
   @JsonIgnore public java.util.Collection<WorkFeatured> getWorkPerformeds() {
-    final Object current = myData.get("workPerformed");
+    final java.lang.Object current = myData.get("workPerformed");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<WorkFeatured>) current;
     }
     return Arrays.asList((WorkFeatured) current);
+  }
+  /**
+   * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+   */
+  @JsonIgnore public Location getLocation() {
+    return (Location) getValue("location");
+  }
+  /**
+   * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+   */
+  @JsonIgnore public java.util.Collection<Location> getLocations() {
+    final java.lang.Object current = myData.get("location");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Location>) current;
+    }
+    return Arrays.asList((Location) current);
   }
   /**
    * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
@@ -122,7 +158,7 @@ public class Event extends Thing {
    * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
    */
   @JsonIgnore public java.util.Collection<Organization> getComposerOrganizations() {
-    final Object current = myData.get("composer");
+    final java.lang.Object current = myData.get("composer");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Organization>) current;
@@ -139,7 +175,7 @@ public class Event extends Thing {
    * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
    */
   @JsonIgnore public java.util.Collection<Person> getComposerPersons() {
-    final Object current = myData.get("composer");
+    final java.lang.Object current = myData.get("composer");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Person>) current;
@@ -156,7 +192,7 @@ public class Event extends Thing {
    * A person or organization attending the event.
    */
   @JsonIgnore public java.util.Collection<Organization> getAttendeeOrganizations() {
-    final Object current = myData.get("attendee");
+    final java.lang.Object current = myData.get("attendee");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Organization>) current;
@@ -173,7 +209,7 @@ public class Event extends Thing {
    * A person or organization attending the event.
    */
   @JsonIgnore public java.util.Collection<Person> getAttendeePersons() {
-    final Object current = myData.get("attendee");
+    final java.lang.Object current = myData.get("attendee");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Person>) current;
@@ -190,7 +226,7 @@ public class Event extends Thing {
    * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
    */
   @JsonIgnore public java.util.Collection<Actor> getActors() {
-    final Object current = myData.get("actor");
+    final java.lang.Object current = myData.get("actor");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Actor>) current;
@@ -207,7 +243,7 @@ public class Event extends Thing {
    * The overall rating, based on a collection of reviews or ratings, of the item.
    */
   @JsonIgnore public java.util.Collection<AggregateRating> getAggregateRatings() {
-    final Object current = myData.get("aggregateRating");
+    final java.lang.Object current = myData.get("aggregateRating");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<AggregateRating>) current;
@@ -224,7 +260,7 @@ public class Event extends Thing {
    * A performer at the event&amp;#x2014;for example, a presenter, musician, musical group or actor.
    */
   @JsonIgnore public java.util.Collection<Organization> getPerformerOrganizations() {
-    final Object current = myData.get("performer");
+    final java.lang.Object current = myData.get("performer");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Organization>) current;
@@ -241,7 +277,7 @@ public class Event extends Thing {
    * A performer at the event&amp;#x2014;for example, a presenter, musician, musical group or actor.
    */
   @JsonIgnore public java.util.Collection<Person> getPerformerPersons() {
-    final Object current = myData.get("performer");
+    final java.lang.Object current = myData.get("performer");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Person>) current;
@@ -258,7 +294,7 @@ public class Event extends Thing {
    * An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.
    */
   @JsonIgnore public java.util.Collection<EventStatusType> getEventStatuss() {
-    final Object current = myData.get("eventStatus");
+    final java.lang.Object current = myData.get("eventStatus");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<EventStatusType>) current;
@@ -275,7 +311,7 @@ public class Event extends Thing {
    * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
    */
   @JsonIgnore public java.util.Collection<Duration> getDurations() {
-    final Object current = myData.get("duration");
+    final java.lang.Object current = myData.get("duration");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Duration>) current;
@@ -292,7 +328,7 @@ public class Event extends Thing {
    * The maximum physical attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OnlineEventAttendanceMode]] (or the online aspects, in the case of a [[MixedEventAttendanceMode]]). 
    */
   @JsonIgnore public java.util.Collection<Integer> getMaximumVirtualAttendeeCapacitys() {
-    final Object current = myData.get("maximumVirtualAttendeeCapacity");
+    final java.lang.Object current = myData.get("maximumVirtualAttendeeCapacity");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -309,7 +345,7 @@ public class Event extends Thing {
    * The eventAttendanceMode of an event indicates whether it occurs online, offline, or a mix.
    */
   @JsonIgnore public java.util.Collection<EventAttendanceModeEnumeration> getEventAttendanceModes() {
-    final Object current = myData.get("eventAttendanceMode");
+    final java.lang.Object current = myData.get("eventAttendanceMode");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<EventAttendanceModeEnumeration>) current;
@@ -326,7 +362,7 @@ public class Event extends Thing {
    * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getStartDates() {
-    final Object current = myData.get("startDate");
+    final java.lang.Object current = myData.get("startDate");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<java.util.Date>) current;
@@ -343,7 +379,7 @@ public class Event extends Thing {
    * A flag to signal that the item, event, or place is accessible for free.
    */
   @JsonIgnore public java.util.Collection<Boolean> getIsAccessibleForFrees() {
-    final Object current = myData.get("isAccessibleForFree");
+    final java.lang.Object current = myData.get("isAccessibleForFree");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Boolean>) current;
@@ -360,7 +396,7 @@ public class Event extends Thing {
    * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
    */
   @JsonIgnore public java.util.Collection<Person> getDirectors() {
-    final Object current = myData.get("director");
+    final java.lang.Object current = myData.get("director");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Person>) current;
@@ -377,7 +413,7 @@ public class Event extends Thing {
    * Used in conjunction with eventStatus for rescheduled or cancelled events. This property contains the previously scheduled start date. For rescheduled events, the startDate property should be used for the newly scheduled start date. In the (rare) case of an event that has been postponed and rescheduled multiple times, this field may be repeated.
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getPreviousStartDates() {
-    final Object current = myData.get("previousStartDate");
+    final java.lang.Object current = myData.get("previousStartDate");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<java.util.Date>) current;
@@ -394,7 +430,7 @@ public class Event extends Thing {
    * The number of attendee places for an event that remain unallocated.
    */
   @JsonIgnore public java.util.Collection<Integer> getRemainingAttendeeCapacitys() {
-    final Object current = myData.get("remainingAttendeeCapacity");
+    final java.lang.Object current = myData.get("remainingAttendeeCapacity");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -411,7 +447,7 @@ public class Event extends Thing {
    * A secondary contributor to the CreativeWork or Event.
    */
   @JsonIgnore public java.util.Collection<Organization> getContributorOrganizations() {
-    final Object current = myData.get("contributor");
+    final java.lang.Object current = myData.get("contributor");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Organization>) current;
@@ -428,7 +464,7 @@ public class Event extends Thing {
    * A secondary contributor to the CreativeWork or Event.
    */
   @JsonIgnore public java.util.Collection<Person> getContributorPersons() {
-    final Object current = myData.get("contributor");
+    final java.lang.Object current = myData.get("contributor");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Person>) current;
@@ -445,7 +481,7 @@ public class Event extends Thing {
    * An intended audience, i.e. a group for whom something was created.
    */
   @JsonIgnore public java.util.Collection<Audience> getAudiences() {
-    final Object current = myData.get("audience");
+    final java.lang.Object current = myData.get("audience");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Audience>) current;
@@ -462,7 +498,7 @@ public class Event extends Thing {
    * The maximum physical attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OfflineEventAttendanceMode]] (or the offline aspects, in the case of a [[MixedEventAttendanceMode]]). 
    */
   @JsonIgnore public java.util.Collection<Integer> getMaximumPhysicalAttendeeCapacitys() {
-    final Object current = myData.get("maximumPhysicalAttendeeCapacity");
+    final java.lang.Object current = myData.get("maximumPhysicalAttendeeCapacity");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -489,7 +525,7 @@ public class Event extends Thing {
    *       or seasons.
    */
   @JsonIgnore public java.util.Collection<Schedule> getEventSchedules() {
-    final Object current = myData.get("eventSchedule");
+    final java.lang.Object current = myData.get("eventSchedule");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Schedule>) current;
@@ -506,7 +542,7 @@ public class Event extends Thing {
    * The time admission will commence.
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getDoorTimes() {
-    final Object current = myData.get("doorTime");
+    final java.lang.Object current = myData.get("doorTime");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<java.util.Date>) current;
@@ -523,7 +559,7 @@ public class Event extends Thing {
    * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
    */
   @JsonIgnore public java.util.Collection<Organization> getTranslatorOrganizations() {
-    final Object current = myData.get("translator");
+    final java.lang.Object current = myData.get("translator");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Organization>) current;
@@ -540,7 +576,7 @@ public class Event extends Thing {
    * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
    */
   @JsonIgnore public java.util.Collection<Person> getTranslatorPersons() {
-    final Object current = myData.get("translator");
+    final java.lang.Object current = myData.get("translator");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Person>) current;
@@ -557,7 +593,7 @@ public class Event extends Thing {
    * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
    */
   @JsonIgnore public java.util.Collection<Sponsor> getSponsors() {
-    final Object current = myData.get("sponsor");
+    final java.lang.Object current = myData.get("sponsor");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Sponsor>) current;
@@ -574,7 +610,7 @@ public class Event extends Thing {
    * A person or organization that supports (sponsors) something through some kind of financial contribution.
    */
   @JsonIgnore public java.util.Collection<Sponsor> getFunders() {
-    final Object current = myData.get("funder");
+    final java.lang.Object current = myData.get("funder");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Sponsor>) current;
@@ -591,7 +627,7 @@ public class Event extends Thing {
    * A review of the item.
    */
   @JsonIgnore public java.util.Collection<Review> getReviews() {
-    final Object current = myData.get("review");
+    final java.lang.Object current = myData.get("review");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Review>) current;
@@ -608,7 +644,7 @@ public class Event extends Thing {
    * The typical expected age range, e.g. '7-9', '11-'.
    */
   @JsonIgnore public java.util.Collection<String> getTypicalAgeRanges() {
-    final Object current = myData.get("typicalAgeRange");
+    final java.lang.Object current = myData.get("typicalAgeRange");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -625,7 +661,7 @@ public class Event extends Thing {
    * The total number of individuals that may attend an event or venue.
    */
   @JsonIgnore public java.util.Collection<Integer> getMaximumAttendeeCapacitys() {
-    final Object current = myData.get("maximumAttendeeCapacity");
+    final java.lang.Object current = myData.get("maximumAttendeeCapacity");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -642,7 +678,7 @@ public class Event extends Thing {
    * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getEndDates() {
-    final Object current = myData.get("endDate");
+    final java.lang.Object current = myData.get("endDate");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<java.util.Date>) current;
@@ -659,7 +695,7 @@ public class Event extends Thing {
    * An Event that is part of this event. For example, a conference event includes many presentations, each of which is a subEvent of the conference.
    */
   @JsonIgnore public java.util.Collection<Event> getSubEvents() {
-    final Object current = myData.get("subEvent");
+    final java.lang.Object current = myData.get("subEvent");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Event>) current;
@@ -678,7 +714,7 @@ public class Event extends Thing {
    *       
    */
   @JsonIgnore public java.util.Collection<Demand> getOffersDemands() {
-    final Object current = myData.get("offers");
+    final java.lang.Object current = myData.get("offers");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Demand>) current;
@@ -697,12 +733,29 @@ public class Event extends Thing {
    *       
    */
   @JsonIgnore public java.util.Collection<Offer> getOffersOffers() {
-    final Object current = myData.get("offers");
+    final java.lang.Object current = myData.get("offers");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Offer>) current;
     }
     return Arrays.asList((Offer) current);
+  }
+  /**
+   * The subject matter of the content.
+   */
+  @JsonIgnore public Thing getAbout() {
+    return (Thing) getValue("about");
+  }
+  /**
+   * The subject matter of the content.
+   */
+  @JsonIgnore public java.util.Collection<Thing> getAbouts() {
+    final java.lang.Object current = myData.get("about");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Thing>) current;
+    }
+    return Arrays.asList((Thing) current);
   }
   /**
    * An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent.
@@ -714,7 +767,7 @@ public class Event extends Thing {
    * An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent.
    */
   @JsonIgnore public java.util.Collection<Event> getSuperEvents() {
-    final Object current = myData.get("superEvent");
+    final java.lang.Object current = myData.get("superEvent");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Event>) current;
@@ -731,14 +784,14 @@ public class Event extends Thing {
    * The CreativeWork that captured all or part of this Event.
    */
   @JsonIgnore public java.util.Collection<CreativeWork> getRecordedIns() {
-    final Object current = myData.get("recordedIn");
+    final java.lang.Object current = myData.get("recordedIn");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<CreativeWork>) current;
     }
     return Arrays.asList((CreativeWork) current);
   }
-  protected Event(java.util.Map<String,Object> data) {
+  protected Event(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -746,7 +799,7 @@ public class Event extends Thing {
    * Builder for {@link Event}
    */
   public static class Builder extends Thing.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public Event build() {
@@ -802,10 +855,25 @@ public class Event extends Thing {
       return this;
     }
     /**
+     * A work featured in some event, e.g. exhibited in an ExhibitionEvent.
+     *        Specific subproperties are available for workPerformed (e.g. a play), or a workPresented (a Movie at a ScreeningEvent).
+     */
+    @NotNull public Builder workFeatured(@NotNull WorkFeatured workFeatured) {
+      putValue("workFeatured", workFeatured);
+      return this;
+    }
+    /**
      * A work performed in some event, for example a play performed in a TheaterEvent.
      */
     @NotNull public Builder workPerformed(@NotNull WorkFeatured workFeatured) {
       putValue("workPerformed", workFeatured);
+      return this;
+    }
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     */
+    @NotNull public Builder location(@NotNull Location location) {
+      putValue("location", location);
       return this;
     }
     /**
@@ -1187,6 +1255,20 @@ public class Event extends Thing {
       return this;
     }
     /**
+     * The subject matter of the content.
+     */
+    @NotNull public Builder about(@NotNull Thing thing) {
+      putValue("about", thing);
+      return this;
+    }
+    /**
+     * The subject matter of the content.
+     */
+    @NotNull public Builder about(@NotNull Thing.Builder thing) {
+      putValue("about", thing.build());
+      return this;
+    }
+    /**
      * An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent.
      */
     @NotNull public Builder superEvent(@NotNull Event event) {
@@ -1215,6 +1297,21 @@ public class Event extends Thing {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -1233,6 +1330,13 @@ public class Event extends Thing {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -1326,7 +1430,7 @@ public class Event extends Thing {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("organizer".equals(key) && value instanceof Organization) { this.organizer((Organization)value); return; }
       if ("organizers".equals(key) && value instanceof Organization) { this.organizer((Organization)value); return; }
       if ("organizer".equals(key) && value instanceof Person) { this.organizer((Person)value); return; }
@@ -1335,8 +1439,12 @@ public class Event extends Thing {
       if ("inLanguages".equals(key) && value instanceof Language) { this.inLanguage((Language)value); return; }
       if ("inLanguage".equals(key) && value instanceof String) { this.inLanguage((String)value); return; }
       if ("inLanguages".equals(key) && value instanceof String) { this.inLanguage((String)value); return; }
+      if ("workFeatured".equals(key) && value instanceof WorkFeatured) { this.workFeatured((WorkFeatured)value); return; }
+      if ("workFeatureds".equals(key) && value instanceof WorkFeatured) { this.workFeatured((WorkFeatured)value); return; }
       if ("workPerformed".equals(key) && value instanceof WorkFeatured) { this.workPerformed((WorkFeatured)value); return; }
       if ("workPerformeds".equals(key) && value instanceof WorkFeatured) { this.workPerformed((WorkFeatured)value); return; }
+      if ("location".equals(key) && value instanceof Location) { this.location((Location)value); return; }
+      if ("locations".equals(key) && value instanceof Location) { this.location((Location)value); return; }
       if ("composer".equals(key) && value instanceof Organization) { this.composer((Organization)value); return; }
       if ("composers".equals(key) && value instanceof Organization) { this.composer((Organization)value); return; }
       if ("composer".equals(key) && value instanceof Person) { this.composer((Person)value); return; }
@@ -1405,6 +1513,8 @@ public class Event extends Thing {
       if ("offerss".equals(key) && value instanceof Demand) { this.offers((Demand)value); return; }
       if ("offers".equals(key) && value instanceof Offer) { this.offers((Offer)value); return; }
       if ("offerss".equals(key) && value instanceof Offer) { this.offers((Offer)value); return; }
+      if ("about".equals(key) && value instanceof Thing) { this.about((Thing)value); return; }
+      if ("abouts".equals(key) && value instanceof Thing) { this.about((Thing)value); return; }
       if ("superEvent".equals(key) && value instanceof Event) { this.superEvent((Event)value); return; }
       if ("superEvents".equals(key) && value instanceof Event) { this.superEvent((Event)value); return; }
       if ("recordedIn".equals(key) && value instanceof CreativeWork) { this.recordedIn((CreativeWork)value); return; }

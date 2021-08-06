@@ -37,7 +37,7 @@ public class UserComments extends UserInteraction {
    * The URL at which a reply may be posted to the specified UserComment.
    */
   @JsonIgnore public java.util.Collection<String> getReplyToUrls() {
-    final Object current = myData.get("replyToUrl");
+    final java.lang.Object current = myData.get("replyToUrl");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -54,7 +54,7 @@ public class UserComments extends UserInteraction {
    * Specifies the CreativeWork associated with the UserComment.
    */
   @JsonIgnore public java.util.Collection<CreativeWork> getDiscussess() {
-    final Object current = myData.get("discusses");
+    final java.lang.Object current = myData.get("discusses");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<CreativeWork>) current;
@@ -71,7 +71,7 @@ public class UserComments extends UserInteraction {
    * The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.
    */
   @JsonIgnore public java.util.Collection<Creator> getCreators() {
-    final Object current = myData.get("creator");
+    final java.lang.Object current = myData.get("creator");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Creator>) current;
@@ -88,7 +88,7 @@ public class UserComments extends UserInteraction {
    * The text of the UserComment.
    */
   @JsonIgnore public java.util.Collection<String> getCommentTexts() {
-    final Object current = myData.get("commentText");
+    final java.lang.Object current = myData.get("commentText");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -105,14 +105,14 @@ public class UserComments extends UserInteraction {
    * The time at which the UserComment was made.
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getCommentTimes() {
-    final Object current = myData.get("commentTime");
+    final java.lang.Object current = myData.get("commentTime");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
-  protected UserComments(java.util.Map<String,Object> data) {
+  protected UserComments(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -120,7 +120,7 @@ public class UserComments extends UserInteraction {
    * Builder for {@link UserComments}
    */
   public static class Builder extends UserInteraction.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public UserComments build() {
@@ -218,10 +218,25 @@ public class UserComments extends UserInteraction {
       return this;
     }
     /**
+     * A work featured in some event, e.g. exhibited in an ExhibitionEvent.
+     *        Specific subproperties are available for workPerformed (e.g. a play), or a workPresented (a Movie at a ScreeningEvent).
+     */
+    @NotNull public Builder workFeatured(@NotNull WorkFeatured workFeatured) {
+      putValue("workFeatured", workFeatured);
+      return this;
+    }
+    /**
      * A work performed in some event, for example a play performed in a TheaterEvent.
      */
     @NotNull public Builder workPerformed(@NotNull WorkFeatured workFeatured) {
       putValue("workPerformed", workFeatured);
+      return this;
+    }
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     */
+    @NotNull public Builder location(@NotNull Location location) {
+      putValue("location", location);
       return this;
     }
     /**
@@ -603,6 +618,20 @@ public class UserComments extends UserInteraction {
       return this;
     }
     /**
+     * The subject matter of the content.
+     */
+    @NotNull public Builder about(@NotNull Thing thing) {
+      putValue("about", thing);
+      return this;
+    }
+    /**
+     * The subject matter of the content.
+     */
+    @NotNull public Builder about(@NotNull Thing.Builder thing) {
+      putValue("about", thing.build());
+      return this;
+    }
+    /**
      * An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent.
      */
     @NotNull public Builder superEvent(@NotNull Event event) {
@@ -631,6 +660,21 @@ public class UserComments extends UserInteraction {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -649,6 +693,13 @@ public class UserComments extends UserInteraction {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -742,7 +793,7 @@ public class UserComments extends UserInteraction {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("replyToUrl".equals(key) && value instanceof String) { this.replyToUrl((String)value); return; }
       if ("replyToUrls".equals(key) && value instanceof String) { this.replyToUrl((String)value); return; }
       if ("discusses".equals(key) && value instanceof CreativeWork) { this.discusses((CreativeWork)value); return; }

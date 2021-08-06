@@ -37,7 +37,7 @@ public class DigitalDocumentPermission extends Intangible {
    * The person, organization, contact point, or audience that has been granted this permission.
    */
   @JsonIgnore public java.util.Collection<Audience> getGranteeAudiences() {
-    final Object current = myData.get("grantee");
+    final java.lang.Object current = myData.get("grantee");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Audience>) current;
@@ -54,7 +54,7 @@ public class DigitalDocumentPermission extends Intangible {
    * The person, organization, contact point, or audience that has been granted this permission.
    */
   @JsonIgnore public java.util.Collection<ContactPoint> getGranteeContactPoints() {
-    final Object current = myData.get("grantee");
+    final java.lang.Object current = myData.get("grantee");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<ContactPoint>) current;
@@ -71,7 +71,7 @@ public class DigitalDocumentPermission extends Intangible {
    * The person, organization, contact point, or audience that has been granted this permission.
    */
   @JsonIgnore public java.util.Collection<Organization> getGranteeOrganizations() {
-    final Object current = myData.get("grantee");
+    final java.lang.Object current = myData.get("grantee");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Organization>) current;
@@ -88,7 +88,7 @@ public class DigitalDocumentPermission extends Intangible {
    * The person, organization, contact point, or audience that has been granted this permission.
    */
   @JsonIgnore public java.util.Collection<Person> getGranteePersons() {
-    final Object current = myData.get("grantee");
+    final java.lang.Object current = myData.get("grantee");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Person>) current;
@@ -105,14 +105,14 @@ public class DigitalDocumentPermission extends Intangible {
    * The type of permission granted the person, organization, or audience.
    */
   @JsonIgnore public java.util.Collection<DigitalDocumentPermissionType> getPermissionTypes() {
-    final Object current = myData.get("permissionType");
+    final java.lang.Object current = myData.get("permissionType");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<DigitalDocumentPermissionType>) current;
     }
     return Arrays.asList((DigitalDocumentPermissionType) current);
   }
-  protected DigitalDocumentPermission(java.util.Map<String,Object> data) {
+  protected DigitalDocumentPermission(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -120,7 +120,7 @@ public class DigitalDocumentPermission extends Intangible {
    * Builder for {@link DigitalDocumentPermission}
    */
   public static class Builder extends Intangible.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public DigitalDocumentPermission build() {
@@ -190,6 +190,21 @@ public class DigitalDocumentPermission extends Intangible {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -208,6 +223,13 @@ public class DigitalDocumentPermission extends Intangible {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -301,7 +323,7 @@ public class DigitalDocumentPermission extends Intangible {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("grantee".equals(key) && value instanceof Audience) { this.grantee((Audience)value); return; }
       if ("grantees".equals(key) && value instanceof Audience) { this.grantee((Audience)value); return; }
       if ("grantee".equals(key) && value instanceof ContactPoint) { this.grantee((ContactPoint)value); return; }

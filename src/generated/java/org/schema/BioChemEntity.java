@@ -37,12 +37,29 @@ public class BioChemEntity extends Thing {
    * A similar BioChemEntity, e.g., obtained by fingerprint similarity algorithms.
    */
   @JsonIgnore public java.util.Collection<BioChemEntity> getBioChemSimilaritys() {
-    final Object current = myData.get("bioChemSimilarity");
+    final java.lang.Object current = myData.get("bioChemSimilarity");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<BioChemEntity>) current;
     }
     return Arrays.asList((BioChemEntity) current);
+  }
+  /**
+   * A common representation such as a protein sequence or chemical structure for this entity. For images use schema.org/image.
+   */
+  @JsonIgnore public HasRepresentation getHasRepresentation() {
+    return (HasRepresentation) getValue("hasRepresentation");
+  }
+  /**
+   * A common representation such as a protein sequence or chemical structure for this entity. For images use schema.org/image.
+   */
+  @JsonIgnore public java.util.Collection<HasRepresentation> getHasRepresentations() {
+    final java.lang.Object current = myData.get("hasRepresentation");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<HasRepresentation>) current;
+    }
+    return Arrays.asList((HasRepresentation) current);
   }
   /**
    * Molecular function performed by this BioChemEntity; please use PropertyValue if you want to include any evidence.
@@ -54,7 +71,7 @@ public class BioChemEntity extends Thing {
    * Molecular function performed by this BioChemEntity; please use PropertyValue if you want to include any evidence.
    */
   @JsonIgnore public java.util.Collection<DefinedTerm> getHasMolecularFunctionDefinedTerms() {
-    final Object current = myData.get("hasMolecularFunction");
+    final java.lang.Object current = myData.get("hasMolecularFunction");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<DefinedTerm>) current;
@@ -71,7 +88,7 @@ public class BioChemEntity extends Thing {
    * Molecular function performed by this BioChemEntity; please use PropertyValue if you want to include any evidence.
    */
   @JsonIgnore public java.util.Collection<PropertyValue> getHasMolecularFunctionPropertyValues() {
-    final Object current = myData.get("hasMolecularFunction");
+    final java.lang.Object current = myData.get("hasMolecularFunction");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<PropertyValue>) current;
@@ -88,7 +105,7 @@ public class BioChemEntity extends Thing {
    * Molecular function performed by this BioChemEntity; please use PropertyValue if you want to include any evidence.
    */
   @JsonIgnore public java.util.Collection<String> getHasMolecularFunctionStrings() {
-    final Object current = myData.get("hasMolecularFunction");
+    final java.lang.Object current = myData.get("hasMolecularFunction");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -105,7 +122,7 @@ public class BioChemEntity extends Thing {
    * A role played by the BioChemEntity within a biological context.
    */
   @JsonIgnore public java.util.Collection<DefinedTerm> getBiologicalRoles() {
-    final Object current = myData.get("biologicalRole");
+    final java.lang.Object current = myData.get("biologicalRole");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<DefinedTerm>) current;
@@ -122,7 +139,7 @@ public class BioChemEntity extends Thing {
    * A BioChemEntity that is known to interact with this item.
    */
   @JsonIgnore public java.util.Collection<BioChemEntity> getBioChemInteractions() {
-    final Object current = myData.get("bioChemInteraction");
+    final java.lang.Object current = myData.get("bioChemInteraction");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<BioChemEntity>) current;
@@ -139,7 +156,7 @@ public class BioChemEntity extends Thing {
    * Biological process this BioChemEntity is involved in; please use PropertyValue if you want to include any evidence.
    */
   @JsonIgnore public java.util.Collection<DefinedTerm> getIsInvolvedInBiologicalProcessDefinedTerms() {
-    final Object current = myData.get("isInvolvedInBiologicalProcess");
+    final java.lang.Object current = myData.get("isInvolvedInBiologicalProcess");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<DefinedTerm>) current;
@@ -156,7 +173,7 @@ public class BioChemEntity extends Thing {
    * Biological process this BioChemEntity is involved in; please use PropertyValue if you want to include any evidence.
    */
   @JsonIgnore public java.util.Collection<PropertyValue> getIsInvolvedInBiologicalProcessPropertyValues() {
-    final Object current = myData.get("isInvolvedInBiologicalProcess");
+    final java.lang.Object current = myData.get("isInvolvedInBiologicalProcess");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<PropertyValue>) current;
@@ -173,7 +190,7 @@ public class BioChemEntity extends Thing {
    * Biological process this BioChemEntity is involved in; please use PropertyValue if you want to include any evidence.
    */
   @JsonIgnore public java.util.Collection<String> getIsInvolvedInBiologicalProcessStrings() {
-    final Object current = myData.get("isInvolvedInBiologicalProcess");
+    final java.lang.Object current = myData.get("isInvolvedInBiologicalProcess");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -190,7 +207,7 @@ public class BioChemEntity extends Thing {
    * Subcellular location where this BioChemEntity is located; please use PropertyValue if you want to include any evidence.
    */
   @JsonIgnore public java.util.Collection<DefinedTerm> getIsLocatedInSubcellularLocationDefinedTerms() {
-    final Object current = myData.get("isLocatedInSubcellularLocation");
+    final java.lang.Object current = myData.get("isLocatedInSubcellularLocation");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<DefinedTerm>) current;
@@ -207,7 +224,7 @@ public class BioChemEntity extends Thing {
    * Subcellular location where this BioChemEntity is located; please use PropertyValue if you want to include any evidence.
    */
   @JsonIgnore public java.util.Collection<PropertyValue> getIsLocatedInSubcellularLocationPropertyValues() {
-    final Object current = myData.get("isLocatedInSubcellularLocation");
+    final java.lang.Object current = myData.get("isLocatedInSubcellularLocation");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<PropertyValue>) current;
@@ -224,7 +241,7 @@ public class BioChemEntity extends Thing {
    * Subcellular location where this BioChemEntity is located; please use PropertyValue if you want to include any evidence.
    */
   @JsonIgnore public java.util.Collection<String> getIsLocatedInSubcellularLocationStrings() {
-    final Object current = myData.get("isLocatedInSubcellularLocation");
+    final java.lang.Object current = myData.get("isLocatedInSubcellularLocation");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -241,7 +258,7 @@ public class BioChemEntity extends Thing {
    * The taxonomic grouping of the organism that expresses, encodes, or in someway related to the BioChemEntity.
    */
   @JsonIgnore public java.util.Collection<DefinedTerm> getTaxonomicRangeDefinedTerms() {
-    final Object current = myData.get("taxonomicRange");
+    final java.lang.Object current = myData.get("taxonomicRange");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<DefinedTerm>) current;
@@ -258,7 +275,7 @@ public class BioChemEntity extends Thing {
    * The taxonomic grouping of the organism that expresses, encodes, or in someway related to the BioChemEntity.
    */
   @JsonIgnore public java.util.Collection<String> getTaxonomicRangeStrings() {
-    final Object current = myData.get("taxonomicRange");
+    final java.lang.Object current = myData.get("taxonomicRange");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -275,7 +292,7 @@ public class BioChemEntity extends Thing {
    * The taxonomic grouping of the organism that expresses, encodes, or in someway related to the BioChemEntity.
    */
   @JsonIgnore public java.util.Collection<Taxon> getTaxonomicRangeTaxons() {
-    final Object current = myData.get("taxonomicRange");
+    final java.lang.Object current = myData.get("taxonomicRange");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Taxon>) current;
@@ -292,7 +309,7 @@ public class BioChemEntity extends Thing {
    * Disease associated to this BioChemEntity. Such disease can be a MedicalCondition or a URL. If you want to add an evidence supporting the association, please use PropertyValue.
    */
   @JsonIgnore public java.util.Collection<MedicalCondition> getAssociatedDiseaseMedicalConditions() {
-    final Object current = myData.get("associatedDisease");
+    final java.lang.Object current = myData.get("associatedDisease");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MedicalCondition>) current;
@@ -309,7 +326,7 @@ public class BioChemEntity extends Thing {
    * Disease associated to this BioChemEntity. Such disease can be a MedicalCondition or a URL. If you want to add an evidence supporting the association, please use PropertyValue.
    */
   @JsonIgnore public java.util.Collection<PropertyValue> getAssociatedDiseasePropertyValues() {
-    final Object current = myData.get("associatedDisease");
+    final java.lang.Object current = myData.get("associatedDisease");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<PropertyValue>) current;
@@ -326,7 +343,7 @@ public class BioChemEntity extends Thing {
    * Disease associated to this BioChemEntity. Such disease can be a MedicalCondition or a URL. If you want to add an evidence supporting the association, please use PropertyValue.
    */
   @JsonIgnore public java.util.Collection<String> getAssociatedDiseaseStrings() {
-    final Object current = myData.get("associatedDisease");
+    final java.lang.Object current = myData.get("associatedDisease");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -343,7 +360,7 @@ public class BioChemEntity extends Thing {
    * Another BioChemEntity encoding by this one.
    */
   @JsonIgnore public java.util.Collection<Gene> getIsEncodedByBioChemEntitys() {
-    final Object current = myData.get("isEncodedByBioChemEntity");
+    final java.lang.Object current = myData.get("isEncodedByBioChemEntity");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Gene>) current;
@@ -360,7 +377,7 @@ public class BioChemEntity extends Thing {
    * Indicates a BioChemEntity that is (in some sense) a part of this BioChemEntity. 
    */
   @JsonIgnore public java.util.Collection<BioChemEntity> getIsPartOfBioChemEntitys() {
-    final Object current = myData.get("isPartOfBioChemEntity");
+    final java.lang.Object current = myData.get("isPartOfBioChemEntity");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<BioChemEntity>) current;
@@ -377,14 +394,14 @@ public class BioChemEntity extends Thing {
    * Indicates a BioChemEntity that (in some sense) has this BioChemEntity as a part. 
    */
   @JsonIgnore public java.util.Collection<BioChemEntity> getHasBioChemEntityParts() {
-    final Object current = myData.get("hasBioChemEntityPart");
+    final java.lang.Object current = myData.get("hasBioChemEntityPart");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<BioChemEntity>) current;
     }
     return Arrays.asList((BioChemEntity) current);
   }
-  protected BioChemEntity(java.util.Map<String,Object> data) {
+  protected BioChemEntity(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -392,7 +409,7 @@ public class BioChemEntity extends Thing {
    * Builder for {@link BioChemEntity}
    */
   public static class Builder extends Thing.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public BioChemEntity build() {
@@ -410,6 +427,13 @@ public class BioChemEntity extends Thing {
      */
     @NotNull public Builder bioChemSimilarity(@NotNull BioChemEntity.Builder bioChemEntity) {
       putValue("bioChemSimilarity", bioChemEntity.build());
+      return this;
+    }
+    /**
+     * A common representation such as a protein sequence or chemical structure for this entity. For images use schema.org/image.
+     */
+    @NotNull public Builder hasRepresentation(@NotNull HasRepresentation hasRepresentation) {
+      putValue("hasRepresentation", hasRepresentation);
       return this;
     }
     /**
@@ -658,6 +682,21 @@ public class BioChemEntity extends Thing {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -676,6 +715,13 @@ public class BioChemEntity extends Thing {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -769,9 +815,11 @@ public class BioChemEntity extends Thing {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("bioChemSimilarity".equals(key) && value instanceof BioChemEntity) { this.bioChemSimilarity((BioChemEntity)value); return; }
       if ("bioChemSimilaritys".equals(key) && value instanceof BioChemEntity) { this.bioChemSimilarity((BioChemEntity)value); return; }
+      if ("hasRepresentation".equals(key) && value instanceof HasRepresentation) { this.hasRepresentation((HasRepresentation)value); return; }
+      if ("hasRepresentations".equals(key) && value instanceof HasRepresentation) { this.hasRepresentation((HasRepresentation)value); return; }
       if ("hasMolecularFunction".equals(key) && value instanceof DefinedTerm) { this.hasMolecularFunction((DefinedTerm)value); return; }
       if ("hasMolecularFunctions".equals(key) && value instanceof DefinedTerm) { this.hasMolecularFunction((DefinedTerm)value); return; }
       if ("hasMolecularFunction".equals(key) && value instanceof PropertyValue) { this.hasMolecularFunction((PropertyValue)value); return; }

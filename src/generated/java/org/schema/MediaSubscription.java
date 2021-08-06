@@ -37,7 +37,7 @@ public class MediaSubscription extends Intangible {
    * The Organization responsible for authenticating the user's subscription. For example, many media apps require a cable/satellite provider to authenticate your subscription before playing media.
    */
   @JsonIgnore public java.util.Collection<Organization> getAuthenticators() {
-    final Object current = myData.get("authenticator");
+    final java.lang.Object current = myData.get("authenticator");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Organization>) current;
@@ -54,14 +54,14 @@ public class MediaSubscription extends Intangible {
    * An Offer which must be accepted before the user can perform the Action. For example, the user may need to buy a movie before being able to watch it.
    */
   @JsonIgnore public java.util.Collection<Offer> getExpectsAcceptanceOfs() {
-    final Object current = myData.get("expectsAcceptanceOf");
+    final java.lang.Object current = myData.get("expectsAcceptanceOf");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Offer>) current;
     }
     return Arrays.asList((Offer) current);
   }
-  protected MediaSubscription(java.util.Map<String,Object> data) {
+  protected MediaSubscription(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -69,7 +69,7 @@ public class MediaSubscription extends Intangible {
    * Builder for {@link MediaSubscription}
    */
   public static class Builder extends Intangible.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public MediaSubscription build() {
@@ -104,6 +104,21 @@ public class MediaSubscription extends Intangible {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -122,6 +137,13 @@ public class MediaSubscription extends Intangible {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -215,7 +237,7 @@ public class MediaSubscription extends Intangible {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("authenticator".equals(key) && value instanceof Organization) { this.authenticator((Organization)value); return; }
       if ("authenticators".equals(key) && value instanceof Organization) { this.authenticator((Organization)value); return; }
       if ("expectsAcceptanceOf".equals(key) && value instanceof Offer) { this.expectsAcceptanceOf((Offer)value); return; }

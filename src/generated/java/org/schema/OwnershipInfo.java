@@ -37,7 +37,7 @@ public class OwnershipInfo extends StructuredValue {
    * The organization or person from which the product was acquired.
    */
   @JsonIgnore public java.util.Collection<Organization> getAcquiredFromOrganizations() {
-    final Object current = myData.get("acquiredFrom");
+    final java.lang.Object current = myData.get("acquiredFrom");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Organization>) current;
@@ -54,7 +54,7 @@ public class OwnershipInfo extends StructuredValue {
    * The organization or person from which the product was acquired.
    */
   @JsonIgnore public java.util.Collection<Person> getAcquiredFromPersons() {
-    final Object current = myData.get("acquiredFrom");
+    final java.lang.Object current = myData.get("acquiredFrom");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Person>) current;
@@ -71,7 +71,7 @@ public class OwnershipInfo extends StructuredValue {
    * The date and time of giving up ownership on the product.
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getOwnedThroughs() {
-    final Object current = myData.get("ownedThrough");
+    final java.lang.Object current = myData.get("ownedThrough");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<java.util.Date>) current;
@@ -88,7 +88,7 @@ public class OwnershipInfo extends StructuredValue {
    * The product that this structured value is referring to.
    */
   @JsonIgnore public java.util.Collection<Product> getTypeOfGoodProducts() {
-    final Object current = myData.get("typeOfGood");
+    final java.lang.Object current = myData.get("typeOfGood");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Product>) current;
@@ -105,7 +105,7 @@ public class OwnershipInfo extends StructuredValue {
    * The product that this structured value is referring to.
    */
   @JsonIgnore public java.util.Collection<Service> getTypeOfGoodServices() {
-    final Object current = myData.get("typeOfGood");
+    final java.lang.Object current = myData.get("typeOfGood");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Service>) current;
@@ -122,14 +122,14 @@ public class OwnershipInfo extends StructuredValue {
    * The date and time of obtaining the product.
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getOwnedFroms() {
-    final Object current = myData.get("ownedFrom");
+    final java.lang.Object current = myData.get("ownedFrom");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
-  protected OwnershipInfo(java.util.Map<String,Object> data) {
+  protected OwnershipInfo(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -137,7 +137,7 @@ public class OwnershipInfo extends StructuredValue {
    * Builder for {@link OwnershipInfo}
    */
   public static class Builder extends StructuredValue.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public OwnershipInfo build() {
@@ -214,6 +214,21 @@ public class OwnershipInfo extends StructuredValue {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -232,6 +247,13 @@ public class OwnershipInfo extends StructuredValue {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -325,7 +347,7 @@ public class OwnershipInfo extends StructuredValue {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("acquiredFrom".equals(key) && value instanceof Organization) { this.acquiredFrom((Organization)value); return; }
       if ("acquiredFroms".equals(key) && value instanceof Organization) { this.acquiredFrom((Organization)value); return; }
       if ("acquiredFrom".equals(key) && value instanceof Person) { this.acquiredFrom((Person)value); return; }

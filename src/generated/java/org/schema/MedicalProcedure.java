@@ -37,7 +37,7 @@ public class MedicalProcedure extends MedicalEntity {
    * The status of the study (enumerated).
    */
   @JsonIgnore public java.util.Collection<EventStatusType> getStatusEventStatusTypes() {
-    final Object current = myData.get("status");
+    final java.lang.Object current = myData.get("status");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<EventStatusType>) current;
@@ -54,7 +54,7 @@ public class MedicalProcedure extends MedicalEntity {
    * The status of the study (enumerated).
    */
   @JsonIgnore public java.util.Collection<MedicalStudyStatus> getStatusMedicalStudyStatuss() {
-    final Object current = myData.get("status");
+    final java.lang.Object current = myData.get("status");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MedicalStudyStatus>) current;
@@ -71,7 +71,7 @@ public class MedicalProcedure extends MedicalEntity {
    * The status of the study (enumerated).
    */
   @JsonIgnore public java.util.Collection<String> getStatusStrings() {
-    final Object current = myData.get("status");
+    final java.lang.Object current = myData.get("status");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -88,7 +88,7 @@ public class MedicalProcedure extends MedicalEntity {
    * Typical preparation that a patient must undergo before having the procedure performed.
    */
   @JsonIgnore public java.util.Collection<MedicalEntity> getPreparationMedicalEntitys() {
-    final Object current = myData.get("preparation");
+    final java.lang.Object current = myData.get("preparation");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MedicalEntity>) current;
@@ -105,7 +105,7 @@ public class MedicalProcedure extends MedicalEntity {
    * Typical preparation that a patient must undergo before having the procedure performed.
    */
   @JsonIgnore public java.util.Collection<String> getPreparationStrings() {
-    final Object current = myData.get("preparation");
+    final java.lang.Object current = myData.get("preparation");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -122,7 +122,7 @@ public class MedicalProcedure extends MedicalEntity {
    * The type of procedure, for example Surgical, Noninvasive, or Percutaneous.
    */
   @JsonIgnore public java.util.Collection<MedicalProcedureType> getProcedureTypes() {
-    final Object current = myData.get("procedureType");
+    final java.lang.Object current = myData.get("procedureType");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MedicalProcedureType>) current;
@@ -139,7 +139,7 @@ public class MedicalProcedure extends MedicalEntity {
    * How the procedure is performed.
    */
   @JsonIgnore public java.util.Collection<String> getHowPerformeds() {
-    final Object current = myData.get("howPerformed");
+    final java.lang.Object current = myData.get("howPerformed");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -156,7 +156,7 @@ public class MedicalProcedure extends MedicalEntity {
    * Typical or recommended followup care after the procedure is performed.
    */
   @JsonIgnore public java.util.Collection<String> getFollowups() {
-    final Object current = myData.get("followup");
+    final java.lang.Object current = myData.get("followup");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -173,14 +173,14 @@ public class MedicalProcedure extends MedicalEntity {
    * Location in the body of the anatomical structure.
    */
   @JsonIgnore public java.util.Collection<String> getBodyLocations() {
-    final Object current = myData.get("bodyLocation");
+    final java.lang.Object current = myData.get("bodyLocation");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
-  protected MedicalProcedure(java.util.Map<String,Object> data) {
+  protected MedicalProcedure(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -188,7 +188,7 @@ public class MedicalProcedure extends MedicalEntity {
    * Builder for {@link MedicalProcedure}
    */
   public static class Builder extends MedicalEntity.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public MedicalProcedure build() {
@@ -363,6 +363,21 @@ public class MedicalProcedure extends MedicalEntity {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -381,6 +396,13 @@ public class MedicalProcedure extends MedicalEntity {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -474,7 +496,7 @@ public class MedicalProcedure extends MedicalEntity {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("status".equals(key) && value instanceof EventStatusType) { this.status((EventStatusType)value); return; }
       if ("statuss".equals(key) && value instanceof EventStatusType) { this.status((EventStatusType)value); return; }
       if ("status".equals(key) && value instanceof MedicalStudyStatus) { this.status((MedicalStudyStatus)value); return; }

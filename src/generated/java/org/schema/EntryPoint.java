@@ -37,7 +37,7 @@ public class EntryPoint extends Intangible {
    * An HTTP method that specifies the appropriate HTTP method for a request to an HTTP EntryPoint. Values are capitalized strings as used in HTTP.
    */
   @JsonIgnore public java.util.Collection<String> getHttpMethods() {
-    final Object current = myData.get("httpMethod");
+    final java.lang.Object current = myData.get("httpMethod");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -54,7 +54,7 @@ public class EntryPoint extends Intangible {
    * An url template (RFC6570) that will be used to construct the target of the execution of the action.
    */
   @JsonIgnore public java.util.Collection<String> getUrlTemplates() {
-    final Object current = myData.get("urlTemplate");
+    final java.lang.Object current = myData.get("urlTemplate");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -71,7 +71,7 @@ public class EntryPoint extends Intangible {
    * The high level platform(s) where the Action can be performed for the given URL. To specify a specific application or operating system instance, use actionApplication.
    */
   @JsonIgnore public java.util.Collection<String> getActionPlatforms() {
-    final Object current = myData.get("actionPlatform");
+    final java.lang.Object current = myData.get("actionPlatform");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -88,7 +88,7 @@ public class EntryPoint extends Intangible {
    * The supported encoding type(s) for an EntryPoint request.
    */
   @JsonIgnore public java.util.Collection<String> getEncodingTypes() {
-    final Object current = myData.get("encodingType");
+    final java.lang.Object current = myData.get("encodingType");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -105,7 +105,7 @@ public class EntryPoint extends Intangible {
    * An application that can complete the request.
    */
   @JsonIgnore public java.util.Collection<SoftwareApplication> getActionApplications() {
-    final Object current = myData.get("actionApplication");
+    final java.lang.Object current = myData.get("actionApplication");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<SoftwareApplication>) current;
@@ -122,14 +122,14 @@ public class EntryPoint extends Intangible {
    * The supported content type(s) for an EntryPoint response.
    */
   @JsonIgnore public java.util.Collection<String> getContentTypes() {
-    final Object current = myData.get("contentType");
+    final java.lang.Object current = myData.get("contentType");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
-  protected EntryPoint(java.util.Map<String,Object> data) {
+  protected EntryPoint(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -137,7 +137,7 @@ public class EntryPoint extends Intangible {
    * Builder for {@link EntryPoint}
    */
   public static class Builder extends Intangible.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public EntryPoint build() {
@@ -193,6 +193,21 @@ public class EntryPoint extends Intangible {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -211,6 +226,13 @@ public class EntryPoint extends Intangible {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -304,7 +326,7 @@ public class EntryPoint extends Intangible {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("httpMethod".equals(key) && value instanceof String) { this.httpMethod((String)value); return; }
       if ("httpMethods".equals(key) && value instanceof String) { this.httpMethod((String)value); return; }
       if ("urlTemplate".equals(key) && value instanceof String) { this.urlTemplate((String)value); return; }

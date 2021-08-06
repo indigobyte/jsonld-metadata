@@ -24,7 +24,8 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * 
+ * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+ *         Equivalent class: http://purl.org/dc/terms/identifier
  */
-public interface Identifier {
+public interface Identifier extends Gtin {
 }

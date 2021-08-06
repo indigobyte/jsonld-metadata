@@ -26,7 +26,7 @@ import java.util.*;
 /**
  * A media object, such as an image, video, or audio object embedded in a web page or a downloadable dataset i.e. DataDownload. Note that a creative work may have many media objects associated with it on the same web page. For example, a page about a single song (MusicRecording) may have a music video (VideoObject), and a high and low bandwidth audio stream (2 AudioObject's).
  */
-public class MediaObject extends CreativeWork implements Caption {
+public class MediaObject extends CreativeWork implements org.schema.Caption {
   /**
    * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
    */
@@ -37,7 +37,7 @@ public class MediaObject extends CreativeWork implements Caption {
    * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getStartTimes() {
-    final Object current = myData.get("startTime");
+    final java.lang.Object current = myData.get("startTime");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<java.util.Date>) current;
@@ -54,7 +54,7 @@ public class MediaObject extends CreativeWork implements Caption {
    * The width of the item.
    */
   @JsonIgnore public java.util.Collection<Distance> getWidthDistances() {
-    final Object current = myData.get("width");
+    final java.lang.Object current = myData.get("width");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Distance>) current;
@@ -71,7 +71,7 @@ public class MediaObject extends CreativeWork implements Caption {
    * The width of the item.
    */
   @JsonIgnore public java.util.Collection<QuantitativeValue> getWidthQuantitativeValues() {
-    final Object current = myData.get("width");
+    final java.lang.Object current = myData.get("width");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<QuantitativeValue>) current;
@@ -88,7 +88,7 @@ public class MediaObject extends CreativeWork implements Caption {
    * The production company or studio responsible for the item e.g. series, video game, episode etc.
    */
   @JsonIgnore public java.util.Collection<Organization> getProductionCompanys() {
-    final Object current = myData.get("productionCompany");
+    final java.lang.Object current = myData.get("productionCompany");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Organization>) current;
@@ -107,7 +107,7 @@ public class MediaObject extends CreativeWork implements Caption {
    *       
    */
   @JsonIgnore public java.util.Collection<GeoShape> getIneligibleRegionGeoShapes() {
-    final Object current = myData.get("ineligibleRegion");
+    final java.lang.Object current = myData.get("ineligibleRegion");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<GeoShape>) current;
@@ -126,7 +126,7 @@ public class MediaObject extends CreativeWork implements Caption {
    *       
    */
   @JsonIgnore public java.util.Collection<Place> getIneligibleRegionPlaces() {
-    final Object current = myData.get("ineligibleRegion");
+    final java.lang.Object current = myData.get("ineligibleRegion");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Place>) current;
@@ -145,7 +145,7 @@ public class MediaObject extends CreativeWork implements Caption {
    *       
    */
   @JsonIgnore public java.util.Collection<String> getIneligibleRegionStrings() {
-    final Object current = myData.get("ineligibleRegion");
+    final java.lang.Object current = myData.get("ineligibleRegion");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -162,7 +162,7 @@ public class MediaObject extends CreativeWork implements Caption {
    * A URL pointing to a player for a specific video. In general, this is the information in the ```src``` element of an ```embed``` tag and should not be the same as the content of the ```loc``` tag.
    */
   @JsonIgnore public java.util.Collection<String> getEmbedUrls() {
-    final Object current = myData.get("embedUrl");
+    final java.lang.Object current = myData.get("embedUrl");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -179,7 +179,7 @@ public class MediaObject extends CreativeWork implements Caption {
    * Actual bytes of the media object, for example the image file or video file.
    */
   @JsonIgnore public java.util.Collection<String> getContentUrls() {
-    final Object current = myData.get("contentUrl");
+    final java.lang.Object current = myData.get("contentUrl");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -196,7 +196,7 @@ public class MediaObject extends CreativeWork implements Caption {
    * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
    */
   @JsonIgnore public java.util.Collection<Duration> getDurations() {
-    final Object current = myData.get("duration");
+    final java.lang.Object current = myData.get("duration");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Duration>) current;
@@ -213,7 +213,7 @@ public class MediaObject extends CreativeWork implements Caption {
    * The height of the item.
    */
   @JsonIgnore public java.util.Collection<Distance> getHeightDistances() {
-    final Object current = myData.get("height");
+    final java.lang.Object current = myData.get("height");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Distance>) current;
@@ -230,7 +230,7 @@ public class MediaObject extends CreativeWork implements Caption {
    * The height of the item.
    */
   @JsonIgnore public java.util.Collection<QuantitativeValue> getHeightQuantitativeValues() {
-    final Object current = myData.get("height");
+    final java.lang.Object current = myData.get("height");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<QuantitativeValue>) current;
@@ -247,7 +247,7 @@ public class MediaObject extends CreativeWork implements Caption {
    * Indicates if use of the media require a subscription  (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had 'yes', 'no').
    */
   @JsonIgnore public java.util.Collection<Boolean> getRequiresSubscriptionBooleans() {
-    final Object current = myData.get("requiresSubscription");
+    final java.lang.Object current = myData.get("requiresSubscription");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Boolean>) current;
@@ -264,7 +264,7 @@ public class MediaObject extends CreativeWork implements Caption {
    * Indicates if use of the media require a subscription  (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had 'yes', 'no').
    */
   @JsonIgnore public java.util.Collection<MediaSubscription> getRequiresSubscriptionMediaSubscriptions() {
-    final Object current = myData.get("requiresSubscription");
+    final java.lang.Object current = myData.get("requiresSubscription");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MediaSubscription>) current;
@@ -289,7 +289,7 @@ public class MediaObject extends CreativeWork implements Caption {
    * Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.
    */
   @JsonIgnore public java.util.Collection<String> getEncodingFormats() {
-    final Object current = myData.get("encodingFormat");
+    final java.lang.Object current = myData.get("encodingFormat");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -306,7 +306,7 @@ public class MediaObject extends CreativeWork implements Caption {
    * Date when this media object was uploaded to this site.
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getUploadDates() {
-    final Object current = myData.get("uploadDate");
+    final java.lang.Object current = myData.get("uploadDate");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<java.util.Date>) current;
@@ -323,7 +323,7 @@ public class MediaObject extends CreativeWork implements Caption {
    * The [SHA-2](https://en.wikipedia.org/wiki/SHA-2) SHA256 hash of the content of the item. For example, a zero-length input has value 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
    */
   @JsonIgnore public java.util.Collection<Description> getSha256s() {
-    final Object current = myData.get("sha256");
+    final java.lang.Object current = myData.get("sha256");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Description>) current;
@@ -340,7 +340,7 @@ public class MediaObject extends CreativeWork implements Caption {
    * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getEndTimes() {
-    final Object current = myData.get("endTime");
+    final java.lang.Object current = myData.get("endTime");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<java.util.Date>) current;
@@ -357,7 +357,7 @@ public class MediaObject extends CreativeWork implements Caption {
    * Player type required&amp;#x2014;for example, Flash or Silverlight.
    */
   @JsonIgnore public java.util.Collection<String> getPlayerTypes() {
-    final Object current = myData.get("playerType");
+    final java.lang.Object current = myData.get("playerType");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -374,7 +374,7 @@ public class MediaObject extends CreativeWork implements Caption {
    * Used to indicate a specific claim contained, implied, translated or refined from the content of a [[MediaObject]] or other [[CreativeWork]]. The interpreting party can be indicated using [[claimInterpreter]].
    */
   @JsonIgnore public java.util.Collection<Description> getInterpretedAsClaims() {
-    final Object current = myData.get("interpretedAsClaim");
+    final java.lang.Object current = myData.get("interpretedAsClaim");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Description>) current;
@@ -391,7 +391,7 @@ public class MediaObject extends CreativeWork implements Caption {
    * A NewsArticle associated with the Media Object.
    */
   @JsonIgnore public java.util.Collection<NewsArticle> getAssociatedArticles() {
-    final Object current = myData.get("associatedArticle");
+    final java.lang.Object current = myData.get("associatedArticle");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<NewsArticle>) current;
@@ -408,7 +408,7 @@ public class MediaObject extends CreativeWork implements Caption {
    * File size in (mega/kilo) bytes.
    */
   @JsonIgnore public java.util.Collection<String> getContentSizes() {
-    final Object current = myData.get("contentSize");
+    final java.lang.Object current = myData.get("contentSize");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -425,7 +425,7 @@ public class MediaObject extends CreativeWork implements Caption {
    * The regions where the media is allowed. If not specified, then it's assumed to be allowed everywhere. Specify the countries in [ISO 3166 format](http://en.wikipedia.org/wiki/ISO_3166).
    */
   @JsonIgnore public java.util.Collection<Place> getRegionsAlloweds() {
-    final Object current = myData.get("regionsAllowed");
+    final java.lang.Object current = myData.get("regionsAllowed");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Place>) current;
@@ -442,7 +442,7 @@ public class MediaObject extends CreativeWork implements Caption {
    * The bitrate of the media object.
    */
   @JsonIgnore public java.util.Collection<String> getBitrates() {
-    final Object current = myData.get("bitrate");
+    final java.lang.Object current = myData.get("bitrate");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -459,14 +459,14 @@ public class MediaObject extends CreativeWork implements Caption {
    * The CreativeWork encoded by this media object.
    */
   @JsonIgnore public java.util.Collection<CreativeWork> getEncodesCreativeWorks() {
-    final Object current = myData.get("encodesCreativeWork");
+    final java.lang.Object current = myData.get("encodesCreativeWork");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<CreativeWork>) current;
     }
     return Arrays.asList((CreativeWork) current);
   }
-  protected MediaObject(java.util.Map<String,Object> data) {
+  protected MediaObject(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -474,7 +474,7 @@ public class MediaObject extends CreativeWork implements Caption {
    * Builder for {@link MediaObject}
    */
   public static class Builder extends CreativeWork.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public MediaObject build() {
@@ -765,6 +765,16 @@ public class MediaObject extends CreativeWork implements Caption {
       return this;
     }
     /**
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+     * 
+     */
+    @NotNull public Builder publishingPrinciples(@NotNull PublishingPrinciples publishingPrinciples) {
+      putValue("publishingPrinciples", publishingPrinciples);
+      return this;
+    }
+    /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
      */
     @NotNull public Builder inLanguage(@NotNull Language language) {
@@ -790,6 +800,13 @@ public class MediaObject extends CreativeWork implements Caption {
      */
     @NotNull public Builder thumbnailUrl(@NotNull String thumbnailUrl) {
       putValue("thumbnailUrl", thumbnailUrl);
+      return this;
+    }
+    /**
+     * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
+     */
+    @NotNull public Builder hasPart(@NotNull HasPart hasPart) {
+      putValue("hasPart", hasPart);
       return this;
     }
     /**
@@ -860,6 +877,13 @@ public class MediaObject extends CreativeWork implements Caption {
      */
     @NotNull public Builder size(@NotNull String size) {
       putValue("size", size);
+      return this;
+    }
+    /**
+     * A material that something is made from, e.g. leather, wool, cotton, paper.
+     */
+    @NotNull public Builder material(@NotNull Material material) {
+      putValue("material", material);
       return this;
     }
     /**
@@ -951,6 +975,15 @@ public class MediaObject extends CreativeWork implements Caption {
      */
     @NotNull public Builder commentCount(@NotNull Integer integer) {
       putValue("commentCount", integer);
+      return this;
+    }
+    /**
+     * The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of
+     *       contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates
+     *       areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
+     */
+    @NotNull public Builder spatialCoverage(@NotNull SpatialCoverage spatialCoverage) {
+      putValue("spatialCoverage", spatialCoverage);
       return this;
     }
     /**
@@ -1171,6 +1204,13 @@ public class MediaObject extends CreativeWork implements Caption {
      */
     @NotNull public Builder sdLicense(@NotNull String sdLicense) {
       putValue("sdLicense", sdLicense);
+      return this;
+    }
+    /**
+     * The position of an item in a series or sequence of items.
+     */
+    @NotNull public Builder position(@NotNull Position position) {
+      putValue("position", position);
       return this;
     }
     /**
@@ -1603,10 +1643,24 @@ public class MediaObject extends CreativeWork implements Caption {
       return this;
     }
     /**
+     * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
+     */
+    @NotNull public Builder isPartOf(@NotNull IsPartOf isPartOf) {
+      putValue("isPartOf", isPartOf);
+      return this;
+    }
+    /**
      * Indicates that the resource is compatible with the referenced accessibility API ([WebSchemas wiki lists possible values](http://www.w3.org/wiki/WebSchemas/Accessibility)).
      */
     @NotNull public Builder accessibilityAPI(@NotNull String accessibilityAPI) {
       putValue("accessibilityAPI", accessibilityAPI);
+      return this;
+    }
+    /**
+     * Example/instance/realization/derivation of the concept of this creative work. eg. The paperback edition, first edition, or eBook.
+     */
+    @NotNull public Builder workExample(@NotNull WorkExample workExample) {
+      putValue("workExample", workExample);
       return this;
     }
     /**
@@ -2196,10 +2250,45 @@ public class MediaObject extends CreativeWork implements Caption {
       return this;
     }
     /**
+     * The subject matter of the content.
+     */
+    @NotNull public Builder about(@NotNull Thing thing) {
+      putValue("about", thing);
+      return this;
+    }
+    /**
+     * The subject matter of the content.
+     */
+    @NotNull public Builder about(@NotNull Thing.Builder thing) {
+      putValue("about", thing.build());
+      return this;
+    }
+    /**
      * Indicates the primary entity described in some page or other CreativeWork.
      */
     @NotNull public Builder mainEntity(@NotNull About about) {
       putValue("mainEntity", about);
+      return this;
+    }
+    /**
+     * Indicates the primary entity described in some page or other CreativeWork.
+     */
+    @NotNull public Builder mainEntity(@NotNull About.Builder about) {
+      putValue("mainEntity", about.build());
+      return this;
+    }
+    /**
+     * Indicates the primary entity described in some page or other CreativeWork.
+     */
+    @NotNull public Builder mainEntity(@NotNull Thing thing) {
+      putValue("mainEntity", thing);
+      return this;
+    }
+    /**
+     * Indicates the primary entity described in some page or other CreativeWork.
+     */
+    @NotNull public Builder mainEntity(@NotNull Thing.Builder thing) {
+      putValue("mainEntity", thing.build());
       return this;
     }
     /**
@@ -2238,6 +2327,21 @@ public class MediaObject extends CreativeWork implements Caption {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -2256,6 +2360,13 @@ public class MediaObject extends CreativeWork implements Caption {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -2349,7 +2460,7 @@ public class MediaObject extends CreativeWork implements Caption {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("startTime".equals(key) && value instanceof java.util.Date) { this.startTime((java.util.Date)value); return; }
       if ("startTimes".equals(key) && value instanceof java.util.Date) { this.startTime((java.util.Date)value); return; }
       if ("width".equals(key) && value instanceof Distance) { this.width((Distance)value); return; }

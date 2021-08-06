@@ -37,7 +37,7 @@ public class Property extends Intangible {
    * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
    */
   @JsonIgnore public java.util.Collection<Enumeration> getSupersededByEnumerations() {
-    final Object current = myData.get("supersededBy");
+    final java.lang.Object current = myData.get("supersededBy");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Enumeration>) current;
@@ -54,7 +54,7 @@ public class Property extends Intangible {
    * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
    */
   @JsonIgnore public java.util.Collection<Property> getSupersededByPropertys() {
-    final Object current = myData.get("supersededBy");
+    final java.lang.Object current = myData.get("supersededBy");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Property>) current;
@@ -71,14 +71,14 @@ public class Property extends Intangible {
    * Relates a property to a property that is its inverse. Inverse properties relate the same pairs of items to each other, but in reversed direction. For example, the 'alumni' and 'alumniOf' properties are inverseOf each other. Some properties don't have explicit inverses; in these situations RDFa and JSON-LD syntax for reverse properties can be used.
    */
   @JsonIgnore public java.util.Collection<Property> getInverseOfs() {
-    final Object current = myData.get("inverseOf");
+    final java.lang.Object current = myData.get("inverseOf");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Property>) current;
     }
     return Arrays.asList((Property) current);
   }
-  protected Property(java.util.Map<String,Object> data) {
+  protected Property(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -86,7 +86,7 @@ public class Property extends Intangible {
    * Builder for {@link Property}
    */
   public static class Builder extends Intangible.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public Property build() {
@@ -135,6 +135,21 @@ public class Property extends Intangible {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -153,6 +168,13 @@ public class Property extends Intangible {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -246,7 +268,7 @@ public class Property extends Intangible {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("supersededBy".equals(key) && value instanceof Enumeration) { this.supersededBy((Enumeration)value); return; }
       if ("supersededBys".equals(key) && value instanceof Enumeration) { this.supersededBy((Enumeration)value); return; }
       if ("supersededBy".equals(key) && value instanceof Property) { this.supersededBy((Property)value); return; }

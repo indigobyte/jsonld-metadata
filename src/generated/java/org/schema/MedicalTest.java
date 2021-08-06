@@ -37,7 +37,7 @@ public class MedicalTest extends MedicalEntity {
    * Device used to perform the test.
    */
   @JsonIgnore public java.util.Collection<MedicalDevice> getUsesDevices() {
-    final Object current = myData.get("usesDevice");
+    final java.lang.Object current = myData.get("usesDevice");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MedicalDevice>) current;
@@ -54,7 +54,7 @@ public class MedicalTest extends MedicalEntity {
    * Range of acceptable values for a typical patient, when applicable.
    */
   @JsonIgnore public java.util.Collection<MedicalEnumeration> getNormalRangeMedicalEnumerations() {
-    final Object current = myData.get("normalRange");
+    final java.lang.Object current = myData.get("normalRange");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MedicalEnumeration>) current;
@@ -71,7 +71,7 @@ public class MedicalTest extends MedicalEntity {
    * Range of acceptable values for a typical patient, when applicable.
    */
   @JsonIgnore public java.util.Collection<String> getNormalRangeStrings() {
-    final Object current = myData.get("normalRange");
+    final java.lang.Object current = myData.get("normalRange");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -88,7 +88,7 @@ public class MedicalTest extends MedicalEntity {
    * A condition the test is used to diagnose.
    */
   @JsonIgnore public java.util.Collection<MedicalCondition> getUsedToDiagnoses() {
-    final Object current = myData.get("usedToDiagnose");
+    final java.lang.Object current = myData.get("usedToDiagnose");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MedicalCondition>) current;
@@ -105,7 +105,7 @@ public class MedicalTest extends MedicalEntity {
    * A sign detected by the test.
    */
   @JsonIgnore public java.util.Collection<MedicalSign> getSignDetecteds() {
-    final Object current = myData.get("signDetected");
+    final java.lang.Object current = myData.get("signDetected");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MedicalSign>) current;
@@ -122,14 +122,14 @@ public class MedicalTest extends MedicalEntity {
    * Drugs that affect the test's results.
    */
   @JsonIgnore public java.util.Collection<Drug> getAffectedBys() {
-    final Object current = myData.get("affectedBy");
+    final java.lang.Object current = myData.get("affectedBy");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Drug>) current;
     }
     return Arrays.asList((Drug) current);
   }
-  protected MedicalTest(java.util.Map<String,Object> data) {
+  protected MedicalTest(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -137,7 +137,7 @@ public class MedicalTest extends MedicalEntity {
    * Builder for {@link MedicalTest}
    */
   public static class Builder extends MedicalEntity.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public MedicalTest build() {
@@ -312,6 +312,21 @@ public class MedicalTest extends MedicalEntity {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -330,6 +345,13 @@ public class MedicalTest extends MedicalEntity {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -423,7 +445,7 @@ public class MedicalTest extends MedicalEntity {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("usesDevice".equals(key) && value instanceof MedicalDevice) { this.usesDevice((MedicalDevice)value); return; }
       if ("usesDevices".equals(key) && value instanceof MedicalDevice) { this.usesDevice((MedicalDevice)value); return; }
       if ("normalRange".equals(key) && value instanceof MedicalEnumeration) { this.normalRange((MedicalEnumeration)value); return; }

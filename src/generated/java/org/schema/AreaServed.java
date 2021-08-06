@@ -24,7 +24,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * 
+ * The geographic area where a service or offered item is provided.
  */
 public interface AreaServed {
 }

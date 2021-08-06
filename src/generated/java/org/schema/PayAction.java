@@ -27,7 +27,24 @@ import java.util.*;
  * An agent pays a price to a participant.
  */
 public class PayAction extends TradeAction {
-  protected PayAction(java.util.Map<String,Object> data) {
+  /**
+   * A sub property of participant. The participant who is at the receiving end of the action.
+   */
+  @JsonIgnore public Recipient getRecipient() {
+    return (Recipient) getValue("recipient");
+  }
+  /**
+   * A sub property of participant. The participant who is at the receiving end of the action.
+   */
+  @JsonIgnore public java.util.Collection<Recipient> getRecipients() {
+    final java.lang.Object current = myData.get("recipient");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Recipient>) current;
+    }
+    return Arrays.asList((Recipient) current);
+  }
+  protected PayAction(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -35,11 +52,18 @@ public class PayAction extends TradeAction {
    * Builder for {@link PayAction}
    */
   public static class Builder extends TradeAction.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public PayAction build() {
       return new PayAction(myData);
+    }
+    /**
+     * A sub property of participant. The participant who is at the receiving end of the action.
+     */
+    @NotNull public Builder recipient(@NotNull Recipient recipient) {
+      putValue("recipient", recipient);
+      return this;
     }
     /**
      * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.\n\nUsage guidelines:\n\n* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;) instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.\n* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a &quot;content=&quot; attribute for publishing simple machine-readable values alongside more human-friendly formatting.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
@@ -86,6 +110,20 @@ public class PayAction extends TradeAction {
       return this;
     }
     /**
+     * The object that helped the agent perform the action. e.g. John wrote a book with *a pen*.
+     */
+    @NotNull public Builder instrument(@NotNull Instrument instrument) {
+      putValue("instrument", instrument);
+      return this;
+    }
+    /**
+     * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
+     */
+    @NotNull public Builder participant(@NotNull Participant participant) {
+      putValue("participant", participant);
+      return this;
+    }
+    /**
      * Indicates a target EntryPoint for an Action.
      */
     @NotNull public Builder target(@NotNull EntryPoint entryPoint) {
@@ -97,6 +135,20 @@ public class PayAction extends TradeAction {
      */
     @NotNull public Builder target(@NotNull EntryPoint.Builder entryPoint) {
       putValue("target", entryPoint.build());
+      return this;
+    }
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     */
+    @NotNull public Builder location(@NotNull Location location) {
+      putValue("location", location);
+      return this;
+    }
+    /**
+     * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
+     */
+    @NotNull public Builder object(@NotNull Object object) {
+      putValue("object", object);
       return this;
     }
     /**
@@ -156,6 +208,28 @@ public class PayAction extends TradeAction {
       return this;
     }
     /**
+     * The result produced in the action. e.g. John wrote *a book*.
+     */
+    @NotNull public Builder result(@NotNull Result result) {
+      putValue("result", result);
+      return this;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -174,6 +248,13 @@ public class PayAction extends TradeAction {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -267,7 +348,9 @@ public class PayAction extends TradeAction {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
+      if ("recipient".equals(key) && value instanceof Recipient) { this.recipient((Recipient)value); return; }
+      if ("recipients".equals(key) && value instanceof Recipient) { this.recipient((Recipient)value); return; }
       super.fromMap(key, value);
     }
   }

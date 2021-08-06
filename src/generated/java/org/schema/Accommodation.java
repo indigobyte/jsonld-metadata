@@ -41,7 +41,7 @@ public class Accommodation extends Place {
    * A page providing information on how to book a tour of some [[Place]], such as an [[Accommodation]] or [[ApartmentComplex]] in a real estate setting, as well as other kinds of tours as appropriate.
    */
   @JsonIgnore public java.util.Collection<String> getTourBookingPages() {
-    final Object current = myData.get("tourBookingPage");
+    final java.lang.Object current = myData.get("tourBookingPage");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -58,7 +58,7 @@ public class Accommodation extends Place {
    * The year an [[Accommodation]] was constructed. This corresponds to the [YearBuilt field in RESO](https://ddwiki.reso.org/display/DDW17/YearBuilt+Field). 
    */
   @JsonIgnore public java.util.Collection<Integer> getYearBuiltIntegers() {
-    final Object current = myData.get("yearBuilt");
+    final java.lang.Object current = myData.get("yearBuilt");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -75,7 +75,7 @@ public class Accommodation extends Place {
    * The year an [[Accommodation]] was constructed. This corresponds to the [YearBuilt field in RESO](https://ddwiki.reso.org/display/DDW17/YearBuilt+Field). 
    */
   @JsonIgnore public java.util.Collection<Long> getYearBuiltLongs() {
-    final Object current = myData.get("yearBuilt");
+    final java.lang.Object current = myData.get("yearBuilt");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Long>) current;
@@ -92,7 +92,7 @@ public class Accommodation extends Place {
    * The year an [[Accommodation]] was constructed. This corresponds to the [YearBuilt field in RESO](https://ddwiki.reso.org/display/DDW17/YearBuilt+Field). 
    */
   @JsonIgnore public java.util.Collection<Float> getYearBuiltFloats() {
-    final Object current = myData.get("yearBuilt");
+    final java.lang.Object current = myData.get("yearBuilt");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Float>) current;
@@ -109,7 +109,7 @@ public class Accommodation extends Place {
    * The year an [[Accommodation]] was constructed. This corresponds to the [YearBuilt field in RESO](https://ddwiki.reso.org/display/DDW17/YearBuilt+Field). 
    */
   @JsonIgnore public java.util.Collection<Double> getYearBuiltDoubles() {
-    final Object current = myData.get("yearBuilt");
+    final java.lang.Object current = myData.get("yearBuilt");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Double>) current;
@@ -126,7 +126,7 @@ public class Accommodation extends Place {
    * The year an [[Accommodation]] was constructed. This corresponds to the [YearBuilt field in RESO](https://ddwiki.reso.org/display/DDW17/YearBuilt+Field). 
    */
   @JsonIgnore public java.util.Collection<String> getYearBuiltStrings() {
-    final Object current = myData.get("yearBuilt");
+    final java.lang.Object current = myData.get("yearBuilt");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -143,7 +143,7 @@ public class Accommodation extends Place {
    * A floorplan of some [[Accommodation]].
    */
   @JsonIgnore public java.util.Collection<FloorPlan> getAccommodationFloorPlans() {
-    final Object current = myData.get("accommodationFloorPlan");
+    final java.lang.Object current = myData.get("accommodationFloorPlan");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<FloorPlan>) current;
@@ -160,7 +160,7 @@ public class Accommodation extends Place {
    * The total integer number of bathrooms in a some [[Accommodation]], following real estate conventions as [documented in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsTotalInteger+Field): &quot;The simple sum of the number of bathrooms. For example for a property with two Full Bathrooms and one Half Bathroom, the Bathrooms Total Integer will be 3.&quot;. See also [[numberOfRooms]].
    */
   @JsonIgnore public java.util.Collection<Integer> getNumberOfBathroomsTotals() {
-    final Object current = myData.get("numberOfBathroomsTotal");
+    final java.lang.Object current = myData.get("numberOfBathroomsTotal");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -177,7 +177,7 @@ public class Accommodation extends Place {
    * Number of full bathrooms - The total number of full and &frac34; bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsFull field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsFull+Field).
    */
   @JsonIgnore public java.util.Collection<Integer> getNumberOfFullBathroomsIntegers() {
-    final Object current = myData.get("numberOfFullBathrooms");
+    final java.lang.Object current = myData.get("numberOfFullBathrooms");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -194,7 +194,7 @@ public class Accommodation extends Place {
    * Number of full bathrooms - The total number of full and &frac34; bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsFull field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsFull+Field).
    */
   @JsonIgnore public java.util.Collection<Long> getNumberOfFullBathroomsLongs() {
-    final Object current = myData.get("numberOfFullBathrooms");
+    final java.lang.Object current = myData.get("numberOfFullBathrooms");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Long>) current;
@@ -211,7 +211,7 @@ public class Accommodation extends Place {
    * Number of full bathrooms - The total number of full and &frac34; bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsFull field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsFull+Field).
    */
   @JsonIgnore public java.util.Collection<Float> getNumberOfFullBathroomsFloats() {
-    final Object current = myData.get("numberOfFullBathrooms");
+    final java.lang.Object current = myData.get("numberOfFullBathrooms");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Float>) current;
@@ -228,7 +228,7 @@ public class Accommodation extends Place {
    * Number of full bathrooms - The total number of full and &frac34; bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsFull field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsFull+Field).
    */
   @JsonIgnore public java.util.Collection<Double> getNumberOfFullBathroomsDoubles() {
-    final Object current = myData.get("numberOfFullBathrooms");
+    final java.lang.Object current = myData.get("numberOfFullBathrooms");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Double>) current;
@@ -245,7 +245,7 @@ public class Accommodation extends Place {
    * Number of full bathrooms - The total number of full and &frac34; bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsFull field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsFull+Field).
    */
   @JsonIgnore public java.util.Collection<String> getNumberOfFullBathroomsStrings() {
-    final Object current = myData.get("numberOfFullBathrooms");
+    final java.lang.Object current = myData.get("numberOfFullBathrooms");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -262,7 +262,7 @@ public class Accommodation extends Place {
    * Indications regarding the permitted usage of the accommodation.
    */
   @JsonIgnore public java.util.Collection<String> getPermittedUsages() {
-    final Object current = myData.get("permittedUsage");
+    final java.lang.Object current = myData.get("permittedUsage");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -281,7 +281,7 @@ public class Accommodation extends Place {
    * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
    */
   @JsonIgnore public java.util.Collection<Integer> getNumberOfRoomsIntegers() {
-    final Object current = myData.get("numberOfRooms");
+    final java.lang.Object current = myData.get("numberOfRooms");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -300,7 +300,7 @@ public class Accommodation extends Place {
    * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
    */
   @JsonIgnore public java.util.Collection<Long> getNumberOfRoomsLongs() {
-    final Object current = myData.get("numberOfRooms");
+    final java.lang.Object current = myData.get("numberOfRooms");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Long>) current;
@@ -319,7 +319,7 @@ public class Accommodation extends Place {
    * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
    */
   @JsonIgnore public java.util.Collection<Float> getNumberOfRoomsFloats() {
-    final Object current = myData.get("numberOfRooms");
+    final java.lang.Object current = myData.get("numberOfRooms");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Float>) current;
@@ -338,7 +338,7 @@ public class Accommodation extends Place {
    * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
    */
   @JsonIgnore public java.util.Collection<Double> getNumberOfRoomsDoubles() {
-    final Object current = myData.get("numberOfRooms");
+    final java.lang.Object current = myData.get("numberOfRooms");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Double>) current;
@@ -357,7 +357,7 @@ public class Accommodation extends Place {
    * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
    */
   @JsonIgnore public java.util.Collection<String> getNumberOfRoomsStrings() {
-    final Object current = myData.get("numberOfRooms");
+    final java.lang.Object current = myData.get("numberOfRooms");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -374,7 +374,7 @@ public class Accommodation extends Place {
    * The total integer number of bedrooms in a some [[Accommodation]], [[ApartmentComplex]] or [[FloorPlan]].
    */
   @JsonIgnore public java.util.Collection<Number> getNumberOfBedroomsNumbers() {
-    final Object current = myData.get("numberOfBedrooms");
+    final java.lang.Object current = myData.get("numberOfBedrooms");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Number>) current;
@@ -391,7 +391,7 @@ public class Accommodation extends Place {
    * The total integer number of bedrooms in a some [[Accommodation]], [[ApartmentComplex]] or [[FloorPlan]].
    */
   @JsonIgnore public java.util.Collection<QuantitativeValue> getNumberOfBedroomsQuantitativeValues() {
-    final Object current = myData.get("numberOfBedrooms");
+    final java.lang.Object current = myData.get("numberOfBedrooms");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<QuantitativeValue>) current;
@@ -408,7 +408,7 @@ public class Accommodation extends Place {
    * Category of an [[Accommodation]], following real estate conventions e.g. RESO (see [PropertySubType](https://ddwiki.reso.org/display/DDW17/PropertySubType+Field), and [PropertyType](https://ddwiki.reso.org/display/DDW17/PropertyType+Field) fields  for suggested values).
    */
   @JsonIgnore public java.util.Collection<Category> getAccommodationCategorys() {
-    final Object current = myData.get("accommodationCategory");
+    final java.lang.Object current = myData.get("accommodationCategory");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Category>) current;
@@ -425,7 +425,7 @@ public class Accommodation extends Place {
    * Number of partial bathrooms - The total number of half and &frac14; bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsPartial field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsPartial+Field). 
    */
   @JsonIgnore public java.util.Collection<Integer> getNumberOfPartialBathroomsIntegers() {
-    final Object current = myData.get("numberOfPartialBathrooms");
+    final java.lang.Object current = myData.get("numberOfPartialBathrooms");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -442,7 +442,7 @@ public class Accommodation extends Place {
    * Number of partial bathrooms - The total number of half and &frac14; bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsPartial field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsPartial+Field). 
    */
   @JsonIgnore public java.util.Collection<Long> getNumberOfPartialBathroomsLongs() {
-    final Object current = myData.get("numberOfPartialBathrooms");
+    final java.lang.Object current = myData.get("numberOfPartialBathrooms");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Long>) current;
@@ -459,7 +459,7 @@ public class Accommodation extends Place {
    * Number of partial bathrooms - The total number of half and &frac14; bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsPartial field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsPartial+Field). 
    */
   @JsonIgnore public java.util.Collection<Float> getNumberOfPartialBathroomsFloats() {
-    final Object current = myData.get("numberOfPartialBathrooms");
+    final java.lang.Object current = myData.get("numberOfPartialBathrooms");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Float>) current;
@@ -476,7 +476,7 @@ public class Accommodation extends Place {
    * Number of partial bathrooms - The total number of half and &frac14; bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsPartial field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsPartial+Field). 
    */
   @JsonIgnore public java.util.Collection<Double> getNumberOfPartialBathroomsDoubles() {
-    final Object current = myData.get("numberOfPartialBathrooms");
+    final java.lang.Object current = myData.get("numberOfPartialBathrooms");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Double>) current;
@@ -493,7 +493,7 @@ public class Accommodation extends Place {
    * Number of partial bathrooms - The total number of half and &frac14; bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsPartial field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsPartial+Field). 
    */
   @JsonIgnore public java.util.Collection<String> getNumberOfPartialBathroomsStrings() {
-    final Object current = myData.get("numberOfPartialBathrooms");
+    final java.lang.Object current = myData.get("numberOfPartialBathrooms");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -510,7 +510,7 @@ public class Accommodation extends Place {
    * Length of the lease for some [[Accommodation]], either particular to some [[Offer]] or in some cases intrinsic to the property.
    */
   @JsonIgnore public java.util.Collection<Duration> getLeaseLengthDurations() {
-    final Object current = myData.get("leaseLength");
+    final java.lang.Object current = myData.get("leaseLength");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Duration>) current;
@@ -527,7 +527,7 @@ public class Accommodation extends Place {
    * Length of the lease for some [[Accommodation]], either particular to some [[Offer]] or in some cases intrinsic to the property.
    */
   @JsonIgnore public java.util.Collection<QuantitativeValue> getLeaseLengthQuantitativeValues() {
-    final Object current = myData.get("leaseLength");
+    final java.lang.Object current = myData.get("leaseLength");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<QuantitativeValue>) current;
@@ -546,7 +546,7 @@ public class Accommodation extends Place {
    * Typical unit code(s): MTK for square meter, FTK for square foot, or YDK for square yard 
    */
   @JsonIgnore public java.util.Collection<QuantitativeValue> getFloorSizes() {
-    final Object current = myData.get("floorSize");
+    final java.lang.Object current = myData.get("floorSize");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<QuantitativeValue>) current;
@@ -563,7 +563,7 @@ public class Accommodation extends Place {
    * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
    */
   @JsonIgnore public java.util.Collection<LocationFeatureSpecification> getAmenityFeatures() {
-    final Object current = myData.get("amenityFeature");
+    final java.lang.Object current = myData.get("amenityFeature");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<LocationFeatureSpecification>) current;
@@ -580,7 +580,7 @@ public class Accommodation extends Place {
    * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
    */
   @JsonIgnore public java.util.Collection<Boolean> getPetsAllowedBooleans() {
-    final Object current = myData.get("petsAllowed");
+    final java.lang.Object current = myData.get("petsAllowed");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Boolean>) current;
@@ -597,7 +597,7 @@ public class Accommodation extends Place {
    * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
    */
   @JsonIgnore public java.util.Collection<String> getPetsAllowedStrings() {
-    final Object current = myData.get("petsAllowed");
+    final java.lang.Object current = myData.get("petsAllowed");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -616,14 +616,14 @@ public class Accommodation extends Place {
    *   systems [vary internationally](https://en.wikipedia.org/wiki/Storey#Consecutive_number_floor_designations), the local system should be used where possible.
    */
   @JsonIgnore public java.util.Collection<String> getFloorLevels() {
-    final Object current = myData.get("floorLevel");
+    final java.lang.Object current = myData.get("floorLevel");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
-  protected Accommodation(java.util.Map<String,Object> data) {
+  protected Accommodation(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -631,7 +631,7 @@ public class Accommodation extends Place {
    * Builder for {@link Accommodation}
    */
   public static class Builder extends Place.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public Accommodation build() {
@@ -1526,6 +1526,21 @@ public class Accommodation extends Place {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -1544,6 +1559,13 @@ public class Accommodation extends Place {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -1637,7 +1659,7 @@ public class Accommodation extends Place {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("tourBookingPage".equals(key) && value instanceof String) { this.tourBookingPage((String)value); return; }
       if ("tourBookingPages".equals(key) && value instanceof String) { this.tourBookingPage((String)value); return; }
       if ("yearBuilt".equals(key) && value instanceof Integer) { this.yearBuilt((Integer)value); return; }

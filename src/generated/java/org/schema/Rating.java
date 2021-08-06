@@ -37,7 +37,7 @@ public class Rating extends Intangible {
    * A short explanation (e.g. one to two sentences) providing background context and other information that led to the conclusion expressed in the rating. This is particularly applicable to ratings associated with &quot;fact check&quot; markup using [[ClaimReview]].
    */
   @JsonIgnore public java.util.Collection<String> getRatingExplanations() {
-    final Object current = myData.get("ratingExplanation");
+    final java.lang.Object current = myData.get("ratingExplanation");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -54,7 +54,7 @@ public class Rating extends Intangible {
    * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
    */
   @JsonIgnore public java.util.Collection<Organization> getAuthorOrganizations() {
-    final Object current = myData.get("author");
+    final java.lang.Object current = myData.get("author");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Organization>) current;
@@ -71,7 +71,7 @@ public class Rating extends Intangible {
    * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
    */
   @JsonIgnore public java.util.Collection<Person> getAuthorPersons() {
-    final Object current = myData.get("author");
+    final java.lang.Object current = myData.get("author");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Person>) current;
@@ -88,7 +88,7 @@ public class Rating extends Intangible {
    * The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.
    */
   @JsonIgnore public java.util.Collection<Number> getWorstRatingNumbers() {
-    final Object current = myData.get("worstRating");
+    final java.lang.Object current = myData.get("worstRating");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Number>) current;
@@ -105,7 +105,7 @@ public class Rating extends Intangible {
    * The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.
    */
   @JsonIgnore public java.util.Collection<String> getWorstRatingStrings() {
-    final Object current = myData.get("worstRating");
+    final java.lang.Object current = myData.get("worstRating");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -122,7 +122,7 @@ public class Rating extends Intangible {
    * This Review or Rating is relevant to this part or facet of the itemReviewed.
    */
   @JsonIgnore public java.util.Collection<String> getReviewAspects() {
-    final Object current = myData.get("reviewAspect");
+    final java.lang.Object current = myData.get("reviewAspect");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -139,7 +139,7 @@ public class Rating extends Intangible {
    * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
    */
   @JsonIgnore public java.util.Collection<Integer> getBestRatingIntegers() {
-    final Object current = myData.get("bestRating");
+    final java.lang.Object current = myData.get("bestRating");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -156,7 +156,7 @@ public class Rating extends Intangible {
    * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
    */
   @JsonIgnore public java.util.Collection<Long> getBestRatingLongs() {
-    final Object current = myData.get("bestRating");
+    final java.lang.Object current = myData.get("bestRating");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Long>) current;
@@ -173,7 +173,7 @@ public class Rating extends Intangible {
    * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
    */
   @JsonIgnore public java.util.Collection<Float> getBestRatingFloats() {
-    final Object current = myData.get("bestRating");
+    final java.lang.Object current = myData.get("bestRating");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Float>) current;
@@ -190,7 +190,7 @@ public class Rating extends Intangible {
    * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
    */
   @JsonIgnore public java.util.Collection<Double> getBestRatingDoubles() {
-    final Object current = myData.get("bestRating");
+    final java.lang.Object current = myData.get("bestRating");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Double>) current;
@@ -207,7 +207,7 @@ public class Rating extends Intangible {
    * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
    */
   @JsonIgnore public java.util.Collection<String> getBestRatingStrings() {
-    final Object current = myData.get("bestRating");
+    final java.lang.Object current = myData.get("bestRating");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -224,7 +224,7 @@ public class Rating extends Intangible {
    * The rating for the content.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
    */
   @JsonIgnore public java.util.Collection<Integer> getRatingValueIntegers() {
-    final Object current = myData.get("ratingValue");
+    final java.lang.Object current = myData.get("ratingValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -241,7 +241,7 @@ public class Rating extends Intangible {
    * The rating for the content.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
    */
   @JsonIgnore public java.util.Collection<Long> getRatingValueLongs() {
-    final Object current = myData.get("ratingValue");
+    final java.lang.Object current = myData.get("ratingValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Long>) current;
@@ -258,7 +258,7 @@ public class Rating extends Intangible {
    * The rating for the content.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
    */
   @JsonIgnore public java.util.Collection<Float> getRatingValueFloats() {
-    final Object current = myData.get("ratingValue");
+    final java.lang.Object current = myData.get("ratingValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Float>) current;
@@ -275,7 +275,7 @@ public class Rating extends Intangible {
    * The rating for the content.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
    */
   @JsonIgnore public java.util.Collection<Double> getRatingValueDoubles() {
-    final Object current = myData.get("ratingValue");
+    final java.lang.Object current = myData.get("ratingValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Double>) current;
@@ -292,14 +292,14 @@ public class Rating extends Intangible {
    * The rating for the content.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
    */
   @JsonIgnore public java.util.Collection<String> getRatingValueStrings() {
-    final Object current = myData.get("ratingValue");
+    final java.lang.Object current = myData.get("ratingValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
-  protected Rating(java.util.Map<String,Object> data) {
+  protected Rating(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -307,7 +307,7 @@ public class Rating extends Intangible {
    * Builder for {@link Rating}
    */
   public static class Builder extends Intangible.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public Rating build() {
@@ -440,6 +440,21 @@ public class Rating extends Intangible {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -458,6 +473,13 @@ public class Rating extends Intangible {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -551,7 +573,7 @@ public class Rating extends Intangible {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("ratingExplanation".equals(key) && value instanceof String) { this.ratingExplanation((String)value); return; }
       if ("ratingExplanations".equals(key) && value instanceof String) { this.ratingExplanation((String)value); return; }
       if ("author".equals(key) && value instanceof Organization) { this.author((Organization)value); return; }

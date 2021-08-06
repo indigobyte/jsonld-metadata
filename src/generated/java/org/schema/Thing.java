@@ -27,7 +27,7 @@ import java.util.*;
  * The most generic type of item.
  */
 @JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
-public class Thing implements Category {
+public class Thing implements org.schema.Instrument, Result, Category {
   @JsonProperty("@type") public String getJsonLdType() {
     return getClass().getSimpleName();
   }
@@ -35,13 +35,49 @@ public class Thing implements Category {
     return "http://schema.org/";
   }
   @JsonAnyGetter
-  public java.util.Map<String,Object> getData() { return myData; }
-  protected Object getValue(String key) {
-    final Object current = myData.get(key);
+  public java.util.Map<String,java.lang.Object> getData() { return myData; }
+  protected java.lang.Object getValue(String key) {
+    final java.lang.Object current = myData.get(key);
     if (current instanceof java.util.Collection) {
       return ((java.util.Collection) current).iterator().next();
     }
     return current;
+  }
+  /**
+   * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+   *         
+   */
+  @JsonIgnore public Identifier getIdentifier() {
+    return (Identifier) getValue("identifier");
+  }
+  /**
+   * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+   *         
+   */
+  @JsonIgnore public java.util.Collection<Identifier> getIdentifiers() {
+    final java.lang.Object current = myData.get("identifier");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Identifier>) current;
+    }
+    return Arrays.asList((Identifier) current);
+  }
+  /**
+   * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+   */
+  @JsonIgnore public Image getImage() {
+    return (Image) getValue("image");
+  }
+  /**
+   * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+   */
+  @JsonIgnore public java.util.Collection<Image> getImages() {
+    final java.lang.Object current = myData.get("image");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Image>) current;
+    }
+    return Arrays.asList((Image) current);
   }
   /**
    * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -53,7 +89,7 @@ public class Thing implements Category {
    * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
    */
   @JsonIgnore public java.util.Collection<Action> getPotentialActions() {
-    final Object current = myData.get("potentialAction");
+    final java.lang.Object current = myData.get("potentialAction");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Action>) current;
@@ -70,7 +106,24 @@ public class Thing implements Category {
    * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
    */
   @JsonIgnore public java.util.Collection<Description> getDisambiguatingDescriptions() {
-    final Object current = myData.get("disambiguatingDescription");
+    final java.lang.Object current = myData.get("disambiguatingDescription");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Description>) current;
+    }
+    return Arrays.asList((Description) current);
+  }
+  /**
+   * A description of the item.
+   */
+  @JsonIgnore public Description getDescription() {
+    return (Description) getValue("description");
+  }
+  /**
+   * A description of the item.
+   */
+  @JsonIgnore public java.util.Collection<Description> getDescriptions() {
+    final java.lang.Object current = myData.get("description");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Description>) current;
@@ -87,7 +140,7 @@ public class Thing implements Category {
    * URL of the item.
    */
   @JsonIgnore public java.util.Collection<String> getUrls() {
-    final Object current = myData.get("url");
+    final java.lang.Object current = myData.get("url");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -104,7 +157,7 @@ public class Thing implements Category {
    * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
    */
   @JsonIgnore public java.util.Collection<String> getAdditionalTypes() {
-    final Object current = myData.get("additionalType");
+    final java.lang.Object current = myData.get("additionalType");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -121,7 +174,7 @@ public class Thing implements Category {
    * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
    */
   @JsonIgnore public java.util.Collection<String> getSameAss() {
-    final Object current = myData.get("sameAs");
+    final java.lang.Object current = myData.get("sameAs");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -138,7 +191,7 @@ public class Thing implements Category {
    * An alias for the item.
    */
   @JsonIgnore public java.util.Collection<String> getAlternateNames() {
-    final Object current = myData.get("alternateName");
+    final java.lang.Object current = myData.get("alternateName");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -155,7 +208,7 @@ public class Thing implements Category {
    * The name of the item.
    */
   @JsonIgnore public java.util.Collection<String> getNames() {
-    final Object current = myData.get("name");
+    final java.lang.Object current = myData.get("name");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -172,7 +225,7 @@ public class Thing implements Category {
    * A CreativeWork or Event about this Thing.
    */
   @JsonIgnore public java.util.Collection<CreativeWork> getSubjectOfCreativeWorks() {
-    final Object current = myData.get("subjectOf");
+    final java.lang.Object current = myData.get("subjectOf");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<CreativeWork>) current;
@@ -189,7 +242,7 @@ public class Thing implements Category {
    * A CreativeWork or Event about this Thing.
    */
   @JsonIgnore public java.util.Collection<Event> getSubjectOfEvents() {
-    final Object current = myData.get("subjectOf");
+    final java.lang.Object current = myData.get("subjectOf");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Event>) current;
@@ -206,7 +259,7 @@ public class Thing implements Category {
    * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
    */
   @JsonIgnore public java.util.Collection<CreativeWork> getMainEntityOfPageCreativeWorks() {
-    final Object current = myData.get("mainEntityOfPage");
+    final java.lang.Object current = myData.get("mainEntityOfPage");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<CreativeWork>) current;
@@ -223,7 +276,7 @@ public class Thing implements Category {
    * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
    */
   @JsonIgnore public java.util.Collection<String> getMainEntityOfPageStrings() {
-    final Object current = myData.get("mainEntityOfPage");
+    final java.lang.Object current = myData.get("mainEntityOfPage");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -233,7 +286,7 @@ public class Thing implements Category {
   @JsonProperty("@id") public String getId() {
     return (String) getValue("id");
   }
-  protected Thing(java.util.Map<String,Object> data) {
+  protected Thing(java.util.Map<String,java.lang.Object> data) {
     myData = data;
   }
   @Override public int hashCode() {
@@ -241,7 +294,7 @@ public class Thing implements Category {
     result = 31 * result + (myData != null ? myData.hashCode() : 0);
     return result;
   }
-  @Override public boolean equals(Object o) {
+  @Override public boolean equals(java.lang.Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     Thing thing = (Thing) o;
@@ -252,15 +305,15 @@ public class Thing implements Category {
   /**
    * Builder for {@link Thing}
    */
-  public static class Builder implements ThingBuilder<Thing> {
-    public void putValue(String key, Object value) {
+  public static class Builder implements org.schema.ThingBuilder<Thing> {
+    public void putValue(String key, java.lang.Object value) {
       if (myData.containsKey(key)) {
-        final Object current = myData.get(key);
+        final java.lang.Object current = myData.get(key);
         final java.util.Collection list;
         if (current instanceof java.util.Collection) {
           list = (java.util.Collection) current;
         } else {
-          list = new ArrayList<Object>();
+          list = new ArrayList<java.lang.Object>();
           list.add(current);
           myData.put(key, list);
         }
@@ -269,11 +322,26 @@ public class Thing implements Category {
         myData.put(key, value);
       }
     }
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       myData = data;
     }
     @NotNull public Thing build() {
       return new Thing(myData);
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
     }
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -294,6 +362,13 @@ public class Thing implements Category {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -387,30 +462,36 @@ public class Thing implements Category {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    public void fromMap(java.util.Map<String, Object> map) {
-      for (java.util.Map.Entry<String, Object> entry : map.entrySet()) {
+    public void fromMap(java.util.Map<String, java.lang.Object> map) {
+      for (java.util.Map.Entry<String, java.lang.Object> entry : map.entrySet()) {
         final String key = entry.getKey();
-        Object value = entry.getValue();
+        java.lang.Object value = entry.getValue();
         if (value instanceof java.util.List) {
           final java.util.List list = (java.util.List) value;
-          for (Object o : list) {
+          for (java.lang.Object o : list) {
             if (o instanceof java.util.Map) {
-              fromMap(key, ThingDeserializer.fromMap((java.util.Map<String, Object>)o));
+              fromMap(key, ThingDeserializer.fromMap((java.util.Map<String, java.lang.Object>)o));
             } else {
               fromMap(key, o);
             }
           }
         } else {
-          if (value instanceof java.util.Map) { value = ThingDeserializer.fromMap((java.util.Map<String,Object>)value); }
+          if (value instanceof java.util.Map) { value = ThingDeserializer.fromMap((java.util.Map<String,java.lang.Object>)value); }
           fromMap(key, value);
         }
       }
     }
-    protected void fromMap(String key, Object value) {
+    protected void fromMap(String key, java.lang.Object value) {
+      if ("identifier".equals(key) && value instanceof Identifier) { this.identifier((Identifier)value); return; }
+      if ("identifiers".equals(key) && value instanceof Identifier) { this.identifier((Identifier)value); return; }
+      if ("image".equals(key) && value instanceof Image) { this.image((Image)value); return; }
+      if ("images".equals(key) && value instanceof Image) { this.image((Image)value); return; }
       if ("potentialAction".equals(key) && value instanceof Action) { this.potentialAction((Action)value); return; }
       if ("potentialActions".equals(key) && value instanceof Action) { this.potentialAction((Action)value); return; }
       if ("disambiguatingDescription".equals(key) && value instanceof Description) { this.disambiguatingDescription((Description)value); return; }
       if ("disambiguatingDescriptions".equals(key) && value instanceof Description) { this.disambiguatingDescription((Description)value); return; }
+      if ("description".equals(key) && value instanceof Description) { this.description((Description)value); return; }
+      if ("descriptions".equals(key) && value instanceof Description) { this.description((Description)value); return; }
       if ("url".equals(key) && value instanceof String) { this.url((String)value); return; }
       if ("urls".equals(key) && value instanceof String) { this.url((String)value); return; }
       if ("additionalType".equals(key) && value instanceof String) { this.additionalType((String)value); return; }
@@ -433,8 +514,8 @@ public class Thing implements Category {
       if ("ids".equals(key) && value instanceof String) { this.id((String)value); return; }
       if ("@id".equals(key) && value instanceof String) { id((String)value); return; }
     }
-    protected HashMap<String,Object> myData;
+    protected HashMap<String,java.lang.Object> myData;
   }
   
-  protected java.util.Map<String,Object> myData;
+  protected java.util.Map<String,java.lang.Object> myData;
 }

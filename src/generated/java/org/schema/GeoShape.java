@@ -26,7 +26,7 @@ import java.util.*;
 /**
  * The geographic shape of a place. A GeoShape can be described using several properties whose values are based on latitude/longitude pairs. Either whitespace or commas can be used to separate latitude and longitude; whitespace should be used when writing a list of several such points.
  */
-public class GeoShape extends StructuredValue {
+public class GeoShape extends StructuredValue implements org.schema.AreaServed {
   /**
    * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
    */
@@ -37,7 +37,7 @@ public class GeoShape extends StructuredValue {
    * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
    */
   @JsonIgnore public java.util.Collection<Integer> getElevationIntegers() {
-    final Object current = myData.get("elevation");
+    final java.lang.Object current = myData.get("elevation");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -54,7 +54,7 @@ public class GeoShape extends StructuredValue {
    * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
    */
   @JsonIgnore public java.util.Collection<Long> getElevationLongs() {
-    final Object current = myData.get("elevation");
+    final java.lang.Object current = myData.get("elevation");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Long>) current;
@@ -71,7 +71,7 @@ public class GeoShape extends StructuredValue {
    * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
    */
   @JsonIgnore public java.util.Collection<Float> getElevationFloats() {
-    final Object current = myData.get("elevation");
+    final java.lang.Object current = myData.get("elevation");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Float>) current;
@@ -88,7 +88,7 @@ public class GeoShape extends StructuredValue {
    * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
    */
   @JsonIgnore public java.util.Collection<Double> getElevationDoubles() {
-    final Object current = myData.get("elevation");
+    final java.lang.Object current = myData.get("elevation");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Double>) current;
@@ -105,7 +105,7 @@ public class GeoShape extends StructuredValue {
    * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
    */
   @JsonIgnore public java.util.Collection<String> getElevationStrings() {
-    final Object current = myData.get("elevation");
+    final java.lang.Object current = myData.get("elevation");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -122,7 +122,7 @@ public class GeoShape extends StructuredValue {
    * Physical address of the item.
    */
   @JsonIgnore public java.util.Collection<PostalAddress> getAddressPostalAddresss() {
-    final Object current = myData.get("address");
+    final java.lang.Object current = myData.get("address");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<PostalAddress>) current;
@@ -139,7 +139,7 @@ public class GeoShape extends StructuredValue {
    * Physical address of the item.
    */
   @JsonIgnore public java.util.Collection<String> getAddressStrings() {
-    final Object current = myData.get("address");
+    final java.lang.Object current = myData.get("address");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -156,7 +156,7 @@ public class GeoShape extends StructuredValue {
    * A line is a point-to-point path consisting of two or more points. A line is expressed as a series of two or more point objects separated by space.
    */
   @JsonIgnore public java.util.Collection<String> getLines() {
-    final Object current = myData.get("line");
+    final java.lang.Object current = myData.get("line");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -173,7 +173,7 @@ public class GeoShape extends StructuredValue {
    * The postal code. For example, 94043.
    */
   @JsonIgnore public java.util.Collection<String> getPostalCodes() {
-    final Object current = myData.get("postalCode");
+    final java.lang.Object current = myData.get("postalCode");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -190,7 +190,7 @@ public class GeoShape extends StructuredValue {
    * A polygon is the area enclosed by a point-to-point path for which the starting and ending points are the same. A polygon is expressed as a series of four or more space delimited points where the first and final points are identical.
    */
   @JsonIgnore public java.util.Collection<String> getPolygons() {
-    final Object current = myData.get("polygon");
+    final java.lang.Object current = myData.get("polygon");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -207,7 +207,7 @@ public class GeoShape extends StructuredValue {
    * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
    */
   @JsonIgnore public java.util.Collection<Country> getAddressCountryCountrys() {
-    final Object current = myData.get("addressCountry");
+    final java.lang.Object current = myData.get("addressCountry");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Country>) current;
@@ -224,7 +224,7 @@ public class GeoShape extends StructuredValue {
    * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
    */
   @JsonIgnore public java.util.Collection<String> getAddressCountryStrings() {
-    final Object current = myData.get("addressCountry");
+    final java.lang.Object current = myData.get("addressCountry");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -241,7 +241,7 @@ public class GeoShape extends StructuredValue {
    * A box is the area enclosed by the rectangle formed by two points. The first point is the lower corner, the second point is the upper corner. A box is expressed as two points separated by a space character.
    */
   @JsonIgnore public java.util.Collection<String> getBoxs() {
-    final Object current = myData.get("box");
+    final java.lang.Object current = myData.get("box");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -258,14 +258,14 @@ public class GeoShape extends StructuredValue {
    * A circle is the circular region of a specified radius centered at a specified latitude and longitude. A circle is expressed as a pair followed by a radius in meters.
    */
   @JsonIgnore public java.util.Collection<String> getCircles() {
-    final Object current = myData.get("circle");
+    final java.lang.Object current = myData.get("circle");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
-  protected GeoShape(java.util.Map<String,Object> data) {
+  protected GeoShape(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -273,7 +273,7 @@ public class GeoShape extends StructuredValue {
    * Builder for {@link GeoShape}
    */
   public static class Builder extends StructuredValue.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public GeoShape build() {
@@ -392,6 +392,21 @@ public class GeoShape extends StructuredValue {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -410,6 +425,13 @@ public class GeoShape extends StructuredValue {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -503,7 +525,7 @@ public class GeoShape extends StructuredValue {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("elevation".equals(key) && value instanceof Integer) { this.elevation((Integer)value); return; }
       if ("elevations".equals(key) && value instanceof Integer) { this.elevation((Integer)value); return; }
       if ("elevation".equals(key) && value instanceof Long) { this.elevation((Long)value); return; }

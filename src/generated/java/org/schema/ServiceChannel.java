@@ -37,7 +37,7 @@ public class ServiceChannel extends Intangible {
    * The service provided by this channel.
    */
   @JsonIgnore public java.util.Collection<Service> getProvidesServices() {
-    final Object current = myData.get("providesService");
+    final java.lang.Object current = myData.get("providesService");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Service>) current;
@@ -54,7 +54,7 @@ public class ServiceChannel extends Intangible {
    * Estimated processing time for the service using this channel.
    */
   @JsonIgnore public java.util.Collection<Duration> getProcessingTimes() {
-    final Object current = myData.get("processingTime");
+    final java.lang.Object current = myData.get("processingTime");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Duration>) current;
@@ -71,7 +71,7 @@ public class ServiceChannel extends Intangible {
    * The website to access the service.
    */
   @JsonIgnore public java.util.Collection<String> getServiceUrls() {
-    final Object current = myData.get("serviceUrl");
+    final java.lang.Object current = myData.get("serviceUrl");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -88,7 +88,7 @@ public class ServiceChannel extends Intangible {
    * The number to access the service by text message.
    */
   @JsonIgnore public java.util.Collection<ContactPoint> getServiceSmsNumbers() {
-    final Object current = myData.get("serviceSmsNumber");
+    final java.lang.Object current = myData.get("serviceSmsNumber");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<ContactPoint>) current;
@@ -105,7 +105,7 @@ public class ServiceChannel extends Intangible {
    * The address for accessing the service by mail.
    */
   @JsonIgnore public java.util.Collection<PostalAddress> getServicePostalAddresss() {
-    final Object current = myData.get("servicePostalAddress");
+    final java.lang.Object current = myData.get("servicePostalAddress");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<PostalAddress>) current;
@@ -122,7 +122,7 @@ public class ServiceChannel extends Intangible {
    * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
    */
   @JsonIgnore public java.util.Collection<Language> getAvailableLanguageLanguages() {
-    final Object current = myData.get("availableLanguage");
+    final java.lang.Object current = myData.get("availableLanguage");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Language>) current;
@@ -139,7 +139,7 @@ public class ServiceChannel extends Intangible {
    * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
    */
   @JsonIgnore public java.util.Collection<String> getAvailableLanguageStrings() {
-    final Object current = myData.get("availableLanguage");
+    final java.lang.Object current = myData.get("availableLanguage");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -156,7 +156,7 @@ public class ServiceChannel extends Intangible {
    * The phone number to use to access the service.
    */
   @JsonIgnore public java.util.Collection<ContactPoint> getServicePhones() {
-    final Object current = myData.get("servicePhone");
+    final java.lang.Object current = myData.get("servicePhone");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<ContactPoint>) current;
@@ -173,14 +173,14 @@ public class ServiceChannel extends Intangible {
    * The location (e.g. civic structure, local business, etc.) where a person can go to access the service.
    */
   @JsonIgnore public java.util.Collection<Place> getServiceLocations() {
-    final Object current = myData.get("serviceLocation");
+    final java.lang.Object current = myData.get("serviceLocation");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Place>) current;
     }
     return Arrays.asList((Place) current);
   }
-  protected ServiceChannel(java.util.Map<String,Object> data) {
+  protected ServiceChannel(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -188,7 +188,7 @@ public class ServiceChannel extends Intangible {
    * Builder for {@link ServiceChannel}
    */
   public static class Builder extends Intangible.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public ServiceChannel build() {
@@ -300,6 +300,21 @@ public class ServiceChannel extends Intangible {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -318,6 +333,13 @@ public class ServiceChannel extends Intangible {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -411,7 +433,7 @@ public class ServiceChannel extends Intangible {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("providesService".equals(key) && value instanceof Service) { this.providesService((Service)value); return; }
       if ("providesServices".equals(key) && value instanceof Service) { this.providesService((Service)value); return; }
       if ("processingTime".equals(key) && value instanceof Duration) { this.processingTime((Duration)value); return; }

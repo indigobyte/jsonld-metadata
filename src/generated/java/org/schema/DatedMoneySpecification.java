@@ -37,7 +37,7 @@ public class DatedMoneySpecification extends StructuredValue {
    * The amount of money.
    */
   @JsonIgnore public java.util.Collection<MonetaryAmount> getAmountMonetaryAmounts() {
-    final Object current = myData.get("amount");
+    final java.lang.Object current = myData.get("amount");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MonetaryAmount>) current;
@@ -54,7 +54,7 @@ public class DatedMoneySpecification extends StructuredValue {
    * The amount of money.
    */
   @JsonIgnore public java.util.Collection<Number> getAmountNumbers() {
-    final Object current = myData.get("amount");
+    final java.lang.Object current = myData.get("amount");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Number>) current;
@@ -71,7 +71,7 @@ public class DatedMoneySpecification extends StructuredValue {
    * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getStartDates() {
-    final Object current = myData.get("startDate");
+    final java.lang.Object current = myData.get("startDate");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<java.util.Date>) current;
@@ -88,7 +88,7 @@ public class DatedMoneySpecification extends StructuredValue {
    * The currency in which the monetary amount is expressed.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;.
    */
   @JsonIgnore public java.util.Collection<String> getCurrencys() {
-    final Object current = myData.get("currency");
+    final java.lang.Object current = myData.get("currency");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -105,14 +105,14 @@ public class DatedMoneySpecification extends StructuredValue {
    * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getEndDates() {
-    final Object current = myData.get("endDate");
+    final java.lang.Object current = myData.get("endDate");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<java.util.Date>) current;
     }
     return Arrays.asList((java.util.Date) current);
   }
-  protected DatedMoneySpecification(java.util.Map<String,Object> data) {
+  protected DatedMoneySpecification(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -120,7 +120,7 @@ public class DatedMoneySpecification extends StructuredValue {
    * Builder for {@link DatedMoneySpecification}
    */
   public static class Builder extends StructuredValue.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public DatedMoneySpecification build() {
@@ -169,6 +169,21 @@ public class DatedMoneySpecification extends StructuredValue {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -187,6 +202,13 @@ public class DatedMoneySpecification extends StructuredValue {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -280,7 +302,7 @@ public class DatedMoneySpecification extends StructuredValue {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("amount".equals(key) && value instanceof MonetaryAmount) { this.amount((MonetaryAmount)value); return; }
       if ("amounts".equals(key) && value instanceof MonetaryAmount) { this.amount((MonetaryAmount)value); return; }
       if ("amount".equals(key) && value instanceof Number) { this.amount((Number)value); return; }

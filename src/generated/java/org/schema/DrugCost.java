@@ -37,7 +37,7 @@ public class DrugCost extends MedicalEntity {
    * The location in which the status applies.
    */
   @JsonIgnore public java.util.Collection<AdministrativeArea> getApplicableLocations() {
-    final Object current = myData.get("applicableLocation");
+    final java.lang.Object current = myData.get("applicableLocation");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<AdministrativeArea>) current;
@@ -54,7 +54,7 @@ public class DrugCost extends MedicalEntity {
    * Additional details to capture the origin of the cost data. For example, 'Medicare Part B'.
    */
   @JsonIgnore public java.util.Collection<String> getCostOrigins() {
-    final Object current = myData.get("costOrigin");
+    final java.lang.Object current = myData.get("costOrigin");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -71,7 +71,7 @@ public class DrugCost extends MedicalEntity {
    * The cost per unit of the drug.
    */
   @JsonIgnore public java.util.Collection<Number> getCostPerUnitNumbers() {
-    final Object current = myData.get("costPerUnit");
+    final java.lang.Object current = myData.get("costPerUnit");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Number>) current;
@@ -88,7 +88,7 @@ public class DrugCost extends MedicalEntity {
    * The cost per unit of the drug.
    */
   @JsonIgnore public java.util.Collection<QualitativeValue> getCostPerUnitQualitativeValues() {
-    final Object current = myData.get("costPerUnit");
+    final java.lang.Object current = myData.get("costPerUnit");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<QualitativeValue>) current;
@@ -105,7 +105,7 @@ public class DrugCost extends MedicalEntity {
    * The cost per unit of the drug.
    */
   @JsonIgnore public java.util.Collection<String> getCostPerUnitStrings() {
-    final Object current = myData.get("costPerUnit");
+    final java.lang.Object current = myData.get("costPerUnit");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -122,7 +122,7 @@ public class DrugCost extends MedicalEntity {
    * The category of cost, such as wholesale, retail, reimbursement cap, etc.
    */
   @JsonIgnore public java.util.Collection<DrugCostCategory> getCostCategorys() {
-    final Object current = myData.get("costCategory");
+    final java.lang.Object current = myData.get("costCategory");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<DrugCostCategory>) current;
@@ -139,7 +139,7 @@ public class DrugCost extends MedicalEntity {
    * The unit in which the drug is measured, e.g. '5 mg tablet'.
    */
   @JsonIgnore public java.util.Collection<String> getDrugUnits() {
-    final Object current = myData.get("drugUnit");
+    final java.lang.Object current = myData.get("drugUnit");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -156,14 +156,14 @@ public class DrugCost extends MedicalEntity {
    * The currency (in 3-letter of the drug cost. See: http://en.wikipedia.org/wiki/ISO_4217. 
    */
   @JsonIgnore public java.util.Collection<String> getCostCurrencys() {
-    final Object current = myData.get("costCurrency");
+    final java.lang.Object current = myData.get("costCurrency");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
-  protected DrugCost(java.util.Map<String,Object> data) {
+  protected DrugCost(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -171,7 +171,7 @@ public class DrugCost extends MedicalEntity {
    * Builder for {@link DrugCost}
    */
   public static class Builder extends MedicalEntity.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public DrugCost build() {
@@ -346,6 +346,21 @@ public class DrugCost extends MedicalEntity {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -364,6 +379,13 @@ public class DrugCost extends MedicalEntity {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -457,7 +479,7 @@ public class DrugCost extends MedicalEntity {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("applicableLocation".equals(key) && value instanceof AdministrativeArea) { this.applicableLocation((AdministrativeArea)value); return; }
       if ("applicableLocations".equals(key) && value instanceof AdministrativeArea) { this.applicableLocation((AdministrativeArea)value); return; }
       if ("costOrigin".equals(key) && value instanceof String) { this.costOrigin((String)value); return; }

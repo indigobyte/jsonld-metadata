@@ -26,7 +26,7 @@ import java.util.*;
 /**
  * A contact point&amp;#x2014;for example, a Customer Complaints department.
  */
-public class ContactPoint extends StructuredValue {
+public class ContactPoint extends StructuredValue implements org.schema.Recipient {
   /**
    * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. &quot;iPhone&quot;) or a general category of products or services (e.g. &quot;smartphones&quot;).
    */
@@ -37,7 +37,7 @@ public class ContactPoint extends StructuredValue {
    * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. &quot;iPhone&quot;) or a general category of products or services (e.g. &quot;smartphones&quot;).
    */
   @JsonIgnore public java.util.Collection<Product> getProductSupportedProducts() {
-    final Object current = myData.get("productSupported");
+    final java.lang.Object current = myData.get("productSupported");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Product>) current;
@@ -54,7 +54,7 @@ public class ContactPoint extends StructuredValue {
    * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. &quot;iPhone&quot;) or a general category of products or services (e.g. &quot;smartphones&quot;).
    */
   @JsonIgnore public java.util.Collection<String> getProductSupportedStrings() {
-    final Object current = myData.get("productSupported");
+    final java.lang.Object current = myData.get("productSupported");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -71,7 +71,7 @@ public class ContactPoint extends StructuredValue {
    * Email address.
    */
   @JsonIgnore public java.util.Collection<String> getEmails() {
-    final Object current = myData.get("email");
+    final java.lang.Object current = myData.get("email");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -88,7 +88,7 @@ public class ContactPoint extends StructuredValue {
    * The telephone number.
    */
   @JsonIgnore public java.util.Collection<String> getTelephones() {
-    final Object current = myData.get("telephone");
+    final java.lang.Object current = myData.get("telephone");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -105,12 +105,29 @@ public class ContactPoint extends StructuredValue {
    * A person or organization can have different contact points, for different purposes. For example, a sales contact point, a PR contact point and so on. This property is used to specify the kind of contact point.
    */
   @JsonIgnore public java.util.Collection<String> getContactTypes() {
-    final Object current = myData.get("contactType");
+    final java.lang.Object current = myData.get("contactType");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
+  }
+  /**
+   * The geographic area where a service or offered item is provided.
+   */
+  @JsonIgnore public AreaServed getAreaServed() {
+    return (AreaServed) getValue("areaServed");
+  }
+  /**
+   * The geographic area where a service or offered item is provided.
+   */
+  @JsonIgnore public java.util.Collection<AreaServed> getAreaServeds() {
+    final java.lang.Object current = myData.get("areaServed");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<AreaServed>) current;
+    }
+    return Arrays.asList((AreaServed) current);
   }
   /**
    * An option available on this contact point (e.g. a toll-free number or support for hearing-impaired callers).
@@ -122,7 +139,7 @@ public class ContactPoint extends StructuredValue {
    * An option available on this contact point (e.g. a toll-free number or support for hearing-impaired callers).
    */
   @JsonIgnore public java.util.Collection<ContactPointOption> getContactOptions() {
-    final Object current = myData.get("contactOption");
+    final java.lang.Object current = myData.get("contactOption");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<ContactPointOption>) current;
@@ -139,7 +156,7 @@ public class ContactPoint extends StructuredValue {
    * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
    */
   @JsonIgnore public java.util.Collection<Language> getAvailableLanguageLanguages() {
-    final Object current = myData.get("availableLanguage");
+    final java.lang.Object current = myData.get("availableLanguage");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Language>) current;
@@ -156,7 +173,7 @@ public class ContactPoint extends StructuredValue {
    * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
    */
   @JsonIgnore public java.util.Collection<String> getAvailableLanguageStrings() {
-    final Object current = myData.get("availableLanguage");
+    final java.lang.Object current = myData.get("availableLanguage");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -173,7 +190,7 @@ public class ContactPoint extends StructuredValue {
    * The fax number.
    */
   @JsonIgnore public java.util.Collection<String> getFaxNumbers() {
-    final Object current = myData.get("faxNumber");
+    final java.lang.Object current = myData.get("faxNumber");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -190,14 +207,14 @@ public class ContactPoint extends StructuredValue {
    * The hours during which this service or contact is available.
    */
   @JsonIgnore public java.util.Collection<OpeningHoursSpecification> getHoursAvailables() {
-    final Object current = myData.get("hoursAvailable");
+    final java.lang.Object current = myData.get("hoursAvailable");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<OpeningHoursSpecification>) current;
     }
     return Arrays.asList((OpeningHoursSpecification) current);
   }
-  protected ContactPoint(java.util.Map<String,Object> data) {
+  protected ContactPoint(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -205,7 +222,7 @@ public class ContactPoint extends StructuredValue {
    * Builder for {@link ContactPoint}
    */
   public static class Builder extends StructuredValue.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public ContactPoint build() {
@@ -251,6 +268,13 @@ public class ContactPoint extends StructuredValue {
      */
     @NotNull public Builder contactType(@NotNull String contactType) {
       putValue("contactType", contactType);
+      return this;
+    }
+    /**
+     * The geographic area where a service or offered item is provided.
+     */
+    @NotNull public Builder areaServed(@NotNull AreaServed areaServed) {
+      putValue("areaServed", areaServed);
       return this;
     }
     /**
@@ -303,6 +327,21 @@ public class ContactPoint extends StructuredValue {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -321,6 +360,13 @@ public class ContactPoint extends StructuredValue {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -414,7 +460,7 @@ public class ContactPoint extends StructuredValue {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("productSupported".equals(key) && value instanceof Product) { this.productSupported((Product)value); return; }
       if ("productSupporteds".equals(key) && value instanceof Product) { this.productSupported((Product)value); return; }
       if ("productSupported".equals(key) && value instanceof String) { this.productSupported((String)value); return; }
@@ -425,6 +471,8 @@ public class ContactPoint extends StructuredValue {
       if ("telephones".equals(key) && value instanceof String) { this.telephone((String)value); return; }
       if ("contactType".equals(key) && value instanceof String) { this.contactType((String)value); return; }
       if ("contactTypes".equals(key) && value instanceof String) { this.contactType((String)value); return; }
+      if ("areaServed".equals(key) && value instanceof AreaServed) { this.areaServed((AreaServed)value); return; }
+      if ("areaServeds".equals(key) && value instanceof AreaServed) { this.areaServed((AreaServed)value); return; }
       if ("contactOption".equals(key) && value instanceof ContactPointOption) { this.contactOption((ContactPointOption)value); return; }
       if ("contactOptions".equals(key) && value instanceof ContactPointOption) { this.contactOption((ContactPointOption)value); return; }
       if ("availableLanguage".equals(key) && value instanceof Language) { this.availableLanguage((Language)value); return; }

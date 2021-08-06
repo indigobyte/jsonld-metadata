@@ -37,7 +37,7 @@ public class RepaymentSpecification extends StructuredValue {
    * a type of payment made in cash during the onset of the purchase of an expensive good/service. The payment typically represents only a percentage of the full purchase price.
    */
   @JsonIgnore public java.util.Collection<Integer> getDownPaymentIntegers() {
-    final Object current = myData.get("downPayment");
+    final java.lang.Object current = myData.get("downPayment");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -54,7 +54,7 @@ public class RepaymentSpecification extends StructuredValue {
    * a type of payment made in cash during the onset of the purchase of an expensive good/service. The payment typically represents only a percentage of the full purchase price.
    */
   @JsonIgnore public java.util.Collection<Long> getDownPaymentLongs() {
-    final Object current = myData.get("downPayment");
+    final java.lang.Object current = myData.get("downPayment");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Long>) current;
@@ -71,7 +71,7 @@ public class RepaymentSpecification extends StructuredValue {
    * a type of payment made in cash during the onset of the purchase of an expensive good/service. The payment typically represents only a percentage of the full purchase price.
    */
   @JsonIgnore public java.util.Collection<Float> getDownPaymentFloats() {
-    final Object current = myData.get("downPayment");
+    final java.lang.Object current = myData.get("downPayment");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Float>) current;
@@ -88,7 +88,7 @@ public class RepaymentSpecification extends StructuredValue {
    * a type of payment made in cash during the onset of the purchase of an expensive good/service. The payment typically represents only a percentage of the full purchase price.
    */
   @JsonIgnore public java.util.Collection<Double> getDownPaymentDoubles() {
-    final Object current = myData.get("downPayment");
+    final java.lang.Object current = myData.get("downPayment");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Double>) current;
@@ -105,7 +105,7 @@ public class RepaymentSpecification extends StructuredValue {
    * a type of payment made in cash during the onset of the purchase of an expensive good/service. The payment typically represents only a percentage of the full purchase price.
    */
   @JsonIgnore public java.util.Collection<String> getDownPaymentStrings() {
-    final Object current = myData.get("downPayment");
+    final java.lang.Object current = myData.get("downPayment");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -122,7 +122,7 @@ public class RepaymentSpecification extends StructuredValue {
    * The amount of money to pay in a single payment.
    */
   @JsonIgnore public java.util.Collection<MonetaryAmount> getLoanPaymentAmounts() {
-    final Object current = myData.get("loanPaymentAmount");
+    final java.lang.Object current = myData.get("loanPaymentAmount");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MonetaryAmount>) current;
@@ -139,7 +139,7 @@ public class RepaymentSpecification extends StructuredValue {
    * Frequency of payments due, i.e. number of months between payments. This is defined as a frequency, i.e. the reciprocal of a period of time.
    */
   @JsonIgnore public java.util.Collection<Integer> getLoanPaymentFrequencyIntegers() {
-    final Object current = myData.get("loanPaymentFrequency");
+    final java.lang.Object current = myData.get("loanPaymentFrequency");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -156,7 +156,7 @@ public class RepaymentSpecification extends StructuredValue {
    * Frequency of payments due, i.e. number of months between payments. This is defined as a frequency, i.e. the reciprocal of a period of time.
    */
   @JsonIgnore public java.util.Collection<Long> getLoanPaymentFrequencyLongs() {
-    final Object current = myData.get("loanPaymentFrequency");
+    final java.lang.Object current = myData.get("loanPaymentFrequency");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Long>) current;
@@ -173,7 +173,7 @@ public class RepaymentSpecification extends StructuredValue {
    * Frequency of payments due, i.e. number of months between payments. This is defined as a frequency, i.e. the reciprocal of a period of time.
    */
   @JsonIgnore public java.util.Collection<Float> getLoanPaymentFrequencyFloats() {
-    final Object current = myData.get("loanPaymentFrequency");
+    final java.lang.Object current = myData.get("loanPaymentFrequency");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Float>) current;
@@ -190,7 +190,7 @@ public class RepaymentSpecification extends StructuredValue {
    * Frequency of payments due, i.e. number of months between payments. This is defined as a frequency, i.e. the reciprocal of a period of time.
    */
   @JsonIgnore public java.util.Collection<Double> getLoanPaymentFrequencyDoubles() {
-    final Object current = myData.get("loanPaymentFrequency");
+    final java.lang.Object current = myData.get("loanPaymentFrequency");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Double>) current;
@@ -207,7 +207,7 @@ public class RepaymentSpecification extends StructuredValue {
    * Frequency of payments due, i.e. number of months between payments. This is defined as a frequency, i.e. the reciprocal of a period of time.
    */
   @JsonIgnore public java.util.Collection<String> getLoanPaymentFrequencyStrings() {
-    final Object current = myData.get("loanPaymentFrequency");
+    final java.lang.Object current = myData.get("loanPaymentFrequency");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -224,7 +224,7 @@ public class RepaymentSpecification extends StructuredValue {
    * The number of payments contractually required at origination to repay the loan. For monthly paying loans this is the number of months from the contractual first payment date to the maturity date.
    */
   @JsonIgnore public java.util.Collection<Integer> getNumberOfLoanPaymentsIntegers() {
-    final Object current = myData.get("numberOfLoanPayments");
+    final java.lang.Object current = myData.get("numberOfLoanPayments");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -241,7 +241,7 @@ public class RepaymentSpecification extends StructuredValue {
    * The number of payments contractually required at origination to repay the loan. For monthly paying loans this is the number of months from the contractual first payment date to the maturity date.
    */
   @JsonIgnore public java.util.Collection<Long> getNumberOfLoanPaymentsLongs() {
-    final Object current = myData.get("numberOfLoanPayments");
+    final java.lang.Object current = myData.get("numberOfLoanPayments");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Long>) current;
@@ -258,7 +258,7 @@ public class RepaymentSpecification extends StructuredValue {
    * The number of payments contractually required at origination to repay the loan. For monthly paying loans this is the number of months from the contractual first payment date to the maturity date.
    */
   @JsonIgnore public java.util.Collection<Float> getNumberOfLoanPaymentsFloats() {
-    final Object current = myData.get("numberOfLoanPayments");
+    final java.lang.Object current = myData.get("numberOfLoanPayments");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Float>) current;
@@ -275,7 +275,7 @@ public class RepaymentSpecification extends StructuredValue {
    * The number of payments contractually required at origination to repay the loan. For monthly paying loans this is the number of months from the contractual first payment date to the maturity date.
    */
   @JsonIgnore public java.util.Collection<Double> getNumberOfLoanPaymentsDoubles() {
-    final Object current = myData.get("numberOfLoanPayments");
+    final java.lang.Object current = myData.get("numberOfLoanPayments");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Double>) current;
@@ -292,7 +292,7 @@ public class RepaymentSpecification extends StructuredValue {
    * The number of payments contractually required at origination to repay the loan. For monthly paying loans this is the number of months from the contractual first payment date to the maturity date.
    */
   @JsonIgnore public java.util.Collection<String> getNumberOfLoanPaymentsStrings() {
-    final Object current = myData.get("numberOfLoanPayments");
+    final java.lang.Object current = myData.get("numberOfLoanPayments");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -309,14 +309,14 @@ public class RepaymentSpecification extends StructuredValue {
    * The amount to be paid as a penalty in the event of early payment of the loan.
    */
   @JsonIgnore public java.util.Collection<MonetaryAmount> getEarlyPrepaymentPenaltys() {
-    final Object current = myData.get("earlyPrepaymentPenalty");
+    final java.lang.Object current = myData.get("earlyPrepaymentPenalty");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MonetaryAmount>) current;
     }
     return Arrays.asList((MonetaryAmount) current);
   }
-  protected RepaymentSpecification(java.util.Map<String,Object> data) {
+  protected RepaymentSpecification(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -324,7 +324,7 @@ public class RepaymentSpecification extends StructuredValue {
    * Builder for {@link RepaymentSpecification}
    */
   public static class Builder extends StructuredValue.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public RepaymentSpecification build() {
@@ -464,6 +464,21 @@ public class RepaymentSpecification extends StructuredValue {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -482,6 +497,13 @@ public class RepaymentSpecification extends StructuredValue {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -575,7 +597,7 @@ public class RepaymentSpecification extends StructuredValue {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("downPayment".equals(key) && value instanceof Integer) { this.downPayment((Integer)value); return; }
       if ("downPayments".equals(key) && value instanceof Integer) { this.downPayment((Integer)value); return; }
       if ("downPayment".equals(key) && value instanceof Long) { this.downPayment((Long)value); return; }

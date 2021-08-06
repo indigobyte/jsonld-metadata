@@ -37,7 +37,7 @@ public class Course extends LearningResource {
    * The number of credits or units awarded by a Course or required to complete an EducationalOccupationalProgram.
    */
   @JsonIgnore public java.util.Collection<Integer> getNumberOfCreditsIntegers() {
-    final Object current = myData.get("numberOfCredits");
+    final java.lang.Object current = myData.get("numberOfCredits");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -54,7 +54,7 @@ public class Course extends LearningResource {
    * The number of credits or units awarded by a Course or required to complete an EducationalOccupationalProgram.
    */
   @JsonIgnore public java.util.Collection<StructuredValue> getNumberOfCreditsStructuredValues() {
-    final Object current = myData.get("numberOfCredits");
+    final java.lang.Object current = myData.get("numberOfCredits");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<StructuredValue>) current;
@@ -71,7 +71,7 @@ public class Course extends LearningResource {
    * A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.
    */
   @JsonIgnore public java.util.Collection<EducationalOccupationalCredential> getEducationalCredentialAwardedEducationalOccupationalCredentials() {
-    final Object current = myData.get("educationalCredentialAwarded");
+    final java.lang.Object current = myData.get("educationalCredentialAwarded");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<EducationalOccupationalCredential>) current;
@@ -88,7 +88,7 @@ public class Course extends LearningResource {
    * A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.
    */
   @JsonIgnore public java.util.Collection<String> getEducationalCredentialAwardedStrings() {
-    final Object current = myData.get("educationalCredentialAwarded");
+    final java.lang.Object current = myData.get("educationalCredentialAwarded");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -105,7 +105,7 @@ public class Course extends LearningResource {
    * Requirements for taking the Course. May be completion of another [[Course]] or a textual description like &quot;permission of instructor&quot;. Requirements may be a pre-requisite competency, referenced using [[AlignmentObject]].
    */
   @JsonIgnore public java.util.Collection<AlignmentObject> getCoursePrerequisitesAlignmentObjects() {
-    final Object current = myData.get("coursePrerequisites");
+    final java.lang.Object current = myData.get("coursePrerequisites");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<AlignmentObject>) current;
@@ -122,7 +122,7 @@ public class Course extends LearningResource {
    * Requirements for taking the Course. May be completion of another [[Course]] or a textual description like &quot;permission of instructor&quot;. Requirements may be a pre-requisite competency, referenced using [[AlignmentObject]].
    */
   @JsonIgnore public java.util.Collection<Course> getCoursePrerequisitesCourses() {
-    final Object current = myData.get("coursePrerequisites");
+    final java.lang.Object current = myData.get("coursePrerequisites");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Course>) current;
@@ -139,7 +139,7 @@ public class Course extends LearningResource {
    * Requirements for taking the Course. May be completion of another [[Course]] or a textual description like &quot;permission of instructor&quot;. Requirements may be a pre-requisite competency, referenced using [[AlignmentObject]].
    */
   @JsonIgnore public java.util.Collection<String> getCoursePrerequisitesStrings() {
-    final Object current = myData.get("coursePrerequisites");
+    final java.lang.Object current = myData.get("coursePrerequisites");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -156,7 +156,7 @@ public class Course extends LearningResource {
    * An offering of the course at a specific time and place or through specific media or mode of study or to a specific section of students.
    */
   @JsonIgnore public java.util.Collection<CourseInstance> getHasCourseInstances() {
-    final Object current = myData.get("hasCourseInstance");
+    final java.lang.Object current = myData.get("hasCourseInstance");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<CourseInstance>) current;
@@ -173,7 +173,7 @@ public class Course extends LearningResource {
    * The identifier for the [[Course]] used by the course [[provider]] (e.g. CS101 or 6.001).
    */
   @JsonIgnore public java.util.Collection<String> getCourseCodes() {
-    final Object current = myData.get("courseCode");
+    final java.lang.Object current = myData.get("courseCode");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -190,7 +190,7 @@ public class Course extends LearningResource {
    * A description of the qualification, award, certificate, diploma or other occupational credential awarded as a consequence of successful completion of this course or program.
    */
   @JsonIgnore public java.util.Collection<EducationalOccupationalCredential> getOccupationalCredentialAwardedEducationalOccupationalCredentials() {
-    final Object current = myData.get("occupationalCredentialAwarded");
+    final java.lang.Object current = myData.get("occupationalCredentialAwarded");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<EducationalOccupationalCredential>) current;
@@ -207,14 +207,14 @@ public class Course extends LearningResource {
    * A description of the qualification, award, certificate, diploma or other occupational credential awarded as a consequence of successful completion of this course or program.
    */
   @JsonIgnore public java.util.Collection<String> getOccupationalCredentialAwardedStrings() {
-    final Object current = myData.get("occupationalCredentialAwarded");
+    final java.lang.Object current = myData.get("occupationalCredentialAwarded");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
-  protected Course(java.util.Map<String,Object> data) {
+  protected Course(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -222,7 +222,7 @@ public class Course extends LearningResource {
    * Builder for {@link Course}
    */
   public static class Builder extends LearningResource.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public Course build() {
@@ -515,6 +515,16 @@ public class Course extends LearningResource {
       return this;
     }
     /**
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+     * 
+     */
+    @NotNull public Builder publishingPrinciples(@NotNull PublishingPrinciples publishingPrinciples) {
+      putValue("publishingPrinciples", publishingPrinciples);
+      return this;
+    }
+    /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
      */
     @NotNull public Builder inLanguage(@NotNull Language language) {
@@ -540,6 +550,13 @@ public class Course extends LearningResource {
      */
     @NotNull public Builder thumbnailUrl(@NotNull String thumbnailUrl) {
       putValue("thumbnailUrl", thumbnailUrl);
+      return this;
+    }
+    /**
+     * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
+     */
+    @NotNull public Builder hasPart(@NotNull HasPart hasPart) {
+      putValue("hasPart", hasPart);
       return this;
     }
     /**
@@ -610,6 +627,13 @@ public class Course extends LearningResource {
      */
     @NotNull public Builder size(@NotNull String size) {
       putValue("size", size);
+      return this;
+    }
+    /**
+     * A material that something is made from, e.g. leather, wool, cotton, paper.
+     */
+    @NotNull public Builder material(@NotNull Material material) {
+      putValue("material", material);
       return this;
     }
     /**
@@ -701,6 +725,15 @@ public class Course extends LearningResource {
      */
     @NotNull public Builder commentCount(@NotNull Integer integer) {
       putValue("commentCount", integer);
+      return this;
+    }
+    /**
+     * The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of
+     *       contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates
+     *       areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
+     */
+    @NotNull public Builder spatialCoverage(@NotNull SpatialCoverage spatialCoverage) {
+      putValue("spatialCoverage", spatialCoverage);
       return this;
     }
     /**
@@ -861,6 +894,13 @@ public class Course extends LearningResource {
      */
     @NotNull public Builder sdLicense(@NotNull String sdLicense) {
       putValue("sdLicense", sdLicense);
+      return this;
+    }
+    /**
+     * The position of an item in a series or sequence of items.
+     */
+    @NotNull public Builder position(@NotNull Position position) {
+      putValue("position", position);
       return this;
     }
     /**
@@ -1304,10 +1344,24 @@ public class Course extends LearningResource {
       return this;
     }
     /**
+     * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
+     */
+    @NotNull public Builder isPartOf(@NotNull IsPartOf isPartOf) {
+      putValue("isPartOf", isPartOf);
+      return this;
+    }
+    /**
      * Indicates that the resource is compatible with the referenced accessibility API ([WebSchemas wiki lists possible values](http://www.w3.org/wiki/WebSchemas/Accessibility)).
      */
     @NotNull public Builder accessibilityAPI(@NotNull String accessibilityAPI) {
       putValue("accessibilityAPI", accessibilityAPI);
+      return this;
+    }
+    /**
+     * Example/instance/realization/derivation of the concept of this creative work. eg. The paperback edition, first edition, or eBook.
+     */
+    @NotNull public Builder workExample(@NotNull WorkExample workExample) {
+      putValue("workExample", workExample);
       return this;
     }
     /**
@@ -1841,10 +1895,45 @@ public class Course extends LearningResource {
       return this;
     }
     /**
+     * The subject matter of the content.
+     */
+    @NotNull public Builder about(@NotNull Thing thing) {
+      putValue("about", thing);
+      return this;
+    }
+    /**
+     * The subject matter of the content.
+     */
+    @NotNull public Builder about(@NotNull Thing.Builder thing) {
+      putValue("about", thing.build());
+      return this;
+    }
+    /**
      * Indicates the primary entity described in some page or other CreativeWork.
      */
     @NotNull public Builder mainEntity(@NotNull About about) {
       putValue("mainEntity", about);
+      return this;
+    }
+    /**
+     * Indicates the primary entity described in some page or other CreativeWork.
+     */
+    @NotNull public Builder mainEntity(@NotNull About.Builder about) {
+      putValue("mainEntity", about.build());
+      return this;
+    }
+    /**
+     * Indicates the primary entity described in some page or other CreativeWork.
+     */
+    @NotNull public Builder mainEntity(@NotNull Thing thing) {
+      putValue("mainEntity", thing);
+      return this;
+    }
+    /**
+     * Indicates the primary entity described in some page or other CreativeWork.
+     */
+    @NotNull public Builder mainEntity(@NotNull Thing.Builder thing) {
+      putValue("mainEntity", thing.build());
       return this;
     }
     /**
@@ -1883,6 +1972,21 @@ public class Course extends LearningResource {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -1901,6 +2005,13 @@ public class Course extends LearningResource {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -1994,7 +2105,7 @@ public class Course extends LearningResource {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("numberOfCredits".equals(key) && value instanceof Integer) { this.numberOfCredits((Integer)value); return; }
       if ("numberOfCreditss".equals(key) && value instanceof Integer) { this.numberOfCredits((Integer)value); return; }
       if ("numberOfCredits".equals(key) && value instanceof StructuredValue) { this.numberOfCredits((StructuredValue)value); return; }

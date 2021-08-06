@@ -24,7 +24,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * 
+ * An associated [[Review]].
  */
 public interface AssociatedReview {
 }

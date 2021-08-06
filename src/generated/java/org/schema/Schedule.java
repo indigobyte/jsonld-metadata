@@ -39,7 +39,7 @@ public class Schedule extends Intangible {
    * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getStartTimes() {
-    final Object current = myData.get("startTime");
+    final java.lang.Object current = myData.get("startTime");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<java.util.Date>) current;
@@ -56,7 +56,7 @@ public class Schedule extends Intangible {
    * Indicates the timezone for which the time(s) indicated in the [[Schedule]] are given. The value provided should be among those listed in the IANA Time Zone Database.
    */
   @JsonIgnore public java.util.Collection<String> getScheduleTimezones() {
-    final Object current = myData.get("scheduleTimezone");
+    final java.lang.Object current = myData.get("scheduleTimezone");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -73,7 +73,7 @@ public class Schedule extends Intangible {
    * Defines the number of times a recurring [[Event]] will take place
    */
   @JsonIgnore public java.util.Collection<Integer> getRepeatCounts() {
-    final Object current = myData.get("repeatCount");
+    final java.lang.Object current = myData.get("repeatCount");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -92,7 +92,7 @@ public class Schedule extends Intangible {
    *       events should be defined as a [[Duration]] of time.
    */
   @JsonIgnore public java.util.Collection<Frequency> getRepeatFrequencys() {
-    final Object current = myData.get("repeatFrequency");
+    final java.lang.Object current = myData.get("repeatFrequency");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Frequency>) current;
@@ -115,7 +115,7 @@ public class Schedule extends Intangible {
    *       excluded from the schedule. This allows a whole day to be excluded from the schedule without having to itemise every scheduled event.
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getExceptDates() {
-    final Object current = myData.get("exceptDate");
+    final java.lang.Object current = myData.get("exceptDate");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<java.util.Date>) current;
@@ -132,7 +132,7 @@ public class Schedule extends Intangible {
    * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
    */
   @JsonIgnore public java.util.Collection<Duration> getDurations() {
-    final Object current = myData.get("duration");
+    final java.lang.Object current = myData.get("duration");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Duration>) current;
@@ -149,7 +149,7 @@ public class Schedule extends Intangible {
    * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getStartDates() {
-    final Object current = myData.get("startDate");
+    final java.lang.Object current = myData.get("startDate");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<java.util.Date>) current;
@@ -166,7 +166,7 @@ public class Schedule extends Intangible {
    * Defines the day(s) of the month on which a recurring [[Event]] takes place. Specified as an [[Integer]] between 1-31.
    */
   @JsonIgnore public java.util.Collection<Integer> getByMonthDays() {
-    final Object current = myData.get("byMonthDay");
+    final java.lang.Object current = myData.get("byMonthDay");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -183,7 +183,7 @@ public class Schedule extends Intangible {
    * Defines the month(s) of the year on which a recurring [[Event]] takes place. Specified as an [[Integer]] between 1-12. January is 1.
    */
   @JsonIgnore public java.util.Collection<Integer> getByMonths() {
-    final Object current = myData.get("byMonth");
+    final java.lang.Object current = myData.get("byMonth");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -200,7 +200,7 @@ public class Schedule extends Intangible {
    * Defines the day(s) of the week on which a recurring [[Event]] takes place. May be specified using either [[DayOfWeek]], or alternatively [[Text]] conforming to iCal's syntax for byDay recurrence rules.
    */
   @JsonIgnore public java.util.Collection<DayOfWeek> getByDayDayOfWeeks() {
-    final Object current = myData.get("byDay");
+    final java.lang.Object current = myData.get("byDay");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<DayOfWeek>) current;
@@ -217,7 +217,7 @@ public class Schedule extends Intangible {
    * Defines the day(s) of the week on which a recurring [[Event]] takes place. May be specified using either [[DayOfWeek]], or alternatively [[Text]] conforming to iCal's syntax for byDay recurrence rules.
    */
   @JsonIgnore public java.util.Collection<String> getByDayStrings() {
-    final Object current = myData.get("byDay");
+    final java.lang.Object current = myData.get("byDay");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -234,7 +234,7 @@ public class Schedule extends Intangible {
    * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getEndTimes() {
-    final Object current = myData.get("endTime");
+    final java.lang.Object current = myData.get("endTime");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<java.util.Date>) current;
@@ -251,7 +251,7 @@ public class Schedule extends Intangible {
    * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getEndDates() {
-    final Object current = myData.get("endDate");
+    final java.lang.Object current = myData.get("endDate");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<java.util.Date>) current;
@@ -268,14 +268,14 @@ public class Schedule extends Intangible {
    * Defines the week(s) of the month on which a recurring Event takes place. Specified as an Integer between 1-5. For clarity, byMonthWeek is best used in conjunction with byDay to indicate concepts like the first and third Mondays of a month.
    */
   @JsonIgnore public java.util.Collection<Integer> getByMonthWeeks() {
-    final Object current = myData.get("byMonthWeek");
+    final java.lang.Object current = myData.get("byMonthWeek");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
-  protected Schedule(java.util.Map<String,Object> data) {
+  protected Schedule(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -283,7 +283,7 @@ public class Schedule extends Intangible {
    * Builder for {@link Schedule}
    */
   public static class Builder extends Intangible.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public Schedule build() {
@@ -392,6 +392,21 @@ public class Schedule extends Intangible {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -410,6 +425,13 @@ public class Schedule extends Intangible {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -503,7 +525,7 @@ public class Schedule extends Intangible {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("startTime".equals(key) && value instanceof java.util.Date) { this.startTime((java.util.Date)value); return; }
       if ("startTimes".equals(key) && value instanceof java.util.Date) { this.startTime((java.util.Date)value); return; }
       if ("scheduleTimezone".equals(key) && value instanceof String) { this.scheduleTimezone((String)value); return; }

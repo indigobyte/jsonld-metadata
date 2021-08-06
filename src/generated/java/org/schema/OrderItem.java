@@ -37,7 +37,7 @@ public class OrderItem extends Intangible {
    * The number of the item ordered. If the property is not set, assume the quantity is one.
    */
   @JsonIgnore public java.util.Collection<Integer> getOrderQuantityIntegers() {
-    final Object current = myData.get("orderQuantity");
+    final java.lang.Object current = myData.get("orderQuantity");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -54,7 +54,7 @@ public class OrderItem extends Intangible {
    * The number of the item ordered. If the property is not set, assume the quantity is one.
    */
   @JsonIgnore public java.util.Collection<Long> getOrderQuantityLongs() {
-    final Object current = myData.get("orderQuantity");
+    final java.lang.Object current = myData.get("orderQuantity");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Long>) current;
@@ -71,7 +71,7 @@ public class OrderItem extends Intangible {
    * The number of the item ordered. If the property is not set, assume the quantity is one.
    */
   @JsonIgnore public java.util.Collection<Float> getOrderQuantityFloats() {
-    final Object current = myData.get("orderQuantity");
+    final java.lang.Object current = myData.get("orderQuantity");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Float>) current;
@@ -88,7 +88,7 @@ public class OrderItem extends Intangible {
    * The number of the item ordered. If the property is not set, assume the quantity is one.
    */
   @JsonIgnore public java.util.Collection<Double> getOrderQuantityDoubles() {
-    final Object current = myData.get("orderQuantity");
+    final java.lang.Object current = myData.get("orderQuantity");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Double>) current;
@@ -105,7 +105,7 @@ public class OrderItem extends Intangible {
    * The number of the item ordered. If the property is not set, assume the quantity is one.
    */
   @JsonIgnore public java.util.Collection<String> getOrderQuantityStrings() {
-    final Object current = myData.get("orderQuantity");
+    final java.lang.Object current = myData.get("orderQuantity");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -122,7 +122,7 @@ public class OrderItem extends Intangible {
    * The item ordered.
    */
   @JsonIgnore public java.util.Collection<OrderItem> getOrderedItemOrderItems() {
-    final Object current = myData.get("orderedItem");
+    final java.lang.Object current = myData.get("orderedItem");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<OrderItem>) current;
@@ -139,7 +139,7 @@ public class OrderItem extends Intangible {
    * The item ordered.
    */
   @JsonIgnore public java.util.Collection<Product> getOrderedItemProducts() {
-    final Object current = myData.get("orderedItem");
+    final java.lang.Object current = myData.get("orderedItem");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Product>) current;
@@ -156,7 +156,7 @@ public class OrderItem extends Intangible {
    * The item ordered.
    */
   @JsonIgnore public java.util.Collection<Service> getOrderedItemServices() {
-    final Object current = myData.get("orderedItem");
+    final java.lang.Object current = myData.get("orderedItem");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Service>) current;
@@ -173,7 +173,7 @@ public class OrderItem extends Intangible {
    * The current status of the order item.
    */
   @JsonIgnore public java.util.Collection<OrderStatus> getOrderItemStatuss() {
-    final Object current = myData.get("orderItemStatus");
+    final java.lang.Object current = myData.get("orderItemStatus");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<OrderStatus>) current;
@@ -190,7 +190,7 @@ public class OrderItem extends Intangible {
    * The delivery of the parcel related to this order or order item.
    */
   @JsonIgnore public java.util.Collection<ParcelDelivery> getOrderDeliverys() {
-    final Object current = myData.get("orderDelivery");
+    final java.lang.Object current = myData.get("orderDelivery");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<ParcelDelivery>) current;
@@ -207,14 +207,14 @@ public class OrderItem extends Intangible {
    * The identifier of the order item.
    */
   @JsonIgnore public java.util.Collection<String> getOrderItemNumbers() {
-    final Object current = myData.get("orderItemNumber");
+    final java.lang.Object current = myData.get("orderItemNumber");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
-  protected OrderItem(java.util.Map<String,Object> data) {
+  protected OrderItem(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -222,7 +222,7 @@ public class OrderItem extends Intangible {
    * Builder for {@link OrderItem}
    */
   public static class Builder extends Intangible.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public OrderItem build() {
@@ -334,6 +334,21 @@ public class OrderItem extends Intangible {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -352,6 +367,13 @@ public class OrderItem extends Intangible {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -445,7 +467,7 @@ public class OrderItem extends Intangible {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("orderQuantity".equals(key) && value instanceof Integer) { this.orderQuantity((Integer)value); return; }
       if ("orderQuantitys".equals(key) && value instanceof Integer) { this.orderQuantity((Integer)value); return; }
       if ("orderQuantity".equals(key) && value instanceof Long) { this.orderQuantity((Long)value); return; }

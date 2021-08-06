@@ -26,7 +26,7 @@ import java.util.*;
 /**
  * Entities that have a somewhat fixed, physical extension.
  */
-public class Place extends Thing implements ContentLocation {
+public class Place extends Thing implements org.schema.ContentLocation, SpatialCoverage, Location, AreaServed {
   /**
    * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
    */
@@ -37,7 +37,7 @@ public class Place extends Thing implements ContentLocation {
    * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
    */
   @JsonIgnore public java.util.Collection<GeospatialGeometry> getGeoWithinGeospatialGeometrys() {
-    final Object current = myData.get("geoWithin");
+    final java.lang.Object current = myData.get("geoWithin");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<GeospatialGeometry>) current;
@@ -54,7 +54,7 @@ public class Place extends Thing implements ContentLocation {
    * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
    */
   @JsonIgnore public java.util.Collection<Place> getGeoWithinPlaces() {
-    final Object current = myData.get("geoWithin");
+    final java.lang.Object current = myData.get("geoWithin");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Place>) current;
@@ -71,7 +71,7 @@ public class Place extends Thing implements ContentLocation {
    * Upcoming or past event associated with this place, organization, or action.
    */
   @JsonIgnore public java.util.Collection<Event> getEvents() {
-    final Object current = myData.get("event");
+    final java.lang.Object current = myData.get("event");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Event>) current;
@@ -88,7 +88,7 @@ public class Place extends Thing implements ContentLocation {
    * A page providing information on how to book a tour of some [[Place]], such as an [[Accommodation]] or [[ApartmentComplex]] in a real estate setting, as well as other kinds of tours as appropriate.
    */
   @JsonIgnore public java.util.Collection<String> getTourBookingPages() {
-    final Object current = myData.get("tourBookingPage");
+    final java.lang.Object current = myData.get("tourBookingPage");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -105,7 +105,7 @@ public class Place extends Thing implements ContentLocation {
    * The geo coordinates of the place.
    */
   @JsonIgnore public java.util.Collection<GeoCoordinates> getGeoGeoCoordinatess() {
-    final Object current = myData.get("geo");
+    final java.lang.Object current = myData.get("geo");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<GeoCoordinates>) current;
@@ -122,7 +122,7 @@ public class Place extends Thing implements ContentLocation {
    * The geo coordinates of the place.
    */
   @JsonIgnore public java.util.Collection<GeoShape> getGeoGeoShapes() {
-    final Object current = myData.get("geo");
+    final java.lang.Object current = myData.get("geo");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<GeoShape>) current;
@@ -139,7 +139,7 @@ public class Place extends Thing implements ContentLocation {
    * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries.&quot; (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM))
    */
   @JsonIgnore public java.util.Collection<GeospatialGeometry> getGeoDisjointGeospatialGeometrys() {
-    final Object current = myData.get("geoDisjoint");
+    final java.lang.Object current = myData.get("geoDisjoint");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<GeospatialGeometry>) current;
@@ -156,7 +156,7 @@ public class Place extends Thing implements ContentLocation {
    * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries.&quot; (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM))
    */
   @JsonIgnore public java.util.Collection<Place> getGeoDisjointPlaces() {
-    final Object current = myData.get("geoDisjoint");
+    final java.lang.Object current = myData.get("geoDisjoint");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Place>) current;
@@ -173,7 +173,7 @@ public class Place extends Thing implements ContentLocation {
    * A URL to a map of the place.
    */
   @JsonIgnore public java.util.Collection<Map> getHasMapMaps() {
-    final Object current = myData.get("hasMap");
+    final java.lang.Object current = myData.get("hasMap");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Map>) current;
@@ -190,7 +190,7 @@ public class Place extends Thing implements ContentLocation {
    * A URL to a map of the place.
    */
   @JsonIgnore public java.util.Collection<String> getHasMapStrings() {
-    final Object current = myData.get("hasMap");
+    final java.lang.Object current = myData.get("hasMap");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -207,7 +207,7 @@ public class Place extends Thing implements ContentLocation {
    * Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points.&quot; (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM) )
    */
   @JsonIgnore public java.util.Collection<GeospatialGeometry> getGeoTouchesGeospatialGeometrys() {
-    final Object current = myData.get("geoTouches");
+    final java.lang.Object current = myData.get("geoTouches");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<GeospatialGeometry>) current;
@@ -224,7 +224,7 @@ public class Place extends Thing implements ContentLocation {
    * Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points.&quot; (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM) )
    */
   @JsonIgnore public java.util.Collection<Place> getGeoTouchesPlaces() {
-    final Object current = myData.get("geoTouches");
+    final java.lang.Object current = myData.get("geoTouches");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Place>) current;
@@ -241,7 +241,7 @@ public class Place extends Thing implements ContentLocation {
    * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
    */
   @JsonIgnore public java.util.Collection<GeospatialGeometry> getGeoIntersectsGeospatialGeometrys() {
-    final Object current = myData.get("geoIntersects");
+    final java.lang.Object current = myData.get("geoIntersects");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<GeospatialGeometry>) current;
@@ -258,7 +258,7 @@ public class Place extends Thing implements ContentLocation {
    * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
    */
   @JsonIgnore public java.util.Collection<Place> getGeoIntersectsPlaces() {
-    final Object current = myData.get("geoIntersects");
+    final java.lang.Object current = myData.get("geoIntersects");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Place>) current;
@@ -275,7 +275,7 @@ public class Place extends Thing implements ContentLocation {
    * The overall rating, based on a collection of reviews or ratings, of the item.
    */
   @JsonIgnore public java.util.Collection<AggregateRating> getAggregateRatings() {
-    final Object current = myData.get("aggregateRating");
+    final java.lang.Object current = myData.get("aggregateRating");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<AggregateRating>) current;
@@ -292,7 +292,7 @@ public class Place extends Thing implements ContentLocation {
    * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
    */
   @JsonIgnore public java.util.Collection<Integer> getLongitudeIntegers() {
-    final Object current = myData.get("longitude");
+    final java.lang.Object current = myData.get("longitude");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -309,7 +309,7 @@ public class Place extends Thing implements ContentLocation {
    * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
    */
   @JsonIgnore public java.util.Collection<Long> getLongitudeLongs() {
-    final Object current = myData.get("longitude");
+    final java.lang.Object current = myData.get("longitude");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Long>) current;
@@ -326,7 +326,7 @@ public class Place extends Thing implements ContentLocation {
    * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
    */
   @JsonIgnore public java.util.Collection<Float> getLongitudeFloats() {
-    final Object current = myData.get("longitude");
+    final java.lang.Object current = myData.get("longitude");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Float>) current;
@@ -343,7 +343,7 @@ public class Place extends Thing implements ContentLocation {
    * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
    */
   @JsonIgnore public java.util.Collection<Double> getLongitudeDoubles() {
-    final Object current = myData.get("longitude");
+    final java.lang.Object current = myData.get("longitude");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Double>) current;
@@ -360,7 +360,7 @@ public class Place extends Thing implements ContentLocation {
    * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
    */
   @JsonIgnore public java.util.Collection<String> getLongitudeStrings() {
-    final Object current = myData.get("longitude");
+    final java.lang.Object current = myData.get("longitude");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -377,7 +377,7 @@ public class Place extends Thing implements ContentLocation {
    * The telephone number.
    */
   @JsonIgnore public java.util.Collection<String> getTelephones() {
-    final Object current = myData.get("telephone");
+    final java.lang.Object current = myData.get("telephone");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -394,7 +394,7 @@ public class Place extends Thing implements ContentLocation {
    * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: &quot;a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them&quot;. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
    */
   @JsonIgnore public java.util.Collection<GeospatialGeometry> getGeoCrossesGeospatialGeometrys() {
-    final Object current = myData.get("geoCrosses");
+    final java.lang.Object current = myData.get("geoCrosses");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<GeospatialGeometry>) current;
@@ -411,7 +411,7 @@ public class Place extends Thing implements ContentLocation {
    * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: &quot;a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them&quot;. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
    */
   @JsonIgnore public java.util.Collection<Place> getGeoCrossesPlaces() {
-    final Object current = myData.get("geoCrosses");
+    final java.lang.Object current = myData.get("geoCrosses");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Place>) current;
@@ -428,7 +428,7 @@ public class Place extends Thing implements ContentLocation {
    * An associated logo.
    */
   @JsonIgnore public java.util.Collection<Image> getLogos() {
-    final Object current = myData.get("logo");
+    final java.lang.Object current = myData.get("logo");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Image>) current;
@@ -445,7 +445,7 @@ public class Place extends Thing implements ContentLocation {
    * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
    */
   @JsonIgnore public java.util.Collection<String> getIsicV4s() {
-    final Object current = myData.get("isicV4");
+    final java.lang.Object current = myData.get("isicV4");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -462,7 +462,7 @@ public class Place extends Thing implements ContentLocation {
    * A flag to signal that the item, event, or place is accessible for free.
    */
   @JsonIgnore public java.util.Collection<Boolean> getIsAccessibleForFrees() {
-    final Object current = myData.get("isAccessibleForFree");
+    final java.lang.Object current = myData.get("isAccessibleForFree");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Boolean>) current;
@@ -479,7 +479,7 @@ public class Place extends Thing implements ContentLocation {
    * A photograph of this place.
    */
   @JsonIgnore public java.util.Collection<Image> getPhotos() {
-    final Object current = myData.get("photo");
+    final java.lang.Object current = myData.get("photo");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Image>) current;
@@ -496,7 +496,7 @@ public class Place extends Thing implements ContentLocation {
    * The basic containment relation between a place and one that contains it.
    */
   @JsonIgnore public java.util.Collection<Place> getContainedInPlaces() {
-    final Object current = myData.get("containedInPlace");
+    final java.lang.Object current = myData.get("containedInPlace");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Place>) current;
@@ -513,7 +513,7 @@ public class Place extends Thing implements ContentLocation {
    * Physical address of the item.
    */
   @JsonIgnore public java.util.Collection<PostalAddress> getAddressPostalAddresss() {
-    final Object current = myData.get("address");
+    final java.lang.Object current = myData.get("address");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<PostalAddress>) current;
@@ -530,7 +530,7 @@ public class Place extends Thing implements ContentLocation {
    * Physical address of the item.
    */
   @JsonIgnore public java.util.Collection<String> getAddressStrings() {
-    final Object current = myData.get("address");
+    final java.lang.Object current = myData.get("address");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -547,7 +547,7 @@ public class Place extends Thing implements ContentLocation {
    * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
    */
   @JsonIgnore public java.util.Collection<GeospatialGeometry> getGeoCoveredByGeospatialGeometrys() {
-    final Object current = myData.get("geoCoveredBy");
+    final java.lang.Object current = myData.get("geoCoveredBy");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<GeospatialGeometry>) current;
@@ -564,7 +564,7 @@ public class Place extends Thing implements ContentLocation {
    * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
    */
   @JsonIgnore public java.util.Collection<Place> getGeoCoveredByPlaces() {
-    final Object current = myData.get("geoCoveredBy");
+    final java.lang.Object current = myData.get("geoCoveredBy");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Place>) current;
@@ -581,7 +581,7 @@ public class Place extends Thing implements ContentLocation {
    * Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.
    */
   @JsonIgnore public java.util.Collection<Boolean> getSmokingAlloweds() {
-    final Object current = myData.get("smokingAllowed");
+    final java.lang.Object current = myData.get("smokingAllowed");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Boolean>) current;
@@ -600,7 +600,7 @@ public class Place extends Thing implements ContentLocation {
    * 
    */
   @JsonIgnore public java.util.Collection<PropertyValue> getAdditionalPropertys() {
-    final Object current = myData.get("additionalProperty");
+    final java.lang.Object current = myData.get("additionalProperty");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<PropertyValue>) current;
@@ -617,7 +617,7 @@ public class Place extends Thing implements ContentLocation {
    * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
    */
   @JsonIgnore public java.util.Collection<Number> getLatitudeNumbers() {
-    final Object current = myData.get("latitude");
+    final java.lang.Object current = myData.get("latitude");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Number>) current;
@@ -634,7 +634,7 @@ public class Place extends Thing implements ContentLocation {
    * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
    */
   @JsonIgnore public java.util.Collection<String> getLatitudeStrings() {
-    final Object current = myData.get("latitude");
+    final java.lang.Object current = myData.get("latitude");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -651,7 +651,7 @@ public class Place extends Thing implements ContentLocation {
    * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). &quot;Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other&quot; (a symmetric relationship)
    */
   @JsonIgnore public java.util.Collection<GeospatialGeometry> getGeoEqualsGeospatialGeometrys() {
-    final Object current = myData.get("geoEquals");
+    final java.lang.Object current = myData.get("geoEquals");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<GeospatialGeometry>) current;
@@ -668,7 +668,7 @@ public class Place extends Thing implements ContentLocation {
    * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). &quot;Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other&quot; (a symmetric relationship)
    */
   @JsonIgnore public java.util.Collection<Place> getGeoEqualsPlaces() {
-    final Object current = myData.get("geoEquals");
+    final java.lang.Object current = myData.get("geoEquals");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Place>) current;
@@ -685,7 +685,7 @@ public class Place extends Thing implements ContentLocation {
    * Indicates whether some facility (e.g. [[FoodEstablishment]], [[CovidTestingFacility]]) offers a service that can be used by driving through in a car. In the case of [[CovidTestingFacility]] such facilities could potentially help with social distancing from other potentially-infected users.
    */
   @JsonIgnore public java.util.Collection<Boolean> getHasDriveThroughServices() {
-    final Object current = myData.get("hasDriveThroughService");
+    final java.lang.Object current = myData.get("hasDriveThroughService");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Boolean>) current;
@@ -702,7 +702,7 @@ public class Place extends Thing implements ContentLocation {
    * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
    */
   @JsonIgnore public java.util.Collection<Identifier> getGlobalLocationNumbers() {
-    final Object current = myData.get("globalLocationNumber");
+    final java.lang.Object current = myData.get("globalLocationNumber");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Identifier>) current;
@@ -719,7 +719,7 @@ public class Place extends Thing implements ContentLocation {
    * A review of the item.
    */
   @JsonIgnore public java.util.Collection<Review> getReviews() {
-    final Object current = myData.get("review");
+    final java.lang.Object current = myData.get("review");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Review>) current;
@@ -736,7 +736,7 @@ public class Place extends Thing implements ContentLocation {
    * The fax number.
    */
   @JsonIgnore public java.util.Collection<String> getFaxNumbers() {
-    final Object current = myData.get("faxNumber");
+    final java.lang.Object current = myData.get("faxNumber");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -753,7 +753,7 @@ public class Place extends Thing implements ContentLocation {
    * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
    */
   @JsonIgnore public java.util.Collection<GeospatialGeometry> getGeoOverlapsGeospatialGeometrys() {
-    final Object current = myData.get("geoOverlaps");
+    final java.lang.Object current = myData.get("geoOverlaps");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<GeospatialGeometry>) current;
@@ -770,7 +770,7 @@ public class Place extends Thing implements ContentLocation {
    * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
    */
   @JsonIgnore public java.util.Collection<Place> getGeoOverlapsPlaces() {
-    final Object current = myData.get("geoOverlaps");
+    final java.lang.Object current = myData.get("geoOverlaps");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Place>) current;
@@ -787,7 +787,7 @@ public class Place extends Thing implements ContentLocation {
    * The total number of individuals that may attend an event or venue.
    */
   @JsonIgnore public java.util.Collection<Integer> getMaximumAttendeeCapacitys() {
-    final Object current = myData.get("maximumAttendeeCapacity");
+    final java.lang.Object current = myData.get("maximumAttendeeCapacity");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -804,7 +804,7 @@ public class Place extends Thing implements ContentLocation {
    * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. &quot;Every point of b is a point of (the interior or boundary of) a&quot;. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
    */
   @JsonIgnore public java.util.Collection<GeospatialGeometry> getGeoCoversGeospatialGeometrys() {
-    final Object current = myData.get("geoCovers");
+    final java.lang.Object current = myData.get("geoCovers");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<GeospatialGeometry>) current;
@@ -821,7 +821,7 @@ public class Place extends Thing implements ContentLocation {
    * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. &quot;Every point of b is a point of (the interior or boundary of) a&quot;. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
    */
   @JsonIgnore public java.util.Collection<Place> getGeoCoversPlaces() {
-    final Object current = myData.get("geoCovers");
+    final java.lang.Object current = myData.get("geoCovers");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Place>) current;
@@ -840,7 +840,7 @@ public class Place extends Thing implements ContentLocation {
    *       
    */
   @JsonIgnore public java.util.Collection<OpeningHoursSpecification> getSpecialOpeningHoursSpecifications() {
-    final Object current = myData.get("specialOpeningHoursSpecification");
+    final java.lang.Object current = myData.get("specialOpeningHoursSpecification");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<OpeningHoursSpecification>) current;
@@ -857,7 +857,7 @@ public class Place extends Thing implements ContentLocation {
    * The opening hours of a certain place.
    */
   @JsonIgnore public java.util.Collection<OpeningHoursSpecification> getOpeningHoursSpecifications() {
-    final Object current = myData.get("openingHoursSpecification");
+    final java.lang.Object current = myData.get("openingHoursSpecification");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<OpeningHoursSpecification>) current;
@@ -874,7 +874,7 @@ public class Place extends Thing implements ContentLocation {
    * A slogan or motto associated with the item.
    */
   @JsonIgnore public java.util.Collection<String> getSlogans() {
-    final Object current = myData.get("slogan");
+    final java.lang.Object current = myData.get("slogan");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -893,7 +893,7 @@ public class Place extends Thing implements ContentLocation {
    *       
    */
   @JsonIgnore public java.util.Collection<String> getBranchCodes() {
-    final Object current = myData.get("branchCode");
+    final java.lang.Object current = myData.get("branchCode");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -910,7 +910,7 @@ public class Place extends Thing implements ContentLocation {
    * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. &quot;a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a&quot;. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
    */
   @JsonIgnore public java.util.Collection<GeospatialGeometry> getGeoContainsGeospatialGeometrys() {
-    final Object current = myData.get("geoContains");
+    final java.lang.Object current = myData.get("geoContains");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<GeospatialGeometry>) current;
@@ -927,7 +927,7 @@ public class Place extends Thing implements ContentLocation {
    * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. &quot;a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a&quot;. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
    */
   @JsonIgnore public java.util.Collection<Place> getGeoContainsPlaces() {
-    final Object current = myData.get("geoContains");
+    final java.lang.Object current = myData.get("geoContains");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Place>) current;
@@ -944,7 +944,7 @@ public class Place extends Thing implements ContentLocation {
    * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
    */
   @JsonIgnore public java.util.Collection<LocationFeatureSpecification> getAmenityFeatures() {
-    final Object current = myData.get("amenityFeature");
+    final java.lang.Object current = myData.get("amenityFeature");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<LocationFeatureSpecification>) current;
@@ -961,7 +961,7 @@ public class Place extends Thing implements ContentLocation {
    * A flag to signal that the [[Place]] is open to public visitors.  If this property is omitted there is no assumed default boolean value
    */
   @JsonIgnore public java.util.Collection<Boolean> getPublicAccesss() {
-    final Object current = myData.get("publicAccess");
+    final java.lang.Object current = myData.get("publicAccess");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Boolean>) current;
@@ -978,14 +978,14 @@ public class Place extends Thing implements ContentLocation {
    * The basic containment relation between a place and another that it contains.
    */
   @JsonIgnore public java.util.Collection<Place> getContainsPlaces() {
-    final Object current = myData.get("containsPlace");
+    final java.lang.Object current = myData.get("containsPlace");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Place>) current;
     }
     return Arrays.asList((Place) current);
   }
-  protected Place(java.util.Map<String,Object> data) {
+  protected Place(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -993,7 +993,7 @@ public class Place extends Thing implements ContentLocation {
    * Builder for {@link Place}
    */
   public static class Builder extends Thing.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public Place build() {
@@ -1628,6 +1628,21 @@ public class Place extends Thing implements ContentLocation {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -1646,6 +1661,13 @@ public class Place extends Thing implements ContentLocation {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -1739,7 +1761,7 @@ public class Place extends Thing implements ContentLocation {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("geoWithin".equals(key) && value instanceof GeospatialGeometry) { this.geoWithin((GeospatialGeometry)value); return; }
       if ("geoWithins".equals(key) && value instanceof GeospatialGeometry) { this.geoWithin((GeospatialGeometry)value); return; }
       if ("geoWithin".equals(key) && value instanceof Place) { this.geoWithin((Place)value); return; }

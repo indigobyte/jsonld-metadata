@@ -37,7 +37,7 @@ public class BusTrip extends Trip {
    * The stop or station from which the bus arrives.
    */
   @JsonIgnore public java.util.Collection<BusStation> getArrivalBusStopBusStations() {
-    final Object current = myData.get("arrivalBusStop");
+    final java.lang.Object current = myData.get("arrivalBusStop");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<BusStation>) current;
@@ -54,7 +54,7 @@ public class BusTrip extends Trip {
    * The stop or station from which the bus arrives.
    */
   @JsonIgnore public java.util.Collection<BusStop> getArrivalBusStopBusStops() {
-    final Object current = myData.get("arrivalBusStop");
+    final java.lang.Object current = myData.get("arrivalBusStop");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<BusStop>) current;
@@ -71,7 +71,7 @@ public class BusTrip extends Trip {
    * The unique identifier for the bus.
    */
   @JsonIgnore public java.util.Collection<String> getBusNumbers() {
-    final Object current = myData.get("busNumber");
+    final java.lang.Object current = myData.get("busNumber");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -88,7 +88,7 @@ public class BusTrip extends Trip {
    * The stop or station from which the bus departs.
    */
   @JsonIgnore public java.util.Collection<BusStation> getDepartureBusStopBusStations() {
-    final Object current = myData.get("departureBusStop");
+    final java.lang.Object current = myData.get("departureBusStop");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<BusStation>) current;
@@ -105,7 +105,7 @@ public class BusTrip extends Trip {
    * The stop or station from which the bus departs.
    */
   @JsonIgnore public java.util.Collection<BusStop> getDepartureBusStopBusStops() {
-    final Object current = myData.get("departureBusStop");
+    final java.lang.Object current = myData.get("departureBusStop");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<BusStop>) current;
@@ -122,14 +122,14 @@ public class BusTrip extends Trip {
    * The name of the bus (e.g. Bolt Express).
    */
   @JsonIgnore public java.util.Collection<String> getBusNames() {
-    final Object current = myData.get("busName");
+    final java.lang.Object current = myData.get("busName");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
-  protected BusTrip(java.util.Map<String,Object> data) {
+  protected BusTrip(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -137,7 +137,7 @@ public class BusTrip extends Trip {
    * Builder for {@link BusTrip}
    */
   public static class Builder extends Trip.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public BusTrip build() {
@@ -344,6 +344,21 @@ public class BusTrip extends Trip {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -362,6 +377,13 @@ public class BusTrip extends Trip {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -455,7 +477,7 @@ public class BusTrip extends Trip {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("arrivalBusStop".equals(key) && value instanceof BusStation) { this.arrivalBusStop((BusStation)value); return; }
       if ("arrivalBusStops".equals(key) && value instanceof BusStation) { this.arrivalBusStop((BusStation)value); return; }
       if ("arrivalBusStop".equals(key) && value instanceof BusStop) { this.arrivalBusStop((BusStop)value); return; }

@@ -37,7 +37,7 @@ public class MusicGroup extends PerformingGroup {
    * Genre of the creative work, broadcast channel or group.
    */
   @JsonIgnore public java.util.Collection<Genre> getGenres() {
-    final Object current = myData.get("genre");
+    final java.lang.Object current = myData.get("genre");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Genre>) current;
@@ -54,7 +54,7 @@ public class MusicGroup extends PerformingGroup {
    * A music album.
    */
   @JsonIgnore public java.util.Collection<MusicAlbum> getAlbums() {
-    final Object current = myData.get("album");
+    final java.lang.Object current = myData.get("album");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MusicAlbum>) current;
@@ -71,7 +71,7 @@ public class MusicGroup extends PerformingGroup {
    * A music recording (track)&amp;#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
    */
   @JsonIgnore public java.util.Collection<ItemList> getTrackItemLists() {
-    final Object current = myData.get("track");
+    final java.lang.Object current = myData.get("track");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<ItemList>) current;
@@ -88,14 +88,14 @@ public class MusicGroup extends PerformingGroup {
    * A music recording (track)&amp;#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
    */
   @JsonIgnore public java.util.Collection<MusicRecording> getTrackMusicRecordings() {
-    final Object current = myData.get("track");
+    final java.lang.Object current = myData.get("track");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MusicRecording>) current;
     }
     return Arrays.asList((MusicRecording) current);
   }
-  protected MusicGroup(java.util.Map<String,Object> data) {
+  protected MusicGroup(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -103,7 +103,7 @@ public class MusicGroup extends PerformingGroup {
    * Builder for {@link MusicGroup}
    */
   public static class Builder extends PerformingGroup.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public MusicGroup build() {
@@ -156,6 +156,16 @@ public class MusicGroup extends PerformingGroup {
      */
     @NotNull public Builder track(@NotNull MusicRecording.Builder musicRecording) {
       putValue("track", musicRecording.build());
+      return this;
+    }
+    /**
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+     * 
+     */
+    @NotNull public Builder publishingPrinciples(@NotNull PublishingPrinciples publishingPrinciples) {
+      putValue("publishingPrinciples", publishingPrinciples);
       return this;
     }
     /**
@@ -240,6 +250,13 @@ public class MusicGroup extends PerformingGroup {
      */
     @NotNull public Builder seeks(@NotNull Demand.Builder demand) {
       putValue("seeks", demand.build());
+      return this;
+    }
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     */
+    @NotNull public Builder location(@NotNull Location location) {
+      putValue("location", location);
       return this;
     }
     /**
@@ -485,6 +502,13 @@ public class MusicGroup extends PerformingGroup {
      */
     @NotNull public Builder vatID(@NotNull String vatID) {
       putValue("vatID", vatID);
+      return this;
+    }
+    /**
+     * The geographic area where a service or offered item is provided.
+     */
+    @NotNull public Builder areaServed(@NotNull AreaServed areaServed) {
+      putValue("areaServed", areaServed);
       return this;
     }
     /**
@@ -789,6 +813,21 @@ public class MusicGroup extends PerformingGroup {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -807,6 +846,13 @@ public class MusicGroup extends PerformingGroup {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -900,7 +946,7 @@ public class MusicGroup extends PerformingGroup {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("genre".equals(key) && value instanceof Genre) { this.genre((Genre)value); return; }
       if ("genres".equals(key) && value instanceof Genre) { this.genre((Genre)value); return; }
       if ("album".equals(key) && value instanceof MusicAlbum) { this.album((MusicAlbum)value); return; }

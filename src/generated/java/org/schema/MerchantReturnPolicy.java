@@ -37,7 +37,7 @@ public class MerchantReturnPolicy extends Intangible {
    * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
    */
   @JsonIgnore public java.util.Collection<OfferItemCondition> getItemConditions() {
-    final Object current = myData.get("itemCondition");
+    final java.lang.Object current = myData.get("itemCondition");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<OfferItemCondition>) current;
@@ -54,7 +54,7 @@ public class MerchantReturnPolicy extends Intangible {
    * Amount of shipping costs for product returns (for any reason). Applicable when property [[returnFees]] equals [[ReturnShippingFees]].
    */
   @JsonIgnore public java.util.Collection<MonetaryAmount> getReturnShippingFeesAmounts() {
-    final Object current = myData.get("returnShippingFeesAmount");
+    final java.lang.Object current = myData.get("returnShippingFeesAmount");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MonetaryAmount>) current;
@@ -71,7 +71,7 @@ public class MerchantReturnPolicy extends Intangible {
    * The type of return fees for returns of defect products.
    */
   @JsonIgnore public java.util.Collection<ReturnFeesEnumeration> getItemDefectReturnFeess() {
-    final Object current = myData.get("itemDefectReturnFees");
+    final java.lang.Object current = myData.get("itemDefectReturnFees");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<ReturnFeesEnumeration>) current;
@@ -88,7 +88,7 @@ public class MerchantReturnPolicy extends Intangible {
    * Specifies a Web page or service by URL, for product returns.
    */
   @JsonIgnore public java.util.Collection<String> getMerchantReturnLinks() {
-    final Object current = myData.get("merchantReturnLink");
+    final java.lang.Object current = myData.get("merchantReturnLink");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -105,7 +105,7 @@ public class MerchantReturnPolicy extends Intangible {
    * Use [[MonetaryAmount]] to specify a fixed restocking fee for product returns, or use [[Number]] to specify a percentage of the product price paid by the customer.
    */
   @JsonIgnore public java.util.Collection<MonetaryAmount> getRestockingFeeMonetaryAmounts() {
-    final Object current = myData.get("restockingFee");
+    final java.lang.Object current = myData.get("restockingFee");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MonetaryAmount>) current;
@@ -122,7 +122,7 @@ public class MerchantReturnPolicy extends Intangible {
    * Use [[MonetaryAmount]] to specify a fixed restocking fee for product returns, or use [[Number]] to specify a percentage of the product price paid by the customer.
    */
   @JsonIgnore public java.util.Collection<Number> getRestockingFeeNumbers() {
-    final Object current = myData.get("restockingFee");
+    final java.lang.Object current = myData.get("restockingFee");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Number>) current;
@@ -139,7 +139,7 @@ public class MerchantReturnPolicy extends Intangible {
    * The country where the product has to be sent to for returns, for example &quot;Ireland&quot; using the [[name]] property of [[Country]]. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1). Note that this can be different from the country where the product was originally shipped from or sent too.
    */
   @JsonIgnore public java.util.Collection<Country> getReturnPolicyCountryCountrys() {
-    final Object current = myData.get("returnPolicyCountry");
+    final java.lang.Object current = myData.get("returnPolicyCountry");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Country>) current;
@@ -156,7 +156,7 @@ public class MerchantReturnPolicy extends Intangible {
    * The country where the product has to be sent to for returns, for example &quot;Ireland&quot; using the [[name]] property of [[Country]]. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1). Note that this can be different from the country where the product was originally shipped from or sent too.
    */
   @JsonIgnore public java.util.Collection<String> getReturnPolicyCountryStrings() {
-    final Object current = myData.get("returnPolicyCountry");
+    final java.lang.Object current = myData.get("returnPolicyCountry");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -173,7 +173,7 @@ public class MerchantReturnPolicy extends Intangible {
    * The method (from an enumeration) by which the customer obtains a return shipping label for a product returned for any reason.
    */
   @JsonIgnore public java.util.Collection<ReturnLabelSourceEnumeration> getReturnLabelSources() {
-    final Object current = myData.get("returnLabelSource");
+    final java.lang.Object current = myData.get("returnLabelSource");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<ReturnLabelSourceEnumeration>) current;
@@ -190,7 +190,7 @@ public class MerchantReturnPolicy extends Intangible {
    * The type of return fees if the product is returned due to customer remorse.
    */
   @JsonIgnore public java.util.Collection<ReturnFeesEnumeration> getCustomerRemorseReturnFeess() {
-    final Object current = myData.get("customerRemorseReturnFees");
+    final java.lang.Object current = myData.get("customerRemorseReturnFees");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<ReturnFeesEnumeration>) current;
@@ -207,7 +207,7 @@ public class MerchantReturnPolicy extends Intangible {
    * The method (from an enumeration) by which the customer obtains a return shipping label for a defect product.
    */
   @JsonIgnore public java.util.Collection<ReturnLabelSourceEnumeration> getItemDefectReturnLabelSources() {
-    final Object current = myData.get("itemDefectReturnLabelSource");
+    final java.lang.Object current = myData.get("itemDefectReturnLabelSource");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<ReturnLabelSourceEnumeration>) current;
@@ -224,7 +224,7 @@ public class MerchantReturnPolicy extends Intangible {
    * The method (from an enumeration) by which the customer obtains a return shipping label for a product returned due to customer remorse.
    */
   @JsonIgnore public java.util.Collection<ReturnLabelSourceEnumeration> getCustomerRemorseReturnLabelSources() {
-    final Object current = myData.get("customerRemorseReturnLabelSource");
+    final java.lang.Object current = myData.get("customerRemorseReturnLabelSource");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<ReturnLabelSourceEnumeration>) current;
@@ -241,7 +241,7 @@ public class MerchantReturnPolicy extends Intangible {
    * A refund type, from an enumerated list.
    */
   @JsonIgnore public java.util.Collection<RefundTypeEnumeration> getRefundTypes() {
-    final Object current = myData.get("refundType");
+    final java.lang.Object current = myData.get("refundType");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<RefundTypeEnumeration>) current;
@@ -258,7 +258,7 @@ public class MerchantReturnPolicy extends Intangible {
    * Are in-store returns offered? (for more advanced return methods use the [[returnMethod]] property)
    */
   @JsonIgnore public java.util.Collection<Boolean> getInStoreReturnsOffereds() {
-    final Object current = myData.get("inStoreReturnsOffered");
+    final java.lang.Object current = myData.get("inStoreReturnsOffered");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Boolean>) current;
@@ -275,7 +275,7 @@ public class MerchantReturnPolicy extends Intangible {
    * The type of return method offered, specified from an enumeration.
    */
   @JsonIgnore public java.util.Collection<ReturnMethodEnumeration> getReturnMethods() {
-    final Object current = myData.get("returnMethod");
+    final java.lang.Object current = myData.get("returnMethod");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<ReturnMethodEnumeration>) current;
@@ -292,7 +292,7 @@ public class MerchantReturnPolicy extends Intangible {
    * Seasonal override of a return policy.
    */
   @JsonIgnore public java.util.Collection<MerchantReturnPolicySeasonalOverride> getReturnPolicySeasonalOverrides() {
-    final Object current = myData.get("returnPolicySeasonalOverride");
+    final java.lang.Object current = myData.get("returnPolicySeasonalOverride");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MerchantReturnPolicySeasonalOverride>) current;
@@ -311,7 +311,7 @@ public class MerchantReturnPolicy extends Intangible {
    * 
    */
   @JsonIgnore public java.util.Collection<PropertyValue> getAdditionalPropertys() {
-    final Object current = myData.get("additionalProperty");
+    final java.lang.Object current = myData.get("additionalProperty");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<PropertyValue>) current;
@@ -328,7 +328,7 @@ public class MerchantReturnPolicy extends Intangible {
    * Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the [[returnPolicyCategory]] property is specified as [[MerchantReturnFiniteReturnWindow]].
    */
   @JsonIgnore public java.util.Collection<Integer> getMerchantReturnDaysIntegers() {
-    final Object current = myData.get("merchantReturnDays");
+    final java.lang.Object current = myData.get("merchantReturnDays");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -345,7 +345,7 @@ public class MerchantReturnPolicy extends Intangible {
    * Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the [[returnPolicyCategory]] property is specified as [[MerchantReturnFiniteReturnWindow]].
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getMerchantReturnDaysDates() {
-    final Object current = myData.get("merchantReturnDays");
+    final java.lang.Object current = myData.get("merchantReturnDays");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<java.util.Date>) current;
@@ -362,7 +362,7 @@ public class MerchantReturnPolicy extends Intangible {
    * The amount of shipping costs if a product is returned due to customer remorse. Applicable when property [[customerRemorseReturnFees]] equals [[ReturnShippingFees]].
    */
   @JsonIgnore public java.util.Collection<MonetaryAmount> getCustomerRemorseReturnShippingFeesAmounts() {
-    final Object current = myData.get("customerRemorseReturnShippingFeesAmount");
+    final java.lang.Object current = myData.get("customerRemorseReturnShippingFeesAmount");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MonetaryAmount>) current;
@@ -379,7 +379,7 @@ public class MerchantReturnPolicy extends Intangible {
    * The type of return fees for purchased products (for any return reason)
    */
   @JsonIgnore public java.util.Collection<ReturnFeesEnumeration> getReturnFeess() {
-    final Object current = myData.get("returnFees");
+    final java.lang.Object current = myData.get("returnFees");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<ReturnFeesEnumeration>) current;
@@ -396,7 +396,7 @@ public class MerchantReturnPolicy extends Intangible {
    * Specifies an applicable return policy (from an enumeration).
    */
   @JsonIgnore public java.util.Collection<MerchantReturnEnumeration> getReturnPolicyCategorys() {
-    final Object current = myData.get("returnPolicyCategory");
+    final java.lang.Object current = myData.get("returnPolicyCategory");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MerchantReturnEnumeration>) current;
@@ -413,14 +413,14 @@ public class MerchantReturnPolicy extends Intangible {
    * Amount of shipping costs for defect product returns. Applicable when property [[itemDefectReturnFees]] equals [[ReturnShippingFees]].
    */
   @JsonIgnore public java.util.Collection<MonetaryAmount> getItemDefectReturnShippingFeesAmounts() {
-    final Object current = myData.get("itemDefectReturnShippingFeesAmount");
+    final java.lang.Object current = myData.get("itemDefectReturnShippingFeesAmount");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MonetaryAmount>) current;
     }
     return Arrays.asList((MonetaryAmount) current);
   }
-  protected MerchantReturnPolicy(java.util.Map<String,Object> data) {
+  protected MerchantReturnPolicy(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -428,7 +428,7 @@ public class MerchantReturnPolicy extends Intangible {
    * Builder for {@link MerchantReturnPolicy}
    */
   public static class Builder extends Intangible.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public MerchantReturnPolicy build() {
@@ -647,6 +647,21 @@ public class MerchantReturnPolicy extends Intangible {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -665,6 +680,13 @@ public class MerchantReturnPolicy extends Intangible {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -758,7 +780,7 @@ public class MerchantReturnPolicy extends Intangible {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("itemCondition".equals(key) && value instanceof OfferItemCondition) { this.itemCondition((OfferItemCondition)value); return; }
       if ("itemConditions".equals(key) && value instanceof OfferItemCondition) { this.itemCondition((OfferItemCondition)value); return; }
       if ("returnShippingFeesAmount".equals(key) && value instanceof MonetaryAmount) { this.returnShippingFeesAmount((MonetaryAmount)value); return; }

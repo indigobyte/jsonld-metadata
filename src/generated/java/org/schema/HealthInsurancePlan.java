@@ -37,7 +37,7 @@ public class HealthInsurancePlan extends Intangible {
    * Formularies covered by this plan.
    */
   @JsonIgnore public java.util.Collection<HealthPlanFormulary> getIncludesHealthPlanFormularys() {
-    final Object current = myData.get("includesHealthPlanFormulary");
+    final java.lang.Object current = myData.get("includesHealthPlanFormulary");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<HealthPlanFormulary>) current;
@@ -54,7 +54,7 @@ public class HealthInsurancePlan extends Intangible {
    * A contact point for a person or organization.
    */
   @JsonIgnore public java.util.Collection<ContactPoint> getContactPoints() {
-    final Object current = myData.get("contactPoint");
+    final java.lang.Object current = myData.get("contactPoint");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<ContactPoint>) current;
@@ -71,7 +71,7 @@ public class HealthInsurancePlan extends Intangible {
    * The 14-character, HIOS-generated Plan ID number. (Plan IDs must be unique, even across different markets.)
    */
   @JsonIgnore public java.util.Collection<String> getHealthPlanIds() {
-    final Object current = myData.get("healthPlanId");
+    final java.lang.Object current = myData.get("healthPlanId");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -88,7 +88,7 @@ public class HealthInsurancePlan extends Intangible {
    * The tier(s) of drugs offered by this formulary or insurance plan.
    */
   @JsonIgnore public java.util.Collection<String> getHealthPlanDrugTiers() {
-    final Object current = myData.get("healthPlanDrugTier");
+    final java.lang.Object current = myData.get("healthPlanDrugTier");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -105,7 +105,7 @@ public class HealthInsurancePlan extends Intangible {
    * The URL that goes directly to the plan brochure for the specific standard plan or plan variation.
    */
   @JsonIgnore public java.util.Collection<String> getHealthPlanMarketingUrls() {
-    final Object current = myData.get("healthPlanMarketingUrl");
+    final java.lang.Object current = myData.get("healthPlanMarketingUrl");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -122,7 +122,7 @@ public class HealthInsurancePlan extends Intangible {
    * TODO.
    */
   @JsonIgnore public java.util.Collection<String> getHealthPlanDrugOptions() {
-    final Object current = myData.get("healthPlanDrugOption");
+    final java.lang.Object current = myData.get("healthPlanDrugOption");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -139,7 +139,7 @@ public class HealthInsurancePlan extends Intangible {
    * Networks covered by this plan.
    */
   @JsonIgnore public java.util.Collection<HealthPlanNetwork> getIncludesHealthPlanNetworks() {
-    final Object current = myData.get("includesHealthPlanNetwork");
+    final java.lang.Object current = myData.get("includesHealthPlanNetwork");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<HealthPlanNetwork>) current;
@@ -156,7 +156,7 @@ public class HealthInsurancePlan extends Intangible {
    * The URL that goes directly to the summary of benefits and coverage for the specific standard plan or plan variation.
    */
   @JsonIgnore public java.util.Collection<String> getBenefitsSummaryUrls() {
-    final Object current = myData.get("benefitsSummaryUrl");
+    final java.lang.Object current = myData.get("benefitsSummaryUrl");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -173,14 +173,14 @@ public class HealthInsurancePlan extends Intangible {
    * The standard for interpreting thePlan ID. The preferred is &quot;HIOS&quot;. See the Centers for Medicare &amp; Medicaid Services for more details.
    */
   @JsonIgnore public java.util.Collection<String> getUsesHealthPlanIdStandards() {
-    final Object current = myData.get("usesHealthPlanIdStandard");
+    final java.lang.Object current = myData.get("usesHealthPlanIdStandard");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
-  protected HealthInsurancePlan(java.util.Map<String,Object> data) {
+  protected HealthInsurancePlan(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -188,7 +188,7 @@ public class HealthInsurancePlan extends Intangible {
    * Builder for {@link HealthInsurancePlan}
    */
   public static class Builder extends Intangible.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public HealthInsurancePlan build() {
@@ -279,6 +279,21 @@ public class HealthInsurancePlan extends Intangible {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -297,6 +312,13 @@ public class HealthInsurancePlan extends Intangible {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -390,7 +412,7 @@ public class HealthInsurancePlan extends Intangible {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("includesHealthPlanFormulary".equals(key) && value instanceof HealthPlanFormulary) { this.includesHealthPlanFormulary((HealthPlanFormulary)value); return; }
       if ("includesHealthPlanFormularys".equals(key) && value instanceof HealthPlanFormulary) { this.includesHealthPlanFormulary((HealthPlanFormulary)value); return; }
       if ("contactPoint".equals(key) && value instanceof ContactPoint) { this.contactPoint((ContactPoint)value); return; }

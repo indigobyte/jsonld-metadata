@@ -37,7 +37,7 @@ public class EducationalOccupationalCredential extends CreativeWork {
    * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
    */
   @JsonIgnore public java.util.Collection<DefinedTerm> getEducationalLevelDefinedTerms() {
-    final Object current = myData.get("educationalLevel");
+    final java.lang.Object current = myData.get("educationalLevel");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<DefinedTerm>) current;
@@ -54,7 +54,7 @@ public class EducationalOccupationalCredential extends CreativeWork {
    * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
    */
   @JsonIgnore public java.util.Collection<String> getEducationalLevelStrings() {
-    final Object current = myData.get("educationalLevel");
+    final java.lang.Object current = myData.get("educationalLevel");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -71,7 +71,7 @@ public class EducationalOccupationalCredential extends CreativeWork {
    * The category or type of credential being described, for example &quot;degree&rdquo;, &ldquo;certificate&rdquo;, &ldquo;badge&rdquo;, or more specific term.
    */
   @JsonIgnore public java.util.Collection<DefinedTerm> getCredentialCategoryDefinedTerms() {
-    final Object current = myData.get("credentialCategory");
+    final java.lang.Object current = myData.get("credentialCategory");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<DefinedTerm>) current;
@@ -88,7 +88,7 @@ public class EducationalOccupationalCredential extends CreativeWork {
    * The category or type of credential being described, for example &quot;degree&rdquo;, &ldquo;certificate&rdquo;, &ldquo;badge&rdquo;, or more specific term.
    */
   @JsonIgnore public java.util.Collection<String> getCredentialCategoryStrings() {
-    final Object current = myData.get("credentialCategory");
+    final java.lang.Object current = myData.get("credentialCategory");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -105,7 +105,7 @@ public class EducationalOccupationalCredential extends CreativeWork {
    * The geographic area where a permit or similar thing is valid.
    */
   @JsonIgnore public java.util.Collection<AdministrativeArea> getValidIns() {
-    final Object current = myData.get("validIn");
+    final java.lang.Object current = myData.get("validIn");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<AdministrativeArea>) current;
@@ -122,7 +122,7 @@ public class EducationalOccupationalCredential extends CreativeWork {
    * The duration of validity of a permit or similar thing.
    */
   @JsonIgnore public java.util.Collection<Duration> getValidFors() {
-    final Object current = myData.get("validFor");
+    final java.lang.Object current = myData.get("validFor");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Duration>) current;
@@ -139,7 +139,7 @@ public class EducationalOccupationalCredential extends CreativeWork {
    * Knowledge, skill, ability or personal attribute that must be demonstrated by a person or other entity in order to do something such as earn an Educational Occupational Credential or understand a LearningResource.
    */
   @JsonIgnore public java.util.Collection<DefinedTerm> getCompetencyRequiredDefinedTerms() {
-    final Object current = myData.get("competencyRequired");
+    final java.lang.Object current = myData.get("competencyRequired");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<DefinedTerm>) current;
@@ -156,7 +156,7 @@ public class EducationalOccupationalCredential extends CreativeWork {
    * Knowledge, skill, ability or personal attribute that must be demonstrated by a person or other entity in order to do something such as earn an Educational Occupational Credential or understand a LearningResource.
    */
   @JsonIgnore public java.util.Collection<String> getCompetencyRequiredStrings() {
-    final Object current = myData.get("competencyRequired");
+    final java.lang.Object current = myData.get("competencyRequired");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -173,14 +173,14 @@ public class EducationalOccupationalCredential extends CreativeWork {
    * An organization that acknowledges the validity, value or utility of a credential. Note: recognition may include a process of quality assurance or accreditation.
    */
   @JsonIgnore public java.util.Collection<Organization> getRecognizedBys() {
-    final Object current = myData.get("recognizedBy");
+    final java.lang.Object current = myData.get("recognizedBy");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
   }
-  protected EducationalOccupationalCredential(java.util.Map<String,Object> data) {
+  protected EducationalOccupationalCredential(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -188,7 +188,7 @@ public class EducationalOccupationalCredential extends CreativeWork {
    * Builder for {@link EducationalOccupationalCredential}
    */
   public static class Builder extends CreativeWork.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public EducationalOccupationalCredential build() {
@@ -316,6 +316,16 @@ public class EducationalOccupationalCredential extends CreativeWork {
       return this;
     }
     /**
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+     * 
+     */
+    @NotNull public Builder publishingPrinciples(@NotNull PublishingPrinciples publishingPrinciples) {
+      putValue("publishingPrinciples", publishingPrinciples);
+      return this;
+    }
+    /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
      */
     @NotNull public Builder inLanguage(@NotNull Language language) {
@@ -341,6 +351,13 @@ public class EducationalOccupationalCredential extends CreativeWork {
      */
     @NotNull public Builder thumbnailUrl(@NotNull String thumbnailUrl) {
       putValue("thumbnailUrl", thumbnailUrl);
+      return this;
+    }
+    /**
+     * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
+     */
+    @NotNull public Builder hasPart(@NotNull HasPart hasPart) {
+      putValue("hasPart", hasPart);
       return this;
     }
     /**
@@ -411,6 +428,13 @@ public class EducationalOccupationalCredential extends CreativeWork {
      */
     @NotNull public Builder size(@NotNull String size) {
       putValue("size", size);
+      return this;
+    }
+    /**
+     * A material that something is made from, e.g. leather, wool, cotton, paper.
+     */
+    @NotNull public Builder material(@NotNull Material material) {
+      putValue("material", material);
       return this;
     }
     /**
@@ -502,6 +526,15 @@ public class EducationalOccupationalCredential extends CreativeWork {
      */
     @NotNull public Builder commentCount(@NotNull Integer integer) {
       putValue("commentCount", integer);
+      return this;
+    }
+    /**
+     * The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of
+     *       contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates
+     *       areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
+     */
+    @NotNull public Builder spatialCoverage(@NotNull SpatialCoverage spatialCoverage) {
+      putValue("spatialCoverage", spatialCoverage);
       return this;
     }
     /**
@@ -701,6 +734,13 @@ public class EducationalOccupationalCredential extends CreativeWork {
      */
     @NotNull public Builder sdLicense(@NotNull String sdLicense) {
       putValue("sdLicense", sdLicense);
+      return this;
+    }
+    /**
+     * The position of an item in a series or sequence of items.
+     */
+    @NotNull public Builder position(@NotNull Position position) {
+      putValue("position", position);
       return this;
     }
     /**
@@ -1144,10 +1184,24 @@ public class EducationalOccupationalCredential extends CreativeWork {
       return this;
     }
     /**
+     * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
+     */
+    @NotNull public Builder isPartOf(@NotNull IsPartOf isPartOf) {
+      putValue("isPartOf", isPartOf);
+      return this;
+    }
+    /**
      * Indicates that the resource is compatible with the referenced accessibility API ([WebSchemas wiki lists possible values](http://www.w3.org/wiki/WebSchemas/Accessibility)).
      */
     @NotNull public Builder accessibilityAPI(@NotNull String accessibilityAPI) {
       putValue("accessibilityAPI", accessibilityAPI);
+      return this;
+    }
+    /**
+     * Example/instance/realization/derivation of the concept of this creative work. eg. The paperback edition, first edition, or eBook.
+     */
+    @NotNull public Builder workExample(@NotNull WorkExample workExample) {
+      putValue("workExample", workExample);
       return this;
     }
     /**
@@ -1744,10 +1798,45 @@ public class EducationalOccupationalCredential extends CreativeWork {
       return this;
     }
     /**
+     * The subject matter of the content.
+     */
+    @NotNull public Builder about(@NotNull Thing thing) {
+      putValue("about", thing);
+      return this;
+    }
+    /**
+     * The subject matter of the content.
+     */
+    @NotNull public Builder about(@NotNull Thing.Builder thing) {
+      putValue("about", thing.build());
+      return this;
+    }
+    /**
      * Indicates the primary entity described in some page or other CreativeWork.
      */
     @NotNull public Builder mainEntity(@NotNull About about) {
       putValue("mainEntity", about);
+      return this;
+    }
+    /**
+     * Indicates the primary entity described in some page or other CreativeWork.
+     */
+    @NotNull public Builder mainEntity(@NotNull About.Builder about) {
+      putValue("mainEntity", about.build());
+      return this;
+    }
+    /**
+     * Indicates the primary entity described in some page or other CreativeWork.
+     */
+    @NotNull public Builder mainEntity(@NotNull Thing thing) {
+      putValue("mainEntity", thing);
+      return this;
+    }
+    /**
+     * Indicates the primary entity described in some page or other CreativeWork.
+     */
+    @NotNull public Builder mainEntity(@NotNull Thing.Builder thing) {
+      putValue("mainEntity", thing.build());
       return this;
     }
     /**
@@ -1786,6 +1875,21 @@ public class EducationalOccupationalCredential extends CreativeWork {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -1804,6 +1908,13 @@ public class EducationalOccupationalCredential extends CreativeWork {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -1897,7 +2008,7 @@ public class EducationalOccupationalCredential extends CreativeWork {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("educationalLevel".equals(key) && value instanceof DefinedTerm) { this.educationalLevel((DefinedTerm)value); return; }
       if ("educationalLevels".equals(key) && value instanceof DefinedTerm) { this.educationalLevel((DefinedTerm)value); return; }
       if ("educationalLevel".equals(key) && value instanceof String) { this.educationalLevel((String)value); return; }

@@ -37,14 +37,14 @@ public class ProductCollection extends Product {
    * This links to a node or nodes indicating the exact quantity of the products included in  an [[Offer]] or [[ProductCollection]].
    */
   @JsonIgnore public java.util.Collection<TypeAndQuantityNode> getIncludesObjects() {
-    final Object current = myData.get("includesObject");
+    final java.lang.Object current = myData.get("includesObject");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<TypeAndQuantityNode>) current;
     }
     return Arrays.asList((TypeAndQuantityNode) current);
   }
-  protected ProductCollection(java.util.Map<String,Object> data) {
+  protected ProductCollection(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -52,7 +52,7 @@ public class ProductCollection extends Product {
    * Builder for {@link ProductCollection}
    */
   public static class Builder extends Product.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public ProductCollection build() {
@@ -182,6 +182,21 @@ public class ProductCollection extends Product {
      */
     @NotNull public Builder gtin13(@NotNull Gtin gtin) {
       putValue("gtin13", gtin);
+      return this;
+    }
+    /**
+     * A Global Trade Item Number ([GTIN](https://www.gs1.org/standards/id-keys/gtin)). GTINs identify trade items, including products and services, using numeric identification codes. The [[gtin]] property generalizes the earlier [[gtin8]], [[gtin12]], [[gtin13]], and [[gtin14]] properties. The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) express GTINs as URLs. A correct [[gtin]] value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a &quot;GS1 Digital Link&quot; URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1's GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged.
+     *    
+     */
+    @NotNull public Builder gtin(@NotNull Gtin gtin) {
+      putValue("gtin", gtin);
+      return this;
+    }
+    /**
+     * A material that something is made from, e.g. leather, wool, cotton, paper.
+     */
+    @NotNull public Builder material(@NotNull Material material) {
+      putValue("material", material);
       return this;
     }
     /**
@@ -710,6 +725,21 @@ public class ProductCollection extends Product {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -728,6 +758,13 @@ public class ProductCollection extends Product {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -821,7 +858,7 @@ public class ProductCollection extends Product {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("includesObject".equals(key) && value instanceof TypeAndQuantityNode) { this.includesObject((TypeAndQuantityNode)value); return; }
       if ("includesObjects".equals(key) && value instanceof TypeAndQuantityNode) { this.includesObject((TypeAndQuantityNode)value); return; }
       super.fromMap(key, value);

@@ -26,7 +26,7 @@ import java.util.*;
 /**
  * The mailing address.
  */
-public class PostalAddress extends ContactPoint {
+public class PostalAddress extends ContactPoint implements org.schema.Location {
   /**
    * The locality in which the street address is, and which is in the region. For example, Mountain View.
    */
@@ -37,7 +37,7 @@ public class PostalAddress extends ContactPoint {
    * The locality in which the street address is, and which is in the region. For example, Mountain View.
    */
   @JsonIgnore public java.util.Collection<String> getAddressLocalitys() {
-    final Object current = myData.get("addressLocality");
+    final java.lang.Object current = myData.get("addressLocality");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -54,7 +54,7 @@ public class PostalAddress extends ContactPoint {
    * The street address. For example, 1600 Amphitheatre Pkwy.
    */
   @JsonIgnore public java.util.Collection<String> getStreetAddresss() {
-    final Object current = myData.get("streetAddress");
+    final java.lang.Object current = myData.get("streetAddress");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -71,7 +71,7 @@ public class PostalAddress extends ContactPoint {
    * The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country) 
    */
   @JsonIgnore public java.util.Collection<String> getAddressRegions() {
-    final Object current = myData.get("addressRegion");
+    final java.lang.Object current = myData.get("addressRegion");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -88,7 +88,7 @@ public class PostalAddress extends ContactPoint {
    * The post office box number for PO box addresses.
    */
   @JsonIgnore public java.util.Collection<String> getPostOfficeBoxNumbers() {
-    final Object current = myData.get("postOfficeBoxNumber");
+    final java.lang.Object current = myData.get("postOfficeBoxNumber");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -105,7 +105,7 @@ public class PostalAddress extends ContactPoint {
    * The postal code. For example, 94043.
    */
   @JsonIgnore public java.util.Collection<String> getPostalCodes() {
-    final Object current = myData.get("postalCode");
+    final java.lang.Object current = myData.get("postalCode");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -122,7 +122,7 @@ public class PostalAddress extends ContactPoint {
    * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
    */
   @JsonIgnore public java.util.Collection<Country> getAddressCountryCountrys() {
-    final Object current = myData.get("addressCountry");
+    final java.lang.Object current = myData.get("addressCountry");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Country>) current;
@@ -139,14 +139,14 @@ public class PostalAddress extends ContactPoint {
    * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
    */
   @JsonIgnore public java.util.Collection<String> getAddressCountryStrings() {
-    final Object current = myData.get("addressCountry");
+    final java.lang.Object current = myData.get("addressCountry");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
-  protected PostalAddress(java.util.Map<String,Object> data) {
+  protected PostalAddress(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -154,7 +154,7 @@ public class PostalAddress extends ContactPoint {
    * Builder for {@link PostalAddress}
    */
   public static class Builder extends ContactPoint.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public PostalAddress build() {
@@ -259,6 +259,13 @@ public class PostalAddress extends ContactPoint {
       return this;
     }
     /**
+     * The geographic area where a service or offered item is provided.
+     */
+    @NotNull public Builder areaServed(@NotNull AreaServed areaServed) {
+      putValue("areaServed", areaServed);
+      return this;
+    }
+    /**
      * An option available on this contact point (e.g. a toll-free number or support for hearing-impaired callers).
      */
     @NotNull public Builder contactOption(@NotNull ContactPointOption contactPointOption) {
@@ -308,6 +315,21 @@ public class PostalAddress extends ContactPoint {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -326,6 +348,13 @@ public class PostalAddress extends ContactPoint {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -419,7 +448,7 @@ public class PostalAddress extends ContactPoint {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("addressLocality".equals(key) && value instanceof String) { this.addressLocality((String)value); return; }
       if ("addressLocalitys".equals(key) && value instanceof String) { this.addressLocality((String)value); return; }
       if ("streetAddress".equals(key) && value instanceof String) { this.streetAddress((String)value); return; }

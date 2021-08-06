@@ -37,7 +37,7 @@ public class Airline extends Organization {
    * IATA identifier for an airline or airport.
    */
   @JsonIgnore public java.util.Collection<String> getIataCodes() {
-    final Object current = myData.get("iataCode");
+    final java.lang.Object current = myData.get("iataCode");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -54,14 +54,14 @@ public class Airline extends Organization {
    * The type of boarding policy used by the airline (e.g. zone-based or group-based).
    */
   @JsonIgnore public java.util.Collection<BoardingPolicyType> getBoardingPolicys() {
-    final Object current = myData.get("boardingPolicy");
+    final java.lang.Object current = myData.get("boardingPolicy");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<BoardingPolicyType>) current;
     }
     return Arrays.asList((BoardingPolicyType) current);
   }
-  protected Airline(java.util.Map<String,Object> data) {
+  protected Airline(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -69,7 +69,7 @@ public class Airline extends Organization {
    * Builder for {@link Airline}
    */
   public static class Builder extends Organization.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public Airline build() {
@@ -87,6 +87,16 @@ public class Airline extends Organization {
      */
     @NotNull public Builder boardingPolicy(@NotNull BoardingPolicyType boardingPolicyType) {
       putValue("boardingPolicy", boardingPolicyType);
+      return this;
+    }
+    /**
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+     * 
+     */
+    @NotNull public Builder publishingPrinciples(@NotNull PublishingPrinciples publishingPrinciples) {
+      putValue("publishingPrinciples", publishingPrinciples);
       return this;
     }
     /**
@@ -171,6 +181,13 @@ public class Airline extends Organization {
      */
     @NotNull public Builder seeks(@NotNull Demand.Builder demand) {
       putValue("seeks", demand.build());
+      return this;
+    }
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     */
+    @NotNull public Builder location(@NotNull Location location) {
+      putValue("location", location);
       return this;
     }
     /**
@@ -416,6 +433,13 @@ public class Airline extends Organization {
      */
     @NotNull public Builder vatID(@NotNull String vatID) {
       putValue("vatID", vatID);
+      return this;
+    }
+    /**
+     * The geographic area where a service or offered item is provided.
+     */
+    @NotNull public Builder areaServed(@NotNull AreaServed areaServed) {
+      putValue("areaServed", areaServed);
       return this;
     }
     /**
@@ -720,6 +744,21 @@ public class Airline extends Organization {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -738,6 +777,13 @@ public class Airline extends Organization {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -831,7 +877,7 @@ public class Airline extends Organization {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("iataCode".equals(key) && value instanceof String) { this.iataCode((String)value); return; }
       if ("iataCodes".equals(key) && value instanceof String) { this.iataCode((String)value); return; }
       if ("boardingPolicy".equals(key) && value instanceof BoardingPolicyType) { this.boardingPolicy((BoardingPolicyType)value); return; }

@@ -37,7 +37,7 @@ public class MolecularEntity extends BioChemEntity {
    * A specification in form of a line notation for describing the structure of chemical species using short ASCII strings.  Double bond stereochemistry \ indicators may need to be escaped in the string in formats where the backslash is an escape character.
    */
   @JsonIgnore public java.util.Collection<HasRepresentation> getSmiless() {
-    final Object current = myData.get("smiles");
+    final java.lang.Object current = myData.get("smiles");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<HasRepresentation>) current;
@@ -54,7 +54,7 @@ public class MolecularEntity extends BioChemEntity {
    * Systematic method of naming chemical compounds as recommended by the International Union of Pure and Applied Chemistry (IUPAC).
    */
   @JsonIgnore public java.util.Collection<String> getIupacNames() {
-    final Object current = myData.get("iupacName");
+    final java.lang.Object current = myData.get("iupacName");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -71,7 +71,7 @@ public class MolecularEntity extends BioChemEntity {
    * The monoisotopic mass is the sum of the masses of the atoms in a molecule using the unbound, ground-state, rest mass of the principal (most abundant) isotope for each element instead of the isotopic average mass. Please include the units the form '&amp;lt;Number&amp;gt; &amp;lt;unit&amp;gt;', for example '770.230488 g/mol' or as '&amp;lt;QuantitativeValue&amp;gt;.
    */
   @JsonIgnore public java.util.Collection<QuantitativeValue> getMonoisotopicMolecularWeightQuantitativeValues() {
-    final Object current = myData.get("monoisotopicMolecularWeight");
+    final java.lang.Object current = myData.get("monoisotopicMolecularWeight");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<QuantitativeValue>) current;
@@ -88,7 +88,7 @@ public class MolecularEntity extends BioChemEntity {
    * The monoisotopic mass is the sum of the masses of the atoms in a molecule using the unbound, ground-state, rest mass of the principal (most abundant) isotope for each element instead of the isotopic average mass. Please include the units the form '&amp;lt;Number&amp;gt; &amp;lt;unit&amp;gt;', for example '770.230488 g/mol' or as '&amp;lt;QuantitativeValue&amp;gt;.
    */
   @JsonIgnore public java.util.Collection<String> getMonoisotopicMolecularWeightStrings() {
-    final Object current = myData.get("monoisotopicMolecularWeight");
+    final java.lang.Object current = myData.get("monoisotopicMolecularWeight");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -105,7 +105,7 @@ public class MolecularEntity extends BioChemEntity {
    * A role played by the BioChemEntity within a chemical context.
    */
   @JsonIgnore public java.util.Collection<DefinedTerm> getChemicalRoles() {
-    final Object current = myData.get("chemicalRole");
+    final java.lang.Object current = myData.get("chemicalRole");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<DefinedTerm>) current;
@@ -122,7 +122,7 @@ public class MolecularEntity extends BioChemEntity {
    * InChIKey is a hashed version of the full InChI (using the SHA-256 algorithm).
    */
   @JsonIgnore public java.util.Collection<HasRepresentation> getInChIKeys() {
-    final Object current = myData.get("inChIKey");
+    final java.lang.Object current = myData.get("inChIKey");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<HasRepresentation>) current;
@@ -139,7 +139,7 @@ public class MolecularEntity extends BioChemEntity {
    * This is the molecular weight of the entity being described, not of the parent. Units should be included in the form '&amp;lt;Number&amp;gt; &amp;lt;unit&amp;gt;', for example '12 amu' or as '&amp;lt;QuantitativeValue&amp;gt;.
    */
   @JsonIgnore public java.util.Collection<QuantitativeValue> getMolecularWeightQuantitativeValues() {
-    final Object current = myData.get("molecularWeight");
+    final java.lang.Object current = myData.get("molecularWeight");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<QuantitativeValue>) current;
@@ -156,7 +156,7 @@ public class MolecularEntity extends BioChemEntity {
    * This is the molecular weight of the entity being described, not of the parent. Units should be included in the form '&amp;lt;Number&amp;gt; &amp;lt;unit&amp;gt;', for example '12 amu' or as '&amp;lt;QuantitativeValue&amp;gt;.
    */
   @JsonIgnore public java.util.Collection<String> getMolecularWeightStrings() {
-    final Object current = myData.get("molecularWeight");
+    final java.lang.Object current = myData.get("molecularWeight");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -173,7 +173,7 @@ public class MolecularEntity extends BioChemEntity {
    * The empirical formula is the simplest whole number ratio of all the atoms in a molecule.
    */
   @JsonIgnore public java.util.Collection<String> getMolecularFormulas() {
-    final Object current = myData.get("molecularFormula");
+    final java.lang.Object current = myData.get("molecularFormula");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -190,7 +190,7 @@ public class MolecularEntity extends BioChemEntity {
    * Intended use of the BioChemEntity by humans.
    */
   @JsonIgnore public java.util.Collection<DefinedTerm> getPotentialUses() {
-    final Object current = myData.get("potentialUse");
+    final java.lang.Object current = myData.get("potentialUse");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<DefinedTerm>) current;
@@ -207,14 +207,14 @@ public class MolecularEntity extends BioChemEntity {
    * Non-proprietary identifier for molecular entity that can be used in printed and electronic data sources thus enabling easier linking of diverse data compilations.
    */
   @JsonIgnore public java.util.Collection<HasRepresentation> getInChIs() {
-    final Object current = myData.get("inChI");
+    final java.lang.Object current = myData.get("inChI");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<HasRepresentation>) current;
     }
     return Arrays.asList((HasRepresentation) current);
   }
-  protected MolecularEntity(java.util.Map<String,Object> data) {
+  protected MolecularEntity(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -222,7 +222,7 @@ public class MolecularEntity extends BioChemEntity {
    * Builder for {@link MolecularEntity}
    */
   public static class Builder extends BioChemEntity.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public MolecularEntity build() {
@@ -345,6 +345,13 @@ public class MolecularEntity extends BioChemEntity {
      */
     @NotNull public Builder bioChemSimilarity(@NotNull BioChemEntity.Builder bioChemEntity) {
       putValue("bioChemSimilarity", bioChemEntity.build());
+      return this;
+    }
+    /**
+     * A common representation such as a protein sequence or chemical structure for this entity. For images use schema.org/image.
+     */
+    @NotNull public Builder hasRepresentation(@NotNull HasRepresentation hasRepresentation) {
+      putValue("hasRepresentation", hasRepresentation);
       return this;
     }
     /**
@@ -593,6 +600,21 @@ public class MolecularEntity extends BioChemEntity {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -611,6 +633,13 @@ public class MolecularEntity extends BioChemEntity {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -704,7 +733,7 @@ public class MolecularEntity extends BioChemEntity {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("smiles".equals(key) && value instanceof HasRepresentation) { this.smiles((HasRepresentation)value); return; }
       if ("smiless".equals(key) && value instanceof HasRepresentation) { this.smiles((HasRepresentation)value); return; }
       if ("iupacName".equals(key) && value instanceof String) { this.iupacName((String)value); return; }

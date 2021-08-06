@@ -37,7 +37,7 @@ public class LymphaticVessel extends Vessel {
    * The vasculature the lymphatic structure runs, or efferents, to.
    */
   @JsonIgnore public java.util.Collection<Vessel> getRunsTos() {
-    final Object current = myData.get("runsTo");
+    final java.lang.Object current = myData.get("runsTo");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Vessel>) current;
@@ -54,7 +54,7 @@ public class LymphaticVessel extends Vessel {
    * The vasculature the lymphatic structure originates, or afferents, from.
    */
   @JsonIgnore public java.util.Collection<Vessel> getOriginatesFroms() {
-    final Object current = myData.get("originatesFrom");
+    final java.lang.Object current = myData.get("originatesFrom");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Vessel>) current;
@@ -71,7 +71,7 @@ public class LymphaticVessel extends Vessel {
    * The anatomical or organ system drained by this vessel; generally refers to a specific part of an organ.
    */
   @JsonIgnore public java.util.Collection<AnatomicalStructure> getRegionDrainedAnatomicalStructures() {
-    final Object current = myData.get("regionDrained");
+    final java.lang.Object current = myData.get("regionDrained");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<AnatomicalStructure>) current;
@@ -88,14 +88,14 @@ public class LymphaticVessel extends Vessel {
    * The anatomical or organ system drained by this vessel; generally refers to a specific part of an organ.
    */
   @JsonIgnore public java.util.Collection<AnatomicalSystem> getRegionDrainedAnatomicalSystems() {
-    final Object current = myData.get("regionDrained");
+    final java.lang.Object current = myData.get("regionDrained");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<AnatomicalSystem>) current;
     }
     return Arrays.asList((AnatomicalSystem) current);
   }
-  protected LymphaticVessel(java.util.Map<String,Object> data) {
+  protected LymphaticVessel(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -103,7 +103,7 @@ public class LymphaticVessel extends Vessel {
    * Builder for {@link LymphaticVessel}
    */
   public static class Builder extends Vessel.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public LymphaticVessel build() {
@@ -362,6 +362,21 @@ public class LymphaticVessel extends Vessel {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -380,6 +395,13 @@ public class LymphaticVessel extends Vessel {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -473,7 +495,7 @@ public class LymphaticVessel extends Vessel {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("runsTo".equals(key) && value instanceof Vessel) { this.runsTo((Vessel)value); return; }
       if ("runsTos".equals(key) && value instanceof Vessel) { this.runsTo((Vessel)value); return; }
       if ("originatesFrom".equals(key) && value instanceof Vessel) { this.originatesFrom((Vessel)value); return; }

@@ -37,7 +37,7 @@ public class EmployeeRole extends OrganizationRole {
    * The currency (coded using [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217) ) used for the main salary information in this job posting or for this employee.
    */
   @JsonIgnore public java.util.Collection<String> getSalaryCurrencys() {
-    final Object current = myData.get("salaryCurrency");
+    final java.lang.Object current = myData.get("salaryCurrency");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -54,7 +54,7 @@ public class EmployeeRole extends OrganizationRole {
    * The base salary of the job or of an employee in an EmployeeRole.
    */
   @JsonIgnore public java.util.Collection<MonetaryAmount> getBaseSalaryMonetaryAmounts() {
-    final Object current = myData.get("baseSalary");
+    final java.lang.Object current = myData.get("baseSalary");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MonetaryAmount>) current;
@@ -71,7 +71,7 @@ public class EmployeeRole extends OrganizationRole {
    * The base salary of the job or of an employee in an EmployeeRole.
    */
   @JsonIgnore public java.util.Collection<Number> getBaseSalaryNumbers() {
-    final Object current = myData.get("baseSalary");
+    final java.lang.Object current = myData.get("baseSalary");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Number>) current;
@@ -88,14 +88,14 @@ public class EmployeeRole extends OrganizationRole {
    * The base salary of the job or of an employee in an EmployeeRole.
    */
   @JsonIgnore public java.util.Collection<PriceSpecification> getBaseSalaryPriceSpecifications() {
-    final Object current = myData.get("baseSalary");
+    final java.lang.Object current = myData.get("baseSalary");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<PriceSpecification>) current;
     }
     return Arrays.asList((PriceSpecification) current);
   }
-  protected EmployeeRole(java.util.Map<String,Object> data) {
+  protected EmployeeRole(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -103,7 +103,7 @@ public class EmployeeRole extends OrganizationRole {
    * Builder for {@link EmployeeRole}
    */
   public static class Builder extends OrganizationRole.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public EmployeeRole build() {
@@ -208,6 +208,21 @@ public class EmployeeRole extends OrganizationRole {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -226,6 +241,13 @@ public class EmployeeRole extends OrganizationRole {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -319,7 +341,7 @@ public class EmployeeRole extends OrganizationRole {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("salaryCurrency".equals(key) && value instanceof String) { this.salaryCurrency((String)value); return; }
       if ("salaryCurrencys".equals(key) && value instanceof String) { this.salaryCurrency((String)value); return; }
       if ("baseSalary".equals(key) && value instanceof MonetaryAmount) { this.baseSalary((MonetaryAmount)value); return; }

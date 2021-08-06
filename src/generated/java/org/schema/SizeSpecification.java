@@ -37,7 +37,7 @@ public class SizeSpecification extends QualitativeValue {
    * A suggested range of body measurements for the intended audience or person, for example inseam between 32 and 34 inches or height between 170 and 190 cm. Typically found on a size chart for wearable products.
    */
   @JsonIgnore public java.util.Collection<QuantitativeValue> getSuggestedMeasurements() {
-    final Object current = myData.get("suggestedMeasurement");
+    final java.lang.Object current = myData.get("suggestedMeasurement");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<QuantitativeValue>) current;
@@ -54,7 +54,7 @@ public class SizeSpecification extends QualitativeValue {
    * The size group (also known as &quot;size type&quot;) for a product's size. Size groups are common in the fashion industry to define size segments and suggested audiences for wearable products. Multiple values can be combined, for example &quot;men's big and tall&quot;, &quot;petite maternity&quot; or &quot;regular&quot;
    */
   @JsonIgnore public java.util.Collection<SizeGroupEnumeration> getSizeGroupSizeGroupEnumerations() {
-    final Object current = myData.get("sizeGroup");
+    final java.lang.Object current = myData.get("sizeGroup");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<SizeGroupEnumeration>) current;
@@ -71,7 +71,7 @@ public class SizeSpecification extends QualitativeValue {
    * The size group (also known as &quot;size type&quot;) for a product's size. Size groups are common in the fashion industry to define size segments and suggested audiences for wearable products. Multiple values can be combined, for example &quot;men's big and tall&quot;, &quot;petite maternity&quot; or &quot;regular&quot;
    */
   @JsonIgnore public java.util.Collection<String> getSizeGroupStrings() {
-    final Object current = myData.get("sizeGroup");
+    final java.lang.Object current = myData.get("sizeGroup");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -88,7 +88,7 @@ public class SizeSpecification extends QualitativeValue {
    * The size system used to identify a product's size. Typically either a standard (for example, &quot;GS1&quot; or &quot;ISO-EN13402&quot;), country code (for example &quot;US&quot; or &quot;JP&quot;), or a measuring system (for example &quot;Metric&quot; or &quot;Imperial&quot;).
    */
   @JsonIgnore public java.util.Collection<SizeSystemEnumeration> getSizeSystemSizeSystemEnumerations() {
-    final Object current = myData.get("sizeSystem");
+    final java.lang.Object current = myData.get("sizeSystem");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<SizeSystemEnumeration>) current;
@@ -105,7 +105,7 @@ public class SizeSpecification extends QualitativeValue {
    * The size system used to identify a product's size. Typically either a standard (for example, &quot;GS1&quot; or &quot;ISO-EN13402&quot;), country code (for example &quot;US&quot; or &quot;JP&quot;), or a measuring system (for example &quot;Metric&quot; or &quot;Imperial&quot;).
    */
   @JsonIgnore public java.util.Collection<String> getSizeSystemStrings() {
-    final Object current = myData.get("sizeSystem");
+    final java.lang.Object current = myData.get("sizeSystem");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -122,7 +122,7 @@ public class SizeSpecification extends QualitativeValue {
    * The suggested gender of the intended person or audience, for example &quot;male&quot;, &quot;female&quot;, or &quot;unisex&quot;.
    */
   @JsonIgnore public java.util.Collection<GenderType> getSuggestedGenderGenderTypes() {
-    final Object current = myData.get("suggestedGender");
+    final java.lang.Object current = myData.get("suggestedGender");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<GenderType>) current;
@@ -139,7 +139,7 @@ public class SizeSpecification extends QualitativeValue {
    * The suggested gender of the intended person or audience, for example &quot;male&quot;, &quot;female&quot;, or &quot;unisex&quot;.
    */
   @JsonIgnore public java.util.Collection<String> getSuggestedGenderStrings() {
-    final Object current = myData.get("suggestedGender");
+    final java.lang.Object current = myData.get("suggestedGender");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -156,7 +156,7 @@ public class SizeSpecification extends QualitativeValue {
    * The age or age range for the intended audience or person, for example 3-12 months for infants, 1-5 years for toddlers.
    */
   @JsonIgnore public java.util.Collection<QuantitativeValue> getSuggestedAges() {
-    final Object current = myData.get("suggestedAge");
+    final java.lang.Object current = myData.get("suggestedAge");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<QuantitativeValue>) current;
@@ -173,14 +173,14 @@ public class SizeSpecification extends QualitativeValue {
    * A product measurement, for example the inseam of pants, the wheel size of a bicycle, or the gauge of a screw. Usually an exact measurement, but can also be a range of measurements for adjustable products, for example belts and ski bindings.
    */
   @JsonIgnore public java.util.Collection<QuantitativeValue> getHasMeasurements() {
-    final Object current = myData.get("hasMeasurement");
+    final java.lang.Object current = myData.get("hasMeasurement");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<QuantitativeValue>) current;
     }
     return Arrays.asList((QuantitativeValue) current);
   }
-  protected SizeSpecification(java.util.Map<String,Object> data) {
+  protected SizeSpecification(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -188,7 +188,7 @@ public class SizeSpecification extends QualitativeValue {
    * Builder for {@link SizeSpecification}
    */
   public static class Builder extends QualitativeValue.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public SizeSpecification build() {
@@ -498,6 +498,21 @@ public class SizeSpecification extends QualitativeValue {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -516,6 +531,13 @@ public class SizeSpecification extends QualitativeValue {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -609,7 +631,7 @@ public class SizeSpecification extends QualitativeValue {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("suggestedMeasurement".equals(key) && value instanceof QuantitativeValue) { this.suggestedMeasurement((QuantitativeValue)value); return; }
       if ("suggestedMeasurements".equals(key) && value instanceof QuantitativeValue) { this.suggestedMeasurement((QuantitativeValue)value); return; }
       if ("sizeGroup".equals(key) && value instanceof SizeGroupEnumeration) { this.sizeGroup((SizeGroupEnumeration)value); return; }

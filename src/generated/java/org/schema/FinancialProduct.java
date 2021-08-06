@@ -37,7 +37,7 @@ public class FinancialProduct extends Service {
    * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
    */
   @JsonIgnore public java.util.Collection<Integer> getInterestRateIntegers() {
-    final Object current = myData.get("interestRate");
+    final java.lang.Object current = myData.get("interestRate");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -54,7 +54,7 @@ public class FinancialProduct extends Service {
    * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
    */
   @JsonIgnore public java.util.Collection<Long> getInterestRateLongs() {
-    final Object current = myData.get("interestRate");
+    final java.lang.Object current = myData.get("interestRate");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Long>) current;
@@ -71,7 +71,7 @@ public class FinancialProduct extends Service {
    * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
    */
   @JsonIgnore public java.util.Collection<Float> getInterestRateFloats() {
-    final Object current = myData.get("interestRate");
+    final java.lang.Object current = myData.get("interestRate");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Float>) current;
@@ -88,7 +88,7 @@ public class FinancialProduct extends Service {
    * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
    */
   @JsonIgnore public java.util.Collection<Double> getInterestRateDoubles() {
-    final Object current = myData.get("interestRate");
+    final java.lang.Object current = myData.get("interestRate");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Double>) current;
@@ -105,7 +105,7 @@ public class FinancialProduct extends Service {
    * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
    */
   @JsonIgnore public java.util.Collection<String> getInterestRateStrings() {
-    final Object current = myData.get("interestRate");
+    final java.lang.Object current = myData.get("interestRate");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -122,7 +122,7 @@ public class FinancialProduct extends Service {
    * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
    */
   @JsonIgnore public java.util.Collection<String> getFeesAndCommissionsSpecifications() {
-    final Object current = myData.get("feesAndCommissionsSpecification");
+    final java.lang.Object current = myData.get("feesAndCommissionsSpecification");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -139,7 +139,7 @@ public class FinancialProduct extends Service {
    * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
    */
   @JsonIgnore public java.util.Collection<Integer> getAnnualPercentageRateIntegers() {
-    final Object current = myData.get("annualPercentageRate");
+    final java.lang.Object current = myData.get("annualPercentageRate");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -156,7 +156,7 @@ public class FinancialProduct extends Service {
    * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
    */
   @JsonIgnore public java.util.Collection<Long> getAnnualPercentageRateLongs() {
-    final Object current = myData.get("annualPercentageRate");
+    final java.lang.Object current = myData.get("annualPercentageRate");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Long>) current;
@@ -173,7 +173,7 @@ public class FinancialProduct extends Service {
    * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
    */
   @JsonIgnore public java.util.Collection<Float> getAnnualPercentageRateFloats() {
-    final Object current = myData.get("annualPercentageRate");
+    final java.lang.Object current = myData.get("annualPercentageRate");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Float>) current;
@@ -190,7 +190,7 @@ public class FinancialProduct extends Service {
    * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
    */
   @JsonIgnore public java.util.Collection<Double> getAnnualPercentageRateDoubles() {
-    final Object current = myData.get("annualPercentageRate");
+    final java.lang.Object current = myData.get("annualPercentageRate");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Double>) current;
@@ -207,14 +207,14 @@ public class FinancialProduct extends Service {
    * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
    */
   @JsonIgnore public java.util.Collection<String> getAnnualPercentageRateStrings() {
-    final Object current = myData.get("annualPercentageRate");
+    final java.lang.Object current = myData.get("annualPercentageRate");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
-  protected FinancialProduct(java.util.Map<String,Object> data) {
+  protected FinancialProduct(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -222,7 +222,7 @@ public class FinancialProduct extends Service {
    * Builder for {@link FinancialProduct}
    */
   public static class Builder extends Service.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public FinancialProduct build() {
@@ -481,6 +481,13 @@ public class FinancialProduct extends Service {
       return this;
     }
     /**
+     * The geographic area where a service or offered item is provided.
+     */
+    @NotNull public Builder areaServed(@NotNull AreaServed areaServed) {
+      putValue("areaServed", areaServed);
+      return this;
+    }
+    /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      */
     @NotNull public Builder category(@NotNull Category category) {
@@ -632,6 +639,21 @@ public class FinancialProduct extends Service {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -650,6 +672,13 @@ public class FinancialProduct extends Service {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -743,7 +772,7 @@ public class FinancialProduct extends Service {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("interestRate".equals(key) && value instanceof Integer) { this.interestRate((Integer)value); return; }
       if ("interestRates".equals(key) && value instanceof Integer) { this.interestRate((Integer)value); return; }
       if ("interestRate".equals(key) && value instanceof Long) { this.interestRate((Long)value); return; }

@@ -39,7 +39,7 @@ public class DeliveryChargeSpecification extends PriceSpecification {
    *       
    */
   @JsonIgnore public java.util.Collection<GeoShape> getIneligibleRegionGeoShapes() {
-    final Object current = myData.get("ineligibleRegion");
+    final java.lang.Object current = myData.get("ineligibleRegion");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<GeoShape>) current;
@@ -58,7 +58,7 @@ public class DeliveryChargeSpecification extends PriceSpecification {
    *       
    */
   @JsonIgnore public java.util.Collection<Place> getIneligibleRegionPlaces() {
-    final Object current = myData.get("ineligibleRegion");
+    final java.lang.Object current = myData.get("ineligibleRegion");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Place>) current;
@@ -77,12 +77,29 @@ public class DeliveryChargeSpecification extends PriceSpecification {
    *       
    */
   @JsonIgnore public java.util.Collection<String> getIneligibleRegionStrings() {
-    final Object current = myData.get("ineligibleRegion");
+    final java.lang.Object current = myData.get("ineligibleRegion");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
+  }
+  /**
+   * The geographic area where a service or offered item is provided.
+   */
+  @JsonIgnore public AreaServed getAreaServed() {
+    return (AreaServed) getValue("areaServed");
+  }
+  /**
+   * The geographic area where a service or offered item is provided.
+   */
+  @JsonIgnore public java.util.Collection<AreaServed> getAreaServeds() {
+    final java.lang.Object current = myData.get("areaServed");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<AreaServed>) current;
+    }
+    return Arrays.asList((AreaServed) current);
   }
   /**
    * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\n\nSee also [[ineligibleRegion]].
@@ -96,7 +113,7 @@ public class DeliveryChargeSpecification extends PriceSpecification {
    *     
    */
   @JsonIgnore public java.util.Collection<AreaServed> getEligibleRegions() {
-    final Object current = myData.get("eligibleRegion");
+    final java.lang.Object current = myData.get("eligibleRegion");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<AreaServed>) current;
@@ -113,14 +130,14 @@ public class DeliveryChargeSpecification extends PriceSpecification {
    * The delivery method(s) to which the delivery charge or payment charge specification applies.
    */
   @JsonIgnore public java.util.Collection<DeliveryMethod> getAppliesToDeliveryMethods() {
-    final Object current = myData.get("appliesToDeliveryMethod");
+    final java.lang.Object current = myData.get("appliesToDeliveryMethod");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<DeliveryMethod>) current;
     }
     return Arrays.asList((DeliveryMethod) current);
   }
-  protected DeliveryChargeSpecification(java.util.Map<String,Object> data) {
+  protected DeliveryChargeSpecification(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -128,7 +145,7 @@ public class DeliveryChargeSpecification extends PriceSpecification {
    * Builder for {@link DeliveryChargeSpecification}
    */
   public static class Builder extends PriceSpecification.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public DeliveryChargeSpecification build() {
@@ -172,6 +189,13 @@ public class DeliveryChargeSpecification extends PriceSpecification {
      */
     @NotNull public Builder ineligibleRegion(@NotNull String ineligibleRegion) {
       putValue("ineligibleRegion", ineligibleRegion);
+      return this;
+    }
+    /**
+     * The geographic area where a service or offered item is provided.
+     */
+    @NotNull public Builder areaServed(@NotNull AreaServed areaServed) {
+      putValue("areaServed", areaServed);
       return this;
     }
     /**
@@ -332,6 +356,21 @@ public class DeliveryChargeSpecification extends PriceSpecification {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -350,6 +389,13 @@ public class DeliveryChargeSpecification extends PriceSpecification {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -443,13 +489,15 @@ public class DeliveryChargeSpecification extends PriceSpecification {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("ineligibleRegion".equals(key) && value instanceof GeoShape) { this.ineligibleRegion((GeoShape)value); return; }
       if ("ineligibleRegions".equals(key) && value instanceof GeoShape) { this.ineligibleRegion((GeoShape)value); return; }
       if ("ineligibleRegion".equals(key) && value instanceof Place) { this.ineligibleRegion((Place)value); return; }
       if ("ineligibleRegions".equals(key) && value instanceof Place) { this.ineligibleRegion((Place)value); return; }
       if ("ineligibleRegion".equals(key) && value instanceof String) { this.ineligibleRegion((String)value); return; }
       if ("ineligibleRegions".equals(key) && value instanceof String) { this.ineligibleRegion((String)value); return; }
+      if ("areaServed".equals(key) && value instanceof AreaServed) { this.areaServed((AreaServed)value); return; }
+      if ("areaServeds".equals(key) && value instanceof AreaServed) { this.areaServed((AreaServed)value); return; }
       if ("eligibleRegion".equals(key) && value instanceof AreaServed) { this.eligibleRegion((AreaServed)value); return; }
       if ("eligibleRegions".equals(key) && value instanceof AreaServed) { this.eligibleRegion((AreaServed)value); return; }
       if ("appliesToDeliveryMethod".equals(key) && value instanceof DeliveryMethod) { this.appliesToDeliveryMethod((DeliveryMethod)value); return; }

@@ -37,7 +37,7 @@ public class SpeakableSpecification extends Intangible {
    * A CSS selector, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual &quot;Web page element&quot;.
    */
   @JsonIgnore public java.util.Collection<String> getCssSelectors() {
-    final Object current = myData.get("cssSelector");
+    final java.lang.Object current = myData.get("cssSelector");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -54,14 +54,14 @@ public class SpeakableSpecification extends Intangible {
    * An XPath, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual &quot;Web page element&quot;.
    */
   @JsonIgnore public java.util.Collection<String> getXpaths() {
-    final Object current = myData.get("xpath");
+    final java.lang.Object current = myData.get("xpath");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
-  protected SpeakableSpecification(java.util.Map<String,Object> data) {
+  protected SpeakableSpecification(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -69,7 +69,7 @@ public class SpeakableSpecification extends Intangible {
    * Builder for {@link SpeakableSpecification}
    */
   public static class Builder extends Intangible.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public SpeakableSpecification build() {
@@ -87,6 +87,21 @@ public class SpeakableSpecification extends Intangible {
      */
     @NotNull public Builder xpath(@NotNull String xpath) {
       putValue("xpath", xpath);
+      return this;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
       return this;
     }
     /**
@@ -108,6 +123,13 @@ public class SpeakableSpecification extends Intangible {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -201,7 +223,7 @@ public class SpeakableSpecification extends Intangible {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("cssSelector".equals(key) && value instanceof String) { this.cssSelector((String)value); return; }
       if ("cssSelectors".equals(key) && value instanceof String) { this.cssSelector((String)value); return; }
       if ("xpath".equals(key) && value instanceof String) { this.xpath((String)value); return; }

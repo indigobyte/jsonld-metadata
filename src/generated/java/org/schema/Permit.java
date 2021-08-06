@@ -37,7 +37,7 @@ public class Permit extends Intangible {
    * The date when the item becomes valid.
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getValidFroms() {
-    final Object current = myData.get("validFrom");
+    final java.lang.Object current = myData.get("validFrom");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<java.util.Date>) current;
@@ -54,7 +54,7 @@ public class Permit extends Intangible {
    * The geographic area where a permit or similar thing is valid.
    */
   @JsonIgnore public java.util.Collection<AdministrativeArea> getValidIns() {
-    final Object current = myData.get("validIn");
+    final java.lang.Object current = myData.get("validIn");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<AdministrativeArea>) current;
@@ -71,7 +71,7 @@ public class Permit extends Intangible {
    * The date when the item is no longer valid.
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getValidUntils() {
-    final Object current = myData.get("validUntil");
+    final java.lang.Object current = myData.get("validUntil");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<java.util.Date>) current;
@@ -88,7 +88,7 @@ public class Permit extends Intangible {
    * The target audience for this permit.
    */
   @JsonIgnore public java.util.Collection<Audience> getPermitAudiences() {
-    final Object current = myData.get("permitAudience");
+    final java.lang.Object current = myData.get("permitAudience");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Audience>) current;
@@ -105,7 +105,7 @@ public class Permit extends Intangible {
    * The duration of validity of a permit or similar thing.
    */
   @JsonIgnore public java.util.Collection<Duration> getValidFors() {
-    final Object current = myData.get("validFor");
+    final java.lang.Object current = myData.get("validFor");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Duration>) current;
@@ -122,7 +122,7 @@ public class Permit extends Intangible {
    * The organization issuing the ticket or permit.
    */
   @JsonIgnore public java.util.Collection<Organization> getIssuedBys() {
-    final Object current = myData.get("issuedBy");
+    final java.lang.Object current = myData.get("issuedBy");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Organization>) current;
@@ -139,14 +139,14 @@ public class Permit extends Intangible {
    * The service through with the permit was granted.
    */
   @JsonIgnore public java.util.Collection<Service> getIssuedThroughs() {
-    final Object current = myData.get("issuedThrough");
+    final java.lang.Object current = myData.get("issuedThrough");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Service>) current;
     }
     return Arrays.asList((Service) current);
   }
-  protected Permit(java.util.Map<String,Object> data) {
+  protected Permit(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -154,7 +154,7 @@ public class Permit extends Intangible {
    * Builder for {@link Permit}
    */
   public static class Builder extends Intangible.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public Permit build() {
@@ -238,6 +238,21 @@ public class Permit extends Intangible {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -256,6 +271,13 @@ public class Permit extends Intangible {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -349,7 +371,7 @@ public class Permit extends Intangible {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("validFrom".equals(key) && value instanceof java.util.Date) { this.validFrom((java.util.Date)value); return; }
       if ("validFroms".equals(key) && value instanceof java.util.Date) { this.validFrom((java.util.Date)value); return; }
       if ("validIn".equals(key) && value instanceof AdministrativeArea) { this.validIn((AdministrativeArea)value); return; }

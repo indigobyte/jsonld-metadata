@@ -13,8 +13,17 @@ class ClassesGenerator(private val sink: GeneratorSink, private val banner: Stri
 
     fun generate(p: Package) {
         for ((key, type) in sink.types) {
-            if (type.name.isNullOrEmpty() || (type.isField && !type.isInterface) || sink.shouldSkip(type.name!!)) continue
-            if (type.parentType == null && type.name != "Thing" && !type.isInterface) continue
+            if (type.name.isNullOrEmpty() ||
+                (type.isField && !type.isInterface) ||
+                sink.shouldSkip(type.name!!)
+            )
+                continue
+            if (type.parentType == null &&
+                type.name != "Thing" &&
+                //type.name != "About" && // hack
+                !type.isInterface
+            )
+                continue
             //if (type.name == "http://schema.org/Enumeration" || (type.parentType?.let{ sink.types[it] }?.isEnum == true)) continue
 
             val typeName = sanitizeIdentifier(type.name!!.capitalize())
@@ -39,7 +48,14 @@ class ClassesGenerator(private val sink: GeneratorSink, private val banner: Stri
                 copyright = banner
                 if (type.isInterface) {
                     extends =
-                        type.interfaces.filter { i -> sink.types.values.any { it.name == i && !it.isField && it.name != "HasPart" } }
+                        type.interfaces.filter { i ->
+                            sink.types.values.any {
+                                it.name == i &&
+                                        !it.isField &&
+                                        it.name != "HasPart" &&
+                                        !sink.shouldSkip(it.name!!)
+                            }
+                        }
                 } else {
                     extends = type.parentType?.let { sink.types[it]?.name }?.let { listOf(it) }
                     implements =
@@ -48,7 +64,8 @@ class ClassesGenerator(private val sink: GeneratorSink, private val banner: Stri
                                 it.name == i &&
                                         !it.isField &&
                                         it.name != "HasPart" &&
-                                        it.name != type.name // Avoid "Duration implements Duration" bug
+                                        it.name != type.name && // Avoid "Duration implements Duration" bug &&
+                                        !sink.shouldSkip(it.name!!)
                             }
                         }
                 }
@@ -75,15 +92,15 @@ class ClassesGenerator(private val sink: GeneratorSink, private val banner: Stri
 
                         line("return \"http://schema.org/\";")
                     }
-                    field("data", "java.util.Map<String,Object>", "protected") {
+                    field("data", "java.util.Map<String,java.lang.Object>", "protected") {
                         getter(listOf("@JsonAnyGetter"))
                     }
 
-                    method("getValue", "Object") {
+                    method("getValue", "java.lang.Object") {
                         access = "protected"
                         parameters("key" to "String")
 
-                        line("final Object current = myData.get(key);")
+                        line("final java.lang.Object current = myData.get(key);")
                         line("if (current instanceof java.util.Collection) {")
                         line("  return ((java.util.Collection) current).iterator().next();")
                         line("}")
@@ -92,7 +109,13 @@ class ClassesGenerator(private val sink: GeneratorSink, private val banner: Stri
                 }
 
                 val ownFields = type.subTypes.mapNotNull { sink.types[it] }
-                    .filter { it.name != null && !it.isSuperseded && it.dataTypes.any() && it.dataTypes[0] != "http://schema.org/Class" && it.dataTypes[0] != "http://schema.org/HasPart" }
+                    .filter {
+                        it.name != null &&
+                                !it.isSuperseded &&
+                                it.dataTypes.any() &&
+                                it.dataTypes.firstOrNull() != "http://schema.org/Class" &&
+                                it.dataTypes.firstOrNull() != "http://schema.org/HasPart"
+                    }
                 ownFields.forEach {
                     val fieldTypes = sink.getEitherTypes(it)
                     val name = it.name!!.capitalize()
@@ -111,7 +134,7 @@ class ClassesGenerator(private val sink: GeneratorSink, private val banner: Stri
                                 comment = it.comment
                                 annotations = listOf("@JsonIgnore")
 
-                                line("final Object current = myData.get(\"$key1\");")
+                                line("final java.lang.Object current = myData.get(\"$key1\");")
                                 line("if (current == null) return Collections.emptyList();")
                                 line("if (current instanceof java.util.Collection) {")
                                 line("  return (java.util.Collection<$fieldType>) current;")
@@ -126,7 +149,7 @@ class ClassesGenerator(private val sink: GeneratorSink, private val banner: Stri
 
                 if (!type.isInterface) {
                     konstructor("protected",
-                        parameters = listOf(Parameter("data", "java.util.Map<String,Object>")),
+                        parameters = listOf(Parameter("data", "java.util.Map<String,java.lang.Object>")),
                         superParameters = type.parentType?.let { listOf("data") }
                     )
 
@@ -144,17 +167,17 @@ class ClassesGenerator(private val sink: GeneratorSink, private val banner: Stri
                         if (type.parentType == null) {
                             implements = listOf("ThingBuilder<$typeName>")
 
-                            field("data", "HashMap<String,Object>", "protected")
+                            field("data", "HashMap<String,java.lang.Object>", "protected")
 
                             method("putValue") {
-                                parameters("key" to "String", "value" to "Object")
+                                parameters("key" to "String", "value" to "java.lang.Object")
                                 line("if (myData.containsKey(key)) {")
-                                line("  final Object current = myData.get(key);")
+                                line("  final java.lang.Object current = myData.get(key);")
                                 line("  final java.util.Collection list;")
                                 line("  if (current instanceof java.util.Collection) {")
                                 line("    list = (java.util.Collection) current;")
                                 line("  } else {")
-                                line("    list = new ArrayList<Object>();")
+                                line("    list = new ArrayList<java.lang.Object>();")
                                 line("    list.add(current);")
                                 line("    myData.put(key, list);")
                                 line("  }")
@@ -167,7 +190,7 @@ class ClassesGenerator(private val sink: GeneratorSink, private val banner: Stri
 
                         konstructor(
                             "public",
-                            listOf(Parameter("data", "HashMap<String,Object>", NOT_NULL)),
+                            listOf(Parameter("data", "HashMap<String,java.lang.Object>", NOT_NULL)),
                             type.parentType?.let { listOf("data") })
 
                         method("build", typeName) {
@@ -210,7 +233,7 @@ class ClassesGenerator(private val sink: GeneratorSink, private val banner: Stri
                                 // add overload accepting ThingBuilder<T>
                                 val isEnum = findType(fieldType)?.isEnum != true &&
                                         (i >= field.dataTypes.size ||
-                                                sink.types[field.dataTypes[i]]?.isEnum != true
+                                                sink.types[field.dataTypes.elementAt(i)]?.isEnum != true
                                                 )
                                 if (!sink.shouldSkip(fieldType) &&
                                     findType(fieldType)?.isInterface != true &&
@@ -253,22 +276,22 @@ class ClassesGenerator(private val sink: GeneratorSink, private val banner: Stri
 
                         if (type.parentType == null) {
                             method("fromMap") {
-                                parameters("map" to "java.util.Map<String, Object>")
+                                parameters("map" to "java.util.Map<String, java.lang.Object>")
 
-                                line("for (java.util.Map.Entry<String, Object> entry : map.entrySet()) {")
+                                line("for (java.util.Map.Entry<String, java.lang.Object> entry : map.entrySet()) {")
                                 line("  final String key = entry.getKey();")
-                                line("  Object value = entry.getValue();")
+                                line("  java.lang.Object value = entry.getValue();")
                                 line("  if (value instanceof java.util.List) {")
                                 line("    final java.util.List list = (java.util.List) value;")
-                                line("    for (Object o : list) {")
+                                line("    for (java.lang.Object o : list) {")
                                 line("      if (o instanceof java.util.Map) {")
-                                line("        fromMap(key, ThingDeserializer.fromMap((java.util.Map<String, Object>)o));")
+                                line("        fromMap(key, ThingDeserializer.fromMap((java.util.Map<String, java.lang.Object>)o));")
                                 line("      } else {")
                                 line("        fromMap(key, o);")
                                 line("      }")
                                 line("    }")
                                 line("  } else {")
-                                line("    if (value instanceof java.util.Map) { value = ThingDeserializer.fromMap((java.util.Map<String,Object>)value); }")
+                                line("    if (value instanceof java.util.Map) { value = ThingDeserializer.fromMap((java.util.Map<String,java.lang.Object>)value); }")
                                 line("    fromMap(key, value);")
                                 line("  }")
                                 line("}")
@@ -277,7 +300,7 @@ class ClassesGenerator(private val sink: GeneratorSink, private val banner: Stri
 
                         method("fromMap") {
                             access = "protected"
-                            parameters("key" to "String", "value" to "Object")
+                            parameters("key" to "String", "value" to "java.lang.Object")
 
                             lines(ownFields.flatMap {
                                 val varName = it.name!!.decapitalize()

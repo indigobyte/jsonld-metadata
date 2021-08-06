@@ -37,7 +37,7 @@ public class InvestmentOrDeposit extends FinancialProduct {
    * The amount of money.
    */
   @JsonIgnore public java.util.Collection<MonetaryAmount> getAmountMonetaryAmounts() {
-    final Object current = myData.get("amount");
+    final java.lang.Object current = myData.get("amount");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MonetaryAmount>) current;
@@ -54,14 +54,14 @@ public class InvestmentOrDeposit extends FinancialProduct {
    * The amount of money.
    */
   @JsonIgnore public java.util.Collection<Number> getAmountNumbers() {
-    final Object current = myData.get("amount");
+    final java.lang.Object current = myData.get("amount");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Number>) current;
     }
     return Arrays.asList((Number) current);
   }
-  protected InvestmentOrDeposit(java.util.Map<String,Object> data) {
+  protected InvestmentOrDeposit(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -69,7 +69,7 @@ public class InvestmentOrDeposit extends FinancialProduct {
    * Builder for {@link InvestmentOrDeposit}
    */
   public static class Builder extends FinancialProduct.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public InvestmentOrDeposit build() {
@@ -349,6 +349,13 @@ public class InvestmentOrDeposit extends FinancialProduct {
       return this;
     }
     /**
+     * The geographic area where a service or offered item is provided.
+     */
+    @NotNull public Builder areaServed(@NotNull AreaServed areaServed) {
+      putValue("areaServed", areaServed);
+      return this;
+    }
+    /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      */
     @NotNull public Builder category(@NotNull Category category) {
@@ -500,6 +507,21 @@ public class InvestmentOrDeposit extends FinancialProduct {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -518,6 +540,13 @@ public class InvestmentOrDeposit extends FinancialProduct {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -611,7 +640,7 @@ public class InvestmentOrDeposit extends FinancialProduct {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("amount".equals(key) && value instanceof MonetaryAmount) { this.amount((MonetaryAmount)value); return; }
       if ("amounts".equals(key) && value instanceof MonetaryAmount) { this.amount((MonetaryAmount)value); return; }
       if ("amount".equals(key) && value instanceof Number) { this.amount((Number)value); return; }

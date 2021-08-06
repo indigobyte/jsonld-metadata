@@ -26,7 +26,7 @@ import java.util.*;
 /**
  * A word, name, acronym, phrase, etc. with a formal definition. Often used in the context of category or subject classification, glossaries or dictionaries, product or creative work types, etc. Use the name property for the term being defined, use termCode if the term has an alpha-numeric code allocated, use description to provide the definition of the term.
  */
-public class DefinedTerm extends Intangible implements HasDefinedTerm {
+public class DefinedTerm extends Intangible implements org.schema.HasDefinedTerm {
   /**
    * A code that identifies this [[DefinedTerm]] within a [[DefinedTermSet]]
    */
@@ -37,7 +37,7 @@ public class DefinedTerm extends Intangible implements HasDefinedTerm {
    * A code that identifies this [[DefinedTerm]] within a [[DefinedTermSet]]
    */
   @JsonIgnore public java.util.Collection<TermCode> getTermCodes() {
-    final Object current = myData.get("termCode");
+    final java.lang.Object current = myData.get("termCode");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<TermCode>) current;
@@ -54,14 +54,14 @@ public class DefinedTerm extends Intangible implements HasDefinedTerm {
    * A [[DefinedTermSet]] that contains this term.
    */
   @JsonIgnore public java.util.Collection<InDefinedTermSet> getInDefinedTermSets() {
-    final Object current = myData.get("inDefinedTermSet");
+    final java.lang.Object current = myData.get("inDefinedTermSet");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<InDefinedTermSet>) current;
     }
     return Arrays.asList((InDefinedTermSet) current);
   }
-  protected DefinedTerm(java.util.Map<String,Object> data) {
+  protected DefinedTerm(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -69,7 +69,7 @@ public class DefinedTerm extends Intangible implements HasDefinedTerm {
    * Builder for {@link DefinedTerm}
    */
   public static class Builder extends Intangible.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public DefinedTerm build() {
@@ -87,6 +87,21 @@ public class DefinedTerm extends Intangible implements HasDefinedTerm {
      */
     @NotNull public Builder inDefinedTermSet(@NotNull InDefinedTermSet inDefinedTermSet) {
       putValue("inDefinedTermSet", inDefinedTermSet);
+      return this;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
       return this;
     }
     /**
@@ -108,6 +123,13 @@ public class DefinedTerm extends Intangible implements HasDefinedTerm {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -201,7 +223,7 @@ public class DefinedTerm extends Intangible implements HasDefinedTerm {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("termCode".equals(key) && value instanceof TermCode) { this.termCode((TermCode)value); return; }
       if ("termCodes".equals(key) && value instanceof TermCode) { this.termCode((TermCode)value); return; }
       if ("inDefinedTermSet".equals(key) && value instanceof InDefinedTermSet) { this.inDefinedTermSet((InDefinedTermSet)value); return; }

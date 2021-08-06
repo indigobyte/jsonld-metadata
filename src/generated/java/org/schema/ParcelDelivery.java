@@ -37,7 +37,7 @@ public class ParcelDelivery extends Intangible {
    * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
    */
   @JsonIgnore public java.util.Collection<Organization> getProviderOrganizations() {
-    final Object current = myData.get("provider");
+    final java.lang.Object current = myData.get("provider");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Organization>) current;
@@ -54,7 +54,7 @@ public class ParcelDelivery extends Intangible {
    * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
    */
   @JsonIgnore public java.util.Collection<Person> getProviderPersons() {
-    final Object current = myData.get("provider");
+    final java.lang.Object current = myData.get("provider");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Person>) current;
@@ -71,7 +71,7 @@ public class ParcelDelivery extends Intangible {
    * The latest date the package may arrive.
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getExpectedArrivalUntils() {
-    final Object current = myData.get("expectedArrivalUntil");
+    final java.lang.Object current = myData.get("expectedArrivalUntil");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<java.util.Date>) current;
@@ -88,7 +88,7 @@ public class ParcelDelivery extends Intangible {
    * Method used for delivery or shipping.
    */
   @JsonIgnore public java.util.Collection<DeliveryMethod> getHasDeliveryMethods() {
-    final Object current = myData.get("hasDeliveryMethod");
+    final java.lang.Object current = myData.get("hasDeliveryMethod");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<DeliveryMethod>) current;
@@ -105,7 +105,7 @@ public class ParcelDelivery extends Intangible {
    * The overall order the items in this delivery were included in.
    */
   @JsonIgnore public java.util.Collection<Order> getPartOfOrders() {
-    final Object current = myData.get("partOfOrder");
+    final java.lang.Object current = myData.get("partOfOrder");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Order>) current;
@@ -122,7 +122,7 @@ public class ParcelDelivery extends Intangible {
    * The earliest date the package may arrive.
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getExpectedArrivalFroms() {
-    final Object current = myData.get("expectedArrivalFrom");
+    final java.lang.Object current = myData.get("expectedArrivalFrom");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<java.util.Date>) current;
@@ -139,7 +139,7 @@ public class ParcelDelivery extends Intangible {
    * Shipper's address.
    */
   @JsonIgnore public java.util.Collection<PostalAddress> getOriginAddresss() {
-    final Object current = myData.get("originAddress");
+    final java.lang.Object current = myData.get("originAddress");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<PostalAddress>) current;
@@ -156,7 +156,7 @@ public class ParcelDelivery extends Intangible {
    * Destination address.
    */
   @JsonIgnore public java.util.Collection<PostalAddress> getDeliveryAddresss() {
-    final Object current = myData.get("deliveryAddress");
+    final java.lang.Object current = myData.get("deliveryAddress");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<PostalAddress>) current;
@@ -173,7 +173,7 @@ public class ParcelDelivery extends Intangible {
    * Item(s) being shipped.
    */
   @JsonIgnore public java.util.Collection<Product> getItemShippeds() {
-    final Object current = myData.get("itemShipped");
+    final java.lang.Object current = myData.get("itemShipped");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Product>) current;
@@ -190,7 +190,7 @@ public class ParcelDelivery extends Intangible {
    * Tracking url for the parcel delivery.
    */
   @JsonIgnore public java.util.Collection<String> getTrackingUrls() {
-    final Object current = myData.get("trackingUrl");
+    final java.lang.Object current = myData.get("trackingUrl");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -207,7 +207,7 @@ public class ParcelDelivery extends Intangible {
    * Shipper tracking number.
    */
   @JsonIgnore public java.util.Collection<String> getTrackingNumbers() {
-    final Object current = myData.get("trackingNumber");
+    final java.lang.Object current = myData.get("trackingNumber");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -224,14 +224,14 @@ public class ParcelDelivery extends Intangible {
    * New entry added as the package passes through each leg of its journey (from shipment to final delivery).
    */
   @JsonIgnore public java.util.Collection<DeliveryEvent> getDeliveryStatuss() {
-    final Object current = myData.get("deliveryStatus");
+    final java.lang.Object current = myData.get("deliveryStatus");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<DeliveryEvent>) current;
     }
     return Arrays.asList((DeliveryEvent) current);
   }
-  protected ParcelDelivery(java.util.Map<String,Object> data) {
+  protected ParcelDelivery(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -239,7 +239,7 @@ public class ParcelDelivery extends Intangible {
    * Builder for {@link ParcelDelivery}
    */
   public static class Builder extends Intangible.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public ParcelDelivery build() {
@@ -379,6 +379,21 @@ public class ParcelDelivery extends Intangible {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -397,6 +412,13 @@ public class ParcelDelivery extends Intangible {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -490,7 +512,7 @@ public class ParcelDelivery extends Intangible {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("provider".equals(key) && value instanceof Organization) { this.provider((Organization)value); return; }
       if ("providers".equals(key) && value instanceof Organization) { this.provider((Organization)value); return; }
       if ("provider".equals(key) && value instanceof Person) { this.provider((Person)value); return; }

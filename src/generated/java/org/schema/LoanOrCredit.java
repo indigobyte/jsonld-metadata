@@ -37,7 +37,7 @@ public class LoanOrCredit extends FinancialProduct {
    * The amount of money.
    */
   @JsonIgnore public java.util.Collection<MonetaryAmount> getAmountMonetaryAmounts() {
-    final Object current = myData.get("amount");
+    final java.lang.Object current = myData.get("amount");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<MonetaryAmount>) current;
@@ -54,7 +54,7 @@ public class LoanOrCredit extends FinancialProduct {
    * The amount of money.
    */
   @JsonIgnore public java.util.Collection<Number> getAmountNumbers() {
-    final Object current = myData.get("amount");
+    final java.lang.Object current = myData.get("amount");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Number>) current;
@@ -71,7 +71,7 @@ public class LoanOrCredit extends FinancialProduct {
    * The duration of the loan or credit agreement.
    */
   @JsonIgnore public java.util.Collection<Duration> getLoanTerms() {
-    final Object current = myData.get("loanTerm");
+    final java.lang.Object current = myData.get("loanTerm");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Duration>) current;
@@ -88,7 +88,7 @@ public class LoanOrCredit extends FinancialProduct {
    * The only way you get the money back in the event of default is the security. Recourse is where you still have the opportunity to go back to the borrower for the rest of the money.
    */
   @JsonIgnore public java.util.Collection<Boolean> getRecourseLoans() {
-    final Object current = myData.get("recourseLoan");
+    final java.lang.Object current = myData.get("recourseLoan");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Boolean>) current;
@@ -105,7 +105,7 @@ public class LoanOrCredit extends FinancialProduct {
    * The period of time after any due date that the borrower has to fulfil its obligations before a default (failure to pay) is deemed to have occurred.
    */
   @JsonIgnore public java.util.Collection<Duration> getGracePeriods() {
-    final Object current = myData.get("gracePeriod");
+    final java.lang.Object current = myData.get("gracePeriod");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Duration>) current;
@@ -122,7 +122,7 @@ public class LoanOrCredit extends FinancialProduct {
    * The type of a loan or credit.
    */
   @JsonIgnore public java.util.Collection<String> getLoanTypes() {
-    final Object current = myData.get("loanType");
+    final java.lang.Object current = myData.get("loanType");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -139,7 +139,7 @@ public class LoanOrCredit extends FinancialProduct {
    * The currency in which the monetary amount is expressed.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;.
    */
   @JsonIgnore public java.util.Collection<String> getCurrencys() {
-    final Object current = myData.get("currency");
+    final java.lang.Object current = myData.get("currency");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -156,7 +156,7 @@ public class LoanOrCredit extends FinancialProduct {
    * A form of paying back money previously borrowed from a lender. Repayment usually takes the form of periodic payments that normally include part principal plus interest in each payment.
    */
   @JsonIgnore public java.util.Collection<RepaymentSpecification> getLoanRepaymentForms() {
-    final Object current = myData.get("loanRepaymentForm");
+    final java.lang.Object current = myData.get("loanRepaymentForm");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<RepaymentSpecification>) current;
@@ -173,7 +173,7 @@ public class LoanOrCredit extends FinancialProduct {
    * Assets required to secure loan or credit repayments. It may take form of third party pledge, goods, financial instruments (cash, securities, etc.)
    */
   @JsonIgnore public java.util.Collection<String> getRequiredCollateralStrings() {
-    final Object current = myData.get("requiredCollateral");
+    final java.lang.Object current = myData.get("requiredCollateral");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -190,7 +190,7 @@ public class LoanOrCredit extends FinancialProduct {
    * Assets required to secure loan or credit repayments. It may take form of third party pledge, goods, financial instruments (cash, securities, etc.)
    */
   @JsonIgnore public java.util.Collection<Thing> getRequiredCollateralThings() {
-    final Object current = myData.get("requiredCollateral");
+    final java.lang.Object current = myData.get("requiredCollateral");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Thing>) current;
@@ -207,14 +207,14 @@ public class LoanOrCredit extends FinancialProduct {
    * Whether the terms for payment of interest can be renegotiated during the life of the loan.
    */
   @JsonIgnore public java.util.Collection<Boolean> getRenegotiableLoans() {
-    final Object current = myData.get("renegotiableLoan");
+    final java.lang.Object current = myData.get("renegotiableLoan");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Boolean>) current;
     }
     return Arrays.asList((Boolean) current);
   }
-  protected LoanOrCredit(java.util.Map<String,Object> data) {
+  protected LoanOrCredit(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -222,7 +222,7 @@ public class LoanOrCredit extends FinancialProduct {
    * Builder for {@link LoanOrCredit}
    */
   public static class Builder extends FinancialProduct.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public LoanOrCredit build() {
@@ -579,6 +579,13 @@ public class LoanOrCredit extends FinancialProduct {
       return this;
     }
     /**
+     * The geographic area where a service or offered item is provided.
+     */
+    @NotNull public Builder areaServed(@NotNull AreaServed areaServed) {
+      putValue("areaServed", areaServed);
+      return this;
+    }
+    /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      */
     @NotNull public Builder category(@NotNull Category category) {
@@ -730,6 +737,21 @@ public class LoanOrCredit extends FinancialProduct {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -748,6 +770,13 @@ public class LoanOrCredit extends FinancialProduct {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -841,7 +870,7 @@ public class LoanOrCredit extends FinancialProduct {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("amount".equals(key) && value instanceof MonetaryAmount) { this.amount((MonetaryAmount)value); return; }
       if ("amounts".equals(key) && value instanceof MonetaryAmount) { this.amount((MonetaryAmount)value); return; }
       if ("amount".equals(key) && value instanceof Number) { this.amount((Number)value); return; }

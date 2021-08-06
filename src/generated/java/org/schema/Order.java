@@ -37,7 +37,7 @@ public class Order extends Intangible {
    * The offer(s) -- e.g., product, quantity and price combinations -- included in the order.
    */
   @JsonIgnore public java.util.Collection<Offer> getAcceptedOffers() {
-    final Object current = myData.get("acceptedOffer");
+    final java.lang.Object current = myData.get("acceptedOffer");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Offer>) current;
@@ -54,7 +54,7 @@ public class Order extends Intangible {
    * The current status of the order.
    */
   @JsonIgnore public java.util.Collection<OrderStatus> getOrderStatuss() {
-    final Object current = myData.get("orderStatus");
+    final java.lang.Object current = myData.get("orderStatus");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<OrderStatus>) current;
@@ -71,7 +71,7 @@ public class Order extends Intangible {
    * An identifier for the method of payment used (e.g. the last 4 digits of the credit card).
    */
   @JsonIgnore public java.util.Collection<String> getPaymentMethodIds() {
-    final Object current = myData.get("paymentMethodId");
+    final java.lang.Object current = myData.get("paymentMethodId");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -88,7 +88,7 @@ public class Order extends Intangible {
    * Party placing the order or paying the invoice.
    */
   @JsonIgnore public java.util.Collection<Organization> getCustomerOrganizations() {
-    final Object current = myData.get("customer");
+    final java.lang.Object current = myData.get("customer");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Organization>) current;
@@ -105,7 +105,7 @@ public class Order extends Intangible {
    * Party placing the order or paying the invoice.
    */
   @JsonIgnore public java.util.Collection<Person> getCustomerPersons() {
-    final Object current = myData.get("customer");
+    final java.lang.Object current = myData.get("customer");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Person>) current;
@@ -122,7 +122,7 @@ public class Order extends Intangible {
    * Was the offer accepted as a gift for someone other than the buyer.
    */
   @JsonIgnore public java.util.Collection<Boolean> getIsGifts() {
-    final Object current = myData.get("isGift");
+    final java.lang.Object current = myData.get("isGift");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Boolean>) current;
@@ -139,7 +139,7 @@ public class Order extends Intangible {
    * The item ordered.
    */
   @JsonIgnore public java.util.Collection<OrderItem> getOrderedItemOrderItems() {
-    final Object current = myData.get("orderedItem");
+    final java.lang.Object current = myData.get("orderedItem");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<OrderItem>) current;
@@ -156,7 +156,7 @@ public class Order extends Intangible {
    * The item ordered.
    */
   @JsonIgnore public java.util.Collection<Product> getOrderedItemProducts() {
-    final Object current = myData.get("orderedItem");
+    final java.lang.Object current = myData.get("orderedItem");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Product>) current;
@@ -173,7 +173,7 @@ public class Order extends Intangible {
    * The item ordered.
    */
   @JsonIgnore public java.util.Collection<Service> getOrderedItemServices() {
-    final Object current = myData.get("orderedItem");
+    final java.lang.Object current = myData.get("orderedItem");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Service>) current;
@@ -190,7 +190,7 @@ public class Order extends Intangible {
    * The URL for sending a payment.
    */
   @JsonIgnore public java.util.Collection<String> getPaymentUrls() {
-    final Object current = myData.get("paymentUrl");
+    final java.lang.Object current = myData.get("paymentUrl");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -207,7 +207,7 @@ public class Order extends Intangible {
    * Code used to redeem a discount.
    */
   @JsonIgnore public java.util.Collection<String> getDiscountCodes() {
-    final Object current = myData.get("discountCode");
+    final java.lang.Object current = myData.get("discountCode");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -224,7 +224,7 @@ public class Order extends Intangible {
    * The date that payment is due.
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getPaymentDueDates() {
-    final Object current = myData.get("paymentDueDate");
+    final java.lang.Object current = myData.get("paymentDueDate");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<java.util.Date>) current;
@@ -241,7 +241,7 @@ public class Order extends Intangible {
    * The currency of the discount.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;.
    */
   @JsonIgnore public java.util.Collection<String> getDiscountCurrencys() {
-    final Object current = myData.get("discountCurrency");
+    final java.lang.Object current = myData.get("discountCurrency");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -258,7 +258,7 @@ public class Order extends Intangible {
    * Any discount applied (to an Order).
    */
   @JsonIgnore public java.util.Collection<Integer> getDiscountIntegers() {
-    final Object current = myData.get("discount");
+    final java.lang.Object current = myData.get("discount");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -275,7 +275,7 @@ public class Order extends Intangible {
    * Any discount applied (to an Order).
    */
   @JsonIgnore public java.util.Collection<Long> getDiscountLongs() {
-    final Object current = myData.get("discount");
+    final java.lang.Object current = myData.get("discount");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Long>) current;
@@ -292,7 +292,7 @@ public class Order extends Intangible {
    * Any discount applied (to an Order).
    */
   @JsonIgnore public java.util.Collection<Float> getDiscountFloats() {
-    final Object current = myData.get("discount");
+    final java.lang.Object current = myData.get("discount");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Float>) current;
@@ -309,7 +309,7 @@ public class Order extends Intangible {
    * Any discount applied (to an Order).
    */
   @JsonIgnore public java.util.Collection<Double> getDiscountDoubles() {
-    final Object current = myData.get("discount");
+    final java.lang.Object current = myData.get("discount");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Double>) current;
@@ -326,7 +326,7 @@ public class Order extends Intangible {
    * Any discount applied (to an Order).
    */
   @JsonIgnore public java.util.Collection<String> getDiscountStrings() {
-    final Object current = myData.get("discount");
+    final java.lang.Object current = myData.get("discount");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -343,7 +343,7 @@ public class Order extends Intangible {
    * The delivery of the parcel related to this order or order item.
    */
   @JsonIgnore public java.util.Collection<ParcelDelivery> getOrderDeliverys() {
-    final Object current = myData.get("orderDelivery");
+    final java.lang.Object current = myData.get("orderDelivery");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<ParcelDelivery>) current;
@@ -360,7 +360,7 @@ public class Order extends Intangible {
    * Date order was placed.
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getOrderDates() {
-    final Object current = myData.get("orderDate");
+    final java.lang.Object current = myData.get("orderDate");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<java.util.Date>) current;
@@ -377,7 +377,7 @@ public class Order extends Intangible {
    * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
    */
   @JsonIgnore public java.util.Collection<Participant> getSellers() {
-    final Object current = myData.get("seller");
+    final java.lang.Object current = myData.get("seller");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Participant>) current;
@@ -394,7 +394,7 @@ public class Order extends Intangible {
    * The order is being paid as part of the referenced Invoice.
    */
   @JsonIgnore public java.util.Collection<Invoice> getPartOfInvoices() {
-    final Object current = myData.get("partOfInvoice");
+    final java.lang.Object current = myData.get("partOfInvoice");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Invoice>) current;
@@ -411,7 +411,7 @@ public class Order extends Intangible {
    * A number that confirms the given order or payment has been received.
    */
   @JsonIgnore public java.util.Collection<Identifier> getConfirmationNumbers() {
-    final Object current = myData.get("confirmationNumber");
+    final java.lang.Object current = myData.get("confirmationNumber");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Identifier>) current;
@@ -428,7 +428,7 @@ public class Order extends Intangible {
    * The billing address for the order.
    */
   @JsonIgnore public java.util.Collection<PostalAddress> getBillingAddresss() {
-    final Object current = myData.get("billingAddress");
+    final java.lang.Object current = myData.get("billingAddress");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<PostalAddress>) current;
@@ -445,7 +445,7 @@ public class Order extends Intangible {
    * The name of the credit card or other method of payment for the order.
    */
   @JsonIgnore public java.util.Collection<PaymentMethod> getPaymentMethods() {
-    final Object current = myData.get("paymentMethod");
+    final java.lang.Object current = myData.get("paymentMethod");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<PaymentMethod>) current;
@@ -462,7 +462,7 @@ public class Order extends Intangible {
    * The identifier of the transaction.
    */
   @JsonIgnore public java.util.Collection<Identifier> getOrderNumbers() {
-    final Object current = myData.get("orderNumber");
+    final java.lang.Object current = myData.get("orderNumber");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Identifier>) current;
@@ -479,7 +479,7 @@ public class Order extends Intangible {
    * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
    */
   @JsonIgnore public java.util.Collection<Organization> getBrokerOrganizations() {
-    final Object current = myData.get("broker");
+    final java.lang.Object current = myData.get("broker");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Organization>) current;
@@ -496,14 +496,14 @@ public class Order extends Intangible {
    * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
    */
   @JsonIgnore public java.util.Collection<Person> getBrokerPersons() {
-    final Object current = myData.get("broker");
+    final java.lang.Object current = myData.get("broker");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
-  protected Order(java.util.Map<String,Object> data) {
+  protected Order(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -511,7 +511,7 @@ public class Order extends Intangible {
    * Builder for {@link Order}
    */
   public static class Builder extends Intangible.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public Order build() {
@@ -791,6 +791,21 @@ public class Order extends Intangible {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -809,6 +824,13 @@ public class Order extends Intangible {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -902,7 +924,7 @@ public class Order extends Intangible {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("acceptedOffer".equals(key) && value instanceof Offer) { this.acceptedOffer((Offer)value); return; }
       if ("acceptedOffers".equals(key) && value instanceof Offer) { this.acceptedOffer((Offer)value); return; }
       if ("orderStatus".equals(key) && value instanceof OrderStatus) { this.orderStatus((OrderStatus)value); return; }

@@ -37,7 +37,7 @@ public class TrainTrip extends Trip {
    * The platform from which the train departs.
    */
   @JsonIgnore public java.util.Collection<String> getDeparturePlatforms() {
-    final Object current = myData.get("departurePlatform");
+    final java.lang.Object current = myData.get("departurePlatform");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -54,7 +54,7 @@ public class TrainTrip extends Trip {
    * The station from which the train departs.
    */
   @JsonIgnore public java.util.Collection<TrainStation> getDepartureStations() {
-    final Object current = myData.get("departureStation");
+    final java.lang.Object current = myData.get("departureStation");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<TrainStation>) current;
@@ -71,7 +71,7 @@ public class TrainTrip extends Trip {
    * The station where the train trip ends.
    */
   @JsonIgnore public java.util.Collection<TrainStation> getArrivalStations() {
-    final Object current = myData.get("arrivalStation");
+    final java.lang.Object current = myData.get("arrivalStation");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<TrainStation>) current;
@@ -88,7 +88,7 @@ public class TrainTrip extends Trip {
    * The name of the train (e.g. The Orient Express).
    */
   @JsonIgnore public java.util.Collection<String> getTrainNames() {
-    final Object current = myData.get("trainName");
+    final java.lang.Object current = myData.get("trainName");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -105,7 +105,7 @@ public class TrainTrip extends Trip {
    * The unique identifier for the train.
    */
   @JsonIgnore public java.util.Collection<String> getTrainNumbers() {
-    final Object current = myData.get("trainNumber");
+    final java.lang.Object current = myData.get("trainNumber");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -122,14 +122,14 @@ public class TrainTrip extends Trip {
    * The platform where the train arrives.
    */
   @JsonIgnore public java.util.Collection<String> getArrivalPlatforms() {
-    final Object current = myData.get("arrivalPlatform");
+    final java.lang.Object current = myData.get("arrivalPlatform");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
-  protected TrainTrip(java.util.Map<String,Object> data) {
+  protected TrainTrip(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -137,7 +137,7 @@ public class TrainTrip extends Trip {
    * Builder for {@link TrainTrip}
    */
   public static class Builder extends Trip.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public TrainTrip build() {
@@ -330,6 +330,21 @@ public class TrainTrip extends Trip {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -348,6 +363,13 @@ public class TrainTrip extends Trip {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -441,7 +463,7 @@ public class TrainTrip extends Trip {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("departurePlatform".equals(key) && value instanceof String) { this.departurePlatform((String)value); return; }
       if ("departurePlatforms".equals(key) && value instanceof String) { this.departurePlatform((String)value); return; }
       if ("departureStation".equals(key) && value instanceof TrainStation) { this.departureStation((TrainStation)value); return; }

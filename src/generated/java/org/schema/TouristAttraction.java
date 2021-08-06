@@ -37,7 +37,7 @@ public class TouristAttraction extends Place {
    * Attraction suitable for type(s) of tourist. eg. Children, visitors from a particular country, etc. 
    */
   @JsonIgnore public java.util.Collection<Audience> getTouristTypeAudiences() {
-    final Object current = myData.get("touristType");
+    final java.lang.Object current = myData.get("touristType");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Audience>) current;
@@ -54,7 +54,7 @@ public class TouristAttraction extends Place {
    * Attraction suitable for type(s) of tourist. eg. Children, visitors from a particular country, etc. 
    */
   @JsonIgnore public java.util.Collection<String> getTouristTypeStrings() {
-    final Object current = myData.get("touristType");
+    final java.lang.Object current = myData.get("touristType");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -71,7 +71,7 @@ public class TouristAttraction extends Place {
    * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
    */
   @JsonIgnore public java.util.Collection<Language> getAvailableLanguageLanguages() {
-    final Object current = myData.get("availableLanguage");
+    final java.lang.Object current = myData.get("availableLanguage");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Language>) current;
@@ -88,14 +88,14 @@ public class TouristAttraction extends Place {
    * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
    */
   @JsonIgnore public java.util.Collection<String> getAvailableLanguageStrings() {
-    final Object current = myData.get("availableLanguage");
+    final java.lang.Object current = myData.get("availableLanguage");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
-  protected TouristAttraction(java.util.Map<String,Object> data) {
+  protected TouristAttraction(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -103,7 +103,7 @@ public class TouristAttraction extends Place {
    * Builder for {@link TouristAttraction}
    */
   public static class Builder extends Place.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public TouristAttraction build() {
@@ -780,6 +780,21 @@ public class TouristAttraction extends Place {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -798,6 +813,13 @@ public class TouristAttraction extends Place {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -891,7 +913,7 @@ public class TouristAttraction extends Place {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("touristType".equals(key) && value instanceof Audience) { this.touristType((Audience)value); return; }
       if ("touristTypes".equals(key) && value instanceof Audience) { this.touristType((Audience)value); return; }
       if ("touristType".equals(key) && value instanceof String) { this.touristType((String)value); return; }

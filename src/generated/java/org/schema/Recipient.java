@@ -24,7 +24,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * 
+ * A sub property of participant. The participant who is at the receiving end of the action.
  */
 public interface Recipient {
 }

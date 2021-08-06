@@ -37,7 +37,7 @@ public class UnitPriceSpecification extends PriceSpecification {
    * Defines the type of a price specified for an offered product, for example a list price, a (temporary) sale price or a manufacturer suggested retail price. If multiple prices are specified for an offer the [[priceType]] property can be used to identify the type of each such specified price. The value of priceType can be specified as a value from enumeration PriceTypeEnumeration or as a free form text string for price types that are not already predefined in PriceTypeEnumeration.
    */
   @JsonIgnore public java.util.Collection<PriceTypeEnumeration> getPriceTypePriceTypeEnumerations() {
-    final Object current = myData.get("priceType");
+    final java.lang.Object current = myData.get("priceType");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<PriceTypeEnumeration>) current;
@@ -54,7 +54,7 @@ public class UnitPriceSpecification extends PriceSpecification {
    * Defines the type of a price specified for an offered product, for example a list price, a (temporary) sale price or a manufacturer suggested retail price. If multiple prices are specified for an offer the [[priceType]] property can be used to identify the type of each such specified price. The value of priceType can be specified as a value from enumeration PriceTypeEnumeration or as a free form text string for price types that are not already predefined in PriceTypeEnumeration.
    */
   @JsonIgnore public java.util.Collection<String> getPriceTypeStrings() {
-    final Object current = myData.get("priceType");
+    final java.lang.Object current = myData.get("priceType");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -73,7 +73,7 @@ public class UnitPriceSpecification extends PriceSpecification {
    * &lt;a href='unitCode'&gt;unitCode&lt;/a&gt;.
    */
   @JsonIgnore public java.util.Collection<String> getUnitTexts() {
-    final Object current = myData.get("unitText");
+    final java.lang.Object current = myData.get("unitText");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -90,7 +90,7 @@ public class UnitPriceSpecification extends PriceSpecification {
    * This property specifies the minimal quantity and rounding increment that will be the basis for the billing. The unit of measurement is specified by the unitCode property.
    */
   @JsonIgnore public java.util.Collection<Integer> getBillingIncrementIntegers() {
-    final Object current = myData.get("billingIncrement");
+    final java.lang.Object current = myData.get("billingIncrement");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -107,7 +107,7 @@ public class UnitPriceSpecification extends PriceSpecification {
    * This property specifies the minimal quantity and rounding increment that will be the basis for the billing. The unit of measurement is specified by the unitCode property.
    */
   @JsonIgnore public java.util.Collection<Long> getBillingIncrementLongs() {
-    final Object current = myData.get("billingIncrement");
+    final java.lang.Object current = myData.get("billingIncrement");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Long>) current;
@@ -124,7 +124,7 @@ public class UnitPriceSpecification extends PriceSpecification {
    * This property specifies the minimal quantity and rounding increment that will be the basis for the billing. The unit of measurement is specified by the unitCode property.
    */
   @JsonIgnore public java.util.Collection<Float> getBillingIncrementFloats() {
-    final Object current = myData.get("billingIncrement");
+    final java.lang.Object current = myData.get("billingIncrement");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Float>) current;
@@ -141,7 +141,7 @@ public class UnitPriceSpecification extends PriceSpecification {
    * This property specifies the minimal quantity and rounding increment that will be the basis for the billing. The unit of measurement is specified by the unitCode property.
    */
   @JsonIgnore public java.util.Collection<Double> getBillingIncrementDoubles() {
-    final Object current = myData.get("billingIncrement");
+    final java.lang.Object current = myData.get("billingIncrement");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Double>) current;
@@ -158,7 +158,7 @@ public class UnitPriceSpecification extends PriceSpecification {
    * This property specifies the minimal quantity and rounding increment that will be the basis for the billing. The unit of measurement is specified by the unitCode property.
    */
   @JsonIgnore public java.util.Collection<String> getBillingIncrementStrings() {
-    final Object current = myData.get("billingIncrement");
+    final java.lang.Object current = myData.get("billingIncrement");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -175,7 +175,7 @@ public class UnitPriceSpecification extends PriceSpecification {
    * The reference quantity for which a certain price applies, e.g. 1 EUR per 4 kWh of electricity. This property is a replacement for unitOfMeasurement for the advanced cases where the price does not relate to a standard unit.
    */
   @JsonIgnore public java.util.Collection<QuantitativeValue> getReferenceQuantitys() {
-    final Object current = myData.get("referenceQuantity");
+    final java.lang.Object current = myData.get("referenceQuantity");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<QuantitativeValue>) current;
@@ -192,7 +192,7 @@ public class UnitPriceSpecification extends PriceSpecification {
    * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
    */
   @JsonIgnore public java.util.Collection<String> getUnitCodes() {
-    final Object current = myData.get("unitCode");
+    final java.lang.Object current = myData.get("unitCode");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -209,7 +209,7 @@ public class UnitPriceSpecification extends PriceSpecification {
    * Specifies after how much time this price (or price component) becomes valid and billing starts. Can be used, for example, to model a price increase after the first year of a subscription. The unit of measurement is specified by the unitCode property.
    */
   @JsonIgnore public java.util.Collection<Integer> getBillingStartIntegers() {
-    final Object current = myData.get("billingStart");
+    final java.lang.Object current = myData.get("billingStart");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -226,7 +226,7 @@ public class UnitPriceSpecification extends PriceSpecification {
    * Specifies after how much time this price (or price component) becomes valid and billing starts. Can be used, for example, to model a price increase after the first year of a subscription. The unit of measurement is specified by the unitCode property.
    */
   @JsonIgnore public java.util.Collection<Long> getBillingStartLongs() {
-    final Object current = myData.get("billingStart");
+    final java.lang.Object current = myData.get("billingStart");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Long>) current;
@@ -243,7 +243,7 @@ public class UnitPriceSpecification extends PriceSpecification {
    * Specifies after how much time this price (or price component) becomes valid and billing starts. Can be used, for example, to model a price increase after the first year of a subscription. The unit of measurement is specified by the unitCode property.
    */
   @JsonIgnore public java.util.Collection<Float> getBillingStartFloats() {
-    final Object current = myData.get("billingStart");
+    final java.lang.Object current = myData.get("billingStart");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Float>) current;
@@ -260,7 +260,7 @@ public class UnitPriceSpecification extends PriceSpecification {
    * Specifies after how much time this price (or price component) becomes valid and billing starts. Can be used, for example, to model a price increase after the first year of a subscription. The unit of measurement is specified by the unitCode property.
    */
   @JsonIgnore public java.util.Collection<Double> getBillingStartDoubles() {
-    final Object current = myData.get("billingStart");
+    final java.lang.Object current = myData.get("billingStart");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Double>) current;
@@ -277,7 +277,7 @@ public class UnitPriceSpecification extends PriceSpecification {
    * Specifies after how much time this price (or price component) becomes valid and billing starts. Can be used, for example, to model a price increase after the first year of a subscription. The unit of measurement is specified by the unitCode property.
    */
   @JsonIgnore public java.util.Collection<String> getBillingStartStrings() {
-    final Object current = myData.get("billingStart");
+    final java.lang.Object current = myData.get("billingStart");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -294,7 +294,7 @@ public class UnitPriceSpecification extends PriceSpecification {
    * Specifies for how long this price (or price component) will be billed. Can be used, for example, to model the contractual duration of a subscription or payment plan. Type can be either a Duration or a Number (in which case the unit of measurement, for example month, is specified by the unitCode property).
    */
   @JsonIgnore public java.util.Collection<Duration> getBillingDurationDurations() {
-    final Object current = myData.get("billingDuration");
+    final java.lang.Object current = myData.get("billingDuration");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Duration>) current;
@@ -311,7 +311,7 @@ public class UnitPriceSpecification extends PriceSpecification {
    * Specifies for how long this price (or price component) will be billed. Can be used, for example, to model the contractual duration of a subscription or payment plan. Type can be either a Duration or a Number (in which case the unit of measurement, for example month, is specified by the unitCode property).
    */
   @JsonIgnore public java.util.Collection<Number> getBillingDurationNumbers() {
-    final Object current = myData.get("billingDuration");
+    final java.lang.Object current = myData.get("billingDuration");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Number>) current;
@@ -328,7 +328,7 @@ public class UnitPriceSpecification extends PriceSpecification {
    * Specifies for how long this price (or price component) will be billed. Can be used, for example, to model the contractual duration of a subscription or payment plan. Type can be either a Duration or a Number (in which case the unit of measurement, for example month, is specified by the unitCode property).
    */
   @JsonIgnore public java.util.Collection<QuantitativeValue> getBillingDurationQuantitativeValues() {
-    final Object current = myData.get("billingDuration");
+    final java.lang.Object current = myData.get("billingDuration");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<QuantitativeValue>) current;
@@ -345,14 +345,14 @@ public class UnitPriceSpecification extends PriceSpecification {
    * Identifies a price component (for example, a line item on an invoice), part of the total price for an offer.
    */
   @JsonIgnore public java.util.Collection<PriceComponentTypeEnumeration> getPriceComponentTypes() {
-    final Object current = myData.get("priceComponentType");
+    final java.lang.Object current = myData.get("priceComponentType");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<PriceComponentTypeEnumeration>) current;
     }
     return Arrays.asList((PriceComponentTypeEnumeration) current);
   }
-  protected UnitPriceSpecification(java.util.Map<String,Object> data) {
+  protected UnitPriceSpecification(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -360,7 +360,7 @@ public class UnitPriceSpecification extends PriceSpecification {
    * Builder for {@link UnitPriceSpecification}
    */
   public static class Builder extends PriceSpecification.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public UnitPriceSpecification build() {
@@ -657,6 +657,21 @@ public class UnitPriceSpecification extends PriceSpecification {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -675,6 +690,13 @@ public class UnitPriceSpecification extends PriceSpecification {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -768,7 +790,7 @@ public class UnitPriceSpecification extends PriceSpecification {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("priceType".equals(key) && value instanceof PriceTypeEnumeration) { this.priceType((PriceTypeEnumeration)value); return; }
       if ("priceTypes".equals(key) && value instanceof PriceTypeEnumeration) { this.priceType((PriceTypeEnumeration)value); return; }
       if ("priceType".equals(key) && value instanceof String) { this.priceType((String)value); return; }

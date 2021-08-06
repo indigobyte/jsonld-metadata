@@ -24,7 +24,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * 
+ * A competitor in a sports event.
  */
 public interface Competitor {
 }

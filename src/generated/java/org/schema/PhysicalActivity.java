@@ -37,7 +37,7 @@ public class PhysicalActivity extends LifestyleModification {
    * The anatomy of the underlying organ system or structures associated with this entity.
    */
   @JsonIgnore public java.util.Collection<AnatomicalStructure> getAssociatedAnatomyAnatomicalStructures() {
-    final Object current = myData.get("associatedAnatomy");
+    final java.lang.Object current = myData.get("associatedAnatomy");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<AnatomicalStructure>) current;
@@ -54,7 +54,7 @@ public class PhysicalActivity extends LifestyleModification {
    * The anatomy of the underlying organ system or structures associated with this entity.
    */
   @JsonIgnore public java.util.Collection<AnatomicalSystem> getAssociatedAnatomyAnatomicalSystems() {
-    final Object current = myData.get("associatedAnatomy");
+    final java.lang.Object current = myData.get("associatedAnatomy");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<AnatomicalSystem>) current;
@@ -71,7 +71,7 @@ public class PhysicalActivity extends LifestyleModification {
    * The anatomy of the underlying organ system or structures associated with this entity.
    */
   @JsonIgnore public java.util.Collection<SuperficialAnatomy> getAssociatedAnatomySuperficialAnatomys() {
-    final Object current = myData.get("associatedAnatomy");
+    final java.lang.Object current = myData.get("associatedAnatomy");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<SuperficialAnatomy>) current;
@@ -88,7 +88,7 @@ public class PhysicalActivity extends LifestyleModification {
    * Changes in the normal mechanical, physical, and biochemical functions that are associated with this activity or condition.
    */
   @JsonIgnore public java.util.Collection<String> getPathophysiologys() {
-    final Object current = myData.get("pathophysiology");
+    final java.lang.Object current = myData.get("pathophysiology");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -105,7 +105,7 @@ public class PhysicalActivity extends LifestyleModification {
    * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
    */
   @JsonIgnore public java.util.Collection<Category> getCategorys() {
-    final Object current = myData.get("category");
+    final java.lang.Object current = myData.get("category");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Category>) current;
@@ -122,14 +122,14 @@ public class PhysicalActivity extends LifestyleModification {
    * The characteristics of associated patients, such as age, gender, race etc.
    */
   @JsonIgnore public java.util.Collection<String> getEpidemiologys() {
-    final Object current = myData.get("epidemiology");
+    final java.lang.Object current = myData.get("epidemiology");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
-  protected PhysicalActivity(java.util.Map<String,Object> data) {
+  protected PhysicalActivity(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -137,7 +137,7 @@ public class PhysicalActivity extends LifestyleModification {
    * Builder for {@link PhysicalActivity}
    */
   public static class Builder extends LifestyleModification.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public PhysicalActivity build() {
@@ -305,6 +305,21 @@ public class PhysicalActivity extends LifestyleModification {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -323,6 +338,13 @@ public class PhysicalActivity extends LifestyleModification {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -416,7 +438,7 @@ public class PhysicalActivity extends LifestyleModification {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("associatedAnatomy".equals(key) && value instanceof AnatomicalStructure) { this.associatedAnatomy((AnatomicalStructure)value); return; }
       if ("associatedAnatomys".equals(key) && value instanceof AnatomicalStructure) { this.associatedAnatomy((AnatomicalStructure)value); return; }
       if ("associatedAnatomy".equals(key) && value instanceof AnatomicalSystem) { this.associatedAnatomy((AnatomicalSystem)value); return; }

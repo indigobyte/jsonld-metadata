@@ -37,7 +37,7 @@ public class FloorPlan extends Intangible {
    * Indicates the total (available plus unavailable) number of accommodation units in an [[ApartmentComplex]], or the number of accommodation units for a specific [[FloorPlan]] (within its specific [[ApartmentComplex]]). See also [[numberOfAvailableAccommodationUnits]].
    */
   @JsonIgnore public java.util.Collection<QuantitativeValue> getNumberOfAccommodationUnitss() {
-    final Object current = myData.get("numberOfAccommodationUnits");
+    final java.lang.Object current = myData.get("numberOfAccommodationUnits");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<QuantitativeValue>) current;
@@ -54,7 +54,7 @@ public class FloorPlan extends Intangible {
    * A schematic image showing the floorplan layout.
    */
   @JsonIgnore public java.util.Collection<Image> getLayoutImages() {
-    final Object current = myData.get("layoutImage");
+    final java.lang.Object current = myData.get("layoutImage");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Image>) current;
@@ -71,7 +71,7 @@ public class FloorPlan extends Intangible {
    * The total integer number of bathrooms in a some [[Accommodation]], following real estate conventions as [documented in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsTotalInteger+Field): &quot;The simple sum of the number of bathrooms. For example for a property with two Full Bathrooms and one Half Bathroom, the Bathrooms Total Integer will be 3.&quot;. See also [[numberOfRooms]].
    */
   @JsonIgnore public java.util.Collection<Integer> getNumberOfBathroomsTotals() {
-    final Object current = myData.get("numberOfBathroomsTotal");
+    final java.lang.Object current = myData.get("numberOfBathroomsTotal");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -88,7 +88,7 @@ public class FloorPlan extends Intangible {
    * Number of full bathrooms - The total number of full and &frac34; bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsFull field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsFull+Field).
    */
   @JsonIgnore public java.util.Collection<Integer> getNumberOfFullBathroomsIntegers() {
-    final Object current = myData.get("numberOfFullBathrooms");
+    final java.lang.Object current = myData.get("numberOfFullBathrooms");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -105,7 +105,7 @@ public class FloorPlan extends Intangible {
    * Number of full bathrooms - The total number of full and &frac34; bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsFull field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsFull+Field).
    */
   @JsonIgnore public java.util.Collection<Long> getNumberOfFullBathroomsLongs() {
-    final Object current = myData.get("numberOfFullBathrooms");
+    final java.lang.Object current = myData.get("numberOfFullBathrooms");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Long>) current;
@@ -122,7 +122,7 @@ public class FloorPlan extends Intangible {
    * Number of full bathrooms - The total number of full and &frac34; bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsFull field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsFull+Field).
    */
   @JsonIgnore public java.util.Collection<Float> getNumberOfFullBathroomsFloats() {
-    final Object current = myData.get("numberOfFullBathrooms");
+    final java.lang.Object current = myData.get("numberOfFullBathrooms");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Float>) current;
@@ -139,7 +139,7 @@ public class FloorPlan extends Intangible {
    * Number of full bathrooms - The total number of full and &frac34; bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsFull field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsFull+Field).
    */
   @JsonIgnore public java.util.Collection<Double> getNumberOfFullBathroomsDoubles() {
-    final Object current = myData.get("numberOfFullBathrooms");
+    final java.lang.Object current = myData.get("numberOfFullBathrooms");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Double>) current;
@@ -156,7 +156,7 @@ public class FloorPlan extends Intangible {
    * Number of full bathrooms - The total number of full and &frac34; bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsFull field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsFull+Field).
    */
   @JsonIgnore public java.util.Collection<String> getNumberOfFullBathroomsStrings() {
-    final Object current = myData.get("numberOfFullBathrooms");
+    final java.lang.Object current = myData.get("numberOfFullBathrooms");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -175,7 +175,7 @@ public class FloorPlan extends Intangible {
    * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
    */
   @JsonIgnore public java.util.Collection<Integer> getNumberOfRoomsIntegers() {
-    final Object current = myData.get("numberOfRooms");
+    final java.lang.Object current = myData.get("numberOfRooms");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -194,7 +194,7 @@ public class FloorPlan extends Intangible {
    * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
    */
   @JsonIgnore public java.util.Collection<Long> getNumberOfRoomsLongs() {
-    final Object current = myData.get("numberOfRooms");
+    final java.lang.Object current = myData.get("numberOfRooms");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Long>) current;
@@ -213,7 +213,7 @@ public class FloorPlan extends Intangible {
    * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
    */
   @JsonIgnore public java.util.Collection<Float> getNumberOfRoomsFloats() {
-    final Object current = myData.get("numberOfRooms");
+    final java.lang.Object current = myData.get("numberOfRooms");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Float>) current;
@@ -232,7 +232,7 @@ public class FloorPlan extends Intangible {
    * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
    */
   @JsonIgnore public java.util.Collection<Double> getNumberOfRoomsDoubles() {
-    final Object current = myData.get("numberOfRooms");
+    final java.lang.Object current = myData.get("numberOfRooms");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Double>) current;
@@ -251,7 +251,7 @@ public class FloorPlan extends Intangible {
    * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
    */
   @JsonIgnore public java.util.Collection<String> getNumberOfRoomsStrings() {
-    final Object current = myData.get("numberOfRooms");
+    final java.lang.Object current = myData.get("numberOfRooms");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -268,7 +268,7 @@ public class FloorPlan extends Intangible {
    * The total integer number of bedrooms in a some [[Accommodation]], [[ApartmentComplex]] or [[FloorPlan]].
    */
   @JsonIgnore public java.util.Collection<Number> getNumberOfBedroomsNumbers() {
-    final Object current = myData.get("numberOfBedrooms");
+    final java.lang.Object current = myData.get("numberOfBedrooms");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Number>) current;
@@ -285,7 +285,7 @@ public class FloorPlan extends Intangible {
    * The total integer number of bedrooms in a some [[Accommodation]], [[ApartmentComplex]] or [[FloorPlan]].
    */
   @JsonIgnore public java.util.Collection<QuantitativeValue> getNumberOfBedroomsQuantitativeValues() {
-    final Object current = myData.get("numberOfBedrooms");
+    final java.lang.Object current = myData.get("numberOfBedrooms");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<QuantitativeValue>) current;
@@ -302,7 +302,7 @@ public class FloorPlan extends Intangible {
    * Number of partial bathrooms - The total number of half and &frac14; bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsPartial field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsPartial+Field). 
    */
   @JsonIgnore public java.util.Collection<Integer> getNumberOfPartialBathroomsIntegers() {
-    final Object current = myData.get("numberOfPartialBathrooms");
+    final java.lang.Object current = myData.get("numberOfPartialBathrooms");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -319,7 +319,7 @@ public class FloorPlan extends Intangible {
    * Number of partial bathrooms - The total number of half and &frac14; bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsPartial field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsPartial+Field). 
    */
   @JsonIgnore public java.util.Collection<Long> getNumberOfPartialBathroomsLongs() {
-    final Object current = myData.get("numberOfPartialBathrooms");
+    final java.lang.Object current = myData.get("numberOfPartialBathrooms");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Long>) current;
@@ -336,7 +336,7 @@ public class FloorPlan extends Intangible {
    * Number of partial bathrooms - The total number of half and &frac14; bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsPartial field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsPartial+Field). 
    */
   @JsonIgnore public java.util.Collection<Float> getNumberOfPartialBathroomsFloats() {
-    final Object current = myData.get("numberOfPartialBathrooms");
+    final java.lang.Object current = myData.get("numberOfPartialBathrooms");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Float>) current;
@@ -353,7 +353,7 @@ public class FloorPlan extends Intangible {
    * Number of partial bathrooms - The total number of half and &frac14; bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsPartial field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsPartial+Field). 
    */
   @JsonIgnore public java.util.Collection<Double> getNumberOfPartialBathroomsDoubles() {
-    final Object current = myData.get("numberOfPartialBathrooms");
+    final java.lang.Object current = myData.get("numberOfPartialBathrooms");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Double>) current;
@@ -370,7 +370,7 @@ public class FloorPlan extends Intangible {
    * Number of partial bathrooms - The total number of half and &frac14; bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsPartial field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsPartial+Field). 
    */
   @JsonIgnore public java.util.Collection<String> getNumberOfPartialBathroomsStrings() {
-    final Object current = myData.get("numberOfPartialBathrooms");
+    final java.lang.Object current = myData.get("numberOfPartialBathrooms");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
@@ -389,7 +389,7 @@ public class FloorPlan extends Intangible {
    * Typical unit code(s): MTK for square meter, FTK for square foot, or YDK for square yard 
    */
   @JsonIgnore public java.util.Collection<QuantitativeValue> getFloorSizes() {
-    final Object current = myData.get("floorSize");
+    final java.lang.Object current = myData.get("floorSize");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<QuantitativeValue>) current;
@@ -406,7 +406,7 @@ public class FloorPlan extends Intangible {
    * Indicates the number of available accommodation units in an [[ApartmentComplex]], or the number of accommodation units for a specific [[FloorPlan]] (within its specific [[ApartmentComplex]]). See also [[numberOfAccommodationUnits]].
    */
   @JsonIgnore public java.util.Collection<QuantitativeValue> getNumberOfAvailableAccommodationUnitss() {
-    final Object current = myData.get("numberOfAvailableAccommodationUnits");
+    final java.lang.Object current = myData.get("numberOfAvailableAccommodationUnits");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<QuantitativeValue>) current;
@@ -423,7 +423,7 @@ public class FloorPlan extends Intangible {
    * Indicates some accommodation that this floor plan describes.
    */
   @JsonIgnore public java.util.Collection<Accommodation> getIsPlanForApartments() {
-    final Object current = myData.get("isPlanForApartment");
+    final java.lang.Object current = myData.get("isPlanForApartment");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Accommodation>) current;
@@ -440,7 +440,7 @@ public class FloorPlan extends Intangible {
    * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
    */
   @JsonIgnore public java.util.Collection<LocationFeatureSpecification> getAmenityFeatures() {
-    final Object current = myData.get("amenityFeature");
+    final java.lang.Object current = myData.get("amenityFeature");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<LocationFeatureSpecification>) current;
@@ -457,7 +457,7 @@ public class FloorPlan extends Intangible {
    * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
    */
   @JsonIgnore public java.util.Collection<Boolean> getPetsAllowedBooleans() {
-    final Object current = myData.get("petsAllowed");
+    final java.lang.Object current = myData.get("petsAllowed");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Boolean>) current;
@@ -474,14 +474,14 @@ public class FloorPlan extends Intangible {
    * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
    */
   @JsonIgnore public java.util.Collection<String> getPetsAllowedStrings() {
-    final Object current = myData.get("petsAllowed");
+    final java.lang.Object current = myData.get("petsAllowed");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
-  protected FloorPlan(java.util.Map<String,Object> data) {
+  protected FloorPlan(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -489,7 +489,7 @@ public class FloorPlan extends Intangible {
    * Builder for {@link FloorPlan}
    */
   public static class Builder extends Intangible.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public FloorPlan build() {
@@ -727,6 +727,21 @@ public class FloorPlan extends Intangible {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -745,6 +760,13 @@ public class FloorPlan extends Intangible {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -838,7 +860,7 @@ public class FloorPlan extends Intangible {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("numberOfAccommodationUnits".equals(key) && value instanceof QuantitativeValue) { this.numberOfAccommodationUnits((QuantitativeValue)value); return; }
       if ("numberOfAccommodationUnitss".equals(key) && value instanceof QuantitativeValue) { this.numberOfAccommodationUnits((QuantitativeValue)value); return; }
       if ("layoutImage".equals(key) && value instanceof Image) { this.layoutImage((Image)value); return; }

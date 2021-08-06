@@ -24,7 +24,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * 
+ * A material that something is made from, e.g. leather, wool, cotton, paper.
  */
 public interface Material {
 }

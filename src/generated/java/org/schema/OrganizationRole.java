@@ -37,7 +37,7 @@ public class OrganizationRole extends Role {
    * A number associated with a role in an organization, for example, the number on an athlete's jersey.
    */
   @JsonIgnore public java.util.Collection<Integer> getNumberedPositionIntegers() {
-    final Object current = myData.get("numberedPosition");
+    final java.lang.Object current = myData.get("numberedPosition");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Integer>) current;
@@ -54,7 +54,7 @@ public class OrganizationRole extends Role {
    * A number associated with a role in an organization, for example, the number on an athlete's jersey.
    */
   @JsonIgnore public java.util.Collection<Long> getNumberedPositionLongs() {
-    final Object current = myData.get("numberedPosition");
+    final java.lang.Object current = myData.get("numberedPosition");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Long>) current;
@@ -71,7 +71,7 @@ public class OrganizationRole extends Role {
    * A number associated with a role in an organization, for example, the number on an athlete's jersey.
    */
   @JsonIgnore public java.util.Collection<Float> getNumberedPositionFloats() {
-    final Object current = myData.get("numberedPosition");
+    final java.lang.Object current = myData.get("numberedPosition");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Float>) current;
@@ -88,7 +88,7 @@ public class OrganizationRole extends Role {
    * A number associated with a role in an organization, for example, the number on an athlete's jersey.
    */
   @JsonIgnore public java.util.Collection<Double> getNumberedPositionDoubles() {
-    final Object current = myData.get("numberedPosition");
+    final java.lang.Object current = myData.get("numberedPosition");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<Double>) current;
@@ -105,14 +105,14 @@ public class OrganizationRole extends Role {
    * A number associated with a role in an organization, for example, the number on an athlete's jersey.
    */
   @JsonIgnore public java.util.Collection<String> getNumberedPositionStrings() {
-    final Object current = myData.get("numberedPosition");
+    final java.lang.Object current = myData.get("numberedPosition");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
-  protected OrganizationRole(java.util.Map<String,Object> data) {
+  protected OrganizationRole(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -120,7 +120,7 @@ public class OrganizationRole extends Role {
    * Builder for {@link OrganizationRole}
    */
   public static class Builder extends Role.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public OrganizationRole build() {
@@ -183,6 +183,21 @@ public class OrganizationRole extends Role {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -201,6 +216,13 @@ public class OrganizationRole extends Role {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -294,7 +316,7 @@ public class OrganizationRole extends Role {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("numberedPosition".equals(key) && value instanceof Integer) { this.numberedPosition((Integer)value); return; }
       if ("numberedPositions".equals(key) && value instanceof Integer) { this.numberedPosition((Integer)value); return; }
       if ("numberedPosition".equals(key) && value instanceof Long) { this.numberedPosition((Long)value); return; }

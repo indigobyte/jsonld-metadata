@@ -37,7 +37,7 @@ public class BoatTrip extends Trip {
    * The terminal or port from which the boat arrives.
    */
   @JsonIgnore public java.util.Collection<BoatTerminal> getArrivalBoatTerminals() {
-    final Object current = myData.get("arrivalBoatTerminal");
+    final java.lang.Object current = myData.get("arrivalBoatTerminal");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<BoatTerminal>) current;
@@ -54,14 +54,14 @@ public class BoatTrip extends Trip {
    * The terminal or port from which the boat departs.
    */
   @JsonIgnore public java.util.Collection<BoatTerminal> getDepartureBoatTerminals() {
-    final Object current = myData.get("departureBoatTerminal");
+    final java.lang.Object current = myData.get("departureBoatTerminal");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
       return (java.util.Collection<BoatTerminal>) current;
     }
     return Arrays.asList((BoatTerminal) current);
   }
-  protected BoatTrip(java.util.Map<String,Object> data) {
+  protected BoatTrip(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
   
@@ -69,7 +69,7 @@ public class BoatTrip extends Trip {
    * Builder for {@link BoatTrip}
    */
   public static class Builder extends Trip.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public BoatTrip build() {
@@ -234,6 +234,21 @@ public class BoatTrip extends Trip {
       return this;
     }
     /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
+      return this;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
+      return this;
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
@@ -252,6 +267,13 @@ public class BoatTrip extends Trip {
      */
     @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
       putValue("disambiguatingDescription", description);
+      return this;
+    }
+    /**
+     * A description of the item.
+     */
+    @NotNull public Builder description(@NotNull Description description) {
+      putValue("description", description);
       return this;
     }
     /**
@@ -345,7 +367,7 @@ public class BoatTrip extends Trip {
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
+    @Override protected void fromMap(String key, java.lang.Object value) {
       if ("arrivalBoatTerminal".equals(key) && value instanceof BoatTerminal) { this.arrivalBoatTerminal((BoatTerminal)value); return; }
       if ("arrivalBoatTerminals".equals(key) && value instanceof BoatTerminal) { this.arrivalBoatTerminal((BoatTerminal)value); return; }
       if ("departureBoatTerminal".equals(key) && value instanceof BoatTerminal) { this.departureBoatTerminal((BoatTerminal)value); return; }

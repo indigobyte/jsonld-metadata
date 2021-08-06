@@ -33,7 +33,7 @@ class ApiGenerator(private val sink: GeneratorSink, private val banner: String? 
                     appendLine("   * ${StringEscapeUtils.escapeHtml4(it)}")
                     appendLine("   */")
                 }
-                appendLine("  @NotNull public static $typeName.Builder ${typeName.decapitalize()}() { return new $typeName.Builder(new HashMap<String,Object>()); }")
+                appendLine("  @NotNull public static $typeName.Builder ${typeName.decapitalize()}() { return new $typeName.Builder(new HashMap<String,java.lang.Object>()); }")
             }
             appendLine()
             appendLine("  public static ThingBuilder getBuilder(@NotNull String type) {")
@@ -44,7 +44,7 @@ class ApiGenerator(private val sink: GeneratorSink, private val banner: String? 
 
                 val typeName = sanitizeIdentifier(type.name!!.capitalize())
 
-                appendLine("    if (\"$typeName\".equals(type)) { return new $typeName.Builder(new HashMap<String,Object>()); }")
+                appendLine("    if (\"$typeName\".equals(type)) { return new $typeName.Builder(new HashMap<String,java.lang.Object>()); }")
             }
             appendLine("    return null;")
             appendLine("  }")
@@ -62,22 +62,22 @@ class ApiGenerator(private val sink: GeneratorSink, private val banner: String? 
             appendLine("  public static Thing readJson(@NotNull JsonNode node) {")
             appendLine("    return ThingDeserializer.fromMap(objectMapper.convertValue(node, java.util.Map.class));")
             appendLine("  }")
-            appendLine("  public static Thing fromMap(@NotNull java.util.Map<String, Object> map) {")
+            appendLine("  public static Thing fromMap(@NotNull java.util.Map<String, java.lang.Object> map) {")
             appendLine("    return ThingDeserializer.fromMap(map);")
             appendLine("  }")
-            appendLine("  public static java.util.Map<String, Object> toMap(@NotNull Thing thing) {")
-            appendLine("    final HashMap<String, Object> result = new HashMap<String, Object>();")
+            appendLine("  public static java.util.Map<String, java.lang.Object> toMap(@NotNull Thing thing) {")
+            appendLine("    final HashMap<String, java.lang.Object> result = new HashMap<String, java.lang.Object>();")
             appendLine("    if (thing.getId() != null) {")
             appendLine("      result.put(\"@id\", thing.getId());")
             appendLine("    }")
             appendLine("    result.put(\"@type\", thing.getJsonLdType());")
             appendLine("    result.put(\"@context\", thing.getJsonLdContext());")
-            appendLine("    for (java.util.Map.Entry<String, Object> entry : thing.myData.entrySet()) {")
+            appendLine("    for (java.util.Map.Entry<String, java.lang.Object> entry : thing.myData.entrySet()) {")
             appendLine("    if (entry.getValue() instanceof Thing) {")
             appendLine("        result.put(entry.getKey(), toMap((Thing) entry.getValue()));")
             appendLine("      } else if (entry.getValue() instanceof java.util.List) {")
-            appendLine("        final java.util.ArrayList<Object> list = new java.util.ArrayList<Object>();")
-            appendLine("        for (Object o : ((java.util.List) entry.getValue())) {")
+            appendLine("        final java.util.ArrayList<java.lang.Object> list = new java.util.ArrayList<java.lang.Object>();")
+            appendLine("        for (java.lang.Object o : ((java.util.List) entry.getValue())) {")
             appendLine("          if (o instanceof Thing) {")
             appendLine("            list.add(toMap((Thing) o));")
             appendLine("          } else {")
@@ -101,7 +101,7 @@ class ApiGenerator(private val sink: GeneratorSink, private val banner: String? 
 package ${p.name};
 
 public interface ThingBuilder<T> {
-  void fromMap(java.util.Map<String,Object> map);
+  void fromMap(java.util.Map<String,java.lang.Object> map);
   T build();
 }""")
         p.writeClass("JsonLdModule", """$banner
@@ -155,17 +155,17 @@ class ThingDeserializer extends JsonDeserializer<Thing> {
 
     @Override
     public Thing deserialize(JsonParser p, DeserializationContext ctx) throws IOException {
-        return fromMap(p.<HashMap<String, Object>>readValueAs(new TypeReference<HashMap<String, Object>>() {
+        return fromMap(p.<HashMap<String, java.lang.Object>>readValueAs(new TypeReference<HashMap<String, java.lang.Object>>() {
         }));
     }
 
     @Nullable
-    static Thing fromMap(Map<String, Object> result, String context) {
+    static Thing fromMap(Map<String, java.lang.Object> result, String context) {
         if (!context.matches("https?://schema.org.*")) {
             return null;
         }
 
-        final Object type = result.get("@type");
+        final java.lang.Object type = result.get("@type");
         if (type == null || !(type instanceof String)) {
             return null;
         }
@@ -175,7 +175,7 @@ class ThingDeserializer extends JsonDeserializer<Thing> {
             return null;
         }
 
-        for (Map.Entry<String, Object> entry : result.entrySet()) {
+        for (Map.Entry<String, java.lang.Object> entry : result.entrySet()) {
             if (entry.getValue() instanceof String) {
                 try {
                     final Date date = dateFormat.parse((String) entry.getValue());
@@ -191,8 +191,8 @@ class ThingDeserializer extends JsonDeserializer<Thing> {
     }
 
     @Nullable
-    static Thing fromMap(Map<String, Object> result) {
-        final Object context = result.get("@context");
+    static Thing fromMap(Map<String, java.lang.Object> result) {
+        final java.lang.Object context = result.get("@context");
         if (context == null) return null;
         
         return fromMap(result, (String)context);

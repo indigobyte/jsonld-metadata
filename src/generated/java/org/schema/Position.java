@@ -24,7 +24,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * 
+ * The position of an item in a series or sequence of items.
  */
 public interface Position {
 }
