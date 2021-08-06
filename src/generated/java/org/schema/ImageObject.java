@@ -47,19 +47,19 @@ public class ImageObject extends MediaObject {
   /**
    * Represents textual captioning from a [[MediaObject]], e.g. text of a 'meme'.
    */
-  @JsonIgnore public String getEmbeddedTextCaption() {
-    return (String) getValue("embeddedTextCaption");
+  @JsonIgnore public Caption getEmbeddedTextCaption() {
+    return (Caption) getValue("embeddedTextCaption");
   }
   /**
    * Represents textual captioning from a [[MediaObject]], e.g. text of a 'meme'.
    */
-  @JsonIgnore public java.util.Collection<String> getEmbeddedTextCaptions() {
+  @JsonIgnore public java.util.Collection<Caption> getEmbeddedTextCaptions() {
     final Object current = myData.get("embeddedTextCaption");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<String>) current;
+      return (java.util.Collection<Caption>) current;
     }
-    return Arrays.asList((String) current);
+    return Arrays.asList((Caption) current);
   }
   /**
    * Indicates whether this image is representative of the content of the page.
@@ -153,8 +153,8 @@ public class ImageObject extends MediaObject {
     /**
      * Represents textual captioning from a [[MediaObject]], e.g. text of a 'meme'.
      */
-    @NotNull public Builder embeddedTextCaption(@NotNull String embeddedTextCaption) {
-      putValue("embeddedTextCaption", embeddedTextCaption);
+    @NotNull public Builder embeddedTextCaption(@NotNull Caption caption) {
+      putValue("embeddedTextCaption", caption);
       return this;
     }
     /**
@@ -379,8 +379,8 @@ public class ImageObject extends MediaObject {
     /**
      * The [SHA-2](https://en.wikipedia.org/wiki/SHA-2) SHA256 hash of the content of the item. For example, a zero-length input has value 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
      */
-    @NotNull public Builder sha256(@NotNull String sha256) {
-      putValue("sha256", sha256);
+    @NotNull public Builder sha256(@NotNull Description description) {
+      putValue("sha256", description);
       return this;
     }
     /**
@@ -1002,22 +1002,8 @@ public class ImageObject extends MediaObject {
     /**
      * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
      */
-    @NotNull public Builder acquireLicensePage(@NotNull CreativeWork creativeWork) {
-      putValue("acquireLicensePage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
-     */
-    @NotNull public Builder acquireLicensePage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("acquireLicensePage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
-     */
-    @NotNull public Builder acquireLicensePage(@NotNull String acquireLicensePage) {
-      putValue("acquireLicensePage", acquireLicensePage);
+    @NotNull public Builder acquireLicensePage(@NotNull UsageInfo usageInfo) {
+      putValue("acquireLicensePage", usageInfo);
       return this;
     }
     /**
@@ -1035,8 +1021,8 @@ public class ImageObject extends MediaObject {
      * Since schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.
      * 
      */
-    @NotNull public Builder editEIDR(@NotNull String editEIDR) {
-      putValue("editEIDR", editEIDR);
+    @NotNull public Builder editEIDR(@NotNull Identifier identifier) {
+      putValue("editEIDR", identifier);
       return this;
     }
     /**
@@ -1931,15 +1917,8 @@ public class ImageObject extends MediaObject {
     /**
      * Indicates the primary entity described in some page or other CreativeWork.
      */
-    @NotNull public Builder mainEntity(@NotNull Thing thing) {
-      putValue("mainEntity", thing);
-      return this;
-    }
-    /**
-     * Indicates the primary entity described in some page or other CreativeWork.
-     */
-    @NotNull public Builder mainEntity(@NotNull Thing.Builder thing) {
-      putValue("mainEntity", thing.build());
+    @NotNull public Builder mainEntity(@NotNull About about) {
+      putValue("mainEntity", about);
       return this;
     }
     /**
@@ -2092,8 +2071,8 @@ public class ImageObject extends MediaObject {
     @Override protected void fromMap(String key, Object value) {
       if ("caption".equals(key) && value instanceof Caption) { this.caption((Caption)value); return; }
       if ("captions".equals(key) && value instanceof Caption) { this.caption((Caption)value); return; }
-      if ("embeddedTextCaption".equals(key) && value instanceof String) { this.embeddedTextCaption((String)value); return; }
-      if ("embeddedTextCaptions".equals(key) && value instanceof String) { this.embeddedTextCaption((String)value); return; }
+      if ("embeddedTextCaption".equals(key) && value instanceof Caption) { this.embeddedTextCaption((Caption)value); return; }
+      if ("embeddedTextCaptions".equals(key) && value instanceof Caption) { this.embeddedTextCaption((Caption)value); return; }
       if ("representativeOfPage".equals(key) && value instanceof Boolean) { this.representativeOfPage((Boolean)value); return; }
       if ("representativeOfPages".equals(key) && value instanceof Boolean) { this.representativeOfPage((Boolean)value); return; }
       if ("thumbnail".equals(key) && value instanceof ImageObject) { this.thumbnail((ImageObject)value); return; }

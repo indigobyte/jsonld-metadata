@@ -115,19 +115,19 @@ public class Gene extends BioChemEntity {
   /**
    * A symbolic representation of a BioChemEnity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein.
    */
-  @JsonIgnore public String getHasBioPolymerSequence() {
-    return (String) getValue("hasBioPolymerSequence");
+  @JsonIgnore public HasRepresentation getHasBioPolymerSequence() {
+    return (HasRepresentation) getValue("hasBioPolymerSequence");
   }
   /**
    * A symbolic representation of a BioChemEnity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein.
    */
-  @JsonIgnore public java.util.Collection<String> getHasBioPolymerSequences() {
+  @JsonIgnore public java.util.Collection<HasRepresentation> getHasBioPolymerSequences() {
     final Object current = myData.get("hasBioPolymerSequence");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<String>) current;
+      return (java.util.Collection<HasRepresentation>) current;
     }
-    return Arrays.asList((String) current);
+    return Arrays.asList((HasRepresentation) current);
   }
   /**
    * Another BioChemEntity encoded by this one. 
@@ -233,8 +233,8 @@ public class Gene extends BioChemEntity {
     /**
      * A symbolic representation of a BioChemEnity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein.
      */
-    @NotNull public Builder hasBioPolymerSequence(@NotNull String hasBioPolymerSequence) {
-      putValue("hasBioPolymerSequence", hasBioPolymerSequence);
+    @NotNull public Builder hasBioPolymerSequence(@NotNull HasRepresentation hasRepresentation) {
+      putValue("hasBioPolymerSequence", hasRepresentation);
       return this;
     }
     /**
@@ -633,8 +633,8 @@ public class Gene extends BioChemEntity {
       if ("expressedIns".equals(key) && value instanceof BioChemEntity) { this.expressedIn((BioChemEntity)value); return; }
       if ("expressedIn".equals(key) && value instanceof DefinedTerm) { this.expressedIn((DefinedTerm)value); return; }
       if ("expressedIns".equals(key) && value instanceof DefinedTerm) { this.expressedIn((DefinedTerm)value); return; }
-      if ("hasBioPolymerSequence".equals(key) && value instanceof String) { this.hasBioPolymerSequence((String)value); return; }
-      if ("hasBioPolymerSequences".equals(key) && value instanceof String) { this.hasBioPolymerSequence((String)value); return; }
+      if ("hasBioPolymerSequence".equals(key) && value instanceof HasRepresentation) { this.hasBioPolymerSequence((HasRepresentation)value); return; }
+      if ("hasBioPolymerSequences".equals(key) && value instanceof HasRepresentation) { this.hasBioPolymerSequence((HasRepresentation)value); return; }
       if ("encodesBioChemEntity".equals(key) && value instanceof BioChemEntity) { this.encodesBioChemEntity((BioChemEntity)value); return; }
       if ("encodesBioChemEntitys".equals(key) && value instanceof BioChemEntity) { this.encodesBioChemEntity((BioChemEntity)value); return; }
       super.fromMap(key, value);

@@ -115,53 +115,36 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * A contact location for a person's residence.
    */
-  @JsonIgnore public ContactPoint getHomeLocationContactPoint() {
-    return (ContactPoint) getValue("homeLocation");
+  @JsonIgnore public Location getHomeLocation() {
+    return (Location) getValue("homeLocation");
   }
   /**
    * A contact location for a person's residence.
    */
-  @JsonIgnore public java.util.Collection<ContactPoint> getHomeLocationContactPoints() {
+  @JsonIgnore public java.util.Collection<Location> getHomeLocations() {
     final Object current = myData.get("homeLocation");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<ContactPoint>) current;
+      return (java.util.Collection<Location>) current;
     }
-    return Arrays.asList((ContactPoint) current);
-  }
-  /**
-   * A contact location for a person's residence.
-   */
-  @JsonIgnore public Place getHomeLocationPlace() {
-    return (Place) getValue("homeLocation");
-  }
-  /**
-   * A contact location for a person's residence.
-   */
-  @JsonIgnore public java.util.Collection<Place> getHomeLocationPlaces() {
-    final Object current = myData.get("homeLocation");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof java.util.Collection) {
-      return (java.util.Collection<Place>) current;
-    }
-    return Arrays.asList((Place) current);
+    return Arrays.asList((Location) current);
   }
   /**
    * The Dun &amp; Bradstreet DUNS number for identifying an organization or business person.
    */
-  @JsonIgnore public String getDuns() {
-    return (String) getValue("duns");
+  @JsonIgnore public Identifier getDuns() {
+    return (Identifier) getValue("duns");
   }
   /**
    * The Dun &amp; Bradstreet DUNS number for identifying an organization or business person.
    */
-  @JsonIgnore public java.util.Collection<String> getDunss() {
+  @JsonIgnore public java.util.Collection<Identifier> getDunss() {
     final Object current = myData.get("duns");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<String>) current;
+      return (java.util.Collection<Identifier>) current;
     }
-    return Arrays.asList((String) current);
+    return Arrays.asList((Identifier) current);
   }
   /**
    * A contact point for a person or organization.
@@ -455,19 +438,19 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
   /**
    * An organization that this person is affiliated with. For example, a school/university, a club, or a team.
    */
-  @JsonIgnore public Organization getAffiliation() {
-    return (Organization) getValue("affiliation");
+  @JsonIgnore public MemberOf getAffiliation() {
+    return (MemberOf) getValue("affiliation");
   }
   /**
    * An organization that this person is affiliated with. For example, a school/university, a club, or a team.
    */
-  @JsonIgnore public java.util.Collection<Organization> getAffiliations() {
+  @JsonIgnore public java.util.Collection<MemberOf> getAffiliations() {
     final Object current = myData.get("affiliation");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<Organization>) current;
+      return (java.util.Collection<MemberOf>) current;
     }
-    return Arrays.asList((Organization) current);
+    return Arrays.asList((MemberOf) current);
   }
   /**
    * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
@@ -1256,36 +1239,15 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
     /**
      * A contact location for a person's residence.
      */
-    @NotNull public Builder homeLocation(@NotNull ContactPoint contactPoint) {
-      putValue("homeLocation", contactPoint);
-      return this;
-    }
-    /**
-     * A contact location for a person's residence.
-     */
-    @NotNull public Builder homeLocation(@NotNull ContactPoint.Builder contactPoint) {
-      putValue("homeLocation", contactPoint.build());
-      return this;
-    }
-    /**
-     * A contact location for a person's residence.
-     */
-    @NotNull public Builder homeLocation(@NotNull Place place) {
-      putValue("homeLocation", place);
-      return this;
-    }
-    /**
-     * A contact location for a person's residence.
-     */
-    @NotNull public Builder homeLocation(@NotNull Place.Builder place) {
-      putValue("homeLocation", place.build());
+    @NotNull public Builder homeLocation(@NotNull Location location) {
+      putValue("homeLocation", location);
       return this;
     }
     /**
      * The Dun &amp; Bradstreet DUNS number for identifying an organization or business person.
      */
-    @NotNull public Builder duns(@NotNull String duns) {
-      putValue("duns", duns);
+    @NotNull public Builder duns(@NotNull Identifier identifier) {
+      putValue("duns", identifier);
       return this;
     }
     /**
@@ -1466,15 +1428,8 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
     /**
      * An organization that this person is affiliated with. For example, a school/university, a club, or a team.
      */
-    @NotNull public Builder affiliation(@NotNull Organization organization) {
-      putValue("affiliation", organization);
-      return this;
-    }
-    /**
-     * An organization that this person is affiliated with. For example, a school/university, a club, or a team.
-     */
-    @NotNull public Builder affiliation(@NotNull Organization.Builder organization) {
-      putValue("affiliation", organization.build());
+    @NotNull public Builder affiliation(@NotNull MemberOf memberOf) {
+      putValue("affiliation", memberOf);
       return this;
     }
     /**
@@ -2069,12 +2024,10 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
       if ("siblings".equals(key) && value instanceof Person) { this.sibling((Person)value); return; }
       if ("callSign".equals(key) && value instanceof Identifier) { this.callSign((Identifier)value); return; }
       if ("callSigns".equals(key) && value instanceof Identifier) { this.callSign((Identifier)value); return; }
-      if ("homeLocation".equals(key) && value instanceof ContactPoint) { this.homeLocation((ContactPoint)value); return; }
-      if ("homeLocations".equals(key) && value instanceof ContactPoint) { this.homeLocation((ContactPoint)value); return; }
-      if ("homeLocation".equals(key) && value instanceof Place) { this.homeLocation((Place)value); return; }
-      if ("homeLocations".equals(key) && value instanceof Place) { this.homeLocation((Place)value); return; }
-      if ("duns".equals(key) && value instanceof String) { this.duns((String)value); return; }
-      if ("dunss".equals(key) && value instanceof String) { this.duns((String)value); return; }
+      if ("homeLocation".equals(key) && value instanceof Location) { this.homeLocation((Location)value); return; }
+      if ("homeLocations".equals(key) && value instanceof Location) { this.homeLocation((Location)value); return; }
+      if ("duns".equals(key) && value instanceof Identifier) { this.duns((Identifier)value); return; }
+      if ("dunss".equals(key) && value instanceof Identifier) { this.duns((Identifier)value); return; }
       if ("contactPoint".equals(key) && value instanceof ContactPoint) { this.contactPoint((ContactPoint)value); return; }
       if ("contactPoints".equals(key) && value instanceof ContactPoint) { this.contactPoint((ContactPoint)value); return; }
       if ("worksFor".equals(key) && value instanceof Organization) { this.worksFor((Organization)value); return; }
@@ -2109,8 +2062,8 @@ public class Person extends Thing implements Creator, Sponsor, Actor {
       if ("knowsLanguages".equals(key) && value instanceof String) { this.knowsLanguage((String)value); return; }
       if ("memberOf".equals(key) && value instanceof MemberOf) { this.memberOf((MemberOf)value); return; }
       if ("memberOfs".equals(key) && value instanceof MemberOf) { this.memberOf((MemberOf)value); return; }
-      if ("affiliation".equals(key) && value instanceof Organization) { this.affiliation((Organization)value); return; }
-      if ("affiliations".equals(key) && value instanceof Organization) { this.affiliation((Organization)value); return; }
+      if ("affiliation".equals(key) && value instanceof MemberOf) { this.affiliation((MemberOf)value); return; }
+      if ("affiliations".equals(key) && value instanceof MemberOf) { this.affiliation((MemberOf)value); return; }
       if ("brand".equals(key) && value instanceof Brand) { this.brand((Brand)value); return; }
       if ("brands".equals(key) && value instanceof Brand) { this.brand((Brand)value); return; }
       if ("brand".equals(key) && value instanceof Organization) { this.brand((Organization)value); return; }

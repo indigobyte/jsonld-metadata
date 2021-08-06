@@ -220,13 +220,6 @@ public class OfferForLease extends Offer {
       return this;
     }
     /**
-     * The payment method(s) accepted by seller for this offer.
-     */
-    @NotNull public Builder acceptedPaymentMethod(@NotNull PaymentMethod.Builder paymentMethod) {
-      putValue("acceptedPaymentMethod", paymentMethod.build());
-      return this;
-    }
-    /**
      * This links to a node or nodes indicating the exact quantity of the products included in  an [[Offer]] or [[ProductCollection]].
      */
     @NotNull public Builder includesObject(@NotNull TypeAndQuantityNode typeAndQuantityNode) {

@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * Enumerates several kinds of policies for product return fees.
  */
 public enum ReturnFeesEnumeration {
-  ;
+  ReturnShippingFees("http://schema.org/ReturnShippingFees"), RestockingFees("http://schema.org/RestockingFees"), FreeReturn("http://schema.org/FreeReturn"), OriginalShippingFees("http://schema.org/OriginalShippingFees"), ReturnFeesCustomerResponsibility("http://schema.org/ReturnFeesCustomerResponsibility");
   ReturnFeesEnumeration(String value) {
     myValue = value;
   }

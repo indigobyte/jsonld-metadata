@@ -31,19 +31,19 @@ public class CreativeWorkSeries extends CreativeWork {
   /**
    * The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
    */
-  @JsonIgnore public String getIssn() {
-    return (String) getValue("issn");
+  @JsonIgnore public Identifier getIssn() {
+    return (Identifier) getValue("issn");
   }
   /**
    * The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
    */
-  @JsonIgnore public java.util.Collection<String> getIssns() {
+  @JsonIgnore public java.util.Collection<Identifier> getIssns() {
     final Object current = myData.get("issn");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<String>) current;
+      return (java.util.Collection<Identifier>) current;
     }
-    return Arrays.asList((String) current);
+    return Arrays.asList((Identifier) current);
   }
   /**
    * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
@@ -96,8 +96,8 @@ public class CreativeWorkSeries extends CreativeWork {
     /**
      * The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
      */
-    @NotNull public Builder issn(@NotNull String issn) {
-      putValue("issn", issn);
+    @NotNull public Builder issn(@NotNull Identifier identifier) {
+      putValue("issn", identifier);
       return this;
     }
     /**
@@ -656,22 +656,8 @@ public class CreativeWorkSeries extends CreativeWork {
     /**
      * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
      */
-    @NotNull public Builder acquireLicensePage(@NotNull CreativeWork creativeWork) {
-      putValue("acquireLicensePage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
-     */
-    @NotNull public Builder acquireLicensePage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("acquireLicensePage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
-     */
-    @NotNull public Builder acquireLicensePage(@NotNull String acquireLicensePage) {
-      putValue("acquireLicensePage", acquireLicensePage);
+    @NotNull public Builder acquireLicensePage(@NotNull UsageInfo usageInfo) {
+      putValue("acquireLicensePage", usageInfo);
       return this;
     }
     /**
@@ -689,8 +675,8 @@ public class CreativeWorkSeries extends CreativeWork {
      * Since schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.
      * 
      */
-    @NotNull public Builder editEIDR(@NotNull String editEIDR) {
-      putValue("editEIDR", editEIDR);
+    @NotNull public Builder editEIDR(@NotNull Identifier identifier) {
+      putValue("editEIDR", identifier);
       return this;
     }
     /**
@@ -1603,15 +1589,8 @@ public class CreativeWorkSeries extends CreativeWork {
     /**
      * Indicates the primary entity described in some page or other CreativeWork.
      */
-    @NotNull public Builder mainEntity(@NotNull Thing thing) {
-      putValue("mainEntity", thing);
-      return this;
-    }
-    /**
-     * Indicates the primary entity described in some page or other CreativeWork.
-     */
-    @NotNull public Builder mainEntity(@NotNull Thing.Builder thing) {
-      putValue("mainEntity", thing.build());
+    @NotNull public Builder mainEntity(@NotNull About about) {
+      putValue("mainEntity", about);
       return this;
     }
     /**
@@ -1762,8 +1741,8 @@ public class CreativeWorkSeries extends CreativeWork {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("issn".equals(key) && value instanceof String) { this.issn((String)value); return; }
-      if ("issns".equals(key) && value instanceof String) { this.issn((String)value); return; }
+      if ("issn".equals(key) && value instanceof Identifier) { this.issn((Identifier)value); return; }
+      if ("issns".equals(key) && value instanceof Identifier) { this.issn((Identifier)value); return; }
       if ("startDate".equals(key) && value instanceof java.util.Date) { this.startDate((java.util.Date)value); return; }
       if ("startDates".equals(key) && value instanceof java.util.Date) { this.startDate((java.util.Date)value); return; }
       if ("endDate".equals(key) && value instanceof java.util.Date) { this.endDate((java.util.Date)value); return; }

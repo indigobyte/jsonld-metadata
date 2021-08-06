@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * UKNonprofitType: Non-profit organization type originating from the United Kingdom.
  */
 public enum UKNonprofitType {
-  ;
+  CharitableIncorporatedOrganization("http://schema.org/CharitableIncorporatedOrganization"), UnincorporatedAssociationCharity("http://schema.org/UnincorporatedAssociationCharity"), LimitedByGuaranteeCharity("http://schema.org/LimitedByGuaranteeCharity"), UKTrust("http://schema.org/UKTrust");
   UKNonprofitType(String value) {
     myValue = value;
   }

@@ -47,36 +47,19 @@ public class FloorPlan extends Intangible {
   /**
    * A schematic image showing the floorplan layout.
    */
-  @JsonIgnore public ImageObject getLayoutImageImageObject() {
-    return (ImageObject) getValue("layoutImage");
+  @JsonIgnore public Image getLayoutImage() {
+    return (Image) getValue("layoutImage");
   }
   /**
    * A schematic image showing the floorplan layout.
    */
-  @JsonIgnore public java.util.Collection<ImageObject> getLayoutImageImageObjects() {
+  @JsonIgnore public java.util.Collection<Image> getLayoutImages() {
     final Object current = myData.get("layoutImage");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<ImageObject>) current;
+      return (java.util.Collection<Image>) current;
     }
-    return Arrays.asList((ImageObject) current);
-  }
-  /**
-   * A schematic image showing the floorplan layout.
-   */
-  @JsonIgnore public String getLayoutImageString() {
-    return (String) getValue("layoutImage");
-  }
-  /**
-   * A schematic image showing the floorplan layout.
-   */
-  @JsonIgnore public java.util.Collection<String> getLayoutImageStrings() {
-    final Object current = myData.get("layoutImage");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof java.util.Collection) {
-      return (java.util.Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
+    return Arrays.asList((Image) current);
   }
   /**
    * The total integer number of bathrooms in a some [[Accommodation]], following real estate conventions as [documented in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsTotalInteger+Field): &quot;The simple sum of the number of bathrooms. For example for a property with two Full Bathrooms and one Half Bathroom, the Bathrooms Total Integer will be 3.&quot;. See also [[numberOfRooms]].
@@ -529,22 +512,8 @@ public class FloorPlan extends Intangible {
     /**
      * A schematic image showing the floorplan layout.
      */
-    @NotNull public Builder layoutImage(@NotNull ImageObject imageObject) {
-      putValue("layoutImage", imageObject);
-      return this;
-    }
-    /**
-     * A schematic image showing the floorplan layout.
-     */
-    @NotNull public Builder layoutImage(@NotNull ImageObject.Builder imageObject) {
-      putValue("layoutImage", imageObject.build());
-      return this;
-    }
-    /**
-     * A schematic image showing the floorplan layout.
-     */
-    @NotNull public Builder layoutImage(@NotNull String layoutImage) {
-      putValue("layoutImage", layoutImage);
+    @NotNull public Builder layoutImage(@NotNull Image image) {
+      putValue("layoutImage", image);
       return this;
     }
     /**
@@ -872,10 +841,8 @@ public class FloorPlan extends Intangible {
     @Override protected void fromMap(String key, Object value) {
       if ("numberOfAccommodationUnits".equals(key) && value instanceof QuantitativeValue) { this.numberOfAccommodationUnits((QuantitativeValue)value); return; }
       if ("numberOfAccommodationUnitss".equals(key) && value instanceof QuantitativeValue) { this.numberOfAccommodationUnits((QuantitativeValue)value); return; }
-      if ("layoutImage".equals(key) && value instanceof ImageObject) { this.layoutImage((ImageObject)value); return; }
-      if ("layoutImages".equals(key) && value instanceof ImageObject) { this.layoutImage((ImageObject)value); return; }
-      if ("layoutImage".equals(key) && value instanceof String) { this.layoutImage((String)value); return; }
-      if ("layoutImages".equals(key) && value instanceof String) { this.layoutImage((String)value); return; }
+      if ("layoutImage".equals(key) && value instanceof Image) { this.layoutImage((Image)value); return; }
+      if ("layoutImages".equals(key) && value instanceof Image) { this.layoutImage((Image)value); return; }
       if ("numberOfBathroomsTotal".equals(key) && value instanceof Integer) { this.numberOfBathroomsTotal((Integer)value); return; }
       if ("numberOfBathroomsTotals".equals(key) && value instanceof Integer) { this.numberOfBathroomsTotal((Integer)value); return; }
       if ("numberOfFullBathrooms".equals(key) && value instanceof Integer) { this.numberOfFullBathrooms((Integer)value); return; }

@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * The publication format of the book.
  */
 public enum BookFormatType {
-  ;
+  Hardcover("http://schema.org/Hardcover"), EBook("http://schema.org/EBook"), Paperback("http://schema.org/Paperback"), AudiobookFormat("http://schema.org/AudiobookFormat"), GraphicNovel("http://schema.org/GraphicNovel");
   BookFormatType(String value) {
     myValue = value;
   }

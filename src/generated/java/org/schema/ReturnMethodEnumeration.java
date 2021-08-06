@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * Enumerates several types of product return methods.
  */
 public enum ReturnMethodEnumeration {
-  ;
+  ReturnAtKiosk("http://schema.org/ReturnAtKiosk"), ReturnByMail("http://schema.org/ReturnByMail"), ReturnInStore("http://schema.org/ReturnInStore");
   ReturnMethodEnumeration(String value) {
     myValue = value;
   }

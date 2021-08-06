@@ -30,36 +30,19 @@ public class BorrowAction extends TransferAction {
   /**
    * A sub property of participant. The person that lends the object being borrowed.
    */
-  @JsonIgnore public Organization getLenderOrganization() {
-    return (Organization) getValue("lender");
+  @JsonIgnore public Participant getLender() {
+    return (Participant) getValue("lender");
   }
   /**
    * A sub property of participant. The person that lends the object being borrowed.
    */
-  @JsonIgnore public java.util.Collection<Organization> getLenderOrganizations() {
+  @JsonIgnore public java.util.Collection<Participant> getLenders() {
     final Object current = myData.get("lender");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<Organization>) current;
+      return (java.util.Collection<Participant>) current;
     }
-    return Arrays.asList((Organization) current);
-  }
-  /**
-   * A sub property of participant. The person that lends the object being borrowed.
-   */
-  @JsonIgnore public Person getLenderPerson() {
-    return (Person) getValue("lender");
-  }
-  /**
-   * A sub property of participant. The person that lends the object being borrowed.
-   */
-  @JsonIgnore public java.util.Collection<Person> getLenderPersons() {
-    final Object current = myData.get("lender");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof java.util.Collection) {
-      return (java.util.Collection<Person>) current;
-    }
-    return Arrays.asList((Person) current);
+    return Arrays.asList((Participant) current);
   }
   protected BorrowAction(java.util.Map<String,Object> data) {
     super(data);
@@ -78,29 +61,8 @@ public class BorrowAction extends TransferAction {
     /**
      * A sub property of participant. The person that lends the object being borrowed.
      */
-    @NotNull public Builder lender(@NotNull Organization organization) {
-      putValue("lender", organization);
-      return this;
-    }
-    /**
-     * A sub property of participant. The person that lends the object being borrowed.
-     */
-    @NotNull public Builder lender(@NotNull Organization.Builder organization) {
-      putValue("lender", organization.build());
-      return this;
-    }
-    /**
-     * A sub property of participant. The person that lends the object being borrowed.
-     */
-    @NotNull public Builder lender(@NotNull Person person) {
-      putValue("lender", person);
-      return this;
-    }
-    /**
-     * A sub property of participant. The person that lends the object being borrowed.
-     */
-    @NotNull public Builder lender(@NotNull Person.Builder person) {
-      putValue("lender", person.build());
+    @NotNull public Builder lender(@NotNull Participant participant) {
+      putValue("lender", participant);
       return this;
     }
     /**
@@ -307,10 +269,8 @@ public class BorrowAction extends TransferAction {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("lender".equals(key) && value instanceof Organization) { this.lender((Organization)value); return; }
-      if ("lenders".equals(key) && value instanceof Organization) { this.lender((Organization)value); return; }
-      if ("lender".equals(key) && value instanceof Person) { this.lender((Person)value); return; }
-      if ("lenders".equals(key) && value instanceof Person) { this.lender((Person)value); return; }
+      if ("lender".equals(key) && value instanceof Participant) { this.lender((Participant)value); return; }
+      if ("lenders".equals(key) && value instanceof Participant) { this.lender((Participant)value); return; }
       super.fromMap(key, value);
     }
   }

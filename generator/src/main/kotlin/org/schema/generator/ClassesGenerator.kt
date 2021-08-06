@@ -43,7 +43,14 @@ class ClassesGenerator(private val sink: GeneratorSink, private val banner: Stri
                 } else {
                     extends = type.parentType?.let { sink.types[it]?.name }?.let { listOf(it) }
                     implements =
-                        type.interfaces.filter { i -> sink.types.values.any { it.name == i && !it.isField && it.name != "HasPart" } }
+                        type.interfaces.filter { i ->
+                            sink.types.values.any {
+                                it.name == i &&
+                                        !it.isField &&
+                                        it.name != "HasPart" &&
+                                        it.name != type.name // Avoid "Duration implements Duration" bug
+                            }
+                        }
                 }
                 imports = listOf(
                     "com.fasterxml.jackson.databind.annotation.*",
@@ -317,7 +324,9 @@ class ClassesGenerator(private val sink: GeneratorSink, private val banner: Stri
 
 
     private fun findType(fieldType: String): GeneratorSink.Type? =
-        sink.types.values.firstOrNull { it.name == fieldType }
+        sink.types.values.firstOrNull {
+            it.name == fieldType && !it.isField
+        }
 
     private fun subTypes(typeName: String) = sink.types.filter { it.value.parentType == typeName }
 

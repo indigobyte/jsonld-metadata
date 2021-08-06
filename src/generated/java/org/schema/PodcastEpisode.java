@@ -100,15 +100,8 @@ public class PodcastEpisode extends Episode {
     /**
      * Position of the episode within an ordered group of episodes.
      */
-    @NotNull public Builder episodeNumber(@NotNull Integer integer) {
-      putValue("episodeNumber", integer);
-      return this;
-    }
-    /**
-     * Position of the episode within an ordered group of episodes.
-     */
-    @NotNull public Builder episodeNumber(@NotNull String episodeNumber) {
-      putValue("episodeNumber", episodeNumber);
+    @NotNull public Builder episodeNumber(@NotNull Position position) {
+      putValue("episodeNumber", position);
       return this;
     }
     /**
@@ -695,22 +688,8 @@ public class PodcastEpisode extends Episode {
     /**
      * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
      */
-    @NotNull public Builder acquireLicensePage(@NotNull CreativeWork creativeWork) {
-      putValue("acquireLicensePage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
-     */
-    @NotNull public Builder acquireLicensePage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("acquireLicensePage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
-     */
-    @NotNull public Builder acquireLicensePage(@NotNull String acquireLicensePage) {
-      putValue("acquireLicensePage", acquireLicensePage);
+    @NotNull public Builder acquireLicensePage(@NotNull UsageInfo usageInfo) {
+      putValue("acquireLicensePage", usageInfo);
       return this;
     }
     /**
@@ -728,8 +707,8 @@ public class PodcastEpisode extends Episode {
      * Since schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.
      * 
      */
-    @NotNull public Builder editEIDR(@NotNull String editEIDR) {
-      putValue("editEIDR", editEIDR);
+    @NotNull public Builder editEIDR(@NotNull Identifier identifier) {
+      putValue("editEIDR", identifier);
       return this;
     }
     /**
@@ -1642,15 +1621,8 @@ public class PodcastEpisode extends Episode {
     /**
      * Indicates the primary entity described in some page or other CreativeWork.
      */
-    @NotNull public Builder mainEntity(@NotNull Thing thing) {
-      putValue("mainEntity", thing);
-      return this;
-    }
-    /**
-     * Indicates the primary entity described in some page or other CreativeWork.
-     */
-    @NotNull public Builder mainEntity(@NotNull Thing.Builder thing) {
-      putValue("mainEntity", thing.build());
+    @NotNull public Builder mainEntity(@NotNull About about) {
+      putValue("mainEntity", about);
       return this;
     }
     /**

@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * Design models for observational medical studies. Enumerated type.
  */
 public enum MedicalObservationalStudyDesign {
-  ;
+  Longitudinal("http://schema.org/Longitudinal"), CrossSectional("http://schema.org/CrossSectional"), CaseSeries("http://schema.org/CaseSeries"), Observational("http://schema.org/Observational"), CohortStudy("http://schema.org/CohortStudy"), Registry("http://schema.org/Registry");
   MedicalObservationalStudyDesign(String value) {
     myValue = value;
   }

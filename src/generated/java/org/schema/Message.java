@@ -64,53 +64,19 @@ public class Message extends CreativeWork {
   /**
    * A sub property of recipient. The recipient copied on a message.
    */
-  @JsonIgnore public ContactPoint getCcRecipientContactPoint() {
-    return (ContactPoint) getValue("ccRecipient");
+  @JsonIgnore public Recipient getCcRecipient() {
+    return (Recipient) getValue("ccRecipient");
   }
   /**
    * A sub property of recipient. The recipient copied on a message.
    */
-  @JsonIgnore public java.util.Collection<ContactPoint> getCcRecipientContactPoints() {
+  @JsonIgnore public java.util.Collection<Recipient> getCcRecipients() {
     final Object current = myData.get("ccRecipient");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<ContactPoint>) current;
+      return (java.util.Collection<Recipient>) current;
     }
-    return Arrays.asList((ContactPoint) current);
-  }
-  /**
-   * A sub property of recipient. The recipient copied on a message.
-   */
-  @JsonIgnore public Organization getCcRecipientOrganization() {
-    return (Organization) getValue("ccRecipient");
-  }
-  /**
-   * A sub property of recipient. The recipient copied on a message.
-   */
-  @JsonIgnore public java.util.Collection<Organization> getCcRecipientOrganizations() {
-    final Object current = myData.get("ccRecipient");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof java.util.Collection) {
-      return (java.util.Collection<Organization>) current;
-    }
-    return Arrays.asList((Organization) current);
-  }
-  /**
-   * A sub property of recipient. The recipient copied on a message.
-   */
-  @JsonIgnore public Person getCcRecipientPerson() {
-    return (Person) getValue("ccRecipient");
-  }
-  /**
-   * A sub property of recipient. The recipient copied on a message.
-   */
-  @JsonIgnore public java.util.Collection<Person> getCcRecipientPersons() {
-    final Object current = myData.get("ccRecipient");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof java.util.Collection) {
-      return (java.util.Collection<Person>) current;
-    }
-    return Arrays.asList((Person) current);
+    return Arrays.asList((Recipient) current);
   }
   /**
    * A sub property of recipient. The recipient who was directly sent the message.
@@ -132,53 +98,19 @@ public class Message extends CreativeWork {
   /**
    * A sub property of participant. The participant who is at the sending end of the action.
    */
-  @JsonIgnore public Audience getSenderAudience() {
-    return (Audience) getValue("sender");
+  @JsonIgnore public Participant getSender() {
+    return (Participant) getValue("sender");
   }
   /**
    * A sub property of participant. The participant who is at the sending end of the action.
    */
-  @JsonIgnore public java.util.Collection<Audience> getSenderAudiences() {
+  @JsonIgnore public java.util.Collection<Participant> getSenders() {
     final Object current = myData.get("sender");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<Audience>) current;
+      return (java.util.Collection<Participant>) current;
     }
-    return Arrays.asList((Audience) current);
-  }
-  /**
-   * A sub property of participant. The participant who is at the sending end of the action.
-   */
-  @JsonIgnore public Organization getSenderOrganization() {
-    return (Organization) getValue("sender");
-  }
-  /**
-   * A sub property of participant. The participant who is at the sending end of the action.
-   */
-  @JsonIgnore public java.util.Collection<Organization> getSenderOrganizations() {
-    final Object current = myData.get("sender");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof java.util.Collection) {
-      return (java.util.Collection<Organization>) current;
-    }
-    return Arrays.asList((Organization) current);
-  }
-  /**
-   * A sub property of participant. The participant who is at the sending end of the action.
-   */
-  @JsonIgnore public Person getSenderPerson() {
-    return (Person) getValue("sender");
-  }
-  /**
-   * A sub property of participant. The participant who is at the sending end of the action.
-   */
-  @JsonIgnore public java.util.Collection<Person> getSenderPersons() {
-    final Object current = myData.get("sender");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof java.util.Collection) {
-      return (java.util.Collection<Person>) current;
-    }
-    return Arrays.asList((Person) current);
+    return Arrays.asList((Participant) current);
   }
   /**
    * The date/time the message was received if a single recipient exists.
@@ -217,53 +149,19 @@ public class Message extends CreativeWork {
   /**
    * A sub property of recipient. The recipient blind copied on a message.
    */
-  @JsonIgnore public ContactPoint getBccRecipientContactPoint() {
-    return (ContactPoint) getValue("bccRecipient");
+  @JsonIgnore public Recipient getBccRecipient() {
+    return (Recipient) getValue("bccRecipient");
   }
   /**
    * A sub property of recipient. The recipient blind copied on a message.
    */
-  @JsonIgnore public java.util.Collection<ContactPoint> getBccRecipientContactPoints() {
+  @JsonIgnore public java.util.Collection<Recipient> getBccRecipients() {
     final Object current = myData.get("bccRecipient");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<ContactPoint>) current;
+      return (java.util.Collection<Recipient>) current;
     }
-    return Arrays.asList((ContactPoint) current);
-  }
-  /**
-   * A sub property of recipient. The recipient blind copied on a message.
-   */
-  @JsonIgnore public Organization getBccRecipientOrganization() {
-    return (Organization) getValue("bccRecipient");
-  }
-  /**
-   * A sub property of recipient. The recipient blind copied on a message.
-   */
-  @JsonIgnore public java.util.Collection<Organization> getBccRecipientOrganizations() {
-    final Object current = myData.get("bccRecipient");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof java.util.Collection) {
-      return (java.util.Collection<Organization>) current;
-    }
-    return Arrays.asList((Organization) current);
-  }
-  /**
-   * A sub property of recipient. The recipient blind copied on a message.
-   */
-  @JsonIgnore public Person getBccRecipientPerson() {
-    return (Person) getValue("bccRecipient");
-  }
-  /**
-   * A sub property of recipient. The recipient blind copied on a message.
-   */
-  @JsonIgnore public java.util.Collection<Person> getBccRecipientPersons() {
-    final Object current = myData.get("bccRecipient");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof java.util.Collection) {
-      return (java.util.Collection<Person>) current;
-    }
-    return Arrays.asList((Person) current);
+    return Arrays.asList((Recipient) current);
   }
   protected Message(java.util.Map<String,Object> data) {
     super(data);
@@ -296,43 +194,8 @@ public class Message extends CreativeWork {
     /**
      * A sub property of recipient. The recipient copied on a message.
      */
-    @NotNull public Builder ccRecipient(@NotNull ContactPoint contactPoint) {
-      putValue("ccRecipient", contactPoint);
-      return this;
-    }
-    /**
-     * A sub property of recipient. The recipient copied on a message.
-     */
-    @NotNull public Builder ccRecipient(@NotNull ContactPoint.Builder contactPoint) {
-      putValue("ccRecipient", contactPoint.build());
-      return this;
-    }
-    /**
-     * A sub property of recipient. The recipient copied on a message.
-     */
-    @NotNull public Builder ccRecipient(@NotNull Organization organization) {
-      putValue("ccRecipient", organization);
-      return this;
-    }
-    /**
-     * A sub property of recipient. The recipient copied on a message.
-     */
-    @NotNull public Builder ccRecipient(@NotNull Organization.Builder organization) {
-      putValue("ccRecipient", organization.build());
-      return this;
-    }
-    /**
-     * A sub property of recipient. The recipient copied on a message.
-     */
-    @NotNull public Builder ccRecipient(@NotNull Person person) {
-      putValue("ccRecipient", person);
-      return this;
-    }
-    /**
-     * A sub property of recipient. The recipient copied on a message.
-     */
-    @NotNull public Builder ccRecipient(@NotNull Person.Builder person) {
-      putValue("ccRecipient", person.build());
+    @NotNull public Builder ccRecipient(@NotNull Recipient recipient) {
+      putValue("ccRecipient", recipient);
       return this;
     }
     /**
@@ -345,43 +208,8 @@ public class Message extends CreativeWork {
     /**
      * A sub property of participant. The participant who is at the sending end of the action.
      */
-    @NotNull public Builder sender(@NotNull Audience audience) {
-      putValue("sender", audience);
-      return this;
-    }
-    /**
-     * A sub property of participant. The participant who is at the sending end of the action.
-     */
-    @NotNull public Builder sender(@NotNull Audience.Builder audience) {
-      putValue("sender", audience.build());
-      return this;
-    }
-    /**
-     * A sub property of participant. The participant who is at the sending end of the action.
-     */
-    @NotNull public Builder sender(@NotNull Organization organization) {
-      putValue("sender", organization);
-      return this;
-    }
-    /**
-     * A sub property of participant. The participant who is at the sending end of the action.
-     */
-    @NotNull public Builder sender(@NotNull Organization.Builder organization) {
-      putValue("sender", organization.build());
-      return this;
-    }
-    /**
-     * A sub property of participant. The participant who is at the sending end of the action.
-     */
-    @NotNull public Builder sender(@NotNull Person person) {
-      putValue("sender", person);
-      return this;
-    }
-    /**
-     * A sub property of participant. The participant who is at the sending end of the action.
-     */
-    @NotNull public Builder sender(@NotNull Person.Builder person) {
-      putValue("sender", person.build());
+    @NotNull public Builder sender(@NotNull Participant participant) {
+      putValue("sender", participant);
       return this;
     }
     /**
@@ -408,43 +236,8 @@ public class Message extends CreativeWork {
     /**
      * A sub property of recipient. The recipient blind copied on a message.
      */
-    @NotNull public Builder bccRecipient(@NotNull ContactPoint contactPoint) {
-      putValue("bccRecipient", contactPoint);
-      return this;
-    }
-    /**
-     * A sub property of recipient. The recipient blind copied on a message.
-     */
-    @NotNull public Builder bccRecipient(@NotNull ContactPoint.Builder contactPoint) {
-      putValue("bccRecipient", contactPoint.build());
-      return this;
-    }
-    /**
-     * A sub property of recipient. The recipient blind copied on a message.
-     */
-    @NotNull public Builder bccRecipient(@NotNull Organization organization) {
-      putValue("bccRecipient", organization);
-      return this;
-    }
-    /**
-     * A sub property of recipient. The recipient blind copied on a message.
-     */
-    @NotNull public Builder bccRecipient(@NotNull Organization.Builder organization) {
-      putValue("bccRecipient", organization.build());
-      return this;
-    }
-    /**
-     * A sub property of recipient. The recipient blind copied on a message.
-     */
-    @NotNull public Builder bccRecipient(@NotNull Person person) {
-      putValue("bccRecipient", person);
-      return this;
-    }
-    /**
-     * A sub property of recipient. The recipient blind copied on a message.
-     */
-    @NotNull public Builder bccRecipient(@NotNull Person.Builder person) {
-      putValue("bccRecipient", person.build());
+    @NotNull public Builder bccRecipient(@NotNull Recipient recipient) {
+      putValue("bccRecipient", recipient);
       return this;
     }
     /**
@@ -989,22 +782,8 @@ public class Message extends CreativeWork {
     /**
      * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
      */
-    @NotNull public Builder acquireLicensePage(@NotNull CreativeWork creativeWork) {
-      putValue("acquireLicensePage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
-     */
-    @NotNull public Builder acquireLicensePage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("acquireLicensePage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
-     */
-    @NotNull public Builder acquireLicensePage(@NotNull String acquireLicensePage) {
-      putValue("acquireLicensePage", acquireLicensePage);
+    @NotNull public Builder acquireLicensePage(@NotNull UsageInfo usageInfo) {
+      putValue("acquireLicensePage", usageInfo);
       return this;
     }
     /**
@@ -1022,8 +801,8 @@ public class Message extends CreativeWork {
      * Since schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.
      * 
      */
-    @NotNull public Builder editEIDR(@NotNull String editEIDR) {
-      putValue("editEIDR", editEIDR);
+    @NotNull public Builder editEIDR(@NotNull Identifier identifier) {
+      putValue("editEIDR", identifier);
       return this;
     }
     /**
@@ -1936,15 +1715,8 @@ public class Message extends CreativeWork {
     /**
      * Indicates the primary entity described in some page or other CreativeWork.
      */
-    @NotNull public Builder mainEntity(@NotNull Thing thing) {
-      putValue("mainEntity", thing);
-      return this;
-    }
-    /**
-     * Indicates the primary entity described in some page or other CreativeWork.
-     */
-    @NotNull public Builder mainEntity(@NotNull Thing.Builder thing) {
-      putValue("mainEntity", thing.build());
+    @NotNull public Builder mainEntity(@NotNull About about) {
+      putValue("mainEntity", about);
       return this;
     }
     /**
@@ -2099,30 +1871,18 @@ public class Message extends CreativeWork {
       if ("dateSents".equals(key) && value instanceof java.util.Date) { this.dateSent((java.util.Date)value); return; }
       if ("dateRead".equals(key) && value instanceof java.util.Date) { this.dateRead((java.util.Date)value); return; }
       if ("dateReads".equals(key) && value instanceof java.util.Date) { this.dateRead((java.util.Date)value); return; }
-      if ("ccRecipient".equals(key) && value instanceof ContactPoint) { this.ccRecipient((ContactPoint)value); return; }
-      if ("ccRecipients".equals(key) && value instanceof ContactPoint) { this.ccRecipient((ContactPoint)value); return; }
-      if ("ccRecipient".equals(key) && value instanceof Organization) { this.ccRecipient((Organization)value); return; }
-      if ("ccRecipients".equals(key) && value instanceof Organization) { this.ccRecipient((Organization)value); return; }
-      if ("ccRecipient".equals(key) && value instanceof Person) { this.ccRecipient((Person)value); return; }
-      if ("ccRecipients".equals(key) && value instanceof Person) { this.ccRecipient((Person)value); return; }
+      if ("ccRecipient".equals(key) && value instanceof Recipient) { this.ccRecipient((Recipient)value); return; }
+      if ("ccRecipients".equals(key) && value instanceof Recipient) { this.ccRecipient((Recipient)value); return; }
       if ("toRecipient".equals(key) && value instanceof Recipient) { this.toRecipient((Recipient)value); return; }
       if ("toRecipients".equals(key) && value instanceof Recipient) { this.toRecipient((Recipient)value); return; }
-      if ("sender".equals(key) && value instanceof Audience) { this.sender((Audience)value); return; }
-      if ("senders".equals(key) && value instanceof Audience) { this.sender((Audience)value); return; }
-      if ("sender".equals(key) && value instanceof Organization) { this.sender((Organization)value); return; }
-      if ("senders".equals(key) && value instanceof Organization) { this.sender((Organization)value); return; }
-      if ("sender".equals(key) && value instanceof Person) { this.sender((Person)value); return; }
-      if ("senders".equals(key) && value instanceof Person) { this.sender((Person)value); return; }
+      if ("sender".equals(key) && value instanceof Participant) { this.sender((Participant)value); return; }
+      if ("senders".equals(key) && value instanceof Participant) { this.sender((Participant)value); return; }
       if ("dateReceived".equals(key) && value instanceof java.util.Date) { this.dateReceived((java.util.Date)value); return; }
       if ("dateReceiveds".equals(key) && value instanceof java.util.Date) { this.dateReceived((java.util.Date)value); return; }
       if ("messageAttachment".equals(key) && value instanceof CreativeWork) { this.messageAttachment((CreativeWork)value); return; }
       if ("messageAttachments".equals(key) && value instanceof CreativeWork) { this.messageAttachment((CreativeWork)value); return; }
-      if ("bccRecipient".equals(key) && value instanceof ContactPoint) { this.bccRecipient((ContactPoint)value); return; }
-      if ("bccRecipients".equals(key) && value instanceof ContactPoint) { this.bccRecipient((ContactPoint)value); return; }
-      if ("bccRecipient".equals(key) && value instanceof Organization) { this.bccRecipient((Organization)value); return; }
-      if ("bccRecipients".equals(key) && value instanceof Organization) { this.bccRecipient((Organization)value); return; }
-      if ("bccRecipient".equals(key) && value instanceof Person) { this.bccRecipient((Person)value); return; }
-      if ("bccRecipients".equals(key) && value instanceof Person) { this.bccRecipient((Person)value); return; }
+      if ("bccRecipient".equals(key) && value instanceof Recipient) { this.bccRecipient((Recipient)value); return; }
+      if ("bccRecipients".equals(key) && value instanceof Recipient) { this.bccRecipient((Recipient)value); return; }
       super.fromMap(key, value);
     }
   }

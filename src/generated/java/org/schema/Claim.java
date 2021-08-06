@@ -35,36 +35,36 @@ public class Claim extends CreativeWork {
   /**
    * Indicates the first known occurence of a [[Claim]] in some [[CreativeWork]].
    */
-  @JsonIgnore public CreativeWork getFirstAppearance() {
-    return (CreativeWork) getValue("firstAppearance");
+  @JsonIgnore public WorkExample getFirstAppearance() {
+    return (WorkExample) getValue("firstAppearance");
   }
   /**
    * Indicates the first known occurence of a [[Claim]] in some [[CreativeWork]].
    */
-  @JsonIgnore public java.util.Collection<CreativeWork> getFirstAppearances() {
+  @JsonIgnore public java.util.Collection<WorkExample> getFirstAppearances() {
     final Object current = myData.get("firstAppearance");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<CreativeWork>) current;
+      return (java.util.Collection<WorkExample>) current;
     }
-    return Arrays.asList((CreativeWork) current);
+    return Arrays.asList((WorkExample) current);
   }
   /**
    * Indicates an occurence of a [[Claim]] in some [[CreativeWork]].
    */
-  @JsonIgnore public CreativeWork getAppearance() {
-    return (CreativeWork) getValue("appearance");
+  @JsonIgnore public WorkExample getAppearance() {
+    return (WorkExample) getValue("appearance");
   }
   /**
    * Indicates an occurence of a [[Claim]] in some [[CreativeWork]].
    */
-  @JsonIgnore public java.util.Collection<CreativeWork> getAppearances() {
+  @JsonIgnore public java.util.Collection<WorkExample> getAppearances() {
     final Object current = myData.get("appearance");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<CreativeWork>) current;
+      return (java.util.Collection<WorkExample>) current;
     }
-    return Arrays.asList((CreativeWork) current);
+    return Arrays.asList((WorkExample) current);
   }
   /**
    * For a [[Claim]] interpreted from [[MediaObject]] content
@@ -121,29 +121,15 @@ public class Claim extends CreativeWork {
     /**
      * Indicates the first known occurence of a [[Claim]] in some [[CreativeWork]].
      */
-    @NotNull public Builder firstAppearance(@NotNull CreativeWork creativeWork) {
-      putValue("firstAppearance", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates the first known occurence of a [[Claim]] in some [[CreativeWork]].
-     */
-    @NotNull public Builder firstAppearance(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("firstAppearance", creativeWork.build());
+    @NotNull public Builder firstAppearance(@NotNull WorkExample workExample) {
+      putValue("firstAppearance", workExample);
       return this;
     }
     /**
      * Indicates an occurence of a [[Claim]] in some [[CreativeWork]].
      */
-    @NotNull public Builder appearance(@NotNull CreativeWork creativeWork) {
-      putValue("appearance", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates an occurence of a [[Claim]] in some [[CreativeWork]].
-     */
-    @NotNull public Builder appearance(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("appearance", creativeWork.build());
+    @NotNull public Builder appearance(@NotNull WorkExample workExample) {
+      putValue("appearance", workExample);
       return this;
     }
     /**
@@ -720,22 +706,8 @@ public class Claim extends CreativeWork {
     /**
      * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
      */
-    @NotNull public Builder acquireLicensePage(@NotNull CreativeWork creativeWork) {
-      putValue("acquireLicensePage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
-     */
-    @NotNull public Builder acquireLicensePage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("acquireLicensePage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
-     */
-    @NotNull public Builder acquireLicensePage(@NotNull String acquireLicensePage) {
-      putValue("acquireLicensePage", acquireLicensePage);
+    @NotNull public Builder acquireLicensePage(@NotNull UsageInfo usageInfo) {
+      putValue("acquireLicensePage", usageInfo);
       return this;
     }
     /**
@@ -753,8 +725,8 @@ public class Claim extends CreativeWork {
      * Since schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.
      * 
      */
-    @NotNull public Builder editEIDR(@NotNull String editEIDR) {
-      putValue("editEIDR", editEIDR);
+    @NotNull public Builder editEIDR(@NotNull Identifier identifier) {
+      putValue("editEIDR", identifier);
       return this;
     }
     /**
@@ -1667,15 +1639,8 @@ public class Claim extends CreativeWork {
     /**
      * Indicates the primary entity described in some page or other CreativeWork.
      */
-    @NotNull public Builder mainEntity(@NotNull Thing thing) {
-      putValue("mainEntity", thing);
-      return this;
-    }
-    /**
-     * Indicates the primary entity described in some page or other CreativeWork.
-     */
-    @NotNull public Builder mainEntity(@NotNull Thing.Builder thing) {
-      putValue("mainEntity", thing.build());
+    @NotNull public Builder mainEntity(@NotNull About about) {
+      putValue("mainEntity", about);
       return this;
     }
     /**
@@ -1826,10 +1791,10 @@ public class Claim extends CreativeWork {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("firstAppearance".equals(key) && value instanceof CreativeWork) { this.firstAppearance((CreativeWork)value); return; }
-      if ("firstAppearances".equals(key) && value instanceof CreativeWork) { this.firstAppearance((CreativeWork)value); return; }
-      if ("appearance".equals(key) && value instanceof CreativeWork) { this.appearance((CreativeWork)value); return; }
-      if ("appearances".equals(key) && value instanceof CreativeWork) { this.appearance((CreativeWork)value); return; }
+      if ("firstAppearance".equals(key) && value instanceof WorkExample) { this.firstAppearance((WorkExample)value); return; }
+      if ("firstAppearances".equals(key) && value instanceof WorkExample) { this.firstAppearance((WorkExample)value); return; }
+      if ("appearance".equals(key) && value instanceof WorkExample) { this.appearance((WorkExample)value); return; }
+      if ("appearances".equals(key) && value instanceof WorkExample) { this.appearance((WorkExample)value); return; }
       if ("claimInterpreter".equals(key) && value instanceof Organization) { this.claimInterpreter((Organization)value); return; }
       if ("claimInterpreters".equals(key) && value instanceof Organization) { this.claimInterpreter((Organization)value); return; }
       if ("claimInterpreter".equals(key) && value instanceof Person) { this.claimInterpreter((Person)value); return; }

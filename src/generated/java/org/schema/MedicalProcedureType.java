@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * An enumeration that describes different types of medical procedures.
  */
 public enum MedicalProcedureType {
-  ;
+  NoninvasiveProcedure("http://schema.org/NoninvasiveProcedure"), PercutaneousProcedure("http://schema.org/PercutaneousProcedure");
   MedicalProcedureType(String value) {
     myValue = value;
   }

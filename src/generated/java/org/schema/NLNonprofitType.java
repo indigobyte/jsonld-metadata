@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * NLNonprofitType: Non-profit organization type originating from the Netherlands.
  */
 public enum NLNonprofitType {
-  ;
+  NonprofitSBBI("http://schema.org/NonprofitSBBI"), NonprofitANBI("http://schema.org/NonprofitANBI");
   NLNonprofitType(String value) {
     myValue = value;
   }

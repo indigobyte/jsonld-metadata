@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * A list of possible conditions for the item.
  */
 public enum OfferItemCondition {
-  ;
+  DamagedCondition("http://schema.org/DamagedCondition"), UsedCondition("http://schema.org/UsedCondition"), NewCondition("http://schema.org/NewCondition"), RefurbishedCondition("http://schema.org/RefurbishedCondition");
   OfferItemCondition(String value) {
     myValue = value;
   }

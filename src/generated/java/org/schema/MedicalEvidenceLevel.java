@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * Level of evidence for a medical guideline. Enumerated type.
  */
 public enum MedicalEvidenceLevel {
-  ;
+  EvidenceLevelC("http://schema.org/EvidenceLevelC"), EvidenceLevelB("http://schema.org/EvidenceLevelB"), EvidenceLevelA("http://schema.org/EvidenceLevelA");
   MedicalEvidenceLevel(String value) {
     myValue = value;
   }

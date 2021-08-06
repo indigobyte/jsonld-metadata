@@ -30,19 +30,19 @@ public class SearchAction extends Action {
   /**
    * A sub property of instrument. The query used on this action.
    */
-  @JsonIgnore public String getQuery() {
-    return (String) getValue("query");
+  @JsonIgnore public Instrument getQuery() {
+    return (Instrument) getValue("query");
   }
   /**
    * A sub property of instrument. The query used on this action.
    */
-  @JsonIgnore public java.util.Collection<String> getQuerys() {
+  @JsonIgnore public java.util.Collection<Instrument> getQuerys() {
     final Object current = myData.get("query");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<String>) current;
+      return (java.util.Collection<Instrument>) current;
     }
-    return Arrays.asList((String) current);
+    return Arrays.asList((Instrument) current);
   }
   protected SearchAction(java.util.Map<String,Object> data) {
     super(data);
@@ -61,8 +61,8 @@ public class SearchAction extends Action {
     /**
      * A sub property of instrument. The query used on this action.
      */
-    @NotNull public Builder query(@NotNull String query) {
-      putValue("query", query);
+    @NotNull public Builder query(@NotNull Instrument instrument) {
+      putValue("query", instrument);
       return this;
     }
     /**
@@ -255,8 +255,8 @@ public class SearchAction extends Action {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("query".equals(key) && value instanceof String) { this.query((String)value); return; }
-      if ("querys".equals(key) && value instanceof String) { this.query((String)value); return; }
+      if ("query".equals(key) && value instanceof Instrument) { this.query((Instrument)value); return; }
+      if ("querys".equals(key) && value instanceof Instrument) { this.query((Instrument)value); return; }
       super.fromMap(key, value);
     }
   }

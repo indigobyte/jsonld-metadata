@@ -115,36 +115,19 @@ public class PublicationIssue extends CreativeWork {
   /**
    * Identifies the issue of publication; for example, &quot;iii&quot; or &quot;2&quot;.
    */
-  @JsonIgnore public Integer getIssueNumberInteger() {
-    return (Integer) getValue("issueNumber");
+  @JsonIgnore public Position getIssueNumber() {
+    return (Position) getValue("issueNumber");
   }
   /**
    * Identifies the issue of publication; for example, &quot;iii&quot; or &quot;2&quot;.
    */
-  @JsonIgnore public java.util.Collection<Integer> getIssueNumberIntegers() {
+  @JsonIgnore public java.util.Collection<Position> getIssueNumbers() {
     final Object current = myData.get("issueNumber");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<Integer>) current;
+      return (java.util.Collection<Position>) current;
     }
-    return Arrays.asList((Integer) current);
-  }
-  /**
-   * Identifies the issue of publication; for example, &quot;iii&quot; or &quot;2&quot;.
-   */
-  @JsonIgnore public String getIssueNumberString() {
-    return (String) getValue("issueNumber");
-  }
-  /**
-   * Identifies the issue of publication; for example, &quot;iii&quot; or &quot;2&quot;.
-   */
-  @JsonIgnore public java.util.Collection<String> getIssueNumberStrings() {
-    final Object current = myData.get("issueNumber");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof java.util.Collection) {
-      return (java.util.Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
+    return Arrays.asList((Position) current);
   }
   protected PublicationIssue(java.util.Map<String,Object> data) {
     super(data);
@@ -198,15 +181,8 @@ public class PublicationIssue extends CreativeWork {
     /**
      * Identifies the issue of publication; for example, &quot;iii&quot; or &quot;2&quot;.
      */
-    @NotNull public Builder issueNumber(@NotNull Integer integer) {
-      putValue("issueNumber", integer);
-      return this;
-    }
-    /**
-     * Identifies the issue of publication; for example, &quot;iii&quot; or &quot;2&quot;.
-     */
-    @NotNull public Builder issueNumber(@NotNull String issueNumber) {
-      putValue("issueNumber", issueNumber);
+    @NotNull public Builder issueNumber(@NotNull Position position) {
+      putValue("issueNumber", position);
       return this;
     }
     /**
@@ -751,22 +727,8 @@ public class PublicationIssue extends CreativeWork {
     /**
      * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
      */
-    @NotNull public Builder acquireLicensePage(@NotNull CreativeWork creativeWork) {
-      putValue("acquireLicensePage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
-     */
-    @NotNull public Builder acquireLicensePage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("acquireLicensePage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
-     */
-    @NotNull public Builder acquireLicensePage(@NotNull String acquireLicensePage) {
-      putValue("acquireLicensePage", acquireLicensePage);
+    @NotNull public Builder acquireLicensePage(@NotNull UsageInfo usageInfo) {
+      putValue("acquireLicensePage", usageInfo);
       return this;
     }
     /**
@@ -784,8 +746,8 @@ public class PublicationIssue extends CreativeWork {
      * Since schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.
      * 
      */
-    @NotNull public Builder editEIDR(@NotNull String editEIDR) {
-      putValue("editEIDR", editEIDR);
+    @NotNull public Builder editEIDR(@NotNull Identifier identifier) {
+      putValue("editEIDR", identifier);
       return this;
     }
     /**
@@ -1698,15 +1660,8 @@ public class PublicationIssue extends CreativeWork {
     /**
      * Indicates the primary entity described in some page or other CreativeWork.
      */
-    @NotNull public Builder mainEntity(@NotNull Thing thing) {
-      putValue("mainEntity", thing);
-      return this;
-    }
-    /**
-     * Indicates the primary entity described in some page or other CreativeWork.
-     */
-    @NotNull public Builder mainEntity(@NotNull Thing.Builder thing) {
-      putValue("mainEntity", thing.build());
+    @NotNull public Builder mainEntity(@NotNull About about) {
+      putValue("mainEntity", about);
       return this;
     }
     /**
@@ -1867,10 +1822,8 @@ public class PublicationIssue extends CreativeWork {
       if ("pageStarts".equals(key) && value instanceof String) { this.pageStart((String)value); return; }
       if ("pagination".equals(key) && value instanceof String) { this.pagination((String)value); return; }
       if ("paginations".equals(key) && value instanceof String) { this.pagination((String)value); return; }
-      if ("issueNumber".equals(key) && value instanceof Integer) { this.issueNumber((Integer)value); return; }
-      if ("issueNumbers".equals(key) && value instanceof Integer) { this.issueNumber((Integer)value); return; }
-      if ("issueNumber".equals(key) && value instanceof String) { this.issueNumber((String)value); return; }
-      if ("issueNumbers".equals(key) && value instanceof String) { this.issueNumber((String)value); return; }
+      if ("issueNumber".equals(key) && value instanceof Position) { this.issueNumber((Position)value); return; }
+      if ("issueNumbers".equals(key) && value instanceof Position) { this.issueNumber((Position)value); return; }
       super.fromMap(key, value);
     }
   }

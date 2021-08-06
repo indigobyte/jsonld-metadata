@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * EventStatusType is an enumeration type whose instances represent several states that an Event may be in.
  */
 public enum EventStatusType {
-  ;
+  EventCancelled("http://schema.org/EventCancelled"), EventMovedOnline("http://schema.org/EventMovedOnline"), EventScheduled("http://schema.org/EventScheduled"), EventPostponed("http://schema.org/EventPostponed"), EventRescheduled("http://schema.org/EventRescheduled");
   EventStatusType(String value) {
     myValue = value;
   }

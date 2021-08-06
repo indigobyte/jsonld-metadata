@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * Design models for medical trials. Enumerated type.
  */
 public enum MedicalTrialDesign {
-  ;
+  SingleBlindedTrial("http://schema.org/SingleBlindedTrial"), MultiCenterTrial("http://schema.org/MultiCenterTrial"), SingleCenterTrial("http://schema.org/SingleCenterTrial"), RandomizedTrial("http://schema.org/RandomizedTrial"), DoubleBlindedTrial("http://schema.org/DoubleBlindedTrial"), PlaceboControlledTrial("http://schema.org/PlaceboControlledTrial"), TripleBlindedTrial("http://schema.org/TripleBlindedTrial"), OpenTrial("http://schema.org/OpenTrial"), InternationalTrial("http://schema.org/InternationalTrial");
   MedicalTrialDesign(String value) {
     myValue = value;
   }

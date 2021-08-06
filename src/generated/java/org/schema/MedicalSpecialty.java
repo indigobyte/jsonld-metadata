@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * Any specific branch of medical science or practice. Medical specialities include clinical specialties that pertain to particular organ systems and their respective disease states, as well as allied health specialties. Enumerated type.
  */
 public enum MedicalSpecialty {
-  ;
+  Toxicologic("http://schema.org/Toxicologic"), Urologic("http://schema.org/Urologic"), Pathology("http://schema.org/Pathology"), Musculoskeletal("http://schema.org/Musculoskeletal"), Surgical("http://schema.org/Surgical"), Cardiovascular("http://schema.org/Cardiovascular"), Endocrine("http://schema.org/Endocrine"), LaboratoryScience("http://schema.org/LaboratoryScience"), Dentistry("http://schema.org/Dentistry"), Hematologic("http://schema.org/Hematologic"), Genetic("http://schema.org/Genetic"), Gastroenterologic("http://schema.org/Gastroenterologic"), Dermatologic("http://schema.org/Dermatologic"), PharmacySpecialty("http://schema.org/PharmacySpecialty"), Rheumatologic("http://schema.org/Rheumatologic"), Pulmonary("http://schema.org/Pulmonary"), Neurologic("http://schema.org/Neurologic"), Infectious("http://schema.org/Infectious"), Renal("http://schema.org/Renal"), Anesthesia("http://schema.org/Anesthesia"), SpeechPathology("http://schema.org/SpeechPathology");
   MedicalSpecialty(String value) {
     myValue = value;
   }

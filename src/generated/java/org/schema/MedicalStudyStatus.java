@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * The status of a medical study. Enumerated type.
  */
 public enum MedicalStudyStatus {
-  ;
+  Recruiting("http://schema.org/Recruiting"), Suspended("http://schema.org/Suspended"), ActiveNotRecruiting("http://schema.org/ActiveNotRecruiting"), EnrollingByInvitation("http://schema.org/EnrollingByInvitation"), ResultsNotAvailable("http://schema.org/ResultsNotAvailable"), NotYetRecruiting("http://schema.org/NotYetRecruiting"), ResultsAvailable("http://schema.org/ResultsAvailable"), Terminated("http://schema.org/Terminated"), Completed("http://schema.org/Completed"), Withdrawn("http://schema.org/Withdrawn");
   MedicalStudyStatus(String value) {
     myValue = value;
   }

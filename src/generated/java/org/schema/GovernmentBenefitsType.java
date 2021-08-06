@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * GovernmentBenefitsType enumerates several kinds of government benefits to support the COVID-19 situation. Note that this structure may not capture all benefits offered.
  */
 public enum GovernmentBenefitsType {
-  ;
+  BusinessSupport("http://schema.org/BusinessSupport"), BasicIncome("http://schema.org/BasicIncome"), DisabilitySupport("http://schema.org/DisabilitySupport"), PaidLeave("http://schema.org/PaidLeave"), ParentalSupport("http://schema.org/ParentalSupport"), OneTimePayments("http://schema.org/OneTimePayments"), HealthCare("http://schema.org/HealthCare"), UnemploymentSupport("http://schema.org/UnemploymentSupport");
   GovernmentBenefitsType(String value) {
     myValue = value;
   }

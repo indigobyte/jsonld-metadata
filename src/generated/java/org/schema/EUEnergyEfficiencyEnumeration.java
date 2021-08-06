@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * Enumerates the EU energy efficiency classes A-G as well as A+, A++, and A+++ as defined in EU directive 2017/1369.
  */
 public enum EUEnergyEfficiencyEnumeration {
-  ;
+  EUEnergyEfficiencyCategoryA3Plus("http://schema.org/EUEnergyEfficiencyCategoryA3Plus"), EUEnergyEfficiencyCategoryA1Plus("http://schema.org/EUEnergyEfficiencyCategoryA1Plus"), EUEnergyEfficiencyCategoryA("http://schema.org/EUEnergyEfficiencyCategoryA"), EUEnergyEfficiencyCategoryB("http://schema.org/EUEnergyEfficiencyCategoryB"), EUEnergyEfficiencyCategoryC("http://schema.org/EUEnergyEfficiencyCategoryC"), EUEnergyEfficiencyCategoryD("http://schema.org/EUEnergyEfficiencyCategoryD"), EUEnergyEfficiencyCategoryE("http://schema.org/EUEnergyEfficiencyCategoryE"), EUEnergyEfficiencyCategoryF("http://schema.org/EUEnergyEfficiencyCategoryF"), EUEnergyEfficiencyCategoryG("http://schema.org/EUEnergyEfficiencyCategoryG"), EUEnergyEfficiencyCategoryA2Plus("http://schema.org/EUEnergyEfficiencyCategoryA2Plus");
   EUEnergyEfficiencyEnumeration(String value) {
     myValue = value;
   }

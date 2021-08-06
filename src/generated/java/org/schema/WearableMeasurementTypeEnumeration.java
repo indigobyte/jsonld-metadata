@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * Enumerates common types of measurement for wearables products.
  */
 public enum WearableMeasurementTypeEnumeration {
-  ;
+  WearableMeasurementCollar("http://schema.org/WearableMeasurementCollar"), WearableMeasurementBack("http://schema.org/WearableMeasurementBack"), WearableMeasurementChestOrBust("http://schema.org/WearableMeasurementChestOrBust"), WearableMeasurementSleeve("http://schema.org/WearableMeasurementSleeve"), WearableMeasurementCup("http://schema.org/WearableMeasurementCup"), WearableMeasurementWaist("http://schema.org/WearableMeasurementWaist"), WearableMeasurementWidth("http://schema.org/WearableMeasurementWidth"), WearableMeasurementHeight("http://schema.org/WearableMeasurementHeight"), WearableMeasurementOutsideLeg("http://schema.org/WearableMeasurementOutsideLeg"), WearableMeasurementInseam("http://schema.org/WearableMeasurementInseam"), WearableMeasurementHips("http://schema.org/WearableMeasurementHips"), WearableMeasurementLength("http://schema.org/WearableMeasurementLength");
   WearableMeasurementTypeEnumeration(String value) {
     myValue = value;
   }

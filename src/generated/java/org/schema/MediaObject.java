@@ -316,19 +316,19 @@ public class MediaObject extends CreativeWork implements Caption {
   /**
    * The [SHA-2](https://en.wikipedia.org/wiki/SHA-2) SHA256 hash of the content of the item. For example, a zero-length input has value 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
    */
-  @JsonIgnore public String getSha256() {
-    return (String) getValue("sha256");
+  @JsonIgnore public Description getSha256() {
+    return (Description) getValue("sha256");
   }
   /**
    * The [SHA-2](https://en.wikipedia.org/wiki/SHA-2) SHA256 hash of the content of the item. For example, a zero-length input has value 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
    */
-  @JsonIgnore public java.util.Collection<String> getSha256s() {
+  @JsonIgnore public java.util.Collection<Description> getSha256s() {
     final Object current = myData.get("sha256");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<String>) current;
+      return (java.util.Collection<Description>) current;
     }
-    return Arrays.asList((String) current);
+    return Arrays.asList((Description) current);
   }
   /**
    * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
@@ -660,8 +660,8 @@ public class MediaObject extends CreativeWork implements Caption {
     /**
      * The [SHA-2](https://en.wikipedia.org/wiki/SHA-2) SHA256 hash of the content of the item. For example, a zero-length input has value 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
      */
-    @NotNull public Builder sha256(@NotNull String sha256) {
-      putValue("sha256", sha256);
+    @NotNull public Builder sha256(@NotNull Description description) {
+      putValue("sha256", description);
       return this;
     }
     /**
@@ -1283,22 +1283,8 @@ public class MediaObject extends CreativeWork implements Caption {
     /**
      * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
      */
-    @NotNull public Builder acquireLicensePage(@NotNull CreativeWork creativeWork) {
-      putValue("acquireLicensePage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
-     */
-    @NotNull public Builder acquireLicensePage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("acquireLicensePage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
-     */
-    @NotNull public Builder acquireLicensePage(@NotNull String acquireLicensePage) {
-      putValue("acquireLicensePage", acquireLicensePage);
+    @NotNull public Builder acquireLicensePage(@NotNull UsageInfo usageInfo) {
+      putValue("acquireLicensePage", usageInfo);
       return this;
     }
     /**
@@ -1316,8 +1302,8 @@ public class MediaObject extends CreativeWork implements Caption {
      * Since schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.
      * 
      */
-    @NotNull public Builder editEIDR(@NotNull String editEIDR) {
-      putValue("editEIDR", editEIDR);
+    @NotNull public Builder editEIDR(@NotNull Identifier identifier) {
+      putValue("editEIDR", identifier);
       return this;
     }
     /**
@@ -2212,15 +2198,8 @@ public class MediaObject extends CreativeWork implements Caption {
     /**
      * Indicates the primary entity described in some page or other CreativeWork.
      */
-    @NotNull public Builder mainEntity(@NotNull Thing thing) {
-      putValue("mainEntity", thing);
-      return this;
-    }
-    /**
-     * Indicates the primary entity described in some page or other CreativeWork.
-     */
-    @NotNull public Builder mainEntity(@NotNull Thing.Builder thing) {
-      putValue("mainEntity", thing.build());
+    @NotNull public Builder mainEntity(@NotNull About about) {
+      putValue("mainEntity", about);
       return this;
     }
     /**
@@ -2403,8 +2382,8 @@ public class MediaObject extends CreativeWork implements Caption {
       if ("encodingFormats".equals(key) && value instanceof String) { this.encodingFormat((String)value); return; }
       if ("uploadDate".equals(key) && value instanceof java.util.Date) { this.uploadDate((java.util.Date)value); return; }
       if ("uploadDates".equals(key) && value instanceof java.util.Date) { this.uploadDate((java.util.Date)value); return; }
-      if ("sha256".equals(key) && value instanceof String) { this.sha256((String)value); return; }
-      if ("sha256s".equals(key) && value instanceof String) { this.sha256((String)value); return; }
+      if ("sha256".equals(key) && value instanceof Description) { this.sha256((Description)value); return; }
+      if ("sha256s".equals(key) && value instanceof Description) { this.sha256((Description)value); return; }
       if ("endTime".equals(key) && value instanceof java.util.Date) { this.endTime((java.util.Date)value); return; }
       if ("endTimes".equals(key) && value instanceof java.util.Date) { this.endTime((java.util.Date)value); return; }
       if ("playerType".equals(key) && value instanceof String) { this.playerType((String)value); return; }

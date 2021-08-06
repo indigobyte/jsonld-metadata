@@ -540,19 +540,19 @@ public class Product extends Thing {
   /**
    * Indicates the [NATO stock number](https://en.wikipedia.org/wiki/NATO_Stock_Number) (nsn) of a [[Product]]. 
    */
-  @JsonIgnore public String getNsn() {
-    return (String) getValue("nsn");
+  @JsonIgnore public Identifier getNsn() {
+    return (Identifier) getValue("nsn");
   }
   /**
    * Indicates the [NATO stock number](https://en.wikipedia.org/wiki/NATO_Stock_Number) (nsn) of a [[Product]]. 
    */
-  @JsonIgnore public java.util.Collection<String> getNsns() {
+  @JsonIgnore public java.util.Collection<Identifier> getNsns() {
     final Object current = myData.get("nsn");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<String>) current;
+      return (java.util.Collection<Identifier>) current;
     }
-    return Arrays.asList((String) current);
+    return Arrays.asList((Identifier) current);
   }
   /**
    * The product identifier, such as ISBN. For example: ``` meta itemprop=&quot;productID&quot; content=&quot;isbn:123-456-789&quot; ```.
@@ -1353,8 +1353,8 @@ public class Product extends Thing {
     /**
      * Indicates the [NATO stock number](https://en.wikipedia.org/wiki/NATO_Stock_Number) (nsn) of a [[Product]]. 
      */
-    @NotNull public Builder nsn(@NotNull String nsn) {
-      putValue("nsn", nsn);
+    @NotNull public Builder nsn(@NotNull Identifier identifier) {
+      putValue("nsn", identifier);
       return this;
     }
     /**
@@ -1817,8 +1817,8 @@ public class Product extends Thing {
       if ("brands".equals(key) && value instanceof Brand) { this.brand((Brand)value); return; }
       if ("brand".equals(key) && value instanceof Organization) { this.brand((Organization)value); return; }
       if ("brands".equals(key) && value instanceof Organization) { this.brand((Organization)value); return; }
-      if ("nsn".equals(key) && value instanceof String) { this.nsn((String)value); return; }
-      if ("nsns".equals(key) && value instanceof String) { this.nsn((String)value); return; }
+      if ("nsn".equals(key) && value instanceof Identifier) { this.nsn((Identifier)value); return; }
+      if ("nsns".equals(key) && value instanceof Identifier) { this.nsn((Identifier)value); return; }
       if ("productID".equals(key) && value instanceof Identifier) { this.productID((Identifier)value); return; }
       if ("productIDs".equals(key) && value instanceof Identifier) { this.productID((Identifier)value); return; }
       if ("hasMerchantReturnPolicy".equals(key) && value instanceof MerchantReturnPolicy) { this.hasMerchantReturnPolicy((MerchantReturnPolicy)value); return; }

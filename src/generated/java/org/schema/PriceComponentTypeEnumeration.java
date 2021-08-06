@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * Enumerates different price components that together make up the total price for an offered product.
  */
 public enum PriceComponentTypeEnumeration {
-  ;
+  DistanceFee("http://schema.org/DistanceFee"), ActivationFee("http://schema.org/ActivationFee"), Downpayment("http://schema.org/Downpayment"), Subscription("http://schema.org/Subscription"), Installment("http://schema.org/Installment"), CleaningFee("http://schema.org/CleaningFee");
   PriceComponentTypeEnumeration(String value) {
     myValue = value;
   }

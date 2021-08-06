@@ -30,36 +30,36 @@ public class SpeakableSpecification extends Intangible {
   /**
    * A CSS selector, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual &quot;Web page element&quot;.
    */
-  @JsonIgnore public CssSelectorType getCssSelector() {
-    return (CssSelectorType) getValue("cssSelector");
+  @JsonIgnore public String getCssSelector() {
+    return (String) getValue("cssSelector");
   }
   /**
    * A CSS selector, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual &quot;Web page element&quot;.
    */
-  @JsonIgnore public java.util.Collection<CssSelectorType> getCssSelectors() {
+  @JsonIgnore public java.util.Collection<String> getCssSelectors() {
     final Object current = myData.get("cssSelector");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<CssSelectorType>) current;
+      return (java.util.Collection<String>) current;
     }
-    return Arrays.asList((CssSelectorType) current);
+    return Arrays.asList((String) current);
   }
   /**
    * An XPath, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual &quot;Web page element&quot;.
    */
-  @JsonIgnore public XPathType getXpath() {
-    return (XPathType) getValue("xpath");
+  @JsonIgnore public String getXpath() {
+    return (String) getValue("xpath");
   }
   /**
    * An XPath, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual &quot;Web page element&quot;.
    */
-  @JsonIgnore public java.util.Collection<XPathType> getXpaths() {
+  @JsonIgnore public java.util.Collection<String> getXpaths() {
     final Object current = myData.get("xpath");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<XPathType>) current;
+      return (java.util.Collection<String>) current;
     }
-    return Arrays.asList((XPathType) current);
+    return Arrays.asList((String) current);
   }
   protected SpeakableSpecification(java.util.Map<String,Object> data) {
     super(data);
@@ -78,29 +78,15 @@ public class SpeakableSpecification extends Intangible {
     /**
      * A CSS selector, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual &quot;Web page element&quot;.
      */
-    @NotNull public Builder cssSelector(@NotNull CssSelectorType cssSelectorType) {
-      putValue("cssSelector", cssSelectorType);
-      return this;
-    }
-    /**
-     * A CSS selector, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual &quot;Web page element&quot;.
-     */
-    @NotNull public Builder cssSelector(@NotNull CssSelectorType.Builder cssSelectorType) {
-      putValue("cssSelector", cssSelectorType.build());
+    @NotNull public Builder cssSelector(@NotNull String cssSelector) {
+      putValue("cssSelector", cssSelector);
       return this;
     }
     /**
      * An XPath, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual &quot;Web page element&quot;.
      */
-    @NotNull public Builder xpath(@NotNull XPathType xPathType) {
-      putValue("xpath", xPathType);
-      return this;
-    }
-    /**
-     * An XPath, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual &quot;Web page element&quot;.
-     */
-    @NotNull public Builder xpath(@NotNull XPathType.Builder xPathType) {
-      putValue("xpath", xPathType.build());
+    @NotNull public Builder xpath(@NotNull String xpath) {
+      putValue("xpath", xpath);
       return this;
     }
     /**
@@ -216,10 +202,10 @@ public class SpeakableSpecification extends Intangible {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("cssSelector".equals(key) && value instanceof CssSelectorType) { this.cssSelector((CssSelectorType)value); return; }
-      if ("cssSelectors".equals(key) && value instanceof CssSelectorType) { this.cssSelector((CssSelectorType)value); return; }
-      if ("xpath".equals(key) && value instanceof XPathType) { this.xpath((XPathType)value); return; }
-      if ("xpaths".equals(key) && value instanceof XPathType) { this.xpath((XPathType)value); return; }
+      if ("cssSelector".equals(key) && value instanceof String) { this.cssSelector((String)value); return; }
+      if ("cssSelectors".equals(key) && value instanceof String) { this.cssSelector((String)value); return; }
+      if ("xpath".equals(key) && value instanceof String) { this.xpath((String)value); return; }
+      if ("xpaths".equals(key) && value instanceof String) { this.xpath((String)value); return; }
       super.fromMap(key, value);
     }
   }

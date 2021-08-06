@@ -30,36 +30,19 @@ public class EndorseAction extends ReactAction {
   /**
    * A sub property of participant. The person/organization being supported.
    */
-  @JsonIgnore public Organization getEndorseeOrganization() {
-    return (Organization) getValue("endorsee");
+  @JsonIgnore public Participant getEndorsee() {
+    return (Participant) getValue("endorsee");
   }
   /**
    * A sub property of participant. The person/organization being supported.
    */
-  @JsonIgnore public java.util.Collection<Organization> getEndorseeOrganizations() {
+  @JsonIgnore public java.util.Collection<Participant> getEndorsees() {
     final Object current = myData.get("endorsee");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<Organization>) current;
+      return (java.util.Collection<Participant>) current;
     }
-    return Arrays.asList((Organization) current);
-  }
-  /**
-   * A sub property of participant. The person/organization being supported.
-   */
-  @JsonIgnore public Person getEndorseePerson() {
-    return (Person) getValue("endorsee");
-  }
-  /**
-   * A sub property of participant. The person/organization being supported.
-   */
-  @JsonIgnore public java.util.Collection<Person> getEndorseePersons() {
-    final Object current = myData.get("endorsee");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof java.util.Collection) {
-      return (java.util.Collection<Person>) current;
-    }
-    return Arrays.asList((Person) current);
+    return Arrays.asList((Participant) current);
   }
   protected EndorseAction(java.util.Map<String,Object> data) {
     super(data);
@@ -78,29 +61,8 @@ public class EndorseAction extends ReactAction {
     /**
      * A sub property of participant. The person/organization being supported.
      */
-    @NotNull public Builder endorsee(@NotNull Organization organization) {
-      putValue("endorsee", organization);
-      return this;
-    }
-    /**
-     * A sub property of participant. The person/organization being supported.
-     */
-    @NotNull public Builder endorsee(@NotNull Organization.Builder organization) {
-      putValue("endorsee", organization.build());
-      return this;
-    }
-    /**
-     * A sub property of participant. The person/organization being supported.
-     */
-    @NotNull public Builder endorsee(@NotNull Person person) {
-      putValue("endorsee", person);
-      return this;
-    }
-    /**
-     * A sub property of participant. The person/organization being supported.
-     */
-    @NotNull public Builder endorsee(@NotNull Person.Builder person) {
-      putValue("endorsee", person.build());
+    @NotNull public Builder endorsee(@NotNull Participant participant) {
+      putValue("endorsee", participant);
       return this;
     }
     /**
@@ -293,10 +255,8 @@ public class EndorseAction extends ReactAction {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("endorsee".equals(key) && value instanceof Organization) { this.endorsee((Organization)value); return; }
-      if ("endorsees".equals(key) && value instanceof Organization) { this.endorsee((Organization)value); return; }
-      if ("endorsee".equals(key) && value instanceof Person) { this.endorsee((Person)value); return; }
-      if ("endorsees".equals(key) && value instanceof Person) { this.endorsee((Person)value); return; }
+      if ("endorsee".equals(key) && value instanceof Participant) { this.endorsee((Participant)value); return; }
+      if ("endorsees".equals(key) && value instanceof Participant) { this.endorsee((Participant)value); return; }
       super.fromMap(key, value);
     }
   }

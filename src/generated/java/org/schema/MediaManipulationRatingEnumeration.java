@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  *  Codes for use with the [[mediaAuthenticityCategory]] property, indicating the authenticity of a media object (in the context of how it was published or shared). In general these codes are not mutually exclusive, although some combinations (such as 'original' versus 'transformed', 'edited' and 'staged') would be contradictory if applied in the same [[MediaReview]]. Note that the application of these codes is with regard to a piece of media shared or published in a particular context.
  */
 public enum MediaManipulationRatingEnumeration {
-  ;
+  SatireOrParodyContent("http://schema.org/SatireOrParodyContent"), OriginalMediaContent("http://schema.org/OriginalMediaContent"), EditedOrCroppedContent("http://schema.org/EditedOrCroppedContent"), DecontextualizedContent("http://schema.org/DecontextualizedContent"), TransformedContent("http://schema.org/TransformedContent"), StagedContent("http://schema.org/StagedContent");
   MediaManipulationRatingEnumeration(String value) {
     myValue = value;
   }

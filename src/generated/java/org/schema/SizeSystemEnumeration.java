@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * Enumerates common size systems for different categories of products, for example &quot;EN-13402&quot; or &quot;UK&quot; for wearables or &quot;Imperial&quot; for screws.
  */
 public enum SizeSystemEnumeration {
-  WearableSizeSystemEnumeration("http://schema.org/WearableSizeSystemEnumeration");
+  SizeSystemMetric("http://schema.org/SizeSystemMetric"), WearableSizeSystemEnumeration("http://schema.org/WearableSizeSystemEnumeration"), SizeSystemImperial("http://schema.org/SizeSystemImperial");
   SizeSystemEnumeration(String value) {
     myValue = value;
   }

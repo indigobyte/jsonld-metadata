@@ -58,43 +58,8 @@ public class EmailMessage extends Message {
     /**
      * A sub property of recipient. The recipient copied on a message.
      */
-    @NotNull public Builder ccRecipient(@NotNull ContactPoint contactPoint) {
-      putValue("ccRecipient", contactPoint);
-      return this;
-    }
-    /**
-     * A sub property of recipient. The recipient copied on a message.
-     */
-    @NotNull public Builder ccRecipient(@NotNull ContactPoint.Builder contactPoint) {
-      putValue("ccRecipient", contactPoint.build());
-      return this;
-    }
-    /**
-     * A sub property of recipient. The recipient copied on a message.
-     */
-    @NotNull public Builder ccRecipient(@NotNull Organization organization) {
-      putValue("ccRecipient", organization);
-      return this;
-    }
-    /**
-     * A sub property of recipient. The recipient copied on a message.
-     */
-    @NotNull public Builder ccRecipient(@NotNull Organization.Builder organization) {
-      putValue("ccRecipient", organization.build());
-      return this;
-    }
-    /**
-     * A sub property of recipient. The recipient copied on a message.
-     */
-    @NotNull public Builder ccRecipient(@NotNull Person person) {
-      putValue("ccRecipient", person);
-      return this;
-    }
-    /**
-     * A sub property of recipient. The recipient copied on a message.
-     */
-    @NotNull public Builder ccRecipient(@NotNull Person.Builder person) {
-      putValue("ccRecipient", person.build());
+    @NotNull public Builder ccRecipient(@NotNull Recipient recipient) {
+      putValue("ccRecipient", recipient);
       return this;
     }
     /**
@@ -107,43 +72,8 @@ public class EmailMessage extends Message {
     /**
      * A sub property of participant. The participant who is at the sending end of the action.
      */
-    @NotNull public Builder sender(@NotNull Audience audience) {
-      putValue("sender", audience);
-      return this;
-    }
-    /**
-     * A sub property of participant. The participant who is at the sending end of the action.
-     */
-    @NotNull public Builder sender(@NotNull Audience.Builder audience) {
-      putValue("sender", audience.build());
-      return this;
-    }
-    /**
-     * A sub property of participant. The participant who is at the sending end of the action.
-     */
-    @NotNull public Builder sender(@NotNull Organization organization) {
-      putValue("sender", organization);
-      return this;
-    }
-    /**
-     * A sub property of participant. The participant who is at the sending end of the action.
-     */
-    @NotNull public Builder sender(@NotNull Organization.Builder organization) {
-      putValue("sender", organization.build());
-      return this;
-    }
-    /**
-     * A sub property of participant. The participant who is at the sending end of the action.
-     */
-    @NotNull public Builder sender(@NotNull Person person) {
-      putValue("sender", person);
-      return this;
-    }
-    /**
-     * A sub property of participant. The participant who is at the sending end of the action.
-     */
-    @NotNull public Builder sender(@NotNull Person.Builder person) {
-      putValue("sender", person.build());
+    @NotNull public Builder sender(@NotNull Participant participant) {
+      putValue("sender", participant);
       return this;
     }
     /**
@@ -170,43 +100,8 @@ public class EmailMessage extends Message {
     /**
      * A sub property of recipient. The recipient blind copied on a message.
      */
-    @NotNull public Builder bccRecipient(@NotNull ContactPoint contactPoint) {
-      putValue("bccRecipient", contactPoint);
-      return this;
-    }
-    /**
-     * A sub property of recipient. The recipient blind copied on a message.
-     */
-    @NotNull public Builder bccRecipient(@NotNull ContactPoint.Builder contactPoint) {
-      putValue("bccRecipient", contactPoint.build());
-      return this;
-    }
-    /**
-     * A sub property of recipient. The recipient blind copied on a message.
-     */
-    @NotNull public Builder bccRecipient(@NotNull Organization organization) {
-      putValue("bccRecipient", organization);
-      return this;
-    }
-    /**
-     * A sub property of recipient. The recipient blind copied on a message.
-     */
-    @NotNull public Builder bccRecipient(@NotNull Organization.Builder organization) {
-      putValue("bccRecipient", organization.build());
-      return this;
-    }
-    /**
-     * A sub property of recipient. The recipient blind copied on a message.
-     */
-    @NotNull public Builder bccRecipient(@NotNull Person person) {
-      putValue("bccRecipient", person);
-      return this;
-    }
-    /**
-     * A sub property of recipient. The recipient blind copied on a message.
-     */
-    @NotNull public Builder bccRecipient(@NotNull Person.Builder person) {
-      putValue("bccRecipient", person.build());
+    @NotNull public Builder bccRecipient(@NotNull Recipient recipient) {
+      putValue("bccRecipient", recipient);
       return this;
     }
     /**
@@ -751,22 +646,8 @@ public class EmailMessage extends Message {
     /**
      * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
      */
-    @NotNull public Builder acquireLicensePage(@NotNull CreativeWork creativeWork) {
-      putValue("acquireLicensePage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
-     */
-    @NotNull public Builder acquireLicensePage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("acquireLicensePage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
-     */
-    @NotNull public Builder acquireLicensePage(@NotNull String acquireLicensePage) {
-      putValue("acquireLicensePage", acquireLicensePage);
+    @NotNull public Builder acquireLicensePage(@NotNull UsageInfo usageInfo) {
+      putValue("acquireLicensePage", usageInfo);
       return this;
     }
     /**
@@ -784,8 +665,8 @@ public class EmailMessage extends Message {
      * Since schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.
      * 
      */
-    @NotNull public Builder editEIDR(@NotNull String editEIDR) {
-      putValue("editEIDR", editEIDR);
+    @NotNull public Builder editEIDR(@NotNull Identifier identifier) {
+      putValue("editEIDR", identifier);
       return this;
     }
     /**
@@ -1698,15 +1579,8 @@ public class EmailMessage extends Message {
     /**
      * Indicates the primary entity described in some page or other CreativeWork.
      */
-    @NotNull public Builder mainEntity(@NotNull Thing thing) {
-      putValue("mainEntity", thing);
-      return this;
-    }
-    /**
-     * Indicates the primary entity described in some page or other CreativeWork.
-     */
-    @NotNull public Builder mainEntity(@NotNull Thing.Builder thing) {
-      putValue("mainEntity", thing.build());
+    @NotNull public Builder mainEntity(@NotNull About about) {
+      putValue("mainEntity", about);
       return this;
     }
     /**

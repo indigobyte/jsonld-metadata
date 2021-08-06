@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * A list of possible statuses for the legal force of a legislation.
  */
 public enum LegalForceStatus {
-  ;
+  InForce("http://schema.org/InForce"), NotInForce("http://schema.org/NotInForce"), PartiallyInForce("http://schema.org/PartiallyInForce");
   LegalForceStatus(String value) {
     myValue = value;
   }

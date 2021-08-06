@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * Any medical imaging modality typically used for diagnostic purposes. Enumerated type.
  */
 public enum MedicalImagingTechnique {
-  ;
+  CT("http://schema.org/CT"), XRay("http://schema.org/XRay"), MRI("http://schema.org/MRI"), Radiography("http://schema.org/Radiography"), Ultrasound("http://schema.org/Ultrasound"), PET("http://schema.org/PET");
   MedicalImagingTechnique(String value) {
     myValue = value;
   }

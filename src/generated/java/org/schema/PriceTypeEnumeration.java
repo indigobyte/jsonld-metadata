@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * Enumerates different price types, for example list price, invoice price, and sale price.
  */
 public enum PriceTypeEnumeration {
-  ;
+  MSRP("http://schema.org/MSRP"), MinimumAdvertisedPrice("http://schema.org/MinimumAdvertisedPrice"), SalePrice("http://schema.org/SalePrice"), ListPrice("http://schema.org/ListPrice"), InvoicePrice("http://schema.org/InvoicePrice"), SRP("http://schema.org/SRP");
   PriceTypeEnumeration(String value) {
     myValue = value;
   }

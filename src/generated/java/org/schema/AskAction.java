@@ -30,19 +30,19 @@ public class AskAction extends CommunicateAction {
   /**
    * A sub property of object. A question.
    */
-  @JsonIgnore public Question getQuestion() {
-    return (Question) getValue("question");
+  @JsonIgnore public Object getQuestion() {
+    return (Object) getValue("question");
   }
   /**
    * A sub property of object. A question.
    */
-  @JsonIgnore public java.util.Collection<Question> getQuestions() {
+  @JsonIgnore public java.util.Collection<Object> getQuestions() {
     final Object current = myData.get("question");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<Question>) current;
+      return (java.util.Collection<Object>) current;
     }
-    return Arrays.asList((Question) current);
+    return Arrays.asList((Object) current);
   }
   protected AskAction(java.util.Map<String,Object> data) {
     super(data);
@@ -61,15 +61,8 @@ public class AskAction extends CommunicateAction {
     /**
      * A sub property of object. A question.
      */
-    @NotNull public Builder question(@NotNull Question question) {
-      putValue("question", question);
-      return this;
-    }
-    /**
-     * A sub property of object. A question.
-     */
-    @NotNull public Builder question(@NotNull Question.Builder question) {
-      putValue("question", question.build());
+    @NotNull public Builder question(@NotNull Object object) {
+      putValue("question", object);
       return this;
     }
     /**
@@ -283,8 +276,8 @@ public class AskAction extends CommunicateAction {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("question".equals(key) && value instanceof Question) { this.question((Question)value); return; }
-      if ("questions".equals(key) && value instanceof Question) { this.question((Question)value); return; }
+      if ("question".equals(key) && value instanceof Object) { this.question((Object)value); return; }
+      if ("questions".equals(key) && value instanceof Object) { this.question((Object)value); return; }
       super.fromMap(key, value);
     }
   }

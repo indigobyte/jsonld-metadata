@@ -511,8 +511,8 @@ public class ProductModel extends Product {
     /**
      * Indicates the [NATO stock number](https://en.wikipedia.org/wiki/NATO_Stock_Number) (nsn) of a [[Product]]. 
      */
-    @NotNull public Builder nsn(@NotNull String nsn) {
-      putValue("nsn", nsn);
+    @NotNull public Builder nsn(@NotNull Identifier identifier) {
+      putValue("nsn", identifier);
       return this;
     }
     /**

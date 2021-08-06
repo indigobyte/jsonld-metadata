@@ -30,53 +30,19 @@ public class ReceiveAction extends TransferAction {
   /**
    * A sub property of participant. The participant who is at the sending end of the action.
    */
-  @JsonIgnore public Audience getSenderAudience() {
-    return (Audience) getValue("sender");
+  @JsonIgnore public Participant getSender() {
+    return (Participant) getValue("sender");
   }
   /**
    * A sub property of participant. The participant who is at the sending end of the action.
    */
-  @JsonIgnore public java.util.Collection<Audience> getSenderAudiences() {
+  @JsonIgnore public java.util.Collection<Participant> getSenders() {
     final Object current = myData.get("sender");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<Audience>) current;
+      return (java.util.Collection<Participant>) current;
     }
-    return Arrays.asList((Audience) current);
-  }
-  /**
-   * A sub property of participant. The participant who is at the sending end of the action.
-   */
-  @JsonIgnore public Organization getSenderOrganization() {
-    return (Organization) getValue("sender");
-  }
-  /**
-   * A sub property of participant. The participant who is at the sending end of the action.
-   */
-  @JsonIgnore public java.util.Collection<Organization> getSenderOrganizations() {
-    final Object current = myData.get("sender");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof java.util.Collection) {
-      return (java.util.Collection<Organization>) current;
-    }
-    return Arrays.asList((Organization) current);
-  }
-  /**
-   * A sub property of participant. The participant who is at the sending end of the action.
-   */
-  @JsonIgnore public Person getSenderPerson() {
-    return (Person) getValue("sender");
-  }
-  /**
-   * A sub property of participant. The participant who is at the sending end of the action.
-   */
-  @JsonIgnore public java.util.Collection<Person> getSenderPersons() {
-    final Object current = myData.get("sender");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof java.util.Collection) {
-      return (java.util.Collection<Person>) current;
-    }
-    return Arrays.asList((Person) current);
+    return Arrays.asList((Participant) current);
   }
   /**
    * A sub property of instrument. The method of delivery.
@@ -112,43 +78,8 @@ public class ReceiveAction extends TransferAction {
     /**
      * A sub property of participant. The participant who is at the sending end of the action.
      */
-    @NotNull public Builder sender(@NotNull Audience audience) {
-      putValue("sender", audience);
-      return this;
-    }
-    /**
-     * A sub property of participant. The participant who is at the sending end of the action.
-     */
-    @NotNull public Builder sender(@NotNull Audience.Builder audience) {
-      putValue("sender", audience.build());
-      return this;
-    }
-    /**
-     * A sub property of participant. The participant who is at the sending end of the action.
-     */
-    @NotNull public Builder sender(@NotNull Organization organization) {
-      putValue("sender", organization);
-      return this;
-    }
-    /**
-     * A sub property of participant. The participant who is at the sending end of the action.
-     */
-    @NotNull public Builder sender(@NotNull Organization.Builder organization) {
-      putValue("sender", organization.build());
-      return this;
-    }
-    /**
-     * A sub property of participant. The participant who is at the sending end of the action.
-     */
-    @NotNull public Builder sender(@NotNull Person person) {
-      putValue("sender", person);
-      return this;
-    }
-    /**
-     * A sub property of participant. The participant who is at the sending end of the action.
-     */
-    @NotNull public Builder sender(@NotNull Person.Builder person) {
-      putValue("sender", person.build());
+    @NotNull public Builder sender(@NotNull Participant participant) {
+      putValue("sender", participant);
       return this;
     }
     /**
@@ -362,12 +293,8 @@ public class ReceiveAction extends TransferAction {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("sender".equals(key) && value instanceof Audience) { this.sender((Audience)value); return; }
-      if ("senders".equals(key) && value instanceof Audience) { this.sender((Audience)value); return; }
-      if ("sender".equals(key) && value instanceof Organization) { this.sender((Organization)value); return; }
-      if ("senders".equals(key) && value instanceof Organization) { this.sender((Organization)value); return; }
-      if ("sender".equals(key) && value instanceof Person) { this.sender((Person)value); return; }
-      if ("senders".equals(key) && value instanceof Person) { this.sender((Person)value); return; }
+      if ("sender".equals(key) && value instanceof Participant) { this.sender((Participant)value); return; }
+      if ("senders".equals(key) && value instanceof Participant) { this.sender((Participant)value); return; }
       if ("deliveryMethod".equals(key) && value instanceof Instrument) { this.deliveryMethod((Instrument)value); return; }
       if ("deliveryMethods".equals(key) && value instanceof Instrument) { this.deliveryMethod((Instrument)value); return; }
       super.fromMap(key, value);

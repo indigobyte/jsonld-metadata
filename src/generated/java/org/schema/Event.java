@@ -98,19 +98,19 @@ public class Event extends Thing {
   /**
    * A work performed in some event, for example a play performed in a TheaterEvent.
    */
-  @JsonIgnore public CreativeWork getWorkPerformed() {
-    return (CreativeWork) getValue("workPerformed");
+  @JsonIgnore public WorkFeatured getWorkPerformed() {
+    return (WorkFeatured) getValue("workPerformed");
   }
   /**
    * A work performed in some event, for example a play performed in a TheaterEvent.
    */
-  @JsonIgnore public java.util.Collection<CreativeWork> getWorkPerformeds() {
+  @JsonIgnore public java.util.Collection<WorkFeatured> getWorkPerformeds() {
     final Object current = myData.get("workPerformed");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<CreativeWork>) current;
+      return (java.util.Collection<WorkFeatured>) current;
     }
-    return Arrays.asList((CreativeWork) current);
+    return Arrays.asList((WorkFeatured) current);
   }
   /**
    * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
@@ -804,15 +804,8 @@ public class Event extends Thing {
     /**
      * A work performed in some event, for example a play performed in a TheaterEvent.
      */
-    @NotNull public Builder workPerformed(@NotNull CreativeWork creativeWork) {
-      putValue("workPerformed", creativeWork);
-      return this;
-    }
-    /**
-     * A work performed in some event, for example a play performed in a TheaterEvent.
-     */
-    @NotNull public Builder workPerformed(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("workPerformed", creativeWork.build());
+    @NotNull public Builder workPerformed(@NotNull WorkFeatured workFeatured) {
+      putValue("workPerformed", workFeatured);
       return this;
     }
     /**
@@ -1342,8 +1335,8 @@ public class Event extends Thing {
       if ("inLanguages".equals(key) && value instanceof Language) { this.inLanguage((Language)value); return; }
       if ("inLanguage".equals(key) && value instanceof String) { this.inLanguage((String)value); return; }
       if ("inLanguages".equals(key) && value instanceof String) { this.inLanguage((String)value); return; }
-      if ("workPerformed".equals(key) && value instanceof CreativeWork) { this.workPerformed((CreativeWork)value); return; }
-      if ("workPerformeds".equals(key) && value instanceof CreativeWork) { this.workPerformed((CreativeWork)value); return; }
+      if ("workPerformed".equals(key) && value instanceof WorkFeatured) { this.workPerformed((WorkFeatured)value); return; }
+      if ("workPerformeds".equals(key) && value instanceof WorkFeatured) { this.workPerformed((WorkFeatured)value); return; }
       if ("composer".equals(key) && value instanceof Organization) { this.composer((Organization)value); return; }
       if ("composers".equals(key) && value instanceof Organization) { this.composer((Organization)value); return; }
       if ("composer".equals(key) && value instanceof Person) { this.composer((Person)value); return; }

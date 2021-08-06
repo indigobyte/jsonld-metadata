@@ -30,19 +30,19 @@ public class CategoryCode extends DefinedTerm {
   /**
    * A short textual code that uniquely identifies the value.
    */
-  @JsonIgnore public String getCodeValue() {
-    return (String) getValue("codeValue");
+  @JsonIgnore public TermCode getCodeValue() {
+    return (TermCode) getValue("codeValue");
   }
   /**
    * A short textual code that uniquely identifies the value.
    */
-  @JsonIgnore public java.util.Collection<String> getCodeValues() {
+  @JsonIgnore public java.util.Collection<TermCode> getCodeValues() {
     final Object current = myData.get("codeValue");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<String>) current;
+      return (java.util.Collection<TermCode>) current;
     }
-    return Arrays.asList((String) current);
+    return Arrays.asList((TermCode) current);
   }
   /**
    * A [[CategoryCodeSet]] that contains this category code.
@@ -78,8 +78,8 @@ public class CategoryCode extends DefinedTerm {
     /**
      * A short textual code that uniquely identifies the value.
      */
-    @NotNull public Builder codeValue(@NotNull String codeValue) {
-      putValue("codeValue", codeValue);
+    @NotNull public Builder codeValue(@NotNull TermCode termCode) {
+      putValue("codeValue", termCode);
       return this;
     }
     /**
@@ -216,8 +216,8 @@ public class CategoryCode extends DefinedTerm {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("codeValue".equals(key) && value instanceof String) { this.codeValue((String)value); return; }
-      if ("codeValues".equals(key) && value instanceof String) { this.codeValue((String)value); return; }
+      if ("codeValue".equals(key) && value instanceof TermCode) { this.codeValue((TermCode)value); return; }
+      if ("codeValues".equals(key) && value instanceof TermCode) { this.codeValue((TermCode)value); return; }
       if ("inCodeSet".equals(key) && value instanceof InDefinedTermSet) { this.inCodeSet((InDefinedTermSet)value); return; }
       if ("inCodeSets".equals(key) && value instanceof InDefinedTermSet) { this.inCodeSet((InDefinedTermSet)value); return; }
       super.fromMap(key, value);

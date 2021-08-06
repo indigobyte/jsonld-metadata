@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * Enumerates several types of return labels for product returns.
  */
 public enum ReturnLabelSourceEnumeration {
-  ;
+  ReturnLabelDownloadAndPrint("http://schema.org/ReturnLabelDownloadAndPrint"), ReturnLabelCustomerResponsibility("http://schema.org/ReturnLabelCustomerResponsibility"), ReturnLabelInBox("http://schema.org/ReturnLabelInBox");
   ReturnLabelSourceEnumeration(String value) {
     myValue = value;
   }

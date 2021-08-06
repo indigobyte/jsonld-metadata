@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * A value indicating a special usage of a car, e.g. commercial rental, driving school, or as a taxi.
  */
 public enum CarUsageType {
-  ;
+  DrivingSchoolVehicleUsage("http://schema.org/DrivingSchoolVehicleUsage"), TaxiVehicleUsage("http://schema.org/TaxiVehicleUsage"), RentalVehicleUsage("http://schema.org/RentalVehicleUsage");
   CarUsageType(String value) {
     myValue = value;
   }

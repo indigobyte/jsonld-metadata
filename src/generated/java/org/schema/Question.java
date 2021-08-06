@@ -81,36 +81,19 @@ public class Question extends Comment {
   /**
    * The answer(s) that has been accepted as best, typically on a Question/Answer site. Sites vary in their selection mechanisms, e.g. drawing on community opinion and/or the view of the Question author.
    */
-  @JsonIgnore public Answer getAcceptedAnswerAnswer() {
-    return (Answer) getValue("acceptedAnswer");
+  @JsonIgnore public SuggestedAnswer getAcceptedAnswer() {
+    return (SuggestedAnswer) getValue("acceptedAnswer");
   }
   /**
    * The answer(s) that has been accepted as best, typically on a Question/Answer site. Sites vary in their selection mechanisms, e.g. drawing on community opinion and/or the view of the Question author.
    */
-  @JsonIgnore public java.util.Collection<Answer> getAcceptedAnswerAnswers() {
+  @JsonIgnore public java.util.Collection<SuggestedAnswer> getAcceptedAnswers() {
     final Object current = myData.get("acceptedAnswer");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<Answer>) current;
+      return (java.util.Collection<SuggestedAnswer>) current;
     }
-    return Arrays.asList((Answer) current);
-  }
-  /**
-   * The answer(s) that has been accepted as best, typically on a Question/Answer site. Sites vary in their selection mechanisms, e.g. drawing on community opinion and/or the view of the Question author.
-   */
-  @JsonIgnore public ItemList getAcceptedAnswerItemList() {
-    return (ItemList) getValue("acceptedAnswer");
-  }
-  /**
-   * The answer(s) that has been accepted as best, typically on a Question/Answer site. Sites vary in their selection mechanisms, e.g. drawing on community opinion and/or the view of the Question author.
-   */
-  @JsonIgnore public java.util.Collection<ItemList> getAcceptedAnswerItemLists() {
-    final Object current = myData.get("acceptedAnswer");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof java.util.Collection) {
-      return (java.util.Collection<ItemList>) current;
-    }
-    return Arrays.asList((ItemList) current);
+    return Arrays.asList((SuggestedAnswer) current);
   }
   protected Question(java.util.Map<String,Object> data) {
     super(data);
@@ -150,29 +133,8 @@ public class Question extends Comment {
     /**
      * The answer(s) that has been accepted as best, typically on a Question/Answer site. Sites vary in their selection mechanisms, e.g. drawing on community opinion and/or the view of the Question author.
      */
-    @NotNull public Builder acceptedAnswer(@NotNull Answer answer) {
-      putValue("acceptedAnswer", answer);
-      return this;
-    }
-    /**
-     * The answer(s) that has been accepted as best, typically on a Question/Answer site. Sites vary in their selection mechanisms, e.g. drawing on community opinion and/or the view of the Question author.
-     */
-    @NotNull public Builder acceptedAnswer(@NotNull Answer.Builder answer) {
-      putValue("acceptedAnswer", answer.build());
-      return this;
-    }
-    /**
-     * The answer(s) that has been accepted as best, typically on a Question/Answer site. Sites vary in their selection mechanisms, e.g. drawing on community opinion and/or the view of the Question author.
-     */
-    @NotNull public Builder acceptedAnswer(@NotNull ItemList itemList) {
-      putValue("acceptedAnswer", itemList);
-      return this;
-    }
-    /**
-     * The answer(s) that has been accepted as best, typically on a Question/Answer site. Sites vary in their selection mechanisms, e.g. drawing on community opinion and/or the view of the Question author.
-     */
-    @NotNull public Builder acceptedAnswer(@NotNull ItemList.Builder itemList) {
-      putValue("acceptedAnswer", itemList.build());
+    @NotNull public Builder acceptedAnswer(@NotNull SuggestedAnswer suggestedAnswer) {
+      putValue("acceptedAnswer", suggestedAnswer);
       return this;
     }
     /**
@@ -745,22 +707,8 @@ public class Question extends Comment {
     /**
      * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
      */
-    @NotNull public Builder acquireLicensePage(@NotNull CreativeWork creativeWork) {
-      putValue("acquireLicensePage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
-     */
-    @NotNull public Builder acquireLicensePage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("acquireLicensePage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
-     */
-    @NotNull public Builder acquireLicensePage(@NotNull String acquireLicensePage) {
-      putValue("acquireLicensePage", acquireLicensePage);
+    @NotNull public Builder acquireLicensePage(@NotNull UsageInfo usageInfo) {
+      putValue("acquireLicensePage", usageInfo);
       return this;
     }
     /**
@@ -778,8 +726,8 @@ public class Question extends Comment {
      * Since schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.
      * 
      */
-    @NotNull public Builder editEIDR(@NotNull String editEIDR) {
-      putValue("editEIDR", editEIDR);
+    @NotNull public Builder editEIDR(@NotNull Identifier identifier) {
+      putValue("editEIDR", identifier);
       return this;
     }
     /**
@@ -1692,15 +1640,8 @@ public class Question extends Comment {
     /**
      * Indicates the primary entity described in some page or other CreativeWork.
      */
-    @NotNull public Builder mainEntity(@NotNull Thing thing) {
-      putValue("mainEntity", thing);
-      return this;
-    }
-    /**
-     * Indicates the primary entity described in some page or other CreativeWork.
-     */
-    @NotNull public Builder mainEntity(@NotNull Thing.Builder thing) {
-      putValue("mainEntity", thing.build());
+    @NotNull public Builder mainEntity(@NotNull About about) {
+      putValue("mainEntity", about);
       return this;
     }
     /**
@@ -1857,10 +1798,8 @@ public class Question extends Comment {
       if ("eduQuestionTypes".equals(key) && value instanceof String) { this.eduQuestionType((String)value); return; }
       if ("suggestedAnswer".equals(key) && value instanceof SuggestedAnswer) { this.suggestedAnswer((SuggestedAnswer)value); return; }
       if ("suggestedAnswers".equals(key) && value instanceof SuggestedAnswer) { this.suggestedAnswer((SuggestedAnswer)value); return; }
-      if ("acceptedAnswer".equals(key) && value instanceof Answer) { this.acceptedAnswer((Answer)value); return; }
-      if ("acceptedAnswers".equals(key) && value instanceof Answer) { this.acceptedAnswer((Answer)value); return; }
-      if ("acceptedAnswer".equals(key) && value instanceof ItemList) { this.acceptedAnswer((ItemList)value); return; }
-      if ("acceptedAnswers".equals(key) && value instanceof ItemList) { this.acceptedAnswer((ItemList)value); return; }
+      if ("acceptedAnswer".equals(key) && value instanceof SuggestedAnswer) { this.acceptedAnswer((SuggestedAnswer)value); return; }
+      if ("acceptedAnswers".equals(key) && value instanceof SuggestedAnswer) { this.acceptedAnswer((SuggestedAnswer)value); return; }
       super.fromMap(key, value);
     }
   }

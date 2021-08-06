@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * Enumerates types (or dimensions) of a person's body measurements, for example for fitting of clothes.
  */
 public enum BodyMeasurementTypeEnumeration {
-  ;
+  BodyMeasurementUnderbust("http://schema.org/BodyMeasurementUnderbust"), BodyMeasurementWaist("http://schema.org/BodyMeasurementWaist"), BodyMeasurementChest("http://schema.org/BodyMeasurementChest"), BodyMeasurementNeck("http://schema.org/BodyMeasurementNeck"), BodyMeasurementInsideLeg("http://schema.org/BodyMeasurementInsideLeg"), BodyMeasurementWeight("http://schema.org/BodyMeasurementWeight"), BodyMeasurementFoot("http://schema.org/BodyMeasurementFoot"), BodyMeasurementArm("http://schema.org/BodyMeasurementArm"), BodyMeasurementHead("http://schema.org/BodyMeasurementHead"), BodyMeasurementHand("http://schema.org/BodyMeasurementHand"), BodyMeasurementHips("http://schema.org/BodyMeasurementHips"), BodyMeasurementBust("http://schema.org/BodyMeasurementBust"), BodyMeasurementHeight("http://schema.org/BodyMeasurementHeight");
   BodyMeasurementTypeEnumeration(String value) {
     myValue = value;
   }

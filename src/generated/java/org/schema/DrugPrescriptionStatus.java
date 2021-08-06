@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * Indicates whether this drug is available by prescription or over-the-counter.
  */
 public enum DrugPrescriptionStatus {
-  ;
+  PrescriptionOnly("http://schema.org/PrescriptionOnly"), OTC("http://schema.org/OTC");
   DrugPrescriptionStatus(String value) {
     myValue = value;
   }

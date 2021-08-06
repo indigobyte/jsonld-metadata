@@ -30,36 +30,19 @@ public class SellAction extends TradeAction {
   /**
    * A sub property of participant. The participant/person/organization that bought the object.
    */
-  @JsonIgnore public Organization getBuyerOrganization() {
-    return (Organization) getValue("buyer");
+  @JsonIgnore public Participant getBuyer() {
+    return (Participant) getValue("buyer");
   }
   /**
    * A sub property of participant. The participant/person/organization that bought the object.
    */
-  @JsonIgnore public java.util.Collection<Organization> getBuyerOrganizations() {
+  @JsonIgnore public java.util.Collection<Participant> getBuyers() {
     final Object current = myData.get("buyer");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<Organization>) current;
+      return (java.util.Collection<Participant>) current;
     }
-    return Arrays.asList((Organization) current);
-  }
-  /**
-   * A sub property of participant. The participant/person/organization that bought the object.
-   */
-  @JsonIgnore public Person getBuyerPerson() {
-    return (Person) getValue("buyer");
-  }
-  /**
-   * A sub property of participant. The participant/person/organization that bought the object.
-   */
-  @JsonIgnore public java.util.Collection<Person> getBuyerPersons() {
-    final Object current = myData.get("buyer");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof java.util.Collection) {
-      return (java.util.Collection<Person>) current;
-    }
-    return Arrays.asList((Person) current);
+    return Arrays.asList((Participant) current);
   }
   protected SellAction(java.util.Map<String,Object> data) {
     super(data);
@@ -78,29 +61,8 @@ public class SellAction extends TradeAction {
     /**
      * A sub property of participant. The participant/person/organization that bought the object.
      */
-    @NotNull public Builder buyer(@NotNull Organization organization) {
-      putValue("buyer", organization);
-      return this;
-    }
-    /**
-     * A sub property of participant. The participant/person/organization that bought the object.
-     */
-    @NotNull public Builder buyer(@NotNull Organization.Builder organization) {
-      putValue("buyer", organization.build());
-      return this;
-    }
-    /**
-     * A sub property of participant. The participant/person/organization that bought the object.
-     */
-    @NotNull public Builder buyer(@NotNull Person person) {
-      putValue("buyer", person);
-      return this;
-    }
-    /**
-     * A sub property of participant. The participant/person/organization that bought the object.
-     */
-    @NotNull public Builder buyer(@NotNull Person.Builder person) {
-      putValue("buyer", person.build());
+    @NotNull public Builder buyer(@NotNull Participant participant) {
+      putValue("buyer", participant);
       return this;
     }
     /**
@@ -330,10 +292,8 @@ public class SellAction extends TradeAction {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("buyer".equals(key) && value instanceof Organization) { this.buyer((Organization)value); return; }
-      if ("buyers".equals(key) && value instanceof Organization) { this.buyer((Organization)value); return; }
-      if ("buyer".equals(key) && value instanceof Person) { this.buyer((Person)value); return; }
-      if ("buyers".equals(key) && value instanceof Person) { this.buyer((Person)value); return; }
+      if ("buyer".equals(key) && value instanceof Participant) { this.buyer((Participant)value); return; }
+      if ("buyers".equals(key) && value instanceof Participant) { this.buyer((Participant)value); return; }
       super.fromMap(key, value);
     }
   }

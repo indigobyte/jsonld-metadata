@@ -238,19 +238,19 @@ public class VisualArtwork extends CreativeWork {
   /**
    * The material used. (e.g. Oil, Watercolour, Acrylic, Linoprint, Marble, Cyanotype, Digital, Lithograph, DryPoint, Intaglio, Pastel, Woodcut, Pencil, Mixed Media, etc.)
    */
-  @JsonIgnore public String getArtMedium() {
-    return (String) getValue("artMedium");
+  @JsonIgnore public Material getArtMedium() {
+    return (Material) getValue("artMedium");
   }
   /**
    * The material used. (e.g. Oil, Watercolour, Acrylic, Linoprint, Marble, Cyanotype, Digital, Lithograph, DryPoint, Intaglio, Pastel, Woodcut, Pencil, Mixed Media, etc.)
    */
-  @JsonIgnore public java.util.Collection<String> getArtMediums() {
+  @JsonIgnore public java.util.Collection<Material> getArtMediums() {
     final Object current = myData.get("artMedium");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<String>) current;
+      return (java.util.Collection<Material>) current;
     }
-    return Arrays.asList((String) current);
+    return Arrays.asList((Material) current);
   }
   /**
    * The number of copies when multiple copies of a piece of artwork are produced - e.g. for a limited edition of 20 prints, 'artEdition' refers to the total number of copies (in this example &quot;20&quot;).
@@ -485,8 +485,8 @@ public class VisualArtwork extends CreativeWork {
     /**
      * The material used. (e.g. Oil, Watercolour, Acrylic, Linoprint, Marble, Cyanotype, Digital, Lithograph, DryPoint, Intaglio, Pastel, Woodcut, Pencil, Mixed Media, etc.)
      */
-    @NotNull public Builder artMedium(@NotNull String artMedium) {
-      putValue("artMedium", artMedium);
+    @NotNull public Builder artMedium(@NotNull Material material) {
+      putValue("artMedium", material);
       return this;
     }
     /**
@@ -1052,22 +1052,8 @@ public class VisualArtwork extends CreativeWork {
     /**
      * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
      */
-    @NotNull public Builder acquireLicensePage(@NotNull CreativeWork creativeWork) {
-      putValue("acquireLicensePage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
-     */
-    @NotNull public Builder acquireLicensePage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("acquireLicensePage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
-     */
-    @NotNull public Builder acquireLicensePage(@NotNull String acquireLicensePage) {
-      putValue("acquireLicensePage", acquireLicensePage);
+    @NotNull public Builder acquireLicensePage(@NotNull UsageInfo usageInfo) {
+      putValue("acquireLicensePage", usageInfo);
       return this;
     }
     /**
@@ -1085,8 +1071,8 @@ public class VisualArtwork extends CreativeWork {
      * Since schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.
      * 
      */
-    @NotNull public Builder editEIDR(@NotNull String editEIDR) {
-      putValue("editEIDR", editEIDR);
+    @NotNull public Builder editEIDR(@NotNull Identifier identifier) {
+      putValue("editEIDR", identifier);
       return this;
     }
     /**
@@ -1999,15 +1985,8 @@ public class VisualArtwork extends CreativeWork {
     /**
      * Indicates the primary entity described in some page or other CreativeWork.
      */
-    @NotNull public Builder mainEntity(@NotNull Thing thing) {
-      putValue("mainEntity", thing);
-      return this;
-    }
-    /**
-     * Indicates the primary entity described in some page or other CreativeWork.
-     */
-    @NotNull public Builder mainEntity(@NotNull Thing.Builder thing) {
-      putValue("mainEntity", thing.build());
+    @NotNull public Builder mainEntity(@NotNull About about) {
+      putValue("mainEntity", about);
       return this;
     }
     /**
@@ -2182,8 +2161,8 @@ public class VisualArtwork extends CreativeWork {
       if ("heights".equals(key) && value instanceof QuantitativeValue) { this.height((QuantitativeValue)value); return; }
       if ("penciler".equals(key) && value instanceof Person) { this.penciler((Person)value); return; }
       if ("pencilers".equals(key) && value instanceof Person) { this.penciler((Person)value); return; }
-      if ("artMedium".equals(key) && value instanceof String) { this.artMedium((String)value); return; }
-      if ("artMediums".equals(key) && value instanceof String) { this.artMedium((String)value); return; }
+      if ("artMedium".equals(key) && value instanceof Material) { this.artMedium((Material)value); return; }
+      if ("artMediums".equals(key) && value instanceof Material) { this.artMedium((Material)value); return; }
       if ("artEdition".equals(key) && value instanceof Integer) { this.artEdition((Integer)value); return; }
       if ("artEditions".equals(key) && value instanceof Integer) { this.artEdition((Integer)value); return; }
       if ("artEdition".equals(key) && value instanceof String) { this.artEdition((String)value); return; }

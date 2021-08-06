@@ -30,36 +30,36 @@ public class WebPageElement extends CreativeWork {
   /**
    * A CSS selector, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual &quot;Web page element&quot;.
    */
-  @JsonIgnore public CssSelectorType getCssSelector() {
-    return (CssSelectorType) getValue("cssSelector");
+  @JsonIgnore public String getCssSelector() {
+    return (String) getValue("cssSelector");
   }
   /**
    * A CSS selector, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual &quot;Web page element&quot;.
    */
-  @JsonIgnore public java.util.Collection<CssSelectorType> getCssSelectors() {
+  @JsonIgnore public java.util.Collection<String> getCssSelectors() {
     final Object current = myData.get("cssSelector");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<CssSelectorType>) current;
+      return (java.util.Collection<String>) current;
     }
-    return Arrays.asList((CssSelectorType) current);
+    return Arrays.asList((String) current);
   }
   /**
    * An XPath, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual &quot;Web page element&quot;.
    */
-  @JsonIgnore public XPathType getXpath() {
-    return (XPathType) getValue("xpath");
+  @JsonIgnore public String getXpath() {
+    return (String) getValue("xpath");
   }
   /**
    * An XPath, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual &quot;Web page element&quot;.
    */
-  @JsonIgnore public java.util.Collection<XPathType> getXpaths() {
+  @JsonIgnore public java.util.Collection<String> getXpaths() {
     final Object current = myData.get("xpath");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<XPathType>) current;
+      return (java.util.Collection<String>) current;
     }
-    return Arrays.asList((XPathType) current);
+    return Arrays.asList((String) current);
   }
   protected WebPageElement(java.util.Map<String,Object> data) {
     super(data);
@@ -78,29 +78,15 @@ public class WebPageElement extends CreativeWork {
     /**
      * A CSS selector, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual &quot;Web page element&quot;.
      */
-    @NotNull public Builder cssSelector(@NotNull CssSelectorType cssSelectorType) {
-      putValue("cssSelector", cssSelectorType);
-      return this;
-    }
-    /**
-     * A CSS selector, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual &quot;Web page element&quot;.
-     */
-    @NotNull public Builder cssSelector(@NotNull CssSelectorType.Builder cssSelectorType) {
-      putValue("cssSelector", cssSelectorType.build());
+    @NotNull public Builder cssSelector(@NotNull String cssSelector) {
+      putValue("cssSelector", cssSelector);
       return this;
     }
     /**
      * An XPath, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual &quot;Web page element&quot;.
      */
-    @NotNull public Builder xpath(@NotNull XPathType xPathType) {
-      putValue("xpath", xPathType);
-      return this;
-    }
-    /**
-     * An XPath, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual &quot;Web page element&quot;.
-     */
-    @NotNull public Builder xpath(@NotNull XPathType.Builder xPathType) {
-      putValue("xpath", xPathType.build());
+    @NotNull public Builder xpath(@NotNull String xpath) {
+      putValue("xpath", xpath);
       return this;
     }
     /**
@@ -645,22 +631,8 @@ public class WebPageElement extends CreativeWork {
     /**
      * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
      */
-    @NotNull public Builder acquireLicensePage(@NotNull CreativeWork creativeWork) {
-      putValue("acquireLicensePage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
-     */
-    @NotNull public Builder acquireLicensePage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("acquireLicensePage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
-     */
-    @NotNull public Builder acquireLicensePage(@NotNull String acquireLicensePage) {
-      putValue("acquireLicensePage", acquireLicensePage);
+    @NotNull public Builder acquireLicensePage(@NotNull UsageInfo usageInfo) {
+      putValue("acquireLicensePage", usageInfo);
       return this;
     }
     /**
@@ -678,8 +650,8 @@ public class WebPageElement extends CreativeWork {
      * Since schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.
      * 
      */
-    @NotNull public Builder editEIDR(@NotNull String editEIDR) {
-      putValue("editEIDR", editEIDR);
+    @NotNull public Builder editEIDR(@NotNull Identifier identifier) {
+      putValue("editEIDR", identifier);
       return this;
     }
     /**
@@ -1592,15 +1564,8 @@ public class WebPageElement extends CreativeWork {
     /**
      * Indicates the primary entity described in some page or other CreativeWork.
      */
-    @NotNull public Builder mainEntity(@NotNull Thing thing) {
-      putValue("mainEntity", thing);
-      return this;
-    }
-    /**
-     * Indicates the primary entity described in some page or other CreativeWork.
-     */
-    @NotNull public Builder mainEntity(@NotNull Thing.Builder thing) {
-      putValue("mainEntity", thing.build());
+    @NotNull public Builder mainEntity(@NotNull About about) {
+      putValue("mainEntity", about);
       return this;
     }
     /**
@@ -1751,10 +1716,10 @@ public class WebPageElement extends CreativeWork {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("cssSelector".equals(key) && value instanceof CssSelectorType) { this.cssSelector((CssSelectorType)value); return; }
-      if ("cssSelectors".equals(key) && value instanceof CssSelectorType) { this.cssSelector((CssSelectorType)value); return; }
-      if ("xpath".equals(key) && value instanceof XPathType) { this.xpath((XPathType)value); return; }
-      if ("xpaths".equals(key) && value instanceof XPathType) { this.xpath((XPathType)value); return; }
+      if ("cssSelector".equals(key) && value instanceof String) { this.cssSelector((String)value); return; }
+      if ("cssSelectors".equals(key) && value instanceof String) { this.cssSelector((String)value); return; }
+      if ("xpath".equals(key) && value instanceof String) { this.xpath((String)value); return; }
+      if ("xpaths".equals(key) && value instanceof String) { this.xpath((String)value); return; }
       super.fromMap(key, value);
     }
   }

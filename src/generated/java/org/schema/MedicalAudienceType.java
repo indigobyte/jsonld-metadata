@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * Target audiences types for medical web pages. Enumerated type.
  */
 public enum MedicalAudienceType {
-  ;
+  Clinician("http://schema.org/Clinician"), MedicalResearcher("http://schema.org/MedicalResearcher");
   MedicalAudienceType(String value) {
     myValue = value;
   }

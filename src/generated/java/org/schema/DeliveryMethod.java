@@ -36,7 +36,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  *         
  */
 public enum DeliveryMethod {
-  ;
+  ParcelService("http://schema.org/ParcelService"), OnSitePickup("http://schema.org/OnSitePickup"), LockerDelivery("http://schema.org/LockerDelivery");
   DeliveryMethod(String value) {
     myValue = value;
   }

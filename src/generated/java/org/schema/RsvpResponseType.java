@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * RsvpResponseType is an enumeration type whose instances represent responding to an RSVP request.
  */
 public enum RsvpResponseType {
-  ;
+  RsvpResponseNo("http://schema.org/RsvpResponseNo"), RsvpResponseYes("http://schema.org/RsvpResponseYes"), RsvpResponseMaybe("http://schema.org/RsvpResponseMaybe");
   RsvpResponseType(String value) {
     myValue = value;
   }

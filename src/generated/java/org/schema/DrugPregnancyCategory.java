@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * Categories that represent an assessment of the risk of fetal injury due to a drug or pharmaceutical used as directed by the mother during pregnancy.
  */
 public enum DrugPregnancyCategory {
-  ;
+  FDAcategoryC("http://schema.org/FDAcategoryC"), FDAcategoryD("http://schema.org/FDAcategoryD"), FDAcategoryA("http://schema.org/FDAcategoryA"), FDAcategoryB("http://schema.org/FDAcategoryB"), FDAcategoryX("http://schema.org/FDAcategoryX"), FDAnotEvaluated("http://schema.org/FDAnotEvaluated");
   DrugPregnancyCategory(String value) {
     myValue = value;
   }

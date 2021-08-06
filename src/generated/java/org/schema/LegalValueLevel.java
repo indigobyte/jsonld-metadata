@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * A list of possible levels for the legal validity of a legislation.
  */
 public enum LegalValueLevel {
-  ;
+  OfficialLegalValue("http://schema.org/OfficialLegalValue"), UnofficialLegalValue("http://schema.org/UnofficialLegalValue"), AuthoritativeLegalValue("http://schema.org/AuthoritativeLegalValue"), DefinitiveLegalValue("http://schema.org/DefinitiveLegalValue");
   LegalValueLevel(String value) {
     myValue = value;
   }

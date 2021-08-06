@@ -47,36 +47,19 @@ public class Clip extends CreativeWork {
   /**
    * Position of the clip within an ordered group of clips.
    */
-  @JsonIgnore public Integer getClipNumberInteger() {
-    return (Integer) getValue("clipNumber");
+  @JsonIgnore public Position getClipNumber() {
+    return (Position) getValue("clipNumber");
   }
   /**
    * Position of the clip within an ordered group of clips.
    */
-  @JsonIgnore public java.util.Collection<Integer> getClipNumberIntegers() {
+  @JsonIgnore public java.util.Collection<Position> getClipNumbers() {
     final Object current = myData.get("clipNumber");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<Integer>) current;
+      return (java.util.Collection<Position>) current;
     }
-    return Arrays.asList((Integer) current);
-  }
-  /**
-   * Position of the clip within an ordered group of clips.
-   */
-  @JsonIgnore public String getClipNumberString() {
-    return (String) getValue("clipNumber");
-  }
-  /**
-   * Position of the clip within an ordered group of clips.
-   */
-  @JsonIgnore public java.util.Collection<String> getClipNumberStrings() {
-    final Object current = myData.get("clipNumber");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof java.util.Collection) {
-      return (java.util.Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
+    return Arrays.asList((Position) current);
   }
   /**
    * The start time of the clip expressed as the number of seconds from the beginning of the work.
@@ -272,15 +255,8 @@ public class Clip extends CreativeWork {
     /**
      * Position of the clip within an ordered group of clips.
      */
-    @NotNull public Builder clipNumber(@NotNull Integer integer) {
-      putValue("clipNumber", integer);
-      return this;
-    }
-    /**
-     * Position of the clip within an ordered group of clips.
-     */
-    @NotNull public Builder clipNumber(@NotNull String clipNumber) {
-      putValue("clipNumber", clipNumber);
+    @NotNull public Builder clipNumber(@NotNull Position position) {
+      putValue("clipNumber", position);
       return this;
     }
     /**
@@ -930,22 +906,8 @@ public class Clip extends CreativeWork {
     /**
      * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
      */
-    @NotNull public Builder acquireLicensePage(@NotNull CreativeWork creativeWork) {
-      putValue("acquireLicensePage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
-     */
-    @NotNull public Builder acquireLicensePage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("acquireLicensePage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
-     */
-    @NotNull public Builder acquireLicensePage(@NotNull String acquireLicensePage) {
-      putValue("acquireLicensePage", acquireLicensePage);
+    @NotNull public Builder acquireLicensePage(@NotNull UsageInfo usageInfo) {
+      putValue("acquireLicensePage", usageInfo);
       return this;
     }
     /**
@@ -963,8 +925,8 @@ public class Clip extends CreativeWork {
      * Since schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.
      * 
      */
-    @NotNull public Builder editEIDR(@NotNull String editEIDR) {
-      putValue("editEIDR", editEIDR);
+    @NotNull public Builder editEIDR(@NotNull Identifier identifier) {
+      putValue("editEIDR", identifier);
       return this;
     }
     /**
@@ -1877,15 +1839,8 @@ public class Clip extends CreativeWork {
     /**
      * Indicates the primary entity described in some page or other CreativeWork.
      */
-    @NotNull public Builder mainEntity(@NotNull Thing thing) {
-      putValue("mainEntity", thing);
-      return this;
-    }
-    /**
-     * Indicates the primary entity described in some page or other CreativeWork.
-     */
-    @NotNull public Builder mainEntity(@NotNull Thing.Builder thing) {
-      putValue("mainEntity", thing.build());
+    @NotNull public Builder mainEntity(@NotNull About about) {
+      putValue("mainEntity", about);
       return this;
     }
     /**
@@ -2038,10 +1993,8 @@ public class Clip extends CreativeWork {
     @Override protected void fromMap(String key, Object value) {
       if ("actor".equals(key) && value instanceof Actor) { this.actor((Actor)value); return; }
       if ("actors".equals(key) && value instanceof Actor) { this.actor((Actor)value); return; }
-      if ("clipNumber".equals(key) && value instanceof Integer) { this.clipNumber((Integer)value); return; }
-      if ("clipNumbers".equals(key) && value instanceof Integer) { this.clipNumber((Integer)value); return; }
-      if ("clipNumber".equals(key) && value instanceof String) { this.clipNumber((String)value); return; }
-      if ("clipNumbers".equals(key) && value instanceof String) { this.clipNumber((String)value); return; }
+      if ("clipNumber".equals(key) && value instanceof Position) { this.clipNumber((Position)value); return; }
+      if ("clipNumbers".equals(key) && value instanceof Position) { this.clipNumber((Position)value); return; }
       if ("startOffset".equals(key) && value instanceof HyperTocEntry) { this.startOffset((HyperTocEntry)value); return; }
       if ("startOffsets".equals(key) && value instanceof HyperTocEntry) { this.startOffset((HyperTocEntry)value); return; }
       if ("startOffset".equals(key) && value instanceof Number) { this.startOffset((Number)value); return; }

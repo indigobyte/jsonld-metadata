@@ -1,5 +1,7 @@
 package org.schema.generator
 
+import org.schema.generator.helper.sanitizeIdentifier
+
 /**
  * @author Victor Kropp
  */
@@ -17,13 +19,13 @@ class TestsGenerator (private val sink: GeneratorSink, private val banner: Strin
                 if (type.isEnum || type.name == "http://schema.org/Enumeration" || (type.parentType?.let{ sink.types[it] }?.isEnum == true)) continue
 
                 val typeName = type.name!!.capitalize()
-                val varName = typeName.decapitalize()
+                val varName = sanitizeIdentifier(typeName.decapitalize())
 
                 method("test$typeName", "void") {
                     annotations = listOf("@Test")
                     throws = "IOException"
 
-                    line("final $typeName $varName = SchemaOrg.$varName()")
+                    line("final ${sanitizeIdentifier(typeName)} $varName = SchemaOrg.$varName()")
 
                     for (field in sink.getAllFields(type)) {
                         when (sink.getEitherTypes(field).first()) {
@@ -36,7 +38,7 @@ class TestsGenerator (private val sink: GeneratorSink, private val banner: Strin
                             "java.util.Date" -> "NOW"
                             else -> null
                         }?.let {
-                            line("  .${field.name!!.decapitalize()}($it)")
+                            line("  .${sanitizeIdentifier(field.name!!.decapitalize())}($it)")
                         }
                     }
                     line("  .build();")

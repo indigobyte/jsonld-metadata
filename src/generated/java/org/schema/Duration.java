@@ -26,7 +26,7 @@ import java.util.*;
 /**
  * Quantity: Duration (use [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601)).
  */
-public class Duration extends Quantity implements PerformTime, Duration {
+public class Duration extends Quantity implements PerformTime {
   protected Duration(java.util.Map<String,Object> data) {
     super(data);
   }

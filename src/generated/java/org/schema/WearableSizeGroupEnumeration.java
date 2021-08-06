@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * Enumerates common size groups (also known as &quot;size types&quot;) for wearable products.
  */
 public enum WearableSizeGroupEnumeration {
-  ;
+  WearableSizeGroupBoys("http://schema.org/WearableSizeGroupBoys"), WearableSizeGroupExtraShort("http://schema.org/WearableSizeGroupExtraShort"), WearableSizeGroupPlus("http://schema.org/WearableSizeGroupPlus"), WearableSizeGroupPetite("http://schema.org/WearableSizeGroupPetite"), WearableSizeGroupMaternity("http://schema.org/WearableSizeGroupMaternity"), WearableSizeGroupJuniors("http://schema.org/WearableSizeGroupJuniors"), WearableSizeGroupBig("http://schema.org/WearableSizeGroupBig"), WearableSizeGroupWomens("http://schema.org/WearableSizeGroupWomens"), WearableSizeGroupExtraTall("http://schema.org/WearableSizeGroupExtraTall"), WearableSizeGroupInfants("http://schema.org/WearableSizeGroupInfants"), WearableSizeGroupTall("http://schema.org/WearableSizeGroupTall"), WearableSizeGroupRegular("http://schema.org/WearableSizeGroupRegular"), WearableSizeGroupMens("http://schema.org/WearableSizeGroupMens"), WearableSizeGroupGirls("http://schema.org/WearableSizeGroupGirls"), WearableSizeGroupHusky("http://schema.org/WearableSizeGroupHusky"), WearableSizeGroupMisses("http://schema.org/WearableSizeGroupMisses"), WearableSizeGroupShort("http://schema.org/WearableSizeGroupShort");
   WearableSizeGroupEnumeration(String value) {
     myValue = value;
   }

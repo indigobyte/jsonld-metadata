@@ -898,36 +898,19 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
   /**
    * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
    */
-  @JsonIgnore public CreativeWork getAcquireLicensePageCreativeWork() {
-    return (CreativeWork) getValue("acquireLicensePage");
+  @JsonIgnore public UsageInfo getAcquireLicensePage() {
+    return (UsageInfo) getValue("acquireLicensePage");
   }
   /**
    * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
    */
-  @JsonIgnore public java.util.Collection<CreativeWork> getAcquireLicensePageCreativeWorks() {
+  @JsonIgnore public java.util.Collection<UsageInfo> getAcquireLicensePages() {
     final Object current = myData.get("acquireLicensePage");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<CreativeWork>) current;
+      return (java.util.Collection<UsageInfo>) current;
     }
-    return Arrays.asList((CreativeWork) current);
-  }
-  /**
-   * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
-   */
-  @JsonIgnore public String getAcquireLicensePageString() {
-    return (String) getValue("acquireLicensePage");
-  }
-  /**
-   * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
-   */
-  @JsonIgnore public java.util.Collection<String> getAcquireLicensePageStrings() {
-    final Object current = myData.get("acquireLicensePage");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof java.util.Collection) {
-      return (java.util.Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
+    return Arrays.asList((UsageInfo) current);
   }
   /**
    * A flag to signal that the item, event, or place is accessible for free.
@@ -954,8 +937,8 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * Since schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.
    * 
    */
-  @JsonIgnore public String getEditEIDR() {
-    return (String) getValue("editEIDR");
+  @JsonIgnore public Identifier getEditEIDR() {
+    return (Identifier) getValue("editEIDR");
   }
   /**
    * An [EIDR](https://eidr.org/) (Entertainment Identifier Registry) [[identifier]] representing a specific edit / edition for a work of film or television.
@@ -965,13 +948,13 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
    * Since schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.
    * 
    */
-  @JsonIgnore public java.util.Collection<String> getEditEIDRs() {
+  @JsonIgnore public java.util.Collection<Identifier> getEditEIDRs() {
     final Object current = myData.get("editEIDR");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<String>) current;
+      return (java.util.Collection<Identifier>) current;
     }
-    return Arrays.asList((String) current);
+    return Arrays.asList((Identifier) current);
   }
   /**
    * The version of the CreativeWork embodied by a specified resource.
@@ -2416,19 +2399,19 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
   /**
    * Indicates the primary entity described in some page or other CreativeWork.
    */
-  @JsonIgnore public Thing getMainEntity() {
-    return (Thing) getValue("mainEntity");
+  @JsonIgnore public About getMainEntity() {
+    return (About) getValue("mainEntity");
   }
   /**
    * Indicates the primary entity described in some page or other CreativeWork.
    */
-  @JsonIgnore public java.util.Collection<Thing> getMainEntitys() {
+  @JsonIgnore public java.util.Collection<About> getMainEntitys() {
     final Object current = myData.get("mainEntity");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<Thing>) current;
+      return (java.util.Collection<About>) current;
     }
-    return Arrays.asList((Thing) current);
+    return Arrays.asList((About) current);
   }
   /**
    * The Event where the CreativeWork was recorded. The CreativeWork may capture all or part of the event.
@@ -3037,22 +3020,8 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
     /**
      * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
      */
-    @NotNull public Builder acquireLicensePage(@NotNull CreativeWork creativeWork) {
-      putValue("acquireLicensePage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
-     */
-    @NotNull public Builder acquireLicensePage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("acquireLicensePage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
-     */
-    @NotNull public Builder acquireLicensePage(@NotNull String acquireLicensePage) {
-      putValue("acquireLicensePage", acquireLicensePage);
+    @NotNull public Builder acquireLicensePage(@NotNull UsageInfo usageInfo) {
+      putValue("acquireLicensePage", usageInfo);
       return this;
     }
     /**
@@ -3070,8 +3039,8 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
      * Since schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.
      * 
      */
-    @NotNull public Builder editEIDR(@NotNull String editEIDR) {
-      putValue("editEIDR", editEIDR);
+    @NotNull public Builder editEIDR(@NotNull Identifier identifier) {
+      putValue("editEIDR", identifier);
       return this;
     }
     /**
@@ -3984,15 +3953,8 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
     /**
      * Indicates the primary entity described in some page or other CreativeWork.
      */
-    @NotNull public Builder mainEntity(@NotNull Thing thing) {
-      putValue("mainEntity", thing);
-      return this;
-    }
-    /**
-     * Indicates the primary entity described in some page or other CreativeWork.
-     */
-    @NotNull public Builder mainEntity(@NotNull Thing.Builder thing) {
-      putValue("mainEntity", thing.build());
+    @NotNull public Builder mainEntity(@NotNull About about) {
+      putValue("mainEntity", about);
       return this;
     }
     /**
@@ -4243,14 +4205,12 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
       if ("creators".equals(key) && value instanceof Creator) { this.creator((Creator)value); return; }
       if ("usageInfo".equals(key) && value instanceof UsageInfo) { this.usageInfo((UsageInfo)value); return; }
       if ("usageInfos".equals(key) && value instanceof UsageInfo) { this.usageInfo((UsageInfo)value); return; }
-      if ("acquireLicensePage".equals(key) && value instanceof CreativeWork) { this.acquireLicensePage((CreativeWork)value); return; }
-      if ("acquireLicensePages".equals(key) && value instanceof CreativeWork) { this.acquireLicensePage((CreativeWork)value); return; }
-      if ("acquireLicensePage".equals(key) && value instanceof String) { this.acquireLicensePage((String)value); return; }
-      if ("acquireLicensePages".equals(key) && value instanceof String) { this.acquireLicensePage((String)value); return; }
+      if ("acquireLicensePage".equals(key) && value instanceof UsageInfo) { this.acquireLicensePage((UsageInfo)value); return; }
+      if ("acquireLicensePages".equals(key) && value instanceof UsageInfo) { this.acquireLicensePage((UsageInfo)value); return; }
       if ("isAccessibleForFree".equals(key) && value instanceof Boolean) { this.isAccessibleForFree((Boolean)value); return; }
       if ("isAccessibleForFrees".equals(key) && value instanceof Boolean) { this.isAccessibleForFree((Boolean)value); return; }
-      if ("editEIDR".equals(key) && value instanceof String) { this.editEIDR((String)value); return; }
-      if ("editEIDRs".equals(key) && value instanceof String) { this.editEIDR((String)value); return; }
+      if ("editEIDR".equals(key) && value instanceof Identifier) { this.editEIDR((Identifier)value); return; }
+      if ("editEIDRs".equals(key) && value instanceof Identifier) { this.editEIDR((Identifier)value); return; }
       if ("version".equals(key) && value instanceof Number) { this.version((Number)value); return; }
       if ("versions".equals(key) && value instanceof Number) { this.version((Number)value); return; }
       if ("version".equals(key) && value instanceof String) { this.version((String)value); return; }
@@ -4415,8 +4375,8 @@ public class CreativeWork extends Thing implements UsageInfo, Step {
       if ("offerss".equals(key) && value instanceof Demand) { this.offers((Demand)value); return; }
       if ("offers".equals(key) && value instanceof Offer) { this.offers((Offer)value); return; }
       if ("offerss".equals(key) && value instanceof Offer) { this.offers((Offer)value); return; }
-      if ("mainEntity".equals(key) && value instanceof Thing) { this.mainEntity((Thing)value); return; }
-      if ("mainEntitys".equals(key) && value instanceof Thing) { this.mainEntity((Thing)value); return; }
+      if ("mainEntity".equals(key) && value instanceof About) { this.mainEntity((About)value); return; }
+      if ("mainEntitys".equals(key) && value instanceof About) { this.mainEntity((About)value); return; }
       if ("recordedAt".equals(key) && value instanceof Event) { this.recordedAt((Event)value); return; }
       if ("recordedAts".equals(key) && value instanceof Event) { this.recordedAt((Event)value); return; }
       if ("exampleOfWork".equals(key) && value instanceof CreativeWork) { this.exampleOfWork((CreativeWork)value); return; }

@@ -52,14 +52,21 @@ fun main() {
         RdfXmlParser.connect(sink)
         //RdfaParser.connect(sink)
     )
-
-    do {
+    var prevUndefinedClasses: Set<String>? = null
+    while (true) {
         File("resources").listFiles { f -> f.extension == "rdf" }?.forEach {
             println("Processing ${it.name}")
             processor.process(FileInputStream(it), "http://schema.org/")
         }
-        // TODO: check number of undefined classes. If it doesn't go down anymore, nothing can be done.
-    } while (sink.hasUndefinedClasses)
+        if (prevUndefinedClasses != null) {
+            if (sink.undefinedClasses.equals(prevUndefinedClasses)) {
+                println("Unable to reduce number of undefined classes, giving up: ")
+                println(sink.undefinedClasses.joinToString())
+                break
+            }
+        }
+        prevUndefinedClasses = sink.undefinedClasses
+    }
 
     sink.postProcess()
 

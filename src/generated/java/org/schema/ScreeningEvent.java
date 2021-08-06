@@ -30,19 +30,19 @@ public class ScreeningEvent extends Event {
   /**
    * The movie presented during this event.
    */
-  @JsonIgnore public Movie getWorkPresented() {
-    return (Movie) getValue("workPresented");
+  @JsonIgnore public WorkFeatured getWorkPresented() {
+    return (WorkFeatured) getValue("workPresented");
   }
   /**
    * The movie presented during this event.
    */
-  @JsonIgnore public java.util.Collection<Movie> getWorkPresenteds() {
+  @JsonIgnore public java.util.Collection<WorkFeatured> getWorkPresenteds() {
     final Object current = myData.get("workPresented");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<Movie>) current;
+      return (java.util.Collection<WorkFeatured>) current;
     }
-    return Arrays.asList((Movie) current);
+    return Arrays.asList((WorkFeatured) current);
   }
   /**
    * Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
@@ -112,15 +112,8 @@ public class ScreeningEvent extends Event {
     /**
      * The movie presented during this event.
      */
-    @NotNull public Builder workPresented(@NotNull Movie movie) {
-      putValue("workPresented", movie);
-      return this;
-    }
-    /**
-     * The movie presented during this event.
-     */
-    @NotNull public Builder workPresented(@NotNull Movie.Builder movie) {
-      putValue("workPresented", movie.build());
+    @NotNull public Builder workPresented(@NotNull WorkFeatured workFeatured) {
+      putValue("workPresented", workFeatured);
       return this;
     }
     /**
@@ -203,15 +196,8 @@ public class ScreeningEvent extends Event {
     /**
      * A work performed in some event, for example a play performed in a TheaterEvent.
      */
-    @NotNull public Builder workPerformed(@NotNull CreativeWork creativeWork) {
-      putValue("workPerformed", creativeWork);
-      return this;
-    }
-    /**
-     * A work performed in some event, for example a play performed in a TheaterEvent.
-     */
-    @NotNull public Builder workPerformed(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("workPerformed", creativeWork.build());
+    @NotNull public Builder workPerformed(@NotNull WorkFeatured workFeatured) {
+      putValue("workPerformed", workFeatured);
       return this;
     }
     /**
@@ -733,8 +719,8 @@ public class ScreeningEvent extends Event {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("workPresented".equals(key) && value instanceof Movie) { this.workPresented((Movie)value); return; }
-      if ("workPresenteds".equals(key) && value instanceof Movie) { this.workPresented((Movie)value); return; }
+      if ("workPresented".equals(key) && value instanceof WorkFeatured) { this.workPresented((WorkFeatured)value); return; }
+      if ("workPresenteds".equals(key) && value instanceof WorkFeatured) { this.workPresented((WorkFeatured)value); return; }
       if ("subtitleLanguage".equals(key) && value instanceof Language) { this.subtitleLanguage((Language)value); return; }
       if ("subtitleLanguages".equals(key) && value instanceof Language) { this.subtitleLanguage((Language)value); return; }
       if ("subtitleLanguage".equals(key) && value instanceof String) { this.subtitleLanguage((String)value); return; }

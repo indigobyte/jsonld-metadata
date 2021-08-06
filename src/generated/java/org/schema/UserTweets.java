@@ -93,15 +93,8 @@ public class UserTweets extends UserInteraction {
     /**
      * A work performed in some event, for example a play performed in a TheaterEvent.
      */
-    @NotNull public Builder workPerformed(@NotNull CreativeWork creativeWork) {
-      putValue("workPerformed", creativeWork);
-      return this;
-    }
-    /**
-     * A work performed in some event, for example a play performed in a TheaterEvent.
-     */
-    @NotNull public Builder workPerformed(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("workPerformed", creativeWork.build());
+    @NotNull public Builder workPerformed(@NotNull WorkFeatured workFeatured) {
+      putValue("workPerformed", workFeatured);
       return this;
     }
     /**

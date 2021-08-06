@@ -268,19 +268,19 @@ public class Invoice extends Intangible {
   /**
    * The identifier for the account the payment will be applied to.
    */
-  @JsonIgnore public String getAccountId() {
-    return (String) getValue("accountId");
+  @JsonIgnore public Identifier getAccountId() {
+    return (Identifier) getValue("accountId");
   }
   /**
    * The identifier for the account the payment will be applied to.
    */
-  @JsonIgnore public java.util.Collection<String> getAccountIds() {
+  @JsonIgnore public java.util.Collection<Identifier> getAccountIds() {
     final Object current = myData.get("accountId");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<String>) current;
+      return (java.util.Collection<Identifier>) current;
     }
-    return Arrays.asList((String) current);
+    return Arrays.asList((Identifier) current);
   }
   /**
    * The Order(s) related to this Invoice. One or more Orders may be combined into a single Invoice.
@@ -319,19 +319,19 @@ public class Invoice extends Intangible {
   /**
    * A number that confirms the given order or payment has been received.
    */
-  @JsonIgnore public String getConfirmationNumber() {
-    return (String) getValue("confirmationNumber");
+  @JsonIgnore public Identifier getConfirmationNumber() {
+    return (Identifier) getValue("confirmationNumber");
   }
   /**
    * A number that confirms the given order or payment has been received.
    */
-  @JsonIgnore public java.util.Collection<String> getConfirmationNumbers() {
+  @JsonIgnore public java.util.Collection<Identifier> getConfirmationNumbers() {
     final Object current = myData.get("confirmationNumber");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<String>) current;
+      return (java.util.Collection<Identifier>) current;
     }
-    return Arrays.asList((String) current);
+    return Arrays.asList((Identifier) current);
   }
   /**
    * The name of the credit card or other method of payment for the order.
@@ -555,8 +555,8 @@ public class Invoice extends Intangible {
     /**
      * The identifier for the account the payment will be applied to.
      */
-    @NotNull public Builder accountId(@NotNull String accountId) {
-      putValue("accountId", accountId);
+    @NotNull public Builder accountId(@NotNull Identifier identifier) {
+      putValue("accountId", identifier);
       return this;
     }
     /**
@@ -583,8 +583,8 @@ public class Invoice extends Intangible {
     /**
      * A number that confirms the given order or payment has been received.
      */
-    @NotNull public Builder confirmationNumber(@NotNull String confirmationNumber) {
-      putValue("confirmationNumber", confirmationNumber);
+    @NotNull public Builder confirmationNumber(@NotNull Identifier identifier) {
+      putValue("confirmationNumber", identifier);
       return this;
     }
     /**
@@ -763,14 +763,14 @@ public class Invoice extends Intangible {
       if ("minimumPaymentDues".equals(key) && value instanceof PriceSpecification) { this.minimumPaymentDue((PriceSpecification)value); return; }
       if ("category".equals(key) && value instanceof Category) { this.category((Category)value); return; }
       if ("categorys".equals(key) && value instanceof Category) { this.category((Category)value); return; }
-      if ("accountId".equals(key) && value instanceof String) { this.accountId((String)value); return; }
-      if ("accountIds".equals(key) && value instanceof String) { this.accountId((String)value); return; }
+      if ("accountId".equals(key) && value instanceof Identifier) { this.accountId((Identifier)value); return; }
+      if ("accountIds".equals(key) && value instanceof Identifier) { this.accountId((Identifier)value); return; }
       if ("referencesOrder".equals(key) && value instanceof Order) { this.referencesOrder((Order)value); return; }
       if ("referencesOrders".equals(key) && value instanceof Order) { this.referencesOrder((Order)value); return; }
       if ("billingPeriod".equals(key) && value instanceof Duration) { this.billingPeriod((Duration)value); return; }
       if ("billingPeriods".equals(key) && value instanceof Duration) { this.billingPeriod((Duration)value); return; }
-      if ("confirmationNumber".equals(key) && value instanceof String) { this.confirmationNumber((String)value); return; }
-      if ("confirmationNumbers".equals(key) && value instanceof String) { this.confirmationNumber((String)value); return; }
+      if ("confirmationNumber".equals(key) && value instanceof Identifier) { this.confirmationNumber((Identifier)value); return; }
+      if ("confirmationNumbers".equals(key) && value instanceof Identifier) { this.confirmationNumber((Identifier)value); return; }
       if ("paymentMethod".equals(key) && value instanceof PaymentMethod) { this.paymentMethod((PaymentMethod)value); return; }
       if ("paymentMethods".equals(key) && value instanceof PaymentMethod) { this.paymentMethod((PaymentMethod)value); return; }
       if ("broker".equals(key) && value instanceof Organization) { this.broker((Organization)value); return; }

@@ -47,19 +47,19 @@ public class Book extends CreativeWork {
   /**
    * The ISBN of the book.
    */
-  @JsonIgnore public String getIsbn() {
-    return (String) getValue("isbn");
+  @JsonIgnore public Identifier getIsbn() {
+    return (Identifier) getValue("isbn");
   }
   /**
    * The ISBN of the book.
    */
-  @JsonIgnore public java.util.Collection<String> getIsbns() {
+  @JsonIgnore public java.util.Collection<Identifier> getIsbns() {
     final Object current = myData.get("isbn");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<String>) current;
+      return (java.util.Collection<Identifier>) current;
     }
-    return Arrays.asList((String) current);
+    return Arrays.asList((Identifier) current);
   }
   /**
    * The illustrator of the book.
@@ -153,8 +153,8 @@ public class Book extends CreativeWork {
     /**
      * The ISBN of the book.
      */
-    @NotNull public Builder isbn(@NotNull String isbn) {
-      putValue("isbn", isbn);
+    @NotNull public Builder isbn(@NotNull Identifier identifier) {
+      putValue("isbn", identifier);
       return this;
     }
     /**
@@ -734,22 +734,8 @@ public class Book extends CreativeWork {
     /**
      * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
      */
-    @NotNull public Builder acquireLicensePage(@NotNull CreativeWork creativeWork) {
-      putValue("acquireLicensePage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
-     */
-    @NotNull public Builder acquireLicensePage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("acquireLicensePage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
-     */
-    @NotNull public Builder acquireLicensePage(@NotNull String acquireLicensePage) {
-      putValue("acquireLicensePage", acquireLicensePage);
+    @NotNull public Builder acquireLicensePage(@NotNull UsageInfo usageInfo) {
+      putValue("acquireLicensePage", usageInfo);
       return this;
     }
     /**
@@ -767,8 +753,8 @@ public class Book extends CreativeWork {
      * Since schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.
      * 
      */
-    @NotNull public Builder editEIDR(@NotNull String editEIDR) {
-      putValue("editEIDR", editEIDR);
+    @NotNull public Builder editEIDR(@NotNull Identifier identifier) {
+      putValue("editEIDR", identifier);
       return this;
     }
     /**
@@ -1681,15 +1667,8 @@ public class Book extends CreativeWork {
     /**
      * Indicates the primary entity described in some page or other CreativeWork.
      */
-    @NotNull public Builder mainEntity(@NotNull Thing thing) {
-      putValue("mainEntity", thing);
-      return this;
-    }
-    /**
-     * Indicates the primary entity described in some page or other CreativeWork.
-     */
-    @NotNull public Builder mainEntity(@NotNull Thing.Builder thing) {
-      putValue("mainEntity", thing.build());
+    @NotNull public Builder mainEntity(@NotNull About about) {
+      putValue("mainEntity", about);
       return this;
     }
     /**
@@ -1842,8 +1821,8 @@ public class Book extends CreativeWork {
     @Override protected void fromMap(String key, Object value) {
       if ("numberOfPages".equals(key) && value instanceof Integer) { this.numberOfPages((Integer)value); return; }
       if ("numberOfPagess".equals(key) && value instanceof Integer) { this.numberOfPages((Integer)value); return; }
-      if ("isbn".equals(key) && value instanceof String) { this.isbn((String)value); return; }
-      if ("isbns".equals(key) && value instanceof String) { this.isbn((String)value); return; }
+      if ("isbn".equals(key) && value instanceof Identifier) { this.isbn((Identifier)value); return; }
+      if ("isbns".equals(key) && value instanceof Identifier) { this.isbn((Identifier)value); return; }
       if ("illustrator".equals(key) && value instanceof Person) { this.illustrator((Person)value); return; }
       if ("illustrators".equals(key) && value instanceof Person) { this.illustrator((Person)value); return; }
       if ("bookEdition".equals(key) && value instanceof String) { this.bookEdition((String)value); return; }

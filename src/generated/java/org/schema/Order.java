@@ -404,19 +404,19 @@ public class Order extends Intangible {
   /**
    * A number that confirms the given order or payment has been received.
    */
-  @JsonIgnore public String getConfirmationNumber() {
-    return (String) getValue("confirmationNumber");
+  @JsonIgnore public Identifier getConfirmationNumber() {
+    return (Identifier) getValue("confirmationNumber");
   }
   /**
    * A number that confirms the given order or payment has been received.
    */
-  @JsonIgnore public java.util.Collection<String> getConfirmationNumbers() {
+  @JsonIgnore public java.util.Collection<Identifier> getConfirmationNumbers() {
     final Object current = myData.get("confirmationNumber");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<String>) current;
+      return (java.util.Collection<Identifier>) current;
     }
-    return Arrays.asList((String) current);
+    return Arrays.asList((Identifier) current);
   }
   /**
    * The billing address for the order.
@@ -730,8 +730,8 @@ public class Order extends Intangible {
     /**
      * A number that confirms the given order or payment has been received.
      */
-    @NotNull public Builder confirmationNumber(@NotNull String confirmationNumber) {
-      putValue("confirmationNumber", confirmationNumber);
+    @NotNull public Builder confirmationNumber(@NotNull Identifier identifier) {
+      putValue("confirmationNumber", identifier);
       return this;
     }
     /**
@@ -947,8 +947,8 @@ public class Order extends Intangible {
       if ("sellers".equals(key) && value instanceof Participant) { this.seller((Participant)value); return; }
       if ("partOfInvoice".equals(key) && value instanceof Invoice) { this.partOfInvoice((Invoice)value); return; }
       if ("partOfInvoices".equals(key) && value instanceof Invoice) { this.partOfInvoice((Invoice)value); return; }
-      if ("confirmationNumber".equals(key) && value instanceof String) { this.confirmationNumber((String)value); return; }
-      if ("confirmationNumbers".equals(key) && value instanceof String) { this.confirmationNumber((String)value); return; }
+      if ("confirmationNumber".equals(key) && value instanceof Identifier) { this.confirmationNumber((Identifier)value); return; }
+      if ("confirmationNumbers".equals(key) && value instanceof Identifier) { this.confirmationNumber((Identifier)value); return; }
       if ("billingAddress".equals(key) && value instanceof PostalAddress) { this.billingAddress((PostalAddress)value); return; }
       if ("billingAddresss".equals(key) && value instanceof PostalAddress) { this.billingAddress((PostalAddress)value); return; }
       if ("paymentMethod".equals(key) && value instanceof PaymentMethod) { this.paymentMethod((PaymentMethod)value); return; }

@@ -30,53 +30,36 @@ public class RentAction extends TradeAction {
   /**
    * A sub property of participant. The real estate agent involved in the action.
    */
-  @JsonIgnore public RealEstateAgent getRealEstateAgent() {
-    return (RealEstateAgent) getValue("realEstateAgent");
+  @JsonIgnore public Participant getRealEstateAgent() {
+    return (Participant) getValue("realEstateAgent");
   }
   /**
    * A sub property of participant. The real estate agent involved in the action.
    */
-  @JsonIgnore public java.util.Collection<RealEstateAgent> getRealEstateAgents() {
+  @JsonIgnore public java.util.Collection<Participant> getRealEstateAgents() {
     final Object current = myData.get("realEstateAgent");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<RealEstateAgent>) current;
+      return (java.util.Collection<Participant>) current;
     }
-    return Arrays.asList((RealEstateAgent) current);
+    return Arrays.asList((Participant) current);
   }
   /**
    * A sub property of participant. The owner of the real estate property.
    */
-  @JsonIgnore public Organization getLandlordOrganization() {
-    return (Organization) getValue("landlord");
+  @JsonIgnore public Participant getLandlord() {
+    return (Participant) getValue("landlord");
   }
   /**
    * A sub property of participant. The owner of the real estate property.
    */
-  @JsonIgnore public java.util.Collection<Organization> getLandlordOrganizations() {
+  @JsonIgnore public java.util.Collection<Participant> getLandlords() {
     final Object current = myData.get("landlord");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<Organization>) current;
+      return (java.util.Collection<Participant>) current;
     }
-    return Arrays.asList((Organization) current);
-  }
-  /**
-   * A sub property of participant. The owner of the real estate property.
-   */
-  @JsonIgnore public Person getLandlordPerson() {
-    return (Person) getValue("landlord");
-  }
-  /**
-   * A sub property of participant. The owner of the real estate property.
-   */
-  @JsonIgnore public java.util.Collection<Person> getLandlordPersons() {
-    final Object current = myData.get("landlord");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof java.util.Collection) {
-      return (java.util.Collection<Person>) current;
-    }
-    return Arrays.asList((Person) current);
+    return Arrays.asList((Participant) current);
   }
   protected RentAction(java.util.Map<String,Object> data) {
     super(data);
@@ -95,43 +78,15 @@ public class RentAction extends TradeAction {
     /**
      * A sub property of participant. The real estate agent involved in the action.
      */
-    @NotNull public Builder realEstateAgent(@NotNull RealEstateAgent realEstateAgent) {
-      putValue("realEstateAgent", realEstateAgent);
-      return this;
-    }
-    /**
-     * A sub property of participant. The real estate agent involved in the action.
-     */
-    @NotNull public Builder realEstateAgent(@NotNull RealEstateAgent.Builder realEstateAgent) {
-      putValue("realEstateAgent", realEstateAgent.build());
+    @NotNull public Builder realEstateAgent(@NotNull Participant participant) {
+      putValue("realEstateAgent", participant);
       return this;
     }
     /**
      * A sub property of participant. The owner of the real estate property.
      */
-    @NotNull public Builder landlord(@NotNull Organization organization) {
-      putValue("landlord", organization);
-      return this;
-    }
-    /**
-     * A sub property of participant. The owner of the real estate property.
-     */
-    @NotNull public Builder landlord(@NotNull Organization.Builder organization) {
-      putValue("landlord", organization.build());
-      return this;
-    }
-    /**
-     * A sub property of participant. The owner of the real estate property.
-     */
-    @NotNull public Builder landlord(@NotNull Person person) {
-      putValue("landlord", person);
-      return this;
-    }
-    /**
-     * A sub property of participant. The owner of the real estate property.
-     */
-    @NotNull public Builder landlord(@NotNull Person.Builder person) {
-      putValue("landlord", person.build());
+    @NotNull public Builder landlord(@NotNull Participant participant) {
+      putValue("landlord", participant);
       return this;
     }
     /**
@@ -361,12 +316,10 @@ public class RentAction extends TradeAction {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("realEstateAgent".equals(key) && value instanceof RealEstateAgent) { this.realEstateAgent((RealEstateAgent)value); return; }
-      if ("realEstateAgents".equals(key) && value instanceof RealEstateAgent) { this.realEstateAgent((RealEstateAgent)value); return; }
-      if ("landlord".equals(key) && value instanceof Organization) { this.landlord((Organization)value); return; }
-      if ("landlords".equals(key) && value instanceof Organization) { this.landlord((Organization)value); return; }
-      if ("landlord".equals(key) && value instanceof Person) { this.landlord((Person)value); return; }
-      if ("landlords".equals(key) && value instanceof Person) { this.landlord((Person)value); return; }
+      if ("realEstateAgent".equals(key) && value instanceof Participant) { this.realEstateAgent((Participant)value); return; }
+      if ("realEstateAgents".equals(key) && value instanceof Participant) { this.realEstateAgent((Participant)value); return; }
+      if ("landlord".equals(key) && value instanceof Participant) { this.landlord((Participant)value); return; }
+      if ("landlords".equals(key) && value instanceof Participant) { this.landlord((Participant)value); return; }
       super.fromMap(key, value);
     }
   }

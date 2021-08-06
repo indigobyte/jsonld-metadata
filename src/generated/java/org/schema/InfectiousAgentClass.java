@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * Classes of agents or pathogens that transmit infectious diseases. Enumerated type.
  */
 public enum InfectiousAgentClass {
-  ;
+  Fungus("http://schema.org/Fungus"), Prion("http://schema.org/Prion"), Bacteria("http://schema.org/Bacteria"), Protozoa("http://schema.org/Protozoa"), Virus("http://schema.org/Virus"), MulticellularParasite("http://schema.org/MulticellularParasite");
   InfectiousAgentClass(String value) {
     myValue = value;
   }

@@ -297,8 +297,8 @@ public class Physician extends MedicalOrganization {
     /**
      * The Dun &amp; Bradstreet DUNS number for identifying an organization or business person.
      */
-    @NotNull public Builder duns(@NotNull String duns) {
-      putValue("duns", duns);
+    @NotNull public Builder duns(@NotNull Identifier identifier) {
+      putValue("duns", identifier);
       return this;
     }
     /**

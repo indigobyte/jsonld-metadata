@@ -47,19 +47,19 @@ public class Legislation extends CreativeWork implements LegislationApplies {
   /**
    * The date of adoption or signature of the legislation. This is the date at which the text is officially aknowledged to be a legislation, even though it might not even be published or in force.
    */
-  @JsonIgnore public java.util.Date getLegislationDate() {
-    return (java.util.Date) getValue("legislationDate");
+  @JsonIgnore public DateCreated getLegislationDate() {
+    return (DateCreated) getValue("legislationDate");
   }
   /**
    * The date of adoption or signature of the legislation. This is the date at which the text is officially aknowledged to be a legislation, even though it might not even be published or in force.
    */
-  @JsonIgnore public java.util.Collection<java.util.Date> getLegislationDates() {
+  @JsonIgnore public java.util.Collection<DateCreated> getLegislationDates() {
     final Object current = myData.get("legislationDate");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<java.util.Date>) current;
+      return (java.util.Collection<DateCreated>) current;
     }
-    return Arrays.asList((java.util.Date) current);
+    return Arrays.asList((DateCreated) current);
   }
   /**
    * The jurisdiction from which the legislation originates.
@@ -183,36 +183,19 @@ public class Legislation extends CreativeWork implements LegislationApplies {
   /**
    * The person or organization that originally passed or made the law : typically parliament (for primary legislation) or government (for secondary legislation). This indicates the &quot;legal author&quot; of the law, as opposed to its physical author.
    */
-  @JsonIgnore public Organization getLegislationPassedByOrganization() {
-    return (Organization) getValue("legislationPassedBy");
+  @JsonIgnore public Creator getLegislationPassedBy() {
+    return (Creator) getValue("legislationPassedBy");
   }
   /**
    * The person or organization that originally passed or made the law : typically parliament (for primary legislation) or government (for secondary legislation). This indicates the &quot;legal author&quot; of the law, as opposed to its physical author.
    */
-  @JsonIgnore public java.util.Collection<Organization> getLegislationPassedByOrganizations() {
+  @JsonIgnore public java.util.Collection<Creator> getLegislationPassedBys() {
     final Object current = myData.get("legislationPassedBy");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<Organization>) current;
+      return (java.util.Collection<Creator>) current;
     }
-    return Arrays.asList((Organization) current);
-  }
-  /**
-   * The person or organization that originally passed or made the law : typically parliament (for primary legislation) or government (for secondary legislation). This indicates the &quot;legal author&quot; of the law, as opposed to its physical author.
-   */
-  @JsonIgnore public Person getLegislationPassedByPerson() {
-    return (Person) getValue("legislationPassedBy");
-  }
-  /**
-   * The person or organization that originally passed or made the law : typically parliament (for primary legislation) or government (for secondary legislation). This indicates the &quot;legal author&quot; of the law, as opposed to its physical author.
-   */
-  @JsonIgnore public java.util.Collection<Person> getLegislationPassedByPersons() {
-    final Object current = myData.get("legislationPassedBy");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof java.util.Collection) {
-      return (java.util.Collection<Person>) current;
-    }
-    return Arrays.asList((Person) current);
+    return Arrays.asList((Creator) current);
   }
   /**
    * Another legislation that this legislation changes. This encompasses the notions of amendment, replacement, correction, repeal, or other types of change. This may be a direct change (textual or non-textual amendment) or a consequential or indirect change. The property is to be used to express the existence of a change relationship between two acts rather than the existence of a consolidated version of the text that shows the result of the change. For consolidation relationships, use the &lt;a href=&quot;/legislationConsolidates&quot;&gt;legislationConsolidates&lt;/a&gt; property.
@@ -306,8 +289,8 @@ public class Legislation extends CreativeWork implements LegislationApplies {
     /**
      * The date of adoption or signature of the legislation. This is the date at which the text is officially aknowledged to be a legislation, even though it might not even be published or in force.
      */
-    @NotNull public Builder legislationDate(@NotNull java.util.Date date) {
-      putValue("legislationDate", date);
+    @NotNull public Builder legislationDate(@NotNull DateCreated dateCreated) {
+      putValue("legislationDate", dateCreated);
       return this;
     }
     /**
@@ -362,29 +345,8 @@ public class Legislation extends CreativeWork implements LegislationApplies {
     /**
      * The person or organization that originally passed or made the law : typically parliament (for primary legislation) or government (for secondary legislation). This indicates the &quot;legal author&quot; of the law, as opposed to its physical author.
      */
-    @NotNull public Builder legislationPassedBy(@NotNull Organization organization) {
-      putValue("legislationPassedBy", organization);
-      return this;
-    }
-    /**
-     * The person or organization that originally passed or made the law : typically parliament (for primary legislation) or government (for secondary legislation). This indicates the &quot;legal author&quot; of the law, as opposed to its physical author.
-     */
-    @NotNull public Builder legislationPassedBy(@NotNull Organization.Builder organization) {
-      putValue("legislationPassedBy", organization.build());
-      return this;
-    }
-    /**
-     * The person or organization that originally passed or made the law : typically parliament (for primary legislation) or government (for secondary legislation). This indicates the &quot;legal author&quot; of the law, as opposed to its physical author.
-     */
-    @NotNull public Builder legislationPassedBy(@NotNull Person person) {
-      putValue("legislationPassedBy", person);
-      return this;
-    }
-    /**
-     * The person or organization that originally passed or made the law : typically parliament (for primary legislation) or government (for secondary legislation). This indicates the &quot;legal author&quot; of the law, as opposed to its physical author.
-     */
-    @NotNull public Builder legislationPassedBy(@NotNull Person.Builder person) {
-      putValue("legislationPassedBy", person.build());
+    @NotNull public Builder legislationPassedBy(@NotNull Creator creator) {
+      putValue("legislationPassedBy", creator);
       return this;
     }
     /**
@@ -985,22 +947,8 @@ public class Legislation extends CreativeWork implements LegislationApplies {
     /**
      * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
      */
-    @NotNull public Builder acquireLicensePage(@NotNull CreativeWork creativeWork) {
-      putValue("acquireLicensePage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
-     */
-    @NotNull public Builder acquireLicensePage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("acquireLicensePage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
-     */
-    @NotNull public Builder acquireLicensePage(@NotNull String acquireLicensePage) {
-      putValue("acquireLicensePage", acquireLicensePage);
+    @NotNull public Builder acquireLicensePage(@NotNull UsageInfo usageInfo) {
+      putValue("acquireLicensePage", usageInfo);
       return this;
     }
     /**
@@ -1018,8 +966,8 @@ public class Legislation extends CreativeWork implements LegislationApplies {
      * Since schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.
      * 
      */
-    @NotNull public Builder editEIDR(@NotNull String editEIDR) {
-      putValue("editEIDR", editEIDR);
+    @NotNull public Builder editEIDR(@NotNull Identifier identifier) {
+      putValue("editEIDR", identifier);
       return this;
     }
     /**
@@ -1932,15 +1880,8 @@ public class Legislation extends CreativeWork implements LegislationApplies {
     /**
      * Indicates the primary entity described in some page or other CreativeWork.
      */
-    @NotNull public Builder mainEntity(@NotNull Thing thing) {
-      putValue("mainEntity", thing);
-      return this;
-    }
-    /**
-     * Indicates the primary entity described in some page or other CreativeWork.
-     */
-    @NotNull public Builder mainEntity(@NotNull Thing.Builder thing) {
-      putValue("mainEntity", thing.build());
+    @NotNull public Builder mainEntity(@NotNull About about) {
+      putValue("mainEntity", about);
       return this;
     }
     /**
@@ -2093,8 +2034,8 @@ public class Legislation extends CreativeWork implements LegislationApplies {
     @Override protected void fromMap(String key, Object value) {
       if ("legislationIdentifier".equals(key) && value instanceof Identifier) { this.legislationIdentifier((Identifier)value); return; }
       if ("legislationIdentifiers".equals(key) && value instanceof Identifier) { this.legislationIdentifier((Identifier)value); return; }
-      if ("legislationDate".equals(key) && value instanceof java.util.Date) { this.legislationDate((java.util.Date)value); return; }
-      if ("legislationDates".equals(key) && value instanceof java.util.Date) { this.legislationDate((java.util.Date)value); return; }
+      if ("legislationDate".equals(key) && value instanceof DateCreated) { this.legislationDate((DateCreated)value); return; }
+      if ("legislationDates".equals(key) && value instanceof DateCreated) { this.legislationDate((DateCreated)value); return; }
       if ("legislationJurisdiction".equals(key) && value instanceof Jurisdiction) { this.legislationJurisdiction((Jurisdiction)value); return; }
       if ("legislationJurisdictions".equals(key) && value instanceof Jurisdiction) { this.legislationJurisdiction((Jurisdiction)value); return; }
       if ("jurisdiction".equals(key) && value instanceof Jurisdiction) { this.jurisdiction((Jurisdiction)value); return; }
@@ -2109,10 +2050,8 @@ public class Legislation extends CreativeWork implements LegislationApplies {
       if ("legislationTransposess".equals(key) && value instanceof LegislationApplies) { this.legislationTransposes((LegislationApplies)value); return; }
       if ("legislationApplies".equals(key) && value instanceof LegislationApplies) { this.legislationApplies((LegislationApplies)value); return; }
       if ("legislationAppliess".equals(key) && value instanceof LegislationApplies) { this.legislationApplies((LegislationApplies)value); return; }
-      if ("legislationPassedBy".equals(key) && value instanceof Organization) { this.legislationPassedBy((Organization)value); return; }
-      if ("legislationPassedBys".equals(key) && value instanceof Organization) { this.legislationPassedBy((Organization)value); return; }
-      if ("legislationPassedBy".equals(key) && value instanceof Person) { this.legislationPassedBy((Person)value); return; }
-      if ("legislationPassedBys".equals(key) && value instanceof Person) { this.legislationPassedBy((Person)value); return; }
+      if ("legislationPassedBy".equals(key) && value instanceof Creator) { this.legislationPassedBy((Creator)value); return; }
+      if ("legislationPassedBys".equals(key) && value instanceof Creator) { this.legislationPassedBy((Creator)value); return; }
       if ("legislationChanges".equals(key) && value instanceof Legislation) { this.legislationChanges((Legislation)value); return; }
       if ("legislationChangess".equals(key) && value instanceof Legislation) { this.legislationChanges((Legislation)value); return; }
       if ("legislationConsolidates".equals(key) && value instanceof Legislation) { this.legislationConsolidates((Legislation)value); return; }

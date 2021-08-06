@@ -30,19 +30,19 @@ public class HyperToc extends CreativeWork {
   /**
    * Indicates a [[HyperTocEntry]] in a [[HyperToc]].
    */
-  @JsonIgnore public HyperTocEntry getTocEntry() {
-    return (HyperTocEntry) getValue("tocEntry");
+  @JsonIgnore public HasPart getTocEntry() {
+    return (HasPart) getValue("tocEntry");
   }
   /**
    * Indicates a [[HyperTocEntry]] in a [[HyperToc]].
    */
-  @JsonIgnore public java.util.Collection<HyperTocEntry> getTocEntrys() {
+  @JsonIgnore public java.util.Collection<HasPart> getTocEntrys() {
     final Object current = myData.get("tocEntry");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<HyperTocEntry>) current;
+      return (java.util.Collection<HasPart>) current;
     }
-    return Arrays.asList((HyperTocEntry) current);
+    return Arrays.asList((HasPart) current);
   }
   /**
    * A media object that encodes this CreativeWork. This property is a synonym for encoding.
@@ -78,15 +78,8 @@ public class HyperToc extends CreativeWork {
     /**
      * Indicates a [[HyperTocEntry]] in a [[HyperToc]].
      */
-    @NotNull public Builder tocEntry(@NotNull HyperTocEntry hyperTocEntry) {
-      putValue("tocEntry", hyperTocEntry);
-      return this;
-    }
-    /**
-     * Indicates a [[HyperTocEntry]] in a [[HyperToc]].
-     */
-    @NotNull public Builder tocEntry(@NotNull HyperTocEntry.Builder hyperTocEntry) {
-      putValue("tocEntry", hyperTocEntry.build());
+    @NotNull public Builder tocEntry(@NotNull HasPart hasPart) {
+      putValue("tocEntry", hasPart);
       return this;
     }
     /**
@@ -631,22 +624,8 @@ public class HyperToc extends CreativeWork {
     /**
      * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
      */
-    @NotNull public Builder acquireLicensePage(@NotNull CreativeWork creativeWork) {
-      putValue("acquireLicensePage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
-     */
-    @NotNull public Builder acquireLicensePage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("acquireLicensePage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
-     */
-    @NotNull public Builder acquireLicensePage(@NotNull String acquireLicensePage) {
-      putValue("acquireLicensePage", acquireLicensePage);
+    @NotNull public Builder acquireLicensePage(@NotNull UsageInfo usageInfo) {
+      putValue("acquireLicensePage", usageInfo);
       return this;
     }
     /**
@@ -664,8 +643,8 @@ public class HyperToc extends CreativeWork {
      * Since schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.
      * 
      */
-    @NotNull public Builder editEIDR(@NotNull String editEIDR) {
-      putValue("editEIDR", editEIDR);
+    @NotNull public Builder editEIDR(@NotNull Identifier identifier) {
+      putValue("editEIDR", identifier);
       return this;
     }
     /**
@@ -1578,15 +1557,8 @@ public class HyperToc extends CreativeWork {
     /**
      * Indicates the primary entity described in some page or other CreativeWork.
      */
-    @NotNull public Builder mainEntity(@NotNull Thing thing) {
-      putValue("mainEntity", thing);
-      return this;
-    }
-    /**
-     * Indicates the primary entity described in some page or other CreativeWork.
-     */
-    @NotNull public Builder mainEntity(@NotNull Thing.Builder thing) {
-      putValue("mainEntity", thing.build());
+    @NotNull public Builder mainEntity(@NotNull About about) {
+      putValue("mainEntity", about);
       return this;
     }
     /**
@@ -1737,8 +1709,8 @@ public class HyperToc extends CreativeWork {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("tocEntry".equals(key) && value instanceof HyperTocEntry) { this.tocEntry((HyperTocEntry)value); return; }
-      if ("tocEntrys".equals(key) && value instanceof HyperTocEntry) { this.tocEntry((HyperTocEntry)value); return; }
+      if ("tocEntry".equals(key) && value instanceof HasPart) { this.tocEntry((HasPart)value); return; }
+      if ("tocEntrys".equals(key) && value instanceof HasPart) { this.tocEntry((HasPart)value); return; }
       if ("associatedMedia".equals(key) && value instanceof MediaObject) { this.associatedMedia((MediaObject)value); return; }
       if ("associatedMedias".equals(key) && value instanceof MediaObject) { this.associatedMedia((MediaObject)value); return; }
       super.fromMap(key, value);

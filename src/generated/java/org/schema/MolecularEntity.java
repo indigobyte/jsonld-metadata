@@ -30,19 +30,19 @@ public class MolecularEntity extends BioChemEntity {
   /**
    * A specification in form of a line notation for describing the structure of chemical species using short ASCII strings.  Double bond stereochemistry \ indicators may need to be escaped in the string in formats where the backslash is an escape character.
    */
-  @JsonIgnore public String getSmiles() {
-    return (String) getValue("smiles");
+  @JsonIgnore public HasRepresentation getSmiles() {
+    return (HasRepresentation) getValue("smiles");
   }
   /**
    * A specification in form of a line notation for describing the structure of chemical species using short ASCII strings.  Double bond stereochemistry \ indicators may need to be escaped in the string in formats where the backslash is an escape character.
    */
-  @JsonIgnore public java.util.Collection<String> getSmiless() {
+  @JsonIgnore public java.util.Collection<HasRepresentation> getSmiless() {
     final Object current = myData.get("smiles");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<String>) current;
+      return (java.util.Collection<HasRepresentation>) current;
     }
-    return Arrays.asList((String) current);
+    return Arrays.asList((HasRepresentation) current);
   }
   /**
    * Systematic method of naming chemical compounds as recommended by the International Union of Pure and Applied Chemistry (IUPAC).
@@ -115,19 +115,19 @@ public class MolecularEntity extends BioChemEntity {
   /**
    * InChIKey is a hashed version of the full InChI (using the SHA-256 algorithm).
    */
-  @JsonIgnore public String getInChIKey() {
-    return (String) getValue("inChIKey");
+  @JsonIgnore public HasRepresentation getInChIKey() {
+    return (HasRepresentation) getValue("inChIKey");
   }
   /**
    * InChIKey is a hashed version of the full InChI (using the SHA-256 algorithm).
    */
-  @JsonIgnore public java.util.Collection<String> getInChIKeys() {
+  @JsonIgnore public java.util.Collection<HasRepresentation> getInChIKeys() {
     final Object current = myData.get("inChIKey");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<String>) current;
+      return (java.util.Collection<HasRepresentation>) current;
     }
-    return Arrays.asList((String) current);
+    return Arrays.asList((HasRepresentation) current);
   }
   /**
    * This is the molecular weight of the entity being described, not of the parent. Units should be included in the form '&amp;lt;Number&amp;gt; &amp;lt;unit&amp;gt;', for example '12 amu' or as '&amp;lt;QuantitativeValue&amp;gt;.
@@ -231,8 +231,8 @@ public class MolecularEntity extends BioChemEntity {
     /**
      * A specification in form of a line notation for describing the structure of chemical species using short ASCII strings.  Double bond stereochemistry \ indicators may need to be escaped in the string in formats where the backslash is an escape character.
      */
-    @NotNull public Builder smiles(@NotNull String smiles) {
-      putValue("smiles", smiles);
+    @NotNull public Builder smiles(@NotNull HasRepresentation hasRepresentation) {
+      putValue("smiles", hasRepresentation);
       return this;
     }
     /**
@@ -280,8 +280,8 @@ public class MolecularEntity extends BioChemEntity {
     /**
      * InChIKey is a hashed version of the full InChI (using the SHA-256 algorithm).
      */
-    @NotNull public Builder inChIKey(@NotNull String inChIKey) {
-      putValue("inChIKey", inChIKey);
+    @NotNull public Builder inChIKey(@NotNull HasRepresentation hasRepresentation) {
+      putValue("inChIKey", hasRepresentation);
       return this;
     }
     /**
@@ -705,8 +705,8 @@ public class MolecularEntity extends BioChemEntity {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("smiles".equals(key) && value instanceof String) { this.smiles((String)value); return; }
-      if ("smiless".equals(key) && value instanceof String) { this.smiles((String)value); return; }
+      if ("smiles".equals(key) && value instanceof HasRepresentation) { this.smiles((HasRepresentation)value); return; }
+      if ("smiless".equals(key) && value instanceof HasRepresentation) { this.smiles((HasRepresentation)value); return; }
       if ("iupacName".equals(key) && value instanceof String) { this.iupacName((String)value); return; }
       if ("iupacNames".equals(key) && value instanceof String) { this.iupacName((String)value); return; }
       if ("monoisotopicMolecularWeight".equals(key) && value instanceof QuantitativeValue) { this.monoisotopicMolecularWeight((QuantitativeValue)value); return; }
@@ -715,8 +715,8 @@ public class MolecularEntity extends BioChemEntity {
       if ("monoisotopicMolecularWeights".equals(key) && value instanceof String) { this.monoisotopicMolecularWeight((String)value); return; }
       if ("chemicalRole".equals(key) && value instanceof DefinedTerm) { this.chemicalRole((DefinedTerm)value); return; }
       if ("chemicalRoles".equals(key) && value instanceof DefinedTerm) { this.chemicalRole((DefinedTerm)value); return; }
-      if ("inChIKey".equals(key) && value instanceof String) { this.inChIKey((String)value); return; }
-      if ("inChIKeys".equals(key) && value instanceof String) { this.inChIKey((String)value); return; }
+      if ("inChIKey".equals(key) && value instanceof HasRepresentation) { this.inChIKey((HasRepresentation)value); return; }
+      if ("inChIKeys".equals(key) && value instanceof HasRepresentation) { this.inChIKey((HasRepresentation)value); return; }
       if ("molecularWeight".equals(key) && value instanceof QuantitativeValue) { this.molecularWeight((QuantitativeValue)value); return; }
       if ("molecularWeights".equals(key) && value instanceof QuantitativeValue) { this.molecularWeight((QuantitativeValue)value); return; }
       if ("molecularWeight".equals(key) && value instanceof String) { this.molecularWeight((String)value); return; }

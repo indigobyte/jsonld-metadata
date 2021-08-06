@@ -27,7 +27,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  *       
  */
 public enum DayOfWeek {
-  ;
+  Wednesday("http://schema.org/Wednesday"), Saturday("http://schema.org/Saturday"), Tuesday("http://schema.org/Tuesday"), Friday("http://schema.org/Friday"), Monday("http://schema.org/Monday"), PublicHolidays("http://schema.org/PublicHolidays"), Thursday("http://schema.org/Thursday"), Sunday("http://schema.org/Sunday");
   DayOfWeek(String value) {
     myValue = value;
   }

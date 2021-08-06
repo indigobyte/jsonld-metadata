@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * Enumerates several kinds of product return refund types.
  */
 public enum RefundTypeEnumeration {
-  ;
+  ExchangeRefund("http://schema.org/ExchangeRefund"), StoreCreditRefund("http://schema.org/StoreCreditRefund"), FullRefund("http://schema.org/FullRefund");
   RefundTypeEnumeration(String value) {
     myValue = value;
   }

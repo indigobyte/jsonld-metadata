@@ -34,17 +34,54 @@ class GeneratorSink : TripleSink {
     private val subjects = mutableSetOf<String>()
     private val predicates = mutableSetOf<String>()
     private val objects = mutableSetOf<String>()
-    var hasUndefinedClasses = false
-        private set
+    private var _undefinedClasses = mutableSetOf<String>()
+    val undefinedClasses: Set<String>
+        get() = _undefinedClasses.toSet()
 
     val types = hashMapOf<String, Type>().withDefault { Type() }
+    private val shouldSkipSet = mutableSetOf(
+        "Text",
+        "DataType",
+        "DateTime",
+        "Date",
+        "Time",
+        "Boolean",
+        "Number",
+        "Integer",
+        "Int",
+        "Long",
+        "Float",
+        "Double",
+        "URL",
+        "True",
+        "False",
+        "Class",
+        "Object",
+        // This type is weird
+        //"Duration",
+        // These types use DataType, so they have to be banned as well
+        "Observation",
+        "SpecialAnnouncement"
+    )
+
+    private val basicTypeNames = mutableMapOf(
+        "Text" to "String",
+        "URL" to "String",
+        "DateTime" to "java.util.Date",
+        "Date" to "java.util.Date",
+        "Time" to "java.util.Date",
+        "Class" to null
+    )
 
     init {
-        val idType = Type()
-        idType.name = "Id"
-        idType.isField = true
-        idType.dataTypes.add("http://schema.org/Text")
-        types.put(ID_TYPE, idType)
+        types.put(
+            ID_TYPE,
+            this.Type(
+                name = "id",
+                isField = true,
+                dataTypes = mutableListOf("http://schema.org/Text")
+            )
+        )
     }
 
     inner class Type(
@@ -112,7 +149,7 @@ class GeneratorSink : TripleSink {
     }
 
     override fun startStream() {
-        hasUndefinedClasses = false
+        _undefinedClasses = mutableSetOf()
     }
 
     override fun addNonLiteral(subj: String, pred: String, obj: String) {
@@ -122,17 +159,40 @@ class GeneratorSink : TripleSink {
 
     private fun addNonLiteralOriginal(subj: String, pred: String, obj: String) {
         when (pred) {
-            "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" -> types.doWith(subj) {
-                val containsKey = types.containsKey(obj)
-                if (types.containsKey(obj)) {
-                    parentType = obj
-                } else {
-                    hasUndefinedClasses = true
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+            "http://www.w3.org/2000/01/rdf-schema#subClassOf" -> {
+                if (obj != "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property") {
+                    types.doWith(subj) {
+                        val currentTypeName = subj.substringAfter(uri)
+                        val parentTypeName = obj.substringAfter(uri)
+                        if (!shouldSkipSet.contains(currentTypeName) &&
+                            shouldSkipSet.contains(parentTypeName)
+                        ) {
+                            println("Skipping $currentTypeName")
+                            shouldSkipSet.add(currentTypeName)
+                            if (parentTypeName in basicTypeNames &&
+                                currentTypeName !in basicTypeNames
+                            ) {
+                                val parentMapping = basicTypeNames[parentTypeName]
+                                println("Mapping $currentTypeName to $parentMapping")
+                                basicTypeNames[currentTypeName] = parentMapping
+                            }
+                        }
+                        val containsKey = types.containsKey(obj)
+                        if (containsKey) {
+                            parentType = obj
+                        } else {
+                            _undefinedClasses.add(obj)
+                        }
+                    }
                 }
-            }  //if(!types.containsKey(subj)) types.put(subj, Type().apply { if (types.containsKey(obj)) parentType = obj })
-            "http://www.w3.org/2000/01/rdf-schema#subClassOf" -> types.doWith(subj) {
-                parentType = obj
-            } //types[subj]!!.parentType = obj
+            }
+            //if(!types.containsKey(subj)) types.put(subj, Type().apply { if (types.containsKey(obj)) parentType = obj })
+//            "http://www.w3.org/2000/01/rdf-schema#subClassOf" -> {
+//                types.doWith(subj) {
+//                    parentType = obj
+//                }
+//            } //types[subj]!!.parentType = obj
             "http://schema.org/domainIncludes" -> {
                 if (subj.contains("fileFormat") || obj.contains("fileFormat")) {
                     println("domainIncludes: $subj -- $obj")
@@ -168,7 +228,9 @@ class GeneratorSink : TripleSink {
                     interfaceType.isInterface = true
                     types.put(obj, interfaceType)
 
-                    if (!types.containsKey(subj)) types.put(subj, Type())
+                    if (!types.containsKey(subj)) {
+                        types.put(subj, Type())
+                    }
 
                     val type = types[subj]!!
                     if (type.isField) {
@@ -178,6 +240,12 @@ class GeneratorSink : TripleSink {
                         //println("adding interface $it to $subj")
                     }
                 } //?: println("${obj} not a valid interface type subprop")
+            }
+            "http://schema.org/isPartOf",
+            "http://schema.org/source",
+            "http://www.w3.org/2004/02/skos/core#closeMatch",
+            "http://schema.org/sameAs",
+            "http://www.w3.org/2004/02/skos/core#exactMatch" -> {
             }
             else -> System.err.println("Unknown non-literal: $pred")
         }
@@ -195,7 +263,9 @@ class GeneratorSink : TripleSink {
             "http://www.w3.org/2000/01/rdf-schema#label" -> types.doWith(subj) {
                 name = content.replace(" ", "").replace(".", "").capitalize()
             }
-            "http://www.w3.org/2000/01/rdf-schema#comment" -> types.doWith(subj) { comment = content }
+            "http://www.w3.org/2000/01/rdf-schema#comment" -> types.doWith(subj) {
+                comment = content
+            }
             else -> System.err.println("Unknown plain literal: $pred")
         }
     }
@@ -205,6 +275,9 @@ class GeneratorSink : TripleSink {
     }
 
     private fun getBasicTypeName(name: String?): String? {
+        if (basicTypeNames.containsKey(name)) {
+            return basicTypeNames[name]
+        }
         return when (name) {
             "Text", "URL" -> "String"
             "DateTime", "Date", "Time" -> "java.util.Date"
@@ -218,7 +291,8 @@ class GeneratorSink : TripleSink {
             return field.name!!.capitalize()
 
         return try {
-            val name = field.dataTypes.firstOrNull { types[it]!!.isInterface } ?: field.dataTypes.firstOrNull()
+            val name = field.dataTypes.firstOrNull { types[it]!!.isInterface }
+                ?: field.dataTypes.firstOrNull()
             getBasicTypeName(types[name]?.name)
         } catch (e: Exception) {
             println("exception: ${e.message}")
@@ -257,26 +331,10 @@ class GeneratorSink : TripleSink {
     }
 
     fun shouldSkip(name: String): Boolean {
-        return arrayOf(
-            "Text",
-            "DataType",
-            "DateTime",
-            "Date",
-            "Time",
-            "Boolean",
-            "Number",
-            "Integer",
-            "Int",
-            "Long",
-            "Float",
-            "Double",
-            "URL",
-            "True",
-            "False",
-            "Class",
-            "Object"
-        ).contains(name) ||
-                name.contains("#") || name.contains("/")
+        return name.contains("#") ||
+                name.contains("/") ||
+                shouldSkipSet.contains(name)
+
     }
 
     fun getAllFields(type: Type?): Iterable<Type> {

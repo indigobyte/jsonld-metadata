@@ -217,19 +217,19 @@ public class Flight extends Trip {
   /**
    * The unique identifier for a flight including the airline IATA code. For example, if describing United flight 110, where the IATA code for United is 'UA', the flightNumber is 'UA110'.
    */
-  @JsonIgnore public String getFlightNumber() {
-    return (String) getValue("flightNumber");
+  @JsonIgnore public Identifier getFlightNumber() {
+    return (Identifier) getValue("flightNumber");
   }
   /**
    * The unique identifier for a flight including the airline IATA code. For example, if describing United flight 110, where the IATA code for United is 'UA', the flightNumber is 'UA110'.
    */
-  @JsonIgnore public java.util.Collection<String> getFlightNumbers() {
+  @JsonIgnore public java.util.Collection<Identifier> getFlightNumbers() {
     final Object current = myData.get("flightNumber");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<String>) current;
+      return (java.util.Collection<Identifier>) current;
     }
-    return Arrays.asList((String) current);
+    return Arrays.asList((Identifier) current);
   }
   /**
    * Identifier of the flight's arrival terminal.
@@ -424,8 +424,8 @@ public class Flight extends Trip {
     /**
      * The unique identifier for a flight including the airline IATA code. For example, if describing United flight 110, where the IATA code for United is 'UA', the flightNumber is 'UA110'.
      */
-    @NotNull public Builder flightNumber(@NotNull String flightNumber) {
-      putValue("flightNumber", flightNumber);
+    @NotNull public Builder flightNumber(@NotNull Identifier identifier) {
+      putValue("flightNumber", identifier);
       return this;
     }
     /**
@@ -742,8 +742,8 @@ public class Flight extends Trip {
       if ("flightDistances".equals(key) && value instanceof Distance) { this.flightDistance((Distance)value); return; }
       if ("flightDistance".equals(key) && value instanceof String) { this.flightDistance((String)value); return; }
       if ("flightDistances".equals(key) && value instanceof String) { this.flightDistance((String)value); return; }
-      if ("flightNumber".equals(key) && value instanceof String) { this.flightNumber((String)value); return; }
-      if ("flightNumbers".equals(key) && value instanceof String) { this.flightNumber((String)value); return; }
+      if ("flightNumber".equals(key) && value instanceof Identifier) { this.flightNumber((Identifier)value); return; }
+      if ("flightNumbers".equals(key) && value instanceof Identifier) { this.flightNumber((Identifier)value); return; }
       if ("arrivalTerminal".equals(key) && value instanceof String) { this.arrivalTerminal((String)value); return; }
       if ("arrivalTerminals".equals(key) && value instanceof String) { this.arrivalTerminal((String)value); return; }
       if ("seller".equals(key) && value instanceof Participant) { this.seller((Participant)value); return; }

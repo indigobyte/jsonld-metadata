@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * An EventAttendanceModeEnumeration value is one of potentially several modes of organising an event, relating to whether it is online or offline.
  */
 public enum EventAttendanceModeEnumeration {
-  ;
+  OfflineEventAttendanceMode("http://schema.org/OfflineEventAttendanceMode"), MixedEventAttendanceMode("http://schema.org/MixedEventAttendanceMode"), OnlineEventAttendanceMode("http://schema.org/OnlineEventAttendanceMode");
   EventAttendanceModeEnumeration(String value) {
     myValue = value;
   }

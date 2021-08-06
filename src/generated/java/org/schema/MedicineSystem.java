@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * Systems of medical practice.
  */
 public enum MedicineSystem {
-  ;
+  TraditionalChinese("http://schema.org/TraditionalChinese"), Chiropractic("http://schema.org/Chiropractic"), Ayurvedic("http://schema.org/Ayurvedic"), WesternConventional("http://schema.org/WesternConventional"), Osteopathic("http://schema.org/Osteopathic"), Homeopathic("http://schema.org/Homeopathic");
   MedicineSystem(String value) {
     myValue = value;
   }

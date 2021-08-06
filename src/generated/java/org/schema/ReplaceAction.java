@@ -30,19 +30,19 @@ public class ReplaceAction extends UpdateAction {
   /**
    * A sub property of object. The object that replaces.
    */
-  @JsonIgnore public Thing getReplacer() {
-    return (Thing) getValue("replacer");
+  @JsonIgnore public Object getReplacer() {
+    return (Object) getValue("replacer");
   }
   /**
    * A sub property of object. The object that replaces.
    */
-  @JsonIgnore public java.util.Collection<Thing> getReplacers() {
+  @JsonIgnore public java.util.Collection<Object> getReplacers() {
     final Object current = myData.get("replacer");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<Thing>) current;
+      return (java.util.Collection<Object>) current;
     }
-    return Arrays.asList((Thing) current);
+    return Arrays.asList((Object) current);
   }
   /**
    * A sub property of object. The object that is being replaced.
@@ -78,15 +78,8 @@ public class ReplaceAction extends UpdateAction {
     /**
      * A sub property of object. The object that replaces.
      */
-    @NotNull public Builder replacer(@NotNull Thing thing) {
-      putValue("replacer", thing);
-      return this;
-    }
-    /**
-     * A sub property of object. The object that replaces.
-     */
-    @NotNull public Builder replacer(@NotNull Thing.Builder thing) {
-      putValue("replacer", thing.build());
+    @NotNull public Builder replacer(@NotNull Object object) {
+      putValue("replacer", object);
       return this;
     }
     /**
@@ -293,8 +286,8 @@ public class ReplaceAction extends UpdateAction {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("replacer".equals(key) && value instanceof Thing) { this.replacer((Thing)value); return; }
-      if ("replacers".equals(key) && value instanceof Thing) { this.replacer((Thing)value); return; }
+      if ("replacer".equals(key) && value instanceof Object) { this.replacer((Object)value); return; }
+      if ("replacers".equals(key) && value instanceof Object) { this.replacer((Object)value); return; }
       if ("replacee".equals(key) && value instanceof Object) { this.replacee((Object)value); return; }
       if ("replacees".equals(key) && value instanceof Object) { this.replacee((Object)value); return; }
       super.fromMap(key, value);

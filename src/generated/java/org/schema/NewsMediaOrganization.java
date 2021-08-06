@@ -166,36 +166,19 @@ public class NewsMediaOrganization extends Organization {
   /**
    * For a [[NewsMediaOrganization]], a statement on coverage priorities, including any public agenda or stance on issues.
    */
-  @JsonIgnore public CreativeWork getMissionCoveragePrioritiesPolicyCreativeWork() {
-    return (CreativeWork) getValue("missionCoveragePrioritiesPolicy");
+  @JsonIgnore public PublishingPrinciples getMissionCoveragePrioritiesPolicy() {
+    return (PublishingPrinciples) getValue("missionCoveragePrioritiesPolicy");
   }
   /**
    * For a [[NewsMediaOrganization]], a statement on coverage priorities, including any public agenda or stance on issues.
    */
-  @JsonIgnore public java.util.Collection<CreativeWork> getMissionCoveragePrioritiesPolicyCreativeWorks() {
+  @JsonIgnore public java.util.Collection<PublishingPrinciples> getMissionCoveragePrioritiesPolicys() {
     final Object current = myData.get("missionCoveragePrioritiesPolicy");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<CreativeWork>) current;
+      return (java.util.Collection<PublishingPrinciples>) current;
     }
-    return Arrays.asList((CreativeWork) current);
-  }
-  /**
-   * For a [[NewsMediaOrganization]], a statement on coverage priorities, including any public agenda or stance on issues.
-   */
-  @JsonIgnore public String getMissionCoveragePrioritiesPolicyString() {
-    return (String) getValue("missionCoveragePrioritiesPolicy");
-  }
-  /**
-   * For a [[NewsMediaOrganization]], a statement on coverage priorities, including any public agenda or stance on issues.
-   */
-  @JsonIgnore public java.util.Collection<String> getMissionCoveragePrioritiesPolicyStrings() {
-    final Object current = myData.get("missionCoveragePrioritiesPolicy");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof java.util.Collection) {
-      return (java.util.Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
+    return Arrays.asList((PublishingPrinciples) current);
   }
   /**
    * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement about public engagement activities (for news media, the newsroom&rsquo;s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.
@@ -217,36 +200,19 @@ public class NewsMediaOrganization extends Organization {
   /**
    * For a [[NewsMediaOrganization]], a link to the masthead page or a page listing top editorial management.
    */
-  @JsonIgnore public CreativeWork getMastheadCreativeWork() {
-    return (CreativeWork) getValue("masthead");
+  @JsonIgnore public PublishingPrinciples getMasthead() {
+    return (PublishingPrinciples) getValue("masthead");
   }
   /**
    * For a [[NewsMediaOrganization]], a link to the masthead page or a page listing top editorial management.
    */
-  @JsonIgnore public java.util.Collection<CreativeWork> getMastheadCreativeWorks() {
+  @JsonIgnore public java.util.Collection<PublishingPrinciples> getMastheads() {
     final Object current = myData.get("masthead");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<CreativeWork>) current;
+      return (java.util.Collection<PublishingPrinciples>) current;
     }
-    return Arrays.asList((CreativeWork) current);
-  }
-  /**
-   * For a [[NewsMediaOrganization]], a link to the masthead page or a page listing top editorial management.
-   */
-  @JsonIgnore public String getMastheadString() {
-    return (String) getValue("masthead");
-  }
-  /**
-   * For a [[NewsMediaOrganization]], a link to the masthead page or a page listing top editorial management.
-   */
-  @JsonIgnore public java.util.Collection<String> getMastheadStrings() {
-    final Object current = myData.get("masthead");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof java.util.Collection) {
-      return (java.util.Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
+    return Arrays.asList((PublishingPrinciples) current);
   }
   /**
    * Statement about ethics policy, e.g. of a [[NewsMediaOrganization]] regarding journalistic and publishing practices, or of a [[Restaurant]], a page describing food source policies. In the case of a [[NewsMediaOrganization]], an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.
@@ -362,22 +328,8 @@ public class NewsMediaOrganization extends Organization {
     /**
      * For a [[NewsMediaOrganization]], a statement on coverage priorities, including any public agenda or stance on issues.
      */
-    @NotNull public Builder missionCoveragePrioritiesPolicy(@NotNull CreativeWork creativeWork) {
-      putValue("missionCoveragePrioritiesPolicy", creativeWork);
-      return this;
-    }
-    /**
-     * For a [[NewsMediaOrganization]], a statement on coverage priorities, including any public agenda or stance on issues.
-     */
-    @NotNull public Builder missionCoveragePrioritiesPolicy(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("missionCoveragePrioritiesPolicy", creativeWork.build());
-      return this;
-    }
-    /**
-     * For a [[NewsMediaOrganization]], a statement on coverage priorities, including any public agenda or stance on issues.
-     */
-    @NotNull public Builder missionCoveragePrioritiesPolicy(@NotNull String missionCoveragePrioritiesPolicy) {
-      putValue("missionCoveragePrioritiesPolicy", missionCoveragePrioritiesPolicy);
+    @NotNull public Builder missionCoveragePrioritiesPolicy(@NotNull PublishingPrinciples publishingPrinciples) {
+      putValue("missionCoveragePrioritiesPolicy", publishingPrinciples);
       return this;
     }
     /**
@@ -390,22 +342,8 @@ public class NewsMediaOrganization extends Organization {
     /**
      * For a [[NewsMediaOrganization]], a link to the masthead page or a page listing top editorial management.
      */
-    @NotNull public Builder masthead(@NotNull CreativeWork creativeWork) {
-      putValue("masthead", creativeWork);
-      return this;
-    }
-    /**
-     * For a [[NewsMediaOrganization]], a link to the masthead page or a page listing top editorial management.
-     */
-    @NotNull public Builder masthead(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("masthead", creativeWork.build());
-      return this;
-    }
-    /**
-     * For a [[NewsMediaOrganization]], a link to the masthead page or a page listing top editorial management.
-     */
-    @NotNull public Builder masthead(@NotNull String masthead) {
-      putValue("masthead", masthead);
+    @NotNull public Builder masthead(@NotNull PublishingPrinciples publishingPrinciples) {
+      putValue("masthead", publishingPrinciples);
       return this;
     }
     /**
@@ -495,8 +433,8 @@ public class NewsMediaOrganization extends Organization {
     /**
      * The Dun &amp; Bradstreet DUNS number for identifying an organization or business person.
      */
-    @NotNull public Builder duns(@NotNull String duns) {
-      putValue("duns", duns);
+    @NotNull public Builder duns(@NotNull Identifier identifier) {
+      putValue("duns", identifier);
       return this;
     }
     /**
@@ -1111,16 +1049,12 @@ public class NewsMediaOrganization extends Organization {
       if ("diversityStaffingReports".equals(key) && value instanceof PublishingPrinciples) { this.diversityStaffingReport((PublishingPrinciples)value); return; }
       if ("correctionsPolicy".equals(key) && value instanceof PublishingPrinciples) { this.correctionsPolicy((PublishingPrinciples)value); return; }
       if ("correctionsPolicys".equals(key) && value instanceof PublishingPrinciples) { this.correctionsPolicy((PublishingPrinciples)value); return; }
-      if ("missionCoveragePrioritiesPolicy".equals(key) && value instanceof CreativeWork) { this.missionCoveragePrioritiesPolicy((CreativeWork)value); return; }
-      if ("missionCoveragePrioritiesPolicys".equals(key) && value instanceof CreativeWork) { this.missionCoveragePrioritiesPolicy((CreativeWork)value); return; }
-      if ("missionCoveragePrioritiesPolicy".equals(key) && value instanceof String) { this.missionCoveragePrioritiesPolicy((String)value); return; }
-      if ("missionCoveragePrioritiesPolicys".equals(key) && value instanceof String) { this.missionCoveragePrioritiesPolicy((String)value); return; }
+      if ("missionCoveragePrioritiesPolicy".equals(key) && value instanceof PublishingPrinciples) { this.missionCoveragePrioritiesPolicy((PublishingPrinciples)value); return; }
+      if ("missionCoveragePrioritiesPolicys".equals(key) && value instanceof PublishingPrinciples) { this.missionCoveragePrioritiesPolicy((PublishingPrinciples)value); return; }
       if ("actionableFeedbackPolicy".equals(key) && value instanceof PublishingPrinciples) { this.actionableFeedbackPolicy((PublishingPrinciples)value); return; }
       if ("actionableFeedbackPolicys".equals(key) && value instanceof PublishingPrinciples) { this.actionableFeedbackPolicy((PublishingPrinciples)value); return; }
-      if ("masthead".equals(key) && value instanceof CreativeWork) { this.masthead((CreativeWork)value); return; }
-      if ("mastheads".equals(key) && value instanceof CreativeWork) { this.masthead((CreativeWork)value); return; }
-      if ("masthead".equals(key) && value instanceof String) { this.masthead((String)value); return; }
-      if ("mastheads".equals(key) && value instanceof String) { this.masthead((String)value); return; }
+      if ("masthead".equals(key) && value instanceof PublishingPrinciples) { this.masthead((PublishingPrinciples)value); return; }
+      if ("mastheads".equals(key) && value instanceof PublishingPrinciples) { this.masthead((PublishingPrinciples)value); return; }
       if ("ethicsPolicy".equals(key) && value instanceof CreativeWork) { this.ethicsPolicy((CreativeWork)value); return; }
       if ("ethicsPolicys".equals(key) && value instanceof CreativeWork) { this.ethicsPolicy((CreativeWork)value); return; }
       if ("ethicsPolicy".equals(key) && value instanceof String) { this.ethicsPolicy((String)value); return; }

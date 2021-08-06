@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * ProductReturnEnumeration enumerates several kinds of product return policy. Note that this structure may not capture all aspects of the policy.
  */
 public enum ProductReturnEnumeration {
-  ;
+  ProductReturnFiniteReturnWindow("http://schema.org/ProductReturnFiniteReturnWindow"), ProductReturnUnspecified("http://schema.org/ProductReturnUnspecified"), ProductReturnUnlimitedWindow("http://schema.org/ProductReturnUnlimitedWindow"), ProductReturnNotPermitted("http://schema.org/ProductReturnNotPermitted");
   ProductReturnEnumeration(String value) {
     myValue = value;
   }

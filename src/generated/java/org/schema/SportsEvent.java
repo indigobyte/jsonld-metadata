@@ -30,36 +30,19 @@ public class SportsEvent extends Event {
   /**
    * The home team in a sports event.
    */
-  @JsonIgnore public Person getHomeTeamPerson() {
-    return (Person) getValue("homeTeam");
+  @JsonIgnore public Competitor getHomeTeam() {
+    return (Competitor) getValue("homeTeam");
   }
   /**
    * The home team in a sports event.
    */
-  @JsonIgnore public java.util.Collection<Person> getHomeTeamPersons() {
+  @JsonIgnore public java.util.Collection<Competitor> getHomeTeams() {
     final Object current = myData.get("homeTeam");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<Person>) current;
+      return (java.util.Collection<Competitor>) current;
     }
-    return Arrays.asList((Person) current);
-  }
-  /**
-   * The home team in a sports event.
-   */
-  @JsonIgnore public SportsTeam getHomeTeamSportsTeam() {
-    return (SportsTeam) getValue("homeTeam");
-  }
-  /**
-   * The home team in a sports event.
-   */
-  @JsonIgnore public java.util.Collection<SportsTeam> getHomeTeamSportsTeams() {
-    final Object current = myData.get("homeTeam");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof java.util.Collection) {
-      return (java.util.Collection<SportsTeam>) current;
-    }
-    return Arrays.asList((SportsTeam) current);
+    return Arrays.asList((Competitor) current);
   }
   /**
    * The away team in a sports event.
@@ -112,29 +95,8 @@ public class SportsEvent extends Event {
     /**
      * The home team in a sports event.
      */
-    @NotNull public Builder homeTeam(@NotNull Person person) {
-      putValue("homeTeam", person);
-      return this;
-    }
-    /**
-     * The home team in a sports event.
-     */
-    @NotNull public Builder homeTeam(@NotNull Person.Builder person) {
-      putValue("homeTeam", person.build());
-      return this;
-    }
-    /**
-     * The home team in a sports event.
-     */
-    @NotNull public Builder homeTeam(@NotNull SportsTeam sportsTeam) {
-      putValue("homeTeam", sportsTeam);
-      return this;
-    }
-    /**
-     * The home team in a sports event.
-     */
-    @NotNull public Builder homeTeam(@NotNull SportsTeam.Builder sportsTeam) {
-      putValue("homeTeam", sportsTeam.build());
+    @NotNull public Builder homeTeam(@NotNull Competitor competitor) {
+      putValue("homeTeam", competitor);
       return this;
     }
     /**
@@ -203,15 +165,8 @@ public class SportsEvent extends Event {
     /**
      * A work performed in some event, for example a play performed in a TheaterEvent.
      */
-    @NotNull public Builder workPerformed(@NotNull CreativeWork creativeWork) {
-      putValue("workPerformed", creativeWork);
-      return this;
-    }
-    /**
-     * A work performed in some event, for example a play performed in a TheaterEvent.
-     */
-    @NotNull public Builder workPerformed(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("workPerformed", creativeWork.build());
+    @NotNull public Builder workPerformed(@NotNull WorkFeatured workFeatured) {
+      putValue("workPerformed", workFeatured);
       return this;
     }
     /**
@@ -733,10 +688,8 @@ public class SportsEvent extends Event {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("homeTeam".equals(key) && value instanceof Person) { this.homeTeam((Person)value); return; }
-      if ("homeTeams".equals(key) && value instanceof Person) { this.homeTeam((Person)value); return; }
-      if ("homeTeam".equals(key) && value instanceof SportsTeam) { this.homeTeam((SportsTeam)value); return; }
-      if ("homeTeams".equals(key) && value instanceof SportsTeam) { this.homeTeam((SportsTeam)value); return; }
+      if ("homeTeam".equals(key) && value instanceof Competitor) { this.homeTeam((Competitor)value); return; }
+      if ("homeTeams".equals(key) && value instanceof Competitor) { this.homeTeam((Competitor)value); return; }
       if ("awayTeam".equals(key) && value instanceof Competitor) { this.awayTeam((Competitor)value); return; }
       if ("awayTeams".equals(key) && value instanceof Competitor) { this.awayTeam((Competitor)value); return; }
       if ("sport".equals(key) && value instanceof String) { this.sport((String)value); return; }

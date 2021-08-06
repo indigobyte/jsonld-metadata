@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * Categories of physical activity, organized by physiologic classification.
  */
 public enum PhysicalActivityCategory {
-  ;
+  StrengthTraining("http://schema.org/StrengthTraining"), OccupationalActivity("http://schema.org/OccupationalActivity"), LeisureTimeActivity("http://schema.org/LeisureTimeActivity"), AnaerobicActivity("http://schema.org/AnaerobicActivity"), Flexibility("http://schema.org/Flexibility"), AerobicActivity("http://schema.org/AerobicActivity"), Balance("http://schema.org/Balance");
   PhysicalActivityCategory(String value) {
     myValue = value;
   }

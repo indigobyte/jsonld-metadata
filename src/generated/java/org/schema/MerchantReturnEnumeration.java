@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * Enumerates several kinds of product return policies.
  */
 public enum MerchantReturnEnumeration {
-  ;
+  MerchantReturnNotPermitted("http://schema.org/MerchantReturnNotPermitted"), MerchantReturnUnlimitedWindow("http://schema.org/MerchantReturnUnlimitedWindow"), MerchantReturnFiniteReturnWindow("http://schema.org/MerchantReturnFiniteReturnWindow"), MerchantReturnUnspecified("http://schema.org/MerchantReturnUnspecified");
   MerchantReturnEnumeration(String value) {
     myValue = value;
   }

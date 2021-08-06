@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * Used to indicate whether a product is EnergyStar certified.
  */
 public enum EnergyStarEnergyEfficiencyEnumeration {
-  ;
+  EnergyStarCertified("http://schema.org/EnergyStarCertified");
   EnergyStarEnergyEfficiencyEnumeration(String value) {
     myValue = value;
   }

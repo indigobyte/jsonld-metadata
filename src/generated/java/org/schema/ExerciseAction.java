@@ -132,19 +132,19 @@ public class ExerciseAction extends PlayAction {
   /**
    * A sub property of instrument. The diet used in this action.
    */
-  @JsonIgnore public Diet getDiet() {
-    return (Diet) getValue("diet");
+  @JsonIgnore public Instrument getDiet() {
+    return (Instrument) getValue("diet");
   }
   /**
    * A sub property of instrument. The diet used in this action.
    */
-  @JsonIgnore public java.util.Collection<Diet> getDiets() {
+  @JsonIgnore public java.util.Collection<Instrument> getDiets() {
     final Object current = myData.get("diet");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<Diet>) current;
+      return (java.util.Collection<Instrument>) current;
     }
-    return Arrays.asList((Diet) current);
+    return Arrays.asList((Instrument) current);
   }
   /**
    * A sub property of location. The original location of the object or the agent before the action.
@@ -166,36 +166,36 @@ public class ExerciseAction extends PlayAction {
   /**
    * A sub property of participant. The opponent on this action.
    */
-  @JsonIgnore public Person getOpponent() {
-    return (Person) getValue("opponent");
+  @JsonIgnore public Participant getOpponent() {
+    return (Participant) getValue("opponent");
   }
   /**
    * A sub property of participant. The opponent on this action.
    */
-  @JsonIgnore public java.util.Collection<Person> getOpponents() {
+  @JsonIgnore public java.util.Collection<Participant> getOpponents() {
     final Object current = myData.get("opponent");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<Person>) current;
+      return (java.util.Collection<Participant>) current;
     }
-    return Arrays.asList((Person) current);
+    return Arrays.asList((Participant) current);
   }
   /**
    * A sub property of instrument. The diet used in this action.
    */
-  @JsonIgnore public Diet getExerciseRelatedDiet() {
-    return (Diet) getValue("exerciseRelatedDiet");
+  @JsonIgnore public Instrument getExerciseRelatedDiet() {
+    return (Instrument) getValue("exerciseRelatedDiet");
   }
   /**
    * A sub property of instrument. The diet used in this action.
    */
-  @JsonIgnore public java.util.Collection<Diet> getExerciseRelatedDiets() {
+  @JsonIgnore public java.util.Collection<Instrument> getExerciseRelatedDiets() {
     final Object current = myData.get("exerciseRelatedDiet");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<Diet>) current;
+      return (java.util.Collection<Instrument>) current;
     }
-    return Arrays.asList((Diet) current);
+    return Arrays.asList((Instrument) current);
   }
   /**
    * A sub property of instrument. The exercise plan used on this action.
@@ -217,19 +217,19 @@ public class ExerciseAction extends PlayAction {
   /**
    * A sub property of location. The sports activity location where this action occurred.
    */
-  @JsonIgnore public SportsActivityLocation getSportsActivityLocation() {
-    return (SportsActivityLocation) getValue("sportsActivityLocation");
+  @JsonIgnore public Location getSportsActivityLocation() {
+    return (Location) getValue("sportsActivityLocation");
   }
   /**
    * A sub property of location. The sports activity location where this action occurred.
    */
-  @JsonIgnore public java.util.Collection<SportsActivityLocation> getSportsActivityLocations() {
+  @JsonIgnore public java.util.Collection<Location> getSportsActivityLocations() {
     final Object current = myData.get("sportsActivityLocation");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<SportsActivityLocation>) current;
+      return (java.util.Collection<Location>) current;
     }
-    return Arrays.asList((SportsActivityLocation) current);
+    return Arrays.asList((Location) current);
   }
   protected ExerciseAction(java.util.Map<String,Object> data) {
     super(data);
@@ -297,15 +297,8 @@ public class ExerciseAction extends PlayAction {
     /**
      * A sub property of instrument. The diet used in this action.
      */
-    @NotNull public Builder diet(@NotNull Diet diet) {
-      putValue("diet", diet);
-      return this;
-    }
-    /**
-     * A sub property of instrument. The diet used in this action.
-     */
-    @NotNull public Builder diet(@NotNull Diet.Builder diet) {
-      putValue("diet", diet.build());
+    @NotNull public Builder diet(@NotNull Instrument instrument) {
+      putValue("diet", instrument);
       return this;
     }
     /**
@@ -318,29 +311,15 @@ public class ExerciseAction extends PlayAction {
     /**
      * A sub property of participant. The opponent on this action.
      */
-    @NotNull public Builder opponent(@NotNull Person person) {
-      putValue("opponent", person);
-      return this;
-    }
-    /**
-     * A sub property of participant. The opponent on this action.
-     */
-    @NotNull public Builder opponent(@NotNull Person.Builder person) {
-      putValue("opponent", person.build());
+    @NotNull public Builder opponent(@NotNull Participant participant) {
+      putValue("opponent", participant);
       return this;
     }
     /**
      * A sub property of instrument. The diet used in this action.
      */
-    @NotNull public Builder exerciseRelatedDiet(@NotNull Diet diet) {
-      putValue("exerciseRelatedDiet", diet);
-      return this;
-    }
-    /**
-     * A sub property of instrument. The diet used in this action.
-     */
-    @NotNull public Builder exerciseRelatedDiet(@NotNull Diet.Builder diet) {
-      putValue("exerciseRelatedDiet", diet.build());
+    @NotNull public Builder exerciseRelatedDiet(@NotNull Instrument instrument) {
+      putValue("exerciseRelatedDiet", instrument);
       return this;
     }
     /**
@@ -353,15 +332,8 @@ public class ExerciseAction extends PlayAction {
     /**
      * A sub property of location. The sports activity location where this action occurred.
      */
-    @NotNull public Builder sportsActivityLocation(@NotNull SportsActivityLocation sportsActivityLocation) {
-      putValue("sportsActivityLocation", sportsActivityLocation);
-      return this;
-    }
-    /**
-     * A sub property of location. The sports activity location where this action occurred.
-     */
-    @NotNull public Builder sportsActivityLocation(@NotNull SportsActivityLocation.Builder sportsActivityLocation) {
-      putValue("sportsActivityLocation", sportsActivityLocation.build());
+    @NotNull public Builder sportsActivityLocation(@NotNull Location location) {
+      putValue("sportsActivityLocation", location);
       return this;
     }
     /**
@@ -594,18 +566,18 @@ public class ExerciseAction extends PlayAction {
       if ("distances".equals(key) && value instanceof Distance) { this.distance((Distance)value); return; }
       if ("exerciseType".equals(key) && value instanceof String) { this.exerciseType((String)value); return; }
       if ("exerciseTypes".equals(key) && value instanceof String) { this.exerciseType((String)value); return; }
-      if ("diet".equals(key) && value instanceof Diet) { this.diet((Diet)value); return; }
-      if ("diets".equals(key) && value instanceof Diet) { this.diet((Diet)value); return; }
+      if ("diet".equals(key) && value instanceof Instrument) { this.diet((Instrument)value); return; }
+      if ("diets".equals(key) && value instanceof Instrument) { this.diet((Instrument)value); return; }
       if ("fromLocation".equals(key) && value instanceof Location) { this.fromLocation((Location)value); return; }
       if ("fromLocations".equals(key) && value instanceof Location) { this.fromLocation((Location)value); return; }
-      if ("opponent".equals(key) && value instanceof Person) { this.opponent((Person)value); return; }
-      if ("opponents".equals(key) && value instanceof Person) { this.opponent((Person)value); return; }
-      if ("exerciseRelatedDiet".equals(key) && value instanceof Diet) { this.exerciseRelatedDiet((Diet)value); return; }
-      if ("exerciseRelatedDiets".equals(key) && value instanceof Diet) { this.exerciseRelatedDiet((Diet)value); return; }
+      if ("opponent".equals(key) && value instanceof Participant) { this.opponent((Participant)value); return; }
+      if ("opponents".equals(key) && value instanceof Participant) { this.opponent((Participant)value); return; }
+      if ("exerciseRelatedDiet".equals(key) && value instanceof Instrument) { this.exerciseRelatedDiet((Instrument)value); return; }
+      if ("exerciseRelatedDiets".equals(key) && value instanceof Instrument) { this.exerciseRelatedDiet((Instrument)value); return; }
       if ("exercisePlan".equals(key) && value instanceof Instrument) { this.exercisePlan((Instrument)value); return; }
       if ("exercisePlans".equals(key) && value instanceof Instrument) { this.exercisePlan((Instrument)value); return; }
-      if ("sportsActivityLocation".equals(key) && value instanceof SportsActivityLocation) { this.sportsActivityLocation((SportsActivityLocation)value); return; }
-      if ("sportsActivityLocations".equals(key) && value instanceof SportsActivityLocation) { this.sportsActivityLocation((SportsActivityLocation)value); return; }
+      if ("sportsActivityLocation".equals(key) && value instanceof Location) { this.sportsActivityLocation((Location)value); return; }
+      if ("sportsActivityLocations".equals(key) && value instanceof Location) { this.sportsActivityLocation((Location)value); return; }
       super.fromMap(key, value);
     }
   }

@@ -30,53 +30,19 @@ public class ArchiveComponent extends CreativeWork {
   /**
    * Current location of the item.
    */
-  @JsonIgnore public Place getItemLocationPlace() {
-    return (Place) getValue("itemLocation");
+  @JsonIgnore public Location getItemLocation() {
+    return (Location) getValue("itemLocation");
   }
   /**
    * Current location of the item.
    */
-  @JsonIgnore public java.util.Collection<Place> getItemLocationPlaces() {
+  @JsonIgnore public java.util.Collection<Location> getItemLocations() {
     final Object current = myData.get("itemLocation");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<Place>) current;
+      return (java.util.Collection<Location>) current;
     }
-    return Arrays.asList((Place) current);
-  }
-  /**
-   * Current location of the item.
-   */
-  @JsonIgnore public PostalAddress getItemLocationPostalAddress() {
-    return (PostalAddress) getValue("itemLocation");
-  }
-  /**
-   * Current location of the item.
-   */
-  @JsonIgnore public java.util.Collection<PostalAddress> getItemLocationPostalAddresss() {
-    final Object current = myData.get("itemLocation");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof java.util.Collection) {
-      return (java.util.Collection<PostalAddress>) current;
-    }
-    return Arrays.asList((PostalAddress) current);
-  }
-  /**
-   * Current location of the item.
-   */
-  @JsonIgnore public String getItemLocationString() {
-    return (String) getValue("itemLocation");
-  }
-  /**
-   * Current location of the item.
-   */
-  @JsonIgnore public java.util.Collection<String> getItemLocationStrings() {
-    final Object current = myData.get("itemLocation");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof java.util.Collection) {
-      return (java.util.Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
+    return Arrays.asList((Location) current);
   }
   /**
    * [[ArchiveOrganization]] that holds, keeps or maintains the [[ArchiveComponent]].
@@ -112,36 +78,8 @@ public class ArchiveComponent extends CreativeWork {
     /**
      * Current location of the item.
      */
-    @NotNull public Builder itemLocation(@NotNull Place place) {
-      putValue("itemLocation", place);
-      return this;
-    }
-    /**
-     * Current location of the item.
-     */
-    @NotNull public Builder itemLocation(@NotNull Place.Builder place) {
-      putValue("itemLocation", place.build());
-      return this;
-    }
-    /**
-     * Current location of the item.
-     */
-    @NotNull public Builder itemLocation(@NotNull PostalAddress postalAddress) {
-      putValue("itemLocation", postalAddress);
-      return this;
-    }
-    /**
-     * Current location of the item.
-     */
-    @NotNull public Builder itemLocation(@NotNull PostalAddress.Builder postalAddress) {
-      putValue("itemLocation", postalAddress.build());
-      return this;
-    }
-    /**
-     * Current location of the item.
-     */
-    @NotNull public Builder itemLocation(@NotNull String itemLocation) {
-      putValue("itemLocation", itemLocation);
+    @NotNull public Builder itemLocation(@NotNull Location location) {
+      putValue("itemLocation", location);
       return this;
     }
     /**
@@ -700,22 +638,8 @@ public class ArchiveComponent extends CreativeWork {
     /**
      * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
      */
-    @NotNull public Builder acquireLicensePage(@NotNull CreativeWork creativeWork) {
-      putValue("acquireLicensePage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
-     */
-    @NotNull public Builder acquireLicensePage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("acquireLicensePage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
-     */
-    @NotNull public Builder acquireLicensePage(@NotNull String acquireLicensePage) {
-      putValue("acquireLicensePage", acquireLicensePage);
+    @NotNull public Builder acquireLicensePage(@NotNull UsageInfo usageInfo) {
+      putValue("acquireLicensePage", usageInfo);
       return this;
     }
     /**
@@ -733,8 +657,8 @@ public class ArchiveComponent extends CreativeWork {
      * Since schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.
      * 
      */
-    @NotNull public Builder editEIDR(@NotNull String editEIDR) {
-      putValue("editEIDR", editEIDR);
+    @NotNull public Builder editEIDR(@NotNull Identifier identifier) {
+      putValue("editEIDR", identifier);
       return this;
     }
     /**
@@ -1647,15 +1571,8 @@ public class ArchiveComponent extends CreativeWork {
     /**
      * Indicates the primary entity described in some page or other CreativeWork.
      */
-    @NotNull public Builder mainEntity(@NotNull Thing thing) {
-      putValue("mainEntity", thing);
-      return this;
-    }
-    /**
-     * Indicates the primary entity described in some page or other CreativeWork.
-     */
-    @NotNull public Builder mainEntity(@NotNull Thing.Builder thing) {
-      putValue("mainEntity", thing.build());
+    @NotNull public Builder mainEntity(@NotNull About about) {
+      putValue("mainEntity", about);
       return this;
     }
     /**
@@ -1806,12 +1723,8 @@ public class ArchiveComponent extends CreativeWork {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("itemLocation".equals(key) && value instanceof Place) { this.itemLocation((Place)value); return; }
-      if ("itemLocations".equals(key) && value instanceof Place) { this.itemLocation((Place)value); return; }
-      if ("itemLocation".equals(key) && value instanceof PostalAddress) { this.itemLocation((PostalAddress)value); return; }
-      if ("itemLocations".equals(key) && value instanceof PostalAddress) { this.itemLocation((PostalAddress)value); return; }
-      if ("itemLocation".equals(key) && value instanceof String) { this.itemLocation((String)value); return; }
-      if ("itemLocations".equals(key) && value instanceof String) { this.itemLocation((String)value); return; }
+      if ("itemLocation".equals(key) && value instanceof Location) { this.itemLocation((Location)value); return; }
+      if ("itemLocations".equals(key) && value instanceof Location) { this.itemLocation((Location)value); return; }
       if ("holdingArchive".equals(key) && value instanceof ArchiveOrganization) { this.holdingArchive((ArchiveOrganization)value); return; }
       if ("holdingArchives".equals(key) && value instanceof ArchiveOrganization) { this.holdingArchive((ArchiveOrganization)value); return; }
       super.fromMap(key, value);

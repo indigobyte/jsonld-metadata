@@ -50,6 +50,10 @@ public class SchemaOrg {
    */
   @NotNull public static AmpStory.Builder ampStory() { return new AmpStory.Builder(new HashMap<String,Object>()); }
   /**
+   * All-wheel Drive is a transmission layout where the engine drives all four wheels.
+   */
+  @NotNull public static AllWheelDriveConfiguration.Builder allWheelDriveConfiguration() { return new AllWheelDriveConfiguration.Builder(new HashMap<String,Object>()); }
+  /**
    * A dentist.
    */
   @NotNull public static Dentist.Builder dentist() { return new Dentist.Builder(new HashMap<String,Object>()); }
@@ -433,6 +437,10 @@ Region = state, canton, prefecture, autonomous community...
    */
   @NotNull public static TheaterGroup.Builder theaterGroup() { return new TheaterGroup.Builder(new HashMap<String,Object>()); }
   /**
+   * The steering position is on the left side of the vehicle (viewed from the main direction of driving).
+   */
+  @NotNull public static LeftHandDriving.Builder leftHandDriving() { return new LeftHandDriving.Builder(new HashMap<String,Object>()); }
+  /**
    * A public swimming pool.
    */
   @NotNull public static PublicSwimmingPool.Builder publicSwimmingPool() { return new PublicSwimmingPool.Builder(new HashMap<String,Object>()); }
@@ -670,6 +678,10 @@ See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on t
    */
   @NotNull public static RecyclingCenter.Builder recyclingCenter() { return new RecyclingCenter.Builder(new HashMap<String,Object>()); }
   /**
+   * Nose function assessment with clinical examination.
+   */
+  @NotNull public static Nose.Builder nose() { return new Nose.Builder(new HashMap<String,Object>()); }
+  /**
    * A fast-food restaurant.
    */
   @NotNull public static FastFoodRestaurant.Builder fastFoodRestaurant() { return new FastFoodRestaurant.Builder(new HashMap<String,Object>()); }
@@ -777,6 +789,10 @@ See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on t
    */
   @NotNull public static TherapeuticProcedure.Builder therapeuticProcedure() { return new TherapeuticProcedure.Builder(new HashMap<String,Object>()); }
   /**
+   * Four-wheel drive is a transmission layout where the engine primarily drives two wheels with a part-time four-wheel drive capability.
+   */
+  @NotNull public static FourWheelDriveConfiguration.Builder fourWheelDriveConfiguration() { return new FourWheelDriveConfiguration.Builder(new HashMap<String,Object>()); }
+  /**
    * A type of blood vessel that specifically carries lymph fluid unidirectionally toward the heart.
    */
   @NotNull public static LymphaticVessel.Builder lymphaticVessel() { return new LymphaticVessel.Builder(new HashMap<String,Object>()); }
@@ -808,6 +824,10 @@ See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on t
    * A government office&amp;#x2014;for example, an IRS or DMV office.
    */
   @NotNull public static GovernmentOffice.Builder governmentOffice() { return new GovernmentOffice.Builder(new HashMap<String,Object>()); }
+  /**
+   * Appearance assessment with clinical examination.
+   */
+  @NotNull public static Appearance.Builder appearance() { return new Appearance.Builder(new HashMap<String,Object>()); }
   /**
    * A lodging business, such as a motel, hotel, or inn.
    */
@@ -930,6 +950,10 @@ This is the equivalent of Atom's element as defined in Feed Paging and Archiving
    * A bar or pub.
    */
   @NotNull public static BarOrPub.Builder barOrPub() { return new BarOrPub.Builder(new HashMap<String,Object>()); }
+  /**
+   * Cardiovascular system assessment withclinical examination.
+   */
+  @NotNull public static CardiovascularExam.Builder cardiovascularExam() { return new CardiovascularExam.Builder(new HashMap<String,Object>()); }
   /**
    * An [[OfferForPurchase]] in Schema.org represents an [[Offer]] to sell something, i.e. an [[Offer]] whose
   [[businessFunction]] is [sell](http://purl.org/goodrelations/v1#Sell.). See [Good Relations](https://en.wikipedia.org/wiki/GoodRelations) for
@@ -1069,10 +1093,6 @@ Note: This type is for information about actual reservations, e.g. in confirmati
    */
   @NotNull public static BoatReservation.Builder boatReservation() { return new BoatReservation.Builder(new HashMap<String,Object>()); }
   /**
-   * Text representing a CSS selector.
-   */
-  @NotNull public static CssSelectorType.Builder cssSelectorType() { return new CssSelectorType.Builder(new HashMap<String,Object>()); }
-  /**
    * An airport.
    */
   @NotNull public static Airport.Builder airport() { return new Airport.Builder(new HashMap<String,Object>()); }
@@ -1135,6 +1155,10 @@ Note: This type is for information about actual reservations, e.g. in confirmati
    * An amusement park.
    */
   @NotNull public static AmusementPark.Builder amusementPark() { return new AmusementPark.Builder(new HashMap<String,Object>()); }
+  /**
+   * Head assessment with clinical examination.
+   */
+  @NotNull public static Head.Builder head() { return new Head.Builder(new HashMap<String,Object>()); }
   /**
    * An accommodation is a place that can accommodate human beings, e.g. a hotel room, a camping pitch, or a meeting room. Many accommodations are for overnight stays, but this is not a mandatory requirement.
 For more specific types of accommodations not defined in schema.org, one can use additionalType with external vocabularies.
@@ -1282,6 +1306,10 @@ See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on t
    */
   @NotNull public static WebPage.Builder webPage() { return new WebPage.Builder(new HashMap<String,Object>()); }
   /**
+   * Lung and respiratory system clinical examination.
+   */
+  @NotNull public static Lung.Builder lung() { return new Lung.Builder(new HashMap<String,Object>()); }
+  /**
    * An EndorsementRating is a rating that expresses some level of endorsement, for example inclusion in a &quot;critic's pick&quot; blog, a
 &quot;Like&quot; or &quot;+1&quot; on a social network. It can be considered the [[result]] of an [[EndorseAction]] in which the [[object]] of the action is rated positively by
 some [[agent]]. As is common elsewhere in schema.org, it is sometimes more useful to describe the results of such an action without explicitly describing the [[Action]].
@@ -1331,6 +1359,10 @@ endorsement rating is particularly useful in the absence of numeric scales as it
    * A field of public health focusing on improving health characteristics of a defined population in relation with their geographical or environment areas.
    */
   @NotNull public static CommunityHealth.Builder communityHealth() { return new CommunityHealth.Builder(new HashMap<String,Object>()); }
+  /**
+   * Musculoskeletal system clinical examination.
+   */
+  @NotNull public static MusculoskeletalExam.Builder musculoskeletalExam() { return new MusculoskeletalExam.Builder(new HashMap<String,Object>()); }
   /**
    * Reserving a concrete object.\n\nRelated actions:\n\n* [[ScheduleAction]]: Unlike ScheduleAction, ReserveAction reserves concrete objects (e.g. a table, a hotel) towards a time slot / spatial allocation.
    */
@@ -1417,6 +1449,10 @@ endorsement rating is particularly useful in the absence of numeric scales as it
    */
   @NotNull public static AuthorizeAction.Builder authorizeAction() { return new AuthorizeAction.Builder(new HashMap<String,Object>()); }
   /**
+   * Genitourinary system function assessment with clinical examination.
+   */
+  @NotNull public static Genitourinary.Builder genitourinary() { return new Genitourinary.Builder(new HashMap<String,Object>()); }
+  /**
    * Season dedicated to TV broadcast and associated online delivery.
    */
   @NotNull public static TVSeason.Builder tVSeason() { return new TVSeason.Builder(new HashMap<String,Object>()); }
@@ -1428,12 +1464,6 @@ endorsement rating is particularly useful in the absence of numeric scales as it
    * A type of blood vessel that specifically carries blood to the heart.
    */
   @NotNull public static Vein.Builder vein() { return new Vein.Builder(new HashMap<String,Object>()); }
-  /**
-   * Instances of the class [[Observation]] are used to specify observations about an entity (which may or may not be an instance of a [[StatisticalPopulation]]), at a particular time. The principal properties of an [[Observation]] are [[observedNode]], [[measuredProperty]], [[measuredValue]] (or [[median]], etc.) and [[observationDate]] ([[measuredProperty]] properties can, but need not always, be W3C RDF Data Cube &quot;measure properties&quot;, as in the [lifeExpectancy example](https://www.w3.org/TR/vocab-data-cube/#dsd-example)).
-See also [[StatisticalPopulation]], and the [data and datasets](/docs/data-and-datasets.html) overview for more details.
-  
-   */
-  @NotNull public static Observation.Builder observation() { return new Observation.Builder(new HashMap<String,Object>()); }
   /**
    * A structured value representing exchange rate.
    */
@@ -1601,6 +1631,10 @@ The amount of a [[Grant]] is represented using [[amount]] as a [[MonetaryAmount]
    */
   @NotNull public static MusicRecording.Builder musicRecording() { return new MusicRecording.Builder(new HashMap<String,Object>()); }
   /**
+   * Abdomen clinical examination.
+   */
+  @NotNull public static Abdomen.Builder abdomen() { return new Abdomen.Builder(new HashMap<String,Object>()); }
+  /**
    * A health club.
    */
   @NotNull public static HealthClub.Builder healthClub() { return new HealthClub.Builder(new HashMap<String,Object>()); }
@@ -1714,10 +1748,6 @@ The amount of a [[Grant]] is represented using [[amount]] as a [[MonetaryAmount]
    */
   @NotNull public static ReactAction.Builder reactAction() { return new ReactAction.Builder(new HashMap<String,Object>()); }
   /**
-   * Text representing an XPath (typically but not necessarily version 1.0).
-   */
-  @NotNull public static XPathType.Builder xPathType() { return new XPathType.Builder(new HashMap<String,Object>()); }
-  /**
    * A hotel is an establishment that provides lodging paid on a short-term basis (Source: Wikipedia, the free encyclopedia, see http://en.wikipedia.org/wiki/Hotel).
 &lt;br /&gt;&lt;br /&gt;
 See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on the use of schema.org for marking up hotels and other forms of accommodations&lt;/a&gt;.
@@ -1816,6 +1846,10 @@ See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on t
    * Event type: Literary event.
    */
   @NotNull public static LiteraryEvent.Builder literaryEvent() { return new LiteraryEvent.Builder(new HashMap<String,Object>()); }
+  /**
+   * Neurological system clinical examination.
+   */
+  @NotNull public static Neuro.Builder neuro() { return new Neuro.Builder(new HashMap<String,Object>()); }
   /**
    * A grocery store.
    */
@@ -2072,6 +2106,10 @@ See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on t
    */
   @NotNull public static WPHeader.Builder wPHeader() { return new WPHeader.Builder(new HashMap<String,Object>()); }
   /**
+   * Ear function assessment with clinical examination.
+   */
+  @NotNull public static Ear.Builder ear() { return new Ear.Builder(new HashMap<String,Object>()); }
+  /**
    * A [hackathon](https://en.wikipedia.org/wiki/Hackathon) event.
    */
   @NotNull public static Hackathon.Builder hackathon() { return new Hackathon.Builder(new HashMap<String,Object>()); }
@@ -2098,6 +2136,10 @@ See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on t
    * The act of stopping or deactivating a device or application (e.g. stopping a timer or turning off a flashlight).
    */
   @NotNull public static DeactivateAction.Builder deactivateAction() { return new DeactivateAction.Builder(new HashMap<String,Object>()); }
+  /**
+   * Neck assessment with clinical examination.
+   */
+  @NotNull public static Neck.Builder neck() { return new Neck.Builder(new HashMap<String,Object>()); }
   /**
    * UserInteraction and its subtypes is an old way of talking about users interacting with pages. It is generally better to use [[Action]]-based vocabulary, alongside types such as [[Comment]].
    */
@@ -2237,6 +2279,14 @@ Examples of funding agencies include ERC, REA, NIH, Bill and Melinda Gates Found
    */
   @NotNull public static Intangible.Builder intangible() { return new Intangible.Builder(new HashMap<String,Object>()); }
   /**
+   * Eye or ophtalmological function assessment with clinical examination.
+   */
+  @NotNull public static Eye.Builder eye() { return new Eye.Builder(new HashMap<String,Object>()); }
+  /**
+   * The steering position is on the right side of the vehicle (viewed from the main direction of driving).
+   */
+  @NotNull public static RightHandDriving.Builder rightHandDriving() { return new RightHandDriving.Builder(new HashMap<String,Object>()); }
+  /**
    * A Workers Union (also known as a Labor Union, Labour Union, or Trade Union) is an organization that promotes the interests of its worker members by collectively bargaining with management, organizing, and political lobbying.
    */
   @NotNull public static WorkersUnion.Builder workersUnion() { return new WorkersUnion.Builder(new HashMap<String,Object>()); }
@@ -2279,10 +2329,6 @@ See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on t
    * A Property value specification.
    */
   @NotNull public static PropertyValueSpecification.Builder propertyValueSpecification() { return new PropertyValueSpecification.Builder(new HashMap<String,Object>()); }
-  /**
-   * Data type: PronounceableText.
-   */
-  @NotNull public static PronounceableText.Builder pronounceableText() { return new PronounceableText.Builder(new HashMap<String,Object>()); }
   /**
    * A screening of a movie or other video.
    */
@@ -2412,6 +2458,10 @@ While a ProductGroup itself is not directly offered for sale, the various varyin
    * An electronics store.
    */
   @NotNull public static ElectronicsStore.Builder electronicsStore() { return new ElectronicsStore.Builder(new HashMap<String,Object>()); }
+  /**
+   * Real-wheel drive is a transmission layout where the engine drives the rear wheels.
+   */
+  @NotNull public static RearWheelDriveConfiguration.Builder rearWheelDriveConfiguration() { return new RearWheelDriveConfiguration.Builder(new HashMap<String,Object>()); }
   /**
    * Health and beauty.
    */
@@ -2635,6 +2685,10 @@ population, and does not imply that the population consists of people. For examp
    */
   @NotNull public static Service.Builder service() { return new Service.Builder(new HashMap<String,Object>()); }
   /**
+   * Skin assessment with clinical examination.
+   */
+  @NotNull public static Skin.Builder skin() { return new Skin.Builder(new HashMap<String,Object>()); }
+  /**
    * A PerformanceRole is a Role that some entity places with regard to a theatrical performance, e.g. in a Movie, TVSeries etc.
    */
   @NotNull public static PerformanceRole.Builder performanceRole() { return new PerformanceRole.Builder(new HashMap<String,Object>()); }
@@ -2740,6 +2794,10 @@ population, and does not imply that the population consists of people. For examp
    * The act of reaching a draw in a competitive activity.
    */
   @NotNull public static TieAction.Builder tieAction() { return new TieAction.Builder(new HashMap<String,Object>()); }
+  /**
+   * Front-wheel drive is a transmission layout where the engine drives the front wheels.
+   */
+  @NotNull public static FrontWheelDriveConfiguration.Builder frontWheelDriveConfiguration() { return new FrontWheelDriveConfiguration.Builder(new HashMap<String,Object>()); }
   /**
    * A process of care involving exercise, changes to diet, fitness routines, and other lifestyle changes aimed at improving a health condition.
    */
@@ -2874,45 +2932,6 @@ A [[ReportageNewsArticle]] which goes deeper into analysis can also be marked wi
    */
   @NotNull public static ReportageNewsArticle.Builder reportageNewsArticle() { return new ReportageNewsArticle.Builder(new HashMap<String,Object>()); }
   /**
-   * A SpecialAnnouncement combines a simple date-stamped textual information update
-      with contextualized Web links and other structured data.  It represents an information update made by a
-      locally-oriented organization, for example schools, pharmacies, healthcare providers,  community groups, police,
-      local government.
-
-For work in progress guidelines on Coronavirus-related markup see [this doc](https://docs.google.com/document/d/14ikaGCKxo50rRM7nvKSlbUpjyIk2WMQd3IkB1lItlrM/edit#).
-
-The motivating scenario for SpecialAnnouncement is the [Coronavirus pandemic](https://en.wikipedia.org/wiki/2019%E2%80%9320_coronavirus_pandemic), and the initial vocabulary is oriented to this urgent situation. Schema.org
-expect to improve the markup iteratively as it is deployed and as feedback emerges from use. In addition to our
-usual [Github entry](https://github.com/schemaorg/schemaorg/issues/2490), feedback comments can also be provided in [this document](https://docs.google.com/document/d/1fpdFFxk8s87CWwACs53SGkYv3aafSxz_DTtOQxMrBJQ/edit#).
-
-
-While this schema is designed to communicate urgent crisis-related information, it is not the same as an emergency warning technology like [CAP](https://en.wikipedia.org/wiki/Common_Alerting_Protocol), although there may be overlaps. The intent is to cover
-the kinds of everyday practical information being posted to existing websites during an emergency situation.
-
-Several kinds of information can be provided:
-
-We encourage the provision of &quot;name&quot;, &quot;text&quot;, &quot;datePosted&quot;, &quot;expires&quot; (if appropriate), &quot;category&quot; and
-&quot;url&quot; as a simple baseline. It is important to provide a value for &quot;category&quot; where possible, most ideally as a well known
-URL from Wikipedia or Wikidata. In the case of the 2019-2020 Coronavirus pandemic, this should be &quot;https://en.wikipedia.org/w/index.php?title=2019-20\_coronavirus\_pandemic&quot; or &quot;https://www.wikidata.org/wiki/Q81068910&quot;.
-
-For many of the possible properties, values can either be simple links or an inline description, depending on whether a summary is available. For a link, provide just the URL of the appropriate page as the property's value. For an inline description, use a [[WebContent]] type, and provide the url as a property of that, alongside at least a simple &quot;[[text]]&quot; summary of the page. It is
-unlikely that a single SpecialAnnouncement will need all of the possible properties simultaneously.
-
-We expect that in many cases the page referenced might contain more specialized structured data, e.g. contact info, [[openingHours]], [[Event]], [[FAQPage]] etc. By linking to those pages from a [[SpecialAnnouncement]] you can help make it clearer that the events are related to the situation (e.g. Coronavirus) indicated by the [[category]] property of the [[SpecialAnnouncement]].
-
-Many [[SpecialAnnouncement]]s will relate to particular regions and to identifiable local organizations. Use [[spatialCoverage]] for the region, and [[announcementLocation]] to indicate specific [[LocalBusiness]]es and [[CivicStructure]]s. If the announcement affects both a particular region and a specific location (for example, a library closure that serves an entire region), use both [[spatialCoverage]] and [[announcementLocation]].
-
-The [[about]] property can be used to indicate entities that are the focus of the announcement. We now recommend using [[about]] only
-for representing non-location entities (e.g. a [[Course]] or a [[RadioStation]]). For places, use [[announcementLocation]] and [[spatialCoverage]]. Consumers of this markup should be aware that the initial design encouraged the use of /about for locations too.
-
-The basic content of [[SpecialAnnouncement]] is similar to that of an [RSS](https://en.wikipedia.org/wiki/RSS) or [Atom](https://en.wikipedia.org/wiki/Atom_(Web_standard)) feed. For publishers without such feeds, basic feed-like information can be shared by posting
-[[SpecialAnnouncement]] updates in a page, e.g. using JSON-LD. For sites with Atom/RSS functionality, you can point to a feed
-with the [[webFeed]] property. This can be a simple URL, or an inline [[DataFeed]] object, with [[encodingFormat]] providing
-media type information e.g. &quot;application/rss+xml&quot; or &quot;application/atom+xml&quot;.
-
-   */
-  @NotNull public static SpecialAnnouncement.Builder specialAnnouncement() { return new SpecialAnnouncement.Builder(new HashMap<String,Object>()); }
-  /**
    * Any part of the human body, typically a component of an anatomical system. Organs, tissues, and cells are all anatomical structures.
    */
   @NotNull public static AnatomicalStructure.Builder anatomicalStructure() { return new AnatomicalStructure.Builder(new HashMap<String,Object>()); }
@@ -3004,6 +3023,10 @@ media type information e.g. &quot;application/rss+xml&quot; or &quot;application
    * The medical care by a physician, or other health-care professional, who is the patient's first contact with the health-care system and who may recommend a specialist if necessary.
    */
   @NotNull public static PrimaryCare.Builder primaryCare() { return new PrimaryCare.Builder(new HashMap<String,Object>()); }
+  /**
+   * Throat assessment with  clinical examination.
+   */
+  @NotNull public static Throat.Builder throat() { return new Throat.Builder(new HashMap<String,Object>()); }
   /**
    * The act of inserting at the end if an ordered collection.
    */
@@ -3535,6 +3558,7 @@ See also the dedicated [document on the use of schema.org for marking up hotels 
     if ("WriteAction".equals(type)) { return new WriteAction.Builder(new HashMap<String,Object>()); }
     if ("WorkBasedProgram".equals(type)) { return new WorkBasedProgram.Builder(new HashMap<String,Object>()); }
     if ("AmpStory".equals(type)) { return new AmpStory.Builder(new HashMap<String,Object>()); }
+    if ("AllWheelDriveConfiguration".equals(type)) { return new AllWheelDriveConfiguration.Builder(new HashMap<String,Object>()); }
     if ("Dentist".equals(type)) { return new Dentist.Builder(new HashMap<String,Object>()); }
     if ("TextDigitalDocument".equals(type)) { return new TextDigitalDocument.Builder(new HashMap<String,Object>()); }
     if ("CancelAction".equals(type)) { return new CancelAction.Builder(new HashMap<String,Object>()); }
@@ -3622,6 +3646,7 @@ See also the dedicated [document on the use of schema.org for marking up hotels 
     if ("MedicalTrial".equals(type)) { return new MedicalTrial.Builder(new HashMap<String,Object>()); }
     if ("ExercisePlan".equals(type)) { return new ExercisePlan.Builder(new HashMap<String,Object>()); }
     if ("TheaterGroup".equals(type)) { return new TheaterGroup.Builder(new HashMap<String,Object>()); }
+    if ("LeftHandDriving".equals(type)) { return new LeftHandDriving.Builder(new HashMap<String,Object>()); }
     if ("PublicSwimmingPool".equals(type)) { return new PublicSwimmingPool.Builder(new HashMap<String,Object>()); }
     if ("TaxiReservation".equals(type)) { return new TaxiReservation.Builder(new HashMap<String,Object>()); }
     if ("ReturnAction".equals(type)) { return new ReturnAction.Builder(new HashMap<String,Object>()); }
@@ -3680,6 +3705,7 @@ See also the dedicated [document on the use of schema.org for marking up hotels 
     if ("WholesaleStore".equals(type)) { return new WholesaleStore.Builder(new HashMap<String,Object>()); }
     if ("GovernmentPermit".equals(type)) { return new GovernmentPermit.Builder(new HashMap<String,Object>()); }
     if ("RecyclingCenter".equals(type)) { return new RecyclingCenter.Builder(new HashMap<String,Object>()); }
+    if ("Nose".equals(type)) { return new Nose.Builder(new HashMap<String,Object>()); }
     if ("FastFoodRestaurant".equals(type)) { return new FastFoodRestaurant.Builder(new HashMap<String,Object>()); }
     if ("MaximumDoseSchedule".equals(type)) { return new MaximumDoseSchedule.Builder(new HashMap<String,Object>()); }
     if ("SeekToAction".equals(type)) { return new SeekToAction.Builder(new HashMap<String,Object>()); }
@@ -3706,6 +3732,7 @@ See also the dedicated [document on the use of schema.org for marking up hotels 
     if ("PropertyValue".equals(type)) { return new PropertyValue.Builder(new HashMap<String,Object>()); }
     if ("Periodical".equals(type)) { return new Periodical.Builder(new HashMap<String,Object>()); }
     if ("TherapeuticProcedure".equals(type)) { return new TherapeuticProcedure.Builder(new HashMap<String,Object>()); }
+    if ("FourWheelDriveConfiguration".equals(type)) { return new FourWheelDriveConfiguration.Builder(new HashMap<String,Object>()); }
     if ("LymphaticVessel".equals(type)) { return new LymphaticVessel.Builder(new HashMap<String,Object>()); }
     if ("LegislationObject".equals(type)) { return new LegislationObject.Builder(new HashMap<String,Object>()); }
     if ("EndorseAction".equals(type)) { return new EndorseAction.Builder(new HashMap<String,Object>()); }
@@ -3714,6 +3741,7 @@ See also the dedicated [document on the use of schema.org for marking up hotels 
     if ("LakeBodyOfWater".equals(type)) { return new LakeBodyOfWater.Builder(new HashMap<String,Object>()); }
     if ("GasStation".equals(type)) { return new GasStation.Builder(new HashMap<String,Object>()); }
     if ("GovernmentOffice".equals(type)) { return new GovernmentOffice.Builder(new HashMap<String,Object>()); }
+    if ("Appearance".equals(type)) { return new Appearance.Builder(new HashMap<String,Object>()); }
     if ("LodgingBusiness".equals(type)) { return new LodgingBusiness.Builder(new HashMap<String,Object>()); }
     if ("GeneralContractor".equals(type)) { return new GeneralContractor.Builder(new HashMap<String,Object>()); }
     if ("DrugCost".equals(type)) { return new DrugCost.Builder(new HashMap<String,Object>()); }
@@ -3744,6 +3772,7 @@ See also the dedicated [document on the use of schema.org for marking up hotels 
     if ("BroadcastEvent".equals(type)) { return new BroadcastEvent.Builder(new HashMap<String,Object>()); }
     if ("BusTrip".equals(type)) { return new BusTrip.Builder(new HashMap<String,Object>()); }
     if ("BarOrPub".equals(type)) { return new BarOrPub.Builder(new HashMap<String,Object>()); }
+    if ("CardiovascularExam".equals(type)) { return new CardiovascularExam.Builder(new HashMap<String,Object>()); }
     if ("OfferForPurchase".equals(type)) { return new OfferForPurchase.Builder(new HashMap<String,Object>()); }
     if ("GiveAction".equals(type)) { return new GiveAction.Builder(new HashMap<String,Object>()); }
     if ("SkiResort".equals(type)) { return new SkiResort.Builder(new HashMap<String,Object>()); }
@@ -3776,7 +3805,6 @@ See also the dedicated [document on the use of schema.org for marking up hotels 
     if ("Corporation".equals(type)) { return new Corporation.Builder(new HashMap<String,Object>()); }
     if ("SportsActivityLocation".equals(type)) { return new SportsActivityLocation.Builder(new HashMap<String,Object>()); }
     if ("BoatReservation".equals(type)) { return new BoatReservation.Builder(new HashMap<String,Object>()); }
-    if ("CssSelectorType".equals(type)) { return new CssSelectorType.Builder(new HashMap<String,Object>()); }
     if ("Airport".equals(type)) { return new Airport.Builder(new HashMap<String,Object>()); }
     if ("MedicalTherapy".equals(type)) { return new MedicalTherapy.Builder(new HashMap<String,Object>()); }
     if ("Seat".equals(type)) { return new Seat.Builder(new HashMap<String,Object>()); }
@@ -3792,6 +3820,7 @@ See also the dedicated [document on the use of schema.org for marking up hotels 
     if ("OwnershipInfo".equals(type)) { return new OwnershipInfo.Builder(new HashMap<String,Object>()); }
     if ("MediaReview".equals(type)) { return new MediaReview.Builder(new HashMap<String,Object>()); }
     if ("AmusementPark".equals(type)) { return new AmusementPark.Builder(new HashMap<String,Object>()); }
+    if ("Head".equals(type)) { return new Head.Builder(new HashMap<String,Object>()); }
     if ("Accommodation".equals(type)) { return new Accommodation.Builder(new HashMap<String,Object>()); }
     if ("RealEstateListing".equals(type)) { return new RealEstateListing.Builder(new HashMap<String,Object>()); }
     if ("QuantitativeValueDistribution".equals(type)) { return new QuantitativeValueDistribution.Builder(new HashMap<String,Object>()); }
@@ -3827,6 +3856,7 @@ See also the dedicated [document on the use of schema.org for marking up hotels 
     if ("LandmarksOrHistoricalBuildings".equals(type)) { return new LandmarksOrHistoricalBuildings.Builder(new HashMap<String,Object>()); }
     if ("ExhibitionEvent".equals(type)) { return new ExhibitionEvent.Builder(new HashMap<String,Object>()); }
     if ("WebPage".equals(type)) { return new WebPage.Builder(new HashMap<String,Object>()); }
+    if ("Lung".equals(type)) { return new Lung.Builder(new HashMap<String,Object>()); }
     if ("EndorsementRating".equals(type)) { return new EndorsementRating.Builder(new HashMap<String,Object>()); }
     if ("ListItem".equals(type)) { return new ListItem.Builder(new HashMap<String,Object>()); }
     if ("RsvpAction".equals(type)) { return new RsvpAction.Builder(new HashMap<String,Object>()); }
@@ -3838,6 +3868,7 @@ See also the dedicated [document on the use of schema.org for marking up hotels 
     if ("WebPageElement".equals(type)) { return new WebPageElement.Builder(new HashMap<String,Object>()); }
     if ("MonetaryGrant".equals(type)) { return new MonetaryGrant.Builder(new HashMap<String,Object>()); }
     if ("CommunityHealth".equals(type)) { return new CommunityHealth.Builder(new HashMap<String,Object>()); }
+    if ("MusculoskeletalExam".equals(type)) { return new MusculoskeletalExam.Builder(new HashMap<String,Object>()); }
     if ("ReserveAction".equals(type)) { return new ReserveAction.Builder(new HashMap<String,Object>()); }
     if ("DefinedTermSet".equals(type)) { return new DefinedTermSet.Builder(new HashMap<String,Object>()); }
     if ("MovieClip".equals(type)) { return new MovieClip.Builder(new HashMap<String,Object>()); }
@@ -3859,10 +3890,10 @@ See also the dedicated [document on the use of schema.org for marking up hotels 
     if ("SoftwareApplication".equals(type)) { return new SoftwareApplication.Builder(new HashMap<String,Object>()); }
     if ("CatholicChurch".equals(type)) { return new CatholicChurch.Builder(new HashMap<String,Object>()); }
     if ("AuthorizeAction".equals(type)) { return new AuthorizeAction.Builder(new HashMap<String,Object>()); }
+    if ("Genitourinary".equals(type)) { return new Genitourinary.Builder(new HashMap<String,Object>()); }
     if ("TVSeason".equals(type)) { return new TVSeason.Builder(new HashMap<String,Object>()); }
     if ("WinAction".equals(type)) { return new WinAction.Builder(new HashMap<String,Object>()); }
     if ("Vein".equals(type)) { return new Vein.Builder(new HashMap<String,Object>()); }
-    if ("Observation".equals(type)) { return new Observation.Builder(new HashMap<String,Object>()); }
     if ("ExchangeRateSpecification".equals(type)) { return new ExchangeRateSpecification.Builder(new HashMap<String,Object>()); }
     if ("EntertainmentBusiness".equals(type)) { return new EntertainmentBusiness.Builder(new HashMap<String,Object>()); }
     if ("Episode".equals(type)) { return new Episode.Builder(new HashMap<String,Object>()); }
@@ -3901,6 +3932,7 @@ See also the dedicated [document on the use of schema.org for marking up hotels 
     if ("ProfilePage".equals(type)) { return new ProfilePage.Builder(new HashMap<String,Object>()); }
     if ("DeliveryChargeSpecification".equals(type)) { return new DeliveryChargeSpecification.Builder(new HashMap<String,Object>()); }
     if ("MusicRecording".equals(type)) { return new MusicRecording.Builder(new HashMap<String,Object>()); }
+    if ("Abdomen".equals(type)) { return new Abdomen.Builder(new HashMap<String,Object>()); }
     if ("HealthClub".equals(type)) { return new HealthClub.Builder(new HashMap<String,Object>()); }
     if ("Attorney".equals(type)) { return new Attorney.Builder(new HashMap<String,Object>()); }
     if ("ArchiveComponent".equals(type)) { return new ArchiveComponent.Builder(new HashMap<String,Object>()); }
@@ -3928,7 +3960,6 @@ See also the dedicated [document on the use of schema.org for marking up hotels 
     if ("CreditCard".equals(type)) { return new CreditCard.Builder(new HashMap<String,Object>()); }
     if ("DataDownload".equals(type)) { return new DataDownload.Builder(new HashMap<String,Object>()); }
     if ("ReactAction".equals(type)) { return new ReactAction.Builder(new HashMap<String,Object>()); }
-    if ("XPathType".equals(type)) { return new XPathType.Builder(new HashMap<String,Object>()); }
     if ("Hotel".equals(type)) { return new Hotel.Builder(new HashMap<String,Object>()); }
     if ("Optician".equals(type)) { return new Optician.Builder(new HashMap<String,Object>()); }
     if ("ResumeAction".equals(type)) { return new ResumeAction.Builder(new HashMap<String,Object>()); }
@@ -3953,6 +3984,7 @@ See also the dedicated [document on the use of schema.org for marking up hotels 
     if ("AutoDealer".equals(type)) { return new AutoDealer.Builder(new HashMap<String,Object>()); }
     if ("WebApplication".equals(type)) { return new WebApplication.Builder(new HashMap<String,Object>()); }
     if ("LiteraryEvent".equals(type)) { return new LiteraryEvent.Builder(new HashMap<String,Object>()); }
+    if ("Neuro".equals(type)) { return new Neuro.Builder(new HashMap<String,Object>()); }
     if ("GroceryStore".equals(type)) { return new GroceryStore.Builder(new HashMap<String,Object>()); }
     if ("BioChemEntity".equals(type)) { return new BioChemEntity.Builder(new HashMap<String,Object>()); }
     if ("NailSalon".equals(type)) { return new NailSalon.Builder(new HashMap<String,Object>()); }
@@ -4015,12 +4047,14 @@ See also the dedicated [document on the use of schema.org for marking up hotels 
     if ("MedicalRiskEstimator".equals(type)) { return new MedicalRiskEstimator.Builder(new HashMap<String,Object>()); }
     if ("BusinessAudience".equals(type)) { return new BusinessAudience.Builder(new HashMap<String,Object>()); }
     if ("WPHeader".equals(type)) { return new WPHeader.Builder(new HashMap<String,Object>()); }
+    if ("Ear".equals(type)) { return new Ear.Builder(new HashMap<String,Object>()); }
     if ("Hackathon".equals(type)) { return new Hackathon.Builder(new HashMap<String,Object>()); }
     if ("JobPosting".equals(type)) { return new JobPosting.Builder(new HashMap<String,Object>()); }
     if ("MathSolver".equals(type)) { return new MathSolver.Builder(new HashMap<String,Object>()); }
     if ("Motel".equals(type)) { return new Motel.Builder(new HashMap<String,Object>()); }
     if ("SportsOrganization".equals(type)) { return new SportsOrganization.Builder(new HashMap<String,Object>()); }
     if ("DeactivateAction".equals(type)) { return new DeactivateAction.Builder(new HashMap<String,Object>()); }
+    if ("Neck".equals(type)) { return new Neck.Builder(new HashMap<String,Object>()); }
     if ("UserLikes".equals(type)) { return new UserLikes.Builder(new HashMap<String,Object>()); }
     if ("ChemicalSubstance".equals(type)) { return new ChemicalSubstance.Builder(new HashMap<String,Object>()); }
     if ("ParentAudience".equals(type)) { return new ParentAudience.Builder(new HashMap<String,Object>()); }
@@ -4052,6 +4086,8 @@ See also the dedicated [document on the use of schema.org for marking up hotels 
     if ("Oncologic".equals(type)) { return new Oncologic.Builder(new HashMap<String,Object>()); }
     if ("Flight".equals(type)) { return new Flight.Builder(new HashMap<String,Object>()); }
     if ("Intangible".equals(type)) { return new Intangible.Builder(new HashMap<String,Object>()); }
+    if ("Eye".equals(type)) { return new Eye.Builder(new HashMap<String,Object>()); }
+    if ("RightHandDriving".equals(type)) { return new RightHandDriving.Builder(new HashMap<String,Object>()); }
     if ("WorkersUnion".equals(type)) { return new WorkersUnion.Builder(new HashMap<String,Object>()); }
     if ("SubscribeAction".equals(type)) { return new SubscribeAction.Builder(new HashMap<String,Object>()); }
     if ("ReplyAction".equals(type)) { return new ReplyAction.Builder(new HashMap<String,Object>()); }
@@ -4062,7 +4098,6 @@ See also the dedicated [document on the use of schema.org for marking up hotels 
     if ("EmailMessage".equals(type)) { return new EmailMessage.Builder(new HashMap<String,Object>()); }
     if ("Suite".equals(type)) { return new Suite.Builder(new HashMap<String,Object>()); }
     if ("PropertyValueSpecification".equals(type)) { return new PropertyValueSpecification.Builder(new HashMap<String,Object>()); }
-    if ("PronounceableText".equals(type)) { return new PronounceableText.Builder(new HashMap<String,Object>()); }
     if ("ScreeningEvent".equals(type)) { return new ScreeningEvent.Builder(new HashMap<String,Object>()); }
     if ("Drawing".equals(type)) { return new Drawing.Builder(new HashMap<String,Object>()); }
     if ("MedicalGuideline".equals(type)) { return new MedicalGuideline.Builder(new HashMap<String,Object>()); }
@@ -4094,6 +4129,7 @@ See also the dedicated [document on the use of schema.org for marking up hotels 
     if ("BankOrCreditUnion".equals(type)) { return new BankOrCreditUnion.Builder(new HashMap<String,Object>()); }
     if ("RealEstateAgent".equals(type)) { return new RealEstateAgent.Builder(new HashMap<String,Object>()); }
     if ("ElectronicsStore".equals(type)) { return new ElectronicsStore.Builder(new HashMap<String,Object>()); }
+    if ("RearWheelDriveConfiguration".equals(type)) { return new RearWheelDriveConfiguration.Builder(new HashMap<String,Object>()); }
     if ("HealthAndBeautyBusiness".equals(type)) { return new HealthAndBeautyBusiness.Builder(new HashMap<String,Object>()); }
     if ("Nursing".equals(type)) { return new Nursing.Builder(new HashMap<String,Object>()); }
     if ("Researcher".equals(type)) { return new Researcher.Builder(new HashMap<String,Object>()); }
@@ -4146,6 +4182,7 @@ See also the dedicated [document on the use of schema.org for marking up hotels 
     if ("TaxiService".equals(type)) { return new TaxiService.Builder(new HashMap<String,Object>()); }
     if ("StatisticalPopulation".equals(type)) { return new StatisticalPopulation.Builder(new HashMap<String,Object>()); }
     if ("Service".equals(type)) { return new Service.Builder(new HashMap<String,Object>()); }
+    if ("Skin".equals(type)) { return new Skin.Builder(new HashMap<String,Object>()); }
     if ("PerformanceRole".equals(type)) { return new PerformanceRole.Builder(new HashMap<String,Object>()); }
     if ("DeliveryTimeSettings".equals(type)) { return new DeliveryTimeSettings.Builder(new HashMap<String,Object>()); }
     if ("Courthouse".equals(type)) { return new Courthouse.Builder(new HashMap<String,Object>()); }
@@ -4172,6 +4209,7 @@ See also the dedicated [document on the use of schema.org for marking up hotels 
     if ("Playground".equals(type)) { return new Playground.Builder(new HashMap<String,Object>()); }
     if ("CivicStructure".equals(type)) { return new CivicStructure.Builder(new HashMap<String,Object>()); }
     if ("TieAction".equals(type)) { return new TieAction.Builder(new HashMap<String,Object>()); }
+    if ("FrontWheelDriveConfiguration".equals(type)) { return new FrontWheelDriveConfiguration.Builder(new HashMap<String,Object>()); }
     if ("LifestyleModification".equals(type)) { return new LifestyleModification.Builder(new HashMap<String,Object>()); }
     if ("HowToTool".equals(type)) { return new HowToTool.Builder(new HashMap<String,Object>()); }
     if ("GameServer".equals(type)) { return new GameServer.Builder(new HashMap<String,Object>()); }
@@ -4203,7 +4241,6 @@ See also the dedicated [document on the use of schema.org for marking up hotels 
     if ("LeaveAction".equals(type)) { return new LeaveAction.Builder(new HashMap<String,Object>()); }
     if ("UserComments".equals(type)) { return new UserComments.Builder(new HashMap<String,Object>()); }
     if ("ReportageNewsArticle".equals(type)) { return new ReportageNewsArticle.Builder(new HashMap<String,Object>()); }
-    if ("SpecialAnnouncement".equals(type)) { return new SpecialAnnouncement.Builder(new HashMap<String,Object>()); }
     if ("AnatomicalStructure".equals(type)) { return new AnatomicalStructure.Builder(new HashMap<String,Object>()); }
     if ("HowToTip".equals(type)) { return new HowToTip.Builder(new HashMap<String,Object>()); }
     if ("AssignAction".equals(type)) { return new AssignAction.Builder(new HashMap<String,Object>()); }
@@ -4227,6 +4264,7 @@ See also the dedicated [document on the use of schema.org for marking up hotels 
     if ("PsychologicalTreatment".equals(type)) { return new PsychologicalTreatment.Builder(new HashMap<String,Object>()); }
     if ("TVEpisode".equals(type)) { return new TVEpisode.Builder(new HashMap<String,Object>()); }
     if ("PrimaryCare".equals(type)) { return new PrimaryCare.Builder(new HashMap<String,Object>()); }
+    if ("Throat".equals(type)) { return new Throat.Builder(new HashMap<String,Object>()); }
     if ("AppendAction".equals(type)) { return new AppendAction.Builder(new HashMap<String,Object>()); }
     if ("MedicalContraindication".equals(type)) { return new MedicalContraindication.Builder(new HashMap<String,Object>()); }
     if ("MobileApplication".equals(type)) { return new MobileApplication.Builder(new HashMap<String,Object>()); }

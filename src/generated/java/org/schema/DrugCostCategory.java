@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * Enumerated categories of medical drug costs.
  */
 public enum DrugCostCategory {
-  ;
+  Retail("http://schema.org/Retail"), Wholesale("http://schema.org/Wholesale"), ReimbursementCap("http://schema.org/ReimbursementCap");
   DrugCostCategory(String value) {
     myValue = value;
   }

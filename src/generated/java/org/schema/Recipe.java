@@ -64,19 +64,19 @@ public class Recipe extends HowTo {
   /**
    * A single ingredient used in the recipe, e.g. sugar, flour or garlic.
    */
-  @JsonIgnore public String getRecipeIngredient() {
-    return (String) getValue("recipeIngredient");
+  @JsonIgnore public Supply getRecipeIngredient() {
+    return (Supply) getValue("recipeIngredient");
   }
   /**
    * A single ingredient used in the recipe, e.g. sugar, flour or garlic.
    */
-  @JsonIgnore public java.util.Collection<String> getRecipeIngredients() {
+  @JsonIgnore public java.util.Collection<Supply> getRecipeIngredients() {
     final Object current = myData.get("recipeIngredient");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<String>) current;
+      return (java.util.Collection<Supply>) current;
     }
-    return Arrays.asList((String) current);
+    return Arrays.asList((Supply) current);
   }
   /**
    * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
@@ -149,53 +149,36 @@ public class Recipe extends HowTo {
   /**
    * The quantity produced by the recipe (for example, number of people served, number of servings, etc).
    */
-  @JsonIgnore public QuantitativeValue getRecipeYieldQuantitativeValue() {
-    return (QuantitativeValue) getValue("recipeYield");
+  @JsonIgnore public Yield getRecipeYield() {
+    return (Yield) getValue("recipeYield");
   }
   /**
    * The quantity produced by the recipe (for example, number of people served, number of servings, etc).
    */
-  @JsonIgnore public java.util.Collection<QuantitativeValue> getRecipeYieldQuantitativeValues() {
+  @JsonIgnore public java.util.Collection<Yield> getRecipeYields() {
     final Object current = myData.get("recipeYield");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<QuantitativeValue>) current;
+      return (java.util.Collection<Yield>) current;
     }
-    return Arrays.asList((QuantitativeValue) current);
-  }
-  /**
-   * The quantity produced by the recipe (for example, number of people served, number of servings, etc).
-   */
-  @JsonIgnore public String getRecipeYieldString() {
-    return (String) getValue("recipeYield");
-  }
-  /**
-   * The quantity produced by the recipe (for example, number of people served, number of servings, etc).
-   */
-  @JsonIgnore public java.util.Collection<String> getRecipeYieldStrings() {
-    final Object current = myData.get("recipeYield");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof java.util.Collection) {
-      return (java.util.Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
+    return Arrays.asList((Yield) current);
   }
   /**
    * The time it takes to actually cook the dish, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
    */
-  @JsonIgnore public Duration getCookTime() {
-    return (Duration) getValue("cookTime");
+  @JsonIgnore public PerformTime getCookTime() {
+    return (PerformTime) getValue("cookTime");
   }
   /**
    * The time it takes to actually cook the dish, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
    */
-  @JsonIgnore public java.util.Collection<Duration> getCookTimes() {
+  @JsonIgnore public java.util.Collection<PerformTime> getCookTimes() {
     final Object current = myData.get("cookTime");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<Duration>) current;
+      return (java.util.Collection<PerformTime>) current;
     }
-    return Arrays.asList((Duration) current);
+    return Arrays.asList((PerformTime) current);
   }
   protected Recipe(java.util.Map<String,Object> data) {
     super(data);
@@ -228,8 +211,8 @@ public class Recipe extends HowTo {
     /**
      * A single ingredient used in the recipe, e.g. sugar, flour or garlic.
      */
-    @NotNull public Builder recipeIngredient(@NotNull String recipeIngredient) {
-      putValue("recipeIngredient", recipeIngredient);
+    @NotNull public Builder recipeIngredient(@NotNull Supply supply) {
+      putValue("recipeIngredient", supply);
       return this;
     }
     /**
@@ -270,29 +253,15 @@ public class Recipe extends HowTo {
     /**
      * The quantity produced by the recipe (for example, number of people served, number of servings, etc).
      */
-    @NotNull public Builder recipeYield(@NotNull QuantitativeValue quantitativeValue) {
-      putValue("recipeYield", quantitativeValue);
-      return this;
-    }
-    /**
-     * The quantity produced by the recipe (for example, number of people served, number of servings, etc).
-     */
-    @NotNull public Builder recipeYield(@NotNull QuantitativeValue.Builder quantitativeValue) {
-      putValue("recipeYield", quantitativeValue.build());
-      return this;
-    }
-    /**
-     * The quantity produced by the recipe (for example, number of people served, number of servings, etc).
-     */
-    @NotNull public Builder recipeYield(@NotNull String recipeYield) {
-      putValue("recipeYield", recipeYield);
+    @NotNull public Builder recipeYield(@NotNull Yield yield) {
+      putValue("recipeYield", yield);
       return this;
     }
     /**
      * The time it takes to actually cook the dish, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
      */
-    @NotNull public Builder cookTime(@NotNull Duration duration) {
-      putValue("cookTime", duration);
+    @NotNull public Builder cookTime(@NotNull PerformTime performTime) {
+      putValue("cookTime", performTime);
       return this;
     }
     /**
@@ -907,22 +876,8 @@ public class Recipe extends HowTo {
     /**
      * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
      */
-    @NotNull public Builder acquireLicensePage(@NotNull CreativeWork creativeWork) {
-      putValue("acquireLicensePage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
-     */
-    @NotNull public Builder acquireLicensePage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("acquireLicensePage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
-     */
-    @NotNull public Builder acquireLicensePage(@NotNull String acquireLicensePage) {
-      putValue("acquireLicensePage", acquireLicensePage);
+    @NotNull public Builder acquireLicensePage(@NotNull UsageInfo usageInfo) {
+      putValue("acquireLicensePage", usageInfo);
       return this;
     }
     /**
@@ -940,8 +895,8 @@ public class Recipe extends HowTo {
      * Since schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.
      * 
      */
-    @NotNull public Builder editEIDR(@NotNull String editEIDR) {
-      putValue("editEIDR", editEIDR);
+    @NotNull public Builder editEIDR(@NotNull Identifier identifier) {
+      putValue("editEIDR", identifier);
       return this;
     }
     /**
@@ -1854,15 +1809,8 @@ public class Recipe extends HowTo {
     /**
      * Indicates the primary entity described in some page or other CreativeWork.
      */
-    @NotNull public Builder mainEntity(@NotNull Thing thing) {
-      putValue("mainEntity", thing);
-      return this;
-    }
-    /**
-     * Indicates the primary entity described in some page or other CreativeWork.
-     */
-    @NotNull public Builder mainEntity(@NotNull Thing.Builder thing) {
-      putValue("mainEntity", thing.build());
+    @NotNull public Builder mainEntity(@NotNull About about) {
+      putValue("mainEntity", about);
       return this;
     }
     /**
@@ -2017,8 +1965,8 @@ public class Recipe extends HowTo {
       if ("suitableForDiets".equals(key) && value instanceof RestrictedDiet) { this.suitableForDiet((RestrictedDiet)value); return; }
       if ("recipeCategory".equals(key) && value instanceof String) { this.recipeCategory((String)value); return; }
       if ("recipeCategorys".equals(key) && value instanceof String) { this.recipeCategory((String)value); return; }
-      if ("recipeIngredient".equals(key) && value instanceof String) { this.recipeIngredient((String)value); return; }
-      if ("recipeIngredients".equals(key) && value instanceof String) { this.recipeIngredient((String)value); return; }
+      if ("recipeIngredient".equals(key) && value instanceof Supply) { this.recipeIngredient((Supply)value); return; }
+      if ("recipeIngredients".equals(key) && value instanceof Supply) { this.recipeIngredient((Supply)value); return; }
       if ("recipeInstructions".equals(key) && value instanceof Step) { this.recipeInstructions((Step)value); return; }
       if ("recipeInstructionss".equals(key) && value instanceof Step) { this.recipeInstructions((Step)value); return; }
       if ("recipeCuisine".equals(key) && value instanceof String) { this.recipeCuisine((String)value); return; }
@@ -2027,12 +1975,10 @@ public class Recipe extends HowTo {
       if ("nutritions".equals(key) && value instanceof NutritionInformation) { this.nutrition((NutritionInformation)value); return; }
       if ("cookingMethod".equals(key) && value instanceof String) { this.cookingMethod((String)value); return; }
       if ("cookingMethods".equals(key) && value instanceof String) { this.cookingMethod((String)value); return; }
-      if ("recipeYield".equals(key) && value instanceof QuantitativeValue) { this.recipeYield((QuantitativeValue)value); return; }
-      if ("recipeYields".equals(key) && value instanceof QuantitativeValue) { this.recipeYield((QuantitativeValue)value); return; }
-      if ("recipeYield".equals(key) && value instanceof String) { this.recipeYield((String)value); return; }
-      if ("recipeYields".equals(key) && value instanceof String) { this.recipeYield((String)value); return; }
-      if ("cookTime".equals(key) && value instanceof Duration) { this.cookTime((Duration)value); return; }
-      if ("cookTimes".equals(key) && value instanceof Duration) { this.cookTime((Duration)value); return; }
+      if ("recipeYield".equals(key) && value instanceof Yield) { this.recipeYield((Yield)value); return; }
+      if ("recipeYields".equals(key) && value instanceof Yield) { this.recipeYield((Yield)value); return; }
+      if ("cookTime".equals(key) && value instanceof PerformTime) { this.cookTime((PerformTime)value); return; }
+      if ("cookTimes".equals(key) && value instanceof PerformTime) { this.cookTime((PerformTime)value); return; }
       super.fromMap(key, value);
     }
   }

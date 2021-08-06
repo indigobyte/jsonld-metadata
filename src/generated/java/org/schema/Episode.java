@@ -115,36 +115,19 @@ public class Episode extends CreativeWork {
   /**
    * Position of the episode within an ordered group of episodes.
    */
-  @JsonIgnore public Integer getEpisodeNumberInteger() {
-    return (Integer) getValue("episodeNumber");
+  @JsonIgnore public Position getEpisodeNumber() {
+    return (Position) getValue("episodeNumber");
   }
   /**
    * Position of the episode within an ordered group of episodes.
    */
-  @JsonIgnore public java.util.Collection<Integer> getEpisodeNumberIntegers() {
+  @JsonIgnore public java.util.Collection<Position> getEpisodeNumbers() {
     final Object current = myData.get("episodeNumber");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<Integer>) current;
+      return (java.util.Collection<Position>) current;
     }
-    return Arrays.asList((Integer) current);
-  }
-  /**
-   * Position of the episode within an ordered group of episodes.
-   */
-  @JsonIgnore public String getEpisodeNumberString() {
-    return (String) getValue("episodeNumber");
-  }
-  /**
-   * Position of the episode within an ordered group of episodes.
-   */
-  @JsonIgnore public java.util.Collection<String> getEpisodeNumberStrings() {
-    final Object current = myData.get("episodeNumber");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof java.util.Collection) {
-      return (java.util.Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
+    return Arrays.asList((Position) current);
   }
   /**
    * The composer of the soundtrack.
@@ -287,15 +270,8 @@ public class Episode extends CreativeWork {
     /**
      * Position of the episode within an ordered group of episodes.
      */
-    @NotNull public Builder episodeNumber(@NotNull Integer integer) {
-      putValue("episodeNumber", integer);
-      return this;
-    }
-    /**
-     * Position of the episode within an ordered group of episodes.
-     */
-    @NotNull public Builder episodeNumber(@NotNull String episodeNumber) {
-      putValue("episodeNumber", episodeNumber);
+    @NotNull public Builder episodeNumber(@NotNull Position position) {
+      putValue("episodeNumber", position);
       return this;
     }
     /**
@@ -882,22 +858,8 @@ public class Episode extends CreativeWork {
     /**
      * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
      */
-    @NotNull public Builder acquireLicensePage(@NotNull CreativeWork creativeWork) {
-      putValue("acquireLicensePage", creativeWork);
-      return this;
-    }
-    /**
-     * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
-     */
-    @NotNull public Builder acquireLicensePage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("acquireLicensePage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
-     */
-    @NotNull public Builder acquireLicensePage(@NotNull String acquireLicensePage) {
-      putValue("acquireLicensePage", acquireLicensePage);
+    @NotNull public Builder acquireLicensePage(@NotNull UsageInfo usageInfo) {
+      putValue("acquireLicensePage", usageInfo);
       return this;
     }
     /**
@@ -915,8 +877,8 @@ public class Episode extends CreativeWork {
      * Since schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.
      * 
      */
-    @NotNull public Builder editEIDR(@NotNull String editEIDR) {
-      putValue("editEIDR", editEIDR);
+    @NotNull public Builder editEIDR(@NotNull Identifier identifier) {
+      putValue("editEIDR", identifier);
       return this;
     }
     /**
@@ -1829,15 +1791,8 @@ public class Episode extends CreativeWork {
     /**
      * Indicates the primary entity described in some page or other CreativeWork.
      */
-    @NotNull public Builder mainEntity(@NotNull Thing thing) {
-      putValue("mainEntity", thing);
-      return this;
-    }
-    /**
-     * Indicates the primary entity described in some page or other CreativeWork.
-     */
-    @NotNull public Builder mainEntity(@NotNull Thing.Builder thing) {
-      putValue("mainEntity", thing.build());
+    @NotNull public Builder mainEntity(@NotNull About about) {
+      putValue("mainEntity", about);
       return this;
     }
     /**
@@ -1998,10 +1953,8 @@ public class Episode extends CreativeWork {
       if ("directors".equals(key) && value instanceof Person) { this.director((Person)value); return; }
       if ("trailer".equals(key) && value instanceof VideoObject) { this.trailer((VideoObject)value); return; }
       if ("trailers".equals(key) && value instanceof VideoObject) { this.trailer((VideoObject)value); return; }
-      if ("episodeNumber".equals(key) && value instanceof Integer) { this.episodeNumber((Integer)value); return; }
-      if ("episodeNumbers".equals(key) && value instanceof Integer) { this.episodeNumber((Integer)value); return; }
-      if ("episodeNumber".equals(key) && value instanceof String) { this.episodeNumber((String)value); return; }
-      if ("episodeNumbers".equals(key) && value instanceof String) { this.episodeNumber((String)value); return; }
+      if ("episodeNumber".equals(key) && value instanceof Position) { this.episodeNumber((Position)value); return; }
+      if ("episodeNumbers".equals(key) && value instanceof Position) { this.episodeNumber((Position)value); return; }
       if ("musicBy".equals(key) && value instanceof MusicGroup) { this.musicBy((MusicGroup)value); return; }
       if ("musicBys".equals(key) && value instanceof MusicGroup) { this.musicBy((MusicGroup)value); return; }
       if ("musicBy".equals(key) && value instanceof Person) { this.musicBy((Person)value); return; }

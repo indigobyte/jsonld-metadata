@@ -166,19 +166,19 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
   /**
    * The Dun &amp; Bradstreet DUNS number for identifying an organization or business person.
    */
-  @JsonIgnore public String getDuns() {
-    return (String) getValue("duns");
+  @JsonIgnore public Identifier getDuns() {
+    return (Identifier) getValue("duns");
   }
   /**
    * The Dun &amp; Bradstreet DUNS number for identifying an organization or business person.
    */
-  @JsonIgnore public java.util.Collection<String> getDunss() {
+  @JsonIgnore public java.util.Collection<Identifier> getDunss() {
     final Object current = myData.get("duns");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<String>) current;
+      return (java.util.Collection<Identifier>) current;
     }
-    return Arrays.asList((String) current);
+    return Arrays.asList((Identifier) current);
   }
   /**
    * A contact point for a person or organization.
@@ -1155,8 +1155,8 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
     /**
      * The Dun &amp; Bradstreet DUNS number for identifying an organization or business person.
      */
-    @NotNull public Builder duns(@NotNull String duns) {
-      putValue("duns", duns);
+    @NotNull public Builder duns(@NotNull Identifier identifier) {
+      putValue("duns", identifier);
       return this;
     }
     /**
@@ -1820,8 +1820,8 @@ public class Organization extends Thing implements Creator, Sponsor, MemberOf {
       if ("seekss".equals(key) && value instanceof Demand) { this.seeks((Demand)value); return; }
       if ("unnamedSourcesPolicy".equals(key) && value instanceof PublishingPrinciples) { this.unnamedSourcesPolicy((PublishingPrinciples)value); return; }
       if ("unnamedSourcesPolicys".equals(key) && value instanceof PublishingPrinciples) { this.unnamedSourcesPolicy((PublishingPrinciples)value); return; }
-      if ("duns".equals(key) && value instanceof String) { this.duns((String)value); return; }
-      if ("dunss".equals(key) && value instanceof String) { this.duns((String)value); return; }
+      if ("duns".equals(key) && value instanceof Identifier) { this.duns((Identifier)value); return; }
+      if ("dunss".equals(key) && value instanceof Identifier) { this.duns((Identifier)value); return; }
       if ("contactPoint".equals(key) && value instanceof ContactPoint) { this.contactPoint((ContactPoint)value); return; }
       if ("contactPoints".equals(key) && value instanceof ContactPoint) { this.contactPoint((ContactPoint)value); return; }
       if ("legalName".equals(key) && value instanceof String) { this.legalName((String)value); return; }

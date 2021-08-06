@@ -30,19 +30,19 @@ public class Protein extends BioChemEntity {
   /**
    * A symbolic representation of a BioChemEnity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein.
    */
-  @JsonIgnore public String getHasBioPolymerSequence() {
-    return (String) getValue("hasBioPolymerSequence");
+  @JsonIgnore public HasRepresentation getHasBioPolymerSequence() {
+    return (HasRepresentation) getValue("hasBioPolymerSequence");
   }
   /**
    * A symbolic representation of a BioChemEnity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein.
    */
-  @JsonIgnore public java.util.Collection<String> getHasBioPolymerSequences() {
+  @JsonIgnore public java.util.Collection<HasRepresentation> getHasBioPolymerSequences() {
     final Object current = myData.get("hasBioPolymerSequence");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<String>) current;
+      return (java.util.Collection<HasRepresentation>) current;
     }
-    return Arrays.asList((String) current);
+    return Arrays.asList((HasRepresentation) current);
   }
   protected Protein(java.util.Map<String,Object> data) {
     super(data);
@@ -61,8 +61,8 @@ public class Protein extends BioChemEntity {
     /**
      * A symbolic representation of a BioChemEnity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein.
      */
-    @NotNull public Builder hasBioPolymerSequence(@NotNull String hasBioPolymerSequence) {
-      putValue("hasBioPolymerSequence", hasBioPolymerSequence);
+    @NotNull public Builder hasBioPolymerSequence(@NotNull HasRepresentation hasRepresentation) {
+      putValue("hasBioPolymerSequence", hasRepresentation);
       return this;
     }
     /**
@@ -437,8 +437,8 @@ public class Protein extends BioChemEntity {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, Object value) {
-      if ("hasBioPolymerSequence".equals(key) && value instanceof String) { this.hasBioPolymerSequence((String)value); return; }
-      if ("hasBioPolymerSequences".equals(key) && value instanceof String) { this.hasBioPolymerSequence((String)value); return; }
+      if ("hasBioPolymerSequence".equals(key) && value instanceof HasRepresentation) { this.hasBioPolymerSequence((HasRepresentation)value); return; }
+      if ("hasBioPolymerSequences".equals(key) && value instanceof HasRepresentation) { this.hasBioPolymerSequence((HasRepresentation)value); return; }
       super.fromMap(key, value);
     }
   }

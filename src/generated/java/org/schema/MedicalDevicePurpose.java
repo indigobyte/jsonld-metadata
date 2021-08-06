@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * Categories of medical devices, organized by the purpose or intended use of the device.
  */
 public enum MedicalDevicePurpose {
-  ;
+  Therapeutic("http://schema.org/Therapeutic"), Diagnostic("http://schema.org/Diagnostic");
   MedicalDevicePurpose(String value) {
     myValue = value;
   }
