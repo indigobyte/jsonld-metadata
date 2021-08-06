@@ -115,19 +115,36 @@ public class PublicationVolume extends CreativeWork {
   /**
    * Identifies the volume of publication or multi-part work; for example, &quot;iii&quot; or &quot;2&quot;.
    */
-  @JsonIgnore public Position getVolumeNumber() {
-    return (Position) getValue("volumeNumber");
+  @JsonIgnore public Integer getVolumeNumberInteger() {
+    return (Integer) getValue("volumeNumber");
   }
   /**
    * Identifies the volume of publication or multi-part work; for example, &quot;iii&quot; or &quot;2&quot;.
    */
-  @JsonIgnore public java.util.Collection<Position> getVolumeNumbers() {
+  @JsonIgnore public java.util.Collection<Integer> getVolumeNumberIntegers() {
     final java.lang.Object current = myData.get("volumeNumber");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<Position>) current;
+      return (java.util.Collection<Integer>) current;
     }
-    return Arrays.asList((Position) current);
+    return Arrays.asList((Integer) current);
+  }
+  /**
+   * Identifies the volume of publication or multi-part work; for example, &quot;iii&quot; or &quot;2&quot;.
+   */
+  @JsonIgnore public String getVolumeNumberString() {
+    return (String) getValue("volumeNumber");
+  }
+  /**
+   * Identifies the volume of publication or multi-part work; for example, &quot;iii&quot; or &quot;2&quot;.
+   */
+  @JsonIgnore public java.util.Collection<String> getVolumeNumberStrings() {
+    final java.lang.Object current = myData.get("volumeNumber");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
   }
   protected PublicationVolume(java.util.Map<String,java.lang.Object> data) {
     super(data);
@@ -181,8 +198,15 @@ public class PublicationVolume extends CreativeWork {
     /**
      * Identifies the volume of publication or multi-part work; for example, &quot;iii&quot; or &quot;2&quot;.
      */
-    @NotNull public Builder volumeNumber(@NotNull Position position) {
-      putValue("volumeNumber", position);
+    @NotNull public Builder volumeNumber(@NotNull Integer integer) {
+      putValue("volumeNumber", integer);
+      return this;
+    }
+    /**
+     * Identifies the volume of publication or multi-part work; for example, &quot;iii&quot; or &quot;2&quot;.
+     */
+    @NotNull public Builder volumeNumber(@NotNull String volumeNumber) {
+      putValue("volumeNumber", volumeNumber);
       return this;
     }
     /**
@@ -653,7 +677,14 @@ public class PublicationVolume extends CreativeWork {
     /**
      * The position of an item in a series or sequence of items.
      */
-    @NotNull public Builder position(@NotNull Position position) {
+    @NotNull public Builder position(@NotNull Integer integer) {
+      putValue("position", integer);
+      return this;
+    }
+    /**
+     * The position of an item in a series or sequence of items.
+     */
+    @NotNull public Builder position(@NotNull String position) {
       putValue("position", position);
       return this;
     }
@@ -1940,8 +1971,10 @@ public class PublicationVolume extends CreativeWork {
       if ("pageStarts".equals(key) && value instanceof String) { this.pageStart((String)value); return; }
       if ("pagination".equals(key) && value instanceof String) { this.pagination((String)value); return; }
       if ("paginations".equals(key) && value instanceof String) { this.pagination((String)value); return; }
-      if ("volumeNumber".equals(key) && value instanceof Position) { this.volumeNumber((Position)value); return; }
-      if ("volumeNumbers".equals(key) && value instanceof Position) { this.volumeNumber((Position)value); return; }
+      if ("volumeNumber".equals(key) && value instanceof Integer) { this.volumeNumber((Integer)value); return; }
+      if ("volumeNumbers".equals(key) && value instanceof Integer) { this.volumeNumber((Integer)value); return; }
+      if ("volumeNumber".equals(key) && value instanceof String) { this.volumeNumber((String)value); return; }
+      if ("volumeNumbers".equals(key) && value instanceof String) { this.volumeNumber((String)value); return; }
       super.fromMap(key, value);
     }
   }

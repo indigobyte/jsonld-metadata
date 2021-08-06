@@ -582,7 +582,14 @@ public class CreativeWorkSeries extends CreativeWork {
     /**
      * The position of an item in a series or sequence of items.
      */
-    @NotNull public Builder position(@NotNull Position position) {
+    @NotNull public Builder position(@NotNull Integer integer) {
+      putValue("position", integer);
+      return this;
+    }
+    /**
+     * The position of an item in a series or sequence of items.
+     */
+    @NotNull public Builder position(@NotNull String position) {
       putValue("position", position);
       return this;
     }

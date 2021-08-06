@@ -166,19 +166,36 @@ public class CreativeWorkSeason extends CreativeWork {
   /**
    * Position of the season within an ordered group of seasons.
    */
-  @JsonIgnore public Position getSeasonNumber() {
-    return (Position) getValue("seasonNumber");
+  @JsonIgnore public Integer getSeasonNumberInteger() {
+    return (Integer) getValue("seasonNumber");
   }
   /**
    * Position of the season within an ordered group of seasons.
    */
-  @JsonIgnore public java.util.Collection<Position> getSeasonNumbers() {
+  @JsonIgnore public java.util.Collection<Integer> getSeasonNumberIntegers() {
     final java.lang.Object current = myData.get("seasonNumber");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<Position>) current;
+      return (java.util.Collection<Integer>) current;
     }
-    return Arrays.asList((Position) current);
+    return Arrays.asList((Integer) current);
+  }
+  /**
+   * Position of the season within an ordered group of seasons.
+   */
+  @JsonIgnore public String getSeasonNumberString() {
+    return (String) getValue("seasonNumber");
+  }
+  /**
+   * Position of the season within an ordered group of seasons.
+   */
+  @JsonIgnore public java.util.Collection<String> getSeasonNumberStrings() {
+    final java.lang.Object current = myData.get("seasonNumber");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
   }
   /**
    * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
@@ -291,8 +308,15 @@ public class CreativeWorkSeason extends CreativeWork {
     /**
      * Position of the season within an ordered group of seasons.
      */
-    @NotNull public Builder seasonNumber(@NotNull Position position) {
-      putValue("seasonNumber", position);
+    @NotNull public Builder seasonNumber(@NotNull Integer integer) {
+      putValue("seasonNumber", integer);
+      return this;
+    }
+    /**
+     * Position of the season within an ordered group of seasons.
+     */
+    @NotNull public Builder seasonNumber(@NotNull String seasonNumber) {
+      putValue("seasonNumber", seasonNumber);
       return this;
     }
     /**
@@ -770,7 +794,14 @@ public class CreativeWorkSeason extends CreativeWork {
     /**
      * The position of an item in a series or sequence of items.
      */
-    @NotNull public Builder position(@NotNull Position position) {
+    @NotNull public Builder position(@NotNull Integer integer) {
+      putValue("position", integer);
+      return this;
+    }
+    /**
+     * The position of an item in a series or sequence of items.
+     */
+    @NotNull public Builder position(@NotNull String position) {
       putValue("position", position);
       return this;
     }
@@ -2063,8 +2094,10 @@ public class CreativeWorkSeason extends CreativeWork {
       if ("trailers".equals(key) && value instanceof VideoObject) { this.trailer((VideoObject)value); return; }
       if ("partOfSeries".equals(key) && value instanceof IsPartOf) { this.partOfSeries((IsPartOf)value); return; }
       if ("partOfSeriess".equals(key) && value instanceof IsPartOf) { this.partOfSeries((IsPartOf)value); return; }
-      if ("seasonNumber".equals(key) && value instanceof Position) { this.seasonNumber((Position)value); return; }
-      if ("seasonNumbers".equals(key) && value instanceof Position) { this.seasonNumber((Position)value); return; }
+      if ("seasonNumber".equals(key) && value instanceof Integer) { this.seasonNumber((Integer)value); return; }
+      if ("seasonNumbers".equals(key) && value instanceof Integer) { this.seasonNumber((Integer)value); return; }
+      if ("seasonNumber".equals(key) && value instanceof String) { this.seasonNumber((String)value); return; }
+      if ("seasonNumbers".equals(key) && value instanceof String) { this.seasonNumber((String)value); return; }
       if ("endDate".equals(key) && value instanceof java.util.Date) { this.endDate((java.util.Date)value); return; }
       if ("endDates".equals(key) && value instanceof java.util.Date) { this.endDate((java.util.Date)value); return; }
       super.fromMap(key, value);

@@ -62,7 +62,8 @@ class GeneratorSink : TripleSink {
         // These types use DataType, so they have to be banned as well
         "Observation",
         "SpecialAnnouncement",
-        "Description" // This one is effectively Text, must be mapped to String
+        "Description", // This one is effectively Text, must be mapped to String
+        "Position" // Narrowing to Integer, Text positions are not supported
     )
 
     private val basicTypeNames = mutableMapOf(
@@ -72,7 +73,8 @@ class GeneratorSink : TripleSink {
         "DateTime" to "java.util.Date",
         "Date" to "java.util.Date",
         "Time" to "java.util.Date",
-        "Class" to null
+        "Class" to null,
+        "Position" to "Integer"
     )
 
     init {
@@ -313,12 +315,7 @@ class GeneratorSink : TripleSink {
         if (basicTypeNames.containsKey(name)) {
             return basicTypeNames[name]
         }
-        return when (name) {
-            "Text", "URL", "Description" -> "String"
-            "DateTime", "Date", "Time" -> "java.util.Date"
-            "Class" -> null
-            else -> name?.capitalize()
-        }
+        return name?.capitalize()
     }
 
     private fun getFieldType(field: Type): String? {

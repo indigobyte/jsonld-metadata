@@ -277,8 +277,15 @@ public class ComicIssue extends PublicationIssue {
     /**
      * Identifies the issue of publication; for example, &quot;iii&quot; or &quot;2&quot;.
      */
-    @NotNull public Builder issueNumber(@NotNull Position position) {
-      putValue("issueNumber", position);
+    @NotNull public Builder issueNumber(@NotNull Integer integer) {
+      putValue("issueNumber", integer);
+      return this;
+    }
+    /**
+     * Identifies the issue of publication; for example, &quot;iii&quot; or &quot;2&quot;.
+     */
+    @NotNull public Builder issueNumber(@NotNull String issueNumber) {
+      putValue("issueNumber", issueNumber);
       return this;
     }
     /**
@@ -749,7 +756,14 @@ public class ComicIssue extends PublicationIssue {
     /**
      * The position of an item in a series or sequence of items.
      */
-    @NotNull public Builder position(@NotNull Position position) {
+    @NotNull public Builder position(@NotNull Integer integer) {
+      putValue("position", integer);
+      return this;
+    }
+    /**
+     * The position of an item in a series or sequence of items.
+     */
+    @NotNull public Builder position(@NotNull String position) {
       putValue("position", position);
       return this;
     }

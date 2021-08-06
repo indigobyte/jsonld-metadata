@@ -100,8 +100,15 @@ public class RadioEpisode extends Episode {
     /**
      * Position of the episode within an ordered group of episodes.
      */
-    @NotNull public Builder episodeNumber(@NotNull Position position) {
-      putValue("episodeNumber", position);
+    @NotNull public Builder episodeNumber(@NotNull Integer integer) {
+      putValue("episodeNumber", integer);
+      return this;
+    }
+    /**
+     * Position of the episode within an ordered group of episodes.
+     */
+    @NotNull public Builder episodeNumber(@NotNull String episodeNumber) {
+      putValue("episodeNumber", episodeNumber);
       return this;
     }
     /**
@@ -614,7 +621,14 @@ public class RadioEpisode extends Episode {
     /**
      * The position of an item in a series or sequence of items.
      */
-    @NotNull public Builder position(@NotNull Position position) {
+    @NotNull public Builder position(@NotNull Integer integer) {
+      putValue("position", integer);
+      return this;
+    }
+    /**
+     * The position of an item in a series or sequence of items.
+     */
+    @NotNull public Builder position(@NotNull String position) {
       putValue("position", position);
       return this;
     }

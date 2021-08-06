@@ -115,19 +115,36 @@ public class Episode extends CreativeWork {
   /**
    * Position of the episode within an ordered group of episodes.
    */
-  @JsonIgnore public Position getEpisodeNumber() {
-    return (Position) getValue("episodeNumber");
+  @JsonIgnore public Integer getEpisodeNumberInteger() {
+    return (Integer) getValue("episodeNumber");
   }
   /**
    * Position of the episode within an ordered group of episodes.
    */
-  @JsonIgnore public java.util.Collection<Position> getEpisodeNumbers() {
+  @JsonIgnore public java.util.Collection<Integer> getEpisodeNumberIntegers() {
     final java.lang.Object current = myData.get("episodeNumber");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<Position>) current;
+      return (java.util.Collection<Integer>) current;
     }
-    return Arrays.asList((Position) current);
+    return Arrays.asList((Integer) current);
+  }
+  /**
+   * Position of the episode within an ordered group of episodes.
+   */
+  @JsonIgnore public String getEpisodeNumberString() {
+    return (String) getValue("episodeNumber");
+  }
+  /**
+   * Position of the episode within an ordered group of episodes.
+   */
+  @JsonIgnore public java.util.Collection<String> getEpisodeNumberStrings() {
+    final java.lang.Object current = myData.get("episodeNumber");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
   }
   /**
    * The composer of the soundtrack.
@@ -270,8 +287,15 @@ public class Episode extends CreativeWork {
     /**
      * Position of the episode within an ordered group of episodes.
      */
-    @NotNull public Builder episodeNumber(@NotNull Position position) {
-      putValue("episodeNumber", position);
+    @NotNull public Builder episodeNumber(@NotNull Integer integer) {
+      putValue("episodeNumber", integer);
+      return this;
+    }
+    /**
+     * Position of the episode within an ordered group of episodes.
+     */
+    @NotNull public Builder episodeNumber(@NotNull String episodeNumber) {
+      putValue("episodeNumber", episodeNumber);
       return this;
     }
     /**
@@ -784,7 +808,14 @@ public class Episode extends CreativeWork {
     /**
      * The position of an item in a series or sequence of items.
      */
-    @NotNull public Builder position(@NotNull Position position) {
+    @NotNull public Builder position(@NotNull Integer integer) {
+      putValue("position", integer);
+      return this;
+    }
+    /**
+     * The position of an item in a series or sequence of items.
+     */
+    @NotNull public Builder position(@NotNull String position) {
       putValue("position", position);
       return this;
     }
@@ -2071,8 +2102,10 @@ public class Episode extends CreativeWork {
       if ("directors".equals(key) && value instanceof Person) { this.director((Person)value); return; }
       if ("trailer".equals(key) && value instanceof VideoObject) { this.trailer((VideoObject)value); return; }
       if ("trailers".equals(key) && value instanceof VideoObject) { this.trailer((VideoObject)value); return; }
-      if ("episodeNumber".equals(key) && value instanceof Position) { this.episodeNumber((Position)value); return; }
-      if ("episodeNumbers".equals(key) && value instanceof Position) { this.episodeNumber((Position)value); return; }
+      if ("episodeNumber".equals(key) && value instanceof Integer) { this.episodeNumber((Integer)value); return; }
+      if ("episodeNumbers".equals(key) && value instanceof Integer) { this.episodeNumber((Integer)value); return; }
+      if ("episodeNumber".equals(key) && value instanceof String) { this.episodeNumber((String)value); return; }
+      if ("episodeNumbers".equals(key) && value instanceof String) { this.episodeNumber((String)value); return; }
       if ("musicBy".equals(key) && value instanceof MusicGroup) { this.musicBy((MusicGroup)value); return; }
       if ("musicBys".equals(key) && value instanceof MusicGroup) { this.musicBy((MusicGroup)value); return; }
       if ("musicBy".equals(key) && value instanceof Person) { this.musicBy((Person)value); return; }

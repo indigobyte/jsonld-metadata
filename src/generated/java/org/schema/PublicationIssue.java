@@ -115,19 +115,36 @@ public class PublicationIssue extends CreativeWork {
   /**
    * Identifies the issue of publication; for example, &quot;iii&quot; or &quot;2&quot;.
    */
-  @JsonIgnore public Position getIssueNumber() {
-    return (Position) getValue("issueNumber");
+  @JsonIgnore public Integer getIssueNumberInteger() {
+    return (Integer) getValue("issueNumber");
   }
   /**
    * Identifies the issue of publication; for example, &quot;iii&quot; or &quot;2&quot;.
    */
-  @JsonIgnore public java.util.Collection<Position> getIssueNumbers() {
+  @JsonIgnore public java.util.Collection<Integer> getIssueNumberIntegers() {
     final java.lang.Object current = myData.get("issueNumber");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<Position>) current;
+      return (java.util.Collection<Integer>) current;
     }
-    return Arrays.asList((Position) current);
+    return Arrays.asList((Integer) current);
+  }
+  /**
+   * Identifies the issue of publication; for example, &quot;iii&quot; or &quot;2&quot;.
+   */
+  @JsonIgnore public String getIssueNumberString() {
+    return (String) getValue("issueNumber");
+  }
+  /**
+   * Identifies the issue of publication; for example, &quot;iii&quot; or &quot;2&quot;.
+   */
+  @JsonIgnore public java.util.Collection<String> getIssueNumberStrings() {
+    final java.lang.Object current = myData.get("issueNumber");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
   }
   protected PublicationIssue(java.util.Map<String,java.lang.Object> data) {
     super(data);
@@ -181,8 +198,15 @@ public class PublicationIssue extends CreativeWork {
     /**
      * Identifies the issue of publication; for example, &quot;iii&quot; or &quot;2&quot;.
      */
-    @NotNull public Builder issueNumber(@NotNull Position position) {
-      putValue("issueNumber", position);
+    @NotNull public Builder issueNumber(@NotNull Integer integer) {
+      putValue("issueNumber", integer);
+      return this;
+    }
+    /**
+     * Identifies the issue of publication; for example, &quot;iii&quot; or &quot;2&quot;.
+     */
+    @NotNull public Builder issueNumber(@NotNull String issueNumber) {
+      putValue("issueNumber", issueNumber);
       return this;
     }
     /**
@@ -653,7 +677,14 @@ public class PublicationIssue extends CreativeWork {
     /**
      * The position of an item in a series or sequence of items.
      */
-    @NotNull public Builder position(@NotNull Position position) {
+    @NotNull public Builder position(@NotNull Integer integer) {
+      putValue("position", integer);
+      return this;
+    }
+    /**
+     * The position of an item in a series or sequence of items.
+     */
+    @NotNull public Builder position(@NotNull String position) {
       putValue("position", position);
       return this;
     }
@@ -1940,8 +1971,10 @@ public class PublicationIssue extends CreativeWork {
       if ("pageStarts".equals(key) && value instanceof String) { this.pageStart((String)value); return; }
       if ("pagination".equals(key) && value instanceof String) { this.pagination((String)value); return; }
       if ("paginations".equals(key) && value instanceof String) { this.pagination((String)value); return; }
-      if ("issueNumber".equals(key) && value instanceof Position) { this.issueNumber((Position)value); return; }
-      if ("issueNumbers".equals(key) && value instanceof Position) { this.issueNumber((Position)value); return; }
+      if ("issueNumber".equals(key) && value instanceof Integer) { this.issueNumber((Integer)value); return; }
+      if ("issueNumbers".equals(key) && value instanceof Integer) { this.issueNumber((Integer)value); return; }
+      if ("issueNumber".equals(key) && value instanceof String) { this.issueNumber((String)value); return; }
+      if ("issueNumbers".equals(key) && value instanceof String) { this.issueNumber((String)value); return; }
       super.fromMap(key, value);
     }
   }

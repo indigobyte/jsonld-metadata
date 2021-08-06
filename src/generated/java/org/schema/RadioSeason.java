@@ -121,8 +121,15 @@ public class RadioSeason extends CreativeWorkSeason {
     /**
      * Position of the season within an ordered group of seasons.
      */
-    @NotNull public Builder seasonNumber(@NotNull Position position) {
-      putValue("seasonNumber", position);
+    @NotNull public Builder seasonNumber(@NotNull Integer integer) {
+      putValue("seasonNumber", integer);
+      return this;
+    }
+    /**
+     * Position of the season within an ordered group of seasons.
+     */
+    @NotNull public Builder seasonNumber(@NotNull String seasonNumber) {
+      putValue("seasonNumber", seasonNumber);
       return this;
     }
     /**
@@ -600,7 +607,14 @@ public class RadioSeason extends CreativeWorkSeason {
     /**
      * The position of an item in a series or sequence of items.
      */
-    @NotNull public Builder position(@NotNull Position position) {
+    @NotNull public Builder position(@NotNull Integer integer) {
+      putValue("position", integer);
+      return this;
+    }
+    /**
+     * The position of an item in a series or sequence of items.
+     */
+    @NotNull public Builder position(@NotNull String position) {
       putValue("position", position);
       return this;
     }

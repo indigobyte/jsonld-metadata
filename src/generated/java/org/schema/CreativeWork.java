@@ -802,19 +802,36 @@ public class CreativeWork extends Thing implements org.schema.IsPartOf, WorkFeat
   /**
    * The position of an item in a series or sequence of items.
    */
-  @JsonIgnore public Position getPosition() {
-    return (Position) getValue("position");
+  @JsonIgnore public Integer getPositionInteger() {
+    return (Integer) getValue("position");
   }
   /**
    * The position of an item in a series or sequence of items.
    */
-  @JsonIgnore public java.util.Collection<Position> getPositions() {
+  @JsonIgnore public java.util.Collection<Integer> getPositionIntegers() {
     final java.lang.Object current = myData.get("position");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<Position>) current;
+      return (java.util.Collection<Integer>) current;
     }
-    return Arrays.asList((Position) current);
+    return Arrays.asList((Integer) current);
+  }
+  /**
+   * The position of an item in a series or sequence of items.
+   */
+  @JsonIgnore public String getPositionString() {
+    return (String) getValue("position");
+  }
+  /**
+   * The position of an item in a series or sequence of items.
+   */
+  @JsonIgnore public java.util.Collection<String> getPositionStrings() {
+    final java.lang.Object current = myData.get("position");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
   }
   /**
    * A media object that encodes this CreativeWork. This property is a synonym for encoding.
@@ -3109,7 +3126,14 @@ public class CreativeWork extends Thing implements org.schema.IsPartOf, WorkFeat
     /**
      * The position of an item in a series or sequence of items.
      */
-    @NotNull public Builder position(@NotNull Position position) {
+    @NotNull public Builder position(@NotNull Integer integer) {
+      putValue("position", integer);
+      return this;
+    }
+    /**
+     * The position of an item in a series or sequence of items.
+     */
+    @NotNull public Builder position(@NotNull String position) {
       putValue("position", position);
       return this;
     }
@@ -4474,8 +4498,10 @@ public class CreativeWork extends Thing implements org.schema.IsPartOf, WorkFeat
       if ("sdLicenses".equals(key) && value instanceof CreativeWork) { this.sdLicense((CreativeWork)value); return; }
       if ("sdLicense".equals(key) && value instanceof String) { this.sdLicense((String)value); return; }
       if ("sdLicenses".equals(key) && value instanceof String) { this.sdLicense((String)value); return; }
-      if ("position".equals(key) && value instanceof Position) { this.position((Position)value); return; }
-      if ("positions".equals(key) && value instanceof Position) { this.position((Position)value); return; }
+      if ("position".equals(key) && value instanceof Integer) { this.position((Integer)value); return; }
+      if ("positions".equals(key) && value instanceof Integer) { this.position((Integer)value); return; }
+      if ("position".equals(key) && value instanceof String) { this.position((String)value); return; }
+      if ("positions".equals(key) && value instanceof String) { this.position((String)value); return; }
       if ("associatedMedia".equals(key) && value instanceof MediaObject) { this.associatedMedia((MediaObject)value); return; }
       if ("associatedMedias".equals(key) && value instanceof MediaObject) { this.associatedMedia((MediaObject)value); return; }
       if ("headline".equals(key) && value instanceof String) { this.headline((String)value); return; }

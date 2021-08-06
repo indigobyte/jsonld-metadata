@@ -51,8 +51,15 @@ public class MovieClip extends Clip {
     /**
      * Position of the clip within an ordered group of clips.
      */
-    @NotNull public Builder clipNumber(@NotNull Position position) {
-      putValue("clipNumber", position);
+    @NotNull public Builder clipNumber(@NotNull Integer integer) {
+      putValue("clipNumber", integer);
+      return this;
+    }
+    /**
+     * Position of the clip within an ordered group of clips.
+     */
+    @NotNull public Builder clipNumber(@NotNull String clipNumber) {
+      putValue("clipNumber", clipNumber);
       return this;
     }
     /**
@@ -628,7 +635,14 @@ public class MovieClip extends Clip {
     /**
      * The position of an item in a series or sequence of items.
      */
-    @NotNull public Builder position(@NotNull Position position) {
+    @NotNull public Builder position(@NotNull Integer integer) {
+      putValue("position", integer);
+      return this;
+    }
+    /**
+     * The position of an item in a series or sequence of items.
+     */
+    @NotNull public Builder position(@NotNull String position) {
       putValue("position", position);
       return this;
     }

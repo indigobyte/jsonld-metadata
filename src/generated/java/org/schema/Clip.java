@@ -47,19 +47,36 @@ public class Clip extends CreativeWork {
   /**
    * Position of the clip within an ordered group of clips.
    */
-  @JsonIgnore public Position getClipNumber() {
-    return (Position) getValue("clipNumber");
+  @JsonIgnore public Integer getClipNumberInteger() {
+    return (Integer) getValue("clipNumber");
   }
   /**
    * Position of the clip within an ordered group of clips.
    */
-  @JsonIgnore public java.util.Collection<Position> getClipNumbers() {
+  @JsonIgnore public java.util.Collection<Integer> getClipNumberIntegers() {
     final java.lang.Object current = myData.get("clipNumber");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<Position>) current;
+      return (java.util.Collection<Integer>) current;
     }
-    return Arrays.asList((Position) current);
+    return Arrays.asList((Integer) current);
+  }
+  /**
+   * Position of the clip within an ordered group of clips.
+   */
+  @JsonIgnore public String getClipNumberString() {
+    return (String) getValue("clipNumber");
+  }
+  /**
+   * Position of the clip within an ordered group of clips.
+   */
+  @JsonIgnore public java.util.Collection<String> getClipNumberStrings() {
+    final java.lang.Object current = myData.get("clipNumber");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
   }
   /**
    * The start time of the clip expressed as the number of seconds from the beginning of the work.
@@ -255,8 +272,15 @@ public class Clip extends CreativeWork {
     /**
      * Position of the clip within an ordered group of clips.
      */
-    @NotNull public Builder clipNumber(@NotNull Position position) {
-      putValue("clipNumber", position);
+    @NotNull public Builder clipNumber(@NotNull Integer integer) {
+      putValue("clipNumber", integer);
+      return this;
+    }
+    /**
+     * Position of the clip within an ordered group of clips.
+     */
+    @NotNull public Builder clipNumber(@NotNull String clipNumber) {
+      putValue("clipNumber", clipNumber);
       return this;
     }
     /**
@@ -832,7 +856,14 @@ public class Clip extends CreativeWork {
     /**
      * The position of an item in a series or sequence of items.
      */
-    @NotNull public Builder position(@NotNull Position position) {
+    @NotNull public Builder position(@NotNull Integer integer) {
+      putValue("position", integer);
+      return this;
+    }
+    /**
+     * The position of an item in a series or sequence of items.
+     */
+    @NotNull public Builder position(@NotNull String position) {
       putValue("position", position);
       return this;
     }
@@ -2111,8 +2142,10 @@ public class Clip extends CreativeWork {
     @Override protected void fromMap(String key, java.lang.Object value) {
       if ("actor".equals(key) && value instanceof Actor) { this.actor((Actor)value); return; }
       if ("actors".equals(key) && value instanceof Actor) { this.actor((Actor)value); return; }
-      if ("clipNumber".equals(key) && value instanceof Position) { this.clipNumber((Position)value); return; }
-      if ("clipNumbers".equals(key) && value instanceof Position) { this.clipNumber((Position)value); return; }
+      if ("clipNumber".equals(key) && value instanceof Integer) { this.clipNumber((Integer)value); return; }
+      if ("clipNumbers".equals(key) && value instanceof Integer) { this.clipNumber((Integer)value); return; }
+      if ("clipNumber".equals(key) && value instanceof String) { this.clipNumber((String)value); return; }
+      if ("clipNumbers".equals(key) && value instanceof String) { this.clipNumber((String)value); return; }
       if ("startOffset".equals(key) && value instanceof HyperTocEntry) { this.startOffset((HyperTocEntry)value); return; }
       if ("startOffsets".equals(key) && value instanceof HyperTocEntry) { this.startOffset((HyperTocEntry)value); return; }
       if ("startOffset".equals(key) && value instanceof Number) { this.startOffset((Number)value); return; }

@@ -30,19 +30,36 @@ public class ListItem extends Intangible {
   /**
    * The position of an item in a series or sequence of items.
    */
-  @JsonIgnore public Position getPosition() {
-    return (Position) getValue("position");
+  @JsonIgnore public Integer getPositionInteger() {
+    return (Integer) getValue("position");
   }
   /**
    * The position of an item in a series or sequence of items.
    */
-  @JsonIgnore public java.util.Collection<Position> getPositions() {
+  @JsonIgnore public java.util.Collection<Integer> getPositionIntegers() {
     final java.lang.Object current = myData.get("position");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<Position>) current;
+      return (java.util.Collection<Integer>) current;
     }
-    return Arrays.asList((Position) current);
+    return Arrays.asList((Integer) current);
+  }
+  /**
+   * The position of an item in a series or sequence of items.
+   */
+  @JsonIgnore public String getPositionString() {
+    return (String) getValue("position");
+  }
+  /**
+   * The position of an item in a series or sequence of items.
+   */
+  @JsonIgnore public java.util.Collection<String> getPositionStrings() {
+    final java.lang.Object current = myData.get("position");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
   }
   /**
    * A link to the ListItem that preceeds the current one.
@@ -112,7 +129,14 @@ public class ListItem extends Intangible {
     /**
      * The position of an item in a series or sequence of items.
      */
-    @NotNull public Builder position(@NotNull Position position) {
+    @NotNull public Builder position(@NotNull Integer integer) {
+      putValue("position", integer);
+      return this;
+    }
+    /**
+     * The position of an item in a series or sequence of items.
+     */
+    @NotNull public Builder position(@NotNull String position) {
       putValue("position", position);
       return this;
     }
@@ -293,8 +317,10 @@ public class ListItem extends Intangible {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, java.lang.Object value) {
-      if ("position".equals(key) && value instanceof Position) { this.position((Position)value); return; }
-      if ("positions".equals(key) && value instanceof Position) { this.position((Position)value); return; }
+      if ("position".equals(key) && value instanceof Integer) { this.position((Integer)value); return; }
+      if ("positions".equals(key) && value instanceof Integer) { this.position((Integer)value); return; }
+      if ("position".equals(key) && value instanceof String) { this.position((String)value); return; }
+      if ("positions".equals(key) && value instanceof String) { this.position((String)value); return; }
       if ("previousItem".equals(key) && value instanceof ListItem) { this.previousItem((ListItem)value); return; }
       if ("previousItems".equals(key) && value instanceof ListItem) { this.previousItem((ListItem)value); return; }
       if ("item".equals(key) && value instanceof Thing) { this.item((Thing)value); return; }
