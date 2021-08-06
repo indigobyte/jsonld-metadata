@@ -99,36 +99,36 @@ public class Thing implements org.schema.Instrument, Result, Category {
   /**
    * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
    */
-  @JsonIgnore public Description getDisambiguatingDescription() {
-    return (Description) getValue("disambiguatingDescription");
+  @JsonIgnore public String getDisambiguatingDescription() {
+    return (String) getValue("disambiguatingDescription");
   }
   /**
    * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
    */
-  @JsonIgnore public java.util.Collection<Description> getDisambiguatingDescriptions() {
+  @JsonIgnore public java.util.Collection<String> getDisambiguatingDescriptions() {
     final java.lang.Object current = myData.get("disambiguatingDescription");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<Description>) current;
+      return (java.util.Collection<String>) current;
     }
-    return Arrays.asList((Description) current);
+    return Arrays.asList((String) current);
   }
   /**
    * A description of the item.
    */
-  @JsonIgnore public Description getDescription() {
-    return (Description) getValue("description");
+  @JsonIgnore public String getDescription() {
+    return (String) getValue("description");
   }
   /**
    * A description of the item.
    */
-  @JsonIgnore public java.util.Collection<Description> getDescriptions() {
+  @JsonIgnore public java.util.Collection<String> getDescriptions() {
     final java.lang.Object current = myData.get("description");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<Description>) current;
+      return (java.util.Collection<String>) current;
     }
-    return Arrays.asList((Description) current);
+    return Arrays.asList((String) current);
   }
   /**
    * URL of the item.
@@ -360,14 +360,14 @@ public class Thing implements org.schema.Instrument, Result, Category {
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
-      putValue("disambiguatingDescription", description);
+    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
+      putValue("disambiguatingDescription", disambiguatingDescription);
       return this;
     }
     /**
      * A description of the item.
      */
-    @NotNull public Builder description(@NotNull Description description) {
+    @NotNull public Builder description(@NotNull String description) {
       putValue("description", description);
       return this;
     }
@@ -488,10 +488,10 @@ public class Thing implements org.schema.Instrument, Result, Category {
       if ("images".equals(key) && value instanceof Image) { this.image((Image)value); return; }
       if ("potentialAction".equals(key) && value instanceof Action) { this.potentialAction((Action)value); return; }
       if ("potentialActions".equals(key) && value instanceof Action) { this.potentialAction((Action)value); return; }
-      if ("disambiguatingDescription".equals(key) && value instanceof Description) { this.disambiguatingDescription((Description)value); return; }
-      if ("disambiguatingDescriptions".equals(key) && value instanceof Description) { this.disambiguatingDescription((Description)value); return; }
-      if ("description".equals(key) && value instanceof Description) { this.description((Description)value); return; }
-      if ("descriptions".equals(key) && value instanceof Description) { this.description((Description)value); return; }
+      if ("disambiguatingDescription".equals(key) && value instanceof String) { this.disambiguatingDescription((String)value); return; }
+      if ("disambiguatingDescriptions".equals(key) && value instanceof String) { this.disambiguatingDescription((String)value); return; }
+      if ("description".equals(key) && value instanceof String) { this.description((String)value); return; }
+      if ("descriptions".equals(key) && value instanceof String) { this.description((String)value); return; }
       if ("url".equals(key) && value instanceof String) { this.url((String)value); return; }
       if ("urls".equals(key) && value instanceof String) { this.url((String)value); return; }
       if ("additionalType".equals(key) && value instanceof String) { this.additionalType((String)value); return; }

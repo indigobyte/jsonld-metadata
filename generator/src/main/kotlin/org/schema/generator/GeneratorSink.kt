@@ -61,12 +61,14 @@ class GeneratorSink : TripleSink {
         //"Duration",
         // These types use DataType, so they have to be banned as well
         "Observation",
-        "SpecialAnnouncement"
+        "SpecialAnnouncement",
+        "Description" // This one is effectively Text, must be mapped to String
     )
 
     private val basicTypeNames = mutableMapOf(
         "Text" to "String",
         "URL" to "String",
+        "Description" to "String",
         "DateTime" to "java.util.Date",
         "Date" to "java.util.Date",
         "Time" to "java.util.Date",
@@ -178,8 +180,8 @@ class GeneratorSink : TripleSink {
                     // || obj != "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
                 ) {
                     types.doWith(subj) {
-                        val currentTypeName = subj.substringAfter(uri)
-                        val parentTypeName = obj.substringAfter(uri)
+                        val currentTypeName = subj.substringAfter(uri).capitalize()
+                        val parentTypeName = obj.substringAfter(uri).capitalize()
                         if (!shouldSkipSet.contains(currentTypeName) &&
                             shouldSkipSet.contains(parentTypeName)
                         ) {
@@ -248,28 +250,31 @@ class GeneratorSink : TripleSink {
                     //System.exit(1)
                 }
 
-                getInterfaceName(obj)?.let {
-                    if (obj !in types) {
-                        types.put(
-                            obj,
-                            Type(
-                                name = it,
-                                isInterface = true
+                val currentTypeName = obj.substringAfter(uri).capitalize()
+                if (!shouldSkipSet.contains(currentTypeName)) {
+                    getInterfaceName(obj)?.let {
+                        if (obj !in types) {
+                            types.put(
+                                obj,
+                                Type(
+                                    name = it,
+                                    isInterface = true
+                                )
                             )
-                        )
-                    }
-                    if (!types.containsKey(subj)) {
-                        types.put(subj, Type())
-                    }
+                        }
+                        if (!types.containsKey(subj)) {
+                            types.put(subj, Type())
+                        }
 
-                    val type = types[subj]!!
-                    if (type.isField) {
-                        type.dataTypes.add(obj)
-                    } else {
-                        type.interfaces.add(it)
-                        //println("adding interface $it to $subj")
+                        val type = types[subj]!!
+                        if (type.isField) {
+                            type.dataTypes.add(obj)
+                        } else {
+                            type.interfaces.add(it)
+                            //println("adding interface $it to $subj")
+                        }
                     }
-                } //?: println("${obj} not a valid interface type subprop")
+                }//?: println("${obj} not a valid interface type subprop")
             }
             "http://schema.org/isPartOf",
             "http://schema.org/source",
@@ -309,7 +314,7 @@ class GeneratorSink : TripleSink {
             return basicTypeNames[name]
         }
         return when (name) {
-            "Text", "URL" -> "String"
+            "Text", "URL", "Description" -> "String"
             "DateTime", "Date", "Time" -> "java.util.Date"
             "Class" -> null
             else -> name?.capitalize()

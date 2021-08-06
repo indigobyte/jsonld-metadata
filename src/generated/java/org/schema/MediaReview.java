@@ -101,19 +101,19 @@ public class MediaReview extends Review {
   /**
    * Describes, in a [[MediaReview]] when dealing with [[DecontextualizedContent]], background information that can contribute to better interpretation of the [[MediaObject]].
    */
-  @JsonIgnore public Description getOriginalMediaContextDescription() {
-    return (Description) getValue("originalMediaContextDescription");
+  @JsonIgnore public String getOriginalMediaContextDescription() {
+    return (String) getValue("originalMediaContextDescription");
   }
   /**
    * Describes, in a [[MediaReview]] when dealing with [[DecontextualizedContent]], background information that can contribute to better interpretation of the [[MediaObject]].
    */
-  @JsonIgnore public java.util.Collection<Description> getOriginalMediaContextDescriptions() {
+  @JsonIgnore public java.util.Collection<String> getOriginalMediaContextDescriptions() {
     final java.lang.Object current = myData.get("originalMediaContextDescription");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<Description>) current;
+      return (java.util.Collection<String>) current;
     }
-    return Arrays.asList((Description) current);
+    return Arrays.asList((String) current);
   }
   protected MediaReview(java.util.Map<String,java.lang.Object> data) {
     super(data);
@@ -174,8 +174,8 @@ public class MediaReview extends Review {
     /**
      * Describes, in a [[MediaReview]] when dealing with [[DecontextualizedContent]], background information that can contribute to better interpretation of the [[MediaObject]].
      */
-    @NotNull public Builder originalMediaContextDescription(@NotNull Description description) {
-      putValue("originalMediaContextDescription", description);
+    @NotNull public Builder originalMediaContextDescription(@NotNull String originalMediaContextDescription) {
+      putValue("originalMediaContextDescription", originalMediaContextDescription);
       return this;
     }
     /**
@@ -1661,8 +1661,15 @@ public class MediaReview extends Review {
     /**
      * Used to indicate a specific claim contained, implied, translated or refined from the content of a [[MediaObject]] or other [[CreativeWork]]. The interpreting party can be indicated using [[claimInterpreter]].
      */
-    @NotNull public Builder interpretedAsClaim(@NotNull Description description) {
-      putValue("interpretedAsClaim", description);
+    @NotNull public Builder interpretedAsClaim(@NotNull Claim claim) {
+      putValue("interpretedAsClaim", claim);
+      return this;
+    }
+    /**
+     * Used to indicate a specific claim contained, implied, translated or refined from the content of a [[MediaObject]] or other [[CreativeWork]]. The interpreting party can be indicated using [[claimInterpreter]].
+     */
+    @NotNull public Builder interpretedAsClaim(@NotNull Claim.Builder claim) {
+      putValue("interpretedAsClaim", claim.build());
       return this;
     }
     /**
@@ -1974,14 +1981,14 @@ public class MediaReview extends Review {
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
-      putValue("disambiguatingDescription", description);
+    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
+      putValue("disambiguatingDescription", disambiguatingDescription);
       return this;
     }
     /**
      * A description of the item.
      */
-    @NotNull public Builder description(@NotNull Description description) {
+    @NotNull public Builder description(@NotNull String description) {
       putValue("description", description);
       return this;
     }
@@ -2085,8 +2092,8 @@ public class MediaReview extends Review {
       if ("originalMediaLinks".equals(key) && value instanceof String) { this.originalMediaLink((String)value); return; }
       if ("originalMediaLink".equals(key) && value instanceof WebPage) { this.originalMediaLink((WebPage)value); return; }
       if ("originalMediaLinks".equals(key) && value instanceof WebPage) { this.originalMediaLink((WebPage)value); return; }
-      if ("originalMediaContextDescription".equals(key) && value instanceof Description) { this.originalMediaContextDescription((Description)value); return; }
-      if ("originalMediaContextDescriptions".equals(key) && value instanceof Description) { this.originalMediaContextDescription((Description)value); return; }
+      if ("originalMediaContextDescription".equals(key) && value instanceof String) { this.originalMediaContextDescription((String)value); return; }
+      if ("originalMediaContextDescriptions".equals(key) && value instanceof String) { this.originalMediaContextDescription((String)value); return; }
       super.fromMap(key, value);
     }
   }

@@ -30,19 +30,19 @@ public class UpdateAction extends Action {
   /**
    * A sub property of object. The collection target of the action.
    */
-  @JsonIgnore public Object getTargetCollection() {
-    return (Object) getValue("targetCollection");
+  @JsonIgnore public Thing getTargetCollection() {
+    return (Thing) getValue("targetCollection");
   }
   /**
    * A sub property of object. The collection target of the action.
    */
-  @JsonIgnore public java.util.Collection<Object> getTargetCollections() {
+  @JsonIgnore public java.util.Collection<Thing> getTargetCollections() {
     final java.lang.Object current = myData.get("targetCollection");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<Object>) current;
+      return (java.util.Collection<Thing>) current;
     }
-    return Arrays.asList((Object) current);
+    return Arrays.asList((Thing) current);
   }
   protected UpdateAction(java.util.Map<String,java.lang.Object> data) {
     super(data);
@@ -61,8 +61,15 @@ public class UpdateAction extends Action {
     /**
      * A sub property of object. The collection target of the action.
      */
-    @NotNull public Builder targetCollection(@NotNull Object object) {
-      putValue("targetCollection", object);
+    @NotNull public Builder targetCollection(@NotNull Thing thing) {
+      putValue("targetCollection", thing);
+      return this;
+    }
+    /**
+     * A sub property of object. The collection target of the action.
+     */
+    @NotNull public Builder targetCollection(@NotNull Thing.Builder thing) {
+      putValue("targetCollection", thing.build());
       return this;
     }
     /**
@@ -110,8 +117,15 @@ public class UpdateAction extends Action {
     /**
      * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
      */
-    @NotNull public Builder object(@NotNull Object object) {
-      putValue("object", object);
+    @NotNull public Builder object(@NotNull Thing thing) {
+      putValue("object", thing);
+      return this;
+    }
+    /**
+     * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
+     */
+    @NotNull public Builder object(@NotNull Thing.Builder thing) {
+      putValue("object", thing.build());
       return this;
     }
     /**
@@ -209,14 +223,14 @@ public class UpdateAction extends Action {
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
-      putValue("disambiguatingDescription", description);
+    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
+      putValue("disambiguatingDescription", disambiguatingDescription);
       return this;
     }
     /**
      * A description of the item.
      */
-    @NotNull public Builder description(@NotNull Description description) {
+    @NotNull public Builder description(@NotNull String description) {
       putValue("description", description);
       return this;
     }
@@ -312,8 +326,8 @@ public class UpdateAction extends Action {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, java.lang.Object value) {
-      if ("targetCollection".equals(key) && value instanceof Object) { this.targetCollection((Object)value); return; }
-      if ("targetCollections".equals(key) && value instanceof Object) { this.targetCollection((Object)value); return; }
+      if ("targetCollection".equals(key) && value instanceof Thing) { this.targetCollection((Thing)value); return; }
+      if ("targetCollections".equals(key) && value instanceof Thing) { this.targetCollection((Thing)value); return; }
       super.fromMap(key, value);
     }
   }

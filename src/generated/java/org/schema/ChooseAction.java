@@ -30,19 +30,36 @@ public class ChooseAction extends AssessAction {
   /**
    * A sub property of object. The options subject to this action.
    */
-  @JsonIgnore public Object getActionOption() {
-    return (Object) getValue("actionOption");
+  @JsonIgnore public String getActionOptionString() {
+    return (String) getValue("actionOption");
   }
   /**
    * A sub property of object. The options subject to this action.
    */
-  @JsonIgnore public java.util.Collection<Object> getActionOptions() {
+  @JsonIgnore public java.util.Collection<String> getActionOptionStrings() {
     final java.lang.Object current = myData.get("actionOption");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<Object>) current;
+      return (java.util.Collection<String>) current;
     }
-    return Arrays.asList((Object) current);
+    return Arrays.asList((String) current);
+  }
+  /**
+   * A sub property of object. The options subject to this action.
+   */
+  @JsonIgnore public Thing getActionOptionThing() {
+    return (Thing) getValue("actionOption");
+  }
+  /**
+   * A sub property of object. The options subject to this action.
+   */
+  @JsonIgnore public java.util.Collection<Thing> getActionOptionThings() {
+    final java.lang.Object current = myData.get("actionOption");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Thing>) current;
+    }
+    return Arrays.asList((Thing) current);
   }
   protected ChooseAction(java.util.Map<String,java.lang.Object> data) {
     super(data);
@@ -61,8 +78,22 @@ public class ChooseAction extends AssessAction {
     /**
      * A sub property of object. The options subject to this action.
      */
-    @NotNull public Builder actionOption(@NotNull Object object) {
-      putValue("actionOption", object);
+    @NotNull public Builder actionOption(@NotNull String actionOption) {
+      putValue("actionOption", actionOption);
+      return this;
+    }
+    /**
+     * A sub property of object. The options subject to this action.
+     */
+    @NotNull public Builder actionOption(@NotNull Thing thing) {
+      putValue("actionOption", thing);
+      return this;
+    }
+    /**
+     * A sub property of object. The options subject to this action.
+     */
+    @NotNull public Builder actionOption(@NotNull Thing.Builder thing) {
+      putValue("actionOption", thing.build());
       return this;
     }
     /**
@@ -110,8 +141,15 @@ public class ChooseAction extends AssessAction {
     /**
      * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
      */
-    @NotNull public Builder object(@NotNull Object object) {
-      putValue("object", object);
+    @NotNull public Builder object(@NotNull Thing thing) {
+      putValue("object", thing);
+      return this;
+    }
+    /**
+     * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
+     */
+    @NotNull public Builder object(@NotNull Thing.Builder thing) {
+      putValue("object", thing.build());
       return this;
     }
     /**
@@ -209,14 +247,14 @@ public class ChooseAction extends AssessAction {
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
-      putValue("disambiguatingDescription", description);
+    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
+      putValue("disambiguatingDescription", disambiguatingDescription);
       return this;
     }
     /**
      * A description of the item.
      */
-    @NotNull public Builder description(@NotNull Description description) {
+    @NotNull public Builder description(@NotNull String description) {
       putValue("description", description);
       return this;
     }
@@ -312,8 +350,10 @@ public class ChooseAction extends AssessAction {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, java.lang.Object value) {
-      if ("actionOption".equals(key) && value instanceof Object) { this.actionOption((Object)value); return; }
-      if ("actionOptions".equals(key) && value instanceof Object) { this.actionOption((Object)value); return; }
+      if ("actionOption".equals(key) && value instanceof String) { this.actionOption((String)value); return; }
+      if ("actionOptions".equals(key) && value instanceof String) { this.actionOption((String)value); return; }
+      if ("actionOption".equals(key) && value instanceof Thing) { this.actionOption((Thing)value); return; }
+      if ("actionOptions".equals(key) && value instanceof Thing) { this.actionOption((Thing)value); return; }
       super.fromMap(key, value);
     }
   }

@@ -319,8 +319,8 @@ public class VideoObjectSnapshot extends VideoObject {
     /**
      * The [SHA-2](https://en.wikipedia.org/wiki/SHA-2) SHA256 hash of the content of the item. For example, a zero-length input has value 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
      */
-    @NotNull public Builder sha256(@NotNull Description description) {
-      putValue("sha256", description);
+    @NotNull public Builder sha256(@NotNull String sha256) {
+      putValue("sha256", sha256);
       return this;
     }
     /**
@@ -340,8 +340,15 @@ public class VideoObjectSnapshot extends VideoObject {
     /**
      * Used to indicate a specific claim contained, implied, translated or refined from the content of a [[MediaObject]] or other [[CreativeWork]]. The interpreting party can be indicated using [[claimInterpreter]].
      */
-    @NotNull public Builder interpretedAsClaim(@NotNull Description description) {
-      putValue("interpretedAsClaim", description);
+    @NotNull public Builder interpretedAsClaim(@NotNull Claim claim) {
+      putValue("interpretedAsClaim", claim);
+      return this;
+    }
+    /**
+     * Used to indicate a specific claim contained, implied, translated or refined from the content of a [[MediaObject]] or other [[CreativeWork]]. The interpreting party can be indicated using [[claimInterpreter]].
+     */
+    @NotNull public Builder interpretedAsClaim(@NotNull Claim.Builder claim) {
+      putValue("interpretedAsClaim", claim.build());
       return this;
     }
     /**
@@ -2017,14 +2024,14 @@ public class VideoObjectSnapshot extends VideoObject {
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
-      putValue("disambiguatingDescription", description);
+    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
+      putValue("disambiguatingDescription", disambiguatingDescription);
       return this;
     }
     /**
      * A description of the item.
      */
-    @NotNull public Builder description(@NotNull Description description) {
+    @NotNull public Builder description(@NotNull String description) {
       putValue("description", description);
       return this;
     }

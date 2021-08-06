@@ -2184,19 +2184,19 @@ public class CreativeWork extends Thing implements org.schema.IsPartOf, WorkFeat
   /**
    * Used to indicate a specific claim contained, implied, translated or refined from the content of a [[MediaObject]] or other [[CreativeWork]]. The interpreting party can be indicated using [[claimInterpreter]].
    */
-  @JsonIgnore public Description getInterpretedAsClaim() {
-    return (Description) getValue("interpretedAsClaim");
+  @JsonIgnore public Claim getInterpretedAsClaim() {
+    return (Claim) getValue("interpretedAsClaim");
   }
   /**
    * Used to indicate a specific claim contained, implied, translated or refined from the content of a [[MediaObject]] or other [[CreativeWork]]. The interpreting party can be indicated using [[claimInterpreter]].
    */
-  @JsonIgnore public java.util.Collection<Description> getInterpretedAsClaims() {
+  @JsonIgnore public java.util.Collection<Claim> getInterpretedAsClaims() {
     final java.lang.Object current = myData.get("interpretedAsClaim");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<Description>) current;
+      return (java.util.Collection<Claim>) current;
     }
-    return Arrays.asList((Description) current);
+    return Arrays.asList((Claim) current);
   }
   /**
    * Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience, e.g. 'PT30M', 'PT1H25M'.
@@ -3963,8 +3963,15 @@ public class CreativeWork extends Thing implements org.schema.IsPartOf, WorkFeat
     /**
      * Used to indicate a specific claim contained, implied, translated or refined from the content of a [[MediaObject]] or other [[CreativeWork]]. The interpreting party can be indicated using [[claimInterpreter]].
      */
-    @NotNull public Builder interpretedAsClaim(@NotNull Description description) {
-      putValue("interpretedAsClaim", description);
+    @NotNull public Builder interpretedAsClaim(@NotNull Claim claim) {
+      putValue("interpretedAsClaim", claim);
+      return this;
+    }
+    /**
+     * Used to indicate a specific claim contained, implied, translated or refined from the content of a [[MediaObject]] or other [[CreativeWork]]. The interpreting party can be indicated using [[claimInterpreter]].
+     */
+    @NotNull public Builder interpretedAsClaim(@NotNull Claim.Builder claim) {
+      putValue("interpretedAsClaim", claim.build());
       return this;
     }
     /**
@@ -4276,14 +4283,14 @@ public class CreativeWork extends Thing implements org.schema.IsPartOf, WorkFeat
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
-      putValue("disambiguatingDescription", description);
+    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
+      putValue("disambiguatingDescription", disambiguatingDescription);
       return this;
     }
     /**
      * A description of the item.
      */
-    @NotNull public Builder description(@NotNull Description description) {
+    @NotNull public Builder description(@NotNull String description) {
       putValue("description", description);
       return this;
     }
@@ -4623,8 +4630,8 @@ public class CreativeWork extends Thing implements org.schema.IsPartOf, WorkFeat
       if ("accessModes".equals(key) && value instanceof String) { this.accessMode((String)value); return; }
       if ("sdDatePublished".equals(key) && value instanceof java.util.Date) { this.sdDatePublished((java.util.Date)value); return; }
       if ("sdDatePublisheds".equals(key) && value instanceof java.util.Date) { this.sdDatePublished((java.util.Date)value); return; }
-      if ("interpretedAsClaim".equals(key) && value instanceof Description) { this.interpretedAsClaim((Description)value); return; }
-      if ("interpretedAsClaims".equals(key) && value instanceof Description) { this.interpretedAsClaim((Description)value); return; }
+      if ("interpretedAsClaim".equals(key) && value instanceof Claim) { this.interpretedAsClaim((Claim)value); return; }
+      if ("interpretedAsClaims".equals(key) && value instanceof Claim) { this.interpretedAsClaim((Claim)value); return; }
       if ("timeRequired".equals(key) && value instanceof Duration) { this.timeRequired((Duration)value); return; }
       if ("timeRequireds".equals(key) && value instanceof Duration) { this.timeRequired((Duration)value); return; }
       if ("locationCreated".equals(key) && value instanceof Place) { this.locationCreated((Place)value); return; }

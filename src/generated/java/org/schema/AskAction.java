@@ -30,19 +30,19 @@ public class AskAction extends CommunicateAction {
   /**
    * A sub property of object. A question.
    */
-  @JsonIgnore public Object getQuestion() {
-    return (Object) getValue("question");
+  @JsonIgnore public Question getQuestion() {
+    return (Question) getValue("question");
   }
   /**
    * A sub property of object. A question.
    */
-  @JsonIgnore public java.util.Collection<Object> getQuestions() {
+  @JsonIgnore public java.util.Collection<Question> getQuestions() {
     final java.lang.Object current = myData.get("question");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<Object>) current;
+      return (java.util.Collection<Question>) current;
     }
-    return Arrays.asList((Object) current);
+    return Arrays.asList((Question) current);
   }
   protected AskAction(java.util.Map<String,java.lang.Object> data) {
     super(data);
@@ -61,8 +61,15 @@ public class AskAction extends CommunicateAction {
     /**
      * A sub property of object. A question.
      */
-    @NotNull public Builder question(@NotNull Object object) {
-      putValue("question", object);
+    @NotNull public Builder question(@NotNull Question question) {
+      putValue("question", question);
+      return this;
+    }
+    /**
+     * A sub property of object. A question.
+     */
+    @NotNull public Builder question(@NotNull Question.Builder question) {
+      putValue("question", question.build());
       return this;
     }
     /**
@@ -152,8 +159,15 @@ public class AskAction extends CommunicateAction {
     /**
      * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
      */
-    @NotNull public Builder object(@NotNull Object object) {
-      putValue("object", object);
+    @NotNull public Builder object(@NotNull Thing thing) {
+      putValue("object", thing);
+      return this;
+    }
+    /**
+     * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
+     */
+    @NotNull public Builder object(@NotNull Thing.Builder thing) {
+      putValue("object", thing.build());
       return this;
     }
     /**
@@ -251,14 +265,14 @@ public class AskAction extends CommunicateAction {
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
-      putValue("disambiguatingDescription", description);
+    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
+      putValue("disambiguatingDescription", disambiguatingDescription);
       return this;
     }
     /**
      * A description of the item.
      */
-    @NotNull public Builder description(@NotNull Description description) {
+    @NotNull public Builder description(@NotNull String description) {
       putValue("description", description);
       return this;
     }
@@ -354,8 +368,8 @@ public class AskAction extends CommunicateAction {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, java.lang.Object value) {
-      if ("question".equals(key) && value instanceof Object) { this.question((Object)value); return; }
-      if ("questions".equals(key) && value instanceof Object) { this.question((Object)value); return; }
+      if ("question".equals(key) && value instanceof Question) { this.question((Question)value); return; }
+      if ("questions".equals(key) && value instanceof Question) { this.question((Question)value); return; }
       super.fromMap(key, value);
     }
   }

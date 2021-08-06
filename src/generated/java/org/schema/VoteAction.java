@@ -30,19 +30,19 @@ public class VoteAction extends ChooseAction {
   /**
    * A sub property of object. The candidate subject of this action.
    */
-  @JsonIgnore public Object getCandidate() {
-    return (Object) getValue("candidate");
+  @JsonIgnore public Person getCandidate() {
+    return (Person) getValue("candidate");
   }
   /**
    * A sub property of object. The candidate subject of this action.
    */
-  @JsonIgnore public java.util.Collection<Object> getCandidates() {
+  @JsonIgnore public java.util.Collection<Person> getCandidates() {
     final java.lang.Object current = myData.get("candidate");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<Object>) current;
+      return (java.util.Collection<Person>) current;
     }
-    return Arrays.asList((Object) current);
+    return Arrays.asList((Person) current);
   }
   protected VoteAction(java.util.Map<String,java.lang.Object> data) {
     super(data);
@@ -61,15 +61,36 @@ public class VoteAction extends ChooseAction {
     /**
      * A sub property of object. The candidate subject of this action.
      */
-    @NotNull public Builder candidate(@NotNull Object object) {
-      putValue("candidate", object);
+    @NotNull public Builder candidate(@NotNull Person person) {
+      putValue("candidate", person);
+      return this;
+    }
+    /**
+     * A sub property of object. The candidate subject of this action.
+     */
+    @NotNull public Builder candidate(@NotNull Person.Builder person) {
+      putValue("candidate", person.build());
       return this;
     }
     /**
      * A sub property of object. The options subject to this action.
      */
-    @NotNull public Builder actionOption(@NotNull Object object) {
-      putValue("actionOption", object);
+    @NotNull public Builder actionOption(@NotNull String actionOption) {
+      putValue("actionOption", actionOption);
+      return this;
+    }
+    /**
+     * A sub property of object. The options subject to this action.
+     */
+    @NotNull public Builder actionOption(@NotNull Thing thing) {
+      putValue("actionOption", thing);
+      return this;
+    }
+    /**
+     * A sub property of object. The options subject to this action.
+     */
+    @NotNull public Builder actionOption(@NotNull Thing.Builder thing) {
+      putValue("actionOption", thing.build());
       return this;
     }
     /**
@@ -117,8 +138,15 @@ public class VoteAction extends ChooseAction {
     /**
      * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
      */
-    @NotNull public Builder object(@NotNull Object object) {
-      putValue("object", object);
+    @NotNull public Builder object(@NotNull Thing thing) {
+      putValue("object", thing);
+      return this;
+    }
+    /**
+     * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
+     */
+    @NotNull public Builder object(@NotNull Thing.Builder thing) {
+      putValue("object", thing.build());
       return this;
     }
     /**
@@ -216,14 +244,14 @@ public class VoteAction extends ChooseAction {
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
-      putValue("disambiguatingDescription", description);
+    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
+      putValue("disambiguatingDescription", disambiguatingDescription);
       return this;
     }
     /**
      * A description of the item.
      */
-    @NotNull public Builder description(@NotNull Description description) {
+    @NotNull public Builder description(@NotNull String description) {
       putValue("description", description);
       return this;
     }
@@ -319,8 +347,8 @@ public class VoteAction extends ChooseAction {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, java.lang.Object value) {
-      if ("candidate".equals(key) && value instanceof Object) { this.candidate((Object)value); return; }
-      if ("candidates".equals(key) && value instanceof Object) { this.candidate((Object)value); return; }
+      if ("candidate".equals(key) && value instanceof Person) { this.candidate((Person)value); return; }
+      if ("candidates".equals(key) && value instanceof Person) { this.candidate((Person)value); return; }
       super.fromMap(key, value);
     }
   }

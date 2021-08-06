@@ -30,19 +30,36 @@ public class FollowAction extends InteractAction {
   /**
    * A sub property of object. The person or organization being followed.
    */
-  @JsonIgnore public Object getFollowee() {
-    return (Object) getValue("followee");
+  @JsonIgnore public Organization getFolloweeOrganization() {
+    return (Organization) getValue("followee");
   }
   /**
    * A sub property of object. The person or organization being followed.
    */
-  @JsonIgnore public java.util.Collection<Object> getFollowees() {
+  @JsonIgnore public java.util.Collection<Organization> getFolloweeOrganizations() {
     final java.lang.Object current = myData.get("followee");
     if (current == null) return Collections.emptyList();
     if (current instanceof java.util.Collection) {
-      return (java.util.Collection<Object>) current;
+      return (java.util.Collection<Organization>) current;
     }
-    return Arrays.asList((Object) current);
+    return Arrays.asList((Organization) current);
+  }
+  /**
+   * A sub property of object. The person or organization being followed.
+   */
+  @JsonIgnore public Person getFolloweePerson() {
+    return (Person) getValue("followee");
+  }
+  /**
+   * A sub property of object. The person or organization being followed.
+   */
+  @JsonIgnore public java.util.Collection<Person> getFolloweePersons() {
+    final java.lang.Object current = myData.get("followee");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
+    }
+    return Arrays.asList((Person) current);
   }
   protected FollowAction(java.util.Map<String,java.lang.Object> data) {
     super(data);
@@ -61,8 +78,29 @@ public class FollowAction extends InteractAction {
     /**
      * A sub property of object. The person or organization being followed.
      */
-    @NotNull public Builder followee(@NotNull Object object) {
-      putValue("followee", object);
+    @NotNull public Builder followee(@NotNull Organization organization) {
+      putValue("followee", organization);
+      return this;
+    }
+    /**
+     * A sub property of object. The person or organization being followed.
+     */
+    @NotNull public Builder followee(@NotNull Organization.Builder organization) {
+      putValue("followee", organization.build());
+      return this;
+    }
+    /**
+     * A sub property of object. The person or organization being followed.
+     */
+    @NotNull public Builder followee(@NotNull Person person) {
+      putValue("followee", person);
+      return this;
+    }
+    /**
+     * A sub property of object. The person or organization being followed.
+     */
+    @NotNull public Builder followee(@NotNull Person.Builder person) {
+      putValue("followee", person.build());
       return this;
     }
     /**
@@ -110,8 +148,15 @@ public class FollowAction extends InteractAction {
     /**
      * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
      */
-    @NotNull public Builder object(@NotNull Object object) {
-      putValue("object", object);
+    @NotNull public Builder object(@NotNull Thing thing) {
+      putValue("object", thing);
+      return this;
+    }
+    /**
+     * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
+     */
+    @NotNull public Builder object(@NotNull Thing.Builder thing) {
+      putValue("object", thing.build());
       return this;
     }
     /**
@@ -209,14 +254,14 @@ public class FollowAction extends InteractAction {
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull Description description) {
-      putValue("disambiguatingDescription", description);
+    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
+      putValue("disambiguatingDescription", disambiguatingDescription);
       return this;
     }
     /**
      * A description of the item.
      */
-    @NotNull public Builder description(@NotNull Description description) {
+    @NotNull public Builder description(@NotNull String description) {
       putValue("description", description);
       return this;
     }
@@ -312,8 +357,10 @@ public class FollowAction extends InteractAction {
       return id(Long.toString(id));
     }
     @Override protected void fromMap(String key, java.lang.Object value) {
-      if ("followee".equals(key) && value instanceof Object) { this.followee((Object)value); return; }
-      if ("followees".equals(key) && value instanceof Object) { this.followee((Object)value); return; }
+      if ("followee".equals(key) && value instanceof Organization) { this.followee((Organization)value); return; }
+      if ("followees".equals(key) && value instanceof Organization) { this.followee((Organization)value); return; }
+      if ("followee".equals(key) && value instanceof Person) { this.followee((Person)value); return; }
+      if ("followees".equals(key) && value instanceof Person) { this.followee((Person)value); return; }
       super.fromMap(key, value);
     }
   }
