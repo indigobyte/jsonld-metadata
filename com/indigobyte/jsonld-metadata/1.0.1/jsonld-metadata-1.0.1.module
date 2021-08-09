@@ -27,11 +27,11 @@
         {
           "name": "jsonld-metadata-1.0.1.jar",
           "url": "jsonld-metadata-1.0.1.jar",
-          "size": 7385741,
-          "sha512": "236188435b824907815268eed28a5356ca37ad955c6665269e043d8bdf4a84296decd522e2d5461d9dc000bf9c3feaac29faf5b1120cb0c0cce8c6e63932fda8",
-          "sha256": "f85312b69321fe2bf9d3dd293d063cf6443c6b5c023e1d8fd69c6f9d2194f0b6",
-          "sha1": "ff7a65ee912f71c744e42a90a5dd593dd2283794",
-          "md5": "47897f30da04572efa296e0979901aff"
+          "size": 10339214,
+          "sha512": "943975caa67b47e46c36d509b7336d65d411cf22dd462e7e7a1a1a1fde69442bebc65db68dc08c5ef2f0eb3e9dd67498d5986eac8db989d29f99f815a44a8af1",
+          "sha256": "aed23455a76888c71b94727ee62d6c2b63300be9a43688f9f13630aabcab5d49",
+          "sha1": "0cedcefa6e880abf14e2be77c7d97ce8eceea30c",
+          "md5": "dced38501466dd0cb9415e3373bebabd"
         }
       ]
     },
@@ -64,11 +64,11 @@
         {
           "name": "jsonld-metadata-1.0.1.jar",
           "url": "jsonld-metadata-1.0.1.jar",
-          "size": 7385741,
-          "sha512": "236188435b824907815268eed28a5356ca37ad955c6665269e043d8bdf4a84296decd522e2d5461d9dc000bf9c3feaac29faf5b1120cb0c0cce8c6e63932fda8",
-          "sha256": "f85312b69321fe2bf9d3dd293d063cf6443c6b5c023e1d8fd69c6f9d2194f0b6",
-          "sha1": "ff7a65ee912f71c744e42a90a5dd593dd2283794",
-          "md5": "47897f30da04572efa296e0979901aff"
+          "size": 10339214,
+          "sha512": "943975caa67b47e46c36d509b7336d65d411cf22dd462e7e7a1a1a1fde69442bebc65db68dc08c5ef2f0eb3e9dd67498d5986eac8db989d29f99f815a44a8af1",
+          "sha256": "aed23455a76888c71b94727ee62d6c2b63300be9a43688f9f13630aabcab5d49",
+          "sha1": "0cedcefa6e880abf14e2be77c7d97ce8eceea30c",
+          "md5": "dced38501466dd0cb9415e3373bebabd"
         }
       ]
     },
@@ -84,11 +84,11 @@
         {
           "name": "jsonld-metadata-1.0.1-javadoc.jar",
           "url": "jsonld-metadata-1.0.1-javadoc.jar",
-          "size": 20729116,
-          "sha512": "25a470d215d8f3f9b537c4c0b1081170733b1405fac001d38d50bbd607f9ef18b8d62d48f8de9e35c9986990827c4644640045fff3f9a0dffe280ea8d1d04171",
-          "sha256": "8cdcc3ab3b60474f46b6559931b17be6b1a80a424d8902d4ae9ff64eda6b549c",
-          "sha1": "e09c6c13f9be4219970761707a41dcca217fcca2",
-          "md5": "d15159aaee38f1878b091ba7cb4e4fb0"
+          "size": 29159480,
+          "sha512": "a309a99d085a5c74fe31aad58b3c84a7031bb04f5704050fa7f0cabf4785d8636f401aa2ac985145b4f7e41012cc91e6ea5a4460f2e47fef6d68d7006bc3eee9",
+          "sha256": "a03915f15fa50d410ab0561134e092a837b838d3af5965fb2260d1688a19f6c8",
+          "sha1": "84c5fccaad653ee2b4dd6fa9f765b619c45a97fc",
+          "md5": "89e90c0977d7fed8892058cd3a435ef1"
         }
       ]
     },
@@ -104,11 +104,11 @@
         {
           "name": "jsonld-metadata-1.0.1-sources.jar",
           "url": "jsonld-metadata-1.0.1-sources.jar",
-          "size": 5907839,
-          "sha512": "ebd94214fe435df50eff1f2e4e78682e09d457cf03b98ad58da163bed78a8fc4a97c528d32f9034abf6e1aa636fdc031a8b8d1a8c7026e63813d49763e9e5a6a",
-          "sha256": "7c284493a8e4997160a1c6bfcff9bd72a070260208897d710248440b32daef72",
-          "sha1": "53e755603bcae7a4de2dcbd3ac6b7f09bfd57fdb",
-          "md5": "03046fd6a1b30340142399b71b27bd88"
+          "size": 8127062,
+          "sha512": "f1728dc1e1f82dbc468e5c625f60f0913bfd4a51c89b7a0db9ec14fb30b85d0e99270597f0cecd18791631a673324b47076debcfffe03a1740bd5a819ebdc93b",
+          "sha256": "87017aa8183fa11517a99d7ebe9a357422b207a40966da4fc32006f3c8acb8a8",
+          "sha1": "86cf0c035adcbec6163b62ffec64488e88ff93e9",
+          "md5": "f140cfcf93c5ac719a25958ec4e8647e"
         }
       ]
     }
