@@ -21,6 +21,7 @@ package org.schema;
 import com.fasterxml.jackson.databind.annotation.*;
 import com.fasterxml.jackson.annotation.*;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.*;
 
 /**
@@ -29,12 +30,15 @@ import java.util.*;
 public class RepaymentSpecification extends StructuredValue {
   /**
    * a type of payment made in cash during the onset of the purchase of an expensive good/service. The payment typically represents only a percentage of the full purchase price.
+   * @return downPayment property set by first invocation of downPayment method or {@code null}.
    */
   @JsonIgnore public Integer getDownPaymentInteger() {
     return (Integer) getValue("downPayment");
   }
   /**
    * a type of payment made in cash during the onset of the purchase of an expensive good/service. The payment typically represents only a percentage of the full purchase price.
+   * @return all downPayment properties as {@link java.util.Collection} or an empty collection 
+   * if downPayment was not set.
    */
   @JsonIgnore public java.util.Collection<Integer> getDownPaymentIntegers() {
     final java.lang.Object current = myData.get("downPayment");
@@ -46,12 +50,15 @@ public class RepaymentSpecification extends StructuredValue {
   }
   /**
    * a type of payment made in cash during the onset of the purchase of an expensive good/service. The payment typically represents only a percentage of the full purchase price.
+   * @return downPayment property set by first invocation of downPayment method or {@code null}.
    */
   @JsonIgnore public Long getDownPaymentLong() {
     return (Long) getValue("downPayment");
   }
   /**
    * a type of payment made in cash during the onset of the purchase of an expensive good/service. The payment typically represents only a percentage of the full purchase price.
+   * @return all downPayment properties as {@link java.util.Collection} or an empty collection 
+   * if downPayment was not set.
    */
   @JsonIgnore public java.util.Collection<Long> getDownPaymentLongs() {
     final java.lang.Object current = myData.get("downPayment");
@@ -63,12 +70,15 @@ public class RepaymentSpecification extends StructuredValue {
   }
   /**
    * a type of payment made in cash during the onset of the purchase of an expensive good/service. The payment typically represents only a percentage of the full purchase price.
+   * @return downPayment property set by first invocation of downPayment method or {@code null}.
    */
   @JsonIgnore public Float getDownPaymentFloat() {
     return (Float) getValue("downPayment");
   }
   /**
    * a type of payment made in cash during the onset of the purchase of an expensive good/service. The payment typically represents only a percentage of the full purchase price.
+   * @return all downPayment properties as {@link java.util.Collection} or an empty collection 
+   * if downPayment was not set.
    */
   @JsonIgnore public java.util.Collection<Float> getDownPaymentFloats() {
     final java.lang.Object current = myData.get("downPayment");
@@ -80,12 +90,15 @@ public class RepaymentSpecification extends StructuredValue {
   }
   /**
    * a type of payment made in cash during the onset of the purchase of an expensive good/service. The payment typically represents only a percentage of the full purchase price.
+   * @return downPayment property set by first invocation of downPayment method or {@code null}.
    */
   @JsonIgnore public Double getDownPaymentDouble() {
     return (Double) getValue("downPayment");
   }
   /**
    * a type of payment made in cash during the onset of the purchase of an expensive good/service. The payment typically represents only a percentage of the full purchase price.
+   * @return all downPayment properties as {@link java.util.Collection} or an empty collection 
+   * if downPayment was not set.
    */
   @JsonIgnore public java.util.Collection<Double> getDownPaymentDoubles() {
     final java.lang.Object current = myData.get("downPayment");
@@ -97,12 +110,15 @@ public class RepaymentSpecification extends StructuredValue {
   }
   /**
    * a type of payment made in cash during the onset of the purchase of an expensive good/service. The payment typically represents only a percentage of the full purchase price.
+   * @return downPayment property set by first invocation of downPayment method or {@code null}.
    */
   @JsonIgnore public String getDownPaymentString() {
     return (String) getValue("downPayment");
   }
   /**
    * a type of payment made in cash during the onset of the purchase of an expensive good/service. The payment typically represents only a percentage of the full purchase price.
+   * @return all downPayment properties as {@link java.util.Collection} or an empty collection 
+   * if downPayment was not set.
    */
   @JsonIgnore public java.util.Collection<String> getDownPaymentStrings() {
     final java.lang.Object current = myData.get("downPayment");
@@ -114,12 +130,15 @@ public class RepaymentSpecification extends StructuredValue {
   }
   /**
    * The amount of money to pay in a single payment.
+   * @return loanPaymentAmount property set by first invocation of loanPaymentAmount method or {@code null}.
    */
   @JsonIgnore public MonetaryAmount getLoanPaymentAmount() {
     return (MonetaryAmount) getValue("loanPaymentAmount");
   }
   /**
    * The amount of money to pay in a single payment.
+   * @return all loanPaymentAmount properties as {@link java.util.Collection} or an empty collection 
+   * if loanPaymentAmount was not set.
    */
   @JsonIgnore public java.util.Collection<MonetaryAmount> getLoanPaymentAmounts() {
     final java.lang.Object current = myData.get("loanPaymentAmount");
@@ -131,12 +150,15 @@ public class RepaymentSpecification extends StructuredValue {
   }
   /**
    * Frequency of payments due, i.e. number of months between payments. This is defined as a frequency, i.e. the reciprocal of a period of time.
+   * @return loanPaymentFrequency property set by first invocation of loanPaymentFrequency method or {@code null}.
    */
   @JsonIgnore public Integer getLoanPaymentFrequencyInteger() {
     return (Integer) getValue("loanPaymentFrequency");
   }
   /**
    * Frequency of payments due, i.e. number of months between payments. This is defined as a frequency, i.e. the reciprocal of a period of time.
+   * @return all loanPaymentFrequency properties as {@link java.util.Collection} or an empty collection 
+   * if loanPaymentFrequency was not set.
    */
   @JsonIgnore public java.util.Collection<Integer> getLoanPaymentFrequencyIntegers() {
     final java.lang.Object current = myData.get("loanPaymentFrequency");
@@ -148,12 +170,15 @@ public class RepaymentSpecification extends StructuredValue {
   }
   /**
    * Frequency of payments due, i.e. number of months between payments. This is defined as a frequency, i.e. the reciprocal of a period of time.
+   * @return loanPaymentFrequency property set by first invocation of loanPaymentFrequency method or {@code null}.
    */
   @JsonIgnore public Long getLoanPaymentFrequencyLong() {
     return (Long) getValue("loanPaymentFrequency");
   }
   /**
    * Frequency of payments due, i.e. number of months between payments. This is defined as a frequency, i.e. the reciprocal of a period of time.
+   * @return all loanPaymentFrequency properties as {@link java.util.Collection} or an empty collection 
+   * if loanPaymentFrequency was not set.
    */
   @JsonIgnore public java.util.Collection<Long> getLoanPaymentFrequencyLongs() {
     final java.lang.Object current = myData.get("loanPaymentFrequency");
@@ -165,12 +190,15 @@ public class RepaymentSpecification extends StructuredValue {
   }
   /**
    * Frequency of payments due, i.e. number of months between payments. This is defined as a frequency, i.e. the reciprocal of a period of time.
+   * @return loanPaymentFrequency property set by first invocation of loanPaymentFrequency method or {@code null}.
    */
   @JsonIgnore public Float getLoanPaymentFrequencyFloat() {
     return (Float) getValue("loanPaymentFrequency");
   }
   /**
    * Frequency of payments due, i.e. number of months between payments. This is defined as a frequency, i.e. the reciprocal of a period of time.
+   * @return all loanPaymentFrequency properties as {@link java.util.Collection} or an empty collection 
+   * if loanPaymentFrequency was not set.
    */
   @JsonIgnore public java.util.Collection<Float> getLoanPaymentFrequencyFloats() {
     final java.lang.Object current = myData.get("loanPaymentFrequency");
@@ -182,12 +210,15 @@ public class RepaymentSpecification extends StructuredValue {
   }
   /**
    * Frequency of payments due, i.e. number of months between payments. This is defined as a frequency, i.e. the reciprocal of a period of time.
+   * @return loanPaymentFrequency property set by first invocation of loanPaymentFrequency method or {@code null}.
    */
   @JsonIgnore public Double getLoanPaymentFrequencyDouble() {
     return (Double) getValue("loanPaymentFrequency");
   }
   /**
    * Frequency of payments due, i.e. number of months between payments. This is defined as a frequency, i.e. the reciprocal of a period of time.
+   * @return all loanPaymentFrequency properties as {@link java.util.Collection} or an empty collection 
+   * if loanPaymentFrequency was not set.
    */
   @JsonIgnore public java.util.Collection<Double> getLoanPaymentFrequencyDoubles() {
     final java.lang.Object current = myData.get("loanPaymentFrequency");
@@ -199,12 +230,15 @@ public class RepaymentSpecification extends StructuredValue {
   }
   /**
    * Frequency of payments due, i.e. number of months between payments. This is defined as a frequency, i.e. the reciprocal of a period of time.
+   * @return loanPaymentFrequency property set by first invocation of loanPaymentFrequency method or {@code null}.
    */
   @JsonIgnore public String getLoanPaymentFrequencyString() {
     return (String) getValue("loanPaymentFrequency");
   }
   /**
    * Frequency of payments due, i.e. number of months between payments. This is defined as a frequency, i.e. the reciprocal of a period of time.
+   * @return all loanPaymentFrequency properties as {@link java.util.Collection} or an empty collection 
+   * if loanPaymentFrequency was not set.
    */
   @JsonIgnore public java.util.Collection<String> getLoanPaymentFrequencyStrings() {
     final java.lang.Object current = myData.get("loanPaymentFrequency");
@@ -216,12 +250,15 @@ public class RepaymentSpecification extends StructuredValue {
   }
   /**
    * The number of payments contractually required at origination to repay the loan. For monthly paying loans this is the number of months from the contractual first payment date to the maturity date.
+   * @return numberOfLoanPayments property set by first invocation of numberOfLoanPayments method or {@code null}.
    */
   @JsonIgnore public Integer getNumberOfLoanPaymentsInteger() {
     return (Integer) getValue("numberOfLoanPayments");
   }
   /**
    * The number of payments contractually required at origination to repay the loan. For monthly paying loans this is the number of months from the contractual first payment date to the maturity date.
+   * @return all numberOfLoanPayments properties as {@link java.util.Collection} or an empty collection 
+   * if numberOfLoanPayments was not set.
    */
   @JsonIgnore public java.util.Collection<Integer> getNumberOfLoanPaymentsIntegers() {
     final java.lang.Object current = myData.get("numberOfLoanPayments");
@@ -233,12 +270,15 @@ public class RepaymentSpecification extends StructuredValue {
   }
   /**
    * The number of payments contractually required at origination to repay the loan. For monthly paying loans this is the number of months from the contractual first payment date to the maturity date.
+   * @return numberOfLoanPayments property set by first invocation of numberOfLoanPayments method or {@code null}.
    */
   @JsonIgnore public Long getNumberOfLoanPaymentsLong() {
     return (Long) getValue("numberOfLoanPayments");
   }
   /**
    * The number of payments contractually required at origination to repay the loan. For monthly paying loans this is the number of months from the contractual first payment date to the maturity date.
+   * @return all numberOfLoanPayments properties as {@link java.util.Collection} or an empty collection 
+   * if numberOfLoanPayments was not set.
    */
   @JsonIgnore public java.util.Collection<Long> getNumberOfLoanPaymentsLongs() {
     final java.lang.Object current = myData.get("numberOfLoanPayments");
@@ -250,12 +290,15 @@ public class RepaymentSpecification extends StructuredValue {
   }
   /**
    * The number of payments contractually required at origination to repay the loan. For monthly paying loans this is the number of months from the contractual first payment date to the maturity date.
+   * @return numberOfLoanPayments property set by first invocation of numberOfLoanPayments method or {@code null}.
    */
   @JsonIgnore public Float getNumberOfLoanPaymentsFloat() {
     return (Float) getValue("numberOfLoanPayments");
   }
   /**
    * The number of payments contractually required at origination to repay the loan. For monthly paying loans this is the number of months from the contractual first payment date to the maturity date.
+   * @return all numberOfLoanPayments properties as {@link java.util.Collection} or an empty collection 
+   * if numberOfLoanPayments was not set.
    */
   @JsonIgnore public java.util.Collection<Float> getNumberOfLoanPaymentsFloats() {
     final java.lang.Object current = myData.get("numberOfLoanPayments");
@@ -267,12 +310,15 @@ public class RepaymentSpecification extends StructuredValue {
   }
   /**
    * The number of payments contractually required at origination to repay the loan. For monthly paying loans this is the number of months from the contractual first payment date to the maturity date.
+   * @return numberOfLoanPayments property set by first invocation of numberOfLoanPayments method or {@code null}.
    */
   @JsonIgnore public Double getNumberOfLoanPaymentsDouble() {
     return (Double) getValue("numberOfLoanPayments");
   }
   /**
    * The number of payments contractually required at origination to repay the loan. For monthly paying loans this is the number of months from the contractual first payment date to the maturity date.
+   * @return all numberOfLoanPayments properties as {@link java.util.Collection} or an empty collection 
+   * if numberOfLoanPayments was not set.
    */
   @JsonIgnore public java.util.Collection<Double> getNumberOfLoanPaymentsDoubles() {
     final java.lang.Object current = myData.get("numberOfLoanPayments");
@@ -284,12 +330,15 @@ public class RepaymentSpecification extends StructuredValue {
   }
   /**
    * The number of payments contractually required at origination to repay the loan. For monthly paying loans this is the number of months from the contractual first payment date to the maturity date.
+   * @return numberOfLoanPayments property set by first invocation of numberOfLoanPayments method or {@code null}.
    */
   @JsonIgnore public String getNumberOfLoanPaymentsString() {
     return (String) getValue("numberOfLoanPayments");
   }
   /**
    * The number of payments contractually required at origination to repay the loan. For monthly paying loans this is the number of months from the contractual first payment date to the maturity date.
+   * @return all numberOfLoanPayments properties as {@link java.util.Collection} or an empty collection 
+   * if numberOfLoanPayments was not set.
    */
   @JsonIgnore public java.util.Collection<String> getNumberOfLoanPaymentsStrings() {
     final java.lang.Object current = myData.get("numberOfLoanPayments");
@@ -301,12 +350,15 @@ public class RepaymentSpecification extends StructuredValue {
   }
   /**
    * The amount to be paid as a penalty in the event of early payment of the loan.
+   * @return earlyPrepaymentPenalty property set by first invocation of earlyPrepaymentPenalty method or {@code null}.
    */
   @JsonIgnore public MonetaryAmount getEarlyPrepaymentPenalty() {
     return (MonetaryAmount) getValue("earlyPrepaymentPenalty");
   }
   /**
    * The amount to be paid as a penalty in the event of early payment of the loan.
+   * @return all earlyPrepaymentPenalty properties as {@link java.util.Collection} or an empty collection 
+   * if earlyPrepaymentPenalty was not set.
    */
   @JsonIgnore public java.util.Collection<MonetaryAmount> getEarlyPrepaymentPenaltys() {
     final java.lang.Object current = myData.get("earlyPrepaymentPenalty");
@@ -332,6 +384,8 @@ public class RepaymentSpecification extends StructuredValue {
     }
     /**
      * a type of payment made in cash during the onset of the purchase of an expensive good/service. The payment typically represents only a percentage of the full purchase price.
+     * @param integer value to set
+     * @return this builder instance
      */
     @NotNull public Builder downPayment(@NotNull Integer integer) {
       putValue("downPayment", integer);
@@ -339,6 +393,8 @@ public class RepaymentSpecification extends StructuredValue {
     }
     /**
      * a type of payment made in cash during the onset of the purchase of an expensive good/service. The payment typically represents only a percentage of the full purchase price.
+     * @param downPayment value to set
+     * @return this builder instance
      */
     @NotNull public Builder downPayment(@NotNull Long downPayment) {
       putValue("downPayment", downPayment);
@@ -346,6 +402,8 @@ public class RepaymentSpecification extends StructuredValue {
     }
     /**
      * a type of payment made in cash during the onset of the purchase of an expensive good/service. The payment typically represents only a percentage of the full purchase price.
+     * @param downPayment value to set
+     * @return this builder instance
      */
     @NotNull public Builder downPayment(@NotNull Float downPayment) {
       putValue("downPayment", downPayment);
@@ -353,6 +411,8 @@ public class RepaymentSpecification extends StructuredValue {
     }
     /**
      * a type of payment made in cash during the onset of the purchase of an expensive good/service. The payment typically represents only a percentage of the full purchase price.
+     * @param downPayment value to set
+     * @return this builder instance
      */
     @NotNull public Builder downPayment(@NotNull Double downPayment) {
       putValue("downPayment", downPayment);
@@ -360,13 +420,35 @@ public class RepaymentSpecification extends StructuredValue {
     }
     /**
      * a type of payment made in cash during the onset of the purchase of an expensive good/service. The payment typically represents only a percentage of the full purchase price.
+     * @param downPayment value to set
+     * @return this builder instance
      */
     @NotNull public Builder downPayment(@NotNull String downPayment) {
       putValue("downPayment", downPayment);
       return this;
     }
     /**
+     * Remove downPayment property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeDownPayment() {
+      removeValue("downPayment");
+      return this;
+    }
+    /**
+     * Get currently set value for downPayment property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getDownPayment() {
+      return myData.get("downPayment");
+    }
+    /**
      * The amount of money to pay in a single payment.
+     * @param monetaryAmount value to set
+     * @return this builder instance
      */
     @NotNull public Builder loanPaymentAmount(@NotNull MonetaryAmount monetaryAmount) {
       putValue("loanPaymentAmount", monetaryAmount);
@@ -374,13 +456,35 @@ public class RepaymentSpecification extends StructuredValue {
     }
     /**
      * The amount of money to pay in a single payment.
+     * @param monetaryAmount value to set
+     * @return this builder instance
      */
     @NotNull public Builder loanPaymentAmount(@NotNull MonetaryAmount.Builder monetaryAmount) {
       putValue("loanPaymentAmount", monetaryAmount.build());
       return this;
     }
     /**
+     * Remove loanPaymentAmount property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeLoanPaymentAmount() {
+      removeValue("loanPaymentAmount");
+      return this;
+    }
+    /**
+     * Get currently set value for loanPaymentAmount property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getLoanPaymentAmount() {
+      return myData.get("loanPaymentAmount");
+    }
+    /**
      * Frequency of payments due, i.e. number of months between payments. This is defined as a frequency, i.e. the reciprocal of a period of time.
+     * @param integer value to set
+     * @return this builder instance
      */
     @NotNull public Builder loanPaymentFrequency(@NotNull Integer integer) {
       putValue("loanPaymentFrequency", integer);
@@ -388,6 +492,8 @@ public class RepaymentSpecification extends StructuredValue {
     }
     /**
      * Frequency of payments due, i.e. number of months between payments. This is defined as a frequency, i.e. the reciprocal of a period of time.
+     * @param loanPaymentFrequency value to set
+     * @return this builder instance
      */
     @NotNull public Builder loanPaymentFrequency(@NotNull Long loanPaymentFrequency) {
       putValue("loanPaymentFrequency", loanPaymentFrequency);
@@ -395,6 +501,8 @@ public class RepaymentSpecification extends StructuredValue {
     }
     /**
      * Frequency of payments due, i.e. number of months between payments. This is defined as a frequency, i.e. the reciprocal of a period of time.
+     * @param loanPaymentFrequency value to set
+     * @return this builder instance
      */
     @NotNull public Builder loanPaymentFrequency(@NotNull Float loanPaymentFrequency) {
       putValue("loanPaymentFrequency", loanPaymentFrequency);
@@ -402,6 +510,8 @@ public class RepaymentSpecification extends StructuredValue {
     }
     /**
      * Frequency of payments due, i.e. number of months between payments. This is defined as a frequency, i.e. the reciprocal of a period of time.
+     * @param loanPaymentFrequency value to set
+     * @return this builder instance
      */
     @NotNull public Builder loanPaymentFrequency(@NotNull Double loanPaymentFrequency) {
       putValue("loanPaymentFrequency", loanPaymentFrequency);
@@ -409,13 +519,35 @@ public class RepaymentSpecification extends StructuredValue {
     }
     /**
      * Frequency of payments due, i.e. number of months between payments. This is defined as a frequency, i.e. the reciprocal of a period of time.
+     * @param loanPaymentFrequency value to set
+     * @return this builder instance
      */
     @NotNull public Builder loanPaymentFrequency(@NotNull String loanPaymentFrequency) {
       putValue("loanPaymentFrequency", loanPaymentFrequency);
       return this;
     }
     /**
+     * Remove loanPaymentFrequency property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeLoanPaymentFrequency() {
+      removeValue("loanPaymentFrequency");
+      return this;
+    }
+    /**
+     * Get currently set value for loanPaymentFrequency property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getLoanPaymentFrequency() {
+      return myData.get("loanPaymentFrequency");
+    }
+    /**
      * The number of payments contractually required at origination to repay the loan. For monthly paying loans this is the number of months from the contractual first payment date to the maturity date.
+     * @param integer value to set
+     * @return this builder instance
      */
     @NotNull public Builder numberOfLoanPayments(@NotNull Integer integer) {
       putValue("numberOfLoanPayments", integer);
@@ -423,6 +555,8 @@ public class RepaymentSpecification extends StructuredValue {
     }
     /**
      * The number of payments contractually required at origination to repay the loan. For monthly paying loans this is the number of months from the contractual first payment date to the maturity date.
+     * @param numberOfLoanPayments value to set
+     * @return this builder instance
      */
     @NotNull public Builder numberOfLoanPayments(@NotNull Long numberOfLoanPayments) {
       putValue("numberOfLoanPayments", numberOfLoanPayments);
@@ -430,6 +564,8 @@ public class RepaymentSpecification extends StructuredValue {
     }
     /**
      * The number of payments contractually required at origination to repay the loan. For monthly paying loans this is the number of months from the contractual first payment date to the maturity date.
+     * @param numberOfLoanPayments value to set
+     * @return this builder instance
      */
     @NotNull public Builder numberOfLoanPayments(@NotNull Float numberOfLoanPayments) {
       putValue("numberOfLoanPayments", numberOfLoanPayments);
@@ -437,6 +573,8 @@ public class RepaymentSpecification extends StructuredValue {
     }
     /**
      * The number of payments contractually required at origination to repay the loan. For monthly paying loans this is the number of months from the contractual first payment date to the maturity date.
+     * @param numberOfLoanPayments value to set
+     * @return this builder instance
      */
     @NotNull public Builder numberOfLoanPayments(@NotNull Double numberOfLoanPayments) {
       putValue("numberOfLoanPayments", numberOfLoanPayments);
@@ -444,13 +582,35 @@ public class RepaymentSpecification extends StructuredValue {
     }
     /**
      * The number of payments contractually required at origination to repay the loan. For monthly paying loans this is the number of months from the contractual first payment date to the maturity date.
+     * @param numberOfLoanPayments value to set
+     * @return this builder instance
      */
     @NotNull public Builder numberOfLoanPayments(@NotNull String numberOfLoanPayments) {
       putValue("numberOfLoanPayments", numberOfLoanPayments);
       return this;
     }
     /**
+     * Remove numberOfLoanPayments property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeNumberOfLoanPayments() {
+      removeValue("numberOfLoanPayments");
+      return this;
+    }
+    /**
+     * Get currently set value for numberOfLoanPayments property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getNumberOfLoanPayments() {
+      return myData.get("numberOfLoanPayments");
+    }
+    /**
      * The amount to be paid as a penalty in the event of early payment of the loan.
+     * @param monetaryAmount value to set
+     * @return this builder instance
      */
     @NotNull public Builder earlyPrepaymentPenalty(@NotNull MonetaryAmount monetaryAmount) {
       putValue("earlyPrepaymentPenalty", monetaryAmount);
@@ -458,28 +618,90 @@ public class RepaymentSpecification extends StructuredValue {
     }
     /**
      * The amount to be paid as a penalty in the event of early payment of the loan.
+     * @param monetaryAmount value to set
+     * @return this builder instance
      */
     @NotNull public Builder earlyPrepaymentPenalty(@NotNull MonetaryAmount.Builder monetaryAmount) {
       putValue("earlyPrepaymentPenalty", monetaryAmount.build());
       return this;
     }
     /**
+     * Remove earlyPrepaymentPenalty property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeEarlyPrepaymentPenalty() {
+      removeValue("earlyPrepaymentPenalty");
+      return this;
+    }
+    /**
+     * Get currently set value for earlyPrepaymentPenalty property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getEarlyPrepaymentPenalty() {
+      return myData.get("earlyPrepaymentPenalty");
+    }
+    /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
+     * 
+     * @param identifier value to set
+     * @return this builder instance
      */
     @NotNull public Builder identifier(@NotNull Identifier identifier) {
       putValue("identifier", identifier);
       return this;
     }
     /**
+     * Remove identifier property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeIdentifier() {
+      removeValue("identifier");
+      return this;
+    }
+    /**
+     * Get currently set value for identifier property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getIdentifier() {
+      return myData.get("identifier");
+    }
+    /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * @param image value to set
+     * @return this builder instance
      */
     @NotNull public Builder image(@NotNull Image image) {
       putValue("image", image);
       return this;
     }
     /**
+     * Remove image property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeImage() {
+      removeValue("image");
+      return this;
+    }
+    /**
+     * Get currently set value for image property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getImage() {
+      return myData.get("image");
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     * @param action value to set
+     * @return this builder instance
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
       putValue("potentialAction", action);
@@ -487,62 +709,224 @@ public class RepaymentSpecification extends StructuredValue {
     }
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     * @param action value to set
+     * @return this builder instance
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
       return this;
     }
     /**
+     * Remove potentialAction property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removePotentialAction() {
+      removeValue("potentialAction");
+      return this;
+    }
+    /**
+     * Get currently set value for potentialAction property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getPotentialAction() {
+      return myData.get("potentialAction");
+    }
+    /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * @param disambiguatingDescription value to set
+     * @return this builder instance
      */
     @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
       putValue("disambiguatingDescription", disambiguatingDescription);
       return this;
     }
     /**
+     * Remove disambiguatingDescription property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeDisambiguatingDescription() {
+      removeValue("disambiguatingDescription");
+      return this;
+    }
+    /**
+     * Get currently set value for disambiguatingDescription property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getDisambiguatingDescription() {
+      return myData.get("disambiguatingDescription");
+    }
+    /**
      * A description of the item.
+     * @param description value to set
+     * @return this builder instance
      */
     @NotNull public Builder description(@NotNull String description) {
       putValue("description", description);
       return this;
     }
     /**
+     * Remove description property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeDescription() {
+      removeValue("description");
+      return this;
+    }
+    /**
+     * Get currently set value for description property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getDescription() {
+      return myData.get("description");
+    }
+    /**
      * URL of the item.
+     * @param url value to set
+     * @return this builder instance
      */
     @NotNull public Builder url(@NotNull String url) {
       putValue("url", url);
       return this;
     }
     /**
+     * Remove url property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeUrl() {
+      removeValue("url");
+      return this;
+    }
+    /**
+     * Get currently set value for url property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getUrl() {
+      return myData.get("url");
+    }
+    /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * @param additionalType value to set
+     * @return this builder instance
      */
     @NotNull public Builder additionalType(@NotNull String additionalType) {
       putValue("additionalType", additionalType);
       return this;
     }
     /**
+     * Remove additionalType property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeAdditionalType() {
+      removeValue("additionalType");
+      return this;
+    }
+    /**
+     * Get currently set value for additionalType property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getAdditionalType() {
+      return myData.get("additionalType");
+    }
+    /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     * @param sameAs value to set
+     * @return this builder instance
      */
     @NotNull public Builder sameAs(@NotNull String sameAs) {
       putValue("sameAs", sameAs);
       return this;
     }
     /**
+     * Remove sameAs property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeSameAs() {
+      removeValue("sameAs");
+      return this;
+    }
+    /**
+     * Get currently set value for sameAs property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getSameAs() {
+      return myData.get("sameAs");
+    }
+    /**
      * An alias for the item.
+     * @param alternateName value to set
+     * @return this builder instance
      */
     @NotNull public Builder alternateName(@NotNull String alternateName) {
       putValue("alternateName", alternateName);
       return this;
     }
     /**
+     * Remove alternateName property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeAlternateName() {
+      removeValue("alternateName");
+      return this;
+    }
+    /**
+     * Get currently set value for alternateName property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getAlternateName() {
+      return myData.get("alternateName");
+    }
+    /**
      * The name of the item.
+     * @param name value to set
+     * @return this builder instance
      */
     @NotNull public Builder name(@NotNull String name) {
       putValue("name", name);
       return this;
     }
     /**
+     * Remove name property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeName() {
+      removeValue("name");
+      return this;
+    }
+    /**
+     * Get currently set value for name property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getName() {
+      return myData.get("name");
+    }
+    /**
      * A CreativeWork or Event about this Thing.
+     * @param creativeWork value to set
+     * @return this builder instance
      */
     @NotNull public Builder subjectOf(@NotNull CreativeWork creativeWork) {
       putValue("subjectOf", creativeWork);
@@ -550,6 +934,8 @@ public class RepaymentSpecification extends StructuredValue {
     }
     /**
      * A CreativeWork or Event about this Thing.
+     * @param creativeWork value to set
+     * @return this builder instance
      */
     @NotNull public Builder subjectOf(@NotNull CreativeWork.Builder creativeWork) {
       putValue("subjectOf", creativeWork.build());
@@ -557,6 +943,8 @@ public class RepaymentSpecification extends StructuredValue {
     }
     /**
      * A CreativeWork or Event about this Thing.
+     * @param event value to set
+     * @return this builder instance
      */
     @NotNull public Builder subjectOf(@NotNull Event event) {
       putValue("subjectOf", event);
@@ -564,13 +952,35 @@ public class RepaymentSpecification extends StructuredValue {
     }
     /**
      * A CreativeWork or Event about this Thing.
+     * @param event value to set
+     * @return this builder instance
      */
     @NotNull public Builder subjectOf(@NotNull Event.Builder event) {
       putValue("subjectOf", event.build());
       return this;
     }
     /**
+     * Remove subjectOf property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeSubjectOf() {
+      removeValue("subjectOf");
+      return this;
+    }
+    /**
+     * Get currently set value for subjectOf property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getSubjectOf() {
+      return myData.get("subjectOf");
+    }
+    /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * @param creativeWork value to set
+     * @return this builder instance
      */
     @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
       putValue("mainEntityOfPage", creativeWork);
@@ -578,6 +988,8 @@ public class RepaymentSpecification extends StructuredValue {
     }
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * @param creativeWork value to set
+     * @return this builder instance
      */
     @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
       putValue("mainEntityOfPage", creativeWork.build());
@@ -585,14 +997,57 @@ public class RepaymentSpecification extends StructuredValue {
     }
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * @param mainEntityOfPage value to set
+     * @return this builder instance
      */
     @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
       putValue("mainEntityOfPage", mainEntityOfPage);
       return this;
     }
+    /**
+     * Remove mainEntityOfPage property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeMainEntityOfPage() {
+      removeValue("mainEntityOfPage");
+      return this;
+    }
+    /**
+     * Get currently set value for mainEntityOfPage property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getMainEntityOfPage() {
+      return myData.get("mainEntityOfPage");
+    }
+    /**
+     * null
+     * @param id value to set
+     * @return this builder instance
+     */
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
+    }
+    /**
+     * Remove id property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeId() {
+      removeValue("id");
+      return this;
+    }
+    /**
+     * Get currently set value for id property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getId() {
+      return myData.get("id");
     }
     public Builder id(long id) {
       return id(Long.toString(id));

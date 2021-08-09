@@ -21,6 +21,7 @@ package org.schema;
 import com.fasterxml.jackson.databind.annotation.*;
 import com.fasterxml.jackson.annotation.*;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.*;
 
 /**
@@ -29,12 +30,15 @@ import java.util.*;
 public class QuantitativeValue extends StructuredValue implements org.schema.Yield {
   /**
    * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+   * @return valueReference property set by first invocation of valueReference method or {@code null}.
    */
   @JsonIgnore public DefinedTerm getValueReferenceDefinedTerm() {
     return (DefinedTerm) getValue("valueReference");
   }
   /**
    * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+   * @return all valueReference properties as {@link java.util.Collection} or an empty collection 
+   * if valueReference was not set.
    */
   @JsonIgnore public java.util.Collection<DefinedTerm> getValueReferenceDefinedTerms() {
     final java.lang.Object current = myData.get("valueReference");
@@ -46,12 +50,15 @@ public class QuantitativeValue extends StructuredValue implements org.schema.Yie
   }
   /**
    * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+   * @return valueReference property set by first invocation of valueReference method or {@code null}.
    */
   @JsonIgnore public Enumeration getValueReferenceEnumeration() {
     return (Enumeration) getValue("valueReference");
   }
   /**
    * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+   * @return all valueReference properties as {@link java.util.Collection} or an empty collection 
+   * if valueReference was not set.
    */
   @JsonIgnore public java.util.Collection<Enumeration> getValueReferenceEnumerations() {
     final java.lang.Object current = myData.get("valueReference");
@@ -63,12 +70,15 @@ public class QuantitativeValue extends StructuredValue implements org.schema.Yie
   }
   /**
    * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+   * @return valueReference property set by first invocation of valueReference method or {@code null}.
    */
   @JsonIgnore public MeasurementTypeEnumeration getValueReferenceMeasurementTypeEnumeration() {
     return (MeasurementTypeEnumeration) getValue("valueReference");
   }
   /**
    * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+   * @return all valueReference properties as {@link java.util.Collection} or an empty collection 
+   * if valueReference was not set.
    */
   @JsonIgnore public java.util.Collection<MeasurementTypeEnumeration> getValueReferenceMeasurementTypeEnumerations() {
     final java.lang.Object current = myData.get("valueReference");
@@ -80,12 +90,15 @@ public class QuantitativeValue extends StructuredValue implements org.schema.Yie
   }
   /**
    * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+   * @return valueReference property set by first invocation of valueReference method or {@code null}.
    */
   @JsonIgnore public PropertyValue getValueReferencePropertyValue() {
     return (PropertyValue) getValue("valueReference");
   }
   /**
    * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+   * @return all valueReference properties as {@link java.util.Collection} or an empty collection 
+   * if valueReference was not set.
    */
   @JsonIgnore public java.util.Collection<PropertyValue> getValueReferencePropertyValues() {
     final java.lang.Object current = myData.get("valueReference");
@@ -97,12 +110,15 @@ public class QuantitativeValue extends StructuredValue implements org.schema.Yie
   }
   /**
    * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+   * @return valueReference property set by first invocation of valueReference method or {@code null}.
    */
   @JsonIgnore public QualitativeValue getValueReferenceQualitativeValue() {
     return (QualitativeValue) getValue("valueReference");
   }
   /**
    * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+   * @return all valueReference properties as {@link java.util.Collection} or an empty collection 
+   * if valueReference was not set.
    */
   @JsonIgnore public java.util.Collection<QualitativeValue> getValueReferenceQualitativeValues() {
     final java.lang.Object current = myData.get("valueReference");
@@ -114,12 +130,15 @@ public class QuantitativeValue extends StructuredValue implements org.schema.Yie
   }
   /**
    * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+   * @return valueReference property set by first invocation of valueReference method or {@code null}.
    */
   @JsonIgnore public QuantitativeValue getValueReferenceQuantitativeValue() {
     return (QuantitativeValue) getValue("valueReference");
   }
   /**
    * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+   * @return all valueReference properties as {@link java.util.Collection} or an empty collection 
+   * if valueReference was not set.
    */
   @JsonIgnore public java.util.Collection<QuantitativeValue> getValueReferenceQuantitativeValues() {
     final java.lang.Object current = myData.get("valueReference");
@@ -131,12 +150,15 @@ public class QuantitativeValue extends StructuredValue implements org.schema.Yie
   }
   /**
    * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+   * @return valueReference property set by first invocation of valueReference method or {@code null}.
    */
   @JsonIgnore public String getValueReferenceString() {
     return (String) getValue("valueReference");
   }
   /**
    * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+   * @return all valueReference properties as {@link java.util.Collection} or an empty collection 
+   * if valueReference was not set.
    */
   @JsonIgnore public java.util.Collection<String> getValueReferenceStrings() {
     final java.lang.Object current = myData.get("valueReference");
@@ -148,12 +170,15 @@ public class QuantitativeValue extends StructuredValue implements org.schema.Yie
   }
   /**
    * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+   * @return valueReference property set by first invocation of valueReference method or {@code null}.
    */
   @JsonIgnore public StructuredValue getValueReferenceStructuredValue() {
     return (StructuredValue) getValue("valueReference");
   }
   /**
    * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+   * @return all valueReference properties as {@link java.util.Collection} or an empty collection 
+   * if valueReference was not set.
    */
   @JsonIgnore public java.util.Collection<StructuredValue> getValueReferenceStructuredValues() {
     final java.lang.Object current = myData.get("valueReference");
@@ -165,12 +190,15 @@ public class QuantitativeValue extends StructuredValue implements org.schema.Yie
   }
   /**
    * The value of the quantitative value or property value node.\n\n* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.\n* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+   * @return value property set by first invocation of value method or {@code null}.
    */
   @JsonIgnore public Boolean getValueBoolean() {
     return (Boolean) getValue("value");
   }
   /**
    * The value of the quantitative value or property value node.\n\n* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.\n* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+   * @return all value properties as {@link java.util.Collection} or an empty collection 
+   * if value was not set.
    */
   @JsonIgnore public java.util.Collection<Boolean> getValueBooleans() {
     final java.lang.Object current = myData.get("value");
@@ -182,12 +210,15 @@ public class QuantitativeValue extends StructuredValue implements org.schema.Yie
   }
   /**
    * The value of the quantitative value or property value node.\n\n* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.\n* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+   * @return value property set by first invocation of value method or {@code null}.
    */
   @JsonIgnore public Number getValueNumber() {
     return (Number) getValue("value");
   }
   /**
    * The value of the quantitative value or property value node.\n\n* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.\n* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+   * @return all value properties as {@link java.util.Collection} or an empty collection 
+   * if value was not set.
    */
   @JsonIgnore public java.util.Collection<Number> getValueNumbers() {
     final java.lang.Object current = myData.get("value");
@@ -199,12 +230,15 @@ public class QuantitativeValue extends StructuredValue implements org.schema.Yie
   }
   /**
    * The value of the quantitative value or property value node.\n\n* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.\n* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+   * @return value property set by first invocation of value method or {@code null}.
    */
   @JsonIgnore public String getValueString() {
     return (String) getValue("value");
   }
   /**
    * The value of the quantitative value or property value node.\n\n* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.\n* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+   * @return all value properties as {@link java.util.Collection} or an empty collection 
+   * if value was not set.
    */
   @JsonIgnore public java.util.Collection<String> getValueStrings() {
     final java.lang.Object current = myData.get("value");
@@ -216,12 +250,15 @@ public class QuantitativeValue extends StructuredValue implements org.schema.Yie
   }
   /**
    * The value of the quantitative value or property value node.\n\n* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.\n* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+   * @return value property set by first invocation of value method or {@code null}.
    */
   @JsonIgnore public StructuredValue getValueStructuredValue() {
     return (StructuredValue) getValue("value");
   }
   /**
    * The value of the quantitative value or property value node.\n\n* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.\n* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+   * @return all value properties as {@link java.util.Collection} or an empty collection 
+   * if value was not set.
    */
   @JsonIgnore public java.util.Collection<StructuredValue> getValueStructuredValues() {
     final java.lang.Object current = myData.get("value");
@@ -233,12 +270,15 @@ public class QuantitativeValue extends StructuredValue implements org.schema.Yie
   }
   /**
    * The upper value of some characteristic or property.
+   * @return maxValue property set by first invocation of maxValue method or {@code null}.
    */
   @JsonIgnore public Integer getMaxValueInteger() {
     return (Integer) getValue("maxValue");
   }
   /**
    * The upper value of some characteristic or property.
+   * @return all maxValue properties as {@link java.util.Collection} or an empty collection 
+   * if maxValue was not set.
    */
   @JsonIgnore public java.util.Collection<Integer> getMaxValueIntegers() {
     final java.lang.Object current = myData.get("maxValue");
@@ -250,12 +290,15 @@ public class QuantitativeValue extends StructuredValue implements org.schema.Yie
   }
   /**
    * The upper value of some characteristic or property.
+   * @return maxValue property set by first invocation of maxValue method or {@code null}.
    */
   @JsonIgnore public Long getMaxValueLong() {
     return (Long) getValue("maxValue");
   }
   /**
    * The upper value of some characteristic or property.
+   * @return all maxValue properties as {@link java.util.Collection} or an empty collection 
+   * if maxValue was not set.
    */
   @JsonIgnore public java.util.Collection<Long> getMaxValueLongs() {
     final java.lang.Object current = myData.get("maxValue");
@@ -267,12 +310,15 @@ public class QuantitativeValue extends StructuredValue implements org.schema.Yie
   }
   /**
    * The upper value of some characteristic or property.
+   * @return maxValue property set by first invocation of maxValue method or {@code null}.
    */
   @JsonIgnore public Float getMaxValueFloat() {
     return (Float) getValue("maxValue");
   }
   /**
    * The upper value of some characteristic or property.
+   * @return all maxValue properties as {@link java.util.Collection} or an empty collection 
+   * if maxValue was not set.
    */
   @JsonIgnore public java.util.Collection<Float> getMaxValueFloats() {
     final java.lang.Object current = myData.get("maxValue");
@@ -284,12 +330,15 @@ public class QuantitativeValue extends StructuredValue implements org.schema.Yie
   }
   /**
    * The upper value of some characteristic or property.
+   * @return maxValue property set by first invocation of maxValue method or {@code null}.
    */
   @JsonIgnore public Double getMaxValueDouble() {
     return (Double) getValue("maxValue");
   }
   /**
    * The upper value of some characteristic or property.
+   * @return all maxValue properties as {@link java.util.Collection} or an empty collection 
+   * if maxValue was not set.
    */
   @JsonIgnore public java.util.Collection<Double> getMaxValueDoubles() {
     final java.lang.Object current = myData.get("maxValue");
@@ -301,12 +350,15 @@ public class QuantitativeValue extends StructuredValue implements org.schema.Yie
   }
   /**
    * The upper value of some characteristic or property.
+   * @return maxValue property set by first invocation of maxValue method or {@code null}.
    */
   @JsonIgnore public String getMaxValueString() {
     return (String) getValue("maxValue");
   }
   /**
    * The upper value of some characteristic or property.
+   * @return all maxValue properties as {@link java.util.Collection} or an empty collection 
+   * if maxValue was not set.
    */
   @JsonIgnore public java.util.Collection<String> getMaxValueStrings() {
     final java.lang.Object current = myData.get("maxValue");
@@ -317,15 +369,18 @@ public class QuantitativeValue extends StructuredValue implements org.schema.Yie
     return Arrays.asList((String) current);
   }
   /**
-   * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
+   *                                 A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
    * &lt;a href='unitCode'&gt;unitCode&lt;/a&gt;.
+   *                                 @return unitText property set by first invocation of unitText method or {@code null}.
    */
   @JsonIgnore public String getUnitText() {
     return (String) getValue("unitText");
   }
   /**
-   * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
+   *                                     A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
    * &lt;a href='unitCode'&gt;unitCode&lt;/a&gt;.
+   *                                     @return all unitText properties as {@link java.util.Collection} or an empty collection 
+   *                                     if unitText was not set.
    */
   @JsonIgnore public java.util.Collection<String> getUnitTexts() {
     final java.lang.Object current = myData.get("unitText");
@@ -338,6 +393,7 @@ public class QuantitativeValue extends StructuredValue implements org.schema.Yie
   /**
    * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.\n\nNote: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
    * 
+   * @return additionalProperty property set by first invocation of additionalProperty method or {@code null}.
    */
   @JsonIgnore public PropertyValue getAdditionalProperty() {
     return (PropertyValue) getValue("additionalProperty");
@@ -345,6 +401,8 @@ public class QuantitativeValue extends StructuredValue implements org.schema.Yie
   /**
    * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.\n\nNote: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
    * 
+   * @return all additionalProperty properties as {@link java.util.Collection} or an empty collection 
+   * if additionalProperty was not set.
    */
   @JsonIgnore public java.util.Collection<PropertyValue> getAdditionalPropertys() {
     final java.lang.Object current = myData.get("additionalProperty");
@@ -356,12 +414,15 @@ public class QuantitativeValue extends StructuredValue implements org.schema.Yie
   }
   /**
    * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
+   * @return unitCode property set by first invocation of unitCode method or {@code null}.
    */
   @JsonIgnore public String getUnitCode() {
     return (String) getValue("unitCode");
   }
   /**
    * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
+   * @return all unitCode properties as {@link java.util.Collection} or an empty collection 
+   * if unitCode was not set.
    */
   @JsonIgnore public java.util.Collection<String> getUnitCodes() {
     final java.lang.Object current = myData.get("unitCode");
@@ -373,12 +434,15 @@ public class QuantitativeValue extends StructuredValue implements org.schema.Yie
   }
   /**
    * The lower value of some characteristic or property.
+   * @return minValue property set by first invocation of minValue method or {@code null}.
    */
   @JsonIgnore public Integer getMinValueInteger() {
     return (Integer) getValue("minValue");
   }
   /**
    * The lower value of some characteristic or property.
+   * @return all minValue properties as {@link java.util.Collection} or an empty collection 
+   * if minValue was not set.
    */
   @JsonIgnore public java.util.Collection<Integer> getMinValueIntegers() {
     final java.lang.Object current = myData.get("minValue");
@@ -390,12 +454,15 @@ public class QuantitativeValue extends StructuredValue implements org.schema.Yie
   }
   /**
    * The lower value of some characteristic or property.
+   * @return minValue property set by first invocation of minValue method or {@code null}.
    */
   @JsonIgnore public Long getMinValueLong() {
     return (Long) getValue("minValue");
   }
   /**
    * The lower value of some characteristic or property.
+   * @return all minValue properties as {@link java.util.Collection} or an empty collection 
+   * if minValue was not set.
    */
   @JsonIgnore public java.util.Collection<Long> getMinValueLongs() {
     final java.lang.Object current = myData.get("minValue");
@@ -407,12 +474,15 @@ public class QuantitativeValue extends StructuredValue implements org.schema.Yie
   }
   /**
    * The lower value of some characteristic or property.
+   * @return minValue property set by first invocation of minValue method or {@code null}.
    */
   @JsonIgnore public Float getMinValueFloat() {
     return (Float) getValue("minValue");
   }
   /**
    * The lower value of some characteristic or property.
+   * @return all minValue properties as {@link java.util.Collection} or an empty collection 
+   * if minValue was not set.
    */
   @JsonIgnore public java.util.Collection<Float> getMinValueFloats() {
     final java.lang.Object current = myData.get("minValue");
@@ -424,12 +494,15 @@ public class QuantitativeValue extends StructuredValue implements org.schema.Yie
   }
   /**
    * The lower value of some characteristic or property.
+   * @return minValue property set by first invocation of minValue method or {@code null}.
    */
   @JsonIgnore public Double getMinValueDouble() {
     return (Double) getValue("minValue");
   }
   /**
    * The lower value of some characteristic or property.
+   * @return all minValue properties as {@link java.util.Collection} or an empty collection 
+   * if minValue was not set.
    */
   @JsonIgnore public java.util.Collection<Double> getMinValueDoubles() {
     final java.lang.Object current = myData.get("minValue");
@@ -441,12 +514,15 @@ public class QuantitativeValue extends StructuredValue implements org.schema.Yie
   }
   /**
    * The lower value of some characteristic or property.
+   * @return minValue property set by first invocation of minValue method or {@code null}.
    */
   @JsonIgnore public String getMinValueString() {
     return (String) getValue("minValue");
   }
   /**
    * The lower value of some characteristic or property.
+   * @return all minValue properties as {@link java.util.Collection} or an empty collection 
+   * if minValue was not set.
    */
   @JsonIgnore public java.util.Collection<String> getMinValueStrings() {
     final java.lang.Object current = myData.get("minValue");
@@ -472,6 +548,8 @@ public class QuantitativeValue extends StructuredValue implements org.schema.Yie
     }
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+     * @param definedTerm value to set
+     * @return this builder instance
      */
     @NotNull public Builder valueReference(@NotNull DefinedTerm definedTerm) {
       putValue("valueReference", definedTerm);
@@ -479,6 +557,8 @@ public class QuantitativeValue extends StructuredValue implements org.schema.Yie
     }
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+     * @param definedTerm value to set
+     * @return this builder instance
      */
     @NotNull public Builder valueReference(@NotNull DefinedTerm.Builder definedTerm) {
       putValue("valueReference", definedTerm.build());
@@ -486,6 +566,8 @@ public class QuantitativeValue extends StructuredValue implements org.schema.Yie
     }
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+     * @param enumeration value to set
+     * @return this builder instance
      */
     @NotNull public Builder valueReference(@NotNull Enumeration enumeration) {
       putValue("valueReference", enumeration);
@@ -493,6 +575,8 @@ public class QuantitativeValue extends StructuredValue implements org.schema.Yie
     }
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+     * @param measurementTypeEnumeration value to set
+     * @return this builder instance
      */
     @NotNull public Builder valueReference(@NotNull MeasurementTypeEnumeration measurementTypeEnumeration) {
       putValue("valueReference", measurementTypeEnumeration);
@@ -500,6 +584,8 @@ public class QuantitativeValue extends StructuredValue implements org.schema.Yie
     }
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+     * @param propertyValue value to set
+     * @return this builder instance
      */
     @NotNull public Builder valueReference(@NotNull PropertyValue propertyValue) {
       putValue("valueReference", propertyValue);
@@ -507,6 +593,8 @@ public class QuantitativeValue extends StructuredValue implements org.schema.Yie
     }
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+     * @param propertyValue value to set
+     * @return this builder instance
      */
     @NotNull public Builder valueReference(@NotNull PropertyValue.Builder propertyValue) {
       putValue("valueReference", propertyValue.build());
@@ -514,6 +602,8 @@ public class QuantitativeValue extends StructuredValue implements org.schema.Yie
     }
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+     * @param qualitativeValue value to set
+     * @return this builder instance
      */
     @NotNull public Builder valueReference(@NotNull QualitativeValue qualitativeValue) {
       putValue("valueReference", qualitativeValue);
@@ -521,6 +611,8 @@ public class QuantitativeValue extends StructuredValue implements org.schema.Yie
     }
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+     * @param qualitativeValue value to set
+     * @return this builder instance
      */
     @NotNull public Builder valueReference(@NotNull QualitativeValue.Builder qualitativeValue) {
       putValue("valueReference", qualitativeValue.build());
@@ -528,6 +620,8 @@ public class QuantitativeValue extends StructuredValue implements org.schema.Yie
     }
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+     * @param quantitativeValue value to set
+     * @return this builder instance
      */
     @NotNull public Builder valueReference(@NotNull QuantitativeValue quantitativeValue) {
       putValue("valueReference", quantitativeValue);
@@ -535,6 +629,8 @@ public class QuantitativeValue extends StructuredValue implements org.schema.Yie
     }
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+     * @param quantitativeValue value to set
+     * @return this builder instance
      */
     @NotNull public Builder valueReference(@NotNull QuantitativeValue.Builder quantitativeValue) {
       putValue("valueReference", quantitativeValue.build());
@@ -542,6 +638,8 @@ public class QuantitativeValue extends StructuredValue implements org.schema.Yie
     }
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+     * @param valueReference value to set
+     * @return this builder instance
      */
     @NotNull public Builder valueReference(@NotNull String valueReference) {
       putValue("valueReference", valueReference);
@@ -549,6 +647,8 @@ public class QuantitativeValue extends StructuredValue implements org.schema.Yie
     }
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+     * @param structuredValue value to set
+     * @return this builder instance
      */
     @NotNull public Builder valueReference(@NotNull StructuredValue structuredValue) {
       putValue("valueReference", structuredValue);
@@ -556,13 +656,35 @@ public class QuantitativeValue extends StructuredValue implements org.schema.Yie
     }
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+     * @param structuredValue value to set
+     * @return this builder instance
      */
     @NotNull public Builder valueReference(@NotNull StructuredValue.Builder structuredValue) {
       putValue("valueReference", structuredValue.build());
       return this;
     }
     /**
+     * Remove valueReference property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeValueReference() {
+      removeValue("valueReference");
+      return this;
+    }
+    /**
+     * Get currently set value for valueReference property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getValueReference() {
+      return myData.get("valueReference");
+    }
+    /**
      * The value of the quantitative value or property value node.\n\n* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.\n* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     * @param value value to set
+     * @return this builder instance
      */
     @NotNull public Builder value(@NotNull Boolean value) {
       putValue("value", value);
@@ -570,6 +692,8 @@ public class QuantitativeValue extends StructuredValue implements org.schema.Yie
     }
     /**
      * The value of the quantitative value or property value node.\n\n* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.\n* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     * @param number value to set
+     * @return this builder instance
      */
     @NotNull public Builder value(@NotNull Number number) {
       putValue("value", number);
@@ -577,6 +701,8 @@ public class QuantitativeValue extends StructuredValue implements org.schema.Yie
     }
     /**
      * The value of the quantitative value or property value node.\n\n* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.\n* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     * @param value value to set
+     * @return this builder instance
      */
     @NotNull public Builder value(@NotNull String value) {
       putValue("value", value);
@@ -584,6 +710,8 @@ public class QuantitativeValue extends StructuredValue implements org.schema.Yie
     }
     /**
      * The value of the quantitative value or property value node.\n\n* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.\n* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     * @param structuredValue value to set
+     * @return this builder instance
      */
     @NotNull public Builder value(@NotNull StructuredValue structuredValue) {
       putValue("value", structuredValue);
@@ -591,13 +719,35 @@ public class QuantitativeValue extends StructuredValue implements org.schema.Yie
     }
     /**
      * The value of the quantitative value or property value node.\n\n* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.\n* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     * @param structuredValue value to set
+     * @return this builder instance
      */
     @NotNull public Builder value(@NotNull StructuredValue.Builder structuredValue) {
       putValue("value", structuredValue.build());
       return this;
     }
     /**
+     * Remove value property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeValue() {
+      removeValue("value");
+      return this;
+    }
+    /**
+     * Get currently set value for value property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getValue() {
+      return myData.get("value");
+    }
+    /**
      * The upper value of some characteristic or property.
+     * @param integer value to set
+     * @return this builder instance
      */
     @NotNull public Builder maxValue(@NotNull Integer integer) {
       putValue("maxValue", integer);
@@ -605,6 +755,8 @@ public class QuantitativeValue extends StructuredValue implements org.schema.Yie
     }
     /**
      * The upper value of some characteristic or property.
+     * @param maxValue value to set
+     * @return this builder instance
      */
     @NotNull public Builder maxValue(@NotNull Long maxValue) {
       putValue("maxValue", maxValue);
@@ -612,6 +764,8 @@ public class QuantitativeValue extends StructuredValue implements org.schema.Yie
     }
     /**
      * The upper value of some characteristic or property.
+     * @param maxValue value to set
+     * @return this builder instance
      */
     @NotNull public Builder maxValue(@NotNull Float maxValue) {
       putValue("maxValue", maxValue);
@@ -619,6 +773,8 @@ public class QuantitativeValue extends StructuredValue implements org.schema.Yie
     }
     /**
      * The upper value of some characteristic or property.
+     * @param maxValue value to set
+     * @return this builder instance
      */
     @NotNull public Builder maxValue(@NotNull Double maxValue) {
       putValue("maxValue", maxValue);
@@ -626,22 +782,64 @@ public class QuantitativeValue extends StructuredValue implements org.schema.Yie
     }
     /**
      * The upper value of some characteristic or property.
+     * @param maxValue value to set
+     * @return this builder instance
      */
     @NotNull public Builder maxValue(@NotNull String maxValue) {
       putValue("maxValue", maxValue);
       return this;
     }
     /**
-     * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
+     * Remove maxValue property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeMaxValue() {
+      removeValue("maxValue");
+      return this;
+    }
+    /**
+     * Get currently set value for maxValue property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getMaxValue() {
+      return myData.get("maxValue");
+    }
+    /**
+     *                                         A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
      * &lt;a href='unitCode'&gt;unitCode&lt;/a&gt;.
+     *                                         @param unitText value to set
+     *                                         @return this builder instance
      */
     @NotNull public Builder unitText(@NotNull String unitText) {
       putValue("unitText", unitText);
       return this;
     }
     /**
+     * Remove unitText property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeUnitText() {
+      removeValue("unitText");
+      return this;
+    }
+    /**
+     * Get currently set value for unitText property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getUnitText() {
+      return myData.get("unitText");
+    }
+    /**
      * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.\n\nNote: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
      * 
+     * @param propertyValue value to set
+     * @return this builder instance
      */
     @NotNull public Builder additionalProperty(@NotNull PropertyValue propertyValue) {
       putValue("additionalProperty", propertyValue);
@@ -650,20 +848,62 @@ public class QuantitativeValue extends StructuredValue implements org.schema.Yie
     /**
      * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.\n\nNote: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
      * 
+     * @param propertyValue value to set
+     * @return this builder instance
      */
     @NotNull public Builder additionalProperty(@NotNull PropertyValue.Builder propertyValue) {
       putValue("additionalProperty", propertyValue.build());
       return this;
     }
     /**
+     * Remove additionalProperty property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeAdditionalProperty() {
+      removeValue("additionalProperty");
+      return this;
+    }
+    /**
+     * Get currently set value for additionalProperty property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getAdditionalProperty() {
+      return myData.get("additionalProperty");
+    }
+    /**
      * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
+     * @param unitCode value to set
+     * @return this builder instance
      */
     @NotNull public Builder unitCode(@NotNull String unitCode) {
       putValue("unitCode", unitCode);
       return this;
     }
     /**
+     * Remove unitCode property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeUnitCode() {
+      removeValue("unitCode");
+      return this;
+    }
+    /**
+     * Get currently set value for unitCode property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getUnitCode() {
+      return myData.get("unitCode");
+    }
+    /**
      * The lower value of some characteristic or property.
+     * @param integer value to set
+     * @return this builder instance
      */
     @NotNull public Builder minValue(@NotNull Integer integer) {
       putValue("minValue", integer);
@@ -671,6 +911,8 @@ public class QuantitativeValue extends StructuredValue implements org.schema.Yie
     }
     /**
      * The lower value of some characteristic or property.
+     * @param minValue value to set
+     * @return this builder instance
      */
     @NotNull public Builder minValue(@NotNull Long minValue) {
       putValue("minValue", minValue);
@@ -678,6 +920,8 @@ public class QuantitativeValue extends StructuredValue implements org.schema.Yie
     }
     /**
      * The lower value of some characteristic or property.
+     * @param minValue value to set
+     * @return this builder instance
      */
     @NotNull public Builder minValue(@NotNull Float minValue) {
       putValue("minValue", minValue);
@@ -685,6 +929,8 @@ public class QuantitativeValue extends StructuredValue implements org.schema.Yie
     }
     /**
      * The lower value of some characteristic or property.
+     * @param minValue value to set
+     * @return this builder instance
      */
     @NotNull public Builder minValue(@NotNull Double minValue) {
       putValue("minValue", minValue);
@@ -692,28 +938,90 @@ public class QuantitativeValue extends StructuredValue implements org.schema.Yie
     }
     /**
      * The lower value of some characteristic or property.
+     * @param minValue value to set
+     * @return this builder instance
      */
     @NotNull public Builder minValue(@NotNull String minValue) {
       putValue("minValue", minValue);
       return this;
     }
     /**
+     * Remove minValue property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeMinValue() {
+      removeValue("minValue");
+      return this;
+    }
+    /**
+     * Get currently set value for minValue property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getMinValue() {
+      return myData.get("minValue");
+    }
+    /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
+     * 
+     * @param identifier value to set
+     * @return this builder instance
      */
     @NotNull public Builder identifier(@NotNull Identifier identifier) {
       putValue("identifier", identifier);
       return this;
     }
     /**
+     * Remove identifier property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeIdentifier() {
+      removeValue("identifier");
+      return this;
+    }
+    /**
+     * Get currently set value for identifier property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getIdentifier() {
+      return myData.get("identifier");
+    }
+    /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * @param image value to set
+     * @return this builder instance
      */
     @NotNull public Builder image(@NotNull Image image) {
       putValue("image", image);
       return this;
     }
     /**
+     * Remove image property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeImage() {
+      removeValue("image");
+      return this;
+    }
+    /**
+     * Get currently set value for image property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getImage() {
+      return myData.get("image");
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     * @param action value to set
+     * @return this builder instance
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
       putValue("potentialAction", action);
@@ -721,62 +1029,224 @@ public class QuantitativeValue extends StructuredValue implements org.schema.Yie
     }
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     * @param action value to set
+     * @return this builder instance
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
       return this;
     }
     /**
+     * Remove potentialAction property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removePotentialAction() {
+      removeValue("potentialAction");
+      return this;
+    }
+    /**
+     * Get currently set value for potentialAction property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getPotentialAction() {
+      return myData.get("potentialAction");
+    }
+    /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * @param disambiguatingDescription value to set
+     * @return this builder instance
      */
     @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
       putValue("disambiguatingDescription", disambiguatingDescription);
       return this;
     }
     /**
+     * Remove disambiguatingDescription property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeDisambiguatingDescription() {
+      removeValue("disambiguatingDescription");
+      return this;
+    }
+    /**
+     * Get currently set value for disambiguatingDescription property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getDisambiguatingDescription() {
+      return myData.get("disambiguatingDescription");
+    }
+    /**
      * A description of the item.
+     * @param description value to set
+     * @return this builder instance
      */
     @NotNull public Builder description(@NotNull String description) {
       putValue("description", description);
       return this;
     }
     /**
+     * Remove description property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeDescription() {
+      removeValue("description");
+      return this;
+    }
+    /**
+     * Get currently set value for description property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getDescription() {
+      return myData.get("description");
+    }
+    /**
      * URL of the item.
+     * @param url value to set
+     * @return this builder instance
      */
     @NotNull public Builder url(@NotNull String url) {
       putValue("url", url);
       return this;
     }
     /**
+     * Remove url property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeUrl() {
+      removeValue("url");
+      return this;
+    }
+    /**
+     * Get currently set value for url property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getUrl() {
+      return myData.get("url");
+    }
+    /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * @param additionalType value to set
+     * @return this builder instance
      */
     @NotNull public Builder additionalType(@NotNull String additionalType) {
       putValue("additionalType", additionalType);
       return this;
     }
     /**
+     * Remove additionalType property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeAdditionalType() {
+      removeValue("additionalType");
+      return this;
+    }
+    /**
+     * Get currently set value for additionalType property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getAdditionalType() {
+      return myData.get("additionalType");
+    }
+    /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     * @param sameAs value to set
+     * @return this builder instance
      */
     @NotNull public Builder sameAs(@NotNull String sameAs) {
       putValue("sameAs", sameAs);
       return this;
     }
     /**
+     * Remove sameAs property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeSameAs() {
+      removeValue("sameAs");
+      return this;
+    }
+    /**
+     * Get currently set value for sameAs property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getSameAs() {
+      return myData.get("sameAs");
+    }
+    /**
      * An alias for the item.
+     * @param alternateName value to set
+     * @return this builder instance
      */
     @NotNull public Builder alternateName(@NotNull String alternateName) {
       putValue("alternateName", alternateName);
       return this;
     }
     /**
+     * Remove alternateName property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeAlternateName() {
+      removeValue("alternateName");
+      return this;
+    }
+    /**
+     * Get currently set value for alternateName property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getAlternateName() {
+      return myData.get("alternateName");
+    }
+    /**
      * The name of the item.
+     * @param name value to set
+     * @return this builder instance
      */
     @NotNull public Builder name(@NotNull String name) {
       putValue("name", name);
       return this;
     }
     /**
+     * Remove name property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeName() {
+      removeValue("name");
+      return this;
+    }
+    /**
+     * Get currently set value for name property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getName() {
+      return myData.get("name");
+    }
+    /**
      * A CreativeWork or Event about this Thing.
+     * @param creativeWork value to set
+     * @return this builder instance
      */
     @NotNull public Builder subjectOf(@NotNull CreativeWork creativeWork) {
       putValue("subjectOf", creativeWork);
@@ -784,6 +1254,8 @@ public class QuantitativeValue extends StructuredValue implements org.schema.Yie
     }
     /**
      * A CreativeWork or Event about this Thing.
+     * @param creativeWork value to set
+     * @return this builder instance
      */
     @NotNull public Builder subjectOf(@NotNull CreativeWork.Builder creativeWork) {
       putValue("subjectOf", creativeWork.build());
@@ -791,6 +1263,8 @@ public class QuantitativeValue extends StructuredValue implements org.schema.Yie
     }
     /**
      * A CreativeWork or Event about this Thing.
+     * @param event value to set
+     * @return this builder instance
      */
     @NotNull public Builder subjectOf(@NotNull Event event) {
       putValue("subjectOf", event);
@@ -798,13 +1272,35 @@ public class QuantitativeValue extends StructuredValue implements org.schema.Yie
     }
     /**
      * A CreativeWork or Event about this Thing.
+     * @param event value to set
+     * @return this builder instance
      */
     @NotNull public Builder subjectOf(@NotNull Event.Builder event) {
       putValue("subjectOf", event.build());
       return this;
     }
     /**
+     * Remove subjectOf property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeSubjectOf() {
+      removeValue("subjectOf");
+      return this;
+    }
+    /**
+     * Get currently set value for subjectOf property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getSubjectOf() {
+      return myData.get("subjectOf");
+    }
+    /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * @param creativeWork value to set
+     * @return this builder instance
      */
     @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
       putValue("mainEntityOfPage", creativeWork);
@@ -812,6 +1308,8 @@ public class QuantitativeValue extends StructuredValue implements org.schema.Yie
     }
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * @param creativeWork value to set
+     * @return this builder instance
      */
     @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
       putValue("mainEntityOfPage", creativeWork.build());
@@ -819,14 +1317,57 @@ public class QuantitativeValue extends StructuredValue implements org.schema.Yie
     }
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * @param mainEntityOfPage value to set
+     * @return this builder instance
      */
     @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
       putValue("mainEntityOfPage", mainEntityOfPage);
       return this;
     }
+    /**
+     * Remove mainEntityOfPage property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeMainEntityOfPage() {
+      removeValue("mainEntityOfPage");
+      return this;
+    }
+    /**
+     * Get currently set value for mainEntityOfPage property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getMainEntityOfPage() {
+      return myData.get("mainEntityOfPage");
+    }
+    /**
+     * null
+     * @param id value to set
+     * @return this builder instance
+     */
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
+    }
+    /**
+     * Remove id property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeId() {
+      removeValue("id");
+      return this;
+    }
+    /**
+     * Get currently set value for id property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getId() {
+      return myData.get("id");
     }
     public Builder id(long id) {
       return id(Long.toString(id));

@@ -3,10 +3,37 @@ java-jsonld-mappings
 
 Library provides easy to use Java classes and builders for [schema.org](http://schema.org/) entities.
 
-All classes are auto generated from schema.rdfa
+All classes are auto generated from schemaorg-all-http.rdf (HTTPS version doesn't work)
 
 Example usage:
+
+Include Maven dependency:
+
+```xml
+<repository>
+    <id>jsonld-metadata</id>
+    <url>https://raw.github.com/indigobyte/jsonld-metadata/mvn-repo/</url>
+    <snapshots>
+        <enabled>true</enabled>
+    </snapshots>
+</repository>
+
+<properties>
+    <jsonld-metadata.version>1.0.1</jsonld-metadata.version>
+</properties>
+
+<dependencies>
+    <dependency>
+        <groupId>com.indigobyte</groupId>
+        <artifactId>jsonld-metadata</artifactId>
+        <version>${jsonld-metadata.version}</version>
+    </dependency>
+</dependencies>
 ```
+
+Use in Java code:
+
+```java
 import static org.schema.SchemaOrg.*;
 
 final Article article = SchemaOrg.article() // with static import you can skip `SchemaOrg.`, left here for clarity

@@ -18,6 +18,7 @@ class ApiGenerator(private val sink: GeneratorSink, private val banner: String? 
             appendLine("import com.fasterxml.jackson.databind.JsonNode;")
             appendLine("import com.fasterxml.jackson.databind.ObjectMapper;")
             appendLine("import org.jetbrains.annotations.NotNull;")
+            appendLine("import org.jetbrains.annotations.Nullable;")
             appendLine()
             appendLine("public class SchemaOrg {")
 

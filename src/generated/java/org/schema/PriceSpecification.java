@@ -21,6 +21,7 @@ package org.schema;
 import com.fasterxml.jackson.databind.annotation.*;
 import com.fasterxml.jackson.annotation.*;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.*;
 
 /**
@@ -29,12 +30,15 @@ import java.util.*;
 public class PriceSpecification extends StructuredValue {
   /**
    * The date when the item becomes valid.
+   * @return validFrom property set by first invocation of validFrom method or {@code null}.
    */
   @JsonIgnore public java.util.Date getValidFrom() {
     return (java.util.Date) getValue("validFrom");
   }
   /**
    * The date when the item becomes valid.
+   * @return all validFrom properties as {@link java.util.Collection} or an empty collection 
+   * if validFrom was not set.
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getValidFroms() {
     final java.lang.Object current = myData.get("validFrom");
@@ -46,14 +50,17 @@ public class PriceSpecification extends StructuredValue {
   }
   /**
    * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.\n\nUsage guidelines:\n\n* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;) instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.\n* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a &quot;content=&quot; attribute for publishing simple machine-readable values alongside more human-friendly formatting.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
-   *       
+   * 
+   * @return price property set by first invocation of price method or {@code null}.
    */
   @JsonIgnore public Number getPriceNumber() {
     return (Number) getValue("price");
   }
   /**
    * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.\n\nUsage guidelines:\n\n* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;) instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.\n* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a &quot;content=&quot; attribute for publishing simple machine-readable values alongside more human-friendly formatting.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
-   *       
+   * 
+   * @return all price properties as {@link java.util.Collection} or an empty collection 
+   * if price was not set.
    */
   @JsonIgnore public java.util.Collection<Number> getPriceNumbers() {
     final java.lang.Object current = myData.get("price");
@@ -65,14 +72,17 @@ public class PriceSpecification extends StructuredValue {
   }
   /**
    * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.\n\nUsage guidelines:\n\n* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;) instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.\n* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a &quot;content=&quot; attribute for publishing simple machine-readable values alongside more human-friendly formatting.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
-   *       
+   * 
+   * @return price property set by first invocation of price method or {@code null}.
    */
   @JsonIgnore public String getPriceString() {
     return (String) getValue("price");
   }
   /**
    * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.\n\nUsage guidelines:\n\n* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;) instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.\n* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a &quot;content=&quot; attribute for publishing simple machine-readable values alongside more human-friendly formatting.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
-   *       
+   * 
+   * @return all price properties as {@link java.util.Collection} or an empty collection 
+   * if price was not set.
    */
   @JsonIgnore public java.util.Collection<String> getPriceStrings() {
     final java.lang.Object current = myData.get("price");
@@ -84,12 +94,15 @@ public class PriceSpecification extends StructuredValue {
   }
   /**
    * The lowest price if the price is a range.
+   * @return minPrice property set by first invocation of minPrice method or {@code null}.
    */
   @JsonIgnore public Integer getMinPriceInteger() {
     return (Integer) getValue("minPrice");
   }
   /**
    * The lowest price if the price is a range.
+   * @return all minPrice properties as {@link java.util.Collection} or an empty collection 
+   * if minPrice was not set.
    */
   @JsonIgnore public java.util.Collection<Integer> getMinPriceIntegers() {
     final java.lang.Object current = myData.get("minPrice");
@@ -101,12 +114,15 @@ public class PriceSpecification extends StructuredValue {
   }
   /**
    * The lowest price if the price is a range.
+   * @return minPrice property set by first invocation of minPrice method or {@code null}.
    */
   @JsonIgnore public Long getMinPriceLong() {
     return (Long) getValue("minPrice");
   }
   /**
    * The lowest price if the price is a range.
+   * @return all minPrice properties as {@link java.util.Collection} or an empty collection 
+   * if minPrice was not set.
    */
   @JsonIgnore public java.util.Collection<Long> getMinPriceLongs() {
     final java.lang.Object current = myData.get("minPrice");
@@ -118,12 +134,15 @@ public class PriceSpecification extends StructuredValue {
   }
   /**
    * The lowest price if the price is a range.
+   * @return minPrice property set by first invocation of minPrice method or {@code null}.
    */
   @JsonIgnore public Float getMinPriceFloat() {
     return (Float) getValue("minPrice");
   }
   /**
    * The lowest price if the price is a range.
+   * @return all minPrice properties as {@link java.util.Collection} or an empty collection 
+   * if minPrice was not set.
    */
   @JsonIgnore public java.util.Collection<Float> getMinPriceFloats() {
     final java.lang.Object current = myData.get("minPrice");
@@ -135,12 +154,15 @@ public class PriceSpecification extends StructuredValue {
   }
   /**
    * The lowest price if the price is a range.
+   * @return minPrice property set by first invocation of minPrice method or {@code null}.
    */
   @JsonIgnore public Double getMinPriceDouble() {
     return (Double) getValue("minPrice");
   }
   /**
    * The lowest price if the price is a range.
+   * @return all minPrice properties as {@link java.util.Collection} or an empty collection 
+   * if minPrice was not set.
    */
   @JsonIgnore public java.util.Collection<Double> getMinPriceDoubles() {
     final java.lang.Object current = myData.get("minPrice");
@@ -152,12 +174,15 @@ public class PriceSpecification extends StructuredValue {
   }
   /**
    * The lowest price if the price is a range.
+   * @return minPrice property set by first invocation of minPrice method or {@code null}.
    */
   @JsonIgnore public String getMinPriceString() {
     return (String) getValue("minPrice");
   }
   /**
    * The lowest price if the price is a range.
+   * @return all minPrice properties as {@link java.util.Collection} or an empty collection 
+   * if minPrice was not set.
    */
   @JsonIgnore public java.util.Collection<String> getMinPriceStrings() {
     final java.lang.Object current = myData.get("minPrice");
@@ -169,12 +194,15 @@ public class PriceSpecification extends StructuredValue {
   }
   /**
    * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
+   * @return eligibleQuantity property set by first invocation of eligibleQuantity method or {@code null}.
    */
   @JsonIgnore public QuantitativeValue getEligibleQuantity() {
     return (QuantitativeValue) getValue("eligibleQuantity");
   }
   /**
    * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
+   * @return all eligibleQuantity properties as {@link java.util.Collection} or an empty collection 
+   * if eligibleQuantity was not set.
    */
   @JsonIgnore public java.util.Collection<QuantitativeValue> getEligibleQuantitys() {
     final java.lang.Object current = myData.get("eligibleQuantity");
@@ -186,12 +214,15 @@ public class PriceSpecification extends StructuredValue {
   }
   /**
    * Specifies whether the applicable value-added tax (VAT) is included in the price specification or not.
+   * @return valueAddedTaxIncluded property set by first invocation of valueAddedTaxIncluded method or {@code null}.
    */
   @JsonIgnore public Boolean getValueAddedTaxIncluded() {
     return (Boolean) getValue("valueAddedTaxIncluded");
   }
   /**
    * Specifies whether the applicable value-added tax (VAT) is included in the price specification or not.
+   * @return all valueAddedTaxIncluded properties as {@link java.util.Collection} or an empty collection 
+   * if valueAddedTaxIncluded was not set.
    */
   @JsonIgnore public java.util.Collection<Boolean> getValueAddedTaxIncludeds() {
     final java.lang.Object current = myData.get("valueAddedTaxIncluded");
@@ -203,12 +234,15 @@ public class PriceSpecification extends StructuredValue {
   }
   /**
    * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
+   * @return validThrough property set by first invocation of validThrough method or {@code null}.
    */
   @JsonIgnore public java.util.Date getValidThrough() {
     return (java.util.Date) getValue("validThrough");
   }
   /**
    * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
+   * @return all validThrough properties as {@link java.util.Collection} or an empty collection 
+   * if validThrough was not set.
    */
   @JsonIgnore public java.util.Collection<java.util.Date> getValidThroughs() {
     final java.lang.Object current = myData.get("validThrough");
@@ -220,12 +254,15 @@ public class PriceSpecification extends StructuredValue {
   }
   /**
    * The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.
+   * @return eligibleTransactionVolume property set by first invocation of eligibleTransactionVolume method or {@code null}.
    */
   @JsonIgnore public PriceSpecification getEligibleTransactionVolume() {
     return (PriceSpecification) getValue("eligibleTransactionVolume");
   }
   /**
    * The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.
+   * @return all eligibleTransactionVolume properties as {@link java.util.Collection} or an empty collection 
+   * if eligibleTransactionVolume was not set.
    */
   @JsonIgnore public java.util.Collection<PriceSpecification> getEligibleTransactionVolumes() {
     final java.lang.Object current = myData.get("eligibleTransactionVolume");
@@ -237,12 +274,15 @@ public class PriceSpecification extends StructuredValue {
   }
   /**
    * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;.
+   * @return priceCurrency property set by first invocation of priceCurrency method or {@code null}.
    */
   @JsonIgnore public String getPriceCurrency() {
     return (String) getValue("priceCurrency");
   }
   /**
    * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;.
+   * @return all priceCurrency properties as {@link java.util.Collection} or an empty collection 
+   * if priceCurrency was not set.
    */
   @JsonIgnore public java.util.Collection<String> getPriceCurrencys() {
     final java.lang.Object current = myData.get("priceCurrency");
@@ -254,12 +294,15 @@ public class PriceSpecification extends StructuredValue {
   }
   /**
    * The highest price if the price is a range.
+   * @return maxPrice property set by first invocation of maxPrice method or {@code null}.
    */
   @JsonIgnore public Integer getMaxPriceInteger() {
     return (Integer) getValue("maxPrice");
   }
   /**
    * The highest price if the price is a range.
+   * @return all maxPrice properties as {@link java.util.Collection} or an empty collection 
+   * if maxPrice was not set.
    */
   @JsonIgnore public java.util.Collection<Integer> getMaxPriceIntegers() {
     final java.lang.Object current = myData.get("maxPrice");
@@ -271,12 +314,15 @@ public class PriceSpecification extends StructuredValue {
   }
   /**
    * The highest price if the price is a range.
+   * @return maxPrice property set by first invocation of maxPrice method or {@code null}.
    */
   @JsonIgnore public Long getMaxPriceLong() {
     return (Long) getValue("maxPrice");
   }
   /**
    * The highest price if the price is a range.
+   * @return all maxPrice properties as {@link java.util.Collection} or an empty collection 
+   * if maxPrice was not set.
    */
   @JsonIgnore public java.util.Collection<Long> getMaxPriceLongs() {
     final java.lang.Object current = myData.get("maxPrice");
@@ -288,12 +334,15 @@ public class PriceSpecification extends StructuredValue {
   }
   /**
    * The highest price if the price is a range.
+   * @return maxPrice property set by first invocation of maxPrice method or {@code null}.
    */
   @JsonIgnore public Float getMaxPriceFloat() {
     return (Float) getValue("maxPrice");
   }
   /**
    * The highest price if the price is a range.
+   * @return all maxPrice properties as {@link java.util.Collection} or an empty collection 
+   * if maxPrice was not set.
    */
   @JsonIgnore public java.util.Collection<Float> getMaxPriceFloats() {
     final java.lang.Object current = myData.get("maxPrice");
@@ -305,12 +354,15 @@ public class PriceSpecification extends StructuredValue {
   }
   /**
    * The highest price if the price is a range.
+   * @return maxPrice property set by first invocation of maxPrice method or {@code null}.
    */
   @JsonIgnore public Double getMaxPriceDouble() {
     return (Double) getValue("maxPrice");
   }
   /**
    * The highest price if the price is a range.
+   * @return all maxPrice properties as {@link java.util.Collection} or an empty collection 
+   * if maxPrice was not set.
    */
   @JsonIgnore public java.util.Collection<Double> getMaxPriceDoubles() {
     final java.lang.Object current = myData.get("maxPrice");
@@ -322,12 +374,15 @@ public class PriceSpecification extends StructuredValue {
   }
   /**
    * The highest price if the price is a range.
+   * @return maxPrice property set by first invocation of maxPrice method or {@code null}.
    */
   @JsonIgnore public String getMaxPriceString() {
     return (String) getValue("maxPrice");
   }
   /**
    * The highest price if the price is a range.
+   * @return all maxPrice properties as {@link java.util.Collection} or an empty collection 
+   * if maxPrice was not set.
    */
   @JsonIgnore public java.util.Collection<String> getMaxPriceStrings() {
     final java.lang.Object current = myData.get("maxPrice");
@@ -353,14 +408,36 @@ public class PriceSpecification extends StructuredValue {
     }
     /**
      * The date when the item becomes valid.
+     * @param date value to set
+     * @return this builder instance
      */
     @NotNull public Builder validFrom(@NotNull java.util.Date date) {
       putValue("validFrom", date);
       return this;
     }
     /**
+     * Remove validFrom property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeValidFrom() {
+      removeValue("validFrom");
+      return this;
+    }
+    /**
+     * Get currently set value for validFrom property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getValidFrom() {
+      return myData.get("validFrom");
+    }
+    /**
      * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.\n\nUsage guidelines:\n\n* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;) instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.\n* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a &quot;content=&quot; attribute for publishing simple machine-readable values alongside more human-friendly formatting.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
-     *       
+     * 
+     * @param number value to set
+     * @return this builder instance
      */
     @NotNull public Builder price(@NotNull Number number) {
       putValue("price", number);
@@ -368,14 +445,36 @@ public class PriceSpecification extends StructuredValue {
     }
     /**
      * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.\n\nUsage guidelines:\n\n* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;) instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.\n* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a &quot;content=&quot; attribute for publishing simple machine-readable values alongside more human-friendly formatting.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
-     *       
+     * 
+     * @param price value to set
+     * @return this builder instance
      */
     @NotNull public Builder price(@NotNull String price) {
       putValue("price", price);
       return this;
     }
     /**
+     * Remove price property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removePrice() {
+      removeValue("price");
+      return this;
+    }
+    /**
+     * Get currently set value for price property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getPrice() {
+      return myData.get("price");
+    }
+    /**
      * The lowest price if the price is a range.
+     * @param integer value to set
+     * @return this builder instance
      */
     @NotNull public Builder minPrice(@NotNull Integer integer) {
       putValue("minPrice", integer);
@@ -383,6 +482,8 @@ public class PriceSpecification extends StructuredValue {
     }
     /**
      * The lowest price if the price is a range.
+     * @param minPrice value to set
+     * @return this builder instance
      */
     @NotNull public Builder minPrice(@NotNull Long minPrice) {
       putValue("minPrice", minPrice);
@@ -390,6 +491,8 @@ public class PriceSpecification extends StructuredValue {
     }
     /**
      * The lowest price if the price is a range.
+     * @param minPrice value to set
+     * @return this builder instance
      */
     @NotNull public Builder minPrice(@NotNull Float minPrice) {
       putValue("minPrice", minPrice);
@@ -397,6 +500,8 @@ public class PriceSpecification extends StructuredValue {
     }
     /**
      * The lowest price if the price is a range.
+     * @param minPrice value to set
+     * @return this builder instance
      */
     @NotNull public Builder minPrice(@NotNull Double minPrice) {
       putValue("minPrice", minPrice);
@@ -404,13 +509,35 @@ public class PriceSpecification extends StructuredValue {
     }
     /**
      * The lowest price if the price is a range.
+     * @param minPrice value to set
+     * @return this builder instance
      */
     @NotNull public Builder minPrice(@NotNull String minPrice) {
       putValue("minPrice", minPrice);
       return this;
     }
     /**
+     * Remove minPrice property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeMinPrice() {
+      removeValue("minPrice");
+      return this;
+    }
+    /**
+     * Get currently set value for minPrice property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getMinPrice() {
+      return myData.get("minPrice");
+    }
+    /**
      * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
+     * @param quantitativeValue value to set
+     * @return this builder instance
      */
     @NotNull public Builder eligibleQuantity(@NotNull QuantitativeValue quantitativeValue) {
       putValue("eligibleQuantity", quantitativeValue);
@@ -418,27 +545,89 @@ public class PriceSpecification extends StructuredValue {
     }
     /**
      * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
+     * @param quantitativeValue value to set
+     * @return this builder instance
      */
     @NotNull public Builder eligibleQuantity(@NotNull QuantitativeValue.Builder quantitativeValue) {
       putValue("eligibleQuantity", quantitativeValue.build());
       return this;
     }
     /**
+     * Remove eligibleQuantity property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeEligibleQuantity() {
+      removeValue("eligibleQuantity");
+      return this;
+    }
+    /**
+     * Get currently set value for eligibleQuantity property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getEligibleQuantity() {
+      return myData.get("eligibleQuantity");
+    }
+    /**
      * Specifies whether the applicable value-added tax (VAT) is included in the price specification or not.
+     * @param valueAddedTaxIncluded value to set
+     * @return this builder instance
      */
     @NotNull public Builder valueAddedTaxIncluded(@NotNull Boolean valueAddedTaxIncluded) {
       putValue("valueAddedTaxIncluded", valueAddedTaxIncluded);
       return this;
     }
     /**
+     * Remove valueAddedTaxIncluded property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeValueAddedTaxIncluded() {
+      removeValue("valueAddedTaxIncluded");
+      return this;
+    }
+    /**
+     * Get currently set value for valueAddedTaxIncluded property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getValueAddedTaxIncluded() {
+      return myData.get("valueAddedTaxIncluded");
+    }
+    /**
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
+     * @param date value to set
+     * @return this builder instance
      */
     @NotNull public Builder validThrough(@NotNull java.util.Date date) {
       putValue("validThrough", date);
       return this;
     }
     /**
+     * Remove validThrough property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeValidThrough() {
+      removeValue("validThrough");
+      return this;
+    }
+    /**
+     * Get currently set value for validThrough property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getValidThrough() {
+      return myData.get("validThrough");
+    }
+    /**
      * The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.
+     * @param priceSpecification value to set
+     * @return this builder instance
      */
     @NotNull public Builder eligibleTransactionVolume(@NotNull PriceSpecification priceSpecification) {
       putValue("eligibleTransactionVolume", priceSpecification);
@@ -446,20 +635,62 @@ public class PriceSpecification extends StructuredValue {
     }
     /**
      * The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.
+     * @param priceSpecification value to set
+     * @return this builder instance
      */
     @NotNull public Builder eligibleTransactionVolume(@NotNull PriceSpecification.Builder priceSpecification) {
       putValue("eligibleTransactionVolume", priceSpecification.build());
       return this;
     }
     /**
+     * Remove eligibleTransactionVolume property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeEligibleTransactionVolume() {
+      removeValue("eligibleTransactionVolume");
+      return this;
+    }
+    /**
+     * Get currently set value for eligibleTransactionVolume property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getEligibleTransactionVolume() {
+      return myData.get("eligibleTransactionVolume");
+    }
+    /**
      * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. &quot;USD&quot;; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. &quot;BTC&quot;; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. &quot;Ithaca HOUR&quot;.
+     * @param priceCurrency value to set
+     * @return this builder instance
      */
     @NotNull public Builder priceCurrency(@NotNull String priceCurrency) {
       putValue("priceCurrency", priceCurrency);
       return this;
     }
     /**
+     * Remove priceCurrency property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removePriceCurrency() {
+      removeValue("priceCurrency");
+      return this;
+    }
+    /**
+     * Get currently set value for priceCurrency property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getPriceCurrency() {
+      return myData.get("priceCurrency");
+    }
+    /**
      * The highest price if the price is a range.
+     * @param integer value to set
+     * @return this builder instance
      */
     @NotNull public Builder maxPrice(@NotNull Integer integer) {
       putValue("maxPrice", integer);
@@ -467,6 +698,8 @@ public class PriceSpecification extends StructuredValue {
     }
     /**
      * The highest price if the price is a range.
+     * @param maxPrice value to set
+     * @return this builder instance
      */
     @NotNull public Builder maxPrice(@NotNull Long maxPrice) {
       putValue("maxPrice", maxPrice);
@@ -474,6 +707,8 @@ public class PriceSpecification extends StructuredValue {
     }
     /**
      * The highest price if the price is a range.
+     * @param maxPrice value to set
+     * @return this builder instance
      */
     @NotNull public Builder maxPrice(@NotNull Float maxPrice) {
       putValue("maxPrice", maxPrice);
@@ -481,6 +716,8 @@ public class PriceSpecification extends StructuredValue {
     }
     /**
      * The highest price if the price is a range.
+     * @param maxPrice value to set
+     * @return this builder instance
      */
     @NotNull public Builder maxPrice(@NotNull Double maxPrice) {
       putValue("maxPrice", maxPrice);
@@ -488,28 +725,90 @@ public class PriceSpecification extends StructuredValue {
     }
     /**
      * The highest price if the price is a range.
+     * @param maxPrice value to set
+     * @return this builder instance
      */
     @NotNull public Builder maxPrice(@NotNull String maxPrice) {
       putValue("maxPrice", maxPrice);
       return this;
     }
     /**
+     * Remove maxPrice property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeMaxPrice() {
+      removeValue("maxPrice");
+      return this;
+    }
+    /**
+     * Get currently set value for maxPrice property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getMaxPrice() {
+      return myData.get("maxPrice");
+    }
+    /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
+     * 
+     * @param identifier value to set
+     * @return this builder instance
      */
     @NotNull public Builder identifier(@NotNull Identifier identifier) {
       putValue("identifier", identifier);
       return this;
     }
     /**
+     * Remove identifier property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeIdentifier() {
+      removeValue("identifier");
+      return this;
+    }
+    /**
+     * Get currently set value for identifier property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getIdentifier() {
+      return myData.get("identifier");
+    }
+    /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * @param image value to set
+     * @return this builder instance
      */
     @NotNull public Builder image(@NotNull Image image) {
       putValue("image", image);
       return this;
     }
     /**
+     * Remove image property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeImage() {
+      removeValue("image");
+      return this;
+    }
+    /**
+     * Get currently set value for image property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getImage() {
+      return myData.get("image");
+    }
+    /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     * @param action value to set
+     * @return this builder instance
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
       putValue("potentialAction", action);
@@ -517,62 +816,224 @@ public class PriceSpecification extends StructuredValue {
     }
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     * @param action value to set
+     * @return this builder instance
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
       return this;
     }
     /**
+     * Remove potentialAction property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removePotentialAction() {
+      removeValue("potentialAction");
+      return this;
+    }
+    /**
+     * Get currently set value for potentialAction property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getPotentialAction() {
+      return myData.get("potentialAction");
+    }
+    /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * @param disambiguatingDescription value to set
+     * @return this builder instance
      */
     @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
       putValue("disambiguatingDescription", disambiguatingDescription);
       return this;
     }
     /**
+     * Remove disambiguatingDescription property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeDisambiguatingDescription() {
+      removeValue("disambiguatingDescription");
+      return this;
+    }
+    /**
+     * Get currently set value for disambiguatingDescription property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getDisambiguatingDescription() {
+      return myData.get("disambiguatingDescription");
+    }
+    /**
      * A description of the item.
+     * @param description value to set
+     * @return this builder instance
      */
     @NotNull public Builder description(@NotNull String description) {
       putValue("description", description);
       return this;
     }
     /**
+     * Remove description property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeDescription() {
+      removeValue("description");
+      return this;
+    }
+    /**
+     * Get currently set value for description property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getDescription() {
+      return myData.get("description");
+    }
+    /**
      * URL of the item.
+     * @param url value to set
+     * @return this builder instance
      */
     @NotNull public Builder url(@NotNull String url) {
       putValue("url", url);
       return this;
     }
     /**
+     * Remove url property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeUrl() {
+      removeValue("url");
+      return this;
+    }
+    /**
+     * Get currently set value for url property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getUrl() {
+      return myData.get("url");
+    }
+    /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * @param additionalType value to set
+     * @return this builder instance
      */
     @NotNull public Builder additionalType(@NotNull String additionalType) {
       putValue("additionalType", additionalType);
       return this;
     }
     /**
+     * Remove additionalType property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeAdditionalType() {
+      removeValue("additionalType");
+      return this;
+    }
+    /**
+     * Get currently set value for additionalType property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getAdditionalType() {
+      return myData.get("additionalType");
+    }
+    /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     * @param sameAs value to set
+     * @return this builder instance
      */
     @NotNull public Builder sameAs(@NotNull String sameAs) {
       putValue("sameAs", sameAs);
       return this;
     }
     /**
+     * Remove sameAs property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeSameAs() {
+      removeValue("sameAs");
+      return this;
+    }
+    /**
+     * Get currently set value for sameAs property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getSameAs() {
+      return myData.get("sameAs");
+    }
+    /**
      * An alias for the item.
+     * @param alternateName value to set
+     * @return this builder instance
      */
     @NotNull public Builder alternateName(@NotNull String alternateName) {
       putValue("alternateName", alternateName);
       return this;
     }
     /**
+     * Remove alternateName property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeAlternateName() {
+      removeValue("alternateName");
+      return this;
+    }
+    /**
+     * Get currently set value for alternateName property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getAlternateName() {
+      return myData.get("alternateName");
+    }
+    /**
      * The name of the item.
+     * @param name value to set
+     * @return this builder instance
      */
     @NotNull public Builder name(@NotNull String name) {
       putValue("name", name);
       return this;
     }
     /**
+     * Remove name property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeName() {
+      removeValue("name");
+      return this;
+    }
+    /**
+     * Get currently set value for name property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getName() {
+      return myData.get("name");
+    }
+    /**
      * A CreativeWork or Event about this Thing.
+     * @param creativeWork value to set
+     * @return this builder instance
      */
     @NotNull public Builder subjectOf(@NotNull CreativeWork creativeWork) {
       putValue("subjectOf", creativeWork);
@@ -580,6 +1041,8 @@ public class PriceSpecification extends StructuredValue {
     }
     /**
      * A CreativeWork or Event about this Thing.
+     * @param creativeWork value to set
+     * @return this builder instance
      */
     @NotNull public Builder subjectOf(@NotNull CreativeWork.Builder creativeWork) {
       putValue("subjectOf", creativeWork.build());
@@ -587,6 +1050,8 @@ public class PriceSpecification extends StructuredValue {
     }
     /**
      * A CreativeWork or Event about this Thing.
+     * @param event value to set
+     * @return this builder instance
      */
     @NotNull public Builder subjectOf(@NotNull Event event) {
       putValue("subjectOf", event);
@@ -594,13 +1059,35 @@ public class PriceSpecification extends StructuredValue {
     }
     /**
      * A CreativeWork or Event about this Thing.
+     * @param event value to set
+     * @return this builder instance
      */
     @NotNull public Builder subjectOf(@NotNull Event.Builder event) {
       putValue("subjectOf", event.build());
       return this;
     }
     /**
+     * Remove subjectOf property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeSubjectOf() {
+      removeValue("subjectOf");
+      return this;
+    }
+    /**
+     * Get currently set value for subjectOf property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getSubjectOf() {
+      return myData.get("subjectOf");
+    }
+    /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * @param creativeWork value to set
+     * @return this builder instance
      */
     @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
       putValue("mainEntityOfPage", creativeWork);
@@ -608,6 +1095,8 @@ public class PriceSpecification extends StructuredValue {
     }
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * @param creativeWork value to set
+     * @return this builder instance
      */
     @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
       putValue("mainEntityOfPage", creativeWork.build());
@@ -615,14 +1104,57 @@ public class PriceSpecification extends StructuredValue {
     }
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * @param mainEntityOfPage value to set
+     * @return this builder instance
      */
     @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
       putValue("mainEntityOfPage", mainEntityOfPage);
       return this;
     }
+    /**
+     * Remove mainEntityOfPage property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeMainEntityOfPage() {
+      removeValue("mainEntityOfPage");
+      return this;
+    }
+    /**
+     * Get currently set value for mainEntityOfPage property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getMainEntityOfPage() {
+      return myData.get("mainEntityOfPage");
+    }
+    /**
+     * null
+     * @param id value to set
+     * @return this builder instance
+     */
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
+    }
+    /**
+     * Remove id property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeId() {
+      removeValue("id");
+      return this;
+    }
+    /**
+     * Get currently set value for id property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getId() {
+      return myData.get("id");
     }
     public Builder id(long id) {
       return id(Long.toString(id));

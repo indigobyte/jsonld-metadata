@@ -9,6 +9,7 @@ import org.schema.generator.helper.sanitizeIdentifier
 
 class ClassesGenerator(private val sink: GeneratorSink, private val banner: String? = null) {
     private val NOT_NULL = listOf("@NotNull")
+    private val NULLABLE = listOf("@Nullable")
     private val OVERRIDE = listOf("@Override")
 
     fun generate(p: Package) {
@@ -73,6 +74,7 @@ class ClassesGenerator(private val sink: GeneratorSink, private val banner: Stri
                     "com.fasterxml.jackson.databind.annotation.*",
                     "com.fasterxml.jackson.annotation.*",
                     "org.jetbrains.annotations.NotNull",
+                    "org.jetbrains.annotations.Nullable",
                     "java.util.*"
                 )
                 annotations = if (typeName == "Thing") {
@@ -124,14 +126,21 @@ class ClassesGenerator(private val sink: GeneratorSink, private val banner: Stri
                         val methodName = getMethodName(fieldType, fieldTypes, name)
                         val key1 = name.decapitalize()
                         method(methodName, fieldType) {
-                            comment = it.comment
+                            comment = """
+                                ${it.comment}
+                                @return $key1 property set by first invocation of $key1 method or {@code null}.
+                            """.trimIndent()
                             annotations = if (name == "Id") listOf("@JsonProperty(\"@id\")") else listOf("@JsonIgnore")
 
                             line("return ($fieldType) getValue(\"$key1\");")
                         }
                         if (name != "Id") {
                             method(methodName + "s", "java.util.Collection<$fieldType>") {
-                                comment = it.comment
+                                comment = """
+                                    ${it.comment}
+                                    @return all $key1 properties as {@link java.util.Collection} or an empty collection 
+                                    if $key1 was not set.
+                                """.trimIndent()
                                 annotations = listOf("@JsonIgnore")
 
                                 line("final java.lang.Object current = myData.get(\"$key1\");")
@@ -171,20 +180,29 @@ class ClassesGenerator(private val sink: GeneratorSink, private val banner: Stri
 
                             method("putValue") {
                                 parameters("key" to "String", "value" to "java.lang.Object")
-                                line("if (myData.containsKey(key)) {")
-                                line("  final java.lang.Object current = myData.get(key);")
-                                line("  final java.util.Collection list;")
-                                line("  if (current instanceof java.util.Collection) {")
-                                line("    list = (java.util.Collection) current;")
-                                line("  } else {")
-                                line("    list = new ArrayList<java.lang.Object>();")
-                                line("    list.add(current);")
-                                line("    myData.put(key, list);")
-                                line("  }")
-                                line("  list.add(value);")
-                                line("} else {")
-                                line("  myData.put(key, value);")
-                                line("}")
+                                line(
+                                    """
+                                    if (myData.containsKey(key)) {
+                                     final java.lang.Object current = myData.get(key);
+                                     final java.util.Collection list;
+                                     if (current instanceof java.util.Collection) {
+                                       list = (java.util.Collection) current;
+                                     } else {
+                                       list = new ArrayList<java.lang.Object>();
+                                       list.add(current);
+                                       myData.put(key, list);
+                                     }
+                                     list.add(value);
+                                   } else {
+                                     myData.put(key, value);
+                                   }
+                                   """
+                                )
+                            }
+
+                            method("removeValue") {
+                                parameters = listOf(Parameter("key", "String", NOT_NULL))
+                                line("myData.remove(key);")
                             }
                         }
 
@@ -203,7 +221,11 @@ class ClassesGenerator(private val sink: GeneratorSink, private val banner: Stri
                             val eitherTypes = sink.getEitherTypes(field)
                             eitherTypes.forEachIndexed { i, fieldType ->
                                 method(sanitizeIdentifier(name.decapitalize()), "Builder") {
-                                    comment = field.comment
+                                    comment = """
+                                        ${field.comment}
+                                        @param ${getVariableName(fieldType, name)} value to set
+                                        @return this builder instance
+                                    """.trimIndent()
                                     parameters =
                                         listOf(Parameter(getVariableName(fieldType, name), fieldType, NOT_NULL))
                                     annotations = NOT_NULL
@@ -243,7 +265,11 @@ class ClassesGenerator(private val sink: GeneratorSink, private val banner: Stri
                                     fieldType != "java.util.Date"
                                 ) {
                                     method(name.decapitalize(), "Builder") {
-                                        comment = field.comment
+                                        comment = """
+                                            ${field.comment}
+                                            @param ${getVariableName(fieldType, name)} value to set
+                                            @return this builder instance
+                                        """.trimIndent()
                                         parameters = listOf(
                                             Parameter(
                                                 getVariableName(fieldType, name),
@@ -262,6 +288,30 @@ class ClassesGenerator(private val sink: GeneratorSink, private val banner: Stri
                                         )
                                         line("return this;")
                                     }
+                                }
+                            }
+                            if (eitherTypes.isNotEmpty()) {
+                                method("remove" + sanitizeIdentifier(name.capitalize()), "Builder") {
+                                    comment = """
+                                            Remove ${name.decapitalize()} property from the builder.
+                                            If this property is repeatable, all instances are removed.
+                                            @return this builder instance
+                                        """.trimIndent()
+                                    annotations = NOT_NULL
+
+                                    line("removeValue(\"${name.decapitalize()}\");")
+                                    line("return this;")
+                                }
+
+                                method("get" + sanitizeIdentifier(name.capitalize()), "java.lang.Object") {
+                                    comment = """
+                                            Get currently set value for ${name.decapitalize()} property in this builder.
+                                            @return previously set value or {@code null}. If multiple values have been 
+                                            set to this property, then {@link java.util.Collection} instance will be 
+                                            returned.
+                                        """.trimIndent()
+                                    annotations = NULLABLE
+                                    line("return myData.get(\"${name.decapitalize()}\");")
                                 }
                             }
                         }
