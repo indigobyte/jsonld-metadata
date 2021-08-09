@@ -166,6 +166,12 @@ class ClassesGenerator(private val sink: GeneratorSink, private val banner: Stri
                         hashCodeAndEquals(false)
                     }
 
+                    method("toBuilder", "Builder") {
+                        comment = "@return new {@link Builder} initialized with this instance's data"
+                        annotations = NOT_NULL
+                        line("return new Builder(new HashMap<>(this.myData));")
+                    }
+
                     klass("Builder") {
                         comment = "Builder for {@link $typeName}"
                         extends = type.parentType?.let {

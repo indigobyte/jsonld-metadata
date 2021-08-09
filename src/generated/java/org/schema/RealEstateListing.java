@@ -93,6 +93,12 @@ public class RealEstateListing extends WebPage {
   protected RealEstateListing(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
+  /**
+   * @return new {@link Builder} initialized with this instance's data
+   */
+  @NotNull public Builder toBuilder() {
+    return new Builder(new HashMap<>(this.myData));
+  }
   
   /**
    * Builder for {@link RealEstateListing}

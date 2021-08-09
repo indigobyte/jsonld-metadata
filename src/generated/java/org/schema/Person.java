@@ -1397,6 +1397,12 @@ public class Person extends Thing implements org.schema.Participant, Competitor,
   protected Person(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
+  /**
+   * @return new {@link Builder} initialized with this instance's data
+   */
+  @NotNull public Builder toBuilder() {
+    return new Builder(new HashMap<>(this.myData));
+  }
   
   /**
    * Builder for {@link Person}

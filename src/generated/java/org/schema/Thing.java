@@ -348,6 +348,12 @@ public class Thing implements org.schema.Instrument, Result, Category {
     if (myData != null ? !myData.equals(thing.myData) : thing.myData != null) return false;
     return true;
   }
+  /**
+   * @return new {@link Builder} initialized with this instance's data
+   */
+  @NotNull public Builder toBuilder() {
+    return new Builder(new HashMap<>(this.myData));
+  }
   
   /**
    * Builder for {@link Thing}

@@ -311,6 +311,12 @@ public class Legislation extends CreativeWork implements org.schema.LegislationA
   protected Legislation(java.util.Map<String,java.lang.Object> data) {
     super(data);
   }
+  /**
+   * @return new {@link Builder} initialized with this instance's data
+   */
+  @NotNull public Builder toBuilder() {
+    return new Builder(new HashMap<>(this.myData));
+  }
   
   /**
    * Builder for {@link Legislation}
