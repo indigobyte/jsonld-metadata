@@ -21,6 +21,7 @@ package org.schema;
 import com.fasterxml.jackson.databind.annotation.*;
 import com.fasterxml.jackson.annotation.*;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.*;
 
 /**
@@ -28,722 +29,593 @@ import java.util.*;
  */
 public class Service extends Intangible {
   /**
-   * Indicates an OfferCatalog listing for this Organization, Person, or Service.
-   */
-  @JsonIgnore public OfferCatalog getHasOfferCatalog() {
-    return (OfferCatalog) getValue("hasOfferCatalog");
-  }
-  /**
-   * Indicates an OfferCatalog listing for this Organization, Person, or Service.
-   */
-  @JsonIgnore public Collection<OfferCatalog> getHasOfferCatalogs() {
-    final Object current = myData.get("hasOfferCatalog");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<OfferCatalog>) current;
-    }
-    return Arrays.asList((OfferCatalog) current);
-  }
-  /**
-   * The overall rating, based on a collection of reviews or ratings, of the item.
-   */
-  @JsonIgnore public AggregateRating getAggregateRating() {
-    return (AggregateRating) getValue("aggregateRating");
-  }
-  /**
-   * The overall rating, based on a collection of reviews or ratings, of the item.
-   */
-  @JsonIgnore public Collection<AggregateRating> getAggregateRatings() {
-    final Object current = myData.get("aggregateRating");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<AggregateRating>) current;
-    }
-    return Arrays.asList((AggregateRating) current);
-  }
-  /**
-   * An intended audience, i.e. a group for whom something was created.
-   */
-  @JsonIgnore public Audience getAudience() {
-    return (Audience) getValue("audience");
-  }
-  /**
-   * An intended audience, i.e. a group for whom something was created.
-   */
-  @JsonIgnore public Collection<Audience> getAudiences() {
-    final Object current = myData.get("audience");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Audience>) current;
-    }
-    return Arrays.asList((Audience) current);
-  }
-  /**
-   * A means of accessing the service (e.g. a phone bank, a web site, a location, etc.).
-   */
-  @JsonIgnore public ServiceChannel getAvailableChannel() {
-    return (ServiceChannel) getValue("availableChannel");
-  }
-  /**
-   * A means of accessing the service (e.g. a phone bank, a web site, a location, etc.).
-   */
-  @JsonIgnore public Collection<ServiceChannel> getAvailableChannels() {
-    final Object current = myData.get("availableChannel");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<ServiceChannel>) current;
-    }
-    return Arrays.asList((ServiceChannel) current);
-  }
-  /**
-   * An award won by or for this item.
-   */
-  @JsonIgnore public String getAward() {
-    return (String) getValue("award");
-  }
-  /**
-   * An award won by or for this item.
-   */
-  @JsonIgnore public Collection<String> getAwards() {
-    final Object current = myData.get("award");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
-   */
-  @JsonIgnore public Brand getBrandBrand() {
-    return (Brand) getValue("brand");
-  }
-  /**
-   * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
-   */
-  @JsonIgnore public Collection<Brand> getBrandBrands() {
-    final Object current = myData.get("brand");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Brand>) current;
-    }
-    return Arrays.asList((Brand) current);
-  }
-  /**
-   * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
-   */
-  @JsonIgnore public Organization getBrandOrganization() {
-    return (Organization) getValue("brand");
-  }
-  /**
-   * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
-   */
-  @JsonIgnore public Collection<Organization> getBrandOrganizations() {
-    final Object current = myData.get("brand");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
-    }
-    return Arrays.asList((Organization) current);
-  }
-  /**
-   * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-   */
-  @JsonIgnore public String getCategoryString() {
-    return (String) getValue("category");
-  }
-  /**
-   * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-   */
-  @JsonIgnore public Collection<String> getCategoryStrings() {
-    final Object current = myData.get("category");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-   */
-  @JsonIgnore public Thing getCategoryThing() {
-    return (Thing) getValue("category");
-  }
-  /**
-   * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-   */
-  @JsonIgnore public Collection<Thing> getCategoryThings() {
-    final Object current = myData.get("category");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Thing>) current;
-    }
-    return Arrays.asList((Thing) current);
-  }
-  /**
-   * The hours during which this service or contact is available.
-   */
-  @JsonIgnore public OpeningHoursSpecification getHoursAvailable() {
-    return (OpeningHoursSpecification) getValue("hoursAvailable");
-  }
-  /**
-   * The hours during which this service or contact is available.
-   */
-  @JsonIgnore public Collection<OpeningHoursSpecification> getHoursAvailables() {
-    final Object current = myData.get("hoursAvailable");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<OpeningHoursSpecification>) current;
-    }
-    return Arrays.asList((OpeningHoursSpecification) current);
-  }
-  /**
-   * A pointer to another, somehow related product (or multiple products).
-   */
-  @JsonIgnore public Product getIsRelatedToProduct() {
-    return (Product) getValue("isRelatedTo");
-  }
-  /**
-   * A pointer to another, somehow related product (or multiple products).
-   */
-  @JsonIgnore public Collection<Product> getIsRelatedToProducts() {
-    final Object current = myData.get("isRelatedTo");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Product>) current;
-    }
-    return Arrays.asList((Product) current);
-  }
-  /**
-   * A pointer to another, somehow related product (or multiple products).
-   */
-  @JsonIgnore public Service getIsRelatedToService() {
-    return (Service) getValue("isRelatedTo");
-  }
-  /**
-   * A pointer to another, somehow related product (or multiple products).
-   */
-  @JsonIgnore public Collection<Service> getIsRelatedToServices() {
-    final Object current = myData.get("isRelatedTo");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Service>) current;
-    }
-    return Arrays.asList((Service) current);
-  }
-  /**
-   * A pointer to another, functionally similar product (or multiple products).
-   */
-  @JsonIgnore public Product getIsSimilarToProduct() {
-    return (Product) getValue("isSimilarTo");
-  }
-  /**
-   * A pointer to another, functionally similar product (or multiple products).
-   */
-  @JsonIgnore public Collection<Product> getIsSimilarToProducts() {
-    final Object current = myData.get("isSimilarTo");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Product>) current;
-    }
-    return Arrays.asList((Product) current);
-  }
-  /**
-   * A pointer to another, functionally similar product (or multiple products).
-   */
-  @JsonIgnore public Service getIsSimilarToService() {
-    return (Service) getValue("isSimilarTo");
-  }
-  /**
-   * A pointer to another, functionally similar product (or multiple products).
-   */
-  @JsonIgnore public Collection<Service> getIsSimilarToServices() {
-    final Object current = myData.get("isSimilarTo");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Service>) current;
-    }
-    return Arrays.asList((Service) current);
-  }
-  /**
-   * An associated logo.
-   */
-  @JsonIgnore public ImageObject getLogoImageObject() {
-    return (ImageObject) getValue("logo");
-  }
-  /**
-   * An associated logo.
-   */
-  @JsonIgnore public Collection<ImageObject> getLogoImageObjects() {
-    final Object current = myData.get("logo");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<ImageObject>) current;
-    }
-    return Arrays.asList((ImageObject) current);
-  }
-  /**
-   * An associated logo.
-   */
-  @JsonIgnore public String getLogoString() {
-    return (String) getValue("logo");
-  }
-  /**
-   * An associated logo.
-   */
-  @JsonIgnore public Collection<String> getLogoStrings() {
-    final Object current = myData.get("logo");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event.
-   */
-  @JsonIgnore public Offer getOffers() {
-    return (Offer) getValue("offers");
-  }
-  /**
-   * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event.
-   */
-  @JsonIgnore public Collection<Offer> getOfferss() {
-    final Object current = myData.get("offers");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Offer>) current;
-    }
-    return Arrays.asList((Offer) current);
-  }
-  /**
-   * The tangible thing generated by the service, e.g. a passport, permit, etc.
-   */
-  @JsonIgnore public Thing getServiceOutput() {
-    return (Thing) getValue("serviceOutput");
-  }
-  /**
-   * The tangible thing generated by the service, e.g. a passport, permit, etc.
-   */
-  @JsonIgnore public Collection<Thing> getServiceOutputs() {
-    final Object current = myData.get("serviceOutput");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Thing>) current;
-    }
-    return Arrays.asList((Thing) current);
-  }
-  /**
-   * A review of the item.
-   */
-  @JsonIgnore public Review getReview() {
-    return (Review) getValue("review");
-  }
-  /**
-   * A review of the item.
-   */
-  @JsonIgnore public Collection<Review> getReviews() {
-    final Object current = myData.get("review");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Review>) current;
-    }
-    return Arrays.asList((Review) current);
-  }
-  /**
-   * A slogan or motto associated with the item.
-   */
-  @JsonIgnore public String getSlogan() {
-    return (String) getValue("slogan");
-  }
-  /**
-   * A slogan or motto associated with the item.
-   */
-  @JsonIgnore public Collection<String> getSlogans() {
-    final Object current = myData.get("slogan");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
-   */
-  @JsonIgnore public String getServiceType() {
-    return (String) getValue("serviceType");
-  }
-  /**
-   * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
-   */
-  @JsonIgnore public Collection<String> getServiceTypes() {
-    final Object current = myData.get("serviceType");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
    * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+   * @return provider property set by first invocation of provider method or {@code null}.
    */
   @JsonIgnore public Organization getProviderOrganization() {
     return (Organization) getValue("provider");
   }
   /**
    * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+   * @return all provider properties as {@link java.util.Collection} or an empty collection 
+   * if provider was not set.
    */
-  @JsonIgnore public Collection<Organization> getProviderOrganizations() {
-    final Object current = myData.get("provider");
+  @JsonIgnore public java.util.Collection<Organization> getProviderOrganizations() {
+    final java.lang.Object current = myData.get("provider");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
   }
   /**
    * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+   * @return provider property set by first invocation of provider method or {@code null}.
    */
   @JsonIgnore public Person getProviderPerson() {
     return (Person) getValue("provider");
   }
   /**
    * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+   * @return all provider properties as {@link java.util.Collection} or an empty collection 
+   * if provider was not set.
    */
-  @JsonIgnore public Collection<Person> getProviderPersons() {
-    final Object current = myData.get("provider");
+  @JsonIgnore public java.util.Collection<Person> getProviderPersons() {
+    final java.lang.Object current = myData.get("provider");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
   /**
+   * A means of accessing the service (e.g. a phone bank, a web site, a location, etc.).
+   * @return availableChannel property set by first invocation of availableChannel method or {@code null}.
+   */
+  @JsonIgnore public ServiceChannel getAvailableChannel() {
+    return (ServiceChannel) getValue("availableChannel");
+  }
+  /**
+   * A means of accessing the service (e.g. a phone bank, a web site, a location, etc.).
+   * @return all availableChannel properties as {@link java.util.Collection} or an empty collection 
+   * if availableChannel was not set.
+   */
+  @JsonIgnore public java.util.Collection<ServiceChannel> getAvailableChannels() {
+    final java.lang.Object current = myData.get("availableChannel");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<ServiceChannel>) current;
+    }
+    return Arrays.asList((ServiceChannel) current);
+  }
+  /**
+   * The tangible thing generated by the service, e.g. a passport, permit, etc.
+   * @return serviceOutput property set by first invocation of serviceOutput method or {@code null}.
+   */
+  @JsonIgnore public Thing getServiceOutput() {
+    return (Thing) getValue("serviceOutput");
+  }
+  /**
+   * The tangible thing generated by the service, e.g. a passport, permit, etc.
+   * @return all serviceOutput properties as {@link java.util.Collection} or an empty collection 
+   * if serviceOutput was not set.
+   */
+  @JsonIgnore public java.util.Collection<Thing> getServiceOutputs() {
+    final java.lang.Object current = myData.get("serviceOutput");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Thing>) current;
+    }
+    return Arrays.asList((Thing) current);
+  }
+  /**
+   * The overall rating, based on a collection of reviews or ratings, of the item.
+   * @return aggregateRating property set by first invocation of aggregateRating method or {@code null}.
+   */
+  @JsonIgnore public AggregateRating getAggregateRating() {
+    return (AggregateRating) getValue("aggregateRating");
+  }
+  /**
+   * The overall rating, based on a collection of reviews or ratings, of the item.
+   * @return all aggregateRating properties as {@link java.util.Collection} or an empty collection 
+   * if aggregateRating was not set.
+   */
+  @JsonIgnore public java.util.Collection<AggregateRating> getAggregateRatings() {
+    final java.lang.Object current = myData.get("aggregateRating");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<AggregateRating>) current;
+    }
+    return Arrays.asList((AggregateRating) current);
+  }
+  /**
+   * An associated logo.
+   * @return logo property set by first invocation of logo method or {@code null}.
+   */
+  @JsonIgnore public Image getLogo() {
+    return (Image) getValue("logo");
+  }
+  /**
+   * An associated logo.
+   * @return all logo properties as {@link java.util.Collection} or an empty collection 
+   * if logo was not set.
+   */
+  @JsonIgnore public java.util.Collection<Image> getLogos() {
+    final java.lang.Object current = myData.get("logo");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Image>) current;
+    }
+    return Arrays.asList((Image) current);
+  }
+  /**
+   * A pointer to another, functionally similar product (or multiple products).
+   * @return isSimilarTo property set by first invocation of isSimilarTo method or {@code null}.
+   */
+  @JsonIgnore public Product getIsSimilarToProduct() {
+    return (Product) getValue("isSimilarTo");
+  }
+  /**
+   * A pointer to another, functionally similar product (or multiple products).
+   * @return all isSimilarTo properties as {@link java.util.Collection} or an empty collection 
+   * if isSimilarTo was not set.
+   */
+  @JsonIgnore public java.util.Collection<Product> getIsSimilarToProducts() {
+    final java.lang.Object current = myData.get("isSimilarTo");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Product>) current;
+    }
+    return Arrays.asList((Product) current);
+  }
+  /**
+   * A pointer to another, functionally similar product (or multiple products).
+   * @return isSimilarTo property set by first invocation of isSimilarTo method or {@code null}.
+   */
+  @JsonIgnore public Service getIsSimilarToService() {
+    return (Service) getValue("isSimilarTo");
+  }
+  /**
+   * A pointer to another, functionally similar product (or multiple products).
+   * @return all isSimilarTo properties as {@link java.util.Collection} or an empty collection 
+   * if isSimilarTo was not set.
+   */
+  @JsonIgnore public java.util.Collection<Service> getIsSimilarToServices() {
+    final java.lang.Object current = myData.get("isSimilarTo");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Service>) current;
+    }
+    return Arrays.asList((Service) current);
+  }
+  /**
+   * A pointer to another, somehow related product (or multiple products).
+   * @return isRelatedTo property set by first invocation of isRelatedTo method or {@code null}.
+   */
+  @JsonIgnore public Product getIsRelatedToProduct() {
+    return (Product) getValue("isRelatedTo");
+  }
+  /**
+   * A pointer to another, somehow related product (or multiple products).
+   * @return all isRelatedTo properties as {@link java.util.Collection} or an empty collection 
+   * if isRelatedTo was not set.
+   */
+  @JsonIgnore public java.util.Collection<Product> getIsRelatedToProducts() {
+    final java.lang.Object current = myData.get("isRelatedTo");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Product>) current;
+    }
+    return Arrays.asList((Product) current);
+  }
+  /**
+   * A pointer to another, somehow related product (or multiple products).
+   * @return isRelatedTo property set by first invocation of isRelatedTo method or {@code null}.
+   */
+  @JsonIgnore public Service getIsRelatedToService() {
+    return (Service) getValue("isRelatedTo");
+  }
+  /**
+   * A pointer to another, somehow related product (or multiple products).
+   * @return all isRelatedTo properties as {@link java.util.Collection} or an empty collection 
+   * if isRelatedTo was not set.
+   */
+  @JsonIgnore public java.util.Collection<Service> getIsRelatedToServices() {
+    final java.lang.Object current = myData.get("isRelatedTo");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Service>) current;
+    }
+    return Arrays.asList((Service) current);
+  }
+  /**
+   * An intended audience, i.e. a group for whom something was created.
+   * @return audience property set by first invocation of audience method or {@code null}.
+   */
+  @JsonIgnore public Audience getAudience() {
+    return (Audience) getValue("audience");
+  }
+  /**
+   * An intended audience, i.e. a group for whom something was created.
+   * @return all audience properties as {@link java.util.Collection} or an empty collection 
+   * if audience was not set.
+   */
+  @JsonIgnore public java.util.Collection<Audience> getAudiences() {
+    final java.lang.Object current = myData.get("audience");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Audience>) current;
+    }
+    return Arrays.asList((Audience) current);
+  }
+  /**
+   * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+   * @return brand property set by first invocation of brand method or {@code null}.
+   */
+  @JsonIgnore public Brand getBrandBrand() {
+    return (Brand) getValue("brand");
+  }
+  /**
+   * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+   * @return all brand properties as {@link java.util.Collection} or an empty collection 
+   * if brand was not set.
+   */
+  @JsonIgnore public java.util.Collection<Brand> getBrandBrands() {
+    final java.lang.Object current = myData.get("brand");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Brand>) current;
+    }
+    return Arrays.asList((Brand) current);
+  }
+  /**
+   * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+   * @return brand property set by first invocation of brand method or {@code null}.
+   */
+  @JsonIgnore public Organization getBrandOrganization() {
+    return (Organization) getValue("brand");
+  }
+  /**
+   * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+   * @return all brand properties as {@link java.util.Collection} or an empty collection 
+   * if brand was not set.
+   */
+  @JsonIgnore public java.util.Collection<Organization> getBrandOrganizations() {
+    final java.lang.Object current = myData.get("brand");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Organization>) current;
+    }
+    return Arrays.asList((Organization) current);
+  }
+  /**
+   * The geographic area where a service or offered item is provided.
+   * @return areaServed property set by first invocation of areaServed method or {@code null}.
+   */
+  @JsonIgnore public AreaServed getAreaServed() {
+    return (AreaServed) getValue("areaServed");
+  }
+  /**
+   * The geographic area where a service or offered item is provided.
+   * @return all areaServed properties as {@link java.util.Collection} or an empty collection 
+   * if areaServed was not set.
+   */
+  @JsonIgnore public java.util.Collection<AreaServed> getAreaServeds() {
+    final java.lang.Object current = myData.get("areaServed");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<AreaServed>) current;
+    }
+    return Arrays.asList((AreaServed) current);
+  }
+  /**
+   * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+   * @return category property set by first invocation of category method or {@code null}.
+   */
+  @JsonIgnore public Category getCategory() {
+    return (Category) getValue("category");
+  }
+  /**
+   * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+   * @return all category properties as {@link java.util.Collection} or an empty collection 
+   * if category was not set.
+   */
+  @JsonIgnore public java.util.Collection<Category> getCategorys() {
+    final java.lang.Object current = myData.get("category");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Category>) current;
+    }
+    return Arrays.asList((Category) current);
+  }
+  /**
+   * Human-readable terms of service documentation.
+   * @return termsOfService property set by first invocation of termsOfService method or {@code null}.
+   */
+  @JsonIgnore public String getTermsOfService() {
+    return (String) getValue("termsOfService");
+  }
+  /**
+   * Human-readable terms of service documentation.
+   * @return all termsOfService properties as {@link java.util.Collection} or an empty collection 
+   * if termsOfService was not set.
+   */
+  @JsonIgnore public java.util.Collection<String> getTermsOfServices() {
+    final java.lang.Object current = myData.get("termsOfService");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * Indicates an OfferCatalog listing for this Organization, Person, or Service.
+   * @return hasOfferCatalog property set by first invocation of hasOfferCatalog method or {@code null}.
+   */
+  @JsonIgnore public OfferCatalog getHasOfferCatalog() {
+    return (OfferCatalog) getValue("hasOfferCatalog");
+  }
+  /**
+   * Indicates an OfferCatalog listing for this Organization, Person, or Service.
+   * @return all hasOfferCatalog properties as {@link java.util.Collection} or an empty collection 
+   * if hasOfferCatalog was not set.
+   */
+  @JsonIgnore public java.util.Collection<OfferCatalog> getHasOfferCatalogs() {
+    final java.lang.Object current = myData.get("hasOfferCatalog");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<OfferCatalog>) current;
+    }
+    return Arrays.asList((OfferCatalog) current);
+  }
+  /**
+   * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
+   * @return serviceType property set by first invocation of serviceType method or {@code null}.
+   */
+  @JsonIgnore public GovernmentBenefitsType getServiceTypeGovernmentBenefitsType() {
+    return (GovernmentBenefitsType) getValue("serviceType");
+  }
+  /**
+   * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
+   * @return all serviceType properties as {@link java.util.Collection} or an empty collection 
+   * if serviceType was not set.
+   */
+  @JsonIgnore public java.util.Collection<GovernmentBenefitsType> getServiceTypeGovernmentBenefitsTypes() {
+    final java.lang.Object current = myData.get("serviceType");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<GovernmentBenefitsType>) current;
+    }
+    return Arrays.asList((GovernmentBenefitsType) current);
+  }
+  /**
+   * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
+   * @return serviceType property set by first invocation of serviceType method or {@code null}.
+   */
+  @JsonIgnore public String getServiceTypeString() {
+    return (String) getValue("serviceType");
+  }
+  /**
+   * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
+   * @return all serviceType properties as {@link java.util.Collection} or an empty collection 
+   * if serviceType was not set.
+   */
+  @JsonIgnore public java.util.Collection<String> getServiceTypeStrings() {
+    final java.lang.Object current = myData.get("serviceType");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
    * Indicates the mobility of a provided service (e.g. 'static', 'dynamic').
+   * @return providerMobility property set by first invocation of providerMobility method or {@code null}.
    */
   @JsonIgnore public String getProviderMobility() {
     return (String) getValue("providerMobility");
   }
   /**
    * Indicates the mobility of a provided service (e.g. 'static', 'dynamic').
+   * @return all providerMobility properties as {@link java.util.Collection} or an empty collection 
+   * if providerMobility was not set.
    */
-  @JsonIgnore public Collection<String> getProviderMobilitys() {
-    final Object current = myData.get("providerMobility");
+  @JsonIgnore public java.util.Collection<String> getProviderMobilitys() {
+    final java.lang.Object current = myData.get("providerMobility");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * A review of the item.
+   * @return review property set by first invocation of review method or {@code null}.
+   */
+  @JsonIgnore public Review getReview() {
+    return (Review) getValue("review");
+  }
+  /**
+   * A review of the item.
+   * @return all review properties as {@link java.util.Collection} or an empty collection 
+   * if review was not set.
+   */
+  @JsonIgnore public java.util.Collection<Review> getReviews() {
+    final java.lang.Object current = myData.get("review");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Review>) current;
+    }
+    return Arrays.asList((Review) current);
+  }
+  /**
+   * An award won by or for this item.
+   * @return award property set by first invocation of award method or {@code null}.
+   */
+  @JsonIgnore public String getAward() {
+    return (String) getValue("award");
+  }
+  /**
+   * An award won by or for this item.
+   * @return all award properties as {@link java.util.Collection} or an empty collection 
+   * if award was not set.
+   */
+  @JsonIgnore public java.util.Collection<String> getAwards() {
+    final java.lang.Object current = myData.get("award");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * The hours during which this service or contact is available.
+   * @return hoursAvailable property set by first invocation of hoursAvailable method or {@code null}.
+   */
+  @JsonIgnore public OpeningHoursSpecification getHoursAvailable() {
+    return (OpeningHoursSpecification) getValue("hoursAvailable");
+  }
+  /**
+   * The hours during which this service or contact is available.
+   * @return all hoursAvailable properties as {@link java.util.Collection} or an empty collection 
+   * if hoursAvailable was not set.
+   */
+  @JsonIgnore public java.util.Collection<OpeningHoursSpecification> getHoursAvailables() {
+    final java.lang.Object current = myData.get("hoursAvailable");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<OpeningHoursSpecification>) current;
+    }
+    return Arrays.asList((OpeningHoursSpecification) current);
+  }
+  /**
+   * A slogan or motto associated with the item.
+   * @return slogan property set by first invocation of slogan method or {@code null}.
+   */
+  @JsonIgnore public String getSlogan() {
+    return (String) getValue("slogan");
+  }
+  /**
+   * A slogan or motto associated with the item.
+   * @return all slogan properties as {@link java.util.Collection} or an empty collection 
+   * if slogan was not set.
+   */
+  @JsonIgnore public java.util.Collection<String> getSlogans() {
+    final java.lang.Object current = myData.get("slogan");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
   /**
    * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
+   * @return broker property set by first invocation of broker method or {@code null}.
    */
   @JsonIgnore public Organization getBrokerOrganization() {
     return (Organization) getValue("broker");
   }
   /**
    * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
+   * @return all broker properties as {@link java.util.Collection} or an empty collection 
+   * if broker was not set.
    */
-  @JsonIgnore public Collection<Organization> getBrokerOrganizations() {
-    final Object current = myData.get("broker");
+  @JsonIgnore public java.util.Collection<Organization> getBrokerOrganizations() {
+    final java.lang.Object current = myData.get("broker");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
   }
   /**
    * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
+   * @return broker property set by first invocation of broker method or {@code null}.
    */
   @JsonIgnore public Person getBrokerPerson() {
     return (Person) getValue("broker");
   }
   /**
    * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
+   * @return all broker properties as {@link java.util.Collection} or an empty collection 
+   * if broker was not set.
    */
-  @JsonIgnore public Collection<Person> getBrokerPersons() {
-    final Object current = myData.get("broker");
+  @JsonIgnore public java.util.Collection<Person> getBrokerPersons() {
+    final java.lang.Object current = myData.get("broker");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
-  protected Service(java.util.Map<String,Object> data) {
+  /**
+   * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+   * 
+   * @return offers property set by first invocation of offers method or {@code null}.
+   */
+  @JsonIgnore public Demand getOffersDemand() {
+    return (Demand) getValue("offers");
+  }
+  /**
+   * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+   * 
+   * @return all offers properties as {@link java.util.Collection} or an empty collection 
+   * if offers was not set.
+   */
+  @JsonIgnore public java.util.Collection<Demand> getOffersDemands() {
+    final java.lang.Object current = myData.get("offers");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Demand>) current;
+    }
+    return Arrays.asList((Demand) current);
+  }
+  /**
+   * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+   * 
+   * @return offers property set by first invocation of offers method or {@code null}.
+   */
+  @JsonIgnore public Offer getOffersOffer() {
+    return (Offer) getValue("offers");
+  }
+  /**
+   * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+   * 
+   * @return all offers properties as {@link java.util.Collection} or an empty collection 
+   * if offers was not set.
+   */
+  @JsonIgnore public java.util.Collection<Offer> getOffersOffers() {
+    final java.lang.Object current = myData.get("offers");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Offer>) current;
+    }
+    return Arrays.asList((Offer) current);
+  }
+  protected Service(java.util.Map<String,java.lang.Object> data) {
     super(data);
+  }
+  /**
+   * @return new {@link Builder} initialized with this instance's data
+   */
+  @NotNull public Builder toBuilder() {
+    return new Builder(new HashMap<>(this.myData));
   }
   
   /**
    * Builder for {@link Service}
    */
   public static class Builder extends Intangible.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public Service build() {
       return new Service(myData);
     }
     /**
-     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
-     */
-    @NotNull public Builder hasOfferCatalog(@NotNull OfferCatalog offerCatalog) {
-      putValue("hasOfferCatalog", offerCatalog);
-      return this;
-    }
-    /**
-     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
-     */
-    @NotNull public Builder hasOfferCatalog(@NotNull OfferCatalog.Builder offerCatalog) {
-      putValue("hasOfferCatalog", offerCatalog.build());
-      return this;
-    }
-    /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
-     */
-    @NotNull public Builder aggregateRating(@NotNull AggregateRating aggregateRating) {
-      putValue("aggregateRating", aggregateRating);
-      return this;
-    }
-    /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
-     */
-    @NotNull public Builder aggregateRating(@NotNull AggregateRating.Builder aggregateRating) {
-      putValue("aggregateRating", aggregateRating.build());
-      return this;
-    }
-    /**
-     * An intended audience, i.e. a group for whom something was created.
-     */
-    @NotNull public Builder audience(@NotNull Audience audience) {
-      putValue("audience", audience);
-      return this;
-    }
-    /**
-     * An intended audience, i.e. a group for whom something was created.
-     */
-    @NotNull public Builder audience(@NotNull Audience.Builder audience) {
-      putValue("audience", audience.build());
-      return this;
-    }
-    /**
-     * A means of accessing the service (e.g. a phone bank, a web site, a location, etc.).
-     */
-    @NotNull public Builder availableChannel(@NotNull ServiceChannel serviceChannel) {
-      putValue("availableChannel", serviceChannel);
-      return this;
-    }
-    /**
-     * A means of accessing the service (e.g. a phone bank, a web site, a location, etc.).
-     */
-    @NotNull public Builder availableChannel(@NotNull ServiceChannel.Builder serviceChannel) {
-      putValue("availableChannel", serviceChannel.build());
-      return this;
-    }
-    /**
-     * An award won by or for this item.
-     */
-    @NotNull public Builder award(@NotNull String award) {
-      putValue("award", award);
-      return this;
-    }
-    /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
-     */
-    @NotNull public Builder brand(@NotNull Brand brand) {
-      putValue("brand", brand);
-      return this;
-    }
-    /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
-     */
-    @NotNull public Builder brand(@NotNull Brand.Builder brand) {
-      putValue("brand", brand.build());
-      return this;
-    }
-    /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
-     */
-    @NotNull public Builder brand(@NotNull Organization organization) {
-      putValue("brand", organization);
-      return this;
-    }
-    /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
-     */
-    @NotNull public Builder brand(@NotNull Organization.Builder organization) {
-      putValue("brand", organization.build());
-      return this;
-    }
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     */
-    @NotNull public Builder category(@NotNull String category) {
-      putValue("category", category);
-      return this;
-    }
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     */
-    @NotNull public Builder category(@NotNull Thing thing) {
-      putValue("category", thing);
-      return this;
-    }
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     */
-    @NotNull public Builder category(@NotNull Thing.Builder thing) {
-      putValue("category", thing.build());
-      return this;
-    }
-    /**
-     * The hours during which this service or contact is available.
-     */
-    @NotNull public Builder hoursAvailable(@NotNull OpeningHoursSpecification openingHoursSpecification) {
-      putValue("hoursAvailable", openingHoursSpecification);
-      return this;
-    }
-    /**
-     * The hours during which this service or contact is available.
-     */
-    @NotNull public Builder hoursAvailable(@NotNull OpeningHoursSpecification.Builder openingHoursSpecification) {
-      putValue("hoursAvailable", openingHoursSpecification.build());
-      return this;
-    }
-    /**
-     * A pointer to another, somehow related product (or multiple products).
-     */
-    @NotNull public Builder isRelatedTo(@NotNull Product product) {
-      putValue("isRelatedTo", product);
-      return this;
-    }
-    /**
-     * A pointer to another, somehow related product (or multiple products).
-     */
-    @NotNull public Builder isRelatedTo(@NotNull Product.Builder product) {
-      putValue("isRelatedTo", product.build());
-      return this;
-    }
-    /**
-     * A pointer to another, somehow related product (or multiple products).
-     */
-    @NotNull public Builder isRelatedTo(@NotNull Service service) {
-      putValue("isRelatedTo", service);
-      return this;
-    }
-    /**
-     * A pointer to another, somehow related product (or multiple products).
-     */
-    @NotNull public Builder isRelatedTo(@NotNull Service.Builder service) {
-      putValue("isRelatedTo", service.build());
-      return this;
-    }
-    /**
-     * A pointer to another, functionally similar product (or multiple products).
-     */
-    @NotNull public Builder isSimilarTo(@NotNull Product product) {
-      putValue("isSimilarTo", product);
-      return this;
-    }
-    /**
-     * A pointer to another, functionally similar product (or multiple products).
-     */
-    @NotNull public Builder isSimilarTo(@NotNull Product.Builder product) {
-      putValue("isSimilarTo", product.build());
-      return this;
-    }
-    /**
-     * A pointer to another, functionally similar product (or multiple products).
-     */
-    @NotNull public Builder isSimilarTo(@NotNull Service service) {
-      putValue("isSimilarTo", service);
-      return this;
-    }
-    /**
-     * A pointer to another, functionally similar product (or multiple products).
-     */
-    @NotNull public Builder isSimilarTo(@NotNull Service.Builder service) {
-      putValue("isSimilarTo", service.build());
-      return this;
-    }
-    /**
-     * An associated logo.
-     */
-    @NotNull public Builder logo(@NotNull ImageObject imageObject) {
-      putValue("logo", imageObject);
-      return this;
-    }
-    /**
-     * An associated logo.
-     */
-    @NotNull public Builder logo(@NotNull ImageObject.Builder imageObject) {
-      putValue("logo", imageObject.build());
-      return this;
-    }
-    /**
-     * An associated logo.
-     */
-    @NotNull public Builder logo(@NotNull String logo) {
-      putValue("logo", logo);
-      return this;
-    }
-    /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event.
-     */
-    @NotNull public Builder offers(@NotNull Offer offer) {
-      putValue("offers", offer);
-      return this;
-    }
-    /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event.
-     */
-    @NotNull public Builder offers(@NotNull Offer.Builder offer) {
-      putValue("offers", offer.build());
-      return this;
-    }
-    /**
-     * The tangible thing generated by the service, e.g. a passport, permit, etc.
-     */
-    @NotNull public Builder serviceOutput(@NotNull Thing thing) {
-      putValue("serviceOutput", thing);
-      return this;
-    }
-    /**
-     * The tangible thing generated by the service, e.g. a passport, permit, etc.
-     */
-    @NotNull public Builder serviceOutput(@NotNull Thing.Builder thing) {
-      putValue("serviceOutput", thing.build());
-      return this;
-    }
-    /**
-     * A review of the item.
-     */
-    @NotNull public Builder review(@NotNull Review review) {
-      putValue("review", review);
-      return this;
-    }
-    /**
-     * A review of the item.
-     */
-    @NotNull public Builder review(@NotNull Review.Builder review) {
-      putValue("review", review.build());
-      return this;
-    }
-    /**
-     * A slogan or motto associated with the item.
-     */
-    @NotNull public Builder slogan(@NotNull String slogan) {
-      putValue("slogan", slogan);
-      return this;
-    }
-    /**
-     * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
-     */
-    @NotNull public Builder serviceType(@NotNull String serviceType) {
-      putValue("serviceType", serviceType);
-      return this;
-    }
-    /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     * @param organization value to set
+     * @return this builder instance
      */
     @NotNull public Builder provider(@NotNull Organization organization) {
       putValue("provider", organization);
@@ -751,6 +623,8 @@ public class Service extends Intangible {
     }
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     * @param organization value to set
+     * @return this builder instance
      */
     @NotNull public Builder provider(@NotNull Organization.Builder organization) {
       putValue("provider", organization.build());
@@ -758,6 +632,8 @@ public class Service extends Intangible {
     }
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     * @param person value to set
+     * @return this builder instance
      */
     @NotNull public Builder provider(@NotNull Person person) {
       putValue("provider", person);
@@ -765,20 +641,674 @@ public class Service extends Intangible {
     }
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     * @param person value to set
+     * @return this builder instance
      */
     @NotNull public Builder provider(@NotNull Person.Builder person) {
       putValue("provider", person.build());
       return this;
     }
     /**
+     * Remove provider property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeProvider() {
+      removeValue("provider");
+      return this;
+    }
+    /**
+     * Get currently set value for provider property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getProvider() {
+      return myData.get("provider");
+    }
+    /**
+     * A means of accessing the service (e.g. a phone bank, a web site, a location, etc.).
+     * @param serviceChannel value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder availableChannel(@NotNull ServiceChannel serviceChannel) {
+      putValue("availableChannel", serviceChannel);
+      return this;
+    }
+    /**
+     * A means of accessing the service (e.g. a phone bank, a web site, a location, etc.).
+     * @param serviceChannel value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder availableChannel(@NotNull ServiceChannel.Builder serviceChannel) {
+      putValue("availableChannel", serviceChannel.build());
+      return this;
+    }
+    /**
+     * Remove availableChannel property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeAvailableChannel() {
+      removeValue("availableChannel");
+      return this;
+    }
+    /**
+     * Get currently set value for availableChannel property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getAvailableChannel() {
+      return myData.get("availableChannel");
+    }
+    /**
+     * The tangible thing generated by the service, e.g. a passport, permit, etc.
+     * @param thing value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder serviceOutput(@NotNull Thing thing) {
+      putValue("serviceOutput", thing);
+      return this;
+    }
+    /**
+     * The tangible thing generated by the service, e.g. a passport, permit, etc.
+     * @param thing value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder serviceOutput(@NotNull Thing.Builder thing) {
+      putValue("serviceOutput", thing.build());
+      return this;
+    }
+    /**
+     * Remove serviceOutput property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeServiceOutput() {
+      removeValue("serviceOutput");
+      return this;
+    }
+    /**
+     * Get currently set value for serviceOutput property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getServiceOutput() {
+      return myData.get("serviceOutput");
+    }
+    /**
+     * The overall rating, based on a collection of reviews or ratings, of the item.
+     * @param aggregateRating value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder aggregateRating(@NotNull AggregateRating aggregateRating) {
+      putValue("aggregateRating", aggregateRating);
+      return this;
+    }
+    /**
+     * The overall rating, based on a collection of reviews or ratings, of the item.
+     * @param aggregateRating value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder aggregateRating(@NotNull AggregateRating.Builder aggregateRating) {
+      putValue("aggregateRating", aggregateRating.build());
+      return this;
+    }
+    /**
+     * Remove aggregateRating property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeAggregateRating() {
+      removeValue("aggregateRating");
+      return this;
+    }
+    /**
+     * Get currently set value for aggregateRating property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getAggregateRating() {
+      return myData.get("aggregateRating");
+    }
+    /**
+     * An associated logo.
+     * @param image value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder logo(@NotNull Image image) {
+      putValue("logo", image);
+      return this;
+    }
+    /**
+     * Remove logo property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeLogo() {
+      removeValue("logo");
+      return this;
+    }
+    /**
+     * Get currently set value for logo property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getLogo() {
+      return myData.get("logo");
+    }
+    /**
+     * A pointer to another, functionally similar product (or multiple products).
+     * @param product value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder isSimilarTo(@NotNull Product product) {
+      putValue("isSimilarTo", product);
+      return this;
+    }
+    /**
+     * A pointer to another, functionally similar product (or multiple products).
+     * @param product value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder isSimilarTo(@NotNull Product.Builder product) {
+      putValue("isSimilarTo", product.build());
+      return this;
+    }
+    /**
+     * A pointer to another, functionally similar product (or multiple products).
+     * @param service value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder isSimilarTo(@NotNull Service service) {
+      putValue("isSimilarTo", service);
+      return this;
+    }
+    /**
+     * A pointer to another, functionally similar product (or multiple products).
+     * @param service value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder isSimilarTo(@NotNull Service.Builder service) {
+      putValue("isSimilarTo", service.build());
+      return this;
+    }
+    /**
+     * Remove isSimilarTo property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeIsSimilarTo() {
+      removeValue("isSimilarTo");
+      return this;
+    }
+    /**
+     * Get currently set value for isSimilarTo property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getIsSimilarTo() {
+      return myData.get("isSimilarTo");
+    }
+    /**
+     * A pointer to another, somehow related product (or multiple products).
+     * @param product value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder isRelatedTo(@NotNull Product product) {
+      putValue("isRelatedTo", product);
+      return this;
+    }
+    /**
+     * A pointer to another, somehow related product (or multiple products).
+     * @param product value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder isRelatedTo(@NotNull Product.Builder product) {
+      putValue("isRelatedTo", product.build());
+      return this;
+    }
+    /**
+     * A pointer to another, somehow related product (or multiple products).
+     * @param service value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder isRelatedTo(@NotNull Service service) {
+      putValue("isRelatedTo", service);
+      return this;
+    }
+    /**
+     * A pointer to another, somehow related product (or multiple products).
+     * @param service value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder isRelatedTo(@NotNull Service.Builder service) {
+      putValue("isRelatedTo", service.build());
+      return this;
+    }
+    /**
+     * Remove isRelatedTo property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeIsRelatedTo() {
+      removeValue("isRelatedTo");
+      return this;
+    }
+    /**
+     * Get currently set value for isRelatedTo property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getIsRelatedTo() {
+      return myData.get("isRelatedTo");
+    }
+    /**
+     * An intended audience, i.e. a group for whom something was created.
+     * @param audience value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder audience(@NotNull Audience audience) {
+      putValue("audience", audience);
+      return this;
+    }
+    /**
+     * An intended audience, i.e. a group for whom something was created.
+     * @param audience value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder audience(@NotNull Audience.Builder audience) {
+      putValue("audience", audience.build());
+      return this;
+    }
+    /**
+     * Remove audience property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeAudience() {
+      removeValue("audience");
+      return this;
+    }
+    /**
+     * Get currently set value for audience property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getAudience() {
+      return myData.get("audience");
+    }
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     * @param brand value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder brand(@NotNull Brand brand) {
+      putValue("brand", brand);
+      return this;
+    }
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     * @param brand value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder brand(@NotNull Brand.Builder brand) {
+      putValue("brand", brand.build());
+      return this;
+    }
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     * @param organization value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder brand(@NotNull Organization organization) {
+      putValue("brand", organization);
+      return this;
+    }
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     * @param organization value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder brand(@NotNull Organization.Builder organization) {
+      putValue("brand", organization.build());
+      return this;
+    }
+    /**
+     * Remove brand property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeBrand() {
+      removeValue("brand");
+      return this;
+    }
+    /**
+     * Get currently set value for brand property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getBrand() {
+      return myData.get("brand");
+    }
+    /**
+     * The geographic area where a service or offered item is provided.
+     * @param areaServed value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder areaServed(@NotNull AreaServed areaServed) {
+      putValue("areaServed", areaServed);
+      return this;
+    }
+    /**
+     * Remove areaServed property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeAreaServed() {
+      removeValue("areaServed");
+      return this;
+    }
+    /**
+     * Get currently set value for areaServed property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getAreaServed() {
+      return myData.get("areaServed");
+    }
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     * @param category value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder category(@NotNull Category category) {
+      putValue("category", category);
+      return this;
+    }
+    /**
+     * Remove category property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeCategory() {
+      removeValue("category");
+      return this;
+    }
+    /**
+     * Get currently set value for category property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getCategory() {
+      return myData.get("category");
+    }
+    /**
+     * Human-readable terms of service documentation.
+     * @param termsOfService value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder termsOfService(@NotNull String termsOfService) {
+      putValue("termsOfService", termsOfService);
+      return this;
+    }
+    /**
+     * Remove termsOfService property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeTermsOfService() {
+      removeValue("termsOfService");
+      return this;
+    }
+    /**
+     * Get currently set value for termsOfService property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getTermsOfService() {
+      return myData.get("termsOfService");
+    }
+    /**
+     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
+     * @param offerCatalog value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder hasOfferCatalog(@NotNull OfferCatalog offerCatalog) {
+      putValue("hasOfferCatalog", offerCatalog);
+      return this;
+    }
+    /**
+     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
+     * @param offerCatalog value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder hasOfferCatalog(@NotNull OfferCatalog.Builder offerCatalog) {
+      putValue("hasOfferCatalog", offerCatalog.build());
+      return this;
+    }
+    /**
+     * Remove hasOfferCatalog property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeHasOfferCatalog() {
+      removeValue("hasOfferCatalog");
+      return this;
+    }
+    /**
+     * Get currently set value for hasOfferCatalog property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getHasOfferCatalog() {
+      return myData.get("hasOfferCatalog");
+    }
+    /**
+     * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
+     * @param governmentBenefitsType value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder serviceType(@NotNull GovernmentBenefitsType governmentBenefitsType) {
+      putValue("serviceType", governmentBenefitsType);
+      return this;
+    }
+    /**
+     * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
+     * @param serviceType value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder serviceType(@NotNull String serviceType) {
+      putValue("serviceType", serviceType);
+      return this;
+    }
+    /**
+     * Remove serviceType property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeServiceType() {
+      removeValue("serviceType");
+      return this;
+    }
+    /**
+     * Get currently set value for serviceType property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getServiceType() {
+      return myData.get("serviceType");
+    }
+    /**
      * Indicates the mobility of a provided service (e.g. 'static', 'dynamic').
+     * @param providerMobility value to set
+     * @return this builder instance
      */
     @NotNull public Builder providerMobility(@NotNull String providerMobility) {
       putValue("providerMobility", providerMobility);
       return this;
     }
     /**
+     * Remove providerMobility property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeProviderMobility() {
+      removeValue("providerMobility");
+      return this;
+    }
+    /**
+     * Get currently set value for providerMobility property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getProviderMobility() {
+      return myData.get("providerMobility");
+    }
+    /**
+     * A review of the item.
+     * @param review value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder review(@NotNull Review review) {
+      putValue("review", review);
+      return this;
+    }
+    /**
+     * A review of the item.
+     * @param review value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder review(@NotNull Review.Builder review) {
+      putValue("review", review.build());
+      return this;
+    }
+    /**
+     * Remove review property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeReview() {
+      removeValue("review");
+      return this;
+    }
+    /**
+     * Get currently set value for review property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getReview() {
+      return myData.get("review");
+    }
+    /**
+     * An award won by or for this item.
+     * @param award value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder award(@NotNull String award) {
+      putValue("award", award);
+      return this;
+    }
+    /**
+     * Remove award property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeAward() {
+      removeValue("award");
+      return this;
+    }
+    /**
+     * Get currently set value for award property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getAward() {
+      return myData.get("award");
+    }
+    /**
+     * The hours during which this service or contact is available.
+     * @param openingHoursSpecification value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder hoursAvailable(@NotNull OpeningHoursSpecification openingHoursSpecification) {
+      putValue("hoursAvailable", openingHoursSpecification);
+      return this;
+    }
+    /**
+     * The hours during which this service or contact is available.
+     * @param openingHoursSpecification value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder hoursAvailable(@NotNull OpeningHoursSpecification.Builder openingHoursSpecification) {
+      putValue("hoursAvailable", openingHoursSpecification.build());
+      return this;
+    }
+    /**
+     * Remove hoursAvailable property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeHoursAvailable() {
+      removeValue("hoursAvailable");
+      return this;
+    }
+    /**
+     * Get currently set value for hoursAvailable property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getHoursAvailable() {
+      return myData.get("hoursAvailable");
+    }
+    /**
+     * A slogan or motto associated with the item.
+     * @param slogan value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder slogan(@NotNull String slogan) {
+      putValue("slogan", slogan);
+      return this;
+    }
+    /**
+     * Remove slogan property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeSlogan() {
+      removeValue("slogan");
+      return this;
+    }
+    /**
+     * Get currently set value for slogan property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getSlogan() {
+      return myData.get("slogan");
+    }
+    /**
      * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
+     * @param organization value to set
+     * @return this builder instance
      */
     @NotNull public Builder broker(@NotNull Organization organization) {
       putValue("broker", organization);
@@ -786,6 +1316,8 @@ public class Service extends Intangible {
     }
     /**
      * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
+     * @param organization value to set
+     * @return this builder instance
      */
     @NotNull public Builder broker(@NotNull Organization.Builder organization) {
       putValue("broker", organization.build());
@@ -793,6 +1325,8 @@ public class Service extends Intangible {
     }
     /**
      * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
+     * @param person value to set
+     * @return this builder instance
      */
     @NotNull public Builder broker(@NotNull Person person) {
       putValue("broker", person);
@@ -800,76 +1334,148 @@ public class Service extends Intangible {
     }
     /**
      * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
+     * @param person value to set
+     * @return this builder instance
      */
     @NotNull public Builder broker(@NotNull Person.Builder person) {
       putValue("broker", person.build());
       return this;
     }
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * Remove broker property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
      */
-    @NotNull public Builder additionalType(@NotNull String additionalType) {
-      putValue("additionalType", additionalType);
+    @NotNull public Builder removeBroker() {
+      removeValue("broker");
       return this;
     }
     /**
-     * An alias for the item.
+     * Get currently set value for broker property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
      */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
+    @Nullable public java.lang.Object getBroker() {
+      return myData.get("broker");
+    }
+    /**
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * 
+     * @param demand value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder offers(@NotNull Demand demand) {
+      putValue("offers", demand);
       return this;
     }
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * 
+     * @param demand value to set
+     * @return this builder instance
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
-      putValue("disambiguatingDescription", disambiguatingDescription);
+    @NotNull public Builder offers(@NotNull Demand.Builder demand) {
+      putValue("offers", demand.build());
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * 
+     * @param offer value to set
+     * @return this builder instance
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
+    @NotNull public Builder offers(@NotNull Offer offer) {
+      putValue("offers", offer);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * An offer to provide this item&amp;#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     * 
+     * @param offer value to set
+     * @return this builder instance
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
+    @NotNull public Builder offers(@NotNull Offer.Builder offer) {
+      putValue("offers", offer.build());
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * Remove offers property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
+    @NotNull public Builder removeOffers() {
+      removeValue("offers");
       return this;
     }
     /**
-     * The name of the item.
+     * Get currently set value for offers property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
      */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
+    @Nullable public java.lang.Object getOffers() {
+      return myData.get("offers");
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     * 
+     * @param identifier value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
       return this;
     }
     /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     * Remove identifier property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
      */
-    @NotNull public Builder sameAs(@NotNull String sameAs) {
-      putValue("sameAs", sameAs);
+    @NotNull public Builder removeIdentifier() {
+      removeValue("identifier");
       return this;
     }
     /**
-     * URL of the item.
+     * Get currently set value for identifier property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
+    @Nullable public java.lang.Object getIdentifier() {
+      return myData.get("identifier");
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * @param image value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
       return this;
+    }
+    /**
+     * Remove image property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeImage() {
+      removeValue("image");
+      return this;
+    }
+    /**
+     * Get currently set value for image property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getImage() {
+      return myData.get("image");
     }
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     * @param action value to set
+     * @return this builder instance
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
       putValue("potentialAction", action);
@@ -877,13 +1483,224 @@ public class Service extends Intangible {
     }
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     * @param action value to set
+     * @return this builder instance
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
       return this;
     }
     /**
+     * Remove potentialAction property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removePotentialAction() {
+      removeValue("potentialAction");
+      return this;
+    }
+    /**
+     * Get currently set value for potentialAction property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getPotentialAction() {
+      return myData.get("potentialAction");
+    }
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * @param disambiguatingDescription value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
+      putValue("disambiguatingDescription", disambiguatingDescription);
+      return this;
+    }
+    /**
+     * Remove disambiguatingDescription property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeDisambiguatingDescription() {
+      removeValue("disambiguatingDescription");
+      return this;
+    }
+    /**
+     * Get currently set value for disambiguatingDescription property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getDisambiguatingDescription() {
+      return myData.get("disambiguatingDescription");
+    }
+    /**
+     * A description of the item.
+     * @param description value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder description(@NotNull String description) {
+      putValue("description", description);
+      return this;
+    }
+    /**
+     * Remove description property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeDescription() {
+      removeValue("description");
+      return this;
+    }
+    /**
+     * Get currently set value for description property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getDescription() {
+      return myData.get("description");
+    }
+    /**
+     * URL of the item.
+     * @param url value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
+      return this;
+    }
+    /**
+     * Remove url property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeUrl() {
+      removeValue("url");
+      return this;
+    }
+    /**
+     * Get currently set value for url property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getUrl() {
+      return myData.get("url");
+    }
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * @param additionalType value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder additionalType(@NotNull String additionalType) {
+      putValue("additionalType", additionalType);
+      return this;
+    }
+    /**
+     * Remove additionalType property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeAdditionalType() {
+      removeValue("additionalType");
+      return this;
+    }
+    /**
+     * Get currently set value for additionalType property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getAdditionalType() {
+      return myData.get("additionalType");
+    }
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     * @param sameAs value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder sameAs(@NotNull String sameAs) {
+      putValue("sameAs", sameAs);
+      return this;
+    }
+    /**
+     * Remove sameAs property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeSameAs() {
+      removeValue("sameAs");
+      return this;
+    }
+    /**
+     * Get currently set value for sameAs property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getSameAs() {
+      return myData.get("sameAs");
+    }
+    /**
+     * An alias for the item.
+     * @param alternateName value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * Remove alternateName property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeAlternateName() {
+      removeValue("alternateName");
+      return this;
+    }
+    /**
+     * Get currently set value for alternateName property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getAlternateName() {
+      return myData.get("alternateName");
+    }
+    /**
+     * The name of the item.
+     * @param name value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
+      return this;
+    }
+    /**
+     * Remove name property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeName() {
+      removeValue("name");
+      return this;
+    }
+    /**
+     * Get currently set value for name property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getName() {
+      return myData.get("name");
+    }
+    /**
      * A CreativeWork or Event about this Thing.
+     * @param creativeWork value to set
+     * @return this builder instance
      */
     @NotNull public Builder subjectOf(@NotNull CreativeWork creativeWork) {
       putValue("subjectOf", creativeWork);
@@ -891,6 +1708,8 @@ public class Service extends Intangible {
     }
     /**
      * A CreativeWork or Event about this Thing.
+     * @param creativeWork value to set
+     * @return this builder instance
      */
     @NotNull public Builder subjectOf(@NotNull CreativeWork.Builder creativeWork) {
       putValue("subjectOf", creativeWork.build());
@@ -898,6 +1717,8 @@ public class Service extends Intangible {
     }
     /**
      * A CreativeWork or Event about this Thing.
+     * @param event value to set
+     * @return this builder instance
      */
     @NotNull public Builder subjectOf(@NotNull Event event) {
       putValue("subjectOf", event);
@@ -905,71 +1726,163 @@ public class Service extends Intangible {
     }
     /**
      * A CreativeWork or Event about this Thing.
+     * @param event value to set
+     * @return this builder instance
      */
     @NotNull public Builder subjectOf(@NotNull Event.Builder event) {
       putValue("subjectOf", event.build());
       return this;
     }
+    /**
+     * Remove subjectOf property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeSubjectOf() {
+      removeValue("subjectOf");
+      return this;
+    }
+    /**
+     * Get currently set value for subjectOf property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getSubjectOf() {
+      return myData.get("subjectOf");
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * @param creativeWork value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * @param creativeWork value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * @param mainEntityOfPage value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
+    /**
+     * Remove mainEntityOfPage property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeMainEntityOfPage() {
+      removeValue("mainEntityOfPage");
+      return this;
+    }
+    /**
+     * Get currently set value for mainEntityOfPage property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getMainEntityOfPage() {
+      return myData.get("mainEntityOfPage");
+    }
+    /**
+     * null
+     * @param id value to set
+     * @return this builder instance
+     */
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
     }
+    /**
+     * Remove id property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeId() {
+      removeValue("id");
+      return this;
+    }
+    /**
+     * Get currently set value for id property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getId() {
+      return myData.get("id");
+    }
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
-      if ("hasOfferCatalog".equals(key) && value instanceof OfferCatalog) { hasOfferCatalog((OfferCatalog)value); return; }
-      if ("hasOfferCatalogs".equals(key) && value instanceof OfferCatalog) { hasOfferCatalog((OfferCatalog)value); return; }
-      if ("aggregateRating".equals(key) && value instanceof AggregateRating) { aggregateRating((AggregateRating)value); return; }
-      if ("aggregateRatings".equals(key) && value instanceof AggregateRating) { aggregateRating((AggregateRating)value); return; }
-      if ("audience".equals(key) && value instanceof Audience) { audience((Audience)value); return; }
-      if ("audiences".equals(key) && value instanceof Audience) { audience((Audience)value); return; }
-      if ("availableChannel".equals(key) && value instanceof ServiceChannel) { availableChannel((ServiceChannel)value); return; }
-      if ("availableChannels".equals(key) && value instanceof ServiceChannel) { availableChannel((ServiceChannel)value); return; }
-      if ("award".equals(key) && value instanceof String) { award((String)value); return; }
-      if ("awards".equals(key) && value instanceof String) { award((String)value); return; }
-      if ("brand".equals(key) && value instanceof Brand) { brand((Brand)value); return; }
-      if ("brands".equals(key) && value instanceof Brand) { brand((Brand)value); return; }
-      if ("brand".equals(key) && value instanceof Organization) { brand((Organization)value); return; }
-      if ("brands".equals(key) && value instanceof Organization) { brand((Organization)value); return; }
-      if ("category".equals(key) && value instanceof String) { category((String)value); return; }
-      if ("categorys".equals(key) && value instanceof String) { category((String)value); return; }
-      if ("category".equals(key) && value instanceof Thing) { category((Thing)value); return; }
-      if ("categorys".equals(key) && value instanceof Thing) { category((Thing)value); return; }
-      if ("hoursAvailable".equals(key) && value instanceof OpeningHoursSpecification) { hoursAvailable((OpeningHoursSpecification)value); return; }
-      if ("hoursAvailables".equals(key) && value instanceof OpeningHoursSpecification) { hoursAvailable((OpeningHoursSpecification)value); return; }
-      if ("isRelatedTo".equals(key) && value instanceof Product) { isRelatedTo((Product)value); return; }
-      if ("isRelatedTos".equals(key) && value instanceof Product) { isRelatedTo((Product)value); return; }
-      if ("isRelatedTo".equals(key) && value instanceof Service) { isRelatedTo((Service)value); return; }
-      if ("isRelatedTos".equals(key) && value instanceof Service) { isRelatedTo((Service)value); return; }
-      if ("isSimilarTo".equals(key) && value instanceof Product) { isSimilarTo((Product)value); return; }
-      if ("isSimilarTos".equals(key) && value instanceof Product) { isSimilarTo((Product)value); return; }
-      if ("isSimilarTo".equals(key) && value instanceof Service) { isSimilarTo((Service)value); return; }
-      if ("isSimilarTos".equals(key) && value instanceof Service) { isSimilarTo((Service)value); return; }
-      if ("logo".equals(key) && value instanceof ImageObject) { logo((ImageObject)value); return; }
-      if ("logos".equals(key) && value instanceof ImageObject) { logo((ImageObject)value); return; }
-      if ("logo".equals(key) && value instanceof String) { logo((String)value); return; }
-      if ("logos".equals(key) && value instanceof String) { logo((String)value); return; }
-      if ("offers".equals(key) && value instanceof Offer) { offers((Offer)value); return; }
-      if ("offerss".equals(key) && value instanceof Offer) { offers((Offer)value); return; }
-      if ("serviceOutput".equals(key) && value instanceof Thing) { serviceOutput((Thing)value); return; }
-      if ("serviceOutputs".equals(key) && value instanceof Thing) { serviceOutput((Thing)value); return; }
-      if ("review".equals(key) && value instanceof Review) { review((Review)value); return; }
-      if ("reviews".equals(key) && value instanceof Review) { review((Review)value); return; }
-      if ("slogan".equals(key) && value instanceof String) { slogan((String)value); return; }
-      if ("slogans".equals(key) && value instanceof String) { slogan((String)value); return; }
-      if ("serviceType".equals(key) && value instanceof String) { serviceType((String)value); return; }
-      if ("serviceTypes".equals(key) && value instanceof String) { serviceType((String)value); return; }
-      if ("provider".equals(key) && value instanceof Organization) { provider((Organization)value); return; }
-      if ("providers".equals(key) && value instanceof Organization) { provider((Organization)value); return; }
-      if ("provider".equals(key) && value instanceof Person) { provider((Person)value); return; }
-      if ("providers".equals(key) && value instanceof Person) { provider((Person)value); return; }
-      if ("providerMobility".equals(key) && value instanceof String) { providerMobility((String)value); return; }
-      if ("providerMobilitys".equals(key) && value instanceof String) { providerMobility((String)value); return; }
-      if ("broker".equals(key) && value instanceof Organization) { broker((Organization)value); return; }
-      if ("brokers".equals(key) && value instanceof Organization) { broker((Organization)value); return; }
-      if ("broker".equals(key) && value instanceof Person) { broker((Person)value); return; }
-      if ("brokers".equals(key) && value instanceof Person) { broker((Person)value); return; }
+    @Override protected void fromMap(String key, java.lang.Object value) {
+      if ("provider".equals(key) && value instanceof Organization) { this.provider((Organization)value); return; }
+      if ("providers".equals(key) && value instanceof Organization) { this.provider((Organization)value); return; }
+      if ("provider".equals(key) && value instanceof Person) { this.provider((Person)value); return; }
+      if ("providers".equals(key) && value instanceof Person) { this.provider((Person)value); return; }
+      if ("availableChannel".equals(key) && value instanceof ServiceChannel) { this.availableChannel((ServiceChannel)value); return; }
+      if ("availableChannels".equals(key) && value instanceof ServiceChannel) { this.availableChannel((ServiceChannel)value); return; }
+      if ("serviceOutput".equals(key) && value instanceof Thing) { this.serviceOutput((Thing)value); return; }
+      if ("serviceOutputs".equals(key) && value instanceof Thing) { this.serviceOutput((Thing)value); return; }
+      if ("aggregateRating".equals(key) && value instanceof AggregateRating) { this.aggregateRating((AggregateRating)value); return; }
+      if ("aggregateRatings".equals(key) && value instanceof AggregateRating) { this.aggregateRating((AggregateRating)value); return; }
+      if ("logo".equals(key) && value instanceof Image) { this.logo((Image)value); return; }
+      if ("logos".equals(key) && value instanceof Image) { this.logo((Image)value); return; }
+      if ("isSimilarTo".equals(key) && value instanceof Product) { this.isSimilarTo((Product)value); return; }
+      if ("isSimilarTos".equals(key) && value instanceof Product) { this.isSimilarTo((Product)value); return; }
+      if ("isSimilarTo".equals(key) && value instanceof Service) { this.isSimilarTo((Service)value); return; }
+      if ("isSimilarTos".equals(key) && value instanceof Service) { this.isSimilarTo((Service)value); return; }
+      if ("isRelatedTo".equals(key) && value instanceof Product) { this.isRelatedTo((Product)value); return; }
+      if ("isRelatedTos".equals(key) && value instanceof Product) { this.isRelatedTo((Product)value); return; }
+      if ("isRelatedTo".equals(key) && value instanceof Service) { this.isRelatedTo((Service)value); return; }
+      if ("isRelatedTos".equals(key) && value instanceof Service) { this.isRelatedTo((Service)value); return; }
+      if ("audience".equals(key) && value instanceof Audience) { this.audience((Audience)value); return; }
+      if ("audiences".equals(key) && value instanceof Audience) { this.audience((Audience)value); return; }
+      if ("brand".equals(key) && value instanceof Brand) { this.brand((Brand)value); return; }
+      if ("brands".equals(key) && value instanceof Brand) { this.brand((Brand)value); return; }
+      if ("brand".equals(key) && value instanceof Organization) { this.brand((Organization)value); return; }
+      if ("brands".equals(key) && value instanceof Organization) { this.brand((Organization)value); return; }
+      if ("areaServed".equals(key) && value instanceof AreaServed) { this.areaServed((AreaServed)value); return; }
+      if ("areaServeds".equals(key) && value instanceof AreaServed) { this.areaServed((AreaServed)value); return; }
+      if ("category".equals(key) && value instanceof Category) { this.category((Category)value); return; }
+      if ("categorys".equals(key) && value instanceof Category) { this.category((Category)value); return; }
+      if ("termsOfService".equals(key) && value instanceof String) { this.termsOfService((String)value); return; }
+      if ("termsOfServices".equals(key) && value instanceof String) { this.termsOfService((String)value); return; }
+      if ("hasOfferCatalog".equals(key) && value instanceof OfferCatalog) { this.hasOfferCatalog((OfferCatalog)value); return; }
+      if ("hasOfferCatalogs".equals(key) && value instanceof OfferCatalog) { this.hasOfferCatalog((OfferCatalog)value); return; }
+      if ("serviceType".equals(key) && value instanceof GovernmentBenefitsType) { this.serviceType((GovernmentBenefitsType)value); return; }
+      if ("serviceTypes".equals(key) && value instanceof GovernmentBenefitsType) { this.serviceType((GovernmentBenefitsType)value); return; }
+      if ("serviceType".equals(key) && value instanceof String) { this.serviceType((String)value); return; }
+      if ("serviceTypes".equals(key) && value instanceof String) { this.serviceType((String)value); return; }
+      if ("providerMobility".equals(key) && value instanceof String) { this.providerMobility((String)value); return; }
+      if ("providerMobilitys".equals(key) && value instanceof String) { this.providerMobility((String)value); return; }
+      if ("review".equals(key) && value instanceof Review) { this.review((Review)value); return; }
+      if ("reviews".equals(key) && value instanceof Review) { this.review((Review)value); return; }
+      if ("award".equals(key) && value instanceof String) { this.award((String)value); return; }
+      if ("awards".equals(key) && value instanceof String) { this.award((String)value); return; }
+      if ("hoursAvailable".equals(key) && value instanceof OpeningHoursSpecification) { this.hoursAvailable((OpeningHoursSpecification)value); return; }
+      if ("hoursAvailables".equals(key) && value instanceof OpeningHoursSpecification) { this.hoursAvailable((OpeningHoursSpecification)value); return; }
+      if ("slogan".equals(key) && value instanceof String) { this.slogan((String)value); return; }
+      if ("slogans".equals(key) && value instanceof String) { this.slogan((String)value); return; }
+      if ("broker".equals(key) && value instanceof Organization) { this.broker((Organization)value); return; }
+      if ("brokers".equals(key) && value instanceof Organization) { this.broker((Organization)value); return; }
+      if ("broker".equals(key) && value instanceof Person) { this.broker((Person)value); return; }
+      if ("brokers".equals(key) && value instanceof Person) { this.broker((Person)value); return; }
+      if ("offers".equals(key) && value instanceof Demand) { this.offers((Demand)value); return; }
+      if ("offerss".equals(key) && value instanceof Demand) { this.offers((Demand)value); return; }
+      if ("offers".equals(key) && value instanceof Offer) { this.offers((Offer)value); return; }
+      if ("offerss".equals(key) && value instanceof Offer) { this.offers((Offer)value); return; }
       super.fromMap(key, value);
     }
   }

@@ -21,10 +21,11 @@ package org.schema;
 import com.fasterxml.jackson.databind.annotation.*;
 import com.fasterxml.jackson.annotation.*;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.*;
 
 /**
- * 
+ * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
  */
-public interface Participant {
+public interface Participant extends Recipient {
 }

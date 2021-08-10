@@ -21,523 +21,557 @@ package org.schema;
 import com.fasterxml.jackson.databind.annotation.*;
 import com.fasterxml.jackson.annotation.*;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.*;
 
 /**
- * A statistical distribution of values.Source: https://github.com/schemaorg/schemaorg/issues/1698
+ * A statistical distribution of values.
  */
 public class QuantitativeValueDistribution extends StructuredValue {
   /**
-   * The 10th percentile value.
-   */
-  @JsonIgnore public Integer getPercentile10Integer() {
-    return (Integer) getValue("percentile10");
-  }
-  /**
-   * The 10th percentile value.
-   */
-  @JsonIgnore public Collection<Integer> getPercentile10Integers() {
-    final Object current = myData.get("percentile10");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
-    }
-    return Arrays.asList((Integer) current);
-  }
-  /**
-   * The 10th percentile value.
-   */
-  @JsonIgnore public Long getPercentile10Long() {
-    return (Long) getValue("percentile10");
-  }
-  /**
-   * The 10th percentile value.
-   */
-  @JsonIgnore public Collection<Long> getPercentile10Longs() {
-    final Object current = myData.get("percentile10");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
-    }
-    return Arrays.asList((Long) current);
-  }
-  /**
-   * The 10th percentile value.
-   */
-  @JsonIgnore public Float getPercentile10Float() {
-    return (Float) getValue("percentile10");
-  }
-  /**
-   * The 10th percentile value.
-   */
-  @JsonIgnore public Collection<Float> getPercentile10Floats() {
-    final Object current = myData.get("percentile10");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
-    }
-    return Arrays.asList((Float) current);
-  }
-  /**
-   * The 10th percentile value.
-   */
-  @JsonIgnore public Double getPercentile10Double() {
-    return (Double) getValue("percentile10");
-  }
-  /**
-   * The 10th percentile value.
-   */
-  @JsonIgnore public Collection<Double> getPercentile10Doubles() {
-    final Object current = myData.get("percentile10");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
-    }
-    return Arrays.asList((Double) current);
-  }
-  /**
-   * The 10th percentile value.
-   */
-  @JsonIgnore public String getPercentile10String() {
-    return (String) getValue("percentile10");
-  }
-  /**
-   * The 10th percentile value.
-   */
-  @JsonIgnore public Collection<String> getPercentile10Strings() {
-    final Object current = myData.get("percentile10");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
-   * The 25th percentile value.
-   */
-  @JsonIgnore public Integer getPercentile25Integer() {
-    return (Integer) getValue("percentile25");
-  }
-  /**
-   * The 25th percentile value.
-   */
-  @JsonIgnore public Collection<Integer> getPercentile25Integers() {
-    final Object current = myData.get("percentile25");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
-    }
-    return Arrays.asList((Integer) current);
-  }
-  /**
-   * The 25th percentile value.
-   */
-  @JsonIgnore public Long getPercentile25Long() {
-    return (Long) getValue("percentile25");
-  }
-  /**
-   * The 25th percentile value.
-   */
-  @JsonIgnore public Collection<Long> getPercentile25Longs() {
-    final Object current = myData.get("percentile25");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
-    }
-    return Arrays.asList((Long) current);
-  }
-  /**
-   * The 25th percentile value.
-   */
-  @JsonIgnore public Float getPercentile25Float() {
-    return (Float) getValue("percentile25");
-  }
-  /**
-   * The 25th percentile value.
-   */
-  @JsonIgnore public Collection<Float> getPercentile25Floats() {
-    final Object current = myData.get("percentile25");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
-    }
-    return Arrays.asList((Float) current);
-  }
-  /**
-   * The 25th percentile value.
-   */
-  @JsonIgnore public Double getPercentile25Double() {
-    return (Double) getValue("percentile25");
-  }
-  /**
-   * The 25th percentile value.
-   */
-  @JsonIgnore public Collection<Double> getPercentile25Doubles() {
-    final Object current = myData.get("percentile25");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
-    }
-    return Arrays.asList((Double) current);
-  }
-  /**
-   * The 25th percentile value.
-   */
-  @JsonIgnore public String getPercentile25String() {
-    return (String) getValue("percentile25");
-  }
-  /**
-   * The 25th percentile value.
-   */
-  @JsonIgnore public Collection<String> getPercentile25Strings() {
-    final Object current = myData.get("percentile25");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
-    }
-    return Arrays.asList((String) current);
-  }
-  /**
    * The median value.
+   * @return median property set by first invocation of median method or {@code null}.
    */
   @JsonIgnore public Integer getMedianInteger() {
     return (Integer) getValue("median");
   }
   /**
    * The median value.
+   * @return all median properties as {@link java.util.Collection} or an empty collection 
+   * if median was not set.
    */
-  @JsonIgnore public Collection<Integer> getMedianIntegers() {
-    final Object current = myData.get("median");
+  @JsonIgnore public java.util.Collection<Integer> getMedianIntegers() {
+    final java.lang.Object current = myData.get("median");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
   /**
    * The median value.
+   * @return median property set by first invocation of median method or {@code null}.
    */
   @JsonIgnore public Long getMedianLong() {
     return (Long) getValue("median");
   }
   /**
    * The median value.
+   * @return all median properties as {@link java.util.Collection} or an empty collection 
+   * if median was not set.
    */
-  @JsonIgnore public Collection<Long> getMedianLongs() {
-    final Object current = myData.get("median");
+  @JsonIgnore public java.util.Collection<Long> getMedianLongs() {
+    final java.lang.Object current = myData.get("median");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Long>) current;
     }
     return Arrays.asList((Long) current);
   }
   /**
    * The median value.
+   * @return median property set by first invocation of median method or {@code null}.
    */
   @JsonIgnore public Float getMedianFloat() {
     return (Float) getValue("median");
   }
   /**
    * The median value.
+   * @return all median properties as {@link java.util.Collection} or an empty collection 
+   * if median was not set.
    */
-  @JsonIgnore public Collection<Float> getMedianFloats() {
-    final Object current = myData.get("median");
+  @JsonIgnore public java.util.Collection<Float> getMedianFloats() {
+    final java.lang.Object current = myData.get("median");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Float>) current;
     }
     return Arrays.asList((Float) current);
   }
   /**
    * The median value.
+   * @return median property set by first invocation of median method or {@code null}.
    */
   @JsonIgnore public Double getMedianDouble() {
     return (Double) getValue("median");
   }
   /**
    * The median value.
+   * @return all median properties as {@link java.util.Collection} or an empty collection 
+   * if median was not set.
    */
-  @JsonIgnore public Collection<Double> getMedianDoubles() {
-    final Object current = myData.get("median");
+  @JsonIgnore public java.util.Collection<Double> getMedianDoubles() {
+    final java.lang.Object current = myData.get("median");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Double>) current;
     }
     return Arrays.asList((Double) current);
   }
   /**
    * The median value.
+   * @return median property set by first invocation of median method or {@code null}.
    */
   @JsonIgnore public String getMedianString() {
     return (String) getValue("median");
   }
   /**
    * The median value.
+   * @return all median properties as {@link java.util.Collection} or an empty collection 
+   * if median was not set.
    */
-  @JsonIgnore public Collection<String> getMedianStrings() {
-    final Object current = myData.get("median");
+  @JsonIgnore public java.util.Collection<String> getMedianStrings() {
+    final java.lang.Object current = myData.get("median");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * The 10th percentile value.
+   * @return percentile10 property set by first invocation of percentile10 method or {@code null}.
+   */
+  @JsonIgnore public Integer getPercentile10Integer() {
+    return (Integer) getValue("percentile10");
+  }
+  /**
+   * The 10th percentile value.
+   * @return all percentile10 properties as {@link java.util.Collection} or an empty collection 
+   * if percentile10 was not set.
+   */
+  @JsonIgnore public java.util.Collection<Integer> getPercentile10Integers() {
+    final java.lang.Object current = myData.get("percentile10");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
+    }
+    return Arrays.asList((Integer) current);
+  }
+  /**
+   * The 10th percentile value.
+   * @return percentile10 property set by first invocation of percentile10 method or {@code null}.
+   */
+  @JsonIgnore public Long getPercentile10Long() {
+    return (Long) getValue("percentile10");
+  }
+  /**
+   * The 10th percentile value.
+   * @return all percentile10 properties as {@link java.util.Collection} or an empty collection 
+   * if percentile10 was not set.
+   */
+  @JsonIgnore public java.util.Collection<Long> getPercentile10Longs() {
+    final java.lang.Object current = myData.get("percentile10");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Long>) current;
+    }
+    return Arrays.asList((Long) current);
+  }
+  /**
+   * The 10th percentile value.
+   * @return percentile10 property set by first invocation of percentile10 method or {@code null}.
+   */
+  @JsonIgnore public Float getPercentile10Float() {
+    return (Float) getValue("percentile10");
+  }
+  /**
+   * The 10th percentile value.
+   * @return all percentile10 properties as {@link java.util.Collection} or an empty collection 
+   * if percentile10 was not set.
+   */
+  @JsonIgnore public java.util.Collection<Float> getPercentile10Floats() {
+    final java.lang.Object current = myData.get("percentile10");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Float>) current;
+    }
+    return Arrays.asList((Float) current);
+  }
+  /**
+   * The 10th percentile value.
+   * @return percentile10 property set by first invocation of percentile10 method or {@code null}.
+   */
+  @JsonIgnore public Double getPercentile10Double() {
+    return (Double) getValue("percentile10");
+  }
+  /**
+   * The 10th percentile value.
+   * @return all percentile10 properties as {@link java.util.Collection} or an empty collection 
+   * if percentile10 was not set.
+   */
+  @JsonIgnore public java.util.Collection<Double> getPercentile10Doubles() {
+    final java.lang.Object current = myData.get("percentile10");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Double>) current;
+    }
+    return Arrays.asList((Double) current);
+  }
+  /**
+   * The 10th percentile value.
+   * @return percentile10 property set by first invocation of percentile10 method or {@code null}.
+   */
+  @JsonIgnore public String getPercentile10String() {
+    return (String) getValue("percentile10");
+  }
+  /**
+   * The 10th percentile value.
+   * @return all percentile10 properties as {@link java.util.Collection} or an empty collection 
+   * if percentile10 was not set.
+   */
+  @JsonIgnore public java.util.Collection<String> getPercentile10Strings() {
+    final java.lang.Object current = myData.get("percentile10");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
+   * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
+   * @return duration property set by first invocation of duration method or {@code null}.
+   */
+  @JsonIgnore public Duration getDuration() {
+    return (Duration) getValue("duration");
+  }
+  /**
+   * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
+   * @return all duration properties as {@link java.util.Collection} or an empty collection 
+   * if duration was not set.
+   */
+  @JsonIgnore public java.util.Collection<Duration> getDurations() {
+    final java.lang.Object current = myData.get("duration");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Duration>) current;
+    }
+    return Arrays.asList((Duration) current);
+  }
+  /**
+   * The 25th percentile value.
+   * @return percentile25 property set by first invocation of percentile25 method or {@code null}.
+   */
+  @JsonIgnore public Integer getPercentile25Integer() {
+    return (Integer) getValue("percentile25");
+  }
+  /**
+   * The 25th percentile value.
+   * @return all percentile25 properties as {@link java.util.Collection} or an empty collection 
+   * if percentile25 was not set.
+   */
+  @JsonIgnore public java.util.Collection<Integer> getPercentile25Integers() {
+    final java.lang.Object current = myData.get("percentile25");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
+    }
+    return Arrays.asList((Integer) current);
+  }
+  /**
+   * The 25th percentile value.
+   * @return percentile25 property set by first invocation of percentile25 method or {@code null}.
+   */
+  @JsonIgnore public Long getPercentile25Long() {
+    return (Long) getValue("percentile25");
+  }
+  /**
+   * The 25th percentile value.
+   * @return all percentile25 properties as {@link java.util.Collection} or an empty collection 
+   * if percentile25 was not set.
+   */
+  @JsonIgnore public java.util.Collection<Long> getPercentile25Longs() {
+    final java.lang.Object current = myData.get("percentile25");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Long>) current;
+    }
+    return Arrays.asList((Long) current);
+  }
+  /**
+   * The 25th percentile value.
+   * @return percentile25 property set by first invocation of percentile25 method or {@code null}.
+   */
+  @JsonIgnore public Float getPercentile25Float() {
+    return (Float) getValue("percentile25");
+  }
+  /**
+   * The 25th percentile value.
+   * @return all percentile25 properties as {@link java.util.Collection} or an empty collection 
+   * if percentile25 was not set.
+   */
+  @JsonIgnore public java.util.Collection<Float> getPercentile25Floats() {
+    final java.lang.Object current = myData.get("percentile25");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Float>) current;
+    }
+    return Arrays.asList((Float) current);
+  }
+  /**
+   * The 25th percentile value.
+   * @return percentile25 property set by first invocation of percentile25 method or {@code null}.
+   */
+  @JsonIgnore public Double getPercentile25Double() {
+    return (Double) getValue("percentile25");
+  }
+  /**
+   * The 25th percentile value.
+   * @return all percentile25 properties as {@link java.util.Collection} or an empty collection 
+   * if percentile25 was not set.
+   */
+  @JsonIgnore public java.util.Collection<Double> getPercentile25Doubles() {
+    final java.lang.Object current = myData.get("percentile25");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Double>) current;
+    }
+    return Arrays.asList((Double) current);
+  }
+  /**
+   * The 25th percentile value.
+   * @return percentile25 property set by first invocation of percentile25 method or {@code null}.
+   */
+  @JsonIgnore public String getPercentile25String() {
+    return (String) getValue("percentile25");
+  }
+  /**
+   * The 25th percentile value.
+   * @return all percentile25 properties as {@link java.util.Collection} or an empty collection 
+   * if percentile25 was not set.
+   */
+  @JsonIgnore public java.util.Collection<String> getPercentile25Strings() {
+    final java.lang.Object current = myData.get("percentile25");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
   /**
    * The 75th percentile value.
+   * @return percentile75 property set by first invocation of percentile75 method or {@code null}.
    */
   @JsonIgnore public Integer getPercentile75Integer() {
     return (Integer) getValue("percentile75");
   }
   /**
    * The 75th percentile value.
+   * @return all percentile75 properties as {@link java.util.Collection} or an empty collection 
+   * if percentile75 was not set.
    */
-  @JsonIgnore public Collection<Integer> getPercentile75Integers() {
-    final Object current = myData.get("percentile75");
+  @JsonIgnore public java.util.Collection<Integer> getPercentile75Integers() {
+    final java.lang.Object current = myData.get("percentile75");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
   /**
    * The 75th percentile value.
+   * @return percentile75 property set by first invocation of percentile75 method or {@code null}.
    */
   @JsonIgnore public Long getPercentile75Long() {
     return (Long) getValue("percentile75");
   }
   /**
    * The 75th percentile value.
+   * @return all percentile75 properties as {@link java.util.Collection} or an empty collection 
+   * if percentile75 was not set.
    */
-  @JsonIgnore public Collection<Long> getPercentile75Longs() {
-    final Object current = myData.get("percentile75");
+  @JsonIgnore public java.util.Collection<Long> getPercentile75Longs() {
+    final java.lang.Object current = myData.get("percentile75");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Long>) current;
     }
     return Arrays.asList((Long) current);
   }
   /**
    * The 75th percentile value.
+   * @return percentile75 property set by first invocation of percentile75 method or {@code null}.
    */
   @JsonIgnore public Float getPercentile75Float() {
     return (Float) getValue("percentile75");
   }
   /**
    * The 75th percentile value.
+   * @return all percentile75 properties as {@link java.util.Collection} or an empty collection 
+   * if percentile75 was not set.
    */
-  @JsonIgnore public Collection<Float> getPercentile75Floats() {
-    final Object current = myData.get("percentile75");
+  @JsonIgnore public java.util.Collection<Float> getPercentile75Floats() {
+    final java.lang.Object current = myData.get("percentile75");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Float>) current;
     }
     return Arrays.asList((Float) current);
   }
   /**
    * The 75th percentile value.
+   * @return percentile75 property set by first invocation of percentile75 method or {@code null}.
    */
   @JsonIgnore public Double getPercentile75Double() {
     return (Double) getValue("percentile75");
   }
   /**
    * The 75th percentile value.
+   * @return all percentile75 properties as {@link java.util.Collection} or an empty collection 
+   * if percentile75 was not set.
    */
-  @JsonIgnore public Collection<Double> getPercentile75Doubles() {
-    final Object current = myData.get("percentile75");
+  @JsonIgnore public java.util.Collection<Double> getPercentile75Doubles() {
+    final java.lang.Object current = myData.get("percentile75");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Double>) current;
     }
     return Arrays.asList((Double) current);
   }
   /**
    * The 75th percentile value.
+   * @return percentile75 property set by first invocation of percentile75 method or {@code null}.
    */
   @JsonIgnore public String getPercentile75String() {
     return (String) getValue("percentile75");
   }
   /**
    * The 75th percentile value.
+   * @return all percentile75 properties as {@link java.util.Collection} or an empty collection 
+   * if percentile75 was not set.
    */
-  @JsonIgnore public Collection<String> getPercentile75Strings() {
-    final Object current = myData.get("percentile75");
+  @JsonIgnore public java.util.Collection<String> getPercentile75Strings() {
+    final java.lang.Object current = myData.get("percentile75");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
   /**
    * The 90th percentile value.
+   * @return percentile90 property set by first invocation of percentile90 method or {@code null}.
    */
   @JsonIgnore public Integer getPercentile90Integer() {
     return (Integer) getValue("percentile90");
   }
   /**
    * The 90th percentile value.
+   * @return all percentile90 properties as {@link java.util.Collection} or an empty collection 
+   * if percentile90 was not set.
    */
-  @JsonIgnore public Collection<Integer> getPercentile90Integers() {
-    final Object current = myData.get("percentile90");
+  @JsonIgnore public java.util.Collection<Integer> getPercentile90Integers() {
+    final java.lang.Object current = myData.get("percentile90");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
   /**
    * The 90th percentile value.
+   * @return percentile90 property set by first invocation of percentile90 method or {@code null}.
    */
   @JsonIgnore public Long getPercentile90Long() {
     return (Long) getValue("percentile90");
   }
   /**
    * The 90th percentile value.
+   * @return all percentile90 properties as {@link java.util.Collection} or an empty collection 
+   * if percentile90 was not set.
    */
-  @JsonIgnore public Collection<Long> getPercentile90Longs() {
-    final Object current = myData.get("percentile90");
+  @JsonIgnore public java.util.Collection<Long> getPercentile90Longs() {
+    final java.lang.Object current = myData.get("percentile90");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Long>) current;
     }
     return Arrays.asList((Long) current);
   }
   /**
    * The 90th percentile value.
+   * @return percentile90 property set by first invocation of percentile90 method or {@code null}.
    */
   @JsonIgnore public Float getPercentile90Float() {
     return (Float) getValue("percentile90");
   }
   /**
    * The 90th percentile value.
+   * @return all percentile90 properties as {@link java.util.Collection} or an empty collection 
+   * if percentile90 was not set.
    */
-  @JsonIgnore public Collection<Float> getPercentile90Floats() {
-    final Object current = myData.get("percentile90");
+  @JsonIgnore public java.util.Collection<Float> getPercentile90Floats() {
+    final java.lang.Object current = myData.get("percentile90");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Float>) current;
     }
     return Arrays.asList((Float) current);
   }
   /**
    * The 90th percentile value.
+   * @return percentile90 property set by first invocation of percentile90 method or {@code null}.
    */
   @JsonIgnore public Double getPercentile90Double() {
     return (Double) getValue("percentile90");
   }
   /**
    * The 90th percentile value.
+   * @return all percentile90 properties as {@link java.util.Collection} or an empty collection 
+   * if percentile90 was not set.
    */
-  @JsonIgnore public Collection<Double> getPercentile90Doubles() {
-    final Object current = myData.get("percentile90");
+  @JsonIgnore public java.util.Collection<Double> getPercentile90Doubles() {
+    final java.lang.Object current = myData.get("percentile90");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Double>) current;
     }
     return Arrays.asList((Double) current);
   }
   /**
    * The 90th percentile value.
+   * @return percentile90 property set by first invocation of percentile90 method or {@code null}.
    */
   @JsonIgnore public String getPercentile90String() {
     return (String) getValue("percentile90");
   }
   /**
    * The 90th percentile value.
+   * @return all percentile90 properties as {@link java.util.Collection} or an empty collection 
+   * if percentile90 was not set.
    */
-  @JsonIgnore public Collection<String> getPercentile90Strings() {
-    final Object current = myData.get("percentile90");
+  @JsonIgnore public java.util.Collection<String> getPercentile90Strings() {
+    final java.lang.Object current = myData.get("percentile90");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
-  protected QuantitativeValueDistribution(java.util.Map<String,Object> data) {
+  protected QuantitativeValueDistribution(java.util.Map<String,java.lang.Object> data) {
     super(data);
+  }
+  /**
+   * @return new {@link Builder} initialized with this instance's data
+   */
+  @NotNull public Builder toBuilder() {
+    return new Builder(new HashMap<>(this.myData));
   }
   
   /**
    * Builder for {@link QuantitativeValueDistribution}
    */
   public static class Builder extends StructuredValue.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public QuantitativeValueDistribution build() {
       return new QuantitativeValueDistribution(myData);
     }
     /**
-     * The 10th percentile value.
-     */
-    @NotNull public Builder percentile10(@NotNull Integer integer) {
-      putValue("percentile10", integer);
-      return this;
-    }
-    /**
-     * The 10th percentile value.
-     */
-    @NotNull public Builder percentile10(@NotNull Long percentile10) {
-      putValue("percentile10", percentile10);
-      return this;
-    }
-    /**
-     * The 10th percentile value.
-     */
-    @NotNull public Builder percentile10(@NotNull Float percentile10) {
-      putValue("percentile10", percentile10);
-      return this;
-    }
-    /**
-     * The 10th percentile value.
-     */
-    @NotNull public Builder percentile10(@NotNull Double percentile10) {
-      putValue("percentile10", percentile10);
-      return this;
-    }
-    /**
-     * The 10th percentile value.
-     */
-    @NotNull public Builder percentile10(@NotNull String percentile10) {
-      putValue("percentile10", percentile10);
-      return this;
-    }
-    /**
-     * The 25th percentile value.
-     */
-    @NotNull public Builder percentile25(@NotNull Integer integer) {
-      putValue("percentile25", integer);
-      return this;
-    }
-    /**
-     * The 25th percentile value.
-     */
-    @NotNull public Builder percentile25(@NotNull Long percentile25) {
-      putValue("percentile25", percentile25);
-      return this;
-    }
-    /**
-     * The 25th percentile value.
-     */
-    @NotNull public Builder percentile25(@NotNull Float percentile25) {
-      putValue("percentile25", percentile25);
-      return this;
-    }
-    /**
-     * The 25th percentile value.
-     */
-    @NotNull public Builder percentile25(@NotNull Double percentile25) {
-      putValue("percentile25", percentile25);
-      return this;
-    }
-    /**
-     * The 25th percentile value.
-     */
-    @NotNull public Builder percentile25(@NotNull String percentile25) {
-      putValue("percentile25", percentile25);
-      return this;
-    }
-    /**
      * The median value.
+     * @param integer value to set
+     * @return this builder instance
      */
     @NotNull public Builder median(@NotNull Integer integer) {
       putValue("median", integer);
@@ -545,6 +579,8 @@ public class QuantitativeValueDistribution extends StructuredValue {
     }
     /**
      * The median value.
+     * @param median value to set
+     * @return this builder instance
      */
     @NotNull public Builder median(@NotNull Long median) {
       putValue("median", median);
@@ -552,6 +588,8 @@ public class QuantitativeValueDistribution extends StructuredValue {
     }
     /**
      * The median value.
+     * @param median value to set
+     * @return this builder instance
      */
     @NotNull public Builder median(@NotNull Float median) {
       putValue("median", median);
@@ -559,6 +597,8 @@ public class QuantitativeValueDistribution extends StructuredValue {
     }
     /**
      * The median value.
+     * @param median value to set
+     * @return this builder instance
      */
     @NotNull public Builder median(@NotNull Double median) {
       putValue("median", median);
@@ -566,13 +606,188 @@ public class QuantitativeValueDistribution extends StructuredValue {
     }
     /**
      * The median value.
+     * @param median value to set
+     * @return this builder instance
      */
     @NotNull public Builder median(@NotNull String median) {
       putValue("median", median);
       return this;
     }
     /**
+     * Remove median property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeMedian() {
+      removeValue("median");
+      return this;
+    }
+    /**
+     * Get currently set value for median property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getMedian() {
+      return myData.get("median");
+    }
+    /**
+     * The 10th percentile value.
+     * @param integer value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder percentile10(@NotNull Integer integer) {
+      putValue("percentile10", integer);
+      return this;
+    }
+    /**
+     * The 10th percentile value.
+     * @param percentile10 value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder percentile10(@NotNull Long percentile10) {
+      putValue("percentile10", percentile10);
+      return this;
+    }
+    /**
+     * The 10th percentile value.
+     * @param percentile10 value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder percentile10(@NotNull Float percentile10) {
+      putValue("percentile10", percentile10);
+      return this;
+    }
+    /**
+     * The 10th percentile value.
+     * @param percentile10 value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder percentile10(@NotNull Double percentile10) {
+      putValue("percentile10", percentile10);
+      return this;
+    }
+    /**
+     * The 10th percentile value.
+     * @param percentile10 value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder percentile10(@NotNull String percentile10) {
+      putValue("percentile10", percentile10);
+      return this;
+    }
+    /**
+     * Remove percentile10 property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removePercentile10() {
+      removeValue("percentile10");
+      return this;
+    }
+    /**
+     * Get currently set value for percentile10 property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getPercentile10() {
+      return myData.get("percentile10");
+    }
+    /**
+     * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
+     * @param duration value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder duration(@NotNull Duration duration) {
+      putValue("duration", duration);
+      return this;
+    }
+    /**
+     * Remove duration property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeDuration() {
+      removeValue("duration");
+      return this;
+    }
+    /**
+     * Get currently set value for duration property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getDuration() {
+      return myData.get("duration");
+    }
+    /**
+     * The 25th percentile value.
+     * @param integer value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder percentile25(@NotNull Integer integer) {
+      putValue("percentile25", integer);
+      return this;
+    }
+    /**
+     * The 25th percentile value.
+     * @param percentile25 value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder percentile25(@NotNull Long percentile25) {
+      putValue("percentile25", percentile25);
+      return this;
+    }
+    /**
+     * The 25th percentile value.
+     * @param percentile25 value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder percentile25(@NotNull Float percentile25) {
+      putValue("percentile25", percentile25);
+      return this;
+    }
+    /**
+     * The 25th percentile value.
+     * @param percentile25 value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder percentile25(@NotNull Double percentile25) {
+      putValue("percentile25", percentile25);
+      return this;
+    }
+    /**
+     * The 25th percentile value.
+     * @param percentile25 value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder percentile25(@NotNull String percentile25) {
+      putValue("percentile25", percentile25);
+      return this;
+    }
+    /**
+     * Remove percentile25 property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removePercentile25() {
+      removeValue("percentile25");
+      return this;
+    }
+    /**
+     * Get currently set value for percentile25 property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getPercentile25() {
+      return myData.get("percentile25");
+    }
+    /**
      * The 75th percentile value.
+     * @param integer value to set
+     * @return this builder instance
      */
     @NotNull public Builder percentile75(@NotNull Integer integer) {
       putValue("percentile75", integer);
@@ -580,6 +795,8 @@ public class QuantitativeValueDistribution extends StructuredValue {
     }
     /**
      * The 75th percentile value.
+     * @param percentile75 value to set
+     * @return this builder instance
      */
     @NotNull public Builder percentile75(@NotNull Long percentile75) {
       putValue("percentile75", percentile75);
@@ -587,6 +804,8 @@ public class QuantitativeValueDistribution extends StructuredValue {
     }
     /**
      * The 75th percentile value.
+     * @param percentile75 value to set
+     * @return this builder instance
      */
     @NotNull public Builder percentile75(@NotNull Float percentile75) {
       putValue("percentile75", percentile75);
@@ -594,6 +813,8 @@ public class QuantitativeValueDistribution extends StructuredValue {
     }
     /**
      * The 75th percentile value.
+     * @param percentile75 value to set
+     * @return this builder instance
      */
     @NotNull public Builder percentile75(@NotNull Double percentile75) {
       putValue("percentile75", percentile75);
@@ -601,13 +822,35 @@ public class QuantitativeValueDistribution extends StructuredValue {
     }
     /**
      * The 75th percentile value.
+     * @param percentile75 value to set
+     * @return this builder instance
      */
     @NotNull public Builder percentile75(@NotNull String percentile75) {
       putValue("percentile75", percentile75);
       return this;
     }
     /**
+     * Remove percentile75 property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removePercentile75() {
+      removeValue("percentile75");
+      return this;
+    }
+    /**
+     * Get currently set value for percentile75 property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getPercentile75() {
+      return myData.get("percentile75");
+    }
+    /**
      * The 90th percentile value.
+     * @param integer value to set
+     * @return this builder instance
      */
     @NotNull public Builder percentile90(@NotNull Integer integer) {
       putValue("percentile90", integer);
@@ -615,6 +858,8 @@ public class QuantitativeValueDistribution extends StructuredValue {
     }
     /**
      * The 90th percentile value.
+     * @param percentile90 value to set
+     * @return this builder instance
      */
     @NotNull public Builder percentile90(@NotNull Long percentile90) {
       putValue("percentile90", percentile90);
@@ -622,6 +867,8 @@ public class QuantitativeValueDistribution extends StructuredValue {
     }
     /**
      * The 90th percentile value.
+     * @param percentile90 value to set
+     * @return this builder instance
      */
     @NotNull public Builder percentile90(@NotNull Float percentile90) {
       putValue("percentile90", percentile90);
@@ -629,6 +876,8 @@ public class QuantitativeValueDistribution extends StructuredValue {
     }
     /**
      * The 90th percentile value.
+     * @param percentile90 value to set
+     * @return this builder instance
      */
     @NotNull public Builder percentile90(@NotNull Double percentile90) {
       putValue("percentile90", percentile90);
@@ -636,76 +885,90 @@ public class QuantitativeValueDistribution extends StructuredValue {
     }
     /**
      * The 90th percentile value.
+     * @param percentile90 value to set
+     * @return this builder instance
      */
     @NotNull public Builder percentile90(@NotNull String percentile90) {
       putValue("percentile90", percentile90);
       return this;
     }
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * Remove percentile90 property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
      */
-    @NotNull public Builder additionalType(@NotNull String additionalType) {
-      putValue("additionalType", additionalType);
+    @NotNull public Builder removePercentile90() {
+      removeValue("percentile90");
       return this;
     }
     /**
-     * An alias for the item.
+     * Get currently set value for percentile90 property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
      */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
+    @Nullable public java.lang.Object getPercentile90() {
+      return myData.get("percentile90");
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     * 
+     * @param identifier value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
       return this;
     }
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * Remove identifier property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
-      putValue("disambiguatingDescription", disambiguatingDescription);
+    @NotNull public Builder removeIdentifier() {
+      removeValue("identifier");
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * Get currently set value for identifier property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
+    @Nullable public java.lang.Object getIdentifier() {
+      return myData.get("identifier");
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * @param image value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * Remove image property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
+    @NotNull public Builder removeImage() {
+      removeValue("image");
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * Get currently set value for image property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
-      return this;
-    }
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     */
-    @NotNull public Builder sameAs(@NotNull String sameAs) {
-      putValue("sameAs", sameAs);
-      return this;
-    }
-    /**
-     * URL of the item.
-     */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
-      return this;
+    @Nullable public java.lang.Object getImage() {
+      return myData.get("image");
     }
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     * @param action value to set
+     * @return this builder instance
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
       putValue("potentialAction", action);
@@ -713,13 +976,224 @@ public class QuantitativeValueDistribution extends StructuredValue {
     }
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     * @param action value to set
+     * @return this builder instance
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
       return this;
     }
     /**
+     * Remove potentialAction property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removePotentialAction() {
+      removeValue("potentialAction");
+      return this;
+    }
+    /**
+     * Get currently set value for potentialAction property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getPotentialAction() {
+      return myData.get("potentialAction");
+    }
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * @param disambiguatingDescription value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
+      putValue("disambiguatingDescription", disambiguatingDescription);
+      return this;
+    }
+    /**
+     * Remove disambiguatingDescription property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeDisambiguatingDescription() {
+      removeValue("disambiguatingDescription");
+      return this;
+    }
+    /**
+     * Get currently set value for disambiguatingDescription property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getDisambiguatingDescription() {
+      return myData.get("disambiguatingDescription");
+    }
+    /**
+     * A description of the item.
+     * @param description value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder description(@NotNull String description) {
+      putValue("description", description);
+      return this;
+    }
+    /**
+     * Remove description property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeDescription() {
+      removeValue("description");
+      return this;
+    }
+    /**
+     * Get currently set value for description property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getDescription() {
+      return myData.get("description");
+    }
+    /**
+     * URL of the item.
+     * @param url value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
+      return this;
+    }
+    /**
+     * Remove url property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeUrl() {
+      removeValue("url");
+      return this;
+    }
+    /**
+     * Get currently set value for url property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getUrl() {
+      return myData.get("url");
+    }
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * @param additionalType value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder additionalType(@NotNull String additionalType) {
+      putValue("additionalType", additionalType);
+      return this;
+    }
+    /**
+     * Remove additionalType property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeAdditionalType() {
+      removeValue("additionalType");
+      return this;
+    }
+    /**
+     * Get currently set value for additionalType property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getAdditionalType() {
+      return myData.get("additionalType");
+    }
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     * @param sameAs value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder sameAs(@NotNull String sameAs) {
+      putValue("sameAs", sameAs);
+      return this;
+    }
+    /**
+     * Remove sameAs property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeSameAs() {
+      removeValue("sameAs");
+      return this;
+    }
+    /**
+     * Get currently set value for sameAs property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getSameAs() {
+      return myData.get("sameAs");
+    }
+    /**
+     * An alias for the item.
+     * @param alternateName value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * Remove alternateName property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeAlternateName() {
+      removeValue("alternateName");
+      return this;
+    }
+    /**
+     * Get currently set value for alternateName property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getAlternateName() {
+      return myData.get("alternateName");
+    }
+    /**
+     * The name of the item.
+     * @param name value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
+      return this;
+    }
+    /**
+     * Remove name property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeName() {
+      removeValue("name");
+      return this;
+    }
+    /**
+     * Get currently set value for name property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getName() {
+      return myData.get("name");
+    }
+    /**
      * A CreativeWork or Event about this Thing.
+     * @param creativeWork value to set
+     * @return this builder instance
      */
     @NotNull public Builder subjectOf(@NotNull CreativeWork creativeWork) {
       putValue("subjectOf", creativeWork);
@@ -727,6 +1201,8 @@ public class QuantitativeValueDistribution extends StructuredValue {
     }
     /**
      * A CreativeWork or Event about this Thing.
+     * @param creativeWork value to set
+     * @return this builder instance
      */
     @NotNull public Builder subjectOf(@NotNull CreativeWork.Builder creativeWork) {
       putValue("subjectOf", creativeWork.build());
@@ -734,6 +1210,8 @@ public class QuantitativeValueDistribution extends StructuredValue {
     }
     /**
      * A CreativeWork or Event about this Thing.
+     * @param event value to set
+     * @return this builder instance
      */
     @NotNull public Builder subjectOf(@NotNull Event event) {
       putValue("subjectOf", event);
@@ -741,69 +1219,159 @@ public class QuantitativeValueDistribution extends StructuredValue {
     }
     /**
      * A CreativeWork or Event about this Thing.
+     * @param event value to set
+     * @return this builder instance
      */
     @NotNull public Builder subjectOf(@NotNull Event.Builder event) {
       putValue("subjectOf", event.build());
       return this;
     }
+    /**
+     * Remove subjectOf property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeSubjectOf() {
+      removeValue("subjectOf");
+      return this;
+    }
+    /**
+     * Get currently set value for subjectOf property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getSubjectOf() {
+      return myData.get("subjectOf");
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * @param creativeWork value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * @param creativeWork value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * @param mainEntityOfPage value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
+    /**
+     * Remove mainEntityOfPage property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeMainEntityOfPage() {
+      removeValue("mainEntityOfPage");
+      return this;
+    }
+    /**
+     * Get currently set value for mainEntityOfPage property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getMainEntityOfPage() {
+      return myData.get("mainEntityOfPage");
+    }
+    /**
+     * null
+     * @param id value to set
+     * @return this builder instance
+     */
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
     }
+    /**
+     * Remove id property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeId() {
+      removeValue("id");
+      return this;
+    }
+    /**
+     * Get currently set value for id property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getId() {
+      return myData.get("id");
+    }
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
-      if ("percentile10".equals(key) && value instanceof Integer) { percentile10((Integer)value); return; }
-      if ("percentile10s".equals(key) && value instanceof Integer) { percentile10((Integer)value); return; }
-      if ("percentile10".equals(key) && value instanceof Long) { percentile10((Long)value); return; }
-      if ("percentile10s".equals(key) && value instanceof Long) { percentile10((Long)value); return; }
-      if ("percentile10".equals(key) && value instanceof Float) { percentile10((Float)value); return; }
-      if ("percentile10s".equals(key) && value instanceof Float) { percentile10((Float)value); return; }
-      if ("percentile10".equals(key) && value instanceof Double) { percentile10((Double)value); return; }
-      if ("percentile10s".equals(key) && value instanceof Double) { percentile10((Double)value); return; }
-      if ("percentile10".equals(key) && value instanceof String) { percentile10((String)value); return; }
-      if ("percentile10s".equals(key) && value instanceof String) { percentile10((String)value); return; }
-      if ("percentile25".equals(key) && value instanceof Integer) { percentile25((Integer)value); return; }
-      if ("percentile25s".equals(key) && value instanceof Integer) { percentile25((Integer)value); return; }
-      if ("percentile25".equals(key) && value instanceof Long) { percentile25((Long)value); return; }
-      if ("percentile25s".equals(key) && value instanceof Long) { percentile25((Long)value); return; }
-      if ("percentile25".equals(key) && value instanceof Float) { percentile25((Float)value); return; }
-      if ("percentile25s".equals(key) && value instanceof Float) { percentile25((Float)value); return; }
-      if ("percentile25".equals(key) && value instanceof Double) { percentile25((Double)value); return; }
-      if ("percentile25s".equals(key) && value instanceof Double) { percentile25((Double)value); return; }
-      if ("percentile25".equals(key) && value instanceof String) { percentile25((String)value); return; }
-      if ("percentile25s".equals(key) && value instanceof String) { percentile25((String)value); return; }
-      if ("median".equals(key) && value instanceof Integer) { median((Integer)value); return; }
-      if ("medians".equals(key) && value instanceof Integer) { median((Integer)value); return; }
-      if ("median".equals(key) && value instanceof Long) { median((Long)value); return; }
-      if ("medians".equals(key) && value instanceof Long) { median((Long)value); return; }
-      if ("median".equals(key) && value instanceof Float) { median((Float)value); return; }
-      if ("medians".equals(key) && value instanceof Float) { median((Float)value); return; }
-      if ("median".equals(key) && value instanceof Double) { median((Double)value); return; }
-      if ("medians".equals(key) && value instanceof Double) { median((Double)value); return; }
-      if ("median".equals(key) && value instanceof String) { median((String)value); return; }
-      if ("medians".equals(key) && value instanceof String) { median((String)value); return; }
-      if ("percentile75".equals(key) && value instanceof Integer) { percentile75((Integer)value); return; }
-      if ("percentile75s".equals(key) && value instanceof Integer) { percentile75((Integer)value); return; }
-      if ("percentile75".equals(key) && value instanceof Long) { percentile75((Long)value); return; }
-      if ("percentile75s".equals(key) && value instanceof Long) { percentile75((Long)value); return; }
-      if ("percentile75".equals(key) && value instanceof Float) { percentile75((Float)value); return; }
-      if ("percentile75s".equals(key) && value instanceof Float) { percentile75((Float)value); return; }
-      if ("percentile75".equals(key) && value instanceof Double) { percentile75((Double)value); return; }
-      if ("percentile75s".equals(key) && value instanceof Double) { percentile75((Double)value); return; }
-      if ("percentile75".equals(key) && value instanceof String) { percentile75((String)value); return; }
-      if ("percentile75s".equals(key) && value instanceof String) { percentile75((String)value); return; }
-      if ("percentile90".equals(key) && value instanceof Integer) { percentile90((Integer)value); return; }
-      if ("percentile90s".equals(key) && value instanceof Integer) { percentile90((Integer)value); return; }
-      if ("percentile90".equals(key) && value instanceof Long) { percentile90((Long)value); return; }
-      if ("percentile90s".equals(key) && value instanceof Long) { percentile90((Long)value); return; }
-      if ("percentile90".equals(key) && value instanceof Float) { percentile90((Float)value); return; }
-      if ("percentile90s".equals(key) && value instanceof Float) { percentile90((Float)value); return; }
-      if ("percentile90".equals(key) && value instanceof Double) { percentile90((Double)value); return; }
-      if ("percentile90s".equals(key) && value instanceof Double) { percentile90((Double)value); return; }
-      if ("percentile90".equals(key) && value instanceof String) { percentile90((String)value); return; }
-      if ("percentile90s".equals(key) && value instanceof String) { percentile90((String)value); return; }
+    @Override protected void fromMap(String key, java.lang.Object value) {
+      if ("median".equals(key) && value instanceof Integer) { this.median((Integer)value); return; }
+      if ("medians".equals(key) && value instanceof Integer) { this.median((Integer)value); return; }
+      if ("median".equals(key) && value instanceof Long) { this.median((Long)value); return; }
+      if ("medians".equals(key) && value instanceof Long) { this.median((Long)value); return; }
+      if ("median".equals(key) && value instanceof Float) { this.median((Float)value); return; }
+      if ("medians".equals(key) && value instanceof Float) { this.median((Float)value); return; }
+      if ("median".equals(key) && value instanceof Double) { this.median((Double)value); return; }
+      if ("medians".equals(key) && value instanceof Double) { this.median((Double)value); return; }
+      if ("median".equals(key) && value instanceof String) { this.median((String)value); return; }
+      if ("medians".equals(key) && value instanceof String) { this.median((String)value); return; }
+      if ("percentile10".equals(key) && value instanceof Integer) { this.percentile10((Integer)value); return; }
+      if ("percentile10s".equals(key) && value instanceof Integer) { this.percentile10((Integer)value); return; }
+      if ("percentile10".equals(key) && value instanceof Long) { this.percentile10((Long)value); return; }
+      if ("percentile10s".equals(key) && value instanceof Long) { this.percentile10((Long)value); return; }
+      if ("percentile10".equals(key) && value instanceof Float) { this.percentile10((Float)value); return; }
+      if ("percentile10s".equals(key) && value instanceof Float) { this.percentile10((Float)value); return; }
+      if ("percentile10".equals(key) && value instanceof Double) { this.percentile10((Double)value); return; }
+      if ("percentile10s".equals(key) && value instanceof Double) { this.percentile10((Double)value); return; }
+      if ("percentile10".equals(key) && value instanceof String) { this.percentile10((String)value); return; }
+      if ("percentile10s".equals(key) && value instanceof String) { this.percentile10((String)value); return; }
+      if ("duration".equals(key) && value instanceof Duration) { this.duration((Duration)value); return; }
+      if ("durations".equals(key) && value instanceof Duration) { this.duration((Duration)value); return; }
+      if ("percentile25".equals(key) && value instanceof Integer) { this.percentile25((Integer)value); return; }
+      if ("percentile25s".equals(key) && value instanceof Integer) { this.percentile25((Integer)value); return; }
+      if ("percentile25".equals(key) && value instanceof Long) { this.percentile25((Long)value); return; }
+      if ("percentile25s".equals(key) && value instanceof Long) { this.percentile25((Long)value); return; }
+      if ("percentile25".equals(key) && value instanceof Float) { this.percentile25((Float)value); return; }
+      if ("percentile25s".equals(key) && value instanceof Float) { this.percentile25((Float)value); return; }
+      if ("percentile25".equals(key) && value instanceof Double) { this.percentile25((Double)value); return; }
+      if ("percentile25s".equals(key) && value instanceof Double) { this.percentile25((Double)value); return; }
+      if ("percentile25".equals(key) && value instanceof String) { this.percentile25((String)value); return; }
+      if ("percentile25s".equals(key) && value instanceof String) { this.percentile25((String)value); return; }
+      if ("percentile75".equals(key) && value instanceof Integer) { this.percentile75((Integer)value); return; }
+      if ("percentile75s".equals(key) && value instanceof Integer) { this.percentile75((Integer)value); return; }
+      if ("percentile75".equals(key) && value instanceof Long) { this.percentile75((Long)value); return; }
+      if ("percentile75s".equals(key) && value instanceof Long) { this.percentile75((Long)value); return; }
+      if ("percentile75".equals(key) && value instanceof Float) { this.percentile75((Float)value); return; }
+      if ("percentile75s".equals(key) && value instanceof Float) { this.percentile75((Float)value); return; }
+      if ("percentile75".equals(key) && value instanceof Double) { this.percentile75((Double)value); return; }
+      if ("percentile75s".equals(key) && value instanceof Double) { this.percentile75((Double)value); return; }
+      if ("percentile75".equals(key) && value instanceof String) { this.percentile75((String)value); return; }
+      if ("percentile75s".equals(key) && value instanceof String) { this.percentile75((String)value); return; }
+      if ("percentile90".equals(key) && value instanceof Integer) { this.percentile90((Integer)value); return; }
+      if ("percentile90s".equals(key) && value instanceof Integer) { this.percentile90((Integer)value); return; }
+      if ("percentile90".equals(key) && value instanceof Long) { this.percentile90((Long)value); return; }
+      if ("percentile90s".equals(key) && value instanceof Long) { this.percentile90((Long)value); return; }
+      if ("percentile90".equals(key) && value instanceof Float) { this.percentile90((Float)value); return; }
+      if ("percentile90s".equals(key) && value instanceof Float) { this.percentile90((Float)value); return; }
+      if ("percentile90".equals(key) && value instanceof Double) { this.percentile90((Double)value); return; }
+      if ("percentile90s".equals(key) && value instanceof Double) { this.percentile90((Double)value); return; }
+      if ("percentile90".equals(key) && value instanceof String) { this.percentile90((String)value); return; }
+      if ("percentile90s".equals(key) && value instanceof String) { this.percentile90((String)value); return; }
       super.fromMap(key, value);
     }
   }

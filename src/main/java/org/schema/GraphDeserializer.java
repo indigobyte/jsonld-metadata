@@ -23,20 +23,20 @@ public class GraphDeserializer extends JsonDeserializer<Graph> {
 
     @Nullable
     static Graph fromMap(Map<String, Object> result) {
-        final Object type = result.get("@graph");
+        final java.lang.Object type = result.get("@graph");
         if (type == null || !(type instanceof List)) {
             return null;
         }
         
         Graph g = new Graph();
         
-        final Object context = result.get("@context");
+        final java.lang.Object context = result.get("@context");
         if (context != null && (context instanceof String)) {
             g.context = (String)context;
         }
 
         
-        for (java.util.Map<String, Object> t: (List<java.util.Map<String, Object>>) type) {
+        for (java.util.Map<String, java.lang.Object> t: (List<java.util.Map<String, java.lang.Object>>) type) {
             if (g.context != null) {
                 g.things.add(ThingDeserializer.fromMap(t, g.context));
             } else {

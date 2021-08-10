@@ -21,62 +21,104 @@ package org.schema;
 import com.fasterxml.jackson.databind.annotation.*;
 import com.fasterxml.jackson.annotation.*;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.*;
 
 /**
- * A structured value representing the duration and scope of services that will be provided to a customer free of charge in case of a defect or malfunction of a product.Source: http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass
+ * A structured value representing the duration and scope of services that will be provided to a customer free of charge in case of a defect or malfunction of a product.
  */
 public class WarrantyPromise extends StructuredValue {
   /**
-   * The duration of the warranty promise. Common unitCode values are ANN for year, MON for months, or DAY for days.
-   */
-  @JsonIgnore public QuantitativeValue getDurationOfWarranty() {
-    return (QuantitativeValue) getValue("durationOfWarranty");
-  }
-  /**
-   * The duration of the warranty promise. Common unitCode values are ANN for year, MON for months, or DAY for days.
-   */
-  @JsonIgnore public Collection<QuantitativeValue> getDurationOfWarrantys() {
-    final Object current = myData.get("durationOfWarranty");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<QuantitativeValue>) current;
-    }
-    return Arrays.asList((QuantitativeValue) current);
-  }
-  /**
    * The scope of the warranty promise.
+   * @return warrantyScope property set by first invocation of warrantyScope method or {@code null}.
    */
   @JsonIgnore public WarrantyScope getWarrantyScope() {
     return (WarrantyScope) getValue("warrantyScope");
   }
   /**
    * The scope of the warranty promise.
+   * @return all warrantyScope properties as {@link java.util.Collection} or an empty collection 
+   * if warrantyScope was not set.
    */
-  @JsonIgnore public Collection<WarrantyScope> getWarrantyScopes() {
-    final Object current = myData.get("warrantyScope");
+  @JsonIgnore public java.util.Collection<WarrantyScope> getWarrantyScopes() {
+    final java.lang.Object current = myData.get("warrantyScope");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<WarrantyScope>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<WarrantyScope>) current;
     }
     return Arrays.asList((WarrantyScope) current);
   }
-  protected WarrantyPromise(java.util.Map<String,Object> data) {
+  /**
+   * The duration of the warranty promise. Common unitCode values are ANN for year, MON for months, or DAY for days.
+   * @return durationOfWarranty property set by first invocation of durationOfWarranty method or {@code null}.
+   */
+  @JsonIgnore public QuantitativeValue getDurationOfWarranty() {
+    return (QuantitativeValue) getValue("durationOfWarranty");
+  }
+  /**
+   * The duration of the warranty promise. Common unitCode values are ANN for year, MON for months, or DAY for days.
+   * @return all durationOfWarranty properties as {@link java.util.Collection} or an empty collection 
+   * if durationOfWarranty was not set.
+   */
+  @JsonIgnore public java.util.Collection<QuantitativeValue> getDurationOfWarrantys() {
+    final java.lang.Object current = myData.get("durationOfWarranty");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<QuantitativeValue>) current;
+    }
+    return Arrays.asList((QuantitativeValue) current);
+  }
+  protected WarrantyPromise(java.util.Map<String,java.lang.Object> data) {
     super(data);
+  }
+  /**
+   * @return new {@link Builder} initialized with this instance's data
+   */
+  @NotNull public Builder toBuilder() {
+    return new Builder(new HashMap<>(this.myData));
   }
   
   /**
    * Builder for {@link WarrantyPromise}
    */
   public static class Builder extends StructuredValue.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public WarrantyPromise build() {
       return new WarrantyPromise(myData);
     }
     /**
+     * The scope of the warranty promise.
+     * @param warrantyScope value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder warrantyScope(@NotNull WarrantyScope warrantyScope) {
+      putValue("warrantyScope", warrantyScope);
+      return this;
+    }
+    /**
+     * Remove warrantyScope property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeWarrantyScope() {
+      removeValue("warrantyScope");
+      return this;
+    }
+    /**
+     * Get currently set value for warrantyScope property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getWarrantyScope() {
+      return myData.get("warrantyScope");
+    }
+    /**
      * The duration of the warranty promise. Common unitCode values are ANN for year, MON for months, or DAY for days.
+     * @param quantitativeValue value to set
+     * @return this builder instance
      */
     @NotNull public Builder durationOfWarranty(@NotNull QuantitativeValue quantitativeValue) {
       putValue("durationOfWarranty", quantitativeValue);
@@ -84,83 +126,90 @@ public class WarrantyPromise extends StructuredValue {
     }
     /**
      * The duration of the warranty promise. Common unitCode values are ANN for year, MON for months, or DAY for days.
+     * @param quantitativeValue value to set
+     * @return this builder instance
      */
     @NotNull public Builder durationOfWarranty(@NotNull QuantitativeValue.Builder quantitativeValue) {
       putValue("durationOfWarranty", quantitativeValue.build());
       return this;
     }
     /**
-     * The scope of the warranty promise.
+     * Remove durationOfWarranty property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
      */
-    @NotNull public Builder warrantyScope(@NotNull WarrantyScope warrantyScope) {
-      putValue("warrantyScope", warrantyScope);
+    @NotNull public Builder removeDurationOfWarranty() {
+      removeValue("durationOfWarranty");
       return this;
     }
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * Get currently set value for durationOfWarranty property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
      */
-    @NotNull public Builder additionalType(@NotNull String additionalType) {
-      putValue("additionalType", additionalType);
+    @Nullable public java.lang.Object getDurationOfWarranty() {
+      return myData.get("durationOfWarranty");
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     * 
+     * @param identifier value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
       return this;
     }
     /**
-     * An alias for the item.
+     * Remove identifier property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
      */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
+    @NotNull public Builder removeIdentifier() {
+      removeValue("identifier");
       return this;
     }
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * Get currently set value for identifier property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
-      putValue("disambiguatingDescription", disambiguatingDescription);
+    @Nullable public java.lang.Object getIdentifier() {
+      return myData.get("identifier");
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * @param image value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * Remove image property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
+    @NotNull public Builder removeImage() {
+      removeValue("image");
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * Get currently set value for image property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
-      return this;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
-      return this;
-    }
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     */
-    @NotNull public Builder sameAs(@NotNull String sameAs) {
-      putValue("sameAs", sameAs);
-      return this;
-    }
-    /**
-     * URL of the item.
-     */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
-      return this;
+    @Nullable public java.lang.Object getImage() {
+      return myData.get("image");
     }
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     * @param action value to set
+     * @return this builder instance
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
       putValue("potentialAction", action);
@@ -168,13 +217,224 @@ public class WarrantyPromise extends StructuredValue {
     }
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     * @param action value to set
+     * @return this builder instance
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
       return this;
     }
     /**
+     * Remove potentialAction property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removePotentialAction() {
+      removeValue("potentialAction");
+      return this;
+    }
+    /**
+     * Get currently set value for potentialAction property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getPotentialAction() {
+      return myData.get("potentialAction");
+    }
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * @param disambiguatingDescription value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
+      putValue("disambiguatingDescription", disambiguatingDescription);
+      return this;
+    }
+    /**
+     * Remove disambiguatingDescription property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeDisambiguatingDescription() {
+      removeValue("disambiguatingDescription");
+      return this;
+    }
+    /**
+     * Get currently set value for disambiguatingDescription property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getDisambiguatingDescription() {
+      return myData.get("disambiguatingDescription");
+    }
+    /**
+     * A description of the item.
+     * @param description value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder description(@NotNull String description) {
+      putValue("description", description);
+      return this;
+    }
+    /**
+     * Remove description property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeDescription() {
+      removeValue("description");
+      return this;
+    }
+    /**
+     * Get currently set value for description property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getDescription() {
+      return myData.get("description");
+    }
+    /**
+     * URL of the item.
+     * @param url value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
+      return this;
+    }
+    /**
+     * Remove url property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeUrl() {
+      removeValue("url");
+      return this;
+    }
+    /**
+     * Get currently set value for url property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getUrl() {
+      return myData.get("url");
+    }
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * @param additionalType value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder additionalType(@NotNull String additionalType) {
+      putValue("additionalType", additionalType);
+      return this;
+    }
+    /**
+     * Remove additionalType property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeAdditionalType() {
+      removeValue("additionalType");
+      return this;
+    }
+    /**
+     * Get currently set value for additionalType property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getAdditionalType() {
+      return myData.get("additionalType");
+    }
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     * @param sameAs value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder sameAs(@NotNull String sameAs) {
+      putValue("sameAs", sameAs);
+      return this;
+    }
+    /**
+     * Remove sameAs property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeSameAs() {
+      removeValue("sameAs");
+      return this;
+    }
+    /**
+     * Get currently set value for sameAs property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getSameAs() {
+      return myData.get("sameAs");
+    }
+    /**
+     * An alias for the item.
+     * @param alternateName value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * Remove alternateName property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeAlternateName() {
+      removeValue("alternateName");
+      return this;
+    }
+    /**
+     * Get currently set value for alternateName property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getAlternateName() {
+      return myData.get("alternateName");
+    }
+    /**
+     * The name of the item.
+     * @param name value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
+      return this;
+    }
+    /**
+     * Remove name property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeName() {
+      removeValue("name");
+      return this;
+    }
+    /**
+     * Get currently set value for name property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getName() {
+      return myData.get("name");
+    }
+    /**
      * A CreativeWork or Event about this Thing.
+     * @param creativeWork value to set
+     * @return this builder instance
      */
     @NotNull public Builder subjectOf(@NotNull CreativeWork creativeWork) {
       putValue("subjectOf", creativeWork);
@@ -182,6 +442,8 @@ public class WarrantyPromise extends StructuredValue {
     }
     /**
      * A CreativeWork or Event about this Thing.
+     * @param creativeWork value to set
+     * @return this builder instance
      */
     @NotNull public Builder subjectOf(@NotNull CreativeWork.Builder creativeWork) {
       putValue("subjectOf", creativeWork.build());
@@ -189,6 +451,8 @@ public class WarrantyPromise extends StructuredValue {
     }
     /**
      * A CreativeWork or Event about this Thing.
+     * @param event value to set
+     * @return this builder instance
      */
     @NotNull public Builder subjectOf(@NotNull Event event) {
       putValue("subjectOf", event);
@@ -196,23 +460,111 @@ public class WarrantyPromise extends StructuredValue {
     }
     /**
      * A CreativeWork or Event about this Thing.
+     * @param event value to set
+     * @return this builder instance
      */
     @NotNull public Builder subjectOf(@NotNull Event.Builder event) {
       putValue("subjectOf", event.build());
       return this;
     }
+    /**
+     * Remove subjectOf property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeSubjectOf() {
+      removeValue("subjectOf");
+      return this;
+    }
+    /**
+     * Get currently set value for subjectOf property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getSubjectOf() {
+      return myData.get("subjectOf");
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * @param creativeWork value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * @param creativeWork value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * @param mainEntityOfPage value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
+    /**
+     * Remove mainEntityOfPage property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeMainEntityOfPage() {
+      removeValue("mainEntityOfPage");
+      return this;
+    }
+    /**
+     * Get currently set value for mainEntityOfPage property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getMainEntityOfPage() {
+      return myData.get("mainEntityOfPage");
+    }
+    /**
+     * null
+     * @param id value to set
+     * @return this builder instance
+     */
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
     }
+    /**
+     * Remove id property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeId() {
+      removeValue("id");
+      return this;
+    }
+    /**
+     * Get currently set value for id property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getId() {
+      return myData.get("id");
+    }
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
-      if ("durationOfWarranty".equals(key) && value instanceof QuantitativeValue) { durationOfWarranty((QuantitativeValue)value); return; }
-      if ("durationOfWarrantys".equals(key) && value instanceof QuantitativeValue) { durationOfWarranty((QuantitativeValue)value); return; }
-      if ("warrantyScope".equals(key) && value instanceof WarrantyScope) { warrantyScope((WarrantyScope)value); return; }
-      if ("warrantyScopes".equals(key) && value instanceof WarrantyScope) { warrantyScope((WarrantyScope)value); return; }
+    @Override protected void fromMap(String key, java.lang.Object value) {
+      if ("warrantyScope".equals(key) && value instanceof WarrantyScope) { this.warrantyScope((WarrantyScope)value); return; }
+      if ("warrantyScopes".equals(key) && value instanceof WarrantyScope) { this.warrantyScope((WarrantyScope)value); return; }
+      if ("durationOfWarranty".equals(key) && value instanceof QuantitativeValue) { this.durationOfWarranty((QuantitativeValue)value); return; }
+      if ("durationOfWarrantys".equals(key) && value instanceof QuantitativeValue) { this.durationOfWarranty((QuantitativeValue)value); return; }
       super.fromMap(key, value);
     }
   }

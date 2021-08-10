@@ -16,7 +16,7 @@
 
 package org.schema.generator
 
-import org.semarglproject.rdf.rdfa.RdfaParser
+import org.semarglproject.rdf.RdfXmlParser
 import org.semarglproject.source.StreamProcessor
 import java.io.File
 import java.io.FileInputStream
@@ -46,14 +46,28 @@ private val BANNER = """/*
 private const val NAMESPACE = "org.schema"
 private const val NAMESPACE_KOTLIN = "$NAMESPACE.kotlin"
 
-fun main(args: Array<String>) {
+fun main() {
     val sink = GeneratorSink()
-    val processor = StreamProcessor(RdfaParser.connect(sink))
-
-    File("resources").listFiles { f -> f.extension == "rdfa" }?.forEach {
-        println("Processing ${it.name}")
-        processor.process(FileInputStream(it), "http://schema.org/")
+    val processor = StreamProcessor(
+        RdfXmlParser.connect(sink)
+        //RdfaParser.connect(sink)
+    )
+    var prevUndefinedClasses: Set<String>? = null
+    while (true) {
+        File("resources").listFiles { f -> f.extension == "rdf" }?.forEach {
+            println("Processing ${it.name}")
+            processor.process(FileInputStream(it), "http://schema.org/")
+        }
+        if (prevUndefinedClasses != null) {
+            if (sink.undefinedClasses.equals(prevUndefinedClasses)) {
+                println("Unable to reduce number of undefined classes, giving up: ")
+                println(sink.undefinedClasses.joinToString())
+                break
+            }
+        }
+        prevUndefinedClasses = sink.undefinedClasses
     }
+
     sink.postProcess()
 
     sources("../src/generated/java") {

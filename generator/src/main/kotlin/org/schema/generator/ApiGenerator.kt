@@ -1,4 +1,6 @@
 package org.schema.generator
+import org.schema.generator.helper.sanitizeIdentifier
+import org.apache.commons.text.StringEscapeUtils
 
 /**
  * @author Victor Kropp
@@ -7,91 +9,92 @@ package org.schema.generator
 class ApiGenerator(private val sink: GeneratorSink, private val banner: String? = null) {
     fun generate(p: Package) {
         p.writeClass("SchemaOrg") {
-            appendln(banner)
-            appendln()
-            appendln("package ${p.name};")
-            appendln()
-            appendln("import java.util.HashMap;")
-            appendln("import com.fasterxml.jackson.core.JsonProcessingException;")
-            appendln("import com.fasterxml.jackson.databind.JsonNode;")
-            appendln("import com.fasterxml.jackson.databind.ObjectMapper;")
-            appendln("import org.jetbrains.annotations.NotNull;")
-            appendln()
-            appendln("public class SchemaOrg {")
+            appendLine(banner)
+            appendLine()
+            appendLine("package ${p.name};")
+            appendLine()
+            appendLine("import java.util.HashMap;")
+            appendLine("import com.fasterxml.jackson.core.JsonProcessingException;")
+            appendLine("import com.fasterxml.jackson.databind.JsonNode;")
+            appendLine("import com.fasterxml.jackson.databind.ObjectMapper;")
+            appendLine("import org.jetbrains.annotations.NotNull;")
+            appendLine("import org.jetbrains.annotations.Nullable;")
+            appendLine()
+            appendLine("public class SchemaOrg {")
 
             for (type in sink.types.values) {
                 if (type.name.isNullOrEmpty() || type.isField || type.isInterface || sink.shouldSkip(type.name!!) || (type.parentType == null && type.name != "Thing" && !type.isInterface))
                     continue
-                if (type.isEnum || type.name == "http://schema.org/Enumeration" || (type.parentType?.let{ sink.types[it] }?.isEnum == true)) continue
+                if (type.isEnum || type.name == "http://schema.org/Enumeration" || (type.parentType?.let { sink.types[it] }?.isEnum == true)) continue
 
-                val typeName = type.name!!.capitalize()
+                val typeName = sanitizeIdentifier(type.name!!.capitalize())
 
                 type.comment?.let {
-                    appendln("  /**")
-                    appendln("   * $it")
-                    appendln("   */")
+                    appendLine("  /**")
+                    appendLine("   * ${StringEscapeUtils.escapeHtml4(it)}")
+                    appendLine("   */")
                 }
-                appendln("  @NotNull public static $typeName.Builder ${typeName.decapitalize()}() { return new $typeName.Builder(new HashMap<String,Object>()); }")
+                appendLine("  @NotNull public static $typeName.Builder ${typeName.decapitalize()}() { return new $typeName.Builder(new HashMap<String,java.lang.Object>()); }")
             }
-            appendln()
-            appendln("  public static ThingBuilder getBuilder(@NotNull String type) {")
+            appendLine()
+            appendLine("  public static ThingBuilder getBuilder(@NotNull String type) {")
             for (type in sink.types.values) {
                 if (type.name.isNullOrEmpty() || type.isField || type.isInterface || type.isEnum || sink.shouldSkip(type.name!!) || (type.parentType == null && type.name != "Thing" && !type.isInterface && !type.isEnum))
                     continue
-                if (type.isEnum || type.name == "http://schema.org/Enumeration" || (type.parentType?.let{ sink.types[it] }?.isEnum == true)) continue
+                if (type.isEnum || type.name == "http://schema.org/Enumeration" || (type.parentType?.let { sink.types[it] }?.isEnum == true)) continue
 
-                val typeName = type.name!!.capitalize()
+                val typeName = sanitizeIdentifier(type.name!!.capitalize())
 
-                appendln("    if (\"$typeName\".equals(type)) { return new $typeName.Builder(new HashMap<String,Object>()); }")
+                appendLine("    if (\"$typeName\".equals(type)) { return new $typeName.Builder(new HashMap<String,java.lang.Object>()); }")
             }
-            appendln("    return null;")
-            appendln("  }")
-            appendln()
-            appendln("  private static final ObjectMapper objectMapper = new ObjectMapper();")
-            appendln("  static {")
-            appendln("    objectMapper.registerModule(new JsonLdModule());")
-            appendln("  }")
-            appendln("  @NotNull public static String writeJson(@NotNull Thing thing) throws JsonProcessingException {")
-            appendln("    return objectMapper.writeValueAsString(thing);")
-            appendln("  }")
-            appendln("  public static Thing readJson(@NotNull String json) throws java.io.IOException {")
-            appendln("    return objectMapper.readValue(json, Thing.class);")
-            appendln("  }")
-            appendln("  public static Thing readJson(@NotNull JsonNode node) {")
-            appendln("    return ThingDeserializer.fromMap(objectMapper.convertValue(node, java.util.Map.class));")
-            appendln("  }")
-            appendln("  public static Thing fromMap(@NotNull java.util.Map<String, Object> map) {")
-            appendln("    return ThingDeserializer.fromMap(map);")
-            appendln("  }")
-            appendln("  public static java.util.Map<String, Object> toMap(@NotNull Thing thing) {")
-            appendln("    final HashMap<String, Object> result = new HashMap<String, Object>();")
-            appendln("    if (thing.getId() != null) {")
-            appendln("      result.put(\"@id\", thing.getId());")
-            appendln("    }")
-            appendln("    result.put(\"@type\", thing.getJsonLdType());")
-            appendln("    result.put(\"@context\", thing.getJsonLdContext());")
-            appendln("    for (java.util.Map.Entry<String, Object> entry : thing.myData.entrySet()) {")
-            appendln("    if (entry.getValue() instanceof Thing) {")
-            appendln("        result.put(entry.getKey(), toMap((Thing) entry.getValue()));")
-            appendln("      } else if (entry.getValue() instanceof java.util.List) {")
-            appendln("        final java.util.ArrayList<Object> list = new java.util.ArrayList<Object>();")
-            appendln("        for (Object o : ((java.util.List) entry.getValue())) {")
-            appendln("          if (o instanceof Thing) {")
-            appendln("            list.add(toMap((Thing) o));")
-            appendln("          } else {")
-            appendln("            list.add(o);")
-            appendln("          }")
-            appendln("        }")
-            appendln("        result.put(entry.getKey(), list);")
-            appendln("      } else if (entry.getValue() instanceof java.util.Date) {")
-            appendln("        result.put(entry.getKey(), ThingDeserializer.dateFormat.format(entry.getValue()));")
-            appendln("      } else {")
-            appendln("        result.put(entry.getKey(), entry.getValue());")
-            appendln("      }")
-            appendln("    }")
-            appendln("    return result;")
-            appendln("  }")
-            appendln("}")
+            appendLine("    return null;")
+            appendLine("  }")
+            appendLine()
+            appendLine("  private static final ObjectMapper objectMapper = new ObjectMapper();")
+            appendLine("  static {")
+            appendLine("    objectMapper.registerModule(new JsonLdModule());")
+            appendLine("  }")
+            appendLine("  @NotNull public static String writeJson(@NotNull Thing thing) throws JsonProcessingException {")
+            appendLine("    return objectMapper.writeValueAsString(thing);")
+            appendLine("  }")
+            appendLine("  public static Thing readJson(@NotNull String json) throws java.io.IOException {")
+            appendLine("    return objectMapper.readValue(json, Thing.class);")
+            appendLine("  }")
+            appendLine("  public static Thing readJson(@NotNull JsonNode node) {")
+            appendLine("    return ThingDeserializer.fromMap(objectMapper.convertValue(node, java.util.Map.class));")
+            appendLine("  }")
+            appendLine("  public static Thing fromMap(@NotNull java.util.Map<String, java.lang.Object> map) {")
+            appendLine("    return ThingDeserializer.fromMap(map);")
+            appendLine("  }")
+            appendLine("  public static java.util.Map<String, java.lang.Object> toMap(@NotNull Thing thing) {")
+            appendLine("    final HashMap<String, java.lang.Object> result = new HashMap<String, java.lang.Object>();")
+            appendLine("    if (thing.getId() != null) {")
+            appendLine("      result.put(\"@id\", thing.getId());")
+            appendLine("    }")
+            appendLine("    result.put(\"@type\", thing.getJsonLdType());")
+            appendLine("    result.put(\"@context\", thing.getJsonLdContext());")
+            appendLine("    for (java.util.Map.Entry<String, java.lang.Object> entry : thing.myData.entrySet()) {")
+            appendLine("    if (entry.getValue() instanceof Thing) {")
+            appendLine("        result.put(entry.getKey(), toMap((Thing) entry.getValue()));")
+            appendLine("      } else if (entry.getValue() instanceof java.util.List) {")
+            appendLine("        final java.util.ArrayList<java.lang.Object> list = new java.util.ArrayList<java.lang.Object>();")
+            appendLine("        for (java.lang.Object o : ((java.util.List) entry.getValue())) {")
+            appendLine("          if (o instanceof Thing) {")
+            appendLine("            list.add(toMap((Thing) o));")
+            appendLine("          } else {")
+            appendLine("            list.add(o);")
+            appendLine("          }")
+            appendLine("        }")
+            appendLine("        result.put(entry.getKey(), list);")
+            appendLine("      } else if (entry.getValue() instanceof java.util.Date) {")
+            appendLine("        result.put(entry.getKey(), ThingDeserializer.dateFormat.format(entry.getValue()));")
+            appendLine("      } else {")
+            appendLine("        result.put(entry.getKey(), entry.getValue());")
+            appendLine("      }")
+            appendLine("    }")
+            appendLine("    return result;")
+            appendLine("  }")
+            appendLine("}")
         }
 
         p.writeClass("ThingBuilder", """$banner
@@ -99,7 +102,7 @@ class ApiGenerator(private val sink: GeneratorSink, private val banner: String? 
 package ${p.name};
 
 public interface ThingBuilder<T> {
-  void fromMap(java.util.Map<String,Object> map);
+  void fromMap(java.util.Map<String,java.lang.Object> map);
   T build();
 }""")
         p.writeClass("JsonLdModule", """$banner
@@ -153,17 +156,17 @@ class ThingDeserializer extends JsonDeserializer<Thing> {
 
     @Override
     public Thing deserialize(JsonParser p, DeserializationContext ctx) throws IOException {
-        return fromMap(p.<HashMap<String, Object>>readValueAs(new TypeReference<HashMap<String, Object>>() {
+        return fromMap(p.<HashMap<String, java.lang.Object>>readValueAs(new TypeReference<HashMap<String, java.lang.Object>>() {
         }));
     }
 
     @Nullable
-    static Thing fromMap(Map<String, Object> result, String context) {
+    static Thing fromMap(Map<String, java.lang.Object> result, String context) {
         if (!context.matches("https?://schema.org.*")) {
             return null;
         }
 
-        final Object type = result.get("@type");
+        final java.lang.Object type = result.get("@type");
         if (type == null || !(type instanceof String)) {
             return null;
         }
@@ -173,7 +176,7 @@ class ThingDeserializer extends JsonDeserializer<Thing> {
             return null;
         }
 
-        for (Map.Entry<String, Object> entry : result.entrySet()) {
+        for (Map.Entry<String, java.lang.Object> entry : result.entrySet()) {
             if (entry.getValue() instanceof String) {
                 try {
                     final Date date = dateFormat.parse((String) entry.getValue());
@@ -189,8 +192,8 @@ class ThingDeserializer extends JsonDeserializer<Thing> {
     }
 
     @Nullable
-    static Thing fromMap(Map<String, Object> result) {
-        final Object context = result.get("@context");
+    static Thing fromMap(Map<String, java.lang.Object> result) {
+        final java.lang.Object context = result.get("@context");
         if (context == null) return null;
         
         return fromMap(result, (String)context);

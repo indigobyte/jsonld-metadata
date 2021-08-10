@@ -21,6 +21,7 @@ package org.schema;
 import com.fasterxml.jackson.databind.annotation.*;
 import com.fasterxml.jackson.annotation.*;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.*;
 
 /**
@@ -29,98 +30,119 @@ import java.util.*;
 public class DigitalDocumentPermission extends Intangible {
   /**
    * The person, organization, contact point, or audience that has been granted this permission.
+   * @return grantee property set by first invocation of grantee method or {@code null}.
    */
   @JsonIgnore public Audience getGranteeAudience() {
     return (Audience) getValue("grantee");
   }
   /**
    * The person, organization, contact point, or audience that has been granted this permission.
+   * @return all grantee properties as {@link java.util.Collection} or an empty collection 
+   * if grantee was not set.
    */
-  @JsonIgnore public Collection<Audience> getGranteeAudiences() {
-    final Object current = myData.get("grantee");
+  @JsonIgnore public java.util.Collection<Audience> getGranteeAudiences() {
+    final java.lang.Object current = myData.get("grantee");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Audience>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Audience>) current;
     }
     return Arrays.asList((Audience) current);
   }
   /**
    * The person, organization, contact point, or audience that has been granted this permission.
+   * @return grantee property set by first invocation of grantee method or {@code null}.
    */
   @JsonIgnore public ContactPoint getGranteeContactPoint() {
     return (ContactPoint) getValue("grantee");
   }
   /**
    * The person, organization, contact point, or audience that has been granted this permission.
+   * @return all grantee properties as {@link java.util.Collection} or an empty collection 
+   * if grantee was not set.
    */
-  @JsonIgnore public Collection<ContactPoint> getGranteeContactPoints() {
-    final Object current = myData.get("grantee");
+  @JsonIgnore public java.util.Collection<ContactPoint> getGranteeContactPoints() {
+    final java.lang.Object current = myData.get("grantee");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<ContactPoint>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<ContactPoint>) current;
     }
     return Arrays.asList((ContactPoint) current);
   }
   /**
    * The person, organization, contact point, or audience that has been granted this permission.
+   * @return grantee property set by first invocation of grantee method or {@code null}.
    */
   @JsonIgnore public Organization getGranteeOrganization() {
     return (Organization) getValue("grantee");
   }
   /**
    * The person, organization, contact point, or audience that has been granted this permission.
+   * @return all grantee properties as {@link java.util.Collection} or an empty collection 
+   * if grantee was not set.
    */
-  @JsonIgnore public Collection<Organization> getGranteeOrganizations() {
-    final Object current = myData.get("grantee");
+  @JsonIgnore public java.util.Collection<Organization> getGranteeOrganizations() {
+    final java.lang.Object current = myData.get("grantee");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Organization>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Organization>) current;
     }
     return Arrays.asList((Organization) current);
   }
   /**
    * The person, organization, contact point, or audience that has been granted this permission.
+   * @return grantee property set by first invocation of grantee method or {@code null}.
    */
   @JsonIgnore public Person getGranteePerson() {
     return (Person) getValue("grantee");
   }
   /**
    * The person, organization, contact point, or audience that has been granted this permission.
+   * @return all grantee properties as {@link java.util.Collection} or an empty collection 
+   * if grantee was not set.
    */
-  @JsonIgnore public Collection<Person> getGranteePersons() {
-    final Object current = myData.get("grantee");
+  @JsonIgnore public java.util.Collection<Person> getGranteePersons() {
+    final java.lang.Object current = myData.get("grantee");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Person>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Person>) current;
     }
     return Arrays.asList((Person) current);
   }
   /**
    * The type of permission granted the person, organization, or audience.
+   * @return permissionType property set by first invocation of permissionType method or {@code null}.
    */
   @JsonIgnore public DigitalDocumentPermissionType getPermissionType() {
     return (DigitalDocumentPermissionType) getValue("permissionType");
   }
   /**
    * The type of permission granted the person, organization, or audience.
+   * @return all permissionType properties as {@link java.util.Collection} or an empty collection 
+   * if permissionType was not set.
    */
-  @JsonIgnore public Collection<DigitalDocumentPermissionType> getPermissionTypes() {
-    final Object current = myData.get("permissionType");
+  @JsonIgnore public java.util.Collection<DigitalDocumentPermissionType> getPermissionTypes() {
+    final java.lang.Object current = myData.get("permissionType");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<DigitalDocumentPermissionType>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<DigitalDocumentPermissionType>) current;
     }
     return Arrays.asList((DigitalDocumentPermissionType) current);
   }
-  protected DigitalDocumentPermission(java.util.Map<String,Object> data) {
+  protected DigitalDocumentPermission(java.util.Map<String,java.lang.Object> data) {
     super(data);
+  }
+  /**
+   * @return new {@link Builder} initialized with this instance's data
+   */
+  @NotNull public Builder toBuilder() {
+    return new Builder(new HashMap<>(this.myData));
   }
   
   /**
    * Builder for {@link DigitalDocumentPermission}
    */
   public static class Builder extends Intangible.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public DigitalDocumentPermission build() {
@@ -128,6 +150,8 @@ public class DigitalDocumentPermission extends Intangible {
     }
     /**
      * The person, organization, contact point, or audience that has been granted this permission.
+     * @param audience value to set
+     * @return this builder instance
      */
     @NotNull public Builder grantee(@NotNull Audience audience) {
       putValue("grantee", audience);
@@ -135,6 +159,8 @@ public class DigitalDocumentPermission extends Intangible {
     }
     /**
      * The person, organization, contact point, or audience that has been granted this permission.
+     * @param audience value to set
+     * @return this builder instance
      */
     @NotNull public Builder grantee(@NotNull Audience.Builder audience) {
       putValue("grantee", audience.build());
@@ -142,6 +168,8 @@ public class DigitalDocumentPermission extends Intangible {
     }
     /**
      * The person, organization, contact point, or audience that has been granted this permission.
+     * @param contactPoint value to set
+     * @return this builder instance
      */
     @NotNull public Builder grantee(@NotNull ContactPoint contactPoint) {
       putValue("grantee", contactPoint);
@@ -149,6 +177,8 @@ public class DigitalDocumentPermission extends Intangible {
     }
     /**
      * The person, organization, contact point, or audience that has been granted this permission.
+     * @param contactPoint value to set
+     * @return this builder instance
      */
     @NotNull public Builder grantee(@NotNull ContactPoint.Builder contactPoint) {
       putValue("grantee", contactPoint.build());
@@ -156,6 +186,8 @@ public class DigitalDocumentPermission extends Intangible {
     }
     /**
      * The person, organization, contact point, or audience that has been granted this permission.
+     * @param organization value to set
+     * @return this builder instance
      */
     @NotNull public Builder grantee(@NotNull Organization organization) {
       putValue("grantee", organization);
@@ -163,6 +195,8 @@ public class DigitalDocumentPermission extends Intangible {
     }
     /**
      * The person, organization, contact point, or audience that has been granted this permission.
+     * @param organization value to set
+     * @return this builder instance
      */
     @NotNull public Builder grantee(@NotNull Organization.Builder organization) {
       putValue("grantee", organization.build());
@@ -170,6 +204,8 @@ public class DigitalDocumentPermission extends Intangible {
     }
     /**
      * The person, organization, contact point, or audience that has been granted this permission.
+     * @param person value to set
+     * @return this builder instance
      */
     @NotNull public Builder grantee(@NotNull Person person) {
       putValue("grantee", person);
@@ -177,83 +213,117 @@ public class DigitalDocumentPermission extends Intangible {
     }
     /**
      * The person, organization, contact point, or audience that has been granted this permission.
+     * @param person value to set
+     * @return this builder instance
      */
     @NotNull public Builder grantee(@NotNull Person.Builder person) {
       putValue("grantee", person.build());
       return this;
     }
     /**
+     * Remove grantee property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeGrantee() {
+      removeValue("grantee");
+      return this;
+    }
+    /**
+     * Get currently set value for grantee property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getGrantee() {
+      return myData.get("grantee");
+    }
+    /**
      * The type of permission granted the person, organization, or audience.
+     * @param digitalDocumentPermissionType value to set
+     * @return this builder instance
      */
     @NotNull public Builder permissionType(@NotNull DigitalDocumentPermissionType digitalDocumentPermissionType) {
       putValue("permissionType", digitalDocumentPermissionType);
       return this;
     }
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * Remove permissionType property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
      */
-    @NotNull public Builder additionalType(@NotNull String additionalType) {
-      putValue("additionalType", additionalType);
+    @NotNull public Builder removePermissionType() {
+      removeValue("permissionType");
       return this;
     }
     /**
-     * An alias for the item.
+     * Get currently set value for permissionType property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
      */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
+    @Nullable public java.lang.Object getPermissionType() {
+      return myData.get("permissionType");
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     * 
+     * @param identifier value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
       return this;
     }
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * Remove identifier property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
-      putValue("disambiguatingDescription", disambiguatingDescription);
+    @NotNull public Builder removeIdentifier() {
+      removeValue("identifier");
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * Get currently set value for identifier property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
+    @Nullable public java.lang.Object getIdentifier() {
+      return myData.get("identifier");
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * @param image value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * Remove image property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
+    @NotNull public Builder removeImage() {
+      removeValue("image");
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * Get currently set value for image property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
-      return this;
-    }
-    /**
-     * The name of the item.
-     */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
-      return this;
-    }
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     */
-    @NotNull public Builder sameAs(@NotNull String sameAs) {
-      putValue("sameAs", sameAs);
-      return this;
-    }
-    /**
-     * URL of the item.
-     */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
-      return this;
+    @Nullable public java.lang.Object getImage() {
+      return myData.get("image");
     }
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     * @param action value to set
+     * @return this builder instance
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
       putValue("potentialAction", action);
@@ -261,13 +331,224 @@ public class DigitalDocumentPermission extends Intangible {
     }
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     * @param action value to set
+     * @return this builder instance
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
       return this;
     }
     /**
+     * Remove potentialAction property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removePotentialAction() {
+      removeValue("potentialAction");
+      return this;
+    }
+    /**
+     * Get currently set value for potentialAction property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getPotentialAction() {
+      return myData.get("potentialAction");
+    }
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * @param disambiguatingDescription value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
+      putValue("disambiguatingDescription", disambiguatingDescription);
+      return this;
+    }
+    /**
+     * Remove disambiguatingDescription property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeDisambiguatingDescription() {
+      removeValue("disambiguatingDescription");
+      return this;
+    }
+    /**
+     * Get currently set value for disambiguatingDescription property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getDisambiguatingDescription() {
+      return myData.get("disambiguatingDescription");
+    }
+    /**
+     * A description of the item.
+     * @param description value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder description(@NotNull String description) {
+      putValue("description", description);
+      return this;
+    }
+    /**
+     * Remove description property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeDescription() {
+      removeValue("description");
+      return this;
+    }
+    /**
+     * Get currently set value for description property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getDescription() {
+      return myData.get("description");
+    }
+    /**
+     * URL of the item.
+     * @param url value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
+      return this;
+    }
+    /**
+     * Remove url property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeUrl() {
+      removeValue("url");
+      return this;
+    }
+    /**
+     * Get currently set value for url property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getUrl() {
+      return myData.get("url");
+    }
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * @param additionalType value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder additionalType(@NotNull String additionalType) {
+      putValue("additionalType", additionalType);
+      return this;
+    }
+    /**
+     * Remove additionalType property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeAdditionalType() {
+      removeValue("additionalType");
+      return this;
+    }
+    /**
+     * Get currently set value for additionalType property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getAdditionalType() {
+      return myData.get("additionalType");
+    }
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     * @param sameAs value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder sameAs(@NotNull String sameAs) {
+      putValue("sameAs", sameAs);
+      return this;
+    }
+    /**
+     * Remove sameAs property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeSameAs() {
+      removeValue("sameAs");
+      return this;
+    }
+    /**
+     * Get currently set value for sameAs property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getSameAs() {
+      return myData.get("sameAs");
+    }
+    /**
+     * An alias for the item.
+     * @param alternateName value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * Remove alternateName property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeAlternateName() {
+      removeValue("alternateName");
+      return this;
+    }
+    /**
+     * Get currently set value for alternateName property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getAlternateName() {
+      return myData.get("alternateName");
+    }
+    /**
+     * The name of the item.
+     * @param name value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
+      return this;
+    }
+    /**
+     * Remove name property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeName() {
+      removeValue("name");
+      return this;
+    }
+    /**
+     * Get currently set value for name property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getName() {
+      return myData.get("name");
+    }
+    /**
      * A CreativeWork or Event about this Thing.
+     * @param creativeWork value to set
+     * @return this builder instance
      */
     @NotNull public Builder subjectOf(@NotNull CreativeWork creativeWork) {
       putValue("subjectOf", creativeWork);
@@ -275,6 +556,8 @@ public class DigitalDocumentPermission extends Intangible {
     }
     /**
      * A CreativeWork or Event about this Thing.
+     * @param creativeWork value to set
+     * @return this builder instance
      */
     @NotNull public Builder subjectOf(@NotNull CreativeWork.Builder creativeWork) {
       putValue("subjectOf", creativeWork.build());
@@ -282,6 +565,8 @@ public class DigitalDocumentPermission extends Intangible {
     }
     /**
      * A CreativeWork or Event about this Thing.
+     * @param event value to set
+     * @return this builder instance
      */
     @NotNull public Builder subjectOf(@NotNull Event event) {
       putValue("subjectOf", event);
@@ -289,29 +574,117 @@ public class DigitalDocumentPermission extends Intangible {
     }
     /**
      * A CreativeWork or Event about this Thing.
+     * @param event value to set
+     * @return this builder instance
      */
     @NotNull public Builder subjectOf(@NotNull Event.Builder event) {
       putValue("subjectOf", event.build());
       return this;
     }
+    /**
+     * Remove subjectOf property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeSubjectOf() {
+      removeValue("subjectOf");
+      return this;
+    }
+    /**
+     * Get currently set value for subjectOf property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getSubjectOf() {
+      return myData.get("subjectOf");
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * @param creativeWork value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * @param creativeWork value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * @param mainEntityOfPage value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
+    /**
+     * Remove mainEntityOfPage property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeMainEntityOfPage() {
+      removeValue("mainEntityOfPage");
+      return this;
+    }
+    /**
+     * Get currently set value for mainEntityOfPage property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getMainEntityOfPage() {
+      return myData.get("mainEntityOfPage");
+    }
+    /**
+     * null
+     * @param id value to set
+     * @return this builder instance
+     */
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
     }
+    /**
+     * Remove id property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeId() {
+      removeValue("id");
+      return this;
+    }
+    /**
+     * Get currently set value for id property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getId() {
+      return myData.get("id");
+    }
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
-      if ("grantee".equals(key) && value instanceof Audience) { grantee((Audience)value); return; }
-      if ("grantees".equals(key) && value instanceof Audience) { grantee((Audience)value); return; }
-      if ("grantee".equals(key) && value instanceof ContactPoint) { grantee((ContactPoint)value); return; }
-      if ("grantees".equals(key) && value instanceof ContactPoint) { grantee((ContactPoint)value); return; }
-      if ("grantee".equals(key) && value instanceof Organization) { grantee((Organization)value); return; }
-      if ("grantees".equals(key) && value instanceof Organization) { grantee((Organization)value); return; }
-      if ("grantee".equals(key) && value instanceof Person) { grantee((Person)value); return; }
-      if ("grantees".equals(key) && value instanceof Person) { grantee((Person)value); return; }
-      if ("permissionType".equals(key) && value instanceof DigitalDocumentPermissionType) { permissionType((DigitalDocumentPermissionType)value); return; }
-      if ("permissionTypes".equals(key) && value instanceof DigitalDocumentPermissionType) { permissionType((DigitalDocumentPermissionType)value); return; }
+    @Override protected void fromMap(String key, java.lang.Object value) {
+      if ("grantee".equals(key) && value instanceof Audience) { this.grantee((Audience)value); return; }
+      if ("grantees".equals(key) && value instanceof Audience) { this.grantee((Audience)value); return; }
+      if ("grantee".equals(key) && value instanceof ContactPoint) { this.grantee((ContactPoint)value); return; }
+      if ("grantees".equals(key) && value instanceof ContactPoint) { this.grantee((ContactPoint)value); return; }
+      if ("grantee".equals(key) && value instanceof Organization) { this.grantee((Organization)value); return; }
+      if ("grantees".equals(key) && value instanceof Organization) { this.grantee((Organization)value); return; }
+      if ("grantee".equals(key) && value instanceof Person) { this.grantee((Person)value); return; }
+      if ("grantees".equals(key) && value instanceof Person) { this.grantee((Person)value); return; }
+      if ("permissionType".equals(key) && value instanceof DigitalDocumentPermissionType) { this.permissionType((DigitalDocumentPermissionType)value); return; }
+      if ("permissionTypes".equals(key) && value instanceof DigitalDocumentPermissionType) { this.permissionType((DigitalDocumentPermissionType)value); return; }
       super.fromMap(key, value);
     }
   }

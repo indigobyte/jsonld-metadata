@@ -21,10 +21,11 @@ package org.schema;
 import com.fasterxml.jackson.databind.annotation.*;
 import com.fasterxml.jackson.annotation.*;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.*;
 
 /**
- * 
+ * The object that helped the agent perform the action. e.g. John wrote a book with *a pen*.
  */
 public interface Instrument {
 }

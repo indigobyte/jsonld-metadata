@@ -21,10 +21,11 @@ package org.schema;
 import com.fasterxml.jackson.databind.annotation.*;
 import com.fasterxml.jackson.annotation.*;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.*;
 
 /**
- * 
+ * A sub property of participant. The participant who is at the receiving end of the action.
  */
 public interface Recipient {
 }

@@ -21,10 +21,11 @@ package org.schema;
 import com.fasterxml.jackson.databind.annotation.*;
 import com.fasterxml.jackson.annotation.*;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.*;
 
 /**
- * 
+ * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
  */
 public interface Image {
 }

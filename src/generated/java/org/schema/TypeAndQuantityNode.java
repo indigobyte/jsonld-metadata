@@ -21,193 +21,230 @@ package org.schema;
 import com.fasterxml.jackson.databind.annotation.*;
 import com.fasterxml.jackson.annotation.*;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.*;
 
 /**
- * A structured value indicating the quantity, unit of measurement, and business function of goods included in a bundle offer.Source: http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass
+ * A structured value indicating the quantity, unit of measurement, and business function of goods included in a bundle offer.
  */
 public class TypeAndQuantityNode extends StructuredValue {
   /**
    * The quantity of the goods included in the offer.
+   * @return amountOfThisGood property set by first invocation of amountOfThisGood method or {@code null}.
    */
   @JsonIgnore public Integer getAmountOfThisGoodInteger() {
     return (Integer) getValue("amountOfThisGood");
   }
   /**
    * The quantity of the goods included in the offer.
+   * @return all amountOfThisGood properties as {@link java.util.Collection} or an empty collection 
+   * if amountOfThisGood was not set.
    */
-  @JsonIgnore public Collection<Integer> getAmountOfThisGoodIntegers() {
-    final Object current = myData.get("amountOfThisGood");
+  @JsonIgnore public java.util.Collection<Integer> getAmountOfThisGoodIntegers() {
+    final java.lang.Object current = myData.get("amountOfThisGood");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Integer>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Integer>) current;
     }
     return Arrays.asList((Integer) current);
   }
   /**
    * The quantity of the goods included in the offer.
+   * @return amountOfThisGood property set by first invocation of amountOfThisGood method or {@code null}.
    */
   @JsonIgnore public Long getAmountOfThisGoodLong() {
     return (Long) getValue("amountOfThisGood");
   }
   /**
    * The quantity of the goods included in the offer.
+   * @return all amountOfThisGood properties as {@link java.util.Collection} or an empty collection 
+   * if amountOfThisGood was not set.
    */
-  @JsonIgnore public Collection<Long> getAmountOfThisGoodLongs() {
-    final Object current = myData.get("amountOfThisGood");
+  @JsonIgnore public java.util.Collection<Long> getAmountOfThisGoodLongs() {
+    final java.lang.Object current = myData.get("amountOfThisGood");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Long>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Long>) current;
     }
     return Arrays.asList((Long) current);
   }
   /**
    * The quantity of the goods included in the offer.
+   * @return amountOfThisGood property set by first invocation of amountOfThisGood method or {@code null}.
    */
   @JsonIgnore public Float getAmountOfThisGoodFloat() {
     return (Float) getValue("amountOfThisGood");
   }
   /**
    * The quantity of the goods included in the offer.
+   * @return all amountOfThisGood properties as {@link java.util.Collection} or an empty collection 
+   * if amountOfThisGood was not set.
    */
-  @JsonIgnore public Collection<Float> getAmountOfThisGoodFloats() {
-    final Object current = myData.get("amountOfThisGood");
+  @JsonIgnore public java.util.Collection<Float> getAmountOfThisGoodFloats() {
+    final java.lang.Object current = myData.get("amountOfThisGood");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Float>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Float>) current;
     }
     return Arrays.asList((Float) current);
   }
   /**
    * The quantity of the goods included in the offer.
+   * @return amountOfThisGood property set by first invocation of amountOfThisGood method or {@code null}.
    */
   @JsonIgnore public Double getAmountOfThisGoodDouble() {
     return (Double) getValue("amountOfThisGood");
   }
   /**
    * The quantity of the goods included in the offer.
+   * @return all amountOfThisGood properties as {@link java.util.Collection} or an empty collection 
+   * if amountOfThisGood was not set.
    */
-  @JsonIgnore public Collection<Double> getAmountOfThisGoodDoubles() {
-    final Object current = myData.get("amountOfThisGood");
+  @JsonIgnore public java.util.Collection<Double> getAmountOfThisGoodDoubles() {
+    final java.lang.Object current = myData.get("amountOfThisGood");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Double>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Double>) current;
     }
     return Arrays.asList((Double) current);
   }
   /**
    * The quantity of the goods included in the offer.
+   * @return amountOfThisGood property set by first invocation of amountOfThisGood method or {@code null}.
    */
   @JsonIgnore public String getAmountOfThisGoodString() {
     return (String) getValue("amountOfThisGood");
   }
   /**
    * The quantity of the goods included in the offer.
+   * @return all amountOfThisGood properties as {@link java.util.Collection} or an empty collection 
+   * if amountOfThisGood was not set.
    */
-  @JsonIgnore public Collection<String> getAmountOfThisGoodStrings() {
-    final Object current = myData.get("amountOfThisGood");
+  @JsonIgnore public java.util.Collection<String> getAmountOfThisGoodStrings() {
+    final java.lang.Object current = myData.get("amountOfThisGood");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
   /**
-   * The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
-   */
-  @JsonIgnore public BusinessFunction getBusinessFunction() {
-    return (BusinessFunction) getValue("businessFunction");
-  }
-  /**
-   * The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
-   */
-  @JsonIgnore public Collection<BusinessFunction> getBusinessFunctions() {
-    final Object current = myData.get("businessFunction");
-    if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<BusinessFunction>) current;
-    }
-    return Arrays.asList((BusinessFunction) current);
-  }
-  /**
    * The product that this structured value is referring to.
+   * @return typeOfGood property set by first invocation of typeOfGood method or {@code null}.
    */
   @JsonIgnore public Product getTypeOfGoodProduct() {
     return (Product) getValue("typeOfGood");
   }
   /**
    * The product that this structured value is referring to.
+   * @return all typeOfGood properties as {@link java.util.Collection} or an empty collection 
+   * if typeOfGood was not set.
    */
-  @JsonIgnore public Collection<Product> getTypeOfGoodProducts() {
-    final Object current = myData.get("typeOfGood");
+  @JsonIgnore public java.util.Collection<Product> getTypeOfGoodProducts() {
+    final java.lang.Object current = myData.get("typeOfGood");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Product>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Product>) current;
     }
     return Arrays.asList((Product) current);
   }
   /**
    * The product that this structured value is referring to.
+   * @return typeOfGood property set by first invocation of typeOfGood method or {@code null}.
    */
   @JsonIgnore public Service getTypeOfGoodService() {
     return (Service) getValue("typeOfGood");
   }
   /**
    * The product that this structured value is referring to.
+   * @return all typeOfGood properties as {@link java.util.Collection} or an empty collection 
+   * if typeOfGood was not set.
    */
-  @JsonIgnore public Collection<Service> getTypeOfGoodServices() {
-    final Object current = myData.get("typeOfGood");
+  @JsonIgnore public java.util.Collection<Service> getTypeOfGoodServices() {
+    final java.lang.Object current = myData.get("typeOfGood");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<Service>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<Service>) current;
     }
     return Arrays.asList((Service) current);
   }
   /**
+   *                                 A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
+   * &lt;a href='unitCode'&gt;unitCode&lt;/a&gt;.
+   *                                 @return unitText property set by first invocation of unitText method or {@code null}.
+   */
+  @JsonIgnore public String getUnitText() {
+    return (String) getValue("unitText");
+  }
+  /**
+   *                                     A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
+   * &lt;a href='unitCode'&gt;unitCode&lt;/a&gt;.
+   *                                     @return all unitText properties as {@link java.util.Collection} or an empty collection 
+   *                                     if unitText was not set.
+   */
+  @JsonIgnore public java.util.Collection<String> getUnitTexts() {
+    final java.lang.Object current = myData.get("unitText");
+    if (current == null) return Collections.emptyList();
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
+    }
+    return Arrays.asList((String) current);
+  }
+  /**
    * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
+   * @return unitCode property set by first invocation of unitCode method or {@code null}.
    */
   @JsonIgnore public String getUnitCode() {
     return (String) getValue("unitCode");
   }
   /**
    * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
+   * @return all unitCode properties as {@link java.util.Collection} or an empty collection 
+   * if unitCode was not set.
    */
-  @JsonIgnore public Collection<String> getUnitCodes() {
-    final Object current = myData.get("unitCode");
+  @JsonIgnore public java.util.Collection<String> getUnitCodes() {
+    final java.lang.Object current = myData.get("unitCode");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<String>) current;
     }
     return Arrays.asList((String) current);
   }
   /**
-   * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
-   * <a href='unitCode'>unitCode</a>.
+   * The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
+   * @return businessFunction property set by first invocation of businessFunction method or {@code null}.
    */
-  @JsonIgnore public String getUnitText() {
-    return (String) getValue("unitText");
+  @JsonIgnore public BusinessFunction getBusinessFunction() {
+    return (BusinessFunction) getValue("businessFunction");
   }
   /**
-   * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
-   * <a href='unitCode'>unitCode</a>.
+   * The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
+   * @return all businessFunction properties as {@link java.util.Collection} or an empty collection 
+   * if businessFunction was not set.
    */
-  @JsonIgnore public Collection<String> getUnitTexts() {
-    final Object current = myData.get("unitText");
+  @JsonIgnore public java.util.Collection<BusinessFunction> getBusinessFunctions() {
+    final java.lang.Object current = myData.get("businessFunction");
     if (current == null) return Collections.emptyList();
-    if (current instanceof Collection) {
-      return (Collection<String>) current;
+    if (current instanceof java.util.Collection) {
+      return (java.util.Collection<BusinessFunction>) current;
     }
-    return Arrays.asList((String) current);
+    return Arrays.asList((BusinessFunction) current);
   }
-  protected TypeAndQuantityNode(java.util.Map<String,Object> data) {
+  protected TypeAndQuantityNode(java.util.Map<String,java.lang.Object> data) {
     super(data);
+  }
+  /**
+   * @return new {@link Builder} initialized with this instance's data
+   */
+  @NotNull public Builder toBuilder() {
+    return new Builder(new HashMap<>(this.myData));
   }
   
   /**
    * Builder for {@link TypeAndQuantityNode}
    */
   public static class Builder extends StructuredValue.Builder {
-    public Builder(@NotNull HashMap<String,Object> data) {
+    public Builder(@NotNull HashMap<String,java.lang.Object> data) {
       super(data);
     }
     @NotNull public TypeAndQuantityNode build() {
@@ -215,6 +252,8 @@ public class TypeAndQuantityNode extends StructuredValue {
     }
     /**
      * The quantity of the goods included in the offer.
+     * @param integer value to set
+     * @return this builder instance
      */
     @NotNull public Builder amountOfThisGood(@NotNull Integer integer) {
       putValue("amountOfThisGood", integer);
@@ -222,6 +261,8 @@ public class TypeAndQuantityNode extends StructuredValue {
     }
     /**
      * The quantity of the goods included in the offer.
+     * @param amountOfThisGood value to set
+     * @return this builder instance
      */
     @NotNull public Builder amountOfThisGood(@NotNull Long amountOfThisGood) {
       putValue("amountOfThisGood", amountOfThisGood);
@@ -229,6 +270,8 @@ public class TypeAndQuantityNode extends StructuredValue {
     }
     /**
      * The quantity of the goods included in the offer.
+     * @param amountOfThisGood value to set
+     * @return this builder instance
      */
     @NotNull public Builder amountOfThisGood(@NotNull Float amountOfThisGood) {
       putValue("amountOfThisGood", amountOfThisGood);
@@ -236,6 +279,8 @@ public class TypeAndQuantityNode extends StructuredValue {
     }
     /**
      * The quantity of the goods included in the offer.
+     * @param amountOfThisGood value to set
+     * @return this builder instance
      */
     @NotNull public Builder amountOfThisGood(@NotNull Double amountOfThisGood) {
       putValue("amountOfThisGood", amountOfThisGood);
@@ -243,20 +288,35 @@ public class TypeAndQuantityNode extends StructuredValue {
     }
     /**
      * The quantity of the goods included in the offer.
+     * @param amountOfThisGood value to set
+     * @return this builder instance
      */
     @NotNull public Builder amountOfThisGood(@NotNull String amountOfThisGood) {
       putValue("amountOfThisGood", amountOfThisGood);
       return this;
     }
     /**
-     * The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
+     * Remove amountOfThisGood property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
      */
-    @NotNull public Builder businessFunction(@NotNull BusinessFunction businessFunction) {
-      putValue("businessFunction", businessFunction);
+    @NotNull public Builder removeAmountOfThisGood() {
+      removeValue("amountOfThisGood");
       return this;
     }
     /**
+     * Get currently set value for amountOfThisGood property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getAmountOfThisGood() {
+      return myData.get("amountOfThisGood");
+    }
+    /**
      * The product that this structured value is referring to.
+     * @param product value to set
+     * @return this builder instance
      */
     @NotNull public Builder typeOfGood(@NotNull Product product) {
       putValue("typeOfGood", product);
@@ -264,6 +324,8 @@ public class TypeAndQuantityNode extends StructuredValue {
     }
     /**
      * The product that this structured value is referring to.
+     * @param product value to set
+     * @return this builder instance
      */
     @NotNull public Builder typeOfGood(@NotNull Product.Builder product) {
       putValue("typeOfGood", product.build());
@@ -271,6 +333,8 @@ public class TypeAndQuantityNode extends StructuredValue {
     }
     /**
      * The product that this structured value is referring to.
+     * @param service value to set
+     * @return this builder instance
      */
     @NotNull public Builder typeOfGood(@NotNull Service service) {
       putValue("typeOfGood", service);
@@ -278,91 +342,172 @@ public class TypeAndQuantityNode extends StructuredValue {
     }
     /**
      * The product that this structured value is referring to.
+     * @param service value to set
+     * @return this builder instance
      */
     @NotNull public Builder typeOfGood(@NotNull Service.Builder service) {
       putValue("typeOfGood", service.build());
       return this;
     }
     /**
-     * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
+     * Remove typeOfGood property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
      */
-    @NotNull public Builder unitCode(@NotNull String unitCode) {
-      putValue("unitCode", unitCode);
+    @NotNull public Builder removeTypeOfGood() {
+      removeValue("typeOfGood");
       return this;
     }
     /**
-     * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
-     * <a href='unitCode'>unitCode</a>.
+     * Get currently set value for typeOfGood property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getTypeOfGood() {
+      return myData.get("typeOfGood");
+    }
+    /**
+     *                                         A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
+     * &lt;a href='unitCode'&gt;unitCode&lt;/a&gt;.
+     *                                         @param unitText value to set
+     *                                         @return this builder instance
      */
     @NotNull public Builder unitText(@NotNull String unitText) {
       putValue("unitText", unitText);
       return this;
     }
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * Remove unitText property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
      */
-    @NotNull public Builder additionalType(@NotNull String additionalType) {
-      putValue("additionalType", additionalType);
+    @NotNull public Builder removeUnitText() {
+      removeValue("unitText");
       return this;
     }
     /**
-     * An alias for the item.
+     * Get currently set value for unitText property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
      */
-    @NotNull public Builder alternateName(@NotNull String alternateName) {
-      putValue("alternateName", alternateName);
+    @Nullable public java.lang.Object getUnitText() {
+      return myData.get("unitText");
+    }
+    /**
+     * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
+     * @param unitCode value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder unitCode(@NotNull String unitCode) {
+      putValue("unitCode", unitCode);
       return this;
     }
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * Remove unitCode property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
      */
-    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
-      putValue("disambiguatingDescription", disambiguatingDescription);
+    @NotNull public Builder removeUnitCode() {
+      removeValue("unitCode");
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * Get currently set value for unitCode property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
-      putValue("mainEntityOfPage", creativeWork);
+    @Nullable public java.lang.Object getUnitCode() {
+      return myData.get("unitCode");
+    }
+    /**
+     * The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
+     * @param businessFunction value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder businessFunction(@NotNull BusinessFunction businessFunction) {
+      putValue("businessFunction", businessFunction);
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * Remove businessFunction property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
-      putValue("mainEntityOfPage", creativeWork.build());
+    @NotNull public Builder removeBusinessFunction() {
+      removeValue("businessFunction");
       return this;
     }
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * Get currently set value for businessFunction property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
      */
-    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
-      putValue("mainEntityOfPage", mainEntityOfPage);
+    @Nullable public java.lang.Object getBusinessFunction() {
+      return myData.get("businessFunction");
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     * 
+     * @param identifier value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder identifier(@NotNull Identifier identifier) {
+      putValue("identifier", identifier);
       return this;
     }
     /**
-     * The name of the item.
+     * Remove identifier property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
      */
-    @NotNull public Builder name(@NotNull String name) {
-      putValue("name", name);
+    @NotNull public Builder removeIdentifier() {
+      removeValue("identifier");
       return this;
     }
     /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     * Get currently set value for identifier property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
      */
-    @NotNull public Builder sameAs(@NotNull String sameAs) {
-      putValue("sameAs", sameAs);
+    @Nullable public java.lang.Object getIdentifier() {
+      return myData.get("identifier");
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * @param image value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder image(@NotNull Image image) {
+      putValue("image", image);
       return this;
     }
     /**
-     * URL of the item.
+     * Remove image property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
      */
-    @NotNull public Builder url(@NotNull String url) {
-      putValue("url", url);
+    @NotNull public Builder removeImage() {
+      removeValue("image");
       return this;
+    }
+    /**
+     * Get currently set value for image property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getImage() {
+      return myData.get("image");
     }
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     * @param action value to set
+     * @return this builder instance
      */
     @NotNull public Builder potentialAction(@NotNull Action action) {
       putValue("potentialAction", action);
@@ -370,13 +515,224 @@ public class TypeAndQuantityNode extends StructuredValue {
     }
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     * @param action value to set
+     * @return this builder instance
      */
     @NotNull public Builder potentialAction(@NotNull Action.Builder action) {
       putValue("potentialAction", action.build());
       return this;
     }
     /**
+     * Remove potentialAction property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removePotentialAction() {
+      removeValue("potentialAction");
+      return this;
+    }
+    /**
+     * Get currently set value for potentialAction property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getPotentialAction() {
+      return myData.get("potentialAction");
+    }
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * @param disambiguatingDescription value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder disambiguatingDescription(@NotNull String disambiguatingDescription) {
+      putValue("disambiguatingDescription", disambiguatingDescription);
+      return this;
+    }
+    /**
+     * Remove disambiguatingDescription property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeDisambiguatingDescription() {
+      removeValue("disambiguatingDescription");
+      return this;
+    }
+    /**
+     * Get currently set value for disambiguatingDescription property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getDisambiguatingDescription() {
+      return myData.get("disambiguatingDescription");
+    }
+    /**
+     * A description of the item.
+     * @param description value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder description(@NotNull String description) {
+      putValue("description", description);
+      return this;
+    }
+    /**
+     * Remove description property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeDescription() {
+      removeValue("description");
+      return this;
+    }
+    /**
+     * Get currently set value for description property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getDescription() {
+      return myData.get("description");
+    }
+    /**
+     * URL of the item.
+     * @param url value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder url(@NotNull String url) {
+      putValue("url", url);
+      return this;
+    }
+    /**
+     * Remove url property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeUrl() {
+      removeValue("url");
+      return this;
+    }
+    /**
+     * Get currently set value for url property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getUrl() {
+      return myData.get("url");
+    }
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * @param additionalType value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder additionalType(@NotNull String additionalType) {
+      putValue("additionalType", additionalType);
+      return this;
+    }
+    /**
+     * Remove additionalType property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeAdditionalType() {
+      removeValue("additionalType");
+      return this;
+    }
+    /**
+     * Get currently set value for additionalType property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getAdditionalType() {
+      return myData.get("additionalType");
+    }
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     * @param sameAs value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder sameAs(@NotNull String sameAs) {
+      putValue("sameAs", sameAs);
+      return this;
+    }
+    /**
+     * Remove sameAs property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeSameAs() {
+      removeValue("sameAs");
+      return this;
+    }
+    /**
+     * Get currently set value for sameAs property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getSameAs() {
+      return myData.get("sameAs");
+    }
+    /**
+     * An alias for the item.
+     * @param alternateName value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder alternateName(@NotNull String alternateName) {
+      putValue("alternateName", alternateName);
+      return this;
+    }
+    /**
+     * Remove alternateName property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeAlternateName() {
+      removeValue("alternateName");
+      return this;
+    }
+    /**
+     * Get currently set value for alternateName property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getAlternateName() {
+      return myData.get("alternateName");
+    }
+    /**
+     * The name of the item.
+     * @param name value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder name(@NotNull String name) {
+      putValue("name", name);
+      return this;
+    }
+    /**
+     * Remove name property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeName() {
+      removeValue("name");
+      return this;
+    }
+    /**
+     * Get currently set value for name property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getName() {
+      return myData.get("name");
+    }
+    /**
      * A CreativeWork or Event about this Thing.
+     * @param creativeWork value to set
+     * @return this builder instance
      */
     @NotNull public Builder subjectOf(@NotNull CreativeWork creativeWork) {
       putValue("subjectOf", creativeWork);
@@ -384,6 +740,8 @@ public class TypeAndQuantityNode extends StructuredValue {
     }
     /**
      * A CreativeWork or Event about this Thing.
+     * @param creativeWork value to set
+     * @return this builder instance
      */
     @NotNull public Builder subjectOf(@NotNull CreativeWork.Builder creativeWork) {
       putValue("subjectOf", creativeWork.build());
@@ -391,6 +749,8 @@ public class TypeAndQuantityNode extends StructuredValue {
     }
     /**
      * A CreativeWork or Event about this Thing.
+     * @param event value to set
+     * @return this builder instance
      */
     @NotNull public Builder subjectOf(@NotNull Event event) {
       putValue("subjectOf", event);
@@ -398,39 +758,127 @@ public class TypeAndQuantityNode extends StructuredValue {
     }
     /**
      * A CreativeWork or Event about this Thing.
+     * @param event value to set
+     * @return this builder instance
      */
     @NotNull public Builder subjectOf(@NotNull Event.Builder event) {
       putValue("subjectOf", event.build());
       return this;
     }
+    /**
+     * Remove subjectOf property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeSubjectOf() {
+      removeValue("subjectOf");
+      return this;
+    }
+    /**
+     * Get currently set value for subjectOf property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getSubjectOf() {
+      return myData.get("subjectOf");
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * @param creativeWork value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork creativeWork) {
+      putValue("mainEntityOfPage", creativeWork);
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * @param creativeWork value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull CreativeWork.Builder creativeWork) {
+      putValue("mainEntityOfPage", creativeWork.build());
+      return this;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * @param mainEntityOfPage value to set
+     * @return this builder instance
+     */
+    @NotNull public Builder mainEntityOfPage(@NotNull String mainEntityOfPage) {
+      putValue("mainEntityOfPage", mainEntityOfPage);
+      return this;
+    }
+    /**
+     * Remove mainEntityOfPage property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeMainEntityOfPage() {
+      removeValue("mainEntityOfPage");
+      return this;
+    }
+    /**
+     * Get currently set value for mainEntityOfPage property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getMainEntityOfPage() {
+      return myData.get("mainEntityOfPage");
+    }
+    /**
+     * null
+     * @param id value to set
+     * @return this builder instance
+     */
     @NotNull public Builder id(@NotNull String id) {
       myData.put("id", id);
       return this;
     }
+    /**
+     * Remove id property from the builder.
+     * If this property is repeatable, all instances are removed.
+     * @return this builder instance
+     */
+    @NotNull public Builder removeId() {
+      removeValue("id");
+      return this;
+    }
+    /**
+     * Get currently set value for id property in this builder.
+     * @return previously set value or {@code null}. If multiple values have been 
+     * set to this property, then {@link java.util.Collection} instance will be 
+     * returned.
+     */
+    @Nullable public java.lang.Object getId() {
+      return myData.get("id");
+    }
     public Builder id(long id) {
       return id(Long.toString(id));
     }
-    @Override protected void fromMap(String key, Object value) {
-      if ("amountOfThisGood".equals(key) && value instanceof Integer) { amountOfThisGood((Integer)value); return; }
-      if ("amountOfThisGoods".equals(key) && value instanceof Integer) { amountOfThisGood((Integer)value); return; }
-      if ("amountOfThisGood".equals(key) && value instanceof Long) { amountOfThisGood((Long)value); return; }
-      if ("amountOfThisGoods".equals(key) && value instanceof Long) { amountOfThisGood((Long)value); return; }
-      if ("amountOfThisGood".equals(key) && value instanceof Float) { amountOfThisGood((Float)value); return; }
-      if ("amountOfThisGoods".equals(key) && value instanceof Float) { amountOfThisGood((Float)value); return; }
-      if ("amountOfThisGood".equals(key) && value instanceof Double) { amountOfThisGood((Double)value); return; }
-      if ("amountOfThisGoods".equals(key) && value instanceof Double) { amountOfThisGood((Double)value); return; }
-      if ("amountOfThisGood".equals(key) && value instanceof String) { amountOfThisGood((String)value); return; }
-      if ("amountOfThisGoods".equals(key) && value instanceof String) { amountOfThisGood((String)value); return; }
-      if ("businessFunction".equals(key) && value instanceof BusinessFunction) { businessFunction((BusinessFunction)value); return; }
-      if ("businessFunctions".equals(key) && value instanceof BusinessFunction) { businessFunction((BusinessFunction)value); return; }
-      if ("typeOfGood".equals(key) && value instanceof Product) { typeOfGood((Product)value); return; }
-      if ("typeOfGoods".equals(key) && value instanceof Product) { typeOfGood((Product)value); return; }
-      if ("typeOfGood".equals(key) && value instanceof Service) { typeOfGood((Service)value); return; }
-      if ("typeOfGoods".equals(key) && value instanceof Service) { typeOfGood((Service)value); return; }
-      if ("unitCode".equals(key) && value instanceof String) { unitCode((String)value); return; }
-      if ("unitCodes".equals(key) && value instanceof String) { unitCode((String)value); return; }
-      if ("unitText".equals(key) && value instanceof String) { unitText((String)value); return; }
-      if ("unitTexts".equals(key) && value instanceof String) { unitText((String)value); return; }
+    @Override protected void fromMap(String key, java.lang.Object value) {
+      if ("amountOfThisGood".equals(key) && value instanceof Integer) { this.amountOfThisGood((Integer)value); return; }
+      if ("amountOfThisGoods".equals(key) && value instanceof Integer) { this.amountOfThisGood((Integer)value); return; }
+      if ("amountOfThisGood".equals(key) && value instanceof Long) { this.amountOfThisGood((Long)value); return; }
+      if ("amountOfThisGoods".equals(key) && value instanceof Long) { this.amountOfThisGood((Long)value); return; }
+      if ("amountOfThisGood".equals(key) && value instanceof Float) { this.amountOfThisGood((Float)value); return; }
+      if ("amountOfThisGoods".equals(key) && value instanceof Float) { this.amountOfThisGood((Float)value); return; }
+      if ("amountOfThisGood".equals(key) && value instanceof Double) { this.amountOfThisGood((Double)value); return; }
+      if ("amountOfThisGoods".equals(key) && value instanceof Double) { this.amountOfThisGood((Double)value); return; }
+      if ("amountOfThisGood".equals(key) && value instanceof String) { this.amountOfThisGood((String)value); return; }
+      if ("amountOfThisGoods".equals(key) && value instanceof String) { this.amountOfThisGood((String)value); return; }
+      if ("typeOfGood".equals(key) && value instanceof Product) { this.typeOfGood((Product)value); return; }
+      if ("typeOfGoods".equals(key) && value instanceof Product) { this.typeOfGood((Product)value); return; }
+      if ("typeOfGood".equals(key) && value instanceof Service) { this.typeOfGood((Service)value); return; }
+      if ("typeOfGoods".equals(key) && value instanceof Service) { this.typeOfGood((Service)value); return; }
+      if ("unitText".equals(key) && value instanceof String) { this.unitText((String)value); return; }
+      if ("unitTexts".equals(key) && value instanceof String) { this.unitText((String)value); return; }
+      if ("unitCode".equals(key) && value instanceof String) { this.unitCode((String)value); return; }
+      if ("unitCodes".equals(key) && value instanceof String) { this.unitCode((String)value); return; }
+      if ("businessFunction".equals(key) && value instanceof BusinessFunction) { this.businessFunction((BusinessFunction)value); return; }
+      if ("businessFunctions".equals(key) && value instanceof BusinessFunction) { this.businessFunction((BusinessFunction)value); return; }
       super.fromMap(key, value);
     }
   }
