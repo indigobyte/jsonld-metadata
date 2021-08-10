@@ -5,9 +5,9 @@ Library provides easy to use Java classes and builders for [schema.org](http://s
 
 All classes are auto generated from schemaorg-all-http.rdf (HTTPS version doesn't work)
 
-Example usage:
+# Usage
 
-Include Maven dependency:
+## Include Maven dependency
 
 ```xml
 <repository>
@@ -31,7 +31,7 @@ Include Maven dependency:
 </dependencies>
 ```
 
-Use in Java code:
+## Use in Java code
 
 ```java
 import static org.schema.SchemaOrg.*;
@@ -39,18 +39,71 @@ import static org.schema.SchemaOrg.*;
 final Article article = SchemaOrg.article() // with static import you can skip `SchemaOrg.`, left here for clarity
         .name("88th Oscars ceremony will be held on February 28th")
         .text("Lorem ipsum")
-        .author(nGO().name("The Academy of Motion Picture Arts and Sciences").build())
+        .author(nGO()
+                   .name("The Academy of Motion Picture Arts and Sciences")
+                   .build()
+        )
         .comment(
                 // note that you may provide Builder instead of object where it is unambiguous
-                comment().text("Hooray!").author(person().name("Max Mustermann"))
+                comment()
+                .text("Hooray!")
+                .author(
+                    person()
+                        .name("Max Mustermann")
+                )
         ).build();
 ```
 
-Than one can serialize it to JSON with __Jackson__ as follows:
+## Generate JSON-LD script
+
+Create `<script type="application/ld+json">` snippet with __Jackson__ like this:
+```java
+@NotNull
+public static String getJsonLdScript(@NotNull Thing thing) {
+    final ObjectMapper mapper = new ObjectMapper();
+    mapper.enable(SerializationFeature.INDENT_OUTPUT);
+    mapper.getFactory().setCharacterEscapes(new HTMLCharacterEscapes());
+    mapper.getFactory().configure(JsonGenerator.Feature.ESCAPE_NON_ASCII, true);
+    // Taken from https://www.baeldung.com/jackson-serialize-dates#iso-8601
+    mapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
+    // StdDateFormat is ISO8601 since jackson 2.9
+    mapper.setDateFormat(new StdDateFormat().withColonInTimeZone(true));
+    try {
+        try (var writer = new StringWriter()) {
+            mapper.writeValue(writer, thing);
+            return "<script type=\"application/ld+json\">\n" +
+                writer +
+                "\n</script>\n";
+        }
+    } catch (Throwable e) {
+        log.error(() -> "Error serializing " + thing, e);
+        return "";
+    }
+}
 ```
-final ObjectMapper objectMapper = new ObjectMapper();
-objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
-objectMapper.writeValue(System.out, event);
+## Editing JSON-LD builder
+
+You can edit (and remove) properties of the builder that were set previously:
+```java
+final Event.Builder eventBuilder = SchemaOrg.event();
+// Let's say that location was added previously
+eventBuilder.location(SchemaOrg.place().name("White House").build());
+// Now we want to add country and city to this location
+final Place.Builder placeBuilder;
+if (eventBuilder.getLocation() instanceof Place place) {
+    placeBuilder = place.toBuilder(); // If it was already set, then create placeBuilder from existing data
+} else {
+    placeBuilder = SchemaOrg.place(); // Otherwise create a new placeBuilder instance
+}
+// Now set the address
+placeBuilder.address(SchemaOrg.postalAddress()
+    .addressCountry("USA")
+    .addressLocality("Washington, DC")
+    .build()
+);
+eventBuilder.removeLocation() // Remove location without address, the one specified previously. If you don't remove it, then eventBuilder will have multiple locations
+    .location(placeBuilder.build()); // Set new location, the one with address.
+
 ```
 
 # Updating schema.org schema
@@ -66,6 +119,7 @@ Must set working directory to `generator` before running. Generated files will b
 `src/generated-test`.
 
 # Building new version
+
 - Update `version` inside `gradle.properties` file.
 - Build this via `gradle clean build`
 - Checkout `mvn-repo` branch of this repository into separate folder.
